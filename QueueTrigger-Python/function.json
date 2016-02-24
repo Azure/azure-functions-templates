@@ -1,0 +1,25 @@
+﻿{
+  "bindings": {
+    "input": [
+      {
+        "type": "queueTrigger",
+        "queueName": "samples-python"
+      },
+      {
+        "type": "table",
+        "name": "input",
+        "tableName": "samples",
+        "partitionKey": "samples",
+        "take": 5,
+        "filter": "status eq '0'"
+      }
+    ],
+    "output": [
+      {
+        "type": "blob",
+        "name": "output",
+        "path": "samples-output/{id}"
+      }
+    ]
+  }
+}

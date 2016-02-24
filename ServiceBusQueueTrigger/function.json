@@ -1,0 +1,17 @@
+﻿{
+  "bindings": {
+    "input": [
+      {
+        "type": "serviceBusTrigger",
+        "queueName": "samples-input"
+      }
+    ],
+    "output": [
+      {
+        "type": "serviceBus",
+        "name": "message",
+        "queueName": "samples-input"
+      }
+    ]
+  }
+}

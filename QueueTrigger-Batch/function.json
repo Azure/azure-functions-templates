@@ -1,0 +1,17 @@
+﻿{
+  "bindings": {
+    "input": [
+      {
+        "type": "queueTrigger",
+        "queueName": "samples-batch"
+      }
+    ],
+    "output": [
+      {
+        "type": "blob",
+        "name": "output",
+        "path": "samples-output/{id}"
+      }
+    ]
+  }
+}
