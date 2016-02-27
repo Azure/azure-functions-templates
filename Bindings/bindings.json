@@ -1,0 +1,390 @@
+{
+    "schema":"",
+    "version":"2-25-2016",
+    "bindings": [
+        {
+            "type": "timerTrigger",
+            "displayName": "Timer",
+            "behavior": "trigger",
+            "resources": [],
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "required": true,
+                    "label": "What you like to name your binding?",
+                    "help": "Your binding name must be mutually exclusive within your function."
+                },
+                {
+                    "name": "schedule",
+                    "value": "string",
+                    "required": true,
+                    "label": "How often would you like to run? Please provide a cron expression.",
+                    "help": "A cron express is a way of expressing a schedule. See the docs to learn more."
+                },
+                {
+                    "name": "runOnStartup",
+                    "value": "boolean",
+                    "label": "Run on start up?",
+                    "help": "When true, your function will run on start. Useful for debugging."
+                }
+            ]
+        },
+        {
+            "type": "queue",
+            "displayName": "Azure Storage Queue",
+            "behavior": "output",
+            "resources": [
+                {
+                    "name": "storageAccount",
+                    "value": "string",
+                    "resource": "Storage",
+                    "required": true,
+                    "label": "Please provide a Storage Account Connection String",
+                    "help": "You can use %<App Setting Name>% to reference an App Setting you've already configured"
+                }
+            ],
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "required": true,
+                    "label": "What you like to name your binding?",
+                    "help": "Your binding name must be mutually exclusive within your function."
+                },
+                {
+                    "name": "queueName",
+                    "value": "string",
+                    "required": true,
+                    "label": "Which queue would you like to output to?",
+                    "help": "If your queue doesn't exist yet, don't worry. We'll create one for you in your specifed Storage Account."
+                }
+            ]
+        },
+        {
+            "type": "queueTrigger",
+            "displayName": "Azure Storage Queue",
+            "behavior": "trigger",
+            "resources": [
+                {
+                    "name": "storageAccount",
+                    "value": "string",
+                    "resource": "Storage",
+                    "required": true,
+                    "label": "Please provide a Storage Account Connection String",
+                    "help": "You can use %<App Setting Name>% to reference an App Setting you've already configured"
+                }
+            ],
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "required": true,
+                    "label": "What you like to name your binding?",
+                    "help": "Your binding name must be mutually exclusive within your function."
+                },
+                {
+                    "name": "queueName",
+                    "value": "string",
+                    "required": true,
+                    "label": "Which queue would you like to trigger off of?",
+                    "help": "If your queue doesn't exist yet, don't worry. We'll wait for it to exist before we start creating events."
+                }
+            ]
+        },
+        {
+            "type": "blob",
+            "displayName": "Azure Storage Blob",
+            "behavior": "output",
+            "resources": [
+                {
+                    "name": "storageAccount",
+                    "value": "string",
+                    "resource": "Storage",
+                    "required": true,
+                    "label": "Please provide a Storage Account Connection String",
+                    "help": "You can use %<App Setting Name>% to reference an App Setting you've already configured"
+                }
+            ],
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "required": true,
+                    "label": "What you like to name your binding?",
+                    "help": "Your binding name must be mutually exclusive within your function."
+                },
+                {
+                    "name": "path",
+                    "value": "string",
+                    "required": true,
+                    "label": "What is the Blob Path you would like to output to?",
+                    "help": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
+                }
+            ]
+        },
+        {
+            "type": "blob",
+            "displayName": "Azure Storage Blob",
+            "behavior": "input",
+            "resources": [
+                {
+                    "name": "storageAccount",
+                    "value": "string",
+                    "resource": "Storage",
+                    "required": true,
+                    "label": "Please provide a Storage Account Connection String",
+                    "help": "You can use %<App Setting Name>% to reference an App Setting you've already configured"
+                }
+            ],
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "required": true,
+                    "label": "What you like to name your binding?",
+                    "help": "Your binding name must be mutually exclusive within your function."
+                },
+                {
+                    "name": "path",
+                    "value": "string",
+                    "required": true,
+                    "label": "What is the Blob Path you would like to read from?",
+                    "help": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
+                }
+            ]
+        },
+        {
+            "type": "blobTrigger",
+            "displayName": "Azure Storage Blob",
+            "behavior": "trigger",
+            "resources": [
+                {
+                    "name": "storageAccount",
+                    "value": "string",
+                    "resource": "Storage",
+                    "required": true,
+                    "label": "Please provide a Storage Account Connection String",
+                    "help": "You can use %<App Setting Name>% to reference an App Setting you've already configured"
+                }
+            ],
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "required": true,
+                    "label": "What you like to name your binding?",
+                    "help": "Your binding name must be mutually exclusive within your function."
+                },
+                {
+                    "name": "path",
+                    "value": "string",
+                    "required": true,
+                    "label": "What is the Blob Path you would like to trigger & read from?",
+                    "help": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
+                }
+            ]
+        },
+        {
+            "type": "httpTrigger",
+            "displayName": "HTTP",
+            "behavior": "trigger",
+            "resources": [],
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "required": true,
+                    "label": "What you like to name your binding?",
+                    "help": "Your binding name must be mutually exclusive within your function."
+                },
+                {
+                    "name": "webHookType",
+                    "value": "enum",
+                    "enum": [
+                        {
+                            "value": "github",
+                            "display": "GitHub"
+                        },
+                        {
+                            "value": "slack",
+                            "display": "Slack"
+                        },
+                        {
+                            "value": "generic",
+                            "display": "Generic"
+                        }
+                    ],
+                    "label": "Is this a WebHook? Select which type of WebHook",
+                    "help": "If your type isn't listed here, you can leave this blank."
+                }
+            ]
+        },
+        {
+            "type": "http",
+            "displayName": "HTTP",
+            "behavior": "output",
+            "resources": [],
+            "settings": []
+        },
+        {
+            "type": "serviceBusTrigger",
+            "displayName": "Azure Service Bus",
+            "behavior": "trigger",
+            "resources": [
+                {
+                    "name": "subscriptionName",
+                    "value": "string",
+                    "resource": "ServiceBus",
+                    "required": true,
+                    "label": "Please provide a Service Bus Connection String",
+                    "help": "You can use %<App Setting Name>% to reference an App Setting you've already configured"
+                }
+            ],
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "required": true,
+                    "label": "What you like to name your binding?",
+                    "help": "Your binding name must be mutually exclusive within your function."
+                },
+                {
+                    "name": "queueName",
+                    "value": "string",
+                    "required": true,
+                    "label": "Which queue would you like to output to?",
+                    "help": "<TBD>"
+                }
+            ]
+        },
+        {
+            "type": "serviceBus",
+            "displayName": "Azure Service Bus",
+            "behavior": "output",
+            "resources": [
+                {
+                    "name": "subscriptionName",
+                    "value": "string",
+                    "resource": "ServiceBus",
+                    "required": true,
+                    "label": "Please provide a Service Bus Connection String",
+                    "help": "You can use %<App Setting Name>% to reference an App Setting you've already configured"
+                }
+            ],
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "required": true,
+                    "label": "What you like to name your binding?",
+                    "help": "Your binding name must be mutually exclusive within your function."
+                },
+                {
+                    "name": "queueName",
+                    "value": "string",
+                    "required": true,
+                    "label": "Which queue would you like to trigger off of?",
+                    "help": "<TBD>"
+                }
+            ]
+        },
+        {
+            "type": "table",
+            "displayName": "Azure Storage Table",
+            "behavior": "output",
+            "resources": [
+                {
+                    "name": "storageAccount",
+                    "value": "string",
+                    "resource": "Storage",
+                    "required": true,
+                    "label": "Please provide a Storage Account Connection String",
+                    "help": "You can use %<App Setting Name>% to reference an App Setting you've already configured"
+                }
+            ],
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "required": true,
+                    "label": "What you like to name your binding?",
+                    "help": "Your binding name must be mutually exclusive within your function."
+                },
+                {
+                    "name": "tableName",
+                    "value": "string",
+                    "required": true,
+                    "label": "What is the name of the Table you would like to output to?",
+                    "help": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
+                },
+                {
+                    "name": "partitionKey",
+                    "value": "string",
+                    "required": true,
+                    "label": "What is the parition key of the partition you would like to output to?",
+                    "help": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
+                },
+                {
+                    "name": "rowKey",
+                    "value": "string",
+                    "required": true,
+                    "label": "What is the row key of the value you would like to output?",
+                    "help": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
+                }
+            ]
+        },
+        {
+            "type": "table",
+            "displayName": "Azure Storage Table",
+            "behavior": "input",
+            "resources": [
+                {
+                    "name": "storageAccount",
+                    "value": "string",
+                    "resource": "Storage",
+                    "required": true,
+                    "label": "Please provide a Storage Account Connection String",
+                    "help": "You can use %<App Setting Name>% to reference an App Setting you've already configured"
+                }
+            ],
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "required": true,
+                    "label": "What you like to name your binding?",
+                    "help": "Your binding name must be mutually exclusive within your function."
+                },
+                {
+                    "name": "tableName",
+                    "value": "string",
+                    "required": true,
+                    "label": "What is the name of the Table you would like to read from?",
+                    "help": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
+                },
+                {
+                    "name": "partitionKey",
+                    "value": "string",
+                    "required": true,
+                    "label": "What is the parition key of the partition you would like to read from?",
+                    "help": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
+                },
+                {
+                    "name": "take",
+                    "value": "int",
+                    "required": true,
+                    "label": "What is the max number of records you'd like to read?",
+                    "help": "You may receive less records, if your table has less records or your filter returns less results."
+                },
+                {
+                    "name": "filter",
+                    "value": "string",
+                    "required": true,
+                    "label": "What is the filter you'd like to apply to the table?",
+                    "help": "<TBD>"
+                }
+            ]
+        }
+    ]
+}
