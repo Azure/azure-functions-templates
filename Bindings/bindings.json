@@ -1,19 +1,24 @@
 {
-    "schema":"",
-    "version":"2-25-2016",
+    "schema": "",
+    "version": "2-25-2016",
+    "settingTemplates": {
+        "parameterName": {
+            "name": "name",
+            "type": "string",
+            "required": true,
+            "label": "What would you like to name your binding?",
+            "help": "Your binding name must be mutually exclusive within your function."
+        }
+    },
     "bindings": [
         {
             "type": "timerTrigger",
             "displayName": "Timer",
             "direction": "trigger",
-            "resources": [],
+            "resources": [ ],
             "settings": [
                 {
-                    "name": "name",
-                    "value": "string",
-                    "required": true,
-                    "label": "What you like to name your binding?",
-                    "help": "Your binding name must be mutually exclusive within your function."
+                    "template": "parameterName"
                 },
                 {
                     "name": "schedule",
@@ -46,11 +51,7 @@
             ],
             "settings": [
                 {
-                    "name": "name",
-                    "value": "string",
-                    "required": true,
-                    "label": "What you like to name your binding?",
-                    "help": "Your binding name must be mutually exclusive within your function."
+                    "template": "parameterName"
                 },
                 {
                     "name": "queueName",
@@ -77,11 +78,7 @@
             ],
             "settings": [
                 {
-                    "name": "name",
-                    "value": "string",
-                    "required": true,
-                    "label": "What you like to name your binding?",
-                    "help": "Your binding name must be mutually exclusive within your function."
+                    "template": "parameterName"
                 },
                 {
                     "name": "queueName",
@@ -108,11 +105,7 @@
             ],
             "settings": [
                 {
-                    "name": "name",
-                    "value": "string",
-                    "required": true,
-                    "label": "What you like to name your binding?",
-                    "help": "Your binding name must be mutually exclusive within your function."
+                    "template": "parameterName"
                 },
                 {
                     "name": "path",
@@ -139,11 +132,7 @@
             ],
             "settings": [
                 {
-                    "name": "name",
-                    "value": "string",
-                    "required": true,
-                    "label": "What you like to name your binding?",
-                    "help": "Your binding name must be mutually exclusive within your function."
+                    "template": "parameterName"
                 },
                 {
                     "name": "path",
@@ -170,11 +159,7 @@
             ],
             "settings": [
                 {
-                    "name": "name",
-                    "value": "string",
-                    "required": true,
-                    "label": "What you like to name your binding?",
-                    "help": "Your binding name must be mutually exclusive within your function."
+                    "template": "parameterName"
                 },
                 {
                     "name": "path",
@@ -189,14 +174,10 @@
             "type": "httpTrigger",
             "displayName": "HTTP",
             "direction": "trigger",
-            "resources": [],
+            "resources": [ ],
             "settings": [
                 {
-                    "name": "name",
-                    "value": "string",
-                    "required": true,
-                    "label": "What you like to name your binding?",
-                    "help": "Your binding name must be mutually exclusive within your function."
+                    "template": "parameterName"
                 },
                 {
                     "name": "webHookType",
@@ -224,8 +205,8 @@
             "type": "http",
             "displayName": "HTTP",
             "direction": "output",
-            "resources": [],
-            "settings": []
+            "resources": [ ],
+            "settings": [ ]
         },
         {
             "type": "serviceBusTrigger",
@@ -243,11 +224,7 @@
             ],
             "settings": [
                 {
-                    "name": "name",
-                    "value": "string",
-                    "required": true,
-                    "label": "What you like to name your binding?",
-                    "help": "Your binding name must be mutually exclusive within your function."
+                    "template": "parameterName"
                 },
                 {
                     "name": "queueName",
@@ -274,11 +251,7 @@
             ],
             "settings": [
                 {
-                    "name": "name",
-                    "value": "string",
-                    "required": true,
-                    "label": "What you like to name your binding?",
-                    "help": "Your binding name must be mutually exclusive within your function."
+                    "template": "parameterName"
                 },
                 {
                     "name": "queueName",
@@ -305,11 +278,7 @@
             ],
             "settings": [
                 {
-                    "name": "name",
-                    "value": "string",
-                    "required": true,
-                    "label": "What you like to name your binding?",
-                    "help": "Your binding name must be mutually exclusive within your function."
+                    "template": "parameterName"
                 },
                 {
                     "name": "tableName",
@@ -350,11 +319,7 @@
             ],
             "settings": [
                 {
-                    "name": "name",
-                    "value": "string",
-                    "required": true,
-                    "label": "What you like to name your binding?",
-                    "help": "Your binding name must be mutually exclusive within your function."
+                    "template": "parameterName"
                 },
                 {
                     "name": "tableName",
