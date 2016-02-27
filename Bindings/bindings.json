@@ -5,7 +5,7 @@
         {
             "type": "timerTrigger",
             "displayName": "Timer",
-            "behavior": "trigger",
+            "direction": "trigger",
             "resources": [],
             "settings": [
                 {
@@ -33,7 +33,7 @@
         {
             "type": "queue",
             "displayName": "Azure Storage Queue",
-            "behavior": "output",
+            "direction": "output",
             "resources": [
                 {
                     "name": "storageAccount",
@@ -64,7 +64,7 @@
         {
             "type": "queueTrigger",
             "displayName": "Azure Storage Queue",
-            "behavior": "trigger",
+            "direction": "trigger",
             "resources": [
                 {
                     "name": "storageAccount",
@@ -95,7 +95,7 @@
         {
             "type": "blob",
             "displayName": "Azure Storage Blob",
-            "behavior": "output",
+            "direction": "output",
             "resources": [
                 {
                     "name": "storageAccount",
@@ -126,7 +126,7 @@
         {
             "type": "blob",
             "displayName": "Azure Storage Blob",
-            "behavior": "input",
+            "direction": "input",
             "resources": [
                 {
                     "name": "storageAccount",
@@ -157,7 +157,7 @@
         {
             "type": "blobTrigger",
             "displayName": "Azure Storage Blob",
-            "behavior": "trigger",
+            "direction": "trigger",
             "resources": [
                 {
                     "name": "storageAccount",
@@ -188,7 +188,7 @@
         {
             "type": "httpTrigger",
             "displayName": "HTTP",
-            "behavior": "trigger",
+            "direction": "trigger",
             "resources": [],
             "settings": [
                 {
@@ -223,14 +223,14 @@
         {
             "type": "http",
             "displayName": "HTTP",
-            "behavior": "output",
+            "direction": "output",
             "resources": [],
             "settings": []
         },
         {
             "type": "serviceBusTrigger",
             "displayName": "Azure Service Bus",
-            "behavior": "trigger",
+            "direction": "trigger",
             "resources": [
                 {
                     "name": "subscriptionName",
@@ -261,7 +261,7 @@
         {
             "type": "serviceBus",
             "displayName": "Azure Service Bus",
-            "behavior": "output",
+            "direction": "output",
             "resources": [
                 {
                     "name": "subscriptionName",
@@ -292,7 +292,7 @@
         {
             "type": "table",
             "displayName": "Azure Storage Table",
-            "behavior": "output",
+            "direction": "output",
             "resources": [
                 {
                     "name": "storageAccount",
@@ -337,7 +337,7 @@
         {
             "type": "table",
             "displayName": "Azure Storage Table",
-            "behavior": "input",
+            "direction": "input",
             "resources": [
                 {
                     "name": "storageAccount",
