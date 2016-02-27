@@ -1,25 +1,17 @@
 {
-    "schema": "",
-    "version": "2-25-2016",
-    "settingTemplates": {
-        "parameterName": {
-            "name": "name",
-            "type": "string",
-            "required": true,
-            "label": "What would you like to name your binding?",
-            "help": "Your binding name must be mutually exclusive within your function."
-        }
+    "$schema": "",
+    "contentVersion": "1.0.0.0",
+    "variables": {
+        "storageConnStringLabel": "Please provide a Storage Account Connection String",
+        "appSettingsHelp": "You can use %<App Setting Name>% to reference an App Setting you've already configured",
+        "triggerRefHelp": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
     },
     "bindings": [
         {
             "type": "timerTrigger",
             "displayName": "Timer",
             "direction": "trigger",
-            "resources": [ ],
             "settings": [
-                {
-                    "template": "parameterName"
-                },
                 {
                     "name": "schedule",
                     "value": "string",
@@ -39,26 +31,21 @@
             "type": "queue",
             "displayName": "Azure Storage Queue",
             "direction": "output",
-            "resources": [
-                {
-                    "name": "storageAccount",
-                    "value": "string",
-                    "resource": "Storage",
-                    "required": true,
-                    "label": "Please provide a Storage Account Connection String",
-                    "help": "You can use %<App Setting Name>% to reference an App Setting you've already configured"
-                }
-            ],
             "settings": [
-                {
-                    "template": "parameterName"
-                },
                 {
                     "name": "queueName",
                     "value": "string",
                     "required": true,
                     "label": "Which queue would you like to output to?",
                     "help": "If your queue doesn't exist yet, don't worry. We'll create one for you in your specifed Storage Account."
+                },
+                {
+                    "name": "storageAccount",
+                    "value": "string",
+                    "resource": "Storage",
+                    "required": true,
+                    "label": "[variables('storageConnStringLabel')]",
+                    "help": "[variables('appSettingsHelp')]"
                 }
             ]
         },
@@ -66,26 +53,21 @@
             "type": "queueTrigger",
             "displayName": "Azure Storage Queue",
             "direction": "trigger",
-            "resources": [
-                {
-                    "name": "storageAccount",
-                    "value": "string",
-                    "resource": "Storage",
-                    "required": true,
-                    "label": "Please provide a Storage Account Connection String",
-                    "help": "You can use %<App Setting Name>% to reference an App Setting you've already configured"
-                }
-            ],
             "settings": [
-                {
-                    "template": "parameterName"
-                },
                 {
                     "name": "queueName",
                     "value": "string",
                     "required": true,
                     "label": "Which queue would you like to trigger off of?",
                     "help": "If your queue doesn't exist yet, don't worry. We'll wait for it to exist before we start creating events."
+                },
+                {
+                    "name": "storageAccount",
+                    "value": "string",
+                    "resource": "Storage",
+                    "required": true,
+                    "label": "[variables('storageConnStringLabel')]",
+                    "help": "[variables('appSettingsHelp')]"
                 }
             ]
         },
@@ -93,26 +75,21 @@
             "type": "blob",
             "displayName": "Azure Storage Blob",
             "direction": "output",
-            "resources": [
-                {
-                    "name": "storageAccount",
-                    "value": "string",
-                    "resource": "Storage",
-                    "required": true,
-                    "label": "Please provide a Storage Account Connection String",
-                    "help": "You can use %<App Setting Name>% to reference an App Setting you've already configured"
-                }
-            ],
             "settings": [
-                {
-                    "template": "parameterName"
-                },
                 {
                     "name": "path",
                     "value": "string",
                     "required": true,
                     "label": "What is the Blob Path you would like to output to?",
-                    "help": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
+                    "help": "[variables('triggerRefHelp')]"
+                },
+                {
+                    "name": "storageAccount",
+                    "value": "string",
+                    "resource": "Storage",
+                    "required": true,
+                    "label": "[variables('storageConnStringLabel')]",
+                    "help": "[variables('appSettingsHelp')]"
                 }
             ]
         },
@@ -120,26 +97,21 @@
             "type": "blob",
             "displayName": "Azure Storage Blob",
             "direction": "input",
-            "resources": [
-                {
-                    "name": "storageAccount",
-                    "value": "string",
-                    "resource": "Storage",
-                    "required": true,
-                    "label": "Please provide a Storage Account Connection String",
-                    "help": "You can use %<App Setting Name>% to reference an App Setting you've already configured"
-                }
-            ],
             "settings": [
-                {
-                    "template": "parameterName"
-                },
                 {
                     "name": "path",
                     "value": "string",
                     "required": true,
                     "label": "What is the Blob Path you would like to read from?",
-                    "help": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
+                    "help": "[variables('triggerRefHelp')]"
+                },
+                {
+                    "name": "storageAccount",
+                    "value": "string",
+                    "resource": "Storage",
+                    "required": true,
+                    "label": "[variables('storageConnStringLabel')]",
+                    "help": "[variables('appSettingsHelp')]"
                 }
             ]
         },
@@ -147,26 +119,21 @@
             "type": "blobTrigger",
             "displayName": "Azure Storage Blob",
             "direction": "trigger",
-            "resources": [
-                {
-                    "name": "storageAccount",
-                    "value": "string",
-                    "resource": "Storage",
-                    "required": true,
-                    "label": "Please provide a Storage Account Connection String",
-                    "help": "You can use %<App Setting Name>% to reference an App Setting you've already configured"
-                }
-            ],
             "settings": [
-                {
-                    "template": "parameterName"
-                },
                 {
                     "name": "path",
                     "value": "string",
                     "required": true,
                     "label": "What is the Blob Path you would like to trigger & read from?",
-                    "help": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
+                    "help": "[variables('triggerRefHelp')]"
+                },
+                {
+                    "name": "storageAccount",
+                    "value": "string",
+                    "resource": "Storage",
+                    "required": true,
+                    "label": "[variables('storageConnStringLabel')]",
+                    "help": "[variables('appSettingsHelp')]"
                 }
             ]
         },
@@ -174,11 +141,7 @@
             "type": "httpTrigger",
             "displayName": "HTTP",
             "direction": "trigger",
-            "resources": [ ],
             "settings": [
-                {
-                    "template": "parameterName"
-                },
                 {
                     "name": "webHookType",
                     "value": "enum",
@@ -205,33 +168,27 @@
             "type": "http",
             "displayName": "HTTP",
             "direction": "output",
-            "resources": [ ],
             "settings": [ ]
         },
         {
             "type": "serviceBusTrigger",
             "displayName": "Azure Service Bus",
             "direction": "trigger",
-            "resources": [
-                {
-                    "name": "subscriptionName",
-                    "value": "string",
-                    "resource": "ServiceBus",
-                    "required": true,
-                    "label": "Please provide a Service Bus Connection String",
-                    "help": "You can use %<App Setting Name>% to reference an App Setting you've already configured"
-                }
-            ],
             "settings": [
-                {
-                    "template": "parameterName"
-                },
                 {
                     "name": "queueName",
                     "value": "string",
                     "required": true,
                     "label": "Which queue would you like to output to?",
                     "help": "<TBD>"
+                },
+                {
+                    "name": "subscriptionName",
+                    "value": "string",
+                    "resource": "ServiceBus",
+                    "required": true,
+                    "label": "Please provide a Service Bus Connection String",
+                    "help": "[variables('appSettingsHelp')]"
                 }
             ]
         },
@@ -239,26 +196,21 @@
             "type": "serviceBus",
             "displayName": "Azure Service Bus",
             "direction": "output",
-            "resources": [
-                {
-                    "name": "subscriptionName",
-                    "value": "string",
-                    "resource": "ServiceBus",
-                    "required": true,
-                    "label": "Please provide a Service Bus Connection String",
-                    "help": "You can use %<App Setting Name>% to reference an App Setting you've already configured"
-                }
-            ],
             "settings": [
-                {
-                    "template": "parameterName"
-                },
                 {
                     "name": "queueName",
                     "value": "string",
                     "required": true,
                     "label": "Which queue would you like to trigger off of?",
                     "help": "<TBD>"
+                },
+                {
+                    "name": "subscriptionName",
+                    "value": "string",
+                    "resource": "ServiceBus",
+                    "required": true,
+                    "label": "Please provide a Service Bus Connection String",
+                    "help": "[variables('appSettingsHelp')]"
                 }
             ]
         },
@@ -266,40 +218,35 @@
             "type": "table",
             "displayName": "Azure Storage Table",
             "direction": "output",
-            "resources": [
-                {
-                    "name": "storageAccount",
-                    "value": "string",
-                    "resource": "Storage",
-                    "required": true,
-                    "label": "Please provide a Storage Account Connection String",
-                    "help": "You can use %<App Setting Name>% to reference an App Setting you've already configured"
-                }
-            ],
             "settings": [
-                {
-                    "template": "parameterName"
-                },
                 {
                     "name": "tableName",
                     "value": "string",
                     "required": true,
                     "label": "What is the name of the Table you would like to output to?",
-                    "help": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
+                    "help": "[variables('triggerRefHelp')]"
                 },
                 {
                     "name": "partitionKey",
                     "value": "string",
                     "required": true,
-                    "label": "What is the parition key of the partition you would like to output to?",
-                    "help": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
+                    "label": "What is the key of the partition you would like to output to?",
+                    "help": "[variables('triggerRefHelp')]"
                 },
                 {
                     "name": "rowKey",
                     "value": "string",
                     "required": true,
                     "label": "What is the row key of the value you would like to output?",
-                    "help": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
+                    "help": "[variables('triggerRefHelp')]"
+                },
+                {
+                    "name": "storageAccount",
+                    "value": "string",
+                    "resource": "Storage",
+                    "required": true,
+                    "label": "[variables('storageConnStringLabel')]",
+                    "help": "[variables('appSettingsHelp')]"
                 }
             ]
         },
@@ -307,33 +254,20 @@
             "type": "table",
             "displayName": "Azure Storage Table",
             "direction": "input",
-            "resources": [
-                {
-                    "name": "storageAccount",
-                    "value": "string",
-                    "resource": "Storage",
-                    "required": true,
-                    "label": "Please provide a Storage Account Connection String",
-                    "help": "You can use %<App Setting Name>% to reference an App Setting you've already configured"
-                }
-            ],
             "settings": [
-                {
-                    "template": "parameterName"
-                },
                 {
                     "name": "tableName",
                     "value": "string",
                     "required": true,
                     "label": "What is the name of the Table you would like to read from?",
-                    "help": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
+                    "help": "[variables('triggerRefHelp')]"
                 },
                 {
                     "name": "partitionKey",
                     "value": "string",
                     "required": true,
-                    "label": "What is the parition key of the partition you would like to read from?",
-                    "help": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
+                    "label": "What is the key of the partition you would like to read from?",
+                    "help": "[variables('triggerRefHelp')]"
                 },
                 {
                     "name": "take",
@@ -348,6 +282,14 @@
                     "required": true,
                     "label": "What is the filter you'd like to apply to the table?",
                     "help": "<TBD>"
+                },
+                {
+                    "name": "storageAccount",
+                    "value": "string",
+                    "resource": "Storage",
+                    "required": true,
+                    "label": "[variables('storageConnStringLabel')]",
+                    "help": "[variables('appSettingsHelp')]"
                 }
             ]
         }
