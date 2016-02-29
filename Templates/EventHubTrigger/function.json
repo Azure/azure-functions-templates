@@ -1,0 +1,18 @@
+﻿{
+  "bindings": {
+    "input": [
+      {
+        "type": "eventHubTrigger",
+        "path": "samples-workitems",
+        "connectionString" :  "<your EventHub receiving connection string here>"
+      }
+    ],
+    "output": [
+      {
+        "type": "blob",
+        "name": "receipt",
+        "path": "samples-workitems/{id}"
+      }
+    ]
+  }
+}
