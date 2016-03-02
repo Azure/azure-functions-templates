@@ -1,18 +1,16 @@
 {
-  "bindings": {
-    "input": [
-      {
-        "type": "timerTrigger",
-        "schedule": "0/10 * * * * *",
-        "runOnStartup": true
-      }
-    ],
-    "output": [
-      {
-        "type": "queue",
-        "name": "message",
-        "queueName": "samples-csharp"
-      }
-    ]
-  }
+  "bindings": [
+    {
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0/10 * * * * *",
+      "runOnStartup": true
+    },
+    {
+      "type": "queue",
+      "name": "message",
+      "direction": "out",
+      "queueName": "samples-csharp"
+    }
+  ]
 }

@@ -1,10 +1,9 @@
 {
-  "bindings": {
-    "input": [
-      {
-        "type": "blobTrigger",
-        "path": "samples-workitems-csharp"
-      }
-    ]
-  }
+  "bindings": [
+    {
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "samples-workitems-csharp"
+    }
+  ]
 }
