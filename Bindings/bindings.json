@@ -10,8 +10,7 @@
         {
             "type": "timerTrigger",
             "displayName": "Timer",
-            "direction": "in",
-            "isTrigger": true,
+            "direction": "trigger",
             "defaultParameterName": "myTimer",
             "settings": [
                 {
@@ -34,8 +33,7 @@
         {
             "type": "eventHubTrigger",
             "displayName": "Azure Event Hub",
-            "direction": "in",
-            "isTrigger": true,
+            "direction": "trigger",
             "defaultParameterName": "myEventHubTrigger",
             "settings": [
                 {
@@ -107,8 +105,7 @@
         {
             "type": "queueTrigger",
             "displayName": "Azure Storage Queue",
-            "direction": "in",
-            "isTrigger": true,
+            "direction": "trigger",
             "defaultParameterName": "myQueueTrigger",
             "settings": [
                 {
@@ -156,7 +153,7 @@
         {
             "type": "blob",
             "displayName": "Azure Storage Blob",
-            "direction": "input",
+            "direction": "in",
             "defaultParameterName": "myBlob",
             "settings": [
                 {
@@ -180,8 +177,7 @@
         {
             "type": "blobTrigger",
             "displayName": "Azure Storage Blob",
-            "direction": "in",
-            "isTrigger": true,
+            "direction": "trigger",
             "defaultParameterName": "myBlobTrigger",
             "settings": [
                 {
@@ -205,8 +201,7 @@
         {
             "type": "httpTrigger",
             "displayName": "HTTP",
-            "direction": "in",
-            "isTrigger": true,
+            "direction": "trigger",
             "defaultParameterName": "req",
             "settings": [
                 {
@@ -241,8 +236,7 @@
         {
             "type": "serviceBusTrigger",
             "displayName": "Azure Service Bus",
-            "direction": "in",
-            "isTrigger": true,
+            "direction": "trigger",
             "defaultParameterName": "myServiceBusTrigger",
             "settings": [
                 {
@@ -330,7 +324,7 @@
         {
             "type": "table",
             "displayName": "Azure Storage Table",
-            "direction": "input",
+            "direction": "in",
             "defaultParameterName": "myTable",
             "settings": [
                 {
