@@ -1,62 +1,71 @@
 {
-    "$schema": "",
-    "contentVersion": "1.0.0.0",
+    "$schema": "<TBD>",
+    "contentVersion": "2016-03-04-alpha",
     "variables": {
         "storageConnStringLabel": "Please provide a Storage Account Connection String",
         "appSettingsHelp": "You can use %<App Setting Name>% to reference an App Setting you've already configured",
         "triggerRefHelp": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
     },
     "bindings": [
-      {
-        "type": "timerTrigger",
-        "displayName": "Timer",
-        "direction": "trigger",
-        "settings": [
-          {
-            "name": "schedule",
-            "value": "string",
-            "required": true,
-            "label": "How often would you like to run? Please provide a cron expression.",
-            "help": "A cron express is a way of expressing a schedule. See the docs to learn more."
-          },
-          {
-            "name": "runOnStartup",
-            "value": "boolean",
-            "label": "Run on start up?",
-            "help": "When true, your function will run on start. Useful for debugging."
-          }
-        ]
-      },
-      {
-        "type": "eventHubTrigger",
-        "displayName": "Azure Event Hub",
-        "direction": "trigger",
-        "settings": [
-          {
-            "name": "path",
-            "value": "string",
-            "required": true,
-            "label": "Which Event Hub would you like to trigger off of?",
-            "help": "[variables('appSettingsHelp')]"
-          },
-          {
-            "name": "connectionString",
-            "value": "string",
-            "resource": "EventHub",
-            "required": true,
-            "label": "Please provide a Connection string with receive permissions to an EventHub.",
-            "help": "[variables('appSettingsHelp')]"
-          }
-        ]
-      },
-       {
-            "type": "eventHub",
+        {
+            "type": "timerTrigger",
+            "displayName": "Timer",
+            "direction": "in",
+            "isTrigger": true,
+            "defaultParameterName": "myTimer",
+            "settings": [
+                {
+                    "name": "schedule",
+                    "value": "string",
+                    "defaultValue": "0 * * * * *",
+                    "required": true,
+                    "label": "How often would you like to run? Please provide a cron expression.",
+                    "help": "A cron express is a way of expressing a schedule. See the docs to learn more."
+                },
+                {
+                    "name": "runOnStartup",
+                    "value": "boolean",
+                    "defaultValue": false,
+                    "label": "Run on start up?",
+                    "help": "When true, your function will run on start. Useful for debugging."
+                }
+            ]
+        },
+        {
+            "type": "eventHubTrigger",
             "displayName": "Azure Event Hub",
-            "direction": "output",
+            "direction": "in",
+            "isTrigger": true,
+            "defaultParameterName": "myEventHubTrigger",
             "settings": [
                 {
                     "name": "path",
                     "value": "string",
+                    "defaultValue": "samples-workitems",
+                    "required": true,
+                    "label": "Which Event Hub would you like to trigger off of?",
+                    "help": "[variables('appSettingsHelp')]"
+                },
+                {
+                    "name": "connectionString",
+                    "value": "string",
+                    "resource": "EventHub",
+                    "required": true,
+                    "label": "Please provide a Connection string with receive permissions to an EventHub.",
+                    "help": "[variables('appSettingsHelp')]"
+                }
+            ]
+        },
+        {
+            "type": "eventHub",
+            "displayName": "Azure Event Hub",
+            "direction": "out",
+            "defaultParameterName": "myEventHub",
+            "settings": [
+                {
+                    "name": "path",
+                    "value": "string",
+                    "defaultValue": "samples-workitems",
                     "required": true,
                     "label": "Which event hub would you like to output to?",
                     "help": "[variables('appSettingsHelp')]"
@@ -74,11 +83,13 @@
         {
             "type": "queue",
             "displayName": "Azure Storage Queue",
-            "direction": "output",
+            "direction": "out",
+            "defaultParameterName": "myQueue",
             "settings": [
                 {
                     "name": "queueName",
                     "value": "string",
+                    "defaultValue": "samples-workitems",
                     "required": true,
                     "label": "Which queue would you like to output to?",
                     "help": "If your queue doesn't exist yet, don't worry. We'll create one for you in your specifed Storage Account."
@@ -96,11 +107,14 @@
         {
             "type": "queueTrigger",
             "displayName": "Azure Storage Queue",
-            "direction": "trigger",
+            "direction": "in",
+            "isTrigger": true,
+            "defaultParameterName": "myQueueTrigger",
             "settings": [
                 {
                     "name": "queueName",
                     "value": "string",
+                    "defaultValue": "samples-workitems",
                     "required": true,
                     "label": "Which queue would you like to trigger off of?",
                     "help": "If your queue doesn't exist yet, don't worry. We'll wait for it to exist before we start creating events."
@@ -118,11 +132,13 @@
         {
             "type": "blob",
             "displayName": "Azure Storage Blob",
-            "direction": "output",
+            "direction": "out",
+            "defaultParameterName": "myBlob",
             "settings": [
                 {
                     "name": "path",
                     "value": "string",
+                    "defaultValue": "samples-workitems/{name}",
                     "required": true,
                     "label": "What is the Blob Path you would like to output to?",
                     "help": "[variables('triggerRefHelp')]"
@@ -141,10 +157,12 @@
             "type": "blob",
             "displayName": "Azure Storage Blob",
             "direction": "input",
+            "defaultParameterName": "myBlob",
             "settings": [
                 {
                     "name": "path",
                     "value": "string",
+                    "defaultValue": "samples-workitems/{name}",
                     "required": true,
                     "label": "What is the Blob Path you would like to read from?",
                     "help": "[variables('triggerRefHelp')]"
@@ -162,11 +180,14 @@
         {
             "type": "blobTrigger",
             "displayName": "Azure Storage Blob",
-            "direction": "trigger",
+            "direction": "in",
+            "isTrigger": true,
+            "defaultParameterName": "myBlobTrigger",
             "settings": [
                 {
                     "name": "path",
                     "value": "string",
+                    "defaultValue": "samples-workitems",
                     "required": true,
                     "label": "What is the Blob Path you would like to trigger & read from?",
                     "help": "[variables('triggerRefHelp')]"
@@ -184,7 +205,9 @@
         {
             "type": "httpTrigger",
             "displayName": "HTTP",
-            "direction": "trigger",
+            "direction": "in",
+            "isTrigger": true,
+            "defaultParameterName": "req",
             "settings": [
                 {
                     "name": "webHookType",
@@ -211,17 +234,21 @@
         {
             "type": "http",
             "displayName": "HTTP",
-            "direction": "output",
-            "settings": [ ]
+            "direction": "out",
+            "defaultParameterName": "res",
+            "settings": []
         },
         {
             "type": "serviceBusTrigger",
             "displayName": "Azure Service Bus",
-            "direction": "trigger",
+            "direction": "in",
+            "isTrigger": true,
+            "defaultParameterName": "myServiceBusTrigger",
             "settings": [
                 {
                     "name": "queueName",
                     "value": "string",
+                    "defaultValue": "samples-workitems",
                     "required": true,
                     "label": "Which queue would you like to output to?",
                     "help": "<TBD>"
@@ -239,11 +266,13 @@
         {
             "type": "serviceBus",
             "displayName": "Azure Service Bus",
-            "direction": "output",
+            "direction": "out",
+            "defaultParameterName": "myServiceBus",
             "settings": [
                 {
                     "name": "queueName",
                     "value": "string",
+                    "defaultValue": "samples-workitems",
                     "required": true,
                     "label": "Which queue would you like to trigger off of?",
                     "help": "<TBD>"
@@ -261,11 +290,13 @@
         {
             "type": "table",
             "displayName": "Azure Storage Table",
-            "direction": "output",
+            "direction": "out",
+            "defaultParameterName": "myTable",
             "settings": [
                 {
                     "name": "tableName",
                     "value": "string",
+                    "defaultValue": "samples-workitems",
                     "required": true,
                     "label": "What is the name of the Table you would like to output to?",
                     "help": "[variables('triggerRefHelp')]"
@@ -273,6 +304,7 @@
                 {
                     "name": "partitionKey",
                     "value": "string",
+                    "defaultValue": "{project-id}",
                     "required": true,
                     "label": "What is the key of the partition you would like to output to?",
                     "help": "[variables('triggerRefHelp')]"
@@ -280,6 +312,7 @@
                 {
                     "name": "rowKey",
                     "value": "string",
+                    "defaultValue": "{id}",
                     "required": true,
                     "label": "What is the row key of the value you would like to output?",
                     "help": "[variables('triggerRefHelp')]"
@@ -298,10 +331,12 @@
             "type": "table",
             "displayName": "Azure Storage Table",
             "direction": "input",
+            "defaultParameterName": "myTable",
             "settings": [
                 {
                     "name": "tableName",
                     "value": "string",
+                    "defaultValue": "samples-workitems",
                     "required": true,
                     "label": "What is the name of the Table you would like to read from?",
                     "help": "[variables('triggerRefHelp')]"
@@ -309,6 +344,7 @@
                 {
                     "name": "partitionKey",
                     "value": "string",
+                    "defaultValue": "{project-id}",
                     "required": true,
                     "label": "What is the key of the partition you would like to read from?",
                     "help": "[variables('triggerRefHelp')]"
@@ -316,6 +352,7 @@
                 {
                     "name": "take",
                     "value": "int",
+                    "defaultValue": 100,
                     "required": true,
                     "label": "What is the max number of records you'd like to read?",
                     "help": "You may receive less records, if your table has less records or your filter returns less results."
@@ -323,6 +360,7 @@
                 {
                     "name": "filter",
                     "value": "string",
+                    "defaultValue": "status eq 'Not Started'",
                     "required": true,
                     "label": "What is the filter you'd like to apply to the table?",
                     "help": "<TBD>"
