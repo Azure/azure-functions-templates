@@ -1,4 +1,4 @@
-# TimerTrigger - C#
+# TimerTrigger - C<span>#</span>
 
 The `TimerTrigger` makes it incredibly easy to have your functions executed on a schedule. This sample demostrates a simple use case of calling your function every 5 minutes.
 
