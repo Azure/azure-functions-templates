@@ -1,9 +1,11 @@
 {
-  "bindings": [
-    {
-      "type": "blobTrigger",
-      "direction": "in",
-      "path": "samples-workitems-csharp"
-    }
-  ]
+    "disabled": false,
+    "bindings": [
+        {
+            "name": "myBlob",
+            "type": "blobTrigger",
+            "direction": "in",
+            "path": "samples-workitems"
+        }
+    ]
 }

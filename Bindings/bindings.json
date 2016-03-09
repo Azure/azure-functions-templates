@@ -183,7 +183,7 @@
             "type": "blobTrigger",
             "displayName": "Azure Storage Blob",
             "direction": "trigger",
-            "defaultParameterName": "myBlobTrigger",
+            "defaultParameterName": "myBlob",
             "parameterNamePrompt":"Name the blob for use in your code",
             "settings": [
                 {
@@ -215,6 +215,10 @@
                     "name": "webHookType",
                     "value": "enum",
                     "enum": [
+                        {
+                            "value": "",
+                            "display": "None"
+                        },
                         {
                             "value": "github",
                             "display": "GitHub"

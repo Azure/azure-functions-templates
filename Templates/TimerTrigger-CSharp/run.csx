@@ -3,9 +3,7 @@ using System.Diagnostics;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
 
-public static void Run(TimerInfo timerInfo, out string message, TraceWriter log)
+public static void Run(TimerInfo myTimer, TraceWriter log)
 {
-    log.Verbose("CSharp Timer trigger function executed.");
-
-    message = $"Trigger function executed at {DateTime.Now}";
+    log.Verbose(string.Format("CSharp Timer trigger function executed at {0}:", DateTime.Now.ToString()));    
 }
