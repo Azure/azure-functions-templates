@@ -1,4 +1,4 @@
-﻿module.exports = function (myBlobTrigger, context) {
-    context.log('Node.js blob trigger function processed work item:' + myBlobTrigger.id);
+﻿module.exports = function (myBlob, context) {
+    context.log('Node.js blob trigger function processed work item:' + myBlob.id);
     context.done();
 }
