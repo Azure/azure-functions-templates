@@ -2,7 +2,7 @@
     "$schema": "<TBD>",
     "contentVersion": "2016-03-04-alpha",
     "variables": {
-        "storageConnStringLabel": "Please provide a Storage Account Connection String",
+        "storageConnStringLabel": "Which storage account should be used?",
         "appSettingsHelp": "You can use %<App Setting Name>% to reference an App Setting you've already configured",
         "triggerRefHelp": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
     },
@@ -12,21 +12,22 @@
             "displayName": "Timer",
             "direction": "trigger",
             "defaultParameterName": "myTimer",
+            "parameterNamePrompt":"Name the timestamp object for use in your code",
             "settings": [
                 {
                     "name": "schedule",
                     "value": "string",
                     "defaultValue": "0 * * * * *",
                     "required": true,
-                    "label": "How often would you like to run? Please provide a cron expression.",
-                    "help": "A cron express is a way of expressing a schedule. See the docs to learn more."
+                    "label": "How frequently should this function run? Enter a cron expression.",
+                    "help": "A cron expression is a way of expressing a schedule. Please consult the documentation to learn more."
                 },
                 {
                     "name": "runOnStartup",
                     "value": "boolean",
                     "defaultValue": false,
-                    "label": "Run on start up?",
-                    "help": "When true, your function will run on start. Useful for debugging."
+                    "label": "Should this function run on start up?",
+                    "help": "When true, your function will run on startup. This may be useful for debugging."
                 }
             ]
         },
@@ -83,13 +84,14 @@
             "displayName": "Azure Storage Queue",
             "direction": "out",
             "defaultParameterName": "myQueue",
+            "parameterNamePrompt":"Name the queue message object for use in your code",
             "settings": [
                 {
                     "name": "queueName",
                     "value": "string",
                     "defaultValue": "samples-workitems",
                     "required": true,
-                    "label": "Which queue would you like to output to?",
+                    "label": "To which queue should the message be sent?",
                     "help": "If your queue doesn't exist yet, don't worry. We'll create one for you in your specifed Storage Account."
                 },
                 {
@@ -107,13 +109,14 @@
             "displayName": "Azure Storage Queue",
             "direction": "trigger",
             "defaultParameterName": "myQueueTrigger",
+            "parameterNamePrompt":"Name the queue message object for use in your code",
             "settings": [
                 {
                     "name": "queueName",
                     "value": "string",
                     "defaultValue": "samples-workitems",
                     "required": true,
-                    "label": "Which queue would you like to trigger off of?",
+                    "label": "Which queue should the trigger monitor?",
                     "help": "If your queue doesn't exist yet, don't worry. We'll wait for it to exist before we start creating events."
                 },
                 {
@@ -131,14 +134,15 @@
             "displayName": "Azure Storage Blob",
             "direction": "out",
             "defaultParameterName": "myBlob",
+            "parameterNamePrompt":"Name the blob for use in your code",
             "settings": [
                 {
                     "name": "path",
                     "value": "string",
                     "defaultValue": "samples-workitems/{name}",
                     "required": true,
-                    "label": "What is the Blob Path you would like to output to?",
-                    "help": "[variables('triggerRefHelp')]"
+                    "label": "To what path should the blob be written?",
+                    "help": "Please enter a path within your storage account."
                 },
                 {
                     "name": "storageAccount",
@@ -155,14 +159,15 @@
             "displayName": "Azure Storage Blob",
             "direction": "in",
             "defaultParameterName": "myBlob",
+            "parameterNamePrompt":"Name the blob for use in your code",
             "settings": [
                 {
                     "name": "path",
                     "value": "string",
                     "defaultValue": "samples-workitems/{name}",
                     "required": true,
-                    "label": "What is the Blob Path you would like to read from?",
-                    "help": "[variables('triggerRefHelp')]"
+                    "label": "On what path is the blob?",
+                    "help": "Please enter a path within your storage account."
                 },
                 {
                     "name": "storageAccount",
@@ -179,14 +184,15 @@
             "displayName": "Azure Storage Blob",
             "direction": "trigger",
             "defaultParameterName": "myBlobTrigger",
+            "parameterNamePrompt":"Name the blob for use in your code",
             "settings": [
                 {
                     "name": "path",
                     "value": "string",
                     "defaultValue": "samples-workitems",
                     "required": true,
-                    "label": "What is the Blob Path you would like to trigger & read from?",
-                    "help": "[variables('triggerRefHelp')]"
+                    "label": "What path should the trigger monitor?",
+                    "help": "Please enter a path within your storage account."
                 },
                 {
                     "name": "storageAccount",
@@ -203,6 +209,7 @@
             "displayName": "HTTP",
             "direction": "trigger",
             "defaultParameterName": "req",
+            "parameterNamePrompt":"Name the request object for use in your code",
             "settings": [
                 {
                     "name": "webHookType",
@@ -221,8 +228,8 @@
                             "display": "Generic"
                         }
                     ],
-                    "label": "Is this a WebHook? Select which type of WebHook",
-                    "help": "If your type isn't listed here, you can leave this blank."
+                    "label": "Is this a WebHook? If so, what type of webhook is it?",
+                    "help": "Webhooks allow services to call one another easily. If the type you need isn't listed here, you can leave this field blank."
                 }
             ]
         },
@@ -231,6 +238,7 @@
             "displayName": "HTTP",
             "direction": "out",
             "defaultParameterName": "res",
+            "parameterNamePrompt":"Name the outbound request object for use in your code",
             "settings": []
         },
         {
@@ -286,21 +294,22 @@
             "displayName": "Azure Storage Table",
             "direction": "out",
             "defaultParameterName": "myTable",
+            "parameterNamePrompt":"Name the row collection for use in your code",
             "settings": [
                 {
                     "name": "tableName",
                     "value": "string",
                     "defaultValue": "samples-workitems",
                     "required": true,
-                    "label": "What is the name of the Table you would like to output to?",
-                    "help": "[variables('triggerRefHelp')]"
+                    "label": "To which table should the data be written?",
+                    "help": "Please enter the name of the table within your storage account."
                 },
                 {
                     "name": "partitionKey",
                     "value": "string",
                     "defaultValue": "{project-id}",
                     "required": true,
-                    "label": "What is the key of the partition you would like to output to?",
+                    "label": "What is the partition key for the data?",
                     "help": "[variables('triggerRefHelp')]"
                 },
                 {
@@ -308,7 +317,7 @@
                     "value": "string",
                     "defaultValue": "{id}",
                     "required": true,
-                    "label": "What is the row key of the value you would like to output?",
+                    "label": "What is the row key for the data?",
                     "help": "[variables('triggerRefHelp')]"
                 },
                 {
@@ -326,21 +335,22 @@
             "displayName": "Azure Storage Table",
             "direction": "in",
             "defaultParameterName": "myTable",
+            "parameterNamePrompt":"Name the row collection for use in your code",
             "settings": [
                 {
                     "name": "tableName",
                     "value": "string",
                     "defaultValue": "samples-workitems",
                     "required": true,
-                    "label": "What is the name of the Table you would like to read from?",
-                    "help": "[variables('triggerRefHelp')]"
+                    "label": "From which table should the data be read?",
+                    "help": "Please enter the name of the table within your storage account."
                 },
                 {
                     "name": "partitionKey",
                     "value": "string",
                     "defaultValue": "{project-id}",
                     "required": true,
-                    "label": "What is the key of the partition you would like to read from?",
+                    "label": "What is the partition key for the data?",
                     "help": "[variables('triggerRefHelp')]"
                 },
                 {
@@ -348,15 +358,15 @@
                     "value": "int",
                     "defaultValue": 100,
                     "required": true,
-                    "label": "What is the max number of records you'd like to read?",
-                    "help": "You may receive less records, if your table has less records or your filter returns less results."
+                    "label": "What is the maximum number of records that should be read?",
+                    "help": "Please enter an integer for the number of records. You may receive fewer records than this value based on the contents of the table and the applied filter."
                 },
                 {
                     "name": "filter",
                     "value": "string",
                     "defaultValue": "status eq 'Not Started'",
                     "required": true,
-                    "label": "What is the filter you'd like to apply to the table?",
+                    "label": "What filter should be applied to the query?",
                     "help": "<TBD>"
                 },
                 {
