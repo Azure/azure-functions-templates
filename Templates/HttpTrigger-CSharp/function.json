@@ -1,12 +1,15 @@
 {
-  "bindings": [
-    {
-      "type": "httpTrigger",
-      "direction": "in"
-    },
-    {
-      "type": "http",
-      "direction": "out"
-    }
-  ]
+    "disabled": false,
+    "bindings": [
+        {
+            "name": "req",
+            "type": "httpTrigger",
+            "direction": "in"            
+        },
+        {
+            "name": "res",
+            "type": "http",
+            "direction": "out"
+        }
+    ]
 }
