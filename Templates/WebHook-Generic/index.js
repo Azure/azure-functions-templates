@@ -1,4 +1,6 @@
-﻿module.exports = function (body, context) {
+﻿module.exports = function (context, body) {
     context.log('Webhook was triggered!');
-    context.done(null, 'WebHook processed successfully! ' + body.a);
+    context.res = {};
+    context.res.body = 'WebHook processed successfully! \n' + JSON.stringify(body, null, " ");
+    context.done();
 }
