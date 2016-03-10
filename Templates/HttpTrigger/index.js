@@ -1,5 +1,5 @@
 ﻿module.exports = function (context, req) {
-    context.log('Node.js HTTP trigger function processed a request. Name=' + req.query.name);
+    context.log('Node.js HTTP trigger function processed a request. Name=' + req.originalUrl);
 
     if (typeof req.query.name == 'undefined') {
         context.res = {
