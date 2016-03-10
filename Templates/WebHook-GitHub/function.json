@@ -3,11 +3,13 @@
     {
       "type": "httpTrigger",
       "direction": "in",
-      "webHookType": "github"
+      "webHookType": "github",
+      "name":"req"
     },
     {
       "type": "http",
-      "direction": "out"
+      "direction": "out",
+      "name":"res"
     }
   ]
 }
