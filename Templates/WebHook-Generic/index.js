@@ -2,8 +2,8 @@
     context.log('Webhook was triggered!');
 
     // Check if we got first/last properties
-    if("first" in data && "last" in data) {
-        context.res = { body: { greeting: 'Hello ' + data.first + " " + data.last + "!"}};
+    if('first in data && 'last' in data) {
+        context.res = { body: { greeting: 'Hello ' + data.first + ' ' + data.last + '!'}};
     }
     else {
         context.res = {
