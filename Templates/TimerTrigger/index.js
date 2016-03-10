@@ -1,7 +1,7 @@
-﻿module.exports = function (context, timerinfo) {
+﻿module.exports = function (context, myTimer) {
     var timeStamp = new Date().toISOString();
     
-    if(timerinfo.isPastDue)
+    if(myTimer.isPastDue)
     {
         context.log('Node.js is running late!');
     }
