@@ -1,4 +1,4 @@
-﻿module.exports = function (myQueue, context) {
-    context.log('Node.js queue trigger function processed work item ' + myQueue.id);
+﻿module.exports = function (myQueueItem, context) {
+    context.log('Node.js queue trigger function processed work item ' + myQueueItem.id);
     context.done();
 }
