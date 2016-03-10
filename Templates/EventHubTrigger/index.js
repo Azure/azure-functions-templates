@@ -1,5 +1,5 @@
-﻿module.exports = function (workItem, context) {
-    context.log('Node.js eventhub trigger function processed work item ' + workItem);
+﻿module.exports = function (context, myEventHubTrigger) {
+    context.log('Node.js eventhub trigger function processed work item ' + myEventHubTrigger);
 
-    context.done(null, workItem);
+    context.done();
 }
