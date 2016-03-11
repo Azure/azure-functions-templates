@@ -11,7 +11,7 @@ public static Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter 
     var queryParamms = req.GetQueryNameValuePairs()
         .ToDictionary(p => p.Key, p => p.Value, StringComparer.OrdinalIgnoreCase);
 
-    log.Verbose(string.Format("CSharp HTTP trigger function processed a request. RequestUri={0}", req.RequestUri));
+    log.Verbose($"C# HTTP trigger function processed a request. RequestUri={req.RequestUri}");
 
     HttpResponseMessage res = null;
     string name;
