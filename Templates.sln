@@ -119,7 +119,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TimerTrigger", "TimerTrigge
 	ProjectSection(SolutionItems) = preProject
 		Templates\TimerTrigger\function.json = Templates\TimerTrigger\function.json
 		Templates\TimerTrigger\index.js = Templates\TimerTrigger\index.js
-		Templates\TimerTrigger\logger.js = Templates\TimerTrigger\logger.js
 		Templates\TimerTrigger\metadata.json = Templates\TimerTrigger\metadata.json
 	EndProjectSection
 EndProject
@@ -142,6 +141,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebHook-GitHub", "WebHook-G
 		Templates\WebHook-GitHub\function.json = Templates\WebHook-GitHub\function.json
 		Templates\WebHook-GitHub\index.js = Templates\WebHook-GitHub\index.js
 		Templates\WebHook-GitHub\metadata.json = Templates\WebHook-GitHub\metadata.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QueueTrigger-CSharp", "QueueTrigger-CSharp", "{AF19C266-E5B5-45BA-B764-7F0CC74D2F34}"
+	ProjectSection(SolutionItems) = preProject
+		Templates\QueueTrigger-CSharp\function.json = Templates\QueueTrigger-CSharp\function.json
+		Templates\QueueTrigger-CSharp\metadata.json = Templates\QueueTrigger-CSharp\metadata.json
+		Templates\QueueTrigger-CSharp\run.csx = Templates\QueueTrigger-CSharp\run.csx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebHook-Generic-CSharp", "WebHook-Generic-CSharp", "{D83790D6-20A0-4A90-B350-D5A4D9860474}"
+	ProjectSection(SolutionItems) = preProject
+		Templates\WebHook-Generic-CSharp\function.json = Templates\WebHook-Generic-CSharp\function.json
+		Templates\WebHook-Generic-CSharp\metadata.json = Templates\WebHook-Generic-CSharp\metadata.json
+		Templates\WebHook-Generic-CSharp\run.csx = Templates\WebHook-Generic-CSharp\run.csx
 	EndProjectSection
 EndProject
 Global
@@ -168,5 +181,7 @@ Global
 		{E365D120-AC87-4637-A3CF-519F3AAD80F0} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 		{077CB41F-83C6-4C2E-BBAF-FCF8AD9DC5B2} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 		{9D9A9327-074C-4298-A56D-C47B3B2637BB} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
+		{AF19C266-E5B5-45BA-B764-7F0CC74D2F34} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
+		{D83790D6-20A0-4A90-B350-D5A4D9860474} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 	EndGlobalSection
 EndGlobal
