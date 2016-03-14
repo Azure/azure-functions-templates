@@ -8,4 +8,4 @@
     context.log('Node.js timer trigger function ran! ' + timeStamp);   
     
     context.done();
-}
+};
