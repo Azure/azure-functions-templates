@@ -1,8 +1,6 @@
 using System;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
-using System.Diagnostics;
 
 public static Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log)
 {
