@@ -1,15 +1,16 @@
 ﻿{
-  "bindings": [
-    {
-      "type": "serviceBusTrigger",
-      "direction": "in",
-      "queueName": "samples-input"
-    },
-    {
-      "type": "serviceBus",
-      "name": "message",
-      "direction": "out",
-      "queueName": "samples-input"
-    }
-  ]
+    "disabled": false,
+    "bindings": [
+        {
+            "type": "serviceBusTrigger",
+            "direction": "in",
+            "queueName": "samples-input"
+        },
+        {
+            "type": "serviceBus",
+            "name": "message",
+            "direction": "out",
+            "queueName": "samples-input"
+        }
+    ]
 }
