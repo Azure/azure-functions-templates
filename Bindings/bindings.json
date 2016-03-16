@@ -246,10 +246,18 @@
             "settings": []
         },
         {
+            "type": "manualTrigger",
+            "displayName": "Manual",
+            "direction": "trigger",
+            "defaultParameterName": "input",
+            "parameterNamePrompt": "Name the object for use in your code",
+            "settings": []
+        },
+        {
             "type": "serviceBusTrigger",
             "displayName": "Azure Service Bus",
             "direction": "trigger",
-            "defaultParameterName": "myServiceBusTrigger",
+            "defaultParameterName": "myQueueItem",
             "settings": [
                 {
                     "name": "queueName",
@@ -273,7 +281,7 @@
             "type": "serviceBus",
             "displayName": "Azure Service Bus",
             "direction": "out",
-            "defaultParameterName": "myServiceBus",
+            "defaultParameterName": "OutPutQueueItem",
             "settings": [
                 {
                     "name": "queueName",

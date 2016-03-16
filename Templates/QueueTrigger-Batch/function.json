@@ -2,9 +2,11 @@
     "disabled": false,
     "bindings": [
         {
+            "name": "input",
             "type": "queueTrigger",
             "direction": "in",
-            "queueName": "samples-batch"
+            "queueName": "samples-batch",
+            "storageAccount":""
         },
         {
             "type": "blob",

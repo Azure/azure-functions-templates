@@ -2,5 +2,9 @@
     "name": "ServiceBusQueueTrigger Nodejs Function",
     "defaultFunctionName":"ServiceBusQueueTriggerNodeJS",
     "language": "JavaScript",
-    "trigger": "ServiceBusQueueTrigger"
+    "trigger": "ServiceBusQueueTrigger",
+    "userPrompt": [
+        "subscriptionName",
+        "queueName"
+    ]
 }
