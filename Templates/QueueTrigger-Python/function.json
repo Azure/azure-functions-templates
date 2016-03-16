@@ -2,9 +2,11 @@
     "disabled": false,
     "bindings": [
         {
+            "name": "myQueueItem",
             "type": "queueTrigger",
             "direction": "in",
-            "queueName": "samples-python"
+            "queueName": "samples-python",
+            "storageAccount":""
         },
         {
             "type": "table",

@@ -2,9 +2,11 @@
     "disabled": false,
     "bindings": [
         {
+            "name": "myQueueItem",
             "type": "serviceBusTrigger",
             "direction": "in",
-            "queueName": "samples-input"
+            "queueName": "samples-input",
+            "subscriptionName": ""
         },
         {
             "type": "serviceBus",
