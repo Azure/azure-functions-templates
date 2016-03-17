@@ -390,6 +390,47 @@
                     "help": "[variables('appSettingsHelp')]"
                 }
             ]
+        },
+        {
+            "type": "documentdb",
+            "displayName": "Azure DocumentDB Document",
+            "direction": "out",
+            "defaultParameterName": "document",
+            "parameterNamePrompt": "Name the document for use in your code",
+            "settings": [
+                {
+                    "name": "dbName",
+                    "value": "string",
+                    "defaultValue": "MyDatabase",
+                    "required": true,
+                    "label": "To which database should the data be written?",
+                    "help": "Please enter the name of the database within your DocumentDB account."
+                },
+                {
+                    "name": "collectionName",
+                    "value": "string",
+                    "defaultValue": "MyCollection",
+                    "required": true,
+                    "label": "To which collection should the data be written?",
+                    "help": "Please enter the name of the collection within your database."
+                },
+                {
+                    "name": "createIfNotExists",
+                    "value": "boolean",
+                    "defaultValue": false,
+                    "required": true,
+                    "label": "Would you like the DocumentDB database and collection to be created for you?",
+                    "help": "When true, your database and collection will be created automatically."
+                },
+                {
+                    "name": "connectionString",
+                    "value": "string",
+                    "resource": "DocumentDB",
+                    "required": true,
+                    "label": "Which DocumentDB account should be used?",
+                    "help": "[variables('appSettingsHelp')]"
+                }
+            ]
         }
     ]
 }
