@@ -431,6 +431,48 @@
                     "help": "[variables('appSettingsHelp')]"
                 }
             ]
+        },
+        {
+            "type": "easyTable",
+            "displayName": "Azure Mobile Easy Table Record",
+            "direction": "out",
+            "defaultParameterName": "record",
+            "parameterNamePrompt":"Name the record for use in your code",
+            "settings": [
+                {
+                    "name": "tableName",
+                    "value": "string",
+                    "defaultValue": "MyTable",
+                    "required": false,
+                    "label": "To which table should the data be sent?",
+                    "help": "Please enter the name of the table within your Mobile App. If you are using a strongly-typed parameter in C# this property is not required."
+                }
+            ]
+        },
+        {
+            "type": "easyTable",
+            "displayName": "Azure Mobile Easy Table Record",
+            "direction": "in",
+            "defaultParameterName": "record",
+            "parameterNamePrompt":"Name the record for use in your code",
+            "settings": [
+                {
+                    "name": "tableName",
+                    "value": "string",
+                    "defaultValue": "MyTable",
+                    "required": false,
+                    "label": "To which table should the data be sent?",
+                    "help": "Please enter the name of the table within your Mobile App. If you are using a strongly-typed parameter in C# this property is not required."
+                },
+                {
+                    "name": "id",
+                    "value": "string",
+                    "defaultValue": "{id}",
+                    "required": true,
+                    "label": "What is the Id for the record?",
+                    "help": "Please enter the id for the record to retrieve."
+                }
+            ]
         }
     ]
 }
