@@ -46,11 +46,11 @@
                     "help": "[variables('appSettingsHelp')]"
                 },
                 {
-                    "name": "connectionString",
+                    "name": "connection",
                     "value": "string",
                     "resource": "EventHub",
                     "required": true,
-                    "label": "Please provide a Connection string with receive permissions to an EventHub.",
+                    "label": "Please provide a connection with receive permissions to an EventHub.",
                     "help": "[variables('appSettingsHelp')]"
                 }
             ]
@@ -70,11 +70,11 @@
                     "help": "[variables('appSettingsHelp')]"
                 },
                 {
-                    "name": "connectionString",
+                    "name": "connection",
                     "value": "string",
                     "resource": "EventHub",
                     "required": true,
-                    "label": "Please provide a Connection string with send permissions to an EventHub.",
+                    "label": "Please provide a connection with send permissions to an EventHub.",
                     "help": "[variables('appSettingsHelp')]"
                 }
             ]
@@ -95,7 +95,7 @@
                     "help": "If your queue doesn't exist yet, don't worry. We'll create one for you in your specifed Storage Account."
                 },
                 {
-                    "name": "storageAccount",
+                    "name": "connection",
                     "value": "string",
                     "resource": "Storage",
                     "required": true,
@@ -120,7 +120,7 @@
                     "help": "If your queue doesn't exist yet, don't worry. We'll wait for it to exist before we start creating events."
                 },
                 {
-                    "name": "storageAccount",
+                    "name": "connection",
                     "value": "string",
                     "resource": "Storage",
                     "required": true,
@@ -145,7 +145,7 @@
                     "help": "Please enter a path within your storage account."
                 },
                 {
-                    "name": "storageAccount",
+                    "name": "connection",
                     "value": "string",
                     "resource": "Storage",
                     "required": true,
@@ -170,7 +170,7 @@
                     "help": "Please enter a path within your storage account."
                 },
                 {
-                    "name": "storageAccount",
+                    "name": "connection",
                     "value": "string",
                     "resource": "Storage",
                     "required": true,
@@ -195,7 +195,7 @@
                     "help": "Please enter a path within your storage account."
                 },
                 {
-                    "name": "storageAccount",
+                    "name": "connection",
                     "value": "string",
                     "resource": "Storage",
                     "required": true,
@@ -333,7 +333,7 @@
                     "help": "[variables('triggerRefHelp')]"
                 },
                 {
-                    "name": "storageAccount",
+                    "name": "connection",
                     "value": "string",
                     "resource": "Storage",
                     "required": true,
@@ -382,7 +382,7 @@
                     "help": "<TBD>"
                 },
                 {
-                    "name": "storageAccount",
+                    "name": "connection",
                     "value": "string",
                     "resource": "Storage",
                     "required": true,
@@ -423,7 +423,7 @@
                     "help": "When true, your database and collection will be created automatically."
                 },
                 {
-                    "name": "connectionString",
+                    "name": "connection",
                     "value": "string",
                     "resource": "DocumentDB",
                     "required": true,
