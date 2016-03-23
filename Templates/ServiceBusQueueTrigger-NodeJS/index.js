@@ -1,5 +1,5 @@
 ﻿module.exports = function(context, myQueueItem) {
-    context.log("Node.js ServiceBus queue trigger function processed message '" + JSON.stringify(myQueueItem) + "'");
+    context.log('Node.js ServiceBus queue trigger function processed message', myQueueItem);
 
     var OutPutQueueItem = null;
     if (myQueueItem.count < 1) {
