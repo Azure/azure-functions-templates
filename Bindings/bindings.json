@@ -477,6 +477,8 @@
         {
             "type": "notificationHub",
             "displayName": "Azure Notification Hub",
+            "defaultParameterName": "notification",
+            "parameterNamePrompt": "Template notification to send",
             "direction": "out",
             "settings": [
                 {
@@ -498,7 +500,7 @@
                 {
                     "name": "connection",
                     "value": "string",
-                    "resource": "NotificationHub",
+                    "resource": "ServiceBus",
                     "required": true,
                     "label": "Connection string for the NotificationHub namespace.",
                     "help": "[variables('appSettingsHelp')]"
