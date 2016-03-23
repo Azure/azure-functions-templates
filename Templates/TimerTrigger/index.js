@@ -1,6 +1,6 @@
 ﻿module.exports = function (context) {
     var timeStamp = new Date().toISOString();
-    context.log('Node.js timer trigger function ran! ' + timeStamp);
+    context.log('Node.js timer trigger function ran!', timeStamp);
 
     var message = {
         id: Math.floor(Math.random() * 10000) + 1,

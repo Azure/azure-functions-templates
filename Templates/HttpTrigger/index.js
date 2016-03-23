@@ -1,5 +1,5 @@
 ﻿module.exports = function (req, context) {
-    context.log('Node.js HTTP trigger function processed a request. Name=' + req.query.name);
+    context.log('Node.js HTTP trigger function processed a request. Name=%s', req.query.name);
 
     if (typeof req.query.name == 'undefined') {
         context.done(null, "Please pass a name on the query string");
