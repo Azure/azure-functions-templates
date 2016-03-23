@@ -12,7 +12,7 @@
             "displayName": "Timer",
             "direction": "trigger",
             "defaultParameterName": "myTimer",
-            "parameterNamePrompt":"Name the timestamp object for use in your code",
+            "parameterNamePrompt": "Name the timestamp object for use in your code",
             "settings": [
                 {
                     "name": "schedule",
@@ -84,7 +84,7 @@
             "displayName": "Azure Storage Queue",
             "direction": "out",
             "defaultParameterName": "myQueue",
-            "parameterNamePrompt":"Name the queue message object for use in your code",
+            "parameterNamePrompt": "Name the queue message object for use in your code",
             "settings": [
                 {
                     "name": "queueName",
@@ -109,7 +109,7 @@
             "displayName": "Azure Storage Queue",
             "direction": "trigger",
             "defaultParameterName": "myQueueItem",
-            "parameterNamePrompt":"Name the queue message object for use in your code",
+            "parameterNamePrompt": "Name the queue message object for use in your code",
             "settings": [
                 {
                     "name": "queueName",
@@ -134,7 +134,7 @@
             "displayName": "Azure Storage Blob",
             "direction": "out",
             "defaultParameterName": "myBlob",
-            "parameterNamePrompt":"Name the blob for use in your code",
+            "parameterNamePrompt": "Name the blob for use in your code",
             "settings": [
                 {
                     "name": "path",
@@ -159,7 +159,7 @@
             "displayName": "Azure Storage Blob",
             "direction": "in",
             "defaultParameterName": "myBlob",
-            "parameterNamePrompt":"Name the blob for use in your code",
+            "parameterNamePrompt": "Name the blob for use in your code",
             "settings": [
                 {
                     "name": "path",
@@ -184,7 +184,7 @@
             "displayName": "Azure Storage Blob",
             "direction": "trigger",
             "defaultParameterName": "myBlob",
-            "parameterNamePrompt":"Name the blob for use in your code",
+            "parameterNamePrompt": "Name the blob for use in your code",
             "settings": [
                 {
                     "name": "path",
@@ -209,7 +209,7 @@
             "displayName": "HTTP",
             "direction": "trigger",
             "defaultParameterName": "req",
-            "parameterNamePrompt":"Name the request object for use in your code",
+            "parameterNamePrompt": "Name the request object for use in your code",
             "settings": [
                 {
                     "name": "webHookType",
@@ -242,7 +242,7 @@
             "displayName": "HTTP",
             "direction": "out",
             "defaultParameterName": "res",
-            "parameterNamePrompt":"Name the outbound request object for use in your code",
+            "parameterNamePrompt": "Name the outbound request object for use in your code",
             "settings": []
         },
         {
@@ -306,7 +306,7 @@
             "displayName": "Azure Storage Table",
             "direction": "out",
             "defaultParameterName": "myTable",
-            "parameterNamePrompt":"Name the row collection for use in your code",
+            "parameterNamePrompt": "Name the row collection for use in your code",
             "settings": [
                 {
                     "name": "tableName",
@@ -347,7 +347,7 @@
             "displayName": "Azure Storage Table",
             "direction": "in",
             "defaultParameterName": "myTable",
-            "parameterNamePrompt":"Name the row collection for use in your code",
+            "parameterNamePrompt": "Name the row collection for use in your code",
             "settings": [
                 {
                     "name": "tableName",
@@ -437,7 +437,7 @@
             "displayName": "Azure Mobile Easy Table Record",
             "direction": "out",
             "defaultParameterName": "record",
-            "parameterNamePrompt":"Name the record for use in your code",
+            "parameterNamePrompt": "Name the record for use in your code",
             "settings": [
                 {
                     "name": "tableName",
@@ -454,7 +454,7 @@
             "displayName": "Azure Mobile Easy Table Record",
             "direction": "in",
             "defaultParameterName": "record",
-            "parameterNamePrompt":"Name the record for use in your code",
+            "parameterNamePrompt": "Name the record for use in your code",
             "settings": [
                 {
                     "name": "tableName",
@@ -471,6 +471,37 @@
                     "required": true,
                     "label": "What is the Id for the record?",
                     "help": "Please enter the id for the record to retrieve."
+                }
+            ]
+        },
+        {
+            "type": "notificationHub",
+            "displayName": "Azure Notification Hub",
+            "direction": "out",
+            "settings": [
+                {
+                    "name": "tagExpression",
+                    "value": "string",
+                    "defaultValue": "tag1||tag2",
+                    "required": false,
+                    "label": "Optional.Tag expression for sending push notification. Leave this blank to send broadcast",
+                    "help": "Tag expressions enable you to target specific sets of devices/registrations, when sending a push notification through Notification Hubs."
+                },
+                {
+                    "name": "hubName",
+                    "value": "string",
+                    "defaultValue": "MyNotificationHubName",
+                    "required": true,
+                    "label": "Name of the Notification hub to be used for sending push notifications",
+                    "help": "Please enter the name of the Notification Hub"
+                },
+                {
+                    "name": "connection",
+                    "value": "string",
+                    "resource": "NotificationHub",
+                    "required": true,
+                    "label": "Connection string for the NotificationHub namespace.",
+                    "help": "[variables('appSettingsHelp')]"
                 }
             ]
         }
