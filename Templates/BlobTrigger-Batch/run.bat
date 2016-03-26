@@ -1,0 +1,1 @@
+copy %input% %output%
