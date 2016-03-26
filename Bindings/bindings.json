@@ -21,13 +21,6 @@
                     "required": true,
                     "label": "How frequently should this function run? Enter a cron expression.",
                     "help": "A cron expression is a way of expressing a schedule. Please consult the documentation to learn more."
-                },
-                {
-                    "name": "runOnStartup",
-                    "value": "boolean",
-                    "defaultValue": false,
-                    "label": "Should this function run on start up?",
-                    "help": "When true, your function will run on startup. This may be useful for debugging."
                 }
             ]
         },
@@ -458,7 +451,7 @@
                 {
                     "name": "id",
                     "value": "string",
-                    "defaultValue" : "{documentId}",
+                    "defaultValue": "{documentId}",
                     "required": true,
                     "label": "What is the id of the document to return?",
                     "help": "[variables('triggerRefHelp')]"
