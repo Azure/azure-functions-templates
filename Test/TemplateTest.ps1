@@ -4,7 +4,6 @@
    [Parameter(Mandatory=$False)][string]$extZipPath
 )
 
-
 $HttpWaitTime = 2
 $action = @{  "deploy" = "Deploy Template"
               "trigger" = "Execute Trigger"
@@ -17,6 +16,8 @@ function GetConfiguration($configFile)
     $config = Get-Content $configFile -Raw | ConvertFrom-Json
     $appName = $config.appName
     $userName = "`$$appName"
+    $storageAccount = $config.storageAccountName    
+    $storageContext = New-AzureStorageContext -StorageAccountName $config.storageAccountName -StorageAccountKey $config.storageKey
     $authInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $userName,$config.password)))    
     
     Write-Host -ForegroundColor Green "Complete"
@@ -25,7 +26,8 @@ function GetConfiguration($configFile)
         appName = $appName
         authInfo = $authInfo
         scmEndpoint = "https://$appName.scm.azurewebsites.net"
-        url = "https://$appName.azurewebsites.net"
+        url = "https://$appName.azurewebsites.net"                
+        storageContext = $storageContext
     }
 }
 
@@ -336,13 +338,72 @@ function ExecuteTrigger($config,$template)
         "timerTrigger" { return ExecuteTimerTrigger $config $template }
         "httptrigger-genericJson" { return ExecuteWebHookTrigger $config $template }
         "httptrigger-github" { return ExecuteWebHookTrigger  $config $template }
+        "queueTrigger" { return ExecuteQueueTrigger $config $template }
         default { return $false }
     }
+}
+
+function ExecuteQueueTrigger ($config,$template)
+{
+    try
+    {
+        Write-Host -ForegroundColor Yellow  "Executing trigger for "$template.Name                        
+        # Good to have
+        # Verify that queue exists in the storage if not create a queue
+
+        $queueList = Get-AzureStorageQueue -Context $config.storageContext
+
+        $queueFound = $False;
+        if (-Not ($queueList.Name | Where {$_ -eq $template.trigger.queueName}))
+        {            
+
+            $queue = New-AzureStorageQueue -Name $template.trigger.queueName -Context $config.storageContext 
+        }
+
+        EnqueueMessage $config $template $template.inputData
+        Write-Host -ForegroundColor Green "Queue trigger Execution Complete"
+        return CreateResult $template "Queue Trigger executed" "passed" $action.trigger
+    }
+    catch
+    {
+        Write-Host -ForegroundColor Green "Queue trigger Execution Complete"
+        return CreateResultFromException $template $_.Exception $action.trigger
+    }
+}
+
+function GetQueueSASToken($config, $template)
+{
+    Write-Host -ForegroundColor Yellow -NoNewline "Getting SAS Token for storage queue"
+    $expiryTime = [DateTime]::Now.AddDays(1)
+    $token = New-AzureStorageQueueSASToken -Name $template.trigger.queueName -Context $config.storageContext -Permission raup -ExpiryTime $expiryTime        
+    Write-Host -ForegroundColor Green "...Complete"
+    return $token
+}
+
+function CreateEncodedMessage($message)
+{
+    Write-Host -ForegroundColor Yellow -NoNewline "Encoding Message"
+    $byteMessage  = [System.Text.Encoding]::UTF8.GetBytes($message)
+    $base64Message = [System.Convert]::ToBase64String($byteMessage)
+    $encodedMessage = '<?xml version="1.0" encoding="utf-8"?><QueueMessage><MessageText>' + $base64Message + '</MessageText></QueueMessage>'
+    Write-Host -ForegroundColor Green "...Complete"
+    return $encodedMessage
+}
+
+function EnqueueMessage($config,$template,$message)
+{    
+    $token = GetQueueSASToken $config $template
+    $url = $config.storageContext.QueueEndPoint + $template.trigger.queueName + "/messages" + $token
+    $encodedMessage = CreateEncodedMessage $message
+    Write-Host -ForegroundColor Yellow -NoNewline "Sending Queue Message"
+    $response = Invoke-RestMethod -Uri $url -Method POST -Body $encodedMessage
+    Write-Host -ForegroundColor Green "...Complete"
 }
 
 function GetLogFile($config,$template)
 {
     try {
+        Write-Host -ForegroundColor Yellow -NoNewline "Checking kudu for log files"
         $apiUrl = $config.scmEndpoint + "/api/vfs/LogFiles/Application/Functions/Function/" + $template.name + "/"
         $response = Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $config.authInfo)} -Method GET    
         if ($response -and $response[0])
@@ -357,12 +418,14 @@ function GetLogFile($config,$template)
             }
 
             $apiUrl = $apiUrl + $latestFile.Name
-            $response = Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $config.authInfo)} -Method GET       
+            $response = Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $config.authInfo)} -Method GET
+            Write-Host -ForegroundColor Green "...Complete"
             return $response
         }
     } 
     Catch 
     {
+        Write-Host -ForegroundColor Green "...Complete"
         if (!($_.Exception.Message.Contains("404"))) { throw $_.Exception }
     }
 }
@@ -538,8 +601,6 @@ function WakeUpHostProcess($config)
     Write-Host -ForegroundColor Green "...Complete"
 }
 
-
-
 function DeleteSiteExtension($config)
 {
     # kill host processes allowing us to delete this site extension
@@ -647,6 +708,7 @@ Try
             # Remove the template after it is done executing
             RemoveTemplate $config $template
 
+            Start-Sleep -s 3
             #$index = $testResult.Add($result)
             AddHostFeed $false
         }
