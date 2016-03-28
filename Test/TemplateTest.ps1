@@ -1,7 +1,7 @@
 ﻿Param(
    [Parameter(Mandatory=$True)][string]$configFile,      
    [Parameter(Mandatory=$True)][string]$templatesFolderPath,
-   [Parameter][string]$extZipPath
+   [Parameter(Mandatory=$False)][string]$extZipPath
 )
 
 
@@ -144,7 +144,7 @@ function InvokeScmHttpDelete($config,$path)
 {
     try
     { 
-        Write-Host -ForegroundColor Yellow -NoNewline "Deleting files at path $path"
+        Write-Host -ForegroundColor Yellow -NoNewline "Invoking delete for path:$path"
         $apiUrl = $config.scmEndpoint + "/api" + $path    
         $response = Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $config.authInfo); "If-Match"="*"} -Method DELETE
         Write-Host -ForegroundColor Green "...Complete"
@@ -160,7 +160,7 @@ function RemoveTemplate($config, $template)
 {
     # Deleting existing log files
     $path = "/vfs/site/wwwroot/"+ $template.Name +"/?recursive=true"
-    InvokeScmHttpDelete $config $path              
+    InvokeScmHttpDelete $config $path
 }
 
 function DeployTemplate($config, $template)
@@ -250,9 +250,7 @@ function ExecuteTimerTrigger($config,$template)
 {
    try
    {
-        Write-Host -ForegroundColor Yellow -NoNewline "Waking up the host" $template.Name
-        $response = Invoke-RestMethod -Uri $config.url -Method GET
-        Write-Host -ForegroundColor Green "...Complete"
+        WakeUpHostProcess $config
         return CreateResult $template $action.trigger "passed" "Timer trigger will auto execute"
     }
     catch
@@ -420,7 +418,7 @@ function CreateResultFromLog($config,$template,$timeout)
 function CreateHtml($testResult,$fileName)
 {
     $Header = @"
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
     <script type='text/javascript'>
         `$(window).on('load', function () {
             cells = document.getElementsByTagName('td');
@@ -533,6 +531,65 @@ function CreateHtml($testResult,$fileName)
     return $formattedObject
 }
 
+function WakeUpHostProcess($config)
+{
+    Write-Host -ForegroundColor Yellow -NoNewline "Waking up the host"
+    $response = Invoke-RestMethod -Uri $config.url -Method GET
+    Write-Host -ForegroundColor Green "...Complete"
+}
+
+
+
+function DeleteSiteExtension($config)
+{
+    # kill host processes allowing us to delete this site extension
+    RestartSite $config
+
+    Write-Host -ForegroundColor Yellow "Removing existing site extensions if any..."
+    $path = "/vfs/SiteExtensions/?recursive=true"
+    $response = InvokeScmHttpDelete $config $path
+    Write-Host -ForegroundColor Green "Site Extension Removal Complete"
+    WakeUpHostProcess $config
+}
+
+function RestartSite($config)
+{
+    try 
+    {
+        Write-Host -ForegroundColor Yellow "Restarting kudu site"
+        # Get process info for kudu process
+        $kuduProcess = InvokeScmHttpGet $config "/processes/0"    
+    
+        # Get list of all processes and kill non kudu w3wp process
+        $allProcesses = InvokeScmHttpGet $config "/processes"
+
+        foreach ($process in $allProcesses)
+        {
+            # if the process is not a kudu process kill it first
+            if ($process.id -ne $kuduProcess.id -and $process.name -eq "w3wp")
+            {
+                #kill non scm process
+                $path = "/processes/" + $process.id
+                $response = InvokeScmHttpDelete $config $path
+            }
+        }
+
+        # kill scm process now
+        $response = InvokeScmHttpDelete $config "/processes/0"
+    }
+    Catch 
+    {
+        if (!($_.Exception.Message.Contains("502"))) { throw $_.Exception }
+        Start-Sleep -Seconds 2
+        
+        # for the delete for kudu call that results in 502
+        Write-Host -ForegroundColor Green "...Complete"
+
+        Write-Host -ForegroundColor Green "Restart Complete"
+    }
+     
+}
+
 Try
 { 
 
@@ -546,10 +603,21 @@ Try
     # Get metadata required to deploy templates
     $templates = GetTemplates $templatesFolderPath
 
+    #Delete existing function site extension
+    DeleteSiteExtension $config
+
     if ($extZipPath)
     {
+        # Uploading site extention
         UploadZip $config $extZipPath
-    }
+
+        # Restart site
+        RestartSite $config
+
+        # Wake up the host process to make sure the site is up
+        WakeUpHostProcess $config
+       
+    }    
 
     # Collection to hold the execution result
     $testResult = New-Object System.Collections.ArrayList
@@ -565,6 +633,7 @@ Try
             $result = DeployTemplate $config $template         
             $index = $testResult.Add($result)
 
+            # Execute Trigger
             $result = ExecuteTrigger $config $template
             $index = $testResult.Add($result)
             
