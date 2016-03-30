@@ -247,54 +247,6 @@
             "settings": []
         },
         {
-            "type": "serviceBusTrigger",
-            "displayName": "Azure Service Bus",
-            "direction": "trigger",
-            "defaultParameterName": "myQueueItem",
-            "settings": [
-                {
-                    "name": "queueName",
-                    "value": "string",
-                    "defaultValue": "samples-workitems",
-                    "required": true,
-                    "label": "Which queue would you like to output to?",
-                    "help": "<TBD>"
-                },
-                {
-                    "name": "subscriptionName",
-                    "value": "string",
-                    "resource": "ServiceBus",
-                    "required": true,
-                    "label": "Please provide a Service Bus Connection String",
-                    "help": "[variables('appSettingsHelp')]"
-                }
-            ]
-        },
-        {
-            "type": "serviceBus",
-            "displayName": "Azure Service Bus",
-            "direction": "out",
-            "defaultParameterName": "OutPutQueueItem",
-            "settings": [
-                {
-                    "name": "queueName",
-                    "value": "string",
-                    "defaultValue": "samples-workitems",
-                    "required": true,
-                    "label": "Which queue would you like to trigger off of?",
-                    "help": "<TBD>"
-                },
-                {
-                    "name": "subscriptionName",
-                    "value": "string",
-                    "resource": "ServiceBus",
-                    "required": true,
-                    "label": "Please provide a Service Bus Connection String",
-                    "help": "[variables('appSettingsHelp')]"
-                }
-            ]
-        },
-        {
             "type": "table",
             "displayName": "Azure Storage Table",
             "direction": "out",
