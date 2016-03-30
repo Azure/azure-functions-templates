@@ -3,7 +3,9 @@
     "contentVersion": "2016-03-04-alpha",
     "variables": {
         "storageConnStringLabel": "Storage account connection",
-        "storageConnHelp": "This is the connection string for your storage account."
+        "storageConnHelp": "This is the connection string for your storage account.",
+        "appSettingsHelp": "You can use &lt;App Setting Name&gt; to reference an App Setting you've already configured",
+        "triggerRefHelp": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
     },
     "bindings": [
         {
@@ -310,7 +312,7 @@
                 {
                     "name": "tableName",
                     "value": "string",
-                    "defaultValue": "samples-workitems",
+                    "defaultValue": "workitems",
                     "required": true,
                     "label": "Table name",
                     "help": "This is the name of the table within your storage account to which the data should be written."
@@ -318,7 +320,7 @@
                 {
                     "name": "partitionKey",
                     "value": "string",
-                    "defaultValue": "{project-id}",
+                    "defaultValue": "items",
                     "required": true,
                     "label": "Partition key",
                     "help": "This is the partition key for the table."
@@ -326,7 +328,7 @@
                 {
                     "name": "rowKey",
                     "value": "string",
-                    "defaultValue": "{id}",
+                    "defaultValue": "%rand-guid%",
                     "required": true,
                     "label": "Row key",
                     "help": "This is the row key for the table."
@@ -351,7 +353,7 @@
                 {
                     "name": "tableName",
                     "value": "string",
-                    "defaultValue": "samples-workitems",
+                    "defaultValue": "workitems",
                     "required": true,
                     "label": "Table name",
                     "help": "This is the name of the table within your storage account from which the data should be read."
@@ -359,7 +361,7 @@
                 {
                     "name": "partitionKey",
                     "value": "string",
-                    "defaultValue": "{project-id}",
+                    "defaultValue": "items",
                     "required": true,
                     "label": "Partition key",
                     "help": "This is the partition key for the table."
@@ -367,7 +369,7 @@
                 {
                     "name": "take",
                     "value": "int",
-                    "defaultValue": 100,
+                    "defaultValue": 50,
                     "required": true,
                     "label": "Maximum number of records to read",
                     "help": "This is an integer for the number of records. You may receive fewer records than this value based on the contents of the table and the applied filter."
@@ -457,7 +459,7 @@
                 {
                     "name": "id",
                     "value": "string",
-                    "defaultValue" : "{documentId}",
+                    "defaultValue": "{documentId}",
                     "required": true,
                     "label": "Document ID",
                     "help": "This is the ID of the document that will be read."
@@ -518,7 +520,8 @@
                     "defaultValue": "MyTable",
                     "required": true,
                     "label": "Table name",
-                    "help": "This is the name of the table within your Mobile App from which data will be read."
+                    "help": "This is the name of the table within your mobile app from which data will be read."
+
                 },
                 {
                     "name": "id",
@@ -534,7 +537,7 @@
                     "defaultValue": "My_MobileApp_Uri",
                     "required": true,
                     "label": "Mobile App URL lookup",
-                    "help": "This is the app setting name that specifies the URL of your Mobile App."
+                    "help": "This is the app setting name that specifies the URL of your mobile app."
                 },
                 {
                     "name": "apiKey",
