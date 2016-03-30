@@ -304,7 +304,7 @@
                 {
                     "name": "tableName",
                     "value": "string",
-                    "defaultValue": "samples-workitems",
+                    "defaultValue": "workitems",
                     "required": true,
                     "label": "To which table should the data be written?",
                     "help": "Please enter the name of the table within your storage account."
@@ -312,7 +312,7 @@
                 {
                     "name": "partitionKey",
                     "value": "string",
-                    "defaultValue": "{project-id}",
+                    "defaultValue": "items",
                     "required": true,
                     "label": "What is the partition key for the data?",
                     "help": "[variables('triggerRefHelp')]"
@@ -320,7 +320,7 @@
                 {
                     "name": "rowKey",
                     "value": "string",
-                    "defaultValue": "{id}",
+                    "defaultValue": "%rand-guid%",
                     "required": true,
                     "label": "What is the row key for the data?",
                     "help": "[variables('triggerRefHelp')]"
@@ -345,7 +345,7 @@
                 {
                     "name": "tableName",
                     "value": "string",
-                    "defaultValue": "samples-workitems",
+                    "defaultValue": "workitems",
                     "required": true,
                     "label": "From which table should the data be read?",
                     "help": "Please enter the name of the table within your storage account."
@@ -353,7 +353,7 @@
                 {
                     "name": "partitionKey",
                     "value": "string",
-                    "defaultValue": "{project-id}",
+                    "defaultValue": "items",
                     "required": true,
                     "label": "What is the partition key for the data?",
                     "help": "[variables('triggerRefHelp')]"
@@ -361,7 +361,7 @@
                 {
                     "name": "take",
                     "value": "int",
-                    "defaultValue": 100,
+                    "defaultValue": 50,
                     "required": true,
                     "label": "What is the maximum number of records that should be read?",
                     "help": "Please enter an integer for the number of records. You may receive fewer records than this value based on the contents of the table and the applied filter."
