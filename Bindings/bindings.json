@@ -2,7 +2,8 @@
     "$schema": "<TBD>",
     "contentVersion": "2016-03-04-alpha",
     "variables": {
-        "storageConnStringLabel": "Which storage account should be used?",
+        "storageConnStringLabel": "Storage account connection",
+        "storageConnHelp": "This is the connection string for your storage account.",
         "appSettingsHelp": "You can use &lt;App Setting Name&gt; to reference an App Setting you've already configured",
         "triggerRefHelp": "You can use brackets ({value}) and percent symbols (%value%) to format your path based on parameters from the trigger object."
     },
@@ -12,15 +13,22 @@
             "displayName": "Timer",
             "direction": "trigger",
             "defaultParameterName": "myTimer",
-            "parameterNamePrompt": "Name the timestamp object for use in your code",
+            "parameterNamePrompt": "Timestamp parameter name",
             "settings": [
                 {
                     "name": "schedule",
                     "value": "string",
                     "defaultValue": "0 * * * * *",
                     "required": true,
-                    "label": "How frequently should this function run? Enter a cron expression.",
-                    "help": "A cron expression is a way of expressing a schedule. Please consult the documentation to learn more."
+                    "label": "Schedule",
+                    "help": "Enter a cron expression of the format '{second} {minute} {hour} {day} {month} {day of week}' to specify your schedule. Please consult the documentation to learn more."
+                },
+                {
+                    "name": "runOnStartup",
+                    "value": "boolean",
+                    "defaultValue": false,
+                    "label": "Should this function run on startup?",
+                    "help": "When true, your function will run on startup. This may be useful for debugging."
                 }
             ]
         },
@@ -28,23 +36,23 @@
             "type": "eventHubTrigger",
             "displayName": "Azure Event Hub",
             "direction": "trigger",
-            "defaultParameterName": "myEventHubTrigger",
+            "defaultParameterName": "Event parameter name",
             "settings": [
                 {
                     "name": "path",
                     "value": "string",
                     "defaultValue": "samples-workitems",
                     "required": true,
-                    "label": "Which Event Hub would you like to trigger off of?",
-                    "help": "[variables('appSettingsHelp')]"
+                    "label": "Event hub name",
+                    "help": "This is the name of the event hub you would like to trigger off of."
                 },
                 {
                     "name": "connection",
                     "value": "string",
                     "resource": "EventHub",
                     "required": true,
-                    "label": "Please provide a connection with receive permissions to an EventHub.",
-                    "help": "[variables('appSettingsHelp')]"
+                    "label": "Event hub connection",
+                    "help": "This is the connection string for your event hub. Make sure that it has receive permissions."
                 }
             ]
         },
@@ -52,23 +60,23 @@
             "type": "eventHub",
             "displayName": "Azure Event Hub",
             "direction": "out",
-            "defaultParameterName": "myEventHub",
+            "defaultParameterName": "Event parameter name",
             "settings": [
                 {
                     "name": "path",
                     "value": "string",
                     "defaultValue": "samples-workitems",
                     "required": true,
-                    "label": "Which event hub would you like to output to?",
-                    "help": "[variables('appSettingsHelp')]"
+                    "label": "Event hub name",
+                    "help": "This is the name of the event hub to which the event will be sent."
                 },
                 {
                     "name": "connection",
                     "value": "string",
                     "resource": "EventHub",
                     "required": true,
-                    "label": "Please provide a connection with send permissions to an EventHub.",
-                    "help": "[variables('appSettingsHelp')]"
+                    "label": "Event hub connection",
+                    "help": "This is the connection string for your event hub. Make sure that it has send permissions."
                 }
             ]
         },
@@ -77,15 +85,15 @@
             "displayName": "Azure Storage Queue",
             "direction": "out",
             "defaultParameterName": "myQueue",
-            "parameterNamePrompt": "Name the queue message object for use in your code",
+            "parameterNamePrompt": "Message parameter name",
             "settings": [
                 {
                     "name": "queueName",
                     "value": "string",
                     "defaultValue": "samples-workitems",
                     "required": true,
-                    "label": "To which queue should the message be sent?",
-                    "help": "If your queue doesn't exist yet, don't worry. We'll create one for you in your specifed Storage Account."
+                    "label": "Queue name",
+                    "help": "This is the queue to which the message will be sent. If the queue doesn't exist yet, one will be created for you in the specifed storage account."
                 },
                 {
                     "name": "connection",
@@ -93,7 +101,7 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('storageConnHelp')]"
                 }
             ]
         },
@@ -102,15 +110,15 @@
             "displayName": "Azure Storage Queue",
             "direction": "trigger",
             "defaultParameterName": "myQueueItem",
-            "parameterNamePrompt": "Name the queue message object for use in your code",
+            "parameterNamePrompt": "Message parameter name",
             "settings": [
                 {
                     "name": "queueName",
                     "value": "string",
                     "defaultValue": "samples-workitems",
                     "required": true,
-                    "label": "Which queue should the trigger monitor?",
-                    "help": "If your queue doesn't exist yet, don't worry. We'll wait for it to exist before we start creating events."
+                    "label": "Queue name",
+                    "help": "This is the name of the queue from which the message will be read."
                 },
                 {
                     "name": "connection",
@@ -118,7 +126,7 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('storageConnHelp')]"
                 }
             ]
         },
@@ -127,15 +135,15 @@
             "displayName": "Azure Storage Blob",
             "direction": "out",
             "defaultParameterName": "myBlob",
-            "parameterNamePrompt": "Name the blob for use in your code",
+            "parameterNamePrompt": "Blob parameter name",
             "settings": [
                 {
                     "name": "path",
                     "value": "string",
                     "defaultValue": "samples-workitems/{name}",
                     "required": true,
-                    "label": "To what path should the blob be written?",
-                    "help": "Please enter a path within your storage account."
+                    "label": "Path",
+                    "help": "This is the path within your storage account to which the blob should be written."
                 },
                 {
                     "name": "connection",
@@ -143,7 +151,7 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('storageConnHelp')]"
                 }
             ]
         },
@@ -152,15 +160,15 @@
             "displayName": "Azure Storage Blob",
             "direction": "in",
             "defaultParameterName": "myBlob",
-            "parameterNamePrompt": "Name the blob for use in your code",
+            "parameterNamePrompt": "Blob parameter name",
             "settings": [
                 {
                     "name": "path",
                     "value": "string",
                     "defaultValue": "samples-workitems/{name}",
                     "required": true,
-                    "label": "On what path is the blob?",
-                    "help": "Please enter a path within your storage account."
+                    "label": "Path",
+                    "help": "This is the path within your storage account from which the blob should be read."
                 },
                 {
                     "name": "connection",
@@ -168,7 +176,7 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('storageConnHelp')]"
                 }
             ]
         },
@@ -177,15 +185,15 @@
             "displayName": "Azure Storage Blob",
             "direction": "trigger",
             "defaultParameterName": "myBlob",
-            "parameterNamePrompt": "Name the blob for use in your code",
+            "parameterNamePrompt": "Blob parameter name",
             "settings": [
                 {
                     "name": "path",
                     "value": "string",
                     "defaultValue": "samples-workitems",
                     "required": true,
-                    "label": "What path should the trigger monitor?",
-                    "help": "Please enter a path within your storage account."
+                    "label": "Path",
+                    "help": "This is the path within your storage account that the trigger should monitor."
                 },
                 {
                     "name": "connection",
@@ -193,7 +201,7 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('storageConnHelp')]"
                 }
             ]
         },
@@ -202,7 +210,7 @@
             "displayName": "HTTP",
             "direction": "trigger",
             "defaultParameterName": "req",
-            "parameterNamePrompt": "Name the request object for use in your code",
+            "parameterNamePrompt": "Request parameter name",
             "settings": [
                 {
                     "name": "webHookType",
@@ -210,7 +218,7 @@
                     "enum": [
                         {
                             "value": "",
-                            "display": "None"
+                            "display": "Not a webhook"
                         },
                         {
                             "value": "github",
@@ -225,8 +233,8 @@
                             "display": "Generic JSON"
                         }
                     ],
-                    "label": "Is this a WebHook? If so, what type of webhook is it?",
-                    "help": "Webhooks allow services to call one another easily. If the type you need isn't listed here, you can leave this field blank."
+                    "label": "Webhook type",
+                    "help": "Webhooks allow services to call one another easily. If the type you need isn't listed here, choose 'not a webhook.'"
                 }
             ]
         },
@@ -235,7 +243,7 @@
             "displayName": "HTTP",
             "direction": "out",
             "defaultParameterName": "res",
-            "parameterNamePrompt": "Name the outbound request object for use in your code",
+            "parameterNamePrompt": "Response parameter name",
             "settings": []
         },
         {
@@ -243,30 +251,30 @@
             "displayName": "Manual",
             "direction": "trigger",
             "defaultParameterName": "input",
-            "parameterNamePrompt": "Name the object for use in your code",
+            "parameterNamePrompt": "Parameter name",
             "settings": []
         },
         {
             "type": "serviceBusTrigger",
             "displayName": "Azure Service Bus",
             "direction": "trigger",
-            "defaultParameterName": "myQueueItem",
+            "defaultParameterName": "Message parameter name",
             "settings": [
                 {
                     "name": "queueName",
                     "value": "string",
                     "defaultValue": "samples-workitems",
                     "required": true,
-                    "label": "Which queue would you like to output to?",
-                    "help": "<TBD>"
+                    "label": "Queue Name",
+                    "help": "This is the name of the queue from which the message will be read."
                 },
                 {
                     "name": "subscriptionName",
                     "value": "string",
                     "resource": "ServiceBus",
                     "required": true,
-                    "label": "Please provide a Service Bus Connection String",
-                    "help": "[variables('appSettingsHelp')]"
+                    "label": "Service bus connection",
+                    "help": "This is the connection string for your service bus."
                 }
             ]
         },
@@ -274,23 +282,23 @@
             "type": "serviceBus",
             "displayName": "Azure Service Bus",
             "direction": "out",
-            "defaultParameterName": "OutPutQueueItem",
+            "defaultParameterName": "Message parameter name",
             "settings": [
                 {
                     "name": "queueName",
                     "value": "string",
                     "defaultValue": "samples-workitems",
                     "required": true,
-                    "label": "Which queue would you like to trigger off of?",
-                    "help": "<TBD>"
+                    "label": "Queue name",
+                    "help": "This is the name of the queue to which the message will be sent."
                 },
                 {
                     "name": "subscriptionName",
                     "value": "string",
                     "resource": "ServiceBus",
                     "required": true,
-                    "label": "Please provide a Service Bus Connection String",
-                    "help": "[variables('appSettingsHelp')]"
+                    "label": "Service bus connection",
+                    "help": "This is the connection string for your service bus."
                 }
             ]
         },
@@ -299,31 +307,31 @@
             "displayName": "Azure Storage Table",
             "direction": "out",
             "defaultParameterName": "myTable",
-            "parameterNamePrompt": "Name the row collection for use in your code",
+            "parameterNamePrompt": "Table parameter name",
             "settings": [
                 {
                     "name": "tableName",
                     "value": "string",
                     "defaultValue": "workitems",
                     "required": true,
-                    "label": "To which table should the data be written?",
-                    "help": "Please enter the name of the table within your storage account."
+                    "label": "Table name",
+                    "help": "This is the name of the table within your storage account to which the data should be written."
                 },
                 {
                     "name": "partitionKey",
                     "value": "string",
                     "defaultValue": "items",
                     "required": true,
-                    "label": "What is the partition key for the data?",
-                    "help": "[variables('triggerRefHelp')]"
+                    "label": "Partition key",
+                    "help": "This is the partition key for the table."
                 },
                 {
                     "name": "rowKey",
                     "value": "string",
                     "defaultValue": "%rand-guid%",
                     "required": true,
-                    "label": "What is the row key for the data?",
-                    "help": "[variables('triggerRefHelp')]"
+                    "label": "Row key",
+                    "help": "This is the row key for the table."
                 },
                 {
                     "name": "connection",
@@ -331,7 +339,7 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('storageConnHelp')]"
                 }
             ]
         },
@@ -340,39 +348,39 @@
             "displayName": "Azure Storage Table",
             "direction": "in",
             "defaultParameterName": "myTable",
-            "parameterNamePrompt": "Name the row collection for use in your code",
+            "parameterNamePrompt": "Table parameter name",
             "settings": [
                 {
                     "name": "tableName",
                     "value": "string",
                     "defaultValue": "workitems",
                     "required": true,
-                    "label": "From which table should the data be read?",
-                    "help": "Please enter the name of the table within your storage account."
+                    "label": "Table name",
+                    "help": "This is the name of the table within your storage account from which the data should be read."
                 },
                 {
                     "name": "partitionKey",
                     "value": "string",
                     "defaultValue": "items",
                     "required": true,
-                    "label": "What is the partition key for the data?",
-                    "help": "[variables('triggerRefHelp')]"
+                    "label": "Partition key",
+                    "help": "This is the partition key for the table."
                 },
                 {
                     "name": "take",
                     "value": "int",
                     "defaultValue": 50,
                     "required": true,
-                    "label": "What is the maximum number of records that should be read?",
-                    "help": "Please enter an integer for the number of records. You may receive fewer records than this value based on the contents of the table and the applied filter."
+                    "label": "Maximum number of records to read",
+                    "help": "This is an integer for the number of records. You may receive fewer records than this value based on the contents of the table and the applied filter."
                 },
                 {
                     "name": "filter",
                     "value": "string",
                     "defaultValue": "status eq 'Not Started'",
                     "required": true,
-                    "label": "What filter should be applied to the query?",
-                    "help": "<TBD>"
+                    "label": "Query filter (optional)",
+                    "help": "This is an optional query expression used to filter the results of the table query."
                 },
                 {
                     "name": "connection",
@@ -380,7 +388,7 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('storageConnHelp')]"
                 }
             ]
         },
@@ -389,23 +397,23 @@
             "displayName": "Azure DocumentDB Document",
             "direction": "out",
             "defaultParameterName": "document",
-            "parameterNamePrompt": "Name the document for use in your code",
+            "parameterNamePrompt": "Document parameter name",
             "settings": [
                 {
                     "name": "databaseName",
                     "value": "string",
                     "defaultValue": "MyDatabase",
                     "required": true,
-                    "label": "To which database should the data be written?",
-                    "help": "Please enter the name of the database within your DocumentDB account."
+                    "label": "Database name",
+                    "help": "This is the name of the database within your DocumentDB account to which data will be written."
                 },
                 {
                     "name": "collectionName",
                     "value": "string",
                     "defaultValue": "MyCollection",
                     "required": true,
-                    "label": "To which collection should the data be written?",
-                    "help": "Please enter the name of the collection within your database."
+                    "label": "Collection Name",
+                    "help": "This is the name of the collection within your database to which data will be written."
                 },
                 {
                     "name": "createIfNotExists",
@@ -420,8 +428,8 @@
                     "value": "string",
                     "resource": "DocumentDB",
                     "required": true,
-                    "label": "Which DocumentDB account should be used?",
-                    "help": "[variables('appSettingsHelp')]"
+                    "label": "DocumentDB account connection",
+                    "help": "This is the connection string for your DocumentDb account."
                 }
             ]
         },
@@ -430,39 +438,39 @@
             "displayName": "Azure DocumentDB Document",
             "direction": "in",
             "defaultParameterName": "document",
-            "parameterNamePrompt": "Name the document for use in your code",
+            "parameterNamePrompt": "Document parameter name",
             "settings": [
                 {
                     "name": "databaseName",
                     "value": "string",
                     "defaultValue": "MyDatabase",
                     "required": true,
-                    "label": "Which database contains the document?",
-                    "help": "Please enter the name of the database within your DocumentDB account."
+                    "label": "Database name",
+                    "help": "This is the name of the database within your DocumentDB account from which data will be read."
                 },
                 {
                     "name": "collectionName",
                     "value": "string",
                     "defaultValue": "MyCollection",
                     "required": true,
-                    "label": "Which collection contains the document?",
-                    "help": "Please enter the name of the collection within your database."
+                    "label": "Collection Name",
+                    "help": "This is the name of the collection within your database from which data will be read."
                 },
                 {
                     "name": "id",
                     "value": "string",
                     "defaultValue": "{documentId}",
                     "required": true,
-                    "label": "What is the id of the document to return?",
-                    "help": "[variables('triggerRefHelp')]"
+                    "label": "Document ID",
+                    "help": "This is the ID of the document that will be read."
                 },
                 {
                     "name": "connection",
                     "value": "string",
                     "resource": "DocumentDB",
                     "required": true,
-                    "label": "Which DocumentDB account should be used?",
-                    "help": "[variables('appSettingsHelp')]"
+                    "label": "DocumentDB account connection",
+                    "help": "This is the connection string for your DocumentDB account."
                 }
             ]
         },
@@ -471,31 +479,31 @@
             "displayName": "Azure Mobile Easy Table Record",
             "direction": "out",
             "defaultParameterName": "record",
-            "parameterNamePrompt": "Name the record for use in your code",
+            "parameterNamePrompt": "Record parameter name",
             "settings": [
                 {
                     "name": "tableName",
                     "value": "string",
                     "defaultValue": "MyTable",
                     "required": true,
-                    "label": "To which table should the data be sent?",
-                    "help": "Please enter the name of the table within your Mobile App."
+                    "label": "Table name",
+                    "help": "This is the name of the table within your Mobile App to which data will be written."
                 },
                 {
                     "name": "connection",
                     "value": "string",
                     "defaultValue": "My_MobileApp_Uri",
                     "required": true,
-                    "label": "What is the app setting that specifies the URL of your Mobile App?",
-                    "help": "Please enter app setting name that specifies the URL of your Mobile App."
+                    "label": "Mobile App URL lookup",
+                    "help": "This is the app setting name that specifies the URL of your Mobile App."
                 },
                 {
                     "name": "apiKey",
                     "value": "string",
                     "defaultValue": "",
                     "required": false,
-                    "label": "What is the app setting that specifies the API Key of your Mobile App?",
-                    "help": "You can use an api key to protect your Mobile App. <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=780568'>More information</a>."
+                    "label": "API key lookup",
+                    "help": "This is app setting name that specifies the API Key for your Mobile App. <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=780568'>More information</a>."
                 }
             ]
         },
@@ -504,39 +512,40 @@
             "displayName": "Azure Mobile Easy Table Record",
             "direction": "in",
             "defaultParameterName": "record",
-            "parameterNamePrompt": "Name the record for use in your code",
+            "parameterNamePrompt": "Record parameter name",
             "settings": [
                 {
                     "name": "tableName",
                     "value": "string",
                     "defaultValue": "MyTable",
                     "required": true,
-                    "label": "Which table contains the record?",
-                    "help": "Please enter the name of the table within your Mobile App."
+                    "label": "Table name",
+                    "help": "This is the name of the table within your mobile app from which data will be read."
+
                 },
                 {
                     "name": "id",
                     "value": "string",
                     "defaultValue": "{itemId}",
                     "required": true,
-                    "label": "What is the id for the record?",
-                    "help": "Please enter the id for the record to retrieve."
+                    "label": "Record ID",
+                    "help": "This is the id for the record to retrieve."
                 },
                 {
                     "name": "connection",
                     "value": "string",
                     "defaultValue": "My_MobileApp_Uri",
                     "required": true,
-                    "label": "What is the app setting that specifies the URL of your Mobile App?",
-                    "help": "Please enter app setting name that specifies the URL of your Mobile App."
+                    "label": "Mobile App URL lookup",
+                    "help": "This is the app setting name that specifies the URL of your mobile app."
                 },
                 {
                     "name": "apiKey",
                     "value": "string",
                     "defaultValue": "",
                     "required": false,
-                    "label": "What is the app setting that specifies the API Key of your Mobile App?",
-                    "help": "You can use an api key to protect your Mobile App. <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=780568'>More information</a>."
+                    "label": "API key lookup",
+                    "help": "This is the app setting name that specifies the API Key for your Mobile App. <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=780568'>More information</a>."
                 }
             ]
         },
@@ -544,7 +553,7 @@
             "type": "notificationHub",
             "displayName": "Azure Notification Hub",
             "defaultParameterName": "notification",
-            "parameterNamePrompt": "Template notification to send",
+            "parameterNamePrompt": "Notification parameter name",
             "direction": "out",
             "settings": [
                 {
@@ -552,24 +561,24 @@
                     "value": "string",
                     "defaultValue": "",
                     "required": false,
-                    "label": "Optional.Tag expression for sending push notification. Leave this blank to send broadcast",
-                    "help": "Tag expressions enable you to target specific sets of devices/registrations, when sending a push notification through Notification Hubs."
+                    "label": "Tag expression (optional)",
+                    "help": "Tag expressions enable you to target specific sets of devices/registrations, when sending a push notification through Notification Hubs. Leave this blank to broadcast to all registered devices."
                 },
                 {
                     "name": "hubName",
                     "value": "string",
                     "defaultValue": "MyNotificationHubName",
                     "required": true,
-                    "label": "Name of the Notification hub to be used for sending push notifications",
-                    "help": "Please enter the name of the Notification Hub"
+                    "label": "Notification hub name",
+                    "help": "This is the name of the Notification Hub to be used for sending push notifications."
                 },
                 {
                     "name": "connection",
                     "value": "string",
                     "resource": "ServiceBus",
                     "required": true,
-                    "label": "Connection string for the NotificationHub namespace.",
-                    "help": "[variables('appSettingsHelp')]"
+                    "label": "Notification hub namespace connection",
+                    "help": "This is the connection string for your notification hub namespace."
                 }
             ]
         }
