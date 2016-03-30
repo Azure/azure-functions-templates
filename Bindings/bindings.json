@@ -27,7 +27,8 @@
             "type": "eventHubTrigger",
             "displayName": "Azure Event Hub",
             "direction": "trigger",
-            "defaultParameterName": "Event parameter name",
+            "defaultParameterName": "myEventHubMessage",
+            "parameterNamePrompt": "Event parameter name",
             "settings": [
                 {
                     "name": "path",
@@ -51,7 +52,8 @@
             "type": "eventHub",
             "displayName": "Azure Event Hub",
             "direction": "out",
-            "defaultParameterName": "Event parameter name",
+            "defaultParameterName": "myEventHubMessage",
+            "parameterNamePrompt": "Event parameter name",
             "settings": [
                 {
                     "name": "path",
