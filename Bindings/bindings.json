@@ -35,16 +35,16 @@
                     "value": "string",
                     "defaultValue": "samples-workitems",
                     "required": true,
-                    "label": "Event hub name",
-                    "help": "This is the name of the event hub you would like to trigger off of."
+                    "label": "Event Hub name",
+                    "help": "This is the name of the Event Hub you would like to trigger off of."
                 },
                 {
                     "name": "connection",
                     "value": "string",
                     "resource": "EventHub",
                     "required": true,
-                    "label": "Event hub connection",
-                    "help": "This is the connection string for your event hub. Make sure that it has receive permissions."
+                    "label": "Event Hub connection",
+                    "help": "This is the connection string for your Event Hub. Make sure that it has Receive permissions."
                 }
             ]
         },
@@ -60,16 +60,16 @@
                     "value": "string",
                     "defaultValue": "samples-workitems",
                     "required": true,
-                    "label": "Event hub name",
-                    "help": "This is the name of the event hub to which the event will be sent."
+                    "label": "Event Hub name",
+                    "help": "This is the name of the Event Hub to which the event will be sent."
                 },
                 {
                     "name": "connection",
                     "value": "string",
                     "resource": "EventHub",
                     "required": true,
-                    "label": "Event hub connection",
-                    "help": "This is the connection string for your event hub. Make sure that it has send permissions."
+                    "label": "Event Hub connection",
+                    "help": "This is the connection string for your Event Hub. Make sure that it has Send permissions."
                 }
             ]
         },
@@ -77,7 +77,7 @@
             "type": "queue",
             "displayName": "Azure Storage Queue",
             "direction": "out",
-            "defaultParameterName": "myQueue",
+            "defaultParameterName": "myQueueItem",
             "parameterNamePrompt": "Message parameter name",
             "settings": [
                 {
@@ -211,7 +211,7 @@
                     "enum": [
                         {
                             "value": "",
-                            "display": "Not a webhook"
+                            "display": "Not a WebHook"
                         },
                         {
                             "value": "github",
@@ -226,8 +226,8 @@
                             "display": "Generic JSON"
                         }
                     ],
-                    "label": "Webhook type",
-                    "help": "Webhooks allow services to call one another easily. If the type you need isn't listed here, choose 'not a webhook.'"
+                    "label": "WebHook type",
+                    "help": "WebHooks allow services to call one another easily. If the type you need isn't listed here, choose 'Not a WebHook'."
                 }
             ]
         },
@@ -238,6 +238,56 @@
             "defaultParameterName": "res",
             "parameterNamePrompt": "Response parameter name",
             "settings": []
+        },
+        {
+            "type": "serviceBusTrigger",
+            "displayName": "Azure Service Bus",
+            "direction": "trigger",
+            "defaultParameterName": "myQueueItem",
+            "parameterNamePrompt": "Message parameter name",
+            "settings": [
+                {
+                    "name": "queueName",
+                    "value": "string",
+                    "defaultValue": "samples-input",
+                    "required": true,
+                    "label": "Queue name",
+                    "help": "This is the name of the queue that messages will be read from."
+                },
+                {
+                    "name": "connection",
+                    "value": "string",
+                    "resource": "ServiceBus",
+                    "required": true,
+                    "label": "Service Bus connection",
+                    "help": "This is the connection string for your Service Bus account. Make sure that it has Listen rights."
+                }
+            ]
+        },
+        {
+            "type": "serviceBus",
+            "displayName": "Azure Service Bus",
+            "direction": "out",
+            "defaultParameterName": "myQueueItem",
+            "parameterNamePrompt": "Message parameter name",
+            "settings": [
+                {
+                    "name": "queueName",
+                    "value": "string",
+                    "defaultValue": "samples-output",
+                    "required": true,
+                    "label": "Queue name",
+                    "help": "This is the name of the queue that messages will be written to."
+                },
+                {
+                    "name": "connection",
+                    "value": "string",
+                    "resource": "ServiceBus",
+                    "required": true,
+                    "label": "Service Bus connection",
+                    "help": "This is the connection string for your Service Bus account. Make sure that it has Send rights."
+                }
+            ]
         },
         {
             "type": "manualTrigger",
