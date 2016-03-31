@@ -501,14 +501,6 @@
             "direction": "out",
             "settings": [
                 {
-                    "name": "tagExpression",
-                    "value": "string",
-                    "defaultValue": "",
-                    "required": false,
-                    "label": "Tag expression (optional)",
-                    "help": "Tag expressions enable you to target specific sets of devices/registrations, when sending a push notification through Notification Hubs. Leave this blank to broadcast to all registered devices."
-                },
-                {
                     "name": "hubName",
                     "value": "string",
                     "defaultValue": "MyNotificationHubName",
@@ -523,6 +515,14 @@
                     "required": true,
                     "label": "Notification hub namespace connection",
                     "help": "This is the connection string for your notification hub namespace."
+                },
+                {
+                    "name": "tagExpression",
+                    "value": "string",
+                    "defaultValue": "tag1||tag2",
+                    "required": false,
+                    "label": "Tag expression (optional)",
+                    "help": "Tag expressions enable you to target specific sets of devices/registrations, when sending a push notification through Notification Hubs. Leave this blank to broadcast to all registered devices<a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=785094'>More information</a>."
                 }
             ]
         }
