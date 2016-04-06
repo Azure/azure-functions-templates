@@ -58,7 +58,7 @@
             "type": "eventHub",
             "displayName": "Azure Event Hub",
             "direction": "out",
-            "defaultParameterName": "myEventHubMessage",
+            "defaultParameterName": "outputEventHubMessage",
             "parameterNamePrompt": "Event parameter name",
             "settings": [
                 {
@@ -89,7 +89,7 @@
             "type": "queue",
             "displayName": "Azure Storage Queue",
             "direction": "out",
-            "defaultParameterName": "myQueueItem",
+            "defaultParameterName": "outputQueueItem",
             "parameterNamePrompt": "Message parameter name",
             "settings": [
                 {
@@ -151,7 +151,7 @@
             "type": "blob",
             "displayName": "Azure Storage Blob",
             "direction": "out",
-            "defaultParameterName": "myBlob",
+            "defaultParameterName": "outputBlob",
             "parameterNamePrompt": "Blob parameter name",
             "settings": [
                 {
@@ -182,7 +182,7 @@
             "type": "blob",
             "displayName": "Azure Storage Blob",
             "direction": "in",
-            "defaultParameterName": "myBlob",
+            "defaultParameterName": "inputBlob",
             "parameterNamePrompt": "Blob parameter name",
             "settings": [
                 {
@@ -285,7 +285,7 @@
             "type": "serviceBusTrigger",
             "displayName": "Azure Service Bus",
             "direction": "trigger",
-            "defaultParameterName": "myQueueItem",
+            "defaultParameterName": "sbQueueItem",
             "parameterNamePrompt": "Message parameter name",
             "settings": [
                 {
@@ -310,7 +310,7 @@
             "type": "serviceBus",
             "displayName": "Azure Service Bus",
             "direction": "out",
-            "defaultParameterName": "myQueueItem",
+            "defaultParameterName": "sbOutputQueueItem",
             "parameterNamePrompt": "Message parameter name",
             "settings": [
                 {
@@ -349,7 +349,7 @@
             "type": "table",
             "displayName": "Azure Storage Table",
             "direction": "out",
-            "defaultParameterName": "myTable",
+            "defaultParameterName": "outputTable",
             "parameterNamePrompt": "Table parameter name",
             "settings": [
                 {
@@ -396,7 +396,7 @@
             "type": "table",
             "displayName": "Azure Storage Table",
             "direction": "in",
-            "defaultParameterName": "myTable",
+            "defaultParameterName": "inputTable",
             "parameterNamePrompt": "Table parameter name",
             "settings": [
                 {
@@ -459,7 +459,7 @@
             "type": "documentdb",
             "displayName": "Azure DocumentDB Document",
             "direction": "out",
-            "defaultParameterName": "document",
+            "defaultParameterName": "outputDocument",
             "parameterNamePrompt": "Document parameter name",
             "settings": [
                 {
@@ -500,7 +500,7 @@
             "type": "documentdb",
             "displayName": "Azure DocumentDB Document",
             "direction": "in",
-            "defaultParameterName": "document",
+            "defaultParameterName": "inputDocument",
             "parameterNamePrompt": "Document parameter name",
             "settings": [
                 {
@@ -541,7 +541,7 @@
             "type": "easyTable",
             "displayName": "Azure Mobile Easy Table Record",
             "direction": "out",
-            "defaultParameterName": "record",
+            "defaultParameterName": "outputRecord",
             "parameterNamePrompt": "Record parameter name",
             "settings": [
                 {
@@ -574,7 +574,7 @@
             "type": "easyTable",
             "displayName": "Azure Mobile Easy Table Record",
             "direction": "in",
-            "defaultParameterName": "record",
+            "defaultParameterName": "inputRecord",
             "parameterNamePrompt": "Record parameter name",
             "settings": [
                 {
