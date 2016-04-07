@@ -285,7 +285,7 @@
             "type": "serviceBusTrigger",
             "displayName": "Azure Service Bus",
             "direction": "trigger",
-            "defaultParameterName": "sbQueueItem",
+            "defaultParameterName": "mySbQueueMsg",
             "parameterNamePrompt": "Message parameter name",
             "settings": [
                 {
@@ -310,7 +310,7 @@
             "type": "serviceBus",
             "displayName": "Azure Service Bus",
             "direction": "out",
-            "defaultParameterName": "sbOutputQueueItem",
+            "defaultParameterName": "outputSbQueueMsg",
             "parameterNamePrompt": "Message parameter name",
             "settings": [
                 {
