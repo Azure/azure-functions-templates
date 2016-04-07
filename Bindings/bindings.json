@@ -163,7 +163,7 @@
                     "help": "This is the path within your storage account to which the blob will be written.",
                     "validators": [
                         {
-                            "expression": "^([a-z0-9](([a-z0-9\-[^\-])){1,61}[a-z0-9])(\/)(\S){1,1023}$",
+                            "expression": "^([a-z0-9](([a-z0-9\\-[^\\-])){1,61}[a-z0-9])(\\/)(\\S){1,1023}$",
                             "errorText": "Not valid blob path"
                         }
                     ]
@@ -194,7 +194,7 @@
                     "help": "This is the path within your storage account from which the blob will be read.",
                     "validators": [
                         {
-                            "expression": "^([a-z0-9](([a-z0-9\-[^\-])){1,61}[a-z0-9])(\/)(\S){1,1023}$",
+                            "expression": "^([a-z0-9](([a-z0-9\\-[^\\-])){1,61}[a-z0-9])(\\/)(\\S){1,1023}$",
                             "errorText": "Not valid blob path"
                         }
                     ]
@@ -225,7 +225,7 @@
                     "help": "This is the path within your storage account that the trigger will monitor.",
                     "validators": [
                         {
-                            "expression": "^([a-z0-9](([a-z0-9\-[^\-])){1,61}[a-z0-9])(\/)(\S){1,1023}$",
+                            "expression": "^([a-z0-9](([a-z0-9\\-[^\\-])){1,61}[a-z0-9])(\\/)(\\S){1,1023}$",
                             "errorText": "Not valid blob path"
                         }
                     ]
