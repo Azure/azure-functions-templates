@@ -36,7 +36,13 @@
                     "defaultValue": "samples-workitems",
                     "required": true,
                     "label": "Event Hub name",
-                    "help": "This is the name of the Event Hub you would like to trigger off of."
+                    "help": "This is the name of the Event Hub you would like to trigger off of.",
+                    "validators": [
+                        {
+                            "expression": "^[A-Za-z0-9]$|^[A-Za-z0-9][\\w-\\.\\/]*[A-Za-z0-9]$",
+                            "errorText": "Not valid event hub name"
+                        }
+                    ]
                 },
                 {
                     "name": "connection",
@@ -61,7 +67,13 @@
                     "defaultValue": "samples-workitems",
                     "required": true,
                     "label": "Event Hub name",
-                    "help": "This is the name of the Event Hub to which the event will be sent."
+                    "help": "This is the name of the Event Hub to which the event will be sent.",
+                    "validators": [
+                        {
+                            "expression": "^[A-Za-z0-9]$|^[A-Za-z0-9][\\w-\\.\\/]*[A-Za-z0-9]$",
+                            "errorText": "Not valid event hub name"
+                        }
+                    ]
                 },
                 {
                     "name": "connection",
@@ -86,7 +98,13 @@
                     "defaultValue": "samples-workitems",
                     "required": true,
                     "label": "Queue name",
-                    "help": "This is the queue to which the message will be sent. If the queue doesn't exist yet, one will be created for you in the specifed storage account."
+                    "help": "This is the queue to which the message will be sent. If the queue doesn't exist yet, one will be created for you in the specifed storage account.",
+                    "validators": [
+                        {
+                            "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
+                            "errorText": "Not valid queue name"
+                        }
+                    ]
                 },
                 {
                     "name": "connection",
@@ -111,7 +129,13 @@
                     "defaultValue": "samples-workitems",
                     "required": true,
                     "label": "Queue name",
-                    "help": "This is the name of the queue from which the message will be read."
+                    "help": "This is the name of the queue from which the message will be read.",
+                    "validators": [
+                        {
+                            "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
+                            "errorText": "Not valid queue name"
+                        }
+                    ]
                 },
                 {
                     "name": "connection",
@@ -136,7 +160,13 @@
                     "defaultValue": "samples-workitems/{name}",
                     "required": true,
                     "label": "Path",
-                    "help": "This is the path within your storage account to which the blob will be written."
+                    "help": "This is the path within your storage account to which the blob will be written.",
+                    "validators": [
+                        {
+                            "expression": "^([a-z0-9](([a-z0-9\-[^\-])){1,61}[a-z0-9])(\/)(\S){1,1023}$",
+                            "errorText": "Not valid blob path"
+                        }
+                    ]
                 },
                 {
                     "name": "connection",
@@ -161,7 +191,13 @@
                     "defaultValue": "samples-workitems/{name}",
                     "required": true,
                     "label": "Path",
-                    "help": "This is the path within your storage account from which the blob will be read."
+                    "help": "This is the path within your storage account from which the blob will be read.",
+                    "validators": [
+                        {
+                            "expression": "^([a-z0-9](([a-z0-9\-[^\-])){1,61}[a-z0-9])(\/)(\S){1,1023}$",
+                            "errorText": "Not valid blob path"
+                        }
+                    ]
                 },
                 {
                     "name": "connection",
@@ -186,7 +222,13 @@
                     "defaultValue": "samples-workitems",
                     "required": true,
                     "label": "Path",
-                    "help": "This is the path within your storage account that the trigger will monitor."
+                    "help": "This is the path within your storage account that the trigger will monitor.",
+                    "validators": [
+                        {
+                            "expression": "^([a-z0-9](([a-z0-9\-[^\-])){1,61}[a-z0-9])(\/)(\S){1,1023}$",
+                            "errorText": "Not valid blob path"
+                        }
+                    ]
                 },
                 {
                     "name": "connection",
@@ -277,7 +319,13 @@
                     "defaultValue": "samples-output",
                     "required": true,
                     "label": "Queue name",
-                    "help": "This is the name of the queue that messages will be written to."
+                    "help": "This is the name of the queue that messages will be written to.",
+                    "validators": [
+                        {
+                            "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
+                            "errorText": "Not valid queue name"
+                        }
+                    ]
                 },
                 {
                     "name": "connection",
@@ -310,7 +358,13 @@
                     "defaultValue": "workitems",
                     "required": true,
                     "label": "Table name",
-                    "help": "This is the name of the table within your storage account to which the data will be written."
+                    "help": "This is the name of the table within your storage account to which the data will be written.",
+                    "validators": [
+                        {
+                            "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$",
+                            "errorText": "Not valid table name"
+                        }
+                    ]
                 },
                 {
                     "name": "partitionKey",
@@ -351,7 +405,13 @@
                     "defaultValue": "workitems",
                     "required": true,
                     "label": "Table name",
-                    "help": "This is the name of the table within your storage account from which the data will be read."
+                    "help": "This is the name of the table within your storage account from which the data will be read.",
+                    "validators": [
+                        {
+                            "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$",
+                            "errorText": "Not valid table name"
+                        }
+                    ]
                 },
                 {
                     "name": "partitionKey",
