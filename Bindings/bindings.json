@@ -157,7 +157,7 @@
                 {
                     "name": "path",
                     "value": "string",
-                    "defaultValue": "samples-workitems/{name}",
+                    "defaultValue": "samples-workitems/%rand-guid%",
                     "required": true,
                     "label": "Path",
                     "help": "This is the path within your storage account to which the blob will be written.",
@@ -416,10 +416,18 @@
                 {
                     "name": "partitionKey",
                     "value": "string",
-                    "defaultValue": "items",
-                    "required": true,
-                    "label": "Partition key",
-                    "help": "This is the partition key for the table."
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "Partition key (optional)",
+                    "help": "This is the value of Partition key column of the table. The records with matching Partition key will be returned."
+                },
+                {
+                    "name": "rowKey",
+                    "value": "string",
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "Row key (optional)",
+                    "help": "This is the value of Row key column of the table. The record with matching Row key will be returned."
                 },
                 {
                     "name": "take",
@@ -432,7 +440,7 @@
                 {
                     "name": "filter",
                     "value": "string",
-                    "defaultValue": "status eq 'Not Started'",
+                    "defaultValue": "true",
                     "required": true,
                     "label": "Query filter (optional)",
                     "help": "This is an optional query expression used to filter the results of the table query."
