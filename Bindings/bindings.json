@@ -33,7 +33,7 @@
                 {
                     "name": "path",
                     "value": "string",
-                    "defaultValue": "samples-workitems",
+                    "defaultValue": "myEventHub",
                     "required": true,
                     "label": "Event Hub name",
                     "help": "This is the name of the Event Hub you would like to trigger off of.",
@@ -64,7 +64,7 @@
                 {
                     "name": "path",
                     "value": "string",
-                    "defaultValue": "samples-workitems",
+                    "defaultValue": "outEventHub",
                     "required": true,
                     "label": "Event Hub name",
                     "help": "This is the name of the Event Hub to which the event will be sent.",
@@ -95,7 +95,7 @@
                 {
                     "name": "queueName",
                     "value": "string",
-                    "defaultValue": "samples-workitems",
+                    "defaultValue": "outqueue",
                     "required": true,
                     "label": "Queue name",
                     "help": "This is the queue to which the message will be sent. If the queue doesn't exist yet, one will be created for you in the specifed storage account.",
@@ -126,7 +126,7 @@
                 {
                     "name": "queueName",
                     "value": "string",
-                    "defaultValue": "samples-workitems",
+                    "defaultValue": "myqueue",
                     "required": true,
                     "label": "Queue name",
                     "help": "This is the name of the queue from which the message will be read.",
@@ -157,7 +157,7 @@
                 {
                     "name": "path",
                     "value": "string",
-                    "defaultValue": "samples-workitems/%rand-guid%",
+                    "defaultValue": "outcontainer/%rand-guid%",
                     "required": true,
                     "label": "Path",
                     "help": "This is the path within your storage account to which the blob will be written.",
@@ -188,7 +188,7 @@
                 {
                     "name": "path",
                     "value": "string",
-                    "defaultValue": "samples-workitems/{name}",
+                    "defaultValue": "incontainer/{name}",
                     "required": true,
                     "label": "Path",
                     "help": "This is the path within your storage account from which the blob will be read.",
@@ -219,7 +219,7 @@
                 {
                     "name": "path",
                     "value": "string",
-                    "defaultValue": "samples-workitems",
+                    "defaultValue": "mycontainer",
                     "required": true,
                     "label": "Path",
                     "help": "This is the path within your storage account that the trigger will monitor.",
@@ -291,7 +291,7 @@
                 {
                     "name": "queueName",
                     "value": "string",
-                    "defaultValue": "samples-input",
+                    "defaultValue": "mysbqueue",
                     "required": true,
                     "label": "Queue name",
                     "help": "This is the name of the queue that messages will be read from."
@@ -316,7 +316,7 @@
                 {
                     "name": "queueName",
                     "value": "string",
-                    "defaultValue": "samples-output",
+                    "defaultValue": "outqueue",
                     "required": true,
                     "label": "Queue name",
                     "help": "This is the name of the queue that messages will be written to.",
@@ -355,7 +355,7 @@
                 {
                     "name": "tableName",
                     "value": "string",
-                    "defaultValue": "workitems",
+                    "defaultValue": "outTable",
                     "required": true,
                     "label": "Table name",
                     "help": "This is the name of the table within your storage account to which the data will be written.",
@@ -402,7 +402,7 @@
                 {
                     "name": "tableName",
                     "value": "string",
-                    "defaultValue": "workitems",
+                    "defaultValue": "inTable",
                     "required": true,
                     "label": "Table name",
                     "help": "This is the name of the table within your storage account from which the data will be read.",
@@ -465,7 +465,7 @@
                 {
                     "name": "databaseName",
                     "value": "string",
-                    "defaultValue": "MyDatabase",
+                    "defaultValue": "outDatabase",
                     "required": true,
                     "label": "Database name",
                     "help": "This is the name of the database within your DocumentDB account to which data will be written."
@@ -506,7 +506,7 @@
                 {
                     "name": "databaseName",
                     "value": "string",
-                    "defaultValue": "MyDatabase",
+                    "defaultValue": "inDatabase",
                     "required": true,
                     "label": "Database name",
                     "help": "This is the name of the database within your DocumentDB account from which data will be read."
@@ -547,7 +547,7 @@
                 {
                     "name": "tableName",
                     "value": "string",
-                    "defaultValue": "MyTable",
+                    "defaultValue": "outEasyTable",
                     "required": true,
                     "label": "Table name",
                     "help": "This is the name of the table within your Mobile App to which data will be written."
@@ -580,7 +580,7 @@
                 {
                     "name": "tableName",
                     "value": "string",
-                    "defaultValue": "MyTable",
+                    "defaultValue": "inEasyTable",
                     "required": true,
                     "label": "Table name",
                     "help": "This is the name of the table within your Mobile App from which data will be read."
@@ -621,7 +621,7 @@
                 {
                     "name": "hubName",
                     "value": "string",
-                    "defaultValue": "MyNotificationHubName",
+                    "defaultValue": "myNotificationHub",
                     "required": true,
                     "label": "Notification hub name",
                     "help": "This is the name of the Notification Hub to be used for sending push notifications."
