@@ -749,8 +749,7 @@ Try
             AddHostFeed
 
             # Deploy the template to azure
-            $result = DeployTemplate $config $template         
-            $index = $testResult.Add($result)
+            $result = DeployTemplate $config $template
 
             # Execute Trigger
             $result = ExecuteTrigger $config $template
