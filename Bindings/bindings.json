@@ -276,12 +276,12 @@
                     "value": "enum",
                     "enum": [
                         {
-                            "value": "anonymous",
-                            "display":"Anonymous"
-                        },
-                        {
                             "value": "function",
                             "display":"Function"
+                        },
+                        {
+                            "value": "anonymous",
+                            "display":"Anonymous"
                         },
                         {
                             "value": "admin",
@@ -289,7 +289,7 @@
                         }
                     ],
                     "label": "Authorization level",
-                    "help": "Authorization level controls whether you're using an API key and which key to use. The function & master keys are found in your host.json. For user-based authentication, go to Function App Settings."
+                    "help": "Authorization level controls whether you're using an API key and which key to use; Function uses your function key; Admin uses your master key. The function & master keys are found in your host secrets file. For user-based authentication, go to Function App Settings."
                 }
             ]
         },
