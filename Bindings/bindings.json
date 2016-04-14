@@ -40,7 +40,7 @@
                     "validators": [
                         {
                             "expression": "^[A-Za-z0-9]$|^[A-Za-z0-9][\\w-\\.\\/]*[A-Za-z0-9]$",
-                            "errorText": "Not valid event hub name"
+                            "errorText": "Invalid event hub name"
                         }
                     ]
                 },
@@ -71,7 +71,7 @@
                     "validators": [
                         {
                             "expression": "^[A-Za-z0-9]$|^[A-Za-z0-9][\\w-\\.\\/]*[A-Za-z0-9]$",
-                            "errorText": "Not valid event hub name"
+                            "errorText": "Invalid event hub name"
                         }
                     ]
                 },
@@ -102,7 +102,7 @@
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
-                            "errorText": "Not valid queue name"
+                            "errorText": "Invalid queue name"
                         }
                     ]
                 },
@@ -133,7 +133,7 @@
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
-                            "errorText": "Not valid queue name"
+                            "errorText": "Invalid queue name"
                         }
                     ]
                 },
@@ -164,7 +164,7 @@
                     "validators": [
                         {
                             "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){1,1023}$",
-                            "errorText": "Not valid blob path"
+                            "errorText": "Invalid blob path"
                         }
                     ]
                 },
@@ -195,7 +195,7 @@
                     "validators": [
                         {
                             "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){1,1023}$",
-                            "errorText": "Not valid blob path"
+                            "errorText": "Invalid blob path"
                         }
                     ]
                 },
@@ -226,7 +226,7 @@
                     "validators": [
                         {
                             "expression": "(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9]$)|(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){1,1023}$)",
-                            "errorText": "Not valid blob path"
+                            "errorText": "Invalid blob path"
                         }
                     ]
                 },
@@ -323,7 +323,7 @@
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
-                            "errorText": "Not valid queue name"
+                            "errorText": "Invalid queue name"
                         }
                     ]
                 },
@@ -362,7 +362,7 @@
                     "validators": [
                         {
                             "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$",
-                            "errorText": "Not valid table name"
+                            "errorText": "Invalid table name"
                         }
                     ]
                 },
@@ -409,7 +409,7 @@
                     "validators": [
                         {
                             "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$",
-                            "errorText": "Not valid table name"
+                            "errorText": "Invalid table name"
                         }
                     ]
                 },
@@ -640,7 +640,7 @@
                     "defaultValue": "tag1||tag2",
                     "required": false,
                     "label": "Tag expression (optional)",
-                    "help": "Tag expressions enable you to target specific sets of devices/registrations, when sending a push notification through Notification Hubs. Leave this blank to broadcast to all registered devices<a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=785094'>More information</a>."
+                    "help": "Tag expressions enable you to target specific sets of devices/registrations, when sending a push notification through Notification Hubs. Leave this blank to broadcast to all registered devices <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=785094'>More information</a>."
                 }
             ]
         }
