@@ -33,10 +33,16 @@
                 {
                     "name": "path",
                     "value": "string",
-                    "defaultValue": "samples-workitems",
+                    "defaultValue": "myEventHub",
                     "required": true,
                     "label": "Event Hub name",
-                    "help": "This is the name of the Event Hub you would like to trigger off of."
+                    "help": "This is the name of the Event Hub you would like to trigger off of.",
+                    "validators": [
+                        {
+                            "expression": "^[A-Za-z0-9]$|^[A-Za-z0-9][\\w-\\.\\/]*[A-Za-z0-9]$",
+                            "errorText": "Invalid event hub name"
+                        }
+                    ]
                 },
                 {
                     "name": "connection",
@@ -52,16 +58,22 @@
             "type": "eventHub",
             "displayName": "Azure Event Hub",
             "direction": "out",
-            "defaultParameterName": "myEventHubMessage",
+            "defaultParameterName": "outputEventHubMessage",
             "parameterNamePrompt": "Event parameter name",
             "settings": [
                 {
                     "name": "path",
                     "value": "string",
-                    "defaultValue": "samples-workitems",
+                    "defaultValue": "outEventHub",
                     "required": true,
                     "label": "Event Hub name",
-                    "help": "This is the name of the Event Hub to which the event will be sent."
+                    "help": "This is the name of the Event Hub to which the event will be sent.",
+                    "validators": [
+                        {
+                            "expression": "^[A-Za-z0-9]$|^[A-Za-z0-9][\\w-\\.\\/]*[A-Za-z0-9]$",
+                            "errorText": "Invalid event hub name"
+                        }
+                    ]
                 },
                 {
                     "name": "connection",
@@ -77,16 +89,22 @@
             "type": "queue",
             "displayName": "Azure Storage Queue",
             "direction": "out",
-            "defaultParameterName": "myQueueItem",
+            "defaultParameterName": "outputQueueItem",
             "parameterNamePrompt": "Message parameter name",
             "settings": [
                 {
                     "name": "queueName",
                     "value": "string",
-                    "defaultValue": "samples-workitems",
+                    "defaultValue": "outqueue",
                     "required": true,
                     "label": "Queue name",
-                    "help": "This is the queue to which the message will be sent. If the queue doesn't exist yet, one will be created for you in the specifed storage account."
+                    "help": "This is the queue to which the message will be sent. If the queue doesn't exist yet, one will be created for you in the specifed storage account.",
+                    "validators": [
+                        {
+                            "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
+                            "errorText": "Invalid queue name"
+                        }
+                    ]
                 },
                 {
                     "name": "connection",
@@ -108,10 +126,16 @@
                 {
                     "name": "queueName",
                     "value": "string",
-                    "defaultValue": "samples-workitems",
+                    "defaultValue": "myqueue",
                     "required": true,
                     "label": "Queue name",
-                    "help": "This is the name of the queue from which the message will be read."
+                    "help": "This is the name of the queue from which the message will be read.",
+                    "validators": [
+                        {
+                            "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
+                            "errorText": "Invalid queue name"
+                        }
+                    ]
                 },
                 {
                     "name": "connection",
@@ -127,16 +151,22 @@
             "type": "blob",
             "displayName": "Azure Storage Blob",
             "direction": "out",
-            "defaultParameterName": "myBlob",
+            "defaultParameterName": "outputBlob",
             "parameterNamePrompt": "Blob parameter name",
             "settings": [
                 {
                     "name": "path",
                     "value": "string",
-                    "defaultValue": "samples-workitems/{name}",
+                    "defaultValue": "outcontainer/%rand-guid%",
                     "required": true,
                     "label": "Path",
-                    "help": "This is the path within your storage account to which the blob will be written."
+                    "help": "This is the path within your storage account to which the blob will be written.",
+                    "validators": [
+                        {
+                            "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){1,1023}$",
+                            "errorText": "Invalid blob path"
+                        }
+                    ]
                 },
                 {
                     "name": "connection",
@@ -152,16 +182,22 @@
             "type": "blob",
             "displayName": "Azure Storage Blob",
             "direction": "in",
-            "defaultParameterName": "myBlob",
+            "defaultParameterName": "inputBlob",
             "parameterNamePrompt": "Blob parameter name",
             "settings": [
                 {
                     "name": "path",
                     "value": "string",
-                    "defaultValue": "samples-workitems/{name}",
+                    "defaultValue": "incontainer/{name}",
                     "required": true,
                     "label": "Path",
-                    "help": "This is the path within your storage account from which the blob will be read."
+                    "help": "This is the path within your storage account from which the blob will be read.",
+                    "validators": [
+                        {
+                            "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){1,1023}$",
+                            "errorText": "Invalid blob path"
+                        }
+                    ]
                 },
                 {
                     "name": "connection",
@@ -183,10 +219,16 @@
                 {
                     "name": "path",
                     "value": "string",
-                    "defaultValue": "samples-workitems",
+                    "defaultValue": "mycontainer",
                     "required": true,
                     "label": "Path",
-                    "help": "This is the path within your storage account that the trigger will monitor."
+                    "help": "This is the path within your storage account that the trigger will monitor.",
+                    "validators": [
+                        {
+                            "expression": "(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9]$)|(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){1,1023}$)",
+                            "errorText": "Invalid blob path"
+                        }
+                    ]
                 },
                 {
                     "name": "connection",
@@ -243,13 +285,13 @@
             "type": "serviceBusTrigger",
             "displayName": "Azure Service Bus",
             "direction": "trigger",
-            "defaultParameterName": "myQueueItem",
+            "defaultParameterName": "mySbQueueMsg",
             "parameterNamePrompt": "Message parameter name",
             "settings": [
                 {
                     "name": "queueName",
                     "value": "string",
-                    "defaultValue": "samples-input",
+                    "defaultValue": "mysbqueue",
                     "required": true,
                     "label": "Queue name",
                     "help": "This is the name of the queue that messages will be read from."
@@ -257,7 +299,7 @@
                 {
                     "name": "connection",
                     "value": "string",
-                    "resource": "ServiceBus",
+                    "resource": "EventHub",
                     "required": true,
                     "label": "Service Bus connection",
                     "help": "This is the connection string for your Service Bus account. Make sure that it has Listen rights."
@@ -268,21 +310,27 @@
             "type": "serviceBus",
             "displayName": "Azure Service Bus",
             "direction": "out",
-            "defaultParameterName": "myQueueItem",
+            "defaultParameterName": "outputSbQueueMsg",
             "parameterNamePrompt": "Message parameter name",
             "settings": [
                 {
                     "name": "queueName",
                     "value": "string",
-                    "defaultValue": "samples-output",
+                    "defaultValue": "outqueue",
                     "required": true,
                     "label": "Queue name",
-                    "help": "This is the name of the queue that messages will be written to."
+                    "help": "This is the name of the queue that messages will be written to.",
+                    "validators": [
+                        {
+                            "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
+                            "errorText": "Invalid queue name"
+                        }
+                    ]
                 },
                 {
                     "name": "connection",
                     "value": "string",
-                    "resource": "ServiceBus",
+                    "resource": "EventHub",
                     "required": true,
                     "label": "Service Bus connection",
                     "help": "This is the connection string for your Service Bus account. Make sure that it has Send rights."
@@ -301,16 +349,22 @@
             "type": "table",
             "displayName": "Azure Storage Table",
             "direction": "out",
-            "defaultParameterName": "myTable",
+            "defaultParameterName": "outputTable",
             "parameterNamePrompt": "Table parameter name",
             "settings": [
                 {
                     "name": "tableName",
                     "value": "string",
-                    "defaultValue": "workitems",
+                    "defaultValue": "outTable",
                     "required": true,
                     "label": "Table name",
-                    "help": "This is the name of the table within your storage account to which the data will be written."
+                    "help": "This is the name of the table within your storage account to which the data will be written.",
+                    "validators": [
+                        {
+                            "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$",
+                            "errorText": "Invalid table name"
+                        }
+                    ]
                 },
                 {
                     "name": "partitionKey",
@@ -342,24 +396,38 @@
             "type": "table",
             "displayName": "Azure Storage Table",
             "direction": "in",
-            "defaultParameterName": "myTable",
+            "defaultParameterName": "inputTable",
             "parameterNamePrompt": "Table parameter name",
             "settings": [
                 {
                     "name": "tableName",
                     "value": "string",
-                    "defaultValue": "workitems",
+                    "defaultValue": "inTable",
                     "required": true,
                     "label": "Table name",
-                    "help": "This is the name of the table within your storage account from which the data will be read."
+                    "help": "This is the name of the table within your storage account from which the data will be read.",
+                    "validators": [
+                        {
+                            "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$",
+                            "errorText": "Invalid table name"
+                        }
+                    ]
                 },
                 {
                     "name": "partitionKey",
                     "value": "string",
-                    "defaultValue": "items",
-                    "required": true,
-                    "label": "Partition key",
-                    "help": "This is the partition key for the table."
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "Partition key (optional)",
+                    "help": "This is the value of Partition key column of the table. The records with matching Partition key will be returned."
+                },
+                {
+                    "name": "rowKey",
+                    "value": "string",
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "Row key (optional)",
+                    "help": "This is the value of Row key column of the table. The record with matching Row key will be returned."
                 },
                 {
                     "name": "take",
@@ -372,7 +440,7 @@
                 {
                     "name": "filter",
                     "value": "string",
-                    "defaultValue": "status eq 'Not Started'",
+                    "defaultValue": "true",
                     "required": true,
                     "label": "Query filter (optional)",
                     "help": "This is an optional query expression used to filter the results of the table query."
@@ -391,13 +459,13 @@
             "type": "documentdb",
             "displayName": "Azure DocumentDB Document",
             "direction": "out",
-            "defaultParameterName": "document",
+            "defaultParameterName": "outputDocument",
             "parameterNamePrompt": "Document parameter name",
             "settings": [
                 {
                     "name": "databaseName",
                     "value": "string",
-                    "defaultValue": "MyDatabase",
+                    "defaultValue": "outDatabase",
                     "required": true,
                     "label": "Database name",
                     "help": "This is the name of the database within your DocumentDB account to which data will be written."
@@ -432,13 +500,13 @@
             "type": "documentdb",
             "displayName": "Azure DocumentDB Document",
             "direction": "in",
-            "defaultParameterName": "document",
+            "defaultParameterName": "inputDocument",
             "parameterNamePrompt": "Document parameter name",
             "settings": [
                 {
                     "name": "databaseName",
                     "value": "string",
-                    "defaultValue": "MyDatabase",
+                    "defaultValue": "inDatabase",
                     "required": true,
                     "label": "Database name",
                     "help": "This is the name of the database within your DocumentDB account from which data will be read."
@@ -473,13 +541,13 @@
             "type": "easyTable",
             "displayName": "Azure Mobile Easy Table Record",
             "direction": "out",
-            "defaultParameterName": "record",
+            "defaultParameterName": "outputRecord",
             "parameterNamePrompt": "Record parameter name",
             "settings": [
                 {
                     "name": "tableName",
                     "value": "string",
-                    "defaultValue": "MyTable",
+                    "defaultValue": "outEasyTable",
                     "required": true,
                     "label": "Table name",
                     "help": "This is the name of the table within your Mobile App to which data will be written."
@@ -506,13 +574,13 @@
             "type": "easyTable",
             "displayName": "Azure Mobile Easy Table Record",
             "direction": "in",
-            "defaultParameterName": "record",
+            "defaultParameterName": "inputRecord",
             "parameterNamePrompt": "Record parameter name",
             "settings": [
                 {
                     "name": "tableName",
                     "value": "string",
-                    "defaultValue": "MyTable",
+                    "defaultValue": "inEasyTable",
                     "required": true,
                     "label": "Table name",
                     "help": "This is the name of the table within your Mobile App from which data will be read."
@@ -553,7 +621,7 @@
                 {
                     "name": "hubName",
                     "value": "string",
-                    "defaultValue": "MyNotificationHubName",
+                    "defaultValue": "myNotificationHub",
                     "required": true,
                     "label": "Notification hub name",
                     "help": "This is the name of the Notification Hub to be used for sending push notifications."
@@ -572,7 +640,7 @@
                     "defaultValue": "tag1||tag2",
                     "required": false,
                     "label": "Tag expression (optional)",
-                    "help": "Tag expressions enable you to target specific sets of devices/registrations, when sending a push notification through Notification Hubs. Leave this blank to broadcast to all registered devices<a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=785094'>More information</a>."
+                    "help": "Tag expressions enable you to target specific sets of devices/registrations, when sending a push notification through Notification Hubs. Leave this blank to broadcast to all registered devices <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=785094'>More information</a>."
                 }
             ]
         }

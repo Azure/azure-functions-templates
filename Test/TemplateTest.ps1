@@ -339,6 +339,7 @@ function ExecuteTrigger($config,$template)
         "httptrigger-genericJson" { return ExecuteWebHookTrigger $config $template }
         "httptrigger-github" { return ExecuteWebHookTrigger  $config $template }
         "queueTrigger" { return ExecuteQueueTrigger $config $template }
+        "blobTrigger" { return ExecuteBlobTrigger $config $template }
         default { return $false }
     }
 }
@@ -347,9 +348,7 @@ function ExecuteQueueTrigger ($config,$template)
 {
     try
     {
-        Write-Host -ForegroundColor Yellow  "Executing trigger for "$template.Name                        
-        # Good to have
-        # Verify that queue exists in the storage if not create a queue
+        Write-Host -ForegroundColor Yellow  "Executing trigger for "$template.Name                                
 
         $queueList = Get-AzureStorageQueue -Context $config.storageContext
 
@@ -368,6 +367,57 @@ function ExecuteQueueTrigger ($config,$template)
     {
         Write-Host -ForegroundColor Green "Queue trigger Execution Complete"
         return CreateResultFromException $template $_.Exception $action.trigger
+    }
+}
+
+function ExecuteblobTrigger ($config,$template)
+{
+    try
+    {
+        Write-Host -ForegroundColor Yellow  "Executing trigger for "$template.Name                                        
+        $containerName = ExtractContainerName $template.trigger.path
+        
+        DeleteContainer $config $template $containerName
+        $container = New-AzureStorageContainer -Name $containerName -Context $config.storageContext        
+
+        InsertBlob $config $template $containerName $template.inputData
+        Write-Host -ForegroundColor Green "Blob trigger Execution Complete"
+        return CreateResult $template "Blob Trigger executed" "passed" $action.trigger
+    }
+    catch
+    {
+        Write-Host -ForegroundColor Green "Queue trigger Execution Complete"
+        return CreateResultFromException $template $_.Exception $action.trigger
+    }
+}
+
+function ExtractContainerName($path)
+{    
+    $index = $path.IndexOf('/')
+    if ($index -gt 0)
+    {
+       $path = $path.Substring(0,$index)
+    }
+    return $path
+}
+
+function DeleteContainer($config, $template,$containerName)
+{
+    try
+    {
+        Write-Host -ForegroundColor Yellow "Deleting the contianer to guarantee a clean state"
+        $containerList = Get-AzureStorageContainer -Context $config.storageContext
+        if ($containerList.Name | Where {$_ -eq $containerName})
+        {
+            Remove-AzureStorageContainer -Name  $containerName -Context $config.storageContext -Force
+            Start-Sleep -Seconds 35
+        }
+        Write-Host -ForegroundColor Green "Container deleted"
+    }
+     catch
+    {
+        Write-Host -ForegroundColor Red "[Error!] Error deleting the container"
+        throw $_.Exception
     }
 }
 
@@ -391,12 +441,20 @@ function CreateEncodedMessage($message)
 }
 
 function EnqueueMessage($config,$template,$message)
-{    
+{
     $token = GetQueueSASToken $config $template
     $url = $config.storageContext.QueueEndPoint + $template.trigger.queueName + "/messages" + $token
     $encodedMessage = CreateEncodedMessage $message
     Write-Host -ForegroundColor Yellow -NoNewline "Sending Queue Message"
     $response = Invoke-RestMethod -Uri $url -Method POST -Body $encodedMessage
+    Write-Host -ForegroundColor Green "...Complete"
+}
+
+function InsertBlob($config,$template,$containerName)
+{    
+    $blobFile = $template.Path + "\sample.dat"
+    Write-Host -ForegroundColor Yellow -NoNewline "Adding a blob to the container"
+    $response = Set-AzureStorageBlobContent -Container $containerName -File $blobFile -Context $config.storageContext -Force
     Write-Host -ForegroundColor Green "...Complete"
 }
 
@@ -691,8 +749,7 @@ Try
             AddHostFeed
 
             # Deploy the template to azure
-            $result = DeployTemplate $config $template         
-            $index = $testResult.Add($result)
+            $result = DeployTemplate $config $template
 
             # Execute Trigger
             $result = ExecuteTrigger $config $template
