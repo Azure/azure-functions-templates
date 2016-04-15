@@ -15,13 +15,7 @@
             "tableName": "samples",
             "partitionKey": "samples",
             "take": 5,
-            "filter": "status eq '0'"
-        },
-        {
-            "type": "blob",
-            "name": "output",
-            "direction": "out",
-            "path": "samples-output/{id}"
+            "filter": "true"
         }
     ]
 }

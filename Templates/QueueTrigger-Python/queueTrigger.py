@@ -12,7 +12,3 @@ table = json.load(tableData)
 print("Read {0} Table entities".format(len(table)))
 for entity in table:
   print(entity)
-
-# write to the output binding
-f = open(os.environ['output'], 'w')
-f.write(input)
