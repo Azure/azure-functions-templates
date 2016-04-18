@@ -416,7 +416,6 @@
                 {
                     "name": "partitionKey",
                     "value": "string",
-                    "defaultValue": "",
                     "required": false,
                     "label": "Partition key (optional)",
                     "help": "This is the value of Partition key column of the table. The records with matching Partition key will be returned."
@@ -424,16 +423,14 @@
                 {
                     "name": "take",
                     "value": "int",
-                    "defaultValue": 50,
-                    "required": true,
-                    "label": "Maximum number of records to read",
+                    "required": false,
+                    "label": "Maximum number of records to read (optional)",
                     "help": "This is an integer for the number of records. You may receive fewer records than this value based on the contents of the table and the applied filter."
                 },
                 {
                     "name": "filter",
                     "value": "string",
-                    "defaultValue": "true",
-                    "required": true,
+                    "required": false,
                     "label": "Query filter (optional)",
                     "help": "This is an optional query expression used to filter the results of the table query."
                 },
@@ -555,9 +552,8 @@
                 {
                     "name": "apiKey",
                     "value": "string",
-                    "defaultValue": "",
                     "required": false,
-                    "label": "API key lookup",
+                    "label": "API key lookup (optional)",
                     "help": "This is app setting name that specifies the API Key for your Mobile App. <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=780568'>More information</a>."
                 }
             ]
@@ -596,9 +592,8 @@
                 {
                     "name": "apiKey",
                     "value": "string",
-                    "defaultValue": "",
                     "required": false,
-                    "label": "API key lookup",
+                    "label": "API key lookup (optional)",
                     "help": "This is the app setting name that specifies the API Key for your Mobile App. <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=780568'>More information</a>."
                 }
             ]
@@ -629,7 +624,6 @@
                 {
                     "name": "tagExpression",
                     "value": "string",
-                    "defaultValue": "tag1||tag2",
                     "required": false,
                     "label": "Tag expression (optional)",
                     "help": "Tag expressions enable you to target specific sets of devices/registrations, when sending a push notification through Notification Hubs. Leave this blank to broadcast to all registered devices <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=785094'>More information</a>."
