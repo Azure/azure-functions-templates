@@ -3,7 +3,8 @@
     "contentVersion": "2016-03-04-alpha",
     "variables": {
         "storageConnStringLabel": "Storage account connection",
-        "appSettingsHelp": "This is the connection string for your storage account."
+        "appSettingsHelp": "This is the connection string for your storage account.",
+        "selectConnectoin":  "Click select to choose a connection"
     },
     "bindings": [
         {
@@ -74,7 +75,8 @@
                     "resource": "EventHub",
                     "required": true,
                     "label": "Event Hub connection",
-                    "help": "This is the connection string for your Event Hub. Make sure that it has Receive permissions."
+                    "help": "This is the connection string for your Event Hub. Make sure that it has Receive permissions.",
+                    "placeholder": "[variables('selectConnectoin')]"
                 }
             ]
         },
@@ -117,7 +119,8 @@
                     "resource": "EventHub",
                     "required": true,
                     "label": "Event Hub connection",
-                    "help": "This is the connection string for your Event Hub. Make sure that it has Send permissions."
+                    "help": "This is the connection string for your Event Hub. Make sure that it has Send permissions.",
+                    "placeholder": "[variables('selectConnectoin')]"
                 }
             ]
         },
@@ -160,7 +163,8 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('appSettingsHelp')]",
+                    "placeholder": "[variables('selectConnectoin')]"
                 }
             ]
         },
@@ -203,7 +207,8 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('appSettingsHelp')]",
+                    "placeholder": "[variables('selectConnectoin')]"
                 }
             ]
         },
@@ -246,7 +251,8 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('appSettingsHelp')]",
+                    "placeholder": "[variables('selectConnectoin')]"
                 }
             ]
         },
@@ -289,7 +295,8 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('appSettingsHelp')]",
+                    "placeholder": "[variables('selectConnectoin')]"
                 }
             ]
         },
@@ -332,7 +339,8 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('appSettingsHelp')]",
+                    "placeholder": "[variables('selectConnectoin')]"
                 }
             ]
         },
@@ -643,7 +651,9 @@
                     "resource": "EventHub",
                     "required": true,
                     "label": "Service Bus connection",
-                    "help": "This is the connection string for your Service Bus account. Make sure that it has Listen rights."
+                    "help": "This is the connection string for your Service Bus account. Make sure that it has Listen rights.",
+                    "placeholder": "[variables('selectConnectoin')]"
+
                 },
                 {
                     "name": "accessRights",
@@ -748,7 +758,8 @@
                     "resource": "EventHub",
                     "required": true,
                     "label": "Service Bus connection",
-                    "help": "This is the connection string for your Service Bus account. Make sure that it has Send rights."
+                    "help": "This is the connection string for your Service Bus account. Make sure that it has Send rights.",
+                    "placeholder": "[variables('selectConnectoin')]"
                 },
                 {
                     "name": "accessRights",
@@ -874,7 +885,8 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('appSettingsHelp')]",
+                    "placeholder": "[variables('selectConnectoin')]"
                 }
             ]
         },
@@ -938,7 +950,8 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('appSettingsHelp')]",
+                    "placeholder": "[variables('selectConnectoin')]"
                 }
             ]
         },
@@ -991,7 +1004,8 @@
                     "resource": "DocumentDB",
                     "required": true,
                     "label": "DocumentDB account connection",
-                    "help": "This is the connection string for your DocumentDb account."
+                    "help": "This is the connection string for your DocumentDb account.",
+                    "placeholder": "[variables('selectConnectoin')]"
                 }
             ]
         },
@@ -1044,7 +1058,8 @@
                     "resource": "DocumentDB",
                     "required": true,
                     "label": "DocumentDB account connection",
-                    "help": "This is the connection string for your DocumentDB account."
+                    "help": "This is the connection string for your DocumentDB account.",
+                    "placeholder": "[variables('selectConnectoin')]"
                 }
             ]
         },
@@ -1177,7 +1192,8 @@
                     "resource": "ServiceBus",
                     "required": true,
                     "label": "Notification hub namespace connection",
-                    "help": "This is the connection string for your notification hub namespace."
+                    "help": "This is the connection string for your notification hub namespace.",
+                    "placeholder": "[variables('selectConnectoin')]"
                 },
                 {
                     "name": "tagExpression",
