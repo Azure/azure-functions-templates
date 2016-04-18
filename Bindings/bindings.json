@@ -241,6 +241,96 @@
             ]
         },
         {
+            "type": "apiHubFile",
+            "displayName": "SaaS File",
+            "direction": "in",
+            "defaultParameterName": "input",
+            "parameterNamePrompt": "The input file parameter name to reference in code",
+            "settings": [
+                {
+                    "name": "path",
+                    "value": "string",
+                    "defaultValue": "path/{file}",
+                    "required": true,
+                    "label": "Path",
+                    "help": "The output file path",
+                    "validators": []
+                },
+                {
+                    "name": "connection",
+                    "value": "string",
+                    "resource": "ApiHub",
+                    "required": true,
+                    "label": "SaaS File connection",
+                    "help": "The connection string to your SaaS File connection",
+                    "metadata":{
+                        "capability": "blob"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "apiHubFile",
+            "displayName": "SaaS File",
+            "direction": "out",
+            "defaultParameterName": "output",
+            "parameterNamePrompt": "The output file parameter name to reference in code",
+            "settings": [
+                {
+                    "name": "path",
+                    "value": "string",
+                    "defaultValue": "path/{file}",
+                    "required": true,
+                    "label": "Path",
+                    "help": "The input file path",
+                    "validators": []
+                },
+                {
+                    "name": "connection",
+                    "value": "string",
+                    "resource": "ApiHub",
+                    "required": true,
+                    "label": "SaaS File connection",
+                    "help": "The connection string to your SaaS File connection",
+                    "metadata":{
+                        "capability": "blob"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "apiHubFileTrigger",
+            "displayName": "SaaS File Trigger",
+            "direction": "trigger",
+            "defaultParameterName": "trigger",
+            "parameterNamePrompt": "The trigger file parameter name to reference in code",
+            "settings": [
+                {
+                    "name": "path",
+                    "value": "string",
+                    "defaultValue": "path/{file}",
+                    "required": true,
+                    "label": "Path",
+                    "help": "The path to trigger on.  ",
+                    "validators": []
+                },
+                {
+                    "name": "connection",
+                    "value": "string",
+                    "resource": "ApiHub",
+                    "required": true,
+                    "label": "SaaS File connection",
+                    "help": "The connection string to your SaaS File connection",
+                    "metadata":{
+                        "capability": "blob",
+                        "excluded":[
+                            "googledrive"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
             "type": "httpTrigger",
             "displayName": "HTTP",
             "direction": "trigger",
