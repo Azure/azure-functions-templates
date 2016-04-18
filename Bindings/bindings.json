@@ -270,6 +270,27 @@
                     ],
                     "label": "WebHook type",
                     "help": "WebHooks allow services to call one another easily. If the type you need isn't listed here, choose 'Not a WebHook'."
+                },
+                {
+                    "name": "authLevel",
+                    "value": "enum",
+                    "defaultValue": "function",
+                    "enum": [
+                        {
+                            "value": "function",
+                            "display":"Function"
+                        },
+                        {
+                            "value": "anonymous",
+                            "display":"Anonymous"
+                        },
+                        {
+                            "value": "admin",
+                            "display": "Admin"
+                        }
+                    ],
+                    "label": "Authorization level",
+                    "help": "Authorization level controls whether you're using an API key and which key to use; Function uses your function key; Admin uses your master key. The function & master keys are found in your host secrets file. For user-based authentication, go to Function App Settings."
                 }
             ]
         },
