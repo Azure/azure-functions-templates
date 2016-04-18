@@ -252,10 +252,6 @@
                     "value": "enum",
                     "enum": [
                         {
-                            "value": "",
-                            "display": "Not a WebHook"
-                        },
-                        {
                             "value": "github",
                             "display": "GitHub"
                         },
@@ -269,7 +265,57 @@
                         }
                     ],
                     "label": "WebHook type",
-                    "help": "WebHooks allow services to call one another easily. If the type you need isn't listed here, choose 'Not a WebHook'."
+                    "help": "WebHooks allow services to call one another easily."
+                },
+                {
+                    "name": "authLevel",
+                    "value": "enum",
+                    "required": false,
+                    "enum": [
+                        {
+                            "value": "function",
+                            "display": "Function"
+                        },
+                        {
+                            "value": "anonymous",
+                            "display": "Anonymous"
+                        },
+                        {
+                            "value": "admin",
+                            "display": "Admin"
+                        }
+                    ],
+                    "label": "Authorization level",
+                    "help": "Authorization level controls whether you're using an API key and which key to use; Function uses your function key; Admin uses your master key. The function & master keys are found in your host secrets file. For user-based authentication, go to Function App Settings."
+                }
+            ],
+            "rules": [
+                {
+                    "type": "exclusivity",
+                    "values": [
+                        {
+                            "value": "authLevel",
+                            "display": "Standard",
+                            "hiddenSettings": [
+                                "webHookType"
+                            ],
+                            "shownSettings": [
+                                "authLevel"
+                            ]
+                        },
+                        {
+                            "value": "webHookType",
+                            "display": "Webhook",
+                            "hiddenSettings": [
+                                "authLevel"
+                            ],
+                            "shownSettings": [
+                                "webHookType"
+                            ]
+                        }
+                    ],
+                    "label": "Mode",
+                    "help": "Mode of trigger. Standard mode means its a normal http trigger, WebHook mode means it is a http trigger of webhook type."
                 }
             ]
         },
