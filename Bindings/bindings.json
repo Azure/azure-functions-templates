@@ -102,7 +102,7 @@
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
-                            "errorText": "Invalid queue name"
+                            "errorText": "Invalid queue name."
                         }
                     ]
                 },
@@ -133,7 +133,7 @@
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
-                            "errorText": "Invalid queue name"
+                            "errorText": "Invalid queue name."
                         }
                     ]
                 },
@@ -285,7 +285,7 @@
             "type": "serviceBusTrigger",
             "displayName": "Azure Service Bus",
             "direction": "trigger",
-            "defaultParameterName": "mySbQueueMsg",
+            "defaultParameterName": "mySbMsg",
             "parameterNamePrompt": "Message parameter name",
             "settings": [
                 {
@@ -294,7 +294,27 @@
                     "defaultValue": "mysbqueue",
                     "required": true,
                     "label": "Queue name",
-                    "help": "This is the name of the queue that messages will be read from."
+                    "help": "This is the name of the queue from which the message will be read.",
+                    "validators": [
+                        {
+                            "expression": "^[0-9a-zA-Z][a-zA-Z0-9_.-]{2,48}[0-9a-zA-Z]$",
+                            "errorText": "Invalid queue name."
+                        }
+                    ]
+                },
+                {
+                    "name": "topicName",
+                    "value": "string",
+                    "defaultValue": "mysbtopic",
+                    "required": true,
+                    "label": "Topic name",
+                    "help": "This is the name of the topic from which the message will be read.",
+                     "validators": [
+                        {
+                            "expression": "^[0-9a-zA-Z][a-zA-Z0-9_.-]{2,48}[0-9a-zA-Z]$",
+                            "errorText": "Invalid topic name."
+                        }
+                    ]
                 },
                 {
                     "name": "connection",
@@ -304,13 +324,42 @@
                     "label": "Service Bus connection",
                     "help": "This is the connection string for your Service Bus account. Make sure that it has Listen rights."
                 }
+            ],
+            "rules": [
+                {
+                    "type": "exclusivity",
+                    "values": [
+                        {
+                            "value": "queueName",
+                            "display": "Service Bus Queue",
+                            "hiddenSettings": [
+                                "topicName"
+                            ],
+                            "shownSettings": [
+                                "queueName"
+                            ]
+                        },
+                        {
+                            "value": "topicName",
+                            "display": "Service Bus Topic",
+                            "hiddenSettings": [
+                                "queueName"
+                            ],
+                            "shownSettings": [
+                                "topicName"
+                            ]
+                        }
+                    ],
+                    "label": "Service Bus message type",
+                    "help": "This is the type of Service Bus message. This lets you choose between using Queues or Topics."
+                }
             ]
         },
         {
             "type": "serviceBus",
             "displayName": "Azure Service Bus",
             "direction": "out",
-            "defaultParameterName": "outputSbQueueMsg",
+            "defaultParameterName": "outputSbMsg",
             "parameterNamePrompt": "Message parameter name",
             "settings": [
                 {
@@ -319,11 +368,25 @@
                     "defaultValue": "outqueue",
                     "required": true,
                     "label": "Queue name",
-                    "help": "This is the name of the queue that messages will be written to.",
+                    "help": "This is the queue to which the message will be sent.",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
-                            "errorText": "Invalid queue name"
+                            "expression": "^[0-9a-zA-Z][a-zA-Z0-9_.-]{2,48}[0-9a-zA-Z]$",
+                            "errorText": "Invalid queue name."
+                        }
+                    ]
+                },
+                {
+                    "name": "topicName",
+                    "value": "string",
+                    "defaultValue": "outtopic",
+                    "required": true,
+                    "label": "Topic name",
+                    "help": "This is the topic to which the message will be sent.",
+                    "validators": [
+                        {
+                            "expression": "^[0-9a-zA-Z][a-zA-Z0-9_.-]{2,48}[0-9a-zA-Z]$",
+                            "errorText": "Invalid topic name."
                         }
                     ]
                 },
@@ -334,6 +397,36 @@
                     "required": true,
                     "label": "Service Bus connection",
                     "help": "This is the connection string for your Service Bus account. Make sure that it has Send rights."
+                }
+            ]
+            ,
+            "rules": [
+                {
+                    "type": "exclusivity",
+                    "values": [
+                        {
+                            "value": "queueName",
+                            "display": "Service Bus Queue",
+                            "hiddenSettings": [
+                                "topicName"
+                            ],
+                            "shownSettings": [
+                                "queueName"
+                            ]
+                        },
+                        {
+                            "value": "topicName",
+                            "display": "Service Bus Topic",
+                            "hiddenSettings": [
+                                "queueName"
+                            ],
+                            "shownSettings": [
+                                "topicName"
+                            ]
+                        }
+                    ],
+                    "label": "Service Bus message type",
+                    "help": "This is the type of Service Bus message. This lets you choose between using Queues or Topics."
                 }
             ]
         },
