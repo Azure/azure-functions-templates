@@ -290,6 +290,7 @@
             ],
             "rules": [
                 {
+                    "Name" : "mode",
                     "type": "exclusivity",
                     "values": [
                         {
@@ -372,6 +373,7 @@
             ],
             "rules": [
                 {
+                    "name": "messageType",
                     "type": "exclusivity",
                     "values": [
                         {
@@ -395,7 +397,7 @@
                             ]
                         }
                     ],
-                    "label": "Service Bus message type",
+                    "label": "Message type",
                     "help": "This is the type of Service Bus message. This lets you choose between using Queues or Topics."
                 }
             ]
@@ -469,7 +471,7 @@
                             ]
                         }
                     ],
-                    "label": "Service Bus message type",
+                    "label": "Message type",
                     "help": "This is the type of Service Bus message. This lets you choose between using Queues or Topics."
                 }
             ]
