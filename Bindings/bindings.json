@@ -270,7 +270,6 @@
                 {
                     "name": "authLevel",
                     "value": "enum",
-                    "required": false,
                     "enum": [
                         {
                             "value": "function",
@@ -315,7 +314,7 @@
                         }
                     ],
                     "label": "Mode",
-                    "help": "Mode of trigger. Standard mode means its a normal http trigger, WebHook mode means it is a http trigger of webhook type."
+                    "help": "This is the mode of the trigger. \"Standard\" means that the request will be standard HTTP with no additional semantics. \"Webhook\" means that the request will be processed according to a specified webhook type."
                 }
             ]
         },
@@ -355,7 +354,7 @@
                     "required": true,
                     "label": "Topic name",
                     "help": "This is the name of the topic from which the message will be read.",
-                     "validators": [
+                    "validators": [
                         {
                             "expression": "^[0-9a-zA-Z][a-zA-Z0-9_.-]{2,48}[0-9a-zA-Z]$",
                             "errorText": "Invalid topic name."
@@ -444,8 +443,7 @@
                     "label": "Service Bus connection",
                     "help": "This is the connection string for your Service Bus account. Make sure that it has Send rights."
                 }
-            ]
-            ,
+            ],
             "rules": [
                 {
                     "type": "exclusivity",
