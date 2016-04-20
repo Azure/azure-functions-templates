@@ -263,7 +263,7 @@
                     "required": true,
                     "label": "SaaS File connection",
                     "help": "The connection string to your SaaS File connection",
-                    "metadata":{
+                    "metadata": {
                         "capability": "blob"
                     }
                 }
@@ -292,7 +292,7 @@
                     "required": true,
                     "label": "SaaS File connection",
                     "help": "The connection string to your SaaS File connection",
-                    "metadata":{
+                    "metadata": {
                         "capability": "blob"
                     }
                 }
@@ -321,9 +321,9 @@
                     "required": true,
                     "label": "SaaS File connection",
                     "help": "The connection string to your SaaS File connection",
-                    "metadata":{
+                    "metadata": {
                         "capability": "blob",
-                        "excluded":[
+                        "excluded": [
                             "googledrive"
                         ]
                     }
@@ -380,7 +380,7 @@
             ],
             "rules": [
                 {
-                    "Name" : "mode",
+                    "name": "mode",
                     "type": "exclusivity",
                     "values": [
                         {
@@ -538,6 +538,7 @@
             ],
             "rules": [
                 {
+                    "name": "messageType",
                     "type": "exclusivity",
                     "values": [
                         {
