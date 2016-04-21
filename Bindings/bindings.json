@@ -40,7 +40,7 @@
                     "validators": [
                         {
                             "expression": "^[A-Za-z0-9]$|^[A-Za-z0-9][\\w-\\.\\/]*[A-Za-z0-9]$",
-                            "errorText": "Invalid event hub name"
+                            "errorText": "Your event hub name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the hyphen, and the underscore."
                         }
                     ]
                 },
@@ -71,7 +71,7 @@
                     "validators": [
                         {
                             "expression": "^[A-Za-z0-9]$|^[A-Za-z0-9][\\w-\\.\\/]*[A-Za-z0-9]$",
-                            "errorText": "Invalid event hub name"
+                            "errorText": "Your event hub name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the hyphen, and the underscore."
                         }
                     ]
                 },
@@ -102,7 +102,7 @@
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
-                            "errorText": "Invalid queue name"
+                            "errorText": "Your queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, and the hyphen. The name must be 3 to 63 characters."
                         }
                     ]
                 },
@@ -133,7 +133,7 @@
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
-                            "errorText": "Invalid queue name"
+                            "errorText": "Your queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, and the hyphen. The name must be 3 to 63 characters."
                         }
                     ]
                 },
@@ -164,7 +164,7 @@
                     "validators": [
                         {
                             "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){1,1023}$",
-                            "errorText": "Invalid blob path"
+                            "errorText": "Your blob path must be a container name of 3 to 63 characters, followed by a blob name of 1 to 1,024 characters. The blob name can be any combination of characters and can contain a maximum of 254 path segments, which are separated by the forward slash (/)."
                         }
                     ]
                 },
@@ -195,7 +195,7 @@
                     "validators": [
                         {
                             "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){1,1023}$",
-                            "errorText": "Invalid blob path"
+                            "errorText": "Your blob path must be a container name of 3 to 63 characters, followed by a blob name of 1 to 1,024 characters. The blob name can be any combination of characters and can contain a maximum of 254 path segments, which are separated by the forward slash (/)."
                         }
                     ]
                 },
@@ -226,7 +226,7 @@
                     "validators": [
                         {
                             "expression": "(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9]$)|(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){1,1023}$)",
-                            "errorText": "Invalid blob path"
+                            "errorText": "Your blob path must be a container name of 3 to 63 characters, followed by a blob name of 1 to 1,024 characters. The blob name can be any combination of characters and can contain a maximum of 254 path segments, which are separated by the forward slash (/)."
                         }
                     ]
                 },
@@ -323,7 +323,7 @@
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
-                            "errorText": "Invalid queue name"
+                            "errorText": "Your queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, and the hyphen. The name must be 3 to 63 characters."
                         }
                     ]
                 },
@@ -362,7 +362,7 @@
                     "validators": [
                         {
                             "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$",
-                            "errorText": "Invalid table name"
+                            "errorText": "Your table name must be a unique alphanumeric string of 3 to 63 characters. It can’t start with a number."
                         }
                     ]
                 },
@@ -409,7 +409,7 @@
                     "validators": [
                         {
                             "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$",
-                            "errorText": "Invalid table name"
+                            "errorText": "Your table name must be a unique alphanumeric string of 3 to 63 characters. It can’t start with a number."
                         }
                     ]
                 },
