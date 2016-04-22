@@ -33,13 +33,13 @@
                 {
                     "name": "path",
                     "value": "string",
-                    "defaultValue": "myEventHub",
+                    "defaultValue": "myeventhub",
                     "required": true,
                     "label": "Event Hub name",
                     "help": "This is the name of the Event Hub you would like to trigger off of.",
                     "validators": [
                         {
-                            "expression": "^[A-Za-z0-9]$|^[A-Za-z0-9][\\w-\\.\\/]*[A-Za-z0-9]$",
+                            "expression": "^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$",
                             "errorText": "Invalid event hub name"
                         }
                     ]
@@ -64,13 +64,13 @@
                 {
                     "name": "path",
                     "value": "string",
-                    "defaultValue": "outEventHub",
+                    "defaultValue": "outeventhub",
                     "required": true,
                     "label": "Event Hub name",
                     "help": "This is the name of the Event Hub to which the event will be sent.",
                     "validators": [
                         {
-                            "expression": "^[A-Za-z0-9]$|^[A-Za-z0-9][\\w-\\.\\/]*[A-Za-z0-9]$",
+                            "expression": "^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$",
                             "errorText": "Invalid event hub name"
                         }
                     ]
@@ -101,7 +101,7 @@
                     "help": "This is the queue to which the message will be sent. If the queue doesn't exist yet, one will be created for you in the specifed storage account.",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
+                            "expression": "^[0-9a-z][a-z0-9-]{1,61}[0-9a-z]$",
                             "errorText": "Invalid queue name."
                         }
                     ]
@@ -132,7 +132,7 @@
                     "help": "This is the name of the queue from which the message will be read.",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
+                            "expression": "^[0-9a-z][a-z0-9-]{1,61}[0-9a-z]$",
                             "errorText": "Invalid queue name."
                         }
                     ]
@@ -163,7 +163,7 @@
                     "help": "This is the path within your storage account to which the blob will be written.",
                     "validators": [
                         {
-                            "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){1,1023}$",
+                            "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){0,1023}[^\\/]$",
                             "errorText": "Invalid blob path"
                         }
                     ]
@@ -194,7 +194,7 @@
                     "help": "This is the path within your storage account from which the blob will be read.",
                     "validators": [
                         {
-                            "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){1,1023}$",
+                            "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){0,1023}[^\\/]$",
                             "errorText": "Invalid blob path"
                         }
                     ]
@@ -225,7 +225,7 @@
                     "help": "This is the path within your storage account that the trigger will monitor.",
                     "validators": [
                         {
-                            "expression": "(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9]$)|(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){1,1023}$)",
+                            "expression": "(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9]$)|(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){0,1023}[^\\/]$)",
                             "errorText": "Invalid blob path"
                         }
                     ]
@@ -435,7 +435,7 @@
                     "help": "This is the name of the queue from which the message will be read.",
                     "validators": [
                         {
-                            "expression": "^[0-9a-zA-Z][a-zA-Z0-9_.-]{2,48}[0-9a-zA-Z]$",
+                            "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
                             "errorText": "Invalid queue name."
                         }
                     ]
@@ -449,7 +449,7 @@
                     "help": "This is the name of the topic from which the message will be read.",
                     "validators": [
                         {
-                            "expression": "^[0-9a-zA-Z][a-zA-Z0-9_.-]{2,48}[0-9a-zA-Z]$",
+                            "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
                             "errorText": "Invalid topic name."
                         }
                     ]
@@ -510,7 +510,7 @@
                     "help": "This is the queue to which the message will be sent.",
                     "validators": [
                         {
-                            "expression": "^[0-9a-zA-Z][a-zA-Z0-9_.-]{2,48}[0-9a-zA-Z]$",
+                            "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
                             "errorText": "Invalid queue name."
                         }
                     ]
@@ -524,7 +524,7 @@
                     "help": "This is the topic to which the message will be sent.",
                     "validators": [
                         {
-                            "expression": "^[0-9a-zA-Z][a-zA-Z0-9_.-]{2,48}[0-9a-zA-Z]$",
+                            "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
                             "errorText": "Invalid topic name."
                         }
                     ]
