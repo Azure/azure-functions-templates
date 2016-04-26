@@ -455,6 +455,20 @@
                     ]
                 },
                 {
+                    "name": "subscriptionName",
+                    "value": "string",
+                    "defaultValue": "mysubscription",
+                    "required": true,
+                    "label": "Subscription name",
+                    "help": "This is the name of the subscription within the topic to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[0-9a-zA-Z][a-zA-Z0-9_.-]{1,48}[0-9a-zA-Z]$",
+                            "errorText": "Invalid subscription name."
+                        }
+                    ]
+                },
+                {
                     "name": "connection",
                     "value": "string",
                     "resource": "EventHub",
@@ -472,7 +486,8 @@
                             "value": "queueName",
                             "display": "Service Bus Queue",
                             "hiddenSettings": [
-                                "topicName"
+                                "topicName",
+                                "subscriptionName"
                             ],
                             "shownSettings": [
                                 "queueName"
@@ -485,7 +500,8 @@
                                 "queueName"
                             ],
                             "shownSettings": [
-                                "topicName"
+                                "topicName",
+                                "subscriptionName"
                             ]
                         }
                     ],
