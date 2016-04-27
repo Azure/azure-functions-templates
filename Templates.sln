@@ -186,6 +186,36 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ManualTrigger-CSharp", "Man
 		Templates\ManualTrigger-CSharp\sample.dat = Templates\ManualTrigger-CSharp\sample.dat
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventHubTrigger-CSharp", "EventHubTrigger-CSharp", "{55F4F1C7-98F3-4CFB-B93A-664AC7EA49A6}"
+	ProjectSection(SolutionItems) = preProject
+		Templates\EventHubTrigger-CSharp\function.json = Templates\EventHubTrigger-CSharp\function.json
+		Templates\EventHubTrigger-CSharp\metadata.json = Templates\EventHubTrigger-CSharp\metadata.json
+		Templates\EventHubTrigger-CSharp\run.csx = Templates\EventHubTrigger-CSharp\run.csx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHubWebHook-CSharp", "GitHubWebHook-CSharp", "{004CF32B-6A02-43C0-95ED-3FD80C76C0E3}"
+	ProjectSection(SolutionItems) = preProject
+		Templates\GitHubWebHook-CSharp\function.json = Templates\GitHubWebHook-CSharp\function.json
+		Templates\GitHubWebHook-CSharp\metadata.json = Templates\GitHubWebHook-CSharp\metadata.json
+		Templates\GitHubWebHook-CSharp\run.csx = Templates\GitHubWebHook-CSharp\run.csx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImageResizer-CSharp", "ImageResizer-CSharp", "{8FFBC736-9CDA-4521-877E-B947328FEC88}"
+	ProjectSection(SolutionItems) = preProject
+		Templates\ImageResizer-CSharp\function.json = Templates\ImageResizer-CSharp\function.json
+		Templates\ImageResizer-CSharp\metadata.json = Templates\ImageResizer-CSharp\metadata.json
+		Templates\ImageResizer-CSharp\project.json = Templates\ImageResizer-CSharp\project.json
+		Templates\ImageResizer-CSharp\readme.md = Templates\ImageResizer-CSharp\readme.md
+		Templates\ImageResizer-CSharp\run.csx = Templates\ImageResizer-CSharp\run.csx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceBusQueueTrigger-CSharp", "ServiceBusQueueTrigger-CSharp", "{253F661A-F7A8-45F4-B864-FDDE01F108C9}"
+	ProjectSection(SolutionItems) = preProject
+		Templates\ServiceBusQueueTrigger-CSharp\function.json = Templates\ServiceBusQueueTrigger-CSharp\function.json
+		Templates\ServiceBusQueueTrigger-CSharp\metadata.json = Templates\ServiceBusQueueTrigger-CSharp\metadata.json
+		Templates\ServiceBusQueueTrigger-CSharp\run.csx = Templates\ServiceBusQueueTrigger-CSharp\run.csx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -216,5 +246,9 @@ Global
 		{95C007B6-2736-4134-B82F-EDDBED147E7B} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 		{BDDB61DB-7F96-4EBF-A324-95C6D61E3E26} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 		{51DA573A-2865-44A7-9B80-521955086B11} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
+		{55F4F1C7-98F3-4CFB-B93A-664AC7EA49A6} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
+		{004CF32B-6A02-43C0-95ED-3FD80C76C0E3} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
+		{8FFBC736-9CDA-4521-877E-B947328FEC88} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
+		{253F661A-F7A8-45F4-B864-FDDE01F108C9} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 	EndGlobalSection
 EndGlobal
