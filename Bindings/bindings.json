@@ -928,21 +928,29 @@
                     "value": "string",
                     "required": false,
                     "label": "Partition key (optional)",
-                    "help": "This is the value of Partition key column of the table. The records with matching Partition key will be returned."
+                    "help": "This is the value of Partition key column of the table. The records with matching Partition key and Row key will be returned. Row key setting must be configured with Partiton key setting."
+                },
+                {
+                    "name": "rowKey",
+                    "value": "string",
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "Row key (optional)",
+                    "help": "This is the value of Row key column of the table. The record with matching Row key and Partition key will be returned. Partiton key setting must be configured with Row key setting"
                 },
                 {
                     "name": "take",
                     "value": "int",
                     "required": false,
                     "label": "Maximum number of records to read (optional)",
-                    "help": "This is an integer for the number of records. You may receive fewer records than this value based on the contents of the table and the applied filter."
+                    "help": "This is an integer for the number of records. You may receive fewer records than this value based on the contents of the table and the applied filter.This setting is not applicable to a C# function."
                 },
                 {
                     "name": "filter",
                     "value": "string",
                     "required": false,
                     "label": "Query filter (optional)",
-                    "help": "This is an optional query expression used to filter the results of the table query."
+                    "help": "This is an optional query expression used to filter the results of the table query.This setting is not applicable to a C# function."
                 },
                 {
                     "name": "connection",
