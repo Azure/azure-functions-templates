@@ -10,9 +10,21 @@
             "type": "timerTrigger",
             "displayName": "Timer",
             "direction": "trigger",
-            "defaultParameterName": "myTimer",
-            "parameterNamePrompt": "Timestamp parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "myTimer",
+                    "required": true,
+                    "label": "Timestamp parameter name",
+                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "schedule",
                     "value": "string",
@@ -27,9 +39,21 @@
             "type": "eventHubTrigger",
             "displayName": "Azure Event Hub",
             "direction": "trigger",
-            "defaultParameterName": "myEventHubMessage",
-            "parameterNamePrompt": "Event parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "myEventHubMessage",
+                    "required": true,
+                    "label": "Event parameter name",
+                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "path",
                     "value": "string",
@@ -58,9 +82,21 @@
             "type": "eventHub",
             "displayName": "Azure Event Hub",
             "direction": "out",
-            "defaultParameterName": "outputEventHubMessage",
-            "parameterNamePrompt": "Event parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "outputEventHubMessage",
+                    "required": true,
+                    "label": "Event parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "path",
                     "value": "string",
@@ -89,9 +125,21 @@
             "type": "queue",
             "displayName": "Azure Storage Queue",
             "direction": "out",
-            "defaultParameterName": "outputQueueItem",
-            "parameterNamePrompt": "Message parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "outputQueueItem",
+                    "required": true,
+                    "label": "Message parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "queueName",
                     "value": "string",
@@ -120,9 +168,21 @@
             "type": "queueTrigger",
             "displayName": "Azure Storage Queue",
             "direction": "trigger",
-            "defaultParameterName": "myQueueItem",
-            "parameterNamePrompt": "Message parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "myQueueItem",
+                    "required": true,
+                    "label": "Message parameter name",
+                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "queueName",
                     "value": "string",
@@ -151,9 +211,21 @@
             "type": "blob",
             "displayName": "Azure Storage Blob",
             "direction": "out",
-            "defaultParameterName": "outputBlob",
-            "parameterNamePrompt": "Blob parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "outputBlob",
+                    "required": true,
+                    "label": "Blob parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "path",
                     "value": "string",
@@ -182,9 +254,21 @@
             "type": "blob",
             "displayName": "Azure Storage Blob",
             "direction": "in",
-            "defaultParameterName": "inputBlob",
-            "parameterNamePrompt": "Blob parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "inputBlob",
+                    "required": true,
+                    "label": "Blob parameter name",
+                    "help": "This is the name of the parameter in the code for input binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "path",
                     "value": "string",
@@ -213,9 +297,21 @@
             "type": "blobTrigger",
             "displayName": "Azure Storage Blob",
             "direction": "trigger",
-            "defaultParameterName": "myBlob",
-            "parameterNamePrompt": "Blob parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "myBlob",
+                    "required": true,
+                    "label": "Blob parameter name",
+                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "path",
                     "value": "string",
@@ -244,9 +340,21 @@
             "type": "apiHubFile",
             "displayName": "SaaS File",
             "direction": "in",
-            "defaultParameterName": "input",
-            "parameterNamePrompt": "The input file parameter name to reference in code",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "input",
+                    "required": true,
+                    "label": "File parameter name",
+                    "help": "This is the name of the parameter in the code for input binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "path",
                     "value": "string",
@@ -273,9 +381,21 @@
             "type": "apiHubFile",
             "displayName": "SaaS File",
             "direction": "out",
-            "defaultParameterName": "output",
-            "parameterNamePrompt": "The output file parameter name to reference in code",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "output",
+                    "required": true,
+                    "label": "File parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "path",
                     "value": "string",
@@ -302,9 +422,21 @@
             "type": "apiHubFileTrigger",
             "displayName": "SaaS File Trigger",
             "direction": "trigger",
-            "defaultParameterName": "trigger",
-            "parameterNamePrompt": "The trigger file parameter name to reference in code",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "trigger",
+                    "required": true,
+                    "label": "File parameter name",
+                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "path",
                     "value": "string",
@@ -336,9 +468,21 @@
             "type": "httpTrigger",
             "displayName": "HTTP",
             "direction": "trigger",
-            "defaultParameterName": "req",
-            "parameterNamePrompt": "Request parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "req",
+                    "required": true,
+                    "label": "Request parameter name",
+                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "webHookType",
                     "value": "enum",
@@ -415,17 +559,42 @@
             "type": "http",
             "displayName": "HTTP",
             "direction": "out",
-            "defaultParameterName": "res",
-            "parameterNamePrompt": "Response parameter name",
-            "settings": []
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "res",
+                    "required": true,
+                    "label": "Response parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "type": "serviceBusTrigger",
             "displayName": "Azure Service Bus",
             "direction": "trigger",
-            "defaultParameterName": "mySbMsg",
-            "parameterNamePrompt": "Message parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "mySbMsg",
+                    "required": true,
+                    "label": "Message parameter name",
+                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "queueName",
                     "value": "string",
@@ -478,7 +647,7 @@
                 },
                 {
                     "name": "accessRights",
-                    "value": "enum",                    
+                    "value": "enum",
                     "enum": [
                         {
                             "value": "Manage",
@@ -530,9 +699,21 @@
             "type": "serviceBus",
             "displayName": "Azure Service Bus",
             "direction": "out",
-            "defaultParameterName": "outputSbMsg",
-            "parameterNamePrompt": "Message parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "outputSbMsg",
+                    "required": true,
+                    "label": "Message parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "queueName",
                     "value": "string",
@@ -570,7 +751,7 @@
                     "help": "This is the connection string for your Service Bus account. Make sure that it has Send rights."
                 },
                 {
-                    "name": "accessRights",                                        
+                    "name": "accessRights",
                     "value": "enum",
                     "enum": [
                         {
@@ -621,17 +802,42 @@
             "type": "manualTrigger",
             "displayName": "Manual",
             "direction": "trigger",
-            "defaultParameterName": "input",
-            "parameterNamePrompt": "Parameter name",
-            "settings": []
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "input",
+                    "required": true,
+                    "label": "Parameter name",
+                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "type": "table",
             "displayName": "Azure Storage Table",
             "direction": "out",
-            "defaultParameterName": "outputTable",
-            "parameterNamePrompt": "Table parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "outputTable",
+                    "required": true,
+                    "label": "Table parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "tableName",
                     "value": "string",
@@ -676,9 +882,21 @@
             "type": "table",
             "displayName": "Azure Storage Table",
             "direction": "in",
-            "defaultParameterName": "inputTable",
-            "parameterNamePrompt": "Table parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "inputTable",
+                    "required": true,
+                    "label": "Table parameter name",
+                    "help": "This is the name of the parameter in the code for input binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "tableName",
                     "value": "string",
@@ -728,9 +946,21 @@
             "type": "documentdb",
             "displayName": "Azure DocumentDB Document",
             "direction": "out",
-            "defaultParameterName": "outputDocument",
-            "parameterNamePrompt": "Document parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "outputDocument",
+                    "required": true,
+                    "label": "Document parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "databaseName",
                     "value": "string",
@@ -769,9 +999,21 @@
             "type": "documentdb",
             "displayName": "Azure DocumentDB Document",
             "direction": "in",
-            "defaultParameterName": "inputDocument",
-            "parameterNamePrompt": "Document parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "inputDocument",
+                    "required": true,
+                    "label": "Document parameter name",
+                    "help": "This is the name of the parameter in the code for input binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "databaseName",
                     "value": "string",
@@ -810,9 +1052,21 @@
             "type": "easyTable",
             "displayName": "Azure Mobile Easy Table Record",
             "direction": "out",
-            "defaultParameterName": "outputRecord",
-            "parameterNamePrompt": "Record parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "outputRecord",
+                    "required": true,
+                    "label": "Record parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "tableName",
                     "value": "string",
@@ -842,9 +1096,21 @@
             "type": "easyTable",
             "displayName": "Azure Mobile Easy Table Record",
             "direction": "in",
-            "defaultParameterName": "inputRecord",
-            "parameterNamePrompt": "Record parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "inputRecord",
+                    "required": true,
+                    "label": "Record parameter name",
+                    "help": "This is the name of the parameter in the code for input binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "tableName",
                     "value": "string",
@@ -881,10 +1147,22 @@
         {
             "type": "notificationHub",
             "displayName": "Azure Notification Hub",
-            "defaultParameterName": "notification",
-            "parameterNamePrompt": "Notification parameter name",
             "direction": "out",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "notification",
+                    "required": true,
+                    "label": "Notification parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "hubName",
                     "value": "string",
