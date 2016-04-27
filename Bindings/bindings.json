@@ -311,7 +311,7 @@
                     "defaultValue": "path/{file}",
                     "required": true,
                     "label": "Path",
-                    "help": "The path to trigger on.  ",
+                    "help": "The path to trigger on.",
                     "validators": []
                 },
                 {
@@ -323,7 +323,7 @@
                     "help": "The connection string to your SaaS File connection",
                     "metadata": {
                         "capability": "blob",
-                        "excluded":[
+                        "excluded": [
                             "googledrive",
                             "ftp",
                             "sftp"
@@ -475,6 +475,22 @@
                     "required": true,
                     "label": "Service Bus connection",
                     "help": "This is the connection string for your Service Bus account. Make sure that it has Listen rights."
+                },
+                {
+                    "name": "accessRights",
+                    "value": "enum",                    
+                    "enum": [
+                        {
+                            "value": "Manage",
+                            "display": "Manage"
+                        },
+                        {
+                            "value": "Listen",
+                            "display": "Listen"
+                        }
+                    ],
+                    "label": "AccessRights",
+                    "help": "This is the access rights the client has to the queue or topic subscription."
                 }
             ],
             "rules": [
@@ -552,6 +568,22 @@
                     "required": true,
                     "label": "Service Bus connection",
                     "help": "This is the connection string for your Service Bus account. Make sure that it has Send rights."
+                },
+                {
+                    "name": "accessRights",                                        
+                    "value": "enum",
+                    "enum": [
+                        {
+                            "value": "Manage",
+                            "display": "Manage"
+                        },
+                        {
+                            "value": "Send",
+                            "display": "Send"
+                        }
+                    ],
+                    "label": "AccessRights",
+                    "help": "This is the access rights the client has to the queue or topic subscription."
                 }
             ],
             "rules": [
