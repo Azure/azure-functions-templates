@@ -61,7 +61,7 @@
                     "defaultValue": "myeventhub",
                     "required": true,
                     "label": "Event Hub name",
-                    "help": "This is the name of the Event Hub you would like to trigger off of.",
+                    "help": "This is the name of the event hub you would like to trigger off of.",
                     "validators": [
                         {
                             "expression": "^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$",
@@ -75,7 +75,7 @@
                     "resource": "EventHub",
                     "required": true,
                     "label": "Event Hub connection",
-                    "help": "This is the connection string for your Event Hub. Make sure that it has Receive permissions.",
+                    "help": "This is the connection string for your event hub. Make sure that it has Receive permissions.",
                     "placeholder": "[variables('selectConnection')]"
                 }
             ]
@@ -105,7 +105,7 @@
                     "defaultValue": "outeventhub",
                     "required": true,
                     "label": "Event Hub name",
-                    "help": "This is the name of the Event Hub to which the event will be sent.",
+                    "help": "This is the name of the event hub to which the event will be sent.",
                     "validators": [
                         {
                             "expression": "^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$",
@@ -119,7 +119,7 @@
                     "resource": "EventHub",
                     "required": true,
                     "label": "Event Hub connection",
-                    "help": "This is the connection string for your Event Hub. Make sure that it has Send permissions.",
+                    "help": "This is the connection string for your event hub. Make sure that it has Send permissions.",
                     "placeholder": "[variables('selectConnection')]"
                 }
             ]
@@ -651,7 +651,7 @@
                     "resource": "EventHub",
                     "required": true,
                     "label": "Service Bus connection",
-                    "help": "This is the connection string for your Service Bus account. Make sure that it has Listen rights.",
+                    "help": "This is the connection string for your service bus. Make sure that it has Listen rights.",
                     "placeholder": "[variables('selectConnectoin')]"
 
                 },
@@ -701,7 +701,7 @@
                         }
                     ],
                     "label": "Message type",
-                    "help": "This is the type of Service Bus message. This lets you choose between using Queues or Topics."
+                    "help": "This is the type of service bus message. This lets you choose between using Queues or Topics."
                 }
             ]
         },
@@ -758,7 +758,7 @@
                     "resource": "EventHub",
                     "required": true,
                     "label": "Service Bus connection",
-                    "help": "This is the connection string for your Service Bus account. Make sure that it has Send rights.",
+                    "help": "This is the connection string for your service bus. Make sure that it has Send rights.",
                     "placeholder": "[variables('selectConnectoin')]"
                 },
                 {
@@ -805,7 +805,7 @@
                         }
                     ],
                     "label": "Message type",
-                    "help": "This is the type of Service Bus message. This lets you choose between using Queues or Topics."
+                    "help": "This is the type of service bus message. This lets you choose between using Queues or Topics."
                 }
             ]
         },
@@ -1004,7 +1004,7 @@
                     "resource": "DocumentDB",
                     "required": true,
                     "label": "DocumentDB account connection",
-                    "help": "This is the connection string for your DocumentDb account.",
+                    "help": "This is the connection string for your DocumentDB account.",
                     "placeholder": "[variables('selectConnection')]"
                 }
             ]
@@ -1183,7 +1183,7 @@
                     "value": "string",
                     "defaultValue": "myNotificationHub",
                     "required": true,
-                    "label": "Notification hub name",
+                    "label": "Notification Hub name",
                     "help": "This is the name of the Notification Hub to be used for sending push notifications."
                 },
                 {
@@ -1191,7 +1191,7 @@
                     "value": "string",
                     "resource": "ServiceBus",
                     "required": true,
-                    "label": "Notification hub namespace connection",
+                    "label": "Notification Hubs namespace connection",
                     "help": "This is the connection string for your notification hub namespace.",
                     "placeholder": "[variables('selectConnection')]"
                 },
@@ -1200,7 +1200,7 @@
                     "value": "string",
                     "required": false,
                     "label": "Tag expression (optional)",
-                    "help": "Tag expressions enable you to target specific sets of devices/registrations, when sending a push notification through Notification Hubs. Leave this blank to broadcast to all registered devices <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=785094'>More information</a>."
+                    "help": "Tag expressions enable you to target specific sets of devices/registrations, when sending a push notification through notification hubs. Leave this blank to broadcast to all registered devices <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=785094'>More information</a>."
                 }
             ]
         }
