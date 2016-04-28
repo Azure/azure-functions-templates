@@ -5,19 +5,22 @@
             "path": "sample-images/{name}",
             "type": "blobTrigger",
             "name": "image",
-            "direction": "in"
+            "direction": "in",
+            "connection": ""
         },
         {
             "path": "sample-images-sm/{name}",
             "type": "blob",
             "name": "imageSmall",
-            "direction": "out"
+            "direction": "out",
+            "connection": ""
         },
         {
             "path": "sample-images-md/{name}",
             "type": "blob",
             "name": "imageMedium",
-            "direction": "out"
+            "direction": "out",
+            "connection": ""
         }
     ]
 }
