@@ -4,7 +4,7 @@
     "variables": {
         "storageConnStringLabel": "Storage account connection",
         "appSettingsHelp": "This is the connection string for your storage account.",
-        "selectConnection":  "Click select to choose a connection"
+        "selectConnection": "Click select to choose a connection"
     },
     "bindings": [
         {
@@ -383,6 +383,9 @@
                         "capability": "blob"
                     }
                 }
+            ],
+            "filters": [
+                "showHiddenBinding"                
             ]
         },
         {
@@ -424,6 +427,9 @@
                         "capability": "blob"
                     }
                 }
+            ],
+            "filters": [
+                "showHiddenBinding"                
             ]
         },
         {
@@ -470,6 +476,9 @@
                         ]
                     }
                 }
+            ],
+            "filters": [
+                "showHiddenBinding"                
             ]
         },
         {
@@ -653,7 +662,6 @@
                     "label": "Service Bus connection",
                     "help": "This is the connection string for your service bus. Make sure that it has Listen rights.",
                     "placeholder": "[variables('selectConnectoin')]"
-
                 },
                 {
                     "name": "accessRights",
