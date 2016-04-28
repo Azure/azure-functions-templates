@@ -1064,8 +1064,8 @@
             ]
         },
         {
-            "type": "easyTable",
-            "displayName": "Azure Mobile Easy Table Record",
+            "type": "mobileTable",
+            "displayName": "Azure Mobile Table Record",
             "direction": "out",
             "settings": [
                 {
@@ -1085,7 +1085,7 @@
                 {
                     "name": "tableName",
                     "value": "string",
-                    "defaultValue": "outEasyTable",
+                    "defaultValue": "outTable",
                     "required": true,
                     "label": "Table name",
                     "help": "This is the name of the table within your Mobile App to which data will be written."
@@ -1108,8 +1108,8 @@
             ]
         },
         {
-            "type": "easyTable",
-            "displayName": "Azure Mobile Easy Table Record",
+            "type": "mobileTable",
+            "displayName": "Azure Mobile Table Record",
             "direction": "in",
             "settings": [
                 {
@@ -1129,7 +1129,7 @@
                 {
                     "name": "tableName",
                     "value": "string",
-                    "defaultValue": "inEasyTable",
+                    "defaultValue": "inTable",
                     "required": true,
                     "label": "Table name",
                     "help": "This is the name of the table within your Mobile App from which data will be read."
