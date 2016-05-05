@@ -178,6 +178,78 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceBusQueueTrigger-Node
 		Templates\ServiceBusQueueTrigger-NodeJS\metadata.json = Templates\ServiceBusQueueTrigger-NodeJS\metadata.json
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ManualTrigger-CSharp", "ManualTrigger-CSharp", "{51DA573A-2865-44A7-9B80-521955086B11}"
+	ProjectSection(SolutionItems) = preProject
+		Templates\ManualTrigger-CSharp\function.json = Templates\ManualTrigger-CSharp\function.json
+		Templates\ManualTrigger-CSharp\metadata.json = Templates\ManualTrigger-CSharp\metadata.json
+		Templates\ManualTrigger-CSharp\run.csx = Templates\ManualTrigger-CSharp\run.csx
+		Templates\ManualTrigger-CSharp\sample.dat = Templates\ManualTrigger-CSharp\sample.dat
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventHubTrigger-CSharp", "EventHubTrigger-CSharp", "{55F4F1C7-98F3-4CFB-B93A-664AC7EA49A6}"
+	ProjectSection(SolutionItems) = preProject
+		Templates\EventHubTrigger-CSharp\function.json = Templates\EventHubTrigger-CSharp\function.json
+		Templates\EventHubTrigger-CSharp\metadata.json = Templates\EventHubTrigger-CSharp\metadata.json
+		Templates\EventHubTrigger-CSharp\run.csx = Templates\EventHubTrigger-CSharp\run.csx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHubWebHook-CSharp", "GitHubWebHook-CSharp", "{004CF32B-6A02-43C0-95ED-3FD80C76C0E3}"
+	ProjectSection(SolutionItems) = preProject
+		Templates\GitHubWebHook-CSharp\function.json = Templates\GitHubWebHook-CSharp\function.json
+		Templates\GitHubWebHook-CSharp\metadata.json = Templates\GitHubWebHook-CSharp\metadata.json
+		Templates\GitHubWebHook-CSharp\run.csx = Templates\GitHubWebHook-CSharp\run.csx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImageResizer-CSharp", "ImageResizer-CSharp", "{8FFBC736-9CDA-4521-877E-B947328FEC88}"
+	ProjectSection(SolutionItems) = preProject
+		Templates\ImageResizer-CSharp\function.json = Templates\ImageResizer-CSharp\function.json
+		Templates\ImageResizer-CSharp\metadata.json = Templates\ImageResizer-CSharp\metadata.json
+		Templates\ImageResizer-CSharp\project.json = Templates\ImageResizer-CSharp\project.json
+		Templates\ImageResizer-CSharp\readme.md = Templates\ImageResizer-CSharp\readme.md
+		Templates\ImageResizer-CSharp\run.csx = Templates\ImageResizer-CSharp\run.csx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceBusQueueTrigger-CSharp", "ServiceBusQueueTrigger-CSharp", "{253F661A-F7A8-45F4-B864-FDDE01F108C9}"
+	ProjectSection(SolutionItems) = preProject
+		Templates\ServiceBusQueueTrigger-CSharp\function.json = Templates\ServiceBusQueueTrigger-CSharp\function.json
+		Templates\ServiceBusQueueTrigger-CSharp\metadata.json = Templates\ServiceBusQueueTrigger-CSharp\metadata.json
+		Templates\ServiceBusQueueTrigger-CSharp\run.csx = Templates\ServiceBusQueueTrigger-CSharp\run.csx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceBusTopicTrigger-CSharp", "ServiceBusTopicTrigger-CSharp", "{E7651C22-E118-4A60-A786-70502EEEB120}"
+	ProjectSection(SolutionItems) = preProject
+		Templates\ServiceBusQueueTrigger-CSharp\function.json = Templates\ServiceBusQueueTrigger-CSharp\function.json
+		Templates\ServiceBusQueueTrigger-CSharp\metadata.json = Templates\ServiceBusQueueTrigger-CSharp\metadata.json
+		Templates\ServiceBusQueueTrigger-CSharp\run.csx = Templates\ServiceBusQueueTrigger-CSharp\run.csx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceBusTopicTrigger-NodeJS", "ServiceBusTopicTrigger-NodeJS", "{C26B5B9B-A13E-4A4D-A19B-853048DC94F8}"
+	ProjectSection(SolutionItems) = preProject
+		Templates\ServiceBusTopicTrigger-NodeJS\function.json = Templates\ServiceBusTopicTrigger-NodeJS\function.json
+		Templates\ServiceBusTopicTrigger-NodeJS\index.js = Templates\ServiceBusTopicTrigger-NodeJS\index.js
+		Templates\ServiceBusTopicTrigger-NodeJS\metadata.json = Templates\ServiceBusTopicTrigger-NodeJS\metadata.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TimerTrigger-Powershell", "TimerTrigger-Powershell", "{6B9E2925-C92E-43C2-96FE-8A6E0C5C7E52}"
+	ProjectSection(SolutionItems) = preProject
+		Templates\TimerTrigger-Powershell\function.json = Templates\TimerTrigger-Powershell\function.json
+		Templates\TimerTrigger-Powershell\metadata.json = Templates\TimerTrigger-Powershell\metadata.json
+		Templates\TimerTrigger-Powershell\readme.md = Templates\TimerTrigger-Powershell\readme.md
+		Templates\TimerTrigger-Powershell\run.ps1 = Templates\TimerTrigger-Powershell\run.ps1
+		Templates\TimerTrigger-Powershell\sample.dat = Templates\TimerTrigger-Powershell\sample.dat
+		Templates\TimerTrigger-Powershell\TestOutput.json = Templates\TimerTrigger-Powershell\TestOutput.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HttpTrigger-Powershell", "HttpTrigger-Powershell", "{522EF9CF-CEA5-4B40-9944-B6F9C1F312CB}"
+	ProjectSection(SolutionItems) = preProject
+		Templates\HttpTrigger-Powershell\function.json = Templates\HttpTrigger-Powershell\function.json
+		Templates\HttpTrigger-Powershell\metadata.json = Templates\HttpTrigger-Powershell\metadata.json
+		Templates\HttpTrigger-Powershell\readme.md = Templates\HttpTrigger-Powershell\readme.md
+		Templates\HttpTrigger-Powershell\run.ps1 = Templates\HttpTrigger-Powershell\run.ps1
+		Templates\HttpTrigger-Powershell\sample.dat = Templates\HttpTrigger-Powershell\sample.dat
+		Templates\HttpTrigger-Powershell\TestOutput.json = Templates\HttpTrigger-Powershell\TestOutput.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -207,5 +279,14 @@ Global
 		{D83790D6-20A0-4A90-B350-D5A4D9860474} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 		{95C007B6-2736-4134-B82F-EDDBED147E7B} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 		{BDDB61DB-7F96-4EBF-A324-95C6D61E3E26} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
+		{51DA573A-2865-44A7-9B80-521955086B11} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
+		{55F4F1C7-98F3-4CFB-B93A-664AC7EA49A6} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
+		{004CF32B-6A02-43C0-95ED-3FD80C76C0E3} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
+		{8FFBC736-9CDA-4521-877E-B947328FEC88} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
+		{253F661A-F7A8-45F4-B864-FDDE01F108C9} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
+		{E7651C22-E118-4A60-A786-70502EEEB120} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
+		{C26B5B9B-A13E-4A4D-A19B-853048DC94F8} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
+		{6B9E2925-C92E-43C2-96FE-8A6E0C5C7E52} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
+		{522EF9CF-CEA5-4B40-9944-B6F9C1F312CB} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 	EndGlobalSection
 EndGlobal

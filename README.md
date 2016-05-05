@@ -71,9 +71,13 @@ To run the test script located [here](test/TemplateTest.ps1), Execute the follow
 - blobTrigger
 - timerTrigger
 
+## License
+
+This project is under the benevolent umbrella of the [.NET Foundation](http://www.dotnetfoundation.org/) and is licensed under [the MIT License](LICENSE.txt)
+
 ## Related Github Repositories
 - [Azure Functions Portal](https://github.com/projectkudu/AzureFunctionsPortal)
-- [Script SDK](https://github.com/Azure/azure-webjobs-sdk-script/)
+- [WebJobs Script SDK](https://github.com/Azure/azure-webjobs-sdk-script/)
 - [WebJobs SDK Extensions](https://github.com/Azure/azure-webjobs-sdk-extensions)
 
 ## Contribute Code or Provide Feedback

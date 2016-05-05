@@ -3,16 +3,29 @@
     "contentVersion": "2016-03-04-alpha",
     "variables": {
         "storageConnStringLabel": "Storage account connection",
-        "appSettingsHelp": "This is the connection string for your storage account."
+        "appSettingsHelp": "This is the connection string for your storage account.",
+        "selectConnection":  "Click select to choose a connection"
     },
     "bindings": [
         {
             "type": "timerTrigger",
             "displayName": "Timer",
             "direction": "trigger",
-            "defaultParameterName": "myTimer",
-            "parameterNamePrompt": "Timestamp parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "myTimer",
+                    "required": true,
+                    "label": "Timestamp parameter name",
+                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "schedule",
                     "value": "string",
@@ -27,19 +40,31 @@
             "type": "eventHubTrigger",
             "displayName": "Azure Event Hub",
             "direction": "trigger",
-            "defaultParameterName": "myEventHubMessage",
-            "parameterNamePrompt": "Event parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "myEventHubMessage",
+                    "required": true,
+                    "label": "Event parameter name",
+                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "path",
                     "value": "string",
-                    "defaultValue": "myEventHub",
+                    "defaultValue": "myeventhub",
                     "required": true,
                     "label": "Event Hub name",
-                    "help": "This is the name of the Event Hub you would like to trigger off of.",
+                    "help": "This is the name of the event hub you would like to trigger off of.",
                     "validators": [
                         {
-                            "expression": "^[A-Za-z0-9]$|^[A-Za-z0-9][\\w-\\.\\/]*[A-Za-z0-9]$",
+                            "expression": "^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$",
                             "errorText": "Invalid event hub name"
                         }
                     ]
@@ -50,7 +75,8 @@
                     "resource": "EventHub",
                     "required": true,
                     "label": "Event Hub connection",
-                    "help": "This is the connection string for your Event Hub. Make sure that it has Receive permissions."
+                    "help": "This is the connection string for your event hub. Make sure that it has Receive permissions.",
+                    "placeholder": "[variables('selectConnection')]"
                 }
             ]
         },
@@ -58,19 +84,31 @@
             "type": "eventHub",
             "displayName": "Azure Event Hub",
             "direction": "out",
-            "defaultParameterName": "outputEventHubMessage",
-            "parameterNamePrompt": "Event parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "outputEventHubMessage",
+                    "required": true,
+                    "label": "Event parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "path",
                     "value": "string",
-                    "defaultValue": "outEventHub",
+                    "defaultValue": "outeventhub",
                     "required": true,
                     "label": "Event Hub name",
-                    "help": "This is the name of the Event Hub to which the event will be sent.",
+                    "help": "This is the name of the event hub to which the event will be sent.",
                     "validators": [
                         {
-                            "expression": "^[A-Za-z0-9]$|^[A-Za-z0-9][\\w-\\.\\/]*[A-Za-z0-9]$",
+                            "expression": "^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$",
                             "errorText": "Invalid event hub name"
                         }
                     ]
@@ -81,7 +119,8 @@
                     "resource": "EventHub",
                     "required": true,
                     "label": "Event Hub connection",
-                    "help": "This is the connection string for your Event Hub. Make sure that it has Send permissions."
+                    "help": "This is the connection string for your event hub. Make sure that it has Send permissions.",
+                    "placeholder": "[variables('selectConnection')]"
                 }
             ]
         },
@@ -89,9 +128,21 @@
             "type": "queue",
             "displayName": "Azure Storage Queue",
             "direction": "out",
-            "defaultParameterName": "outputQueueItem",
-            "parameterNamePrompt": "Message parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "outputQueueItem",
+                    "required": true,
+                    "label": "Message parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "queueName",
                     "value": "string",
@@ -101,8 +152,8 @@
                     "help": "This is the queue to which the message will be sent. If the queue doesn't exist yet, one will be created for you in the specifed storage account.",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
-                            "errorText": "Invalid queue name"
+                            "expression": "^[0-9a-z][a-z0-9-]{1,61}[0-9a-z]$",
+                            "errorText": "Invalid queue name."
                         }
                     ]
                 },
@@ -112,7 +163,8 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('appSettingsHelp')]",
+                    "placeholder": "[variables('selectConnection')]"
                 }
             ]
         },
@@ -120,9 +172,21 @@
             "type": "queueTrigger",
             "displayName": "Azure Storage Queue",
             "direction": "trigger",
-            "defaultParameterName": "myQueueItem",
-            "parameterNamePrompt": "Message parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "myQueueItem",
+                    "required": true,
+                    "label": "Message parameter name",
+                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "queueName",
                     "value": "string",
@@ -132,8 +196,8 @@
                     "help": "This is the name of the queue from which the message will be read.",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
-                            "errorText": "Invalid queue name"
+                            "expression": "^[0-9a-z][a-z0-9-]{1,61}[0-9a-z]$",
+                            "errorText": "Invalid queue name."
                         }
                     ]
                 },
@@ -143,7 +207,8 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('appSettingsHelp')]",
+                    "placeholder": "[variables('selectConnection')]"
                 }
             ]
         },
@@ -151,9 +216,21 @@
             "type": "blob",
             "displayName": "Azure Storage Blob",
             "direction": "out",
-            "defaultParameterName": "outputBlob",
-            "parameterNamePrompt": "Blob parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "outputBlob",
+                    "required": true,
+                    "label": "Blob parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "path",
                     "value": "string",
@@ -163,7 +240,7 @@
                     "help": "This is the path within your storage account to which the blob will be written.",
                     "validators": [
                         {
-                            "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){1,1023}$",
+                            "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){0,1023}[^\\/]$",
                             "errorText": "Invalid blob path"
                         }
                     ]
@@ -174,7 +251,8 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('appSettingsHelp')]",
+                    "placeholder": "[variables('selectConnection')]"
                 }
             ]
         },
@@ -182,9 +260,21 @@
             "type": "blob",
             "displayName": "Azure Storage Blob",
             "direction": "in",
-            "defaultParameterName": "inputBlob",
-            "parameterNamePrompt": "Blob parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "inputBlob",
+                    "required": true,
+                    "label": "Blob parameter name",
+                    "help": "This is the name of the parameter in the code for input binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "path",
                     "value": "string",
@@ -194,7 +284,7 @@
                     "help": "This is the path within your storage account from which the blob will be read.",
                     "validators": [
                         {
-                            "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){1,1023}$",
+                            "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){0,1023}[^\\/]$",
                             "errorText": "Invalid blob path"
                         }
                     ]
@@ -205,7 +295,8 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('appSettingsHelp')]",
+                    "placeholder": "[variables('selectConnection')]"
                 }
             ]
         },
@@ -213,9 +304,21 @@
             "type": "blobTrigger",
             "displayName": "Azure Storage Blob",
             "direction": "trigger",
-            "defaultParameterName": "myBlob",
-            "parameterNamePrompt": "Blob parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "myBlob",
+                    "required": true,
+                    "label": "Blob parameter name",
+                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "path",
                     "value": "string",
@@ -225,7 +328,7 @@
                     "help": "This is the path within your storage account that the trigger will monitor.",
                     "validators": [
                         {
-                            "expression": "(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9]$)|(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){1,1023}$)",
+                            "expression": "(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9]$)|(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){0,1023}[^\\/]$)",
                             "errorText": "Invalid blob path"
                         }
                     ]
@@ -236,7 +339,136 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('appSettingsHelp')]",
+                    "placeholder": "[variables('selectConnection')]"
+                }
+            ]
+        },
+        {
+            "type": "apiHubFile",
+            "displayName": "SaaS File",
+            "direction": "in",
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "input",
+                    "required": true,
+                    "label": "File parameter name",
+                    "help": "This is the name of the parameter in the code for input binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
+                {
+                    "name": "path",
+                    "value": "string",
+                    "defaultValue": "path/{file}",
+                    "required": true,
+                    "label": "Path",
+                    "help": "The output file path",
+                    "validators": []
+                },
+                {
+                    "name": "connection",
+                    "value": "string",
+                    "resource": "ApiHub",
+                    "required": true,
+                    "label": "SaaS File connection",
+                    "help": "The connection string to your SaaS File connection",
+                    "metadata": {
+                        "capability": "blob"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "apiHubFile",
+            "displayName": "SaaS File",
+            "direction": "out",
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "output",
+                    "required": true,
+                    "label": "File parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
+                {
+                    "name": "path",
+                    "value": "string",
+                    "defaultValue": "path/{file}",
+                    "required": true,
+                    "label": "Path",
+                    "help": "The input file path",
+                    "validators": []
+                },
+                {
+                    "name": "connection",
+                    "value": "string",
+                    "resource": "ApiHub",
+                    "required": true,
+                    "label": "SaaS File connection",
+                    "help": "The connection string to your SaaS File connection",
+                    "metadata": {
+                        "capability": "blob"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "apiHubFileTrigger",
+            "displayName": "SaaS File Trigger",
+            "direction": "trigger",
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "trigger",
+                    "required": true,
+                    "label": "File parameter name",
+                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
+                {
+                    "name": "path",
+                    "value": "string",
+                    "defaultValue": "path/{file}",
+                    "required": true,
+                    "label": "Path",
+                    "help": "The path to trigger on.",
+                    "validators": []
+                },
+                {
+                    "name": "connection",
+                    "value": "string",
+                    "resource": "ApiHub",
+                    "required": true,
+                    "label": "SaaS File connection",
+                    "help": "The connection string to your SaaS File connection",
+                    "metadata": {
+                        "capability": "blob",
+                        "excluded": [
+                            "googledrive",
+                            "ftp",
+                            "sftp"
+                        ]
+                    }
                 }
             ]
         },
@@ -244,32 +476,86 @@
             "type": "httpTrigger",
             "displayName": "HTTP",
             "direction": "trigger",
-            "defaultParameterName": "req",
-            "parameterNamePrompt": "Request parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "req",
+                    "required": true,
+                    "label": "Request parameter name",
+                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "webHookType",
                     "value": "enum",
                     "enum": [
                         {
-                            "value": "",
-                            "display": "Not a WebHook"
-                        },
-                        {
                             "value": "github",
                             "display": "GitHub"
-                        },
-                        {
-                            "value": "slack",
-                            "display": "Slack"
                         },
                         {
                             "value": "genericJson",
                             "display": "Generic JSON"
                         }
                     ],
-                    "label": "WebHook type",
-                    "help": "WebHooks allow services to call one another easily. If the type you need isn't listed here, choose 'Not a WebHook'."
+                    "label": "Webhook type",
+                    "help": "Webhooks allow services to call one another easily."
+                },
+                {
+                    "name": "authLevel",
+                    "value": "enum",
+                    "enum": [
+                        {
+                            "value": "function",
+                            "display": "Function"
+                        },
+                        {
+                            "value": "anonymous",
+                            "display": "Anonymous"
+                        },
+                        {
+                            "value": "admin",
+                            "display": "Admin"
+                        }
+                    ],
+                    "label": "Authorization level",
+                    "help": "Authorization level controls whether you're using an API key and which key to use; Function uses your function key; Admin uses your master key. The function & master keys are found in your host secrets file. For user-based authentication, go to Function App Settings."
+                }
+            ],
+            "rules": [
+                {
+                    "name": "mode",
+                    "type": "exclusivity",
+                    "values": [
+                        {
+                            "value": "authLevel",
+                            "display": "Standard",
+                            "hiddenSettings": [
+                                "webHookType"
+                            ],
+                            "shownSettings": [
+                                "authLevel"
+                            ]
+                        },
+                        {
+                            "value": "webHookType",
+                            "display": "Webhook",
+                            "hiddenSettings": [
+                                "authLevel"
+                            ],
+                            "shownSettings": [
+                                "webHookType"
+                            ]
+                        }
+                    ],
+                    "label": "Mode",
+                    "help": "This is the mode of the trigger. \"Standard\" means that the request will be standard HTTP with no additional semantics. \"Webhook\" means that the request will be processed according to a specified webhook type."
                 }
             ]
         },
@@ -277,53 +563,81 @@
             "type": "http",
             "displayName": "HTTP",
             "direction": "out",
-            "defaultParameterName": "res",
-            "parameterNamePrompt": "Response parameter name",
-            "settings": []
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "res",
+                    "required": true,
+                    "label": "Response parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "type": "serviceBusTrigger",
             "displayName": "Azure Service Bus",
             "direction": "trigger",
-            "defaultParameterName": "mySbQueueMsg",
-            "parameterNamePrompt": "Message parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "mySbMsg",
+                    "required": true,
+                    "label": "Message parameter name",
+                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "queueName",
                     "value": "string",
                     "defaultValue": "mysbqueue",
                     "required": true,
                     "label": "Queue name",
-                    "help": "This is the name of the queue that messages will be read from."
-                },
-                {
-                    "name": "connection",
-                    "value": "string",
-                    "resource": "EventHub",
-                    "required": true,
-                    "label": "Service Bus connection",
-                    "help": "This is the connection string for your Service Bus account. Make sure that it has Listen rights."
-                }
-            ]
-        },
-        {
-            "type": "serviceBus",
-            "displayName": "Azure Service Bus",
-            "direction": "out",
-            "defaultParameterName": "outputSbQueueMsg",
-            "parameterNamePrompt": "Message parameter name",
-            "settings": [
-                {
-                    "name": "queueName",
-                    "value": "string",
-                    "defaultValue": "outqueue",
-                    "required": true,
-                    "label": "Queue name",
-                    "help": "This is the name of the queue that messages will be written to.",
+                    "help": "This is the name of the queue from which the message will be read.",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z][a-z0-9-]{2,62}$",
-                            "errorText": "Invalid queue name"
+                            "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
+                            "errorText": "Invalid queue name."
+                        }
+                    ]
+                },
+                {
+                    "name": "topicName",
+                    "value": "string",
+                    "defaultValue": "mysbtopic",
+                    "required": true,
+                    "label": "Topic name",
+                    "help": "This is the name of the topic from which the message will be read.",
+                    "validators": [
+                        {
+                            "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
+                            "errorText": "Invalid topic name."
+                        }
+                    ]
+                },
+                {
+                    "name": "subscriptionName",
+                    "value": "string",
+                    "defaultValue": "mysubscription",
+                    "required": true,
+                    "label": "Subscription name",
+                    "help": "This is the name of the subscription within the topic to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[0-9a-zA-Z][a-zA-Z0-9_.-]{1,48}[0-9a-zA-Z]$",
+                            "errorText": "Invalid subscription name."
                         }
                     ]
                 },
@@ -333,7 +647,160 @@
                     "resource": "EventHub",
                     "required": true,
                     "label": "Service Bus connection",
-                    "help": "This is the connection string for your Service Bus account. Make sure that it has Send rights."
+                    "help": "This is the connection string for your service bus. Make sure that it has Listen rights.",
+                    "placeholder": "[variables('selectConnection')]"
+                },
+                {
+                    "name": "accessRights",
+                    "value": "enum",
+                    "enum": [
+                        {
+                            "value": "Manage",
+                            "display": "Manage"
+                        },
+                        {
+                            "value": "Listen",
+                            "display": "Listen"
+                        }
+                    ],
+                    "label": "AccessRights",
+                    "help": "This is the access rights the client has to the queue or topic subscription."
+                }
+            ],
+            "rules": [
+                {
+                    "name": "messageType",
+                    "type": "exclusivity",
+                    "values": [
+                        {
+                            "value": "queueName",
+                            "display": "Service Bus Queue",
+                            "hiddenSettings": [
+                                "topicName",
+                                "subscriptionName"
+                            ],
+                            "shownSettings": [
+                                "queueName"
+                            ]
+                        },
+                        {
+                            "value": "topicName",
+                            "display": "Service Bus Topic",
+                            "hiddenSettings": [
+                                "queueName"
+                            ],
+                            "shownSettings": [
+                                "topicName",
+                                "subscriptionName"
+                            ]
+                        }
+                    ],
+                    "label": "Message type",
+                    "help": "This is the type of service bus message. This lets you choose between using Queues or Topics."
+                }
+            ]
+        },
+        {
+            "type": "serviceBus",
+            "displayName": "Azure Service Bus",
+            "direction": "out",
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "outputSbMsg",
+                    "required": true,
+                    "label": "Message parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
+                {
+                    "name": "queueName",
+                    "value": "string",
+                    "defaultValue": "outqueue",
+                    "required": true,
+                    "label": "Queue name",
+                    "help": "This is the queue to which the message will be sent.",
+                    "validators": [
+                        {
+                            "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
+                            "errorText": "Invalid queue name."
+                        }
+                    ]
+                },
+                {
+                    "name": "topicName",
+                    "value": "string",
+                    "defaultValue": "outtopic",
+                    "required": true,
+                    "label": "Topic name",
+                    "help": "This is the topic to which the message will be sent.",
+                    "validators": [
+                        {
+                            "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
+                            "errorText": "Invalid topic name."
+                        }
+                    ]
+                },
+                {
+                    "name": "connection",
+                    "value": "string",
+                    "resource": "EventHub",
+                    "required": true,
+                    "label": "Service Bus connection",
+                    "help": "This is the connection string for your service bus. Make sure that it has Send rights.",
+                    "placeholder": "[variables('selectConnection')]"
+                },
+                {
+                    "name": "accessRights",
+                    "value": "enum",
+                    "enum": [
+                        {
+                            "value": "Manage",
+                            "display": "Manage"
+                        },
+                        {
+                            "value": "Send",
+                            "display": "Send"
+                        }
+                    ],
+                    "label": "AccessRights",
+                    "help": "This is the access rights the client has to the queue or topic subscription."
+                }
+            ],
+            "rules": [
+                {
+                    "name": "messageType",
+                    "type": "exclusivity",
+                    "values": [
+                        {
+                            "value": "queueName",
+                            "display": "Service Bus Queue",
+                            "hiddenSettings": [
+                                "topicName"
+                            ],
+                            "shownSettings": [
+                                "queueName"
+                            ]
+                        },
+                        {
+                            "value": "topicName",
+                            "display": "Service Bus Topic",
+                            "hiddenSettings": [
+                                "queueName"
+                            ],
+                            "shownSettings": [
+                                "topicName"
+                            ]
+                        }
+                    ],
+                    "label": "Message type",
+                    "help": "This is the type of service bus message. This lets you choose between using Queues or Topics."
                 }
             ]
         },
@@ -341,17 +808,42 @@
             "type": "manualTrigger",
             "displayName": "Manual",
             "direction": "trigger",
-            "defaultParameterName": "input",
-            "parameterNamePrompt": "Parameter name",
-            "settings": []
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "input",
+                    "required": true,
+                    "label": "Parameter name",
+                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "type": "table",
             "displayName": "Azure Storage Table",
             "direction": "out",
-            "defaultParameterName": "outputTable",
-            "parameterNamePrompt": "Table parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "outputTable",
+                    "required": true,
+                    "label": "Table parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "tableName",
                     "value": "string",
@@ -388,7 +880,8 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('appSettingsHelp')]",
+                    "placeholder": "[variables('selectConnection')]"
                 }
             ]
         },
@@ -396,9 +889,21 @@
             "type": "table",
             "displayName": "Azure Storage Table",
             "direction": "in",
-            "defaultParameterName": "inputTable",
-            "parameterNamePrompt": "Table parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "inputTable",
+                    "required": true,
+                    "label": "Table parameter name",
+                    "help": "This is the name of the parameter in the code for input binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "tableName",
                     "value": "string",
@@ -416,26 +921,31 @@
                 {
                     "name": "partitionKey",
                     "value": "string",
-                    "defaultValue": "",
                     "required": false,
                     "label": "Partition key (optional)",
-                    "help": "This is the value of Partition key column of the table. The records with matching Partition key will be returned."
+                    "help": "This is the value of Partition key column of the table. The records with matching Partition key and Row key will be returned. Row key setting must be configured with Partiton key setting."
+                },
+                {
+                    "name": "rowKey",
+                    "value": "string",
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "Row key (optional)",
+                    "help": "This is the value of Row key column of the table. The record with matching Row key and Partition key will be returned. Partiton key setting must be configured with Row key setting"
                 },
                 {
                     "name": "take",
                     "value": "int",
-                    "defaultValue": 50,
-                    "required": true,
-                    "label": "Maximum number of records to read",
-                    "help": "This is an integer for the number of records. You may receive fewer records than this value based on the contents of the table and the applied filter."
+                    "required": false,
+                    "label": "Maximum number of records to read (optional)",
+                    "help": "This is an integer for the number of records. You may receive fewer records than this value based on the contents of the table and the applied filter.This setting is not applicable to a C# function."
                 },
                 {
                     "name": "filter",
                     "value": "string",
-                    "defaultValue": "true",
-                    "required": true,
+                    "required": false,
                     "label": "Query filter (optional)",
-                    "help": "This is an optional query expression used to filter the results of the table query."
+                    "help": "This is an optional query expression used to filter the results of the table query.This setting is not applicable to a C# function."
                 },
                 {
                     "name": "connection",
@@ -443,7 +953,8 @@
                     "resource": "Storage",
                     "required": true,
                     "label": "[variables('storageConnStringLabel')]",
-                    "help": "[variables('appSettingsHelp')]"
+                    "help": "[variables('appSettingsHelp')]",
+                    "placeholder": "[variables('selectConnection')]"
                 }
             ]
         },
@@ -451,9 +962,21 @@
             "type": "documentdb",
             "displayName": "Azure DocumentDB Document",
             "direction": "out",
-            "defaultParameterName": "outputDocument",
-            "parameterNamePrompt": "Document parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "outputDocument",
+                    "required": true,
+                    "label": "Document parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "databaseName",
                     "value": "string",
@@ -484,7 +1007,8 @@
                     "resource": "DocumentDB",
                     "required": true,
                     "label": "DocumentDB account connection",
-                    "help": "This is the connection string for your DocumentDb account."
+                    "help": "This is the connection string for your DocumentDB account.",
+                    "placeholder": "[variables('selectConnection')]"
                 }
             ]
         },
@@ -492,9 +1016,21 @@
             "type": "documentdb",
             "displayName": "Azure DocumentDB Document",
             "direction": "in",
-            "defaultParameterName": "inputDocument",
-            "parameterNamePrompt": "Document parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "inputDocument",
+                    "required": true,
+                    "label": "Document parameter name",
+                    "help": "This is the name of the parameter in the code for input binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "databaseName",
                     "value": "string",
@@ -525,21 +1061,34 @@
                     "resource": "DocumentDB",
                     "required": true,
                     "label": "DocumentDB account connection",
-                    "help": "This is the connection string for your DocumentDB account."
+                    "help": "This is the connection string for your DocumentDB account.",
+                    "placeholder": "[variables('selectConnection')]"
                 }
             ]
         },
         {
-            "type": "easyTable",
-            "displayName": "Azure Mobile Easy Table Record",
+            "type": "mobileTable",
+            "displayName": "Azure Mobile Table Record",
             "direction": "out",
-            "defaultParameterName": "outputRecord",
-            "parameterNamePrompt": "Record parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "outputRecord",
+                    "required": true,
+                    "label": "Record parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "tableName",
                     "value": "string",
-                    "defaultValue": "outEasyTable",
+                    "defaultValue": "outTable",
                     "required": true,
                     "label": "Table name",
                     "help": "This is the name of the table within your Mobile App to which data will be written."
@@ -555,24 +1104,35 @@
                 {
                     "name": "apiKey",
                     "value": "string",
-                    "defaultValue": "",
                     "required": false,
-                    "label": "API key lookup",
+                    "label": "API key lookup (optional)",
                     "help": "This is app setting name that specifies the API Key for your Mobile App. <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=780568'>More information</a>."
                 }
             ]
         },
         {
-            "type": "easyTable",
-            "displayName": "Azure Mobile Easy Table Record",
+            "type": "mobileTable",
+            "displayName": "Azure Mobile Table Record",
             "direction": "in",
-            "defaultParameterName": "inputRecord",
-            "parameterNamePrompt": "Record parameter name",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "inputRecord",
+                    "required": true,
+                    "label": "Record parameter name",
+                    "help": "This is the name of the parameter in the code for input binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "tableName",
                     "value": "string",
-                    "defaultValue": "inEasyTable",
+                    "defaultValue": "inTable",
                     "required": true,
                     "label": "Table name",
                     "help": "This is the name of the table within your Mobile App from which data will be read."
@@ -596,9 +1156,8 @@
                 {
                     "name": "apiKey",
                     "value": "string",
-                    "defaultValue": "",
                     "required": false,
-                    "label": "API key lookup",
+                    "label": "API key lookup (optional)",
                     "help": "This is the app setting name that specifies the API Key for your Mobile App. <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=780568'>More information</a>."
                 }
             ]
@@ -606,16 +1165,28 @@
         {
             "type": "notificationHub",
             "displayName": "Azure Notification Hub",
-            "defaultParameterName": "notification",
-            "parameterNamePrompt": "Notification parameter name",
             "direction": "out",
             "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "notification",
+                    "required": true,
+                    "label": "Notification parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "Invalid Parameter Name"
+                        }
+                    ]
+                },
                 {
                     "name": "hubName",
                     "value": "string",
                     "defaultValue": "myNotificationHub",
                     "required": true,
-                    "label": "Notification hub name",
+                    "label": "Notification Hub name",
                     "help": "This is the name of the Notification Hub to be used for sending push notifications."
                 },
                 {
@@ -623,16 +1194,16 @@
                     "value": "string",
                     "resource": "ServiceBus",
                     "required": true,
-                    "label": "Notification hub namespace connection",
-                    "help": "This is the connection string for your notification hub namespace."
+                    "label": "Notification Hubs namespace connection",
+                    "help": "This is the connection string for your notification hub namespace.",
+                    "placeholder": "[variables('selectConnection')]"
                 },
                 {
                     "name": "tagExpression",
                     "value": "string",
-                    "defaultValue": "tag1||tag2",
                     "required": false,
                     "label": "Tag expression (optional)",
-                    "help": "Tag expressions enable you to target specific sets of devices/registrations, when sending a push notification through Notification Hubs. Leave this blank to broadcast to all registered devices <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=785094'>More information</a>."
+                    "help": "Tag expressions enable you to target specific sets of devices/registrations, when sending a push notification through notification hubs. Leave this blank to broadcast to all registered devices <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=785094'>More information</a>."
                 }
             ]
         }
