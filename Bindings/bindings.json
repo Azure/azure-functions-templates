@@ -4,7 +4,8 @@
     "variables": {
         "storageConnStringLabel": "Storage account connection",
         "appSettingsHelp": "This is the connection string for your storage account.",
-        "selectConnection":  "Click select to choose a connection"
+        "selectConnection":  "Click select to choose a connection",
+        "parameterName" : "The parameter name must be an alphanumeric string of any number of characters. It can’t start with a number."
     },
     "bindings": [
         {
@@ -22,7 +23,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -51,7 +52,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -95,7 +96,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -139,7 +140,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -183,7 +184,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -227,7 +228,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -271,7 +272,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -315,7 +316,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -359,7 +360,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -400,7 +401,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -441,7 +442,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -487,7 +488,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -574,7 +575,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 }
@@ -595,7 +596,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -715,7 +716,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -819,7 +820,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 }
@@ -840,7 +841,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -900,7 +901,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -973,7 +974,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -1027,7 +1028,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -1081,7 +1082,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Your table name must be an alphanumeric string of any number of characters. It can’t start with a number."
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -1125,7 +1126,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -1177,7 +1178,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
