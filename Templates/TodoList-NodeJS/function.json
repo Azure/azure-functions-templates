@@ -1,0 +1,36 @@
+﻿{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "table",
+      "name": "inputList",
+      "tableName": "Todo",
+      "filter": "completed eq 'False'",
+      "connection": "",
+      "direction": "in"
+    },
+    {
+      "type": "table",
+      "name": "outList",
+      "tableName": "Todo",
+      "partitionKey": "items",
+      "rowKey": "%rand-guid%",
+      "connection": "",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
