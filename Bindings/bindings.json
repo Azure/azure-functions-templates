@@ -110,7 +110,7 @@
                     "validators": [
                         {
                             "expression": "^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$",
-                            "errorText": "Your event hub name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the hyphen, and the underscore."
+                            "errorText": "Your event hub name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, the hyphen, and the underscore."
                         }
                     ]
                 },
@@ -610,7 +610,7 @@
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
-                            "errorText": "Your queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, and the hyphen. The name must be 3 to 63 characters."
+                            "errorText": "Your queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters."
                         }
                     ]
                 },
@@ -624,7 +624,7 @@
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
-                            "errorText": "Your topic name must start and end with a letter or number, and it can contain only lowercase letters, numbers, and the hyphen. The name must be 3 to 63 characters."
+                            "errorText": "Your topic name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters."
                         }
                     ]
                 },
@@ -638,7 +638,7 @@
                     "validators": [
                         {
                             "expression": "^[0-9a-zA-Z][a-zA-Z0-9_.-]{1,48}[0-9a-zA-Z]$",
-                            "errorText": "Your subscription name must start and end with a letter or number, and it can contain only lowercase letters, numbers, and the hyphen. The name must be 3 to 63 characters."
+                            "errorText": "Your subscription name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters."
                         }
                     ]
                 },
