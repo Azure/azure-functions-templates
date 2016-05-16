@@ -4,7 +4,8 @@
     "variables": {
         "storageConnStringLabel": "Storage account connection",
         "appSettingsHelp": "This is the connection string for your storage account.",
-        "selectConnection":  "Click select to choose a connection"
+        "selectConnection":  "Click select to choose a connection",
+        "parameterName" : "The parameter name must be an alphanumeric string of any number of characters. It can’t start with a number."
     },
     "bindings": [
         {
@@ -22,7 +23,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -51,7 +52,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -65,7 +66,7 @@
                     "validators": [
                         {
                             "expression": "^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$",
-                            "errorText": "Invalid event hub name"
+                            "errorText": "Your event hub name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the hyphen, the period, and the underscore."
                         }
                     ]
                 },
@@ -95,7 +96,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -109,7 +110,7 @@
                     "validators": [
                         {
                             "expression": "^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$",
-                            "errorText": "Invalid event hub name"
+                            "errorText": "Your event hub name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, the hyphen, and the underscore."
                         }
                     ]
                 },
@@ -139,7 +140,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -153,7 +154,7 @@
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9-]{1,61}[0-9a-z]$",
-                            "errorText": "Invalid queue name."
+                            "errorText": "Your queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, and the hyphen. The name must be 3 to 63 characters."
                         }
                     ]
                 },
@@ -183,7 +184,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -197,7 +198,7 @@
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9-]{1,61}[0-9a-z]$",
-                            "errorText": "Invalid queue name."
+                            "errorText": "Your queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, and the hyphen. The name must be 3 to 63 characters."
                         }
                     ]
                 },
@@ -227,7 +228,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -241,7 +242,7 @@
                     "validators": [
                         {
                             "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){0,1023}[^\\/]$",
-                            "errorText": "Invalid blob path"
+                            "errorText": "Your blob path must be a container name of 3 to 63 characters, followed by a blob name of 1 to 1,024 characters. The blob name can be any combination of characters and can contain a maximum of 254 path segments, which are separated by the forward slash (/)."
                         }
                     ]
                 },
@@ -271,7 +272,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -285,7 +286,7 @@
                     "validators": [
                         {
                             "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){0,1023}[^\\/]$",
-                            "errorText": "Invalid blob path"
+                            "errorText": "Your blob path must be a container name of 3 to 63 characters, followed by a blob name of 1 to 1,024 characters. The blob name can be any combination of characters and can contain a maximum of 254 path segments, which are separated by the forward slash (/)."
                         }
                     ]
                 },
@@ -315,7 +316,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -329,7 +330,7 @@
                     "validators": [
                         {
                             "expression": "(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9]$)|(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){0,1023}[^\\/]$)",
-                            "errorText": "Invalid blob path"
+                            "errorText": "Your blob path must be a container name of 3 to 63 characters, followed by a blob name of 1 to 1,024 characters. The blob name can be any combination of characters and can contain a maximum of 254 path segments, which are separated by the forward slash (/)."
                         }
                     ]
                 },
@@ -359,7 +360,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -400,7 +401,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -441,7 +442,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -487,7 +488,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -574,7 +575,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 }
@@ -595,7 +596,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -609,7 +610,7 @@
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
-                            "errorText": "Invalid queue name."
+                            "errorText": "Your queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters."
                         }
                     ]
                 },
@@ -623,7 +624,7 @@
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
-                            "errorText": "Invalid topic name."
+                            "errorText": "Your topic name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters."
                         }
                     ]
                 },
@@ -637,7 +638,7 @@
                     "validators": [
                         {
                             "expression": "^[0-9a-zA-Z][a-zA-Z0-9_.-]{1,48}[0-9a-zA-Z]$",
-                            "errorText": "Invalid subscription name."
+                            "errorText": "Your subscription name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters."
                         }
                     ]
                 },
@@ -715,7 +716,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -729,7 +730,7 @@
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
-                            "errorText": "Invalid queue name."
+                            "errorText": "Your queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters."
                         }
                     ]
                 },
@@ -743,7 +744,7 @@
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
-                            "errorText": "Invalid topic name."
+                            "errorText": "Your topic name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters."
                         }
                     ]
                 },
@@ -819,7 +820,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 }
@@ -840,7 +841,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -854,7 +855,7 @@
                     "validators": [
                         {
                             "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$",
-                            "errorText": "Invalid table name"
+                            "errorText": "Your table name must be an alphanumeric string of 3 to 63 characters. It can’t start with a number."
                         }
                     ]
                 },
@@ -900,7 +901,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -914,7 +915,7 @@
                     "validators": [
                         {
                             "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$",
-                            "errorText": "Invalid table name"
+                            "errorText": "Your table name must be an alphanumeric string of 3 to 63 characters. It can’t start with a number."
                         }
                     ]
                 },
@@ -973,7 +974,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -1027,7 +1028,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -1081,7 +1082,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -1125,7 +1126,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
@@ -1177,7 +1178,7 @@
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
-                            "errorText": "Invalid Parameter Name"
+                            "errorText": "[variables('parameterName')]"
                         }
                     ]
                 },
