@@ -5,7 +5,18 @@
         "storageConnStringLabel": "Storage account connection",
         "appSettingsHelp": "This is the connection string for your storage account.",
         "selectConnection":  "Click select to choose a connection",
-        "parameterName" : "The parameter name must be an alphanumeric string of any number of characters. It can’t start with a number."
+        "parameterName" : "The parameter name must be an alphanumeric string of any number of characters. It can’t start with a number.",
+        "paramNameLabel" : "Parameter Name",
+        "paramNameInputHelp" : "This is the name of the parameter in code for the input binding to bind to.",
+        "paramNameOutputHelp" : "This is the name of the parameter in code for the output binding to bind to.",
+        "apiHubTableDataSetLabel" : "Data Set Name",
+        "apiHubTableDataSetHelp" : "The name of the data set to bind to.  Leave as 'default' if binding to a table or entity.",
+        "apiHubTableNameLabel" : "Table Name",
+        "apiHubTableHelp" : "The name of the table to bind to.  Leave empty if binding to a data set or entity",
+        "apiHubTableEntityLabel" : "Entity ID",
+        "apiHubTableEntityHelp" : "The ID of the entity to bind to.  Leave empty if binding to a data set or table",
+        "apiHubTableConnectionLabel" : "SaaS Table connection",
+        "apiHubTableConnectionHelp" : "The connection string for your SaaS Table connection"
     },
     "bindings": [
         {
@@ -483,8 +494,8 @@
                     "value": "string",
                     "defaultValue": "input",
                     "required": true,
-                    "label": "Parameter name",
-                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "label": "[variables('paramNameLabel')]",
+                    "help": "[variables('paramNameInputHelp')]",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -497,8 +508,8 @@
                     "value": "string",
                     "defaultValue": "default",
                     "required": false,
-                    "label": "Data Set Name",
-                    "help": "The name of the data set to bind to.",
+                    "label": "[variables('apiHubTableDataSetLabel')]",
+                    "help": "[variables('apiHubTableDataSetHelp')]",
                     "validators": []
                 },
                 {
@@ -506,8 +517,8 @@
                     "value": "string",
                     "defaultValue": null,
                     "required": false,
-                    "label": "Table Name",
-                    "help": "The name of the table to bind to.",
+                    "label": "[variables('apiHubTableNameLabel')]",
+                    "help": "[variables('apiHubTableHelp')]",
                     "validators": []
                 },
                 {
@@ -515,8 +526,8 @@
                     "value": "string",
                     "defaultValue": null,
                     "required": false,
-                    "label": "Entity ID",
-                    "help": "The ID of the entity to bind to.",
+                    "label": "[variables('apiHubTableEntityLabel')]",
+                    "help": "[variables('apiHubTableEntityHelp')]",
                     "validators": []
                 },
                 {
@@ -524,8 +535,8 @@
                     "value": "string",
                     "resource": "ApiHub",
                     "required": true,
-                    "label": "SaaS Table connection",
-                    "help": "The connection string to your SaaS Table connection",
+                    "label": "[variables('apiHubTableConnectionLabel')]",
+                    "help": "[variables('apiHubTableConnectionHelp')]",
                     "metadata": {
                         "capability": "tabular"
                     }
@@ -542,8 +553,8 @@
                     "value": "string",
                     "defaultValue": "output",
                     "required": true,
-                    "label": "Parameter name",
-                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "label": "[variables('paramNameLabel')]",
+                    "help": "[variables('paramNameOutputHelp')]",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -556,8 +567,8 @@
                     "value": "string",
                     "defaultValue": "default",
                     "required": false,
-                    "label": "Data Set Name",
-                    "help": "The name of the data set to bind to.",
+                    "label": "[variables('apiHubTableDataSetLabel')]",
+                    "help": "[variables('apiHubTableDataSetHelp')]",
                     "validators": []
                 },
                 {
@@ -565,8 +576,8 @@
                     "value": "string",
                     "defaultValue": null,
                     "required": false,
-                    "label": "Table Name",
-                    "help": "The name of the table to bind to.",
+                    "label": "[variables('apiHubTableNameLabel')]",
+                    "help": "[variables('apiHubTableHelp')]",
                     "validators": []
                 },
                 {
@@ -574,8 +585,8 @@
                     "value": "string",
                     "defaultValue": null,
                     "required": false,
-                    "label": "Entity ID",
-                    "help": "The ID of the entity to bind to.",
+                    "label": "[variables('apiHubTableEntityLabel')]",
+                    "help": "[variables('apiHubTableEntityHelp')]",
                     "validators": []
                 },
                 {
@@ -583,8 +594,8 @@
                     "value": "string",
                     "resource": "ApiHub",
                     "required": true,
-                    "label": "SaaS Table connection",
-                    "help": "The connection string to your SaaS Table connection",
+                    "label": "[variables('apiHubTableConnectionLabel')]",
+                    "help": "[variables('apiHubTableConnectionHelp')]",
                     "metadata": {
                         "capability": "tabular"
                     }
