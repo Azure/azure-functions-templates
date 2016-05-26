@@ -1,1 +1,3 @@
-copy %input% %output%
+echo OFF
+SET /p input=<%input%
+echo Windows Batch script processed blob '%input%'
