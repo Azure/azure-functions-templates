@@ -1334,6 +1334,38 @@
                     "required": false,
                     "label": "Tag expression (optional)",
                     "help": "Tag expressions enable you to target specific sets of devices/registrations, when sending a push notification through notification hubs. Leave this blank to broadcast to all registered devices <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=785094'>More information</a>."
+                },
+                {
+                    "name": "platform",
+                    "value": "enum",
+                    "enum": [
+                        {
+                            "value": "",
+                            "display": "Template"
+                        },
+                        {
+                            "value": "apns",
+                            "display": "Apple (APNS)"
+                        },
+                        {
+                            "value": "adm",
+                            "display": "Amazon (ADM)"
+                        },
+                        {
+                            "value": "gcm",
+                            "display": "Google (GCM)"
+                        },
+                        {
+                            "value": "wns",
+                            "display": "Windows (WNS)"
+                        },
+                        {
+                            "value": "mpns",
+                            "display": "Windows Phone (MPNS)"
+                        }
+                    ],
+                    "label": "Notification Platform",
+                    "help": "Choose platform to send native notifcations. Select Template to send template notification."
                 }
             ]
         }
