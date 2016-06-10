@@ -2,7 +2,7 @@
 // 1) Go to https://www.microsoft.com/cognitive-services/en-us/computer-vision-api 
 //    Sign up for computer vision api
 // 2) Go to Function app settings -> App Service settings -> Settings -> Application settings
-//    create a new app setting FACEAPI_Subscription_Key and use Computer vision key as value
+//    create a new app setting Vision_API_Subscription_Key and use Computer vision key as value
 #r "Microsoft.WindowsAzure.Storage"
 #r "Newtonsoft.Json"
 
@@ -15,7 +15,7 @@ using System.IO;
 
 public static async Task Run(Stream image, string name, IAsyncCollector<FaceRectangle> outTable, TraceWriter log)
 {
-    string result = await CallFaceAPI(image);
+    string result = await CallVisionAPI(image);
     log.Info(result);
 
     if (String.IsNullOrEmpty(result))
@@ -26,7 +26,7 @@ public static async Task Run(Stream image, string name, IAsyncCollector<FaceRect
     ImageData imageData = JsonConvert.DeserializeObject<ImageData>(result);
     foreach (Face face in imageData.Faces)
     {
-        var faceRectangle = face.faceRectangle;
+        var faceRectangle = face.FaceRectangle;
         faceRectangle.RowKey = Guid.NewGuid().ToString();
         faceRectangle.PartitionKey = "Functions";
         faceRectangle.ImageFile = name + ".jpg";
@@ -34,13 +34,13 @@ public static async Task Run(Stream image, string name, IAsyncCollector<FaceRect
     }
 }
 
-static async Task<string> CallFaceAPI(Stream image)
+static async Task<string> CallVisionAPI(Stream image)
 {
     using (var client = new HttpClient())
     {
         var content = new StreamContent(image);
         var url = "https://api.projectoxford.ai/vision/v1.0/analyze?visualFeatures=Faces";
-        client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", Environment.GetEnvironmentVariable("FACEAPI_Subscription_Key"));
+        client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", Environment.GetEnvironmentVariable("Vision_API_Subscription_Key"));
         content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
         var httpResponse = await client.PostAsync(url, content);
 
@@ -63,7 +63,7 @@ public class Face
 
     public string Gender { get; set; }
 
-    public FaceRectangle faceRectangle { get; set; }
+    public FaceRectangle FaceRectangle { get; set; }
 }
 
 public class FaceRectangle : TableEntity
