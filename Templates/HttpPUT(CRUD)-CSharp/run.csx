@@ -9,7 +9,7 @@ public static HttpResponseMessage Run(Person person, CloudTable outTable, TraceW
     {
         return new HttpResponseMessage(HttpStatusCode.BadRequest)
         {
-            Content = new StringContent("Person entity not present in HttpRequest body")
+            Content = new StringContent("A non-empty Name must be specified.")
         };
     };
 
