@@ -237,7 +237,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TimerTrigger-Powershell", "
 		Templates\TimerTrigger-Powershell\readme.md = Templates\TimerTrigger-Powershell\readme.md
 		Templates\TimerTrigger-Powershell\run.ps1 = Templates\TimerTrigger-Powershell\run.ps1
 		Templates\TimerTrigger-Powershell\sample.dat = Templates\TimerTrigger-Powershell\sample.dat
-		Templates\TimerTrigger-Powershell\TestOutput.json = Templates\TimerTrigger-Powershell\TestOutput.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HttpTrigger-Powershell", "HttpTrigger-Powershell", "{522EF9CF-CEA5-4B40-9944-B6F9C1F312CB}"
@@ -247,7 +246,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HttpTrigger-Powershell", "H
 		Templates\HttpTrigger-Powershell\readme.md = Templates\HttpTrigger-Powershell\readme.md
 		Templates\HttpTrigger-Powershell\run.ps1 = Templates\HttpTrigger-Powershell\run.ps1
 		Templates\HttpTrigger-Powershell\sample.dat = Templates\HttpTrigger-Powershell\sample.dat
-		Templates\HttpTrigger-Powershell\TestOutput.json = Templates\HttpTrigger-Powershell\TestOutput.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HttpPOST(CRUD)-CSharp", "HttpPOST(CRUD)-CSharp", "{F34942AA-B934-4AE9-830E-9BD85289CB64}"
@@ -345,6 +343,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FaceLocator-NodeJS", "FaceL
 		Templates\FaceLocator-NodeJS\index.js = Templates\FaceLocator-NodeJS\index.js
 		Templates\FaceLocator-NodeJS\metadata.json = Templates\FaceLocator-NodeJS\metadata.json
 		Templates\FaceLocator-NodeJS\sample.dat = Templates\FaceLocator-NodeJS\sample.dat
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{84E9734A-2B07-45FE-8B03-7B49953F7F26}"
+	ProjectSection(SolutionItems) = preProject
+		Test\lib.ps1 = Test\lib.ps1
+		Test\TestExecutor.ps1 = Test\TestExecutor.ps1
+		Test\Tests.ps1 = Test\Tests.ps1
 	EndProjectSection
 EndProject
 Global

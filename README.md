@@ -14,8 +14,6 @@ A template requires specific metadata files and folder structure so that [Azure 
 
 - **Sample.dat:** Sample.dat contains sample input data for each template. The Run text box in the portal will be populated by the contents of the sample.dat file. The contents of this file is also used as input by the [test script](Test/TemplateTest.ps1). Refer the [Running Tests](#running-tests) section for more information on testing templates.
 
-- **TestOutput.json (optional):** This file is used by the [test script](Test/TemplateTest.ps1) to match the actual output with expected test output. If this file is present the template will be picked by the [test script](Test/TemplateTest.ps1) for test run. Refer the [Running Tests](#running-tests) section for more information on testing templates.
-
 - **Readme.md (optional):** The markdown file that presents basic information and description of the templates.
 
 ## Testing templates
@@ -34,43 +32,7 @@ A template requires specific metadata files and folder structure so that [Azure 
 10. Make sure the checkboxes `Enable rules` and `Unmatched requests passthrough` are checked.
 11. Your template changes should appear in the [portal](https://functions.azure.com/signin).
 
-### Testing via Test Script
-
-#### Setup
-1. Create a Functions App from [portal](https://functions.azure.com/signin).
-2. Download the publish credentials of the Functions App. _(Function app settings -> App service settings -> Get publish credentials)_
-3. Create a json file of the following format
-````
-{
-            "appName": "",
-            "password": "",
-            "storageAccountName": "",
-            "storageKey" : ""
-}
-````
-
-#### Executing the Script
-To run the test script located [here](test/TemplateTest.ps1), Execute the following command in PowerShell from the root of the templates repository.
-
-```powershell
-    .\Test\TemplateTest.ps1 -configFile <location of the jsonfile> -templatesFolderPath .\Templates\
 ```
-- Alternatively you can target any folder that contains the templates
-```powershell
-    .\Test\TemplateTest.ps1 -configFile <location of the jsonfile> -templatesFolderPath <Folder with templates>
-```
-#### How it works
-1. The [Test Script](Test/TemplateTest.ps1) reads the configuration file and executes the templates one by one.
-2. The contents of sample.dat file is used as input for the testing the templates.
-3. TestOutput.json is used for matching the output with logs or httpresponse.
-4. Only tests for templates with TestOutput.json file in their folder are run at the moment.
-
-#### Triggers supported by the Test Script
-- httpTrigger
-- queueTrigger
-- blobTrigger
-- timerTrigger
-
 ## License
 
 This project is under the benevolent umbrella of the [.NET Foundation](http://www.dotnetfoundation.org/) and is licensed under [the MIT License](LICENSE.txt)
