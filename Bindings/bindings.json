@@ -5,7 +5,18 @@
         "storageConnStringLabel": "Storage account connection",
         "appSettingsHelp": "This is the connection string for your storage account.",
         "selectConnection":  "Click select to choose a connection",
-        "parameterName" : "The parameter name must be an alphanumeric string of any number of characters. It can’t start with a number."
+        "parameterName" : "The parameter name must be an alphanumeric string of any number of characters. It can’t start with a number.",
+        "paramNameLabel" : "Parameter Name",
+        "paramNameInputHelp" : "This is the name of the parameter in code for the input binding to bind to.",
+        "paramNameOutputHelp" : "This is the name of the parameter in code for the output binding to bind to.",
+        "apiHubTableDataSetLabel" : "Data Set Name",
+        "apiHubTableDataSetHelp" : "The name of the data set to bind to.  Leave as 'default' if binding to a table or entity.",
+        "apiHubTableNameLabel" : "Table Name",
+        "apiHubTableHelp" : "The name of the table to bind to.  Leave empty if binding to a data set or entity",
+        "apiHubTableEntityLabel" : "Entity ID",
+        "apiHubTableEntityHelp" : "The ID of the entity to bind to.  Leave empty if binding to a data set or table",
+        "apiHubTableConnectionLabel" : "SaaS Table connection",
+        "apiHubTableConnectionHelp" : "The connection string for your SaaS Table connection"
     },
     "bindings": [
         {
@@ -33,7 +44,14 @@
                     "defaultValue": "0 * * * * *",
                     "required": true,
                     "label": "Schedule",
-                    "help": "Enter a cron expression of the format '{second} {minute} {hour} {day} {month} {day of week}' to specify your schedule. Please consult the documentation to learn more."
+                    "help": "Enter a cron expression of the format '{second} {minute} {hour} {day} {month} {day of week}' to specify your schedule. Please consult the <a target='_blank' href='https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/'>documentation</a> to learn more.",
+                    "//": "http://stackoverflow.com/questions/2362985/verifying-a-cron-expression-is-valid-in-java",
+                    "validators": [
+                        {
+                            "expression": "^\\s*($|#|\\w+\\s*=|(\\?|\\*|(?:[0-5]?\\d)(?:(?:-|\\/|\\,)(?:[0-5]?\\d))?(?:,(?:[0-5]?\\d)(?:(?:-|\\/|\\,)(?:[0-5]?\\d))?)*)\\s+(\\?|\\*|(?:[0-5]?\\d)(?:(?:-|\\/|\\,)(?:[0-5]?\\d))?(?:,(?:[0-5]?\\d)(?:(?:-|\\/|\\,)(?:[0-5]?\\d))?)*)\\s+(\\?|\\*|(?:[01]?\\d|2[0-3])(?:(?:-|\\/|\\,)(?:[01]?\\d|2[0-3]))?(?:,(?:[01]?\\d|2[0-3])(?:(?:-|\\/|\\,)(?:[01]?\\d|2[0-3]))?)*)\\s+(\\?|\\*|(?:0?[1-9]|[12]\\d|3[01])(?:(?:-|\\/|\\,)(?:0?[1-9]|[12]\\d|3[01]))?(?:,(?:0?[1-9]|[12]\\d|3[01])(?:(?:-|\\/|\\,)(?:0?[1-9]|[12]\\d|3[01]))?)*)\\s+(\\?|\\*|(?:[1-9]|1[012])(?:(?:-|\\/|\\,)(?:[1-9]|1[012]))?(?:L|W)?(?:,(?:[1-9]|1[012])(?:(?:-|\\/|\\,)(?:[1-9]|1[012]))?(?:L|W)?)*|\\?|\\*|(?:JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?:(?:-)(?:JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC))?(?:,(?:JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)(?:(?:-)(?:JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC))?)*)\\s+(\\?|\\*|(?:[0-6])(?:(?:-|\\/|\\,|#)(?:[0-6]))?(?:L)?(?:,(?:[0-6])(?:(?:-|\\/|\\,|#)(?:[0-6]))?(?:L)?)*|\\?|\\*|(?:MON|TUE|WED|THU|FRI|SAT|SUN)(?:(?:-)(?:MON|TUE|WED|THU|FRI|SAT|SUN))?(?:,(?:MON|TUE|WED|THU|FRI|SAT|SUN)(?:(?:-)(?:MON|TUE|WED|THU|FRI|SAT|SUN))?)*)(|\\s)+(\\?|\\*|(?:|\\d{4})(?:(?:-|\\/|\\,)(?:|\\d{4}))?(?:,(?:|\\d{4})(?:(?:-|\\/|\\,)(?:|\\d{4}))?)*))$",
+                            "errorText": "Invalid Cron Expression. Please consult the <a target='_blank' href='https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/'>documentation</a> to learn more. "
+                        }
+                    ]
                 }
             ]
         },
@@ -452,7 +470,7 @@
                     "defaultValue": "path/{file}",
                     "required": true,
                     "label": "Path",
-                    "help": "The path to trigger on.",
+                    "help": "The path to trigger on. This path must exist.",
                     "validators": []
                 },
                 {
@@ -469,6 +487,124 @@
                             "ftp",
                             "sftp"
                         ]
+                    }
+                }
+            ]
+        },
+        {
+            "type": "apiHubTable",
+            "displayName": "SaaS Table",
+            "direction": "in",
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "input",
+                    "required": true,
+                    "label": "[variables('paramNameLabel')]",
+                    "help": "[variables('paramNameInputHelp')]",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "[variables('parameterName')]"
+                        }
+                    ]
+                },
+                {
+                    "name": "dataSetName",
+                    "value": "string",
+                    "defaultValue": "default",
+                    "required": false,
+                    "label": "[variables('apiHubTableDataSetLabel')]",
+                    "help": "[variables('apiHubTableDataSetHelp')]",
+                    "validators": []
+                },
+                {
+                    "name": "tableName",
+                    "value": "string",
+                    "defaultValue": null,
+                    "required": false,
+                    "label": "[variables('apiHubTableNameLabel')]",
+                    "help": "[variables('apiHubTableHelp')]",
+                    "validators": []
+                },
+                {
+                    "name": "entityId",
+                    "value": "string",
+                    "defaultValue": null,
+                    "required": false,
+                    "label": "[variables('apiHubTableEntityLabel')]",
+                    "help": "[variables('apiHubTableEntityHelp')]",
+                    "validators": []
+                },
+                {
+                    "name": "connection",
+                    "value": "string",
+                    "resource": "ApiHub",
+                    "required": true,
+                    "label": "[variables('apiHubTableConnectionLabel')]",
+                    "help": "[variables('apiHubTableConnectionHelp')]",
+                    "metadata": {
+                        "capability": "tabular"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "apiHubTable",
+            "displayName": "SaaS Table",
+            "direction": "out",
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "output",
+                    "required": true,
+                    "label": "[variables('paramNameLabel')]",
+                    "help": "[variables('paramNameOutputHelp')]",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "[variables('parameterName')]"
+                        }
+                    ]
+                },
+                {
+                    "name": "dataSetName",
+                    "value": "string",
+                    "defaultValue": "default",
+                    "required": false,
+                    "label": "[variables('apiHubTableDataSetLabel')]",
+                    "help": "[variables('apiHubTableDataSetHelp')]",
+                    "validators": []
+                },
+                {
+                    "name": "tableName",
+                    "value": "string",
+                    "defaultValue": null,
+                    "required": false,
+                    "label": "[variables('apiHubTableNameLabel')]",
+                    "help": "[variables('apiHubTableHelp')]",
+                    "validators": []
+                },
+                {
+                    "name": "entityId",
+                    "value": "string",
+                    "defaultValue": null,
+                    "required": false,
+                    "label": "[variables('apiHubTableEntityLabel')]",
+                    "help": "[variables('apiHubTableEntityHelp')]",
+                    "validators": []
+                },
+                {
+                    "name": "connection",
+                    "value": "string",
+                    "resource": "ApiHub",
+                    "required": true,
+                    "label": "[variables('apiHubTableConnectionLabel')]",
+                    "help": "[variables('apiHubTableConnectionHelp')]",
+                    "metadata": {
+                        "capability": "tabular"
                     }
                 }
             ]
@@ -860,22 +996,6 @@
                     ]
                 },
                 {
-                    "name": "partitionKey",
-                    "value": "string",
-                    "defaultValue": "items",
-                    "required": true,
-                    "label": "Partition key",
-                    "help": "This is the partition key for the table."
-                },
-                {
-                    "name": "rowKey",
-                    "value": "string",
-                    "defaultValue": "%rand-guid%",
-                    "required": true,
-                    "label": "Row key",
-                    "help": "This is the row key for the table."
-                },
-                {
                     "name": "connection",
                     "value": "string",
                     "resource": "Storage",
@@ -960,7 +1080,7 @@
             ]
         },
         {
-            "type": "documentdb",
+            "type": "documentDB",
             "displayName": "Azure DocumentDB Document",
             "direction": "out",
             "settings": [
@@ -1014,7 +1134,7 @@
             ]
         },
         {
-            "type": "documentdb",
+            "type": "documentDB",
             "displayName": "Azure DocumentDB Document",
             "direction": "in",
             "settings": [
@@ -1205,6 +1325,38 @@
                     "required": false,
                     "label": "Tag expression (optional)",
                     "help": "Tag expressions enable you to target specific sets of devices/registrations, when sending a push notification through notification hubs. Leave this blank to broadcast to all registered devices <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=785094'>More information</a>."
+                },
+                {
+                    "name": "platform",
+                    "value": "enum",
+                    "enum": [
+                        {
+                            "value": "",
+                            "display": "Template"
+                        },
+                        {
+                            "value": "apns",
+                            "display": "Apple (APNS)"
+                        },
+                        {
+                            "value": "adm",
+                            "display": "Amazon (ADM)"
+                        },
+                        {
+                            "value": "gcm",
+                            "display": "Google (GCM)"
+                        },
+                        {
+                            "value": "wns",
+                            "display": "Windows (WNS)"
+                        },
+                        {
+                            "value": "mpns",
+                            "display": "Windows Phone (MPNS)"
+                        }
+                    ],
+                    "label": "Notification Platform",
+                    "help": "Choose platform to send native notifcations. Select Template to send template notification."
                 }
             ]
         }

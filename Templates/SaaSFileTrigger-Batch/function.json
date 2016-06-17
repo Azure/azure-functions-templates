@@ -1,0 +1,18 @@
+{
+  "bindings": [
+    {
+      "type": "apiHubFileTrigger",
+      "name": "input",
+      "direction": "in",
+      "path": "input-batch/{name}",
+      "connection": ""
+    },
+    {
+      "type": "apiHubFile",
+      "name": "output",
+      "direction": "out",
+      "path": "output-batch/{name}",
+      "connection": ""
+    }
+  ]
+}

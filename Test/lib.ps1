@@ -1,26 +1,32 @@
-﻿Param(
-   [Parameter(Mandatory=$True)][string]$configFile,      
-   [Parameter(Mandatory=$True)][string]$templatesFolderPath,
-   [Parameter(Mandatory=$False)][string]$extZipPath
-)
+﻿Function CreateAppveyorTests($aggregateTestResults)
+{
+    foreach($testResult in $aggregateTestResults)
+    {
+        Add-AppveyorTest $testResult.Title -Outcome $testResult.Outcome -StdOut $testResult.Log
+    }    
+}
+
+# get list of tests to execute
+Function GetTestList()
+{
+    return Get-ChildItem function: | Where-Object {$_.Name.ToLower().StartsWith('test-')}
+}
 
 $HttpWaitTime = 2
-$action = @{  "deploy" = "Deploy Template"
-              "trigger" = "Execute Trigger"
-              "checklog" = "Check Logs"   
-                }
+$action = @{  
+               "deploy" = "Deploy Template"
+               "trigger" = "Execute Trigger"
+               "checklog" = "Check Logs"   
+           }
 
-function GetConfiguration($configFile)
+function GetConfiguration($appName, $password, $storageAccount, $storageKey)
 {
-    Write-Host "Getting the Azure configuration"
-    $config = Get-Content $configFile -Raw | ConvertFrom-Json
-    $appName = $config.appName
-    $userName = "`$$appName"
-    $storageAccount = $config.storageAccountName    
-    $storageContext = New-AzureStorageContext -StorageAccountName $config.storageAccountName -StorageAccountKey $config.storageKey
-    $authInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $userName,$config.password)))    
+    Write-Host "Getting the Azure configuration" -NoNewline        
+    $userName = "`$$appName"    
+    $storageContext = New-AzureStorageContext -StorageAccountName $storageAccount -StorageAccountKey $storageKey
+    $authInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $userName,$password)))    
     
-    Write-Host -ForegroundColor Green "Complete"
+    Write-Host -ForegroundColor Green "...Complete"
 
     return @{ 
         appName = $appName
@@ -66,15 +72,14 @@ function CreateResultFromException($template,$Exception,$action)
 # Create an array list with info (name, trigger, input and output binding) of all templates
 function GetTemplates($templatesFolderPath)
 {
-    Write-Host "Fetching information for all templates"
+    Write-Host "Fetching information for all templates" -NoNewline
     # Getting the list of template folders"
     $templatesList = Get-ChildItem $templatesFolderPath -Recurse | ?{ $_.PSIsContainer }
 
-    $templates = New-Object System.Collections.ArrayList
+    $templates = New-Object System.Collections.ArrayList    
 
     foreach ($template in $templatesList)
-    { 
-           
+    {                    
         $functionJson = GetLocalFile $template.FullName "function.json"
         
         if ($functionJson)
@@ -82,7 +87,7 @@ function GetTemplates($templatesFolderPath)
             $trigger = $functionJson.bindings.Where({ if ($_) {($_.type).ToLower().EndsWith("trigger")}})
             $inputBinding = $functionJson.bindings.Where({ if ($_) {($_.direction).ToLower().EndsWith("in")}})        
             $outputBinding = $functionJson.bindings.Where({ if ($_) {($_.direction).ToLower().EndsWith("out")}})
-        }
+        }        
 
         $index = $templates.add(
             @{ 
@@ -90,14 +95,17 @@ function GetTemplates($templatesFolderPath)
                 Path = $template.FullName
                 trigger = $trigger
                 inputBinding = $inputBinding 
-                outputBinding = $outputBinding                 
-                inputData = GetLocalFile $template.FullName "sample.dat"
-                TestOutput = GetLocalFile $template.FullName "TestOutput.json"
+                outputBinding = $outputBinding                
             })
     }
 
-    Write-Host -ForegroundColor Green "Complete"
+    Write-Host -ForegroundColor Green "...Complete"
     return $templates
+}
+
+function GetTemplate($templates, $templateName)
+{
+    return $templates | Where-Object {$_.Name.ToLower() -eq $templateName }
 }
 
 function UploadZip($config,$zipFilePath,$destinationPath)
@@ -160,7 +168,7 @@ function InvokeScmHttpDelete($config,$path)
 
 function RemoveTemplate($config, $template)
 {
-    # Deleting existing log files
+    # Deleting existing function    
     $path = "/vfs/site/wwwroot/"+ $template.Name +"/?recursive=true"
     InvokeScmHttpDelete $config $path
 }
@@ -172,7 +180,8 @@ function DeployTemplate($config, $template)
         RemoveTemplate $config $template
 
         Start-Sleep -Seconds 2
-        # Deleting existing function
+        
+        # Deleting existing log files
         $path = "/vfs/LogFiles/Application/Functions/function/"+ $template.Name +"/?recursive=true" 
         InvokeScmHttpDelete $config $path
 
@@ -182,11 +191,12 @@ function DeployTemplate($config, $template)
         # Upload the newly zipped file to remote location
         UploadZip $config $zipFilePath "site/wwwroot/"
 
-        return CreateResult $template $action.deploy "passed" "Deployment Successful"
+        $templateName = $template.Name
+        return CreateResult -success $True -log "Deployment Successful for $templateName"        
     }
     Catch
     {
-        return CreateResultFromException $template $_.Exception $action.deploy
+         return CreateResult -success $false -log $_.Exception.Message        
     }
 }
 
@@ -194,7 +204,7 @@ function CreateResultFromResponse($template,$actualValue,$action)
 {
     $name = $template.Name + "-" + $action
     $value = $null;
-    if ($actualValue.contains($template.TestOutput.output))
+    if ($actualValue.contains($template.testoutput.value))
     {
         return @{
                     Template = $template.Name
@@ -209,33 +219,36 @@ function CreateResultFromResponse($template,$actualValue,$action)
                     Template = $template.Name
                     Action = $action                
                     Status = "failed"
-                    TestLog = "Expected value:" + $template.TestOutput.output + "`n Actual value" + $actualValue
+                    TestLog = "Expected value:" + $template.testoutput.value + "`n Actual value" + $actualValue
               }
     }
 }
 
-function CreateResult($template,$action,$status,$message)
+function CreateResult()
 {
-    return @{
-                Template = $template.Name
-                Action = $action                            
-                Status = $status
-                TestLog = $message
+    [cmdletbinding()]
+    Param(
+        [Parameter(Mandatory=$True)][bool]$success,
+        [Parameter(Mandatory=$True)]$log
+    )
+    return @{                                            
+                Success = $success
+                log = $log
             }
 }
 
 function ExecuteHttpTrigger($config,$template)
 {
    try
-   {
-        $body = GetJsonWithoutWhiteSpace $template.inputData
+   {        
+        $body = $template.triggerinput.value | ConvertTo-Json -Compress 
         Write-Host -ForegroundColor Yellow -NoNewline "Executing trigger for "$template.Name
         Start-Sleep -s $HttpWaitTime
         $apiUrl = $config.url + "/api/" + $template.Name  + "?code=" + $config.functionSecret
         $response = Invoke-RestMethod -Uri $apiUrl -Method POST -Body $body -ContentType "application/json"
         Write-Host -ForegroundColor Green "...Complete"   
            
-        if ($template.TestOutput.location.ToLower() -eq "httpResponse")
+        if ($template.testoutput.type.ToLower() -eq "httpResponse")
         {
             return CreateResultFromResponse $template $response $action.trigger
         }    
@@ -295,7 +308,7 @@ function ExecuteWebHookTrigger($config,$template)
 {
     try
     {
-        $body = GetJsonWithoutWhiteSpace $template.inputData
+        $body = $template.triggerinput.value | ConvertTo-Json -Compress 
         $sha1 = GetSha1 $body $config.functionSecret
     
         #add headers
@@ -308,7 +321,7 @@ function ExecuteWebHookTrigger($config,$template)
         Write-Host -ForegroundColor Green "...Complete"    
         [string]$response = ConvertTo-Json $response        
     
-        if ($template.TestOutput.location.ToLower() -eq "httpResponse")
+        if ($template.testoutput.type.ToLower() -eq "httpResponse")
         {
             return CreateResultFromResponse $template $response $action.trigger
         }    
@@ -321,29 +334,8 @@ function ExecuteWebHookTrigger($config,$template)
         return CreateResultFromException $template $_.Exception $action.trigger
     }
     
-}
-
-function ExecuteTrigger($config,$template)
-{
-
-    $triggerType = $template.trigger.type
-    if ($triggerType.ToLower() -eq "httptrigger" -and $template.trigger.webHookType)
-    {
-        $triggerType = $triggerType + "-" + $template.trigger.webHookType
-    }
-
-    switch ($triggerType)
-    {
-        "httptrigger" { return ExecuteHttpTrigger $config $template }
-        "timerTrigger" { return ExecuteTimerTrigger $config $template }
-        "httptrigger-genericJson" { return ExecuteWebHookTrigger $config $template }
-        "httptrigger-github" { return ExecuteWebHookTrigger  $config $template }
-        "queueTrigger" { return ExecuteQueueTrigger $config $template }
-        "blobTrigger" { return ExecuteBlobTrigger $config $template }
-        default { return $false }
-    }
-}
-
+}            
+    
 function ExecuteQueueTrigger ($config,$template)
 {
     try
@@ -355,11 +347,10 @@ function ExecuteQueueTrigger ($config,$template)
         $queueFound = $False;
         if (-Not ($queueList.Name | Where {$_ -eq $template.trigger.queueName}))
         {            
-
             $queue = New-AzureStorageQueue -Name $template.trigger.queueName -Context $config.storageContext 
         }
 
-        EnqueueMessage $config $template $template.inputData
+        EnqueueMessage $config $template $template.triggerinput.value
         Write-Host -ForegroundColor Green "Queue trigger Execution Complete"
         return CreateResult $template "Queue Trigger executed" "passed" $action.trigger
     }
@@ -370,24 +361,33 @@ function ExecuteQueueTrigger ($config,$template)
     }
 }
 
-function ExecuteblobTrigger ($config,$template)
+function ExecuteblobTrigger()
 {
+    [cmdletbinding()]
+    Param(
+        [Parameter(Mandatory=$True)]$config,        
+        [Parameter(Mandatory=$True)]$containerName,
+        [Parameter(Mandatory=$True)]$blobName,
+        [Parameter(Mandatory=$True)]$blobContent,
+        [Parameter(Mandatory=$False)][bool] $cleanStart
+    )
     try
     {
-        Write-Host -ForegroundColor Yellow  "Executing trigger for "$template.Name                                        
-        $containerName = ExtractContainerName $template.trigger.path
-        
-        DeleteContainer $config $template $containerName
-        $container = New-AzureStorageContainer -Name $containerName -Context $config.storageContext        
+        Write-Host -ForegroundColor Yellow  "Executing trigger for " $template.Name
+        if ($cleanStart)
+        {
+            DeleteContainer $config $containerName
+            $container = New-AzureStorageContainer -Name $containerName -Context $config.storageContext            
+        }                                                
 
-        InsertBlob $config $template $containerName $template.inputData
+        InsertBlob $config  $containerName $blobName $blobContent
         Write-Host -ForegroundColor Green "Blob trigger Execution Complete"
-        return CreateResult $template "Blob Trigger executed" "passed" $action.trigger
+        return CreateResult -success $True -log "Blob Trigger executed Successfully"
     }
     catch
     {
-        Write-Host -ForegroundColor Green "Queue trigger Execution Complete"
-        return CreateResultFromException $template $_.Exception $action.trigger
+        Write-Host -ForegroundColor Green "Blob trigger Execution Complete"
+        return CreateResult -success $False -log $_.Exception.Message
     }
 }
 
@@ -401,7 +401,7 @@ function ExtractContainerName($path)
     return $path
 }
 
-function DeleteContainer($config, $template,$containerName)
+function DeleteContainer($config, $containerName)
 {
     try
     {
@@ -450,12 +450,13 @@ function EnqueueMessage($config,$template,$message)
     Write-Host -ForegroundColor Green "...Complete"
 }
 
-function InsertBlob($config,$template,$containerName)
+function InsertBlob($config, $containerName, $blobName, $blobContent)
 {    
-    $blobFile = $template.Path + "\sample.dat"
     Write-Host -ForegroundColor Yellow -NoNewline "Adding a blob to the container"
-    $response = Set-AzureStorageBlobContent -Container $containerName -File $blobFile -Context $config.storageContext -Force
-    Write-Host -ForegroundColor Green "...Complete"
+    $blobContent | out-file $blobName -encoding ascii 
+    $response =  Set-AzureStorageBlobContent -Container $containerName -Context $config.storageContext -Force -File $blobName
+    Remove-Item -Path $blobName
+    Write-Host -ForegroundColor Green "...Complete"`
 }
 
 function GetLogFile($config,$template)
@@ -493,7 +494,7 @@ function GetFunctionSecret($config)
     Write-Host -ForegroundColor Yellow -NoNewline "Getting function Secret"
     $keyFile = InvokeScmHttpGet $config "/vfs/data/functions/secrets/host.json"
     Write-Host -ForegroundColor Green "...Complete"
-    return $keyFile.masterKey
+    return $keyFile.masterKey   
 }
 
 function InvokeScmHttpGet($config,$path)
@@ -501,6 +502,29 @@ function InvokeScmHttpGet($config,$path)
     $apiUrl = $config.scmEndpoint + "/api" + $path    
     $response = Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $config.authInfo)} -Method GET
     return $response
+}
+
+Function CheckLogs($config,$template, $expectedValue, $timeout)
+{
+    While ($i -lt $timeout)
+    {
+        $response = GetLogFile $config $template
+        if ($response -and $response.contains($expectedValue))
+        { 
+            Break 
+        }
+            Start-Sleep -Seconds 15
+            $i = $i + 15
+    }
+
+    if ($response)
+    {
+        return CreateResult -success $True -log $response        
+    }
+    else         
+    {
+        return CreateResult -success $False -log "Log files not found"        
+    }        
 }
 
 function CreateResultFromLog($config,$template,$timeout)
@@ -512,7 +536,7 @@ function CreateResultFromLog($config,$template,$timeout)
         While ($i -lt $timeout)
         {
             $response = GetLogFile $config $template
-            if ($response -and $response.contains($template.TestOutput.output))
+            if ($response -and $response.contains($template.testoutput.value))
             { 
                 Break 
             }
@@ -653,8 +677,9 @@ function CreateHtml($testResult,$fileName)
 }
 
 function WakeUpHostProcess($config)
-{
+{    
     Write-Host -ForegroundColor Yellow -NoNewline "Waking up the host"
+    Start-Sleep -s 10
     $response = Invoke-RestMethod -Uri $config.url -Method GET
     Write-Host -ForegroundColor Green "...Complete"
 }
@@ -668,6 +693,7 @@ function DeleteSiteExtension($config)
     $path = "/vfs/SiteExtensions/?recursive=true"
     $response = InvokeScmHttpDelete $config $path
     Write-Host -ForegroundColor Green "Site Extension Removal Complete"
+
     WakeUpHostProcess $config
 }
 
@@ -707,84 +733,4 @@ function RestartSite($config)
         Write-Host -ForegroundColor Green "Restart Complete"
     }
      
-}
-
-Try
-{ 
-
-    # Get the azure config
-    $config = GetConfiguration $configFile
-
-    # Get the secret key from the function            
-    $secretJson = GetFunctionSecret $config
-    $config.Add("functionSecret",$secretJson) 
-
-    # Get metadata required to deploy templates
-    $templates = GetTemplates $templatesFolderPath
-
-    #Delete existing function site extension
-    DeleteSiteExtension $config
-
-    if ($extZipPath)
-    {
-        # Uploading site extention
-        UploadZip $config $extZipPath
-
-        # Restart site
-        RestartSite $config
-
-        # Wake up the host process to make sure the site is up
-        WakeUpHostProcess $config
-       
-    }    
-
-    # Collection to hold the execution result
-    $testResult = New-Object System.Collections.ArrayList
-    
-
-    foreach ($template in $templates)
-    {
-        if ($template.TestOutput)
-        {
-            AddHostFeed
-
-            # Deploy the template to azure
-            $result = DeployTemplate $config $template
-
-            # Execute Trigger
-            $result = ExecuteTrigger $config $template
-            $index = $testResult.Add($result)
-            
-            if ($template.TestOutPut.location.ToLower() -eq "logs")
-            {                
-                $result = CreateResultFromLog $config $template 120
-                $index = $testResult.Add($result)
-            }
-
-
-            # Remove the template after it is done executing
-            RemoveTemplate $config $template
-
-            Start-Sleep -s 3
-            #$index = $testResult.Add($result)
-            AddHostFeed $false
-        }
-    }
-
-    $FormattedResult = CreateHtml $testResult "TestOut.html"
-    
-    $aggregateStatus = $true
-    $FormattedResult.ForEach({$aggregateStatus =  (($_.Status -eq "passed") -and $aggregateStatus) })
-
-    $FormattedResult
-    if (!$aggregateStatus)
-    {
-        throw "Template Execution failed. Please check the results"
-    }
-    
-}
-Catch
-{
-    Write-Host $_.Exception.GetType().FullName, $_.Exception.Message
-    throw $_.Exception
-}
+} 
