@@ -396,7 +396,7 @@
                     "required": true,
                     "label": "Path",
                     "help": "The output file path",
-                    "validators": []
+                    "validators": [ ]
                 },
                 {
                     "name": "connection",
@@ -437,7 +437,7 @@
                     "required": true,
                     "label": "Path",
                     "help": "The input file path",
-                    "validators": []
+                    "validators": [ ]
                 },
                 {
                     "name": "connection",
@@ -478,7 +478,7 @@
                     "required": true,
                     "label": "Path",
                     "help": "The path to trigger on. This path must exist.",
-                    "validators": []
+                    "validators": [ ]
                 },
                 {
                     "name": "connection",
@@ -524,7 +524,7 @@
                     "required": false,
                     "label": "[variables('apiHubTableDataSetLabel')]",
                     "help": "[variables('apiHubTableDataSetHelp')]",
-                    "validators": []
+                    "validators": [ ]
                 },
                 {
                     "name": "tableName",
@@ -533,7 +533,7 @@
                     "required": false,
                     "label": "[variables('apiHubTableNameLabel')]",
                     "help": "[variables('apiHubTableHelp')]",
-                    "validators": []
+                    "validators": [ ]
                 },
                 {
                     "name": "entityId",
@@ -542,7 +542,7 @@
                     "required": false,
                     "label": "[variables('apiHubTableEntityLabel')]",
                     "help": "[variables('apiHubTableEntityHelp')]",
-                    "validators": []
+                    "validators": [ ]
                 },
                 {
                     "name": "connection",
@@ -583,7 +583,7 @@
                     "required": false,
                     "label": "[variables('apiHubTableDataSetLabel')]",
                     "help": "[variables('apiHubTableDataSetHelp')]",
-                    "validators": []
+                    "validators": [ ]
                 },
                 {
                     "name": "tableName",
@@ -592,7 +592,7 @@
                     "required": false,
                     "label": "[variables('apiHubTableNameLabel')]",
                     "help": "[variables('apiHubTableHelp')]",
-                    "validators": []
+                    "validators": [ ]
                 },
                 {
                     "name": "entityId",
@@ -601,7 +601,7 @@
                     "required": false,
                     "label": "[variables('apiHubTableEntityLabel')]",
                     "help": "[variables('apiHubTableEntityHelp')]",
-                    "validators": []
+                    "validators": [ ]
                 },
                 {
                     "name": "connection",
@@ -1364,6 +1364,45 @@
                     ],
                     "label": "Notification Platform",
                     "help": "Choose platform to send native notifcations. Select Template to send template notification."
+                }
+            ]
+        },
+        {
+            "type": "sendGrid",
+            "displayName": "SendGrid",
+            "direction": "out",
+            "settings": [
+                {
+                    "name": "to",
+                    "value": "string",
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "To address",
+                    "help": "This is the email address the message should be sent to. Can be of the form 'user@host.com' or 'Display Name <user@host.com>'. If not specified here, the value can be specified in code."
+                },
+                {
+                    "name": "from",
+                    "value": "string",
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "From address",
+                    "help": "This is the email address the message is sent from. Can be of the form 'user@host.com' or 'Display Name <user@host.com>'. If not specified here, the value can be specified in code."
+                },
+                {
+                    "name": "subject",
+                    "value": "string",
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "Message Subject",
+                    "help": "This is the subject line to use for the message. If not specified here, the value can be specified in code."
+                },
+                {
+                    "name": "text",
+                    "value": "string",
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "Message Text",
+                    "help": "This is the text body to use for the message. If not specified here, the value can be specified in code."
                 }
             ]
         }
