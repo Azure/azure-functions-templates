@@ -11,8 +11,8 @@ using System.Drawing;
 using System.Drawing.Imaging;
 
 // Use the ImageResizer NuGet to resize images based a blob trigger.
-// Currently, NuGet restore doesn't work for templates. To trigger a restore manually, go to your Kudu site and touch project.json. 
-// Go to http://yoursite.scm.azurewebsites.net/DebugConsole, then edit site/wwwroot/ImageResizerCSharp/project.json.
+// Currently, NuGet restore doesn't work for templates. To trigger a restore manually, click "View Files" 
+// in the bottom left of the code editor.  Make an edit to project.json. Once you save, you'll see "Starting NuGet restore" in the Log window.
 // Or, use the version based on System.Drawing by commenting out this method and using statement and uncommenting the one below.
 using ImageResizer;
 
