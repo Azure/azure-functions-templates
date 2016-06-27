@@ -1,4 +1,4 @@
-# HttpTrigger - Powershell
+# HttpTrigger - PowerShell
 
 The `HttpTrigger` makes it incredibly easy to have your functions executed via an HTTP call to your function.
 
