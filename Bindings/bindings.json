@@ -4,19 +4,19 @@
     "variables": {
         "storageConnStringLabel": "Storage account connection",
         "appSettingsHelp": "This is the connection string for your storage account.",
-        "selectConnection":  "Click select to choose a connection",
-        "parameterName" : "The parameter name must be an alphanumeric string of any number of characters. It can’t start with a number.",
-        "paramNameLabel" : "Parameter Name",
-        "paramNameInputHelp" : "This is the name of the parameter in code for the input binding to bind to.",
-        "paramNameOutputHelp" : "This is the name of the parameter in code for the output binding to bind to.",
-        "apiHubTableDataSetLabel" : "Data Set Name",
-        "apiHubTableDataSetHelp" : "The name of the data set to bind to.  Leave as 'default' if binding to a table or entity.",
-        "apiHubTableNameLabel" : "Table Name",
-        "apiHubTableHelp" : "The name of the table to bind to.  Leave empty if binding to a data set or entity",
-        "apiHubTableEntityLabel" : "Entity ID",
-        "apiHubTableEntityHelp" : "The ID of the entity to bind to.  Leave empty if binding to a data set or table",
-        "apiHubTableConnectionLabel" : "SaaS Table connection",
-        "apiHubTableConnectionHelp" : "The connection string for your SaaS Table connection"
+        "selectConnection": "Click select to choose a connection",
+        "parameterName": "The parameter name must be an alphanumeric string of any number of characters. It can’t start with a number.",
+        "paramNameLabel": "Parameter Name",
+        "paramNameInputHelp": "This is the name of the parameter in code for the input binding to bind to.",
+        "paramNameOutputHelp": "This is the name of the parameter in code for the output binding to bind to.",
+        "apiHubTableDataSetLabel": "Data Set Name",
+        "apiHubTableDataSetHelp": "The name of the data set to bind to.  Leave as 'default' if binding to a table or entity.",
+        "apiHubTableNameLabel": "Table Name",
+        "apiHubTableHelp": "The name of the table to bind to.  Leave empty if binding to a data set or entity",
+        "apiHubTableEntityLabel": "Entity ID",
+        "apiHubTableEntityHelp": "The ID of the entity to bind to.  Leave empty if binding to a data set or table",
+        "apiHubTableConnectionLabel": "SaaS Table connection",
+        "apiHubTableConnectionHelp": "The connection string for your SaaS Table connection"
     },
     "bindings": [
         {
@@ -89,6 +89,14 @@
                     "label": "Event Hub connection",
                     "help": "This is the connection string for your event hub. Make sure that it has Receive permissions.",
                     "placeholder": "[variables('selectConnection')]"
+                },
+                {
+                    "name": "consumerGroup",
+                    "value": "string",
+                    "defaultValue": "$Default",
+                    "required": false,
+                    "label": "Event Hub consumer group",
+                    "help": "The name of the Event Hub consumer group to receive events from."
                 }
             ]
         },

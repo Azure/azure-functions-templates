@@ -352,6 +352,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{84E9734A-2
 		Test\Tests.ps1 = Test\Tests.ps1
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventHubTrigger-Python", "EventHubTrigger-Python", "{B961A3B3-39AE-4392-8A7C-B9E051D42BB4}"
+	ProjectSection(SolutionItems) = preProject
+		Templates\EventHubTrigger-Python\function.json = Templates\EventHubTrigger-Python\function.json
+		Templates\EventHubTrigger-Python\metadata.json = Templates\EventHubTrigger-Python\metadata.json
+		Templates\EventHubTrigger-Python\run.py = Templates\EventHubTrigger-Python\run.py
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -402,5 +409,6 @@ Global
 		{B0889BC1-1558-430A-9998-2795C90E6570} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 		{2CE0C2B4-F391-411F-96E4-64D8AE69B708} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 		{C1C799D0-ED2C-45C2-8F09-5F924323BAD7} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
+		{B961A3B3-39AE-4392-8A7C-B9E051D42BB4} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 	EndGlobalSection
 EndGlobal

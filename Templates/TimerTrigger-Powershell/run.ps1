@@ -1,1 +1,1 @@
-[Console]::WriteLine("Powershell Timer trigger function executed at:$(get-date)");
+Write-Output "PowerShell Timer trigger function executed at:$(get-date)";
