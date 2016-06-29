@@ -1,9 +1,9 @@
-$requestBody = Get-Content $Env:req -Raw | ConvertFrom-Json
+$requestBody = Get-Content $req -Raw | ConvertFrom-Json
 $name = $requestBody.name
 
-if ($Env:req_query_name) 
+if ($req_query_name) 
 {
-    $name = $Env:req_query_name 
+    $name = $req_query_name 
 }
 
-Out-File -Encoding Ascii $Env:res -inputObject "Hello $name"
+Out-File -Encoding Ascii $res -inputObject "Hello $name"

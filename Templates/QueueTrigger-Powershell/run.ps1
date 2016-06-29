@@ -1,3 +1,2 @@
-$in = Get-Content $Env:input
-
-[Console]::WriteLine("Powershell script processed queue message '$in'")
+$in = Get-Content $triggerInput
+Write-Output "PowerShell script processed queue message '$in'"

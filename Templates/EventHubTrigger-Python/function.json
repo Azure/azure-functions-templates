@@ -2,10 +2,10 @@
     "disabled": false,
     "bindings": [
         {
-            "name": "triggerInput",
-            "type": "queueTrigger",
+            "type": "eventHubTrigger",
+            "name": "myEventHubMessage",
             "direction": "in",
-            "queueName": "samples-powershell",
+            "path": "samples-workitems",
             "connection": ""
         }
     ]
