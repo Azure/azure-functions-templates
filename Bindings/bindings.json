@@ -82,6 +82,14 @@
                     ]
                 },
                 {
+                    "name": "consumerGroup",
+                    "value": "string",
+                    "defaultValue": "$Default",
+                    "required": false,
+                    "label": "Event Hub consumer group",
+                    "help": "The name of the Event Hub consumer group to receive events from."
+                },
+                {
                     "name": "connection",
                     "value": "string",
                     "resource": "EventHub",
@@ -89,20 +97,6 @@
                     "label": "Event Hub connection",
                     "help": "This is the connection string for your event hub. Make sure that it has Receive permissions.",
                     "placeholder": "[variables('selectConnection')]"
-                },
-                {
-                    "name": "consumerGroup",
-                    "value": "string",
-                    "defaultValue": "$Default",
-                    "required": false,
-                    "label": "Event Hub consumer group",
-                    "help": "The name of the Event Hub consumer group to receive events from.",
-                    "validators": [
-                        {
-                            "expression": "(^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$)|^\\$Default$",
-                            "errorText": "Your consumer group name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed."
-                        }
-                    ]
                 }
             ]
         },
