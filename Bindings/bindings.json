@@ -82,6 +82,14 @@
                     ]
                 },
                 {
+                    "name": "consumerGroup",
+                    "value": "string",
+                    "defaultValue": "$Default",
+                    "required": false,
+                    "label": "Event Hub consumer group",
+                    "help": "The name of the Event Hub consumer group to receive events from."
+                },
+                {
                     "name": "connection",
                     "value": "string",
                     "resource": "EventHub",
@@ -89,14 +97,6 @@
                     "label": "Event Hub connection",
                     "help": "This is the connection string for your event hub. Make sure that it has Receive permissions.",
                     "placeholder": "[variables('selectConnection')]"
-                },
-                {
-                    "name": "consumerGroup",
-                    "value": "string",
-                    "defaultValue": "$Default",
-                    "required": false,
-                    "label": "Event Hub consumer group",
-                    "help": "The name of the Event Hub consumer group to receive events from."
                 }
             ]
         },
@@ -1081,7 +1081,7 @@
             ]
         },
         {
-            "type": "documentdb",
+            "type": "documentDB",
             "displayName": "Azure DocumentDB Document",
             "direction": "out",
             "settings": [
@@ -1135,7 +1135,7 @@
             ]
         },
         {
-            "type": "documentdb",
+            "type": "documentDB",
             "displayName": "Azure DocumentDB Document",
             "direction": "in",
             "settings": [
@@ -1358,6 +1358,59 @@
                     ],
                     "label": "Notification Platform",
                     "help": "Choose platform to send native notifcations. Select Template to send template notification."
+                }
+            ]
+        },
+        {
+            "type": "sendGrid",
+            "displayName": "SendGrid",
+            "direction": "out",
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "message",
+                    "required": true,
+                    "label": "Message parameter name",
+                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "[variables('parameterName')]"
+                        }
+                    ]
+                },
+                {
+                    "name": "to",
+                    "value": "string",
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "To address",
+                    "help": "This is the email address the message should be sent to. Can be of the form 'user@host.com' or 'Display Name <user@host.com>'. If not specified here, the value can be specified in code."
+                },
+                {
+                    "name": "from",
+                    "value": "string",
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "From address",
+                    "help": "This is the email address the message is sent from. Can be of the form 'user@host.com' or 'Display Name <user@host.com>'. If not specified here, the value can be specified in code."
+                },
+                {
+                    "name": "subject",
+                    "value": "string",
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "Message Subject",
+                    "help": "This is the subject line to use for the message. If not specified here, the value can be specified in code."
+                },
+                {
+                    "name": "text",
+                    "value": "string",
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "Message Text",
+                    "help": "This is the text body to use for the message. If not specified here, the value can be specified in code."
                 }
             ]
         }
