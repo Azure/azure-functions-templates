@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="eventHubOut_connection_label" xml:space="preserve">
+    <value>This is the connection string for your event hub. Make sure that it has Send permissions.</value>
+  </data>
+  <data name="eventHubOut_connection_label1" xml:space="preserve">
+    <value>Event Hub connection</value>
+  </data>
+  <data name="eventHubOut_displayName" xml:space="preserve">
+    <value>Azure Event Hub</value>
+  </data>
+  <data name="eventHubOut_name_help" xml:space="preserve">
+    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+  </data>
+  <data name="eventHubOut_name_label" xml:space="preserve">
+    <value>Event parameter name</value>
+  </data>
+  <data name="eventHubOut_path_errorText" xml:space="preserve">
+    <value>Your event hub name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, the hyphen, and the underscore.</value>
+  </data>
+  <data name="eventHubOut_path_help" xml:space="preserve">
+    <value>This is the name of the event hub to which the event will be sent.</value>
+  </data>
+  <data name="eventHubOut_path_label" xml:space="preserve">
+    <value>Event Hub name</value>
+  </data>
+  <data name="eventHubTrigger_connection_help" xml:space="preserve">
+    <value>This is the connection string for your event hub. Make sure that it has Receive permissions.</value>
+  </data>
+  <data name="eventHubTrigger_connection_label" xml:space="preserve">
+    <value>Event Hub connection</value>
+  </data>
+  <data name="eventHubTrigger_consumerGroup_help" xml:space="preserve">
+    <value>The name of the Event Hub consumer group to receive events from.</value>
+  </data>
+  <data name="eventHubTrigger_consumerGroup_label" xml:space="preserve">
+    <value>Event Hub consumer group</value>
+  </data>
+  <data name="eventHubTrigger_displayName" xml:space="preserve">
+    <value>Azure Event Hub</value>
+  </data>
+  <data name="eventHubTrigger_name_help" xml:space="preserve">
+    <value>This is the name of the parameter in the code for trigger to bind to.</value>
+  </data>
+  <data name="eventHubTrigger_name_label" xml:space="preserve">
+    <value>Event parameter name</value>
+  </data>
+  <data name="eventHubTrigger_path_errorText" xml:space="preserve">
+    <value>Your event hub name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the hyphen, the period, and the underscore.</value>
+  </data>
+  <data name="eventHubTrigger_path_help" xml:space="preserve">
+    <value>This is the name of the event hub you would like to trigger off of.</value>
+  </data>
+  <data name="eventHubTrigger_path_label" xml:space="preserve">
+    <value>Event Hub name</value>
+  </data>
+  <data name="queueOut_displayName" xml:space="preserve">
+    <value>Azure Storage Queue</value>
+  </data>
+  <data name="queueOut_name_help" xml:space="preserve">
+    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+  </data>
+  <data name="queueOut_name_label" xml:space="preserve">
+    <value>Message parameter name</value>
+  </data>
+  <data name="queueOut_queueName_erroText" xml:space="preserve">
+    <value>Your queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, and the hyphen. The name must be 3 to 63 characters.</value>
+  </data>
+  <data name="queueOut_queueName_label" xml:space="preserve">
+    <value>Queue name</value>
+  </data>
+  <data name="queueOut_queueName_name" xml:space="preserve">
+    <value>This is the queue to which the message will be sent. If the queue doesn't exist yet, one will be created for you in the specifed storage account.</value>
+  </data>
+  <data name="temp_category_core" xml:space="preserve">
+    <value>Core</value>
+  </data>
+  <data name="temp_category_dataProcessing" xml:space="preserve">
+    <value>Data Processing</value>
+  </data>
+  <data name="temp_timerTrigger_CSharp_desc" xml:space="preserve">
+    <value>A C# function that will be run on a specified schedule</value>
+  </data>
+  <data name="temp_timerTrigger_CSharp_name" xml:space="preserve">
+    <value>TimerTrigger - C#</value>
+  </data>
+  <data name="timerTrigger_displayName" xml:space="preserve">
+    <value>Timer</value>
+  </data>
+  <data name="timerTrigger_name_help" xml:space="preserve">
+    <value>This is the name of the parameter in the code for trigger to bind to.</value>
+  </data>
+  <data name="timerTrigger_name_label" xml:space="preserve">
+    <value>Timestamp parameter nam</value>
+  </data>
+  <data name="timerTrigger_schedule_help" xml:space="preserve">
+    <value>Enter a cron expression of the format '{second} {minute} {hour} {day} {month} {day of week}' to specify your schedule. Please consult the documentation to learn more.</value>
+  </data>
+  <data name="timerTrigger_schedule_label" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
+    <value>The connection string for your SaaS Table connection</value>
+  </data>
+  <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
+    <value>SaaS Table connection</value>
+  </data>
+  <data name="variables_apiHubTableDataSetHelp" xml:space="preserve">
+    <value>The name of the data set to bind to.  Leave as 'default' if binding to a table or entity.</value>
+  </data>
+  <data name="variables_apiHubTableDataSetLabel" xml:space="preserve">
+    <value>Data Set Name</value>
+  </data>
+  <data name="variables_apiHubTableEntityHelp" xml:space="preserve">
+    <value>The ID of the entity to bind to.  Leave empty if binding to a data set or table</value>
+  </data>
+  <data name="variables_apiHubTableEntityLabel" xml:space="preserve">
+    <value>Entity ID</value>
+  </data>
+  <data name="variables_apiHubTableHelp" xml:space="preserve">
+    <value>The name of the table to bind to.  Leave empty if binding to a data set or entity</value>
+  </data>
+  <data name="variables_apiHubTableNameLabel" xml:space="preserve">
+    <value>Table Name</value>
+  </data>
+  <data name="variables_appSettingsHelp" xml:space="preserve">
+    <value>This is the connection string for your storage account.</value>
+  </data>
+  <data name="variables_parameterName" xml:space="preserve">
+    <value>The parameter name must be an alphanumeric string of any number of characters. It can’t start with a number.</value>
+  </data>
+  <data name="variables_paramNameInputHelp" xml:space="preserve">
+    <value>This is the name of the parameter in code for the input binding to bind to.</value>
+  </data>
+  <data name="variables_paramNameOutputHelp" xml:space="preserve">
+    <value>This is the name of the parameter in code for the output binding to bind to.</value>
+  </data>
+  <data name="variables_selectConnection" xml:space="preserve">
+    <value>Click select to choose a connection</value>
+  </data>
+  <data name="variables_storageConnStringLabel" xml:space="preserve">
+    <value>Storage account connection</value>
+  </data>
+  <data name="variable_paramNameLabel" xml:space="preserve">
+    <value>Parameter Name</value>
+  </data>
+  <data name="temp_category_all" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="temp_category_api" xml:space="preserve">
+    <value>API &amp; Webhooks</value>
+  </data>
+  <data name="temp_category_experimental" xml:space="preserve">
+    <value>Experimental</value>
+  </data>
+  <data name="temp_category_samples" xml:space="preserve">
+    <value>Samples</value>
+  </data>
+</root>
