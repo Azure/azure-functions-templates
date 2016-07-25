@@ -1,22 +1,22 @@
-{
+﻿{
     "$schema": "<TBD>",
     "contentVersion": "2016-03-04-alpha",
     "variables": {
-        "storageConnStringLabel": "Storage account connection",
-        "appSettingsHelp": "This is the connection string for your storage account.",
-        "selectConnection": "Click select to choose a connection",
-        "parameterName": "The parameter name must be an alphanumeric string of any number of characters. It can’t start with a number.",
-        "paramNameLabel": "Parameter Name",
-        "paramNameInputHelp": "This is the name of the parameter in code for the input binding to bind to.",
-        "paramNameOutputHelp": "This is the name of the parameter in code for the output binding to bind to.",
-        "apiHubTableDataSetLabel": "Data Set Name",
-        "apiHubTableDataSetHelp": "The name of the data set to bind to.  Leave as 'default' if binding to a table or entity.",
-        "apiHubTableNameLabel": "Table Name",
-        "apiHubTableHelp": "The name of the table to bind to.  Leave empty if binding to a data set or entity",
-        "apiHubTableEntityLabel": "Entity ID",
-        "apiHubTableEntityHelp": "The ID of the entity to bind to.  Leave empty if binding to a data set or table",
-        "apiHubTableConnectionLabel": "SaaS Table connection",
-        "apiHubTableConnectionHelp": "The connection string for your SaaS Table connection"
+        "storageConnStringLabel": "$variables_storageConnStringLabel",
+        "appSettingsHelp": "$variables_appSettingsHelp",
+        "selectConnection": "$variables_selectConnection",
+        "parameterName": "$variables_parameterName",
+        "paramNameLabel": "$variables_paramNameLabel",
+        "paramNameInputHelp": "$variables_paramNameInputHelp",
+        "paramNameOutputHelp": "$variables_paramNameOutputHelp",
+        "apiHubTableDataSetLabel": "$variables_apiHubTableDataSetLabel",
+        "apiHubTableDataSetHelp": "$variables_apiHubTableDataSetHelp",
+        "apiHubTableNameLabel": "$variables_apiHubTableNameLabel",
+        "apiHubTableHelp": "$variables_apiHubTableHelp",
+        "apiHubTableEntityLabel": "$variables_apiHubTableEntityLabel",
+        "apiHubTableEntityHelp": "$variables_apiHubTableEntityHelp",
+        "apiHubTableConnectionLabel": "$variables_apiHubTableConnectionLabel",
+        "apiHubTableConnectionHelp": "$variables_apiHubTableConnectionHelp"
     },
     "bindings": [
         {
@@ -29,8 +29,8 @@
                     "value": "string",
                     "defaultValue": "myTimer",
                     "required": true,
-                    "label": "Timestamp parameter name",
-                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "label": "$timerTrigger_name_label",
+                    "help": "$timerTrigger_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -43,14 +43,14 @@
                     "value": "string",
                     "defaultValue": "0 * * * * *",
                     "required": true,
-                    "label": "Schedule",
-                    "help": "Enter a cron expression of the format '{second} {minute} {hour} {day} {month} {day of week}' to specify your schedule. Please consult the documentation to learn more."
+                    "label": "$timerTrigger_schedule_label",
+                    "help": "$timerTrigger_schedule_help"
                 }
             ]
         },
         {
             "type": "eventHubTrigger",
-            "displayName": "Azure Event Hub",
+            "displayName": "$eventHubOut_displayName",
             "direction": "trigger",
             "settings": [
                 {
@@ -58,8 +58,8 @@
                     "value": "string",
                     "defaultValue": "myEventHubMessage",
                     "required": true,
-                    "label": "Event parameter name",
-                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "label": "$eventHubOut_name_label",
+                    "help": "$eventHubTrigger_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -72,12 +72,12 @@
                     "value": "string",
                     "defaultValue": "myeventhub",
                     "required": true,
-                    "label": "Event Hub name",
-                    "help": "This is the name of the event hub you would like to trigger off of.",
+                    "label": "$eventHubOut_path_label",
+                    "help": "$eventHubTrigger_path_help",
                     "validators": [
                         {
                             "expression": "^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$",
-                            "errorText": "Your event hub name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the hyphen, the period, and the underscore."
+                            "errorText": "$eventHubTrigger_path_errorText"
                         }
                     ]
                 },
@@ -86,23 +86,23 @@
                     "value": "string",
                     "defaultValue": "$Default",
                     "required": false,
-                    "label": "Event Hub consumer group",
-                    "help": "The name of the Event Hub consumer group to receive events from."
+                    "label": "$eventHubTrigger_consumerGroup_label",
+                    "help": "$eventHubTrigger_consumerGroup_help"
                 },
                 {
                     "name": "connection",
                     "value": "string",
                     "resource": "EventHub",
                     "required": true,
-                    "label": "Event Hub connection",
-                    "help": "This is the connection string for your event hub. Make sure that it has Receive permissions.",
+                    "label": "$eventHubOut_connection_label",
+                    "help": "$eventHubTrigger_connection_help",
                     "placeholder": "[variables('selectConnection')]"
                 }
             ]
         },
         {
             "type": "eventHub",
-            "displayName": "Azure Event Hub",
+            "displayName": "$eventHubOut_displayName",
             "direction": "out",
             "settings": [
                 {
@@ -110,8 +110,8 @@
                     "value": "string",
                     "defaultValue": "outputEventHubMessage",
                     "required": true,
-                    "label": "Event parameter name",
-                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "label": "$eventHubOut_name_label",
+                    "help": "$eventHubOut_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -124,12 +124,12 @@
                     "value": "string",
                     "defaultValue": "outeventhub",
                     "required": true,
-                    "label": "Event Hub name",
-                    "help": "This is the name of the event hub to which the event will be sent.",
+                    "label": "$eventHubOut_path_label",
+                    "help": "$eventHubOut_path_help",
                     "validators": [
                         {
                             "expression": "^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$",
-                            "errorText": "Your event hub name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, the hyphen, and the underscore."
+                            "errorText": "$eventHubOut_path_errorText"
                         }
                     ]
                 },
@@ -138,15 +138,15 @@
                     "value": "string",
                     "resource": "EventHub",
                     "required": true,
-                    "label": "Event Hub connection",
-                    "help": "This is the connection string for your event hub. Make sure that it has Send permissions.",
+                    "label": "$eventHubTrigger_connection_label",
+                    "help": "$eventHubOut_connection_help",
                     "placeholder": "[variables('selectConnection')]"
                 }
             ]
         },
         {
             "type": "queue",
-            "displayName": "Azure Storage Queue",
+            "displayName": "$queueOut_displayName",
             "direction": "out",
             "settings": [
                 {
@@ -154,8 +154,8 @@
                     "value": "string",
                     "defaultValue": "outputQueueItem",
                     "required": true,
-                    "label": "Message parameter name",
-                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "label": "$queueOut_name_label",
+                    "help": "$eventHubOut_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -168,12 +168,12 @@
                     "value": "string",
                     "defaultValue": "outqueue",
                     "required": true,
-                    "label": "Queue name",
-                    "help": "This is the queue to which the message will be sent. If the queue doesn't exist yet, one will be created for you in the specifed storage account.",
+                    "label": "$queueOut_queueName_label",
+                    "help": "$queueOut_queueName_help",
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9-]{1,61}[0-9a-z]$",
-                            "errorText": "Your queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, and the hyphen. The name must be 3 to 63 characters."
+                            "errorText": "$queueOut_queueName_errorText"
                         }
                     ]
                 },
@@ -198,8 +198,8 @@
                     "value": "string",
                     "defaultValue": "myQueueItem",
                     "required": true,
-                    "label": "Message parameter name",
-                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "label": "$queueOut_name_label",
+                    "help": "$timerTrigger_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -212,8 +212,8 @@
                     "value": "string",
                     "defaultValue": "myqueue",
                     "required": true,
-                    "label": "Queue name",
-                    "help": "This is the name of the queue from which the message will be read.",
+                    "label": "$queueOut_queueName_label",
+                    "help": "$queueTrigger_queueName_help",
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9-]{1,61}[0-9a-z]$",
@@ -242,8 +242,8 @@
                     "value": "string",
                     "defaultValue": "outputBlob",
                     "required": true,
-                    "label": "Blob parameter name",
-                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "label": "$blob_name_label",
+                    "help": "$blob_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -254,7 +254,7 @@
                 {
                     "name": "path",
                     "value": "string",
-                    "defaultValue": "outcontainer/%rand-guid%",
+                    "defaultValue": "outcontainer/{rand-guid}",
                     "required": true,
                     "label": "Path",
                     "help": "This is the path within your storage account to which the blob will be written.",
