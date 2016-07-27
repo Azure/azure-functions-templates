@@ -23,6 +23,7 @@
             "type": "timerTrigger",
             "displayName": "$timerTrigger_displayName",
             "direction": "trigger",
+            "enabledInTryMode": true,
             "settings": [
                 {
                     "name": "name",
@@ -58,6 +59,7 @@
             "type": "eventHubTrigger",
             "displayName": "$eventHubOut_displayName",
             "direction": "trigger",
+            "enabledInTryMode": false,
             "settings": [
                 {
                     "name": "name",
@@ -110,6 +112,7 @@
             "type": "eventHub",
             "displayName": "$eventHubOut_displayName",
             "direction": "out",
+            "enabledInTryMode": false,
             "settings": [
                 {
                     "name": "name",
@@ -154,6 +157,7 @@
             "type": "queue",
             "displayName": "$queueOut_displayName",
             "direction": "out",
+            "enabledInTryMode": true,
             "settings": [
                 {
                     "name": "name",
@@ -198,6 +202,7 @@
             "type": "queueTrigger",
             "displayName": "$queueTrigger_displayName",
             "direction": "trigger",
+            "enabledInTryMode": true,
             "settings": [
                 {
                     "name": "name",
@@ -242,6 +247,7 @@
             "type": "blob",
             "displayName": "$blobOut_displayName",
             "direction": "out",
+            "enabledInTryMode": true,
             "settings": [
                 {
                     "name": "name",
@@ -287,6 +293,7 @@
             "type": "blob",
             "displayName": "$blobIn_displayName",
             "direction": "in",
+            "enabledInTryMode": true,
             "settings": [
                 {
                     "name": "name",
@@ -331,6 +338,7 @@
             "type": "blobTrigger",
             "displayName": "$blobTrigger_displayName",
             "direction": "trigger",
+            "enabledInTryMode": true,
             "settings": [
                 {
                     "name": "name",
@@ -375,6 +383,7 @@
             "type": "apiHubFile",
             "displayName": "$apiHubFileIn_displayName",
             "direction": "in",
+            "enabledInTryMode": false,
             "settings": [
                 {
                     "name": "name",
@@ -416,6 +425,7 @@
             "type": "apiHubFile",
             "displayName": "$apiHubFileIn_displayName",
             "direction": "out",
+            "enabledInTryMode": false,
             "settings": [
                 {
                     "name": "name",
@@ -457,6 +467,7 @@
             "type": "apiHubFileTrigger",
             "displayName": "$apiHubFileTrigger_displayName",
             "direction": "trigger",
+            "enabledInTryMode": false,
             "settings": [
                 {
                     "name": "name",
@@ -502,6 +513,7 @@
             "type": "apiHubTable",
             "displayName": "$apiHubTableIn_displayName",
             "direction": "in",
+            "enabledInTryMode": false,
             "settings": [
                 {
                     "name": "name",
@@ -561,6 +573,7 @@
             "type": "apiHubTable",
             "displayName": "$apiHubTableOut_displayName",
             "direction": "out",
+            "enabledInTryMode": false,
             "settings": [
                 {
                     "name": "name",
@@ -620,6 +633,7 @@
             "type": "httpTrigger",
             "displayName": "$httpTrigger_displayName",
             "direction": "trigger",
+            "enabledInTryMode": true,
             "settings": [
                 {
                     "name": "name",
@@ -707,6 +721,7 @@
             "type": "http",
             "displayName": "$httpOut_displayName",
             "direction": "out",
+            "enabledInTryMode": true,
             "settings": [
                 {
                     "name": "name",
@@ -728,6 +743,7 @@
             "type": "serviceBusTrigger",
             "displayName": "$serviceBusTrigger_displayName",
             "direction": "trigger",
+            "enabledInTryMode": false,
             "settings": [
                 {
                     "name": "name",
@@ -849,6 +865,7 @@
             "type": "serviceBus",
             "displayName": "$serviceBusOut_displayName",
             "direction": "out",
+            "enabledInTryMode": false,
             "settings": [
                 {
                     "name": "name",
@@ -953,6 +970,7 @@
             "type": "manualTrigger",
             "displayName": "Manual",
             "direction": "trigger",
+            "enabledInTryMode": true,
             "settings": [
                 {
                     "name": "name",
@@ -974,6 +992,7 @@
             "type": "table",
             "displayName": "$tableout_displayName",
             "direction": "out",
+            "enabledInTryMode": true,
             "settings": [
                 {
                     "name": "name",
@@ -1018,6 +1037,7 @@
             "type": "table",
             "displayName": "$tableIn_displayName",
             "direction": "in",
+            "enabledInTryMode": true,
             "settings": [
                 {
                     "name": "name",
@@ -1091,6 +1111,7 @@
             "type": "documentDB",
             "displayName": "$documentDB_displayName",
             "direction": "out",
+            "enabledInTryMode": false,
             "settings": [
                 {
                     "name": "name",
@@ -1145,6 +1166,7 @@
             "type": "documentDB",
             "displayName": "$documentDBIn_displayName",
             "direction": "in",
+            "enabledInTryMode": false,
             "settings": [
                 {
                     "name": "name",
@@ -1199,6 +1221,7 @@
             "type": "mobileTable",
             "displayName": "$mobileTableOut_displayName",
             "direction": "out",
+            "enabledInTryMode": false,
             "settings": [
                 {
                     "name": "name",
@@ -1243,6 +1266,7 @@
             "type": "mobileTable",
             "displayName": "$mobileTableIn_displayName",
             "direction": "in",
+            "enabledInTryMode": false,            
             "settings": [
                 {
                     "name": "name",
@@ -1295,6 +1319,7 @@
             "type": "notificationHub",
             "displayName": "$notificationHubOut_displayName",
             "direction": "out",
+            "enabledInTryMode": false,
             "settings": [
                 {
                     "name": "name",
@@ -1372,6 +1397,7 @@
             "type": "sendGrid",
             "displayName": "$sendGrid_displayName",
             "direction": "out",
+            "enabledInTryMode": false,
             "settings": [
                 {
                     "name": "name",
