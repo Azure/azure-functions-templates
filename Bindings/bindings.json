@@ -95,7 +95,14 @@
                     "defaultValue": "$Default",
                     "required": false,
                     "label": "$eventHubTrigger_consumerGroup_label",
-                    "help": "$eventHubTrigger_consumerGroup_help"
+                    "help": "$eventHubTrigger_consumerGroup_help",
+                    "validators": [
+                        {
+                            "expression": "(^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$)|^\\$Default$",
+                            "errorText": "$eventHubTrigger_consumerGroup_errorText"
+                        }
+                    ]
+                    
                 },
                 {
                     "name": "connection",
