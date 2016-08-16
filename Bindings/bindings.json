@@ -24,6 +24,7 @@
             "displayName": "$timerTrigger_displayName",
             "direction": "trigger",
             "enabledInTryMode": true,
+            "documentation": "$content=..\\Documentation\\timerTrigger.md",
             "settings": [
                 {
                     "name": "name",
@@ -49,7 +50,7 @@
                     "validators": [
                         {
                             "expression": "^(\\*|((([1-5]\\d)|\\d)(\\-(([1-5]\\d)|\\d)(\\/\\d+)?)?)(,((([1-5]\\d)|\\d)(\\-(([1-5]\\d)|\\d)(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|((([1-5]\\d)|\\d)(\\-(([1-5]\\d)|\\d)(\\/\\d+)?)?)(,((([1-5]\\d)|\\d)(\\-(([1-5]\\d)|\\d)(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|(((1\\d)|(2[0-3])|\\d)(\\-((1\\d)|(2[0-3])|\\d)(\\/\\d+)?)?)(,(((1\\d)|(2[0-3])|\\d)(\\-((1\\d)|(2[0-3])|\\d)(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|((([1-2]\\d)|(3[0-1])|[1-9])(\\-(([1-2]\\d)|(3[0-1])|[1-9])(\\/\\d+)?)?)(,((([1-2]\\d)|(3[0-1])|[1-9])(\\-(([1-2]\\d)|(3[0-1])|[1-9])(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|(([A-Za-z]+|(1[0-2])|[1-9])(\\-([A-Za-z]+|(1[0-2])|[1-9])(\\/\\d+)?)?)(,(([A-Za-z]+|(1[0-2])|[1-9])(\\-([A-Za-z]+|(1[0-2])|[1-9])(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|(([A-Za-z]+|[0-6])(\\-([A-Za-z]+|[0-6])(\\/\\d+)?)?)(,(([A-Za-z]+|[0-6])(\\-([A-Za-z]+|[0-6])(\\/\\d+)?)?))*)(\\/\\d+)?$",
-                            "errorText": "$timerTrigger_schedule_errorText"                            
+                            "errorText": "$timerTrigger_schedule_errorText"
                         }
                     ]
                 }
@@ -60,6 +61,7 @@
             "displayName": "$eventHubOut_displayName",
             "direction": "trigger",
             "enabledInTryMode": false,
+            "documentation": "$content=..\\Documentation\\eventHubTrigger.md",
             "settings": [
                 {
                     "name": "name",
@@ -102,7 +104,6 @@
                             "errorText": "$eventHubTrigger_consumerGroup_errorText"
                         }
                     ]
-                    
                 },
                 {
                     "name": "connection",
@@ -120,6 +121,7 @@
             "displayName": "$eventHubOut_displayName",
             "direction": "out",
             "enabledInTryMode": false,
+            "documentation": "$content=..\\Documentation\\eventHubOut.md",
             "settings": [
                 {
                     "name": "name",
@@ -165,6 +167,7 @@
             "displayName": "$queueOut_displayName",
             "direction": "out",
             "enabledInTryMode": true,
+            "documentation": "$content=..\\Documentation\\queueOut.md",
             "settings": [
                 {
                     "name": "name",
@@ -210,6 +213,7 @@
             "displayName": "$queueTrigger_displayName",
             "direction": "trigger",
             "enabledInTryMode": true,
+            "documentation": "$content=..\\Documentation\\queueTrigger.md",
             "settings": [
                 {
                     "name": "name",
@@ -255,6 +259,7 @@
             "displayName": "$blobOut_displayName",
             "direction": "out",
             "enabledInTryMode": true,
+            "documentation": "$content=..\\Documentation\\blobOut.md",
             "settings": [
                 {
                     "name": "name",
@@ -281,7 +286,6 @@
                         {
                             "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){0,1023}[^\\/]$",
                             "errorText": "$blobOut_path_errorText"
-
                         }
                     ]
                 },
@@ -301,6 +305,7 @@
             "displayName": "$blobIn_displayName",
             "direction": "in",
             "enabledInTryMode": true,
+            "documentation": "$content=..\\Documentation\\blobIn.md",
             "settings": [
                 {
                     "name": "name",
@@ -346,6 +351,7 @@
             "displayName": "$blobTrigger_displayName",
             "direction": "trigger",
             "enabledInTryMode": true,
+            "documentation": "$content=..\\Documentation\\blobTrigger.md",
             "settings": [
                 {
                     "name": "name",
@@ -391,6 +397,7 @@
             "displayName": "$apiHubFileIn_displayName",
             "direction": "in",
             "enabledInTryMode": false,
+            "documentation": "$content=..\\Documentation\\apiHubFileIn.md",
             "settings": [
                 {
                     "name": "name",
@@ -413,7 +420,7 @@
                     "required": true,
                     "label": "$apiHubFileIn_path_label",
                     "help": "$apiHubFileIn_path_help",
-                    "validators": [ ]
+                    "validators": []
                 },
                 {
                     "name": "connection",
@@ -433,6 +440,7 @@
             "displayName": "$apiHubFileIn_displayName",
             "direction": "out",
             "enabledInTryMode": false,
+            "documentation": "$content=..\\Documentation\\apiHubFileOut.md",
             "settings": [
                 {
                     "name": "name",
@@ -455,7 +463,7 @@
                     "required": true,
                     "label": "$apiHubFileIn_path_label",
                     "help": "$apiHubFileIn_path_help",
-                    "validators": [ ]
+                    "validators": []
                 },
                 {
                     "name": "connection",
@@ -475,6 +483,7 @@
             "displayName": "$apiHubFileTrigger_displayName",
             "direction": "trigger",
             "enabledInTryMode": false,
+            "documentation": "$content=..\\Documentation\\apiHubFileTrigger.md",
             "settings": [
                 {
                     "name": "name",
@@ -497,7 +506,7 @@
                     "required": true,
                     "label": "$apiHubFileTrigger_path_label",
                     "help": "$apiHubFileTrigger_path_help",
-                    "validators": [ ]
+                    "validators": []
                 },
                 {
                     "name": "connection",
@@ -521,6 +530,7 @@
             "displayName": "$apiHubTableIn_displayName",
             "direction": "in",
             "enabledInTryMode": false,
+            "documentation": "$content=..\\Documentation\\apiHubTable.md",
             "settings": [
                 {
                     "name": "name",
@@ -543,7 +553,7 @@
                     "required": false,
                     "label": "[variables('apiHubTableDataSetLabel')]",
                     "help": "[variables('apiHubTableDataSetHelp')]",
-                    "validators": [ ]
+                    "validators": []
                 },
                 {
                     "name": "tableName",
@@ -552,7 +562,7 @@
                     "required": false,
                     "label": "[variables('apiHubTableNameLabel')]",
                     "help": "[variables('apiHubTableHelp')]",
-                    "validators": [ ]
+                    "validators": []
                 },
                 {
                     "name": "entityId",
@@ -561,7 +571,7 @@
                     "required": false,
                     "label": "[variables('apiHubTableEntityLabel')]",
                     "help": "[variables('apiHubTableEntityHelp')]",
-                    "validators": [ ]
+                    "validators": []
                 },
                 {
                     "name": "connection",
@@ -581,6 +591,7 @@
             "displayName": "$apiHubTableOut_displayName",
             "direction": "out",
             "enabledInTryMode": false,
+            "documentation": "$content=..\\Documentation\\apiHubTableOut.md",
             "settings": [
                 {
                     "name": "name",
@@ -603,7 +614,7 @@
                     "required": false,
                     "label": "[variables('apiHubTableDataSetLabel')]",
                     "help": "[variables('apiHubTableDataSetHelp')]",
-                    "validators": [ ]
+                    "validators": []
                 },
                 {
                     "name": "tableName",
@@ -612,7 +623,7 @@
                     "required": false,
                     "label": "[variables('apiHubTableNameLabel')]",
                     "help": "[variables('apiHubTableHelp')]",
-                    "validators": [ ]
+                    "validators": []
                 },
                 {
                     "name": "entityId",
@@ -621,7 +632,7 @@
                     "required": false,
                     "label": "[variables('apiHubTableEntityLabel')]",
                     "help": "[variables('apiHubTableEntityHelp')]",
-                    "validators": [ ]
+                    "validators": []
                 },
                 {
                     "name": "connection",
@@ -641,6 +652,7 @@
             "displayName": "$httpTrigger_displayName",
             "direction": "trigger",
             "enabledInTryMode": true,
+            "documentation": "$content=..\\Documentation\\httpTrigger.md",
             "settings": [
                 {
                     "name": "name",
@@ -729,6 +741,7 @@
             "displayName": "$httpOut_displayName",
             "direction": "out",
             "enabledInTryMode": true,
+            "documentation": "$content=..\\Documentation\\httpOut.md",
             "settings": [
                 {
                     "name": "name",
@@ -751,6 +764,7 @@
             "displayName": "$serviceBusTrigger_displayName",
             "direction": "trigger",
             "enabledInTryMode": false,
+            "documentation": "$content=..\\Documentation\\serviceBusTrigger.md",
             "settings": [
                 {
                     "name": "name",
@@ -777,7 +791,6 @@
                         {
                             "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
                             "errorText": "$serviceBusTrigger_queueName_errorText"
-
                         }
                     ]
                 },
@@ -873,6 +886,7 @@
             "displayName": "$serviceBusOut_displayName",
             "direction": "out",
             "enabledInTryMode": false,
+            "documentation": "$content=..\\Documentation\\serviceBusOut.md",
             "settings": [
                 {
                     "name": "name",
@@ -978,6 +992,7 @@
             "displayName": "Manual",
             "direction": "trigger",
             "enabledInTryMode": true,
+            "documentation": "$content=..\\Documentation\\manualTrigger.md",
             "settings": [
                 {
                     "name": "name",
@@ -1000,6 +1015,7 @@
             "displayName": "$tableout_displayName",
             "direction": "out",
             "enabledInTryMode": true,
+            "documentation": "$content=..\\Documentation\\tableOut.md",
             "settings": [
                 {
                     "name": "name",
@@ -1045,6 +1061,7 @@
             "displayName": "$tableIn_displayName",
             "direction": "in",
             "enabledInTryMode": true,
+            "documentation": "$content=..\\Documentation\\tableIn.md",
             "settings": [
                 {
                     "name": "name",
@@ -1119,6 +1136,7 @@
             "displayName": "$documentDB_displayName",
             "direction": "out",
             "enabledInTryMode": false,
+            "documentation": "$content=..\\Documentation\\documentDBOut.md",
             "settings": [
                 {
                     "name": "name",
@@ -1174,6 +1192,7 @@
             "displayName": "$documentDBIn_displayName",
             "direction": "in",
             "enabledInTryMode": false,
+            "documentation": "$content=..\\Documentation\\documentDBIn.md",
             "settings": [
                 {
                     "name": "name",
@@ -1229,6 +1248,7 @@
             "displayName": "$mobileTableOut_displayName",
             "direction": "out",
             "enabledInTryMode": false,
+            "documentation": "$content=..\\Documentation\\mobileTableOut.md",
             "settings": [
                 {
                     "name": "name",
@@ -1273,7 +1293,8 @@
             "type": "mobileTable",
             "displayName": "$mobileTableIn_displayName",
             "direction": "in",
-            "enabledInTryMode": false,            
+            "enabledInTryMode": false,
+            "documentation": "$content=..\\Documentation\\mobileTableIn.md",
             "settings": [
                 {
                     "name": "name",
@@ -1327,6 +1348,7 @@
             "displayName": "$notificationHubOut_displayName",
             "direction": "out",
             "enabledInTryMode": false,
+            "documentation": "$content=..\\Documentation\\notificationHubOut.md",
             "settings": [
                 {
                     "name": "name",
@@ -1405,6 +1427,7 @@
             "displayName": "$sendGrid_displayName",
             "direction": "out",
             "enabledInTryMode": false,
+            "documentation": "$content=..\\Documentation\\sendGridOut.md",
             "settings": [
                 {
                     "name": "name",
