@@ -167,6 +167,16 @@
             "displayName": "$queueOut_displayName",
             "direction": "out",
             "enabledInTryMode": true,
+            "actions": [
+                {
+                    "template": "QueueTrigger",
+                    "binding": "queueTrigger",
+                    "settings": [
+                        "queueName",
+                        "connection"
+                    ]
+                }
+            ],
             "documentation": "$content=Documentation\\queueOut.md",
             "settings": [
                 {
@@ -259,6 +269,16 @@
             "displayName": "$blobOut_displayName",
             "direction": "out",
             "enabledInTryMode": true,
+            "actions": [
+                {
+                    "template": "BlobTrigger",
+                    "binding": "blobTrigger",
+                    "settings": [
+                        "path",
+                        "connection"
+                    ]
+                }
+            ],
             "documentation": "$content=Documentation\\blobOut.md",
             "settings": [
                 {
