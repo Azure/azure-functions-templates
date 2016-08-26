@@ -1,4 +1,4 @@
-Using Mobile Apps table binding requires setting up an app setting. See these docs to see the full details: [go to azure.com](https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-mobile-apps/#create-an-environment-variable-for-your-mobile-app-backend-url)
+Using Mobile Apps table binding requires setting up an app setting. See these docs to see the full details: <a href="https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-mobile-apps/#create-an-environment-variable-for-your-mobile-app-backend-url" target="_blank">go to azure.com</a>
 
 #### Settings for Mobile Apps input binding
 
