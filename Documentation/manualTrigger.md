@@ -1,2 +1,30 @@
-# Azure Functions Templates
-This repository contains the templates used by the [Azure Functions Portal](https://functions.azure.com/signin). Templates are pre-defined functions that demonstrate a working scenario and could be used as a starting point for more complex ones.
+#### Settings for manual trigger
+
+- `type` : Must be set to *manualTrigger*.
+- `name` : The variable name used in function code for the event hub message. 
+
+#### Data types
+
+Manual trigger supports
+ - Object (JSON) (C# supports `T`)
+ - String
+
+#### Manual trigger C# example
+ 
+ ```csharp
+using System;
+
+public static void Run(string trigger, TraceWriter log)
+{
+    log.Info(trigger);
+}
+```
+
+#### Manual trigger Node.js example
+ 
+ ```javascript
+module.exports = function (context, trigger) {
+    context.log(trigger);	
+    context.done();
+};
+```
