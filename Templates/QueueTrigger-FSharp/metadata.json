@@ -1,9 +1,10 @@
 {
     "defaultFunctionName": "QueueTriggerFSharp",
-    "description": "An F# function that will be run whenever a message is added to a specified Azure Storage queue",
+    "description": "$QueueTriggerFSharp_description",
     "name": "QueueTrigger - F#",
-    "language": "F#",    
-    "category": [ "Experimental" ],
+    "language": "F#",
+    "category": [ "$temp_category_experimental" ],
+    "enabledInTryMode": true,
     "userPrompt": [
         "connection",
         "queueName"

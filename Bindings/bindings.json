@@ -1,36 +1,38 @@
-{
+﻿{
     "$schema": "<TBD>",
     "contentVersion": "2016-03-04-alpha",
     "variables": {
-        "storageConnStringLabel": "Storage account connection",
-        "appSettingsHelp": "This is the connection string for your storage account.",
-        "selectConnection": "Click select to choose a connection",
-        "parameterName": "The parameter name must be an alphanumeric string of any number of characters. It can’t start with a number.",
-        "paramNameLabel": "Parameter Name",
-        "paramNameInputHelp": "This is the name of the parameter in code for the input binding to bind to.",
-        "paramNameOutputHelp": "This is the name of the parameter in code for the output binding to bind to.",
-        "apiHubTableDataSetLabel": "Data Set Name",
-        "apiHubTableDataSetHelp": "The name of the data set to bind to.  Leave as 'default' if binding to a table or entity.",
-        "apiHubTableNameLabel": "Table Name",
-        "apiHubTableHelp": "The name of the table to bind to.  Leave empty if binding to a data set or entity",
-        "apiHubTableEntityLabel": "Entity ID",
-        "apiHubTableEntityHelp": "The ID of the entity to bind to.  Leave empty if binding to a data set or table",
-        "apiHubTableConnectionLabel": "SaaS Table connection",
-        "apiHubTableConnectionHelp": "The connection string for your SaaS Table connection"
+        "storageConnStringLabel": "$variables_storageConnStringLabel",
+        "appSettingsHelp": "$variables_appSettingsHelp",
+        "selectConnection": "$variables_selectConnection",
+        "parameterName": "$variables_parameterName",
+        "paramNameLabel": "$variables_paramNameLabel",
+        "paramNameInputHelp": "$variables_paramNameInputHelp",
+        "paramNameOutputHelp": "$variables_paramNameOutputHelp",
+        "apiHubTableDataSetLabel": "$variables_apiHubTableDataSetLabel",
+        "apiHubTableDataSetHelp": "$variables_apiHubTableDataSetHelp",
+        "apiHubTableNameLabel": "$variables_apiHubTableNameLabel",
+        "apiHubTableHelp": "$variables_apiHubTableHelp",
+        "apiHubTableEntityLabel": "$variables_apiHubTableEntityLabel",
+        "apiHubTableEntityHelp": "$variables_apiHubTableEntityHelp",
+        "apiHubTableConnectionLabel": "$variables_apiHubTableConnectionLabel",
+        "apiHubTableConnectionHelp": "$variables_apiHubTableConnectionHelp"
     },
     "bindings": [
         {
             "type": "timerTrigger",
-            "displayName": "Timer",
+            "displayName": "$timerTrigger_displayName",
             "direction": "trigger",
+            "enabledInTryMode": true,
+            "documentation": "$content=Documentation\\timerTrigger.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "myTimer",
                     "required": true,
-                    "label": "Timestamp parameter name",
-                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "label": "$timerTrigger_name_label",
+                    "help": "$timerTrigger_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -43,23 +45,31 @@
                     "value": "string",
                     "defaultValue": "0 * * * * *",
                     "required": true,
-                    "label": "Schedule",
-                    "help": "Enter a cron expression of the format '{second} {minute} {hour} {day} {month} {day of week}' to specify your schedule. Please consult the documentation to learn more."
+                    "label": "$timerTrigger_schedule_label",
+                    "help": "$timerTrigger_schedule_help",
+                    "validators": [
+                        {
+                            "expression": "^(\\*|((([1-5]\\d)|\\d)(\\-(([1-5]\\d)|\\d)(\\/\\d+)?)?)(,((([1-5]\\d)|\\d)(\\-(([1-5]\\d)|\\d)(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|((([1-5]\\d)|\\d)(\\-(([1-5]\\d)|\\d)(\\/\\d+)?)?)(,((([1-5]\\d)|\\d)(\\-(([1-5]\\d)|\\d)(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|(((1\\d)|(2[0-3])|\\d)(\\-((1\\d)|(2[0-3])|\\d)(\\/\\d+)?)?)(,(((1\\d)|(2[0-3])|\\d)(\\-((1\\d)|(2[0-3])|\\d)(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|((([1-2]\\d)|(3[0-1])|[1-9])(\\-(([1-2]\\d)|(3[0-1])|[1-9])(\\/\\d+)?)?)(,((([1-2]\\d)|(3[0-1])|[1-9])(\\-(([1-2]\\d)|(3[0-1])|[1-9])(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|(([A-Za-z]+|(1[0-2])|[1-9])(\\-([A-Za-z]+|(1[0-2])|[1-9])(\\/\\d+)?)?)(,(([A-Za-z]+|(1[0-2])|[1-9])(\\-([A-Za-z]+|(1[0-2])|[1-9])(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|(([A-Za-z]+|[0-6])(\\-([A-Za-z]+|[0-6])(\\/\\d+)?)?)(,(([A-Za-z]+|[0-6])(\\-([A-Za-z]+|[0-6])(\\/\\d+)?)?))*)(\\/\\d+)?$",
+                            "errorText": "$timerTrigger_schedule_errorText"
+                        }
+                    ]
                 }
             ]
         },
         {
             "type": "eventHubTrigger",
-            "displayName": "Azure Event Hub",
+            "displayName": "$eventHubTrigger_displayName",
             "direction": "trigger",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\eventHubTrigger.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "myEventHubMessage",
                     "required": true,
-                    "label": "Event parameter name",
-                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "label": "$eventHubTrigger_name_label",
+                    "help": "$eventHubTrigger_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -72,46 +82,64 @@
                     "value": "string",
                     "defaultValue": "myeventhub",
                     "required": true,
-                    "label": "Event Hub name",
-                    "help": "This is the name of the event hub you would like to trigger off of.",
+                    "label": "$eventHubOut_path_label",
+                    "help": "$eventHubTrigger_path_help",
                     "validators": [
                         {
                             "expression": "^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$",
-                            "errorText": "Your event hub name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the hyphen, the period, and the underscore."
+                            "errorText": "$eventHubTrigger_path_errorText"
                         }
                     ]
                 },
                 {
                     "name": "consumerGroup",
                     "value": "string",
-                    "defaultValue": "$Default",
+                    "defaultValue": "$$Default",
                     "required": false,
-                    "label": "Event Hub consumer group",
-                    "help": "The name of the Event Hub consumer group to receive events from."
+                    "label": "$eventHubTrigger_consumerGroup_label",
+                    "help": "$eventHubTrigger_consumerGroup_help",
+                    "validators": [
+                        {
+                            "expression": "(^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$)|^\\$Default$",
+                            "errorText": "$eventHubTrigger_consumerGroup_errorText"
+                        }
+                    ]
                 },
                 {
                     "name": "connection",
                     "value": "string",
                     "resource": "EventHub",
                     "required": true,
-                    "label": "Event Hub connection",
-                    "help": "This is the connection string for your event hub. Make sure that it has Receive permissions.",
+                    "label": "$eventHubTrigger_connection_label",
+                    "help": "$eventHubTrigger_connection_help",
                     "placeholder": "[variables('selectConnection')]"
                 }
             ]
         },
         {
             "type": "eventHub",
-            "displayName": "Azure Event Hub",
+            "displayName": "$eventHubOut_displayName",
             "direction": "out",
+            "enabledInTryMode": false,
+            "actions": [
+                {
+                    "template": "EventHubTrigger",
+                    "binding": "eventHubTrigger",
+                    "settings": [
+                        "path",
+                        "connection"
+                    ]
+                }
+            ],
+            "documentation": "$content=Documentation\\eventHubOut.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "outputEventHubMessage",
                     "required": true,
-                    "label": "Event parameter name",
-                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "label": "$eventHubOut_name_label",
+                    "help": "$eventHubOut_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -124,12 +152,12 @@
                     "value": "string",
                     "defaultValue": "outeventhub",
                     "required": true,
-                    "label": "Event Hub name",
-                    "help": "This is the name of the event hub to which the event will be sent.",
+                    "label": "$eventHubOut_path_label",
+                    "help": "$eventHubOut_path_help",
                     "validators": [
                         {
                             "expression": "^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$",
-                            "errorText": "Your event hub name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, the hyphen, and the underscore."
+                            "errorText": "$eventHubOut_path_errorText"
                         }
                     ]
                 },
@@ -138,24 +166,36 @@
                     "value": "string",
                     "resource": "EventHub",
                     "required": true,
-                    "label": "Event Hub connection",
-                    "help": "This is the connection string for your event hub. Make sure that it has Send permissions.",
+                    "label": "$eventHubOut_connection_label",
+                    "help": "$eventHubOut_connection_help",
                     "placeholder": "[variables('selectConnection')]"
                 }
             ]
         },
         {
             "type": "queue",
-            "displayName": "Azure Storage Queue",
+            "displayName": "$queueOut_displayName",
             "direction": "out",
+            "enabledInTryMode": true,
+            "actions": [
+                {
+                    "template": "QueueTrigger",
+                    "binding": "queueTrigger",
+                    "settings": [
+                        "queueName",
+                        "connection"
+                    ]
+                }
+            ],
+            "documentation": "$content=Documentation\\queueOut.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "outputQueueItem",
                     "required": true,
-                    "label": "Message parameter name",
-                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "label": "$queueOut_name_label",
+                    "help": "$queueOut_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -168,12 +208,12 @@
                     "value": "string",
                     "defaultValue": "outqueue",
                     "required": true,
-                    "label": "Queue name",
-                    "help": "This is the queue to which the message will be sent. If the queue doesn't exist yet, one will be created for you in the specifed storage account.",
+                    "label": "$queueOut_queueName_label",
+                    "help": "$queueOut_queueName_help",
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9-]{1,61}[0-9a-z]$",
-                            "errorText": "Your queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, and the hyphen. The name must be 3 to 63 characters."
+                            "errorText": "$queueOut_queueName_errorText"
                         }
                     ]
                 },
@@ -190,16 +230,18 @@
         },
         {
             "type": "queueTrigger",
-            "displayName": "Azure Storage Queue",
+            "displayName": "$queueTrigger_displayName",
             "direction": "trigger",
+            "enabledInTryMode": true,
+            "documentation": "$content=Documentation\\queueTrigger.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "myQueueItem",
                     "required": true,
-                    "label": "Message parameter name",
-                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "label": "$queueTrigger_name_label",
+                    "help": "$queueTrigger_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -212,12 +254,12 @@
                     "value": "string",
                     "defaultValue": "myqueue",
                     "required": true,
-                    "label": "Queue name",
-                    "help": "This is the name of the queue from which the message will be read.",
+                    "label": "$queueTrigger_queueName_label",
+                    "help": "$queueTrigger_queueName_help",
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9-]{1,61}[0-9a-z]$",
-                            "errorText": "Your queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, and the hyphen. The name must be 3 to 63 characters."
+                            "errorText": "$queueTrigger_queueName_errorText"
                         }
                     ]
                 },
@@ -234,16 +276,28 @@
         },
         {
             "type": "blob",
-            "displayName": "Azure Storage Blob",
+            "displayName": "$blobOut_displayName",
             "direction": "out",
+            "enabledInTryMode": true,
+            "actions": [
+                {
+                    "template": "BlobTrigger",
+                    "binding": "blobTrigger",
+                    "settings": [
+                        "path",
+                        "connection"
+                    ]
+                }
+            ],
+            "documentation": "$content=Documentation\\blobOut.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "outputBlob",
                     "required": true,
-                    "label": "Blob parameter name",
-                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "label": "$blobOut_name_label",
+                    "help": "$blobOut_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -256,12 +310,12 @@
                     "value": "string",
                     "defaultValue": "outcontainer/{rand-guid}",
                     "required": true,
-                    "label": "Path",
-                    "help": "This is the path within your storage account to which the blob will be written.",
+                    "label": "$blobOut_path_label",
+                    "help": "$blobOut_path_help",
                     "validators": [
                         {
                             "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){0,1023}[^\\/]$",
-                            "errorText": "Your blob path must be a container name of 3 to 63 characters, followed by a blob name of 1 to 1,024 characters. The blob name can be any combination of characters and can contain a maximum of 254 path segments, which are separated by the forward slash (/)."
+                            "errorText": "$blobOut_path_errorText"
                         }
                     ]
                 },
@@ -278,16 +332,18 @@
         },
         {
             "type": "blob",
-            "displayName": "Azure Storage Blob",
+            "displayName": "$blobIn_displayName",
             "direction": "in",
+            "enabledInTryMode": true,
+            "documentation": "$content=Documentation\\blobIn.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "inputBlob",
                     "required": true,
-                    "label": "Blob parameter name",
-                    "help": "This is the name of the parameter in the code for input binding to bind to.",
+                    "label": "$blobIn_name_label",
+                    "help": "$blobIn_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -300,12 +356,12 @@
                     "value": "string",
                     "defaultValue": "incontainer/{name}",
                     "required": true,
-                    "label": "Path",
-                    "help": "This is the path within your storage account from which the blob will be read.",
+                    "label": "$blobIn_path_label",
+                    "help": "$blobIn_path_help",
                     "validators": [
                         {
                             "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){0,1023}[^\\/]$",
-                            "errorText": "Your blob path must be a container name of 3 to 63 characters, followed by a blob name of 1 to 1,024 characters. The blob name can be any combination of characters and can contain a maximum of 254 path segments, which are separated by the forward slash (/)."
+                            "errorText": "$blobIn_patherrorText"
                         }
                     ]
                 },
@@ -322,16 +378,18 @@
         },
         {
             "type": "blobTrigger",
-            "displayName": "Azure Storage Blob",
+            "displayName": "$blobTrigger_displayName",
             "direction": "trigger",
+            "enabledInTryMode": true,
+            "documentation": "$content=Documentation\\blobTrigger.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "myBlob",
                     "required": true,
-                    "label": "Blob parameter name",
-                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "label": "$blobTrigger_name_label",
+                    "help": "$blobTrigger_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -344,12 +402,12 @@
                     "value": "string",
                     "defaultValue": "mycontainer",
                     "required": true,
-                    "label": "Path",
-                    "help": "This is the path within your storage account that the trigger will monitor.",
+                    "label": "$blobTrigger_path_label",
+                    "help": "$blobTrigger_path_help",
                     "validators": [
                         {
                             "expression": "(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9]$)|(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){0,1023}[^\\/]$)",
-                            "errorText": "Your blob path must be a container name of 3 to 63 characters, followed by a blob name of 1 to 1,024 characters. The blob name can be any combination of characters and can contain a maximum of 254 path segments, which are separated by the forward slash (/)."
+                            "errorText": "$blobTrigger_path_errorText"
                         }
                     ]
                 },
@@ -366,16 +424,18 @@
         },
         {
             "type": "apiHubFile",
-            "displayName": "SaaS File",
+            "displayName": "$apiHubFileIn_displayName",
             "direction": "in",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\apiHubFileIn.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "input",
                     "required": true,
-                    "label": "File parameter name",
-                    "help": "This is the name of the parameter in the code for input binding to bind to.",
+                    "label": "$apiHubFileIn_name_label",
+                    "help": "$apiHubFileIn_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -388,8 +448,8 @@
                     "value": "string",
                     "defaultValue": "path/{file}",
                     "required": true,
-                    "label": "Path",
-                    "help": "The output file path",
+                    "label": "$apiHubFileIn_path_label",
+                    "help": "$apiHubFileIn_path_help",
                     "validators": []
                 },
                 {
@@ -397,8 +457,8 @@
                     "value": "string",
                     "resource": "ApiHub",
                     "required": true,
-                    "label": "SaaS File connection",
-                    "help": "The connection string to your SaaS File connection",
+                    "label": "$apiHubFileIn_connection_label",
+                    "help": "$apiHubFileIn_connection_help",
                     "metadata": {
                         "capability": "blob"
                     }
@@ -407,16 +467,18 @@
         },
         {
             "type": "apiHubFile",
-            "displayName": "SaaS File",
+            "displayName": "$apiHubFileIn_displayName",
             "direction": "out",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\apiHubFileOut.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "output",
                     "required": true,
-                    "label": "File parameter name",
-                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "label": "$apiHubFileIn_name_label",
+                    "help": "$apiHubFileIn_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -429,8 +491,8 @@
                     "value": "string",
                     "defaultValue": "path/{file}",
                     "required": true,
-                    "label": "Path",
-                    "help": "The input file path",
+                    "label": "$apiHubFileIn_path_label",
+                    "help": "$apiHubFileIn_path_help",
                     "validators": []
                 },
                 {
@@ -438,8 +500,8 @@
                     "value": "string",
                     "resource": "ApiHub",
                     "required": true,
-                    "label": "SaaS File connection",
-                    "help": "The connection string to your SaaS File connection",
+                    "label": "$apiHubFileIn_connection_label",
+                    "help": "$apiHubFileIn_connection_help",
                     "metadata": {
                         "capability": "blob"
                     }
@@ -448,16 +510,18 @@
         },
         {
             "type": "apiHubFileTrigger",
-            "displayName": "SaaS File Trigger",
+            "displayName": "$apiHubFileTrigger_displayName",
             "direction": "trigger",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\apiHubFileTrigger.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "trigger",
                     "required": true,
-                    "label": "File parameter name",
-                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "label": "$apiHubFileTrigger_name_label",
+                    "help": "$apiHubFileTrigger_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -470,8 +534,8 @@
                     "value": "string",
                     "defaultValue": "path/{file}",
                     "required": true,
-                    "label": "Path",
-                    "help": "The path to trigger on. This path must exist.",
+                    "label": "$apiHubFileTrigger_path_label",
+                    "help": "$apiHubFileTrigger_path_help",
                     "validators": []
                 },
                 {
@@ -479,14 +543,13 @@
                     "value": "string",
                     "resource": "ApiHub",
                     "required": true,
-                    "label": "SaaS File connection",
-                    "help": "The connection string to your SaaS File connection",
+                    "label": "$apiHubFileTrigger_connection_label",
+                    "help": "$apiHubFileTrigger_connection_help",
                     "metadata": {
                         "capability": "blob",
                         "excluded": [
                             "googledrive",
-                            "ftp",
-                            "sftp"
+                            "azureblob"
                         ]
                     }
                 }
@@ -494,8 +557,10 @@
         },
         {
             "type": "apiHubTable",
-            "displayName": "SaaS Table",
+            "displayName": "$apiHubTableIn_displayName",
             "direction": "in",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\apiHubTable.md",
             "settings": [
                 {
                     "name": "name",
@@ -553,8 +618,10 @@
         },
         {
             "type": "apiHubTable",
-            "displayName": "SaaS Table",
+            "displayName": "$apiHubTableOut_displayName",
             "direction": "out",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\apiHubTableOut.md",
             "settings": [
                 {
                     "name": "name",
@@ -612,16 +679,18 @@
         },
         {
             "type": "httpTrigger",
-            "displayName": "HTTP",
+            "displayName": "$httpTrigger_displayName",
             "direction": "trigger",
+            "enabledInTryMode": true,
+            "documentation": "$content=Documentation\\httpTrigger.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "req",
                     "required": true,
-                    "label": "Request parameter name",
-                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "label": "$httpTrigger_name_label",
+                    "help": "$httpTrigger_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -642,8 +711,8 @@
                             "display": "Generic JSON"
                         }
                     ],
-                    "label": "Webhook type",
-                    "help": "Webhooks allow services to call one another easily."
+                    "label": "$httpTrigger_webHookType_label",
+                    "help": "$httpTrigger_webHookType_help"
                 },
                 {
                     "name": "authLevel",
@@ -662,8 +731,8 @@
                             "display": "Admin"
                         }
                     ],
-                    "label": "Authorization level",
-                    "help": "Authorization level controls whether you're using an API key and which key to use; Function uses your function key; Admin uses your master key. The function & master keys are found in your host secrets file. For user-based authentication, go to Function App Settings."
+                    "label": "$httpTrigger_authLevel_label",
+                    "help": "$httpTrigger_authLevel_help"
                 }
             ],
             "rules": [
@@ -692,23 +761,25 @@
                             ]
                         }
                     ],
-                    "label": "Mode",
-                    "help": "This is the mode of the trigger. \"Standard\" means that the request will be standard HTTP with no additional semantics. \"Webhook\" means that the request will be processed according to a specified webhook type."
+                    "label": "$httpTrigger_mode_label",
+                    "help": "$httpTrigger_mode_help"
                 }
             ]
         },
         {
             "type": "http",
-            "displayName": "HTTP",
+            "displayName": "$httpOut_displayName",
             "direction": "out",
+            "enabledInTryMode": true,
+            "documentation": "$content=Documentation\\httpOut.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "res",
                     "required": true,
-                    "label": "Response parameter name",
-                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "label": "$httpOut_name_label",
+                    "help": "$httpOut_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -720,16 +791,18 @@
         },
         {
             "type": "serviceBusTrigger",
-            "displayName": "Azure Service Bus",
+            "displayName": "$serviceBusTrigger_displayName",
             "direction": "trigger",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\serviceBusTrigger.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "mySbMsg",
                     "required": true,
-                    "label": "Message parameter name",
-                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "label": "$serviceBusTrigger_name_label",
+                    "help": "$serviceBusTrigger_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -742,12 +815,12 @@
                     "value": "string",
                     "defaultValue": "mysbqueue",
                     "required": true,
-                    "label": "Queue name",
-                    "help": "This is the name of the queue from which the message will be read.",
+                    "label": "$serviceBusTrigger_queueName_label",
+                    "help": "$serviceBusTrigger_queueName_help",
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
-                            "errorText": "Your queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters."
+                            "errorText": "$serviceBusTrigger_queueName_errorText"
                         }
                     ]
                 },
@@ -756,12 +829,12 @@
                     "value": "string",
                     "defaultValue": "mysbtopic",
                     "required": true,
-                    "label": "Topic name",
-                    "help": "This is the name of the topic from which the message will be read.",
+                    "label": "$serviceBusTrigger_topicName_label",
+                    "help": "$serviceBusTrigger_topicName_help",
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
-                            "errorText": "Your topic name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters."
+                            "errorText": "$serviceBusTrigger_topicName_errorText"
                         }
                     ]
                 },
@@ -770,12 +843,12 @@
                     "value": "string",
                     "defaultValue": "mysubscription",
                     "required": true,
-                    "label": "Subscription name",
-                    "help": "This is the name of the subscription within the topic to bind to.",
+                    "label": "$serviceBusTrigger_subscriptionName_label",
+                    "help": "$serviceBusTrigger_subscriptionName_help",
                     "validators": [
                         {
                             "expression": "^[0-9a-zA-Z][a-zA-Z0-9_.-]{1,48}[0-9a-zA-Z]$",
-                            "errorText": "Your subscription name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters."
+                            "errorText": "$serviceBusTrigger_subscriptionName_errorText"
                         }
                     ]
                 },
@@ -784,8 +857,8 @@
                     "value": "string",
                     "resource": "EventHub",
                     "required": true,
-                    "label": "Service Bus connection",
-                    "help": "This is the connection string for your service bus. Make sure that it has Listen rights.",
+                    "label": "$serviceBusTrigger_connection_label",
+                    "help": "$serviceBusTrigger_connection_help",
                     "placeholder": "[variables('selectConnection')]"
                 },
                 {
@@ -801,8 +874,8 @@
                             "display": "Listen"
                         }
                     ],
-                    "label": "AccessRights",
-                    "help": "This is the access rights the client has to the queue or topic subscription."
+                    "label": "$serviceBusTrigger_accessRights_label",
+                    "help": "$serviceBusTrigger_accessRights_help"
                 }
             ],
             "rules": [
@@ -812,7 +885,7 @@
                     "values": [
                         {
                             "value": "queueName",
-                            "display": "Service Bus Queue",
+                            "display": "$serviceBusTrigger_messageType_queueName",
                             "hiddenSettings": [
                                 "topicName",
                                 "subscriptionName"
@@ -823,7 +896,7 @@
                         },
                         {
                             "value": "topicName",
-                            "display": "Service Bus Topic",
+                            "display": "$serviceBusTrigger_messageType_topicName",
                             "hiddenSettings": [
                                 "queueName"
                             ],
@@ -833,23 +906,25 @@
                             ]
                         }
                     ],
-                    "label": "Message type",
-                    "help": "This is the type of service bus message. This lets you choose between using Queues or Topics."
+                    "label": "$serviceBusTrigger_messageType_label",
+                    "help": "$serviceBusTrigger_messageType_help"
                 }
             ]
         },
         {
             "type": "serviceBus",
-            "displayName": "Azure Service Bus",
+            "displayName": "$serviceBusOut_displayName",
             "direction": "out",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\serviceBusOut.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "outputSbMsg",
                     "required": true,
-                    "label": "Message parameter name",
-                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "label": "$serviceBusOut_name_label",
+                    "help": "$serviceBusOut_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -862,12 +937,12 @@
                     "value": "string",
                     "defaultValue": "outqueue",
                     "required": true,
-                    "label": "Queue name",
-                    "help": "This is the queue to which the message will be sent.",
+                    "label": "$serviceBusOut_queueName_label",
+                    "help": "$serviceBusOut_queueName_help",
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
-                            "errorText": "Your queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters."
+                            "errorText": "$serviceBusOut_queueName_errorText"
                         }
                     ]
                 },
@@ -876,12 +951,12 @@
                     "value": "string",
                     "defaultValue": "outtopic",
                     "required": true,
-                    "label": "Topic name",
-                    "help": "This is the topic to which the message will be sent.",
+                    "label": "$serviceBusOut_topicName_label",
+                    "help": "$serviceBusOut_topicName_help",
                     "validators": [
                         {
                             "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
-                            "errorText": "Your topic name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters."
+                            "errorText": "$serviceBusOut_topicName_errorText"
                         }
                     ]
                 },
@@ -890,12 +965,12 @@
                     "value": "string",
                     "resource": "EventHub",
                     "required": true,
-                    "label": "Service Bus connection",
-                    "help": "This is the connection string for your service bus. Make sure that it has Send rights.",
+                    "label": "$serviceBusOut_connection_label",
+                    "help": "$serviceBusOut_connection_help",
                     "placeholder": "[variables('selectConnection')]"
                 },
                 {
-                    "name": "accessRights",
+                    "name": "accessRights_",
                     "value": "enum",
                     "enum": [
                         {
@@ -907,8 +982,8 @@
                             "display": "Send"
                         }
                     ],
-                    "label": "AccessRights",
-                    "help": "This is the access rights the client has to the queue or topic subscription."
+                    "label": "$serviceBusOut_accessRights_label",
+                    "help": "$serviceBusOut_accessRights_help"
                 }
             ],
             "rules": [
@@ -918,7 +993,7 @@
                     "values": [
                         {
                             "value": "queueName",
-                            "display": "Service Bus Queue",
+                            "display": "$serviceBusOut_messageType_queueName",
                             "hiddenSettings": [
                                 "topicName"
                             ],
@@ -928,7 +1003,7 @@
                         },
                         {
                             "value": "topicName",
-                            "display": "Service Bus Topic",
+                            "display": "display",
                             "hiddenSettings": [
                                 "queueName"
                             ],
@@ -937,8 +1012,8 @@
                             ]
                         }
                     ],
-                    "label": "Message type",
-                    "help": "This is the type of service bus message. This lets you choose between using Queues or Topics."
+                    "label": "$serviceBusOut_messageType_label",
+                    "help": "$serviceBusOut_messageType_help"
                 }
             ]
         },
@@ -946,14 +1021,16 @@
             "type": "manualTrigger",
             "displayName": "Manual",
             "direction": "trigger",
+            "enabledInTryMode": true,
+            "documentation": "$content=Documentation\\manualTrigger.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "input",
                     "required": true,
-                    "label": "Parameter name",
-                    "help": "This is the name of the parameter in the code for trigger to bind to.",
+                    "label": "$manualTrigger_name_label",
+                    "help": "$manualTrigger_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -965,16 +1042,18 @@
         },
         {
             "type": "table",
-            "displayName": "Azure Storage Table",
+            "displayName": "$tableout_displayName",
             "direction": "out",
+            "enabledInTryMode": true,
+            "documentation": "$content=Documentation\\tableOut.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "outputTable",
                     "required": true,
-                    "label": "Table parameter name",
-                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "label": "$tableout_name_label",
+                    "help": "$tableout_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -987,12 +1066,12 @@
                     "value": "string",
                     "defaultValue": "outTable",
                     "required": true,
-                    "label": "Table name",
-                    "help": "This is the name of the table within your storage account to which the data will be written.",
+                    "label": "$table_tableName_label",
+                    "help": "$table_tableName_help",
                     "validators": [
                         {
                             "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$",
-                            "errorText": "Your table name must be an alphanumeric string of 3 to 63 characters. It can’t start with a number."
+                            "errorText": "$table_tableName_errorText"
                         }
                     ]
                 },
@@ -1009,16 +1088,18 @@
         },
         {
             "type": "table",
-            "displayName": "Azure Storage Table",
+            "displayName": "$tableIn_displayName",
             "direction": "in",
+            "enabledInTryMode": true,
+            "documentation": "$content=Documentation\\tableIn.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "inputTable",
                     "required": true,
-                    "label": "Table parameter name",
-                    "help": "This is the name of the parameter in the code for input binding to bind to.",
+                    "label": "$tableIn_name_label",
+                    "help": "$tableIn_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -1031,12 +1112,12 @@
                     "value": "string",
                     "defaultValue": "inTable",
                     "required": true,
-                    "label": "Table name",
-                    "help": "This is the name of the table within your storage account from which the data will be read.",
+                    "label": "$tableIn_tableName_label",
+                    "help": "$tableIn_tableName_help",
                     "validators": [
                         {
                             "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$",
-                            "errorText": "Your table name must be an alphanumeric string of 3 to 63 characters. It can’t start with a number."
+                            "errorText": "$tableIn_tableName_errorText"
                         }
                     ]
                 },
@@ -1044,30 +1125,30 @@
                     "name": "partitionKey",
                     "value": "string",
                     "required": false,
-                    "label": "Partition key (optional)",
-                    "help": "This is the value of Partition key column of the table. The records with matching Partition key and Row key will be returned. Row key setting must be configured with Partiton key setting."
+                    "label": "$tableIn_partitionKey_label",
+                    "help": "$tableIn_partitionKey_help"
                 },
                 {
                     "name": "rowKey",
                     "value": "string",
                     "defaultValue": "",
                     "required": false,
-                    "label": "Row key (optional)",
-                    "help": "This is the value of Row key column of the table. The record with matching Row key and Partition key will be returned. Partiton key setting must be configured with Row key setting"
+                    "label": "$tableIn_rowKey_label",
+                    "help": "$tableIn_rowKey_help"
                 },
                 {
                     "name": "take",
                     "value": "int",
                     "required": false,
-                    "label": "Maximum number of records to read (optional)",
-                    "help": "This is an integer for the number of records. You may receive fewer records than this value based on the contents of the table and the applied filter.This setting is not applicable to a C# function."
+                    "label": "$tableIn_take_label",
+                    "help": "$tableIn_take_help"
                 },
                 {
                     "name": "filter",
                     "value": "string",
                     "required": false,
-                    "label": "Query filter (optional)",
-                    "help": "This is an optional query expression used to filter the results of the table query.This setting is not applicable to a C# function."
+                    "label": "$tableIn_filter_label",
+                    "help": "$tableIn_filter_help"
                 },
                 {
                     "name": "connection",
@@ -1082,16 +1163,18 @@
         },
         {
             "type": "documentDB",
-            "displayName": "Azure DocumentDB Document",
+            "displayName": "$documentDB_displayName",
             "direction": "out",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\documentDBOut.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "outputDocument",
                     "required": true,
-                    "label": "Document parameter name",
-                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "label": "$documentDBOut_name_label",
+                    "help": "$documentDBOut_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -1104,48 +1187,50 @@
                     "value": "string",
                     "defaultValue": "outDatabase",
                     "required": true,
-                    "label": "Database name",
-                    "help": "This is the name of the database within your DocumentDB account to which data will be written."
+                    "label": "$documentDBOut_databaseName_label",
+                    "help": "$documentDBOut_databaseName_help"
                 },
                 {
                     "name": "collectionName",
                     "value": "string",
                     "defaultValue": "MyCollection",
                     "required": true,
-                    "label": "Collection Name",
-                    "help": "This is the name of the collection within your database to which data will be written."
+                    "label": "$documentDBOut_collectionName_label",
+                    "help": "$documentDBOut_collectionName_help"
                 },
                 {
                     "name": "createIfNotExists",
                     "value": "boolean",
                     "defaultValue": false,
                     "required": true,
-                    "label": "Would you like the DocumentDB database and collection to be created for you?",
-                    "help": "When true, your database and collection will be created automatically."
+                    "label": "$documentDBOut_createIfNotExists_label",
+                    "help": "$documentDBOut_createIfNotExists_help"
                 },
                 {
                     "name": "connection",
                     "value": "string",
                     "resource": "DocumentDB",
                     "required": true,
-                    "label": "DocumentDB account connection",
-                    "help": "This is the connection string for your DocumentDB account.",
+                    "label": "$documentDBOut_connection_label",
+                    "help": "$documentDBOut_connection_help",
                     "placeholder": "[variables('selectConnection')]"
                 }
             ]
         },
         {
             "type": "documentDB",
-            "displayName": "Azure DocumentDB Document",
+            "displayName": "$documentDBIn_displayName",
             "direction": "in",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\documentDBIn.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "inputDocument",
                     "required": true,
-                    "label": "Document parameter name",
-                    "help": "This is the name of the parameter in the code for input binding to bind to.",
+                    "label": "$documentDBIn_name_label",
+                    "help": "$documentDBIn_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -1158,48 +1243,50 @@
                     "value": "string",
                     "defaultValue": "inDatabase",
                     "required": true,
-                    "label": "Database name",
-                    "help": "This is the name of the database within your DocumentDB account from which data will be read."
+                    "label": "$documentDBIn_databaseName_label",
+                    "help": "$documentDBIn_databaseName_help"
                 },
                 {
                     "name": "collectionName",
                     "value": "string",
                     "defaultValue": "MyCollection",
                     "required": true,
-                    "label": "Collection Name",
-                    "help": "This is the name of the collection within your database from which data will be read."
+                    "label": "$documentDBIn_collectionName_label",
+                    "help": "$documentDBIn_collectionName_help"
                 },
                 {
                     "name": "id",
                     "value": "string",
                     "defaultValue": "{documentId}",
                     "required": true,
-                    "label": "Document ID",
-                    "help": "This is the ID of the document that will be read."
+                    "label": "$documentDBIn_id_label",
+                    "help": "$documentDBIn_id_help"
                 },
                 {
                     "name": "connection",
                     "value": "string",
                     "resource": "DocumentDB",
                     "required": true,
-                    "label": "DocumentDB account connection",
-                    "help": "This is the connection string for your DocumentDB account.",
+                    "label": "$documentDBIn_connection_label",
+                    "help": "$documentDBIn_connection_help",
                     "placeholder": "[variables('selectConnection')]"
                 }
             ]
         },
         {
             "type": "mobileTable",
-            "displayName": "Azure Mobile Table Record",
+            "displayName": "$mobileTableOut_displayName",
             "direction": "out",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\mobileTableOut.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "outputRecord",
                     "required": true,
-                    "label": "Record parameter name",
-                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "label": "$mobileTableOut_name_label",
+                    "help": "$mobileTableOut_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -1212,38 +1299,40 @@
                     "value": "string",
                     "defaultValue": "outTable",
                     "required": true,
-                    "label": "Table name",
-                    "help": "This is the name of the table within your Mobile App to which data will be written."
+                    "label": "$mobileTableOut_tableName_label",
+                    "help": "$mobileTableOut_tableName_help"
                 },
                 {
                     "name": "connection",
                     "value": "string",
                     "defaultValue": "My_MobileApp_Uri",
                     "required": true,
-                    "label": "Mobile App URL lookup",
-                    "help": "This is the app setting name that specifies the URL of your Mobile App."
+                    "label": "$mobileTableOut_connection_label",
+                    "help": "$mobileTableOut_connection_help"
                 },
                 {
                     "name": "apiKey",
                     "value": "string",
                     "required": false,
-                    "label": "API key lookup (optional)",
-                    "help": "This is app setting name that specifies the API Key for your Mobile App. <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=780568'>More information</a>."
+                    "label": "$mobileTableOut_apiKey_label",
+                    "help": "$mobileTableOut_apiKey_help"
                 }
             ]
         },
         {
             "type": "mobileTable",
-            "displayName": "Azure Mobile Table Record",
+            "displayName": "$mobileTableIn_displayName",
             "direction": "in",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\mobileTableIn.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "inputRecord",
                     "required": true,
-                    "label": "Record parameter name",
-                    "help": "This is the name of the parameter in the code for input binding to bind to.",
+                    "label": "$mobileTableIn_name_label",
+                    "help": "$mobileTableIn_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -1256,46 +1345,48 @@
                     "value": "string",
                     "defaultValue": "inTable",
                     "required": true,
-                    "label": "Table name",
-                    "help": "This is the name of the table within your Mobile App from which data will be read."
+                    "label": "$mobileTableIn_tableName_label",
+                    "help": "$mobileTableIn_tableName_help"
                 },
                 {
                     "name": "id",
                     "value": "string",
                     "defaultValue": "{itemId}",
                     "required": true,
-                    "label": "Record ID",
-                    "help": "This is the id for the record to retrieve."
+                    "label": "$mobileTableIn_id_label",
+                    "help": "$mobileTableIn_id_help"
                 },
                 {
                     "name": "connection",
                     "value": "string",
                     "defaultValue": "My_MobileApp_Uri",
                     "required": true,
-                    "label": "Mobile App URL lookup",
-                    "help": "This is the app setting name that specifies the URL of your Mobile App."
+                    "label": "$mobileTableIn_connection_label",
+                    "help": "$mobileTableIn_connection_help"
                 },
                 {
                     "name": "apiKey",
                     "value": "string",
                     "required": false,
-                    "label": "API key lookup (optional)",
-                    "help": "This is the app setting name that specifies the API Key for your Mobile App. <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=780568'>More information</a>."
+                    "label": "$mobileTableIn_apiKey_label",
+                    "help": "$mobileTableIn_apiKey_help"
                 }
             ]
         },
         {
             "type": "notificationHub",
-            "displayName": "Azure Notification Hub",
+            "displayName": "$notificationHubOut_displayName",
             "direction": "out",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\notificationHubOut.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "notification",
                     "required": true,
-                    "label": "Notification parameter name",
-                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "label": "$notificationHubOut_name_label",
+                    "help": "$notificationHubOut_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -1308,24 +1399,24 @@
                     "value": "string",
                     "defaultValue": "myNotificationHub",
                     "required": true,
-                    "label": "Notification Hub name",
-                    "help": "This is the name of the Notification Hub to be used for sending push notifications."
+                    "label": "$notificationHubOut_hubName_label",
+                    "help": "$notificationHubOut_hubName_help"
                 },
                 {
                     "name": "connection",
                     "value": "string",
                     "resource": "ServiceBus",
                     "required": true,
-                    "label": "Notification Hubs namespace connection",
-                    "help": "This is the connection string for your notification hub namespace.",
+                    "label": "$notificationHubOut_connection_label",
+                    "help": "$notificationHubOut_connection_help",
                     "placeholder": "[variables('selectConnection')]"
                 },
                 {
                     "name": "tagExpression",
                     "value": "string",
                     "required": false,
-                    "label": "Tag expression (optional)",
-                    "help": "Tag expressions enable you to target specific sets of devices/registrations, when sending a push notification through notification hubs. Leave this blank to broadcast to all registered devices <a target='_blank' href='http://go.microsoft.com/fwlink/?LinkId=785094'>More information</a>."
+                    "label": "$notificationHubOut_tagExpression_label",
+                    "help": "$notificationHubOut_tagExpression_help"
                 },
                 {
                     "name": "platform",
@@ -1356,23 +1447,25 @@
                             "display": "Windows Phone (MPNS)"
                         }
                     ],
-                    "label": "Notification Platform",
-                    "help": "Choose platform to send native notifcations. Select Template to send template notification."
+                    "label": "$notificationHubOut_platform_label",
+                    "help": "$notificationHubOut_platform_help"
                 }
             ]
         },
         {
             "type": "sendGrid",
-            "displayName": "SendGrid",
+            "displayName": "$sendGrid_displayName",
             "direction": "out",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\sendGridOut.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "message",
                     "required": true,
-                    "label": "Message parameter name",
-                    "help": "This is the name of the parameter in the code for output binding to bind to.",
+                    "label": "$sendGrid_name_label",
+                    "help": "$sendGrid_name_help",
                     "validators": [
                         {
                             "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
@@ -1385,32 +1478,32 @@
                     "value": "string",
                     "defaultValue": "",
                     "required": false,
-                    "label": "To address",
-                    "help": "This is the email address the message should be sent to. Can be of the form 'user@host.com' or 'Display Name <user@host.com>'. If not specified here, the value can be specified in code."
+                    "label": "$sendGrid_to_label",
+                    "help": "$sendGrid_to_help"
                 },
                 {
                     "name": "from",
                     "value": "string",
                     "defaultValue": "",
                     "required": false,
-                    "label": "From address",
-                    "help": "This is the email address the message is sent from. Can be of the form 'user@host.com' or 'Display Name <user@host.com>'. If not specified here, the value can be specified in code."
+                    "label": "$sendGrid_from_label",
+                    "help": "$sendGrid_from_help"
                 },
                 {
                     "name": "subject",
                     "value": "string",
                     "defaultValue": "",
                     "required": false,
-                    "label": "Message Subject",
-                    "help": "This is the subject line to use for the message. If not specified here, the value can be specified in code."
+                    "label": "$sendGrid_subject_label",
+                    "help": "$sendGrid_subject_help"
                 },
                 {
                     "name": "text",
                     "value": "string",
                     "defaultValue": "",
                     "required": false,
-                    "label": "Message Text",
-                    "help": "This is the text body to use for the message. If not specified here, the value can be specified in code."
+                    "label": "$sendGrid_text_label",
+                    "help": "$sendGrid_text_help"
                 }
             ]
         }

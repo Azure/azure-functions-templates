@@ -1,10 +1,11 @@
 {
     "defaultFunctionName": "QueueTriggerBash",
-    "description": "A bash function that will be run whenever a message is added to a specified Azure Storage queue",
+    "description": "$QueueTriggerBash_description",
     "name": "QueueTrigger - Bash",
     "language": "Bash",
     "trigger": "QueueTrigger",
-    "category": [ "Experimental" ],
+    "category": [ "$temp_category_experimental" ],
+    "enabledInTryMode": true,
     "userPrompt": [
         "connection",
         "queueName"

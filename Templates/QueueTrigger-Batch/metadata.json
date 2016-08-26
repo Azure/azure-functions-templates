@@ -1,10 +1,11 @@
 {
     "defaultFunctionName": "QueueTriggerBatch",
-    "description": "A batch function that will be run whenever a message is added to a specified Azure Storage queue",
+    "description": "$QueueTriggerBatch_description",
     "name": "QueueTrigger - Batch",
     "language": "Batch",
     "trigger": "QueueTrigger",
-    "category": [ "Experimental" ],
+    "category": [ "$temp_category_experimental" ],
+    "enabledInTryMode": true,
     "userPrompt": [
         "connection",
         "queueName"

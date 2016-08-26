@@ -1,12 +1,13 @@
 {
     "defaultFunctionName": "FaceLocator-CSharp",
-    "description": "A C# function that extracts dimensions (surrounding rectangle) of faces in a blob (image) in a container & stores it in an Azure storage table",
+    "description": "$FaceLocatorCSharp_description",
     "name": "FaceLocator-C#",
     "language": "C#",
     "trigger": "HttpTrigger",
     "category": [
-        "Samples"
+        "$temp_category_samples"
     ],
+    "enabledInTryMode": true,
     "userPrompt": [
         "path",
         "connection",

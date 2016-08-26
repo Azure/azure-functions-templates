@@ -1,12 +1,13 @@
 {
     "defaultFunctionName": "FaceLocatorNodeJS",
-    "description": "A Node.js function that extracts dimensions (surrounding rectangle) of faces in a blob (image) in a container & stores it in an Azure storage table",
+    "description": "$FaceLocatorNodeJS_description",
     "name": "FaceLocator-Node",
     "language": "JavaScript",
     "trigger": "HttpTrigger",
     "category": [
-        "Samples"
+        "$temp_category_samples"
     ],
+    "enabledInTryMode": true,
     "userPrompt": [
         "path",
         "connection",

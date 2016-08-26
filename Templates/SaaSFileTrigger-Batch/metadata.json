@@ -1,9 +1,10 @@
 {
     "name": "SaaSFileTrigger - Batch",
-    "description": "A Batch function that will be run whenever a file is added to a SaaS provider.",
+    "description": "$SaasFileTriggerBatch_description",
     "defaultFunctionName": "SaasFileTriggerBatch",
     "language": "Batch",
-    "category": [ "Experimental" ],
+    "category": [ "$temp_category_experimental" ],
+    "enabledInTryMode": false,
     "userPrompt": [
         "connection",
         "path"

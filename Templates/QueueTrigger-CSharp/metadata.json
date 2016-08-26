@@ -1,12 +1,13 @@
 {
     "defaultFunctionName": "QueueTriggerCSharp",
-    "description": "A C# function that will be run whenever a message is added to a specified Azure Storage queue",
+    "description": "$QueueTriggerCSharp_description",
     "name": "QueueTrigger - C#",
     "language": "C#",
     "category": [
-        "Core",
-        "Data Processing"
+        "$temp_category_core",
+        "$temp_category_dataProcessing"
     ],
+    "enabledInTryMode": true,
     "userPrompt": [
         "connection",
         "queueName"

@@ -1,12 +1,13 @@
 {
     "name": "BlobTrigger - Node",
-    "description": "A Node.js function that will be run whenever a blob is added to a specified container",
+    "description": "$BlobTriggerNodeJS_description",
     "defaultFunctionName": "BlobTriggerNodeJS",
     "language": "JavaScript",
     "category": [
-        "Core",
-        "Data Processing"
+        "$temp_category_core",
+        "$temp_category_dataProcessing"
     ],
+    "enabledInTryMode": true,
     "userPrompt": [
         "connection",
         "path"
