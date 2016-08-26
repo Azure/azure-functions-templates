@@ -58,7 +58,7 @@
         },
         {
             "type": "eventHubTrigger",
-            "displayName": "$eventHubOut_displayName",
+            "displayName": "$eventHubTrigger_displayName",
             "direction": "trigger",
             "enabledInTryMode": false,
             "documentation": "$content=Documentation\\eventHubTrigger.md",
@@ -121,6 +121,16 @@
             "displayName": "$eventHubOut_displayName",
             "direction": "out",
             "enabledInTryMode": false,
+            "actions": [
+                {
+                    "template": "EventHubTrigger",
+                    "binding": "eventHubTrigger",
+                    "settings": [
+                        "path",
+                        "connection"
+                    ]
+                }
+            ],
             "documentation": "$content=Documentation\\eventHubOut.md",
             "settings": [
                 {
