@@ -966,6 +966,45 @@
   <data name="timerTrigger_schedule_errorText" xml:space="preserve">
     <value>Invalid Cron Expression. Please consult the &lt;a target='_blank' href='https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/'&gt;documentation&lt;/a&gt; to learn more.</value>
   </data>
+    <data name="twilioSms_accountsid_help" xml:space="preserve">
+    <value>This is your Twilio account SID</value>
+  </data>
+  <data name="twilioSms_accountsid_label" xml:space="preserve">
+    <value>Account SID</value>
+  </data>
+  <data name="twilioSms_authtoken_help" xml:space="preserve">
+    <value>This is your Twilio Auth Token</value>
+  </data>
+  <data name="twilioSms_authtoken_label" xml:space="preserve">
+    <value>Twilio Auth Token</value>
+  </data>
+  <data name="twilioSms_body_help" xml:space="preserve">
+    <value>This is the text body to use for the message. If not specified here, the value can be specified in code.</value>
+  </data>
+  <data name="twilioSms_body_label" xml:space="preserve">
+    <value>Message text</value>
+  </data>
+  <data name="twilioSms_displayName" xml:space="preserve">
+    <value>Twilio SMS</value>
+  </data>
+  <data name="twilioSms_from_help" xml:space="preserve">
+    <value>This is the Twilio phone number the message should be sent from. If not specified here, the value can be specified in code.</value>
+  </data>
+  <data name="twilioSms_from_label" xml:space="preserve">
+    <value>From number</value>
+  </data>
+  <data name="twilioSms_name_help" xml:space="preserve">
+    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+  </data>
+  <data name="twilioSms_name_label" xml:space="preserve">
+    <value>Message parameter name</value>
+  </data>
+  <data name="twilioSms_to_help" xml:space="preserve">
+    <value>This is the phone number the message should be sent to. If not specified here, the value can be specified in code.</value>
+  </data>
+  <data name="twilioSms_to_label" xml:space="preserve">
+    <value>To number</value>
+  </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
     <value>Your consumer group name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed.</value>
   </data>
