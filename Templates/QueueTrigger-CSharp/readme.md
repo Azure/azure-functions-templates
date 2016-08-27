@@ -4,7 +4,7 @@ The `QueueTrigger` makes it incredibly easy to react to new Queues inside of Azu
 
 ## How it works
 
-For a `QueueTrigger` to work, you provide a path which dictates where the queue messages are located inside your container.
+For a `QueueTrigger` to work, you must provide a queue name that defines the queue messages will be read from.
 
 ## Learn more
 
