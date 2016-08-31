@@ -1506,6 +1506,69 @@
                     "help": "$sendGrid_text_help"
                 }
             ]
+        },
+        {
+            "type": "twilioSms",
+            "displayName": "$twilioSms_displayName",
+            "direction": "out",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\twilioSmsOut.md",
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "message",
+                    "required": true,
+                    "label": "$twilioSms_name_label",
+                    "help": "$twilioSms_name_help",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "errorText": "[variables('parameterName')]"
+                        }
+                    ]
+                },
+                {
+                    "name": "accountSid",
+                    "value": "string",
+                    "defaultValue": "TwilioAccountSid",
+                    "required": true,
+                    "label": "$twilioSms_accountsid_label",
+                    "help": "$twilioSms_accountsid_help"
+                },
+                {
+                    "name": "authToken",
+                    "value": "string",
+                    "defaultValue": "TwilioAuthToken",
+                    "required": true,
+                    "label": "$twilioSms_authtoken_label",
+                    "help": "$twilioSms_authtoken_help"
+                },
+                {
+                    "name": "to",
+                    "value": "string",
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "$twilioSms_to_label",
+                    "help": "$twilioSms_to_help"
+                },
+                {
+                    "name": "from",
+                    "value": "string",
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "$twilioSms_from_label",
+                    "help": "$twilioSms_from_help"
+                },
+                {
+                    "name": "body",
+                    "value": "string",
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "$twilioSms_body_label",
+                    "help": "$twilioSms_body_help"
+                }
+            ]
         }
     ]
 }
