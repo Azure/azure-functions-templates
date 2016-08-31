@@ -3,7 +3,7 @@
 The settings specifies the following properties.
 
 - `name` : The variable name used in function code for the queue or the queue message. 
-- `queueName` : The name of the queue. For queue naming rules, see <a href="https://msdn.microsoft.com/library/dd179349.aspx" target="_blank">Naming Queues and Metadata</a>.
+- `queueName` : The name of the queue. For queue naming rules, see [Naming Queues and Metadata](https://msdn.microsoft.com/library/dd179349.aspx).
 - `connection` : The name of an app setting that contains a storage connection string. If you leave `connection` empty, the trigger will work with the default storage connection string for the function app, which is specified by the AzureWebJobsStorage app setting.
 - `type` : Must be set to *queue*.
 - `direction` : Must be set to *out*. 
