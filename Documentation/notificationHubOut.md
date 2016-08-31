@@ -4,7 +4,7 @@ The settings provide the following properties:
 
 - `name` : Variable name used in function code for the notification hub message.
 - `type` : must be set to *"notificationHub"*.
-- `tagExpression` : Tag expressions allow you to specify that notifications be delivered to a set of devices who have registered to receive notifications that match the tag expression.  For more information, see [Routing and tag expressions](https://azure.microsoft.com/en-us/documentation/articles/notification-hubs-tags-segment-push-message/).
+- `tagExpression` : Tag expressions allow you to specify that notifications be delivered to a set of devices who have registered to receive notifications that match the tag expression.  For more information, see <a href="https://azure.microsoft.com/en-us/documentation/articles/notification-hubs-tags-segment-push-message/" target="_blank">Routing and tag expressions</a>.
 - `hubName` : Name of the notification hub resource in the Azure portal.
 - `connection` : This connection string must be an **Application Setting** connection string set to the *DefaultFullSharedAccessSignature* value for your notification hub.
 - `direction` : must be set to *"out"*. 
@@ -21,7 +21,7 @@ You can also manually add a connection string for an existing hub by adding a co
 
 ## Azure Notification Hub code example for a Node.js timer trigger 
 
-This example sends a notification for a [template registration](../notification-hubs/notification-hubs-templates-cross-platform-push-messages.md) that contains `location` and `message`.
+This example sends a notification for a <a href="https://azure.microsoft.com/en-us/documentation/articles/notification-hubs-templates-cross-platform-push-messages/" target="_blank">template registration</a> that contains `location` and `message`.
 
 ```javascript
 module.exports = function (context, myTimer) {
@@ -42,7 +42,7 @@ module.exports = function (context, myTimer) {
 
 ## Azure Notification Hub code example for a C# queue trigger
 
-This example sends a notification for a [template registration](https://azure.microsoft.com/en-us/documentation/articles/notification-hubs-templates-cross-platform-push-messages/) that contains `message`.
+This example sends a notification for a <a href="https://azure.microsoft.com/en-us/documentation/articles/notification-hubs-templates-cross-platform-push-messages/" target="_blank">template registration</a> that contains `message`.
 
 ```csharp
 using System;
@@ -63,7 +63,7 @@ private static IDictionary<string, string> GetTemplateProperties(string message)
 }
 ```
 
-This example sends a notification for a [template registration](https://azure.microsoft.com/en-us/documentation/articles/notification-hubs-templates-cross-platform-push-messages/) that contains `message` using a valid JSON string.
+This example sends a notification for a <a href="https://azure.microsoft.com/en-us/documentation/articles/notification-hubs-templates-cross-platform-push-messages/" target="_blank">template registration</a> that contains `message` using a valid JSON string.
 
 ```csharp    
 public static void Run(string myQueueItem,  out string notification, TraceWriter log)
@@ -75,7 +75,7 @@ public static void Run(string myQueueItem,  out string notification, TraceWriter
 
 ## Azure Notification Hub queue trigger C# code example using Notification type
 
-This example shows how to use the `Notification` type that is defined in the [Microsoft Azure Notification Hubs Library](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/). In order to use this type, and the library, you must upload a *project.json* file for your function app. The project.json file is a JSON text file which will look similar to the follow:
+This example shows how to use the `Notification` type that is defined in the <a href="https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/" target="_blank">Microsoft Azure Notification Hubs Library</a>. In order to use this type, and the library, you must upload a *project.json* file for your function app. The project.json file is a JSON text file which will look similar to the follow:
 ```json
 {
     "frameworks": {
@@ -88,7 +88,7 @@ This example shows how to use the `Notification` type that is defined in the [Mi
 }
 ```
 
-For more information on uploading your project.json file, see [uploading a project.json file](https://azure.microsoft.com/en-us/documentation/articles/functions-reference-csharp/#_how-to-upload-a-projectjson-file).
+For more information on uploading your project.json file, see <a href="https://azure.microsoft.com/en-us/documentation/articles/functions-reference-csharp/#_how-to-upload-a-projectjson-file" target="_blank">uploading a project.json file</a>.
 
 Example code:
 
