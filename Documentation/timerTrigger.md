@@ -11,7 +11,7 @@ The timer trigger handles multi-instance scale-out automatically: only a single 
 
 ## Format of schedule expression
 
-The schedule expression is a <a href="http://en.wikipedia.org/wiki/Cron#CRON_expression" target="_blank">CRON expression</a> that includes 6 fields:  `{second} {minute} {hour} {day} {month} {day of the week}`. 
+The schedule expression is a [CRON expression](http://en.wikipedia.org/wiki/Cron#CRON_expression) that includes 6 fields:  `{second} {minute} {hour} {day} {month} {day of the week}`. 
 
 Note that many of the cron expressions you find online omit the {second} field, so if you copy from one of those you'll have to adjust for the extra field. 
 
