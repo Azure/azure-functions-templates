@@ -54,7 +54,7 @@ In C# functions you can also bind to any of the following types:
 * `CloudBlobDirectory`
 * `IEnumerable<CloudBlockBlob>`
 * `IEnumerable<CloudPageBlob>`
-* Other types deserialized by <a href="https://azure.microsoft.com/en-us/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to/" target="_blank">ICloudBlobStreamBinder</a>
+* Other types deserialized by [ICloudBlobStreamBinder](https://azure.microsoft.com/en-us/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to/)
 
 #### Blob trigger C# code example
 
