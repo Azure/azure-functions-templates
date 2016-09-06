@@ -1,0 +1,1011 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="eventHubOut_connection_help" xml:space="preserve">
+    <value>Это строка подключения для вашего концентратора событий. Убедитесь в наличии разрешений на отправку.</value>
+  </data>
+  <data name="eventHubOut_connection_label" xml:space="preserve">
+    <value>Подключение концентратора событий</value>
+  </data>
+  <data name="eventHubOut_displayName" xml:space="preserve">
+    <value>Концентратор событий Azure</value>
+  </data>
+  <data name="eventHubOut_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для вывода.</value>
+  </data>
+  <data name="eventHubOut_name_label" xml:space="preserve">
+    <value>Имя параметра события</value>
+  </data>
+  <data name="eventHubOut_path_errorText" xml:space="preserve">
+    <value>Имя концентратора событий должно начинаться и заканчиваться буквой или цифрой и может содержать только строчные буквы, цифры, а также дефис, точку и символ подчеркивания.</value>
+  </data>
+  <data name="eventHubOut_path_help" xml:space="preserve">
+    <value>Это имя концентратора событий, куда будет отправлено событие.</value>
+  </data>
+  <data name="eventHubOut_path_label" xml:space="preserve">
+    <value>Имя концентратора событий</value>
+  </data>
+  <data name="eventHubTrigger_connection_help" xml:space="preserve">
+    <value>Это строка подключения для вашего концентратора событий. Убедитесь в наличии разрешений на прием.</value>
+  </data>
+  <data name="eventHubTrigger_connection_label" xml:space="preserve">
+    <value>Подключение концентратора событий</value>
+  </data>
+  <data name="eventHubTrigger_consumerGroup_help" xml:space="preserve">
+    <value>Имя группы потребителей концентратора событий, из которой требуется получать события.</value>
+  </data>
+  <data name="eventHubTrigger_consumerGroup_label" xml:space="preserve">
+    <value>Группа потребителей концентратора событий</value>
+  </data>
+  <data name="eventHubTrigger_displayName" xml:space="preserve">
+    <value>Концентратор событий Azure</value>
+  </data>
+  <data name="eventHubTrigger_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать триггер.</value>
+  </data>
+  <data name="eventHubTrigger_name_label" xml:space="preserve">
+    <value>Имя параметра события</value>
+  </data>
+  <data name="eventHubTrigger_path_errorText" xml:space="preserve">
+    <value>Имя концентратора событий должно начинаться и заканчиваться буквой или цифрой и может содержать только строчные буквы, цифры, а также дефис, точку и символ подчеркивания.</value>
+  </data>
+  <data name="eventHubTrigger_path_help" xml:space="preserve">
+    <value>Это имя концентратора событий, который требуется активировать.</value>
+  </data>
+  <data name="eventHubTrigger_path_label" xml:space="preserve">
+    <value>Имя концентратора событий</value>
+  </data>
+  <data name="queueOut_displayName" xml:space="preserve">
+    <value>Очередь службы хранилища Azure</value>
+  </data>
+  <data name="queueOut_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для вывода.</value>
+  </data>
+  <data name="queueOut_name_label" xml:space="preserve">
+    <value>Имя параметра сообщения</value>
+  </data>
+  <data name="queueOut_queueName_errorText" xml:space="preserve">
+    <value>Имя очереди должно начинаться и заканчиваться буквой или цифрой и может содержать только строчные буквы, цифры, а также дефис. Длина имени должна находиться в диапазоне от 3 до 63 символов.</value>
+  </data>
+  <data name="queueOut_queueName_label" xml:space="preserve">
+    <value>Имя очереди</value>
+  </data>
+  <data name="queueOut_queueName_help" xml:space="preserve">
+    <value>Это очередь, куда будет отправлено сообщение. Если эта очередь пока не существует, она будет создана в указанной учетной записи хранения.</value>
+  </data>
+  <data name="temp_category_core" xml:space="preserve">
+    <value>Ядро</value>
+  </data>
+  <data name="temp_category_dataProcessing" xml:space="preserve">
+    <value>Обработка данных</value>
+  </data>
+  <data name="temp_timerTrigger_CSharp_desc" xml:space="preserve">
+    <value>Функция C#, которая будет запускаться по указанному расписанию</value>
+  </data>
+  <data name="temp_timerTrigger_CSharp_name" xml:space="preserve">
+    <value>TimerTrigger — C#</value>
+  </data>
+  <data name="timerTrigger_displayName" xml:space="preserve">
+    <value>Таймер</value>
+  </data>
+  <data name="timerTrigger_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать триггер.</value>
+  </data>
+  <data name="timerTrigger_name_label" xml:space="preserve">
+    <value>Имя параметра метки времени</value>
+  </data>
+  <data name="timerTrigger_schedule_help" xml:space="preserve">
+    <value>Введите выражение Cron в формате "{секунда} {минута} {час} {день} {месяц} {день недели}", чтобы задать расписание. Дополнительные сведения см. в документации.</value>
+  </data>
+  <data name="timerTrigger_schedule_label" xml:space="preserve">
+    <value>Расписание</value>
+  </data>
+  <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
+    <value>Строка подключения для подключения к таблице SaaS.</value>
+  </data>
+  <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
+    <value>Подключение к таблице SaaS</value>
+  </data>
+  <data name="variables_apiHubTableDataSetHelp" xml:space="preserve">
+    <value>Имя набора данных, к которому выполняется привязка.  Оставьте значение "default" в случае привязки к таблице или сущности.</value>
+  </data>
+  <data name="variables_apiHubTableDataSetLabel" xml:space="preserve">
+    <value>Имя набора данных</value>
+  </data>
+  <data name="variables_apiHubTableEntityHelp" xml:space="preserve">
+    <value>Идентификатор сущности, к которой выполняется привязка. Оставьте поле пустым в случае привязки к набору данных или таблице.</value>
+  </data>
+  <data name="variables_apiHubTableEntityLabel" xml:space="preserve">
+    <value>Идентификатор сущности</value>
+  </data>
+  <data name="variables_apiHubTableHelp" xml:space="preserve">
+    <value>Имя таблицы, к которой выполняется привязка. Оставьте поле пустым в случае привязки к набору данных или сущности.</value>
+  </data>
+  <data name="variables_apiHubTableNameLabel" xml:space="preserve">
+    <value>Имя таблицы</value>
+  </data>
+  <data name="variables_appSettingsHelp" xml:space="preserve">
+    <value>Это строка подключения для вашей учетной записи хранения.</value>
+  </data>
+  <data name="variables_parameterName" xml:space="preserve">
+    <value>Имя параметра должно быть алфавитно-цифровой строкой любой длины. Оно не может начинаться с цифры.</value>
+  </data>
+  <data name="variables_paramNameInputHelp" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для ввода.</value>
+  </data>
+  <data name="variables_paramNameOutputHelp" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для вывода.</value>
+  </data>
+  <data name="variables_selectConnection" xml:space="preserve">
+    <value>Щелкните для выбора подключения</value>
+  </data>
+  <data name="variables_storageConnStringLabel" xml:space="preserve">
+    <value>Подключение к учетной записи хранения</value>
+  </data>
+  <data name="variables_paramNameLabel" xml:space="preserve">
+    <value>Имя параметра</value>
+  </data>
+  <data name="temp_category_all" xml:space="preserve">
+    <value>Все</value>
+  </data>
+  <data name="temp_category_api" xml:space="preserve">
+    <value>API и Webhook</value>
+  </data>
+  <data name="temp_category_experimental" xml:space="preserve">
+    <value>Экспериментальный</value>
+  </data>
+  <data name="temp_category_samples" xml:space="preserve">
+    <value>Примеры</value>
+  </data>
+  <data name="blobOut_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для вывода.</value>
+  </data>
+  <data name="blobOut_name_label" xml:space="preserve">
+    <value>Имя параметра BLOB-объекта</value>
+  </data>
+  <data name="queueTrigger_queueName_help" xml:space="preserve">
+    <value>Это имя очереди, откуда будет считано сообщение.</value>
+  </data>
+  <data name="queueTrigger_name_label" xml:space="preserve">
+    <value>Имя параметра сообщения</value>
+  </data>
+  <data name="queueTrigger_queueName_errorText" xml:space="preserve">
+    <value>Имя очереди должно начинаться и заканчиваться буквой или цифрой и может содержать только строчные буквы, цифры, а также дефис. Длина имени должна находиться в диапазоне от 3 до 63 символов.</value>
+  </data>
+  <data name="queueTrigger_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать триггер.</value>
+  </data>
+  <data name="queueTrigger_queueName_label" xml:space="preserve">
+    <value>Имя очереди</value>
+  </data>
+  <data name="blobOut_path_help" xml:space="preserve">
+    <value>Это путь в вашей учетной записи хранения, куда будет записываться BLOB-объект.</value>
+  </data>
+  <data name="blobOut_path_errorTex" xml:space="preserve">
+    <value>Путь BLOB-объекта должен иметь вид имени контейнера длиной от 3 до 63 символов, за которым идет имя BLOB-объекта длиной от 1 до 1024 символов. Имя BLOB-объекта может быть представлено любым сочетанием символов и содержать до 254 сегментов пути, разделенных косой чертой (/).</value>
+  </data>
+  <data name="blobOut_path_label" xml:space="preserve">
+    <value>Путь</value>
+  </data>
+  <data name="blobIn_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для ввода.</value>
+  </data>
+  <data name="blobIn_name_label" xml:space="preserve">
+    <value>Имя параметра BLOB-объекта</value>
+  </data>
+  <data name="blobIn_path_help" xml:space="preserve">
+    <value>Это путь в вашей учетной записи хранения, откуда будет считываться BLOB-объект.</value>
+  </data>
+  <data name="blobIn_path_label" xml:space="preserve">
+    <value>Путь</value>
+  </data>
+  <data name="blobIn_patherrorText" xml:space="preserve">
+    <value>Путь BLOB-объекта должен иметь вид имени контейнера длиной от 3 до 63 символов, за которым идет имя BLOB-объекта длиной от 1 до 1024 символов. Имя BLOB-объекта может быть представлено любым сочетанием символов и содержать до 254 сегментов пути, разделенных косой чертой (/).</value>
+  </data>
+  <data name="blobTrigger_name_label" xml:space="preserve">
+    <value>Имя параметра BLOB-объекта</value>
+  </data>
+  <data name="blobTrigger_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать триггер.</value>
+  </data>
+  <data name="blobTrigger_path_label" xml:space="preserve">
+    <value>Путь</value>
+  </data>
+  <data name="blobTrigger_path_help" xml:space="preserve">
+    <value>Это путь в вашей учетной записи хранения, который будет отслеживать триггер.</value>
+  </data>
+  <data name="blobTrigger_path_errorTex" xml:space="preserve">
+    <value>Путь BLOB-объекта должен иметь вид имени контейнера длиной от 3 до 63 символов, за которым идет имя BLOB-объекта длиной от 1 до 1024 символов. Имя BLOB-объекта может быть представлено любым сочетанием символов и содержать до 254 сегментов пути, разделенных косой чертой (/).</value>
+  </data>
+  <data name="apiHubFileIn_name_label" xml:space="preserve">
+    <value>Имя параметра файла</value>
+  </data>
+  <data name="apiHubFileIn_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для вывода.</value>
+  </data>
+  <data name="apiHubFileIn_path_label" xml:space="preserve">
+    <value>Путь</value>
+  </data>
+  <data name="apiHubFileIn_path_help" xml:space="preserve">
+    <value>Путь к входному файлу</value>
+  </data>
+  <data name="apiHubFileIn_connection_label" xml:space="preserve">
+    <value>Подключение к файлу SaaS</value>
+  </data>
+  <data name="apiHubFileIn_connection_help" xml:space="preserve">
+    <value>Строка подключения для подключения к файлу SaaS.</value>
+  </data>
+  <data name="apiHubFileTrigger_name_label" xml:space="preserve">
+    <value>Имя параметра файла</value>
+  </data>
+  <data name="apiHubFileTrigger_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать триггер.</value>
+  </data>
+  <data name="apiHubFileTrigger_path_label" xml:space="preserve">
+    <value>Путь</value>
+  </data>
+  <data name="apiHubFileTrigger_path_help" xml:space="preserve">
+    <value>Путь для активации. Этот путь должен существовать.</value>
+  </data>
+  <data name="apiHubFileTrigger_connection_label" xml:space="preserve">
+    <value>Подключение к файлу SaaS</value>
+  </data>
+  <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
+    <value>Строка подключения для подключения к файлу SaaS.</value>
+  </data>
+  <data name="apiHubTableIn_displayName" xml:space="preserve">
+    <value>Таблица SaaS</value>
+  </data>
+  <data name="apiHubTableOut_displayName" xml:space="preserve">
+    <value>Таблица SaaS</value>
+  </data>
+  <data name="httpTrigger_displayName" xml:space="preserve">
+    <value>HTTP</value>
+  </data>
+  <data name="httpTrigger_name_label" xml:space="preserve">
+    <value>Имя параметра запроса</value>
+  </data>
+  <data name="httpTrigger_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать триггер.</value>
+  </data>
+  <data name="httpTrigger_webHookType_label" xml:space="preserve">
+    <value>Тип webhook</value>
+  </data>
+  <data name="httpTrigger_webHookType_help" xml:space="preserve">
+    <value>Webhook позволяют службам легко вызывать друг друга.</value>
+  </data>
+  <data name="httpTrigger_authLevel_label" xml:space="preserve">
+    <value>Уровень авторизации</value>
+  </data>
+  <data name="httpTrigger_mode_label" xml:space="preserve">
+    <value>Режим</value>
+  </data>
+  <data name="httpTrigger_mode_help" xml:space="preserve">
+    <value>Это — режим триггера. \"Стандартный\" означает, что запрос будет иметь стандартный вид HTTP без дополнительной семантики. \"Webhook\" означает, что запрос будет обрабатываться в соответствии с указанным типом webhook.</value>
+  </data>
+  <data name="apiHubFileIn_displayName" xml:space="preserve">
+    <value>Файл SaaS</value>
+  </data>
+  <data name="apiHubFileTrigger_displayName" xml:space="preserve">
+    <value>Триггер файла SaaS</value>
+  </data>
+  <data name="blobIn_displayName" xml:space="preserve">
+    <value>Azure Storage Blob</value>
+  </data>
+  <data name="blobOut_displayName" xml:space="preserve">
+    <value>Azure Storage Blob</value>
+  </data>
+  <data name="blobTrigger_displayName" xml:space="preserve">
+    <value>Azure Storage Blob</value>
+  </data>
+  <data name="documentDBIn_collectionName_help" xml:space="preserve">
+    <value>Это имя коллекции в вашей базе данных, откуда будут считываться данные.</value>
+  </data>
+  <data name="documentDBIn_collectionName_label" xml:space="preserve">
+    <value>Имя коллекции</value>
+  </data>
+  <data name="documentDBIn_connection_help" xml:space="preserve">
+    <value>Это строка подключения для вашей учетной записи DocumentDB.</value>
+  </data>
+  <data name="documentDBIn_connection_label" xml:space="preserve">
+    <value>Подключение к учетной записи DocumentDB</value>
+  </data>
+  <data name="documentDBIn_databaseName_help" xml:space="preserve">
+    <value>Это имя базы данных в вашей учетной записи DocumentDB, откуда будут считываться данные.</value>
+  </data>
+  <data name="documentDBIn_databaseName_label" xml:space="preserve">
+    <value>Имя базы данных</value>
+  </data>
+  <data name="documentDBIn_displayName" xml:space="preserve">
+    <value>Документ Azure DocumentDB</value>
+  </data>
+  <data name="documentDBIn_id_help" xml:space="preserve">
+    <value>Это идентификатор для документа, который будет считан.</value>
+  </data>
+  <data name="documentDBIn_id_label" xml:space="preserve">
+    <value>Идентификатор документа</value>
+  </data>
+  <data name="documentDBIn_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для ввода.</value>
+  </data>
+  <data name="documentDBIn_name_label" xml:space="preserve">
+    <value>Имя параметра документа</value>
+  </data>
+  <data name="documentDBOut_collectionName_help" xml:space="preserve">
+    <value>Это имя коллекции в вашей базе данных, куда будут записываться данные.</value>
+  </data>
+  <data name="documentDBOut_collectionName_label" xml:space="preserve">
+    <value>Имя коллекции</value>
+  </data>
+  <data name="documentDBOut_connection_help" xml:space="preserve">
+    <value>Это строка подключения для вашей учетной записи DocumentDB.</value>
+  </data>
+  <data name="documentDBOut_connection_label" xml:space="preserve">
+    <value>Подключение к учетной записи DocumentDB</value>
+  </data>
+  <data name="documentDBOut_createIfNotExists_help" xml:space="preserve">
+    <value>При значении true ваша база данных и коллекция создаются автоматически.</value>
+  </data>
+  <data name="documentDBOut_createIfNotExists_label" xml:space="preserve">
+    <value>Вы хотите, чтобы коллекция и база данных DocumentDB создавались автоматически?</value>
+  </data>
+  <data name="documentDBOut_databaseName_help" xml:space="preserve">
+    <value>Это имя базы данных в вашей учетной записи DocumentDB, куда будут записываться данные.</value>
+  </data>
+  <data name="documentDBOut_databaseName_label" xml:space="preserve">
+    <value>Имя базы данных</value>
+  </data>
+  <data name="documentDBOut_displayName" xml:space="preserve">
+    <value>Документ Azure DocumentDB</value>
+  </data>
+  <data name="documentDBOut_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для вывода.</value>
+  </data>
+  <data name="documentDBOut_name_label" xml:space="preserve">
+    <value>Имя параметра документа</value>
+  </data>
+  <data name="httpOut_displayName" xml:space="preserve">
+    <value>HTTP</value>
+  </data>
+  <data name="httpOut_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для вывода.</value>
+  </data>
+  <data name="httpOut_name_label" xml:space="preserve">
+    <value>Имя параметра ответа</value>
+  </data>
+  <data name="httpTrigger_authLevel_help" xml:space="preserve">
+    <value>Уровень авторизации определяет, используете ли вы ключ API и какой именно; при значении "Функция" используется функциональный ключ, а при значении "Администратор" — главный ключ. Функциональный и главный ключи находятся в файле секретов узла. Для проверки подлинности на уровне пользователей перейдите к параметрам приложения-функции.</value>
+  </data>
+  <data name="manualTrigger_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать триггер.</value>
+  </data>
+  <data name="manualTrigger_name_label" xml:space="preserve">
+    <value>Имя параметра</value>
+  </data>
+  <data name="mobileTableIn_apiKey_help" xml:space="preserve">
+    <value>Это имя параметра приложения, которое указывает ключ API для вашего мобильного приложения. &lt;a target="_blank" href="http:go.microsoft.com/fwlink/?LinkId=780568"&gt;Подробнее&lt;/a&gt;.</value>
+  </data>
+  <data name="mobileTableIn_apiKey_label" xml:space="preserve">
+    <value>Поиск ключа API (дополнительно)</value>
+  </data>
+  <data name="mobileTableIn_connection_help" xml:space="preserve">
+    <value>Это имя параметра приложения, которое указывает URL-адрес для вашего мобильного приложения.</value>
+  </data>
+  <data name="mobileTableIn_connection_label" xml:space="preserve">
+    <value>Поиск URL-адреса мобильного приложения</value>
+  </data>
+  <data name="mobileTableIn_displayName" xml:space="preserve">
+    <value>Запись мобильной таблицы Azure</value>
+  </data>
+  <data name="mobileTableIn_id_help" xml:space="preserve">
+    <value>Это идентификатор для извлекаемой записи.</value>
+  </data>
+  <data name="mobileTableIn_id_label" xml:space="preserve">
+    <value>Идентификатор записи</value>
+  </data>
+  <data name="mobileTableIn_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для ввода.</value>
+  </data>
+  <data name="mobileTableIn_name_label" xml:space="preserve">
+    <value>Имя параметра записи</value>
+  </data>
+  <data name="mobileTableIn_tableName_help" xml:space="preserve">
+    <value>Это имя таблицы в вашем мобильном приложении, откуда будут считываться данные.</value>
+  </data>
+  <data name="mobileTableIn_tableName_label" xml:space="preserve">
+    <value>Имя таблицы</value>
+  </data>
+  <data name="mobileTableOut_apiKey_help" xml:space="preserve">
+    <value>Это имя параметра приложения, которое указывает ключ API для вашего мобильного приложения. &lt;a target="_blank" href="http:go.microsoft.com/fwlink/?LinkId=780568"&gt;Подробнее&lt;/a&gt;.</value>
+  </data>
+  <data name="mobileTableOut_apiKey_label" xml:space="preserve">
+    <value>Поиск ключа API (дополнительно)</value>
+  </data>
+  <data name="mobileTableOut_connection_help" xml:space="preserve">
+    <value>Это имя параметра приложения, которое указывает URL-адрес для вашего мобильного приложения.</value>
+  </data>
+  <data name="mobileTableOut_connection_label" xml:space="preserve">
+    <value>Поиск URL-адреса мобильного приложения</value>
+  </data>
+  <data name="mobileTableOut_displayName" xml:space="preserve">
+    <value>Запись мобильной таблицы Azure</value>
+  </data>
+  <data name="mobileTableOut_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для вывода.</value>
+  </data>
+  <data name="mobileTableOut_name_label" xml:space="preserve">
+    <value>Имя параметра записи</value>
+  </data>
+  <data name="mobileTableOut_tableName_help" xml:space="preserve">
+    <value>Это имя таблицы в вашем мобильном приложении, куда будут записываться данные.</value>
+  </data>
+  <data name="mobileTableOut_tableName_label" xml:space="preserve">
+    <value>Имя таблицы</value>
+  </data>
+  <data name="notificationHubOut_connection_help" xml:space="preserve">
+    <value>Это строка подключения для вашего пространства имен концентратора уведомлений.</value>
+  </data>
+  <data name="notificationHubOut_connection_label" xml:space="preserve">
+    <value>Подключение к пространству имен концентратора уведомлений</value>
+  </data>
+  <data name="notificationHubOut_displayName" xml:space="preserve">
+    <value>Концентратор уведомлений Azure</value>
+  </data>
+  <data name="notificationHubOut_hubName_help" xml:space="preserve">
+    <value>Это имя концентратора уведомлений, используемого для отправки push-уведомлений.</value>
+  </data>
+  <data name="notificationHubOut_hubName_label" xml:space="preserve">
+    <value>Имя концентратора уведомлений</value>
+  </data>
+  <data name="notificationHubOut_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для вывода.</value>
+  </data>
+  <data name="notificationHubOut_name_label" xml:space="preserve">
+    <value>Имя параметра уведомления</value>
+  </data>
+  <data name="notificationHubOut_platform_help" xml:space="preserve">
+    <value>Выберите платформу для отправки собственных уведомлений. Выберите шаблон для отправки шаблонного уведомления.</value>
+  </data>
+  <data name="notificationHubOut_platform_label" xml:space="preserve">
+    <value>Платформа уведомлений</value>
+  </data>
+  <data name="notificationHubOut_tagExpression_help" xml:space="preserve">
+    <value>Выражения тега позволяют ориентироваться на определенный набор устройств/регистраций при отправке push-уведомлений через концентраторы уведомлений. Оставьте это поле пустым, чтобы вещать на все зарегистрированные устройства. &lt;a target="_blank" href="http:go.microsoft.com/fwlink/?LinkId=785094"&gt;Подробнее&lt;/a&gt;.</value>
+  </data>
+  <data name="notificationHubOut_tagExpression_label" xml:space="preserve">
+    <value>Выражение тега (дополнительно)</value>
+  </data>
+  <data name="queueTrigger_displayName" xml:space="preserve">
+    <value>Очередь службы хранилища Azure</value>
+  </data>
+  <data name="sendGrid_displayName" xml:space="preserve">
+    <value>SendGrid</value>
+  </data>
+  <data name="sendGrid_from_help" xml:space="preserve">
+    <value>Это адрес электронной почты, с которого отправляется сообщение. Он может принимать форму "пользователь@узел.com" или "отображаемое имя &lt;пользователь@узел.com&gt;". Если это поле оставлено пустым, значение можно указать в коде.</value>
+  </data>
+  <data name="sendGrid_from_label" xml:space="preserve">
+    <value>Адрес отправителя</value>
+  </data>
+  <data name="sendGrid_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для вывода.</value>
+  </data>
+  <data name="sendGrid_name_label" xml:space="preserve">
+    <value>Имя параметра сообщения</value>
+  </data>
+  <data name="sendGrid_subject_help" xml:space="preserve">
+    <value>Это строка темы, используемая для сообщения. Если это поле оставлено пустым, значение можно указать в коде.</value>
+  </data>
+  <data name="sendGrid_subject_label" xml:space="preserve">
+    <value>Тема сообщения</value>
+  </data>
+  <data name="sendGrid_text_help" xml:space="preserve">
+    <value>Это основной текст, используемый для сообщения. Если это поле оставлено пустым, значение можно указать в коде.</value>
+  </data>
+  <data name="sendGrid_text_label" xml:space="preserve">
+    <value>Текст сообщения</value>
+  </data>
+  <data name="sendGrid_to_help" xml:space="preserve">
+    <value>Это адрес электронной почты, на который требуется отправить сообщение. Он может принимать форму "пользователь@узел.com" или "отображаемое имя &lt;пользователь@узел.com&gt;". Если это поле оставлено пустым, значение можно указать в коде.</value>
+  </data>
+  <data name="sendGrid_to_label" xml:space="preserve">
+    <value>Адрес назначения</value>
+  </data>
+  <data name="serviceBusOut_accessRights_help" xml:space="preserve">
+    <value>Это права доступа, которыми обладает клиент в отношении очереди или подписки раздела.</value>
+  </data>
+  <data name="serviceBusOut_accessRights_label" xml:space="preserve">
+    <value>AccessRights</value>
+  </data>
+  <data name="serviceBusOut_connection_help" xml:space="preserve">
+    <value>Это строка подключения для вашей служебной шины. Убедитесь в наличии прав на отправку.</value>
+  </data>
+  <data name="serviceBusOut_connection_label" xml:space="preserve">
+    <value>Подключение к служебной шине</value>
+  </data>
+  <data name="serviceBusOut_displayName" xml:space="preserve">
+    <value>Служебная шина Azure</value>
+  </data>
+  <data name="serviceBusOut_messageType_help" xml:space="preserve">
+    <value>Это тип сообщения служебной шины. Он позволяет переключаться между использованием очередей и разделов.</value>
+  </data>
+  <data name="serviceBusOut_messageType_label" xml:space="preserve">
+    <value>Тип сообщений</value>
+  </data>
+  <data name="serviceBusOut_messageType_queueName" xml:space="preserve">
+    <value>Очередь служебной шины</value>
+  </data>
+  <data name="serviceBusOut_messageType_topicName" xml:space="preserve">
+    <value>Раздел служебной шины</value>
+  </data>
+  <data name="serviceBusOut_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для вывода.</value>
+  </data>
+  <data name="serviceBusOut_name_label" xml:space="preserve">
+    <value>Имя параметра сообщения</value>
+  </data>
+  <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
+    <value>Имя очереди должно начинаться и заканчиваться буквой или цифрой и может содержать только строчные буквы, цифры, а также точку и дефис. Длина имени должна находиться в диапазоне от 3 до 63 символов.</value>
+  </data>
+  <data name="serviceBusOut_queueName_help" xml:space="preserve">
+    <value>Это очередь, куда будет отправлено сообщение.</value>
+  </data>
+  <data name="serviceBusOut_queueName_label" xml:space="preserve">
+    <value>Имя очереди</value>
+  </data>
+  <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
+    <value>Имя раздела должно начинаться и заканчиваться буквой или цифрой и может содержать только строчные буквы, цифры, а также точку и дефис. Длина имени должна находиться в диапазоне от 3 до 63 символов.</value>
+  </data>
+  <data name="serviceBusOut_topicName_help" xml:space="preserve">
+    <value>Это раздел, куда будет отправлено сообщение.</value>
+  </data>
+  <data name="serviceBusOut_topicName_label" xml:space="preserve">
+    <value>Имя раздела</value>
+  </data>
+  <data name="serviceBusTrigger_accessRights_help" xml:space="preserve">
+    <value>Это права доступа, которыми обладает клиент в отношении очереди или подписки раздела.</value>
+  </data>
+  <data name="serviceBusTrigger_accessRights_label" xml:space="preserve">
+    <value>AccessRights</value>
+  </data>
+  <data name="serviceBusTrigger_connection_help" xml:space="preserve">
+    <value>Это строка подключения для вашей служебной шины. Убедитесь в наличии прав на прослушивание.</value>
+  </data>
+  <data name="serviceBusTrigger_connection_label" xml:space="preserve">
+    <value>Подключение к служебной шине</value>
+  </data>
+  <data name="serviceBusTrigger_displayName" xml:space="preserve">
+    <value>Служебная шина Azure</value>
+  </data>
+  <data name="serviceBusTrigger_messageType_help" xml:space="preserve">
+    <value>Это тип сообщения служебной шины. Он позволяет переключаться между использованием очередей и разделов.</value>
+  </data>
+  <data name="serviceBusTrigger_messageType_label" xml:space="preserve">
+    <value>Тип сообщений</value>
+  </data>
+  <data name="serviceBusTrigger_messageType_queueName" xml:space="preserve">
+    <value>Очередь служебной шины</value>
+  </data>
+  <data name="serviceBusTrigger_messageType_topicName" xml:space="preserve">
+    <value>Раздел служебной шины</value>
+  </data>
+  <data name="serviceBusTrigger_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать триггер.</value>
+  </data>
+  <data name="serviceBusTrigger_name_label" xml:space="preserve">
+    <value>Имя параметра сообщения</value>
+  </data>
+  <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
+    <value>Имя очереди должно начинаться и заканчиваться буквой или цифрой и может содержать только строчные буквы, цифры, а также точку и дефис. Длина имени должна находиться в диапазоне от 3 до 63 символов.</value>
+  </data>
+  <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
+    <value>Это имя очереди, откуда будет считано сообщение.</value>
+  </data>
+  <data name="serviceBusTrigger_queueName_label" xml:space="preserve">
+    <value>Имя очереди</value>
+  </data>
+  <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
+    <value>Имя подписки должно начинаться и заканчиваться буквой или цифрой и может содержать только строчные буквы, цифры, а также точку и дефис. Длина имени должна находиться в диапазоне от 3 до 63 символов.</value>
+  </data>
+  <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
+    <value>Это имя подписки в разделе, к которой требуется выполнить привязку.</value>
+  </data>
+  <data name="serviceBusTrigger_subscriptionName_label" xml:space="preserve">
+    <value>Имя подписки</value>
+  </data>
+  <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
+    <value>Имя раздела должно начинаться и заканчиваться буквой или цифрой и может содержать только строчные буквы, цифры, а также точку и дефис. Длина имени должна находиться в диапазоне от 3 до 63 символов.</value>
+  </data>
+  <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
+    <value>Это имя раздела, откуда будет считано сообщение.</value>
+  </data>
+  <data name="serviceBusTrigger_topicName_label" xml:space="preserve">
+    <value>Имя раздела</value>
+  </data>
+  <data name="tableIn_displayName" xml:space="preserve">
+    <value>Таблица службы хранилища Azure</value>
+  </data>
+  <data name="tableIn_filter_help" xml:space="preserve">
+    <value>Это необязательное выражение запроса, используемое для фильтрации результатов запроса к таблице. Этот параметр не применяется к функции C#.</value>
+  </data>
+  <data name="tableIn_filter_label" xml:space="preserve">
+    <value>Фильтр запроса (дополнительно)</value>
+  </data>
+  <data name="tableIn_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для ввода.</value>
+  </data>
+  <data name="tableIn_name_label" xml:space="preserve">
+    <value>Имя параметра таблицы</value>
+  </data>
+  <data name="tableIn_partitionKey_help" xml:space="preserve">
+    <value>Это значение столбца ключа раздела в таблице. Записи с совпадающим ключом раздела и ключом строки возвращаются. Для параметра ключа строки требуется настроить параметр ключа раздела.</value>
+  </data>
+  <data name="tableIn_partitionKey_label" xml:space="preserve">
+    <value>Ключ раздела (дополнительно)</value>
+  </data>
+  <data name="tableIn_rowKey_help" xml:space="preserve">
+    <value>Это значение столбца ключа строки в таблице. Запись с совпадающим ключом строки и ключом раздела возвращается. Для параметра ключа раздела требуется настроить параметр ключа строки.</value>
+  </data>
+  <data name="tableIn_rowKey_label" xml:space="preserve">
+    <value>Ключ строки (дополнительно)</value>
+  </data>
+  <data name="tableIn_tableName_errorText" xml:space="preserve">
+    <value>Имя таблицы должно быть алфавитно-цифровой строкой длиной от 3 до 63 символов. Оно не может начинаться с цифры.</value>
+  </data>
+  <data name="tableIn_tableName_help" xml:space="preserve">
+    <value>Это имя таблицы в вашей учетной записи хранения, откуда будут считываться данные.</value>
+  </data>
+  <data name="tableIn_tableName_label" xml:space="preserve">
+    <value>Имя таблицы</value>
+  </data>
+  <data name="tableIn_take_help" xml:space="preserve">
+    <value>Это целое число, обозначающее количество записей. В зависимости от содержимого таблицы и примененного фильтра число полученных записей может быть меньше этого значения. Этот параметр не применяется к функции C#.</value>
+  </data>
+  <data name="tableIn_take_label" xml:space="preserve">
+    <value>Максимальное число считываемых записей (дополнительно)</value>
+  </data>
+  <data name="tableout_displayName" xml:space="preserve">
+    <value>Таблица службы хранилища Azure</value>
+  </data>
+  <data name="tableout_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для вывода.</value>
+  </data>
+  <data name="tableout_name_label" xml:space="preserve">
+    <value>Имя параметра таблицы</value>
+  </data>
+  <data name="table_tableName_errorText" xml:space="preserve">
+    <value>Имя таблицы должно быть алфавитно-цифровой строкой длиной от 3 до 63 символов. Оно не может начинаться с цифры.</value>
+  </data>
+  <data name="table_tableName_help" xml:space="preserve">
+    <value>Это имя таблицы в вашей учетной записи хранения, куда будут записываться данные.</value>
+  </data>
+  <data name="table_tableName_label" xml:space="preserve">
+    <value>Имя таблицы</value>
+  </data>
+  <data name="BlobTriggerBatch_description" xml:space="preserve">
+    <value>Пакетная функция, которая будет запускаться при каждом добавлении BLOB-объекта в указанный контейнер</value>
+  </data>
+  <data name="BlobTriggerCSharp_description" xml:space="preserve">
+    <value>Функция C#, которая будет запускаться при каждом добавлении BLOB-объекта в указанный контейнер</value>
+  </data>
+  <data name="BlobTriggerNodeJS_description" xml:space="preserve">
+    <value>Функция Node.js, которая будет запускаться при каждом добавлении BLOB-объекта в указанный контейнер</value>
+  </data>
+  <data name="CSharp_description" xml:space="preserve">
+    <value>Функция C#, которая будет запускаться при каждом получении webhook-запроса GitHub</value>
+  </data>
+  <data name="EmptyBash_description" xml:space="preserve">
+    <value>Пустая функция Bash без триггеров, входных или выходных данных</value>
+  </data>
+  <data name="EmptyBatch_description" xml:space="preserve">
+    <value>Пустая пакетная функция без триггеров, входных или выходных данных</value>
+  </data>
+  <data name="EmptyCSharp_description" xml:space="preserve">
+    <value>Пустая функция C# без триггеров, входных или выходных данных</value>
+  </data>
+  <data name="EmptyFSharp_description" xml:space="preserve">
+    <value>Пустая функция F# без триггеров, входных или выходных данных</value>
+  </data>
+  <data name="EmptyNodeJS_description" xml:space="preserve">
+    <value>Пустая функция Node.js без триггеров, входных или выходных данных</value>
+  </data>
+  <data name="EmptyPHP_description" xml:space="preserve">
+    <value>Пустая функция PHP без триггеров, входных или выходных данных</value>
+  </data>
+  <data name="EmptyPowerShell_description" xml:space="preserve">
+    <value>Пустая функция PowerShell без триггеров, входных или выходных данных</value>
+  </data>
+  <data name="EmptyPython_description" xml:space="preserve">
+    <value>Пустая функция Python без триггеров, входных или выходных данных</value>
+  </data>
+  <data name="EventHubTriggerCSharp_description" xml:space="preserve">
+    <value>Функция C#, которая будет запускаться при каждом получении нового события концентратором событий</value>
+  </data>
+  <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
+    <value>Функция Node.js, которая будет запускаться при каждом получении нового события концентратором событий</value>
+  </data>
+  <data name="EventHubTriggerPython_description" xml:space="preserve">
+    <value>Функция Python, которая будет запускаться при каждом получении нового события концентратором событий</value>
+  </data>
+  <data name="FaceLocatorCSharp_description" xml:space="preserve">
+    <value>Функция C#, которая извлекает измерения (окружающий прямоугольник) лиц в BLOB-объекте (на изображении) в контейнер и сохраняет его в таблице службы хранилища Azure</value>
+  </data>
+  <data name="FaceLocatorNodeJS_description" xml:space="preserve">
+    <value>Функция Node.js, которая извлекает измерения (окружающий прямоугольник) лиц в BLOB-объекте (на изображении) в контейнер и сохраняет его в таблице службы хранилища Azure</value>
+  </data>
+  <data name="GenericWebhookCSharp_description" xml:space="preserve">
+    <value>Функция C#, которая будет запускаться при каждом получении webhook-запроса</value>
+  </data>
+  <data name="GenericWebhookNodeJS_description" xml:space="preserve">
+    <value>Функция Node.js, которая будет запускаться при каждом получении webhook-запроса</value>
+  </data>
+  <data name="GitHubCommenterNodeJS_description" xml:space="preserve">
+    <value>Функция Node.js, которая будет запускаться при каждом получении webhook-запроса GitHub</value>
+  </data>
+  <data name="GithubWebhookCSharp_description" xml:space="preserve">
+    <value>Функция C#, которая будет запускаться при каждом получении webhook-запроса GitHub</value>
+  </data>
+  <data name="GithubWebhookNodeJS_description" xml:space="preserve">
+    <value>Функция Node.js, которая будет запускаться при каждом получении webhook-запроса GitHub</value>
+  </data>
+  <data name="HttpGETCRUDC_description" xml:space="preserve">
+    <value>Функция C#, которая извлекает сущности из таблицы службы хранилища при получении HTTP-запроса</value>
+  </data>
+  <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
+    <value>Функция Node.js, которая извлекает сущности из таблицы службы хранилища при получении HTTP-запроса</value>
+  </data>
+  <data name="HttpGETCRUDPHP_description" xml:space="preserve">
+    <value>Функция PHP, которая извлекает сущности из таблицы хранилища при получении HTTP-запроса</value>
+  </data>
+  <data name="HttpPOSTCRUDCSharp_description" xml:space="preserve">
+    <value>Функция C#, которая добавляет сущности в таблицу службы хранилища при получении HTTP-запроса</value>
+  </data>
+  <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
+    <value>Функция Node.js, которая добавляет сущности в таблицу службы хранилища при получении HTTP-запроса</value>
+  </data>
+  <data name="HttpPUTCRUDC_description" xml:space="preserve">
+    <value>Функция C#, которая обновляет сущность в таблице службы хранилища при получении HTTP-запроса</value>
+  </data>
+  <data name="HttpTriggerBatch_description" xml:space="preserve">
+    <value>Пакетная функция, которая будет запускаться при каждом получении HTTP-запроса</value>
+  </data>
+  <data name="HttpTriggerCSharp_description" xml:space="preserve">
+    <value>Функция C#, которая будет запускаться при каждом получении HTTP-запроса</value>
+  </data>
+  <data name="HttpTriggerNodeJS_description" xml:space="preserve">
+    <value>Функция Node.js, которая будет запускаться при каждом получении HTTP-запроса</value>
+  </data>
+  <data name="HttpTriggerPowerShell_description" xml:space="preserve">
+    <value>Функция PowerShell, которая будет запускаться при каждом получении HTTP-запроса</value>
+  </data>
+  <data name="ImageResizerCSharp_description" xml:space="preserve">
+    <value>Функция C#, которая создает изображения с измененным размером при каждом добавлении BLOB-объекта в указанный контейнер</value>
+  </data>
+  <data name="ManualTriggerCSharp_description" xml:space="preserve">
+    <value>Функция C#, которая активируется вручную с помощью кнопки \"Запуск\" на портале</value>
+  </data>
+  <data name="ManualTriggerNodeJS_description" xml:space="preserve">
+    <value>Функция Node.js, которая активируется вручную с помощью кнопки \"Запуск\" на портале</value>
+  </data>
+  <data name="QueueTriggerBash_description" xml:space="preserve">
+    <value>Функция bash, которая будет запускаться при каждом добавлении сообщения в указанную очередь службы хранилища Azure</value>
+  </data>
+  <data name="QueueTriggerBatch_description" xml:space="preserve">
+    <value>Пакетная функция, которая будет запускаться при каждом добавлении сообщения в указанную очередь службы хранилища Azure</value>
+  </data>
+  <data name="QueueTriggerCSharp_description" xml:space="preserve">
+    <value>Функция C#, которая будет запускаться при каждом добавлении сообщения в указанную очередь службы хранилища Azure</value>
+  </data>
+  <data name="QueueTriggerFSharp_description" xml:space="preserve">
+    <value>Функция F#, которая будет запускаться при каждом добавлении сообщения в указанную очередь службы хранилища Azure</value>
+  </data>
+  <data name="QueueTriggerNodeJS_description" xml:space="preserve">
+    <value>Функция Node.js, которая будет запускаться при каждом добавлении сообщения в указанную очередь службы хранилища Azure</value>
+  </data>
+  <data name="QueueTriggerPHP_description" xml:space="preserve">
+    <value>Функция PHP, которая будет запускаться при каждом добавлении сообщения в указанную очередь службы хранилища Azure</value>
+  </data>
+  <data name="QueueTriggerPowerShell_description" xml:space="preserve">
+    <value>Функция PowerShell, которая будет запускаться при каждом добавлении сообщения в указанную очередь службы хранилища Azure</value>
+  </data>
+  <data name="QueueTriggerPython_description" xml:space="preserve">
+    <value>Функция Python, которая будет запускаться при каждом добавлении сообщения в указанную очередь службы хранилища Azure</value>
+  </data>
+  <data name="SaasFileTriggerBatch_description" xml:space="preserve">
+    <value>Пакетная функция, которая будет запускаться при каждом добавлении файла в поставщик SaaS.</value>
+  </data>
+  <data name="SaasFileTriggerCSharp_description" xml:space="preserve">
+    <value>Функция C#, которая будет запускаться при каждом добавлении файла в поставщик SaaS.</value>
+  </data>
+  <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
+    <value>Функция Node.js, которая будет запускаться при каждом добавлении файла в поставщик SaaS.</value>
+  </data>
+  <data name="SaasTableCSharp_description" xml:space="preserve">
+    <value>Функция C#, которая извлекает сущности из таблицы SaaS при получении HTTP-запроса</value>
+  </data>
+  <data name="SendGridCSharp_description" xml:space="preserve">
+    <value>Функция C#, которая отправляет сообщение с подтверждением SendGrid при каждом добавлении нового заказа в указанную очередь службы хранилища Azure</value>
+  </data>
+  <data name="SendGridNodeJS_description" xml:space="preserve">
+    <value>Функция Node.js, которая отправляет сообщение с подтверждением SendGrid при каждом добавлении нового заказа в указанную очередь службы хранилища Azure</value>
+  </data>
+  <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
+    <value>Функция C#, которая будет запускаться при каждом добавлении сообщения в указанную очередь служебной шины</value>
+  </data>
+  <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
+    <value>Функция Node.js, которая будет запускаться при каждом добавлении сообщения в указанную очередь служебной шины</value>
+  </data>
+  <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
+    <value>Функция Node.js, которая будет запускаться при каждом добавлении сообщения в указанный раздел служебной шины</value>
+  </data>
+  <data name="TimerTriggerCSharp_description" xml:space="preserve">
+    <value>Функция C#, которая будет запускаться по указанному расписанию</value>
+  </data>
+  <data name="TimerTriggerNodeJS_description" xml:space="preserve">
+    <value>Функция Node.js, которая будет запускаться по указанному расписанию</value>
+  </data>
+  <data name="TimerTriggerPowerShell_description" xml:space="preserve">
+    <value>Функция PowerShell, которая будет запускаться по указанному расписанию</value>
+  </data>
+  <data name="timerTrigger_schedule_errorText" xml:space="preserve">
+    <value>Недопустимое выражение Cron. Дополнительные сведения см. в &lt;a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/"&gt;документации&lt;/a&gt;.</value>
+  </data>
+  <data name="twilioSms_accountsid_help" xml:space="preserve">
+    <value>This is your Twilio account SID</value>
+  </data>
+  <data name="twilioSms_accountsid_label" xml:space="preserve">
+    <value>Account SID</value>
+  </data>
+  <data name="twilioSms_authtoken_help" xml:space="preserve">
+    <value>This is your Twilio Auth Token</value>
+  </data>
+  <data name="twilioSms_authtoken_label" xml:space="preserve">
+    <value>Twilio Auth Token</value>
+  </data>
+  <data name="twilioSms_body_help" xml:space="preserve">
+    <value>This is the text body to use for the message. If not specified here, the value can be specified in code.</value>
+  </data>
+  <data name="twilioSms_body_label" xml:space="preserve">
+    <value>Message text</value>
+  </data>
+  <data name="twilioSms_displayName" xml:space="preserve">
+    <value>Twilio SMS</value>
+  </data>
+  <data name="twilioSms_from_help" xml:space="preserve">
+    <value>This is the Twilio phone number the message should be sent from. If not specified here, the value can be specified in code.</value>
+  </data>
+  <data name="twilioSms_from_label" xml:space="preserve">
+    <value>From number</value>
+  </data>
+  <data name="twilioSms_name_help" xml:space="preserve">
+    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+  </data>
+  <data name="twilioSms_name_label" xml:space="preserve">
+    <value>Message parameter name</value>
+  </data>
+  <data name="twilioSms_to_help" xml:space="preserve">
+    <value>This is the phone number the message should be sent to. If not specified here, the value can be specified in code.</value>
+  </data>
+  <data name="twilioSms_to_label" xml:space="preserve">
+    <value>To number</value>
+  </data>
+  <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
+    <value>Имя группы потребителей должно начинаться и заканчиваться буквой или цифрой и может содержать только строчные буквы, цифры, а также дефис, точку и символ подчеркивания. Группа $Default также допустима.</value>
+  </data>
+</root>
