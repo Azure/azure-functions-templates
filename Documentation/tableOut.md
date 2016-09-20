@@ -28,7 +28,7 @@ The table binding supports the following scenarios:
 	The Functions runtime provides an `ICollector<T>` or `IAsyncCollector<T>` bound to the table, where `T` specifies the schema of the entities you want to add. Typically, type `T` derives from `TableEntity` or implements `ITableEntity`, but it doesn't have to. The `partitionKey`, `rowKey`, `filter`, and `take` properties are not used in this scenario.
 
 
-#### Storage tables example: Create table entities in C# 
+#### Storage tables example: C# code that creates table entities
 
 ```csharp
 public static void Run(string input, ICollector<Person> tableBinding, TraceWriter log)
@@ -55,7 +55,7 @@ public class Person
 
 ```
 
-#### Storage tables example: Create a table entity in Node
+#### Storage tables example: Node example that creates a table entity
 
 ```javascript
 module.exports = function (context, myQueueItem) {
