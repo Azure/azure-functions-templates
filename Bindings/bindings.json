@@ -35,7 +35,7 @@
                     "help": "$timerTrigger_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -72,7 +72,7 @@
                     "help": "$eventHubTrigger_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -142,7 +142,7 @@
                     "help": "$eventHubOut_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -198,7 +198,7 @@
                     "help": "$queueOut_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -244,7 +244,7 @@
                     "help": "$queueTrigger_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -300,7 +300,7 @@
                     "help": "$blobOut_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -346,7 +346,7 @@
                     "help": "$blobIn_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -392,7 +392,7 @@
                     "help": "$blobTrigger_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -438,7 +438,7 @@
                     "help": "$apiHubFileIn_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -481,7 +481,7 @@
                     "help": "$apiHubFileIn_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -524,7 +524,7 @@
                     "help": "$apiHubFileTrigger_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -571,7 +571,7 @@
                     "help": "[variables('paramNameInputHelp')]",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -632,7 +632,7 @@
                     "help": "[variables('paramNameOutputHelp')]",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -693,7 +693,7 @@
                     "help": "$httpTrigger_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -782,7 +782,7 @@
                     "help": "$httpOut_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -805,7 +805,7 @@
                     "help": "$serviceBusTrigger_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -927,7 +927,7 @@
                     "help": "$serviceBusOut_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -1033,7 +1033,7 @@
                     "help": "$manualTrigger_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -1056,7 +1056,7 @@
                     "help": "$tableout_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -1102,7 +1102,7 @@
                     "help": "$tableIn_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -1177,7 +1177,7 @@
                     "help": "$documentDBOut_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -1233,7 +1233,7 @@
                     "help": "$documentDBIn_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -1289,7 +1289,7 @@
                     "help": "$mobileTableOut_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -1335,7 +1335,7 @@
                     "help": "$mobileTableIn_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -1389,7 +1389,7 @@
                     "help": "$notificationHubOut_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -1468,7 +1468,7 @@
                     "help": "$sendGrid_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
@@ -1523,7 +1523,7 @@
                     "help": "$twilioSms_name_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z_$][a-zA-Z_$0-9]*$",
+                            "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
                             "errorText": "[variables('parameterName')]"
                         }
                     ]

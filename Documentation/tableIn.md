@@ -64,7 +64,7 @@ module.exports = function (context, myQueueItem) {
 };
 ```
 
-#### Storage tables example: Read multiple table entities in C# 
+#### Storage tables example: C# example that reads multiple table entities
 
 The C# code adds a reference to the Azure Storage SDK so that the entity type can derive from `TableEntity`.
 
