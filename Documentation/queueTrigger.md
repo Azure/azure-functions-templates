@@ -1,3 +1,12 @@
+#### Connecting to your Storage Account
+
+* Download Storage explorer from here: http://storageexplorer.com/ 
+* Connect using these credentials:
+* Account Name: `{{accountName}}`
+* Account Key: `{{accountKey}}`
+
+You can now view the blobs, queues and tables associated with this storage binding.
+
 #### Settings for storage queue trigger
 
 - `name` : The variable name used in function code for the queue or the queue message. 
