@@ -12,8 +12,7 @@ let Run(req: HttpRequestMessage, log: TraceWriter) =
         let comment = data?comment?body
 
         if isNull comment then
-            return req.CreateResponse(HttpStatusCode.BadRequest,
-                "No comment data")
+            return req.CreateResponse(HttpStatusCode.BadRequest, "No comment data")
         else
             return req.CreateResponse(HttpStatusCode.OK, "From Github: " + comment)
     } |> Async.StartAsTask

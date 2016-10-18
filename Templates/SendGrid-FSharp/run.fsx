@@ -21,11 +21,11 @@ type Order = {
     CustomerEmail: string
 }
 
-let Run(order: Order, message: byref<Mail>, log: TraceWriter) =
+let Run(order: Order, log: TraceWriter) =
     log.Info(
         sprintf "F# Queue trigger function processed order: %s" order.OrderId)
 
-    message <- new Mail()
+    let message = new Mail()
     message.Subject <- sprintf "Thanks for your order (#%s)!" order.OrderId
 
     let content =
@@ -36,3 +36,4 @@ let Run(order: Order, message: byref<Mail>, log: TraceWriter) =
         )
 
     message.AddContent(content)
+    message
