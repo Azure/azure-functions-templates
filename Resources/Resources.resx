@@ -401,6 +401,12 @@
   </data>
   <data name="httpTrigger_methodRule_label" xml:space="preserve">
     <value>Allowed HTTP methods</value>
+  </data>
+  <data name="httpTrigger_route_label" xml:space="preserve">
+    <value>Route template</value>
+  </data>
+  <data name="httpTrigger_route_help" xml:space="preserve">
+    <value>The route template setting allows you to change the URI that triggers this function. The values should be a relative path, starting with a slash '/'. Path segments may be treated as parameters by surrounding them with curly braces. For example: /customer/{customerId}</value>
   </data>  
   <data name="httpTrigger_methodRule_help" xml:space="preserve">
     <value>HttpTrigger can respond to any HTTP method. If you wish to restrict support to specific methods, choose the 'Selected methods' option.</value>
