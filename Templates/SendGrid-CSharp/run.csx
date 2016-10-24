@@ -1,12 +1,12 @@
-#r "SendGridMail"
+#r "SendGrid"
 
 using System;
-using SendGrid;
+using SendGrid.Helpers.Mail;
 using Microsoft.Azure.WebJobs.Host;
 
-// To use this template you must configure the app setting "AzureWebJobsSendGridApiKey"
-// with your SendGrid Api key. You can also optionally configure the default From/To addresses
-// globally via host.config, e.g.:
+// The 'From' and 'To' fields are automatically populated with the values specified by the binding settings.
+//
+// You can also optionally configure the default From/To addresses globally via host.config, e.g.:
 //
 // {
 //   "sendGrid": {
@@ -14,16 +14,22 @@ using Microsoft.Azure.WebJobs.Host;
 //      "from": "Azure Functions <samples@functions.com>"
 //   }
 // }
-public static void Run(Order order, out SendGridMessage message, TraceWriter log)
+public static void Run(Order order, out Mail message, TraceWriter log)
 {
     log.Info($"C# Queue trigger function processed order: {order.OrderId}");
-
-    message = new SendGridMessage()
+    
+    message = new Mail()
     {
-        Subject = string.Format("Thanks for your order (#{0})!", order.OrderId),
-        Text = string.Format("{0}, your order ({1}) is being processed!", order.CustomerName, order.OrderId)
+        Subject = $"Thanks for your order (#{order.OrderId})!"
     };
-    message.AddTo(order.CustomerEmail);
+
+    Content content = new Content
+    {
+        Type = "text/plain",
+        Value = $"{order.CustomerName}, your order ({order.OrderId}) is being processed!"
+    };
+
+    message.AddContent(content);    
 }
 
 public class Order

@@ -699,6 +699,14 @@
                     ]
                 },
                 {
+                    "name": "route",
+                    "value": "string",
+                    "required": false,
+                    "label": "$httpTrigger_route_label",
+                    "help": "$httpTrigger_route_help",
+                    "validators": []
+                },
+                {
                     "name": "webHookType",
                     "value": "enum",
                     "enum": [
@@ -733,6 +741,56 @@
                     ],
                     "label": "$httpTrigger_authLevel_label",
                     "help": "$httpTrigger_authLevel_help"
+                },
+                {
+                    "name": "methods",
+                    "value": "checkBoxList",
+                    "defaultValue": [
+                        "get",
+                        "post",
+                        "delete",
+                        "head",
+                        "patch",
+                        "put",
+                        "options",
+                        "trace"
+                    ],
+                    "enum": [
+                        {
+                            "value": "get",
+                            "display": "GET"
+                        },
+                        {
+                            "value": "post",
+                            "display": "POST"
+                        },
+                        {
+                            "value": "delete",
+                            "display": "DELETE"
+                        },
+                        {
+                            "value": "head",
+                            "display": "HEAD"
+                        },
+                        {
+                            "value": "patch",
+                            "display": "PATCH"
+                        },
+                        {
+                            "value": "put",
+                            "display": "PUT"
+                        },
+                        {
+                            "value": "options",
+                            "display": "OPTIONS"
+                        },
+                        {
+                            "value": "trace",
+                            "display": "TRACE"
+                        }
+                    ],
+                    "label": "$httpTrigger_methods_label",
+                    "help": "$httpTrigger_methods_help"
                 }
             ],
             "rules": [
@@ -763,6 +821,30 @@
                     ],
                     "label": "$httpTrigger_mode_label",
                     "help": "$httpTrigger_mode_help"
+                },
+                {
+                    "name": "methodRule",
+                    "type": "exclusivity",
+                    "values": [
+                        {
+                            "value": "allMethods",
+                            "display": "All methods",
+                            "hiddenSettings": [
+                                "methods"
+                            ],
+                            "shownSettings": []
+                        },
+                        {
+                            "value": "methods",
+                            "display": "Selected methods",
+                            "hiddenSettings": [],
+                            "shownSettings": [
+                                "methods"
+                            ]
+                        }
+                    ],
+                    "label": "$httpTrigger_methodRule_label",
+                    "help": "$httpTrigger_methodRule_help"
                 }
             ]
         },
@@ -1472,6 +1554,14 @@
                             "errorText": "[variables('parameterName')]"
                         }
                     ]
+                },
+                {
+                    "name": "apiKey",
+                    "value": "string",
+                    "defaultValue": "SendGridApiKey",
+                    "required": true,
+                    "label": "$sendGrid_apiKey_label",
+                    "help": "$sendGrid_apiKey_help"
                 },
                 {
                     "name": "to",

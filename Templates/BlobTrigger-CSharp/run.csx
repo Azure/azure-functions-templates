@@ -1,6 +1,4 @@
-using System;
-
-public static void Run(string myBlob, TraceWriter log)
+public static void Run(Stream myBlob, string name, TraceWriter log)
 {
-    log.Info($"C# Blob trigger function processed: {myBlob}");
+    log.Info($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
 }
