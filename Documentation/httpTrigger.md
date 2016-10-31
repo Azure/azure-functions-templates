@@ -86,23 +86,30 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
 
 ## Example Node.js code for an HTTP trigger function 
 
+We support an [express-like api](https://expressjs.com/en/4x/api.html#res) for node http triggers.
+See supported methods for [context.req](https://github.com/Azure/azure-webjobs-sdk-script/blob/dev/src/WebJobs.Script/Content/Script/http/request.js) and [context.res](https://github.com/Azure/azure-webjobs-sdk-script/blob/dev/src/WebJobs.Script/Content/Script/http/response.js).
+
 ```javascript
 module.exports = function(context, req) {
     context.log('Node.js HTTP trigger function processed a request. RequestUri=%s', req.originalUrl);
 
     if (req.query.name || (req.body && req.body.name)) {
-        context.res = {
-            // status: 200, /* Defaults to 200 */
-            body: "Hello " + (req.query.name || req.body.name)
-        };
-    }
-    else {
+        // using the express api style
+        context.res
+            // set statusCode to 200
+            .status(200)
+            // set a header on the response
+            .set("QuerySet", req.query.name != undefined)
+            // send will automatically call context.done
+            .send("Hello " + (req.query.name || req.body.name));
+    } else {
+        // alternate style
         context.res = {
             status: 400,
             body: "Please pass a name on the query string or in the request body"
         };
+        context.done();
     }
-    context.done();
 };
 ```
 
@@ -134,7 +141,6 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
 ```javascript
 module.exports = function (context, data) {
     context.log('GitHub WebHook triggered!', data.comment.body);
-    context.res = { body: 'New GitHub comment: ' + data.comment.body };
-    context.done();
+    context.res.send('New GitHub comment: ' + data.comment.body);
 };
 ```
