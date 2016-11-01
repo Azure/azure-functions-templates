@@ -394,22 +394,22 @@
     <value>Auktorisationsnivå</value>
   </data>
   <data name="httpTrigger_methods_label" xml:space="preserve">
-    <value>Selected HTTP methods</value>
+    <value>Utvalda HTTP-metoder</value>
   </data>
   <data name="httpTrigger_methods_help" xml:space="preserve">
-    <value>These are the only methods to which this function will respond.</value>
+    <value>Funktionen svarar enbart på de här metoderna.</value>
   </data>
   <data name="httpTrigger_methodRule_label" xml:space="preserve">
-    <value>Allowed HTTP methods</value>
+    <value>Tillåtna HTTP-metoder</value>
   </data>
   <data name="httpTrigger_route_label" xml:space="preserve">
-    <value>Route template</value>
+    <value>Flödesmall</value>
   </data>
   <data name="httpTrigger_route_help" xml:space="preserve">
-    <value>The route template setting allows you to change the URI that triggers this function. The values should be a relative path. Path segments may be treated as parameters by surrounding them with curly braces. For example: customer/{customerId}</value>
+    <value>Med flödesmallinställningen kan du ändra den URI som utlöser funktionen. Värdena måste vara en relativ sökväg. Sökvägssegment kan tolkas som parametrar om de skrivs inom klammerparenteser. Exempel: /kund/{customerId}</value>
   </data>
   <data name="httpTrigger_methodRule_help" xml:space="preserve">
-    <value>HttpTrigger can respond to any HTTP method. If you wish to restrict support to specific methods, choose the 'Selected methods' option.</value>
+    <value>HttpTrigger kan svara på vilken HTTP-metod som helst. Om du vill begränsa stödet till bara vissa metoder väljer du alternativet Utvalda metoder.</value>
   </data>
   <data name="httpTrigger_mode_label" xml:space="preserve">
     <value>Läge</value>
@@ -421,7 +421,7 @@
     <value>SaaS-fil</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>SaaS File</value>
+    <value>SaaS-fil</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
     <value>Azure Storage Blob</value>
@@ -508,7 +508,7 @@
     <value>Svarsparameternamn</value>
   </data>
   <data name="httpTrigger_authLevel_help" xml:space="preserve">
-    <value>Authorization level controls whether you require an API key and which key to use; Function uses a function key; Admin uses your master key. The function and master keys are found in the 'keys' management panel on the portal, when your function is selected. For user-based authentication, go to Function App Settings.</value>
+    <value>Auktorisationsnivån styr huruvida du kräver en API-nyckel och vilken nyckel som ska användas. Funktion använder en funktionsnyckel, Admin använder huvudnyckeln. Funktions- och huvudnycklarna finns på hanteringspanelen "nycklar" på portalen om funktionen har valts. För användarbaserad autentisering går du till funktionsappinställningarna.</value>
   </data>
   <data name="manualTrigger_name_help" xml:space="preserve">
     <value>Namnet på parametern i koden som utlösaren ska bindas till.</value>
@@ -610,10 +610,10 @@
     <value>Tagguttryck (valfritt)</value>
   </data>
   <data name="notificationHubOut_enableTestSend_help" xml:space="preserve">
-    <value>To get detailed status about the PNS errors encountered while sending the notification, set enableTestSend to true &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=832692'&gt;More information&lt;/a&gt;.</value>
+    <value>För att få detaljerad status om de PNS-fel som uppstod när avsieringen skickades ska enableTestSend anges som sant &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=832692'&gt;Mer information&lt;/a&gt;.</value>
   </data>
   <data name="notificationHubOut_enableTestSend_label" xml:space="preserve">
-    <value>Enable Test Send (optional)</value>
+    <value>Aktivera testsändning (valfritt)</value>
   </data>
   <data name="queueTrigger_displayName" xml:space="preserve">
     <value>Azure Storage-kö</value>
@@ -829,7 +829,7 @@
     <value>En C#-funktion som körs när en blobb läggs till i en angiven behållare</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a blob is added to a specified container</value>
+    <value>En F#-funktion som ska köras när en blobb läggs till i en angiven behållare</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
     <value>En Node.js-funktion som körs när en blobb läggs till i en angiven behållare</value>
@@ -865,7 +865,7 @@
     <value>En C#-funktion som körs när en händelsehubb tar emot en ny händelse</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever an event hub receives a new event</value>
+    <value>En F#-funktion som ska köras när en händelsehubb tar emot en ny händelse</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
     <value>En Node.js-funktion som körs när en händelsehubb tar emot en ny händelse</value>
@@ -877,7 +877,7 @@
     <value>En C#-funktion som extraherar siddimensioner (omgivande rektangel) av en blobb (avbildning) i en behållare och lagrar den i en Azure-lagringstabell</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>An F# function that extracts dimensions (surrounding rectangle) of faces in a blob (image) in a container &amp; stores it in an Azure storage table</value>
+    <value>En F#-funktion som extraherar siddimensioner (omgivande rektangel) av en blobb (avbildning) i en behållare och lagrar den i en Azure Storage-tabell</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
     <value>En Node.js-funktion som extraherar siddimensioner (omgivande rektangel) av en blobb (avbildning) i en behållare och lagrar den i en Azure-lagringstabell</value>
@@ -886,7 +886,7 @@
     <value>En C#-funktion som körs när den får en webbhookförfrågan</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a webhook request</value>
+    <value>En F#-funktion som ska köras när den får en webbhookförfrågan</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
     <value>En Node.js-funktion som körs när den får en webbhookförfrågan</value>
@@ -895,13 +895,13 @@
     <value>En Node.js-funktion som körs när den får en GitHub-webbhookförfrågan</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a GitHub webhook request</value>
+    <value>En F#-funktion som ska köras när den får en GitHub-webbhookförfrågan</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>En C#-funktion som körs när den får en GitHub-webbhookförfrågan</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a GitHub webhook request</value>
+    <value>En F#-funktion som ska köras när den får en GitHub-webbhookförfrågan</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
     <value>En Node.js-funktion som körs när den får en GitHub-webbhookförfrågan</value>
@@ -910,7 +910,7 @@
     <value>En C#-funktion som hämtar enheter från en lagringstabell när den får en HTTP-förfrågan</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that fetches entities from a Storage Table when it receives an HTTP request</value>
+    <value>En F#-funktion som hämtar enheter från en lagringstabell när den får en HTTP-förfrågan</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
     <value>En Node.js-funktion som hämtar enheter från en lagringstabell när den får en HTTP-förfrågan</value>
@@ -922,16 +922,16 @@
     <value>En C#-funktion som lägger till enheter i en lagringstabell när den får en HTTP-förfrågan</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that adds entities to a Storage Table when it receives an HTTP request</value>
+    <value>En F#-funktion som lägger till enheter i en lagringstabell när den får en HTTP-förfrågan</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
     <value>En Node.js-funktion som lägger till enheter i en lagringstabell när den får en HTTP-förfrågan</value>
   </data>
   <data name="HttpPUTCRUDC_description" xml:space="preserve">
-    <value>A C# function that updates entity in a Storage Table when it receives an HTTP request</value>
+    <value>En C#-funktion som uppdaterar enheter i en lagringstabell när den får en HTTP-förfrågan</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that updates entity in a Storage Table when it receives an HTTP request</value>
+    <value>En C#-funktion som uppdaterar enheter i en lagringstabell när den får en HTTP-förfrågan</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
     <value>En batchfunktion som körs när den får en HTTP-förfrågan</value>
@@ -940,7 +940,7 @@
     <value>En C#-funktion som körs när den får en HTTP-förfrågan</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives an HTTP request</value>
+    <value>En F#-funktion som ska köras när den får en HTTP-förfrågan</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
     <value>En Node.js-funktion som körs när den får en HTTP-förfrågan</value>
@@ -952,13 +952,13 @@
     <value>En C#-funktion som skapar storleksändrade avbildningar när en blobb läggs till i en angiven behållare</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>An F# function that creates resized images whenever a blob is added to a specified container</value>
+    <value>En F#-funktion som skapar storleksändrade avbildningar när en blobb läggs till i en angiven behållare</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>En C#-funktion som utlöses manuellt via portalknappen Kör</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that is triggered manually via the portal "Run" button</value>
+    <value>En F#-funktion som utlöses manuellt via portalknappen Kör</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>En Node.js-funktion som utlöses manuellt via portalknappen Kör</value>
@@ -994,7 +994,7 @@
     <value>En C#-funktion som körs när en fil läggs till i en SaaS-provider.</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a file is added to a SaaS provider.</value>
+    <value>En F#-funktion som ska köras när en fil läggs till i en SaaS-provider.</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
     <value>En Node.js-funktion som körs när en fil läggs till i en SaaS-provider.</value>
@@ -1003,16 +1003,16 @@
     <value>En C#-funktion som hämtar enheter från en SaaS-tabell när den får en HTTP-förfrågan.</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>An F# function that fetches entities from a SaaS Table when it receives an HTTP request.</value>
+    <value>En F#-funktion som hämtar enheter från en SaaS-tabell när den får en HTTP-förfrågan.</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>An F# function that generates a SAS token for Azure Storage for a given container and blob name.</value>
+    <value>En F#-funktion som genererar en SAS-token för Azure Storage för en angiven behållare och blobbnamn.</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
     <value>En C#-funktion som skickar ett SendGrid-bekräftelsemejl när en ny beställning läggs till i en angiven Azure Storage-kö</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>An F# function that sends a SendGrid confirmation mail whenever a new order is added to a specified Azure Storage queue</value>
+    <value>En F#-funktion som skickar ett SendGrid-bekräftelsemejl när en ny beställning läggs till i en angiven Azure Storage-kö</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
     <value>En Node.js-funktion som skickar ett SendGrid-bekräftelsemejl när en ny beställning läggs till i en angiven Azure Storage-kö</value>
@@ -1021,13 +1021,13 @@
     <value>En C#-funktion som körs när ett meddelande läggs till i en angiven Service Bus-kö</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a message is added to a specified Service Bus queue</value>
+    <value>En F#-funktion som ska köras när ett meddelande läggs till i en angiven Service Bus-kö</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
     <value>En Node.js-funktion som körs när ett meddelande läggs till i en angiven Service Bus-kö</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a message is added to the specified Service Bus topic</value>
+    <value>En F#-funktion som ska köras när ett meddelande läggs till i det angivna Service Bus-ämnet</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>En Node.js-funktion som körs när ett meddelande läggs till i det angivna Service Bus-ämnet</value>
@@ -1036,7 +1036,7 @@
     <value>En C#-funktion som körs enligt ett angivet schema</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run on a specified schedule</value>
+    <value>En F#-funktion som ska köras enligt ett angivet schema</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
     <value>En Node.js-funktion som körs enligt ett angivet schema</value>
@@ -1048,54 +1048,54 @@
     <value>Ogiltigt Cron-uttryck. Mer information hittar du i &lt;a target='_blank' href='https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/'&gt;dokumentationen&lt;/a&gt;.</value>
   </data>
   <data name="twilioSms_accountsid_help" xml:space="preserve">
-    <value>The name of the app setting containing your Twilio account SID</value>
+    <value>Namnet på appinställningen som innehåller ditt säkerhets-id för Twilio-kontot</value>
   </data>
   <data name="twilioSms_accountsid_label" xml:space="preserve">
-    <value>Account SID setting</value>
+    <value>Inställning för kontots säkerhets-id</value>
   </data>
   <data name="twilioSms_authtoken_help" xml:space="preserve">
-    <value>The name of the app setting containing your Twilio Auth Token</value>
+    <value>Namnet på appinställningen som innehåller din Twilio-autentiseringstoken</value>
   </data>
   <data name="twilioSms_authtoken_label" xml:space="preserve">
-    <value>Auth Token setting</value>
+    <value>Autentiseringstokeninställning</value>
   </data>
   <data name="twilioSms_body_help" xml:space="preserve">
-    <value>This is the text body to use for the message. If not specified here, the value can be specified in code.</value>
+    <value>Brödtexten som ska användas för meddelandet. Om värdet inte anges här kan det anges i koden.</value>
   </data>
   <data name="twilioSms_body_label" xml:space="preserve">
-    <value>Message text</value>
+    <value>Meddelandetext</value>
   </data>
   <data name="twilioSms_displayName" xml:space="preserve">
-    <value>Twilio SMS</value>
+    <value>Twilio-SMS</value>
   </data>
   <data name="twilioSms_from_help" xml:space="preserve">
-    <value>This is the Twilio phone number the message should be sent from. If not specified here, the value can be specified in code.</value>
+    <value>Det här är det Twilio-telefonnummer som meddelandet ska skickas från. Om det inte anges här kan värdet anges i koden.</value>
   </data>
   <data name="twilioSms_from_label" xml:space="preserve">
-    <value>From number</value>
+    <value>Från nummer</value>
   </data>
   <data name="twilioSms_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>Namnet på parametern i koden som utdatabindningen ska bindas till.</value>
   </data>
   <data name="twilioSms_name_label" xml:space="preserve">
-    <value>Message parameter name</value>
+    <value>Meddelandeparameternamn</value>
   </data>
   <data name="twilioSms_to_help" xml:space="preserve">
-    <value>This is the phone number the message should be sent to. If not specified here, the value can be specified in code.</value>
+    <value>Det här är det telefonnummer som meddelandet ska skickas till. Om det inte anges här kan värdet anges i koden.</value>
   </data>
   <data name="twilioSms_to_label" xml:space="preserve">
-    <value>To number</value>
+    <value>Till nummer</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
     <value>Namnet på konsumentgruppen måste börja och sluta med en bokstav eller siffra och får bara innehålla gemener, siffror, punkt, bindestreck och understreck. Gruppen $Default tillåst också.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
-    <value>Azure DocumentDB Document</value>
+    <value>DocumentDB-dokument i Azure</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>This is your SendGrid API Key</value>
+    <value>Det här är din API-nyckel för SendGrid</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
-    <value>SendGrid API Key</value>
+    <value>API-nyckel för SendGrid</value>
   </data>
 </root>

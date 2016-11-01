@@ -394,22 +394,22 @@
     <value>Poziom autoryzacji</value>
   </data>
   <data name="httpTrigger_methods_label" xml:space="preserve">
-    <value>Selected HTTP methods</value>
+    <value>Wybrane metody HTTP</value>
   </data>
   <data name="httpTrigger_methods_help" xml:space="preserve">
-    <value>These are the only methods to which this function will respond.</value>
+    <value>To są jedyne metody, na które będzie odpowiadać ta funkcja.</value>
   </data>
   <data name="httpTrigger_methodRule_label" xml:space="preserve">
-    <value>Allowed HTTP methods</value>
+    <value>Dozwolone metody HTTP</value>
   </data>
   <data name="httpTrigger_route_label" xml:space="preserve">
-    <value>Route template</value>
+    <value>Szablon trasy</value>
   </data>
   <data name="httpTrigger_route_help" xml:space="preserve">
-    <value>The route template setting allows you to change the URI that triggers this function. The values should be a relative path. Path segments may be treated as parameters by surrounding them with curly braces. For example: customer/{customerId}</value>
+    <value>Ustawienie szablonu trasy umożliwia zmianę identyfikatora URI wyzwalającego tę funkcję. Wartość musi być ścieżką względną. Segmenty ścieżki mogą być traktowane jak parametry i mogą być ujęte w nawiasy klamrowe. Przykład: /customer/{customerId}</value>
   </data>
   <data name="httpTrigger_methodRule_help" xml:space="preserve">
-    <value>HttpTrigger can respond to any HTTP method. If you wish to restrict support to specific methods, choose the 'Selected methods' option.</value>
+    <value>Element HttpTrigger może odpowiadać na dowolną metodę HTTP. Aby ograniczyć obsługę do określonych metod, wybierz opcję „Wybrane metody”.</value>
   </data>
   <data name="httpTrigger_mode_label" xml:space="preserve">
     <value>Tryb</value>
@@ -421,7 +421,7 @@
     <value>Plik SaaS</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>SaaS File</value>
+    <value>Plik SaaS</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
     <value>Azure Storage Blob</value>
@@ -610,10 +610,10 @@
     <value>Wyrażenie tagu (opcjonalne)</value>
   </data>
   <data name="notificationHubOut_enableTestSend_help" xml:space="preserve">
-    <value>To get detailed status about the PNS errors encountered while sending the notification, set enableTestSend to true &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=832692'&gt;More information&lt;/a&gt;.</value>
+    <value>Aby uzyskać szczegółowy stan błędów PNS napotkanych podczas wysyłania powiadomienia, ustaw atrybut enableTestSend na wartość true. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=832692'&gt;Więcej informacji&lt;/a&gt;.</value>
   </data>
   <data name="notificationHubOut_enableTestSend_label" xml:space="preserve">
-    <value>Enable Test Send (optional)</value>
+    <value>Włącz wysyłanie testowe (opcjonalnie)</value>
   </data>
   <data name="queueTrigger_displayName" xml:space="preserve">
     <value>Kolejka usługi Azure Storage</value>
@@ -829,7 +829,7 @@
     <value>Funkcja języka C#, która będzie uruchamiana po każdym dodaniu obiektu blob do określonego kontenera</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a blob is added to a specified container</value>
+    <value>Funkcja języka F#, która zostanie uruchomiona, gdy obiekt blob zostanie dodany do określonego kontenera</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
     <value>Funkcja środowiska Node.js, która będzie uruchamiana po każdym dodaniu obiektu blob do określonego kontenera</value>
@@ -865,7 +865,7 @@
     <value>Funkcja języka C#, która będzie uruchamiana po każdym odebraniu nowego zdarzenia przez centrum zdarzeń</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever an event hub receives a new event</value>
+    <value>Funkcja języka F#, która zostanie uruchomiona, gdy centrum zdarzeń odbierze nowe zdarzenie</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
     <value>Funkcja środowiska Node.js, która będzie uruchamiana po każdym odebraniu nowego zdarzenia przez centrum zdarzeń</value>
@@ -877,7 +877,7 @@
     <value>Funkcja języka C#, która wyodrębnia wymiary (otaczający prostokąt) powierzchni obiektu blob (obrazu) w kontenerze i zapisuje je w tabeli magazynu platformy Azure</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>An F# function that extracts dimensions (surrounding rectangle) of faces in a blob (image) in a container &amp; stores it in an Azure storage table</value>
+    <value>Funkcja języka F#, która wyodrębnia wymiary (otaczający prostokąt) twarzy w obiekcie blob (obraz) w kontenerze i przechowuje je w usłudze Azure Storage</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
     <value>Funkcja środowiska Node.js, która wyodrębnia wymiary (otaczający prostokąt) powierzchni obiektu blob (obrazu) w kontenerze i zapisuje je w tabeli magazynu platformy Azure</value>
@@ -886,7 +886,7 @@
     <value>Funkcja języka C#, która będzie uruchamiana za każdym razem, gdy odbierze żądanie elementu webhook</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a webhook request</value>
+    <value>Funkcja języka F#, która zostanie uruchomiona, gdy otrzyma żądanie elementu webhook</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
     <value>Funkcja środowiska Node.js, która będzie uruchamiana za każdym razem, gdy odbierze żądanie elementu webhook</value>
@@ -895,13 +895,13 @@
     <value>Funkcja środowiska Node.js, która będzie uruchamiana za każdym razem, gdy odbierze żądanie elementu webhook usługi GitHub</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a GitHub webhook request</value>
+    <value>Funkcja języka F#, która zostanie uruchomiona, gdy otrzyma żądanie elementu webhook GitHub</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>Funkcja języka C#, która będzie uruchamiana za każdym razem, gdy odbierze żądanie elementu webhook usługi GitHub</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a GitHub webhook request</value>
+    <value>Funkcja języka F#, która zostanie uruchomiona, gdy otrzyma żądanie elementu webhook GitHub</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
     <value>Funkcja środowiska Node.js, która będzie uruchamiana za każdym razem, gdy odbierze żądanie elementu webhook usługi GitHub</value>
@@ -910,7 +910,7 @@
     <value>Funkcja języka C#, która pobiera jednostki z tabeli magazynu po odebraniu żądania HTTP</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that fetches entities from a Storage Table when it receives an HTTP request</value>
+    <value>Funkcja języka F#, która pobierze jednostki z tabeli magazynu, gdy odbierze żądanie HTTP</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
     <value>Funkcja środowiska Node.js, która pobiera jednostki z tabeli magazynu po odebraniu żądania HTTP</value>
@@ -922,16 +922,16 @@
     <value>Funkcja języka C#, która dodaje jednostki do tabeli magazynu po odebraniu żądania HTTP</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that adds entities to a Storage Table when it receives an HTTP request</value>
+    <value>Funkcja języka F#, która doda jednostki do tabeli magazynu, gdy odbierze żądanie HTTP</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
     <value>Funkcja środowiska Node.js, która dodaje jednostki do tabeli magazynu po odebraniu żądania HTTP</value>
   </data>
   <data name="HttpPUTCRUDC_description" xml:space="preserve">
-    <value>A C# function that updates entity in a Storage Table when it receives an HTTP request</value>
+    <value>Funkcja języka C#, która zaktualizuje jednostkę w tabeli magazynu po odebraniu żądania HTTP</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that updates entity in a Storage Table when it receives an HTTP request</value>
+    <value>Funkcja języka F#, która zaktualizuje jednostkę w tabeli magazynu po odebraniu żądania HTTP</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
     <value>Funkcja wsadowa, która będzie uruchamiana za każdym razem, gdy odbierze żądanie HTTP</value>
@@ -940,7 +940,7 @@
     <value>Funkcja języka C#, która będzie uruchamiana za każdym razem, gdy odbierze żądanie HTTP</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives an HTTP request</value>
+    <value>Funkcja języka F#, która zostanie uruchomiona, gdy odbierze żądanie HTTP</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
     <value>Funkcja środowiska Node.js, która będzie uruchamiana za każdym razem, gdy odbierze żądanie HTTP</value>
@@ -952,13 +952,13 @@
     <value>Funkcja języka C#, która tworzy obrazy ze zmienionym rozmiarem za każdym razem, gdy obiekt blob zostanie dodany do określonego kontenera</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>An F# function that creates resized images whenever a blob is added to a specified container</value>
+    <value>Funkcja języka F#, która tworzy obrazy o zmienionych rozmiarach, gdy obiekt blob zostaje dodany do określonego kontenera</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>Funkcja języka C# wyzwalana ręcznie za pomocą przycisku „Uruchom” portalu</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that is triggered manually via the portal "Run" button</value>
+    <value>Funkcja języka F#, która jest wyzwalana ręcznie za pośrednictwem przycisku „Uruchom” w portalu</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>Funkcja środowiska Node.js wyzwalana ręcznie za pomocą przycisku „Uruchom” portalu</value>
@@ -994,7 +994,7 @@
     <value>Funkcja języka C#, która będzie uruchamiana za każdym razem, gdy pole zostanie dodane do dostawcy SaaS.</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a file is added to a SaaS provider.</value>
+    <value>Funkcja języka F#, która zostanie uruchomiona, gdy plik zostanie dodany do dostawcy SaaS.</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
     <value>Funkcja środowiska Node.js, która będzie uruchamiana za każdym razem, gdy pole zostanie dodane do dostawcy SaaS.</value>
@@ -1003,16 +1003,16 @@
     <value>Funkcja języka C#, która pobiera jednostki z tabeli SaaS po odebraniu żądania HTTP.</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>An F# function that fetches entities from a SaaS Table when it receives an HTTP request.</value>
+    <value>Funkcja języka F#, która pobierze jednostki z tabeli SaaS, gdy odbierze żądanie HTTP.</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>An F# function that generates a SAS token for Azure Storage for a given container and blob name.</value>
+    <value>Funkcja języka F#, która generuje token SAS dla usługi Azure Storage dla danego kontenera i nazwy obiektu blob.</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
     <value>Funkcja języka C#, która wysyła potwierdzenie SendGrid za każdym razem, gdy nowe zamówienie zostanie dodane do określonej kolejki usługi Azure Storage</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>An F# function that sends a SendGrid confirmation mail whenever a new order is added to a specified Azure Storage queue</value>
+    <value>Funkcja języka F#, która wysyła potwierdzenie e-mail SendGrid, gdy nowy porządek zostaje dodany do określonej kolejki usługi Azure Storage</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
     <value>Funkcja środowiska Node.js, która wysyła potwierdzenie SendGrid za każdym razem, gdy nowe zamówienie zostanie dodane do określonej kolejki usługi Azure Storage</value>
@@ -1021,13 +1021,13 @@
     <value>Funkcja języka C#, która będzie uruchamiana za każdym razem, gdy komunikat zostanie dodany do określonej kolejki usługi Service Bus</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a message is added to a specified Service Bus queue</value>
+    <value>Funkcja języka F#, która zostanie uruchomiona, gdy komunikat zostanie dodany do określonej kolejki usługi Service Bus</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
     <value>Funkcja środowiska Node.js, która będzie uruchamiana za każdym razem, gdy komunikat zostanie dodany do określonej kolejki usługi Service Bus</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a message is added to the specified Service Bus topic</value>
+    <value>Funkcja języka F#, która zostanie uruchomiona, gdy komunikat zostanie dodany do określonego tematu usługi Service Bus</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>Funkcja środowiska Node.js, która będzie uruchamiana za każdym razem, gdy komunikat zostanie dodany do określonego tematu usługi Service Bus</value>
@@ -1036,7 +1036,7 @@
     <value>Funkcja języka C#, która będzie uruchamiana zgodnie z określonym harmonogramem</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run on a specified schedule</value>
+    <value>Funkcja języka F#, która zostanie uruchomiona w oparciu o określony harmonogram</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
     <value>Funkcja środowiska Node.js, która będzie uruchamiana zgodnie z określonym harmonogramem</value>
@@ -1048,54 +1048,54 @@
     <value>Nieprawidłowe wyrażenie narzędzia Cron. Zapoznaj się z &lt;a target='_blank' href='https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/'&gt;dokumentacją&lt;/a&gt;, aby dowiedzieć się więcej.</value>
   </data>
   <data name="twilioSms_accountsid_help" xml:space="preserve">
-    <value>The name of the app setting containing your Twilio account SID</value>
+    <value>Nazwa ustawienia aplikacji zawierającego identyfikator SID Twojego konta usługi Twilio</value>
   </data>
   <data name="twilioSms_accountsid_label" xml:space="preserve">
-    <value>Account SID setting</value>
+    <value>Ustawienie identyfikatora SID konta</value>
   </data>
   <data name="twilioSms_authtoken_help" xml:space="preserve">
-    <value>The name of the app setting containing your Twilio Auth Token</value>
+    <value>Nazwa ustawienia aplikacji zawierającego token uwierzytelniania usługi Twilio</value>
   </data>
   <data name="twilioSms_authtoken_label" xml:space="preserve">
-    <value>Auth Token setting</value>
+    <value>Ustawienie tokenu uwierzytelniania</value>
   </data>
   <data name="twilioSms_body_help" xml:space="preserve">
-    <value>This is the text body to use for the message. If not specified here, the value can be specified in code.</value>
+    <value>To jest treść tekstowa do użycia dla wiadomości. Jeśli nie zostanie określona tutaj, wartość można określić w kodzie.</value>
   </data>
   <data name="twilioSms_body_label" xml:space="preserve">
-    <value>Message text</value>
+    <value>Tekst wiadomości</value>
   </data>
   <data name="twilioSms_displayName" xml:space="preserve">
     <value>Twilio SMS</value>
   </data>
   <data name="twilioSms_from_help" xml:space="preserve">
-    <value>This is the Twilio phone number the message should be sent from. If not specified here, the value can be specified in code.</value>
+    <value>To jest numer telefonu dla usługi Twilio, z którego powinna zostać wysyłana wiadomość. Jeśli nie zostanie tu określony, wartość można podać w kodzie.</value>
   </data>
   <data name="twilioSms_from_label" xml:space="preserve">
-    <value>From number</value>
+    <value>Numer nadawcy</value>
   </data>
   <data name="twilioSms_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>To jest nazwa parametru w kodzie, z którym jest powiązane powiązanie wyjściowe.</value>
   </data>
   <data name="twilioSms_name_label" xml:space="preserve">
-    <value>Message parameter name</value>
+    <value>Nazwa parametru komunikatu</value>
   </data>
   <data name="twilioSms_to_help" xml:space="preserve">
-    <value>This is the phone number the message should be sent to. If not specified here, the value can be specified in code.</value>
+    <value>To jest numer telefonu, na który powinna zostać wysłana wiadomość. Jeśli nie zostanie tu określony, wartość można podać w kodzie.</value>
   </data>
   <data name="twilioSms_to_label" xml:space="preserve">
-    <value>To number</value>
+    <value>Numer odbiorcy</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
     <value>Nazwa grupy konsumentów musi zaczynać i kończyć się literą lub cyfrą oraz może zawierać tylko małe litery, cyfry, kropki, łączniki i znaki podkreślenia. Dozwolona jest także nazwa grupy $Default.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
-    <value>Azure DocumentDB Document</value>
+    <value>Dokument usługi Azure DocumentDB</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>This is your SendGrid API Key</value>
+    <value>To jest klucz interfejsu API SendGrid</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
-    <value>SendGrid API Key</value>
+    <value>Klucz interfejsu API SendGrid</value>
   </data>
 </root>

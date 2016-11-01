@@ -394,22 +394,22 @@
     <value>권한 수준</value>
   </data>
   <data name="httpTrigger_methods_label" xml:space="preserve">
-    <value>Selected HTTP methods</value>
+    <value>선택한 HTTP 메서드</value>
   </data>
   <data name="httpTrigger_methods_help" xml:space="preserve">
-    <value>These are the only methods to which this function will respond.</value>
+    <value>이러한 메서드에만 이 함수가 응답합니다.</value>
   </data>
   <data name="httpTrigger_methodRule_label" xml:space="preserve">
-    <value>Allowed HTTP methods</value>
+    <value>허용되는 HTTP 메서드</value>
   </data>
   <data name="httpTrigger_route_label" xml:space="preserve">
-    <value>Route template</value>
+    <value>경로 템플릿</value>
   </data>
   <data name="httpTrigger_route_help" xml:space="preserve">
-    <value>The route template setting allows you to change the URI that triggers this function. The values should be a relative path. Path segments may be treated as parameters by surrounding them with curly braces. For example: customer/{customerId}</value>
+    <value>경로 템플릿 설정을 사용하면 이 함수를 트리거하는 URI를 변경할 수 있습니다. 값은 상대 경로여야 합니다. 경로 세그먼트를 중괄호로 둘러싸 매개 변수로 처리할 수 있습니다(예: /customer/{customerId}).</value>
   </data>
   <data name="httpTrigger_methodRule_help" xml:space="preserve">
-    <value>HttpTrigger can respond to any HTTP method. If you wish to restrict support to specific methods, choose the 'Selected methods' option.</value>
+    <value>HttpTrigger는 모든 HTTP 메서드에 응답할 수 있습니다. 특정 메서드만 지원하도록 제한하려면 '선택한 메서드' 옵션을 선택하세요.</value>
   </data>
   <data name="httpTrigger_mode_label" xml:space="preserve">
     <value>모드</value>
@@ -421,7 +421,7 @@
     <value>SaaS 파일</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>SaaS File</value>
+    <value>SaaS 파일</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
     <value>Azure Storage Blob</value>
@@ -508,7 +508,7 @@
     <value>응답 매개 변수 이름</value>
   </data>
   <data name="httpTrigger_authLevel_help" xml:space="preserve">
-    <value>Authorization level controls whether you require an API key and which key to use; Function uses a function key; Admin uses your master key. The function and master keys are found in the 'keys' management panel on the portal, when your function is selected. For user-based authentication, go to Function App Settings.</value>
+    <value>권한 수준은 API 키를 사용할지 여부와 어떤 키를 사용할지 제어합니다. 즉, 함수는 함수 키를 사용하고 관리자는 마스터 키를 사용합니다. 함수를 선택할 때 함수 및 마스터 키는 포털의 '키' 관리 패널에 있습니다. 사용자 기반 인증이 필요하면 [함수 앱 설정]으로 이동하세요.</value>
   </data>
   <data name="manualTrigger_name_help" xml:space="preserve">
     <value>코드에서 트리거가 바인딩되는 매개 변수의 이름입니다.</value>
@@ -580,7 +580,7 @@
     <value>알림 허브 네임스페이스에 대한 연결 문자열입니다.</value>
   </data>
   <data name="notificationHubOut_connection_label" xml:space="preserve">
-    <value>알림 허브 네임스페이스 연결</value>
+    <value>Notification Hubs 네임스페이스 연결</value>
   </data>
   <data name="notificationHubOut_displayName" xml:space="preserve">
     <value>Azure 알림 허브</value>
@@ -610,10 +610,10 @@
     <value>태그 식(선택 사항)</value>
   </data>
   <data name="notificationHubOut_enableTestSend_help" xml:space="preserve">
-    <value>To get detailed status about the PNS errors encountered while sending the notification, set enableTestSend to true &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=832692'&gt;More information&lt;/a&gt;.</value>
+    <value>알림을 보내는 중 발생하는 PNS 오류에 대한 자세한 상태를 가져오려면 enableTestSend를 true로 설정하세요. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=832692'&gt;자세한 정보&lt;/a&gt;</value>
   </data>
   <data name="notificationHubOut_enableTestSend_label" xml:space="preserve">
-    <value>Enable Test Send (optional)</value>
+    <value>테스트 보내기 사용(선택 사항)</value>
   </data>
   <data name="queueTrigger_displayName" xml:space="preserve">
     <value>Azure Storage 큐</value>
@@ -661,10 +661,10 @@
     <value>서비스 버스에 대한 연결 문자열입니다. 이 문자열에 Send 권한이 있는지 확인하세요.</value>
   </data>
   <data name="serviceBusOut_connection_label" xml:space="preserve">
-    <value>서비스 버스 연결</value>
+    <value>Service Bus 연결</value>
   </data>
   <data name="serviceBusOut_displayName" xml:space="preserve">
-    <value>Azure 서비스 버스</value>
+    <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusOut_messageType_help" xml:space="preserve">
     <value>서비스 버스 메시지 유형입니다. 큐 또는 토픽 사용 중에서 선택할 수 있습니다.</value>
@@ -673,10 +673,10 @@
     <value>메시지 유형</value>
   </data>
   <data name="serviceBusOut_messageType_queueName" xml:space="preserve">
-    <value>서비스 버스 큐</value>
+    <value>Service Bus 큐</value>
   </data>
   <data name="serviceBusOut_messageType_topicName" xml:space="preserve">
-    <value>서비스 버스 항목</value>
+    <value>Service Bus 항목</value>
   </data>
   <data name="serviceBusOut_name_help" xml:space="preserve">
     <value>코드에서 출력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
@@ -712,10 +712,10 @@
     <value>서비스 버스에 대한 연결 문자열입니다. 이 문자열에 Listen 권한이 있는지 확인하세요.</value>
   </data>
   <data name="serviceBusTrigger_connection_label" xml:space="preserve">
-    <value>서비스 버스 연결</value>
+    <value>Service Bus 연결</value>
   </data>
   <data name="serviceBusTrigger_displayName" xml:space="preserve">
-    <value>Azure 서비스 버스</value>
+    <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusTrigger_messageType_help" xml:space="preserve">
     <value>서비스 버스 메시지 유형입니다. 큐 또는 토픽 사용 중에서 선택할 수 있습니다.</value>
@@ -724,10 +724,10 @@
     <value>메시지 유형</value>
   </data>
   <data name="serviceBusTrigger_messageType_queueName" xml:space="preserve">
-    <value>서비스 버스 큐</value>
+    <value>Service Bus 큐</value>
   </data>
   <data name="serviceBusTrigger_messageType_topicName" xml:space="preserve">
-    <value>서비스 버스 항목</value>
+    <value>Service Bus 항목</value>
   </data>
   <data name="serviceBusTrigger_name_help" xml:space="preserve">
     <value>코드에서 트리거가 바인딩되는 매개 변수의 이름입니다.</value>
@@ -829,7 +829,7 @@
     <value>Blob이 지정된 컨테이너에 추가될 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a blob is added to a specified container</value>
+    <value>Blob이 지정된 컨테이너에 추가될 때마다 실행되는 F# 함수</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
     <value>Blob이 지정된 컨테이너에 추가될 때마다 실행되는 Node.js 함수입니다.</value>
@@ -865,7 +865,7 @@
     <value>이벤트 허브에서 새 이벤트를 받을 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever an event hub receives a new event</value>
+    <value>이벤트 허브에서 새 이벤트를 받을 때마다 실행되는 F# 함수</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
     <value>이벤트 허브에서 새 이벤트를 받을 때마다 실행되는 Node.js 함수입니다.</value>
@@ -877,7 +877,7 @@
     <value>컨테이너에 있는 blob(이미지)에서 면의 크기(주변 사각형)를 추출하여 Azure Storage 테이블에 저장하는 C# 함수입니다.</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>An F# function that extracts dimensions (surrounding rectangle) of faces in a blob (image) in a container &amp; stores it in an Azure storage table</value>
+    <value>컨테이너에 있는 Blob(이미지)에서 면의 크기(주변 사각형)를 추출하여 Azure Storage 테이블에 저장하는 F# 함수</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
     <value>컨테이너에 있는 blob(이미지)에서 면의 크기(주변 사각형)를 추출하여 Azure Storage 테이블에 저장하는 Node.js 함수입니다.</value>
@@ -886,7 +886,7 @@
     <value>webhook 요청을 받을 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a webhook request</value>
+    <value>웹후크 요청을 받을 때마다 실행되는 F# 함수</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
     <value>웹후크 요청을 받을 때마다 실행되는 Node.js 함수입니다.</value>
@@ -895,13 +895,13 @@
     <value>GitHub 웹후크 요청을 받을 때마다 실행되는 Node.js 함수입니다.</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a GitHub webhook request</value>
+    <value>GitHub 웹후크 요청을 받을 때마다 실행되는 F# 함수</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>GitHub 웹후크 요청을 받을 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a GitHub webhook request</value>
+    <value>GitHub 웹후크 요청을 받을 때마다 실행되는 F# 함수</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
     <value>GitHub 웹후크 요청을 받을 때마다 실행되는 Node.js 함수입니다.</value>
@@ -910,28 +910,28 @@
     <value>HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 가져오는 C# 함수입니다.</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that fetches entities from a Storage Table when it receives an HTTP request</value>
+    <value>HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 가져오는 F# 함수</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
     <value>HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 가져오는 Node.js 함수입니다.</value>
   </data>
   <data name="HttpGETCRUDPHP_description" xml:space="preserve">
-    <value>A PHP function that fetches entities from a Storage Table when it receives an HTTP request</value>
+    <value>HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 가져오는 PHP 함수입니다.</value>
   </data>
   <data name="HttpPOSTCRUDCSharp_description" xml:space="preserve">
     <value>HTTP 요청을 받을 때 저장소 테이블에 엔터티를 추가하는 C# 함수입니다.</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that adds entities to a Storage Table when it receives an HTTP request</value>
+    <value>HTTP 요청을 받을 때 저장소 테이블에 엔터티를 추가하는 F# 함수</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
     <value>HTTP 요청을 받을 때 저장소 테이블에 엔터티를 추가하는 Node.js 함수입니다.</value>
   </data>
   <data name="HttpPUTCRUDC_description" xml:space="preserve">
-    <value>A C# function that updates entity in a Storage Table when it receives an HTTP request</value>
+    <value>HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 업데이트하는 C# 함수</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that updates entity in a Storage Table when it receives an HTTP request</value>
+    <value>HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 업데이트하는 F# 함수</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
     <value>HTTP 요청을 받을 때마다 실행되는 batch 함수입니다.</value>
@@ -940,7 +940,7 @@
     <value>HTTP 요청을 받을 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives an HTTP request</value>
+    <value>HTTP 요청을 받을 때마다 실행되는 F# 함수</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
     <value>HTTP 요청을 받을 때마다 실행되는 Node.js 함수입니다.</value>
@@ -952,13 +952,13 @@
     <value>Blob이 지정된 컨테이너에 추가될 때마다 크기 조정된 이미지를 만드는 C# 함수입니다.</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>An F# function that creates resized images whenever a blob is added to a specified container</value>
+    <value>Blob이 특정 컨테이너에 추가될 때마다 크기 조정된 이미지를 만드는 F# 함수</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>포털 "실행" 단추를 통해 수동으로 트리거되는 C# 함수입니다.</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that is triggered manually via the portal "Run" button</value>
+    <value>포털의 "실행" 단추를 통해 수동으로 트리거되는 F# 함수</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>포털 "실행" 단추를 통해 수동으로 트리거되는 Node.js 함수입니다.</value>
@@ -994,7 +994,7 @@
     <value>SaaS 공급자에 파일이 추가될 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a file is added to a SaaS provider.</value>
+    <value>파일이 SaaS 공급자에 추가될 때마다 실행되는 F# 함수입니다.</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
     <value>SaaS 공급자에 파일이 추가될 때마다 실행되는 Node.js 함수입니다.</value>
@@ -1003,40 +1003,40 @@
     <value>HTTP 요청을 받을 때 SaaS 테이블에서 엔터티를 가져오는 C# 함수입니다.</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>An F# function that fetches entities from a SaaS Table when it receives an HTTP request.</value>
+    <value>HTTP 요청을 받으면 SaaS 테이블에서 엔터티를 가져오는 F# 함수입니다.</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>An F# function that generates a SAS token for Azure Storage for a given container and blob name.</value>
+    <value>지정된 컨테이너 및 Blob 이름에 대해 Azure Storage의 SAS 토큰을 생성하는 F# 함수입니다.</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
     <value>지정된 Azure Storage 큐에 새 명령이 추가될 때마다 SendGrid 확인 메일을 보내는 C# 함수입니다.</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>An F# function that sends a SendGrid confirmation mail whenever a new order is added to a specified Azure Storage queue</value>
+    <value>지정된 Azure Storage 큐에 새 명령이 추가될 때마다 SendGrid 확인 메일을 보내는 F# 함수</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
     <value>지정된 Azure Storage 큐에 새 명령이 추가될 때마다 SendGrid 확인 메일을 보내는 Node.js 함수입니다.</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
-    <value>지정된 서비스 버스 큐에 메시지가 추가될 때마다 실행되는 C# 함수입니다.</value>
+    <value>지정된 Service Bus 큐에 메시지가 추가될 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a message is added to a specified Service Bus queue</value>
+    <value>지정된 Service Bus 큐에 메시지가 추가될 때마다 실행되는 F# 함수</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
-    <value>지정된 서비스 버스 큐에 메시지가 추가될 때마다 실행되는 Node.js 함수입니다.</value>
+    <value>지정된 Service Bus 큐에 메시지가 추가될 때마다 실행되는 Node.js 함수입니다.</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a message is added to the specified Service Bus topic</value>
+    <value>지정된 Service Bus 토픽에 메시지가 추가될 때마다 실행되는 F# 함수</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
-    <value>지정된 서비스 버스 토픽에 메시지가 추가될 때마다 실행되는 Node.js 함수입니다.</value>
+    <value>지정된 Service Bus 토픽에 메시지가 추가될 때마다 실행되는 Node.js 함수입니다.</value>
   </data>
   <data name="TimerTriggerCSharp_description" xml:space="preserve">
     <value>지정된 일정으로 실행되는 C# 함수입니다.</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run on a specified schedule</value>
+    <value>지정된 일정으로 실행되는 F# 함수</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
     <value>지정된 일정으로 실행되는 Node.js 함수입니다.</value>
@@ -1048,54 +1048,54 @@
     <value>Cron 식이 잘못되었습니다. 자세한 내용은 &lt;a target='_blank' href='https://azure.microsoft.com/ko-kr/documentation/articles/functions-bindings-timer/'&gt;설명서&lt;/a&gt;를 참조하세요.</value>
   </data>
   <data name="twilioSms_accountsid_help" xml:space="preserve">
-    <value>The name of the app setting containing your Twilio account SID</value>
+    <value>Twilio 계정 SID를 포함하는 앱 설정의 이름</value>
   </data>
   <data name="twilioSms_accountsid_label" xml:space="preserve">
-    <value>Account SID setting</value>
+    <value>계정 SID 설정</value>
   </data>
   <data name="twilioSms_authtoken_help" xml:space="preserve">
-    <value>The name of the app setting containing your Twilio Auth Token</value>
+    <value>Twilio 인증 토큰을 포함하는 앱 설정의 이름</value>
   </data>
   <data name="twilioSms_authtoken_label" xml:space="preserve">
-    <value>Auth Token setting</value>
+    <value>인증 토큰 설정</value>
   </data>
   <data name="twilioSms_body_help" xml:space="preserve">
-    <value>This is the text body to use for the message. If not specified here, the value can be specified in code.</value>
+    <value>메시지에 사용할 텍스트 본문입니다. 여기서 지정하지 않으면 코드에서 값을 지정할 수 있습니다.</value>
   </data>
   <data name="twilioSms_body_label" xml:space="preserve">
-    <value>Message text</value>
+    <value>메시지 텍스트</value>
   </data>
   <data name="twilioSms_displayName" xml:space="preserve">
     <value>Twilio SMS</value>
   </data>
   <data name="twilioSms_from_help" xml:space="preserve">
-    <value>This is the Twilio phone number the message should be sent from. If not specified here, the value can be specified in code.</value>
+    <value>메시지를 보내는 Twilio 전화 번호입니다. 여기서 지정하지 않으면 코드에서 값을 지정할 수 있습니다.</value>
   </data>
   <data name="twilioSms_from_label" xml:space="preserve">
-    <value>From number</value>
+    <value>보낸 사람 번호</value>
   </data>
   <data name="twilioSms_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>코드에서 출력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
   </data>
   <data name="twilioSms_name_label" xml:space="preserve">
-    <value>Message parameter name</value>
+    <value>메시지 매개 변수 이름</value>
   </data>
   <data name="twilioSms_to_help" xml:space="preserve">
-    <value>This is the phone number the message should be sent to. If not specified here, the value can be specified in code.</value>
+    <value>메시지가 전송되는 전화 번호입니다. 여기서 지정하지 않으면 코드에서 값을 지정할 수 있습니다.</value>
   </data>
   <data name="twilioSms_to_label" xml:space="preserve">
-    <value>To number</value>
+    <value>받는 사람 번호</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
     <value>소비자 그룹 이름은 문자나 숫자로 시작하고 끝나야 하며 소문자, 숫자, 하이픈, 마침표 및 밑줄만 포함할 수 있습니다. $Default 그룹도 사용할 수 있습니다.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
-    <value>Azure DocumentDB Document</value>
+    <value>Azure DocumentDB 문서</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>This is your SendGrid API Key</value>
+    <value>이것은 SendGrid API 키입니다.</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
-    <value>SendGrid API Key</value>
+    <value>SendGrid API 키</value>
   </data>
 </root>

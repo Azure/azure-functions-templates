@@ -394,22 +394,22 @@
     <value>身份验证级别</value>
   </data>
   <data name="httpTrigger_methods_label" xml:space="preserve">
-    <value>Selected HTTP methods</value>
+    <value>选定的 HTTP 方法</value>
   </data>
   <data name="httpTrigger_methods_help" xml:space="preserve">
-    <value>These are the only methods to which this function will respond.</value>
+    <value>这些是此函数会响应的唯一方法。</value>
   </data>
   <data name="httpTrigger_methodRule_label" xml:space="preserve">
-    <value>Allowed HTTP methods</value>
+    <value>允许的 HTTP 方法</value>
   </data>
   <data name="httpTrigger_route_label" xml:space="preserve">
-    <value>Route template</value>
+    <value>路由模板</value>
   </data>
   <data name="httpTrigger_route_help" xml:space="preserve">
-    <value>The route template setting allows you to change the URI that triggers this function. The values should be a relative path. Path segments may be treated as parameters by surrounding them with curly braces. For example: customer/{customerId}</value>
+    <value>通过路由模板设置，可更改会触发此函数的 URI。值应为相对路径。路径段可能被视为参数，将其以大括号括起。例如: customer/{customerId}</value>
   </data>
   <data name="httpTrigger_methodRule_help" xml:space="preserve">
-    <value>HttpTrigger can respond to any HTTP method. If you wish to restrict support to specific methods, choose the 'Selected methods' option.</value>
+    <value>HttpTrigger 可响应任何 HTTP 方法。若想要限制对特定方法的支持，请选择“所选方法”选项。</value>
   </data>
   <data name="httpTrigger_mode_label" xml:space="preserve">
     <value>模式</value>
@@ -421,7 +421,7 @@
     <value>SaaS 文件</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>SaaS File</value>
+    <value>SaaS 文件</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
     <value>Azure 存储 Blob</value>
@@ -508,7 +508,7 @@
     <value>响应参数名称</value>
   </data>
   <data name="httpTrigger_authLevel_help" xml:space="preserve">
-    <value>Authorization level controls whether you require an API key and which key to use; Function uses a function key; Admin uses your master key. The function and master keys are found in the 'keys' management panel on the portal, when your function is selected. For user-based authentication, go to Function App Settings.</value>
+    <value>授权级别控制是否需要 API 密钥和使用哪一个密钥；“函数”使用函数密钥；“管理员”使用主密钥。选中函数时，门户的“密钥”管理面板上会出现函数密钥和主密钥。对于基于用户的身份验证，请转到 Function App 设置。</value>
   </data>
   <data name="manualTrigger_name_help" xml:space="preserve">
     <value>这是代码中用于触发器绑定到的参数的名称。</value>
@@ -610,10 +610,10 @@
     <value>标记表达式(可选)</value>
   </data>
   <data name="notificationHubOut_enableTestSend_help" xml:space="preserve">
-    <value>To get detailed status about the PNS errors encountered while sending the notification, set enableTestSend to true &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=832692'&gt;More information&lt;/a&gt;.</value>
+    <value>若要获取有关发送通知时遇到的 PNS 错误的详细状态，可将 enableTestSend 设置为 "true" &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=832692'&gt;详细信息&lt;/a&gt;。</value>
   </data>
   <data name="notificationHubOut_enableTestSend_label" xml:space="preserve">
-    <value>Enable Test Send (optional)</value>
+    <value>启用测试发送(可选)</value>
   </data>
   <data name="queueTrigger_displayName" xml:space="preserve">
     <value>Azure 存储队列</value>
@@ -829,7 +829,7 @@
     <value>一个 C# 函数，每当将 blob 添加到指定容器时它都会运行</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a blob is added to a specified container</value>
+    <value>每当将 blob 添加到指定容器时都会运行的 F# 函数</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
     <value>一个 Node.js 函数，每当将 blob 添加到指定容器时它都会运行</value>
@@ -865,7 +865,7 @@
     <value>一个 C# 函数，每当事件中心收到一个新事件时它都会运行</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever an event hub receives a new event</value>
+    <value>每当事件中心收到新事件时都会运行的 F# 函数</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
     <value>一个 Node.js 函数，每当事件中心收到一个新事件时它都会运行</value>
@@ -877,7 +877,7 @@
     <value>一个 C# 函数，用于在容器中提取 blob (映像)中的平面尺寸(周围边框)并将其存储在 Azure 存储表中</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>An F# function that extracts dimensions (surrounding rectangle) of faces in a blob (image) in a container &amp; stores it in an Azure storage table</value>
+    <value>在容器中提取 blob (映像)中的平面尺寸(周围边框)并将其存储在 Azure 存储表中的 F# 函数</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
     <value>一个 Node.js 函数，用于在容器中提取 blob (映像)中的平面尺寸(周围边框)并将其存储在 Azure 存储表中</value>
@@ -886,7 +886,7 @@
     <value>一个 C# 函数，每当收到 Webhook 请求时它都会运行</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a webhook request</value>
+    <value>每当收到 Webhook 请求时都会运行的 F# 函数</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
     <value>一个 Node.js 函数，每当收到 Webhook 请求时它都会运行</value>
@@ -895,13 +895,13 @@
     <value>一个 Node.js 函数，每当收到 GitHub Webhook 请求时它都会运行</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a GitHub webhook request</value>
+    <value>每当收到 GitHub Webhook 请求时都会运行的 F# 函数</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>一个 C# 函数，每当收到 GitHub Webhook 请求时它都会运行</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a GitHub webhook request</value>
+    <value>每当收到 GitHub Webhook 请求时都会运行的 F# 函数</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
     <value>一个 Node.js 函数，每当收到 GitHub Webhook 请求时它都会运行</value>
@@ -910,28 +910,28 @@
     <value>一个 C# 函数，当它收到 HTTP 请求时会从存储表获取实体</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that fetches entities from a Storage Table when it receives an HTTP request</value>
+    <value>当收到 HTTP 请求时会从存储表提取实体的 F# 函数</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
     <value>一个 Node.js 函数，当它收到 HTTP 请求时会从存储表获取实体</value>
   </data>
   <data name="HttpGETCRUDPHP_description" xml:space="preserve">
-    <value>A PHP function that fetches entities from a Storage Table when it receives an HTTP request</value>
+    <value>PHP 函数在接收到 HTTP 请求时从存储表中提取实体</value>
   </data>
   <data name="HttpPOSTCRUDCSharp_description" xml:space="preserve">
     <value>一个 C# 函数，当它收到 HTTP 请求时会向存储表添加实体</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that adds entities to a Storage Table when it receives an HTTP request</value>
+    <value>当收到 HTTP 请求时会向存储表添加实体的 F# 函数</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
     <value>一个 Node.js 函数，当它收到 HTTP 请求时会向存储表添加实体</value>
   </data>
   <data name="HttpPUTCRUDC_description" xml:space="preserve">
-    <value>A C# function that updates entity in a Storage Table when it receives an HTTP request</value>
+    <value>当收到 HTTP 请求时会更新存储表中的实体的 C# 函数</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that updates entity in a Storage Table when it receives an HTTP request</value>
+    <value>当收到 HTTP 请求时会更新存储表中的实体的 F# 函数</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
     <value>一个 batch 函数，每当它收到 HTTP 请求时都会运行</value>
@@ -940,7 +940,7 @@
     <value>一个 C# 函数，每当它收到 HTTP 请求时都会运行</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives an HTTP request</value>
+    <value>每当收到 HTTP 请求时都会运行的 F# 函数</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
     <value>一个 Node.js 函数，每当它收到 HTTP 请求时都会运行</value>
@@ -952,13 +952,13 @@
     <value>一个 C# 函数，每当将 blob 添加到指定容器时它都会创建已调整大小的映像</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>An F# function that creates resized images whenever a blob is added to a specified container</value>
+    <value>每当将 blob 添加到指定容器时都会创建已调整大小的映像的 F# 函数</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>一个 C# 函数，通过门户“运行”按钮手动触发</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that is triggered manually via the portal "Run" button</value>
+    <value>通过门户“运行”按钮手动触发的 F# 函数</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>一个 Node.js 函数，通过门户“运行”按钮手动触发</value>
@@ -994,7 +994,7 @@
     <value>一个 C# 函数，每当将文件添加到 SaaS 提供程序时它都会运行。</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a file is added to a SaaS provider.</value>
+    <value>每当将文件添加到 SaaS 提供程序时都会运行的 F# 函数。</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
     <value>一个 Node.js 函数，每当将文件添加到 SaaS 提供程序时它都会运行。</value>
@@ -1003,16 +1003,16 @@
     <value>一个 C# 函数，每当它收到 HTTP 请求时都将从 SaaS 表获取实体。</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>An F# function that fetches entities from a SaaS Table when it receives an HTTP request.</value>
+    <value>每当收到 HTTP 请求时都会从 SaaS 表提取实体的 F# 函数。</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>An F# function that generates a SAS token for Azure Storage for a given container and blob name.</value>
+    <value>为给定容器和 blob 名称的 Azure 存储生成 SAS 令牌的 F# 函数。</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
     <value>一个 C# 函数，每当将新订单添加到指定的 Azure 存储队列时它都会发送 SendGrid 确认邮件。</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>An F# function that sends a SendGrid confirmation mail whenever a new order is added to a specified Azure Storage queue</value>
+    <value>每当将新顺序添加到指定 Azure 存储队列时都会发送 SendGrid 确认邮件的 F# 函数</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
     <value>一个 Node.js 函数，每当将新订单添加到指定的 Azure 存储队列时它都会发送 SendGrid 确认邮件。</value>
@@ -1021,13 +1021,13 @@
     <value>一个 C# 函数，每当将消息添加到指定的服务总线队列时它都会运行</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a message is added to a specified Service Bus queue</value>
+    <value>每当将消息添加到指定服务总线队列时都会运行的 F# 函数</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
     <value>一个 Node.js 函数，每当将消息添加到指定的服务总线队列时它都会运行</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a message is added to the specified Service Bus topic</value>
+    <value>每当将消息添加到指定服务总线主题时都会运行的 F# 函数</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>一个 Node.js 函数，每当将消息添加到指定的服务总线主题时它都会运行</value>
@@ -1036,7 +1036,7 @@
     <value>将在指定的计划上运行的 C# 函数</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run on a specified schedule</value>
+    <value>将按指定计划运行的 F# 函数</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
     <value>将在指定的计划上运行的 Node.js 函数</value>
@@ -1048,54 +1048,54 @@
     <value>无效的 Cron 表达式。请查阅&lt;a target='_blank' href='https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/'&gt;文档&lt;/a&gt;以了解详细信息。</value>
   </data>
   <data name="twilioSms_accountsid_help" xml:space="preserve">
-    <value>The name of the app setting containing your Twilio account SID</value>
+    <value>包含你的 Twilio 帐户 SID 的应用设置的名称</value>
   </data>
   <data name="twilioSms_accountsid_label" xml:space="preserve">
-    <value>Account SID setting</value>
+    <value>帐户 SID 设置</value>
   </data>
   <data name="twilioSms_authtoken_help" xml:space="preserve">
-    <value>The name of the app setting containing your Twilio Auth Token</value>
+    <value>包含你的 Twilio 身份验证令牌的应用设置的名称</value>
   </data>
   <data name="twilioSms_authtoken_label" xml:space="preserve">
-    <value>Auth Token setting</value>
+    <value>身份验证令牌设置</value>
   </data>
   <data name="twilioSms_body_help" xml:space="preserve">
-    <value>This is the text body to use for the message. If not specified here, the value can be specified in code.</value>
+    <value>这是用于邮件的文本正文。如果未在此处指定值，则可在代码中指定。</value>
   </data>
   <data name="twilioSms_body_label" xml:space="preserve">
-    <value>Message text</value>
+    <value>消息文本</value>
   </data>
   <data name="twilioSms_displayName" xml:space="preserve">
-    <value>Twilio SMS</value>
+    <value>Twilio 短信</value>
   </data>
   <data name="twilioSms_from_help" xml:space="preserve">
-    <value>This is the Twilio phone number the message should be sent from. If not specified here, the value can be specified in code.</value>
+    <value>这是用于从其发送消息的 Twilio 电话号码。如果此处未指定，则可在代码中指定该值。</value>
   </data>
   <data name="twilioSms_from_label" xml:space="preserve">
-    <value>From number</value>
+    <value>发送号码</value>
   </data>
   <data name="twilioSms_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>这是代码中用于输出绑定绑定到的参数的名称。</value>
   </data>
   <data name="twilioSms_name_label" xml:space="preserve">
-    <value>Message parameter name</value>
+    <value>消息参数名称</value>
   </data>
   <data name="twilioSms_to_help" xml:space="preserve">
-    <value>This is the phone number the message should be sent to. If not specified here, the value can be specified in code.</value>
+    <value>这是用于接收消息的电话号码。如果此处未指定，则可在代码中指定该值。</value>
   </data>
   <data name="twilioSms_to_label" xml:space="preserve">
-    <value>To number</value>
+    <value>接收号码</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
     <value>使用者组名称必须以字母或数字开头和结尾，并且只能包含小写字母、数字、连字符、句点和下划线。还允许使用 $Default 组。</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
-    <value>Azure DocumentDB Document</value>
+    <value>Azure DocumentDB 文档</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>This is your SendGrid API Key</value>
+    <value>这是 SendGrid API 密钥</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
-    <value>SendGrid API Key</value>
+    <value>SendGrid API 密钥</value>
   </data>
 </root>
