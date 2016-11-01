@@ -394,22 +394,22 @@
     <value>Úroveň autorizace</value>
   </data>
   <data name="httpTrigger_methods_label" xml:space="preserve">
-    <value>Selected HTTP methods</value>
+    <value>Vybrané metody HTTP</value>
   </data>
   <data name="httpTrigger_methods_help" xml:space="preserve">
-    <value>These are the only methods to which this function will respond.</value>
+    <value>Toto jsou jediné metody, na které bude tato funkce reagovat.</value>
   </data>
   <data name="httpTrigger_methodRule_label" xml:space="preserve">
-    <value>Allowed HTTP methods</value>
+    <value>Povolené metody HTTP</value>
   </data>
   <data name="httpTrigger_route_label" xml:space="preserve">
-    <value>Route template</value>
+    <value>Šablona trasy</value>
   </data>
   <data name="httpTrigger_route_help" xml:space="preserve">
-    <value>The route template setting allows you to change the URI that triggers this function. The values should be a relative path. Path segments may be treated as parameters by surrounding them with curly braces. For example: customer/{customerId}</value>
+    <value>Nastavení šablony trasy umožňuje změnit identifikátor URI, který aktivuje tuto funkci. Hodnoty by měly tvořit relativní cestu. Když segmenty cesty uzavřete do složených závorek, můžou se považovat za parametry. Příklad: zakaznik/{IdZakaznika}</value>
   </data>
   <data name="httpTrigger_methodRule_help" xml:space="preserve">
-    <value>HttpTrigger can respond to any HTTP method. If you wish to restrict support to specific methods, choose the 'Selected methods' option.</value>
+    <value>HttpTrigger může reagovat na jakoukoli metodu HTTP. Pokud chcete podporu omezit na konkrétní metody, zvolte možnost Vybrané metody.</value>
   </data>
   <data name="httpTrigger_mode_label" xml:space="preserve">
     <value>Režim</value>
@@ -421,7 +421,7 @@
     <value>Soubor SaaS</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>SaaS File</value>
+    <value>Soubor SaaS</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
     <value>Azure Storage Blob</value>
@@ -508,7 +508,7 @@
     <value>Název parametru odpovědi</value>
   </data>
   <data name="httpTrigger_authLevel_help" xml:space="preserve">
-    <value>Authorization level controls whether you require an API key and which key to use; Function uses a function key; Admin uses your master key. The function and master keys are found in the 'keys' management panel on the portal, when your function is selected. For user-based authentication, go to Function App Settings.</value>
+    <value>Úroveň autorizace určuje, jestli vyžadujete klíč rozhraní API a který klíč se má použít. Funkce používá klíč funkce, zatímco správce používá váš hlavní klíč. Když je vybraná vaše funkce, hlavní klíč a klíč funkce se zobrazují na portálu na panelu pro správu klíčů. Pokud chcete používat ověřování podle uživatelů, přejděte na nastavení aplikace Function App.</value>
   </data>
   <data name="manualTrigger_name_help" xml:space="preserve">
     <value>Toto je název parametru v kódu, se kterým se sváže aktivační událost.</value>
@@ -610,10 +610,10 @@
     <value>Výraz označení (volitelné)</value>
   </data>
   <data name="notificationHubOut_enableTestSend_help" xml:space="preserve">
-    <value>To get detailed status about the PNS errors encountered while sending the notification, set enableTestSend to true &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=832692'&gt;More information&lt;/a&gt;.</value>
+    <value>Pokud chcete získat podrobné informace o chybách systému oznámení platformy, které se při posílání oznámení staly, nastavte enableTestSend na true. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=832692'&gt;Další informace&lt;/a&gt;</value>
   </data>
   <data name="notificationHubOut_enableTestSend_label" xml:space="preserve">
-    <value>Enable Test Send (optional)</value>
+    <value>Povolit testovací odeslání (nepovinné)</value>
   </data>
   <data name="queueTrigger_displayName" xml:space="preserve">
     <value>Fronta Azure Storage</value>
@@ -829,7 +829,7 @@
     <value>Funkce jazyka C#, která se spustí pokaždé, když se do zadaného kontejneru přidá objekt blob</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a blob is added to a specified container</value>
+    <value>Funkce jazyka F#, která se spustí pokaždé, když se do zadaného kontejneru přidá objekt blob</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
     <value>Funkce jazyka Node.js, která se spustí pokaždé, když se do zadaného kontejneru přidá objekt blob</value>
@@ -865,7 +865,7 @@
     <value>Funkce jazyka C#, která se spustí pokaždé, když centrum událostí přijme novou událost</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever an event hub receives a new event</value>
+    <value>Funkce jazyka F#, která se spustí pokaždé, když centrum událostí přijme novou událost</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
     <value>Funkce jazyka Node.js, která se spustí pokaždé, když centrum událostí přijme novou událost</value>
@@ -877,7 +877,7 @@
     <value>Funkce jazyka C#, která extrahuje dimenze (okolní obdélník) ploch v objektu blob (obrázku) v kontejneru a uloží ho do tabulky úložiště Azure</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>An F# function that extracts dimensions (surrounding rectangle) of faces in a blob (image) in a container &amp; stores it in an Azure storage table</value>
+    <value>Funkce jazyka F#, která extrahuje dimenze (okolní obdélník) ploch v objektu blob (obrázku) v kontejneru a uloží je do tabulky úložiště Azure</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
     <value>Funkce jazyka Node.js, která extrahuje dimenze (okolní obdélník) ploch v objektu blob (obrázku) v kontejneru a uloží ho do tabulky úložiště Azure</value>
@@ -886,7 +886,7 @@
     <value>Funkce jazyka C#, která se spustí pokaždé, když přijme požadavek webhooku</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a webhook request</value>
+    <value>Funkce jazyka F#, která se spustí pokaždé, když dostane požadavek webhooku</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
     <value>Funkce jazyka Node.js, která se spustí pokaždé, když přijme požadavek webhooku</value>
@@ -895,13 +895,13 @@
     <value>Funkce jazyka Node.js, která se spustí pokaždé, když přijme požadavek webhooku GitHub</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a GitHub webhook request</value>
+    <value>Funkce jazyka F#, která se spustí pokaždé, když dostane požadavek webhooku GitHubu</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>Funkce jazyka C#, která se spustí pokaždé, když přijme požadavek webhooku GitHub</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a GitHub webhook request</value>
+    <value>Funkce jazyka F#, která se spustí pokaždé, když dostane požadavek webhooku GitHubu</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
     <value>Funkce jazyka Node.js, která se spustí pokaždé, když přijme požadavek webhooku GitHub</value>
@@ -910,7 +910,7 @@
     <value>Funkce jazyka C#, která načte entity z tabulky úložiště, když přijme požadavek HTTP</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that fetches entities from a Storage Table when it receives an HTTP request</value>
+    <value>Funkce jazyka F#, která načítá entity z tabulky úložiště, když přijme požadavek HTTP</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
     <value>Funkce jazyka Node.js, která načte entity z tabulky úložiště, když přijme požadavek HTTP</value>
@@ -922,16 +922,16 @@
     <value>Funkce jazyka C#, která přidá entity do tabulky úložiště, když přijme požadavek HTTP</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that adds entities to a Storage Table when it receives an HTTP request</value>
+    <value>Funkce jazyka F#, která přidává entity do tabulky úložiště, když přijme požadavek HTTP</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
     <value>Funkce jazyka Node.js, která přidá entity do tabulky úložiště, když přijme požadavek HTTP</value>
   </data>
   <data name="HttpPUTCRUDC_description" xml:space="preserve">
-    <value>A C# function that updates entity in a Storage Table when it receives an HTTP request</value>
+    <value>Funkce jazyka C#, která aktualizuje entity v tabulce úložiště, když přijme požadavek HTTP</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that updates entity in a Storage Table when it receives an HTTP request</value>
+    <value>Funkce jazyka F#, která aktualizuje entity v tabulce úložiště, když přijme požadavek HTTP</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
     <value>Funkce jazyka Batch, která se spustí pokaždé, když přijme požadavek HTTP</value>
@@ -940,7 +940,7 @@
     <value>Funkce jazyka C#, která se spustí pokaždé, když přijme požadavek HTTP</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives an HTTP request</value>
+    <value>Funkce jazyka F#, která se spustí pokaždé, když dostane požadavek HTTP</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
     <value>Funkce jazyka Node.js, která se spustí pokaždé, když přijme požadavek HTTP</value>
@@ -952,13 +952,13 @@
     <value>Funkce jazyka C#, která vytvoří obrázky se změněnou velikostí pokaždé, když se do zadaného kontejneru přidá objekt blob</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>An F# function that creates resized images whenever a blob is added to a specified container</value>
+    <value>Funkce jazyka F#, která vytvoří obrázky se změněnou velikostí pokaždé, když se do zadaného kontejneru přidá objekt blob</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>Funkce jazyka C#, která se spouští ručně přes tlačítko Spustit na portálu</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that is triggered manually via the portal "Run" button</value>
+    <value>Funkce jazyka F#, která se aktivuje ručně tlačítkem Spustit na portálu</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>Funkce jazyka Node.js, která se spouští ručně přes tlačítko Spustit na portálu</value>
@@ -994,7 +994,7 @@
     <value>Funkce jazyka C#, která se spustí pokaždé, když se k poskytovateli SaaS přidá soubor.</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a file is added to a SaaS provider.</value>
+    <value>Funkce jazyka F#, která se spustí pokaždé, když se do poskytovatele SaaS přidá soubor</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
     <value>Funkce jazyka Node.js, která se spustí pokaždé, když se k poskytovateli SaaS přidá soubor.</value>
@@ -1003,16 +1003,16 @@
     <value>Funkce jazyka C#, která načte entity z tabulky SaaS, když přijme požadavek HTTP</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>An F# function that fetches entities from a SaaS Table when it receives an HTTP request.</value>
+    <value>Funkce jazyka F#, která načítá entity z tabulky SaaS, když přijme požadavek HTTP</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>An F# function that generates a SAS token for Azure Storage for a given container and blob name.</value>
+    <value>Funkce jazyka F#, která pro zadaný název kontejneru a objektu blob generuje token SAS pro Azure Storage</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
     <value>Funkce jazyka C#, která pošle e-mail s potvrzením SendGrid pokaždé, když se do zadané fronty Azure Storage přidá nová objednávka</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>An F# function that sends a SendGrid confirmation mail whenever a new order is added to a specified Azure Storage queue</value>
+    <value>Funkce jazyka F#, která posílá potvrzovací e-mail SendGridu pokaždé, když se do zadané fronty Azure Storage přidá nová objednávka</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
     <value>Funkce jazyka Node.js, která pošle e-mail s potvrzením SendGrid pokaždé, když se do zadané fronty Azure Storage přidá nová objednávka</value>
@@ -1021,13 +1021,13 @@
     <value>Funkce jazyka C#, která se spustí pokaždé, když se do zadané fronty Service Bus přidá zpráva</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a message is added to a specified Service Bus queue</value>
+    <value>Funkce jazyka F#, která se spustí pokaždé, když se do zadané fronty služby Service Bus přidá zpráva</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
     <value>Funkce jazyka Node.js, která se spustí pokaždé, když se do zadané fronty Service Bus přidá zpráva</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a message is added to the specified Service Bus topic</value>
+    <value>Funkce jazyka F#, která se spustí pokaždé, když se do zadaného tématu služby Service Bus přidá zpráva</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>Funkce jazyka Node.js, která se spustí pokaždé, když se do zadaného tématu Service Bus přidá zpráva</value>
@@ -1036,7 +1036,7 @@
     <value>Funkce jazyka C#, která se bude spouštět podle zadaného plánu</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run on a specified schedule</value>
+    <value>Funkce jazyka F#, která se spustí podle zadaného plánu</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
     <value>Funkce jazyka Node.js, která se bude spouštět podle zadaného plánu</value>
@@ -1048,54 +1048,54 @@
     <value>Neplatný výraz Cronu. Další informace najdete v &lt;a target='_blank' href='https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/'&gt;dokumentaci&lt;/a&gt;.</value>
   </data>
   <data name="twilioSms_accountsid_help" xml:space="preserve">
-    <value>The name of the app setting containing your Twilio account SID</value>
+    <value>Název nastavení aplikace s vaším SID účtu Twilio</value>
   </data>
   <data name="twilioSms_accountsid_label" xml:space="preserve">
-    <value>Account SID setting</value>
+    <value>Nastavení SID účtu</value>
   </data>
   <data name="twilioSms_authtoken_help" xml:space="preserve">
-    <value>The name of the app setting containing your Twilio Auth Token</value>
+    <value>Název nastavení aplikace s vaším ověřovacím tokenem Twilio</value>
   </data>
   <data name="twilioSms_authtoken_label" xml:space="preserve">
-    <value>Auth Token setting</value>
+    <value>Nastavení ověřovacího tokenu</value>
   </data>
   <data name="twilioSms_body_help" xml:space="preserve">
-    <value>This is the text body to use for the message. If not specified here, the value can be specified in code.</value>
+    <value>Toto je text zprávy, který se použije ve zprávě. Pokud se nezadá tady, dá se zadat v kódu.</value>
   </data>
   <data name="twilioSms_body_label" xml:space="preserve">
-    <value>Message text</value>
+    <value>Text zprávy</value>
   </data>
   <data name="twilioSms_displayName" xml:space="preserve">
     <value>Twilio SMS</value>
   </data>
   <data name="twilioSms_from_help" xml:space="preserve">
-    <value>This is the Twilio phone number the message should be sent from. If not specified here, the value can be specified in code.</value>
+    <value>Toto je telefonní číslo Twilio, ze kterého se má zpráva poslat. Pokud se nezadá tady, dá se zadat v kódu.</value>
   </data>
   <data name="twilioSms_from_label" xml:space="preserve">
-    <value>From number</value>
+    <value>Z čísla</value>
   </data>
   <data name="twilioSms_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>Toto je název parametru v kódu, se kterým se sváže výstupní vazba.</value>
   </data>
   <data name="twilioSms_name_label" xml:space="preserve">
-    <value>Message parameter name</value>
+    <value>Název parametru zprávy</value>
   </data>
   <data name="twilioSms_to_help" xml:space="preserve">
-    <value>This is the phone number the message should be sent to. If not specified here, the value can be specified in code.</value>
+    <value>Toto je telefonní číslo, na které se má zpráva poslat. Pokud se nezadá tady, dá se zadat v kódu.</value>
   </data>
   <data name="twilioSms_to_label" xml:space="preserve">
-    <value>To number</value>
+    <value>Na číslo</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
     <value>Název skupiny uživatelů musí začínat a končit písmenem nebo číslem a může obsahovat jenom malá písmena, čísla, tečku, spojovník a podtržítko. Je povolená i skupina $Default.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
-    <value>Azure DocumentDB Document</value>
+    <value>Dokument Azure DocumentDB</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>This is your SendGrid API Key</value>
+    <value>Toto je váš klíč rozhraní API SendGrid.</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
-    <value>SendGrid API Key</value>
+    <value>Klíč rozhraní API SendGrid</value>
   </data>
 </root>

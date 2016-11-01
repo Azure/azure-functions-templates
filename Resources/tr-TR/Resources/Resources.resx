@@ -394,22 +394,22 @@
     <value>Yetkilendirme düzeyi</value>
   </data>
   <data name="httpTrigger_methods_label" xml:space="preserve">
-    <value>Selected HTTP methods</value>
+    <value>Seçili HTTP metotları</value>
   </data>
   <data name="httpTrigger_methods_help" xml:space="preserve">
-    <value>These are the only methods to which this function will respond.</value>
+    <value>Bu işlev, sadece bu metotları yanıtlar.</value>
   </data>
   <data name="httpTrigger_methodRule_label" xml:space="preserve">
-    <value>Allowed HTTP methods</value>
+    <value>İzin verilen HTTP metotları</value>
   </data>
   <data name="httpTrigger_route_label" xml:space="preserve">
-    <value>Route template</value>
+    <value>Yol şablonu</value>
   </data>
   <data name="httpTrigger_route_help" xml:space="preserve">
-    <value>The route template setting allows you to change the URI that triggers this function. The values should be a relative path. Path segments may be treated as parameters by surrounding them with curly braces. For example: customer/{customerId}</value>
+    <value>Rota şablonu ayarı, bu işlevi tetikleyen URI'yi değiştirebilmenizi sağlar. Değerler, göreli yol olmalıdır. Yol kesimleri, küme ayraçları içine alınarak parametre olarak değerlendirilebilir. Örneğin: customer/{customerId}</value>
   </data>
   <data name="httpTrigger_methodRule_help" xml:space="preserve">
-    <value>HttpTrigger can respond to any HTTP method. If you wish to restrict support to specific methods, choose the 'Selected methods' option.</value>
+    <value>HttpTrigger tüm HTTP metotlarını yanıtlayabilir. Belirli metotlar için desteği kısıtlamak istiyorsanız 'Seçili metotlar' seçeneğini belirtin.</value>
   </data>
   <data name="httpTrigger_mode_label" xml:space="preserve">
     <value>Mod</value>
@@ -421,7 +421,7 @@
     <value>SaaS Dosyası</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>SaaS File</value>
+    <value>SaaS Dosyası</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
     <value>Azure Depolama Blob'u</value>
@@ -610,10 +610,10 @@
     <value>Etiket ifadesi (isteğe bağlı)</value>
   </data>
   <data name="notificationHubOut_enableTestSend_help" xml:space="preserve">
-    <value>To get detailed status about the PNS errors encountered while sending the notification, set enableTestSend to true &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=832692'&gt;More information&lt;/a&gt;.</value>
+    <value>Bildirim gönderilirken karşılaşılan PNS hataları hakkındaki ayrıntılı durumu görüntülemek için, enableTestSend değerini true olarak ayarlayın. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=832692'&gt;Daha fazla bilgi&lt;/a&gt;.</value>
   </data>
   <data name="notificationHubOut_enableTestSend_label" xml:space="preserve">
-    <value>Enable Test Send (optional)</value>
+    <value>Test Gönderimini Etkinleştir (isteğe bağlı)</value>
   </data>
   <data name="queueTrigger_displayName" xml:space="preserve">
     <value>Azure Depolama Kuyruğu</value>
@@ -829,7 +829,7 @@
     <value>Belirtilen kapsayıcıya bir blob eklendiğinde çalıştırılacak C# işlevi</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a blob is added to a specified container</value>
+    <value>Belirtilen kapsayıcıya bir blob eklendiğinde çalıştırılacak F# işlevi</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
     <value>Belirtilen kapsayıcıya bir blob eklendiğinde çalıştırılacak Node.js işlevi</value>
@@ -865,7 +865,7 @@
     <value>Bir olay hub'ı her yeni olay aldığında çalıştırılacak C# işlevi</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever an event hub receives a new event</value>
+    <value>Olay hub'ı yeni bir olay aldığında çalıştırılacak F# işlevi</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
     <value>Bir olay hub'ı her yeni olay aldığında çalıştırılacak Node.js işlevi</value>
@@ -877,7 +877,7 @@
     <value>Bir kapsayıcıda bulunan blob'daki (görüntü) yüzlerin boyutlarını (çevreleyen dikdörtgen) ayıklayan ve bir Azure depolama tablosunda depolayan C# işlevi</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>An F# function that extracts dimensions (surrounding rectangle) of faces in a blob (image) in a container &amp; stores it in an Azure storage table</value>
+    <value>Bir kapsayıcıda yer alan blobdaki (görüntü) yüzlerin boyutlarını (çevreleyen dikdörtgen) ayıklayıp Azure depolama tablosunda depolayan F# işlevi</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
     <value>Bir kapsayıcıda bulunan blob'daki (görüntü) yüzlerin boyutlarını (çevreleyen dikdörtgen) ayıklayan ve bir Azure depolama tablosunda depolayan Node.js işlevi</value>
@@ -886,7 +886,7 @@
     <value>Bir web kancası isteğini her aldığında çalıştırılacak C# işlevi</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a webhook request</value>
+    <value>Bir Web kancası isteği aldığında çalıştırılacak F# işlevi</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
     <value>Bir web kancası isteğini her aldığında çalıştırılacak Node.js işlevi</value>
@@ -895,13 +895,13 @@
     <value>Bir GitHub web kancası isteğini her aldığında çalıştırılacak Node.js işlevi</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a GitHub webhook request</value>
+    <value>Bir GitHub Web kancası isteği aldığında çalıştırılacak F# işlevi</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>Bir GitHub web kancası isteği aldığında çalıştırılacak C# işlevi</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a GitHub webhook request</value>
+    <value>Bir GitHub Web kancası isteği aldığında çalıştırılacak F# işlevi</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
     <value>Bir GitHub web kancası isteğini her aldığında çalıştırılacak Node.js işlevi</value>
@@ -910,28 +910,28 @@
     <value>HTTP isteği aldığında bir Depolama Tablosundaki varlıkları getiren C# işlevi</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that fetches entities from a Storage Table when it receives an HTTP request</value>
+    <value>Bir HTTP isteği aldığında Depolama Tablosundaki varlıkları getiren F# işlevi</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
     <value>HTTP isteği aldığında bir Depolama Tablosundaki varlıkları getiren Node.js işlevi</value>
   </data>
   <data name="HttpGETCRUDPHP_description" xml:space="preserve">
-    <value>A PHP function that fetches entities from a Storage Table when it receives an HTTP request</value>
+    <value>HTTP isteği aldığında varlıkları Depolama Tablosu'ndan getiren bir PHP işlevi</value>
   </data>
   <data name="HttpPOSTCRUDCSharp_description" xml:space="preserve">
     <value>HTTP isteği aldığında bir Depolama Tablosundaki varlıkları ekleyen C# işlevi</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that adds entities to a Storage Table when it receives an HTTP request</value>
+    <value>HTTP isteği aldığında varlıkları bir Depolama Tablosuna ekleyen F# işlevi</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
     <value>HTTP isteği aldığında bir Depolama Tablosundaki varlıkları ekleyen Node.js işlevi</value>
   </data>
   <data name="HttpPUTCRUDC_description" xml:space="preserve">
-    <value>A C# function that updates entity in a Storage Table when it receives an HTTP request</value>
+    <value>HTTP isteği aldığında bir Depolama Tablosundaki varlığı güncelleştiren C# işlevi</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that updates entity in a Storage Table when it receives an HTTP request</value>
+    <value>HTTP isteği aldığında bir Depolama Tablosundaki varlığı güncelleştiren F# işlevi</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
     <value>Her HTTP isteği aldığında çalıştırılacak Batch işlevi</value>
@@ -940,7 +940,7 @@
     <value>Her HTTP isteği aldığında çalıştırılacak C# işlevi</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives an HTTP request</value>
+    <value>Bir HTTP isteği aldığında çalıştırılacak F# işlevi</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
     <value>Her HTTP isteği aldığında çalıştırılacak Node.js işlevi</value>
@@ -952,13 +952,13 @@
     <value>Belirtilen kapsayıcıya bir blob eklendiğinde yeniden boyutlandırılmış görüntüler oluşturan C# işlevi</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>An F# function that creates resized images whenever a blob is added to a specified container</value>
+    <value>Belirtilen kapsayıcıya bir blob eklendiğinde yeniden boyutlandırılmış görüntüler oluşturan F# işlevi</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>Portal "Çalıştır" düğmesi aracılığıyla el ile tetiklenen C# işlevi</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that is triggered manually via the portal "Run" button</value>
+    <value>Portaldaki "Çalıştır" düğmesi aracılığıyla el ile tetiklenen F# işlevi</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>Portal "Çalıştır" düğmesi aracılığıyla el ile tetiklenen Node.js işlevi</value>
@@ -994,7 +994,7 @@
     <value>Bir SaaS sağlayıcısına dosya eklendiğinde çalıştırılacak C# işlevi.</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a file is added to a SaaS provider.</value>
+    <value>SaaS sağlayıcısına bir dosya eklendiğinde çalıştırılacak F# işlevi.</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
     <value>Bir SaaS sağlayıcısına dosya eklendiğinde çalıştırılacak Node.js işlevi.</value>
@@ -1003,16 +1003,16 @@
     <value>HTTP isteği aldığında SaaS Tablosundaki varlıkları getiren C# işlevi.</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>An F# function that fetches entities from a SaaS Table when it receives an HTTP request.</value>
+    <value>HTTP isteği aldığında SaaS Tablosundaki varlıkları getiren F# işlevi.</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>An F# function that generates a SAS token for Azure Storage for a given container and blob name.</value>
+    <value>Belirli bir kapsayıcı ve blob adı için Azure Depolama'ya yönelik SAS belirteci oluşturan F# işlevi.</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
     <value>Belirtilen Azure Depolama kuyruğuna yeni düzen eklendiğinde SendGrid onay e-postası gönderen C# işlevi</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>An F# function that sends a SendGrid confirmation mail whenever a new order is added to a specified Azure Storage queue</value>
+    <value>Belirtilen bir Azure Depolama kuyruğuna yeni bir sipariş eklendiğinde SendGrid onay postası gönderen F# işlevi</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
     <value>Belirtilen Azure Depolama kuyruğuna yeni düzen eklendiğinde SendGrid onay e-postası gönderen Node.js işlevi</value>
@@ -1021,13 +1021,13 @@
     <value>Belirtilen Service Bus kuyruğuna bir ileti eklendiğinde çalıştırılacak C# işlevi</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a message is added to a specified Service Bus queue</value>
+    <value>Belirtilen Service Bus kuyruğuna bir ileti eklendiğinde çalıştırılacak F# işlevi</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
     <value>Belirtilen Service Bus kuyruğuna bir ileti eklendiğinde çalıştırılacak Node.js işlevi</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a message is added to the specified Service Bus topic</value>
+    <value>Belirtilen Service Bus konu başlığına bir ileti eklendiğinde çalıştırılacak F# işlevi</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>Belirtilen Service Bus konusuna bir ileti eklendiğinde çalıştırılacak Node.js işlevi</value>
@@ -1036,7 +1036,7 @@
     <value>Belirtilen zamanlamaya göre çalıştırılacak C# işlevi</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run on a specified schedule</value>
+    <value>Belirtilen zamanlamada çalıştırılacak F# işlevi</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
     <value>Belirtilen bir zamanlamaya göre çalıştırılacak Node.js işlevi</value>
@@ -1048,54 +1048,54 @@
     <value>Geçersiz Cron İfadesi. Daha fazla bilgi için lütfen &lt;a target='_blank' href='https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/'&gt;belgelere&lt;/a&gt; bakın.</value>
   </data>
   <data name="twilioSms_accountsid_help" xml:space="preserve">
-    <value>The name of the app setting containing your Twilio account SID</value>
+    <value>Twilio hesabınızın SID'sini içeren uygulama ayarının adı</value>
   </data>
   <data name="twilioSms_accountsid_label" xml:space="preserve">
-    <value>Account SID setting</value>
+    <value>Hesap SID'si ayarı</value>
   </data>
   <data name="twilioSms_authtoken_help" xml:space="preserve">
-    <value>The name of the app setting containing your Twilio Auth Token</value>
+    <value>Twilio Kimlik Doğrulama Belirtecinizi içeren uygulama ayarının adı</value>
   </data>
   <data name="twilioSms_authtoken_label" xml:space="preserve">
-    <value>Auth Token setting</value>
+    <value>Kimlik Doğrulama Belirteci ayarı</value>
   </data>
   <data name="twilioSms_body_help" xml:space="preserve">
-    <value>This is the text body to use for the message. If not specified here, the value can be specified in code.</value>
+    <value>Bu, ileti için kullanılacak metin gövdesidir. Burada belirtilmediyse, değer kodda belirtilebilir.</value>
   </data>
   <data name="twilioSms_body_label" xml:space="preserve">
-    <value>Message text</value>
+    <value>İleti metni</value>
   </data>
   <data name="twilioSms_displayName" xml:space="preserve">
     <value>Twilio SMS</value>
   </data>
   <data name="twilioSms_from_help" xml:space="preserve">
-    <value>This is the Twilio phone number the message should be sent from. If not specified here, the value can be specified in code.</value>
+    <value>Bu, iletiyi göndermesi gereken Twilio telefon numarasıdır. Değer, burada belirtilmemişse kod içinde belirtilebilir.</value>
   </data>
   <data name="twilioSms_from_label" xml:space="preserve">
-    <value>From number</value>
+    <value>Kaynak numara</value>
   </data>
   <data name="twilioSms_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>Bu, kodda bulunan ve çıkış bağlamasının bağlanacağı parametrenin adıdır.</value>
   </data>
   <data name="twilioSms_name_label" xml:space="preserve">
-    <value>Message parameter name</value>
+    <value>İleti parametresi adı</value>
   </data>
   <data name="twilioSms_to_help" xml:space="preserve">
-    <value>This is the phone number the message should be sent to. If not specified here, the value can be specified in code.</value>
+    <value>Bu, iletinin gönderilmesi gereken hedef telefon numarasıdır. Değer, burada belirtilmezse kod içinde belirtilebilir.</value>
   </data>
   <data name="twilioSms_to_label" xml:space="preserve">
-    <value>To number</value>
+    <value>Hedef numara</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
     <value>Tüketici grubunuzun adı bir harf veya sayıyla başlayıp bitmelidir ve yalnızca küçük harfler, sayılar, kısa çizgi, nokta ve alt çizgi içerebilir. $Default grubuna da izin verilir.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
-    <value>Azure DocumentDB Document</value>
+    <value>Azure DocumentDB Belgesi</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>This is your SendGrid API Key</value>
+    <value>Bu, SendGrid API Anahtarınızdır</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
-    <value>SendGrid API Key</value>
+    <value>SendGrid API Anahtarı</value>
   </data>
 </root>

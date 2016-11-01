@@ -394,22 +394,22 @@
     <value>Уровень авторизации</value>
   </data>
   <data name="httpTrigger_methods_label" xml:space="preserve">
-    <value>Selected HTTP methods</value>
+    <value>Выбранные методы HTTP</value>
   </data>
   <data name="httpTrigger_methods_help" xml:space="preserve">
-    <value>These are the only methods to which this function will respond.</value>
+    <value>Это — все методы, на которые будет реагировать данная функция.</value>
   </data>
   <data name="httpTrigger_methodRule_label" xml:space="preserve">
-    <value>Allowed HTTP methods</value>
+    <value>Разрешенные методы HTTP</value>
   </data>
   <data name="httpTrigger_route_label" xml:space="preserve">
-    <value>Route template</value>
+    <value>Шаблон маршрута</value>
   </data>
   <data name="httpTrigger_route_help" xml:space="preserve">
-    <value>The route template setting allows you to change the URI that triggers this function. The values should be a relative path. Path segments may be treated as parameters by surrounding them with curly braces. For example: customer/{customerId}</value>
+    <value>Параметр шаблона маршрута позволяет изменить URI, который активирует эту функцию. Значением должен быть относительный путь. Сегменты пути можно обрабатывать как параметры, если заключить их в фигурные скобки. Пример: customer/{customerId}.</value>
   </data>
   <data name="httpTrigger_methodRule_help" xml:space="preserve">
-    <value>HttpTrigger can respond to any HTTP method. If you wish to restrict support to specific methods, choose the 'Selected methods' option.</value>
+    <value>HttpTrigger может отвечать на любой метод HTTP. Если нужно ограничить поддержку определенным кругом методов, выберите пункт "Выбранные методы".</value>
   </data>
   <data name="httpTrigger_mode_label" xml:space="preserve">
     <value>Режим</value>
@@ -421,7 +421,7 @@
     <value>Файл SaaS</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>SaaS File</value>
+    <value>Файл SaaS</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
     <value>Azure Storage Blob</value>
@@ -508,7 +508,7 @@
     <value>Имя параметра ответа</value>
   </data>
   <data name="httpTrigger_authLevel_help" xml:space="preserve">
-    <value>Authorization level controls whether you require an API key and which key to use; Function uses a function key; Admin uses your master key. The function and master keys are found in the 'keys' management panel on the portal, when your function is selected. For user-based authentication, go to Function App Settings.</value>
+    <value>Уровень авторизации определяет, используется ли вами ключ API и какой именно; при значении "Функция" используется ключ для функции, а при значении "Администратор" — главный ключ. Ключ для функции и главный ключ находятся на панели управления "Ключи" портала (предварительно нужно выбрать функцию). Для проверки подлинности на уровне пользователей перейдите к параметрам приложения-функции.</value>
   </data>
   <data name="manualTrigger_name_help" xml:space="preserve">
     <value>Это имя параметра в коде, к которому требуется привязать триггер.</value>
@@ -610,10 +610,10 @@
     <value>Выражение тега (дополнительно)</value>
   </data>
   <data name="notificationHubOut_enableTestSend_help" xml:space="preserve">
-    <value>To get detailed status about the PNS errors encountered while sending the notification, set enableTestSend to true &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=832692'&gt;More information&lt;/a&gt;.</value>
+    <value>Чтобы получить подробную информацию о состоянии, связанную с ошибками PNS, которые возникли при отправке уведомления, задайте для enableTestSend значение True. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=832692'&gt;Дополнительная информация&lt;/a&gt;.</value>
   </data>
   <data name="notificationHubOut_enableTestSend_label" xml:space="preserve">
-    <value>Enable Test Send (optional)</value>
+    <value>Включить тестовую отправку (необязательно)</value>
   </data>
   <data name="queueTrigger_displayName" xml:space="preserve">
     <value>Очередь службы хранилища Azure</value>
@@ -829,7 +829,7 @@
     <value>Функция C#, которая будет запускаться при каждом добавлении BLOB-объекта в указанный контейнер</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a blob is added to a specified container</value>
+    <value>Функция F#, которая будет выполняться при добавлении BLOB-объекта в указанный контейнер.</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
     <value>Функция Node.js, которая будет запускаться при каждом добавлении BLOB-объекта в указанный контейнер</value>
@@ -865,7 +865,7 @@
     <value>Функция C#, которая будет запускаться при каждом получении нового события концентратором событий</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever an event hub receives a new event</value>
+    <value>Функция F#, которая будет выполняться при получении нового события концентратором событий.</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
     <value>Функция Node.js, которая будет запускаться при каждом получении нового события концентратором событий</value>
@@ -877,7 +877,7 @@
     <value>Функция C#, которая извлекает измерения (окружающий прямоугольник) лиц в BLOB-объекте (на изображении) в контейнер и сохраняет его в таблице службы хранилища Azure</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>An F# function that extracts dimensions (surrounding rectangle) of faces in a blob (image) in a container &amp; stores it in an Azure storage table</value>
+    <value>Функция F#, которая извлекает размеры (окружающий прямоугольник) лиц в BLOB-объекте (на изображении) в контейнере и хранит их в таблице службы хранилища Azure.</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
     <value>Функция Node.js, которая извлекает измерения (окружающий прямоугольник) лиц в BLOB-объекте (на изображении) в контейнер и сохраняет его в таблице службы хранилища Azure</value>
@@ -886,7 +886,7 @@
     <value>Функция C#, которая будет запускаться при каждом получении webhook-запроса</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a webhook request</value>
+    <value>Функция F#, которая будет выполняться при получении запроса webhook.</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
     <value>Функция Node.js, которая будет запускаться при каждом получении webhook-запроса</value>
@@ -895,13 +895,13 @@
     <value>Функция Node.js, которая будет запускаться при каждом получении webhook-запроса GitHub</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a GitHub webhook request</value>
+    <value>Функция F#, которая будет выполняться при получении запроса webhook GitHub.</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>Функция C#, которая будет запускаться при каждом получении webhook-запроса GitHub</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a GitHub webhook request</value>
+    <value>Функция F#, которая будет выполняться при получении запроса webhook GitHub.</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
     <value>Функция Node.js, которая будет запускаться при каждом получении webhook-запроса GitHub</value>
@@ -910,7 +910,7 @@
     <value>Функция C#, которая извлекает сущности из таблицы службы хранилища при получении HTTP-запроса</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that fetches entities from a Storage Table when it receives an HTTP request</value>
+    <value>Функция F#, которая извлекает сущности из таблицы службы хранилища при получении HTTP-запроса.</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
     <value>Функция Node.js, которая извлекает сущности из таблицы службы хранилища при получении HTTP-запроса</value>
@@ -922,16 +922,16 @@
     <value>Функция C#, которая добавляет сущности в таблицу службы хранилища при получении HTTP-запроса</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that adds entities to a Storage Table when it receives an HTTP request</value>
+    <value>Функция F#, которая добавляет сущности в таблицу службы хранилища при получении HTTP-запроса.</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
     <value>Функция Node.js, которая добавляет сущности в таблицу службы хранилища при получении HTTP-запроса</value>
   </data>
   <data name="HttpPUTCRUDC_description" xml:space="preserve">
-    <value>A C# function that updates entity in a Storage Table when it receives an HTTP request</value>
+    <value>Функция C#, которая изменяет сущность в таблице службы хранилища при получении HTTP-запроса.</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that updates entity in a Storage Table when it receives an HTTP request</value>
+    <value>Функция F#, которая изменяет сущность в таблице службы хранилища при получении HTTP-запроса.</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
     <value>Пакетная функция, которая будет запускаться при каждом получении HTTP-запроса</value>
@@ -940,7 +940,7 @@
     <value>Функция C#, которая будет запускаться при каждом получении HTTP-запроса</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives an HTTP request</value>
+    <value>Функция F#, которая будет выполняться при получении HTTP-запроса.</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
     <value>Функция Node.js, которая будет запускаться при каждом получении HTTP-запроса</value>
@@ -952,13 +952,13 @@
     <value>Функция C#, которая создает изображения с измененным размером при каждом добавлении BLOB-объекта в указанный контейнер</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>An F# function that creates resized images whenever a blob is added to a specified container</value>
+    <value>Функция F#, которая создает изображения измененного размера при добавлении BLOB-объекта в указанный контейнер.</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>Функция C#, которая активируется вручную с помощью кнопки \"Запуск\" на портале</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that is triggered manually via the portal "Run" button</value>
+    <value>Функция F#, которая активируется вручную кнопкой "Выполнить" на портале.</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>Функция Node.js, которая активируется вручную с помощью кнопки \"Запуск\" на портале</value>
@@ -994,7 +994,7 @@
     <value>Функция C#, которая будет запускаться при каждом добавлении файла в поставщик SaaS.</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a file is added to a SaaS provider.</value>
+    <value>Функция F#, которая будет выполняться при добавлении файла в поставщик SaaS.</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
     <value>Функция Node.js, которая будет запускаться при каждом добавлении файла в поставщик SaaS.</value>
@@ -1003,16 +1003,16 @@
     <value>Функция C#, которая извлекает сущности из таблицы SaaS при получении HTTP-запроса</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>An F# function that fetches entities from a SaaS Table when it receives an HTTP request.</value>
+    <value>Функция F#, которая извлекает сущности из таблицы SaaS при получении HTTP-запроса.</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>An F# function that generates a SAS token for Azure Storage for a given container and blob name.</value>
+    <value>Функция F#, которая создает токен SAS для службы хранилища Azure для указанного контейнера и имени BLOB-объекта.</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
     <value>Функция C#, которая отправляет сообщение с подтверждением SendGrid при каждом добавлении нового заказа в указанную очередь службы хранилища Azure</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>An F# function that sends a SendGrid confirmation mail whenever a new order is added to a specified Azure Storage queue</value>
+    <value>Функция F#, которая отправляет письмо с подтверждением SendGrid при добавлении нового заказа к указанной очереди службы хранилища Azure.</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
     <value>Функция Node.js, которая отправляет сообщение с подтверждением SendGrid при каждом добавлении нового заказа в указанную очередь службы хранилища Azure</value>
@@ -1021,13 +1021,13 @@
     <value>Функция C#, которая будет запускаться при каждом добавлении сообщения в указанную очередь служебной шины</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a message is added to a specified Service Bus queue</value>
+    <value>Функция F#, которая будет выполняться при добавлении сообщения в указанную очередь служебной шины.</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
     <value>Функция Node.js, которая будет запускаться при каждом добавлении сообщения в указанную очередь служебной шины</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a message is added to the specified Service Bus topic</value>
+    <value>Функция F#, которая будет выполняться при добавлении сообщения в указанный раздел служебной шины.</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>Функция Node.js, которая будет запускаться при каждом добавлении сообщения в указанный раздел служебной шины</value>
@@ -1036,7 +1036,7 @@
     <value>Функция C#, которая будет запускаться по указанному расписанию</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run on a specified schedule</value>
+    <value>Функция F#, которая будет выполняться по указанному расписанию.</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
     <value>Функция Node.js, которая будет запускаться по указанному расписанию</value>
@@ -1048,54 +1048,54 @@
     <value>Недопустимое выражение Cron. Дополнительные сведения см. в &lt;a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/"&gt;документации&lt;/a&gt;.</value>
   </data>
   <data name="twilioSms_accountsid_help" xml:space="preserve">
-    <value>The name of the app setting containing your Twilio account SID</value>
+    <value>Имя параметра приложения, который содержит идентификатор безопасности вашей учетной записи в Twilio.</value>
   </data>
   <data name="twilioSms_accountsid_label" xml:space="preserve">
-    <value>Account SID setting</value>
+    <value>Параметр идентификатора безопасности учетной записи</value>
   </data>
   <data name="twilioSms_authtoken_help" xml:space="preserve">
-    <value>The name of the app setting containing your Twilio Auth Token</value>
+    <value>Имя параметра приложения, который содержит ваш токен проверки подлинности в Twilio.</value>
   </data>
   <data name="twilioSms_authtoken_label" xml:space="preserve">
-    <value>Auth Token setting</value>
+    <value>Параметр токена проверки подлинности</value>
   </data>
   <data name="twilioSms_body_help" xml:space="preserve">
-    <value>This is the text body to use for the message. If not specified here, the value can be specified in code.</value>
+    <value>Это основной текст, используемый для сообщения. Если это поле оставлено пустым, значение можно указать в коде.</value>
   </data>
   <data name="twilioSms_body_label" xml:space="preserve">
-    <value>Message text</value>
+    <value>Текст сообщения</value>
   </data>
   <data name="twilioSms_displayName" xml:space="preserve">
     <value>Twilio SMS</value>
   </data>
   <data name="twilioSms_from_help" xml:space="preserve">
-    <value>This is the Twilio phone number the message should be sent from. If not specified here, the value can be specified in code.</value>
+    <value>Это номер телефона в Twilio, откуда должно быть отправлено сообщение. Если он не указан здесь, значение может быть указано в коде.</value>
   </data>
   <data name="twilioSms_from_label" xml:space="preserve">
-    <value>From number</value>
+    <value>С номера</value>
   </data>
   <data name="twilioSms_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для вывода.</value>
   </data>
   <data name="twilioSms_name_label" xml:space="preserve">
-    <value>Message parameter name</value>
+    <value>Имя параметра сообщения</value>
   </data>
   <data name="twilioSms_to_help" xml:space="preserve">
-    <value>This is the phone number the message should be sent to. If not specified here, the value can be specified in code.</value>
+    <value>Это номер телефона, куда должно быть отправлено сообщение. Если он не указан здесь, значение может быть указано в коде.</value>
   </data>
   <data name="twilioSms_to_label" xml:space="preserve">
-    <value>To number</value>
+    <value>На номер</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
     <value>Имя группы потребителей должно начинаться и заканчиваться буквой или цифрой и может содержать только строчные буквы, цифры, а также дефис, точку и символ подчеркивания. Группа $Default также допустима.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
-    <value>Azure DocumentDB Document</value>
+    <value>Документ Azure DocumentDB</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>This is your SendGrid API Key</value>
+    <value>Это ваш ключ SendGrid API</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
-    <value>SendGrid API Key</value>
+    <value>Ключ SendGrid API</value>
   </data>
 </root>
