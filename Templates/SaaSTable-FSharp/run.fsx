@@ -13,8 +13,7 @@ type Contact() =
 let Run(req: HttpRequestMessage, input: ITable<Contact>, log: TraceWriter) =
     async {
         log.Info(sprintf 
-            "F# HTTP trigger function processed a request. RequestUri=%s"
-            (req.RequestUri.ToString()))
+            "F# HTTP trigger function processed a request.")
 
         let rec q (cont: ContinuationToken) = async {
             let! segment =

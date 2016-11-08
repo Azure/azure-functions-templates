@@ -6,8 +6,7 @@ open FSharp.Interop.Dynamic
 
 let Run(req: HttpRequestMessage, log: TraceWriter) =
     log.Info(sprintf 
-        "F# HTTP trigger function processed a request. RequestUri=%s" 
-        (req.RequestUri.ToString()))
+        "F# HTTP trigger function processed a request.")
 
     // Set name to query string or body data
     let name =
