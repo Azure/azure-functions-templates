@@ -19,9 +19,9 @@ public static void Run(string myQueueItem, dynamic document)
 }
 ```
 
-#### Azure DocumentDB input code example for a Node.js queue trigger
+#### Azure DocumentDB input code example for a JavaScript queue trigger
  
-The DocumentDB input binding will retrieve the document with the id that matches the queue message string and pass it to the `documentIn` binding property. In Node.js functions, updated documents are not sent back to the collection. However, you can pass the input binding directly to a DocumentDB output binding named `documentOut` to support updates. This code example updates the text property of the input document and sets it as the output document.
+The DocumentDB input binding will retrieve the document with the id that matches the queue message string and pass it to the `documentIn` binding property. In JavaScript functions, updated documents are not sent back to the collection. However, you can pass the input binding directly to a DocumentDB output binding named `documentOut` to support updates. This code example updates the text property of the input document and sets it as the output document.
  
  ```javascript
 module.exports = function (context, input) {   

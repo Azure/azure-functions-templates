@@ -70,7 +70,7 @@ public static void Run(TimerInfo myTimer, TraceWriter log)
 module.exports = function(context, myTimer) {
     if(myTimer.isPastDue)
     {
-        context.log('Node.js is running late!');
+        context.log('JavaScript is running late!');
     }
     context.log("Timer last triggered at " + myTimer.last);
     context.log("Timer triggered at " + myTimer.next);

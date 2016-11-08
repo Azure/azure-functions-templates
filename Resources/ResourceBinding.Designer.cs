@@ -385,7 +385,7 @@ namespace AzureFunctions.ResourcesBinding {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A Node.js function that will be run whenever a blob is added to a specified container.
+        ///   Looks up a localized string similar to A JavaScript function that will be run whenever a blob is added to a specified container.
         /// </summary>
         internal static string BlobTriggerNodeJS_description {
             get {
@@ -637,7 +637,7 @@ namespace AzureFunctions.ResourcesBinding {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An empty Node.js function without triggers, inputs, or outputs.
+        ///   Looks up a localized string similar to An empty JavaScript function without triggers, inputs, or outputs.
         /// </summary>
         internal static string EmptyNodeJS_description {
             get {
@@ -853,7 +853,7 @@ namespace AzureFunctions.ResourcesBinding {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A Node.js function that will be run whenever an event hub receives a new event.
+        ///   Looks up a localized string similar to A JavaScript function that will be run whenever an event hub receives a new event.
         /// </summary>
         internal static string EventHubTriggerNodeJS_description {
             get {
@@ -880,7 +880,7 @@ namespace AzureFunctions.ResourcesBinding {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A Node.js function that extracts dimensions (surrounding rectangle) of faces in a blob (image) in a container &amp; stores it in an Azure storage table.
+        ///   Looks up a localized string similar to A JavaScript function that extracts dimensions (surrounding rectangle) of faces in a blob (image) in a container &amp; stores it in an Azure storage table.
         /// </summary>
         internal static string FaceLocatorNodeJS_description {
             get {
@@ -898,7 +898,7 @@ namespace AzureFunctions.ResourcesBinding {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A Node.js function that will be run whenever it receives a webhook request.
+        ///   Looks up a localized string similar to A JavaScript function that will be run whenever it receives a webhook request.
         /// </summary>
         internal static string GenericWebhookNodeJS_description {
             get {
@@ -907,7 +907,7 @@ namespace AzureFunctions.ResourcesBinding {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A Node.js function that will be run whenever it receives a GitHub webhook request.
+        ///   Looks up a localized string similar to A JavaScript function that will be run whenever it receives a GitHub webhook request.
         /// </summary>
         internal static string GitHubCommenterNodeJS_description {
             get {
@@ -925,7 +925,7 @@ namespace AzureFunctions.ResourcesBinding {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A Node.js function that will be run whenever it receives a GitHub webhook request.
+        ///   Looks up a localized string similar to A JavaScript function that will be run whenever it receives a GitHub webhook request.
         /// </summary>
         internal static string GithubWebhookNodeJS_description {
             get {
@@ -943,7 +943,7 @@ namespace AzureFunctions.ResourcesBinding {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A Node.js function that fetches entities from a Storage Table when it receives an HTTP request.
+        ///   Looks up a localized string similar to A JavaScript function that fetches entities from a Storage Table when it receives an HTTP request.
         /// </summary>
         internal static string HttpGETCRUDNodeJS_description {
             get {
@@ -997,7 +997,7 @@ namespace AzureFunctions.ResourcesBinding {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A Node.js function that adds entities to a Storage Table when it receives an HTTP request.
+        ///   Looks up a localized string similar to A JavaScript function that adds entities to a Storage Table when it receives an HTTP request.
         /// </summary>
         internal static string HttpPOSTCRUDNodeJS_description {
             get {
@@ -1114,7 +1114,7 @@ namespace AzureFunctions.ResourcesBinding {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A Node.js function that will be run whenever it receives an HTTP request.
+        ///   Looks up a localized string similar to A JavaScript function that will be run whenever it receives an HTTP request.
         /// </summary>
         internal static string HttpTriggerNodeJS_description {
             get {
@@ -1168,7 +1168,7 @@ namespace AzureFunctions.ResourcesBinding {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A Node.js function that is triggered manually via the portal &quot;Run&quot; button.
+        ///   Looks up a localized string similar to A JavaScript function that is triggered manually via the portal &quot;Run&quot; button.
         /// </summary>
         internal static string ManualTriggerNodeJS_description {
             get {
@@ -1600,7 +1600,7 @@ namespace AzureFunctions.ResourcesBinding {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A Node.js function that will be run whenever a message is added to a specified Azure Storage queue.
+        ///   Looks up a localized string similar to A JavaScript function that will be run whenever a message is added to a specified Azure Storage queue.
         /// </summary>
         internal static string QueueTriggerNodeJS_description {
             get {
@@ -1654,7 +1654,7 @@ namespace AzureFunctions.ResourcesBinding {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A Node.js function that will be run whenever a file is added to a SaaS provider..
+        ///   Looks up a localized string similar to A JavaScript function that will be run whenever a file is added to a SaaS provider..
         /// </summary>
         internal static string SaasFileTriggerNodeJS_description {
             get {
@@ -1780,7 +1780,7 @@ namespace AzureFunctions.ResourcesBinding {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A Node.js function that sends a SendGrid confirmation mail whenever a new order is added to a specified Azure Storage queue.
+        ///   Looks up a localized string similar to A JavaScript function that sends a SendGrid confirmation mail whenever a new order is added to a specified Azure Storage queue.
         /// </summary>
         internal static string SendGridNodeJS_description {
             get {
@@ -1951,7 +1951,7 @@ namespace AzureFunctions.ResourcesBinding {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A Node.js function that will be run whenever a message is added to a specified Service Bus queue.
+        ///   Looks up a localized string similar to A JavaScript function that will be run whenever a message is added to a specified Service Bus queue.
         /// </summary>
         internal static string ServiceBusQueueTriggerNodeJS_description {
             get {
@@ -1960,7 +1960,7 @@ namespace AzureFunctions.ResourcesBinding {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A Node.js function that will be run whenever a message is added to the specified Service Bus topic.
+        ///   Looks up a localized string similar to A JavaScript function that will be run whenever a message is added to the specified Service Bus topic.
         /// </summary>
         internal static string ServiceBusTopicTriggerNodeJS_description {
             get {
@@ -2464,7 +2464,7 @@ namespace AzureFunctions.ResourcesBinding {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A Node.js function that will be run on a specified schedule.
+        ///   Looks up a localized string similar to A JavaScript function that will be run on a specified schedule.
         /// </summary>
         internal static string TimerTriggerNodeJS_description {
             get {

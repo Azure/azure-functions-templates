@@ -4,7 +4,7 @@ The settings provide properties that pertain to both the request and response.
 
 Properties for the HTTP request:
 
-- `name` : Variable name used in function code for the request object (or the request body in the case of Node.js functions).
+- `name` : Variable name used in function code for the request object (or the request body in the case of JavaScript functions).
 - `type` : Must be set to *httpTrigger*.
 - `direction` : Must be set to *in*. 
 - `webHookType` : For WebHook triggers, valid values are *github*, *slack*, and *genericJson*. 
@@ -21,7 +21,7 @@ Properties for the HTTP response:
 A WebHook trigger is an HTTP trigger that has the following features designed for WebHooks:
 
 * For specific WebHook providers (currently GitHub and Slack are supported), the Functions runtime validates the provider's signature.
-* For Node.js functions, the Functions runtime provides the request body instead of the request object. There is no special handling for C# functions, because you control what is provided by specifying the parameter type. If you specify `HttpRequestMessage` you get the request object. If you specify a POCO type, the Functions runtime tries to parse a JSON object in the body of the request to populate the object properties.
+* For JavaScript functions, the Functions runtime provides the request body instead of the request object. There is no special handling for C# functions, because you control what is provided by specifying the parameter type. If you specify `HttpRequestMessage` you get the request object. If you specify a POCO type, the Functions runtime tries to parse a JSON object in the body of the request to populate the object properties.
 * To trigger a WebHook function the HTTP request must include an API key. For non-WebHook HTTP triggers,  this requirement is optional.
 
 For information about how to set up a GitHub WebHook, see [GitHub Developer - Creating WebHooks](http://go.microsoft.com/fwlink/?LinkID=761099&clcid=0x409).
@@ -84,14 +84,14 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
 }
 ```
 
-## Example Node.js code for an HTTP trigger function 
+## Example JavaScript code for an HTTP trigger function 
 
-We support an [express-like api](https://expressjs.com/en/4x/api.html#res) for node http triggers.
+We support an [express-like api](https://expressjs.com/en/4x/api.html#res) for JavaScript http triggers.
 See supported methods for [context.req](https://github.com/Azure/azure-webjobs-sdk-script/blob/dev/src/WebJobs.Script/Content/Script/http/request.js) and [context.res](https://github.com/Azure/azure-webjobs-sdk-script/blob/dev/src/WebJobs.Script/Content/Script/http/response.js).
 
 ```javascript
 module.exports = function(context, req) {
-    context.log('Node.js HTTP trigger function processed a request. RequestUri=%s', req.originalUrl);
+    context.log('JavaScript HTTP trigger function processed a request. RequestUri=%s', req.originalUrl);
 
     if (req.query.name || (req.body && req.body.name)) {
         // using the express api style
@@ -136,7 +136,7 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
 }
 ```
 
-## Example Node.js code for a GitHub WebHook function 
+## Example JavaScript code for a GitHub WebHook function 
 
 ```javascript
 module.exports = function (context, data) {

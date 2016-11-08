@@ -19,7 +19,7 @@ You can also manually add a connection string for an existing hub by adding a co
 2. Scroll down to the **Connection strings** section, and add an named entry for *DefaultFullSharedAccessSignature* value for you notification hub. Change the type to **Custom**.
 3. Reference your connection string name in the output bindings. Similar to **MyHubConnectionString** used in the example above.
 
-## Azure Notification Hub code example for a Node.js timer trigger 
+## Azure Notification Hub code example for a JavaScript timer trigger 
 
 This example sends a notification for a [template registration](https://azure.microsoft.com/en-us/documentation/articles/notification-hubs-templates-cross-platform-push-messages/) that contains `location` and `message`.
 
@@ -29,12 +29,12 @@ module.exports = function (context, myTimer) {
     
     if(myTimer.isPastDue)
     {
-        context.log('Node.js is running late!');
+        context.log('JavaScript is running late!');
     }
-    context.log('Node.js timer trigger function ran!', timeStamp);  
+    context.log('JavaScript timer trigger function ran!', timeStamp);  
     context.bindings.notification = {
         location: "Redmond",
-        message: "Hello from Node!"
+        message: "Hello from JavaScript!"
     };
     context.done();
 };
