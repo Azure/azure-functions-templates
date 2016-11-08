@@ -29,9 +29,9 @@ public static void Run(string myQueueItem, JObject record)
 }
 ```
 
-#### Azure Mobile Apps code example for a Node.js queue trigger
+#### Azure Mobile Apps code example for a JavaScript queue trigger
 
-The input binding retrieves the record from a Mobile Apps table endpoint with the ID that matches the queue message string and passes it to the *record* parameter. In Node.js functions, updated records are not sent back to the table. This code example writes the retrieved record to the log.
+The input binding retrieves the record from a Mobile Apps table endpoint with the ID that matches the queue message string and passes it to the *record* parameter. In JavaScript functions, updated records are not sent back to the table. This code example writes the retrieved record to the log.
 
 ```javascript
 module.exports = function (context, input) {    

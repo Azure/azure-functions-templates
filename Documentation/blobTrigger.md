@@ -38,7 +38,7 @@ In the example, the `name` variable value would be *soundfile.mp3*.
 
 #### Blob trigger supported types
 
-The blob can be deserialized to any of the following types in Node or C# functions:
+The blob can be deserialized to any of the following types in JavaScript or C# functions:
 
 * Object (from JSON)
 * String

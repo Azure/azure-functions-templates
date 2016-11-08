@@ -20,7 +20,7 @@ public static void Run(string trigger, TraceWriter log)
 }
 ```
 
-#### Manual trigger Node.js example
+#### Manual trigger JavaScript example
  
  ```javascript
 module.exports = function (context, trigger) {

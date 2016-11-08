@@ -8,7 +8,7 @@
 
 #### Blob input and output supported types
 
-The `blob` binding can serialize or deserialize the following types in Node.js or C# functions:
+The `blob` binding can serialize or deserialize the following types in JavaScript or C# functions:
 
 * Object (`out T` in C# for output blob: creates a blob as null object if parameter value is null when the function ends)
 * String (`out string` in C# for output blob: creates a blob only if the string parameter is non-null when the function returns)

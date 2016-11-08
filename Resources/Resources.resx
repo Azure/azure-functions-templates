@@ -832,7 +832,7 @@
     <value>An F# function that will be run whenever a blob is added to a specified container</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
-    <value>A Node.js function that will be run whenever a blob is added to a specified container</value>
+    <value>A JavaScript function that will be run whenever a blob is added to a specified container</value>
   </data>
   <data name="CSharp_description" xml:space="preserve">
     <value>A C# function that will be run whenever it receives a GitHub webhook request</value>
@@ -850,7 +850,7 @@
     <value>An empty F# function without triggers, inputs, or outputs</value>
   </data>
   <data name="EmptyNodeJS_description" xml:space="preserve">
-    <value>An empty Node.js function without triggers, inputs, or outputs</value>
+    <value>An empty JavaScript function without triggers, inputs, or outputs</value>
   </data>
   <data name="EmptyPHP_description" xml:space="preserve">
     <value>An empty PHP function without triggers, inputs, or outputs</value>
@@ -868,7 +868,7 @@
     <value>An F# function that will be run whenever an event hub receives a new event</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
-    <value>A Node.js function that will be run whenever an event hub receives a new event</value>
+    <value>A JavaScript function that will be run whenever an event hub receives a new event</value>
   </data>
   <data name="EventHubTriggerPython_description" xml:space="preserve">
     <value>A Python function that will be run whenever an event hub receives a new event</value>
@@ -880,7 +880,7 @@
     <value>An F# function that extracts dimensions (surrounding rectangle) of faces in a blob (image) in a container &amp; stores it in an Azure storage table</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
-    <value>A Node.js function that extracts dimensions (surrounding rectangle) of faces in a blob (image) in a container &amp; stores it in an Azure storage table</value>
+    <value>A JavaScript function that extracts dimensions (surrounding rectangle) of faces in a blob (image) in a container &amp; stores it in an Azure storage table</value>
   </data>
   <data name="GenericWebhookCSharp_description" xml:space="preserve">
     <value>A C# function that will be run whenever it receives a webhook request</value>
@@ -889,10 +889,10 @@
     <value>An F# function that will be run whenever it receives a webhook request</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
-    <value>A Node.js function that will be run whenever it receives a webhook request</value>
+    <value>A JavaScript function that will be run whenever it receives a webhook request</value>
   </data>
   <data name="GitHubCommenterNodeJS_description" xml:space="preserve">
-    <value>A Node.js function that will be run whenever it receives a GitHub webhook request</value>
+    <value>A JavaScript function that will be run whenever it receives a GitHub webhook request</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
     <value>An F# function that will be run whenever it receives a GitHub webhook request</value>
@@ -904,7 +904,7 @@
     <value>An F# function that will be run whenever it receives a GitHub webhook request</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
-    <value>A Node.js function that will be run whenever it receives a GitHub webhook request</value>
+    <value>A JavaScript function that will be run whenever it receives a GitHub webhook request</value>
   </data>
   <data name="HttpGETCRUDC_description" xml:space="preserve">
     <value>A C# function that fetches entities from a Storage Table when it receives an HTTP request</value>
@@ -913,7 +913,7 @@
     <value>An F# function that fetches entities from a Storage Table when it receives an HTTP request</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
-    <value>A Node.js function that fetches entities from a Storage Table when it receives an HTTP request</value>
+    <value>A JavaScript function that fetches entities from a Storage Table when it receives an HTTP request</value>
   </data>
   <data name="HttpGETCRUDPHP_description" xml:space="preserve">
     <value>A PHP function that fetches entities from a Storage Table when it receives an HTTP request</value>
@@ -925,7 +925,7 @@
     <value>An F# function that adds entities to a Storage Table when it receives an HTTP request</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
-    <value>A Node.js function that adds entities to a Storage Table when it receives an HTTP request</value>
+    <value>A JavaScript function that adds entities to a Storage Table when it receives an HTTP request</value>
   </data>
   <data name="HttpPUTCRUDC_description" xml:space="preserve">
     <value>A C# function that updates entity in a Storage Table when it receives an HTTP request</value>
@@ -943,7 +943,7 @@
     <value>An F# function that will be run whenever it receives an HTTP request</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
-    <value>A Node.js function that will be run whenever it receives an HTTP request</value>
+    <value>A JavaScript function that will be run whenever it receives an HTTP request</value>
   </data>
   <data name="HttpTriggerPowerShell_description" xml:space="preserve">
     <value>A PowerShell function that will be run whenever it receives an HTTP request</value>
@@ -961,7 +961,7 @@
     <value>An F# function that is triggered manually via the portal "Run" button</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
-    <value>A Node.js function that is triggered manually via the portal "Run" button</value>
+    <value>A JavaScript function that is triggered manually via the portal "Run" button</value>
   </data>
   <data name="QueueTriggerBash_description" xml:space="preserve">
     <value>A bash function that will be run whenever a message is added to a specified Azure Storage queue</value>
@@ -976,7 +976,7 @@
     <value>An F# function that will be run whenever a message is added to a specified Azure Storage queue</value>
   </data>
   <data name="QueueTriggerNodeJS_description" xml:space="preserve">
-    <value>A Node.js function that will be run whenever a message is added to a specified Azure Storage queue</value>
+    <value>A JavaScript function that will be run whenever a message is added to a specified Azure Storage queue</value>
   </data>
   <data name="QueueTriggerPHP_description" xml:space="preserve">
     <value>A PHP function that will be run whenever a message is added to a specified Azure Storage queue</value>
@@ -997,7 +997,10 @@
     <value>An F# function that will be run whenever a file is added to a SaaS provider.</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
-    <value>A Node.js function that will be run whenever a file is added to a SaaS provider.</value>
+    <value>A JavaScript function that will be run whenever a file is added to a SaaS provider.</value>
+  </data>
+  <data name="SaasFileTokenNodeJS_description" xml:space="preserve">
+    <value>A JavaScript function that will be run whenever a file is added to a SaaS provider.</value>
   </data>
   <data name="SaasTableCSharp_description" xml:space="preserve">
     <value>A C# function that fetches entities from a SaaS Table when it receives an HTTP request.</value>
@@ -1015,7 +1018,7 @@
     <value>An F# function that sends a SendGrid confirmation mail whenever a new order is added to a specified Azure Storage queue</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>A Node.js function that sends a SendGrid confirmation mail whenever a new order is added to a specified Azure Storage queue</value>
+    <value>A JavaScript function that sends a SendGrid confirmation mail whenever a new order is added to a specified Azure Storage queue</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
     <value>A C# function that will be run whenever a message is added to a specified Service Bus queue</value>
@@ -1024,13 +1027,13 @@
     <value>An F# function that will be run whenever a message is added to a specified Service Bus queue</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
-    <value>A Node.js function that will be run whenever a message is added to a specified Service Bus queue</value>
+    <value>A JavaScript function that will be run whenever a message is added to a specified Service Bus queue</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
     <value>An F# function that will be run whenever a message is added to the specified Service Bus topic</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
-    <value>A Node.js function that will be run whenever a message is added to the specified Service Bus topic</value>
+    <value>A JavaScript function that will be run whenever a message is added to the specified Service Bus topic</value>
   </data>
   <data name="TimerTriggerCSharp_description" xml:space="preserve">
     <value>A C# function that will be run on a specified schedule</value>
@@ -1039,7 +1042,7 @@
     <value>An F# function that will be run on a specified schedule</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
-    <value>A Node.js function that will be run on a specified schedule</value>
+    <value>A JavaScript function that will be run on a specified schedule</value>
   </data>
   <data name="TimerTriggerPowerShell_description" xml:space="preserve">
     <value>A PowerShell function that will be run on a specified schedule</value>

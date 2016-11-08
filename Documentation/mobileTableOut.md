@@ -24,15 +24,15 @@ public static void Run(string myQueueItem, out object record)
 }
 ```
 
-#### Azure Mobile Apps code example for a Node.js queue trigger
+#### Azure Mobile Apps code example for a JavaScript queue trigger
 
-This Node.js code example inserts a new record into a Mobile Apps table endpoint with a *text* property into the table specified in the above binding.
+This JavaScript code example inserts a new record into a Mobile Apps table endpoint with a *text* property into the table specified in the above binding.
 
 ```javascript
 module.exports = function (context, input) {
 
     context.bindings.record = {
-        text : "I'm running in a Node function! Data: '" + input + "'"
+        text : "I'm running in a JavaScript function! Data: '" + input + "'"
     }   
 
     context.done();

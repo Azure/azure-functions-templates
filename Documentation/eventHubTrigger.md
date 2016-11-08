@@ -17,9 +17,9 @@ The settings for an Azure Event Hub trigger specifies the following properties:
 	    log.Info($"C# Event Hub trigger function processed a message: {myEventHubMessage}");
 	}
 
-#### Azure Event Hub trigger Node.js example
+#### Azure Event Hub trigger JavaScript example
  
 	module.exports = function (context, myEventHubMessage) {
-	    context.log('Node.js eventhub trigger function processed work item', myEventHubMessage);	
+	    context.log('JavaScript eventhub trigger function processed work item', myEventHubMessage);	
 	    context.done();
 	};

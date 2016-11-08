@@ -4,14 +4,14 @@ The *function.json* specifies the following properties.
 
 - `name` : The variable name used in function code for the table binding. 
 - `tableName` : The name of the table.
-- `partitionKey` and `rowKey` : Used together to read to write a single entity in a Node function.
+- `partitionKey` and `rowKey` : Used together to read to write a single entity in a JavaScript function.
 - `connection` : The name of an app setting that contains a storage connection string. If you leave `connection` empty, the binding will work with the default storage connection string for the function app, which is specified by the AzureWebJobsStorage app setting.
 - `type` : Must be set to *table*.
 - `direction` : Set to *out*. 
 
 #### Storage tables input and output supported types
 
-The `table` binding can serialize or deserialize objects in Node.js or C# functions. The objects will have RowKey and PartitionKey properties. 
+The `table` binding can serialize or deserialize objects in JavaScript or C# functions. The objects will have RowKey and PartitionKey properties. 
 
 In C# functions, you can also bind to the following types:
 
@@ -55,11 +55,11 @@ public class Person
 
 ```
 
-#### Storage tables example: Node example that creates a table entity
+#### Storage tables example: JavaScript example that creates a table entity
 
 ```javascript
 module.exports = function (context, myQueueItem) {
-    context.log('Node.js queue trigger function processed work item', myQueueItem);
+    context.log('JavaScript queue trigger function processed work item', myQueueItem);
     context.bindings.tableOut = {
         "partitionKey": "123Contoso",
         "rowKey":"Fabrikam43234",

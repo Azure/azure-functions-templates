@@ -20,11 +20,11 @@ public static void Run(string myQueueItem, TraceWriter log)
 }
 ```
 
-#### Node.js code example that processes a Service Bus queue message
+#### JavaScript code example that processes a Service Bus queue message
 
 ```javascript
 module.exports = function(context, myQueueItem) {
-    context.log('Node.js ServiceBus queue trigger function processed message', myQueueItem);
+    context.log('JavaScript ServiceBus queue trigger function processed message', myQueueItem);
     context.done();
 };
 ```
