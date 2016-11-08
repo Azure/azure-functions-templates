@@ -394,22 +394,22 @@
     <value>Engedélyszint</value>
   </data>
   <data name="httpTrigger_methods_label" xml:space="preserve">
-    <value>Selected HTTP methods</value>
+    <value>Kiválasztott HTTP-metódusok</value>
   </data>
   <data name="httpTrigger_methods_help" xml:space="preserve">
-    <value>These are the only methods to which this function will respond.</value>
+    <value>A függvény csak ezeknek a metódusoknak fog válaszolni.</value>
   </data>
   <data name="httpTrigger_methodRule_label" xml:space="preserve">
-    <value>Allowed HTTP methods</value>
+    <value>Engedélyezett HTTP-metódusok</value>
   </data>
   <data name="httpTrigger_route_label" xml:space="preserve">
-    <value>Route template</value>
+    <value>Útvonalsablon</value>
   </data>
   <data name="httpTrigger_route_help" xml:space="preserve">
     <value>The route template setting allows you to change the URI that triggers this function. The values should be a relative path. Path segments may be treated as parameters by surrounding them with curly braces. For example: customer/{customerId}</value>
   </data>
   <data name="httpTrigger_methodRule_help" xml:space="preserve">
-    <value>HttpTrigger can respond to any HTTP method. If you wish to restrict support to specific methods, choose the 'Selected methods' option.</value>
+    <value>A HttpTrigger minden HTTP-metódusra válaszolni tud. Ha korlátozni szeretné a támogatott metódusok körét, válassza a Kiválasztott HTTP-metódusok lehetőséget.</value>
   </data>
   <data name="httpTrigger_mode_label" xml:space="preserve">
     <value>Üzemmód</value>
@@ -421,7 +421,7 @@
     <value>SaaS-fájl</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>SaaS File</value>
+    <value>SaaS-fájl</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
     <value>Azure Storage-blob</value>
@@ -829,7 +829,7 @@
     <value>C#-függvény, amely akkor fut le, amikor egy blob bekerül egy adott tárolóba</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a blob is added to a specified container</value>
+    <value>F# függvény, amely akkor fut le, ha egy adott tárolóhoz blobot adnak hozzá</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
     <value>Node.js-függvény, amely akkor fut le, amikor egy blob bekerül egy adott tárolóba</value>
@@ -865,7 +865,7 @@
     <value>C#-függvény, amely akkor fut le, amikor egy eseményközpont új eseményt kap</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever an event hub receives a new event</value>
+    <value>F# függvény, amely akkor fut le, ha egy eseményközpont új eseményt fogad</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
     <value>Node.js-függvény, amely akkor fut le, amikor egy eseményközpont új eseményt kap</value>
@@ -877,7 +877,7 @@
     <value>C#-függvény, amely egy tárolóban lévő blobból (képből) kinyeri az arcok méreteit (az őket körülvevő téglalapokat), és egy Azure-beli tárolótáblában tárolja azokat</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>An F# function that extracts dimensions (surrounding rectangle) of faces in a blob (image) in a container &amp; stores it in an Azure storage table</value>
+    <value>F# függvény, amely kinyeri a megadott tárolóblobban (képen) lévő arcok méreteit (befoglaló téglalapját), és egy Azure Storage-táblába menti</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
     <value>Node.js-függvény, amely egy tárolóban lévő blobból (képből) kinyeri az arcok méreteit (az őket körülvevő téglalapokat), és egy Azure-beli tárolótáblában tárolja azokat</value>
@@ -886,7 +886,7 @@
     <value>C#-függvény, amely akkor fut le, amikor webhookkérést kap</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a webhook request</value>
+    <value>F# függvény, amely akkor fut le, ha webhookkérést kap</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
     <value>Node.js-függvény, amely akkor fut le, amikor webhookkérést kap</value>
@@ -895,13 +895,13 @@
     <value>Node.js-függvény, amely akkor fut le, amikor a GitHubtól webhookkérést kap</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a GitHub webhook request</value>
+    <value>F# függvény, amely akkor fut le, ha GitHub-webhook-kérést kap</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>C#-függvény, amely akkor fut le, amikor a GitHubtól webhookkérést kap</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives a GitHub webhook request</value>
+    <value>F# függvény, amely akkor fut le, ha GitHub-webhook-kérést kap</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
     <value>Node.js-függvény, amely akkor fut le, amikor a GitHubtól webhookkérést kap</value>
@@ -910,28 +910,28 @@
     <value>C#-függvény, amely egy tárolótáblából entitásokat olvas be, amikor HTTP-kérést kap</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that fetches entities from a Storage Table when it receives an HTTP request</value>
+    <value>F# függvény, amely beolvassa az entitásokat egy Storage-táblából, ha HTTP-kérést kap</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
     <value>Node.js-függvény, amely egy tárolótáblából entitásokat olvas be, amikor HTTP-kérést kap</value>
   </data>
   <data name="HttpGETCRUDPHP_description" xml:space="preserve">
-    <value>A PHP function that fetches entities from a Storage Table when it receives an HTTP request</value>
+    <value>PHP-függvény, amely entitásokat olvas be egy tárolótáblából, amikor HTTP-kérést kap</value>
   </data>
   <data name="HttpPOSTCRUDCSharp_description" xml:space="preserve">
     <value>C#-függvény, amely egy tárolótáblához entitásokat ad hozzá, amikor HTTP-kérést kap</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that adds entities to a Storage Table when it receives an HTTP request</value>
+    <value>F # függvény, amely hozzáadja az entitásokat egy Storage-táblához, ha HTTP-kérést kap</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
     <value>Node.js-függvény, amely egy tárolótáblához entitásokat ad hozzá, amikor HTTP-kérést kap</value>
   </data>
   <data name="HttpPUTCRUDC_description" xml:space="preserve">
-    <value>A C# function that updates entity in a Storage Table when it receives an HTTP request</value>
+    <value>C#-függvény, amely frissít egy tárolótáblában lévő entitást, ha HTTP-kérést kap</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>An F# function that updates entity in a Storage Table when it receives an HTTP request</value>
+    <value>F# függvény, amely frissít egy tárolótáblában lévő entitást, ha HTTP-kérést kap</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
     <value>Batch-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
@@ -940,7 +940,7 @@
     <value>C#-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever it receives an HTTP request</value>
+    <value>F# függvény, amely akkor fut le, ha HTTP-kérést kap</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
     <value>Node.js-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
@@ -952,13 +952,13 @@
     <value>C#-függvény, amely átméretezett képeket hoz létre, amikor egy blob bekerül egy adott tárolóba</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>An F# function that creates resized images whenever a blob is added to a specified container</value>
+    <value>F# függvény, amely átméretezett képeket hoz létre, ha egy adott tárolóhoz blobot adnak hozzá</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>C#-függvény, amely manuálisan indítható a portál Futtatás gombjával</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that is triggered manually via the portal "Run" button</value>
+    <value>F# függvény, amely manuálisan aktiválható a portálon lévő Futtatás gombbal</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>Node.js-függvény, amely manuálisan indítható a portál Futtatás gombjával</value>
@@ -994,7 +994,7 @@
     <value>C#-függvény, amely akkor fut le, amikor egy fájlt hozzáadnak egy SaaS-szolgáltatóhoz.</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a file is added to a SaaS provider.</value>
+    <value>F# függvény, amely akkor fut le, ha fájlt adnak hozzá egy SaaS-szolgáltatóhoz.</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
     <value>Node.js-függvény, amely akkor fut le, amikor egy fájlt hozzáadnak egy SaaS-szolgáltatóhoz.</value>
@@ -1003,16 +1003,16 @@
     <value>C#-függvény, amely egy SaaS-táblából entitásokat olvas be, amikor HTTP-kérést kap.</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>An F# function that fetches entities from a SaaS Table when it receives an HTTP request.</value>
+    <value>F# függvény, amely beolvassa az entitásokat egy SaaS-táblából, ha HTTP-kérést kap.</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>An F# function that generates a SAS token for Azure Storage for a given container and blob name.</value>
+    <value>F# függvény, amely létrehozza egy adott tároló és blobnév Azure Storage-beli SAS-jogkivonatát.</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
     <value>C#-függvény, amely SendGrid megerősítő e-mailt küld, amikor egy új rendelés bekerül egy adott Azure Storage-üzenetsorba</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>An F# function that sends a SendGrid confirmation mail whenever a new order is added to a specified Azure Storage queue</value>
+    <value>F# függvény, amely megerősítő SendGrid e-mailt küld, ha egy adott Azure Storage-üzenetsor új megrendeléssel bővül</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
     <value>Node.js-függvény, amely SendGrid megerősítő e-mailt küld, amikor egy új rendelés kerül be egy adott Azure Storage-üzenetsorba</value>
@@ -1021,13 +1021,13 @@
     <value>C#-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-üzenetsorba</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a message is added to a specified Service Bus queue</value>
+    <value>F# függvény, amely akkor fut le, ha egy adott Service Bus-üzenetsor új üzenettel bővül</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
     <value>Node.js-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-üzenetsorba</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a message is added to the specified Service Bus topic</value>
+    <value>F# függvény, amely akkor fut le, ha egy adott Service Bus-témakör új üzenettel bővül</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>Node.js-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-témába</value>
@@ -1036,7 +1036,7 @@
     <value>C#-függvény, amely megadott ütemezés szerint fut</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run on a specified schedule</value>
+    <value>F# függvény, amely egy adott ütemezés szerint fut le</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
     <value>Node.js-függvény, amely megadott ütemezés szerint fut</value>
@@ -1048,54 +1048,54 @@
     <value>Érvénytelen CRON-kifejezés. További információkért tanulmányozza a &lt;a target='_blank' href='https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/'&gt;dokumentációt&lt;/a&gt;.</value>
   </data>
   <data name="twilioSms_accountsid_help" xml:space="preserve">
-    <value>The name of the app setting containing your Twilio account SID</value>
+    <value>A Twilio-fiók SID-jét tartalmazó alkalmazásbeállítás neve</value>
   </data>
   <data name="twilioSms_accountsid_label" xml:space="preserve">
-    <value>Account SID setting</value>
+    <value>A fiók SID-jének beállítása</value>
   </data>
   <data name="twilioSms_authtoken_help" xml:space="preserve">
-    <value>The name of the app setting containing your Twilio Auth Token</value>
+    <value>A Twilio hitelesítési jogkivonatát tartalmazó alkalmazásbeállítás neve</value>
   </data>
   <data name="twilioSms_authtoken_label" xml:space="preserve">
-    <value>Auth Token setting</value>
+    <value>Hitelesítési jogkivonat beállítása</value>
   </data>
   <data name="twilioSms_body_help" xml:space="preserve">
-    <value>This is the text body to use for the message. If not specified here, the value can be specified in code.</value>
+    <value>Az üzenethez használandó szövegtörzs. Ha itt nincs megadva, az érték kód segítségével is megadható.</value>
   </data>
   <data name="twilioSms_body_label" xml:space="preserve">
-    <value>Message text</value>
+    <value>Üzenet szövege</value>
   </data>
   <data name="twilioSms_displayName" xml:space="preserve">
     <value>Twilio SMS</value>
   </data>
   <data name="twilioSms_from_help" xml:space="preserve">
-    <value>This is the Twilio phone number the message should be sent from. If not specified here, the value can be specified in code.</value>
+    <value>Erről a Twilio-telefonszámról lesz az üzenet elküldve. Ha itt nem adja meg a számot, a kódban is meghatározhatja.</value>
   </data>
   <data name="twilioSms_from_label" xml:space="preserve">
-    <value>From number</value>
+    <value>Erről a számról</value>
   </data>
   <data name="twilioSms_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>A kódban szereplő azon paraméter neve, amellyel a kimeneti kötési funkciónak kötést kell létesítenie.</value>
   </data>
   <data name="twilioSms_name_label" xml:space="preserve">
-    <value>Message parameter name</value>
+    <value>Üzenetparaméter neve</value>
   </data>
   <data name="twilioSms_to_help" xml:space="preserve">
-    <value>This is the phone number the message should be sent to. If not specified here, the value can be specified in code.</value>
+    <value>Erre a Twilio-telefonszámra lesz az üzenet elküldve. Ha itt nem adja meg a számot, a kódban is meghatározhatja.</value>
   </data>
   <data name="twilioSms_to_label" xml:space="preserve">
-    <value>To number</value>
+    <value>Erre a számra</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
     <value>A fogyasztói csoport nevének betűvel vagy számmal kell kezdődnie és végződnie, és csak kisbetűket, számokat, kötőjelet, pontot és aláhúzást tartalmazhat. A $Default csoport is engedélyezett.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
-    <value>Azure DocumentDB Document</value>
+    <value>Azure DocumentDB-dokumentum</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>This is your SendGrid API Key</value>
+    <value>Az Ön SendGrid-API-kulcsa</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
-    <value>SendGrid API Key</value>
+    <value>SendGrid-API-kulcs</value>
   </data>
 </root>
