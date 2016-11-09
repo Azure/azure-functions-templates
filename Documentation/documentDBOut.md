@@ -8,13 +8,13 @@
 - `connection` : This string must be an **Application Setting** set to the endpoint for your DocumentDB account. If you choose your account from the **Integrate** tab, a new App setting will be created for you with a name that takes the following form, `yourAccount_DOCUMENTDB`. If you need to manually create the App setting, the actual connection string must take the following form, `AccountEndpoint=<Endpoint for your account>;AccountKey=<Your primary access key>;`. 
 - `direction` : must be set to *"out"*. 
 
-#### Azure DocumentDB output code example for a Node.js queue trigger
+#### Azure DocumentDB output code example for a JavaScript queue trigger
 
 ```javascript
 module.exports = function (context, input) {
     
     context.bindings.document = {
-        text : "I'm running in a Node function! Data: '" + input + "'"
+        text : "I'm running in a JavaScript function! Data: '" + input + "'"
     }   
     
     context.done();
@@ -25,7 +25,7 @@ The output document:
 
 ```json
 {
-    "text": "I'm running in a Node function! Data: 'example queue data'",
+    "text": "I'm running in a JavaScript function! Data: 'example queue data'",
     "id": "01a817fe-f582-4839-b30c-fb32574ff13f"
 }
 ```

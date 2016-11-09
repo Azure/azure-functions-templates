@@ -14,7 +14,7 @@ public class Contact
 
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, ITable<Contact> input, TraceWriter log)
 {
-    log.Info($"C# HTTP trigger function processed a request. RequestUri={req.RequestUri}");
+    log.Info("C# HTTP trigger function processed a request.");
 
     ContinuationToken continuationToken = null;
     do

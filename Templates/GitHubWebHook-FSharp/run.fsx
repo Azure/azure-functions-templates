@@ -6,7 +6,7 @@ open FSharp.Interop.Dynamic
 
 let Run(req: HttpRequestMessage, log: TraceWriter) =
     async {
-        log.Info(sprintf "F# HTTP trigger function processed a request. RequestUri=%s" (req.RequestUri.ToString()))
+        log.Info(sprintf "F# HTTP trigger function processed a request.")
 
         let! data = req.Content.ReadAsAsync<obj>() |> Async.AwaitTask
         let comment = data?comment?body

@@ -23,7 +23,7 @@ This example uses a Timer Trigger input, but Event Hubs output can work with any
 	    outputEventHubMessage = msg;
 	}
 
-#### Azure Event Hub Node.js code example for output binding
+#### Azure Event Hub JavaScript code example for output binding
 
 This example uses a Timer Trigger input, but Event Hubs output can work with any trigger.
  
@@ -32,12 +32,12 @@ This example uses a Timer Trigger input, but Event Hubs output can work with any
 	    
 	    if(myTimer.isPastDue)
 	    {
-	        context.log('TimerTriggerNodeJS1 is running late!');
+	        context.log('TimerTriggerJS1 is running late!');
 	    }
 
-	    context.log('TimerTriggerNodeJS1 function ran!', timeStamp);   
+	    context.log('TimerTriggerJS1 function ran!', timeStamp);   
 	    
-	    context.bindings.outputEventHubMessage = "TimerTriggerNodeJS1 ran at : " + timeStamp;
+	    context.bindings.outputEventHubMessage = "TimerTriggerJS1 ran at : " + timeStamp;
 	
 	    context.done();
 	};

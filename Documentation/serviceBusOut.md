@@ -20,7 +20,7 @@ Azure Functions can create a Service Bus queue message from any of the following
 * byte array (works like string) 
 * `BrokeredMessage` (C#, works like string)
 
-For creating multiple messages in a C# function, you can use `ICollector<T>` or `IAsyncCollector<T>`. A message is created when you call the `Add` method. For Node.js, you can return an array.
+For creating multiple messages in a C# function, you can use `ICollector<T>` or `IAsyncCollector<T>`. A message is created when you call the `Add` method. For JavaScript, you can return an array.
 
 #### C# code examples that create Service Bus queue messages
 
@@ -43,7 +43,7 @@ public static void Run(TimerInfo myTimer, TraceWriter log, ICollector<string> ou
 }
 ```
 
-#### Node.js code example that creates Service Bus queue messages
+#### JavaScript code example that creates Service Bus queue messages
 
 ```javascript
 module.exports = function (context, myTimer) {

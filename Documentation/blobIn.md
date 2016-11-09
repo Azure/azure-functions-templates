@@ -8,7 +8,7 @@
 
 #### Blob input and output supported types
 
-The `blob` binding can serialize or deserialize the following types in Node.js or C# functions:
+The `blob` binding can serialize or deserialize the following types in JavaScript or C# functions:
 
 * Object
 * String
