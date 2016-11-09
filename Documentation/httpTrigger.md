@@ -65,7 +65,7 @@ using System.Threading.Tasks;
 
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log)
 {
-    log.Info($"C# HTTP trigger function processed a request. RequestUri={req.RequestUri}");
+    log.Info("C# HTTP trigger function processed a request.");
 
     // parse query parameter
     string name = req.GetQueryNameValuePairs()
@@ -91,7 +91,7 @@ See supported methods for [context.req](https://github.com/Azure/azure-webjobs-s
 
 ```javascript
 module.exports = function(context, req) {
-    context.log('JavaScript HTTP trigger function processed a request. RequestUri=%s', req.originalUrl);
+    context.log('JavaScript HTTP trigger function processed a request.');
 
     if (req.query.name || (req.body && req.body.name)) {
         // using the express api style
