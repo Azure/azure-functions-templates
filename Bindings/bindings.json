@@ -1670,6 +1670,54 @@
                     "help": "$twilioSms_body_help"
                 }
             ]
+        },
+        {
+            "type": "bot",
+            "displayName": "$bot_out_displayName",
+            "direction": "out",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\botOut.md",
+            "settings": [
+                {
+                    "name": "botId",
+                    "value": "string",
+                    "defaultValue": "BotBindingFunction",
+                    "required": true,
+                    "label": "$bot_botId_label",
+                    "help": "$bot_botId_help",
+                    "validators": [
+                        {
+                            "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+                            "errorText": "[variables('parameterName')]"
+                        }
+                    ]
+                },
+                {
+                    "name": "secret",
+                    "value": "string",
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "$bot_secret_label",
+                    "help": "$bot_secret_help"
+                }
+            ]
+        },
+        {
+            "type": "bot",
+            "displayName": "$bot_in_displayName",
+            "direction": "in",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\botIn.md",
+            "settings": [
+                {
+                    "name": "secret",
+                    "value": "string",
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "$bot_secret_label",
+                    "help": "$bot_secret_help"
+                }
+            ]
         }
     ]
 }
