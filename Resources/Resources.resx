@@ -1102,10 +1102,10 @@
     <value>SendGrid API Key</value>
   </data>
   <data name="bot_botId_help" xml:space="preserve">
-    <value>This is the name that will appear in ChannelAccount.Id of Activity, this is populates ChannelAccount.Id of a sent activity.</value>
+    <value>This is the Id that will used in From property of Activity while creating and sending message to the bot, this is populates ChannelAccount.Id of a sent activity.</value>
   </data>
   <data name="bot_botId_label" xml:space="preserve">
-    <value>Sender name</value>
+    <value>Sender Id</value>
   </data>
   <data name="bot_in_displayName" xml:space="preserve">
     <value>Bot Framework</value>
@@ -1118,5 +1118,17 @@
   </data>
   <data name="bot_secret_label" xml:space="preserve">
     <value>Direct Line Key</value>
+  </data>
+  <data name="bot_in_name_help" xml:space="preserve">
+    <value>This is the name of the parameter in the code for input binding to bind to.</value>
+  </data>
+  <data name="bot_in_name_label" xml:space="preserve">
+    <value>Bot parameter name</value>
+  </data>
+  <data name="bot_out_name_help" xml:space="preserve">
+    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+  </data>
+  <data name="bot_out_name_label" xml:space="preserve">
+    <value>Bot parameter name</value>
   </data>
 </root>
