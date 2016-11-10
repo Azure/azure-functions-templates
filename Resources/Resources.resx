@@ -217,10 +217,10 @@
     <value>Schedule</value>
   </data>
   <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
-    <value>The connection string for your SaaS Table connection.</value>
+    <value>The connection string for your External File connection.</value>
   </data>
   <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
-    <value>SaaS Table connection</value>
+    <value>External File connection</value>
   </data>
   <data name="variables_apiHubTableDataSetHelp" xml:space="preserve">
     <value>The name of the data set to bind to.  Leave as 'default' if binding to a table or entity.</value>
@@ -346,10 +346,10 @@
     <value>The input file path</value>
   </data>
   <data name="apiHubFileIn_connection_label" xml:space="preserve">
-    <value>SaaS File connection</value>
+    <value>External File connection</value>
   </data>
   <data name="apiHubFileIn_connection_help" xml:space="preserve">
-    <value>The connection string to your SaaS File connection.</value>
+    <value>The connection string to your External File connection.</value>
   </data>
   <data name="apiHubFileTrigger_name_label" xml:space="preserve">
     <value>File parameter name</value>
@@ -364,16 +364,16 @@
     <value>The path to trigger on. This path must exist.</value>
   </data>
   <data name="apiHubFileTrigger_connection_label" xml:space="preserve">
-    <value>SaaS File connection</value>
+    <value>External File connection</value>
   </data>
   <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
-    <value>The connection string to your SaaS File connection.</value>
+    <value>The connection string to your External File connection.</value>
   </data>
   <data name="apiHubTableIn_displayName" xml:space="preserve">
-    <value>SaaS Table</value>
+    <value>External File</value>
   </data>
   <data name="apiHubTableOut_displayName" xml:space="preserve">
-    <value>SaaS Table</value>
+    <value>External File</value>
   </data>
   <data name="httpTrigger_displayName" xml:space="preserve">
     <value>HTTP</value>
@@ -418,10 +418,10 @@
     <value>This is the mode of the trigger. "Standard" means that the request will be standard HTTP with no additional semantics. "Webhook" means that the request will be processed according to a specified webhook type.</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
-    <value>SaaS File</value>
+    <value>External File</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>SaaS File</value>
+    <value>External File</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
     <value>Azure Blob Storage</value>
@@ -1003,10 +1003,10 @@
     <value>A JavaScript function that will be run whenever a file is added to a SaaS provider.</value>
   </data>
   <data name="SaasTableCSharp_description" xml:space="preserve">
-    <value>(Experimental) A C# function that fetches entities from a SaaS Table when it receives an HTTP request.</value>
+    <value>(Experimental) A C# function that fetches entities from a External File when it receives an HTTP request.</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>(Experimental) An F# function that fetches entities from a SaaS Table when it receives an HTTP request.</value>
+    <value>(Experimental) An F# function that fetches entities from a External File when it receives an HTTP request.</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
     <value>(Preview) An F# function that generates a SAS token for Azure Storage for a given container and blob name.</value>
