@@ -395,7 +395,7 @@
   </data>
   <data name="httpTrigger_methods_label" xml:space="preserve">
     <value>Selected HTTP methods</value>
-  </data>  
+  </data>
   <data name="httpTrigger_methods_help" xml:space="preserve">
     <value>These are the only methods to which this function will respond.</value>
   </data>
@@ -407,7 +407,7 @@
   </data>
   <data name="httpTrigger_route_help" xml:space="preserve">
     <value>The route template setting allows you to change the URI that triggers this function. The values should be a relative path. Path segments may be treated as parameters by surrounding them with curly braces. For example: customer/{customerId}</value>
-  </data>  
+  </data>
   <data name="httpTrigger_methodRule_help" xml:space="preserve">
     <value>HttpTrigger can respond to any HTTP method. If you wish to restrict support to specific methods, choose the 'Selected methods' option.</value>
   </data>
@@ -1100,5 +1100,35 @@
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
     <value>SendGrid API Key</value>
+  </data>
+  <data name="bot_botId_help" xml:space="preserve">
+    <value>This is the Id that will used in From property of Activity while creating and sending message to the bot, this is populates ChannelAccount.Id of a sent activity.</value>
+  </data>
+  <data name="bot_botId_label" xml:space="preserve">
+    <value>Sender Id</value>
+  </data>
+  <data name="bot_in_displayName" xml:space="preserve">
+    <value>Bot Framework</value>
+  </data>
+  <data name="bot_out_displayName" xml:space="preserve">
+    <value>Bot Framework</value>
+  </data>
+  <data name="bot_secret_help" xml:space="preserve">
+    <value>Direct Line Key can be generated from Direct Line channel configuration page in the Bot Framework portal; leaving this field empty will look for value in Application Setting 'AzureWebJobsBotFrameworkDirectLineSecret'</value>
+  </data>
+  <data name="bot_secret_label" xml:space="preserve">
+    <value>Direct Line Key</value>
+  </data>
+  <data name="bot_in_name_help" xml:space="preserve">
+    <value>This is the name of the parameter in the code for input binding to bind to.</value>
+  </data>
+  <data name="bot_in_name_label" xml:space="preserve">
+    <value>Bot parameter name</value>
+  </data>
+  <data name="bot_out_name_help" xml:space="preserve">
+    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+  </data>
+  <data name="bot_out_name_label" xml:space="preserve">
+    <value>Bot parameter name</value>
   </data>
 </root>
