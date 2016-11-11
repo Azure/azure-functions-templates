@@ -86,7 +86,7 @@
                     "help": "$eventHubTrigger_path_help",
                     "validators": [
                         {
-                            "expression": "^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$",
+                            "expression": "^[a-z0-9{]$|^[a-z0-9{][a-z0-9-_.{}]{0,48}[a-z0-9{}]$",
                             "errorText": "$eventHubTrigger_path_errorText"
                         }
                     ]
@@ -100,7 +100,7 @@
                     "help": "$eventHubTrigger_consumerGroup_help",
                     "validators": [
                         {
-                            "expression": "(^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$)|^\\$Default$",
+                            "expression": "(^[a-z0-9{]$|^[a-z0-9{][a-z0-9-_.{}]{0,48}[a-z0-9{}]$)|^\\$Default$",
                             "errorText": "$eventHubTrigger_consumerGroup_errorText"
                         }
                     ]
@@ -156,7 +156,7 @@
                     "help": "$eventHubOut_path_help",
                     "validators": [
                         {
-                            "expression": "^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$",
+                            "expression": "^[a-z0-9{]$|^[a-z0-9{][a-z0-9-_.{}]{0,48}[a-z0-9{}]$",
                             "errorText": "$eventHubOut_path_errorText"
                         }
                     ]
@@ -212,7 +212,7 @@
                     "help": "$queueOut_queueName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z][a-z0-9-]{1,61}[0-9a-z]$",
+                            "expression": "^[0-9a-z{][a-z0-9-{}]{1,61}[0-9a-z{}]$",
                             "errorText": "$queueOut_queueName_errorText"
                         }
                     ]
@@ -258,7 +258,7 @@
                     "help": "$queueTrigger_queueName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z][a-z0-9-]{1,61}[0-9a-z]$",
+                            "expression": "^[0-9a-z{][a-z0-9-{}]{1,61}[0-9a-z{}]$",
                             "errorText": "$queueTrigger_queueName_errorText"
                         }
                     ]
@@ -314,7 +314,7 @@
                     "help": "$blobOut_path_help",
                     "validators": [
                         {
-                            "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){0,1023}[^\\/]$",
+                            "expression": "^[a-z0-9{](?:[a-z0-9{}]|(?:\\-(?!\\-))){1,61}[a-z0-9{}][\\/](\\S){0,1023}[^\\/]$",
                             "errorText": "$blobOut_path_errorText"
                         }
                     ]
@@ -360,7 +360,7 @@
                     "help": "$blobIn_path_help",
                     "validators": [
                         {
-                            "expression": "^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){0,1023}[^\\/]$",
+                            "expression": "^[a-z0-9{](?:[a-z0-9{}]|(?:\\-(?!\\-))){1,61}[a-z0-9{}][\\/](\\S){0,1023}[^\\/]$",
                             "errorText": "$blobIn_patherrorText"
                         }
                     ]
@@ -406,7 +406,7 @@
                     "help": "$blobTrigger_path_help",
                     "validators": [
                         {
-                            "expression": "(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9]$)|(^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9][\\/](\\S){0,1023}[^\\/]$)",
+                            "expression": "(^[a-z0-9{](?:[a-z0-9{}]|(?:\\-(?!\\-))){1,61}[a-z0-9{}]$)|(^[a-z0-9{](?:[a-z0-9{}]|(?:\\-(?!\\-))){1,61}[a-z0-9{}][\\/](\\S){0,1023}[^\\/]$)",
                             "errorText": "$blobTrigger_path_errorText"
                         }
                     ]
@@ -905,7 +905,7 @@
                     "help": "$serviceBusTrigger_queueName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
+                            "expression": "^[0-9a-z{][a-z0-9_.-{}]{1,48}[0-9a-z{}]$",
                             "errorText": "$serviceBusTrigger_queueName_errorText"
                         }
                     ]
@@ -919,7 +919,7 @@
                     "help": "$serviceBusTrigger_topicName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
+                            "expression": "^[0-9a-z{][a-z0-9_.-{}]{1,48}[0-9a-z{}]$",
                             "errorText": "$serviceBusTrigger_topicName_errorText"
                         }
                     ]
@@ -1027,7 +1027,7 @@
                     "help": "$serviceBusOut_queueName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
+                            "expression": "^[0-9a-z{][a-z0-9_.-{}]{1,48}[0-9a-z{}]$",
                             "errorText": "$serviceBusOut_queueName_errorText"
                         }
                     ]
@@ -1041,7 +1041,7 @@
                     "help": "$serviceBusOut_topicName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$",
+                            "expression": "^[0-9a-z{][a-z0-9_.-{}]{1,48}[0-9a-z{}]$",
                             "errorText": "$serviceBusOut_topicName_errorText"
                         }
                     ]
@@ -1156,7 +1156,7 @@
                     "help": "$table_tableName_help",
                     "validators": [
                         {
-                            "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$",
+                            "expression": "^[A-Za-z{][A-Za-z0-9{}]{2,62}$",
                             "errorText": "$table_tableName_errorText"
                         }
                     ]
@@ -1202,7 +1202,7 @@
                     "help": "$tableIn_tableName_help",
                     "validators": [
                         {
-                            "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$",
+                            "expression": "^[A-Za-z{][A-Za-z0-9{}]{2,62}$",
                             "errorText": "$tableIn_tableName_errorText"
                         }
                     ]
@@ -1668,6 +1668,75 @@
                     "required": false,
                     "label": "$twilioSms_body_label",
                     "help": "$twilioSms_body_help"
+                }
+            ]
+        },
+        {
+            "type": "bot",
+            "displayName": "$bot_out_displayName",
+            "direction": "out",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\botOut.md",
+            "filters": ["ShowBotBinding"],
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "$return",
+                    "required": true,
+                    "label": "$bot_out_name_label",
+                    "help": "$bot_out_name_help",
+                    "validators": [
+                        {
+                            "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+                            "errorText": "[variables('parameterName')]"
+                        }
+                    ]
+                },
+                {
+                    "name": "botId",
+                    "value": "string",
+                    "required": true,
+                    "label": "$bot_botId_label",
+                    "help": "$bot_botId_help"
+                },
+                {
+                    "name": "secret",
+                    "value": "string",
+                    "required": false,
+                    "label": "$bot_out_secret_label",
+                    "help": "$bot_out_secret_help"
+                }
+            ]
+        },
+        {
+            "type": "bot",
+            "displayName": "$bot_in_displayName",
+            "direction": "in",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\botIn.md",
+            "filters": ["ShowBotBinding"],
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "bot",
+                    "required": true,
+                    "label": "$bot_in_name_label",
+                    "help": "$bot_in_name_help",
+                    "validators": [
+                        {
+                            "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+                            "errorText": "[variables('parameterName')]"
+                        }
+                    ]
+                },
+                {
+                    "name": "secret",
+                    "value": "string",
+                    "required": false,
+                    "label": "$bot_in_secret_label",
+                    "help": "$bot_in_secret_help"
                 }
             ]
         }
