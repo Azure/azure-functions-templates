@@ -172,7 +172,7 @@
     <value>이벤트 허브 이름</value>
   </data>
   <data name="queueOut_displayName" xml:space="preserve">
-    <value>Azure Storage 큐</value>
+    <value>Azure Queue Storage</value>
   </data>
   <data name="queueOut_name_help" xml:space="preserve">
     <value>코드에서 출력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
@@ -217,10 +217,10 @@
     <value>일정</value>
   </data>
   <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
-    <value>SaaS 테이블 연결에 대한 연결 문자열입니다.</value>
+    <value>The connection string for your External Table connection.</value>
   </data>
   <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
-    <value>SaaS 테이블 연결</value>
+    <value>External Table connection</value>
   </data>
   <data name="variables_apiHubTableDataSetHelp" xml:space="preserve">
     <value>바인딩할 데이터 집합의 이름입니다. 테이블 또는 엔터티에 바인딩하려면 'default'로 두세요.</value>
@@ -346,10 +346,10 @@
     <value>입력 파일 경로</value>
   </data>
   <data name="apiHubFileIn_connection_label" xml:space="preserve">
-    <value>SaaS 파일 연결</value>
+    <value>외부 파일 연결</value>
   </data>
   <data name="apiHubFileIn_connection_help" xml:space="preserve">
-    <value>SaaS 파일 연결에 대한 연결 문자열입니다.</value>
+    <value>외부 파일 연결에 대한 연결 문자열입니다.</value>
   </data>
   <data name="apiHubFileTrigger_name_label" xml:space="preserve">
     <value>파일 매개 변수 이름</value>
@@ -364,16 +364,16 @@
     <value>트리거할 경로입니다. 이 경로가 있어야 합니다.</value>
   </data>
   <data name="apiHubFileTrigger_connection_label" xml:space="preserve">
-    <value>SaaS 파일 연결</value>
+    <value>외부 파일 연결</value>
   </data>
   <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
-    <value>SaaS 파일 연결에 대한 연결 문자열입니다.</value>
+    <value>외부 파일 연결에 대한 연결 문자열입니다.</value>
   </data>
   <data name="apiHubTableIn_displayName" xml:space="preserve">
-    <value>SaaS 테이블</value>
+    <value>External Table</value>
   </data>
   <data name="apiHubTableOut_displayName" xml:space="preserve">
-    <value>SaaS 테이블</value>
+    <value>External Table</value>
   </data>
   <data name="httpTrigger_displayName" xml:space="preserve">
     <value>HTTP</value>
@@ -418,19 +418,19 @@
     <value>트리거 모드입니다. "Standard"는 요청이 추가 의미 체계가 없는 표준 HTTP임을 의미하고 "Webhook"는 지정된 webhook 형식에 따라 요청이 처리됨을 의미합니다.</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
-    <value>SaaS 파일</value>
+    <value>외부 파일</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>SaaS 파일</value>
+    <value>외부 파일</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
-    <value>Azure Storage Blob</value>
+    <value>Azure Blob Storage</value>
   </data>
   <data name="blobOut_displayName" xml:space="preserve">
-    <value>Azure Storage Blob</value>
+    <value>Azure Blob Storage</value>
   </data>
   <data name="blobTrigger_displayName" xml:space="preserve">
-    <value>Azure Storage Blob</value>
+    <value>Azure Blob Storage</value>
   </data>
   <data name="documentDBIn_collectionName_help" xml:space="preserve">
     <value>데이터를 읽을 데이터베이스 내에 있는 컬렉션의 이름입니다.</value>
@@ -616,7 +616,7 @@
     <value>테스트 보내기 사용(선택 사항)</value>
   </data>
   <data name="queueTrigger_displayName" xml:space="preserve">
-    <value>Azure Storage 큐</value>
+    <value>Azure Queue Storage</value>
   </data>
   <data name="sendGrid_displayName" xml:space="preserve">
     <value>SendGrid</value>
@@ -763,7 +763,7 @@
     <value>토픽 이름</value>
   </data>
   <data name="tableIn_displayName" xml:space="preserve">
-    <value>Azure Storage 테이블</value>
+    <value>Azure Table Storage</value>
   </data>
   <data name="tableIn_filter_help" xml:space="preserve">
     <value>테이블 쿼리의 결과를 필터링하는 데 사용되는 선택적 쿼리 식입니다. C# 함수에는 이 설정이 적용되지 않습니다.</value>
@@ -805,7 +805,7 @@
     <value>읽을 최대 레코드 수(선택 사항)</value>
   </data>
   <data name="tableout_displayName" xml:space="preserve">
-    <value>Azure Storage 테이블</value>
+    <value>Azure Table Storage</value>
   </data>
   <data name="tableout_name_help" xml:space="preserve">
     <value>코드에서 출력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
@@ -823,16 +823,16 @@
     <value>테이블 이름</value>
   </data>
   <data name="BlobTriggerBatch_description" xml:space="preserve">
-    <value>Blob이 지정된 컨테이너에 추가될 때마다 실행되는 Batch 함수입니다.</value>
+    <value>(실험적) 지정된 컨테이너에 Blob이 추가될 때마다 실행되는 Batch 함수입니다.</value>
   </data>
   <data name="BlobTriggerCSharp_description" xml:space="preserve">
     <value>Blob이 지정된 컨테이너에 추가될 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>Blob이 지정된 컨테이너에 추가될 때마다 실행되는 F# 함수</value>
+    <value>(미리 보기) 지정된 컨테이너에 Blob이 추가될 때마다 실행되는 F# 함수입니다.</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
-    <value>Blob이 지정된 컨테이너에 추가될 때마다 실행되는 Node.js 함수입니다.</value>
+    <value>Blob이 지정된 컨테이너에 추가될 때마다 실행되는 JavaScript 함수입니다.</value>
   </data>
   <data name="CSharp_description" xml:space="preserve">
     <value>GitHub 웹후크 요청을 받을 때마다 실행되는 C# 함수입니다.</value>
@@ -850,7 +850,7 @@
     <value>트러거, 입력 또는 출력이 없는 빈 F# 함수입니다.</value>
   </data>
   <data name="EmptyNodeJS_description" xml:space="preserve">
-    <value>트러거, 입력 또는 출력이 없는 빈 Node.js 함수입니다.</value>
+    <value>트리거, 입력 또는 출력이 없는 빈 JavaScript 함수입니다.</value>
   </data>
   <data name="EmptyPHP_description" xml:space="preserve">
     <value>트러거, 입력 또는 출력이 없는 빈 PHP 함수입니다.</value>
@@ -865,184 +865,187 @@
     <value>이벤트 허브에서 새 이벤트를 받을 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>이벤트 허브에서 새 이벤트를 받을 때마다 실행되는 F# 함수</value>
+    <value>(미리 보기) 이벤트 허브에서 새 이벤트를 받을 때마다 실행되는 F# 함수입니다.</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
-    <value>이벤트 허브에서 새 이벤트를 받을 때마다 실행되는 Node.js 함수입니다.</value>
+    <value>이벤트 허브에서 새 이벤트를 받을 때마다 실행되는 JavaScript 함수입니다.</value>
   </data>
   <data name="EventHubTriggerPython_description" xml:space="preserve">
-    <value>이벤트 허브에서 새 이벤트를 받을 때마다 실행되는 Python 함수입니다.</value>
+    <value>(실험적) 이벤트 허브에서 새 이벤트를 받을 때마다 실행되는 Python 함수입니다.</value>
   </data>
   <data name="FaceLocatorCSharp_description" xml:space="preserve">
-    <value>컨테이너에 있는 blob(이미지)에서 면의 크기(주변 사각형)를 추출하여 Azure Storage 테이블에 저장하는 C# 함수입니다.</value>
+    <value>이미지를 처리하고 면의 경계 사각형을 출력하는 C# 함수입니다.</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>컨테이너에 있는 Blob(이미지)에서 면의 크기(주변 사각형)를 추출하여 Azure Storage 테이블에 저장하는 F# 함수</value>
+    <value>(미리 보기) 이미지를 처리하고 면의 경계 사각형을 출력하는 F# 함수입니다.</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
-    <value>컨테이너에 있는 blob(이미지)에서 면의 크기(주변 사각형)를 추출하여 Azure Storage 테이블에 저장하는 Node.js 함수입니다.</value>
+    <value>이미지를 처리하고 면의 경계 사각형을 출력하는 JavaScript 함수입니다.</value>
   </data>
   <data name="GenericWebhookCSharp_description" xml:space="preserve">
     <value>webhook 요청을 받을 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>웹후크 요청을 받을 때마다 실행되는 F# 함수</value>
+    <value>(미리 보기) 웹후크 요청을 받을 때마다 실행되는 F# 함수입니다.</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
-    <value>웹후크 요청을 받을 때마다 실행되는 Node.js 함수입니다.</value>
+    <value>웹후크 요청을 받을 때마다 실행되는 JavaScript 함수입니다.</value>
   </data>
   <data name="GitHubCommenterNodeJS_description" xml:space="preserve">
-    <value>GitHub 웹후크 요청을 받을 때마다 실행되는 Node.js 함수입니다.</value>
+    <value>GitHub 웹후크 요청을 받을 때마다 실행되는 JavaScript 함수입니다.</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>GitHub 웹후크 요청을 받을 때마다 실행되는 F# 함수</value>
+    <value>(미리 보기) GitHub 웹후크 요청을 받을 때마다 실행되는 F# 함수입니다.</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>GitHub 웹후크 요청을 받을 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>GitHub 웹후크 요청을 받을 때마다 실행되는 F# 함수</value>
+    <value>(미리 보기) GitHub 웹후크 요청을 받을 때마다 실행되는 F# 함수입니다.</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
-    <value>GitHub 웹후크 요청을 받을 때마다 실행되는 Node.js 함수입니다.</value>
+    <value>GitHub 웹후크 요청을 받을 때마다 실행되는 JavaScript 함수입니다.</value>
   </data>
   <data name="HttpGETCRUDC_description" xml:space="preserve">
     <value>HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 가져오는 C# 함수입니다.</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 가져오는 F# 함수</value>
+    <value>(미리 보기) HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 가져오는 F# 함수입니다.</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
-    <value>HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 가져오는 Node.js 함수입니다.</value>
+    <value>HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 가져오는 JavaScript 함수입니다.</value>
   </data>
   <data name="HttpGETCRUDPHP_description" xml:space="preserve">
-    <value>HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 가져오는 PHP 함수입니다.</value>
+    <value>(실험적) HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 가져오는 PHP 함수입니다.</value>
   </data>
   <data name="HttpPOSTCRUDCSharp_description" xml:space="preserve">
     <value>HTTP 요청을 받을 때 저장소 테이블에 엔터티를 추가하는 C# 함수입니다.</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>HTTP 요청을 받을 때 저장소 테이블에 엔터티를 추가하는 F# 함수</value>
+    <value>(미리 보기) HTTP 요청을 받을 때 저장소 테이블에 엔터티를 추가하는 F# 함수입니다.</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
-    <value>HTTP 요청을 받을 때 저장소 테이블에 엔터티를 추가하는 Node.js 함수입니다.</value>
+    <value>HTTP 요청을 받을 때 저장소 테이블에 엔터티를 추가하는 JavaScript 함수입니다.</value>
   </data>
   <data name="HttpPUTCRUDC_description" xml:space="preserve">
     <value>HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 업데이트하는 C# 함수</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 업데이트하는 F# 함수</value>
+    <value>(미리 보기) HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 업데이트하는 F# 함수입니다.</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
-    <value>HTTP 요청을 받을 때마다 실행되는 batch 함수입니다.</value>
+    <value>(실험적) HTTP 요청을 받을 때마다 실행되는 Batch 함수입니다.</value>
   </data>
   <data name="HttpTriggerCSharp_description" xml:space="preserve">
     <value>HTTP 요청을 받을 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>HTTP 요청을 받을 때마다 실행되는 F# 함수</value>
+    <value>(미리 보기) HTTP 요청을 받을 때마다 실행되는 F# 함수입니다.</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
-    <value>HTTP 요청을 받을 때마다 실행되는 Node.js 함수입니다.</value>
+    <value>HTTP 요청을 받을 때마다 실행되는 JavaScript 함수입니다.</value>
   </data>
   <data name="HttpTriggerPowerShell_description" xml:space="preserve">
-    <value>HTTP 요청을 받을 때마다 실행되는 PowerShell 함수입니다.</value>
+    <value>(미리 보기) HTTP 요청을 받을 때마다 실행되는 PowerShell 함수입니다.</value>
   </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>Blob이 지정된 컨테이너에 추가될 때마다 크기 조정된 이미지를 만드는 C# 함수입니다.</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>Blob이 특정 컨테이너에 추가될 때마다 크기 조정된 이미지를 만드는 F# 함수</value>
+    <value>(미리 보기) 지정된 컨테이너에 Blob이 추가될 때마다 크기 조정된 이미지를 만드는 F# 함수입니다.</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>포털 "실행" 단추를 통해 수동으로 트리거되는 C# 함수입니다.</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>포털의 "실행" 단추를 통해 수동으로 트리거되는 F# 함수</value>
+    <value>(미리 보기) 포털의 "실행" 단추를 통해 수동으로 트리거되는 F# 함수입니다.</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
-    <value>포털 "실행" 단추를 통해 수동으로 트리거되는 Node.js 함수입니다.</value>
+    <value>포털 "실행" 단추를 통해 수동으로 트리거되는 JavaScript 함수입니다.</value>
   </data>
   <data name="QueueTriggerBash_description" xml:space="preserve">
-    <value>지정된 Azure Storage 큐에 메시지가 추가될 때마다 실행되는 bash 함수입니다.</value>
+    <value>(실험적) 지정된 Azure Queue Storage에 메시지가 추가될 때마다 실행되는 Bash 함수입니다.</value>
   </data>
   <data name="QueueTriggerBatch_description" xml:space="preserve">
-    <value>지정된 Azure Storage 큐에 메시지가 추가될 때마다 실행되는 batch 함수입니다.</value>
+    <value>(실험적) 지정된 Azure Queue Storage에 메시지가 추가될 때마다 실행되는 Batch 함수입니다.</value>
   </data>
   <data name="QueueTriggerCSharp_description" xml:space="preserve">
-    <value>지정된 Azure Storage 큐에 메시지가 추가될 때마다 실행되는 C# 함수입니다.</value>
+    <value>지정된 Azure Queue Storage에 메시지가 추가될 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>지정된 Azure Storage 큐에 메시지가 추가될 때마다 실행되는 F# 함수입니다.</value>
+    <value>(미리 보기) 지정된 Azure Queue Storage에 메시지가 추가될 때마다 실행되는 F# 함수입니다.</value>
   </data>
   <data name="QueueTriggerNodeJS_description" xml:space="preserve">
-    <value>지정된 Azure Storage 큐에 메시지가 추가될 때마다 실행되는 Node.js 함수입니다.</value>
+    <value>지정된 Azure Queue Storage에 메시지가 추가될 때마다 실행되는 JavaScript 함수입니다.</value>
   </data>
   <data name="QueueTriggerPHP_description" xml:space="preserve">
-    <value>지정된 Azure Storage 큐에 메시지가 추가될 때마다 실행되는 PHP 함수입니다.</value>
+    <value>(실험적) 지정된 Azure Queue Storage에 메시지가 추가될 때마다 실행되는 PHP 함수입니다.</value>
   </data>
   <data name="QueueTriggerPowerShell_description" xml:space="preserve">
-    <value>지정된 Azure Storage 큐에 메시지가 추가될 때마다 실행되는 PowerShell 함수입니다.</value>
+    <value>(미리 보기) 지정된 Azure Queue Storage에 메시지가 추가될 때마다 실행되는 PowerShell 함수입니다.</value>
   </data>
   <data name="QueueTriggerPython_description" xml:space="preserve">
-    <value>지정된 Azure Storage 큐에 메시지가 추가될 때마다 실행되는 Python 함수입니다.</value>
+    <value>(실험적) 지정된 Azure Queue Storage에 메시지가 추가될 때마다 실행되는 Python 함수입니다.</value>
   </data>
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
-    <value>SaaS 공급자에 파일이 추가될 때마다 실행되는 Batch 함수입니다.</value>
+    <value>(Experimental) A Batch function that will be run whenever a file is added to a External File provider.</value>
   </data>
   <data name="SaasFileTriggerCSharp_description" xml:space="preserve">
-    <value>SaaS 공급자에 파일이 추가될 때마다 실행되는 C# 함수입니다.</value>
+    <value>(Preview) A C# function that will be run whenever a file is added to a External File provider.</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>파일이 SaaS 공급자에 추가될 때마다 실행되는 F# 함수입니다.</value>
+    <value>(Preview) An F# function that will be run whenever a file is added to a External File provider.</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
-    <value>SaaS 공급자에 파일이 추가될 때마다 실행되는 Node.js 함수입니다.</value>
+    <value>(Preview) A JavaScript function that will be run whenever a file is added to a External File provider.</value>
+  </data>
+  <data name="SaasFileTokenNodeJS_description" xml:space="preserve">
+    <value>A JavaScript function that will be run whenever a file is added to a External File provider.</value>
   </data>
   <data name="SaasTableCSharp_description" xml:space="preserve">
-    <value>HTTP 요청을 받을 때 SaaS 테이블에서 엔터티를 가져오는 C# 함수입니다.</value>
+    <value>(Experimental) A C# function that fetches entities from a External Table when it receives an HTTP request.</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>HTTP 요청을 받으면 SaaS 테이블에서 엔터티를 가져오는 F# 함수입니다.</value>
+    <value>(Experimental) An F# function that fetches entities from a External Table when it receives an HTTP request.</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>지정된 컨테이너 및 Blob 이름에 대해 Azure Storage의 SAS 토큰을 생성하는 F# 함수입니다.</value>
+    <value>(미리 보기) 지정된 컨테이너 및 Blob 이름에 대해 Azure Storage의 SAS 토큰을 생성하는 F# 함수입니다.</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>지정된 Azure Storage 큐에 새 명령이 추가될 때마다 SendGrid 확인 메일을 보내는 C# 함수입니다.</value>
+    <value>(미리 보기) 특정 큐에 새 항목이 추가될 때 확인 메일을 보내는 C# 함수입니다.</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>지정된 Azure Storage 큐에 새 명령이 추가될 때마다 SendGrid 확인 메일을 보내는 F# 함수</value>
+    <value>(미리 보기) 특정 큐에 새 항목이 추가될 때 확인 메일을 보내는 F# 함수입니다.</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>지정된 Azure Storage 큐에 새 명령이 추가될 때마다 SendGrid 확인 메일을 보내는 Node.js 함수입니다.</value>
+    <value>(미리 보기) 특정 큐에 새 항목이 추가될 때 확인 메일을 보내는 C# 함수입니다.</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
-    <value>지정된 Service Bus 큐에 메시지가 추가될 때마다 실행되는 C# 함수입니다.</value>
+    <value>지정된 Service Bus 큐에 메시지가 추가될 때마다 실행되는 JavaScript 함수입니다.</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>지정된 Service Bus 큐에 메시지가 추가될 때마다 실행되는 F# 함수</value>
+    <value>(미리 보기) 지정된 Service Bus 큐에 메시지가 추가될 때마다 실행되는 F# 함수입니다.</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
-    <value>지정된 Service Bus 큐에 메시지가 추가될 때마다 실행되는 Node.js 함수입니다.</value>
+    <value>지정된 Service Bus 큐에 메시지가 추가될 때마다 실행되는 JavaScript 함수입니다.</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>지정된 Service Bus 토픽에 메시지가 추가될 때마다 실행되는 F# 함수</value>
+    <value>(미리 보기) 지정된 Service Bus 항목에 메시지가 추가될 때마다 실행되는 F# 함수입니다.</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
-    <value>지정된 Service Bus 토픽에 메시지가 추가될 때마다 실행되는 Node.js 함수입니다.</value>
+    <value>지정된 Service Bus 항목에 메시지가 추가될 때마다 실행되는 JavaScript 함수입니다.</value>
   </data>
   <data name="TimerTriggerCSharp_description" xml:space="preserve">
     <value>지정된 일정으로 실행되는 C# 함수입니다.</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>지정된 일정으로 실행되는 F# 함수</value>
+    <value>(미리 보기) 지정된 일정으로 실행되는 F# 함수입니다.</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
-    <value>지정된 일정으로 실행되는 Node.js 함수입니다.</value>
+    <value>지정된 일정으로 실행되는 JavaScript 함수입니다.</value>
   </data>
   <data name="TimerTriggerPowerShell_description" xml:space="preserve">
-    <value>지정된 일정으로 실행되는 PowerShell 함수입니다.</value>
+    <value>(미리 보기) 지정된 일정으로 실행되는 PowerShell 함수입니다.</value>
   </data>
   <data name="timerTrigger_schedule_errorText" xml:space="preserve">
     <value>Cron 식이 잘못되었습니다. 자세한 내용은 &lt;a target='_blank' href='https://azure.microsoft.com/ko-kr/documentation/articles/functions-bindings-timer/'&gt;설명서&lt;/a&gt;를 참조하세요.</value>
@@ -1097,5 +1100,41 @@
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
     <value>SendGrid API 키</value>
+  </data>
+  <data name="bot_botId_help" xml:space="preserve">
+    <value>메시지를 작성하여 봇에 보낼 때 작업의 보낸 사람 속성에 사용되는 ID이며, 보낸 작업의 ChannelAccount.Id를 채웁니다.</value>
+  </data>
+  <data name="bot_botId_label" xml:space="preserve">
+    <value>보낸 사람 ID</value>
+  </data>
+  <data name="bot_in_displayName" xml:space="preserve">
+    <value>Bot Framework</value>
+  </data>
+  <data name="bot_out_displayName" xml:space="preserve">
+    <value>Bot Framework</value>
+  </data>
+  <data name="bot_in_secret_help" xml:space="preserve">
+    <value>직접 회선 키는 Bot Framework 포털의 직접 회선 채널 구성 페이지에서 생성할 수 있습니다. 이 필드를 비워 두면 응용 프로그램 설정 'AzureWebJobsBotFrameworkDirectLineSecret'의 값이 검색됩니다.</value>
+  </data>
+  <data name="bot_in_secret_label" xml:space="preserve">
+    <value>직접 회선 키</value>
+  </data>
+  <data name="bot_out_secret_help" xml:space="preserve">
+    <value>직접 회선 키는 Bot Framework 포털의 직접 회선 채널 구성 페이지에서 생성할 수 있습니다. 이 필드를 비워 두면 응용 프로그램 설정 'AzureWebJobsBotFrameworkDirectLineSecret'의 값이 검색됩니다.</value>
+  </data>
+  <data name="bot_out_secret_label" xml:space="preserve">
+    <value>직접 회선 키</value>
+  </data>
+  <data name="bot_in_name_help" xml:space="preserve">
+    <value>코드에서 입력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+  </data>
+  <data name="bot_in_name_label" xml:space="preserve">
+    <value>봇 매개 변수 이름</value>
+  </data>
+  <data name="bot_out_name_help" xml:space="preserve">
+    <value>코드에서 출력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+  </data>
+  <data name="bot_out_name_label" xml:space="preserve">
+    <value>봇 매개 변수 이름</value>
   </data>
 </root>
