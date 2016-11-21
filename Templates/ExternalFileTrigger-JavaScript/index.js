@@ -1,6 +1,6 @@
-module.exports = function (context, input) {
+module.exports = function (context, inputFile) {
     context.log('JavaScript External trigger function processed a file!');
     context.done(null, {
-        output: input
+        output: inputFile
     });
 };
