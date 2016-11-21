@@ -1,3 +1,3 @@
 echo OFF
-SET /p input=<%input%
-echo Windows Batch script processed blob '%input%'
+SET /p inputBlob=<%inputBlob%
+echo Windows Batch script processed blob '%inputBlob%'
