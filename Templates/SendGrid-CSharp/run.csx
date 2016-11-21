@@ -14,11 +14,11 @@ using Microsoft.Azure.WebJobs.Host;
 //      "from": "Azure Functions <samples@functions.com>"
 //   }
 // }
-public static void Run(Order order, out Mail message, TraceWriter log)
+public static Mail Run(Order order, TraceWriter log)
 {
     log.Info($"C# Queue trigger function processed order: {order.OrderId}");
     
-    message = new Mail()
+    Mail message = new Mail()
     {
         Subject = $"Thanks for your order (#{order.OrderId})!"
     };
@@ -30,6 +30,7 @@ public static void Run(Order order, out Mail message, TraceWriter log)
     };
 
     message.AddContent(content);    
+    return message;
 }
 
 public class Order
