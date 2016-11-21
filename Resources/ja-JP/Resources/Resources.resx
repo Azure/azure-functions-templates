@@ -172,7 +172,7 @@
     <value>イベント ハブ名</value>
   </data>
   <data name="queueOut_displayName" xml:space="preserve">
-    <value>Azure Storage キュー</value>
+    <value>Azure Queue Storage</value>
   </data>
   <data name="queueOut_name_help" xml:space="preserve">
     <value>これは出力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
@@ -217,10 +217,10 @@
     <value>スケジュール</value>
   </data>
   <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
-    <value>SaaS テーブル接続の接続文字列。</value>
+    <value>外部テーブル接続のための接続文字列。</value>
   </data>
   <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
-    <value>SaaS テーブル接続</value>
+    <value>外部テーブル接続</value>
   </data>
   <data name="variables_apiHubTableDataSetHelp" xml:space="preserve">
     <value>バインドするデータ セットの名前。テーブルまたはエンティティにバインドする場合は、'default' のままにします。</value>
@@ -346,10 +346,10 @@
     <value>入力ファイルのパス</value>
   </data>
   <data name="apiHubFileIn_connection_label" xml:space="preserve">
-    <value>SaaS ファイル接続</value>
+    <value>外部ファイル接続</value>
   </data>
   <data name="apiHubFileIn_connection_help" xml:space="preserve">
-    <value>SaaS ファイル接続への接続文字列。</value>
+    <value>外部ファイル接続への接続文字列。</value>
   </data>
   <data name="apiHubFileTrigger_name_label" xml:space="preserve">
     <value>ファイル パラメーター名</value>
@@ -364,16 +364,16 @@
     <value>トリガーをオンにするパス。このパスは存在する必要があります。</value>
   </data>
   <data name="apiHubFileTrigger_connection_label" xml:space="preserve">
-    <value>SaaS ファイル接続</value>
+    <value>外部ファイル接続</value>
   </data>
   <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
-    <value>SaaS ファイル接続への接続文字列。</value>
+    <value>外部ファイル接続への接続文字列。</value>
   </data>
   <data name="apiHubTableIn_displayName" xml:space="preserve">
-    <value>SaaS テーブル</value>
+    <value>外部テーブル</value>
   </data>
   <data name="apiHubTableOut_displayName" xml:space="preserve">
-    <value>SaaS テーブル</value>
+    <value>外部テーブル</value>
   </data>
   <data name="httpTrigger_displayName" xml:space="preserve">
     <value>HTTP</value>
@@ -418,19 +418,19 @@
     <value>これはトリガーのモードです。"Standard" は、要求がセマンティクスを追加しない標準 HTTP であることを意味します。"Webhook" は、指定した webhook の種類に従って要求が処理されることを意味します。</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
-    <value>SaaS ファイル</value>
+    <value>外部ファイル</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>SaaS ファイル</value>
+    <value>外部ファイル</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
-    <value>Azure Storage BLOB</value>
+    <value>Azure BLOB ストレージ</value>
   </data>
   <data name="blobOut_displayName" xml:space="preserve">
-    <value>Azure Storage BLOB</value>
+    <value>Azure BLOB ストレージ</value>
   </data>
   <data name="blobTrigger_displayName" xml:space="preserve">
-    <value>Azure Storage BLOB</value>
+    <value>Azure BLOB ストレージ</value>
   </data>
   <data name="documentDBIn_collectionName_help" xml:space="preserve">
     <value>これはデータの読み取り元のデータベース内のコレクションの名前です。</value>
@@ -616,7 +616,7 @@
     <value>テスト送信の有効化 (オプション)</value>
   </data>
   <data name="queueTrigger_displayName" xml:space="preserve">
-    <value>Azure Storage キュー</value>
+    <value>Azure Queue Storage</value>
   </data>
   <data name="sendGrid_displayName" xml:space="preserve">
     <value>SendGrid</value>
@@ -763,7 +763,7 @@
     <value>トピック名</value>
   </data>
   <data name="tableIn_displayName" xml:space="preserve">
-    <value>Azure Storage テーブル</value>
+    <value>Azure Table Storage</value>
   </data>
   <data name="tableIn_filter_help" xml:space="preserve">
     <value>これはテーブル クエリの結果のフィルター処理に使用される省略可能なクエリ式です。この設定は C# 関数には適用できません。</value>
@@ -805,7 +805,7 @@
     <value>読み込むレコードの最大数 (省略可能)</value>
   </data>
   <data name="tableout_displayName" xml:space="preserve">
-    <value>Azure Storage テーブル</value>
+    <value>Azure Table Storage</value>
   </data>
   <data name="tableout_name_help" xml:space="preserve">
     <value>これは出力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
@@ -823,16 +823,16 @@
     <value>テーブル名</value>
   </data>
   <data name="BlobTriggerBatch_description" xml:space="preserve">
-    <value>指定したコンテナーに BLOB が追加されるたびに実行されるバッチ関数</value>
+    <value>(試験段階) 指定したコンテナーに BLOB が追加されると実行されるバッチ関数</value>
   </data>
   <data name="BlobTriggerCSharp_description" xml:space="preserve">
     <value>指定したコンテナーに BLOB が追加されるたびに実行される C# 関数</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>指定されたコンテナーに BLOB が追加されると実行される F# 関数</value>
+    <value>(プレビュー) 指定されたコンテナーに BLOB が追加されると実行される F# 関数</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
-    <value>指定したコンテナーに BLOB が追加されるたびに実行される Node.js 関数</value>
+    <value>指定したコンテナーに BLOB が追加されるたびに実行される JavaScript 関数</value>
   </data>
   <data name="CSharp_description" xml:space="preserve">
     <value>GitHub Webhook 要求を受信するたびに実行される C# 関数</value>
@@ -850,7 +850,7 @@
     <value>トリガー、入力、または出力のない空の F# 関数</value>
   </data>
   <data name="EmptyNodeJS_description" xml:space="preserve">
-    <value>トリガー、入力、または出力のない空の Node.js 関数</value>
+    <value>トリガー、入力、または出力のない空の JavaScript 関数</value>
   </data>
   <data name="EmptyPHP_description" xml:space="preserve">
     <value>トリガー、入力、または出力のない空の PHP 関数</value>
@@ -865,184 +865,187 @@
     <value>イベント ハブが新しいイベントを受信するたびに実行される C# 関数</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>イベント ハブが新しいイベントを受信すると実行される F# 関数</value>
+    <value>(プレビュー) イベント ハブが新しいイベントを受信すると実行される F# 関数</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
-    <value>イベント ハブが新しいイベントを受信するたびに実行される Node.js 関数</value>
+    <value>イベント ハブが新しいイベントを受信するたびに実行される JavaScript 関数</value>
   </data>
   <data name="EventHubTriggerPython_description" xml:space="preserve">
-    <value>イベント ハブが新しいイベントを受信するたびに実行される Python 関数</value>
+    <value>(試験段階) イベント ハブが新しいイベントを受信すると実行される Python 関数</value>
   </data>
   <data name="FaceLocatorCSharp_description" xml:space="preserve">
-    <value>コンテナー内にある BLOB (画像) の面のディメンション (周囲の四角形) を抽出して、Azure Storage テーブルに保存する C# 関数</value>
+    <value>画像を処理して、顔に外接する長方形を出力する C# 関数</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>コンテナー内の BLOB (画像) にある顔の寸法 (包囲長方形) を抽出し、Azure ストレージ テーブルに格納する F# 関数</value>
+    <value>(プレビュー) 画像を処理して、顔に外接する長方形を出力する F# 関数</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
-    <value>コンテナー内にある BLOB (画像) の面のディメンション (周囲の四角形) を抽出して、Azure Storage テーブルに保存する Node.js 関数</value>
+    <value>画像を処理して、顔に外接する長方形を出力する JavaScript 関数</value>
   </data>
   <data name="GenericWebhookCSharp_description" xml:space="preserve">
     <value>webhook 要求を受信するたびに実行される C# 関数</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>webhook 要求を受信すると実行される F# 関数</value>
+    <value>(プレビュー) webhook 要求を受信すると実行される F# 関数</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
-    <value>webhook 要求を受信するたびに実行される Node.js 関数</value>
+    <value>webhook 要求を受信するたびに実行される JavaScript 関数</value>
   </data>
   <data name="GitHubCommenterNodeJS_description" xml:space="preserve">
-    <value>GitHub Webhook 要求を受信するたびに実行される Node.js 関数</value>
+    <value>GitHub Webhook 要求を受信するたびに実行される JavaScript 関数</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>GitHub webhook 要求を受信すると実行される F# 関数</value>
+    <value>(プレビュー) GitHub webhook 要求を受信すると実行される F# 関数</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>GitHub Webhook 要求を受信するたびに実行される C# 関数</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>GitHub webhook 要求を受信すると実行される F# 関数</value>
+    <value>(プレビュー) GitHub webhook 要求を受信すると実行される F# 関数</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
-    <value>GitHub Webhook 要求を受信するたびに実行される Node.js 関数</value>
+    <value>GitHub Webhook 要求を受信するたびに実行される JavaScript 関数</value>
   </data>
   <data name="HttpGETCRUDC_description" xml:space="preserve">
     <value>HTTP 要求の受信時にストレージ テーブルからエンティティをフェッチする C# 関数</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>HTTP 要求を受信するとストレージ テーブルからエンティティをフェッチする F# 関数</value>
+    <value>(プレビュー) HTTP 要求を受信するとストレージ テーブルからエンティティをフェッチする F# 関数</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
-    <value>HTTP 要求の受信時にストレージ テーブルからエンティティをフェッチする Node.js 関数</value>
+    <value>HTTP 要求の受信時にストレージ テーブルからエンティティをフェッチする JavaScript 関数</value>
   </data>
   <data name="HttpGETCRUDPHP_description" xml:space="preserve">
-    <value>HTTP 要求を受け取るとストレージ テーブルからエンティティをフェッチする PHP 関数</value>
+    <value>(試験段階) HTTP 要求を受信するとストレージ テーブルからエンティティをフェッチする PHP 関数</value>
   </data>
   <data name="HttpPOSTCRUDCSharp_description" xml:space="preserve">
     <value>HTTP 要求の受信時にストレージ テーブルにエンティティを追加する C# 関数</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>HTTP 要求を受信するとストレージ テーブルにエンティティを追加する F# 関数</value>
+    <value>(プレビュー) HTTP 要求を受信するとストレージ テーブルにエンティティを追加する F# 関数</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
-    <value>HTTP 要求の受信時にストレージ テーブルにエンティティを追加する Node.js 関数</value>
+    <value>HTTP 要求の受信時にストレージ テーブルにエンティティを追加する JavaScript 関数</value>
   </data>
   <data name="HttpPUTCRUDC_description" xml:space="preserve">
     <value>HTTP 要求を受信するとストレージ テーブルのエンティティを更新する C# 関数</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>HTTP 要求を受信するとストレージ テーブルのエンティティを更新する F# 関数</value>
+    <value>(プレビュー) HTTP 要求を受信するとストレージ テーブルのエンティティを更新する F# 関数</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
-    <value>HTTP 要求を受信するたびに実行されるバッチ関数</value>
+    <value>(試験段階) HTTP 要求を受信すると実行されるバッチ関数</value>
   </data>
   <data name="HttpTriggerCSharp_description" xml:space="preserve">
     <value>HTTP 要求を受信するたびに実行される C# 関数</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>HTTP 要求を受信すると実行される F# 関数</value>
+    <value>(プレビュー) HTTP 要求を受信すると実行される F# 関数</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
-    <value>HTTP 要求を受信するたびに実行される Node.js 関数</value>
+    <value>HTTP 要求を受信するたびに実行される JavaScript 関数</value>
   </data>
   <data name="HttpTriggerPowerShell_description" xml:space="preserve">
-    <value>HTTP 要求を受信するたびに実行される PowerShell 関数</value>
+    <value>(プレビュー) HTTP 要求を受信すると実行される PowerShell 関数</value>
   </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>指定したコンテナーに BLOB が追加されるたびにサイズを変更した画像を作成する C# 関数</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>指定されたコンテナーに BLOB が追加されると、サイズを変更した画像を作成する F# 関数</value>
+    <value>(プレビュー) 指定されたコンテナーに BLOB が追加されると、サイズを変更した画像を作成する F# 関数</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>ポータルの [実行] ボタンから手動でトリガーされる C# 関数</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>ポータルの [実行] ボタンにより手動でトリガーされる F# 関数</value>
+    <value>(プレビュー) ポータルの [実行] ボタンにより手動でトリガーされる F# 関数</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
-    <value>ポータルの [実行] ボタンから手動でトリガーされる Node.js 関数</value>
+    <value>ポータルの [実行] ボタンから手動でトリガーされる JavaScript 関数</value>
   </data>
   <data name="QueueTriggerBash_description" xml:space="preserve">
-    <value>指定した Azure Storage キューにメッセージが追加されるたびに実行されるバッシュ関数</value>
+    <value>(試験段階) 指定した Azure Queue Storage にメッセージが追加されると実行されるバッシュ関数</value>
   </data>
   <data name="QueueTriggerBatch_description" xml:space="preserve">
-    <value>指定した Azure Storage キューにメッセージが追加されるたびに実行されるバッチ関数</value>
+    <value>(試験段階) 指定した Azure Queue Storage にメッセージが追加されると実行されるバッチ関数</value>
   </data>
   <data name="QueueTriggerCSharp_description" xml:space="preserve">
-    <value>指定した Azure Storage キューにメッセージが追加されるたびに実行される C# 関数</value>
+    <value>指定した Azure Queue Storage にメッセージが追加されると実行される C# 関数</value>
   </data>
   <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>指定した Azure Storage キューにメッセージが追加されるたびに実行される F# 関数</value>
+    <value>(プレビュー) 指定した Azure Queue Storage にメッセージが追加されると実行される F# 関数</value>
   </data>
   <data name="QueueTriggerNodeJS_description" xml:space="preserve">
-    <value>指定した Azure Storage キューにメッセージが追加されるたびに実行される Node.js 関数</value>
+    <value>指定した Azure Queue Storage にメッセージが追加されると実行される JavaScript 関数</value>
   </data>
   <data name="QueueTriggerPHP_description" xml:space="preserve">
-    <value>指定した Azure Storage キューにメッセージが追加されるたびに実行される PHP 関数</value>
+    <value>(試験段階) 指定した Azure Queue Storage にメッセージが追加されると実行される PHP 関数</value>
   </data>
   <data name="QueueTriggerPowerShell_description" xml:space="preserve">
-    <value>指定した Azure Storage キューにメッセージが追加されるたびに実行される PowerShell 関数</value>
+    <value>(プレビュー) 指定した Azure Queue Storage にメッセージが追加されると実行される PowerShell 関数</value>
   </data>
   <data name="QueueTriggerPython_description" xml:space="preserve">
-    <value>指定した Azure Storage キューにメッセージが追加されるたびに実行される Python 関数</value>
+    <value>(試験段階) 指定した Azure Queue Storage にメッセージが追加されると実行される Python 関数</value>
   </data>
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
-    <value>SaaS プロバイダーにファイルが追加されるたびに実行されるバッチ関数。</value>
+    <value>(試験段階) 外部ファイル プロバイダーにファイルが追加されると実行されるバッチ関数。</value>
   </data>
   <data name="SaasFileTriggerCSharp_description" xml:space="preserve">
-    <value>SaaS プロバイダーにファイルが追加されるたびに実行される C# 関数。</value>
+    <value>(プレビュー) 外部ファイル プロバイダーにファイルが追加されると実行される C# 関数。</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>SaaS プロバイダーにファイルが追加されると実行される F# 関数。</value>
+    <value>(プレビュー) 外部ファイル プロバイダーにファイルが追加されると実行される F# 関数。</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
-    <value>SaaS プロバイダーにファイルが追加されるたびに実行される Node.js 関数。</value>
+    <value>(プレビュー) 外部ファイル プロバイダーにファイルが追加されると実行される JavaScript 関数。</value>
+  </data>
+  <data name="SaasFileTokenNodeJS_description" xml:space="preserve">
+    <value>外部ファイル プロバイダーにファイルが追加されると実行される JavaScript 関数。</value>
   </data>
   <data name="SaasTableCSharp_description" xml:space="preserve">
-    <value>HTTP 要求の受信時に SaaS テーブルからエンティティをフェッチする C# 関数。</value>
+    <value>(試験段階) HTTP 要求を受信すると外部テーブルからエンティティをフェッチする C# 関数。</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>HTTP 要求を受信すると SaaS テーブルからエンティティをフェッチする F# 関数。</value>
+    <value>(試験段階) HTTP 要求を受信すると外部テーブルからエンティティをフェッチする F# 関数。</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>特定のコンテナーおよび BLOB 名について、Azure Storage の SAS トークンを生成する F# 関数。</value>
+    <value>(プレビュー) 特定のコンテナーおよび BLOB 名について、Azure Storage の SAS トークンを生成する F# 関数。</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>指定した Azure Storage キューに新しいオーダーが追加されるたびに SendGrid 確認メールを送信する C# 関数</value>
+    <value>(プレビュー) 特定のキューに新しい項目が追加されたときに確認メールを送信する C# 関数</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>指定された Azure Storage キューに新しい注文が追加されると SendGrid 確認メールを送信する F# 関数</value>
+    <value>(プレビュー) 特定のキューに新しい項目が追加されたときに確認メールを送信する F# 関数</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>指定した Azure Storage キューに新しいオーダーが追加されるたびに SendGrid 確認メールを送信する Node.js 関数</value>
+    <value>(プレビュー) 特定のキューに新しい項目が追加されたときに確認メールを送信する C# 関数</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
-    <value>指定した Service Bus キューにメッセージが追加されるたびに実行される C# 関数</value>
+    <value>指定した Service Bus キューにメッセージが追加されるたびに実行される JavaScript 関数</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>指定された Service Bus キューにメッセージが追加されると実行される F# 関数</value>
+    <value>(プレビュー) 指定された Service Bus キューにメッセージが追加されると実行される F# 関数</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
-    <value>指定した Service Bus キューにメッセージが追加されるたびに実行される Node.js 関数</value>
+    <value>指定した Service Bus キューにメッセージが追加されるたびに実行される JavaScript 関数</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>指定された Service Bus トピックにメッセージが追加されると実行される F# 関数</value>
+    <value>(プレビュー) 指定された Service Bus トピックにメッセージが追加されると実行される F# 関数</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
-    <value>指定した Service Bus トピックにメッセージが追加されるたびに実行される Node.js 関数</value>
+    <value>指定した Service Bus トピックにメッセージが追加されるたびに実行される JavaScript 関数</value>
   </data>
   <data name="TimerTriggerCSharp_description" xml:space="preserve">
     <value>指定したスケジュールで実行される C# 関数</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>指定されたスケジュールで実行される F# 関数</value>
+    <value>(プレビュー) 指定されたスケジュールで実行される F# 関数</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
-    <value>指定のスケジュールで実行される Node.js 関数</value>
+    <value>指定のスケジュールで実行される JavaScript 関数</value>
   </data>
   <data name="TimerTriggerPowerShell_description" xml:space="preserve">
-    <value>指定したスケジュールで実行される PowerShell 関数</value>
+    <value>(プレビュー) 指定されたスケジュールで実行される PowerShell 関数</value>
   </data>
   <data name="timerTrigger_schedule_errorText" xml:space="preserve">
     <value>無効な CRON 式です。詳細については、&lt;a target='_blank' href='https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/'&gt;ドキュメント&lt;/a&gt;を参照してください。</value>
@@ -1097,5 +1100,41 @@
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
     <value>SendGrid API キー</value>
+  </data>
+  <data name="bot_botId_help" xml:space="preserve">
+    <value>ボットに対してメッセージを作成および送信している間に [アクティビティ] の [送信元] プロパティで使われる ID です。ここには、送信されたアクティビティの ChannelAccount.Id が入力されます。</value>
+  </data>
+  <data name="bot_botId_label" xml:space="preserve">
+    <value>送信者 ID</value>
+  </data>
+  <data name="bot_in_displayName" xml:space="preserve">
+    <value>ボットのフレームワーク</value>
+  </data>
+  <data name="bot_out_displayName" xml:space="preserve">
+    <value>ボットのフレームワーク</value>
+  </data>
+  <data name="bot_in_secret_help" xml:space="preserve">
+    <value>ダイレクト ライン キーはボット フレームワーク ポータルの [Direct Line channel configuration] ページで生成できます。このフィールドを空にした場合には、アプリケーションの設定 'AzureWebJobsBotFrameworkDirectLineSecret' から値が検索されます</value>
+  </data>
+  <data name="bot_in_secret_label" xml:space="preserve">
+    <value>ダイレクト ライン キー</value>
+  </data>
+  <data name="bot_out_secret_help" xml:space="preserve">
+    <value>ダイレクト ライン キーはボット フレームワーク ポータルの [Direct Line channel configuration] ページで生成できます。このフィールドを空にした場合には、アプリケーションの設定 'AzureWebJobsBotFrameworkDirectLineSecret' から値が検索されます</value>
+  </data>
+  <data name="bot_out_secret_label" xml:space="preserve">
+    <value>ダイレクト ライン キー</value>
+  </data>
+  <data name="bot_in_name_help" xml:space="preserve">
+    <value>これは入力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+  </data>
+  <data name="bot_in_name_label" xml:space="preserve">
+    <value>ボットのパラメーター名</value>
+  </data>
+  <data name="bot_out_name_help" xml:space="preserve">
+    <value>これは出力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+  </data>
+  <data name="bot_out_name_label" xml:space="preserve">
+    <value>ボットのパラメーター名</value>
   </data>
 </root>

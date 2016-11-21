@@ -172,7 +172,7 @@
     <value>事件中心名称</value>
   </data>
   <data name="queueOut_displayName" xml:space="preserve">
-    <value>Azure 存储队列</value>
+    <value>Azure 队列存储</value>
   </data>
   <data name="queueOut_name_help" xml:space="preserve">
     <value>这是代码中用于输出绑定绑定到的参数的名称。</value>
@@ -217,10 +217,10 @@
     <value>计划</value>
   </data>
   <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
-    <value>SaaS 表连接的连接字符串。</value>
+    <value>The connection string for your External Table connection.</value>
   </data>
   <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
-    <value>SaaS 表连接</value>
+    <value>External Table connection</value>
   </data>
   <data name="variables_apiHubTableDataSetHelp" xml:space="preserve">
     <value>要绑定到的数据集的名称。如果绑定到表或实体，请保留为默认。</value>
@@ -346,10 +346,10 @@
     <value>输入文件路径</value>
   </data>
   <data name="apiHubFileIn_connection_label" xml:space="preserve">
-    <value>SaaS 文件连接</value>
+    <value>外部文件连接</value>
   </data>
   <data name="apiHubFileIn_connection_help" xml:space="preserve">
-    <value>SaaS 文件连接的连接字符串。</value>
+    <value>到外部文件连接的连接字符串。</value>
   </data>
   <data name="apiHubFileTrigger_name_label" xml:space="preserve">
     <value>文件参数名称</value>
@@ -364,16 +364,16 @@
     <value>要在其中触发的路径。此路径必须存在。</value>
   </data>
   <data name="apiHubFileTrigger_connection_label" xml:space="preserve">
-    <value>SaaS 文件连接</value>
+    <value>外部文件连接</value>
   </data>
   <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
-    <value>SaaS 文件连接的连接字符串。</value>
+    <value>到外部文件连接的连接字符串。</value>
   </data>
   <data name="apiHubTableIn_displayName" xml:space="preserve">
-    <value>SaaS 表</value>
+    <value>External Table</value>
   </data>
   <data name="apiHubTableOut_displayName" xml:space="preserve">
-    <value>SaaS 表</value>
+    <value>External Table</value>
   </data>
   <data name="httpTrigger_displayName" xml:space="preserve">
     <value>HTTP</value>
@@ -418,19 +418,19 @@
     <value>这是触发器的模式。“标准”是指请求将为无任何其他语义的标准 HTTP。"Webhook" 指请求将根据指定的 Webhook 类型进行处理。</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
-    <value>SaaS 文件</value>
+    <value>外部文件</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>SaaS 文件</value>
+    <value>外部文件</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
-    <value>Azure 存储 Blob</value>
+    <value>Azure Blob 存储</value>
   </data>
   <data name="blobOut_displayName" xml:space="preserve">
-    <value>Azure 存储 Blob</value>
+    <value>Azure Blob 存储</value>
   </data>
   <data name="blobTrigger_displayName" xml:space="preserve">
-    <value>Azure 存储 Blob</value>
+    <value>Azure Blob 存储</value>
   </data>
   <data name="documentDBIn_collectionName_help" xml:space="preserve">
     <value>这是将从中读取数据的数据库的内部集合的名称。</value>
@@ -616,7 +616,7 @@
     <value>启用测试发送(可选)</value>
   </data>
   <data name="queueTrigger_displayName" xml:space="preserve">
-    <value>Azure 存储队列</value>
+    <value>Azure 队列存储</value>
   </data>
   <data name="sendGrid_displayName" xml:space="preserve">
     <value>SendGrid</value>
@@ -763,7 +763,7 @@
     <value>主题名称</value>
   </data>
   <data name="tableIn_displayName" xml:space="preserve">
-    <value>Azure 存储表</value>
+    <value>Azure 表存储</value>
   </data>
   <data name="tableIn_filter_help" xml:space="preserve">
     <value>这是用于筛选表查询结果的可选查询表达式。此设置不适用于 C# 函数。</value>
@@ -805,7 +805,7 @@
     <value>要读取的记录的最大数量(可选)</value>
   </data>
   <data name="tableout_displayName" xml:space="preserve">
-    <value>Azure 存储表</value>
+    <value>Azure 表存储</value>
   </data>
   <data name="tableout_name_help" xml:space="preserve">
     <value>这是代码中用于输出绑定绑定到的参数的名称。</value>
@@ -823,16 +823,16 @@
     <value>表单名称</value>
   </data>
   <data name="BlobTriggerBatch_description" xml:space="preserve">
-    <value>一个 Batch 函数，每当将 blob 添加到指定容器时它都会运行</value>
+    <value>(实验)一个 Batch 函数，每当将 blob 添加到指定容器时它都会运行</value>
   </data>
   <data name="BlobTriggerCSharp_description" xml:space="preserve">
     <value>一个 C# 函数，每当将 blob 添加到指定容器时它都会运行</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>每当将 blob 添加到指定容器时都会运行的 F# 函数</value>
+    <value>(预览)一个 F# 函数，每当将 blob 添加到指定容器时它都会运行</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
-    <value>一个 Node.js 函数，每当将 blob 添加到指定容器时它都会运行</value>
+    <value>一个 JavaScript 函数，每当将 blob 添加到指定容器时它都会运行</value>
   </data>
   <data name="CSharp_description" xml:space="preserve">
     <value>一个 C# 函数，每当收到 GitHub Webhook 请求时它都会运行</value>
@@ -850,7 +850,7 @@
     <value>一个空 F# 函数，没有触发器、输入或输出</value>
   </data>
   <data name="EmptyNodeJS_description" xml:space="preserve">
-    <value>一个空 Node.js 函数，没有触发器、输入或输出</value>
+    <value>一个空 JavaScript 函数，没有触发器、输入或输出</value>
   </data>
   <data name="EmptyPHP_description" xml:space="preserve">
     <value>一个空 PHP 函数，没有触发器、输入或输出</value>
@@ -865,184 +865,187 @@
     <value>一个 C# 函数，每当事件中心收到一个新事件时它都会运行</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>每当事件中心收到新事件时都会运行的 F# 函数</value>
+    <value>(预览)一个 F# 函数，每当事件中心收到新事件时它都会运行</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
-    <value>一个 Node.js 函数，每当事件中心收到一个新事件时它都会运行</value>
+    <value>一个 JavaScript 函数，每当事件中心收到一个新事件时它都会运行</value>
   </data>
   <data name="EventHubTriggerPython_description" xml:space="preserve">
-    <value>一个 Python 函数，每当事件中心收到一个新事件时它都会运行</value>
+    <value>(实验)一个 Python 函数，每当事件中心收到一个新事件时它都会运行</value>
   </data>
   <data name="FaceLocatorCSharp_description" xml:space="preserve">
-    <value>一个 C# 函数，用于在容器中提取 blob (映像)中的平面尺寸(周围边框)并将其存储在 Azure 存储表中</value>
+    <value>一个 C# 函数，它会处理映像并输出平面的边框</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>在容器中提取 blob (映像)中的平面尺寸(周围边框)并将其存储在 Azure 存储表中的 F# 函数</value>
+    <value>(预览)一个 F# 函数，它会处理映像并输出平面的边框</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
-    <value>一个 Node.js 函数，用于在容器中提取 blob (映像)中的平面尺寸(周围边框)并将其存储在 Azure 存储表中</value>
+    <value>一个 JavaScript 函数，它会处理映像并输出平面的边框</value>
   </data>
   <data name="GenericWebhookCSharp_description" xml:space="preserve">
     <value>一个 C# 函数，每当收到 Webhook 请求时它都会运行</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>每当收到 Webhook 请求时都会运行的 F# 函数</value>
+    <value>(预览)一个 F# 函数，每当它收到 Webhook 请求时都会运行</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
-    <value>一个 Node.js 函数，每当收到 Webhook 请求时它都会运行</value>
+    <value>一个 JavaScript 函数，每当收到 Webhook 请求时它都会运行</value>
   </data>
   <data name="GitHubCommenterNodeJS_description" xml:space="preserve">
-    <value>一个 Node.js 函数，每当收到 GitHub Webhook 请求时它都会运行</value>
+    <value>一个 JavaScript 函数，每当收到 GitHub Webhook 请求时它都会运行</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>每当收到 GitHub Webhook 请求时都会运行的 F# 函数</value>
+    <value>(预览)一个 F# 函数，每当它收到 GitHub Webhook 请求时都会运行</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>一个 C# 函数，每当收到 GitHub Webhook 请求时它都会运行</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>每当收到 GitHub Webhook 请求时都会运行的 F# 函数</value>
+    <value>(预览)一个 F# 函数，每当它收到 GitHub Webhook 请求时都会运行</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
-    <value>一个 Node.js 函数，每当收到 GitHub Webhook 请求时它都会运行</value>
+    <value>一个 JavaScript 函数，每当收到 GitHub Webhook 请求时它都会运行</value>
   </data>
   <data name="HttpGETCRUDC_description" xml:space="preserve">
     <value>一个 C# 函数，当它收到 HTTP 请求时会从存储表获取实体</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>当收到 HTTP 请求时会从存储表提取实体的 F# 函数</value>
+    <value>(预览)一个 F# 函数，当它收到 HTTP 请求时会从存储表提取实体</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
-    <value>一个 Node.js 函数，当它收到 HTTP 请求时会从存储表获取实体</value>
+    <value>一个 JavaScript 函数，当它收到 HTTP 请求时会从存储表获取实体</value>
   </data>
   <data name="HttpGETCRUDPHP_description" xml:space="preserve">
-    <value>PHP 函数在接收到 HTTP 请求时从存储表中提取实体</value>
+    <value>(实验)一个 PHP 函数，当它收到 HTTP 请求时会从存储表提取实体</value>
   </data>
   <data name="HttpPOSTCRUDCSharp_description" xml:space="preserve">
     <value>一个 C# 函数，当它收到 HTTP 请求时会向存储表添加实体</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>当收到 HTTP 请求时会向存储表添加实体的 F# 函数</value>
+    <value>(预览)一个 F# 函数，当它收到 HTTP 请求时会向存储表添加实体</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
-    <value>一个 Node.js 函数，当它收到 HTTP 请求时会向存储表添加实体</value>
+    <value>一个 JavaScript 函数，当它收到 HTTP 请求时会向存储表添加实体</value>
   </data>
   <data name="HttpPUTCRUDC_description" xml:space="preserve">
     <value>当收到 HTTP 请求时会更新存储表中的实体的 C# 函数</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>当收到 HTTP 请求时会更新存储表中的实体的 F# 函数</value>
+    <value>(预览)一个 F# 函数，当它收到 HTTP 请求时会更新存储表中的实体</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
-    <value>一个 batch 函数，每当它收到 HTTP 请求时都会运行</value>
+    <value>(实验)一个 Batch 函数，每当它收到 HTTP 请求时都会运行</value>
   </data>
   <data name="HttpTriggerCSharp_description" xml:space="preserve">
     <value>一个 C# 函数，每当它收到 HTTP 请求时都会运行</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>每当收到 HTTP 请求时都会运行的 F# 函数</value>
+    <value>(预览)一个 F# 函数，每当它收到 HTTP 请求时都会运行</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
-    <value>一个 Node.js 函数，每当它收到 HTTP 请求时都会运行</value>
+    <value>一个 JavaScript 函数，每当它收到 HTTP 请求时都会运行</value>
   </data>
   <data name="HttpTriggerPowerShell_description" xml:space="preserve">
-    <value>一个 PowerShell 函数，每当它收到 HTTP 请求时都会运行</value>
+    <value>(预览)一个 PowerShell 函数，每当它收到 HTTP 请求时都会运行</value>
   </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>一个 C# 函数，每当将 blob 添加到指定容器时它都会创建已调整大小的映像</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>每当将 blob 添加到指定容器时都会创建已调整大小的映像的 F# 函数</value>
+    <value>(预览)一个 F# 函数，每当将 blob 添加到指定容器时它都会创建已调整大小的映像</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>一个 C# 函数，通过门户“运行”按钮手动触发</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>通过门户“运行”按钮手动触发的 F# 函数</value>
+    <value>(预览)一个 F# 函数，可通过门户“运行”按钮手动触发</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
-    <value>一个 Node.js 函数，通过门户“运行”按钮手动触发</value>
+    <value>一个 JavaScript 函数，通过门户“运行”按钮手动触发</value>
   </data>
   <data name="QueueTriggerBash_description" xml:space="preserve">
-    <value>一个 bash 函数，每当将消息添加到指定的 Azure 存储队列时它都会运行</value>
+    <value>(实验)一个 bash 函数，每当将消息添加到指定的 Azure 队列存储时它都会运行</value>
   </data>
   <data name="QueueTriggerBatch_description" xml:space="preserve">
-    <value>一个 batch 函数，每当将消息添加到指定的 Azure 存储队列时它都会运行</value>
+    <value>(实验)一个 Batch 函数，每当将消息添加到指定的 Azure 队列存储时它都会运行</value>
   </data>
   <data name="QueueTriggerCSharp_description" xml:space="preserve">
-    <value>一个 C# 函数，每当将消息添加到指定的 Azure 存储队列时它都会运行</value>
+    <value>一个 C# 函数，每当将消息添加到指定的 Azure 队列存储时它都会运行</value>
   </data>
   <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>一个 F# 函数，每当将消息添加到指定的 Azure 存储队列时它都会运行</value>
+    <value>(预览)一个 F# 函数，每当将消息添加到指定的 Azure 队列存储时它都会运行</value>
   </data>
   <data name="QueueTriggerNodeJS_description" xml:space="preserve">
-    <value>一个 Node.js 函数，每当将消息添加到指定的 Azure 存储队列时它都会运行</value>
+    <value>一个 JavaScript 函数，每当将消息添加到指定的 Azure 队列存储时它都会运行</value>
   </data>
   <data name="QueueTriggerPHP_description" xml:space="preserve">
-    <value>一个 PHP 函数，每当将消息添加到指定的 Azure 存储队列时它都会运行</value>
+    <value>(实验)一个 PHP 函数，每当将消息添加到指定的 Azure 队列存储时它都会运行</value>
   </data>
   <data name="QueueTriggerPowerShell_description" xml:space="preserve">
-    <value>一个 PowerShell 函数，每当将消息添加到指定的 Azure 存储队列时它都会运行</value>
+    <value>(预览)一个 PowerShell 函数，每当将消息添加到指定的 Azure 队列存储时它都会运行</value>
   </data>
   <data name="QueueTriggerPython_description" xml:space="preserve">
-    <value>一个 Python 函数，每当将消息添加到指定的 Azure 存储队列时它都会运行</value>
+    <value>(实验)一个 Python 函数，每当将消息添加到指定的 Azure 队列存储时它都会运行</value>
   </data>
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
-    <value>一个 Batch 函数，每当将文件添加到 SaaS 提供程序时它都会运行。</value>
+    <value>(Experimental) A Batch function that will be run whenever a file is added to a External File provider.</value>
   </data>
   <data name="SaasFileTriggerCSharp_description" xml:space="preserve">
-    <value>一个 C# 函数，每当将文件添加到 SaaS 提供程序时它都会运行。</value>
+    <value>(Preview) A C# function that will be run whenever a file is added to a External File provider.</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>每当将文件添加到 SaaS 提供程序时都会运行的 F# 函数。</value>
+    <value>(Preview) An F# function that will be run whenever a file is added to a External File provider.</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
-    <value>一个 Node.js 函数，每当将文件添加到 SaaS 提供程序时它都会运行。</value>
+    <value>(Preview) A JavaScript function that will be run whenever a file is added to a External File provider.</value>
+  </data>
+  <data name="SaasFileTokenNodeJS_description" xml:space="preserve">
+    <value>A JavaScript function that will be run whenever a file is added to a External File provider.</value>
   </data>
   <data name="SaasTableCSharp_description" xml:space="preserve">
-    <value>一个 C# 函数，每当它收到 HTTP 请求时都将从 SaaS 表获取实体。</value>
+    <value>(Experimental) A C# function that fetches entities from a External Table when it receives an HTTP request.</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>每当收到 HTTP 请求时都会从 SaaS 表提取实体的 F# 函数。</value>
+    <value>(Experimental) An F# function that fetches entities from a External Table when it receives an HTTP request.</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>为给定容器和 blob 名称的 Azure 存储生成 SAS 令牌的 F# 函数。</value>
+    <value>(预览)一个 F# 函数，它给定容器和 blob 名称的 Azure 存储生成 SAS 令牌。</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>一个 C# 函数，每当将新订单添加到指定的 Azure 存储队列时它都会发送 SendGrid 确认邮件。</value>
+    <value>(预览)一个 C# 函数，每当将新项添加到特定的队列时它都会发送一封确认电子邮件</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>每当将新顺序添加到指定 Azure 存储队列时都会发送 SendGrid 确认邮件的 F# 函数</value>
+    <value>(预览)一个 F# 函数，每当将新项添加到特定的队列时它都会发送一封确认电子邮件</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>一个 Node.js 函数，每当将新订单添加到指定的 Azure 存储队列时它都会发送 SendGrid 确认邮件。</value>
+    <value>(预览)一个 C# 函数，每当将新项添加到特定的队列时它都会发送一封确认电子邮件</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
-    <value>一个 C# 函数，每当将消息添加到指定的服务总线队列时它都会运行</value>
+    <value>一个 JavaScript 函数，每当将消息添加到指定的服务总线队列时它都会运行</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>每当将消息添加到指定服务总线队列时都会运行的 F# 函数</value>
+    <value>(预览)一个 F# 函数，每当将消息添加到指定服务总线队列时它都会运行</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
-    <value>一个 Node.js 函数，每当将消息添加到指定的服务总线队列时它都会运行</value>
+    <value>一个 JavaScript 函数，每当将消息添加到指定的服务总线队列时它都会运行</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>每当将消息添加到指定服务总线主题时都会运行的 F# 函数</value>
+    <value>(预览)一个 F# 函数，每当将消息添加到指定服务总线主题时它都会运行</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
-    <value>一个 Node.js 函数，每当将消息添加到指定的服务总线主题时它都会运行</value>
+    <value>一个 JavaScript 函数，每当将消息添加到指定的服务总线主题时它都会运行</value>
   </data>
   <data name="TimerTriggerCSharp_description" xml:space="preserve">
     <value>将在指定的计划上运行的 C# 函数</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>将按指定计划运行的 F# 函数</value>
+    <value>(预览)一个 F# 函数，它将按指定计划运行</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
-    <value>将在指定的计划上运行的 Node.js 函数</value>
+    <value>将在指定的计划上运行的 JavaScript 函数</value>
   </data>
   <data name="TimerTriggerPowerShell_description" xml:space="preserve">
-    <value>将在指定的计划上运行的 PowerShell 函数</value>
+    <value>(预览)一个 PowerShell 函数，它将按指定计划运行</value>
   </data>
   <data name="timerTrigger_schedule_errorText" xml:space="preserve">
     <value>无效的 Cron 表达式。请查阅&lt;a target='_blank' href='https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/'&gt;文档&lt;/a&gt;以了解详细信息。</value>
@@ -1097,5 +1100,41 @@
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
     <value>SendGrid API 密钥</value>
+  </data>
+  <data name="bot_botId_help" xml:space="preserve">
+    <value>这是在创建消息并将其发送到 bot 时，活动的 From 属性所使用的 ID，这将填充已发送活动的 ChannelAccount.Id。</value>
+  </data>
+  <data name="bot_botId_label" xml:space="preserve">
+    <value>发件人 ID</value>
+  </data>
+  <data name="bot_in_displayName" xml:space="preserve">
+    <value>Bot Framework</value>
+  </data>
+  <data name="bot_out_displayName" xml:space="preserve">
+    <value>Bot Framework</value>
+  </data>
+  <data name="bot_in_secret_help" xml:space="preserve">
+    <value>Direct Line 键可从 Bot Framework 门户的 Direct Line 通道配置页面生成；将此字段留空将在应用程序设置 "AzureWebJobsBotFrameworkDirectLineSecret" 中查找值</value>
+  </data>
+  <data name="bot_in_secret_label" xml:space="preserve">
+    <value>Direct Line 键</value>
+  </data>
+  <data name="bot_out_secret_help" xml:space="preserve">
+    <value>Direct Line 键可从 Bot Framework 门户的 Direct Line 通道配置页面生成；将此字段留空将在应用程序设置 "AzureWebJobsBotFrameworkDirectLineSecret" 中查找值</value>
+  </data>
+  <data name="bot_out_secret_label" xml:space="preserve">
+    <value>Direct Line 键</value>
+  </data>
+  <data name="bot_in_name_help" xml:space="preserve">
+    <value>这是代码中用于输入绑定绑定到的参数的名称。</value>
+  </data>
+  <data name="bot_in_name_label" xml:space="preserve">
+    <value>Bot 参数名称</value>
+  </data>
+  <data name="bot_out_name_help" xml:space="preserve">
+    <value>这是代码中用于输出绑定绑定到的参数的名称。</value>
+  </data>
+  <data name="bot_out_name_label" xml:space="preserve">
+    <value>Bot 参数名称</value>
   </data>
 </root>

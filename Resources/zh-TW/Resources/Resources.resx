@@ -172,7 +172,7 @@
     <value>事件中樞名稱</value>
   </data>
   <data name="queueOut_displayName" xml:space="preserve">
-    <value>Azure 儲存體佇列</value>
+    <value>Azure 佇列儲存體</value>
   </data>
   <data name="queueOut_name_help" xml:space="preserve">
     <value>此為程式碼中輸出繫結的繫結目標參數名稱。</value>
@@ -217,10 +217,10 @@
     <value>排程</value>
   </data>
   <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
-    <value>您 SaaS 資料表連線的連接字串。</value>
+    <value>您外部資料表連線的連接字串。</value>
   </data>
   <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
-    <value>SaaS 資料表連線</value>
+    <value>外部資料表連線</value>
   </data>
   <data name="variables_apiHubTableDataSetHelp" xml:space="preserve">
     <value>要繫結至的資料集名稱。若要繫結至資料表或實體則保留為「預設」。</value>
@@ -346,10 +346,10 @@
     <value>輸入檔案路徑</value>
   </data>
   <data name="apiHubFileIn_connection_label" xml:space="preserve">
-    <value>SaaS 檔案連線</value>
+    <value>外部檔案連線</value>
   </data>
   <data name="apiHubFileIn_connection_help" xml:space="preserve">
-    <value>您 SaaS 檔案連線的連接字串。</value>
+    <value>您外部檔案連線的連接字串。</value>
   </data>
   <data name="apiHubFileTrigger_name_label" xml:space="preserve">
     <value>檔案參數名稱</value>
@@ -364,16 +364,16 @@
     <value>要觸發的路徑。此路徑必須存在。</value>
   </data>
   <data name="apiHubFileTrigger_connection_label" xml:space="preserve">
-    <value>SaaS 檔案連線</value>
+    <value>外部檔案連線</value>
   </data>
   <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
-    <value>您 SaaS 檔案連線的連接字串。</value>
+    <value>您外部檔案連線的連接字串。</value>
   </data>
   <data name="apiHubTableIn_displayName" xml:space="preserve">
-    <value>SaaS 資料表</value>
+    <value>外部資料表</value>
   </data>
   <data name="apiHubTableOut_displayName" xml:space="preserve">
-    <value>SaaS 資料表</value>
+    <value>外部資料表</value>
   </data>
   <data name="httpTrigger_displayName" xml:space="preserve">
     <value>HTTP</value>
@@ -418,19 +418,19 @@
     <value>此為觸發程序模式。「標準」表示要求將為不具其他語意的標準 HTTP。「Webhook」表示要求將根據指定的 webhook 類型處理。</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
-    <value>SaaS 檔案</value>
+    <value>外部檔案</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>SaaS 檔案</value>
+    <value>外部檔案</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
-    <value>Azure 儲存體 Blob</value>
+    <value>Azure Blob 儲存體</value>
   </data>
   <data name="blobOut_displayName" xml:space="preserve">
-    <value>Azure 儲存體 Blob</value>
+    <value>Azure Blob 儲存體</value>
   </data>
   <data name="blobTrigger_displayName" xml:space="preserve">
-    <value>Azure 儲存體 Blob</value>
+    <value>Azure Blob 儲存體</value>
   </data>
   <data name="documentDBIn_collectionName_help" xml:space="preserve">
     <value>此為您資料庫中資料讀取來源的集合名稱。</value>
@@ -616,7 +616,7 @@
     <value>啟用測試傳送 (可省略)</value>
   </data>
   <data name="queueTrigger_displayName" xml:space="preserve">
-    <value>Azure 儲存體佇列</value>
+    <value>Azure 佇列儲存體</value>
   </data>
   <data name="sendGrid_displayName" xml:space="preserve">
     <value>SendGrid</value>
@@ -763,7 +763,7 @@
     <value>主題名稱</value>
   </data>
   <data name="tableIn_displayName" xml:space="preserve">
-    <value>Azure 儲存體資料表</value>
+    <value>Azure 資料表儲存體</value>
   </data>
   <data name="tableIn_filter_help" xml:space="preserve">
     <value>此為選用的查詢運算式，用於篩選資料表查詢的結果。此設定不適用於 C# 函式。</value>
@@ -805,7 +805,7 @@
     <value>要讀取的記錄數目上限 (選用)</value>
   </data>
   <data name="tableout_displayName" xml:space="preserve">
-    <value>Azure 儲存體資料表</value>
+    <value>Azure 資料表儲存體</value>
   </data>
   <data name="tableout_name_help" xml:space="preserve">
     <value>此為程式碼中輸出繫結的繫結目標參數名稱。</value>
@@ -823,16 +823,16 @@
     <value>資料表名稱</value>
   </data>
   <data name="BlobTriggerBatch_description" xml:space="preserve">
-    <value>每當 Blob 新增至指定的容器時，將會執行的 Batch 函式</value>
+    <value>(實驗性) 每當 Blob 新增至指定的容器時，將會執行的 Batch 函式</value>
   </data>
   <data name="BlobTriggerCSharp_description" xml:space="preserve">
     <value>每當 Blob 新增至指定的容器時，將會執行的 C# 函式</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>每當 Blob 新增至指定的容器時，將會執行的 F# 函式</value>
+    <value>(預覽) 每當 Blob 新增至指定的容器時，將會執行的 F# 函式</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
-    <value>每當 Blob 新增至指定的容器時，將會執行的 Node.js 函式</value>
+    <value>每當 Blob 新增至指定的容器時，將會執行的 JavaScript 函式</value>
   </data>
   <data name="CSharp_description" xml:space="preserve">
     <value>每當接收 GitHub webhook 要求時，將會執行的 C# 函式</value>
@@ -850,7 +850,7 @@
     <value>空白 F# 函式，不具觸發程序、輸入或輸出</value>
   </data>
   <data name="EmptyNodeJS_description" xml:space="preserve">
-    <value>空白 Node.js 函式，不具觸發程序、輸入或輸出</value>
+    <value>空白 JavaScript 函式，不具觸發程序、輸入或輸出</value>
   </data>
   <data name="EmptyPHP_description" xml:space="preserve">
     <value>空白 PHP 函式，不具觸發程序、輸入或輸出</value>
@@ -865,184 +865,187 @@
     <value>每當事件中樞接收新事件時，將會執行的 C# 函式</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>每當事件中樞接收新事件時，將會執行的 F# 函式</value>
+    <value>(預覽) 每當事件中樞接收新事件時，將會執行的 F# 函式</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
-    <value>每當事件中樞接收新事件時，將會執行的 Node.js 函式</value>
+    <value>每當事件中樞接收新事件時，將會執行的 JavaScript 函式</value>
   </data>
   <data name="EventHubTriggerPython_description" xml:space="preserve">
-    <value>每當事件中樞接收新事件時，將會執行的 Python 函式</value>
+    <value>(實驗性) 每當事件中樞接收新事件時，將會執行的 Python 函式</value>
   </data>
   <data name="FaceLocatorCSharp_description" xml:space="preserve">
-    <value>C# 函式，會擷取容器中 Blob (影像) 各面的維度 (周圍的矩形)，並於 Azure 儲存體資料表中加以儲存。</value>
+    <value>C# 函式，會處理影像及輸出面的週框</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>F# 函式，會擷取容器中 Blob (影像) 各面的維度 (周圍的矩形)，並於 Azure 儲存體資料表中加以儲存</value>
+    <value>(預覽) F# 函式，會處理影像及輸出面的週框</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
-    <value>Node.js 函式，會擷取容器中 Blob (影像) 各面的維度 (周圍的矩形)，並於 Azure 儲存體資料表中加以儲存。</value>
+    <value>JavaScript 函式，會處理影像及輸出面的週框</value>
   </data>
   <data name="GenericWebhookCSharp_description" xml:space="preserve">
     <value>每當接收 webhook 要求時，將會執行的 C# 函式</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>每當接收 webhook 要求時，將會執行的 F# 函式</value>
+    <value>(預覽) 每當接收 webhook 要求時，將會執行的 F# 函式</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
-    <value>每當接收 webhook 要求時，將會執行的 Node.js 函式</value>
+    <value>每當接收 webhook 要求時，將會執行的 JavaScript 函式</value>
   </data>
   <data name="GitHubCommenterNodeJS_description" xml:space="preserve">
-    <value>每當接收 GitHub webhook 要求時，將會執行的 Node.js 函式</value>
+    <value>每當接收 GitHub webhook 要求時，將會執行的 JavaScript 函式</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>每當接收 GitHub webhook 要求時，將會執行的 F# 函式</value>
+    <value>(預覽) 每當接收 GitHub webhook 要求時，將會執行的 F# 函式</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>每當接收 GitHub webhook 要求時，將會執行的 C# 函式</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>每當接收 GitHub webhook 要求時，將會執行的 F# 函式</value>
+    <value>(預覽) 每當接收 GitHub webhook 要求時，將會執行的 F# 函式</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
-    <value>每當接收 GitHub webhook 要求時，將會執行的 Node.js 函式</value>
+    <value>每當接收 GitHub webhook 要求時，將會執行的 JavaScript 函式</value>
   </data>
   <data name="HttpGETCRUDC_description" xml:space="preserve">
     <value>C# 函式，會在接收 HTTP 要求時從儲存體資料表擷取實體</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>F# 函式，會在接收 HTTP 要求時從儲存體資料表擷取實體</value>
+    <value>(預覽) F# 函式，會在接收 HTTP 要求時從儲存體資料表擷取實體</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
-    <value>Node.js 函式，會在接收 HTTP 要求時從儲存體資料表擷取實體</value>
+    <value>JavaScript 函式，會在接收 HTTP 要求時從儲存體資料表擷取實體</value>
   </data>
   <data name="HttpGETCRUDPHP_description" xml:space="preserve">
-    <value>PHP 函式，收到 HTTP 要求時會從儲存體資料表擷取實體</value>
+    <value>(實驗性) PHP 函式，收到 HTTP 要求時會從儲存體資料表擷取實體</value>
   </data>
   <data name="HttpPOSTCRUDCSharp_description" xml:space="preserve">
     <value>C# 函式，會在接收 HTTP 要求時將實體新增至儲存體資料表</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>F# 函式，會在接收 HTTP 要求時將實體新增至儲存體資料表</value>
+    <value>(預覽) F# 函式，會在接收 HTTP 要求時將實體新增至儲存體資料表</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
-    <value>Node.js 函式，會在接收 HTTP 要求時將實體新增至儲存體資料表</value>
+    <value>JavaScript 函式，會在接收 HTTP 要求時將實體新增至儲存體資料表</value>
   </data>
   <data name="HttpPUTCRUDC_description" xml:space="preserve">
     <value>C# 函式，會在接收 HTTP 要求時更新儲存體資料表中的實體</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>F# 函式，會在接收 HTTP 要求時更新儲存體資料表中的實體</value>
+    <value>(預覽) F# 函式，會在接收 HTTP 要求時更新儲存體資料表中的實體</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
-    <value>每當接收 HTTP 要求時，將會執行的 Batch 函式</value>
+    <value>(實驗性) 每當接收 HTTP 要求時，將會執行的 Batch 函式</value>
   </data>
   <data name="HttpTriggerCSharp_description" xml:space="preserve">
     <value>每當接收 HTTP 要求時，將會執行的 C# 函式</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>每當接收 HTTP 要求時，將會執行的 F# 函式</value>
+    <value>(預覽) 每當接收 HTTP 要求時，將會執行的 F# 函式</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
-    <value>每當接收 HTTP 要求時，將會執行的 Node.js 函式</value>
+    <value>每當接收 HTTP 要求時，將會執行的 JavaScript 函式</value>
   </data>
   <data name="HttpTriggerPowerShell_description" xml:space="preserve">
-    <value>每當接收 HTTP 要求時，將會執行的 PowerShell 函式</value>
+    <value>(預覽) 每當接收 HTTP 要求時，將會執行的 PowerShell 函式</value>
   </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>C# 函式，會在每次 Blob 新增至指定的容器時建立重新調整大小的影像</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>F# 函式，會在每次 Blob 新增至指定的容器時建立重新調整大小的影像</value>
+    <value>(預覽) F# 函式，會在每次 Blob 新增至指定的容器時建立重新調整大小的影像</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>C# 函式，透過入口網站「執行」按鈕手動觸發</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>F# 函式，透過入口網站「執行」按鈕手動觸發</value>
+    <value>(預覽) F# 函式，透過入口網站 [執行] 按鈕手動觸發</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
-    <value>Node.js 函式，透過入口網站「執行」按鈕手動觸發</value>
+    <value>JavaScript 函式，透過入口網站「執行」按鈕手動觸發</value>
   </data>
   <data name="QueueTriggerBash_description" xml:space="preserve">
-    <value>每當訊息新增至指定的 Azure 儲存體佇列時，將會執行的 Bash 函式</value>
+    <value>(實驗性) 每當訊息新增至指定的 Azure 佇列儲存體時，將會執行的 Bash 函式</value>
   </data>
   <data name="QueueTriggerBatch_description" xml:space="preserve">
-    <value>每當訊息新增至指定的 Azure 儲存體佇列時，將會執行的 Batch 函式</value>
+    <value>(實驗性) 每當訊息新增至指定的 Azure 佇列儲存體時，將會執行的 Batch 函式</value>
   </data>
   <data name="QueueTriggerCSharp_description" xml:space="preserve">
-    <value>每當訊息新增至指定的 Azure 儲存體佇列時，將會執行的 C# 函式</value>
+    <value>每當訊息新增至指定的 Azure 佇列儲存體時，將會執行的 C# 函式</value>
   </data>
   <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>每當訊息新增至指定的 Azure 儲存體佇列時，將會執行的 F# 函式</value>
+    <value>(預覽 )每當訊息新增至指定的 Azure 佇列儲存體時，將會執行的 F# 函式</value>
   </data>
   <data name="QueueTriggerNodeJS_description" xml:space="preserve">
-    <value>每當訊息新增至指定的 Azure 儲存體佇列時，將會執行的 Node.js 函式</value>
+    <value>每當訊息新增至指定的 Azure 佇列儲存體時，將會執行的 JavaScript 函式</value>
   </data>
   <data name="QueueTriggerPHP_description" xml:space="preserve">
-    <value>每當訊息新增至指定的 Azure 儲存體佇列時，將會執行的 PHP 函式</value>
+    <value>(實驗性) 每當訊息新增至指定的 Azure 佇列儲存體時，將會執行的 PHP 函式</value>
   </data>
   <data name="QueueTriggerPowerShell_description" xml:space="preserve">
-    <value>每當訊息新增至指定的 Azure 儲存體佇列時，將會執行的 PowerShell 函式</value>
+    <value>(預覽) 每當訊息新增至指定的 Azure 佇列儲存體時，將會執行的 PowerShell 函式</value>
   </data>
   <data name="QueueTriggerPython_description" xml:space="preserve">
-    <value>每當訊息新增至指定的 Azure 儲存體佇列時，將會執行的 Python 函式。</value>
+    <value>(實驗性) 每當訊息新增至指定的 Azure 佇列儲存體時，將會執行的 Python 函式</value>
   </data>
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
-    <value>每當檔案新增至 SaaS 提供者時，將會執行的 Bash 函式。</value>
+    <value>(實驗性) 每當檔案新增至外部檔案提供者時，將會執行的 Batch 函式。</value>
   </data>
   <data name="SaasFileTriggerCSharp_description" xml:space="preserve">
-    <value>每當檔案新增至 SaaS 提供者時，將會執行的 C# 函式。</value>
+    <value>(預覽) 每當檔案新增至外部檔案提供者時，將會執行的 C# 函式。</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>每當檔案新增至 SaaS 提供者時，將會執行的 F# 函式。</value>
+    <value>(預覽) 每當檔案新增至外部檔案提供者時，將會執行的 F# 函式。</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
-    <value>每當檔案新增至 SaaS 提供者時，將會執行的 Node.js 函式。</value>
+    <value>(預覽) 每當檔案新增至外部檔案提供者時，將會執行的 JavaScript 函式。</value>
+  </data>
+  <data name="SaasFileTokenNodeJS_description" xml:space="preserve">
+    <value>每當檔案新增至外部檔案提供者時，將會執行的 JavaScript 函式。</value>
   </data>
   <data name="SaasTableCSharp_description" xml:space="preserve">
-    <value>C# 函式，會在接收 HTTP 要求時從 SaaS 資料表擷取實體。</value>
+    <value>(實驗性) C# 函式，會在接收 HTTP 要求時從外部資料表擷取實體。</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>F# 函式，會在接收 HTTP 要求時從 SaaS 資料表擷取實體。</value>
+    <value>(實驗性) F# 函式，會在接收 HTTP 要求時從外部資料表擷取實體。</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>F# 函式，會為給定容器和 Blob 名稱產生 Azure 儲存體的 SAS 權杖。</value>
+    <value>(預覽) F# 函式，會為給定容器和 Blob 名稱產生 Azure 儲存體的 SAS 權杖。</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>C# 函式，會在每次順序新增至指定的 Azure 儲存體佇列時傳送 SendGrid 確認郵件</value>
+    <value>(預覽) C# 函式，會在新項目新增至特定佇列時傳送確認電子郵件</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>F# 函式，會在每次順序新增至指定的 Azure 儲存體佇列時傳送 SendGrid 確認郵件</value>
+    <value>(預覽) F# 函式，會在新項目新增至特定佇列時傳送確認電子郵件</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>Node.js 函式，會在每次順序新增至指定的 Azure 儲存體佇列時傳送 SendGrid 確認郵件</value>
+    <value>(預覽) C# 函式，會在新項目新增至特定佇列時傳送確認電子郵件</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
-    <value>每當訊息新增至指定的服務匯流排佇列時，將會執行的 C# 函式</value>
+    <value>每當訊息新增至指定的服務匯流排佇列時，將會執行的 JavaScript 函式</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>每當訊息新增至指定的服務匯流排佇列時，將會執行的 F# 函式</value>
+    <value>(預覽) 每當訊息新增至指定的服務匯流排佇列時，將會執行的 F# 函式</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
-    <value>每當訊息新增至指定的服務匯流排佇列時，將會執行的 Node.js 函式</value>
+    <value>每當訊息新增至指定的服務匯流排佇列時，將會執行的 JavaScript 函式</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>每當訊息新增至指定的服務匯流排主題時，將會執行的 F# 函式</value>
+    <value>(預覽) 每當訊息新增至指定的服務匯流排主題時，將會執行的 F# 函式</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
-    <value>每當訊息新增至指定的服務匯流排主題時，將會執行的 Node.js 函式</value>
+    <value>每當訊息新增至指定的服務匯流排主題時，將會執行的 JavaScript 函式</value>
   </data>
   <data name="TimerTriggerCSharp_description" xml:space="preserve">
     <value>C# 函式，會在指定的排程執行</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>F# 函式，會在指定的排程執行</value>
+    <value>(預覽) F# 函式，會在指定的排程執行</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
-    <value>Node.js 函式，會在指定的排程執行</value>
+    <value>JavaScript 函式，會在指定的排程執行</value>
   </data>
   <data name="TimerTriggerPowerShell_description" xml:space="preserve">
-    <value>PowerShell 函式，會在指定的排程執行</value>
+    <value>(預覽) PowerShell 函式，會在指定的排程執行</value>
   </data>
   <data name="timerTrigger_schedule_errorText" xml:space="preserve">
     <value>Cron 運算式無效。如需深入了解，請參閱&lt;a target='_blank' href='https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/'&gt;文件&lt;/a&gt;。</value>
@@ -1097,5 +1100,41 @@
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
     <value>SendGrid API 金鑰</value>
+  </data>
+  <data name="bot_botId_help" xml:space="preserve">
+    <value>建立並傳送訊息至 Bot 時，活動的 From 屬性將使用此識別碼，這會填入已傳送活動的 ChannelAccount.Id。</value>
+  </data>
+  <data name="bot_botId_label" xml:space="preserve">
+    <value>傳送者識別碼</value>
+  </data>
+  <data name="bot_in_displayName" xml:space="preserve">
+    <value>Bot Framework</value>
+  </data>
+  <data name="bot_out_displayName" xml:space="preserve">
+    <value>Bot Framework</value>
+  </data>
+  <data name="bot_in_secret_help" xml:space="preserve">
+    <value>直接線路金鑰可於 Bot Framework 入口網站的直接線路通道設定頁面直接產生; 若此欄位保留空白，則會在應用程式設定 'AzureWebJobsBotFrameworkDirectLineSecret' 中尋找值</value>
+  </data>
+  <data name="bot_in_secret_label" xml:space="preserve">
+    <value>直接線路金鑰</value>
+  </data>
+  <data name="bot_out_secret_help" xml:space="preserve">
+    <value>直接線路金鑰可於 Bot Framework 入口網站的直接線路通道設定頁面直接產生; 若此欄位保留空白，則會在應用程式設定 'AzureWebJobsBotFrameworkDirectLineSecret' 中尋找值</value>
+  </data>
+  <data name="bot_out_secret_label" xml:space="preserve">
+    <value>直接線路金鑰</value>
+  </data>
+  <data name="bot_in_name_help" xml:space="preserve">
+    <value>此為程式碼中輸入繫結的繫結目標參數名稱。</value>
+  </data>
+  <data name="bot_in_name_label" xml:space="preserve">
+    <value>Bot 參數名稱</value>
+  </data>
+  <data name="bot_out_name_help" xml:space="preserve">
+    <value>此為程式碼中輸出繫結的繫結目標參數名稱。</value>
+  </data>
+  <data name="bot_out_name_label" xml:space="preserve">
+    <value>Bot 參數名稱</value>
   </data>
 </root>
