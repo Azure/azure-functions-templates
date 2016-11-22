@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bindings", "Bindings", "{FACDC5B8-244C-4913-91B1-BA31BB7BDB61}"
 	ProjectSection(SolutionItems) = preProject
@@ -21,7 +21,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlobTrigger-CSharp", "BlobT
 	ProjectSection(SolutionItems) = preProject
 		Templates\BlobTrigger-CSharp\function.json = Templates\BlobTrigger-CSharp\function.json
 		Templates\BlobTrigger-CSharp\metadata.json = Templates\BlobTrigger-CSharp\metadata.json
+		Templates\BlobTrigger-CSharp\project.json = Templates\BlobTrigger-CSharp\project.json
+		Templates\BlobTrigger-CSharp\project.lock.json = Templates\BlobTrigger-CSharp\project.lock.json
+		Templates\BlobTrigger-CSharp\readme.md = Templates\BlobTrigger-CSharp\readme.md
 		Templates\BlobTrigger-CSharp\run.csx = Templates\BlobTrigger-CSharp\run.csx
+		Templates\BlobTrigger-CSharp\sample.dat = Templates\BlobTrigger-CSharp\sample.dat
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventHubTrigger-NodeJS", "EventHubTrigger-NodeJS", "{A09398BE-059F-4756-8FFF-A7DACFAB3DE3}"
@@ -49,6 +53,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HttpTrigger-CSharp", "HttpT
 	ProjectSection(SolutionItems) = preProject
 		Templates\HttpTrigger-CSharp\function.json = Templates\HttpTrigger-CSharp\function.json
 		Templates\HttpTrigger-CSharp\metadata.json = Templates\HttpTrigger-CSharp\metadata.json
+		Templates\HttpTrigger-CSharp\project.json = Templates\HttpTrigger-CSharp\project.json
+		Templates\HttpTrigger-CSharp\project.lock.json = Templates\HttpTrigger-CSharp\project.lock.json
 		Templates\HttpTrigger-CSharp\run.csx = Templates\HttpTrigger-CSharp\run.csx
 	EndProjectSection
 EndProject
@@ -119,6 +125,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TimerTrigger-CSharp", "Time
 	ProjectSection(SolutionItems) = preProject
 		Templates\TimerTrigger-CSharp\function.json = Templates\TimerTrigger-CSharp\function.json
 		Templates\TimerTrigger-CSharp\metadata.json = Templates\TimerTrigger-CSharp\metadata.json
+		Templates\TimerTrigger-CSharp\project.json = Templates\TimerTrigger-CSharp\project.json
+		Templates\TimerTrigger-CSharp\project.lock.json = Templates\TimerTrigger-CSharp\project.lock.json
 		Templates\TimerTrigger-CSharp\run.csx = Templates\TimerTrigger-CSharp\run.csx
 	EndProjectSection
 EndProject
@@ -147,6 +155,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Empty-CSharp", "Empty-CShar
 	ProjectSection(SolutionItems) = preProject
 		Templates\Empty-CSharp\function.json = Templates\Empty-CSharp\function.json
 		Templates\Empty-CSharp\metadata.json = Templates\Empty-CSharp\metadata.json
+		Templates\Empty-CSharp\project.json = Templates\Empty-CSharp\project.json
+		Templates\Empty-CSharp\project.lock.json = Templates\Empty-CSharp\project.lock.json
 		Templates\Empty-CSharp\run.csx = Templates\Empty-CSharp\run.csx
 	EndProjectSection
 EndProject
@@ -154,6 +164,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QueueTrigger-CSharp", "Queu
 	ProjectSection(SolutionItems) = preProject
 		Templates\QueueTrigger-CSharp\function.json = Templates\QueueTrigger-CSharp\function.json
 		Templates\QueueTrigger-CSharp\metadata.json = Templates\QueueTrigger-CSharp\metadata.json
+		Templates\QueueTrigger-CSharp\project.json = Templates\QueueTrigger-CSharp\project.json
+		Templates\QueueTrigger-CSharp\project.lock.json = Templates\QueueTrigger-CSharp\project.lock.json
 		Templates\QueueTrigger-CSharp\run.csx = Templates\QueueTrigger-CSharp\run.csx
 	EndProjectSection
 EndProject
@@ -161,6 +173,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GenericWebHook-CSharp", "Ge
 	ProjectSection(SolutionItems) = preProject
 		Templates\GenericWebHook-CSharp\function.json = Templates\GenericWebHook-CSharp\function.json
 		Templates\GenericWebHook-CSharp\metadata.json = Templates\GenericWebHook-CSharp\metadata.json
+		Templates\GenericWebHook-CSharp\project.json = Templates\GenericWebHook-CSharp\project.json
+		Templates\GenericWebHook-CSharp\project.lock.json = Templates\GenericWebHook-CSharp\project.lock.json
 		Templates\GenericWebHook-CSharp\run.csx = Templates\GenericWebHook-CSharp\run.csx
 	EndProjectSection
 EndProject
@@ -182,6 +196,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ManualTrigger-CSharp", "Man
 	ProjectSection(SolutionItems) = preProject
 		Templates\ManualTrigger-CSharp\function.json = Templates\ManualTrigger-CSharp\function.json
 		Templates\ManualTrigger-CSharp\metadata.json = Templates\ManualTrigger-CSharp\metadata.json
+		Templates\ManualTrigger-CSharp\project.json = Templates\ManualTrigger-CSharp\project.json
+		Templates\ManualTrigger-CSharp\project.lock.json = Templates\ManualTrigger-CSharp\project.lock.json
 		Templates\ManualTrigger-CSharp\run.csx = Templates\ManualTrigger-CSharp\run.csx
 		Templates\ManualTrigger-CSharp\sample.dat = Templates\ManualTrigger-CSharp\sample.dat
 	EndProjectSection
@@ -190,6 +206,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventHubTrigger-CSharp", "E
 	ProjectSection(SolutionItems) = preProject
 		Templates\EventHubTrigger-CSharp\function.json = Templates\EventHubTrigger-CSharp\function.json
 		Templates\EventHubTrigger-CSharp\metadata.json = Templates\EventHubTrigger-CSharp\metadata.json
+		Templates\EventHubTrigger-CSharp\project.json = Templates\EventHubTrigger-CSharp\project.json
+		Templates\EventHubTrigger-CSharp\project.lock.json = Templates\EventHubTrigger-CSharp\project.lock.json
 		Templates\EventHubTrigger-CSharp\run.csx = Templates\EventHubTrigger-CSharp\run.csx
 	EndProjectSection
 EndProject
@@ -197,6 +215,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHubWebHook-CSharp", "Git
 	ProjectSection(SolutionItems) = preProject
 		Templates\GitHubWebHook-CSharp\function.json = Templates\GitHubWebHook-CSharp\function.json
 		Templates\GitHubWebHook-CSharp\metadata.json = Templates\GitHubWebHook-CSharp\metadata.json
+		Templates\GenericWebHook-CSharp\project.json = Templates\GenericWebHook-CSharp\project.json
+		Templates\GenericWebHook-CSharp\project.lock.json = Templates\GenericWebHook-CSharp\project.lock.json
 		Templates\GitHubWebHook-CSharp\run.csx = Templates\GitHubWebHook-CSharp\run.csx
 	EndProjectSection
 EndProject
@@ -205,6 +225,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImageResizer-CSharp", "Imag
 		Templates\ImageResizer-CSharp\function.json = Templates\ImageResizer-CSharp\function.json
 		Templates\ImageResizer-CSharp\metadata.json = Templates\ImageResizer-CSharp\metadata.json
 		Templates\ImageResizer-CSharp\project.json = Templates\ImageResizer-CSharp\project.json
+		Templates\ImageResizer-CSharp\project.lock.json = Templates\ImageResizer-CSharp\project.lock.json
 		Templates\ImageResizer-CSharp\readme.md = Templates\ImageResizer-CSharp\readme.md
 		Templates\ImageResizer-CSharp\run.csx = Templates\ImageResizer-CSharp\run.csx
 	EndProjectSection
@@ -213,6 +234,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceBusQueueTrigger-CSha
 	ProjectSection(SolutionItems) = preProject
 		Templates\ServiceBusQueueTrigger-CSharp\function.json = Templates\ServiceBusQueueTrigger-CSharp\function.json
 		Templates\ServiceBusQueueTrigger-CSharp\metadata.json = Templates\ServiceBusQueueTrigger-CSharp\metadata.json
+		Templates\ServiceBusQueueTrigger-CSharp\project.json = Templates\ServiceBusQueueTrigger-CSharp\project.json
+		Templates\ServiceBusQueueTrigger-CSharp\project.lock.json = Templates\ServiceBusQueueTrigger-CSharp\project.lock.json
 		Templates\ServiceBusQueueTrigger-CSharp\run.csx = Templates\ServiceBusQueueTrigger-CSharp\run.csx
 	EndProjectSection
 EndProject
@@ -220,6 +243,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceBusTopicTrigger-CSha
 	ProjectSection(SolutionItems) = preProject
 		Templates\ServiceBusQueueTrigger-CSharp\function.json = Templates\ServiceBusQueueTrigger-CSharp\function.json
 		Templates\ServiceBusQueueTrigger-CSharp\metadata.json = Templates\ServiceBusQueueTrigger-CSharp\metadata.json
+		Templates\ServiceBusTopicTrigger-CSharp\project.json = Templates\ServiceBusTopicTrigger-CSharp\project.json
+		Templates\ServiceBusTopicTrigger-CSharp\project.lock.json = Templates\ServiceBusTopicTrigger-CSharp\project.lock.json
 		Templates\ServiceBusQueueTrigger-CSharp\run.csx = Templates\ServiceBusQueueTrigger-CSharp\run.csx
 	EndProjectSection
 EndProject
@@ -252,6 +277,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HttpPOST(CRUD)-CSharp", "Ht
 	ProjectSection(SolutionItems) = preProject
 		Templates\HttpPOST(CRUD)-CSharp\function.json = Templates\HttpPOST(CRUD)-CSharp\function.json
 		Templates\HttpPOST(CRUD)-CSharp\metadata.json = Templates\HttpPOST(CRUD)-CSharp\metadata.json
+		Templates\HttpPOST(CRUD)-CSharp\project.json = Templates\HttpPOST(CRUD)-CSharp\project.json
+		Templates\HttpPOST(CRUD)-CSharp\project.lock.json = Templates\HttpPOST(CRUD)-CSharp\project.lock.json
 		Templates\HttpPOST(CRUD)-CSharp\run.csx = Templates\HttpPOST(CRUD)-CSharp\run.csx
 		Templates\HttpPOST(CRUD)-CSharp\sample.dat = Templates\HttpPOST(CRUD)-CSharp\sample.dat
 	EndProjectSection
@@ -260,6 +287,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HttpGET(CRUD)-CSharp", "Htt
 	ProjectSection(SolutionItems) = preProject
 		Templates\HttpGET(CRUD)-CSharp\function.json = Templates\HttpGET(CRUD)-CSharp\function.json
 		Templates\HttpGET(CRUD)-CSharp\metadata.json = Templates\HttpGET(CRUD)-CSharp\metadata.json
+		Templates\HttpGET(CRUD)-CSharp\project.json = Templates\HttpGET(CRUD)-CSharp\project.json
+		Templates\HttpGET(CRUD)-CSharp\project.lock.json = Templates\HttpGET(CRUD)-CSharp\project.lock.json
 		Templates\HttpGET(CRUD)-CSharp\run.csx = Templates\HttpGET(CRUD)-CSharp\run.csx
 		Templates\HttpGET(CRUD)-CSharp\sample.dat = Templates\HttpGET(CRUD)-CSharp\sample.dat
 	EndProjectSection
@@ -292,6 +321,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SaaSFileTrigger-CSharp", "S
 	ProjectSection(SolutionItems) = preProject
 		Templates\SaaSFileTrigger-CSharp\function.json = Templates\SaaSFileTrigger-CSharp\function.json
 		Templates\SaaSFileTrigger-CSharp\metadata.json = Templates\SaaSFileTrigger-CSharp\metadata.json
+		Templates\SaaSFileTrigger-CSharp\project.json = Templates\SaaSFileTrigger-CSharp\project.json
+		Templates\SaaSFileTrigger-CSharp\project.lock.json = Templates\SaaSFileTrigger-CSharp\project.lock.json
 		Templates\SaaSFileTrigger-CSharp\run.csx = Templates\SaaSFileTrigger-CSharp\run.csx
 		Templates\SaaSFileTrigger-CSharp\sample.dat = Templates\SaaSFileTrigger-CSharp\sample.dat
 	EndProjectSection
@@ -308,6 +339,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHubCommenter-CSharp", "G
 	ProjectSection(SolutionItems) = preProject
 		Templates\GitHubCommenter-CSharp\function.json = Templates\GitHubCommenter-CSharp\function.json
 		Templates\GitHubCommenter-CSharp\metadata.json = Templates\GitHubCommenter-CSharp\metadata.json
+		Templates\GitHubCommenter-CSharp\project.json = Templates\GitHubCommenter-CSharp\project.json
+		Templates\GitHubCommenter-CSharp\project.lock.json = Templates\GitHubCommenter-CSharp\project.lock.json
 		Templates\GitHubCommenter-CSharp\run.csx = Templates\GitHubCommenter-CSharp\run.csx
 		Templates\GitHubCommenter-CSharp\sample.dat = Templates\GitHubCommenter-CSharp\sample.dat
 	EndProjectSection
@@ -316,6 +349,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FaceLocator-CSharp", "FaceL
 	ProjectSection(SolutionItems) = preProject
 		Templates\FaceLocator-CSharp\function.json = Templates\FaceLocator-CSharp\function.json
 		Templates\FaceLocator-CSharp\metadata.json = Templates\FaceLocator-CSharp\metadata.json
+		Templates\FaceLocator-CSharp\project.json = Templates\FaceLocator-CSharp\project.json
+		Templates\FaceLocator-CSharp\project.lock.json = Templates\FaceLocator-CSharp\project.lock.json
 		Templates\FaceLocator-CSharp\run.csx = Templates\FaceLocator-CSharp\run.csx
 		Templates\FaceLocator-CSharp\sample.dat = Templates\FaceLocator-CSharp\sample.dat
 	EndProjectSection
@@ -333,6 +368,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HttpPUT(CRUD)-CSharp", "Htt
 	ProjectSection(SolutionItems) = preProject
 		Templates\HttpPUT(CRUD)-CSharp\function.json = Templates\HttpPUT(CRUD)-CSharp\function.json
 		Templates\HttpPUT(CRUD)-CSharp\metadata.json = Templates\HttpPUT(CRUD)-CSharp\metadata.json
+		Templates\HttpPUT(CRUD)-CSharp\project.json = Templates\HttpPUT(CRUD)-CSharp\project.json
+		Templates\HttpPUT(CRUD)-CSharp\project.lock.json = Templates\HttpPUT(CRUD)-CSharp\project.lock.json
 		Templates\HttpPUT(CRUD)-CSharp\run.csx = Templates\HttpPUT(CRUD)-CSharp\run.csx
 		Templates\HttpPUT(CRUD)-CSharp\sample.dat = Templates\HttpPUT(CRUD)-CSharp\sample.dat
 	EndProjectSection
@@ -364,6 +401,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SendGrid-CSharp", "SendGrid
 	ProjectSection(SolutionItems) = preProject
 		Templates\SendGrid-CSharp\function.json = Templates\SendGrid-CSharp\function.json
 		Templates\SendGrid-CSharp\metadata.json = Templates\SendGrid-CSharp\metadata.json
+		Templates\SendGrid-CSharp\project.json = Templates\SendGrid-CSharp\project.json
+		Templates\SendGrid-CSharp\project.lock.json = Templates\SendGrid-CSharp\project.lock.json
 		Templates\SendGrid-CSharp\run.csx = Templates\SendGrid-CSharp\run.csx
 		Templates\SendGrid-CSharp\sample.dat = Templates\SendGrid-CSharp\sample.dat
 	EndProjectSection
@@ -393,6 +432,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Empty-FSharp", "Empty-FShar
 	ProjectSection(SolutionItems) = preProject
 		Templates\Empty-FSharp\function.json = Templates\Empty-FSharp\function.json
 		Templates\Empty-FSharp\metadata.json = Templates\Empty-FSharp\metadata.json
+		Templates\Empty-FSharp\project.json = Templates\Empty-FSharp\project.json
+		Templates\Empty-FSharp\project.lock.json = Templates\Empty-FSharp\project.lock.json
 		Templates\Empty-FSharp\run.fsx = Templates\Empty-FSharp\run.fsx
 	EndProjectSection
 EndProject
@@ -428,6 +469,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SasToken-CSharp", "SasToken
 	ProjectSection(SolutionItems) = preProject
 		Templates\SasToken-CSharp\function.json = Templates\SasToken-CSharp\function.json
 		Templates\SasToken-CSharp\metadata.json = Templates\SasToken-CSharp\metadata.json
+		Templates\SasToken-CSharp\project.json = Templates\SasToken-CSharp\project.json
+		Templates\SasToken-CSharp\project.lock.json = Templates\SasToken-CSharp\project.lock.json
 		Templates\SasToken-CSharp\readme.md = Templates\SasToken-CSharp\readme.md
 		Templates\SasToken-CSharp\run.csx = Templates\SasToken-CSharp\run.csx
 		Templates\SasToken-CSharp\sample.dat = Templates\SasToken-CSharp\sample.dat
@@ -447,6 +490,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SaaSTable-CSharp", "SaaSTab
 	ProjectSection(SolutionItems) = preProject
 		Templates\SaaSTable-CSharp\function.json = Templates\SaaSTable-CSharp\function.json
 		Templates\SaaSTable-CSharp\metadata.json = Templates\SaaSTable-CSharp\metadata.json
+		Templates\SaaSTable-CSharp\project.json = Templates\SaaSTable-CSharp\project.json
+		Templates\SaaSTable-CSharp\project.lock.json = Templates\SaaSTable-CSharp\project.lock.json
 		Templates\SaaSTable-CSharp\run.csx = Templates\SaaSTable-CSharp\run.csx
 	EndProjectSection
 EndProject
