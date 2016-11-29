@@ -905,7 +905,7 @@
                     "help": "$serviceBusTrigger_queueName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z{][a-z0-9_.-{}]{1,48}[0-9a-z{}]$",
+                            "expression": "^[0-9a-z{][a-z0-9_.{}-]{1,48}[0-9a-z{}]$",
                             "errorText": "$serviceBusTrigger_queueName_errorText"
                         }
                     ]
@@ -919,7 +919,7 @@
                     "help": "$serviceBusTrigger_topicName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z{][a-z0-9_.-{}]{1,48}[0-9a-z{}]$",
+                            "expression": "^[0-9a-z{][a-z0-9_.{}-]{1,48}[0-9a-z{}]$",
                             "errorText": "$serviceBusTrigger_topicName_errorText"
                         }
                     ]
@@ -1027,7 +1027,7 @@
                     "help": "$serviceBusOut_queueName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z{][a-z0-9_.-{}]{1,48}[0-9a-z{}]$",
+                            "expression": "^[0-9a-z{][a-z0-9_.{}-]{1,48}[0-9a-z{}]$",
                             "errorText": "$serviceBusOut_queueName_errorText"
                         }
                     ]
@@ -1041,7 +1041,7 @@
                     "help": "$serviceBusOut_topicName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z{][a-z0-9_.-{}]{1,48}[0-9a-z{}]$",
+                            "expression": "^[0-9a-z{][a-z0-9_.{}-]{1,48}[0-9a-z{}]$",
                             "errorText": "$serviceBusOut_topicName_errorText"
                         }
                     ]
