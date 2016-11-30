@@ -172,7 +172,7 @@
     <value>Имя концентратора событий</value>
   </data>
   <data name="queueOut_displayName" xml:space="preserve">
-    <value>Очередь службы хранилища Azure</value>
+    <value>Хранилище очередей Azure</value>
   </data>
   <data name="queueOut_name_help" xml:space="preserve">
     <value>Это имя параметра в коде, к которому требуется привязать привязку для вывода.</value>
@@ -217,10 +217,10 @@
     <value>Расписание</value>
   </data>
   <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
-    <value>Строка подключения для подключения к таблице SaaS.</value>
+    <value>Строка подключения для внешней таблицы.</value>
   </data>
   <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
-    <value>Подключение к таблице SaaS</value>
+    <value>Подключение к внешней таблице</value>
   </data>
   <data name="variables_apiHubTableDataSetHelp" xml:space="preserve">
     <value>Имя набора данных, к которому выполняется привязка.  Оставьте значение "default" в случае привязки к таблице или сущности.</value>
@@ -346,10 +346,10 @@
     <value>Путь к входному файлу</value>
   </data>
   <data name="apiHubFileIn_connection_label" xml:space="preserve">
-    <value>Подключение к файлу SaaS</value>
+    <value>Подключение к внешнему файлу</value>
   </data>
   <data name="apiHubFileIn_connection_help" xml:space="preserve">
-    <value>Строка подключения для подключения к файлу SaaS.</value>
+    <value>Строка подключения для соединения с внешним файлом.</value>
   </data>
   <data name="apiHubFileTrigger_name_label" xml:space="preserve">
     <value>Имя параметра файла</value>
@@ -364,16 +364,16 @@
     <value>Путь для активации. Этот путь должен существовать.</value>
   </data>
   <data name="apiHubFileTrigger_connection_label" xml:space="preserve">
-    <value>Подключение к файлу SaaS</value>
+    <value>Подключение к внешнему файлу</value>
   </data>
   <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
-    <value>Строка подключения для подключения к файлу SaaS.</value>
+    <value>Строка подключения для соединения с внешним файлом.</value>
   </data>
   <data name="apiHubTableIn_displayName" xml:space="preserve">
-    <value>Таблица SaaS</value>
+    <value>Внешняя таблица</value>
   </data>
   <data name="apiHubTableOut_displayName" xml:space="preserve">
-    <value>Таблица SaaS</value>
+    <value>Внешняя таблица</value>
   </data>
   <data name="httpTrigger_displayName" xml:space="preserve">
     <value>HTTP</value>
@@ -418,19 +418,19 @@
     <value>Это — режим триггера. \"Стандартный\" означает, что запрос будет иметь стандартный вид HTTP без дополнительной семантики. \"Webhook\" означает, что запрос будет обрабатываться в соответствии с указанным типом webhook.</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
-    <value>Файл SaaS</value>
+    <value>Внешний файл</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>Файл SaaS</value>
+    <value>Внешний файл</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
-    <value>Azure Storage Blob</value>
+    <value>Хранилище больших двоичных объектов Azure</value>
   </data>
   <data name="blobOut_displayName" xml:space="preserve">
-    <value>Azure Storage Blob</value>
+    <value>Хранилище больших двоичных объектов Azure</value>
   </data>
   <data name="blobTrigger_displayName" xml:space="preserve">
-    <value>Azure Storage Blob</value>
+    <value>Хранилище больших двоичных объектов Azure</value>
   </data>
   <data name="documentDBIn_collectionName_help" xml:space="preserve">
     <value>Это имя коллекции в вашей базе данных, откуда будут считываться данные.</value>
@@ -616,7 +616,7 @@
     <value>Включить тестовую отправку (необязательно)</value>
   </data>
   <data name="queueTrigger_displayName" xml:space="preserve">
-    <value>Очередь службы хранилища Azure</value>
+    <value>Хранилище очередей Azure</value>
   </data>
   <data name="sendGrid_displayName" xml:space="preserve">
     <value>SendGrid</value>
@@ -763,7 +763,7 @@
     <value>Имя раздела</value>
   </data>
   <data name="tableIn_displayName" xml:space="preserve">
-    <value>Таблица службы хранилища Azure</value>
+    <value>Хранилище таблиц Azure</value>
   </data>
   <data name="tableIn_filter_help" xml:space="preserve">
     <value>Это необязательное выражение запроса, используемое для фильтрации результатов запроса к таблице. Этот параметр не применяется к функции C#.</value>
@@ -805,7 +805,7 @@
     <value>Максимальное число считываемых записей (дополнительно)</value>
   </data>
   <data name="tableout_displayName" xml:space="preserve">
-    <value>Таблица службы хранилища Azure</value>
+    <value>Хранилище таблиц Azure</value>
   </data>
   <data name="tableout_name_help" xml:space="preserve">
     <value>Это имя параметра в коде, к которому требуется привязать привязку для вывода.</value>
@@ -823,16 +823,16 @@
     <value>Имя таблицы</value>
   </data>
   <data name="BlobTriggerBatch_description" xml:space="preserve">
-    <value>Пакетная функция, которая будет запускаться при каждом добавлении BLOB-объекта в указанный контейнер</value>
+    <value>Пакетная функция, которая будет выполняться при каждом добавлении BLOB-объекта в указанный контейнер (экспериментальная).</value>
   </data>
   <data name="BlobTriggerCSharp_description" xml:space="preserve">
     <value>Функция C#, которая будет запускаться при каждом добавлении BLOB-объекта в указанный контейнер</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая будет выполняться при добавлении BLOB-объекта в указанный контейнер.</value>
+    <value>Функция F#, которая будет выполняться при добавлении BLOB-объекта в указанный контейнер (предварительная версия).</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
-    <value>Функция Node.js, которая будет запускаться при каждом добавлении BLOB-объекта в указанный контейнер</value>
+    <value>Функция JavaScript, которая будет запускаться при каждом добавлении BLOB-объекта в указанный контейнер.</value>
   </data>
   <data name="CSharp_description" xml:space="preserve">
     <value>Функция C#, которая будет запускаться при каждом получении webhook-запроса GitHub</value>
@@ -850,7 +850,7 @@
     <value>Пустая функция F# без триггеров, входных или выходных данных</value>
   </data>
   <data name="EmptyNodeJS_description" xml:space="preserve">
-    <value>Пустая функция Node.js без триггеров, входных или выходных данных</value>
+    <value>Пустая функция JavaScript без триггеров, входных или выходных данных.</value>
   </data>
   <data name="EmptyPHP_description" xml:space="preserve">
     <value>Пустая функция PHP без триггеров, входных или выходных данных</value>
@@ -865,184 +865,187 @@
     <value>Функция C#, которая будет запускаться при каждом получении нового события концентратором событий</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая будет выполняться при получении нового события концентратором событий.</value>
+    <value>Функция F#, которая будет выполняться при получении нового события концентратором событий (предварительная версия).</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
-    <value>Функция Node.js, которая будет запускаться при каждом получении нового события концентратором событий</value>
+    <value>Функция JavaScript, которая будет запускаться при каждом получении нового события концентратором событий.</value>
   </data>
   <data name="EventHubTriggerPython_description" xml:space="preserve">
-    <value>Функция Python, которая будет запускаться при каждом получении нового события концентратором событий</value>
+    <value>Функция Python, которая будет выполняться при каждом получении нового события концентратором событий (экспериментальная).</value>
   </data>
   <data name="FaceLocatorCSharp_description" xml:space="preserve">
-    <value>Функция C#, которая извлекает измерения (окружающий прямоугольник) лиц в BLOB-объекте (на изображении) в контейнер и сохраняет его в таблице службы хранилища Azure</value>
+    <value>Функция C#, которая обрабатывает изображения и выводит ограничивающий прямоугольник лиц.</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая извлекает размеры (окружающий прямоугольник) лиц в BLOB-объекте (на изображении) в контейнере и хранит их в таблице службы хранилища Azure.</value>
+    <value>Функция F#, которая обрабатывает изображения и выводит ограничивающий прямоугольник лиц (предварительная версия).</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
-    <value>Функция Node.js, которая извлекает измерения (окружающий прямоугольник) лиц в BLOB-объекте (на изображении) в контейнер и сохраняет его в таблице службы хранилища Azure</value>
+    <value>Функция JavaScript, которая обрабатывает изображения и выводит ограничивающий прямоугольник лиц.</value>
   </data>
   <data name="GenericWebhookCSharp_description" xml:space="preserve">
     <value>Функция C#, которая будет запускаться при каждом получении webhook-запроса</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая будет выполняться при получении запроса webhook.</value>
+    <value>Функция F#, которая будет выполняться при получении webhook-запроса (предварительная версия).</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
-    <value>Функция Node.js, которая будет запускаться при каждом получении webhook-запроса</value>
+    <value>Функция JavaScript, которая будет запускаться при каждом получении webhook-запроса.</value>
   </data>
   <data name="GitHubCommenterNodeJS_description" xml:space="preserve">
-    <value>Функция Node.js, которая будет запускаться при каждом получении webhook-запроса GitHub</value>
+    <value>Функция JavaScript, которая будет запускаться при каждом получении webhook-запроса GitHub.</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая будет выполняться при получении запроса webhook GitHub.</value>
+    <value>Функция F#, которая будет выполняться при получении webhook-запроса GitHub (предварительная версия).</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>Функция C#, которая будет запускаться при каждом получении webhook-запроса GitHub</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая будет выполняться при получении запроса webhook GitHub.</value>
+    <value>Функция F#, которая будет выполняться при получении webhook-запроса GitHub (предварительная версия).</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
-    <value>Функция Node.js, которая будет запускаться при каждом получении webhook-запроса GitHub</value>
+    <value>Функция JavaScript, которая будет запускаться при каждом получении webhook-запроса GitHub.</value>
   </data>
   <data name="HttpGETCRUDC_description" xml:space="preserve">
     <value>Функция C#, которая извлекает сущности из таблицы службы хранилища при получении HTTP-запроса</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая извлекает сущности из таблицы службы хранилища при получении HTTP-запроса.</value>
+    <value>Функция F#, которая извлекает сущности из таблицы службы хранилища при получении HTTP-запроса (предварительная версия).</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
-    <value>Функция Node.js, которая извлекает сущности из таблицы службы хранилища при получении HTTP-запроса</value>
+    <value>Функция JavaScript, которая извлекает сущности из таблицы службы хранилища при получении HTTP-запроса.</value>
   </data>
   <data name="HttpGETCRUDPHP_description" xml:space="preserve">
-    <value>Функция PHP, которая извлекает сущности из таблицы хранилища при получении HTTP-запроса</value>
+    <value>Функция PHP, которая извлекает сущности из таблицы службы хранилища при получении HTTP-запроса (экспериментальная).</value>
   </data>
   <data name="HttpPOSTCRUDCSharp_description" xml:space="preserve">
     <value>Функция C#, которая добавляет сущности в таблицу службы хранилища при получении HTTP-запроса</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая добавляет сущности в таблицу службы хранилища при получении HTTP-запроса.</value>
+    <value>Функция F#, которая добавляет сущности в таблицу службы хранилища при получении HTTP-запроса (предварительная версия).</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
-    <value>Функция Node.js, которая добавляет сущности в таблицу службы хранилища при получении HTTP-запроса</value>
+    <value>Функция JavaScript, которая добавляет сущности в таблицу службы хранилища при получении HTTP-запроса.</value>
   </data>
   <data name="HttpPUTCRUDC_description" xml:space="preserve">
     <value>Функция C#, которая изменяет сущность в таблице службы хранилища при получении HTTP-запроса.</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая изменяет сущность в таблице службы хранилища при получении HTTP-запроса.</value>
+    <value>Функция F#, которая изменяет сущность в таблице службы хранилища при получении HTTP-запроса (предварительная версия).</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
-    <value>Пакетная функция, которая будет запускаться при каждом получении HTTP-запроса</value>
+    <value>Пакетная функция, которая будет выполняться при каждом получении HTTP-запроса (экспериментальная).</value>
   </data>
   <data name="HttpTriggerCSharp_description" xml:space="preserve">
     <value>Функция C#, которая будет запускаться при каждом получении HTTP-запроса</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая будет выполняться при получении HTTP-запроса.</value>
+    <value>Функция F#, которая будет выполняться при получении HTTP-запроса (предварительная версия).</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
-    <value>Функция Node.js, которая будет запускаться при каждом получении HTTP-запроса</value>
+    <value>Функция JavaScript, которая будет запускаться при каждом получении HTTP-запроса.</value>
   </data>
   <data name="HttpTriggerPowerShell_description" xml:space="preserve">
-    <value>Функция PowerShell, которая будет запускаться при каждом получении HTTP-запроса</value>
+    <value>Функция PowerShell, которая будет выполняться при каждом получении HTTP-запроса (предварительная версия).</value>
   </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>Функция C#, которая создает изображения с измененным размером при каждом добавлении BLOB-объекта в указанный контейнер</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая создает изображения измененного размера при добавлении BLOB-объекта в указанный контейнер.</value>
+    <value>Функция F#, которая создает изображения измененного размера при добавлении BLOB-объекта в указанный контейнер (предварительная версия).</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>Функция C#, которая активируется вручную с помощью кнопки \"Запуск\" на портале</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая активируется вручную кнопкой "Выполнить" на портале.</value>
+    <value>Функция F#, которая активируется вручную кнопкой "Выполнить" на портале (предварительная версия).</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
-    <value>Функция Node.js, которая активируется вручную с помощью кнопки \"Запуск\" на портале</value>
+    <value>Функция JavaScript, которая активируется вручную кнопкой \"Запуск\" на портале.</value>
   </data>
   <data name="QueueTriggerBash_description" xml:space="preserve">
-    <value>Функция bash, которая будет запускаться при каждом добавлении сообщения в указанную очередь службы хранилища Azure</value>
+    <value>Функция bash, которая будет выполняться при каждом добавлении сообщения в указанное хранилище очередей Azure (экспериментальная).</value>
   </data>
   <data name="QueueTriggerBatch_description" xml:space="preserve">
-    <value>Пакетная функция, которая будет запускаться при каждом добавлении сообщения в указанную очередь службы хранилища Azure</value>
+    <value>Пакетная функция, которая будет выполняться при каждом добавлении сообщения в указанное хранилище очередей Azure (экспериментальная).</value>
   </data>
   <data name="QueueTriggerCSharp_description" xml:space="preserve">
-    <value>Функция C#, которая будет запускаться при каждом добавлении сообщения в указанную очередь службы хранилища Azure</value>
+    <value>Функция C#, которая будет выполняться при каждом добавлении сообщения в указанное хранилище очередей Azure.</value>
   </data>
   <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая будет запускаться при каждом добавлении сообщения в указанную очередь службы хранилища Azure</value>
+    <value>Функция F#, которая будет выполняться при каждом добавлении сообщения в указанное хранилище очередей Azure (предварительная версия).</value>
   </data>
   <data name="QueueTriggerNodeJS_description" xml:space="preserve">
-    <value>Функция Node.js, которая будет запускаться при каждом добавлении сообщения в указанную очередь службы хранилища Azure</value>
+    <value>Функция JavaScript, которая будет выполняться при каждом добавлении сообщения в указанное хранилище очередей Azure.</value>
   </data>
   <data name="QueueTriggerPHP_description" xml:space="preserve">
-    <value>Функция PHP, которая будет запускаться при каждом добавлении сообщения в указанную очередь службы хранилища Azure</value>
+    <value>Функция PHP, которая будет выполняться при каждом добавлении сообщения в указанное хранилище очередей Azure (экспериментальная).</value>
   </data>
   <data name="QueueTriggerPowerShell_description" xml:space="preserve">
-    <value>Функция PowerShell, которая будет запускаться при каждом добавлении сообщения в указанную очередь службы хранилища Azure</value>
+    <value>Функция PowerShell, которая будет выполняться при каждом добавлении сообщения в указанное хранилище очередей Azure (предварительная версия).</value>
   </data>
   <data name="QueueTriggerPython_description" xml:space="preserve">
-    <value>Функция Python, которая будет запускаться при каждом добавлении сообщения в указанную очередь службы хранилища Azure</value>
+    <value>Функция Python, которая будет выполняться при каждом добавлении сообщения в указанное хранилище очередей Azure (экспериментальная).</value>
   </data>
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
-    <value>Пакетная функция, которая будет запускаться при каждом добавлении файла в поставщик SaaS.</value>
+    <value>Пакетная функция, которая будет выполняться при каждом добавлении файла в поставщик внешних файлов (экспериментальная).</value>
   </data>
   <data name="SaasFileTriggerCSharp_description" xml:space="preserve">
-    <value>Функция C#, которая будет запускаться при каждом добавлении файла в поставщик SaaS.</value>
+    <value>Функция C#, которая будет выполняться при каждом добавлении файла в поставщик внешних файлов (предварительная версия).</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая будет выполняться при добавлении файла в поставщик SaaS.</value>
+    <value>Функция F#, которая будет выполняться при каждом добавлении файла в поставщик внешних файлов (предварительная версия).</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
-    <value>Функция Node.js, которая будет запускаться при каждом добавлении файла в поставщик SaaS.</value>
+    <value>Функция JavaScript, которая будет выполняться при каждом добавлении файла в поставщик внешних файлов (предварительная версия).</value>
+  </data>
+  <data name="SaasFileTokenNodeJS_description" xml:space="preserve">
+    <value>Функция JavaScript, которая будет запускаться при каждом добавлении файла в поставщик внешних файлов.</value>
   </data>
   <data name="SaasTableCSharp_description" xml:space="preserve">
-    <value>Функция C#, которая извлекает сущности из таблицы SaaS при получении HTTP-запроса</value>
+    <value>Функция C#, которая извлекает сущности из внешней таблицы при получении HTTP-запроса (экспериментальная).</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая извлекает сущности из таблицы SaaS при получении HTTP-запроса.</value>
+    <value>Функция F#, которая извлекает сущности из внешней таблицы при получении HTTP-запроса (экспериментальная).</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая создает токен SAS для службы хранилища Azure для указанного контейнера и имени BLOB-объекта.</value>
+    <value>Функция F#, которая создает токен SAS для службы хранилища Azure для указанного контейнера и имени BLOB-объекта (предварительная версия).</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>Функция C#, которая отправляет сообщение с подтверждением SendGrid при каждом добавлении нового заказа в указанную очередь службы хранилища Azure</value>
+    <value>Функция C#, которая отправляет письмо с подтверждением при добавлении нового элемента в указанную очередь (предварительная версия).</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая отправляет письмо с подтверждением SendGrid при добавлении нового заказа к указанной очереди службы хранилища Azure.</value>
+    <value>Функция F#, которая отправляет письмо с подтверждением при добавлении нового элемента в указанную очередь (предварительная версия).</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>Функция Node.js, которая отправляет сообщение с подтверждением SendGrid при каждом добавлении нового заказа в указанную очередь службы хранилища Azure</value>
+    <value>Функция C#, которая отправляет письмо с подтверждением при добавлении нового элемента в указанную очередь (предварительная версия).</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
-    <value>Функция C#, которая будет запускаться при каждом добавлении сообщения в указанную очередь служебной шины</value>
+    <value>Функция JavaScript, которая будет запускаться при каждом добавлении сообщения в указанную очередь служебной шины.</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая будет выполняться при добавлении сообщения в указанную очередь служебной шины.</value>
+    <value>Функция F#, которая будет выполняться при добавлении сообщения в указанную очередь служебной шины (предварительная версия).</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
-    <value>Функция Node.js, которая будет запускаться при каждом добавлении сообщения в указанную очередь служебной шины</value>
+    <value>Функция JavaScript, которая будет запускаться при каждом добавлении сообщения в указанную очередь служебной шины.</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая будет выполняться при добавлении сообщения в указанный раздел служебной шины.</value>
+    <value>Функция F#, которая будет выполняться при добавлении сообщения в указанный раздел служебной шины (предварительная версия).</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
-    <value>Функция Node.js, которая будет запускаться при каждом добавлении сообщения в указанный раздел служебной шины</value>
+    <value>Функция JavaScript, которая будет запускаться при каждом добавлении сообщения в указанный раздел служебной шины.</value>
   </data>
   <data name="TimerTriggerCSharp_description" xml:space="preserve">
     <value>Функция C#, которая будет запускаться по указанному расписанию</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>Функция F#, которая будет выполняться по указанному расписанию.</value>
+    <value>Функция F#, которая будет запускаться по указанному расписанию (предварительная версия).</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
-    <value>Функция Node.js, которая будет запускаться по указанному расписанию</value>
+    <value>Функция JavaScript, которая будет запускаться по указанному расписанию.</value>
   </data>
   <data name="TimerTriggerPowerShell_description" xml:space="preserve">
-    <value>Функция PowerShell, которая будет запускаться по указанному расписанию</value>
+    <value>Функция PowerShell, которая будет запускаться по указанному расписанию (предварительная версия).</value>
   </data>
   <data name="timerTrigger_schedule_errorText" xml:space="preserve">
     <value>Недопустимое выражение Cron. Дополнительные сведения см. в &lt;a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/"&gt;документации&lt;/a&gt;.</value>
@@ -1097,5 +1100,41 @@
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
     <value>Ключ SendGrid API</value>
+  </data>
+  <data name="bot_botId_help" xml:space="preserve">
+    <value>Это — идентификатор, который будет использоваться в свойстве From действия при создании и отправке сообщения боту. Он заполняет ChannelAccount.Id отправленного действия.</value>
+  </data>
+  <data name="bot_botId_label" xml:space="preserve">
+    <value>Идентификатор отправителя</value>
+  </data>
+  <data name="bot_in_displayName" xml:space="preserve">
+    <value>Bot Framework</value>
+  </data>
+  <data name="bot_out_displayName" xml:space="preserve">
+    <value>Bot Framework</value>
+  </data>
+  <data name="bot_in_secret_help" xml:space="preserve">
+    <value>Ключ прямой линии можно создать на странице настройки канала прямой линии портала Bot Framework; если оставить после пустым, значение будет искаться в параметре приложения AzureWebJobsBotFrameworkDirectLineSecret.</value>
+  </data>
+  <data name="bot_in_secret_label" xml:space="preserve">
+    <value>Ключ прямой линии</value>
+  </data>
+  <data name="bot_out_secret_help" xml:space="preserve">
+    <value>Ключ прямой линии можно создать на странице настройки канала прямой линии портала Bot Framework; если оставить после пустым, значение будет искаться в параметре приложения AzureWebJobsBotFrameworkDirectLineSecret.</value>
+  </data>
+  <data name="bot_out_secret_label" xml:space="preserve">
+    <value>Ключ прямой линии</value>
+  </data>
+  <data name="bot_in_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для ввода.</value>
+  </data>
+  <data name="bot_in_name_label" xml:space="preserve">
+    <value>Имя параметра бота</value>
+  </data>
+  <data name="bot_out_name_help" xml:space="preserve">
+    <value>Это имя параметра в коде, к которому требуется привязать привязку для вывода.</value>
+  </data>
+  <data name="bot_out_name_label" xml:space="preserve">
+    <value>Имя параметра бота</value>
   </data>
 </root>

@@ -432,7 +432,7 @@
                 {
                     "name": "name",
                     "value": "string",
-                    "defaultValue": "input",
+                    "defaultValue": "inputFile",
                     "required": true,
                     "label": "$apiHubFileIn_name_label",
                     "help": "$apiHubFileIn_name_help",
@@ -475,7 +475,7 @@
                 {
                     "name": "name",
                     "value": "string",
-                    "defaultValue": "output",
+                    "defaultValue": "outputFile",
                     "required": true,
                     "label": "$apiHubFileIn_name_label",
                     "help": "$apiHubFileIn_name_help",
@@ -518,7 +518,7 @@
                 {
                     "name": "name",
                     "value": "string",
-                    "defaultValue": "trigger",
+                    "defaultValue": "inputFile",
                     "required": true,
                     "label": "$apiHubFileTrigger_name_label",
                     "help": "$apiHubFileTrigger_name_help",
@@ -565,7 +565,7 @@
                 {
                     "name": "name",
                     "value": "string",
-                    "defaultValue": "input",
+                    "defaultValue": "inputTable",
                     "required": true,
                     "label": "[variables('paramNameLabel')]",
                     "help": "[variables('paramNameInputHelp')]",
@@ -626,7 +626,7 @@
                 {
                     "name": "name",
                     "value": "string",
-                    "defaultValue": "output",
+                    "defaultValue": "outputTable",
                     "required": true,
                     "label": "[variables('paramNameLabel')]",
                     "help": "[variables('paramNameOutputHelp')]",
@@ -905,7 +905,7 @@
                     "help": "$serviceBusTrigger_queueName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z{][a-z0-9_.-{}]{1,48}[0-9a-z{}]$",
+                            "expression": "^[0-9a-z{][a-z0-9_.{}-]{1,48}[0-9a-z{}]$",
                             "errorText": "$serviceBusTrigger_queueName_errorText"
                         }
                     ]
@@ -919,7 +919,7 @@
                     "help": "$serviceBusTrigger_topicName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z{][a-z0-9_.-{}]{1,48}[0-9a-z{}]$",
+                            "expression": "^[0-9a-z{][a-z0-9_.{}-]{1,48}[0-9a-z{}]$",
                             "errorText": "$serviceBusTrigger_topicName_errorText"
                         }
                     ]
@@ -1027,7 +1027,7 @@
                     "help": "$serviceBusOut_queueName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z{][a-z0-9_.-{}]{1,48}[0-9a-z{}]$",
+                            "expression": "^[0-9a-z{][a-z0-9_.{}-]{1,48}[0-9a-z{}]$",
                             "errorText": "$serviceBusOut_queueName_errorText"
                         }
                     ]
@@ -1041,7 +1041,7 @@
                     "help": "$serviceBusOut_topicName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z{][a-z0-9_.-{}]{1,48}[0-9a-z{}]$",
+                            "expression": "^[0-9a-z{][a-z0-9_.{}-]{1,48}[0-9a-z{}]$",
                             "errorText": "$serviceBusOut_topicName_errorText"
                         }
                     ]
@@ -1217,7 +1217,6 @@
                 {
                     "name": "rowKey",
                     "value": "string",
-                    "defaultValue": "",
                     "required": false,
                     "label": "$tableIn_rowKey_label",
                     "help": "$tableIn_rowKey_help"
@@ -1225,6 +1224,7 @@
                 {
                     "name": "take",
                     "value": "int",
+                    "defaultValue": 50,
                     "required": false,
                     "label": "$tableIn_take_label",
                     "help": "$tableIn_take_help"
@@ -1483,7 +1483,6 @@
                 {
                     "name": "hubName",
                     "value": "string",
-                    "defaultValue": "myNotificationHub",
                     "required": true,
                     "label": "$notificationHubOut_hubName_label",
                     "help": "$notificationHubOut_hubName_help"

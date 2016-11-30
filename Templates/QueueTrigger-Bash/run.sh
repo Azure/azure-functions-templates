@@ -1,2 +1,2 @@
-input=$(<$INPUT)
-printf "Bash script processed queue message: $input"
+inputMessage=$(<$inputMessage)
+printf "Bash script processed queue message: $inputMessage"

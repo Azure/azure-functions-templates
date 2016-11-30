@@ -2,14 +2,14 @@
   "bindings": [
     {
       "type": "apiHubFileTrigger",
-      "name": "input",
+      "name": "inputFile",
       "direction": "in",
       "path": "input-cs/{name}",
       "connection": ""
     },
     {
       "type": "apiHubFile",
-      "name": "output",
+      "name": "$return",
       "direction": "out",
       "path": "output-cs/{name}",
       "connection": ""
