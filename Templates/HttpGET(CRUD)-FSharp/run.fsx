@@ -17,4 +17,7 @@ let Run(req: HttpRequestMessage, inTable: IQueryable<Person>, log: TraceWriter) 
     } |> Seq.iter (fun person ->
         log.Info(sprintf "Name: %s" person.Name))
 
-    req.CreateResponse(HttpStatusCode.OK, inTable.ToList())
+    try
+        req.CreateResponse(HttpStatusCode.OK, inTable.ToList())
+    with _ ->
+        req.CreateResponse(HttpStatusCode.OK)

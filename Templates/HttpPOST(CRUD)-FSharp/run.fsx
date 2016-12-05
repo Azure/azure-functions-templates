@@ -1,11 +1,13 @@
 ﻿#r "System.Net.Http"
 #r "Microsoft.WindowsAzure.Storage"
+#r "Newtonsoft.Json"
 
 open System
 open System.Net
 open System.Net.Http
 open Microsoft.WindowsAzure.Storage.Table
-open FSharp.Interop.Dynamic
+open Newtonsoft.Json
+open Newtonsoft.Json.Linq
 
 type Person() =
     inherit TableEntity()
@@ -13,13 +15,12 @@ type Person() =
 
 let Run(req: HttpRequestMessage, outTable: ICollector<Person>, log: TraceWriter) =
     async {
-        let! data = req.Content.ReadAsAsync<obj>() |> Async.AwaitTask
-        let name = data?name
+        let! data = req.Content.ReadAsStringAsync() |> Async.AwaitTask
+        let json = JObject.Parse(data)
+        let nameJ = json.["name"]
 
-        if isNull name then
-            return req.CreateResponse(HttpStatusCode.BadRequest,
-                "Please pass a name in the request body")
-        else
+        if nameJ <> null then
+            let name = nameJ.Value<string>()
             let person = Person()
             person.PartitionKey <- "Functions"
             person.RowKey <- Guid.NewGuid().ToString()
@@ -27,4 +28,7 @@ let Run(req: HttpRequestMessage, outTable: ICollector<Person>, log: TraceWriter)
             outTable.Add(person)
 
             return req.CreateResponse(HttpStatusCode.Created)
+        else
+            return req.CreateResponse(HttpStatusCode.BadRequest,
+                "Please pass a name in the request body")
     } |> Async.StartAsTask

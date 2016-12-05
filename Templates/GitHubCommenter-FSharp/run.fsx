@@ -1,13 +1,15 @@
 // Please follow the link https://developer.github.com/v3/oauth/ to get information on GitHub authentication
 
 #r "System.Net.Http"
+#r "Newtonsoft.Json"
 
 open System
 open System.Net
 open System.Net.Http
 open System.Net.Http.Headers
 open System.Text
-open FSharp.Interop.Dynamic
+open Newtonsoft.Json
+open Newtonsoft.Json.Linq
 
 let SendGitHubRequest (url: string) requestBody =
     async {
@@ -27,24 +29,61 @@ let SendGitHubRequest (url: string) requestBody =
         return! client.PostAsync(url, content) |> Async.AwaitTask
     } |> Async.RunSynchronously
 
-let Run(payload: obj, log: TraceWriter) =
+let rec hasProp (key: string list) (from: JObject) =
+    match from with
+    | null -> false
+    | _ ->
+        let x = from.[key.Head]
+        match x with
+        | null -> false
+        | _ ->
+            match key with
+            | [_] -> true
+            | _::tl -> hasProp tl (x.Value<JObject>())
+            | [] -> false
+
+let rec prop<'T> (key: string list) (def: 'T) (from: JObject) =
+    match from with
+    | null -> def
+    | _ ->
+        let x = from.[key.Head]
+        match x with
+        | null -> def
+        | _ ->
+            match key with
+            | [_] -> x.Value<'T>()
+            | _::tl ->
+                prop<'T> tl def (x.Value<JObject>())
+            | [] -> def
+
+let Run(payload: string, log: TraceWriter) =
     let comment = "{ \"body\": \"Thank you for your contribution, We will get to it shortly\" }";
     let label = "[ \"bug\" ]";
 
-    if payload?action = "opened" then
-        let issue = payload?issue
-        if not (isNull issue) then
+    let json = JObject.Parse(payload)
+    if json |> prop ["action"] "none" = "opened" then
+        if hasProp ["issue"] json then
             log.Info(
                 sprintf "%s posted an issue #%d: %s"
-                    issue?user?login issue?number issue?title)
+                    (prop ["issue"; "user"; "login"] "unknown user" json)
+                    (prop ["issue"; "number"] 0 json)
+                    (prop ["issue"; "title"] "unknown title" json)
+                    )
 
-            SendGitHubRequest (issue?comments_url.ToString()) comment |> ignore
+            SendGitHubRequest (prop ["issue"; "comment_url"] "" json) comment
+                |> ignore
             SendGitHubRequest
-                (sprintf "%s/labels" (issue?url.ToString())) label |> ignore
+                (sprintf "%s/labels" (prop ["issue"; "url"] "" json)) label
+                |> ignore
 
-        let pr = payload?pull_request
-        if not (isNull pr) then
-            log.Info(sprintf "%s submitted pull request #%d: %s"
-                pr?user?login pr?number pr?title)
+        if hasProp ["pull_request"] json then
+            log.Info(
+                sprintf "%s submitted pull request #%d: %s"
+                    (prop ["pull_request"; "user"; "login"] "unknown user" json)
+                    (prop ["pull_request"; "number"] 0 json)
+                    (prop ["pull_request"; "title"] "unknown title" json)
+                    )
 
-            SendGitHubRequest (pr?comments_url.ToString()) comment |> ignore
+            SendGitHubRequest
+                (prop ["pull_request"; "comment_url"] "" json) comment
+                |> ignore
