@@ -1,0 +1,27 @@
+﻿{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "table",
+      "name": "outTable",
+      "tableName": "person",
+      "partitionKey": "functions",
+      "rowKey": "{rand-guid}",
+      "connection": "",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}

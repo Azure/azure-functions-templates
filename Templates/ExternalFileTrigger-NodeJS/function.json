@@ -1,0 +1,18 @@
+{
+  "bindings": [
+    {
+      "type": "apiHubFileTrigger",
+      "name": "inputFile",
+      "direction": "in",
+      "path": "input-javascript/{name}",
+      "connection": ""
+    },
+    {
+      "type": "apiHubFile",
+      "name": "outputFile",
+      "direction": "out",
+      "path": "output-javascript/{name}",
+      "connection": ""
+    }
+  ]
+}
