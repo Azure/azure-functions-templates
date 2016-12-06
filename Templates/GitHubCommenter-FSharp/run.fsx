@@ -69,8 +69,7 @@ let Run(payload: string, log: TraceWriter) =
                     (prop ["issue"; "number"] 0 json)
                     (prop ["issue"; "title"] "unknown title" json)
                     )
-
-            SendGitHubRequest (prop ["issue"; "comment_url"] "" json) comment
+            SendGitHubRequest (prop ["issue"; "comments_url"] "" json) comment
                 |> ignore
             SendGitHubRequest
                 (sprintf "%s/labels" (prop ["issue"; "url"] "" json)) label
@@ -83,7 +82,6 @@ let Run(payload: string, log: TraceWriter) =
                     (prop ["pull_request"; "number"] 0 json)
                     (prop ["pull_request"; "title"] "unknown title" json)
                     )
-
             SendGitHubRequest
-                (prop ["pull_request"; "comment_url"] "" json) comment
+                (prop ["pull_request"; "comments_url"] "" json) comment
                 |> ignore

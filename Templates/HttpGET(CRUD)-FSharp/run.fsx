@@ -11,13 +11,12 @@ type Person() =
     member val Name: string = null with get, set
 
 let Run(req: HttpRequestMessage, inTable: IQueryable<Person>, log: TraceWriter) =
-    query {
-        for person in inTable do
-        select person
-    } |> Seq.iter (fun person ->
-        log.Info(sprintf "Name: %s" person.Name))
+    let people =
+        query {
+            for person in inTable do
+            select person
+        }
+        |> Seq.map (fun person -> sprintf "\"Name\": \"%s\"" person.Name)
+        |> String.concat ","
 
-    try
-        req.CreateResponse(HttpStatusCode.OK, inTable.ToList())
-    with _ ->
-        req.CreateResponse(HttpStatusCode.OK)
+    req.CreateResponse(HttpStatusCode.OK, sprintf "{%s}" people)
