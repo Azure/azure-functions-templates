@@ -25,7 +25,7 @@ public static Mail Run(TimerInfo myTimer, TraceWriter log)
     };
 
     // TODO: Customize this code to generate your specific mail message
-	var orderCount = 100;
+    var orderCount = 100;
 
     Content content = new Content
     {
@@ -33,6 +33,6 @@ public static Mail Run(TimerInfo myTimer, TraceWriter log)
         Value = $"You had {orderCount} orders today!"
     };
 
-    message.AddContent(content);    
+    message.AddContent(content);
     return message;
 }
