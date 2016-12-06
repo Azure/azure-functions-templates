@@ -16,19 +16,21 @@ using Microsoft.Azure.WebJobs.Host;
 // }
 public static Mail Run(TimerInfo myTimer, TraceWriter log)
 {
-    log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
+    var today = DateTime.Today.ToShortDateString();
+    log.Info($"Generating daily report for {today} at {DateTime.Now}");
     
     Mail message = new Mail()
     {
-        Subject = $"Daily Report"
+        Subject = $"Daily Report for {today}"
     };
 
+    // TODO: Customize this code to generate your specific mail message
 	var orderCount = 100;
 
     Content content = new Content
     {
         Type = "text/plain",
-        Value = $"You had ${orderCount} orders today!"
+        Value = $"You had {orderCount} orders today!"
     };
 
     message.AddContent(content);    
