@@ -5,6 +5,7 @@
 #r "System.Configuration"
 #r "System.Net.Http"
 #r "Microsoft.WindowsAzure.Storage"
+#r "Newtonsoft.Json"
 
 open System
 open System.Net
@@ -12,7 +13,8 @@ open System.Net.Http
 open System.Configuration
 open Microsoft.WindowsAzure.Storage
 open Microsoft.WindowsAzure.Storage.Blob
-open FSharp.Interop.Dynamic
+open Newtonsoft.Json
+open Newtonsoft.Json.Linq
 
 // Request body format: 
 // - `container` - *required*. Name of container in storage account
@@ -43,28 +45,35 @@ let GetBlobSasToken (container: CloudBlobContainer) blobName permissions =
 
 let Run(req: HttpRequestMessage, log: TraceWriter) =
     async {
-        let! data = req.Content.ReadAsAsync<obj>() |> Async.AwaitTask
-        let container = data?container
+        let! data = req.Content.ReadAsStringAsync() |> Async.AwaitTask
+        let json = JObject.Parse(data)
+        let containerJ = json.["container"]
 
-        if isNull container then
+        if containerJ = null then
             return req.CreateResponse(HttpStatusCode.BadRequest, "Specify value for container")
-
         else
+        let container = containerJ.Value<string>()
         let mutable permissions = SharedAccessBlobPermissions.Read
+        let reqPermJ = json.["permissions"]
 
-        if not (Enum.TryParse(data?permissions.ToString(), &permissions)) then
+        if reqPermJ = null then
+            return req.CreateResponse(HttpStatusCode.BadRequest, "Specify value for 'permissions'")
+        else
+        let reqPerm = reqPermJ.Value<string>()
+        if not (Enum.TryParse(reqPerm, &permissions)) then
             return req.CreateResponse(HttpStatusCode.BadRequest, "Invalid value for 'permissions'")
 
         else
         let storageAccount = CloudStorageAccount.Parse(ConfigurationManager.AppSettings.Item("AzureWebJobsStorage"))
         let blobClient = storageAccount.CreateCloudBlobClient()
         let container = blobClient.GetContainerReference(container.ToString())
-        let blobName = data?blobName
+        let blobJ = json.["blobName"]
+
         let sasToken =
-            if isNull blobName then
+            if blobJ = null then
                 GetContainerSasToken container permissions
             else
-                GetBlobSasToken container blobName permissions
+                GetBlobSasToken container (blobJ.Value<string>()) permissions
 
         return req.CreateResponse(HttpStatusCode.OK, { Token = sasToken; Uri = container.Uri.ToString() + sasToken })
     } |> Async.RunSynchronously

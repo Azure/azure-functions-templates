@@ -1,13 +1,18 @@
+#r "ImageResizer.dll"
+#r "System.Drawing.dll"
+
 open System.IO
 open ImageResizer
 
-let Run(imageIn: Stream, imageSmall: Stream, imageMedium: Stream) =
+let Run(image: Stream, imageSmall: Stream, imageMedium: Stream) =
     let imageBuilder = ImageResizer.ImageBuilder.Current
 
     imageBuilder.Build(
-        imageIn, imageSmall, 
+        image, imageSmall, 
         ResizeSettings(320, 200, FitMode.Max, null), false)
 
+    image.Position <- int64 0
+
     imageBuilder.Build(
-        imageIn, imageMedium,
+        image, imageMedium,
         ResizeSettings(800, 600, FitMode.Max, null), false)
