@@ -9,44 +9,35 @@ using System.Configuration;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 
-// Request body format: 
-// - `container` - *required*. Name of container in storage account
-// - `blobName` - *optional*. Used to scope permissions to a particular blob
-// - `permissions` - *optional*. Default value is read permissions. The format matches the enum values of SharedAccessBlobPermissions. 
+// Request body format:
+// - `ContainerName` - *required*. Name of container in storage account
+// - `BlobName` - *optional*. Used to scope permissions to a particular blob
+// - `Permission` - *optional*. Default value is read permissions. The format matches the enum values of SharedAccessBlobPermissions. 
 //    Possible values are "Read", "Write", "Delete", "List", "Add", "Create". Comma-separate multiple permissions, such as "Read, Write, Create".
 
-public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log)
-{
-    dynamic data = await req.Content.ReadAsAsync<object>();
-
-    if (data.container == null) {
-        return req.CreateResponse(HttpStatusCode.BadRequest, new {
-            error = "Specify value for 'container'"
-        });
-    }
-
+public static HttpResponseMessage Run(Input input, CloudBlobDirectory blobDirectory, TraceWriter log)
+{    
     var permissions = SharedAccessBlobPermissions.Read; // default to read permissions
-    bool success = Enum.TryParse(data.permissions.ToString(), out permissions);
+    bool success = Enum.TryParse(input.Permission, out permissions);
 
-    if (!success) {
-        return req.CreateResponse(HttpStatusCode.BadRequest, new {
-            error = "Invalid value for 'permissions'"
-        });
+    if (!success)
+    {
+        return new HttpResponseMessage(HttpStatusCode.BadRequest) { Content = new StringContent("Invalid value for 'permissions'") };
     }
 
-    var storageAccount = CloudStorageAccount.Parse(ConfigurationManager.AppSettings["AzureWebJobsStorage"]);
-    var blobClient = storageAccount.CreateCloudBlobClient();
-    var container = blobClient.GetContainerReference(data.container.ToString());
+    var container = blobDirectory.Container;
+    var sasToken = input.BlobName != null ?
+         GetBlobSasToken(container, input.BlobName, permissions) :
+         GetContainerSasToken(container, permissions);
 
-    var sasToken =
-        data.blobName != null ?
-            GetBlobSasToken(container, data.blobName.ToString(), permissions) :
-            GetContainerSasToken(container, permissions);
+    return new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent(sasToken) };
+}
 
-    return req.CreateResponse(HttpStatusCode.OK, new {
-        token = sasToken,
-        uri = container.Uri + sasToken
-    });
+public class Input
+{
+    public string ContainerName { get; set; }
+    public string BlobName { get; set; }
+    public string Permission { get; set; }
 }
 
 public static string GetBlobSasToken(CloudBlobContainer container, string blobName, SharedAccessBlobPermissions permissions, string policyName = null)
@@ -57,33 +48,37 @@ public static string GetBlobSasToken(CloudBlobContainer container, string blobNa
     // Note that the blob may not exist yet, but a SAS can still be created for it.
     CloudBlockBlob blob = container.GetBlockBlobReference(blobName);
 
-    if (policyName == null) {
+    if (policyName == null)
+    {
         var adHocSas = CreateAdHocSasPolicy(permissions);
 
         // Generate the shared access signature on the blob, setting the constraints directly on the signature.
         sasBlobToken = blob.GetSharedAccessSignature(adHocSas);
     }
-    else {
+    else
+    {
         // Generate the shared access signature on the blob. In this case, all of the constraints for the
         // shared access signature are specified on the container's stored access policy.
         sasBlobToken = blob.GetSharedAccessSignature(null, policyName);
-    } 
+    }
 
     return sasBlobToken;
 }
- 
+
 public static string GetContainerSasToken(CloudBlobContainer container, SharedAccessBlobPermissions permissions, string storedPolicyName = null)
 {
     string sasContainerToken;
 
     // If no stored policy is specified, create a new access policy and define its constraints.
-    if (storedPolicyName == null) {
+    if (storedPolicyName == null)
+    {
         var adHocSas = CreateAdHocSasPolicy(permissions);
 
         // Generate the shared access signature on the container, setting the constraints directly on the signature.
         sasContainerToken = container.GetSharedAccessSignature(adHocSas, null);
     }
-    else {
+    else
+    {
         // Generate the shared access signature on the container. In this case, all of the constraints for the
         // shared access signature are specified on the stored access policy, which is provided by name.
         // It is also possible to specify some constraints on an ad-hoc SAS and others on the stored access policy.
@@ -99,8 +94,8 @@ private static SharedAccessBlobPolicy CreateAdHocSasPolicy(SharedAccessBlobPermi
     // Create a new access policy and define its constraints.
     // Note that the SharedAccessBlobPolicy class is used both to define the parameters of an ad-hoc SAS, and 
     // to construct a shared access policy that is saved to the container's shared access policies. 
-
-    return new SharedAccessBlobPolicy() {
+    return new SharedAccessBlobPolicy()
+    {
         // Set start time to five minutes before now to avoid clock skew.
         SharedAccessStartTime = DateTime.UtcNow.AddMinutes(-5),
         SharedAccessExpiryTime = DateTime.UtcNow.AddHours(1),

@@ -1,23 +1,22 @@
-{
+﻿{
     "bindings": [
         {
-            "authLevel": "function",
-            "name": "input",
             "type": "httpTrigger",
             "direction": "in",
+            "name": "req",
             "methods": [
-                "post"
+                "get"
             ]
         },
         {
-            "name": "$return",
             "type": "http",
-            "direction": "out"
+            "direction": "out",
+            "name": "res"
         },
         {
-            "type": "blob",
-            "name": "blobDirectory",
-            "path": "{ContainerName}",
+            "type": "table",
+            "name": "inTable",
+            "tableName": "person",
             "connection": "",
             "direction": "in"
         }
