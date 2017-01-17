@@ -18,17 +18,14 @@ let Run(req: HttpRequestMessage, outTable: ICollector<Person>, log: TraceWriter)
         let! data = req.Content.ReadAsStringAsync() |> Async.AwaitTask
         let json = JObject.Parse(data)
         let nameJ = json.["name"]
-
-        if nameJ <> null then
+        match isNull nameJ with
+        | true -> return req.CreateResponse(HttpStatusCode.BadRequest, "Please pass a name in the request body")
+        | false ->
             let name = nameJ.Value<string>()
             let person = Person()
             person.PartitionKey <- "Functions"
             person.RowKey <- Guid.NewGuid().ToString()
             person.Name <- name
             outTable.Add(person)
-
             return req.CreateResponse(HttpStatusCode.Created)
-        else
-            return req.CreateResponse(HttpStatusCode.BadRequest,
-                "Please pass a name in the request body")
     } |> Async.StartAsTask
