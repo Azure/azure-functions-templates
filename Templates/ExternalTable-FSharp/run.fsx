@@ -20,8 +20,8 @@ let Run(req: HttpRequestMessage, input: ITable<Contact>, log: TraceWriter) =
                 input.ListEntitiesAsync(continuationToken = cont)
                 |> Async.AwaitTask
             
-            for item in segment.Items do
-                log.Info(sprintf "%s %s" item.FirstName item.LastName)
+            segment.Items 
+            |> Seq.iter(fun i ->  log.Info(sprintf "%s %s" item.FirstName item.LastName))
 
             match segment.ContinuationToken with
             | null -> return ()
