@@ -24,10 +24,10 @@ let Run(req: HttpRequestMessage, log: TraceWriter) =
             return req.CreateResponse(HttpStatusCode.OK, "Hello " + x.Value);
         | None ->
             let! data = req.Content.ReadAsStringAsync() |> Async.AwaitTask
-            match String.IsNullOrEmpty(data) with
-            | true ->
-                return req.CreateResponse(HttpStatusCode.BadRequest, "Specify a Name value");
-            | false -> 
+
+            if not (String.IsNullOrEmpty(data)) then
                 let named = JsonConvert.DeserializeObject<Named>(data)
                 return req.CreateResponse(HttpStatusCode.OK, "Hello " + named.name);
+            else
+                return req.CreateResponse(HttpStatusCode.BadRequest, "Specify a Name value");
     } |> Async.RunSynchronously
