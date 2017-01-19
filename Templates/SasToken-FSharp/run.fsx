@@ -49,30 +49,31 @@ let Run(req: HttpRequestMessage, log: TraceWriter) =
         let json = JObject.Parse(data)
         let containerJ = json.["container"]
 
-        match isNull containerJ with
-        | true -> return req.CreateResponse(HttpStatusCode.BadRequest, "Specify value for container")
-        | false -> 
-            let container = containerJ.Value<string>()
-            let mutable permissions = SharedAccessBlobPermissions.Read
-            let reqPermJ = json.["permissions"]
+        if containerJ = null then
+            return req.CreateResponse(HttpStatusCode.BadRequest, "Specify value for container")
+        else
+        let container = containerJ.Value<string>()
+        let mutable permissions = SharedAccessBlobPermissions.Read
+        let reqPermJ = json.["permissions"]
 
-        match isNull reqPermJ with
-        | true -> return req.CreateResponse(HttpStatusCode.BadRequest, "Specify value for 'permissions'")
-        | false -> 
-            let reqPerm = reqPermJ.Value<string>()
-            if not (Enum.TryParse(reqPerm, &permissions)) then
-                return req.CreateResponse(HttpStatusCode.BadRequest, "Invalid value for 'permissions'")
+        if reqPermJ = null then
+            return req.CreateResponse(HttpStatusCode.BadRequest, "Specify value for 'permissions'")
+        else
+        let reqPerm = reqPermJ.Value<string>()
+        if not (Enum.TryParse(reqPerm, &permissions)) then
+            return req.CreateResponse(HttpStatusCode.BadRequest, "Invalid value for 'permissions'")
+
+        else
+        let storageAccount = CloudStorageAccount.Parse(ConfigurationManager.AppSettings.Item("AzureWebJobsStorage"))
+        let blobClient = storageAccount.CreateCloudBlobClient()
+        let container = blobClient.GetContainerReference(container.ToString())
+        let blobJ = json.["blobName"]
+
+        let sasToken =
+            if blobJ = null then
+                GetContainerSasToken container permissions
             else
-            let storageAccount = CloudStorageAccount.Parse(ConfigurationManager.AppSettings.Item("AzureWebJobsStorage"))
-            let blobClient = storageAccount.CreateCloudBlobClient()
-            let container = blobClient.GetContainerReference(container.ToString())
-            let blobJ = json.["blobName"]
+                GetBlobSasToken container (blobJ.Value<string>()) permissions
 
-            let sasToken =
-                if blobJ = null then
-                    GetContainerSasToken container permissions
-                else
-                    GetBlobSasToken container (blobJ.Value<string>()) permissions
-
-            return req.CreateResponse(HttpStatusCode.OK, { Token = sasToken; Uri = container.Uri.ToString() + sasToken })
+        return req.CreateResponse(HttpStatusCode.OK, { Token = sasToken; Uri = container.Uri.ToString() + sasToken })
     } |> Async.RunSynchronously
