@@ -46,23 +46,27 @@ let callVisionAPI (image: Stream) = async {
 
     let! httpResponse = client.PostAsync(url, content) |> Async.AwaitTask
 
-    if httpResponse.StatusCode = HttpStatusCode.OK then
-        return! httpResponse.Content.ReadAsStringAsync() |> Async.AwaitTask
-    else
-        return null
+    match httpResponse.StatusCode with
+    | HttpStatusCode.OK -> return! httpResponse.Content.ReadAsStringAsync() |> Async.AwaitTask
+    | _ -> return null
 }
+
+let handleFace face =
+    let faceRectangle = face.FaceRectangle
+    faceRectangle.RowKey <- Guid.NewGuid().ToString()
+    faceRectangle.PartitionKey <- "Functions"
+    faceRectangle.ImageFile <- name + ".jpg"
+    outTable.AddAsync(faceRectangle)
+    |> Async.AwaitTask
+    |> Async.RunSynchronously
 
 let Run(image: Stream, name: string, outTable: IAsyncCollector<FaceRectangle>, log: TraceWriter) =
     let result = callVisionAPI(image) |> Async.RunSynchronously
     log.Info(result)
 
-    if not (String.IsNullOrEmpty(result)) then
+    match String.IsNullOrEmpty(result) with
+    | true -> ()
+    | false ->
         let imageData = JsonConvert.DeserializeObject<ImageData>(result)
-        for face in imageData.Faces do
-            let faceRectangle = face.FaceRectangle
-            faceRectangle.RowKey <- Guid.NewGuid().ToString()
-            faceRectangle.PartitionKey <- "Functions"
-            faceRectangle.ImageFile <- name + ".jpg"
-            outTable.AddAsync(faceRectangle)
-            |> Async.AwaitTask
-            |> Async.RunSynchronously
+        imageData.Faces
+        |> Seq.iter(fun f -> handleFace f)
