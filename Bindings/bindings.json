@@ -919,7 +919,7 @@
                     "help": "$serviceBusTrigger_topicName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z][a-z0-9_.]{1,48}[0-9a-z]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+                            "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
                             "errorText": "$serviceBusTrigger_topicName_errorText"
                         }
                     ]
