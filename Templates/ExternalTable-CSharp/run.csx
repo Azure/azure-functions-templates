@@ -12,20 +12,18 @@ public class Contact
 }
 
 
-public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, ITable<Contact> input, TraceWriter log)
+public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, ITable<Contact> inputTable, TraceWriter log)
 {
     log.Info("C# HTTP trigger function processed a request.");
-
     ContinuationToken continuationToken = null;
+    
     do
     {
-        var segment = await input.ListEntitiesAsync(continuationToken: continuationToken);
-
+        var segment = await inputTable.ListEntitiesAsync(continuationToken: continuationToken);
         foreach (var item in segment.Items)
         {
             log.Info(item.FirstName + " " + item.LastName);
         }
-
         continuationToken = segment.ContinuationToken; ;
     }
     while (continuationToken != null);

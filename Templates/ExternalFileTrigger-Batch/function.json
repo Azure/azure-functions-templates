@@ -2,14 +2,14 @@
   "bindings": [
     {
       "type": "apiHubFileTrigger",
-      "name": "input",
+      "name": "inputFile",
       "direction": "in",
       "path": "input-batch/{name}",
       "connection": ""
     },
     {
       "type": "apiHubFile",
-      "name": "output",
+      "name": "outputFile",
       "direction": "out",
       "path": "output-batch/{name}",
       "connection": ""

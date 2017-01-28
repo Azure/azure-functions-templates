@@ -172,7 +172,7 @@
     <value>Eseményközpont neve</value>
   </data>
   <data name="queueOut_displayName" xml:space="preserve">
-    <value>Azure Storage-üzenetsor</value>
+    <value>Azure Queue Storage</value>
   </data>
   <data name="queueOut_name_help" xml:space="preserve">
     <value>A kódban szereplő azon paraméter neve, amellyel a kimeneti kötési funkciónak kötést kell létesítenie.</value>
@@ -217,10 +217,10 @@
     <value>Ütemezés</value>
   </data>
   <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
-    <value>Az SaaS-táblakapcsolat kapcsolati karakterlánca.</value>
+    <value>The connection string for your External Table connection.</value>
   </data>
   <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
-    <value>SaaS-táblakapcsolat</value>
+    <value>External Table connection</value>
   </data>
   <data name="variables_apiHubTableDataSetHelp" xml:space="preserve">
     <value>Annak az adatkészletnek a neve, amellyel kötést kell kialakítani. Hagyja meg a „default” értéket táblával vagy entitással létesítendő kötés esetén.</value>
@@ -346,10 +346,10 @@
     <value>A bemenetfájl elérési útja</value>
   </data>
   <data name="apiHubFileIn_connection_label" xml:space="preserve">
-    <value>SaaS-fájlkapcsolat</value>
+    <value>Külső fájl kapcsolata</value>
   </data>
   <data name="apiHubFileIn_connection_help" xml:space="preserve">
-    <value>A kapcsolati karakterlánc a SaaS-fájlkapcsolathoz.</value>
+    <value>A külső fájl kapcsolatának kapcsolati karakterlánca.</value>
   </data>
   <data name="apiHubFileTrigger_name_label" xml:space="preserve">
     <value>Fájlparaméter neve</value>
@@ -364,16 +364,16 @@
     <value>Az elérési út az eseményindításhoz. Az elérési útnak léteznie kell.</value>
   </data>
   <data name="apiHubFileTrigger_connection_label" xml:space="preserve">
-    <value>SaaS-fájlkapcsolat</value>
+    <value>Külső fájl kapcsolata</value>
   </data>
   <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
-    <value>A kapcsolati karakterlánc a SaaS-fájlkapcsolathoz.</value>
+    <value>A külső fájl kapcsolatának kapcsolati karakterlánca.</value>
   </data>
   <data name="apiHubTableIn_displayName" xml:space="preserve">
-    <value>SaaS-tábla</value>
+    <value>External Table</value>
   </data>
   <data name="apiHubTableOut_displayName" xml:space="preserve">
-    <value>SaaS-tábla</value>
+    <value>External Table</value>
   </data>
   <data name="httpTrigger_displayName" xml:space="preserve">
     <value>HTTP</value>
@@ -406,7 +406,7 @@
     <value>Útvonalsablon</value>
   </data>
   <data name="httpTrigger_route_help" xml:space="preserve">
-    <value>The route template setting allows you to change the URI that triggers this function. The values should be a relative path. Path segments may be treated as parameters by surrounding them with curly braces. For example: customer/{customerId}</value>
+    <value>Az Útvonalsablon beállítás lehetővé teszi az ezt a függvényt aktiváló URI azonosító módosítását. Az értéknek relatív elérési útnak kell lennie. Az elérési út szegmensei kapcsos zárójelek közé téve paraméterként is megadhatók. Példa: /ügyfél/{customerId}</value>
   </data>
   <data name="httpTrigger_methodRule_help" xml:space="preserve">
     <value>A HttpTrigger minden HTTP-metódusra válaszolni tud. Ha korlátozni szeretné a támogatott metódusok körét, válassza a Kiválasztott HTTP-metódusok lehetőséget.</value>
@@ -418,19 +418,19 @@
     <value>Ez az eseményindító üzemmódja. A „Szokásos” azt jelenti, hogy a kérés normál HTTP-kérés további jelentés nélkül. A „Webhook” azt jelenti, hogy a kérés egy adott webhooktípus szerint lesz feldolgozva.</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
-    <value>SaaS-fájl</value>
+    <value>Külső fájl</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>SaaS-fájl</value>
+    <value>Külső fájl</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
-    <value>Azure Storage-blob</value>
+    <value>Azure Blob Storage</value>
   </data>
   <data name="blobOut_displayName" xml:space="preserve">
-    <value>Azure Storage-blob</value>
+    <value>Azure Blob Storage</value>
   </data>
   <data name="blobTrigger_displayName" xml:space="preserve">
-    <value>Azure Storage-blob</value>
+    <value>Azure Blob Storage</value>
   </data>
   <data name="documentDBIn_collectionName_help" xml:space="preserve">
     <value>Ez a neve annak a gyűjteménynek az adatbázison belül, amelyből az adatok ki lesznek olvasva.</value>
@@ -508,7 +508,7 @@
     <value>Válaszparaméter neve</value>
   </data>
   <data name="httpTrigger_authLevel_help" xml:space="preserve">
-    <value>Authorization level controls whether you require an API key and which key to use; Function uses a function key; Admin uses your master key. The function and master keys are found in the 'keys' management panel on the portal, when your function is selected. For user-based authentication, go to Function App Settings.</value>
+    <value>Az engedélyszinttel azt adhatja meg, hogy kötelező-e API-kulcsot használni, és ha igen, melyik kulcsot kell használni; a Függvény szint a függvénykulcsot, a Rendszergazda szint a mesterkulcsot használja. Az Ön függvényének kiválasztásakor a függvény- és a mesterkulcs a portál kezelési paneljén érhető el. Felhasználóalapú hitelesítés esetén nyissa meg a függvényalkalmazás beállításait.</value>
   </data>
   <data name="manualTrigger_name_help" xml:space="preserve">
     <value>Annak a paraméternek a neve a kódban, amellyel az eseményindítónak kötést kell létesítenie.</value>
@@ -610,13 +610,13 @@
     <value>Címkét alkotó kifejezés (választható)</value>
   </data>
   <data name="notificationHubOut_enableTestSend_help" xml:space="preserve">
-    <value>To get detailed status about the PNS errors encountered while sending the notification, set enableTestSend to true &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=832692'&gt;More information&lt;/a&gt;.</value>
+    <value>Az értesítésküldés közben előforduló PNS-hibák részletes állapotadatainak megjelenítéséhez az enableTestSend beállításnál Igaz értéket adjon meg &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=832692'&gt;További információ&lt;/a&gt;.</value>
   </data>
   <data name="notificationHubOut_enableTestSend_label" xml:space="preserve">
-    <value>Enable Test Send (optional)</value>
+    <value>Tesztküldés engedélyezése (nem kötelező)</value>
   </data>
   <data name="queueTrigger_displayName" xml:space="preserve">
-    <value>Azure Storage-üzenetsor</value>
+    <value>Azure Queue Storage</value>
   </data>
   <data name="sendGrid_displayName" xml:space="preserve">
     <value>SendGrid</value>
@@ -763,7 +763,7 @@
     <value>Témakör neve</value>
   </data>
   <data name="tableIn_displayName" xml:space="preserve">
-    <value>Azure Storage-tábla</value>
+    <value>Azure Table Storage</value>
   </data>
   <data name="tableIn_filter_help" xml:space="preserve">
     <value>Opcionális lekérdezési kifejezés, amellyel a táblalekérdezés eredménye szűrhető. Ez a beállítás nem alkalmazható C#-függvényekre.</value>
@@ -805,7 +805,7 @@
     <value>Beolvasandó rekordok maximális száma (nem kötelező)</value>
   </data>
   <data name="tableout_displayName" xml:space="preserve">
-    <value>Azure Storage-tábla</value>
+    <value>Azure Table Storage</value>
   </data>
   <data name="tableout_name_help" xml:space="preserve">
     <value>A kódban szereplő azon paraméter neve, amellyel a kimeneti kötési funkciónak kötést kell létesítenie.</value>
@@ -823,16 +823,16 @@
     <value>Tábla neve</value>
   </data>
   <data name="BlobTriggerBatch_description" xml:space="preserve">
-    <value>Batch-függvény, amely akkor fut le, amikor egy blob bekerül egy adott tárolóba</value>
+    <value>(Kísérleti) Batch-függvény, amely akkor fut le, amikor egy blob bekerül egy adott tárolóba</value>
   </data>
   <data name="BlobTriggerCSharp_description" xml:space="preserve">
     <value>C#-függvény, amely akkor fut le, amikor egy blob bekerül egy adott tárolóba</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely akkor fut le, ha egy adott tárolóhoz blobot adnak hozzá</value>
+    <value>(Előzetes verzió) F#-függvény, amely akkor fut le, ha egy adott tárolóhoz blobot adnak hozzá</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
-    <value>Node.js-függvény, amely akkor fut le, amikor egy blob bekerül egy adott tárolóba</value>
+    <value>JavaScript-függvény, amely akkor fut le, amikor egy blob bekerül egy adott tárolóba</value>
   </data>
   <data name="CSharp_description" xml:space="preserve">
     <value>C#-függvény, amely akkor fut le, amikor a GitHubtól webhookkérést kap</value>
@@ -850,7 +850,7 @@
     <value>Üres F#-függvény eseményindítók, bemenetek és kimenetek nélkül</value>
   </data>
   <data name="EmptyNodeJS_description" xml:space="preserve">
-    <value>Üres Node.js-függvény eseményindítók, bemenetek és kimenetek nélkül</value>
+    <value>Üres JavaScript-függvény eseményindítók, bemenetek és kimenetek nélkül</value>
   </data>
   <data name="EmptyPHP_description" xml:space="preserve">
     <value>Üres PHP-függvény eseményindítók, bemenetek és kimenetek nélkül</value>
@@ -865,184 +865,187 @@
     <value>C#-függvény, amely akkor fut le, amikor egy eseményközpont új eseményt kap</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely akkor fut le, ha egy eseményközpont új eseményt fogad</value>
+    <value>(Előzetes verzió) F#-függvény, amely akkor fut le, ha egy eseményközpont új eseményt kap</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
-    <value>Node.js-függvény, amely akkor fut le, amikor egy eseményközpont új eseményt kap</value>
+    <value>JavaScript-függvény, amely akkor fut le, amikor egy eseményközpont új eseményt kap</value>
   </data>
   <data name="EventHubTriggerPython_description" xml:space="preserve">
-    <value>Python-függvény, amely akkor fut le, amikor egy eseményközpont új eseményt kap</value>
+    <value>(Kísérleti) Python-függvény, amely akkor fut le, amikor egy eseményközpont új eseményt kap</value>
   </data>
   <data name="FaceLocatorCSharp_description" xml:space="preserve">
-    <value>C#-függvény, amely egy tárolóban lévő blobból (képből) kinyeri az arcok méreteit (az őket körülvevő téglalapokat), és egy Azure-beli tárolótáblában tárolja azokat</value>
+    <value>C#-függvény, amely képeket dolgoz fel, és arcokhoz tartozó határoló téglalapot ad vissza kimenetként</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely kinyeri a megadott tárolóblobban (képen) lévő arcok méreteit (befoglaló téglalapját), és egy Azure Storage-táblába menti</value>
+    <value>(Előzetes verzió) F#-függvény, amely képeket dolgoz fel, és arcokhoz tartozó határoló téglalapot ad vissza kimenetként</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
-    <value>Node.js-függvény, amely egy tárolóban lévő blobból (képből) kinyeri az arcok méreteit (az őket körülvevő téglalapokat), és egy Azure-beli tárolótáblában tárolja azokat</value>
+    <value>JavaScript-függvény, amely képeket dolgoz fel, és arcokhoz tartozó határoló téglalapot ad vissza kimenetként</value>
   </data>
   <data name="GenericWebhookCSharp_description" xml:space="preserve">
     <value>C#-függvény, amely akkor fut le, amikor webhookkérést kap</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely akkor fut le, ha webhookkérést kap</value>
+    <value>(Előzetes verzió) F#-függvény, amely akkor fut le, ha webhookkérést kap</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
-    <value>Node.js-függvény, amely akkor fut le, amikor webhookkérést kap</value>
+    <value>JavaScript-függvény, amely akkor fut le, amikor webhookkérést kap</value>
   </data>
   <data name="GitHubCommenterNodeJS_description" xml:space="preserve">
-    <value>Node.js-függvény, amely akkor fut le, amikor a GitHubtól webhookkérést kap</value>
+    <value>JavaScript-függvény, amely akkor fut le, amikor a GitHubtól webhookkérést kap</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely akkor fut le, ha GitHub-webhook-kérést kap</value>
+    <value>(Előzetes verzió) F#-függvény, amely akkor fut le, ha GitHub-webhook-kérést kap</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>C#-függvény, amely akkor fut le, amikor a GitHubtól webhookkérést kap</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely akkor fut le, ha GitHub-webhook-kérést kap</value>
+    <value>(Előzetes verzió) F#-függvény, amely akkor fut le, ha GitHub-webhook-kérést kap</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
-    <value>Node.js-függvény, amely akkor fut le, amikor a GitHubtól webhookkérést kap</value>
+    <value>JavaScript-függvény, amely akkor fut le, amikor a GitHubtól webhookkérést kap</value>
   </data>
   <data name="HttpGETCRUDC_description" xml:space="preserve">
     <value>C#-függvény, amely egy tárolótáblából entitásokat olvas be, amikor HTTP-kérést kap</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely beolvassa az entitásokat egy Storage-táblából, ha HTTP-kérést kap</value>
+    <value>(Előzetes verzió) F#-függvény, amely beolvassa az entitásokat egy Storage-táblából, ha HTTP-kérést kap</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
-    <value>Node.js-függvény, amely egy tárolótáblából entitásokat olvas be, amikor HTTP-kérést kap</value>
+    <value>JavaScript-függvény, amely egy Storage-táblából entitásokat olvas be, amikor HTTP-kérést kap</value>
   </data>
   <data name="HttpGETCRUDPHP_description" xml:space="preserve">
-    <value>PHP-függvény, amely entitásokat olvas be egy tárolótáblából, amikor HTTP-kérést kap</value>
+    <value>(Kísérleti) PHP-függvény, amely entitásokat olvas be egy Storage-táblából, amikor HTTP-kérést kap</value>
   </data>
   <data name="HttpPOSTCRUDCSharp_description" xml:space="preserve">
     <value>C#-függvény, amely egy tárolótáblához entitásokat ad hozzá, amikor HTTP-kérést kap</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>F # függvény, amely hozzáadja az entitásokat egy Storage-táblához, ha HTTP-kérést kap</value>
+    <value>(Előzetes verzió) F#-függvény, amely hozzáadja az entitásokat egy Storage-táblához, ha HTTP-kérést kap</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
-    <value>Node.js-függvény, amely egy tárolótáblához entitásokat ad hozzá, amikor HTTP-kérést kap</value>
+    <value>JavaScript-függvény, amely egy Storage-táblához entitásokat ad hozzá, amikor HTTP-kérést kap</value>
   </data>
   <data name="HttpPUTCRUDC_description" xml:space="preserve">
     <value>C#-függvény, amely frissít egy tárolótáblában lévő entitást, ha HTTP-kérést kap</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely frissít egy tárolótáblában lévő entitást, ha HTTP-kérést kap</value>
+    <value>(Előzetes verzió) F#-függvény, amely frissít egy Storage-táblában lévő entitást, ha HTTP-kérést kap</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
-    <value>Batch-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
+    <value>(Kísérleti) Batch-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
   </data>
   <data name="HttpTriggerCSharp_description" xml:space="preserve">
     <value>C#-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely akkor fut le, ha HTTP-kérést kap</value>
+    <value>(Előzetes verzió) F#-függvény, amely akkor fut le, ha HTTP-kérést kap</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
-    <value>Node.js-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
+    <value>JavaScript-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
   </data>
   <data name="HttpTriggerPowerShell_description" xml:space="preserve">
-    <value>PowerShell-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
+    <value>(Előzetes verzió) PowerShell-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
   </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>C#-függvény, amely átméretezett képeket hoz létre, amikor egy blob bekerül egy adott tárolóba</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely átméretezett képeket hoz létre, ha egy adott tárolóhoz blobot adnak hozzá</value>
+    <value>(Előzetes verzió) F#-függvény, amely átméretezett képeket hoz létre, ha egy adott tárolóhoz blobot adnak hozzá</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>C#-függvény, amely manuálisan indítható a portál Futtatás gombjával</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely manuálisan aktiválható a portálon lévő Futtatás gombbal</value>
+    <value>(Előzetes verzió) F#-függvény, amely manuálisan aktiválható a portál Futtatás gombjával</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
-    <value>Node.js-függvény, amely manuálisan indítható a portál Futtatás gombjával</value>
+    <value>JavaScript-függvény, amely manuálisan indítható a portál Futtatás gombjával</value>
   </data>
   <data name="QueueTriggerBash_description" xml:space="preserve">
-    <value>Bash-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Storage-üzenetsorba</value>
+    <value>(Kísérleti) Bash-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
   </data>
   <data name="QueueTriggerBatch_description" xml:space="preserve">
-    <value>Batch-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Storage-üzenetsorba</value>
+    <value>(Kísérleti) Batch-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
   </data>
   <data name="QueueTriggerCSharp_description" xml:space="preserve">
-    <value>C#-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Storage-üzenetsorba</value>
+    <value>C#-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
   </data>
   <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>F#-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Storage-üzenetsorba</value>
+    <value>(Előzetes verzió) F#-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
   </data>
   <data name="QueueTriggerNodeJS_description" xml:space="preserve">
-    <value>Node.js-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Storage-üzenetsorba</value>
+    <value>JavaScript-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
   </data>
   <data name="QueueTriggerPHP_description" xml:space="preserve">
-    <value>PHP-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Storage-üzenetsorba</value>
+    <value>(Kísérleti) PHP-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
   </data>
   <data name="QueueTriggerPowerShell_description" xml:space="preserve">
-    <value>PowerShell-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Storage-üzenetsorba</value>
+    <value>(Előzetes verzió) PowerShell-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
   </data>
   <data name="QueueTriggerPython_description" xml:space="preserve">
-    <value>Python-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Storage-üzenetsorba</value>
+    <value>(Kísérleti) Python-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
   </data>
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
-    <value>Batch-függvény, amely akkor fut le, amikor egy blob bekerül egy adott tárolóba.</value>
+    <value>(Experimental) A Batch function that will be run whenever a file is added to a External File provider.</value>
   </data>
   <data name="SaasFileTriggerCSharp_description" xml:space="preserve">
-    <value>C#-függvény, amely akkor fut le, amikor egy fájlt hozzáadnak egy SaaS-szolgáltatóhoz.</value>
+    <value>(Preview) A C# function that will be run whenever a file is added to a External File provider.</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely akkor fut le, ha fájlt adnak hozzá egy SaaS-szolgáltatóhoz.</value>
+    <value>(Preview) An F# function that will be run whenever a file is added to a External File provider.</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
-    <value>Node.js-függvény, amely akkor fut le, amikor egy fájlt hozzáadnak egy SaaS-szolgáltatóhoz.</value>
+    <value>(Preview) A JavaScript function that will be run whenever a file is added to a External File provider.</value>
+  </data>
+  <data name="SaasFileTokenNodeJS_description" xml:space="preserve">
+    <value>A JavaScript function that will be run whenever a file is added to a External File provider.</value>
   </data>
   <data name="SaasTableCSharp_description" xml:space="preserve">
-    <value>C#-függvény, amely egy SaaS-táblából entitásokat olvas be, amikor HTTP-kérést kap.</value>
+    <value>(Experimental) A C# function that fetches entities from a External Table when it receives an HTTP request.</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely beolvassa az entitásokat egy SaaS-táblából, ha HTTP-kérést kap.</value>
+    <value>(Experimental) An F# function that fetches entities from a External Table when it receives an HTTP request.</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely létrehozza egy adott tároló és blobnév Azure Storage-beli SAS-jogkivonatát.</value>
+    <value>(Előzetes verzió) F#-függvény, amely létrehozza egy adott tároló és blobnév Azure Storage-beli SAS-jogkivonatát.</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>C#-függvény, amely SendGrid megerősítő e-mailt küld, amikor egy új rendelés bekerül egy adott Azure Storage-üzenetsorba</value>
+    <value>(Előzetes verzió) C#-függvény, amely megerősítő e-mailt küld, amikor egy új elem kerül be egy adott üzenetsorba</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely megerősítő SendGrid e-mailt küld, ha egy adott Azure Storage-üzenetsor új megrendeléssel bővül</value>
+    <value>(Előzetes verzió) F#-függvény, amely megerősítő e-mailt küld, amikor egy új elem kerül be egy adott üzenetsorba</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>Node.js-függvény, amely SendGrid megerősítő e-mailt küld, amikor egy új rendelés kerül be egy adott Azure Storage-üzenetsorba</value>
+    <value>(Előzetes verzió) C#-függvény, amely megerősítő e-mailt küld, amikor egy új elem kerül be egy adott üzenetsorba</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
-    <value>C#-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-üzenetsorba</value>
+    <value>JavaScript-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-üzenetsorba</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely akkor fut le, ha egy adott Service Bus-üzenetsor új üzenettel bővül</value>
+    <value>(Előzetes verzió) F#-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-üzenetsorba</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
-    <value>Node.js-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-üzenetsorba</value>
+    <value>JavaScript-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-üzenetsorba</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely akkor fut le, ha egy adott Service Bus-témakör új üzenettel bővül</value>
+    <value>(Előzetes verzió) F#-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-témakörbe</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
-    <value>Node.js-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-témába</value>
+    <value>JavaScript-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-témakörbe</value>
   </data>
   <data name="TimerTriggerCSharp_description" xml:space="preserve">
     <value>C#-függvény, amely megadott ütemezés szerint fut</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely egy adott ütemezés szerint fut le</value>
+    <value>(Előzetes verzió) F#-függvény, amely egy adott ütemezés szerint fut le</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
-    <value>Node.js-függvény, amely megadott ütemezés szerint fut</value>
+    <value>JavaScript-függvény, amely egy adott ütemezés szerint fut le</value>
   </data>
   <data name="TimerTriggerPowerShell_description" xml:space="preserve">
-    <value>PowerShell-függvény, amely megadott ütemezés szerint fut</value>
+    <value>(Előzetes verzió) PowerShell-függvény, amely egy adott ütemezés szerint fut le</value>
   </data>
   <data name="timerTrigger_schedule_errorText" xml:space="preserve">
     <value>Érvénytelen CRON-kifejezés. További információkért tanulmányozza a &lt;a target='_blank' href='https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/'&gt;dokumentációt&lt;/a&gt;.</value>
@@ -1097,5 +1100,41 @@
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
     <value>SendGrid-API-kulcs</value>
+  </data>
+  <data name="bot_botId_help" xml:space="preserve">
+    <value>A rendszer ezt az azonosítót fogja használni üzenetek létrehozásakor és robotnak történő elküldésekor a tevékenység Feladó tulajdonságában, illetve ezzel tölti fel az elküldött tevékenység ChannelAccount.Id mezőjét.</value>
+  </data>
+  <data name="bot_botId_label" xml:space="preserve">
+    <value>Küldő azonosítója</value>
+  </data>
+  <data name="bot_in_displayName" xml:space="preserve">
+    <value>Bot Framework</value>
+  </data>
+  <data name="bot_out_displayName" xml:space="preserve">
+    <value>Bot Framework</value>
+  </data>
+  <data name="bot_in_secret_help" xml:space="preserve">
+    <value>A közvetlen vonal kulcsát a közvetlen vonal csatornakonfigurációs lapján lehet létrehozni a Bot Framework portálon. Ha üresen hagyja ezt a mezőt, a rendszer az értéket az AzureWebJobsBotFrameworkDirectLineSecret alkalmazásbeállításban fogja keresni</value>
+  </data>
+  <data name="bot_in_secret_label" xml:space="preserve">
+    <value>Közvetlen vonal kulcsa</value>
+  </data>
+  <data name="bot_out_secret_help" xml:space="preserve">
+    <value>A közvetlen vonal kulcsát a közvetlen vonal csatornakonfigurációs lapján lehet létrehozni a Bot Framework portálon. Ha üresen hagyja ezt a mezőt, a rendszer az értéket az AzureWebJobsBotFrameworkDirectLineSecret alkalmazásbeállításban fogja keresni</value>
+  </data>
+  <data name="bot_out_secret_label" xml:space="preserve">
+    <value>Közvetlen vonal kulcsa</value>
+  </data>
+  <data name="bot_in_name_help" xml:space="preserve">
+    <value>Annak a paraméternek a neve a kódban, amellyel a bemeneti kötési funkciónak kötést kell létesítenie.</value>
+  </data>
+  <data name="bot_in_name_label" xml:space="preserve">
+    <value>A robot paraméterneve</value>
+  </data>
+  <data name="bot_out_name_help" xml:space="preserve">
+    <value>A kódban szereplő azon paraméter neve, amellyel a kimeneti kötési funkciónak kötést kell létesítenie.</value>
+  </data>
+  <data name="bot_out_name_label" xml:space="preserve">
+    <value>A robot paraméterneve</value>
   </data>
 </root>

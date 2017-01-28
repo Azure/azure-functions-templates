@@ -354,13 +354,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SendGrid-CSharp", "SendGrid
 		Templates\SendGrid-CSharp\sample.dat = Templates\SendGrid-CSharp\sample.dat
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventHubTrigger-Python", "EventHubTrigger-Python", "{B961A3B3-39AE-4392-8A7C-B9E051D42BB4}"
-	ProjectSection(SolutionItems) = preProject
-		Templates\EventHubTrigger-Python\function.json = Templates\EventHubTrigger-Python\function.json
-		Templates\EventHubTrigger-Python\metadata.json = Templates\EventHubTrigger-Python\metadata.json
-		Templates\EventHubTrigger-Python\run.py = Templates\EventHubTrigger-Python\run.py
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{933D5A66-1DCC-4A3E-AC98-BD394646F184}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{9D8B34D2-B129-4C3F-A68C-ED962B58B92E}"
@@ -661,6 +654,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HttpPOSTQueueTrigger(CRUD)-
 		Templates\HttpPOSTQueueTrigger(CRUD)-FSharp\project.json = Templates\HttpPOSTQueueTrigger(CRUD)-FSharp\project.json
 		Templates\HttpPOSTQueueTrigger(CRUD)-FSharp\run.fsx = Templates\HttpPOSTQueueTrigger(CRUD)-FSharp\run.fsx
 		Templates\HttpPOSTQueueTrigger(CRUD)-FSharp\sample.dat = Templates\HttpPOSTQueueTrigger(CRUD)-FSharp\sample.dat
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScheduledMail-CSharp", "ScheduledMail-CSharp", "{E0D727E3-729D-419E-BF5D-2162846A69B3}"
+	ProjectSection(SolutionItems) = preProject
+		Templates\ScheduledMail-CSharp\function.json = Templates\ScheduledMail-CSharp\function.json
+		Templates\ScheduledMail-CSharp\metadata.json = Templates\ScheduledMail-CSharp\metadata.json
+		Templates\ScheduledMail-CSharp\run.csx = Templates\ScheduledMail-CSharp\run.csx
 	EndProjectSection
 EndProject
 Global
@@ -713,7 +711,6 @@ Global
 		{C1C799D0-ED2C-45C2-8F09-5F924323BAD7} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 		{0BF07FB0-DD2B-4865-BD62-D6A1774CEC36} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 		{849D87EE-A7B3-46C7-8D09-4D4C93D2EE12} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
-		{B961A3B3-39AE-4392-8A7C-B9E051D42BB4} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 		{E89FDC38-9AE5-49D9-AE1E-0169732973C6} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 		{35D8627B-DF0F-4318-A094-FA8DEB82252C} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 		{D5F963A5-57CB-4079-9475-C36C6175615E} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
@@ -755,5 +752,6 @@ Global
 		{194D0A62-F490-4F6D-9E28-01741AFA9470} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 		{642A3997-3CC5-4273-8157-A46DA0DB37A6} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 		{358DE0D0-9107-49B7-AAD8-D2DD189CC2A3} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
+		{E0D727E3-729D-419E-BF5D-2162846A69B3} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 	EndGlobalSection
 EndGlobal

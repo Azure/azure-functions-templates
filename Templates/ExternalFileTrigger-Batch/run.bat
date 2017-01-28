@@ -1,5 +1,5 @@
 @echo off
 
-copy %input% %output%
+copy %inputFile% %outputFile%
 
 echo Windows Batch script processed a file!
