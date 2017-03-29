@@ -1343,10 +1343,18 @@
                 {
                     "name": "id",
                     "value": "string",
-                    "defaultValue": "{documentId}",
-                    "required": true,
+                    "defaultValue": "",
+                    "required": false,
                     "label": "$documentDBIn_id_label",
                     "help": "$documentDBIn_id_help"
+                },
+                {
+                    "name": "sqlQuery",
+                    "value": "string",
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "$documentDBIn_sqlQuery_label",
+                    "help": "$documentDBIn_sqlQuery_help"
                 },
                 {
                     "name": "connection",

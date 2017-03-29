@@ -451,13 +451,13 @@
     <value>Database name</value>
   </data>
   <data name="documentDBIn_displayName" xml:space="preserve">
-    <value>Azure DocumentDB Document</value>
+    <value>Azure DocumentDB</value>
   </data>
   <data name="documentDBIn_id_help" xml:space="preserve">
-    <value>This is the ID of the document that will be read.</value>
+    <value>This is the ID of the document that will be read. If neither a SQL query nor an ID are specified, all documents in the collection are returned.</value>
   </data>
   <data name="documentDBIn_id_label" xml:space="preserve">
-    <value>Document ID</value>
+    <value>Document ID (optional)</value>
   </data>
   <data name="documentDBIn_name_help" xml:space="preserve">
     <value>This is the name of the parameter in the code for input binding to bind to.</value>
@@ -1139,5 +1139,11 @@
   </data>
   <data name="ScheduledMailCSharp_description" xml:space="preserve">
     <value>(Preview) A C# function that will periodically send emails</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
+    <value>This is an optional DocumentDB SQL query used to retrieve a set of documents. If neither a SQL query nor an ID are specified, all documents in the collection are returned.</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
+    <value>SQL Query (optional)</value>
   </data>
 </root>
