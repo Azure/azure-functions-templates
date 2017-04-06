@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="eventHubOut_connection_help" xml:space="preserve">
-    <value>This is the connection string for your event hub. Make sure that it has Send permissions.</value>
+    <value>The name of the app setting containing your Event Hub connection string. The connection string must have Send permissions.</value>
   </data>
   <data name="eventHubOut_connection_label" xml:space="preserve">
     <value>Event Hub connection</value>
@@ -127,7 +127,7 @@
     <value>Azure Event Hub</value>
   </data>
   <data name="eventHubOut_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="eventHubOut_name_label" xml:space="preserve">
     <value>Event parameter name</value>
@@ -142,13 +142,13 @@
     <value>Event Hub name</value>
   </data>
   <data name="eventHubTrigger_connection_help" xml:space="preserve">
-    <value>This is the connection string for your event hub. Make sure that it has Receive permissions.</value>
+    <value>The name of the app setting containing your your Event Hub connection string. The connection string must have Receive permissions.</value>
   </data>
   <data name="eventHubTrigger_connection_label" xml:space="preserve">
     <value>Event Hub connection</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_help" xml:space="preserve">
-    <value>The name of the Event Hub consumer group to receive events from.</value>
+    <value>Event Hub consumer group from which to receive events</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_label" xml:space="preserve">
     <value>Event Hub consumer group</value>
@@ -157,16 +157,16 @@
     <value>Azure Event Hub</value>
   </data>
   <data name="eventHubTrigger_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for trigger to bind to.</value>
+    <value>The name used to identify this trigger in your code</value>
   </data>
   <data name="eventHubTrigger_name_label" xml:space="preserve">
     <value>Event parameter name</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>Your event hub name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the hyphen, the period, and the underscore.</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the hyphen, the period, and the underscore.</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
-    <value>This is the name of the event hub you would like to trigger off of.</value>
+    <value>The name of the event hub from which to trigger</value>
   </data>
   <data name="eventHubTrigger_path_label" xml:space="preserve">
     <value>Event Hub name</value>
@@ -175,7 +175,7 @@
     <value>Azure Queue Storage</value>
   </data>
   <data name="queueOut_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="queueOut_name_label" xml:space="preserve">
     <value>Message parameter name</value>
@@ -205,19 +205,19 @@
     <value>Timer</value>
   </data>
   <data name="timerTrigger_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for trigger to bind to.</value>
+    <value>The name used to identify this trigger in your code</value>
   </data>
   <data name="timerTrigger_name_label" xml:space="preserve">
     <value>Timestamp parameter name</value>
   </data>
   <data name="timerTrigger_schedule_help" xml:space="preserve">
-    <value>Enter a cron expression of the format '{second} {minute} {hour} {day} {month} {day of week}' to specify your schedule. Please consult the documentation to learn more.</value>
+    <value>Enter a cron expression of the format '{second} {minute} {hour} {day} {month} {day of week}' to specify the schedule. See documentation below for examples.</value>
   </data>
   <data name="timerTrigger_schedule_label" xml:space="preserve">
     <value>Schedule</value>
   </data>
   <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
-    <value>The connection string for your External Table connection.</value>
+    <value>The name of the app setting containing your External Table connection.</value>
   </data>
   <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
     <value>External Table connection</value>
@@ -244,7 +244,7 @@
     <value>This is the connection string for your storage account.</value>
   </data>
   <data name="variables_parameterName" xml:space="preserve">
-    <value>The parameter name must be an alphanumeric string of any number of characters. It can’t start with a number.</value>
+    <value>The parameter name must be an alphanumeric string of any number of characters and cannot start with a number.</value>
   </data>
   <data name="variables_paramNameInputHelp" xml:space="preserve">
     <value>This is the name of the parameter in code for the input binding to bind to.</value>
@@ -274,22 +274,22 @@
     <value>Samples</value>
   </data>
   <data name="blobOut_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="blobOut_name_label" xml:space="preserve">
     <value>Blob parameter name</value>
   </data>
   <data name="queueTrigger_queueName_help" xml:space="preserve">
-    <value>This is the name of the queue from which the message will be read.</value>
+    <value>Name of the queue from which the message will be read</value>
   </data>
   <data name="queueTrigger_name_label" xml:space="preserve">
     <value>Message parameter name</value>
   </data>
   <data name="queueTrigger_queueName_errorText" xml:space="preserve">
-    <value>Your queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, and the hyphen. The name must be 3 to 63 characters.</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, and the hyphen. The name must be 3 to 63 characters.</value>
   </data>
   <data name="queueTrigger_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for trigger to bind to.</value>
+    <value>The name used to identify this trigger in your code</value>
   </data>
   <data name="queueTrigger_queueName_label" xml:space="preserve">
     <value>Queue name</value>
@@ -304,7 +304,7 @@
     <value>Path</value>
   </data>
   <data name="blobIn_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for input binding to bind to.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="blobIn_name_label" xml:space="preserve">
     <value>Blob parameter name</value>
@@ -322,7 +322,7 @@
     <value>Blob parameter name</value>
   </data>
   <data name="blobTrigger_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for trigger to bind to.</value>
+    <value>The name used to identify this trigger in your code</value>
   </data>
   <data name="blobTrigger_path_label" xml:space="preserve">
     <value>Path</value>
@@ -337,7 +337,7 @@
     <value>File parameter name</value>
   </data>
   <data name="apiHubFileIn_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="apiHubFileIn_path_label" xml:space="preserve">
     <value>Path</value>
@@ -349,13 +349,13 @@
     <value>External File connection</value>
   </data>
   <data name="apiHubFileIn_connection_help" xml:space="preserve">
-    <value>The connection string to your External File connection.</value>
+    <value>The name of the app setting containing your External File connection string</value>
   </data>
   <data name="apiHubFileTrigger_name_label" xml:space="preserve">
     <value>File parameter name</value>
   </data>
   <data name="apiHubFileTrigger_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for trigger to bind to.</value>
+    <value>The name used to identify this trigger in your code</value>
   </data>
   <data name="apiHubFileTrigger_path_label" xml:space="preserve">
     <value>Path</value>
@@ -367,7 +367,7 @@
     <value>External File connection</value>
   </data>
   <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
-    <value>The connection string to your External File connection.</value>
+    <value>The name of the app setting containing your External File connection string</value>
   </data>
   <data name="apiHubTableIn_displayName" xml:space="preserve">
     <value>External Table (Experimental)</value>
@@ -382,7 +382,7 @@
     <value>Request parameter name</value>
   </data>
   <data name="httpTrigger_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for trigger to bind to.</value>
+    <value>The name used to identify this trigger in your code</value>
   </data>
   <data name="httpTrigger_webHookType_label" xml:space="preserve">
     <value>Webhook type</value>
@@ -439,13 +439,13 @@
     <value>Collection Name</value>
   </data>
   <data name="documentDBIn_connection_help" xml:space="preserve">
-    <value>This is the connection string for your DocumentDB account.</value>
+    <value>The name of the app setting containing your DocumentDB connection string</value>
   </data>
   <data name="documentDBIn_connection_label" xml:space="preserve">
     <value>DocumentDB account connection</value>
   </data>
   <data name="documentDBIn_databaseName_help" xml:space="preserve">
-    <value>This is the name of the database within your DocumentDB account from which data will be read.</value>
+    <value>Name of the database within your DocumentDB account from which data will be read.</value>
   </data>
   <data name="documentDBIn_databaseName_label" xml:space="preserve">
     <value>Database name</value>
@@ -460,7 +460,7 @@
     <value>Document ID (optional)</value>
   </data>
   <data name="documentDBIn_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for input binding to bind to.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="documentDBIn_name_label" xml:space="preserve">
     <value>Document parameter name</value>
@@ -472,7 +472,7 @@
     <value>Collection Name</value>
   </data>
   <data name="documentDBOut_connection_help" xml:space="preserve">
-    <value>This is the connection string for your DocumentDB account.</value>
+    <value>The name of the app setting containing your DocumentDB connection string</value>
   </data>
   <data name="documentDBOut_connection_label" xml:space="preserve">
     <value>DocumentDB account connection</value>
@@ -493,7 +493,7 @@
     <value>Azure DocumentDB Document</value>
   </data>
   <data name="documentDBOut_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="documentDBOut_name_label" xml:space="preserve">
     <value>Document parameter name</value>
@@ -502,16 +502,16 @@
     <value>HTTP</value>
   </data>
   <data name="httpOut_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="httpOut_name_label" xml:space="preserve">
     <value>Response parameter name</value>
   </data>
   <data name="httpTrigger_authLevel_help" xml:space="preserve">
-    <value>Authorization level controls whether you require an API key and which key to use; Function uses a function key; Admin uses your master key. The function and master keys are found in the 'keys' management panel on the portal, when your function is selected. For user-based authentication, go to Function App Settings.</value>
+    <value>Authorization level controls whether the function requires an API key and which key to use; Function uses a function key; Admin uses your master key. The function and master keys are found in the 'keys' management panel on the portal, when your function is selected. For user-based authentication, go to Function App Settings.</value>
   </data>
   <data name="manualTrigger_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for trigger to bind to.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="manualTrigger_name_label" xml:space="preserve">
     <value>Parameter name</value>
@@ -523,7 +523,7 @@
     <value>API key lookup (optional)</value>
   </data>
   <data name="mobileTableIn_connection_help" xml:space="preserve">
-    <value>This is the app setting name that specifies the URL of your Mobile App.</value>
+    <value>The name of the app setting containing the URL of your Mobile App</value>
   </data>
   <data name="mobileTableIn_connection_label" xml:space="preserve">
     <value>Mobile App URL lookup</value>
@@ -538,13 +538,13 @@
     <value>Record ID</value>
   </data>
   <data name="mobileTableIn_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for input binding to bind to.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="mobileTableIn_name_label" xml:space="preserve">
     <value>Record parameter name</value>
   </data>
   <data name="mobileTableIn_tableName_help" xml:space="preserve">
-    <value>This is the name of the table within your Mobile App from which data will be read.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="mobileTableIn_tableName_label" xml:space="preserve">
     <value>Table name</value>
@@ -556,7 +556,7 @@
     <value>API key lookup (optional)</value>
   </data>
   <data name="mobileTableOut_connection_help" xml:space="preserve">
-    <value>This is the app setting name that specifies the URL of your Mobile App.</value>
+    <value>The name of the app setting containing the URL of your Mobile App</value>
   </data>
   <data name="mobileTableOut_connection_label" xml:space="preserve">
     <value>Mobile App URL lookup</value>
@@ -565,19 +565,19 @@
     <value>Azure Mobile Table Record</value>
   </data>
   <data name="mobileTableOut_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="mobileTableOut_name_label" xml:space="preserve">
     <value>Record parameter name</value>
   </data>
   <data name="mobileTableOut_tableName_help" xml:space="preserve">
-    <value>This is the name of the table within your Mobile App to which data will be written.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="mobileTableOut_tableName_label" xml:space="preserve">
     <value>Table name</value>
   </data>
   <data name="notificationHubOut_connection_help" xml:space="preserve">
-    <value>This is the connection string for your notification hub namespace.</value>
+    <value>The name of the app setting containing the connection string to your Notification Hub namespace</value>
   </data>
   <data name="notificationHubOut_connection_label" xml:space="preserve">
     <value>Notification Hubs namespace connection</value>
@@ -592,7 +592,7 @@
     <value>Notification Hub name</value>
   </data>
   <data name="notificationHubOut_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="notificationHubOut_name_label" xml:space="preserve">
     <value>Notification parameter name</value>
@@ -619,7 +619,7 @@
     <value>Azure Queue Storage</value>
   </data>
   <data name="sendGrid_displayName" xml:space="preserve">
-    <value>SendGrid (Preview)</value>
+    <value>SendGrid</value>
   </data>
   <data name="sendGrid_from_help" xml:space="preserve">
     <value>This is the email address the message is sent from. Can be of the form 'user@host.com' or 'Display Name &lt;user@host.com&gt;'. If not specified here, the value can be specified in code.</value>
@@ -628,37 +628,37 @@
     <value>From address</value>
   </data>
   <data name="sendGrid_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="sendGrid_name_label" xml:space="preserve">
     <value>Message parameter name</value>
   </data>
   <data name="sendGrid_subject_help" xml:space="preserve">
-    <value>This is the subject line to use for the message. If not specified here, the value can be specified in code.</value>
+    <value>Subject line to use for the message. If not provided here, the value can be specified in code.</value>
   </data>
   <data name="sendGrid_subject_label" xml:space="preserve">
-    <value>Message Subject</value>
+    <value>Message subject</value>
   </data>
   <data name="sendGrid_text_help" xml:space="preserve">
-    <value>This is the text body to use for the message. If not specified here, the value can be specified in code.</value>
+    <value>Text body to use for the message. If not provided here, the value can be specified in code.</value>
   </data>
   <data name="sendGrid_text_label" xml:space="preserve">
     <value>Message Text</value>
   </data>
   <data name="sendGrid_to_help" xml:space="preserve">
-    <value>This is the email address the message should be sent to. Can be of the form 'user@host.com' or 'Display Name &lt;user@host.com&gt;'. If not specified here, the value can be specified in code.</value>
+    <value>Email address to which the message should be sent. Can be of the form 'user@host.com' or 'Display Name &lt;user@host.com&gt;'. If not provided here, the value can be specified in code.</value>
   </data>
   <data name="sendGrid_to_label" xml:space="preserve">
     <value>To address</value>
   </data>
   <data name="serviceBusOut_accessRights_help" xml:space="preserve">
-    <value>This is the access rights the client has to the queue or topic subscription.</value>
+    <value>The access rights of the Service Bus connection string. Set to Send if you're using a connection string that doesn't have Manage permissions.</value>
   </data>
   <data name="serviceBusOut_accessRights_label" xml:space="preserve">
-    <value>AccessRights</value>
+    <value>Access rights</value>
   </data>
   <data name="serviceBusOut_connection_help" xml:space="preserve">
-    <value>This is the connection string for your service bus. Make sure that it has Send rights.</value>
+    <value>The name of the app setting containing your Service Bus connection string. The connection string must have Send rights.</value>
   </data>
   <data name="serviceBusOut_connection_label" xml:space="preserve">
     <value>Service Bus connection</value>
@@ -667,7 +667,7 @@
     <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusOut_messageType_help" xml:space="preserve">
-    <value>This is the type of service bus message. This lets you choose between using Queues or Topics.</value>
+    <value>Type of Service Bus message, either Queues or Topics.</value>
   </data>
   <data name="serviceBusOut_messageType_label" xml:space="preserve">
     <value>Message type</value>
@@ -679,37 +679,37 @@
     <value>Service Bus Topic</value>
   </data>
   <data name="serviceBusOut_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="serviceBusOut_name_label" xml:space="preserve">
     <value>Message parameter name</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>Your queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters.</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters.</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
-    <value>This is the queue to which the message will be sent.</value>
+    <value>The queue to which the message will be sent.</value>
   </data>
   <data name="serviceBusOut_queueName_label" xml:space="preserve">
     <value>Queue name</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>Your topic name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters.</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters.</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
-    <value>This is the topic to which the message will be sent.</value>
+    <value>Topic to which the message will be sent.</value>
   </data>
   <data name="serviceBusOut_topicName_label" xml:space="preserve">
     <value>Topic name</value>
   </data>
   <data name="serviceBusTrigger_accessRights_help" xml:space="preserve">
-    <value>This is the access rights the client has to the queue or topic subscription.</value>
+    <value>The access rights of the Service Bus connection string. Set to Send if you're using a connection string that doesn't have Manage permissions.</value>
   </data>
   <data name="serviceBusTrigger_accessRights_label" xml:space="preserve">
-    <value>AccessRights</value>
+    <value>Access rights</value>
   </data>
   <data name="serviceBusTrigger_connection_help" xml:space="preserve">
-    <value>This is the connection string for your service bus. Make sure that it has Listen rights.</value>
+    <value>The name of the app setting containing your Service Bus connection string. THe connection string must have Listen rights.</value>
   </data>
   <data name="serviceBusTrigger_connection_label" xml:space="preserve">
     <value>Service Bus connection</value>
@@ -718,7 +718,7 @@
     <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusTrigger_messageType_help" xml:space="preserve">
-    <value>This is the type of service bus message. This lets you choose between using Queues or Topics.</value>
+    <value>Type of Service Bus message, either Queues or Topics.</value>
   </data>
   <data name="serviceBusTrigger_messageType_label" xml:space="preserve">
     <value>Message type</value>
@@ -730,34 +730,34 @@
     <value>Service Bus Topic</value>
   </data>
   <data name="serviceBusTrigger_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for trigger to bind to.</value>
+    <value>The name used to identify this trigger in your code</value>
   </data>
   <data name="serviceBusTrigger_name_label" xml:space="preserve">
     <value>Message parameter name</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>Your queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters.</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters.</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
-    <value>This is the name of the queue from which the message will be read.</value>
+    <value>The queue from which the message will be read.</value>
   </data>
   <data name="serviceBusTrigger_queueName_label" xml:space="preserve">
     <value>Queue name</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>Your subscription name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters.</value>
+    <value>Subscription name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
-    <value>This is the name of the subscription within the topic to bind to.</value>
+    <value>Subscription name within the topic to bind to.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_label" xml:space="preserve">
     <value>Subscription name</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>Your topic name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters.</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the period, and the hyphen. The name must be 3 to 63 characters.</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
-    <value>This is the name of the topic from which the message will be read.</value>
+    <value>The name of the topic from which the message will be read.</value>
   </data>
   <data name="serviceBusTrigger_topicName_label" xml:space="preserve">
     <value>Topic name</value>
@@ -766,40 +766,40 @@
     <value>Azure Table Storage</value>
   </data>
   <data name="tableIn_filter_help" xml:space="preserve">
-    <value>This is an optional query expression used to filter the results of the table query.This setting is not applicable to a C# function.</value>
+    <value>Optional query expression used to filter the results of the table query. This setting is not applicable for C# functions.</value>
   </data>
   <data name="tableIn_filter_label" xml:space="preserve">
     <value>Query filter (optional)</value>
   </data>
   <data name="tableIn_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for input binding to bind to.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="tableIn_name_label" xml:space="preserve">
     <value>Table parameter name</value>
   </data>
   <data name="tableIn_partitionKey_help" xml:space="preserve">
-    <value>This is the value of Partition key column of the table. The records with matching Partition key and Row key will be returned. Row key setting must be configured with Partiton key setting.</value>
+    <value>The name of the partition key column of the table. Records with matching Partition key and Row key will be returned. If partition key is provided, row key must also be provided.</value>
   </data>
   <data name="tableIn_partitionKey_label" xml:space="preserve">
     <value>Partition key (optional)</value>
   </data>
   <data name="tableIn_rowKey_help" xml:space="preserve">
-    <value>This is the value of Row key column of the table. The record with matching Row key and Partition key will be returned. Partiton key setting must be configured with Row key setting.</value>
+    <value>The name of the partition key column of the table. Records with matching Partition key and Row key will be returned. If partition key is provided, row key must also be provided.</value>
   </data>
   <data name="tableIn_rowKey_label" xml:space="preserve">
     <value>Row key (optional)</value>
   </data>
   <data name="tableIn_tableName_errorText" xml:space="preserve">
-    <value>Your table name must be an alphanumeric string of 3 to 63 characters. It can’t start with a number.</value>
+    <value>Table name must be an alphanumeric string of 3 to 63 characters and cannot start with a number.</value>
   </data>
   <data name="tableIn_tableName_help" xml:space="preserve">
-    <value>This is the name of the table within your storage account from which the data will be read.</value>
+    <value>Table name in storage account from which data will be read.</value>
   </data>
   <data name="tableIn_tableName_label" xml:space="preserve">
     <value>Table name</value>
   </data>
   <data name="tableIn_take_help" xml:space="preserve">
-    <value>This is an integer for the number of records. You may receive fewer records than this value based on the contents of the table and the applied filter.This setting is not applicable to a C# function.</value>
+    <value>Integer value for maxium number of records to be returned. You may receive fewer records than this value, depending on table contents and filters. This setting is not applicable for C# functions.</value>
   </data>
   <data name="tableIn_take_label" xml:space="preserve">
     <value>Maximum number of records to read (optional)</value>
@@ -808,16 +808,16 @@
     <value>Azure Table Storage</value>
   </data>
   <data name="tableout_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="tableout_name_label" xml:space="preserve">
     <value>Table parameter name</value>
   </data>
   <data name="table_tableName_errorText" xml:space="preserve">
-    <value>Your table name must be an alphanumeric string of 3 to 63 characters. It can’t start with a number.</value>
+    <value>Table name must be an alphanumeric string of 3 to 63 characters. It can’t start with a number.</value>
   </data>
   <data name="table_tableName_help" xml:space="preserve">
-    <value>This is the name of the table within your storage account to which the data will be written.</value>
+    <value>Table name in storage account where data will be written.</value>
   </data>
   <data name="table_tableName_label" xml:space="preserve">
     <value>Table name</value>
@@ -1012,13 +1012,13 @@
     <value>An F# function that generates a SAS token for Azure Storage for a given container and blob name.</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>(Preview) A C# function that sends a confirmation e-mail when a new item is added to a particular queue</value>
+    <value>A C# function that sends a confirmation e-mail when a new item is added to a particular queue</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>(Preview) An F# function that sends a confirmation e-mail when a new item is added to a particular queue</value>
+    <value>An F# function that sends a confirmation e-mail when a new item is added to a particular queue</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>(Preview) A JavaScript function that sends a confirmation e-mail when a new item is added to a particular queue</value>
+    <value>A JavaScript function that sends a confirmation e-mail when a new item is added to a particular queue</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
     <value>A C# function that will be run whenever a message is added to a specified Service Bus queue</value>
@@ -1063,40 +1063,40 @@
     <value>Auth Token setting</value>
   </data>
   <data name="twilioSms_body_help" xml:space="preserve">
-    <value>This is the text body to use for the message. If not specified here, the value can be specified in code.</value>
+    <value>Text body to use for the message. If not provided here, the value can be specified in code.</value>
   </data>
   <data name="twilioSms_body_label" xml:space="preserve">
     <value>Message text</value>
   </data>
   <data name="twilioSms_displayName" xml:space="preserve">
-    <value>Twilio SMS (Preview)</value>
+    <value>Twilio SMS</value>
   </data>
   <data name="twilioSms_from_help" xml:space="preserve">
-    <value>This is the Twilio phone number the message should be sent from. If not specified here, the value can be specified in code.</value>
+    <value>The Twilio phone number from which the message should be sent. If not provided here, the value can be specified in code.</value>
   </data>
   <data name="twilioSms_from_label" xml:space="preserve">
     <value>From number</value>
   </data>
   <data name="twilioSms_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="twilioSms_name_label" xml:space="preserve">
     <value>Message parameter name</value>
   </data>
   <data name="twilioSms_to_help" xml:space="preserve">
-    <value>This is the phone number the message should be sent to. If not specified here, the value can be specified in code.</value>
+    <value>The phone number the message should be sent to. If not provided here, the value can be specified in code.</value>
   </data>
   <data name="twilioSms_to_label" xml:space="preserve">
     <value>To number</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>Your consumer group name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed.</value>
+    <value>The consumer group name must start and end with a letter or number, and it can contain only lowercase letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>Azure DocumentDB Document</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>This is your SendGrid API Key</value>
+    <value>SendGrid developer API Key</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
     <value>SendGrid API Key</value>
@@ -1108,10 +1108,10 @@
     <value>Sender Id</value>
   </data>
   <data name="bot_in_displayName" xml:space="preserve">
-    <value>Bot Framework</value>
+    <value>Bot Framework (Preview)</value>
   </data>
   <data name="bot_out_displayName" xml:space="preserve">
-    <value>Bot Framework</value>
+    <value>Bot Framework (Preview)</value>
   </data>
   <data name="bot_in_secret_help" xml:space="preserve">
     <value>Direct Line Key can be generated from Direct Line channel configuration page in the Bot Framework portal; leaving this field empty will look for value in Application Setting 'AzureWebJobsBotFrameworkDirectLineSecret'</value>
@@ -1126,13 +1126,13 @@
     <value>Direct Line Key</value>
   </data>
   <data name="bot_in_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for input binding to bind to.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="bot_in_name_label" xml:space="preserve">
     <value>Bot parameter name</value>
   </data>
   <data name="bot_out_name_help" xml:space="preserve">
-    <value>This is the name of the parameter in the code for output binding to bind to.</value>
+    <value>The name used to identify this binding in your code</value>
   </data>
   <data name="bot_out_name_label" xml:space="preserve">
     <value>Bot parameter name</value>
