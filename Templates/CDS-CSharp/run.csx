@@ -32,11 +32,10 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
 
     using (var client = await SecurityHelper.GetClientFromConfiguration(req, log))
     {
-        // Query product categories for Surface
-        // TODO: pick this from req parameters
+        // Query product categories for Surfaces and Phones
         var query = client.GetRelationalEntitySet<ProductCategory>()
             .CreateQueryBuilder()
-            .Where(pc => pc.Name == "Surface")
+            .Where(pc => pc.Name == "Surface" || pc.Name == "Phone")
             .Project(pc => pc.SelectField(f => f.CategoryId).SelectField(f => f.Name));
 
         OperationResult<IReadOnlyList<ProductCategory>> queryResult = null;
