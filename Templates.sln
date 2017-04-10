@@ -397,6 +397,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 		Documentation\blobIn.md = Documentation\blobIn.md
 		Documentation\blobOut.md = Documentation\blobOut.md
 		Documentation\blobTrigger.md = Documentation\blobTrigger.md
+		Documentation\cdsIn.md = Documentation\cdsIn.md
 		Documentation\documentDBIn.md = Documentation\documentDBIn.md
 		Documentation\documentDBOut.md = Documentation\documentDBOut.md
 		Documentation\eventHubOut.md = Documentation\eventHubOut.md
@@ -654,6 +655,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScheduledMail-CSharp", "Sch
 		Templates\ScheduledMail-CSharp\run.csx = Templates\ScheduledMail-CSharp\run.csx
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cds-CSharp", "Cds-CSharp", "{6DB047E1-C19C-423B-A1CB-BF1D8DED3BA2}"
+	ProjectSection(SolutionItems) = preProject
+		Templates\CDS-CSharp\function.json = Templates\CDS-CSharp\function.json
+		Templates\CDS-CSharp\metadata.json = Templates\CDS-CSharp\metadata.json
+		Templates\CDS-CSharp\project.json = Templates\CDS-CSharp\project.json
+		Templates\CDS-CSharp\run.csx = Templates\CDS-CSharp\run.csx
+		Templates\CDS-CSharp\sample.dat = Templates\CDS-CSharp\sample.dat
+		Templates\CDS-CSharp\SecurityHelper.csx = Templates\CDS-CSharp\SecurityHelper.csx
+		Templates\CDS-CSharp\TraceWriterTelemetryBridge.csx = Templates\CDS-CSharp\TraceWriterTelemetryBridge.csx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -745,5 +757,6 @@ Global
 		{194D0A62-F490-4F6D-9E28-01741AFA9470} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 		{642A3997-3CC5-4273-8157-A46DA0DB37A6} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 		{E0D727E3-729D-419E-BF5D-2162846A69B3} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
+		{6DB047E1-C19C-423B-A1CB-BF1D8DED3BA2} = {9131FAC9-F834-4D69-A9F3-0057D7BB5670}
 	EndGlobalSection
 EndGlobal
