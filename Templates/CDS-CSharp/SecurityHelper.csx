@@ -22,7 +22,6 @@ internal class SecurityHelper
             Credentials = new UserImpersonationCredentialsSettings()
             {
                 ApplicationId = EnvironmentValues.ApplicationId,
-                RedirectUri = EnvironmentValues.RedirectUri,
                 ApplicationSecret = EnvironmentValues.ApplicationSecret
             }
         };

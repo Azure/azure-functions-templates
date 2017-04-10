@@ -1,4 +1,7 @@
-﻿#load ".\SecurityHelper.csx"
+﻿// Usage of this template is subject to license terms of the 
+// Microsoft Common Data Service Software Development Kit (https://go.microsoft.com/fwlink/?linkid=842862).
+
+#load ".\SecurityHelper.csx"
 #load ".\TraceWriterTelemetryBridge.csx"
 
 using Microsoft.CommonDataService;
@@ -14,11 +17,10 @@ using System.Net.Http.Headers;
 
 class EnvironmentValues
 {
-    internal const string Tenant = "<REPLACE WITH YOUR TENANT INFORMATION>";
-    internal const string EnvironmentId = "<REPLACE WITH YOUR ENVEIRONMENT ID INFORMATION>";
-    internal const string ApplicationId = "<REPLACE WITH YOUR APPLICATION ID INFORMATION>";
-    internal const string ApplicationSecret = "<REPLACE WITH YOUR APPLICATION SECRET INFORMATION>";
-    internal const string RedirectUri = "<REPLACE WITH YOUR REDIRECT URI INFORMATION>";
+    internal const string Tenant = "[[Replace with AAD tenant for CDS value]]";
+    internal const string EnvironmentId = "[[Replace with PowerApps environment ID value]]";
+    internal const string ApplicationId = "[[Replace with Function application ID value]]";
+    internal const string ApplicationSecret = "[[Replace with Function application secret value]]";
 }
 
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log)

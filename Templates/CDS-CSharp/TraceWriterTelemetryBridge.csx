@@ -1,4 +1,7 @@
-﻿using System;
+﻿// The contents of this template are subject to license terms of the 
+// Microsoft Common Data Service Software Development Kit (https://go.microsoft.com/fwlink/?linkid=842862).
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
