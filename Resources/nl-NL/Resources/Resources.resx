@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="eventHubOut_connection_help" xml:space="preserve">
-    <value>Dit is de verbindingsreeks voor uw Event Hub. Zorg dat hiervoor de rechten van Verzenden zijn ingesteld.</value>
+    <value>De naam van de app-instelling met daarin de Event Hub-verbindingsreeks. Voor de verbindingsreeks moeten machtigingen voor verzenden zijn ingesteld.</value>
   </data>
   <data name="eventHubOut_connection_label" xml:space="preserve">
     <value>Event Hub-verbinding</value>
@@ -127,13 +127,13 @@
     <value>Azure Event Hub</value>
   </data>
   <data name="eventHubOut_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de uitvoerbinding kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="eventHubOut_name_label" xml:space="preserve">
     <value>Naam van de gebeurtenisparameter</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>De naam van de Event Hub moet beginnen en eindigen met een letter of cijfer en mag alleen kleine letters, cijfers, punten, afbreekstreepjes en onderstrepingstekens bevatten.</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>Dit is de naam van de Event Hub waarnaar de gebeurtenis wordt verzonden.</value>
@@ -142,13 +142,13 @@
     <value>Event Hub-naam</value>
   </data>
   <data name="eventHubTrigger_connection_help" xml:space="preserve">
-    <value>Dit is de verbindingsreeks voor uw Event Hub. Zorg dat hiervoor de rechten van Ontvangen zijn ingesteld.</value>
+    <value>De naam van de app-instelling met daarin de Event Hub-verbindingsreeks. Voor de verbindingsreeks moeten machtigingen voor ontvangen zijn ingesteld.</value>
   </data>
   <data name="eventHubTrigger_connection_label" xml:space="preserve">
     <value>Event Hub-verbinding</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_help" xml:space="preserve">
-    <value>De naam van de Event Hub-consumentengroep waaruit gebeurtenissen worden ontvangen.</value>
+    <value>De Event Hub-consumentengroep waaruit gebeurtenissen worden ontvangen</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_label" xml:space="preserve">
     <value>Event Hub-consumentengroep</value>
@@ -157,16 +157,16 @@
     <value>Azure Event Hub</value>
   </data>
   <data name="eventHubTrigger_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de trigger kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de trigger in uw code aan te geven</value>
   </data>
   <data name="eventHubTrigger_name_label" xml:space="preserve">
     <value>Naam van de gebeurtenisparameter</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>De naam van de Event Hub moet beginnen en eindigen met een letter of cijfer en mag alleen kleine letters, cijfers, afbreekstreepjes, punten en onderstrepingstekens bevatten.</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
-    <value>Dit is de naam van de Event Hub waarmee u wilt activeren.</value>
+    <value>De naam van de Event Hub waaruit de trigger wordt geactiveerd</value>
   </data>
   <data name="eventHubTrigger_path_label" xml:space="preserve">
     <value>Event Hub-naam</value>
@@ -175,7 +175,7 @@
     <value>Azure Queue Storage</value>
   </data>
   <data name="queueOut_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de uitvoerbinding kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="queueOut_name_label" xml:space="preserve">
     <value>Naam van de berichtparameter</value>
@@ -205,19 +205,19 @@
     <value>Timer</value>
   </data>
   <data name="timerTrigger_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de trigger kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de trigger in uw code aan te geven</value>
   </data>
   <data name="timerTrigger_name_label" xml:space="preserve">
     <value>Naam van de timestampparameter</value>
   </data>
   <data name="timerTrigger_schedule_help" xml:space="preserve">
-    <value>Voer een cron-expressie in met de notatie {seconde} {minuten} {uren} {dag} {maand} {dag van week} om uw planning op te geven. Raadpleeg de documentatie voor meer informatie.</value>
+    <value>Voer een Cron-expressie in met de notatie {second} {minute} {hour} {day} {month} {day of week} om de planning op te geven. Zie de onderstaande documentatie voor voorbeelden.</value>
   </data>
   <data name="timerTrigger_schedule_label" xml:space="preserve">
     <value>Schema</value>
   </data>
   <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
-    <value>Dit is de verbindingsreeks voor uw verbinding voor externe tabellen.</value>
+    <value>De naam van de app-instelling met daarin de verbindingsreeks voor externe tabellen.</value>
   </data>
   <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
     <value>Verbinding voor externe tabellen</value>
@@ -274,13 +274,13 @@
     <value>Voorbeelden</value>
   </data>
   <data name="blobOut_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de uitvoerbinding kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="blobOut_name_label" xml:space="preserve">
     <value>Naam van de blobparameter</value>
   </data>
   <data name="queueTrigger_queueName_help" xml:space="preserve">
-    <value>Dit is de naam van de wachtrij waaruit het bericht wordt gelezen.</value>
+    <value>De naam van de wachtrij waaruit het bericht wordt gelezen</value>
   </data>
   <data name="queueTrigger_name_label" xml:space="preserve">
     <value>Naam van de berichtparameter</value>
@@ -289,7 +289,7 @@
     <value>De naam van de wachtrij moet beginnen en eindigen met een letter of cijfer en mag alleen kleine letters, cijfers en afbreekstreepjes bevatten. De naam moet tussen de 3 en 63 tekens lang zijn.</value>
   </data>
   <data name="queueTrigger_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de trigger kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de trigger in uw code aan te geven</value>
   </data>
   <data name="queueTrigger_queueName_label" xml:space="preserve">
     <value>Wachtrijnaam</value>
@@ -304,7 +304,7 @@
     <value>Pad</value>
   </data>
   <data name="blobIn_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de invoerbinding kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="blobIn_name_label" xml:space="preserve">
     <value>Naam van de blobparameter</value>
@@ -322,7 +322,7 @@
     <value>Naam van de blobparameter</value>
   </data>
   <data name="blobTrigger_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de trigger kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de trigger in uw code aan te geven</value>
   </data>
   <data name="blobTrigger_path_label" xml:space="preserve">
     <value>Pad</value>
@@ -337,7 +337,7 @@
     <value>Bestandsparameternaam</value>
   </data>
   <data name="apiHubFileIn_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de uitvoerbinding kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="apiHubFileIn_path_label" xml:space="preserve">
     <value>Pad</value>
@@ -349,13 +349,13 @@
     <value>Verbinding voor externe bestanden</value>
   </data>
   <data name="apiHubFileIn_connection_help" xml:space="preserve">
-    <value>De verbindingsreeks met uw verbinding voor externe bestanden.</value>
+    <value>De naam van de app-instelling met daarin de verbindingsreeks voor externe bestanden</value>
   </data>
   <data name="apiHubFileTrigger_name_label" xml:space="preserve">
     <value>Bestandsparameternaam</value>
   </data>
   <data name="apiHubFileTrigger_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de trigger kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de trigger in uw code aan te geven</value>
   </data>
   <data name="apiHubFileTrigger_path_label" xml:space="preserve">
     <value>Pad</value>
@@ -367,13 +367,13 @@
     <value>Verbinding voor externe bestanden</value>
   </data>
   <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
-    <value>De verbindingsreeks met uw verbinding voor externe bestanden.</value>
+    <value>De naam van de app-instelling met daarin de verbindingsreeks voor externe bestanden</value>
   </data>
   <data name="apiHubTableIn_displayName" xml:space="preserve">
-    <value>Externe tabel</value>
+    <value>Externe tabel (experimenteel)</value>
   </data>
   <data name="apiHubTableOut_displayName" xml:space="preserve">
-    <value>Externe tabel</value>
+    <value>Externe tabel (experimenteel)</value>
   </data>
   <data name="httpTrigger_displayName" xml:space="preserve">
     <value>HTTP</value>
@@ -382,7 +382,7 @@
     <value>Naam van de aanvraagparameter</value>
   </data>
   <data name="httpTrigger_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de trigger kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de trigger in uw code aan te geven</value>
   </data>
   <data name="httpTrigger_webHookType_label" xml:space="preserve">
     <value>Type webhook</value>
@@ -418,10 +418,10 @@
     <value>Dit is de modus van de trigger. Standaard geeft aan dat de aanvraag wordt verwerkt via het HTTP-standaardprotocol zonder aanvullende semantiek. Webhook geeft aan dat de aanvraag wordt verwerkt op basis van een opgegeven webhooktype.</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
-    <value>Extern bestand</value>
+    <value>Extern bestand (preview)</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>Extern bestand</value>
+    <value>Extern bestand (preview)</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
     <value>Azure Blob Storage</value>
@@ -439,28 +439,28 @@
     <value>Verzamelingnaam</value>
   </data>
   <data name="documentDBIn_connection_help" xml:space="preserve">
-    <value>Dit is de verbindingsreeks voor uw DocumentDB-account.</value>
+    <value>De naam van de app-instelling met daarin de DocumentDB-verbindingsreeks</value>
   </data>
   <data name="documentDBIn_connection_label" xml:space="preserve">
     <value>Verbinding voor DocumentDB-account</value>
   </data>
   <data name="documentDBIn_databaseName_help" xml:space="preserve">
-    <value>Dit is de naam van de database binnen uw DocumentDB-account waaruit de gegevens worden gelezen.</value>
+    <value>De naam van de database in uw DocumentDB-account waaruit de gegevens worden gelezen.</value>
   </data>
   <data name="documentDBIn_databaseName_label" xml:space="preserve">
     <value>Databasenaam</value>
   </data>
   <data name="documentDBIn_displayName" xml:space="preserve">
-    <value>Azure DocumentDB-document</value>
+    <value>Microsoft Azure DocumentDB</value>
   </data>
   <data name="documentDBIn_id_help" xml:space="preserve">
-    <value>Dit is de id van het document dat wordt gelezen.</value>
+    <value>Dit is de id van het document dat wordt gelezen. Als er geen SQL-query of een id zijn opgegeven, worden alle documenten in de verzameling opgehaald.</value>
   </data>
   <data name="documentDBIn_id_label" xml:space="preserve">
-    <value>Document-id</value>
+    <value>Document-id (optioneel)</value>
   </data>
   <data name="documentDBIn_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de invoerbinding kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="documentDBIn_name_label" xml:space="preserve">
     <value>Naam van de documentparameter</value>
@@ -472,7 +472,7 @@
     <value>Verzamelingnaam</value>
   </data>
   <data name="documentDBOut_connection_help" xml:space="preserve">
-    <value>Dit is de verbindingsreeks voor uw DocumentDB-account.</value>
+    <value>De naam van de app-instelling met daarin de DocumentDB-verbindingsreeks</value>
   </data>
   <data name="documentDBOut_connection_label" xml:space="preserve">
     <value>Verbinding voor DocumentDB-account</value>
@@ -493,7 +493,7 @@
     <value>Azure DocumentDB-document</value>
   </data>
   <data name="documentDBOut_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de uitvoerbinding kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="documentDBOut_name_label" xml:space="preserve">
     <value>Naam van de documentparameter</value>
@@ -502,16 +502,16 @@
     <value>HTTP</value>
   </data>
   <data name="httpOut_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de uitvoerbinding kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="httpOut_name_label" xml:space="preserve">
     <value>Naam van de antwoordparameter</value>
   </data>
   <data name="httpTrigger_authLevel_help" xml:space="preserve">
-    <value>Met verificatieniveau wordt bepaald of voor u een API-sleutel is vereist en welke sleutel u moet gebruiken; Voor Functie wordt de functiesleutel gebruikt; voor Beheer wordt de hoofdsleutel gebruikt. De functie- en hoofdsleutels bevinden zich in het beheervenster voor sleutels in de portal wanneer uw functie is geselecteerd. Ga voor verificatie op basis van gebruiker naar de instellingen van de functie-app.</value>
+    <value>Het verificatieniveau bepaalt of de functie een API-sleutel vereist en welke sleutel u moet gebruiken. Voor Functie wordt de functiesleutel gebruikt en voor Beheer wordt de hoofdsleutel gebruikt. De functie- en hoofdsleutels bevinden zich in het beheervenster voor sleutels in de portal wanneer uw functie is geselecteerd. Ga voor verificatie op basis van gebruiker naar de instellingen van de functie-app.</value>
   </data>
   <data name="manualTrigger_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de trigger kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="manualTrigger_name_label" xml:space="preserve">
     <value>Parameternaam</value>
@@ -523,7 +523,7 @@
     <value>API-sleutel zoeken (optioneel)</value>
   </data>
   <data name="mobileTableIn_connection_help" xml:space="preserve">
-    <value>Dit is de naam van de appinstelling waarmee de URL voor uw mobiele app wordt opgegeven.</value>
+    <value>De naam van de app-instelling met daarin de URL van uw mobiele app</value>
   </data>
   <data name="mobileTableIn_connection_label" xml:space="preserve">
     <value>URL van mobiele app zoeken</value>
@@ -538,13 +538,13 @@
     <value>Record-id</value>
   </data>
   <data name="mobileTableIn_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de invoerbinding kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="mobileTableIn_name_label" xml:space="preserve">
     <value>Naam van de recordparameter</value>
   </data>
   <data name="mobileTableIn_tableName_help" xml:space="preserve">
-    <value>Dit is de naam van de tabel binnen uw mobiele app waaruit de gegevens worden gelezen.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="mobileTableIn_tableName_label" xml:space="preserve">
     <value>Tabelnaam</value>
@@ -556,7 +556,7 @@
     <value>API-sleutel zoeken (optioneel)</value>
   </data>
   <data name="mobileTableOut_connection_help" xml:space="preserve">
-    <value>Dit is de naam van de appinstelling waarmee de URL voor uw mobiele app wordt opgegeven.</value>
+    <value>De naam van de app-instelling met daarin de URL van uw mobiele app</value>
   </data>
   <data name="mobileTableOut_connection_label" xml:space="preserve">
     <value>URL van mobiele app zoeken</value>
@@ -565,19 +565,19 @@
     <value>Azure Mobile-tabelrecord</value>
   </data>
   <data name="mobileTableOut_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de uitvoerbinding kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="mobileTableOut_name_label" xml:space="preserve">
     <value>Naam van de recordparameter</value>
   </data>
   <data name="mobileTableOut_tableName_help" xml:space="preserve">
-    <value>Dit is de naam van de tabel binnen uw mobiele app waarnaar de gegevens worden geschreven.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="mobileTableOut_tableName_label" xml:space="preserve">
     <value>Tabelnaam</value>
   </data>
   <data name="notificationHubOut_connection_help" xml:space="preserve">
-    <value>Dit is de verbindingsreeks voor uw Notification Hub-naamruimte.</value>
+    <value>De naam van de app-instelling met daarin de verbindingsreeks voor de Notification Hub-naamruimte</value>
   </data>
   <data name="notificationHubOut_connection_label" xml:space="preserve">
     <value>Verbinding voor Notification Hub-naamruimte</value>
@@ -592,7 +592,7 @@
     <value>Naam van Notification Hub</value>
   </data>
   <data name="notificationHubOut_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de uitvoerbinding kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="notificationHubOut_name_label" xml:space="preserve">
     <value>Naam van de meldingsparameter</value>
@@ -628,37 +628,37 @@
     <value>Van adres</value>
   </data>
   <data name="sendGrid_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de uitvoerbinding kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="sendGrid_name_label" xml:space="preserve">
     <value>Naam van de berichtparameter</value>
   </data>
   <data name="sendGrid_subject_help" xml:space="preserve">
-    <value>Dit is de onderwerpregel die wordt gebruikt voor het bericht. Als de waarde hier niet is opgegeven, kan de waarde in de code worden opgegeven.</value>
+    <value>De onderwerpregel die wordt gebruikt voor het bericht. Als de waarde hier niet is opgegeven, kan deze in de code worden opgegeven.</value>
   </data>
   <data name="sendGrid_subject_label" xml:space="preserve">
     <value>Onderwerp van bericht</value>
   </data>
   <data name="sendGrid_text_help" xml:space="preserve">
-    <value>Dit is de hoofdtekst die wordt gebruikt voor het bericht. Als de waarde hier niet is opgegeven, kan de waarde in de code worden opgegeven.</value>
+    <value>De hoofdtekst die wordt gebruikt voor het bericht. Als de waarde hier niet is opgegeven, kan deze in de code worden opgegeven.</value>
   </data>
   <data name="sendGrid_text_label" xml:space="preserve">
     <value>Berichttekst</value>
   </data>
   <data name="sendGrid_to_help" xml:space="preserve">
-    <value>Dit is het e-mailadres waarnaar het bericht moet worden verzonden. Het adres kan worden opgegeven als gebruiker@host.com of als weergavenaam gevolgd door &lt;gebruiker@host.com&gt;. Als de waarde hier niet is opgegeven, kan de waarde in de code worden opgegeven.</value>
+    <value>Het e-mailadres waarnaar het bericht moet worden verzonden. Het adres kan worden opgegeven als gebruiker@host.com of als weergavenaam gevolgd door &lt;gebruiker@host.com&gt;. Als de waarde hier niet is opgegeven, kan deze in de code worden opgegeven.</value>
   </data>
   <data name="sendGrid_to_label" xml:space="preserve">
     <value>Adres van geadresseerde</value>
   </data>
   <data name="serviceBusOut_accessRights_help" xml:space="preserve">
-    <value>Dit zijn de toegangsrechten van de client voor de wachtrij of het onderwerpabonnement.</value>
+    <value>De toegangsrechten van de Service Bus-verbindingsreeks. Stel deze in op Verzenden als u een verbindingsreeks gebruikt waarvoor geen machtigingen voor beheer zijn ingesteld.</value>
   </data>
   <data name="serviceBusOut_accessRights_label" xml:space="preserve">
     <value>Toegangsrechten</value>
   </data>
   <data name="serviceBusOut_connection_help" xml:space="preserve">
-    <value>Dit is de verbindingsreeks voor uw Service Bus. Zorg dat hiervoor de rechten van Verzenden zijn ingesteld.</value>
+    <value>De naam van de app-instelling met daarin de Service Bus-verbindingsreeks. Voor de verbindingsreeks moeten machtigingen voor verzenden zijn ingesteld.</value>
   </data>
   <data name="serviceBusOut_connection_label" xml:space="preserve">
     <value>Service Bus-verbinding</value>
@@ -667,7 +667,7 @@
     <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusOut_messageType_help" xml:space="preserve">
-    <value>Dit is het type van het Service Bus-bericht. U kunt hiermee kiezen voor het gebruik van wachtrijen of onderwerpen.</value>
+    <value>Het type van het Service Bus-bericht. U kunt Wachtrijen of Onderwerpen kiezen.</value>
   </data>
   <data name="serviceBusOut_messageType_label" xml:space="preserve">
     <value>Berichttype</value>
@@ -679,37 +679,37 @@
     <value>Service Bus-onderwerp</value>
   </data>
   <data name="serviceBusOut_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de uitvoerbinding kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="serviceBusOut_name_label" xml:space="preserve">
     <value>Naam van de berichtparameter</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>De naam van de wachtrij moet beginnen en eindigen met een letter of cijfer en mag alleen kleine letters, cijfers, punten en afbreekstreepjes bevatten. De naam moet tussen de 3 en 63 tekens lang zijn.</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
-    <value>Dit is de wachtrij waarnaar het bericht wordt verzonden.</value>
+    <value>De wachtrij waarnaar het bericht wordt verzonden.</value>
   </data>
   <data name="serviceBusOut_queueName_label" xml:space="preserve">
     <value>Wachtrijnaam</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>De naam van het onderwerp moet beginnen en eindigen met een letter of cijfer en mag alleen kleine letters, cijfers, punten en afbreekstreepjes bevatten. De naam moet tussen de 3 en 63 tekens lang zijn.</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
-    <value>Dit is het onderwerp waarnaar het bericht wordt verzonden.</value>
+    <value>Het onderwerp waarnaar het bericht wordt verzonden.</value>
   </data>
   <data name="serviceBusOut_topicName_label" xml:space="preserve">
     <value>Onderwerpnaam</value>
   </data>
   <data name="serviceBusTrigger_accessRights_help" xml:space="preserve">
-    <value>Dit zijn de toegangsrechten van de client voor de wachtrij of het onderwerpabonnement.</value>
+    <value>De toegangsrechten van de Service Bus-verbindingsreeks. Stel deze in op Verzenden als u een verbindingsreeks gebruikt waarvoor geen machtigingen voor beheer zijn ingesteld.</value>
   </data>
   <data name="serviceBusTrigger_accessRights_label" xml:space="preserve">
     <value>Toegangsrechten</value>
   </data>
   <data name="serviceBusTrigger_connection_help" xml:space="preserve">
-    <value>Dit is de verbindingsreeks voor uw Service Bus. Zorg dat hiervoor de rechten van Luisteren zijn ingesteld.</value>
+    <value>De naam van de app-instelling met daarin de Service Bus-verbindingsreeks. Voor de verbindingsreeks moeten machtigingen voor luisteren zijn ingesteld.</value>
   </data>
   <data name="serviceBusTrigger_connection_label" xml:space="preserve">
     <value>Service Bus-verbinding</value>
@@ -718,7 +718,7 @@
     <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusTrigger_messageType_help" xml:space="preserve">
-    <value>Dit is het type van het Service Bus-bericht. U kunt hiermee kiezen voor het gebruik van wachtrijen of onderwerpen.</value>
+    <value>Het type van het Service Bus-bericht. U kunt Wachtrijen of Onderwerpen kiezen.</value>
   </data>
   <data name="serviceBusTrigger_messageType_label" xml:space="preserve">
     <value>Berichttype</value>
@@ -730,34 +730,34 @@
     <value>Service Bus-onderwerp</value>
   </data>
   <data name="serviceBusTrigger_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de trigger kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de trigger in uw code aan te geven</value>
   </data>
   <data name="serviceBusTrigger_name_label" xml:space="preserve">
     <value>Naam van de berichtparameter</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>De naam van de wachtrij moet beginnen en eindigen met een letter of cijfer en mag alleen kleine letters, cijfers, punten en afbreekstreepjes bevatten. De naam moet tussen de 3 en 63 tekens lang zijn.</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
-    <value>Dit is de naam van de wachtrij waaruit het bericht wordt gelezen.</value>
+    <value>De wachtrij waaruit het bericht wordt gelezen.</value>
   </data>
   <data name="serviceBusTrigger_queueName_label" xml:space="preserve">
     <value>Wachtrijnaam</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>De naam van het abonnement moet beginnen en eindigen met een letter of cijfer en mag alleen kleine letters, cijfers, punten en afbreekstreepjes bevatten. De naam moet tussen de 3 en 63 tekens lang zijn.</value>
+    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
-    <value>Dit is de naam van abonnement in het onderwerp waarmee moet worden verbonden.</value>
+    <value>De naam van abonnement in het onderwerp waarmee moet worden verbonden.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_label" xml:space="preserve">
     <value>Abonnementsnaam</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>De naam van het onderwerp moet beginnen en eindigen met een letter of cijfer en mag alleen kleine letters, cijfers, punten en afbreekstreepjes bevatten. De naam moet tussen de 3 en 63 tekens lang zijn.</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
-    <value>Dit is de naam van het onderwerp waaruit het bericht wordt gelezen.</value>
+    <value>De naam van het onderwerp waaruit het bericht wordt gelezen.</value>
   </data>
   <data name="serviceBusTrigger_topicName_label" xml:space="preserve">
     <value>Onderwerpnaam</value>
@@ -766,25 +766,25 @@
     <value>Azure Table Storage</value>
   </data>
   <data name="tableIn_filter_help" xml:space="preserve">
-    <value>Dit is een optionele query-expressie die wordt gebruikt voor het filteren van de resultaten van de tabelquery. Deze instelling is niet van toepassing op een C#-functie.</value>
+    <value>Een optionele queryexpressie die wordt gebruikt voor het filteren van de resultaten van de tabelquery. Deze instelling is niet van toepassing op C#-functies.</value>
   </data>
   <data name="tableIn_filter_label" xml:space="preserve">
     <value>Queryfilter (optioneel)</value>
   </data>
   <data name="tableIn_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de invoerbinding kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="tableIn_name_label" xml:space="preserve">
     <value>Naam van de tabelparameter</value>
   </data>
   <data name="tableIn_partitionKey_help" xml:space="preserve">
-    <value>Dit is de waarde van de kolom Partitiesleutel van de tabel. De records met een overeenkomende waarde voor Partitiesleutel en Rijsleutel worden geretourneerd. De instelling voor Rijsleutel moet worden geconfigureerd met de instelling voor Partitiesleutel.</value>
+    <value>De naam van de kolom Partitiesleutel van de tabel. De records met een overeenkomende waarde voor Partitiesleutel en Rijsleutel worden geretourneerd. Als de partitiesleutel is opgegeven, moet ook de rijsleutel worden opgegeven.</value>
   </data>
   <data name="tableIn_partitionKey_label" xml:space="preserve">
     <value>Partitiesleutel (optioneel)</value>
   </data>
   <data name="tableIn_rowKey_help" xml:space="preserve">
-    <value>Dit is de waarde van de kolom Rijsleutel van de tabel. De records met een overeenkomende waarde voor Rijsleutel en Partitiesleutel worden geretourneerd. De instelling voor Partitiesleutel moet worden geconfigureerd met de instelling voor Rijsleutel.</value>
+    <value>De naam van de kolom Partitiesleutel van de tabel. De records met een overeenkomende waarde voor Partitiesleutel en Rijsleutel worden geretourneerd. Als de partitiesleutel is opgegeven, moet ook de rijsleutel worden opgegeven.</value>
   </data>
   <data name="tableIn_rowKey_label" xml:space="preserve">
     <value>Rijsleutel (optioneel)</value>
@@ -793,13 +793,13 @@
     <value>De tabelnaam moet een alfanumerieke tekenreeks met een lengte tussen de 3 en 63 tekens zijn. De naam mag niet beginnen met een cijfer.</value>
   </data>
   <data name="tableIn_tableName_help" xml:space="preserve">
-    <value>Dit is de naam van de tabel binnen uw opslagaccount waaruit de gegevens worden gelezen.</value>
+    <value>De tabelnaam in uw opslagaccount waaruit de gegevens worden gelezen.</value>
   </data>
   <data name="tableIn_tableName_label" xml:space="preserve">
     <value>Tabelnaam</value>
   </data>
   <data name="tableIn_take_help" xml:space="preserve">
-    <value>Dit is een geheel getal voor het aantal records. Mogelijk ontvangt u minder records dan de waarde die hier is ingesteld vanwege de inhoud van de tabel en het toegepaste filter. Deze instelling is niet van toepassing op een C#-functie.</value>
+    <value>Een geheel getal dat het maximale aantal records aangeeft dat mag worden geretourneerd. Mogelijk ontvangt u minder records dan de waarde die hier is ingesteld vanwege de inhoud van de tabel en de toegepaste filters. Deze instelling is niet van toepassing op C#-functies.</value>
   </data>
   <data name="tableIn_take_label" xml:space="preserve">
     <value>Maximum aantal records dat kan worden gelezen (optioneel)</value>
@@ -808,7 +808,7 @@
     <value>Azure Table Storage</value>
   </data>
   <data name="tableout_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de uitvoerbinding kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="tableout_name_label" xml:space="preserve">
     <value>Naam van de tabelparameter</value>
@@ -817,7 +817,7 @@
     <value>De tabelnaam moet een alfanumerieke tekenreeks met een lengte tussen de 3 en 63 tekens zijn. De naam mag niet beginnen met een cijfer.</value>
   </data>
   <data name="table_tableName_help" xml:space="preserve">
-    <value>Dit is de naam van de tabel binnen uw opslagaccount waarnaar de gegevens worden geschreven.</value>
+    <value>De tabelnaam in uw opslagaccount waarnaar de gegevens worden geschreven.</value>
   </data>
   <data name="table_tableName_label" xml:space="preserve">
     <value>Tabelnaam</value>
@@ -829,7 +829,7 @@
     <value>Een C#-functie die wordt uitgevoerd wanneer een blob wordt toegevoegd aan een opgegeven container</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) Een F#-functie die wordt uitgevoerd wanneer een blob aan een opgegeven container wordt toegevoegd</value>
+    <value>Een F#-functie die wordt uitgevoerd wanneer een blob aan een opgegeven container wordt toegevoegd</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
     <value>Een JavaScript-functie die wordt uitgevoerd wanneer een blob wordt toegevoegd aan een opgegeven container</value>
@@ -865,7 +865,7 @@
     <value>Een C#-functie die wordt uitgevoerd wanneer een Event Hub een gebeurtenis ontvangt</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) Een F#-functie die wordt uitgevoerd met een Event Hub een nieuwe gebeurtenis wordt ontvangen</value>
+    <value>Een F#-functie die wordt uitgevoerd met een Event Hub een nieuwe gebeurtenis wordt ontvangen</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
     <value>Een JavaScript-functie die wordt uitgevoerd wanneer een Event Hub een gebeurtenis ontvangt</value>
@@ -877,7 +877,7 @@
     <value>Een C#-functie waarmee afbeeldingen worden verwerkt en de begrenzingsrechthoek van gezichten wordt uitgevoerd</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>(Preview) Een F#-functie waarmee afbeeldingen worden verwerkt en de begrenzingsrechthoek van gezichten wordt uitgevoerd</value>
+    <value>Een F#-functie waarmee afbeeldingen worden verwerkt en de begrenzingsrechthoek van gezichten wordt uitgevoerd</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
     <value>Een JavaScrips-functie waarmee afbeeldingen worden verwerkt en de begrenzingsrechthoek van gezichten wordt uitgevoerd</value>
@@ -886,7 +886,7 @@
     <value>Een C#-functie die wordt uitgevoerd wanneer deze een webhookaanvraag ontvangt</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>(Preview) Een F#-functie die wordt uitgevoerd wanneer met de functie een webhookaanvraag wordt ontvangen</value>
+    <value>Een F#-functie die wordt uitgevoerd wanneer met de functie een webhookaanvraag wordt ontvangen</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
     <value>Een JavaScript-functie die wordt uitgevoerd wanneer deze een webhookaanvraag ontvangt</value>
@@ -895,13 +895,13 @@
     <value>Een JavaScript-functie die wordt uitgevoerd wanneer deze een webhookaanvraag van GitHub ontvangt</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>(Preview) Een F#-functie die wordt uitgevoerd wanneer deze een GitHub-webhookaanvraag ontvangt</value>
+    <value>Een F#-functie die wordt uitgevoerd wanneer deze een GitHub-webhookaanvraag ontvangt</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>Een C#-functie die wordt uitgevoerd wanneer deze een webhookaanvraag van GitHub ontvangt</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>(Preview) Een F#-functie die wordt uitgevoerd wanneer deze een GitHub-webhookaanvraag ontvangt</value>
+    <value>Een F#-functie die wordt uitgevoerd wanneer deze een GitHub-webhookaanvraag ontvangt</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
     <value>Een JavaScript-functie die wordt uitgevoerd wanneer deze een webhookaanvraag van GitHub ontvangt</value>
@@ -910,7 +910,7 @@
     <value>Een C#-functie die entiteiten ophaalt uit een opslagtabel wanneer deze een http-aanvraag ontvangt</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>(Preview) Een F#-functie waarmee entiteiten vanuit een opslagtabel worden opgehaald wanneer met de functie een HTTP-aanvraag wordt ontvangen</value>
+    <value>Een F#-functie waarmee entiteiten vanuit een opslagtabel worden opgehaald wanneer met de functie een HTTP-aanvraag wordt ontvangen</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
     <value>Een JavaScript-functie die entiteiten ophaalt uit een opslagtabel wanneer deze een http-aanvraag ontvangt</value>
@@ -922,7 +922,7 @@
     <value>Een C#-functie die entiteiten toevoegt aan een opslagtabel wanneer deze een http-aanvraag ontvangt</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>(Preview) Een F#-functie waarmee entiteiten aan een opslagtabel worden toegevoegd wanneer met de functie een HTTP-aanvraag wordt ontvangen</value>
+    <value>Een F#-functie waarmee entiteiten aan een opslagtabel worden toegevoegd wanneer met de functie een HTTP-aanvraag wordt ontvangen</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
     <value>Een JavaScript-functie die entiteiten toevoegt aan een opslagtabel wanneer deze een http-aanvraag ontvangt</value>
@@ -931,7 +931,7 @@
     <value>Een C#-functie waarmee entiteiten in een opslagtabel worden bijgewerkt wanneer met de functie een HTTP-aanvraag wordt ontvangen</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>(Preview) Een F#-functie waarmee entiteiten in een opslagtabel worden bijgewerkt wanneer met de functie een HTTP-aanvraag wordt ontvangen</value>
+    <value>Een F#-functie waarmee entiteiten in een opslagtabel worden bijgewerkt wanneer met de functie een HTTP-aanvraag wordt ontvangen</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
     <value>(Experimenteel) Een batchfunctie die wordt uitgevoerd wanneer met de functie een HTTP-aanvraag wordt ontvangen</value>
@@ -940,7 +940,7 @@
     <value>Een C#-functie die wordt uitgevoerd wanneer deze een http-aanvraag ontvangt</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) Een F#-functie die wordt uitgevoerd wanneer met de functie een HTTP-aanvraag wordt ontvangen</value>
+    <value>Een F#-functie die wordt uitgevoerd wanneer met de functie een HTTP-aanvraag wordt ontvangen</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
     <value>Een JavaScript-functie die wordt uitgevoerd wanneer deze een HTTP-aanvraag ontvangt</value>
@@ -952,13 +952,13 @@
     <value>Een C#-functie die afbeeldingen met een gewijzigd formaat maakt wanneer een blob wordt toegevoegd aan een opgegeven container</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>(Preview) Een F#-functie waarmee afbeeldingsgrootten worden aangepast wanneer een blob aan een opgegeven container wordt toegevoegd</value>
+    <value>Een F#-functie waarmee afbeeldingsgrootten worden aangepast wanneer een blob aan een opgegeven container wordt toegevoegd</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>Een functie van C# die handmatig kan worden geactiveerd via de knop Uitvoeren op de portal</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) Een F#-functie die handmatig wordt geactiveerd met de knop Uitvoeren op de portal</value>
+    <value>Een F#-functie die handmatig wordt geactiveerd met de knop Uitvoeren op de portal</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>Een JavaScript-functie die handmatig kan worden geactiveerd via de knop Uitvoeren van de portal</value>
@@ -973,7 +973,7 @@
     <value>Een C#-functie die wordt uitgevoerd wanneer een bericht wordt toegevoegd aan een opgegeven Azure Queue Storage</value>
   </data>
   <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) Een F#-functie die wordt uitgevoerd wanneer een bericht wordt toegevoegd aan een opgegeven Azure Queue Storage</value>
+    <value>Een F#-functie die wordt uitgevoerd wanneer een bericht wordt toegevoegd aan een opgegeven exemplaar van Azure Queue Storage</value>
   </data>
   <data name="QueueTriggerNodeJS_description" xml:space="preserve">
     <value>Een JavaScript-functie die wordt uitgevoerd wanneer een bericht wordt toegevoegd aan een opgegeven Azure Queue Storage</value>
@@ -1000,7 +1000,7 @@
     <value>(Preview) Een JavaScript-functie die wordt uitgevoerd wanneer een bestand wordt toegevoegd aan een SaaS-provider.</value>
   </data>
   <data name="SaasFileTokenNodeJS_description" xml:space="preserve">
-    <value>Een JavaScript-functie die wordt uitgevoerd wanneer een bestand wordt toegevoegd aan de provider van een extern bestand.</value>
+    <value>(Preview) Een JavaScript-functie die wordt uitgevoerd wanneer een bestand wordt toegevoegd aan een SaaS-provider.</value>
   </data>
   <data name="SaasTableCSharp_description" xml:space="preserve">
     <value>(Experimenteel) Een C#-functie waarmee entiteiten vanuit een externe tabel worden opgehaald wanneer met de functie een HTTP-aanvraag wordt ontvangen.</value>
@@ -1009,28 +1009,28 @@
     <value>(Experimenteel) Een F#-functie waarmee entiteiten vanuit een externe tabel worden opgehaald wanneer met de functie een HTTP-aanvraag wordt ontvangen.</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>(Preview) Een F#-functie waarmee een SAS-token voor Azure Storage wordt gegenereerd voor een bepaalde container- en blobnaam.</value>
+    <value>Een F#-functie waarmee een SAS-token voor Azure Storage wordt gegenereerd voor een bepaalde container- en blobnaam.</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>(Preview) Een C#-functie waarmee een bevestigingse-mail wordt verzonden wanneer een nieuw item wordt toegevoegd aan een bepaalde wachtrij</value>
+    <value>Een C#-functie waarmee een bevestigings-e-mail wordt verzonden wanneer een nieuw item wordt toegevoegd aan een bepaalde wachtrij</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>(Preview) Een F#-functie waarmee een bevestigingse-mail wordt verzonden wanneer een nieuw item wordt toegevoegd aan een bepaalde wachtrij</value>
+    <value>Een F#-functie waarmee een bevestigings-e-mail wordt verzonden wanneer een nieuw item wordt toegevoegd aan een bepaalde wachtrij</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>(Preview) Een C#-functie waarmee een bevestigingse-mail wordt verzonden wanneer een nieuw item wordt toegevoegd aan een bepaalde wachtrij</value>
+    <value>Een JavaScript-functie waarmee een bevestigings-e-mail wordt verzonden wanneer een nieuw item wordt toegevoegd aan een bepaalde wachtrij</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
-    <value>Een JavaScript-functie die wordt uitgevoerd wanneer een bericht wordt toegevoegd aan een opgegeven Service Bus-wachtrij</value>
+    <value>Een C#-functie die wordt uitgevoerd wanneer een bericht wordt toegevoegd aan een opgegeven Service Bus-wachtrij</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) Een F#-functie die wordt uitgevoerd wanneer een bericht wordt toegevoegd aan een opgegeven Service Bus-wachtrij</value>
+    <value>Een F#-functie die wordt uitgevoerd wanneer een bericht aan een opgegeven Service Bus-wachtrij wordt toegevoegd</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
     <value>Een JavaScript-functie die wordt uitgevoerd wanneer een bericht wordt toegevoegd aan een opgegeven Service Bus-wachtrij</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) Een F#-functie die telkens wordt uitgevoerd wanneer een bericht wordt toegevoegd aan het opgegeven Service Bus-onderwerp</value>
+    <value>Een F#-functie die telkens wordt uitgevoerd wanneer een bericht aan het opgegeven Service Bus-onderwerp wordt toegevoegd</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>Een JavaScript-functie die wordt uitgevoerd wanneer een bericht wordt toegevoegd aan het opgegeven Service Bus-onderwerp</value>
@@ -1039,7 +1039,7 @@
     <value>Een C#-functie die wordt uitgevoerd volgens een opgegeven schema</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) Een F#-functie die wordt uitgevoerd volgens een opgegeven planning</value>
+    <value>Een F#-functie die wordt uitgevoerd volgens een opgegeven planning</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
     <value>Een JavaScript-functie die wordt uitgevoerd volgens een opgegeven schema</value>
@@ -1063,7 +1063,7 @@
     <value>Instelling voor het verificatietoken</value>
   </data>
   <data name="twilioSms_body_help" xml:space="preserve">
-    <value>Dit is de hoofdtekst die wordt gebruikt voor het bericht. Als de waarde hier niet is opgegeven, kan de waarde in de code worden opgegeven.</value>
+    <value>De hoofdtekst die wordt gebruikt voor het bericht. Als de waarde hier niet is opgegeven, kan deze in de code worden opgegeven.</value>
   </data>
   <data name="twilioSms_body_label" xml:space="preserve">
     <value>Berichttekst</value>
@@ -1072,31 +1072,31 @@
     <value>Twilio-sms</value>
   </data>
   <data name="twilioSms_from_help" xml:space="preserve">
-    <value>Dit is het Twilio-telefoonnummer dat wordt gebruikt voor het bericht waarvan het bericht moet worden verzonden. Als de waarde hier niet is opgegeven, kan de waarde in de code worden opgegeven.</value>
+    <value>Het Twilio-telefoonnummer waarvandaan het bericht moet worden verzonden. Als de waarde hier niet is opgegeven, kan deze in de code worden opgegeven.</value>
   </data>
   <data name="twilioSms_from_label" xml:space="preserve">
     <value>Vanaf telefoonnummer</value>
   </data>
   <data name="twilioSms_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de uitvoerbinding kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="twilioSms_name_label" xml:space="preserve">
     <value>Naam van de berichtparameter</value>
   </data>
   <data name="twilioSms_to_help" xml:space="preserve">
-    <value>Dit is het telefoonnummer waarnaar het bericht moet worden verzonden. Als de waarde hier niet is opgegeven, kan de waarde in de code worden opgegeven.</value>
+    <value>Het telefoonnummer waarnaar het bericht moet worden verzonden. Als de waarde hier niet is opgegeven, kan deze in de code worden opgegeven.</value>
   </data>
   <data name="twilioSms_to_label" xml:space="preserve">
     <value>Naar telefoonnummer</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>De naam van de consumentengroep moet beginnen en eindigen met een letter of cijfer en mag alleen kleine letters, cijfers, punten, afbreekstreepjes en onderstrepingstekens bevatten. De groep $Default is ook toegestaan.</value>
+    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>Azure DocumentDB-document</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>Dit is uw SendGrid API-sleutel</value>
+    <value>API-sleutel voor SendGrid-ontwikkelaar</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
     <value>SendGrid API-sleutel</value>
@@ -1108,10 +1108,10 @@
     <value>Afzender-id</value>
   </data>
   <data name="bot_in_displayName" xml:space="preserve">
-    <value>Bot Framework</value>
+    <value>Bot Framework (preview-versie)</value>
   </data>
   <data name="bot_out_displayName" xml:space="preserve">
-    <value>Bot Framework</value>
+    <value>Bot Framework (preview-versie)</value>
   </data>
   <data name="bot_in_secret_help" xml:space="preserve">
     <value>De rechtstreekse regelsleutel kan worden gegenereerd op de kanaalconfiguratiepagina Rechtstreekse regel in de portal Bot Framework; als dit veld leeg is, wordt er een waarde opgehaald uit de toepassingsinstelling Application Setting AzureWebJobsBotFrameworkDirectLineSecret</value>
@@ -1126,15 +1126,24 @@
     <value>Rechtstreekse regelsleutel</value>
   </data>
   <data name="bot_in_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de invoerbinding kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="bot_in_name_label" xml:space="preserve">
     <value>Botparameternaam</value>
   </data>
   <data name="bot_out_name_help" xml:space="preserve">
-    <value>Dit is de naam van de parameter in de code waarmee de uitvoerbinding kan verbinden.</value>
+    <value>De naam die wordt gebruikt om de binding in uw code aan te geven</value>
   </data>
   <data name="bot_out_name_label" xml:space="preserve">
     <value>Botparameternaam</value>
+  </data>
+  <data name="ScheduledMailCSharp_description" xml:space="preserve">
+    <value>Een C#-functie waarmee periodiek e-mails worden verzonden (preview)</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
+    <value>Dit is een optionele DocumentDB SQL-query die wordt gebruikt om een set documenten op te halen. Als er geen SQL-query of een id zijn opgegeven, worden alle documenten in de verzameling opgehaald.</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
+    <value>SQL-query (optioneel)</value>
   </data>
 </root>

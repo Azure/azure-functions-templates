@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="eventHubOut_connection_help" xml:space="preserve">
-    <value>这是你的事件中心的连接字符串。请确保它具有发送权限。</value>
+    <value>包含你的事件中心连接字符串的应用设置名称。连接字符串必须具有“发送”权限。</value>
   </data>
   <data name="eventHubOut_connection_label" xml:space="preserve">
     <value>事件中心连接</value>
@@ -127,13 +127,13 @@
     <value>Azure 事件中心</value>
   </data>
   <data name="eventHubOut_name_help" xml:space="preserve">
-    <value>这是代码中用于输出绑定绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="eventHubOut_name_label" xml:space="preserve">
     <value>事件参数名称</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>事件中心名称必须以字母或数字开头和结尾，并且只能包含小写字母、数字、句点、连字符和下划线。</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>这是将接收事件的事件中心的名称。</value>
@@ -142,13 +142,13 @@
     <value>事件中心名称</value>
   </data>
   <data name="eventHubTrigger_connection_help" xml:space="preserve">
-    <value>这是事件中心的连接字符串。请确保它具有接收权限。</value>
+    <value>包含你的事件中心连接字符串的应用设置名称。连接字符串必须具有“接收”权限。</value>
   </data>
   <data name="eventHubTrigger_connection_label" xml:space="preserve">
     <value>事件中心连接</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_help" xml:space="preserve">
-    <value>从其接收事件的事件中心使用者组的名称。</value>
+    <value>从中接收事件的事件中心使用者组</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_label" xml:space="preserve">
     <value>事件中心使用者组</value>
@@ -157,16 +157,16 @@
     <value>Azure 事件中心</value>
   </data>
   <data name="eventHubTrigger_name_help" xml:space="preserve">
-    <value>这是代码中用于触发器绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此触发器的名称</value>
   </data>
   <data name="eventHubTrigger_name_label" xml:space="preserve">
     <value>事件参数名称</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>事件中心名称必须以字母或数字开头和结尾，并且只能包含小写字母、数字、连字符、句点和下划线。</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
-    <value>这是你想要触发的事件中心的名称。</value>
+    <value>从中进行触发的事件中心的名称</value>
   </data>
   <data name="eventHubTrigger_path_label" xml:space="preserve">
     <value>事件中心名称</value>
@@ -175,7 +175,7 @@
     <value>Azure 队列存储</value>
   </data>
   <data name="queueOut_name_help" xml:space="preserve">
-    <value>这是代码中用于输出绑定绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="queueOut_name_label" xml:space="preserve">
     <value>消息参数名称</value>
@@ -205,22 +205,22 @@
     <value>计时器</value>
   </data>
   <data name="timerTrigger_name_help" xml:space="preserve">
-    <value>这是代码中用于触发器绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此触发器的名称</value>
   </data>
   <data name="timerTrigger_name_label" xml:space="preserve">
     <value>时间戳参数名称</value>
   </data>
   <data name="timerTrigger_schedule_help" xml:space="preserve">
-    <value>输入格式为 "{second} {minute} {hour} {day} {month} {day of week}" 的 cron 表达式来指定你的计划。请查阅文档了解详细信息。</value>
+    <value>输入格式为“{second} {minute} {hour} {day} {month} {day of week}”的 cron 表达式来指定计划。请查看以下文档了解相关示例。</value>
   </data>
   <data name="timerTrigger_schedule_label" xml:space="preserve">
     <value>计划</value>
   </data>
   <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
-    <value>The connection string for your External Table connection.</value>
+    <value>包含外部表连接的应用设置的名称。</value>
   </data>
   <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
-    <value>External Table connection</value>
+    <value>外部表连接</value>
   </data>
   <data name="variables_apiHubTableDataSetHelp" xml:space="preserve">
     <value>要绑定到的数据集的名称。如果绑定到表或实体，请保留为默认。</value>
@@ -244,7 +244,7 @@
     <value>这是存储帐户的连接字符串。</value>
   </data>
   <data name="variables_parameterName" xml:space="preserve">
-    <value>参数名称必须为包含任意字符数的字母数字字符串。不能以数字开头。</value>
+    <value>参数名称必须为包含任意字符数的字母数字字符串，且不能以数字开头。</value>
   </data>
   <data name="variables_paramNameInputHelp" xml:space="preserve">
     <value>这是代码中用于输入绑定绑定到的参数的名称。</value>
@@ -274,13 +274,13 @@
     <value>示例</value>
   </data>
   <data name="blobOut_name_help" xml:space="preserve">
-    <value>这是代码中用于输出绑定绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="blobOut_name_label" xml:space="preserve">
     <value>Blob 参数名称</value>
   </data>
   <data name="queueTrigger_queueName_help" xml:space="preserve">
-    <value>这是从中读取消息的队列的名称。</value>
+    <value>将从中读取消息的队列的名称</value>
   </data>
   <data name="queueTrigger_name_label" xml:space="preserve">
     <value>消息参数名称</value>
@@ -289,7 +289,7 @@
     <value>队列名称必须以字母或数字开头和结尾，并且只能包含小写字母、数字和连字符。名称长度必须为 3 到 63 个字符。</value>
   </data>
   <data name="queueTrigger_name_help" xml:space="preserve">
-    <value>这是代码中用于触发器绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此触发器的名称</value>
   </data>
   <data name="queueTrigger_queueName_label" xml:space="preserve">
     <value>队列名称</value>
@@ -304,7 +304,7 @@
     <value>路径</value>
   </data>
   <data name="blobIn_name_help" xml:space="preserve">
-    <value>这是代码中用于输入绑定绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="blobIn_name_label" xml:space="preserve">
     <value>Blob 参数名称</value>
@@ -322,7 +322,7 @@
     <value>Blob 参数名称</value>
   </data>
   <data name="blobTrigger_name_help" xml:space="preserve">
-    <value>这是代码中用于触发器绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此触发器的名称</value>
   </data>
   <data name="blobTrigger_path_label" xml:space="preserve">
     <value>路径</value>
@@ -337,7 +337,7 @@
     <value>文件参数名称</value>
   </data>
   <data name="apiHubFileIn_name_help" xml:space="preserve">
-    <value>这是代码中用于输出绑定绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="apiHubFileIn_path_label" xml:space="preserve">
     <value>路径</value>
@@ -349,13 +349,13 @@
     <value>外部文件连接</value>
   </data>
   <data name="apiHubFileIn_connection_help" xml:space="preserve">
-    <value>到外部文件连接的连接字符串。</value>
+    <value>包含你的外部文件连接字符串的应用设置名称</value>
   </data>
   <data name="apiHubFileTrigger_name_label" xml:space="preserve">
     <value>文件参数名称</value>
   </data>
   <data name="apiHubFileTrigger_name_help" xml:space="preserve">
-    <value>这是代码中用于触发器绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此触发器的名称</value>
   </data>
   <data name="apiHubFileTrigger_path_label" xml:space="preserve">
     <value>路径</value>
@@ -367,13 +367,13 @@
     <value>外部文件连接</value>
   </data>
   <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
-    <value>到外部文件连接的连接字符串。</value>
+    <value>包含你的外部文件连接字符串的应用设置名称</value>
   </data>
   <data name="apiHubTableIn_displayName" xml:space="preserve">
-    <value>External Table</value>
+    <value>外部表(实验)</value>
   </data>
   <data name="apiHubTableOut_displayName" xml:space="preserve">
-    <value>External Table</value>
+    <value>外部表(实验)</value>
   </data>
   <data name="httpTrigger_displayName" xml:space="preserve">
     <value>HTTP</value>
@@ -382,7 +382,7 @@
     <value>请求参数名称</value>
   </data>
   <data name="httpTrigger_name_help" xml:space="preserve">
-    <value>这是代码中用于触发器绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此触发器的名称</value>
   </data>
   <data name="httpTrigger_webHookType_label" xml:space="preserve">
     <value>Webhook 类型</value>
@@ -418,10 +418,10 @@
     <value>这是触发器的模式。“标准”是指请求将为无任何其他语义的标准 HTTP。"Webhook" 指请求将根据指定的 Webhook 类型进行处理。</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
-    <value>外部文件</value>
+    <value>外部文件(预览)</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>外部文件</value>
+    <value>外部文件(预览)</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
     <value>Azure Blob 存储</value>
@@ -439,28 +439,28 @@
     <value>集合名称</value>
   </data>
   <data name="documentDBIn_connection_help" xml:space="preserve">
-    <value>这是你的 DocumentDB 帐户的连接字符串。</value>
+    <value>包含你的 DocumentDB 连接字符串的应用设置名称</value>
   </data>
   <data name="documentDBIn_connection_label" xml:space="preserve">
     <value>DocumentDB 帐户连接</value>
   </data>
   <data name="documentDBIn_databaseName_help" xml:space="preserve">
-    <value>这是将从中读取数据的 DocumentDB 帐户的内部数据库的名称。</value>
+    <value>将从中读取数据的 DocumentDB 帐户内的数据库的名称。</value>
   </data>
   <data name="documentDBIn_databaseName_label" xml:space="preserve">
     <value>数据库名称</value>
   </data>
   <data name="documentDBIn_displayName" xml:space="preserve">
-    <value>Azure DocumentDB 文档</value>
+    <value>Azure DocumentDB</value>
   </data>
   <data name="documentDBIn_id_help" xml:space="preserve">
-    <value>这是将被读取的文档的 ID。</value>
+    <value>这是将被读取的文档的 ID。如果既未指定 SQL 查询也未指定 ID，则返回集合中的所有文档。</value>
   </data>
   <data name="documentDBIn_id_label" xml:space="preserve">
-    <value>文档 ID</value>
+    <value>文档 ID (可选)</value>
   </data>
   <data name="documentDBIn_name_help" xml:space="preserve">
-    <value>这是代码中用于输入绑定绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="documentDBIn_name_label" xml:space="preserve">
     <value>文档参数名称</value>
@@ -472,7 +472,7 @@
     <value>集合名称</value>
   </data>
   <data name="documentDBOut_connection_help" xml:space="preserve">
-    <value>这是你的 DocumentDB 帐户的连接字符串。</value>
+    <value>包含你的 DocumentDB 连接字符串的应用设置名称</value>
   </data>
   <data name="documentDBOut_connection_label" xml:space="preserve">
     <value>DocumentDB 帐户连接</value>
@@ -493,7 +493,7 @@
     <value>Azure DocumentDB 文档</value>
   </data>
   <data name="documentDBOut_name_help" xml:space="preserve">
-    <value>这是代码中用于输出绑定绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="documentDBOut_name_label" xml:space="preserve">
     <value>文档参数名称</value>
@@ -502,16 +502,16 @@
     <value>HTTP</value>
   </data>
   <data name="httpOut_name_help" xml:space="preserve">
-    <value>这是代码中用于输出绑定绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="httpOut_name_label" xml:space="preserve">
     <value>响应参数名称</value>
   </data>
   <data name="httpTrigger_authLevel_help" xml:space="preserve">
-    <value>授权级别控制是否需要 API 密钥和使用哪一个密钥；“函数”使用函数密钥；“管理员”使用主密钥。选中函数时，门户的“密钥”管理面板上会出现函数密钥和主密钥。对于基于用户的身份验证，请转到 Function App 设置。</value>
+    <value>授权级别控制函数是否需要 API 密钥以及使用哪一个密钥；“函数”使用函数密钥；“管理员”使用主密钥。选中函数时，门户上的“密钥”管理面板中会出现函数密钥和主密钥。对于基于用户的身份验证，请转到 Function App 设置。</value>
   </data>
   <data name="manualTrigger_name_help" xml:space="preserve">
-    <value>这是代码中用于触发器绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="manualTrigger_name_label" xml:space="preserve">
     <value>参数名称</value>
@@ -523,7 +523,7 @@
     <value>API 密钥查找(可选)</value>
   </data>
   <data name="mobileTableIn_connection_help" xml:space="preserve">
-    <value>这是指定移动应用的 URL 的应用设置名称。</value>
+    <value>包含你的移动应用的 URL 的应用设置名称</value>
   </data>
   <data name="mobileTableIn_connection_label" xml:space="preserve">
     <value>移动应用 URL 查找</value>
@@ -538,13 +538,13 @@
     <value>记录 ID</value>
   </data>
   <data name="mobileTableIn_name_help" xml:space="preserve">
-    <value>这是代码中用于输入绑定绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="mobileTableIn_name_label" xml:space="preserve">
     <value>记录参数名称</value>
   </data>
   <data name="mobileTableIn_tableName_help" xml:space="preserve">
-    <value>这是将从中读取数据的移动应用的内部表的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="mobileTableIn_tableName_label" xml:space="preserve">
     <value>表单名称</value>
@@ -556,7 +556,7 @@
     <value>API 密钥查找(可选)</value>
   </data>
   <data name="mobileTableOut_connection_help" xml:space="preserve">
-    <value>这是指定移动应用的 URL 的应用设置名称。</value>
+    <value>包含你的移动应用的 URL 的应用设置名称</value>
   </data>
   <data name="mobileTableOut_connection_label" xml:space="preserve">
     <value>移动应用 URL 查找</value>
@@ -565,19 +565,19 @@
     <value>Azure 移动表记录</value>
   </data>
   <data name="mobileTableOut_name_help" xml:space="preserve">
-    <value>这是代码中用于输出绑定绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="mobileTableOut_name_label" xml:space="preserve">
     <value>记录参数名称</value>
   </data>
   <data name="mobileTableOut_tableName_help" xml:space="preserve">
-    <value>这是将向其中写入数据的移动应用的内部表的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="mobileTableOut_tableName_label" xml:space="preserve">
     <value>表单名称</value>
   </data>
   <data name="notificationHubOut_connection_help" xml:space="preserve">
-    <value>这是你的通知中心命名空间的连接字符串。</value>
+    <value>包含到你的通知中心命名空间的连接字符串的应用设置名称</value>
   </data>
   <data name="notificationHubOut_connection_label" xml:space="preserve">
     <value>通知中心命名空间连接</value>
@@ -592,7 +592,7 @@
     <value>通知中心名称</value>
   </data>
   <data name="notificationHubOut_name_help" xml:space="preserve">
-    <value>这是代码中用于输出绑定绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="notificationHubOut_name_label" xml:space="preserve">
     <value>通知参数名称</value>
@@ -628,37 +628,37 @@
     <value>发件人地址</value>
   </data>
   <data name="sendGrid_name_help" xml:space="preserve">
-    <value>这是代码中用于输出绑定绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="sendGrid_name_label" xml:space="preserve">
     <value>消息参数名称</value>
   </data>
   <data name="sendGrid_subject_help" xml:space="preserve">
-    <value>这是用于邮件的主题行。如果未在此处指定值，则可在代码中指定。</value>
+    <value>用于邮件的主题行。如果未在此处提供，则可在代码中指定该值。</value>
   </data>
   <data name="sendGrid_subject_label" xml:space="preserve">
     <value>邮件主题</value>
   </data>
   <data name="sendGrid_text_help" xml:space="preserve">
-    <value>这是用于邮件的文本正文。如果未在此处指定值，则可在代码中指定。</value>
+    <value>用于邮件的文本正文。如果未在此处提供，则可在代码中指定该值。</value>
   </data>
   <data name="sendGrid_text_label" xml:space="preserve">
     <value>邮件文本</value>
   </data>
   <data name="sendGrid_to_help" xml:space="preserve">
-    <value>这是接收邮件的电子邮件地址。格式可以为 "user@host.com" 或“显示名称 &lt;user@host.com&gt;”。如果未在此处指定值，则可在代码中指定。</value>
+    <value>应向其发送邮件的电子邮件地址。格式可以为 "user@host.com" 或“显示名称 &lt;user@host.com&gt;”。如果未在此处提供，则可在代码中指定该值。</value>
   </data>
   <data name="sendGrid_to_label" xml:space="preserve">
     <value>收件地址</value>
   </data>
   <data name="serviceBusOut_accessRights_help" xml:space="preserve">
-    <value>这是客户端对队列或主题订阅所具有的访问权限。</value>
+    <value>服务总线连接字符串的访问权限。如果使用的是没有“管理”权限的连接字符串，则设置为“发送”。</value>
   </data>
   <data name="serviceBusOut_accessRights_label" xml:space="preserve">
-    <value>AccessRights</value>
+    <value>访问权限</value>
   </data>
   <data name="serviceBusOut_connection_help" xml:space="preserve">
-    <value>这是你的服务总线的连接字符串。请确保它具有发送权限。</value>
+    <value>包含你的服务总线连接字符串的应用设置名称。连接字符串必须具有“发送”权限。</value>
   </data>
   <data name="serviceBusOut_connection_label" xml:space="preserve">
     <value>服务总线连接</value>
@@ -667,7 +667,7 @@
     <value>Azure 服务总线</value>
   </data>
   <data name="serviceBusOut_messageType_help" xml:space="preserve">
-    <value>这是服务总线消息类型。这使你可以在使用队列或使用主题之间进行选择。</value>
+    <value>服务总线消息的类型，可以为队列或主题。</value>
   </data>
   <data name="serviceBusOut_messageType_label" xml:space="preserve">
     <value>消息类型</value>
@@ -679,37 +679,37 @@
     <value>服务总线主题</value>
   </data>
   <data name="serviceBusOut_name_help" xml:space="preserve">
-    <value>这是代码中用于输出绑定绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="serviceBusOut_name_label" xml:space="preserve">
     <value>消息参数名称</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>队列名称必须以字母或数字开头和结尾，并且只能包含小写字母、数字、句点和连字符。名称长度必须为 3 到 63 个字符。</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
-    <value>这是将向其发送消息的队列。</value>
+    <value>将向其发送消息的队列。</value>
   </data>
   <data name="serviceBusOut_queueName_label" xml:space="preserve">
     <value>队列名称</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>主题名称必须以字母或数字开头和结尾，并且只能包含小写字母、数字、句点和连字符。名称长度必须为 3 到 63 个字符。</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
-    <value>这是将向其发送消息的主题。</value>
+    <value>将向其发送消息的主题。</value>
   </data>
   <data name="serviceBusOut_topicName_label" xml:space="preserve">
     <value>主题名称</value>
   </data>
   <data name="serviceBusTrigger_accessRights_help" xml:space="preserve">
-    <value>这是客户端对队列或主题订阅所具有的访问权限。</value>
+    <value>服务总线连接字符串的访问权限。如果使用的是没有“管理”权限的连接字符串，则设置为“发送”。</value>
   </data>
   <data name="serviceBusTrigger_accessRights_label" xml:space="preserve">
-    <value>AccessRights</value>
+    <value>访问权限</value>
   </data>
   <data name="serviceBusTrigger_connection_help" xml:space="preserve">
-    <value>这是你的服务总线的连接字符串。请确保它具有侦听权限。</value>
+    <value>包含你的服务总线连接字符串的应用设置名称。连接字符串必须具有“侦听”权限。</value>
   </data>
   <data name="serviceBusTrigger_connection_label" xml:space="preserve">
     <value>服务总线连接</value>
@@ -718,7 +718,7 @@
     <value>Azure 服务总线</value>
   </data>
   <data name="serviceBusTrigger_messageType_help" xml:space="preserve">
-    <value>这是服务总线消息类型。这使你可以在使用队列或使用主题之间进行选择。</value>
+    <value>服务总线消息的类型，可以为队列或主题。</value>
   </data>
   <data name="serviceBusTrigger_messageType_label" xml:space="preserve">
     <value>消息类型</value>
@@ -730,34 +730,34 @@
     <value>服务总线主题</value>
   </data>
   <data name="serviceBusTrigger_name_help" xml:space="preserve">
-    <value>这是代码中用于触发器绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此触发器的名称</value>
   </data>
   <data name="serviceBusTrigger_name_label" xml:space="preserve">
     <value>消息参数名称</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>队列名称必须以字母或数字开头和结尾，并且只能包含小写字母、数字、句点和连字符。名称长度必须为 3 到 63 个字符。</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
-    <value>这是从中读取消息的队列的名称。</value>
+    <value>将从中读取消息的队列。</value>
   </data>
   <data name="serviceBusTrigger_queueName_label" xml:space="preserve">
     <value>队列名称</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>订阅名称必须以字母或数字开头和结尾，并且只能包含小写字母、数字、句点和连字符。名称长度必须为 3 到 63 个字符。</value>
+    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
-    <value>这是要绑定到的主题的内部订阅的名称。</value>
+    <value>要绑定到的主题内的订阅名称。</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_label" xml:space="preserve">
     <value>订阅名</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>主题名称必须以字母或数字开头和结尾，并且只能包含小写字母、数字、句点和连字符。名称长度必须为 3 到 63 个字符。</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
-    <value>这是将从中读取消息的主题的名称。</value>
+    <value>将从中读取消息的主题的名称。</value>
   </data>
   <data name="serviceBusTrigger_topicName_label" xml:space="preserve">
     <value>主题名称</value>
@@ -766,40 +766,40 @@
     <value>Azure 表存储</value>
   </data>
   <data name="tableIn_filter_help" xml:space="preserve">
-    <value>这是用于筛选表查询结果的可选查询表达式。此设置不适用于 C# 函数。</value>
+    <value>用于筛选表查询结果的可选查询表达式。此设置不适用于 C# 函数。</value>
   </data>
   <data name="tableIn_filter_label" xml:space="preserve">
     <value>查询筛选器(可选)</value>
   </data>
   <data name="tableIn_name_help" xml:space="preserve">
-    <value>这是代码中用于输入绑定绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="tableIn_name_label" xml:space="preserve">
     <value>表参数名称</value>
   </data>
   <data name="tableIn_partitionKey_help" xml:space="preserve">
-    <value>这是表分区键列的值。将会返回具有匹配的分区键和行键的记录。必须使用分区键设置配置行键设置。</value>
+    <value>表的分区键列的名称。将会返回具有匹配的分区键和行键的记录。如果提供了分区键，也必须要提供行键。</value>
   </data>
   <data name="tableIn_partitionKey_label" xml:space="preserve">
     <value>分区键(可选)</value>
   </data>
   <data name="tableIn_rowKey_help" xml:space="preserve">
-    <value>这是表行键列的值。将会返回具有匹配的行键和分区键的记录。必须使用行键设置配置分区键设置。</value>
+    <value>表的分区键列的名称。将会返回具有匹配的分区键和行键的记录。如果提供了分区键，也必须要提供行键。</value>
   </data>
   <data name="tableIn_rowKey_label" xml:space="preserve">
     <value>行键(可选)</value>
   </data>
   <data name="tableIn_tableName_errorText" xml:space="preserve">
-    <value>表名称必须为包含 3 到 63 个字符的字母数字字符串。不能以数字开头。</value>
+    <value>表名称必须为包含 3 到 63 个字符的字母数字字符串，且不能以数字开头。</value>
   </data>
   <data name="tableIn_tableName_help" xml:space="preserve">
-    <value>这是将从中读取数据的存储帐户的内部表的名称。</value>
+    <value>将从中读取数据的存储帐户内的表名称。</value>
   </data>
   <data name="tableIn_tableName_label" xml:space="preserve">
     <value>表单名称</value>
   </data>
   <data name="tableIn_take_help" xml:space="preserve">
-    <value>这是记录数的整数值。基于表的内容和应用的筛选器，你可能收到比这个值更少的记录。此设置不适用于 C# 函数。</value>
+    <value>要返回的最大记录数的整数值。根据表内容和筛选器，你可能会收到比这个值更少的记录数。此设置不适用于 C# 函数。</value>
   </data>
   <data name="tableIn_take_label" xml:space="preserve">
     <value>要读取的记录的最大数量(可选)</value>
@@ -808,7 +808,7 @@
     <value>Azure 表存储</value>
   </data>
   <data name="tableout_name_help" xml:space="preserve">
-    <value>这是代码中用于输出绑定绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="tableout_name_label" xml:space="preserve">
     <value>表参数名称</value>
@@ -817,7 +817,7 @@
     <value>表名称必须为包含 3 到 63 个字符的字母数字字符串。不能以数字开头。</value>
   </data>
   <data name="table_tableName_help" xml:space="preserve">
-    <value>这是将向其中写入数据的存储帐户的内部表的名称。</value>
+    <value>将向其中写入数据的存储帐户内的表名称。</value>
   </data>
   <data name="table_tableName_label" xml:space="preserve">
     <value>表单名称</value>
@@ -829,7 +829,7 @@
     <value>一个 C# 函数，每当将 blob 添加到指定容器时它都会运行</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>(预览)一个 F# 函数，每当将 blob 添加到指定容器时它都会运行</value>
+    <value>每当将 blob 添加到指定容器时都会运行的 F# 函数</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
     <value>一个 JavaScript 函数，每当将 blob 添加到指定容器时它都会运行</value>
@@ -865,7 +865,7 @@
     <value>一个 C# 函数，每当事件中心收到一个新事件时它都会运行</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>(预览)一个 F# 函数，每当事件中心收到新事件时它都会运行</value>
+    <value>每当事件中心收到新事件时都会运行的 F# 函数</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
     <value>一个 JavaScript 函数，每当事件中心收到一个新事件时它都会运行</value>
@@ -877,7 +877,7 @@
     <value>一个 C# 函数，它会处理映像并输出平面的边框</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>(预览)一个 F# 函数，它会处理映像并输出平面的边框</value>
+    <value>一个 F# 函数，它会处理映像并输出平面的边框</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
     <value>一个 JavaScript 函数，它会处理映像并输出平面的边框</value>
@@ -886,7 +886,7 @@
     <value>一个 C# 函数，每当收到 Webhook 请求时它都会运行</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>(预览)一个 F# 函数，每当它收到 Webhook 请求时都会运行</value>
+    <value>每当收到 Webhook 请求时都会运行的 F# 函数</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
     <value>一个 JavaScript 函数，每当收到 Webhook 请求时它都会运行</value>
@@ -895,13 +895,13 @@
     <value>一个 JavaScript 函数，每当收到 GitHub Webhook 请求时它都会运行</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>(预览)一个 F# 函数，每当它收到 GitHub Webhook 请求时都会运行</value>
+    <value>每当收到 GitHub Webhook 请求时都会运行的 F# 函数</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>一个 C# 函数，每当收到 GitHub Webhook 请求时它都会运行</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>(预览)一个 F# 函数，每当它收到 GitHub Webhook 请求时都会运行</value>
+    <value>每当收到 GitHub Webhook 请求时都会运行的 F# 函数</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
     <value>一个 JavaScript 函数，每当收到 GitHub Webhook 请求时它都会运行</value>
@@ -910,7 +910,7 @@
     <value>一个 C# 函数，当它收到 HTTP 请求时会从存储表获取实体</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>(预览)一个 F# 函数，当它收到 HTTP 请求时会从存储表提取实体</value>
+    <value>当收到 HTTP 请求时会从存储表提取实体的 F# 函数</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
     <value>一个 JavaScript 函数，当它收到 HTTP 请求时会从存储表获取实体</value>
@@ -922,7 +922,7 @@
     <value>一个 C# 函数，当它收到 HTTP 请求时会向存储表添加实体</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>(预览)一个 F# 函数，当它收到 HTTP 请求时会向存储表添加实体</value>
+    <value>当收到 HTTP 请求时会向存储表添加实体的 F# 函数</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
     <value>一个 JavaScript 函数，当它收到 HTTP 请求时会向存储表添加实体</value>
@@ -931,7 +931,7 @@
     <value>当收到 HTTP 请求时会更新存储表中的实体的 C# 函数</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>(预览)一个 F# 函数，当它收到 HTTP 请求时会更新存储表中的实体</value>
+    <value>当收到 HTTP 请求时会更新存储表中的实体的 F# 函数</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
     <value>(实验)一个 Batch 函数，每当它收到 HTTP 请求时都会运行</value>
@@ -940,7 +940,7 @@
     <value>一个 C# 函数，每当它收到 HTTP 请求时都会运行</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>(预览)一个 F# 函数，每当它收到 HTTP 请求时都会运行</value>
+    <value>每当收到 HTTP 请求时都会运行的 F# 函数</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
     <value>一个 JavaScript 函数，每当它收到 HTTP 请求时都会运行</value>
@@ -952,13 +952,13 @@
     <value>一个 C# 函数，每当将 blob 添加到指定容器时它都会创建已调整大小的映像</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>(预览)一个 F# 函数，每当将 blob 添加到指定容器时它都会创建已调整大小的映像</value>
+    <value>每当将 blob 添加到指定容器时都会创建已调整大小的映像的 F# 函数</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>一个 C# 函数，通过门户“运行”按钮手动触发</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>(预览)一个 F# 函数，可通过门户“运行”按钮手动触发</value>
+    <value>通过门户“运行”按钮手动触发的 F# 函数</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>一个 JavaScript 函数，通过门户“运行”按钮手动触发</value>
@@ -973,7 +973,7 @@
     <value>一个 C# 函数，每当将消息添加到指定的 Azure 队列存储时它都会运行</value>
   </data>
   <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>(预览)一个 F# 函数，每当将消息添加到指定的 Azure 队列存储时它都会运行</value>
+    <value>一个 F# 函数，每当将消息添加到指定的 Azure 队列存储时它都会运行</value>
   </data>
   <data name="QueueTriggerNodeJS_description" xml:space="preserve">
     <value>一个 JavaScript 函数，每当将消息添加到指定的 Azure 队列存储时它都会运行</value>
@@ -988,49 +988,49 @@
     <value>(实验)一个 Python 函数，每当将消息添加到指定的 Azure 队列存储时它都会运行</value>
   </data>
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
-    <value>(Experimental) A Batch function that will be run whenever a file is added to a External File provider.</value>
+    <value>(实验)一个 Batch 函数，每当将文件添加到外部文件提供程序时它都会运行。</value>
   </data>
   <data name="SaasFileTriggerCSharp_description" xml:space="preserve">
-    <value>(Preview) A C# function that will be run whenever a file is added to a External File provider.</value>
+    <value>(预览)一个 C# 函数，每当将文件添加到外部文件提供程序时它都会运行。</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) An F# function that will be run whenever a file is added to a External File provider.</value>
+    <value>(预览)一个 F# 函数，每当将文件添加到外部文件提供程序时它都会运行。</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
-    <value>(Preview) A JavaScript function that will be run whenever a file is added to a External File provider.</value>
+    <value>(预览)一个 JavaScript 函数，每当将文件添加到外部文件提供程序时它都会运行。</value>
   </data>
   <data name="SaasFileTokenNodeJS_description" xml:space="preserve">
-    <value>A JavaScript function that will be run whenever a file is added to a External File provider.</value>
+    <value>(预览)一个 JavaScript 函数，每当将文件添加到外部文件提供程序时它都会运行。</value>
   </data>
   <data name="SaasTableCSharp_description" xml:space="preserve">
-    <value>(Experimental) A C# function that fetches entities from a External Table when it receives an HTTP request.</value>
+    <value>(实验)一个 C# 函数，每当它收到 HTTP 请求时都将从外部表中提取实体。</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>(Experimental) An F# function that fetches entities from a External Table when it receives an HTTP request.</value>
+    <value>(实验)一个 F# 函数，每当它收到 HTTP 请求时都将从外部表中提取实体。</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>(预览)一个 F# 函数，它给定容器和 blob 名称的 Azure 存储生成 SAS 令牌。</value>
+    <value>为给定容器和 blob 名称的 Azure 存储生成 SAS 令牌的 F# 函数。</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>(预览)一个 C# 函数，每当将新项添加到特定的队列时它都会发送一封确认电子邮件</value>
+    <value>一个 C# 函数，每当将新项添加到特定的队列时它都会发送一封确认电子邮件</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>(预览)一个 F# 函数，每当将新项添加到特定的队列时它都会发送一封确认电子邮件</value>
+    <value>一个 F# 函数，每当将新项添加到特定的队列时它都会发送一封确认电子邮件</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>(预览)一个 C# 函数，每当将新项添加到特定的队列时它都会发送一封确认电子邮件</value>
+    <value>一个 JavaScript 函数，每当将新项添加到特定的队列时它都会发送一封确认电子邮件</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
-    <value>一个 JavaScript 函数，每当将消息添加到指定的服务总线队列时它都会运行</value>
+    <value>一个 C# 函数，每当将消息添加到指定的服务总线队列时它都会运行</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>(预览)一个 F# 函数，每当将消息添加到指定服务总线队列时它都会运行</value>
+    <value>每当将消息添加到指定服务总线队列时都会运行的 F# 函数</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
     <value>一个 JavaScript 函数，每当将消息添加到指定的服务总线队列时它都会运行</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>(预览)一个 F# 函数，每当将消息添加到指定服务总线主题时它都会运行</value>
+    <value>每当将消息添加到指定服务总线主题时都会运行的 F# 函数</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>一个 JavaScript 函数，每当将消息添加到指定的服务总线主题时它都会运行</value>
@@ -1039,7 +1039,7 @@
     <value>将在指定的计划上运行的 C# 函数</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>(预览)一个 F# 函数，它将按指定计划运行</value>
+    <value>将按指定计划运行的 F# 函数</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
     <value>将在指定的计划上运行的 JavaScript 函数</value>
@@ -1063,7 +1063,7 @@
     <value>身份验证令牌设置</value>
   </data>
   <data name="twilioSms_body_help" xml:space="preserve">
-    <value>这是用于邮件的文本正文。如果未在此处指定值，则可在代码中指定。</value>
+    <value>用于邮件的文本正文。如果未在此处提供，则可在代码中指定该值。</value>
   </data>
   <data name="twilioSms_body_label" xml:space="preserve">
     <value>消息文本</value>
@@ -1072,31 +1072,31 @@
     <value>Twilio 短信</value>
   </data>
   <data name="twilioSms_from_help" xml:space="preserve">
-    <value>这是用于从其发送消息的 Twilio 电话号码。如果此处未指定，则可在代码中指定该值。</value>
+    <value>应从其发送消息的 Twilio 电话号码。如果此处未提供，则可在代码中指定该值。</value>
   </data>
   <data name="twilioSms_from_label" xml:space="preserve">
     <value>发送号码</value>
   </data>
   <data name="twilioSms_name_help" xml:space="preserve">
-    <value>这是代码中用于输出绑定绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="twilioSms_name_label" xml:space="preserve">
     <value>消息参数名称</value>
   </data>
   <data name="twilioSms_to_help" xml:space="preserve">
-    <value>这是用于接收消息的电话号码。如果此处未指定，则可在代码中指定该值。</value>
+    <value>应向其发送消息的电话号码。如果此处未提供，则可在代码中指定该值。</value>
   </data>
   <data name="twilioSms_to_label" xml:space="preserve">
     <value>接收号码</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>使用者组名称必须以字母或数字开头和结尾，并且只能包含小写字母、数字、连字符、句点和下划线。还允许使用 $Default 组。</value>
+    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>Azure DocumentDB 文档</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>这是 SendGrid API 密钥</value>
+    <value>SendGrid 开发人员 API 密钥</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
     <value>SendGrid API 密钥</value>
@@ -1108,10 +1108,10 @@
     <value>发件人 ID</value>
   </data>
   <data name="bot_in_displayName" xml:space="preserve">
-    <value>Bot Framework</value>
+    <value>Bot Framework (预览版)</value>
   </data>
   <data name="bot_out_displayName" xml:space="preserve">
-    <value>Bot Framework</value>
+    <value>Bot Framework (预览版)</value>
   </data>
   <data name="bot_in_secret_help" xml:space="preserve">
     <value>Direct Line 键可从 Bot Framework 门户的 Direct Line 通道配置页面生成；将此字段留空将在应用程序设置 "AzureWebJobsBotFrameworkDirectLineSecret" 中查找值</value>
@@ -1126,15 +1126,24 @@
     <value>Direct Line 键</value>
   </data>
   <data name="bot_in_name_help" xml:space="preserve">
-    <value>这是代码中用于输入绑定绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="bot_in_name_label" xml:space="preserve">
     <value>Bot 参数名称</value>
   </data>
   <data name="bot_out_name_help" xml:space="preserve">
-    <value>这是代码中用于输出绑定绑定到的参数的名称。</value>
+    <value>用于在你的代码中标识此绑定的名称</value>
   </data>
   <data name="bot_out_name_label" xml:space="preserve">
     <value>Bot 参数名称</value>
+  </data>
+  <data name="ScheduledMailCSharp_description" xml:space="preserve">
+    <value>(预览)将定期发送电子邮件的 C# 函数</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
+    <value>这是用于检索文档集的可选 DocumentDB SQL 查询。如果既未指定 SQL 查询也未指定 ID，则返回集合中的所有文档。</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
+    <value>SQL 查询 (可选)</value>
   </data>
 </root>

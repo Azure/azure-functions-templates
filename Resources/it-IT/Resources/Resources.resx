@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="eventHubOut_connection_help" xml:space="preserve">
-    <value>Stringa di connessione per l'hub eventi. Assicurarsi che disponga delle autorizzazioni di invio.</value>
+    <value>Nome dell'impostazione dell'app contenente la stringa di connessione dell'hub eventi. Alla stringa di connessione devono essere assegnate le autorizzazioni di invio.</value>
   </data>
   <data name="eventHubOut_connection_label" xml:space="preserve">
     <value>Connessione dell'hub eventi</value>
@@ -127,13 +127,13 @@
     <value>Hub eventi di Azure</value>
   </data>
   <data name="eventHubOut_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione dell'output.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="eventHubOut_name_label" xml:space="preserve">
     <value>Nome del parametro dell'evento</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>Il nome dell'hub eventi deve iniziare e terminare con una lettera o un numero e può contenere solo lettere minuscole, numeri, punti, trattini e caratteri di sottolineatura.</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>Nome dell'hub eventi a cui verrà inviato l'evento.</value>
@@ -142,13 +142,13 @@
     <value>Nome hub eventi</value>
   </data>
   <data name="eventHubTrigger_connection_help" xml:space="preserve">
-    <value>Stringa di connessione per l'hub eventi. Assicurarsi che disponga delle autorizzazioni di ricezione.</value>
+    <value>Nome dell'impostazione dell'app contenente la stringa di connessione dell'hub eventi. Alla stringa di connessione devono essere assegnate le autorizzazioni di ricezione.</value>
   </data>
   <data name="eventHubTrigger_connection_label" xml:space="preserve">
     <value>Connessione dell'hub eventi</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_help" xml:space="preserve">
-    <value>Nome del gruppo di consumer dell'hub eventi da cui ricevere gli eventi.</value>
+    <value>Gruppo di consumer dell'hub eventi da cui ricevere gli eventi</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_label" xml:space="preserve">
     <value>Gruppo di consumer dell'hub eventi</value>
@@ -157,16 +157,16 @@
     <value>Hub eventi di Azure</value>
   </data>
   <data name="eventHubTrigger_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione del trigger.</value>
+    <value>Nome usato per identificare questo trigger nel codice</value>
   </data>
   <data name="eventHubTrigger_name_label" xml:space="preserve">
     <value>Nome del parametro dell'evento</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>Il nome dell'hub eventi deve iniziare e terminare con una lettera o un numero e può contenere solo lettere minuscole, numeri, trattini, punti e caratteri di sottolineatura.</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
-    <value>Nome dell'hub eventi da attivare.</value>
+    <value>Nome dell'hub eventi da cui attivare</value>
   </data>
   <data name="eventHubTrigger_path_label" xml:space="preserve">
     <value>Nome hub eventi</value>
@@ -175,7 +175,7 @@
     <value>Archiviazione code di Azure</value>
   </data>
   <data name="queueOut_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione dell'output.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="queueOut_name_label" xml:space="preserve">
     <value>Nome del parametro del messaggio</value>
@@ -205,22 +205,22 @@
     <value>Timer</value>
   </data>
   <data name="timerTrigger_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione del trigger.</value>
+    <value>Nome usato per identificare questo trigger nel codice</value>
   </data>
   <data name="timerTrigger_name_label" xml:space="preserve">
     <value>Nome del parametro del timestamp</value>
   </data>
   <data name="timerTrigger_schedule_help" xml:space="preserve">
-    <value>Immettere un'espressione Cron nel formato '{second} {minute} {hour} {day} {month} {day of week}' per specificare la pianificazione. Per altre informazioni, vedere la documentazione.</value>
+    <value>Immettere un'espressione Cron nel formato '{second} {minute} {hour} {day} {month} {day of week}' per specificare la pianificazione. Per alcuni esempi, vedere la documentazione sotto.</value>
   </data>
   <data name="timerTrigger_schedule_label" xml:space="preserve">
     <value>Pianificazione</value>
   </data>
   <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
-    <value>The connection string for your External Table connection.</value>
+    <value>Nome dell'impostazione dell'app contenente la connessione Tabella esterna.</value>
   </data>
   <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
-    <value>External Table connection</value>
+    <value>Connessione tabella esterna</value>
   </data>
   <data name="variables_apiHubTableDataSetHelp" xml:space="preserve">
     <value>Nome del set di dati per l'associazione. Lasciare il valore 'default' per l'associazione a una tabella o a un'entità.</value>
@@ -274,22 +274,22 @@
     <value>Esempi</value>
   </data>
   <data name="blobOut_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione dell'output.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="blobOut_name_label" xml:space="preserve">
     <value>Nome del parametro del BLOB</value>
   </data>
   <data name="queueTrigger_queueName_help" xml:space="preserve">
-    <value>Nome della coda da cui verrà eseguita la lettura del messaggio.</value>
+    <value>Nome della coda da cui verrà eseguita la lettura del messaggio</value>
   </data>
   <data name="queueTrigger_name_label" xml:space="preserve">
     <value>Nome del parametro del messaggio</value>
   </data>
   <data name="queueTrigger_queueName_errorText" xml:space="preserve">
-    <value>Il nome della coda deve iniziare e terminare con una lettera o un numero e può contenere solo lettere minuscole, numeri e trattini. La lunghezza del nome deve essere compresa tra 3 e 63 caratteri.</value>
+    <value>Il nome della coda deve iniziare e terminare con una lettera o un numero e contenere solo lettere minuscole, numeri e trattini. La lunghezza del nome deve essere compresa tra 3 e 63 caratteri.</value>
   </data>
   <data name="queueTrigger_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione del trigger.</value>
+    <value>Nome usato per identificare questo trigger nel codice</value>
   </data>
   <data name="queueTrigger_queueName_label" xml:space="preserve">
     <value>Nome coda</value>
@@ -304,7 +304,7 @@
     <value>Percorso</value>
   </data>
   <data name="blobIn_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione dell'input.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="blobIn_name_label" xml:space="preserve">
     <value>Nome del parametro del BLOB</value>
@@ -322,7 +322,7 @@
     <value>Nome del parametro del BLOB</value>
   </data>
   <data name="blobTrigger_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione del trigger.</value>
+    <value>Nome usato per identificare questo trigger nel codice</value>
   </data>
   <data name="blobTrigger_path_label" xml:space="preserve">
     <value>Percorso</value>
@@ -337,7 +337,7 @@
     <value>Nome del parametro del file</value>
   </data>
   <data name="apiHubFileIn_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione dell'output.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="apiHubFileIn_path_label" xml:space="preserve">
     <value>Percorso</value>
@@ -349,13 +349,13 @@
     <value>Connessione file esterno</value>
   </data>
   <data name="apiHubFileIn_connection_help" xml:space="preserve">
-    <value>Stringa di connessione alla connessione file esterno.</value>
+    <value>Nome dell'impostazione dell'app contenente la stringa di connessione File esterno</value>
   </data>
   <data name="apiHubFileTrigger_name_label" xml:space="preserve">
     <value>Nome del parametro del file</value>
   </data>
   <data name="apiHubFileTrigger_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione del trigger.</value>
+    <value>Nome usato per identificare questo trigger nel codice</value>
   </data>
   <data name="apiHubFileTrigger_path_label" xml:space="preserve">
     <value>Percorso</value>
@@ -367,13 +367,13 @@
     <value>Connessione file esterno</value>
   </data>
   <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
-    <value>Stringa di connessione alla connessione file esterno.</value>
+    <value>Nome dell'impostazione dell'app contenente la stringa di connessione File esterno</value>
   </data>
   <data name="apiHubTableIn_displayName" xml:space="preserve">
-    <value>External Table</value>
+    <value>Tabella esterna (sperimentale)</value>
   </data>
   <data name="apiHubTableOut_displayName" xml:space="preserve">
-    <value>External Table</value>
+    <value>Tabella esterna (sperimentale)</value>
   </data>
   <data name="httpTrigger_displayName" xml:space="preserve">
     <value>HTTP</value>
@@ -382,7 +382,7 @@
     <value>Nome del parametro della richiesta</value>
   </data>
   <data name="httpTrigger_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione del trigger.</value>
+    <value>Nome usato per identificare questo trigger nel codice</value>
   </data>
   <data name="httpTrigger_webHookType_label" xml:space="preserve">
     <value>Tipo di webhook</value>
@@ -418,10 +418,10 @@
     <value>Modalità del trigger. \"Standard\" indica che la richiesta sarà di tipo HTTP standard senza semantica aggiuntiva. \"Webhook\" indica che la richiesta verrà elaborata in base a un tipo di webhook specificato.</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
-    <value>File esterno</value>
+    <value>File esterno (anteprima)</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>File esterno</value>
+    <value>File esterno (anteprima)</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
     <value>Archivio BLOB di Azure</value>
@@ -439,7 +439,7 @@
     <value>Nome raccolta</value>
   </data>
   <data name="documentDBIn_connection_help" xml:space="preserve">
-    <value>Stringa di connessione per l'account DocumentDB.</value>
+    <value>Nome dell'impostazione dell'app contenente la stringa di connessione di DocumentDB</value>
   </data>
   <data name="documentDBIn_connection_label" xml:space="preserve">
     <value>Connessione dell'account DocumentDB</value>
@@ -451,16 +451,16 @@
     <value>Nome database</value>
   </data>
   <data name="documentDBIn_displayName" xml:space="preserve">
-    <value>Documento di Azure DocumentDB</value>
+    <value>Azure DocumentDB</value>
   </data>
   <data name="documentDBIn_id_help" xml:space="preserve">
-    <value>ID del documento di cui verrà eseguita la lettura.</value>
+    <value>ID del documento di cui verrà eseguita la lettura. Se non vengono specificati né una query SQL né un ID, verranno restituiti tutti i documenti nella raccolta.</value>
   </data>
   <data name="documentDBIn_id_label" xml:space="preserve">
-    <value>ID documento</value>
+    <value>ID documento (facoltativo)</value>
   </data>
   <data name="documentDBIn_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione dell'input.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="documentDBIn_name_label" xml:space="preserve">
     <value>Nome del parametro del documento</value>
@@ -472,7 +472,7 @@
     <value>Nome raccolta</value>
   </data>
   <data name="documentDBOut_connection_help" xml:space="preserve">
-    <value>Stringa di connessione per l'account DocumentDB.</value>
+    <value>Nome dell'impostazione dell'app contenente la stringa di connessione di DocumentDB</value>
   </data>
   <data name="documentDBOut_connection_label" xml:space="preserve">
     <value>Connessione dell'account DocumentDB</value>
@@ -493,7 +493,7 @@
     <value>Documento di Azure DocumentDB</value>
   </data>
   <data name="documentDBOut_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione dell'output.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="documentDBOut_name_label" xml:space="preserve">
     <value>Nome del parametro del documento</value>
@@ -502,16 +502,16 @@
     <value>HTTP</value>
   </data>
   <data name="httpOut_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione dell'output.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="httpOut_name_label" xml:space="preserve">
     <value>Nome del parametro della risposta</value>
   </data>
   <data name="httpTrigger_authLevel_help" xml:space="preserve">
-    <value>Il livello di autorizzazione controlla se è necessaria una chiave API e la chiave da usare. Function usa una chiave di funzione. Admin usa la chiave master. Le chiavi di funzione e master sono disponibili nel pannello di gestione 'Chiavi' del portale, quando la funzione è selezionata. Per l'autenticazione basata sull'utente, passare a Impostazioni dell'app per le funzioni.</value>
+    <value>Il livello di autorizzazione controlla se la funzione richiede una chiave API e la chiave da usare. Function usa una chiave di funzione. Admin usa la chiave master. Le chiavi di funzione e master sono disponibili nel pannello di gestione 'Chiavi' del portale, quando la funzione è selezionata. Per l'autenticazione basata sull'utente, passare a Impostazioni dell'app per le funzioni.</value>
   </data>
   <data name="manualTrigger_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione del trigger.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="manualTrigger_name_label" xml:space="preserve">
     <value>Nome parametro</value>
@@ -523,7 +523,7 @@
     <value>Ricerca chiave API (facoltativa)</value>
   </data>
   <data name="mobileTableIn_connection_help" xml:space="preserve">
-    <value>Nome dell'impostazione dell'app che specifica l'URL dell'app per dispositivi mobili.</value>
+    <value>Nome dell'impostazione dell'app contenente l'URL dell'app per dispositivi mobili</value>
   </data>
   <data name="mobileTableIn_connection_label" xml:space="preserve">
     <value>Ricerca URL dell'app per dispositivi mobili</value>
@@ -538,13 +538,13 @@
     <value>ID record</value>
   </data>
   <data name="mobileTableIn_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione dell'input.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="mobileTableIn_name_label" xml:space="preserve">
     <value>Nome del parametro del record</value>
   </data>
   <data name="mobileTableIn_tableName_help" xml:space="preserve">
-    <value>Nome della tabella nell'app per dispositivi mobili da cui verrà eseguita la lettura dei dati.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="mobileTableIn_tableName_label" xml:space="preserve">
     <value>Nome tabella</value>
@@ -556,7 +556,7 @@
     <value>Ricerca chiave API (facoltativa)</value>
   </data>
   <data name="mobileTableOut_connection_help" xml:space="preserve">
-    <value>Nome dell'impostazione dell'app che specifica l'URL dell'app per dispositivi mobili.</value>
+    <value>Nome dell'impostazione dell'app contenente l'URL dell'app per dispositivi mobili</value>
   </data>
   <data name="mobileTableOut_connection_label" xml:space="preserve">
     <value>Ricerca URL dell'app per dispositivi mobili</value>
@@ -565,19 +565,19 @@
     <value>Record di tabella dell'app per dispositivi mobili di Azure</value>
   </data>
   <data name="mobileTableOut_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione dell'output.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="mobileTableOut_name_label" xml:space="preserve">
     <value>Nome del parametro del record</value>
   </data>
   <data name="mobileTableOut_tableName_help" xml:space="preserve">
-    <value>Nome della tabella nell'app per dispositivi mobili in cui verrà eseguita la scrittura dei dati.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="mobileTableOut_tableName_label" xml:space="preserve">
     <value>Nome tabella</value>
   </data>
   <data name="notificationHubOut_connection_help" xml:space="preserve">
-    <value>Stringa di connessione per lo spazio dei nomi dell'hub di notifica.</value>
+    <value>Nome dell'impostazione dell'app contenente la stringa di connessione allo spazio dei nomi dell'hub di notifica</value>
   </data>
   <data name="notificationHubOut_connection_label" xml:space="preserve">
     <value>Connessione dello spazio dei nomi degli hub di notifica</value>
@@ -592,7 +592,7 @@
     <value>Nome hub di notifica</value>
   </data>
   <data name="notificationHubOut_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione dell'output.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="notificationHubOut_name_label" xml:space="preserve">
     <value>Nome del parametro della notifica</value>
@@ -628,7 +628,7 @@
     <value>Indirizzo mittente</value>
   </data>
   <data name="sendGrid_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione dell'output.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="sendGrid_name_label" xml:space="preserve">
     <value>Nome del parametro del messaggio</value>
@@ -652,13 +652,13 @@
     <value>Indirizzo A</value>
   </data>
   <data name="serviceBusOut_accessRights_help" xml:space="preserve">
-    <value>Diritti di accesso del client alla sottoscrizione della coda o dell'argomento.</value>
+    <value>Diritti di accesso della stringa di connessione del bus di servizio. Impostare su Invio se si usa una stringa di connessione senza autorizzazioni di gestione.</value>
   </data>
   <data name="serviceBusOut_accessRights_label" xml:space="preserve">
     <value>Diritti di accesso</value>
   </data>
   <data name="serviceBusOut_connection_help" xml:space="preserve">
-    <value>Stringa di connessione per il bus di servizio. Assicurarsi che disponga dei diritti di invio.</value>
+    <value>Nome dell'impostazione dell'app contenente la stringa di connessione del bus di servizio. Alla stringa di connessione devono essere assegnati i diritti di invio.</value>
   </data>
   <data name="serviceBusOut_connection_label" xml:space="preserve">
     <value>Connessione al bus di servizio</value>
@@ -667,7 +667,7 @@
     <value>Bus di servizio di Azure</value>
   </data>
   <data name="serviceBusOut_messageType_help" xml:space="preserve">
-    <value>Tipo del messaggio del bus di servizio. È possibile scegliere tra code o argomenti.</value>
+    <value>Tipo di messaggio del bus di servizio, ovvero code o argomenti.</value>
   </data>
   <data name="serviceBusOut_messageType_label" xml:space="preserve">
     <value>Tipo messaggio</value>
@@ -679,13 +679,13 @@
     <value>Argomento del bus di servizio</value>
   </data>
   <data name="serviceBusOut_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione dell'output.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="serviceBusOut_name_label" xml:space="preserve">
     <value>Nome del parametro del messaggio</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>Il nome della coda deve iniziare e terminare con una lettera o un numero e può contenere solo lettere minuscole, numeri, punti e trattini. La lunghezza del nome deve essere compresa tra 3 e 63 caratteri.</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
     <value>Coda a cui verrà inviato il messaggio.</value>
@@ -694,7 +694,7 @@
     <value>Nome coda</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>Il nome dell'argomento deve iniziare e terminare con una lettera o un numero e può contenere solo lettere minuscole, numeri, punti e trattini. La lunghezza del nome deve essere compresa tra 3 e 63 caratteri.</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
     <value>Argomento a cui verrà inviato il messaggio.</value>
@@ -703,13 +703,13 @@
     <value>Nome argomento</value>
   </data>
   <data name="serviceBusTrigger_accessRights_help" xml:space="preserve">
-    <value>Diritti di accesso del client alla sottoscrizione della coda o dell'argomento.</value>
+    <value>Diritti di accesso della stringa di connessione del bus di servizio. Impostare su Invio se si usa una stringa di connessione senza autorizzazioni di gestione.</value>
   </data>
   <data name="serviceBusTrigger_accessRights_label" xml:space="preserve">
     <value>Diritti di accesso</value>
   </data>
   <data name="serviceBusTrigger_connection_help" xml:space="preserve">
-    <value>Stringa di connessione per il bus di servizio. Assicurarsi che disponga dei diritti di ascolto.</value>
+    <value>Nome dell'impostazione dell'app contenente la stringa di connessione del bus di servizio. Alla stringa di connessione devono essere assegnati i diritti di ascolto.</value>
   </data>
   <data name="serviceBusTrigger_connection_label" xml:space="preserve">
     <value>Connessione al bus di servizio</value>
@@ -718,7 +718,7 @@
     <value>Bus di servizio di Azure</value>
   </data>
   <data name="serviceBusTrigger_messageType_help" xml:space="preserve">
-    <value>Tipo del messaggio del bus di servizio. È possibile scegliere tra code o argomenti.</value>
+    <value>Tipo di messaggio del bus di servizio, ovvero code o argomenti.</value>
   </data>
   <data name="serviceBusTrigger_messageType_label" xml:space="preserve">
     <value>Tipo messaggio</value>
@@ -730,13 +730,13 @@
     <value>Argomento del bus di servizio</value>
   </data>
   <data name="serviceBusTrigger_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione del trigger.</value>
+    <value>Nome usato per identificare questo trigger nel codice</value>
   </data>
   <data name="serviceBusTrigger_name_label" xml:space="preserve">
     <value>Nome del parametro del messaggio</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>Il nome della coda deve iniziare e terminare con una lettera o un numero e può contenere solo lettere minuscole, numeri, punti e trattini. La lunghezza del nome deve essere compresa tra 3 e 63 caratteri.</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
     <value>Nome della coda da cui verrà eseguita la lettura del messaggio.</value>
@@ -745,7 +745,7 @@
     <value>Nome coda</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>Il nome della sottoscrizione deve iniziare e terminare con una lettera o un numero e può contenere solo lettere minuscole, numeri, punti e trattini. La lunghezza del nome deve essere compresa tra 3 e 63 caratteri.</value>
+    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
     <value>Nome della sottoscrizione nell'argomento per l'associazione.</value>
@@ -754,7 +754,7 @@
     <value>Nome sottoscrizione</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>Il nome dell'argomento deve iniziare e terminare con una lettera o un numero e può contenere solo lettere minuscole, numeri, punti e trattini. La lunghezza del nome deve essere compresa tra 3 e 63 caratteri.</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
     <value>Nome dell'argomento da cui verrà eseguita la lettura del messaggio.</value>
@@ -772,19 +772,19 @@
     <value>Filtro query (facoltativo)</value>
   </data>
   <data name="tableIn_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione dell'input.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="tableIn_name_label" xml:space="preserve">
     <value>Nome del parametro della tabella</value>
   </data>
   <data name="tableIn_partitionKey_help" xml:space="preserve">
-    <value>Valore della colonna Chiave di partizione della tabella. Verranno restituiti i record con chiave di partizione e chiave di riga corrispondenti. È necessario configurare l'impostazione Chiave di riga con l'impostazione Chiave di partizione.</value>
+    <value>Nome della colonna Chiave di partizione della tabella. Verranno restituiti i record con chiave di partizione e chiave di riga corrispondenti. Se si specifica la chiave di partizione, è necessario specificare anche la chiave di riga.</value>
   </data>
   <data name="tableIn_partitionKey_label" xml:space="preserve">
     <value>Chiave di partizione (facoltativa)</value>
   </data>
   <data name="tableIn_rowKey_help" xml:space="preserve">
-    <value>Valore della colonna Chiave di riga della tabella. Verranno restituiti i record con chiave di riga e chiave di partizione corrispondenti. È necessario configurare l'impostazione Chiave di partizione con l'impostazione Chiave di riga.</value>
+    <value>Nome della colonna Chiave di partizione della tabella. Verranno restituiti i record con chiave di partizione e chiave di riga corrispondenti. Se si specifica la chiave di partizione, è necessario specificare anche la chiave di riga.</value>
   </data>
   <data name="tableIn_rowKey_label" xml:space="preserve">
     <value>Chiave di riga (facoltativa)</value>
@@ -799,7 +799,7 @@
     <value>Nome tabella</value>
   </data>
   <data name="tableIn_take_help" xml:space="preserve">
-    <value>Numero intero che indica il numero di record. Può essere restituito un numero di record minore di questo valore in base al contenuto della tabella e al filtro applicato. Questa impostazione non è applicabile a una funzione C#.</value>
+    <value>Valore intero per il numero massimo di record da restituire. Può essere restituito un numero di record minore di questo valore in base al contenuto della tabella e ai filtri applicati. Questa impostazione non è applicabile a alle funzioni C#.</value>
   </data>
   <data name="tableIn_take_label" xml:space="preserve">
     <value>Numero massimo di record per la lettura (facoltativo)</value>
@@ -808,7 +808,7 @@
     <value>Archiviazione tabelle di Azure</value>
   </data>
   <data name="tableout_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione dell'output.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="tableout_name_label" xml:space="preserve">
     <value>Nome del parametro della tabella</value>
@@ -829,7 +829,7 @@
     <value>Funzione C# che verrà eseguita ogni volta che un BLOB viene aggiunto a un contenitore specificato</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>(Anteprima) Funzione F# che verrà eseguita ogni volta che un BLOB viene aggiunto a un contenitore specificato</value>
+    <value>Funzione F# che verrà eseguita ogni volta che un BLOB viene aggiunto a un contenitore specificato</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
     <value>Funzione JavaScript che verrà eseguita ogni volta che un BLOB viene aggiunto a un contenitore specificato</value>
@@ -865,7 +865,7 @@
     <value>Funzione C# che verrà eseguita ogni volta che un hub eventi riceve un nuovo evento</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>(Anteprima) Funzione F# che verrà eseguita ogni volta che un hub eventi riceve un nuovo evento</value>
+    <value>Funzione F# che verrà eseguita ogni volta che un hub eventi riceve un nuovo evento</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
     <value>Funzione JavaScript che verrà eseguita ogni volta che un hub eventi riceve un nuovo evento</value>
@@ -877,7 +877,7 @@
     <value>Funzione C# che elabora le immagini ed esegue l'output del rettangolo delimitatore delle facce</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>(Anteprima) Funzione C# che elabora le immagini ed esegue l'output del rettangolo delimitatore delle facce</value>
+    <value>Funzione F# che elabora le immagini ed esegue l'output del rettangolo delimitatore delle facce</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
     <value>Funzione JavaScript che elabora le immagini ed esegue l'output del rettangolo delimitatore delle facce</value>
@@ -886,7 +886,7 @@
     <value>Funzione C# che verrà eseguita ogni volta che viene ricevuta una richiesta di un webhook</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>(Anteprima) Funzione F# che verrà eseguita ogni volta che viene ricevuta una richiesta di un webhook</value>
+    <value>Funzione F# che verrà eseguita ogni volta che viene ricevuta una richiesta di un webhook</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
     <value>Funzione JavaScript che verrà eseguita ogni volta che viene ricevuta una richiesta di un webhook</value>
@@ -895,13 +895,13 @@
     <value>Funzione JavaScript che verrà eseguita ogni volta che viene ricevuta una richiesta di un webhook GitHub</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>(Anteprima) Funzione F# che verrà eseguita ogni volta che viene ricevuta una richiesta di un webhook GitHub</value>
+    <value>Funzione F# che verrà eseguita ogni volta che viene ricevuta una richiesta di un webhook GitHub</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>Funzione C# che verrà eseguita ogni volta che viene ricevuta una richiesta di un webhook GitHub</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>(Anteprima) Funzione F# che verrà eseguita ogni volta che viene ricevuta una richiesta di un webhook GitHub</value>
+    <value>Funzione F# che verrà eseguita ogni volta che viene ricevuta una richiesta di un webhook GitHub</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
     <value>Funzione JavaScript che verrà eseguita ogni volta che viene ricevuta una richiesta di un webhook GitHub</value>
@@ -910,7 +910,7 @@
     <value>Funzione C# che recupera le entità da una tabella di archiviazione quando riceve una richiesta HTTP</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>(Anteprima) Funzione F# che recupera le entità da una tabella di archiviazione quando riceve una richiesta HTTP</value>
+    <value>Funzione F# che recupera le entità da una tabella di archiviazione quando riceve una richiesta HTTP</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
     <value>Funzione JavaScript che recupera le entità da una tabella di archiviazione quando riceve una richiesta HTTP</value>
@@ -922,7 +922,7 @@
     <value>Funzione C# che aggiunge entità a una tabella di archiviazione quando riceve una richiesta HTTP</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>(Anteprima) Funzione F# che aggiunge entità a una tabella di archiviazione quando riceve una richiesta HTTP</value>
+    <value>Funzione F# che aggiunge entità a una tabella di archiviazione quando riceve una richiesta HTTP</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
     <value>Funzione JavaScript che aggiunge entità a una tabella di archiviazione quando riceve una richiesta HTTP</value>
@@ -931,7 +931,7 @@
     <value>Funzione C# che aggiorna l'entità in una tabella di archiviazione quando riceve una richiesta HTTP</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>(Anteprima) Funzione F# che aggiorna l'entità in una tabella di archiviazione quando riceve una richiesta HTTP</value>
+    <value>Funzione F# che aggiorna l'entità in una tabella di archiviazione quando riceve una richiesta HTTP</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
     <value>(Sperimentale) Funzione Batch che verrà eseguita ogni volta che viene ricevuta una richiesta HTTP</value>
@@ -940,7 +940,7 @@
     <value>Funzione C# che verrà eseguita ogni volta che viene ricevuta una richiesta HTTP</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>(Anteprima) Funzione F# che verrà eseguita ogni volta che viene ricevuta una richiesta HTTP</value>
+    <value>Funzione F# che verrà eseguita ogni volta che viene ricevuta una richiesta HTTP</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
     <value>Funzione JavaScript che verrà eseguita ogni volta che viene ricevuta una richiesta HTTP</value>
@@ -952,13 +952,13 @@
     <value>Funzione C# che crea immagini ridimensionate ogni volta che un BLOB viene aggiunto a un contenitore specificato</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>(Anteprima) Funzione F# che crea immagini ridimensionate ogni volta che un BLOB viene aggiunto a un contenitore specificato</value>
+    <value>Funzione F# che crea immagini ridimensionate ogni volta che un BLOB viene aggiunto a un contenitore specificato</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>Funzione C# che viene attivata manualmente tramite il pulsante \"Esegui\" del portale</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>(Anteprima) Funzione F# che viene attivata manualmente tramite il pulsante "Esegui" del portale</value>
+    <value>Funzione F# che viene attivata manualmente tramite il pulsante "Esegui" del portale</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>Funzione JavaScript che viene attivata manualmente tramite il pulsante "Esegui" del portale</value>
@@ -973,7 +973,7 @@
     <value>Funzione C# che verrà eseguita ogni volta che un messaggio viene aggiunto all'archivio code di Azure specificato</value>
   </data>
   <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>(Anteprima) Funzione F# che verrà eseguita ogni volta che un messaggio viene aggiunto all'archivio code di Azure specificato</value>
+    <value>Funzione F# che verrà eseguita ogni volta che un messaggio viene aggiunto all'archivio code di Azure specificato</value>
   </data>
   <data name="QueueTriggerNodeJS_description" xml:space="preserve">
     <value>Funzione JavaScript che verrà eseguita ogni volta che un messaggio viene aggiunto all'archivio code di Azure specificato</value>
@@ -988,49 +988,49 @@
     <value>(Sperimentale) Funzione Python che verrà eseguita ogni volta che un messaggio viene aggiunto all'archivio code di Azure specificato</value>
   </data>
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
-    <value>(Experimental) A Batch function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Sperimentale) Funzione Batch che verrà eseguita ogni volta che un file viene aggiunto a un provider File esterno.</value>
   </data>
   <data name="SaasFileTriggerCSharp_description" xml:space="preserve">
-    <value>(Preview) A C# function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Anteprima) Funzione C# che verrà eseguita ogni volta che un file viene aggiunto a un provider File esterno.</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) An F# function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Anteprima) Funzione F# che verrà eseguita ogni volta che un file viene aggiunto a un provider File esterno.</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
-    <value>(Preview) A JavaScript function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Anteprima) Funzione JavaScript che verrà eseguita ogni volta che un file viene aggiunto a un provider File esterno.</value>
   </data>
   <data name="SaasFileTokenNodeJS_description" xml:space="preserve">
-    <value>A JavaScript function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Anteprima) Funzione JavaScript che verrà eseguita ogni volta che un file viene aggiunto a un provider File esterno.</value>
   </data>
   <data name="SaasTableCSharp_description" xml:space="preserve">
-    <value>(Experimental) A C# function that fetches entities from a External Table when it receives an HTTP request.</value>
+    <value>(Sperimentale) Funzione C# che recupera le entità da una tabella esterna quando riceve una richiesta HTTP.</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>(Experimental) An F# function that fetches entities from a External Table when it receives an HTTP request.</value>
+    <value>(Sperimentale) Funzione F# che recupera le entità da una tabella esterna quando riceve una richiesta HTTP.</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>(Anteprima) Funzione F# che genera un token di firma di accesso condiviso per l'archiviazione di Azure per un nome di BLOB e di contenitore specificato.</value>
+    <value>Funzione F# che genera un token di firma di accesso condiviso per l'archiviazione di Azure per un nome di BLOB e di contenitore specificato.</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>(Anteprima) Funzione C# che invia un messaggio di posta elettronica di conferma ogni volta che un nuovo elemento viene aggiunto a una coda specifica</value>
+    <value>Funzione C# che invia un messaggio di posta elettronica di conferma ogni volta che un nuovo elemento viene aggiunto a una coda specifica</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>(Anteprima) Funzione F# che invia un messaggio di posta elettronica di conferma ogni volta che un nuovo elemento viene aggiunto a una coda specifica</value>
+    <value>Funzione F# che invia un messaggio di posta elettronica di conferma ogni volta che un nuovo elemento viene aggiunto a una coda specifica</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>(Anteprima) Funzione C# che invia un messaggio di posta elettronica di conferma ogni volta che un nuovo elemento viene aggiunto a una coda specifica</value>
+    <value>Funzione JavaScript che invia un messaggio di posta elettronica di conferma ogni volta che un nuovo elemento viene aggiunto a una coda specifica</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
-    <value>Funzione JavaScript che verrà eseguita ogni volta che un messaggio viene aggiunto a una coda del bus di servizio specificata</value>
+    <value>Funzione C# che verrà eseguita ogni volta che un messaggio viene aggiunto a una coda del bus di servizio specificata</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>(Anteprima) Funzione F# che verrà eseguita ogni volta che un messaggio viene aggiunto a una coda del bus di servizio specificata</value>
+    <value>Funzione F# che verrà eseguita ogni volta che un messaggio viene aggiunto a una coda del bus di servizio specificata</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
     <value>Funzione JavaScript che verrà eseguita ogni volta che un messaggio viene aggiunto a una coda del bus di servizio specificata</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>(Anteprima) Funzione F# che verrà eseguita ogni volta che un messaggio viene aggiunto a un argomento del bus di servizio specificato</value>
+    <value>Funzione F# che verrà eseguita ogni volta che un messaggio viene aggiunto a un argomento del bus di servizio specificato</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>Funzione JavaScript che verrà eseguita ogni volta che un messaggio viene aggiunto a un argomento del bus di servizio specificato</value>
@@ -1039,7 +1039,7 @@
     <value>Funzione C# che verrà eseguita in base a una pianificazione specificata</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>(Anteprima) Funzione F# che verrà eseguita su una pianificazione specificata</value>
+    <value>Funzione F# che verrà eseguita in base a una pianificazione specificata</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
     <value>Funzione JavaScript che verrà eseguita su una pianificazione specificata</value>
@@ -1078,7 +1078,7 @@
     <value>Numero mittente</value>
   </data>
   <data name="twilioSms_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione dell'output.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="twilioSms_name_label" xml:space="preserve">
     <value>Nome del parametro del messaggio</value>
@@ -1090,13 +1090,13 @@
     <value>Numero di destinazione</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>Il nome del gruppo di consumer deve iniziare e terminare con una lettera o un numero e può contenere solo lettere minuscole, numeri, trattini, punti e caratteri di sottolineatura. È anche consentito il gruppo $Default.</value>
+    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>Documento di Azure DocumentDB</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>Questa è la chiave API SendGrid</value>
+    <value>Chiave API di sviluppo SendGrid</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
     <value>Chiave API SendGrid</value>
@@ -1108,10 +1108,10 @@
     <value>ID mittente</value>
   </data>
   <data name="bot_in_displayName" xml:space="preserve">
-    <value>Bot Framework</value>
+    <value>Bot Framework (anteprima)</value>
   </data>
   <data name="bot_out_displayName" xml:space="preserve">
-    <value>Bot Framework</value>
+    <value>Bot Framework (anteprima)</value>
   </data>
   <data name="bot_in_secret_help" xml:space="preserve">
     <value>È possibile generare la chiave Direct Line dalla pagina di configurazione del canale Direct Line nel portale di Bot Framework. Se si lascia questo campo vuoto, il valore verrà cercato nell'impostazione dell'applicazione 'AzureWebJobsBotFrameworkDirectLineSecret'</value>
@@ -1126,15 +1126,24 @@
     <value>Chiave Direct Line</value>
   </data>
   <data name="bot_in_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione dell'input.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="bot_in_name_label" xml:space="preserve">
     <value>Nome del parametro Bot</value>
   </data>
   <data name="bot_out_name_help" xml:space="preserve">
-    <value>Nome del parametro nel codice per l'associazione dell'output.</value>
+    <value>Nome usato per identificare questa associazione nel codice</value>
   </data>
   <data name="bot_out_name_label" xml:space="preserve">
     <value>Nome del parametro Bot</value>
+  </data>
+  <data name="ScheduledMailCSharp_description" xml:space="preserve">
+    <value>(Anteprima) Funzione C# che invierà messaggi di posta elettronica su base periodica</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
+    <value>Query SQL di DocumentDB facoltativa usata per recuperare un set di documenti. Se non vengono specificati né una query SQL né un ID, verranno restituiti tutti i documenti nella raccolta.</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
+    <value>Query SQL (facoltativa)</value>
   </data>
 </root>

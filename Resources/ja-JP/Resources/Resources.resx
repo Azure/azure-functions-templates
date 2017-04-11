@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="eventHubOut_connection_help" xml:space="preserve">
-    <value>これはイベント ハブの接続文字列です。Send アクセス許可があることを確認してください。</value>
+    <value>イベント ハブへの接続文字列が含まれるアプリ設定の名前です。接続文字列には、送信アクセス許可が必要です。</value>
   </data>
   <data name="eventHubOut_connection_label" xml:space="preserve">
     <value>イベント ハブ接続</value>
@@ -127,13 +127,13 @@
     <value>Azure イベント ハブ</value>
   </data>
   <data name="eventHubOut_name_help" xml:space="preserve">
-    <value>これは出力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="eventHubOut_name_label" xml:space="preserve">
     <value>イベント パラメーター名</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>イベント ハブ名の先頭と末尾は英字または数字でなければなりません。名前に使用できるのは、英小文字、数字、ピリオド、ハイフン、およびアンダースコアのみです。</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>これはイベントの送信先のイベント ハブの名前です。</value>
@@ -142,13 +142,13 @@
     <value>イベント ハブ名</value>
   </data>
   <data name="eventHubTrigger_connection_help" xml:space="preserve">
-    <value>これはイベント ハブの接続文字列です。受信アクセス許可があることを確認してください。</value>
+    <value>イベント ハブへの接続文字列が含まれるアプリ設定の名前です。接続文字列には、受信アクセス許可が必要です。</value>
   </data>
   <data name="eventHubTrigger_connection_label" xml:space="preserve">
     <value>イベント ハブ接続</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_help" xml:space="preserve">
-    <value>イベントの受信元のイベント ハブ コンシューマー グループの名前。</value>
+    <value>イベントの受信元のイベント ハブ コンシューマー グループ</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_label" xml:space="preserve">
     <value>イベント ハブ コンシューマー グループ</value>
@@ -157,16 +157,16 @@
     <value>Azure イベント ハブ</value>
   </data>
   <data name="eventHubTrigger_name_help" xml:space="preserve">
-    <value>これはトリガーのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのトリガーの特定に使用する名前</value>
   </data>
   <data name="eventHubTrigger_name_label" xml:space="preserve">
     <value>イベント パラメーター名</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>イベント ハブ名の先頭と末尾は英字または数字でなければなりません。名前に使用できるのは、英小文字、数字、ハイフン、ピリオド、およびアンダースコアのみです。</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
-    <value>これはトリガーをオフにするイベント ハブの名前です。</value>
+    <value>トリガー元となるイベント ハブの名前</value>
   </data>
   <data name="eventHubTrigger_path_label" xml:space="preserve">
     <value>イベント ハブ名</value>
@@ -175,7 +175,7 @@
     <value>Azure Queue Storage</value>
   </data>
   <data name="queueOut_name_help" xml:space="preserve">
-    <value>これは出力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="queueOut_name_label" xml:space="preserve">
     <value>メッセージ パラメーター名</value>
@@ -205,19 +205,19 @@
     <value>タイマー</value>
   </data>
   <data name="timerTrigger_name_help" xml:space="preserve">
-    <value>これはトリガーのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのトリガーの特定に使用する名前</value>
   </data>
   <data name="timerTrigger_name_label" xml:space="preserve">
     <value>タイムスタンプ パラメーター名</value>
   </data>
   <data name="timerTrigger_schedule_help" xml:space="preserve">
-    <value>スケジュールを指定するには、形式 '{second} {minute} {hour} {day} {month} {day of week}' の Cron 式を入力します。詳細についてはドキュメントを参照してください。</value>
+    <value>スケジュールを指定するには、'{second} {minute} {hour} {day} {month} {day of week}' という形式の cron 式を入力します。具体例については以下のドキュメントをご覧ください。</value>
   </data>
   <data name="timerTrigger_schedule_label" xml:space="preserve">
     <value>スケジュール</value>
   </data>
   <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
-    <value>外部テーブル接続のための接続文字列。</value>
+    <value>外部テーブル接続が含まれるアプリ設定の名前です。</value>
   </data>
   <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
     <value>外部テーブル接続</value>
@@ -274,22 +274,22 @@
     <value>サンプル</value>
   </data>
   <data name="blobOut_name_help" xml:space="preserve">
-    <value>これは出力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="blobOut_name_label" xml:space="preserve">
     <value>BLOB パラメーター名</value>
   </data>
   <data name="queueTrigger_queueName_help" xml:space="preserve">
-    <value>これはメッセージの読み取り元のキューの名前です。</value>
+    <value>メッセージの読み取り元のキューの名前</value>
   </data>
   <data name="queueTrigger_name_label" xml:space="preserve">
     <value>メッセージ パラメーター名</value>
   </data>
   <data name="queueTrigger_queueName_errorText" xml:space="preserve">
-    <value>キュー名の先頭と末尾は英字または数字でなければなりません。名前に使用できるのは、英小文字、数字、およびハイフンのみです。名前は 3 - 63 文字にする必要があります。</value>
+    <value>キュー名の先頭と末尾は英字または数字でなければなりません。名前に使用できるのは、英小文字、数字、およびハイフンのみです。名前は 3 から 63 文字にする必要があります。</value>
   </data>
   <data name="queueTrigger_name_help" xml:space="preserve">
-    <value>これはトリガーのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのトリガーの特定に使用する名前</value>
   </data>
   <data name="queueTrigger_queueName_label" xml:space="preserve">
     <value>キュー名</value>
@@ -304,7 +304,7 @@
     <value>パス</value>
   </data>
   <data name="blobIn_name_help" xml:space="preserve">
-    <value>これは入力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="blobIn_name_label" xml:space="preserve">
     <value>BLOB パラメーター名</value>
@@ -322,7 +322,7 @@
     <value>BLOB パラメーター名</value>
   </data>
   <data name="blobTrigger_name_help" xml:space="preserve">
-    <value>これはトリガーのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのトリガーの特定に使用する名前</value>
   </data>
   <data name="blobTrigger_path_label" xml:space="preserve">
     <value>パス</value>
@@ -337,7 +337,7 @@
     <value>ファイル パラメーター名</value>
   </data>
   <data name="apiHubFileIn_name_help" xml:space="preserve">
-    <value>これは出力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="apiHubFileIn_path_label" xml:space="preserve">
     <value>パス</value>
@@ -349,13 +349,13 @@
     <value>外部ファイル接続</value>
   </data>
   <data name="apiHubFileIn_connection_help" xml:space="preserve">
-    <value>外部ファイル接続への接続文字列。</value>
+    <value>外部ファイルへの接続文字列が含まれるアプリ設定の名前</value>
   </data>
   <data name="apiHubFileTrigger_name_label" xml:space="preserve">
     <value>ファイル パラメーター名</value>
   </data>
   <data name="apiHubFileTrigger_name_help" xml:space="preserve">
-    <value>これはトリガーのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのトリガーの特定に使用する名前</value>
   </data>
   <data name="apiHubFileTrigger_path_label" xml:space="preserve">
     <value>パス</value>
@@ -367,13 +367,13 @@
     <value>外部ファイル接続</value>
   </data>
   <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
-    <value>外部ファイル接続への接続文字列。</value>
+    <value>外部ファイルへの接続文字列が含まれるアプリ設定の名前</value>
   </data>
   <data name="apiHubTableIn_displayName" xml:space="preserve">
-    <value>外部テーブル</value>
+    <value>外部テーブル (プレビュー)</value>
   </data>
   <data name="apiHubTableOut_displayName" xml:space="preserve">
-    <value>外部テーブル</value>
+    <value>外部テーブル (プレビュー)</value>
   </data>
   <data name="httpTrigger_displayName" xml:space="preserve">
     <value>HTTP</value>
@@ -382,7 +382,7 @@
     <value>要求パラメーター名</value>
   </data>
   <data name="httpTrigger_name_help" xml:space="preserve">
-    <value>これはトリガーのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのトリガーの特定に使用する名前</value>
   </data>
   <data name="httpTrigger_webHookType_label" xml:space="preserve">
     <value>webhook の種類</value>
@@ -418,10 +418,10 @@
     <value>これはトリガーのモードです。"Standard" は、要求がセマンティクスを追加しない標準 HTTP であることを意味します。"Webhook" は、指定した webhook の種類に従って要求が処理されることを意味します。</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
-    <value>外部ファイル</value>
+    <value>外部ファイル (プレビュー)</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>外部ファイル</value>
+    <value>外部ファイル (プレビュー)</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
     <value>Azure BLOB ストレージ</value>
@@ -439,28 +439,28 @@
     <value>コレクション名</value>
   </data>
   <data name="documentDBIn_connection_help" xml:space="preserve">
-    <value>これは DocumentDB アカウントの接続文字列です。</value>
+    <value>DocumentDB への接続文字列が含まれるアプリ設定の名前</value>
   </data>
   <data name="documentDBIn_connection_label" xml:space="preserve">
     <value>DocumentDB アカウント接続</value>
   </data>
   <data name="documentDBIn_databaseName_help" xml:space="preserve">
-    <value>これはデータの読み取り元の DocumentDB アカウント内のデータベースの名前です。</value>
+    <value>データの読み取り元の DocumentDB アカウント内のデータベースの名前です。</value>
   </data>
   <data name="documentDBIn_databaseName_label" xml:space="preserve">
     <value>データベース名</value>
   </data>
   <data name="documentDBIn_displayName" xml:space="preserve">
-    <value>Azure DocumentDB ドキュメント</value>
+    <value>Azure DocumentDB</value>
   </data>
   <data name="documentDBIn_id_help" xml:space="preserve">
-    <value>これは読み取られるドキュメントの ID です。</value>
+    <value>これは読み取られるドキュメントの ID です。SQL クエリと ID のどちらも指定しなかった場合には、コレクション内のドキュメントがすべて返されます。</value>
   </data>
   <data name="documentDBIn_id_label" xml:space="preserve">
-    <value>ドキュメント ID</value>
+    <value>ドキュメント ID (省略可)</value>
   </data>
   <data name="documentDBIn_name_help" xml:space="preserve">
-    <value>これは入力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="documentDBIn_name_label" xml:space="preserve">
     <value>ドキュメント パラメーター名</value>
@@ -472,7 +472,7 @@
     <value>コレクション名</value>
   </data>
   <data name="documentDBOut_connection_help" xml:space="preserve">
-    <value>これは DocumentDB アカウントの接続文字列です。</value>
+    <value>DocumentDB への接続文字列が含まれるアプリ設定の名前</value>
   </data>
   <data name="documentDBOut_connection_label" xml:space="preserve">
     <value>DocumentDB アカウント接続</value>
@@ -493,7 +493,7 @@
     <value>Azure DocumentDB ドキュメント</value>
   </data>
   <data name="documentDBOut_name_help" xml:space="preserve">
-    <value>これは出力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="documentDBOut_name_label" xml:space="preserve">
     <value>ドキュメント パラメーター名</value>
@@ -502,16 +502,16 @@
     <value>HTTP</value>
   </data>
   <data name="httpOut_name_help" xml:space="preserve">
-    <value>これは出力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="httpOut_name_label" xml:space="preserve">
     <value>応答パラメーター名</value>
   </data>
   <data name="httpTrigger_authLevel_help" xml:space="preserve">
-    <value>承認レベルは、API キーを必要とするかどうかと、どのキーを使用するかを制御するものです。関数は関数キーを使用します。管理者はマスター キーを使用します。関数キーとマスター キーは、関数を選択しているとポータルの [キー] 管理パネルに表示されます。ユーザーベース認証の場合は、Function App 設定に移動してください。</value>
+    <value>承認レベルは、関数で API キーを必要とするかどうかと、どのキーを使用するかを制御するものです。関数は関数キーを使用します。管理者はマスター キーを使用します。関数キーとマスター キーは、関数を選択しているとポータルの [キー] 管理パネルに表示されます。ユーザーベース認証の場合は、Function App 設定に移動してください。</value>
   </data>
   <data name="manualTrigger_name_help" xml:space="preserve">
-    <value>これはトリガーのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="manualTrigger_name_label" xml:space="preserve">
     <value>パラメーター名</value>
@@ -523,7 +523,7 @@
     <value>API キーの参照 (省略可能)</value>
   </data>
   <data name="mobileTableIn_connection_help" xml:space="preserve">
-    <value>これはモバイル アプリの URL を指定するアプリ設定の名前です。</value>
+    <value>モバイル アプリの URL が含まれるアプリ設定の名前</value>
   </data>
   <data name="mobileTableIn_connection_label" xml:space="preserve">
     <value>モバイル アプリの URL 参照</value>
@@ -538,13 +538,13 @@
     <value>レコード ID</value>
   </data>
   <data name="mobileTableIn_name_help" xml:space="preserve">
-    <value>これは入力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="mobileTableIn_name_label" xml:space="preserve">
     <value>レコード パラメーター名</value>
   </data>
   <data name="mobileTableIn_tableName_help" xml:space="preserve">
-    <value>これはデータの読み取り元のモバイル アプリ内のテーブルの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="mobileTableIn_tableName_label" xml:space="preserve">
     <value>テーブル名</value>
@@ -556,7 +556,7 @@
     <value>API キーの参照 (省略可能)</value>
   </data>
   <data name="mobileTableOut_connection_help" xml:space="preserve">
-    <value>これはモバイル アプリの URL を指定するアプリ設定の名前です。</value>
+    <value>モバイル アプリの URL が含まれるアプリ設定の名前</value>
   </data>
   <data name="mobileTableOut_connection_label" xml:space="preserve">
     <value>モバイル アプリの URL 参照</value>
@@ -565,19 +565,19 @@
     <value>Azure Mobile テーブル レコード</value>
   </data>
   <data name="mobileTableOut_name_help" xml:space="preserve">
-    <value>これは出力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="mobileTableOut_name_label" xml:space="preserve">
     <value>レコード パラメーター名</value>
   </data>
   <data name="mobileTableOut_tableName_help" xml:space="preserve">
-    <value>これはデータの書き込み先のモバイル アプリ内のテーブルの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="mobileTableOut_tableName_label" xml:space="preserve">
     <value>テーブル名</value>
   </data>
   <data name="notificationHubOut_connection_help" xml:space="preserve">
-    <value>これは通知ハブの名前空間の接続文字列です。</value>
+    <value>通知ハブ名前空間への接続文字列が含まれるアプリ設定の名前</value>
   </data>
   <data name="notificationHubOut_connection_label" xml:space="preserve">
     <value>Notification Hubs 名前空間の接続</value>
@@ -592,7 +592,7 @@
     <value>通知ハブ名</value>
   </data>
   <data name="notificationHubOut_name_help" xml:space="preserve">
-    <value>これは出力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="notificationHubOut_name_label" xml:space="preserve">
     <value>通知パラメーター名</value>
@@ -628,37 +628,37 @@
     <value>差出人アドレス</value>
   </data>
   <data name="sendGrid_name_help" xml:space="preserve">
-    <value>これは出力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="sendGrid_name_label" xml:space="preserve">
     <value>メッセージ パラメーター名</value>
   </data>
   <data name="sendGrid_subject_help" xml:space="preserve">
-    <value>これはメッセージに使用する件名です。ここで指定しない場合は、値をコードで指定することもできます。</value>
+    <value>メッセージに使用する件名です。ここで指定しなかった場合には、コード内で値を指定できます。</value>
   </data>
   <data name="sendGrid_subject_label" xml:space="preserve">
     <value>メッセージの件名</value>
   </data>
   <data name="sendGrid_text_help" xml:space="preserve">
-    <value>これはメッセージに使用する本文です。ここで指定しない場合は、値をコードで指定することもできます。</value>
+    <value>メッセージに使用する本文です。ここで指定しなかった場合には、コード内で値を指定できます。</value>
   </data>
   <data name="sendGrid_text_label" xml:space="preserve">
     <value>メッセージ テキスト</value>
   </data>
   <data name="sendGrid_to_help" xml:space="preserve">
-    <value>これはメッセージの送信先の電子メール アドレスです。'user@host.com' または '表示名 &lt;user@host.com&gt;' の形式にすることができます。ここで指定しない場合、値はコードで指定することができます。</value>
+    <value>メッセージの送信先のメール アドレスです。'user@host.com' または '表示名 &lt;user@host.com&gt;' の形式にすることができます。ここで指定しなかった場合には、コード内で値を指定できます。</value>
   </data>
   <data name="sendGrid_to_label" xml:space="preserve">
     <value>宛先アドレス</value>
   </data>
   <data name="serviceBusOut_accessRights_help" xml:space="preserve">
-    <value>これはキューまたはトピックのサブスクリプションに対してクライアントが持っているアクセス権です。</value>
+    <value>サービス バスへの接続文字列のアクセス権です。管理アクセス許可がない接続文字列を使用している場合には、[送信] に設定してください。</value>
   </data>
   <data name="serviceBusOut_accessRights_label" xml:space="preserve">
-    <value>AccessRights</value>
+    <value>アクセス権</value>
   </data>
   <data name="serviceBusOut_connection_help" xml:space="preserve">
-    <value>これはサービス バスの接続文字列です。送信権限があることを確認してください。</value>
+    <value>サービス バスへの接続文字列が含まれるアプリ設定です。接続文字列には送信権限が必要です。</value>
   </data>
   <data name="serviceBusOut_connection_label" xml:space="preserve">
     <value>Service Bus 接続</value>
@@ -667,7 +667,7 @@
     <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusOut_messageType_help" xml:space="preserve">
-    <value>これはサービス バス メッセージの種類です。キューを使用するか、トピックを使用するかを選択できます。</value>
+    <value>Service Bus メッセージの種類です。キューとトピックのいずれかになります。</value>
   </data>
   <data name="serviceBusOut_messageType_label" xml:space="preserve">
     <value>メッセージの種類</value>
@@ -679,37 +679,37 @@
     <value>Service Bus トピック</value>
   </data>
   <data name="serviceBusOut_name_help" xml:space="preserve">
-    <value>これは出力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="serviceBusOut_name_label" xml:space="preserve">
     <value>メッセージ パラメーター名</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>キュー名の先頭と末尾は英字または数字でなければなりません。名前に使用できるのは、英小文字、数字、ピリオド、およびハイフンのみです。名前は 3 - 63 文字にする必要があります。</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
-    <value>これはメッセージの送信先のキューです。</value>
+    <value>メッセージの送信先のキューです。</value>
   </data>
   <data name="serviceBusOut_queueName_label" xml:space="preserve">
     <value>キュー名</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>トピック名の先頭と末尾は英字または数字でなければなりません。名前に使用できるのは、英小文字、数字、ピリオド、およびハイフンのみです。名前は 3 - 63 文字にする必要があります。</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
-    <value>これはメッセージの送信先のトピックです。</value>
+    <value>メッセージの送信先のトピックです。</value>
   </data>
   <data name="serviceBusOut_topicName_label" xml:space="preserve">
     <value>トピック名</value>
   </data>
   <data name="serviceBusTrigger_accessRights_help" xml:space="preserve">
-    <value>これはキューまたはトピックのサブスクリプションに対してクライアントが持っているアクセス権です。</value>
+    <value>サービス バスへの接続文字列のアクセス権です。管理アクセス許可がない接続文字列を使用している場合には、[送信] に設定してください。</value>
   </data>
   <data name="serviceBusTrigger_accessRights_label" xml:space="preserve">
-    <value>AccessRights</value>
+    <value>アクセス権</value>
   </data>
   <data name="serviceBusTrigger_connection_help" xml:space="preserve">
-    <value>これはサービス バスの接続文字列です。リッスン権限があることを確認してください。</value>
+    <value>サービス バスへの接続文字列が含まれるアプリ設定です。接続文字列にはリッスン権限が必要です。</value>
   </data>
   <data name="serviceBusTrigger_connection_label" xml:space="preserve">
     <value>Service Bus 接続</value>
@@ -718,7 +718,7 @@
     <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusTrigger_messageType_help" xml:space="preserve">
-    <value>これはサービス バス メッセージの種類です。キューを使用するか、トピックを使用するかを選択できます。</value>
+    <value>Service Bus メッセージの種類です。キューとトピックのいずれかになります。</value>
   </data>
   <data name="serviceBusTrigger_messageType_label" xml:space="preserve">
     <value>メッセージの種類</value>
@@ -730,34 +730,34 @@
     <value>Service Bus トピック</value>
   </data>
   <data name="serviceBusTrigger_name_help" xml:space="preserve">
-    <value>これはトリガーのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのトリガーの特定に使用する名前</value>
   </data>
   <data name="serviceBusTrigger_name_label" xml:space="preserve">
     <value>メッセージ パラメーター名</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>キュー名の先頭と末尾は英字または数字でなければなりません。名前に使用できるのは、英小文字、数字、ピリオド、およびハイフンのみです。名前は 3 - 63 文字にする必要があります。</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
-    <value>これはメッセージの読み取り元のキューの名前です。</value>
+    <value>メッセージの読み取り元のキューの名前です。</value>
   </data>
   <data name="serviceBusTrigger_queueName_label" xml:space="preserve">
     <value>キュー名</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>サブスクリプション名の先頭と末尾は英字または数字でなければなりません。名前に使用できるのは、英小文字、数字、ピリオド、およびハイフンのみです。名前は 3 - 63 文字にする必要があります。</value>
+    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
-    <value>これはバインド先のトピック内のサブスクリプションの名前です。</value>
+    <value>バインド先のトピック内のサブスクリプションの名前です。</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_label" xml:space="preserve">
     <value>サブスクリプション名</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>トピック名の先頭と末尾は英字または数字でなければなりません。名前に使用できるのは、英小文字、数字、ピリオド、およびハイフンのみです。名前は 3 - 63 文字にする必要があります。</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
-    <value>これはメッセージの読み取り元のトピックの名前です。</value>
+    <value>メッセージの読み取り元のトピックの名前です。</value>
   </data>
   <data name="serviceBusTrigger_topicName_label" xml:space="preserve">
     <value>トピック名</value>
@@ -766,40 +766,40 @@
     <value>Azure Table Storage</value>
   </data>
   <data name="tableIn_filter_help" xml:space="preserve">
-    <value>これはテーブル クエリの結果のフィルター処理に使用される省略可能なクエリ式です。この設定は C# 関数には適用できません。</value>
+    <value>テーブル クエリの結果のフィルター処理に使用される省略可能なクエリ式です。この設定は C# 関数には適用されません。</value>
   </data>
   <data name="tableIn_filter_label" xml:space="preserve">
     <value>クエリ フィルター (省略可能)</value>
   </data>
   <data name="tableIn_name_help" xml:space="preserve">
-    <value>これは入力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="tableIn_name_label" xml:space="preserve">
     <value>テーブル パラメーター名</value>
   </data>
   <data name="tableIn_partitionKey_help" xml:space="preserve">
-    <value>これはテーブルのパーティション キー列の値です。一致するパーティション キーと行キーのあるレコードが返されます。行キーの設定はパーティション キーの設定で構成する必要があります。</value>
+    <value>テーブルのパーティション キー列の名前です。一致するパーティション キーと行キーのあるレコードが返されます。パーティション キーを指定した場合には、行キーも指定する必要があります。</value>
   </data>
   <data name="tableIn_partitionKey_label" xml:space="preserve">
     <value>パーティション キー (省略可能)</value>
   </data>
   <data name="tableIn_rowKey_help" xml:space="preserve">
-    <value>これはテーブルの行キー列の値です。一致する行キーとパーティション キーあるレコードが返されます。パーティション キーの設定は行キーの設定で構成する必要があります。</value>
+    <value>テーブルのパーティション キー列の名前です。一致するパーティション キーと行キーのあるレコードが返されます。パーティション キーを指定した場合には、行キーも指定する必要があります。</value>
   </data>
   <data name="tableIn_rowKey_label" xml:space="preserve">
     <value>行キー (省略可能)</value>
   </data>
   <data name="tableIn_tableName_errorText" xml:space="preserve">
-    <value>テーブル名は 3 - 63 文字の英数字の文字列でなければなりません。名前の先頭を数字にすることはできません。</value>
+    <value>テーブル名は 3 から 63 文字の英数字の文字列でなければなりません。名前の先頭を数字にすることはできません。</value>
   </data>
   <data name="tableIn_tableName_help" xml:space="preserve">
-    <value>これはデータの読み取り元のストレージ アカウント内にあるテーブルの名前です。</value>
+    <value>データの読み取り元のストレージ アカウント内にあるテーブルの名前です。</value>
   </data>
   <data name="tableIn_tableName_label" xml:space="preserve">
     <value>テーブル名</value>
   </data>
   <data name="tableIn_take_help" xml:space="preserve">
-    <value>これはレコード数の整数値です。テーブルのコンテンツと適用されているフィルターに基づいて、この値より少ないレコードを受信する場合があります。この設定は C# 関数には適用できません。</value>
+    <value>返されるレコードの最大数を表す整数値です。テーブルのコンテンツとフィルターに応じて、受信するレコードの数がこの値よりも少なくなることがあります。この設定は C# 関数には適用されません。</value>
   </data>
   <data name="tableIn_take_label" xml:space="preserve">
     <value>読み込むレコードの最大数 (省略可能)</value>
@@ -808,16 +808,16 @@
     <value>Azure Table Storage</value>
   </data>
   <data name="tableout_name_help" xml:space="preserve">
-    <value>これは出力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="tableout_name_label" xml:space="preserve">
     <value>テーブル パラメーター名</value>
   </data>
   <data name="table_tableName_errorText" xml:space="preserve">
-    <value>テーブル名は 3 - 63 文字の英数字の文字列でなければなりません。名前の先頭を数字にすることはできません。</value>
+    <value>テーブル名は 3 から 63 文字の英数字の文字列でなければなりません。名前の先頭を数字にすることはできません。</value>
   </data>
   <data name="table_tableName_help" xml:space="preserve">
-    <value>これはデータの書き込み先のストレージ アカウント内にあるテーブルの名前です。</value>
+    <value>データの書き込み先のストレージ アカウント内にあるテーブルの名前です。</value>
   </data>
   <data name="table_tableName_label" xml:space="preserve">
     <value>テーブル名</value>
@@ -829,7 +829,7 @@
     <value>指定したコンテナーに BLOB が追加されるたびに実行される C# 関数</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>(プレビュー) 指定されたコンテナーに BLOB が追加されると実行される F# 関数</value>
+    <value>指定されたコンテナーに BLOB が追加されると実行される F# 関数</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
     <value>指定したコンテナーに BLOB が追加されるたびに実行される JavaScript 関数</value>
@@ -865,7 +865,7 @@
     <value>イベント ハブが新しいイベントを受信するたびに実行される C# 関数</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>(プレビュー) イベント ハブが新しいイベントを受信すると実行される F# 関数</value>
+    <value>イベント ハブが新しいイベントを受信すると実行される F# 関数</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
     <value>イベント ハブが新しいイベントを受信するたびに実行される JavaScript 関数</value>
@@ -877,7 +877,7 @@
     <value>画像を処理して、顔に外接する長方形を出力する C# 関数</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>(プレビュー) 画像を処理して、顔に外接する長方形を出力する F# 関数</value>
+    <value>画像を処理して、顔に外接する長方形を出力する F# 関数</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
     <value>画像を処理して、顔に外接する長方形を出力する JavaScript 関数</value>
@@ -886,7 +886,7 @@
     <value>webhook 要求を受信するたびに実行される C# 関数</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>(プレビュー) webhook 要求を受信すると実行される F# 関数</value>
+    <value>webhook 要求を受信すると実行される F# 関数</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
     <value>webhook 要求を受信するたびに実行される JavaScript 関数</value>
@@ -895,13 +895,13 @@
     <value>GitHub Webhook 要求を受信するたびに実行される JavaScript 関数</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>(プレビュー) GitHub webhook 要求を受信すると実行される F# 関数</value>
+    <value>GitHub webhook 要求を受信すると実行される F# 関数</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>GitHub Webhook 要求を受信するたびに実行される C# 関数</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>(プレビュー) GitHub webhook 要求を受信すると実行される F# 関数</value>
+    <value>GitHub webhook 要求を受信すると実行される F# 関数</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
     <value>GitHub Webhook 要求を受信するたびに実行される JavaScript 関数</value>
@@ -910,7 +910,7 @@
     <value>HTTP 要求の受信時にストレージ テーブルからエンティティをフェッチする C# 関数</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>(プレビュー) HTTP 要求を受信するとストレージ テーブルからエンティティをフェッチする F# 関数</value>
+    <value>HTTP 要求を受信するとストレージ テーブルからエンティティをフェッチする F# 関数</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
     <value>HTTP 要求の受信時にストレージ テーブルからエンティティをフェッチする JavaScript 関数</value>
@@ -922,7 +922,7 @@
     <value>HTTP 要求の受信時にストレージ テーブルにエンティティを追加する C# 関数</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>(プレビュー) HTTP 要求を受信するとストレージ テーブルにエンティティを追加する F# 関数</value>
+    <value>HTTP 要求を受信するとストレージ テーブルにエンティティを追加する F# 関数</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
     <value>HTTP 要求の受信時にストレージ テーブルにエンティティを追加する JavaScript 関数</value>
@@ -931,7 +931,7 @@
     <value>HTTP 要求を受信するとストレージ テーブルのエンティティを更新する C# 関数</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>(プレビュー) HTTP 要求を受信するとストレージ テーブルのエンティティを更新する F# 関数</value>
+    <value>HTTP 要求を受信するとストレージ テーブルのエンティティを更新する F# 関数</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
     <value>(試験段階) HTTP 要求を受信すると実行されるバッチ関数</value>
@@ -940,7 +940,7 @@
     <value>HTTP 要求を受信するたびに実行される C# 関数</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>(プレビュー) HTTP 要求を受信すると実行される F# 関数</value>
+    <value>HTTP 要求を受信すると実行される F# 関数</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
     <value>HTTP 要求を受信するたびに実行される JavaScript 関数</value>
@@ -952,13 +952,13 @@
     <value>指定したコンテナーに BLOB が追加されるたびにサイズを変更した画像を作成する C# 関数</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>(プレビュー) 指定されたコンテナーに BLOB が追加されると、サイズを変更した画像を作成する F# 関数</value>
+    <value>指定されたコンテナーに BLOB が追加されると、サイズを変更した画像を作成する F# 関数</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>ポータルの [実行] ボタンから手動でトリガーされる C# 関数</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>(プレビュー) ポータルの [実行] ボタンにより手動でトリガーされる F# 関数</value>
+    <value>ポータルの [実行] ボタンにより手動でトリガーされる F# 関数</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>ポータルの [実行] ボタンから手動でトリガーされる JavaScript 関数</value>
@@ -973,7 +973,7 @@
     <value>指定した Azure Queue Storage にメッセージが追加されると実行される C# 関数</value>
   </data>
   <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>(プレビュー) 指定した Azure Queue Storage にメッセージが追加されると実行される F# 関数</value>
+    <value>指定した Azure Queue Storage にメッセージが追加されると実行される F# 関数</value>
   </data>
   <data name="QueueTriggerNodeJS_description" xml:space="preserve">
     <value>指定した Azure Queue Storage にメッセージが追加されると実行される JavaScript 関数</value>
@@ -1000,7 +1000,7 @@
     <value>(プレビュー) 外部ファイル プロバイダーにファイルが追加されると実行される JavaScript 関数。</value>
   </data>
   <data name="SaasFileTokenNodeJS_description" xml:space="preserve">
-    <value>外部ファイル プロバイダーにファイルが追加されると実行される JavaScript 関数。</value>
+    <value>(プレビュー) 外部ファイル プロバイダーにファイルが追加されると実行される JavaScript 関数。</value>
   </data>
   <data name="SaasTableCSharp_description" xml:space="preserve">
     <value>(試験段階) HTTP 要求を受信すると外部テーブルからエンティティをフェッチする C# 関数。</value>
@@ -1009,28 +1009,28 @@
     <value>(試験段階) HTTP 要求を受信すると外部テーブルからエンティティをフェッチする F# 関数。</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>(プレビュー) 特定のコンテナーおよび BLOB 名について、Azure Storage の SAS トークンを生成する F# 関数。</value>
+    <value>特定のコンテナーおよび BLOB 名について、Azure Storage の SAS トークンを生成する F# 関数。</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>(プレビュー) 特定のキューに新しい項目が追加されたときに確認メールを送信する C# 関数</value>
+    <value>特定のキューに新しい項目が追加されたときに確認メールを送信する C# 関数</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>(プレビュー) 特定のキューに新しい項目が追加されたときに確認メールを送信する F# 関数</value>
+    <value>特定のキューに新しい項目が追加されたときに確認メールを送信する F# 関数</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>(プレビュー) 特定のキューに新しい項目が追加されたときに確認メールを送信する C# 関数</value>
+    <value>特定のキューに新しい項目が追加されたときに確認メールを送信する JavaScript 関数</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
-    <value>指定した Service Bus キューにメッセージが追加されるたびに実行される JavaScript 関数</value>
+    <value>指定した Service Bus キューにメッセージが追加されるたびに実行される C# 関数</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>(プレビュー) 指定された Service Bus キューにメッセージが追加されると実行される F# 関数</value>
+    <value>指定された Service Bus キューにメッセージが追加されると実行される F# 関数</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
     <value>指定した Service Bus キューにメッセージが追加されるたびに実行される JavaScript 関数</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>(プレビュー) 指定された Service Bus トピックにメッセージが追加されると実行される F# 関数</value>
+    <value>指定された Service Bus トピックにメッセージが追加されると実行される F# 関数</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>指定した Service Bus トピックにメッセージが追加されるたびに実行される JavaScript 関数</value>
@@ -1039,7 +1039,7 @@
     <value>指定したスケジュールで実行される C# 関数</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>(プレビュー) 指定されたスケジュールで実行される F# 関数</value>
+    <value>指定されたスケジュールで実行される F# 関数</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
     <value>指定のスケジュールで実行される JavaScript 関数</value>
@@ -1063,7 +1063,7 @@
     <value>認証トークン設定</value>
   </data>
   <data name="twilioSms_body_help" xml:space="preserve">
-    <value>これはメッセージに使用するテキスト本文です。ここで指定しない場合、値はコードで指定できます。</value>
+    <value>メッセージに使用する本文です。ここで指定しなかった場合には、コード内で値を指定できます。</value>
   </data>
   <data name="twilioSms_body_label" xml:space="preserve">
     <value>メッセージ テキスト</value>
@@ -1078,7 +1078,7 @@
     <value>送信元電話番号</value>
   </data>
   <data name="twilioSms_name_help" xml:space="preserve">
-    <value>これは出力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="twilioSms_name_label" xml:space="preserve">
     <value>メッセージ パラメーター名</value>
@@ -1090,13 +1090,13 @@
     <value>送信先電話番号</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>コンシューマー グループ名の先頭と末尾は英字または数字でなければなりません。名前に使用できるのは、英小文字、数字、ハイフン、ピリオド、およびアンダースコアのみです。$Default グループも使用できます。</value>
+    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>Azure DocumentDB ドキュメント</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>これが、SendGrid API キーです</value>
+    <value>SendGrid 開発者 API キー</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
     <value>SendGrid API キー</value>
@@ -1108,10 +1108,10 @@
     <value>送信者 ID</value>
   </data>
   <data name="bot_in_displayName" xml:space="preserve">
-    <value>ボットのフレームワーク</value>
+    <value>Bot Framework (プレビュー)</value>
   </data>
   <data name="bot_out_displayName" xml:space="preserve">
-    <value>ボットのフレームワーク</value>
+    <value>Bot Framework (プレビュー)</value>
   </data>
   <data name="bot_in_secret_help" xml:space="preserve">
     <value>ダイレクト ライン キーはボット フレームワーク ポータルの [Direct Line channel configuration] ページで生成できます。このフィールドを空にした場合には、アプリケーションの設定 'AzureWebJobsBotFrameworkDirectLineSecret' から値が検索されます</value>
@@ -1126,15 +1126,24 @@
     <value>ダイレクト ライン キー</value>
   </data>
   <data name="bot_in_name_help" xml:space="preserve">
-    <value>これは入力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="bot_in_name_label" xml:space="preserve">
     <value>ボットのパラメーター名</value>
   </data>
   <data name="bot_out_name_help" xml:space="preserve">
-    <value>これは出力バインディングのバインド先のコード内にあるパラメーターの名前です。</value>
+    <value>コードでこのバインドの特定に使用する名前</value>
   </data>
   <data name="bot_out_name_label" xml:space="preserve">
     <value>ボットのパラメーター名</value>
+  </data>
+  <data name="ScheduledMailCSharp_description" xml:space="preserve">
+    <value>(プレビュー) 定期的にメールを送信する C# 関数</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
+    <value>一定のドキュメントを取得する場合に使用する DocumentDB 用 SQL クエリです。SQL クエリと ID のどちらも指定しなかった場合には、コレクション内のドキュメントがすべて返されます。</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
+    <value>SQL クエリ (省略可)</value>
   </data>
 </root>

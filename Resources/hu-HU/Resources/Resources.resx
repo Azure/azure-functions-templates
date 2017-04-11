@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="eventHubOut_connection_help" xml:space="preserve">
-    <value>Ez az eseményközpont kapcsolati karakterlánca. Győződjön meg róla, hogy az rendelkezik küldési (Send) engedéllyel.</value>
+    <value>Az Event Hub-kapcsolati sztringet tartalmazó alkalmazásbeállítás neve. A kapcsolati sztringnek küldési jogosultsággal kell rendelkeznie.</value>
   </data>
   <data name="eventHubOut_connection_label" xml:space="preserve">
     <value>Eseményközpont-kapcsolat</value>
@@ -127,13 +127,13 @@
     <value>Azure-eseményközpont</value>
   </data>
   <data name="eventHubOut_name_help" xml:space="preserve">
-    <value>Annak a paraméternek a neve a kódban, amellyel a kimeneti kötési funkciónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="eventHubOut_name_label" xml:space="preserve">
     <value>Eseményparaméter neve</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>Az eseményközpont nevének betűvel vagy számmal kell kezdődnie és végződnie, és csak kisbetűket, számokat, pontot, kötőjelet és aláhúzást tartalmazhat.</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>Ez annak az eseményközpontnak a neve, amelybe az esemény küldve lesz.</value>
@@ -142,13 +142,13 @@
     <value>Eseményközpont neve</value>
   </data>
   <data name="eventHubTrigger_connection_help" xml:space="preserve">
-    <value>Ez az eseményközpont kapcsolati karakterlánca. Győződjön meg róla, hogy az rendelkezik fogadási (Receive) engedéllyel.</value>
+    <value>Az Event Hub-kapcsolati sztringet tartalmazó alkalmazásbeállítás neve. A kapcsolati sztringnek fogadási jogosultsággal kell rendelkeznie.</value>
   </data>
   <data name="eventHubTrigger_connection_label" xml:space="preserve">
     <value>Eseményközpont-kapcsolat</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_help" xml:space="preserve">
-    <value>Annak az eseményközpontbeli fogyasztói csoportnak a neve, amelytől eseményeket szeretne fogadni.</value>
+    <value>Azon Event Hub-beli fogyasztói csoport neve, amelytől eseményeket szeretne fogadni.</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_label" xml:space="preserve">
     <value>Eseményközpontbeli fogyasztói csoport</value>
@@ -157,13 +157,13 @@
     <value>Azure-eseményközpont</value>
   </data>
   <data name="eventHubTrigger_name_help" xml:space="preserve">
-    <value>Annak a paraméternek a neve a kódban, amellyel az eseményindítónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál az eseményindító azonosítására a kódban.</value>
   </data>
   <data name="eventHubTrigger_name_label" xml:space="preserve">
     <value>Eseményparaméter neve</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>Az eseményközpont nevének betűvel vagy számmal kell kezdődnie és végződnie, és csak kisbetűket, számokat, kötőjelet, pontot és aláhúzást tartalmazhat.</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
     <value>Annak az eseményközpontnak a neve, amelyből eseményt szeretne indítani.</value>
@@ -175,7 +175,7 @@
     <value>Azure Queue Storage</value>
   </data>
   <data name="queueOut_name_help" xml:space="preserve">
-    <value>A kódban szereplő azon paraméter neve, amellyel a kimeneti kötési funkciónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="queueOut_name_label" xml:space="preserve">
     <value>Üzenetparaméter neve</value>
@@ -205,22 +205,22 @@
     <value>Időzítő</value>
   </data>
   <data name="timerTrigger_name_help" xml:space="preserve">
-    <value>A kódban szereplő azon paraméter neve, amellyel az eseményindítónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál az eseményindító azonosítására a kódban.</value>
   </data>
   <data name="timerTrigger_name_label" xml:space="preserve">
     <value>Időbélyeg-paraméter neve</value>
   </data>
   <data name="timerTrigger_schedule_help" xml:space="preserve">
-    <value>Írjon be egy „{second} {minute} {hour} {day} {month} {day of week}” formátumú CRON-kifejezést az ütemezés megadásához. További információt a dokumentációban talál.</value>
+    <value>Írjon be egy „{second} {minute} {hour} {day} {month} {day of week}” formátumú CRON-kifejezést az ütemezés megadásához. Példákat az alábbi dokumentációban talál.</value>
   </data>
   <data name="timerTrigger_schedule_label" xml:space="preserve">
     <value>Ütemezés</value>
   </data>
   <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
-    <value>The connection string for your External Table connection.</value>
+    <value>A külső táblával létesített kapcsolatot tartalmazó alkalmazásbeállítás neve.</value>
   </data>
   <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
-    <value>External Table connection</value>
+    <value>Külső táblával létesített kapcsolat</value>
   </data>
   <data name="variables_apiHubTableDataSetHelp" xml:space="preserve">
     <value>Annak az adatkészletnek a neve, amellyel kötést kell kialakítani. Hagyja meg a „default” értéket táblával vagy entitással létesítendő kötés esetén.</value>
@@ -244,7 +244,7 @@
     <value>A tárfiók kapcsolati karakterlánca.</value>
   </data>
   <data name="variables_parameterName" xml:space="preserve">
-    <value>A paraméternévnek tetszőleges számú karakterből álló, alfanumerikus karakterláncnak kell lennie. Számmal nem kezdődhet.</value>
+    <value>A paraméternévnek tetszőleges számú karakterből álló, alfanumerikus karakterláncnak lennie, és a név nem kezdődhet számmal.</value>
   </data>
   <data name="variables_paramNameInputHelp" xml:space="preserve">
     <value>A kódban szereplő azon paraméter neve, amellyel a bemeneti kötési funkciónak kötést kell létesítenie.</value>
@@ -274,7 +274,7 @@
     <value>Minták</value>
   </data>
   <data name="blobOut_name_help" xml:space="preserve">
-    <value>Annak a paraméternek a neve a kódban, amellyel a kimeneti kötési funkciónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="blobOut_name_label" xml:space="preserve">
     <value>Blobparaméter neve</value>
@@ -286,10 +286,10 @@
     <value>Üzenetparaméter neve</value>
   </data>
   <data name="queueTrigger_queueName_errorText" xml:space="preserve">
-    <value>Az üzenetsor nevének betűvel vagy számmal kell kezdődnie és végződnie, és csak kisbetűket, számokat és kötőjeleket tartalmazhat. A név 3–63 karakter hosszúságú lehet.</value>
+    <value>Az üzenetsor neve csak betűvel vagy számmal kezdődhet és végződhet, valamint csak kisbetűket, számokat és kötőjelet tartalmazhat. A név hossza 3–63 karakter lehet.</value>
   </data>
   <data name="queueTrigger_name_help" xml:space="preserve">
-    <value>A kódban szereplő azon paraméter neve, amellyel az eseményindítónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál az eseményindító azonosítására a kódban.</value>
   </data>
   <data name="queueTrigger_queueName_label" xml:space="preserve">
     <value>Üzenetsor neve</value>
@@ -304,7 +304,7 @@
     <value>Elérési út</value>
   </data>
   <data name="blobIn_name_help" xml:space="preserve">
-    <value>Annak a paraméternek a neve a kódban, amellyel a bemeneti kötési funkciónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="blobIn_name_label" xml:space="preserve">
     <value>Blobparaméter neve</value>
@@ -322,7 +322,7 @@
     <value>Blobparaméter neve</value>
   </data>
   <data name="blobTrigger_name_help" xml:space="preserve">
-    <value>Annak a paraméternek a neve a kódban, amellyel az eseményindítónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál az eseményindító azonosítására a kódban.</value>
   </data>
   <data name="blobTrigger_path_label" xml:space="preserve">
     <value>Elérési út</value>
@@ -337,7 +337,7 @@
     <value>Fájlparaméter neve</value>
   </data>
   <data name="apiHubFileIn_name_help" xml:space="preserve">
-    <value>Annak a paraméternek a neve a kódban, amellyel a kimeneti kötési funkciónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="apiHubFileIn_path_label" xml:space="preserve">
     <value>Elérési út</value>
@@ -349,13 +349,13 @@
     <value>Külső fájl kapcsolata</value>
   </data>
   <data name="apiHubFileIn_connection_help" xml:space="preserve">
-    <value>A külső fájl kapcsolatának kapcsolati karakterlánca.</value>
+    <value>A külső fájl kapcsolati sztringjét tartalmazó alkalmazásbeállítás neve.</value>
   </data>
   <data name="apiHubFileTrigger_name_label" xml:space="preserve">
     <value>Fájlparaméter neve</value>
   </data>
   <data name="apiHubFileTrigger_name_help" xml:space="preserve">
-    <value>Annak a paraméternek a neve a kódban, amellyel az eseményindítónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál az eseményindító azonosítására a kódban.</value>
   </data>
   <data name="apiHubFileTrigger_path_label" xml:space="preserve">
     <value>Elérési út</value>
@@ -367,13 +367,13 @@
     <value>Külső fájl kapcsolata</value>
   </data>
   <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
-    <value>A külső fájl kapcsolatának kapcsolati karakterlánca.</value>
+    <value>A külső fájl kapcsolati sztringjét tartalmazó alkalmazásbeállítás neve.</value>
   </data>
   <data name="apiHubTableIn_displayName" xml:space="preserve">
-    <value>External Table</value>
+    <value>Külső tábla (Kísérleti funkció)</value>
   </data>
   <data name="apiHubTableOut_displayName" xml:space="preserve">
-    <value>External Table</value>
+    <value>Külső tábla (Kísérleti funkció)</value>
   </data>
   <data name="httpTrigger_displayName" xml:space="preserve">
     <value>HTTP</value>
@@ -382,7 +382,7 @@
     <value>Paraméternév kérése</value>
   </data>
   <data name="httpTrigger_name_help" xml:space="preserve">
-    <value>Annak a paraméternek a neve a kódban, amellyel az eseményindítónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál az eseményindító azonosítására a kódban.</value>
   </data>
   <data name="httpTrigger_webHookType_label" xml:space="preserve">
     <value>Webhook típusa</value>
@@ -418,10 +418,10 @@
     <value>Ez az eseményindító üzemmódja. A „Szokásos” azt jelenti, hogy a kérés normál HTTP-kérés további jelentés nélkül. A „Webhook” azt jelenti, hogy a kérés egy adott webhooktípus szerint lesz feldolgozva.</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
-    <value>Külső fájl</value>
+    <value>Külső fájl (Előzetes verzió)</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>Külső fájl</value>
+    <value>Külső fájl (Előzetes verzió)</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
     <value>Azure Blob Storage</value>
@@ -439,28 +439,28 @@
     <value>Gyűjtemény neve</value>
   </data>
   <data name="documentDBIn_connection_help" xml:space="preserve">
-    <value>Ez a DocumentDB-fiók kapcsolati karakterlánca.</value>
+    <value>A DocumentDB-kapcsolati sztringet tartalmazó alkalmazásbeállítás neve.</value>
   </data>
   <data name="documentDBIn_connection_label" xml:space="preserve">
     <value>DocumentDB-fiókkapcsolat</value>
   </data>
   <data name="documentDBIn_databaseName_help" xml:space="preserve">
-    <value>Ez a neve annak az adatbázisnak a DocumentDB-fiókban, amelyből az adatok ki lesznek olvasva.</value>
+    <value>A DocumentDB-fiók azon adatbázisának neve, amelyből az adatok be lesznek olvasva.</value>
   </data>
   <data name="documentDBIn_databaseName_label" xml:space="preserve">
     <value>Adatbázis neve</value>
   </data>
   <data name="documentDBIn_displayName" xml:space="preserve">
-    <value>Azure DocumentDB-dokumentum</value>
+    <value>Azure DocumentDB</value>
   </data>
   <data name="documentDBIn_id_help" xml:space="preserve">
-    <value>Ez annak a dokumentumnak az azonosítója, amely be lesz olvasva.</value>
+    <value>Ez annak a dokumentumnak az azonosítója, amely be lesz olvasva. Ha sem SQL-lekérdezés, sem pedig azonosító nincs megadva, a rendszer az adott gyűjteményben lévő összes dokumentumot visszaadja.</value>
   </data>
   <data name="documentDBIn_id_label" xml:space="preserve">
-    <value>Dokumentumazonosító</value>
+    <value>Dokumentumazonosító (nem kötelező)</value>
   </data>
   <data name="documentDBIn_name_help" xml:space="preserve">
-    <value>Annak a paraméternek a neve a kódban, amellyel a bemeneti kötési funkciónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="documentDBIn_name_label" xml:space="preserve">
     <value>Dokumentumparaméter neve</value>
@@ -472,7 +472,7 @@
     <value>Gyűjtemény neve</value>
   </data>
   <data name="documentDBOut_connection_help" xml:space="preserve">
-    <value>Ez a DocumentDB-fiók kapcsolati karakterlánca.</value>
+    <value>A DocumentDB-kapcsolati sztringet tartalmazó alkalmazásbeállítás neve.</value>
   </data>
   <data name="documentDBOut_connection_label" xml:space="preserve">
     <value>DocumentDB-fiókkapcsolat</value>
@@ -493,7 +493,7 @@
     <value>Azure DocumentDB-dokumentum</value>
   </data>
   <data name="documentDBOut_name_help" xml:space="preserve">
-    <value>Annak a paraméternek a neve a kódban, amellyel a kimeneti kötési funkciónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="documentDBOut_name_label" xml:space="preserve">
     <value>Dokumentumparaméter neve</value>
@@ -502,16 +502,16 @@
     <value>HTTP</value>
   </data>
   <data name="httpOut_name_help" xml:space="preserve">
-    <value>Annak a paraméternek a neve a kódban, amellyel a kimeneti kötési funkciónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="httpOut_name_label" xml:space="preserve">
     <value>Válaszparaméter neve</value>
   </data>
   <data name="httpTrigger_authLevel_help" xml:space="preserve">
-    <value>Az engedélyszinttel azt adhatja meg, hogy kötelező-e API-kulcsot használni, és ha igen, melyik kulcsot kell használni; a Függvény szint a függvénykulcsot, a Rendszergazda szint a mesterkulcsot használja. Az Ön függvényének kiválasztásakor a függvény- és a mesterkulcs a portál kezelési paneljén érhető el. Felhasználóalapú hitelesítés esetén nyissa meg a függvényalkalmazás beállításait.</value>
+    <value>Az engedélyszinttel azt adhatja meg, hogy a függvény igényli-e API-kulcs használatát, és ha igen, melyik kulcsot kell használni; a Függvény szint a függvénykulcsot, a Rendszergazda szint a mesterkulcsot használja. Az Ön függvényének kiválasztásakor a függvény- és a mesterkulcs a portál kezelési paneljén érhető el. Felhasználóalapú hitelesítés esetén nyissa meg a függvényalkalmazás beállításait.</value>
   </data>
   <data name="manualTrigger_name_help" xml:space="preserve">
-    <value>Annak a paraméternek a neve a kódban, amellyel az eseményindítónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="manualTrigger_name_label" xml:space="preserve">
     <value>Paraméter neve</value>
@@ -523,7 +523,7 @@
     <value>API-kulcskeresés (nem kötelező)</value>
   </data>
   <data name="mobileTableIn_connection_help" xml:space="preserve">
-    <value>Annak az alkalmazásbeállításnak a neve, amely megadja az URL-címet a mobilalkalmazáshoz.</value>
+    <value>A mobilalkalmazás URL-címét tartalmazó alkalmazásbeállítás neve.</value>
   </data>
   <data name="mobileTableIn_connection_label" xml:space="preserve">
     <value>Mobilalkalmazás URL-címének keresése</value>
@@ -538,13 +538,13 @@
     <value>Rekordazonosító</value>
   </data>
   <data name="mobileTableIn_name_help" xml:space="preserve">
-    <value>Annak a paraméternek a neve a kódban, amellyel a bemeneti kötési funkciónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="mobileTableIn_name_label" xml:space="preserve">
     <value>Rekordparaméter neve</value>
   </data>
   <data name="mobileTableIn_tableName_help" xml:space="preserve">
-    <value>Ez a neve annak a táblának a mobilalkalmazáson belül, amelyből az adatok ki lesznek olvasva.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="mobileTableIn_tableName_label" xml:space="preserve">
     <value>Tábla neve</value>
@@ -556,7 +556,7 @@
     <value>API-kulcskeresés (nem kötelező)</value>
   </data>
   <data name="mobileTableOut_connection_help" xml:space="preserve">
-    <value>Annak az alkalmazásbeállításnak a neve, amely megadja az URL-címet a mobilalkalmazáshoz.</value>
+    <value>A mobilalkalmazás URL-címét tartalmazó alkalmazásbeállítás neve.</value>
   </data>
   <data name="mobileTableOut_connection_label" xml:space="preserve">
     <value>Mobilalkalmazás URL-címének keresése</value>
@@ -565,19 +565,19 @@
     <value>Azure Mobile-tábla rekordja</value>
   </data>
   <data name="mobileTableOut_name_help" xml:space="preserve">
-    <value>Annak a paraméternek a neve a kódban, amellyel a kimeneti kötési funkciónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="mobileTableOut_name_label" xml:space="preserve">
     <value>Rekordparaméter neve</value>
   </data>
   <data name="mobileTableOut_tableName_help" xml:space="preserve">
-    <value>Ez a neve annak a táblának a mobilalkalmazáson belül, amelybe az adatok írva lesznek.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="mobileTableOut_tableName_label" xml:space="preserve">
     <value>Tábla neve</value>
   </data>
   <data name="notificationHubOut_connection_help" xml:space="preserve">
-    <value>Ez az értesítési központ névterének kapcsolati karakterlánca.</value>
+    <value>A Notification Hub-névtér kapcsolati sztringjét tartalmazó alkalmazásbeállítás neve.</value>
   </data>
   <data name="notificationHubOut_connection_label" xml:space="preserve">
     <value>Notification Hubs névterének kapcsolata</value>
@@ -592,7 +592,7 @@
     <value>Értesítési központ neve</value>
   </data>
   <data name="notificationHubOut_name_help" xml:space="preserve">
-    <value>Annak a paraméternek a neve a kódban, amellyel a kimeneti kötési funkciónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="notificationHubOut_name_label" xml:space="preserve">
     <value>Értesítési paraméter neve</value>
@@ -628,7 +628,7 @@
     <value>Feladó címe</value>
   </data>
   <data name="sendGrid_name_help" xml:space="preserve">
-    <value>A kódban szereplő azon paraméter neve, amellyel a kimeneti kötési funkciónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="sendGrid_name_label" xml:space="preserve">
     <value>Üzenetparaméter neve</value>
@@ -646,19 +646,19 @@
     <value>Üzenet szövege</value>
   </data>
   <data name="sendGrid_to_help" xml:space="preserve">
-    <value>Az e-mail-cím, amelyre az üzenetet el kell küldeni. Lehet „felhasználó@állomás.com” vagy „Megjelenített név &lt;felhasználó@állomás.com&gt;” formátumú. Ha itt nincs megadva, az érték kód segítségével is megadható.</value>
+    <value>Az az e-mail-cím, amelyre az üzenetet el kell küldeni. A formátuma a következő lehet: „felhasználó@contoso.com” vagy „Megjelenített név &lt;felhasználó@contoso.com&gt;”. Ha itt nincs megadva, az érték kód segítségével is megadható.</value>
   </data>
   <data name="sendGrid_to_label" xml:space="preserve">
     <value>Címzett</value>
   </data>
   <data name="serviceBusOut_accessRights_help" xml:space="preserve">
-    <value>A hozzáférési jogok, amelyekkel az ügyfél rendelkezik az üzenetsor- vagy téma-előfizetés vonatkozásában.</value>
+    <value>A Service Bus-kapcsolati sztring hozzáférési jogosultsága. A Küldés értéket állítsa be, ha felügyeleti engedélyekkel nem rendelkező kapcsolati sztringet használ.</value>
   </data>
   <data name="serviceBusOut_accessRights_label" xml:space="preserve">
-    <value>Hozzáférési jogok</value>
+    <value>Hozzáférési jogosultságok</value>
   </data>
   <data name="serviceBusOut_connection_help" xml:space="preserve">
-    <value>A szolgáltatási busz kapcsolati karakterlánca. Fontos, hogy rendelkezzen küldési jogosultággal.</value>
+    <value>A Service Bus-kapcsolati sztringet tartalmazó alkalmazásbeállítás neve. A kapcsolati sztringnek küldési jogosultággal kell rendelkeznie.</value>
   </data>
   <data name="serviceBusOut_connection_label" xml:space="preserve">
     <value>Service Bus-kapcsolat</value>
@@ -667,7 +667,7 @@
     <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusOut_messageType_help" xml:space="preserve">
-    <value>A szolgáltatásbusz-üzenet típusa. Az üzenetsorok és a témák használata között lehet választani vele.</value>
+    <value>A Service Bus-üzenet típusa (Üzenetsorok vagy Témák).</value>
   </data>
   <data name="serviceBusOut_messageType_label" xml:space="preserve">
     <value>Üzenet típusa</value>
@@ -679,13 +679,13 @@
     <value>Service Bus-téma</value>
   </data>
   <data name="serviceBusOut_name_help" xml:space="preserve">
-    <value>A kódban szereplő azon paraméter neve, amellyel a kimeneti kötési funkciónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="serviceBusOut_name_label" xml:space="preserve">
     <value>Üzenetparaméter neve</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>Az üzenetsor nevének betűvel vagy számmal kell kezdődnie és végződnie, és csak kisbetűket, számokat, pontokat és kötőjeleket tartalmazhat. A név 3–63 karakter hosszúságú lehet.</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
     <value>Az az üzenetsor, amelybe el kell küldeni az üzenetet.</value>
@@ -694,22 +694,22 @@
     <value>Üzenetsor neve</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>A téma nevének betűvel vagy számmal kell kezdődnie és végződnie, és csak kisbetűket, számokat, pontokat és kötőjeleket tartalmazhat. A név 3–63 karakter hosszúságú lehet.</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
-    <value>Az a téma, amelybe el kell küldeni az üzenetet.</value>
+    <value>Az a témakör, amelybe el kell küldeni az üzenetet.</value>
   </data>
   <data name="serviceBusOut_topicName_label" xml:space="preserve">
     <value>Témakör neve</value>
   </data>
   <data name="serviceBusTrigger_accessRights_help" xml:space="preserve">
-    <value>A hozzáférési jogok, amelyekkel az ügyfél rendelkezik az üzenetsor- vagy téma-előfizetés vonatkozásában.</value>
+    <value>A Service Bus-kapcsolati sztring hozzáférési jogosultsága. A Küldés értéket állítsa be, ha felügyeleti engedélyekkel nem rendelkező kapcsolati sztringet használ.</value>
   </data>
   <data name="serviceBusTrigger_accessRights_label" xml:space="preserve">
-    <value>Hozzáférési jogok</value>
+    <value>Hozzáférési jogosultságok</value>
   </data>
   <data name="serviceBusTrigger_connection_help" xml:space="preserve">
-    <value>A szolgáltatási busz kapcsolati karakterlánca. Fontos, hogy rendelkezzen figyelési jogosultággal.</value>
+    <value>A Service Bus-kapcsolati sztringet tartalmazó alkalmazásbeállítás neve. A kapcsolati sztringnek figyelési jogosultággal kell rendelkeznie.</value>
   </data>
   <data name="serviceBusTrigger_connection_label" xml:space="preserve">
     <value>Service Bus-kapcsolat</value>
@@ -718,7 +718,7 @@
     <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusTrigger_messageType_help" xml:space="preserve">
-    <value>A szolgáltatásbusz-üzenet típusa. Az üzenetsorok és a témák használata között lehet választani vele.</value>
+    <value>A Service Bus-üzenet típusa (Üzenetsorok vagy Témák).</value>
   </data>
   <data name="serviceBusTrigger_messageType_label" xml:space="preserve">
     <value>Üzenet típusa</value>
@@ -730,22 +730,22 @@
     <value>Service Bus-téma</value>
   </data>
   <data name="serviceBusTrigger_name_help" xml:space="preserve">
-    <value>A kódban szereplő azon paraméter neve, amellyel az eseményindítónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál az eseményindító azonosítására a kódban.</value>
   </data>
   <data name="serviceBusTrigger_name_label" xml:space="preserve">
     <value>Üzenetparaméter neve</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>Az üzenetsor nevének betűvel vagy számmal kell kezdődnie és végződnie, és csak kisbetűket, számokat, pontokat és kötőjeleket tartalmazhat. A név 3–63 karakter hosszúságú lehet.</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
-    <value>Azon üzenetsor neve, amelyből be kell olvasni az üzenetet.</value>
+    <value>Az az üzenetsor, amelyből be kell olvasni az üzenetet.</value>
   </data>
   <data name="serviceBusTrigger_queueName_label" xml:space="preserve">
     <value>Üzenetsor neve</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>Az előfizetés nevének betűvel vagy számmal kell kezdődnie és végződnie, és csak kisbetűket, számokat, pontokat és kötőjeleket tartalmazhat. A név 3–63 karakter hosszúságú lehet.</value>
+    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
     <value>A témában szereplő azon előfizetés neve, amellyel kötést kell létesíteni.</value>
@@ -754,10 +754,10 @@
     <value>Előfizetés neve</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>A téma nevének betűvel vagy számmal kell kezdődnie és végződnie, és csak kisbetűket, számokat, pontokat és kötőjeleket tartalmazhat. A név 3–63 karakter hosszúságú lehet.</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
-    <value>Azon téma neve, amelyből be kell olvasni az üzenetet.</value>
+    <value>Azon témakör neve, amelyből be kell olvasni az üzenetet.</value>
   </data>
   <data name="serviceBusTrigger_topicName_label" xml:space="preserve">
     <value>Témakör neve</value>
@@ -766,40 +766,40 @@
     <value>Azure Table Storage</value>
   </data>
   <data name="tableIn_filter_help" xml:space="preserve">
-    <value>Opcionális lekérdezési kifejezés, amellyel a táblalekérdezés eredménye szűrhető. Ez a beállítás nem alkalmazható C#-függvényekre.</value>
+    <value>Opcionális lekérdezési kifejezés, amellyel a táblalekérdezés eredménye szűrhető. Ez a beállítás C#-függvényekre nem alkalmazható.</value>
   </data>
   <data name="tableIn_filter_label" xml:space="preserve">
     <value>Lekérdezésszűrő (nem kötelező)</value>
   </data>
   <data name="tableIn_name_help" xml:space="preserve">
-    <value>A kódban szereplő azon paraméter neve, amellyel a bemeneti kötési funkciónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="tableIn_name_label" xml:space="preserve">
     <value>Táblaparaméter neve</value>
   </data>
   <data name="tableIn_partitionKey_help" xml:space="preserve">
-    <value>A tábla Partíciókulcs oszlopának neve. A rendszer a megfelelő partíciókulccsal és sorkulccsal rendelkező rekordokat adja vissza. A Partíciókulcs beállításhoz a Sorkulcs beállítást is meg kell adni.</value>
+    <value>A tábla partíciókulcs-oszlopának neve. A rendszer a megfelelő partíciókulccsal és sorkulccsal rendelkező rekordokat adja vissza. Ha a partíciókulcs meg van adva, a sorkulcsot is meg kell adni.</value>
   </data>
   <data name="tableIn_partitionKey_label" xml:space="preserve">
     <value>Partíciókulcs (nem kötelező)</value>
   </data>
   <data name="tableIn_rowKey_help" xml:space="preserve">
-    <value>A tábla Sorkulcs oszlopának neve. A rendszer a megfelelő sorkulccsal és partíciókulccsal rendelkező rekordokat adja vissza. A Sorkulcs beállításhoz a Partíciókulcs beállítást is meg kell adni.</value>
+    <value>A tábla partíciókulcs-oszlopának neve. A rendszer a megfelelő partíciókulccsal és sorkulccsal rendelkező rekordokat adja vissza. Ha a partíciókulcs meg van adva, a sorkulcsot is meg kell adni.</value>
   </data>
   <data name="tableIn_rowKey_label" xml:space="preserve">
     <value>Sorkulcs (nem kötelező)</value>
   </data>
   <data name="tableIn_tableName_errorText" xml:space="preserve">
-    <value>A táblanévnek 3–63 karakterből álló, alfanumerikus karakterláncnak kell lennie. Számmal nem kezdődhet.</value>
+    <value>A táblanévnek 3–63 karakterből álló, alfanumerikus karakterláncnak kell lennie, és a név nem kezdődhet számmal.</value>
   </data>
   <data name="tableIn_tableName_help" xml:space="preserve">
-    <value>A tárfiókon belüli azon tábla neve, amelyből be kell olvasni az adatokat.</value>
+    <value>A tárfiók azon táblájának neve, amelyből be kell olvasni az adatokat.</value>
   </data>
   <data name="tableIn_tableName_label" xml:space="preserve">
     <value>Tábla neve</value>
   </data>
   <data name="tableIn_take_help" xml:space="preserve">
-    <value>A rekordok számát megadó egész szám. A tábla tartalmától és az alkalmazott szűrőtől függően előfordulat, hogy kevesebb rekordot kap, mint ez az érték. Ez a beállítás nem alkalmazható C#-függvényekre.</value>
+    <value>A visszaadandó rekordok maximális számát megadó egész szám. A visszaadott rekordok száma a tábla tartalmától és a szűrőktől függően ennél az értéknél kisebb is lehet. Ez a beállítás C#-függvényekre nem alkalmazható.</value>
   </data>
   <data name="tableIn_take_label" xml:space="preserve">
     <value>Beolvasandó rekordok maximális száma (nem kötelező)</value>
@@ -808,16 +808,16 @@
     <value>Azure Table Storage</value>
   </data>
   <data name="tableout_name_help" xml:space="preserve">
-    <value>A kódban szereplő azon paraméter neve, amellyel a kimeneti kötési funkciónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="tableout_name_label" xml:space="preserve">
     <value>Táblaparaméter neve</value>
   </data>
   <data name="table_tableName_errorText" xml:space="preserve">
-    <value>A táblanévnek 3–63 karakterből álló, alfanumerikus karakterláncnak kell lennie. Számmal nem kezdődhet.</value>
+    <value>A táblanévnek 3–63 karakterből álló, alfanumerikus karakterláncnak kell lennie, és a név nem kezdődhet számmal.</value>
   </data>
   <data name="table_tableName_help" xml:space="preserve">
-    <value>A tárfiókon belüli azon tábla neve, amelybe be kell írni az adatokat.</value>
+    <value>A tárfiók azon táblájának neve, amelybe az adatokat írni kell.</value>
   </data>
   <data name="table_tableName_label" xml:space="preserve">
     <value>Tábla neve</value>
@@ -829,7 +829,7 @@
     <value>C#-függvény, amely akkor fut le, amikor egy blob bekerül egy adott tárolóba</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) F#-függvény, amely akkor fut le, ha egy adott tárolóhoz blobot adnak hozzá</value>
+    <value>F# függvény, amely akkor fut le, ha egy adott tárolóhoz blobot adnak hozzá</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
     <value>JavaScript-függvény, amely akkor fut le, amikor egy blob bekerül egy adott tárolóba</value>
@@ -865,7 +865,7 @@
     <value>C#-függvény, amely akkor fut le, amikor egy eseményközpont új eseményt kap</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) F#-függvény, amely akkor fut le, ha egy eseményközpont új eseményt kap</value>
+    <value>F# függvény, amely akkor fut le, ha egy eseményközpont új eseményt fogad</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
     <value>JavaScript-függvény, amely akkor fut le, amikor egy eseményközpont új eseményt kap</value>
@@ -877,7 +877,7 @@
     <value>C#-függvény, amely képeket dolgoz fel, és arcokhoz tartozó határoló téglalapot ad vissza kimenetként</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) F#-függvény, amely képeket dolgoz fel, és arcokhoz tartozó határoló téglalapot ad vissza kimenetként</value>
+    <value>F#-függvény, amely képeket dolgoz fel, és arcokhoz tartozó határoló téglalapot ad vissza kimenetként</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
     <value>JavaScript-függvény, amely képeket dolgoz fel, és arcokhoz tartozó határoló téglalapot ad vissza kimenetként</value>
@@ -886,7 +886,7 @@
     <value>C#-függvény, amely akkor fut le, amikor webhookkérést kap</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) F#-függvény, amely akkor fut le, ha webhookkérést kap</value>
+    <value>F# függvény, amely akkor fut le, ha webhookkérést kap</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
     <value>JavaScript-függvény, amely akkor fut le, amikor webhookkérést kap</value>
@@ -895,13 +895,13 @@
     <value>JavaScript-függvény, amely akkor fut le, amikor a GitHubtól webhookkérést kap</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) F#-függvény, amely akkor fut le, ha GitHub-webhook-kérést kap</value>
+    <value>F# függvény, amely akkor fut le, ha GitHub-webhook-kérést kap</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>C#-függvény, amely akkor fut le, amikor a GitHubtól webhookkérést kap</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) F#-függvény, amely akkor fut le, ha GitHub-webhook-kérést kap</value>
+    <value>F# függvény, amely akkor fut le, ha GitHub-webhook-kérést kap</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
     <value>JavaScript-függvény, amely akkor fut le, amikor a GitHubtól webhookkérést kap</value>
@@ -910,7 +910,7 @@
     <value>C#-függvény, amely egy tárolótáblából entitásokat olvas be, amikor HTTP-kérést kap</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) F#-függvény, amely beolvassa az entitásokat egy Storage-táblából, ha HTTP-kérést kap</value>
+    <value>F# függvény, amely beolvassa az entitásokat egy Storage-táblából, ha HTTP-kérést kap</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
     <value>JavaScript-függvény, amely egy Storage-táblából entitásokat olvas be, amikor HTTP-kérést kap</value>
@@ -922,7 +922,7 @@
     <value>C#-függvény, amely egy tárolótáblához entitásokat ad hozzá, amikor HTTP-kérést kap</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) F#-függvény, amely hozzáadja az entitásokat egy Storage-táblához, ha HTTP-kérést kap</value>
+    <value>F # függvény, amely hozzáadja az entitásokat egy Storage-táblához, ha HTTP-kérést kap</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
     <value>JavaScript-függvény, amely egy Storage-táblához entitásokat ad hozzá, amikor HTTP-kérést kap</value>
@@ -931,7 +931,7 @@
     <value>C#-függvény, amely frissít egy tárolótáblában lévő entitást, ha HTTP-kérést kap</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) F#-függvény, amely frissít egy Storage-táblában lévő entitást, ha HTTP-kérést kap</value>
+    <value>F# függvény, amely frissít egy tárolótáblában lévő entitást, ha HTTP-kérést kap</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
     <value>(Kísérleti) Batch-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
@@ -940,7 +940,7 @@
     <value>C#-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) F#-függvény, amely akkor fut le, ha HTTP-kérést kap</value>
+    <value>F# függvény, amely akkor fut le, ha HTTP-kérést kap</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
     <value>JavaScript-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
@@ -952,13 +952,13 @@
     <value>C#-függvény, amely átméretezett képeket hoz létre, amikor egy blob bekerül egy adott tárolóba</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) F#-függvény, amely átméretezett képeket hoz létre, ha egy adott tárolóhoz blobot adnak hozzá</value>
+    <value>F# függvény, amely átméretezett képeket hoz létre, ha egy adott tárolóhoz blobot adnak hozzá</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>C#-függvény, amely manuálisan indítható a portál Futtatás gombjával</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) F#-függvény, amely manuálisan aktiválható a portál Futtatás gombjával</value>
+    <value>F# függvény, amely manuálisan aktiválható a portálon lévő Futtatás gombbal</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>JavaScript-függvény, amely manuálisan indítható a portál Futtatás gombjával</value>
@@ -973,7 +973,7 @@
     <value>C#-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
   </data>
   <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) F#-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
+    <value>F#-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
   </data>
   <data name="QueueTriggerNodeJS_description" xml:space="preserve">
     <value>JavaScript-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
@@ -988,49 +988,49 @@
     <value>(Kísérleti) Python-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
   </data>
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
-    <value>(Experimental) A Batch function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Kísérleti) Batch-függvény, amely akkor fut le, ha fájlt adnak hozzá egy külső fájlszolgáltatóhoz.</value>
   </data>
   <data name="SaasFileTriggerCSharp_description" xml:space="preserve">
-    <value>(Preview) A C# function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Előzetes verzió) C#-függvény, amely akkor fut le, ha fájlt adnak hozzá egy külső fájlszolgáltatóhoz.</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) An F# function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Előzetes verzió) F#-függvény, amely akkor fut le, ha fájlt adnak hozzá egy külső fájlszolgáltatóhoz.</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
-    <value>(Preview) A JavaScript function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Előzetes verzió) JavaScript-függvény, amely akkor fut le, ha fájlt adnak hozzá egy külső fájlszolgáltatóhoz.</value>
   </data>
   <data name="SaasFileTokenNodeJS_description" xml:space="preserve">
-    <value>A JavaScript function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Előzetes verzió) JavaScript-függvény, amely akkor fut le, ha fájlt adnak hozzá egy külső fájlszolgáltatóhoz.</value>
   </data>
   <data name="SaasTableCSharp_description" xml:space="preserve">
-    <value>(Experimental) A C# function that fetches entities from a External Table when it receives an HTTP request.</value>
+    <value>(Kísérleti) C#-függvény, amely entitásokat olvas be egy külső táblából, ha HTTP-kérést kap.</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>(Experimental) An F# function that fetches entities from a External Table when it receives an HTTP request.</value>
+    <value>(Kísérleti) F#-függvény, amely entitásokat olvas be egy külső táblából, ha HTTP-kérést kap.</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) F#-függvény, amely létrehozza egy adott tároló és blobnév Azure Storage-beli SAS-jogkivonatát.</value>
+    <value>F# függvény, amely létrehozza egy adott tároló és blobnév Azure Storage-beli SAS-jogkivonatát.</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) C#-függvény, amely megerősítő e-mailt küld, amikor egy új elem kerül be egy adott üzenetsorba</value>
+    <value>C#-függvény, amely megerősítő e-mailt küld, ha egy adott üzenetsor új elemmel bővül.</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) F#-függvény, amely megerősítő e-mailt küld, amikor egy új elem kerül be egy adott üzenetsorba</value>
+    <value>F#-függvény, amely megerősítő e-mailt küld, ha egy adott üzenetsor új elemmel bővül.</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>(Előzetes verzió) C#-függvény, amely megerősítő e-mailt küld, amikor egy új elem kerül be egy adott üzenetsorba</value>
+    <value>JavaScript-függvény, amely megerősítő e-mailt küld, ha egy adott üzenetsor új elemmel bővül.</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
-    <value>JavaScript-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-üzenetsorba</value>
+    <value>C#-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-üzenetsorba</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) F#-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-üzenetsorba</value>
+    <value>F# függvény, amely akkor fut le, ha egy adott Service Bus-üzenetsor új üzenettel bővül</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
     <value>JavaScript-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-üzenetsorba</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) F#-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-témakörbe</value>
+    <value>F# függvény, amely akkor fut le, ha egy adott Service Bus-témakör új üzenettel bővül</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>JavaScript-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-témakörbe</value>
@@ -1039,7 +1039,7 @@
     <value>C#-függvény, amely megadott ütemezés szerint fut</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) F#-függvény, amely egy adott ütemezés szerint fut le</value>
+    <value>F# függvény, amely egy adott ütemezés szerint fut le</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
     <value>JavaScript-függvény, amely egy adott ütemezés szerint fut le</value>
@@ -1072,31 +1072,31 @@
     <value>Twilio SMS</value>
   </data>
   <data name="twilioSms_from_help" xml:space="preserve">
-    <value>Erről a Twilio-telefonszámról lesz az üzenet elküldve. Ha itt nem adja meg a számot, a kódban is meghatározhatja.</value>
+    <value>Erről a Twilio-telefonszámról lesz elküldve az üzenet. Ha itt nem adja meg a számot, az érték kód segítségével is megadható.</value>
   </data>
   <data name="twilioSms_from_label" xml:space="preserve">
     <value>Erről a számról</value>
   </data>
   <data name="twilioSms_name_help" xml:space="preserve">
-    <value>A kódban szereplő azon paraméter neve, amellyel a kimeneti kötési funkciónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="twilioSms_name_label" xml:space="preserve">
     <value>Üzenetparaméter neve</value>
   </data>
   <data name="twilioSms_to_help" xml:space="preserve">
-    <value>Erre a Twilio-telefonszámra lesz az üzenet elküldve. Ha itt nem adja meg a számot, a kódban is meghatározhatja.</value>
+    <value>Erre a Twilio-telefonszámra lesz elküldve az üzenet. Ha itt nem adja meg a számot, az érték kód segítségével is megadható.</value>
   </data>
   <data name="twilioSms_to_label" xml:space="preserve">
     <value>Erre a számra</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>A fogyasztói csoport nevének betűvel vagy számmal kell kezdődnie és végződnie, és csak kisbetűket, számokat, kötőjelet, pontot és aláhúzást tartalmazhat. A $Default csoport is engedélyezett.</value>
+    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>Azure DocumentDB-dokumentum</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>Az Ön SendGrid-API-kulcsa</value>
+    <value>A SendGrid-fejlesztő API-kulcsa.</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
     <value>SendGrid-API-kulcs</value>
@@ -1108,10 +1108,10 @@
     <value>Küldő azonosítója</value>
   </data>
   <data name="bot_in_displayName" xml:space="preserve">
-    <value>Bot Framework</value>
+    <value>Bot Framework (előzetes verzió)</value>
   </data>
   <data name="bot_out_displayName" xml:space="preserve">
-    <value>Bot Framework</value>
+    <value>Bot Framework (előzetes verzió)</value>
   </data>
   <data name="bot_in_secret_help" xml:space="preserve">
     <value>A közvetlen vonal kulcsát a közvetlen vonal csatornakonfigurációs lapján lehet létrehozni a Bot Framework portálon. Ha üresen hagyja ezt a mezőt, a rendszer az értéket az AzureWebJobsBotFrameworkDirectLineSecret alkalmazásbeállításban fogja keresni</value>
@@ -1126,15 +1126,24 @@
     <value>Közvetlen vonal kulcsa</value>
   </data>
   <data name="bot_in_name_help" xml:space="preserve">
-    <value>Annak a paraméternek a neve a kódban, amellyel a bemeneti kötési funkciónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="bot_in_name_label" xml:space="preserve">
     <value>A robot paraméterneve</value>
   </data>
   <data name="bot_out_name_help" xml:space="preserve">
-    <value>A kódban szereplő azon paraméter neve, amellyel a kimeneti kötési funkciónak kötést kell létesítenie.</value>
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
   </data>
   <data name="bot_out_name_label" xml:space="preserve">
     <value>A robot paraméterneve</value>
+  </data>
+  <data name="ScheduledMailCSharp_description" xml:space="preserve">
+    <value>(Előzetes verzió) C#-függvény, amely rendszeresen e-maileket küld</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
+    <value>Ez egy dokumentumkészlet beolvasására használható DocumentDB SQL-lekérdezés, melyet nem kötelező megadni. Ha sem SQL-lekérdezés, sem pedig azonosító nincs megadva, a rendszer az adott gyűjteményben lévő összes dokumentumot visszaadja.</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
+    <value>SQL-lekérdezés (nem kötelező)</value>
   </data>
 </root>

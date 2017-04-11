@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="eventHubOut_connection_help" xml:space="preserve">
-    <value>이벤트 허브에 대한 연결 문자열입니다. 이 문자열에 Send 권한이 있는지 확인하세요.</value>
+    <value>이벤트 허브 연결 문자열을 포함하는 앱 설정의 이름입니다. 이 연결 문자열에 보내기 권한이 있어야 합니다.</value>
   </data>
   <data name="eventHubOut_connection_label" xml:space="preserve">
     <value>이벤트 허브 연결</value>
@@ -127,13 +127,13 @@
     <value>AZURE 이벤트 허브</value>
   </data>
   <data name="eventHubOut_name_help" xml:space="preserve">
-    <value>코드에서 출력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="eventHubOut_name_label" xml:space="preserve">
     <value>이벤트 매개 변수 이름</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>이벤트 허브 이름은 문자나 숫자로 시작하고 끝나야 하며 소문자, 숫자, 마침표, 하이픈 및 밑줄만 포함할 수 있습니다.</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>이벤트를 보낼 이벤트 허브의 이름입니다.</value>
@@ -142,13 +142,13 @@
     <value>이벤트 허브 이름</value>
   </data>
   <data name="eventHubTrigger_connection_help" xml:space="preserve">
-    <value>이벤트 허브에 대한 연결 문자열입니다. 이 문자열에 Receive 권한이 있는지 확인하세요.</value>
+    <value>이벤트 허브 연결 문자열을 포함하는 앱 설정의 이름입니다. 연결 문자열에 받기 권한이 있어야 합니다.</value>
   </data>
   <data name="eventHubTrigger_connection_label" xml:space="preserve">
     <value>이벤트 허브 연결</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_help" xml:space="preserve">
-    <value>이벤트를 수신할 이벤트 허브 소비자 그룹의 이름입니다.</value>
+    <value>이벤트를 받을 이벤트 허브 소비자 그룹입니다.</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_label" xml:space="preserve">
     <value>이벤트 허브 소비자 그룹</value>
@@ -157,13 +157,13 @@
     <value>AZURE 이벤트 허브</value>
   </data>
   <data name="eventHubTrigger_name_help" xml:space="preserve">
-    <value>코드에서 트리거가 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 트리거를 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="eventHubTrigger_name_label" xml:space="preserve">
     <value>이벤트 매개 변수 이름</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>이벤트 허브 이름은 문자나 숫자로 시작하고 끝나야 하며 소문자, 숫자, 하이픈, 마침표 및 밑줄만 포함할 수 있습니다.</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
     <value>트리거할 이벤트 허브의 이름입니다.</value>
@@ -175,7 +175,7 @@
     <value>Azure Queue Storage</value>
   </data>
   <data name="queueOut_name_help" xml:space="preserve">
-    <value>코드에서 출력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="queueOut_name_label" xml:space="preserve">
     <value>메시지 매개 변수 이름</value>
@@ -205,22 +205,22 @@
     <value>타이머</value>
   </data>
   <data name="timerTrigger_name_help" xml:space="preserve">
-    <value>코드에서 트리거가 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 트리거를 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="timerTrigger_name_label" xml:space="preserve">
     <value>타임스탬프 매개 변수 이름</value>
   </data>
   <data name="timerTrigger_schedule_help" xml:space="preserve">
-    <value>Cron 식을 '{second} {minute} {hour} {day} {month} {day of week}' 형식으로 입력하여 일정을 지정하세요. 자세한 내용은 설명서를 참조하세요.</value>
+    <value>일정을 지정하려면 Cron 식을 '{second} {minute} {hour} {day} {month} {day of week}' 형식으로 입력하세요. 아래 설명서에서 예를 참조하세요.</value>
   </data>
   <data name="timerTrigger_schedule_label" xml:space="preserve">
     <value>일정</value>
   </data>
   <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
-    <value>The connection string for your External Table connection.</value>
+    <value>외부 테이블 연결을 포함하는 앱 설정의 이름입니다.</value>
   </data>
   <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
-    <value>External Table connection</value>
+    <value>외부 테이블 연결</value>
   </data>
   <data name="variables_apiHubTableDataSetHelp" xml:space="preserve">
     <value>바인딩할 데이터 집합의 이름입니다. 테이블 또는 엔터티에 바인딩하려면 'default'로 두세요.</value>
@@ -244,7 +244,7 @@
     <value>저장소 계정에 대한 연결 문자열입니다.</value>
   </data>
   <data name="variables_parameterName" xml:space="preserve">
-    <value>매개 변수 이름은 임의 길이의 영숫자 문자열이어야 합니다. 숫자로 시작할 수 없습니다.</value>
+    <value>매개 변수 이름은 임의 길이의 영숫자 문자열이어야 하며 숫자로 시작할 수 없습니다.</value>
   </data>
   <data name="variables_paramNameInputHelp" xml:space="preserve">
     <value>코드에서 입력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
@@ -274,7 +274,7 @@
     <value>샘플</value>
   </data>
   <data name="blobOut_name_help" xml:space="preserve">
-    <value>코드에서 출력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="blobOut_name_label" xml:space="preserve">
     <value>Blob 매개 변수 이름</value>
@@ -289,7 +289,7 @@
     <value>큐 이름은 문자나 숫자로 시작하고 끝나야 하며 소문자, 숫자 및 하이픈만 포함할 수 있습니다. 이름은 3자에서 63자 사이여야 합니다.</value>
   </data>
   <data name="queueTrigger_name_help" xml:space="preserve">
-    <value>코드에서 트리거가 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 트리거를 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="queueTrigger_queueName_label" xml:space="preserve">
     <value>큐 이름</value>
@@ -304,7 +304,7 @@
     <value>경로</value>
   </data>
   <data name="blobIn_name_help" xml:space="preserve">
-    <value>코드에서 입력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="blobIn_name_label" xml:space="preserve">
     <value>Blob 매개 변수 이름</value>
@@ -322,7 +322,7 @@
     <value>Blob 매개 변수 이름</value>
   </data>
   <data name="blobTrigger_name_help" xml:space="preserve">
-    <value>코드에서 트리거가 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 트리거를 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="blobTrigger_path_label" xml:space="preserve">
     <value>경로</value>
@@ -337,7 +337,7 @@
     <value>파일 매개 변수 이름</value>
   </data>
   <data name="apiHubFileIn_name_help" xml:space="preserve">
-    <value>코드에서 출력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="apiHubFileIn_path_label" xml:space="preserve">
     <value>경로</value>
@@ -349,13 +349,13 @@
     <value>외부 파일 연결</value>
   </data>
   <data name="apiHubFileIn_connection_help" xml:space="preserve">
-    <value>외부 파일 연결에 대한 연결 문자열입니다.</value>
+    <value>외부 파일 연결 문자열을 포함하는 앱 설정 이름입니다.</value>
   </data>
   <data name="apiHubFileTrigger_name_label" xml:space="preserve">
     <value>파일 매개 변수 이름</value>
   </data>
   <data name="apiHubFileTrigger_name_help" xml:space="preserve">
-    <value>코드에서 트리거가 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 트리거를 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="apiHubFileTrigger_path_label" xml:space="preserve">
     <value>경로</value>
@@ -367,13 +367,13 @@
     <value>외부 파일 연결</value>
   </data>
   <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
-    <value>외부 파일 연결에 대한 연결 문자열입니다.</value>
+    <value>외부 파일 연결 문자열을 포함하는 앱 설정 이름입니다.</value>
   </data>
   <data name="apiHubTableIn_displayName" xml:space="preserve">
-    <value>External Table</value>
+    <value>외부 테이블(실험적)</value>
   </data>
   <data name="apiHubTableOut_displayName" xml:space="preserve">
-    <value>External Table</value>
+    <value>외부 테이블(실험적)</value>
   </data>
   <data name="httpTrigger_displayName" xml:space="preserve">
     <value>HTTP</value>
@@ -382,7 +382,7 @@
     <value>요청 매개 변수 이름</value>
   </data>
   <data name="httpTrigger_name_help" xml:space="preserve">
-    <value>코드에서 트리거가 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 트리거를 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="httpTrigger_webHookType_label" xml:space="preserve">
     <value>Webhook 형식</value>
@@ -418,10 +418,10 @@
     <value>트리거 모드입니다. "Standard"는 요청이 추가 의미 체계가 없는 표준 HTTP임을 의미하고 "Webhook"는 지정된 webhook 형식에 따라 요청이 처리됨을 의미합니다.</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
-    <value>외부 파일</value>
+    <value>외부 파일(미리 보기)</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>외부 파일</value>
+    <value>외부 파일(미리 보기)</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
     <value>Azure Blob Storage</value>
@@ -439,7 +439,7 @@
     <value>컬렉션 이름</value>
   </data>
   <data name="documentDBIn_connection_help" xml:space="preserve">
-    <value>DocumentDB 계정에 대한 연결 문자열입니다.</value>
+    <value>DocumentDB 연결 문자열을 포함하는 앱 설정의 이름입니다.</value>
   </data>
   <data name="documentDBIn_connection_label" xml:space="preserve">
     <value>DocumentDB 계정 연결</value>
@@ -451,16 +451,16 @@
     <value>데이터베이스 이름</value>
   </data>
   <data name="documentDBIn_displayName" xml:space="preserve">
-    <value>Azure DocumentDB 문서</value>
+    <value>Azure DocumentDB</value>
   </data>
   <data name="documentDBIn_id_help" xml:space="preserve">
-    <value>읽을 문서의 ID입니다.</value>
+    <value>읽기 대상 문서의 ID입니다. SQL 쿼리와 ID가 모두 지정되지 않은 경우 컬렉션의 모든 문서가 반환됩니다.</value>
   </data>
   <data name="documentDBIn_id_label" xml:space="preserve">
-    <value>문서 ID</value>
+    <value>문서 ID(선택 사항)</value>
   </data>
   <data name="documentDBIn_name_help" xml:space="preserve">
-    <value>코드에서 입력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="documentDBIn_name_label" xml:space="preserve">
     <value>문서 매개 변수 이름</value>
@@ -472,7 +472,7 @@
     <value>컬렉션 이름</value>
   </data>
   <data name="documentDBOut_connection_help" xml:space="preserve">
-    <value>DocumentDB 계정에 대한 연결 문자열입니다.</value>
+    <value>DocumentDB 연결 문자열을 포함하는 앱 설정의 이름입니다.</value>
   </data>
   <data name="documentDBOut_connection_label" xml:space="preserve">
     <value>DocumentDB 계정 연결</value>
@@ -493,7 +493,7 @@
     <value>Azure DocumentDB 문서</value>
   </data>
   <data name="documentDBOut_name_help" xml:space="preserve">
-    <value>코드에서 출력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="documentDBOut_name_label" xml:space="preserve">
     <value>문서 매개 변수 이름</value>
@@ -502,16 +502,16 @@
     <value>HTTP</value>
   </data>
   <data name="httpOut_name_help" xml:space="preserve">
-    <value>코드에서 출력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="httpOut_name_label" xml:space="preserve">
     <value>응답 매개 변수 이름</value>
   </data>
   <data name="httpTrigger_authLevel_help" xml:space="preserve">
-    <value>권한 수준은 API 키를 사용할지 여부와 어떤 키를 사용할지 제어합니다. 즉, 함수는 함수 키를 사용하고 관리자는 마스터 키를 사용합니다. 함수를 선택할 때 함수 및 마스터 키는 포털의 '키' 관리 패널에 있습니다. 사용자 기반 인증이 필요하면 [함수 앱 설정]으로 이동하세요.</value>
+    <value>권한 수준은 함수에 API 키가 필요한지 여부와 어떤 키를 사용할지 제어합니다. 즉, 함수는 함수 키를 사용하고 관리자는 마스터 키를 사용합니다. 함수가 선택되면 함수 및 마스터 키는 포털의 '키' 관리 패널에 있습니다. 사용자 기반 인증의 경우 [함수 앱 설정]으로 이동하세요.</value>
   </data>
   <data name="manualTrigger_name_help" xml:space="preserve">
-    <value>코드에서 트리거가 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="manualTrigger_name_label" xml:space="preserve">
     <value>매개 변수 이름</value>
@@ -523,7 +523,7 @@
     <value>API 키 조회(선택 사항)</value>
   </data>
   <data name="mobileTableIn_connection_help" xml:space="preserve">
-    <value>모바일 앱의 URL을 지정하는 앱 설정 이름입니다.</value>
+    <value>모바일 앱의 URL을 포함하는 앱 설정의 이름입니다.</value>
   </data>
   <data name="mobileTableIn_connection_label" xml:space="preserve">
     <value>모바일 앱 URL 조회</value>
@@ -538,13 +538,13 @@
     <value>레코드 ID</value>
   </data>
   <data name="mobileTableIn_name_help" xml:space="preserve">
-    <value>코드에서 입력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="mobileTableIn_name_label" xml:space="preserve">
     <value>레코드 매개 변수 이름</value>
   </data>
   <data name="mobileTableIn_tableName_help" xml:space="preserve">
-    <value>데이터를 읽을 모바일 앱 내에 있는 테이블의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="mobileTableIn_tableName_label" xml:space="preserve">
     <value>테이블 이름</value>
@@ -556,7 +556,7 @@
     <value>API 키 조회(선택 사항)</value>
   </data>
   <data name="mobileTableOut_connection_help" xml:space="preserve">
-    <value>모바일 앱의 URL을 지정하는 앱 설정 이름입니다.</value>
+    <value>모바일 앱의 URL을 포함하는 앱 설정의 이름입니다.</value>
   </data>
   <data name="mobileTableOut_connection_label" xml:space="preserve">
     <value>모바일 앱 URL 조회</value>
@@ -565,19 +565,19 @@
     <value>Azure 모바일 테이블 레코드</value>
   </data>
   <data name="mobileTableOut_name_help" xml:space="preserve">
-    <value>코드에서 출력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="mobileTableOut_name_label" xml:space="preserve">
     <value>레코드 매개 변수 이름</value>
   </data>
   <data name="mobileTableOut_tableName_help" xml:space="preserve">
-    <value>데이터를 쓸 모바일 앱 내에 있는 테이블의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="mobileTableOut_tableName_label" xml:space="preserve">
     <value>테이블 이름</value>
   </data>
   <data name="notificationHubOut_connection_help" xml:space="preserve">
-    <value>알림 허브 네임스페이스에 대한 연결 문자열입니다.</value>
+    <value>알림 허브 네임스페이스에 대한 연결 문자열을 포함하는 앱 설정의 이름입니다.</value>
   </data>
   <data name="notificationHubOut_connection_label" xml:space="preserve">
     <value>Notification Hubs 네임스페이스 연결</value>
@@ -592,7 +592,7 @@
     <value>알림 허브 이름</value>
   </data>
   <data name="notificationHubOut_name_help" xml:space="preserve">
-    <value>코드에서 출력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="notificationHubOut_name_label" xml:space="preserve">
     <value>알림 매개 변수 이름</value>
@@ -628,37 +628,37 @@
     <value>보낸 사람 주소</value>
   </data>
   <data name="sendGrid_name_help" xml:space="preserve">
-    <value>코드에서 출력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="sendGrid_name_label" xml:space="preserve">
     <value>메시지 매개 변수 이름</value>
   </data>
   <data name="sendGrid_subject_help" xml:space="preserve">
-    <value>메시지에 사용할 제목 줄입니다. 여기서 지정하지 않으면 코드에서 값을 지정할 수 있습니다.</value>
+    <value>메시지에 사용할 제목 줄입니다. 여기서 제공하지 않으면 코드에서 값을 지정할 수 있습니다.</value>
   </data>
   <data name="sendGrid_subject_label" xml:space="preserve">
     <value>메시지 제목</value>
   </data>
   <data name="sendGrid_text_help" xml:space="preserve">
-    <value>메시지에 사용할 텍스트 본문입니다. 여기서 지정하지 않으면 코드에서 값을 지정할 수 있습니다.</value>
+    <value>메시지에 사용할 텍스트 본문입니다. 여기서 제공하지 않으면 코드에서 값을 지정할 수 있습니다.</value>
   </data>
   <data name="sendGrid_text_label" xml:space="preserve">
     <value>메시지 텍스트</value>
   </data>
   <data name="sendGrid_to_help" xml:space="preserve">
-    <value>메시지를 받는 메일 주소입니다. 'user@host.com' 또는 '표시 이름 &lt;user@host.com&gt;' 형태입니다. 여기서 지정하지 않으면 코드에서 값을 지정할 수 있습니다.</value>
+    <value>메시지가 전송되는 메일 주소입니다. 'user@host.com' 또는 '표시 이름 &lt;user@host.com&gt;' 형태입니다. 여기서 제공하지 않으면 코드에서 값을 지정할 수 있습니다.</value>
   </data>
   <data name="sendGrid_to_label" xml:space="preserve">
     <value>받는 사람 주소</value>
   </data>
   <data name="serviceBusOut_accessRights_help" xml:space="preserve">
-    <value>클라이언트가 큐 또는 토픽 구독에 대해 가지는 액세스 권한입니다.</value>
+    <value>Service Bus 연결 문자열의 액세스 권한입니다. 관리 권한이 없는 연결 문자열을 사용하는 경우 [보내기]로 설정하세요.</value>
   </data>
   <data name="serviceBusOut_accessRights_label" xml:space="preserve">
-    <value>AccessRights</value>
+    <value>액세스 권한</value>
   </data>
   <data name="serviceBusOut_connection_help" xml:space="preserve">
-    <value>서비스 버스에 대한 연결 문자열입니다. 이 문자열에 Send 권한이 있는지 확인하세요.</value>
+    <value>Service Bus 연결 문자열을 포함하는 앱 설정 이름입니다. 연결 문자열에 보내기 권한이 있어야 합니다.</value>
   </data>
   <data name="serviceBusOut_connection_label" xml:space="preserve">
     <value>Service Bus 연결</value>
@@ -667,7 +667,7 @@
     <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusOut_messageType_help" xml:space="preserve">
-    <value>서비스 버스 메시지 유형입니다. 큐 또는 토픽 사용 중에서 선택할 수 있습니다.</value>
+    <value>Service Bus 메시지 유형(큐 또는 토픽)입니다.</value>
   </data>
   <data name="serviceBusOut_messageType_label" xml:space="preserve">
     <value>메시지 유형</value>
@@ -679,37 +679,37 @@
     <value>Service Bus 항목</value>
   </data>
   <data name="serviceBusOut_name_help" xml:space="preserve">
-    <value>코드에서 출력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="serviceBusOut_name_label" xml:space="preserve">
     <value>메시지 매개 변수 이름</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>큐 이름은 문자나 숫자로 시작하고 끝나야 하며 소문자, 숫자, 마침표 및 하이픈만 포함할 수 있습니다. 이름은 3자에서 63자 사이여야 합니다.</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
-    <value>메시지를 보낼 큐입니다.</value>
+    <value>메시지가 전송될 큐입니다.</value>
   </data>
   <data name="serviceBusOut_queueName_label" xml:space="preserve">
     <value>큐 이름</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>토픽 이름은 문자나 숫자로 시작하고 끝나야 하며 소문자, 숫자, 마침표 및 하이픈만 포함할 수 있습니다. 이름은 3자에서 63자 사이여야 합니다.</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
-    <value>메시지를 보낼 토픽입니다.</value>
+    <value>메시지가 전송될 토픽입니다.</value>
   </data>
   <data name="serviceBusOut_topicName_label" xml:space="preserve">
     <value>토픽 이름</value>
   </data>
   <data name="serviceBusTrigger_accessRights_help" xml:space="preserve">
-    <value>클라이언트가 큐 또는 토픽 구독에 대해 가지는 액세스 권한입니다.</value>
+    <value>Service Bus 연결 문자열의 액세스 권한입니다. 관리 권한이 없는 연결 문자열을 사용하는 경우 [보내기]로 설정하세요.</value>
   </data>
   <data name="serviceBusTrigger_accessRights_label" xml:space="preserve">
-    <value>AccessRights</value>
+    <value>액세스 권한</value>
   </data>
   <data name="serviceBusTrigger_connection_help" xml:space="preserve">
-    <value>서비스 버스에 대한 연결 문자열입니다. 이 문자열에 Listen 권한이 있는지 확인하세요.</value>
+    <value>Service Bus 연결 문자열을 포함하는 앱 설정의 이름입니다. 연결 문자열에 듣기 권한이 있어야 합니다.</value>
   </data>
   <data name="serviceBusTrigger_connection_label" xml:space="preserve">
     <value>Service Bus 연결</value>
@@ -718,7 +718,7 @@
     <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusTrigger_messageType_help" xml:space="preserve">
-    <value>서비스 버스 메시지 유형입니다. 큐 또는 토픽 사용 중에서 선택할 수 있습니다.</value>
+    <value>Service Bus 메시지 유형(큐 또는 토픽)입니다.</value>
   </data>
   <data name="serviceBusTrigger_messageType_label" xml:space="preserve">
     <value>메시지 유형</value>
@@ -730,34 +730,34 @@
     <value>Service Bus 항목</value>
   </data>
   <data name="serviceBusTrigger_name_help" xml:space="preserve">
-    <value>코드에서 트리거가 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 트리거를 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="serviceBusTrigger_name_label" xml:space="preserve">
     <value>메시지 매개 변수 이름</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>큐 이름은 문자나 숫자로 시작하고 끝나야 하며 소문자, 숫자, 마침표 및 하이픈만 포함할 수 있습니다. 이름은 3자에서 63자 사이여야 합니다.</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
-    <value>메시지를 읽을 큐의 이름입니다.</value>
+    <value>메시지가 읽힐 큐입니다.</value>
   </data>
   <data name="serviceBusTrigger_queueName_label" xml:space="preserve">
     <value>큐 이름</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>구독 이름은 문자나 숫자로 시작하고 끝나야 하며 소문자, 숫자, 마침표 및 하이픈만 포함할 수 있습니다. 이름은 3자에서 63자 사이여야 합니다.</value>
+    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
-    <value>바인딩할 토픽 내에 있는 구독의 이름입니다.</value>
+    <value>바인딩할 토픽 내에 있는 구독 이름입니다.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_label" xml:space="preserve">
     <value>구독 이름</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>토픽 이름은 문자나 숫자로 시작하고 끝나야 하며 소문자, 숫자, 마침표 및 하이픈만 포함할 수 있습니다. 이름은 3자에서 63자 사이여야 합니다.</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
-    <value>메시지를 읽을 토픽의 이름입니다.</value>
+    <value>메시지가 읽힐 토픽의 이름입니다.</value>
   </data>
   <data name="serviceBusTrigger_topicName_label" xml:space="preserve">
     <value>토픽 이름</value>
@@ -766,31 +766,31 @@
     <value>Azure Table Storage</value>
   </data>
   <data name="tableIn_filter_help" xml:space="preserve">
-    <value>테이블 쿼리의 결과를 필터링하는 데 사용되는 선택적 쿼리 식입니다. C# 함수에는 이 설정이 적용되지 않습니다.</value>
+    <value>테이블 쿼리의 결과를 필터링하는 데 사용되는 선택적 쿼리 식입니다. C# 함수에는 이 설정을 적용할 수 없습니다.</value>
   </data>
   <data name="tableIn_filter_label" xml:space="preserve">
     <value>쿼리 필터(선택 사항)</value>
   </data>
   <data name="tableIn_name_help" xml:space="preserve">
-    <value>코드에서 입력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="tableIn_name_label" xml:space="preserve">
     <value>테이블 매개 변수 이름</value>
   </data>
   <data name="tableIn_partitionKey_help" xml:space="preserve">
-    <value>테이블의 파티션 키 열 값입니다. 파티션 키 및 행 키가 일치하는 레코드가 반환됩니다. 파티션 키 설정과 함께 행 키 설정을 구성해야 합니다.</value>
+    <value>테이블의 파티션 키 열 이름입니다. 파티션 키 및 행 키가 일치하는 레코드가 반환됩니다. 파티션 키가 제공된 경우 행 키도 제공되어야 합니다.</value>
   </data>
   <data name="tableIn_partitionKey_label" xml:space="preserve">
     <value>파티션 키(선택 사항)</value>
   </data>
   <data name="tableIn_rowKey_help" xml:space="preserve">
-    <value>테이블의 행 키 열 값입니다. 행 키 및 파티션 키가 일치하는 레코드가 반환됩니다. 행 키 설정과 함께 파티션 키 설정을 구성해야 합니다.</value>
+    <value>테이블의 파티션 키 열 이름입니다. 파티션 키 및 행 키가 일치하는 레코드가 반환됩니다. 파티션 키가 제공된 경우 행 키도 제공되어야 합니다.</value>
   </data>
   <data name="tableIn_rowKey_label" xml:space="preserve">
     <value>행 키(선택 사항)</value>
   </data>
   <data name="tableIn_tableName_errorText" xml:space="preserve">
-    <value>테이블 이름은 3~63자의 영숫자 문자열이어야 합니다. 숫자로 시작할 수 없습니다.</value>
+    <value>테이블 이름은 3~63자의 영숫자 문자열이어야 하며 숫자로 시작할 수 없습니다.</value>
   </data>
   <data name="tableIn_tableName_help" xml:space="preserve">
     <value>데이터를 읽을 저장소 계정 내에 있는 테이블의 이름입니다.</value>
@@ -799,7 +799,7 @@
     <value>테이블 이름</value>
   </data>
   <data name="tableIn_take_help" xml:space="preserve">
-    <value>레코드 수를 나타내는 정수입니다. 테이블의 내용 및 적용된 필터에 따라 이 값보다 적은 수의 레코드를 수신할 수 있습니다. C# 함수에는 이 설정이 적용되지 않습니다.</value>
+    <value>반환할 최대 레코드 수의 정수 값입니다. 테이블 내용 및 필터에 따라 이 값보다 적은 수의 레코드를 수신할 수 있습니다. C# 함수에는 이 설정을 적용할 수 없습니다.</value>
   </data>
   <data name="tableIn_take_label" xml:space="preserve">
     <value>읽을 최대 레코드 수(선택 사항)</value>
@@ -808,7 +808,7 @@
     <value>Azure Table Storage</value>
   </data>
   <data name="tableout_name_help" xml:space="preserve">
-    <value>코드에서 출력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="tableout_name_label" xml:space="preserve">
     <value>테이블 매개 변수 이름</value>
@@ -817,7 +817,7 @@
     <value>테이블 이름은 3~63자의 영숫자 문자열이어야 합니다. 숫자로 시작할 수 없습니다.</value>
   </data>
   <data name="table_tableName_help" xml:space="preserve">
-    <value>데이터를 쓸 저장소 계정 내에 있는 테이블의 이름입니다.</value>
+    <value>데이터가 써지는 저장소 계정에 있는 테이블의 이름입니다.</value>
   </data>
   <data name="table_tableName_label" xml:space="preserve">
     <value>테이블 이름</value>
@@ -829,7 +829,7 @@
     <value>Blob이 지정된 컨테이너에 추가될 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>(미리 보기) 지정된 컨테이너에 Blob이 추가될 때마다 실행되는 F# 함수입니다.</value>
+    <value>Blob이 지정된 컨테이너에 추가될 때마다 실행되는 F# 함수</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
     <value>Blob이 지정된 컨테이너에 추가될 때마다 실행되는 JavaScript 함수입니다.</value>
@@ -865,7 +865,7 @@
     <value>이벤트 허브에서 새 이벤트를 받을 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>(미리 보기) 이벤트 허브에서 새 이벤트를 받을 때마다 실행되는 F# 함수입니다.</value>
+    <value>이벤트 허브에서 새 이벤트를 받을 때마다 실행되는 F# 함수</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
     <value>이벤트 허브에서 새 이벤트를 받을 때마다 실행되는 JavaScript 함수입니다.</value>
@@ -877,7 +877,7 @@
     <value>이미지를 처리하고 면의 경계 사각형을 출력하는 C# 함수입니다.</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>(미리 보기) 이미지를 처리하고 면의 경계 사각형을 출력하는 F# 함수입니다.</value>
+    <value>이미지를 처리하고 면의 경계 사각형을 출력하는 F# 함수입니다.</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
     <value>이미지를 처리하고 면의 경계 사각형을 출력하는 JavaScript 함수입니다.</value>
@@ -886,7 +886,7 @@
     <value>webhook 요청을 받을 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>(미리 보기) 웹후크 요청을 받을 때마다 실행되는 F# 함수입니다.</value>
+    <value>웹후크 요청을 받을 때마다 실행되는 F# 함수</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
     <value>웹후크 요청을 받을 때마다 실행되는 JavaScript 함수입니다.</value>
@@ -895,13 +895,13 @@
     <value>GitHub 웹후크 요청을 받을 때마다 실행되는 JavaScript 함수입니다.</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>(미리 보기) GitHub 웹후크 요청을 받을 때마다 실행되는 F# 함수입니다.</value>
+    <value>GitHub 웹후크 요청을 받을 때마다 실행되는 F# 함수</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>GitHub 웹후크 요청을 받을 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>(미리 보기) GitHub 웹후크 요청을 받을 때마다 실행되는 F# 함수입니다.</value>
+    <value>GitHub 웹후크 요청을 받을 때마다 실행되는 F# 함수</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
     <value>GitHub 웹후크 요청을 받을 때마다 실행되는 JavaScript 함수입니다.</value>
@@ -910,7 +910,7 @@
     <value>HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 가져오는 C# 함수입니다.</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>(미리 보기) HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 가져오는 F# 함수입니다.</value>
+    <value>HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 가져오는 F# 함수</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
     <value>HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 가져오는 JavaScript 함수입니다.</value>
@@ -922,7 +922,7 @@
     <value>HTTP 요청을 받을 때 저장소 테이블에 엔터티를 추가하는 C# 함수입니다.</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>(미리 보기) HTTP 요청을 받을 때 저장소 테이블에 엔터티를 추가하는 F# 함수입니다.</value>
+    <value>HTTP 요청을 받을 때 저장소 테이블에 엔터티를 추가하는 F# 함수</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
     <value>HTTP 요청을 받을 때 저장소 테이블에 엔터티를 추가하는 JavaScript 함수입니다.</value>
@@ -931,7 +931,7 @@
     <value>HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 업데이트하는 C# 함수</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>(미리 보기) HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 업데이트하는 F# 함수입니다.</value>
+    <value>HTTP 요청을 받을 때 저장소 테이블에서 엔터티를 업데이트하는 F# 함수</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
     <value>(실험적) HTTP 요청을 받을 때마다 실행되는 Batch 함수입니다.</value>
@@ -940,7 +940,7 @@
     <value>HTTP 요청을 받을 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>(미리 보기) HTTP 요청을 받을 때마다 실행되는 F# 함수입니다.</value>
+    <value>HTTP 요청을 받을 때마다 실행되는 F# 함수</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
     <value>HTTP 요청을 받을 때마다 실행되는 JavaScript 함수입니다.</value>
@@ -952,13 +952,13 @@
     <value>Blob이 지정된 컨테이너에 추가될 때마다 크기 조정된 이미지를 만드는 C# 함수입니다.</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>(미리 보기) 지정된 컨테이너에 Blob이 추가될 때마다 크기 조정된 이미지를 만드는 F# 함수입니다.</value>
+    <value>Blob이 특정 컨테이너에 추가될 때마다 크기 조정된 이미지를 만드는 F# 함수</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>포털 "실행" 단추를 통해 수동으로 트리거되는 C# 함수입니다.</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>(미리 보기) 포털의 "실행" 단추를 통해 수동으로 트리거되는 F# 함수입니다.</value>
+    <value>포털의 "실행" 단추를 통해 수동으로 트리거되는 F# 함수</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>포털 "실행" 단추를 통해 수동으로 트리거되는 JavaScript 함수입니다.</value>
@@ -973,7 +973,7 @@
     <value>지정된 Azure Queue Storage에 메시지가 추가될 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>(미리 보기) 지정된 Azure Queue Storage에 메시지가 추가될 때마다 실행되는 F# 함수입니다.</value>
+    <value>지정된 Azure Queue Storage에 메시지가 추가될 때마다 실행되는 F# 함수입니다.</value>
   </data>
   <data name="QueueTriggerNodeJS_description" xml:space="preserve">
     <value>지정된 Azure Queue Storage에 메시지가 추가될 때마다 실행되는 JavaScript 함수입니다.</value>
@@ -988,49 +988,49 @@
     <value>(실험적) 지정된 Azure Queue Storage에 메시지가 추가될 때마다 실행되는 Python 함수입니다.</value>
   </data>
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
-    <value>(Experimental) A Batch function that will be run whenever a file is added to a External File provider.</value>
+    <value>(실험적) 외부 파일 공급자에 파일이 추가될 때마다 실행되는 Batch 함수입니다.</value>
   </data>
   <data name="SaasFileTriggerCSharp_description" xml:space="preserve">
-    <value>(Preview) A C# function that will be run whenever a file is added to a External File provider.</value>
+    <value>(미리 보기) 외부 파일 공급자에 파일이 추가될 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) An F# function that will be run whenever a file is added to a External File provider.</value>
+    <value>(미리 보기) 외부 파일 공급자에 파일이 추가될 때마다 실행되는 F# 함수입니다.</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
-    <value>(Preview) A JavaScript function that will be run whenever a file is added to a External File provider.</value>
+    <value>(미리 보기) 외부 파일 공급자에 파일이 추가될 때마다 실행되는 JavaScript 함수입니다.</value>
   </data>
   <data name="SaasFileTokenNodeJS_description" xml:space="preserve">
-    <value>A JavaScript function that will be run whenever a file is added to a External File provider.</value>
+    <value>(미리 보기) 외부 파일 공급자에 파일이 추가될 때마다 실행되는 JavaScript 함수입니다.</value>
   </data>
   <data name="SaasTableCSharp_description" xml:space="preserve">
-    <value>(Experimental) A C# function that fetches entities from a External Table when it receives an HTTP request.</value>
+    <value>(실험적) HTTP 요청을 받을 때 외부 테이블에서 엔터티를 가져오는 C# 함수입니다.</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>(Experimental) An F# function that fetches entities from a External Table when it receives an HTTP request.</value>
+    <value>(실험적) HTTP 요청을 받을 때 외부 테이블에서 엔터티를 가져오는 F# 함수입니다.</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>(미리 보기) 지정된 컨테이너 및 Blob 이름에 대해 Azure Storage의 SAS 토큰을 생성하는 F# 함수입니다.</value>
+    <value>지정된 컨테이너 및 Blob 이름에 대해 Azure Storage의 SAS 토큰을 생성하는 F# 함수입니다.</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>(미리 보기) 특정 큐에 새 항목이 추가될 때 확인 메일을 보내는 C# 함수입니다.</value>
+    <value>특정 큐에 새 항목이 추가될 때 확인 메일을 보내는 C# 함수입니다.</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>(미리 보기) 특정 큐에 새 항목이 추가될 때 확인 메일을 보내는 F# 함수입니다.</value>
+    <value>특정 큐에 새 항목이 추가될 때 확인 메일을 보내는 F# 함수입니다.</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>(미리 보기) 특정 큐에 새 항목이 추가될 때 확인 메일을 보내는 C# 함수입니다.</value>
+    <value>특정 큐에 새 항목이 추가될 때 확인 메일을 보내는 JavaScript 함수입니다.</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
-    <value>지정된 Service Bus 큐에 메시지가 추가될 때마다 실행되는 JavaScript 함수입니다.</value>
+    <value>지정된 Service Bus 큐에 메시지가 추가될 때마다 실행되는 C# 함수입니다.</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>(미리 보기) 지정된 Service Bus 큐에 메시지가 추가될 때마다 실행되는 F# 함수입니다.</value>
+    <value>지정된 Service Bus 큐에 메시지가 추가될 때마다 실행되는 F# 함수</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
     <value>지정된 Service Bus 큐에 메시지가 추가될 때마다 실행되는 JavaScript 함수입니다.</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>(미리 보기) 지정된 Service Bus 항목에 메시지가 추가될 때마다 실행되는 F# 함수입니다.</value>
+    <value>지정된 Service Bus 토픽에 메시지가 추가될 때마다 실행되는 F# 함수</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>지정된 Service Bus 항목에 메시지가 추가될 때마다 실행되는 JavaScript 함수입니다.</value>
@@ -1039,7 +1039,7 @@
     <value>지정된 일정으로 실행되는 C# 함수입니다.</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>(미리 보기) 지정된 일정으로 실행되는 F# 함수입니다.</value>
+    <value>지정된 일정으로 실행되는 F# 함수</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
     <value>지정된 일정으로 실행되는 JavaScript 함수입니다.</value>
@@ -1063,7 +1063,7 @@
     <value>인증 토큰 설정</value>
   </data>
   <data name="twilioSms_body_help" xml:space="preserve">
-    <value>메시지에 사용할 텍스트 본문입니다. 여기서 지정하지 않으면 코드에서 값을 지정할 수 있습니다.</value>
+    <value>메시지에 사용할 텍스트 본문입니다. 여기서 제공하지 않으면 코드에서 값을 지정할 수 있습니다.</value>
   </data>
   <data name="twilioSms_body_label" xml:space="preserve">
     <value>메시지 텍스트</value>
@@ -1072,31 +1072,31 @@
     <value>Twilio SMS</value>
   </data>
   <data name="twilioSms_from_help" xml:space="preserve">
-    <value>메시지를 보내는 Twilio 전화 번호입니다. 여기서 지정하지 않으면 코드에서 값을 지정할 수 있습니다.</value>
+    <value>메시지가 전송되는 Twilio 전화 번호입니다. 여기서 제공하지 않으면 코드에서 값을 지정할 수 있습니다.</value>
   </data>
   <data name="twilioSms_from_label" xml:space="preserve">
     <value>보낸 사람 번호</value>
   </data>
   <data name="twilioSms_name_help" xml:space="preserve">
-    <value>코드에서 출력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="twilioSms_name_label" xml:space="preserve">
     <value>메시지 매개 변수 이름</value>
   </data>
   <data name="twilioSms_to_help" xml:space="preserve">
-    <value>메시지가 전송되는 전화 번호입니다. 여기서 지정하지 않으면 코드에서 값을 지정할 수 있습니다.</value>
+    <value>메시지가 전송되는 전화 번호입니다. 여기서 제공하지 않으면 코드에서 값을 지정할 수 있습니다.</value>
   </data>
   <data name="twilioSms_to_label" xml:space="preserve">
     <value>받는 사람 번호</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>소비자 그룹 이름은 문자나 숫자로 시작하고 끝나야 하며 소문자, 숫자, 하이픈, 마침표 및 밑줄만 포함할 수 있습니다. $Default 그룹도 사용할 수 있습니다.</value>
+    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>Azure DocumentDB 문서</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>이것은 SendGrid API 키입니다.</value>
+    <value>SendGrid 개발자 API 키</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
     <value>SendGrid API 키</value>
@@ -1108,10 +1108,10 @@
     <value>보낸 사람 ID</value>
   </data>
   <data name="bot_in_displayName" xml:space="preserve">
-    <value>Bot Framework</value>
+    <value>Bot Framework(미리 보기)</value>
   </data>
   <data name="bot_out_displayName" xml:space="preserve">
-    <value>Bot Framework</value>
+    <value>Bot Framework(미리 보기)</value>
   </data>
   <data name="bot_in_secret_help" xml:space="preserve">
     <value>직접 회선 키는 Bot Framework 포털의 직접 회선 채널 구성 페이지에서 생성할 수 있습니다. 이 필드를 비워 두면 응용 프로그램 설정 'AzureWebJobsBotFrameworkDirectLineSecret'의 값이 검색됩니다.</value>
@@ -1126,15 +1126,24 @@
     <value>직접 회선 키</value>
   </data>
   <data name="bot_in_name_help" xml:space="preserve">
-    <value>코드에서 입력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="bot_in_name_label" xml:space="preserve">
     <value>봇 매개 변수 이름</value>
   </data>
   <data name="bot_out_name_help" xml:space="preserve">
-    <value>코드에서 출력 바인딩이 바인딩되는 매개 변수의 이름입니다.</value>
+    <value>코드에서 이 바인딩을 식별하는 데 사용되는 이름입니다.</value>
   </data>
   <data name="bot_out_name_label" xml:space="preserve">
     <value>봇 매개 변수 이름</value>
+  </data>
+  <data name="ScheduledMailCSharp_description" xml:space="preserve">
+    <value>(미리 보기) 정기적으로 메일을 보내는 C# 함수입니다.</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
+    <value>문서 집합을 검색하는 데 사용되는 선택적 DocumentDB SQL 쿼리입니다. SQL 쿼리와 ID가 모두 지정되지 않은 경우 컬렉션의 모든 문서가 반환됩니다.</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
+    <value>SQL 쿼리(선택 사항)</value>
   </data>
 </root>
