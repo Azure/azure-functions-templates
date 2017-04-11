@@ -18,11 +18,14 @@ using Microsoft.WindowsAzure.Storage.Blob;
 public static HttpResponseMessage Run(Input input, CloudBlobDirectory blobDirectory, TraceWriter log)
 {    
     var permissions = SharedAccessBlobPermissions.Read; // default to read permissions
-    bool success = Enum.TryParse(input.Permission, out permissions);
 
-    if (!success)
+    // if permission was supplied, check if it is a possible value
+    if (!string.IsNullOrWhiteSpace(input.Permission))
     {
-        return new HttpResponseMessage(HttpStatusCode.BadRequest) { Content = new StringContent("Invalid value for 'permissions'") };
+        if (!Enum.TryParse(input.Permission, out permissions))
+        {
+            return new HttpResponseMessage(HttpStatusCode.BadRequest) { Content = new StringContent("Invalid value for 'permissions'") };
+        }
     }
 
     var container = blobDirectory.Container;
