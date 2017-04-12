@@ -113,6 +113,24 @@
                     "label": "$eventHubTrigger_connection_label",
                     "help": "$eventHubTrigger_connection_help",
                     "placeholder": "[variables('selectConnection')]"
+                },
+                {
+                    "name": "cardinality",
+                    "value": "enum",
+                    "required": false,
+                    "defaultValue": "many",
+                    "enum": [
+                        {
+                            "value": "one",
+                            "display": "One"
+                        },
+                        {
+                            "value": "many",
+                            "display": "Many"
+                        }
+                    ],
+                    "label": "$eventHubTrigger_cardinality_label",
+                    "help": "$eventHubTrigger_cardinality_help"
                 }
             ]
         },
