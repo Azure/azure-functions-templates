@@ -3,10 +3,11 @@
     "bindings": [
         {
             "type": "eventHubTrigger",
-            "name": "myEventHubTrigger",
+            "name": "eventHubMessages",
             "direction": "in",
             "path": "samples-workitems",
-            "connection": ""
+            "connection": "",
+            "cardinality": "many"
         }
     ]
 }

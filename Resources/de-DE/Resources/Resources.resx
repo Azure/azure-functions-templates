@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="eventHubOut_connection_help" xml:space="preserve">
-    <value>Dies ist die Verbindungszeichenfolge für Ihren Event Hub. Stellen Sie sicher, dass er über Sendeberechtigungen verfügt.</value>
+    <value>Der Name der App-Einstellung, die Ihre Event Hub-Verbindungszeichenfolge enthält. Die Verbindungszeichenfolge muss über Sendeberechtigungen verfügen.</value>
   </data>
   <data name="eventHubOut_connection_label" xml:space="preserve">
     <value>Event Hub-Verbindung</value>
@@ -127,13 +127,13 @@
     <value>Azure Event Hub</value>
   </data>
   <data name="eventHubOut_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den die Ausgabebindung gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="eventHubOut_name_label" xml:space="preserve">
     <value>Ereignisparametername</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>Der Event Hub-Name muss mit einem Buchstaben oder einer Zahl beginnen und enden und kann nur Kleinbuchstaben, Zahlen, Punkte, Bindestriche und Unterstriche enthalten.</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>Dies ist der Name des Event Hubs, an den das Ereignis gesendet wird.</value>
@@ -142,13 +142,13 @@
     <value>Name des Event Hubs</value>
   </data>
   <data name="eventHubTrigger_connection_help" xml:space="preserve">
-    <value>Dies ist die Verbindungszeichenfolge für Ihren Event Hub. Stellen Sie sicher, dass er über Empfangsberechtigungen verfügt.</value>
+    <value>Der Name der App-Einstellung, die Ihre Event Hub-Verbindungszeichenfolge enthält. Die Verbindungszeichenfolge muss über Empfangsberechtigungen verfügen.</value>
   </data>
   <data name="eventHubTrigger_connection_label" xml:space="preserve">
     <value>Event Hub-Verbindung</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_help" xml:space="preserve">
-    <value>Der Name der Event Hub-Consumergruppe, von der Ereignisse empfangen werden.</value>
+    <value>Event Hub-Consumergruppe, von der Ereignisse empfangen werden.</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_label" xml:space="preserve">
     <value>Event Hub-Consumergruppe</value>
@@ -157,16 +157,16 @@
     <value>Azure Event Hub</value>
   </data>
   <data name="eventHubTrigger_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den der Trigger gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieses Triggers in Ihrem Code verwendet wird</value>
   </data>
   <data name="eventHubTrigger_name_label" xml:space="preserve">
     <value>Ereignisparametername</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>Der Event Hub-Name muss mit einem Buchstaben oder einer Zahl beginnen und enden und kann nur Kleinbuchstaben, Zahlen, Bindestriche, Punkte und Unterstriche enthalten.</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
-    <value>Dies ist der Name des Event Hubs, von dem aus Sie ein Ereignis auslösen möchten.</value>
+    <value>Der Name des Event Hubs, von dem aus Sie auslösen möchten.</value>
   </data>
   <data name="eventHubTrigger_path_label" xml:space="preserve">
     <value>Name des Event Hubs</value>
@@ -175,7 +175,7 @@
     <value>Azure Queue Storage</value>
   </data>
   <data name="queueOut_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den die Ausgabebindung gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="queueOut_name_label" xml:space="preserve">
     <value>Nachrichtenparametername</value>
@@ -205,22 +205,22 @@
     <value>Timer</value>
   </data>
   <data name="timerTrigger_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den der Trigger gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieses Triggers in Ihrem Code verwendet wird</value>
   </data>
   <data name="timerTrigger_name_label" xml:space="preserve">
     <value>Zeitstempel-Parametername</value>
   </data>
   <data name="timerTrigger_schedule_help" xml:space="preserve">
-    <value>Geben Sie einen Cron-Ausdruck im Format "{second} {minute} {hour} {day} {month} {day of week}" ein, um Ihren Zeitplan anzugeben. Weitere Informationen finden Sie in der Dokumentation.</value>
+    <value>Geben Sie einen Cron-Ausdruck im Format "{second} {minute} {hour} {day} {month} {day of week}" ein, um den Zeitplan anzugeben. Beispiele finden Sie in der unten gezeigten Dokumentation.</value>
   </data>
   <data name="timerTrigger_schedule_label" xml:space="preserve">
     <value>Zeitplan</value>
   </data>
   <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
-    <value>The connection string for your External Table connection.</value>
+    <value>Der Name der App-Einstellung, die Ihre Verbindung mit einer externen Tabelle enthält.</value>
   </data>
   <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
-    <value>External Table connection</value>
+    <value>Verbindung mit externer Tabelle</value>
   </data>
   <data name="variables_apiHubTableDataSetHelp" xml:space="preserve">
     <value>Der Name des Datasets, an das die Bindung erfolgen soll. Bei einer Bindung an eine Tabelle oder eine Entität behalten Sie "Standard" bei.</value>
@@ -244,7 +244,7 @@
     <value>Dies ist die Verbindungszeichenfolge für Ihr Speicherkonto.</value>
   </data>
   <data name="variables_parameterName" xml:space="preserve">
-    <value>Der Parametername muss eine alphanumerische Zeichenfolge aus einer beliebigen Anzahl von Zeichen sein. Er kann nicht mit einer Zahl beginnen.</value>
+    <value>Der Parametername muss eine alphanumerische Zeichenfolge aus einer beliebigen Anzahl von Zeichen sein und kann nicht mit einer Zahl beginnen.</value>
   </data>
   <data name="variables_paramNameInputHelp" xml:space="preserve">
     <value>Dies ist der Name des Parameters im Code, an den die Eingabebindung gebunden werden soll.</value>
@@ -274,13 +274,13 @@
     <value>Beispiele</value>
   </data>
   <data name="blobOut_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den die Ausgabebindung gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="blobOut_name_label" xml:space="preserve">
     <value>Blobparametername</value>
   </data>
   <data name="queueTrigger_queueName_help" xml:space="preserve">
-    <value>Dies ist der Name der Warteschlange, aus der die Nachricht gelesen wird.</value>
+    <value>Name der Warteschlange, aus der die Nachricht gelesen wird</value>
   </data>
   <data name="queueTrigger_name_label" xml:space="preserve">
     <value>Nachrichtenparametername</value>
@@ -289,7 +289,7 @@
     <value>Der Warteschlangenname muss mit einem Buchstaben oder einer Zahl beginnen und enden und kann nur Kleinbuchstaben, Zahlen und Bindestriche enthalten. Der Name muss 3 bis 63 Zeichen umfassen.</value>
   </data>
   <data name="queueTrigger_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den der Trigger gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieses Triggers in Ihrem Code verwendet wird</value>
   </data>
   <data name="queueTrigger_queueName_label" xml:space="preserve">
     <value>Warteschlangenname</value>
@@ -297,14 +297,14 @@
   <data name="blobOut_path_help" xml:space="preserve">
     <value>Dies ist der Pfad innerhalb Ihres Speicherkontos, in den das Blob geschrieben wird.</value>
   </data>
-  <data name="blobOut_path_errorTex" xml:space="preserve">
+  <data name="blobOut_path_errorText" xml:space="preserve">
     <value>Beim Blobpfad muss es sich um einen Containernamen aus 3 bis 63 Zeichen handeln, gefolgt von einem Blobnamen von 1 bis 1.024 Zeichen. Der Blobname kann aus einer beliebigen Zeichenkombination bestehen und darf maximal 254 Pfadsegmente enthalten, die durch einen Schrägstrich (/) voneinander getrennt sind.</value>
   </data>
   <data name="blobOut_path_label" xml:space="preserve">
     <value>Pfad</value>
   </data>
   <data name="blobIn_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den die Eingabebindung gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="blobIn_name_label" xml:space="preserve">
     <value>Blobparametername</value>
@@ -322,7 +322,7 @@
     <value>Blobparametername</value>
   </data>
   <data name="blobTrigger_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den der Trigger gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieses Triggers in Ihrem Code verwendet wird</value>
   </data>
   <data name="blobTrigger_path_label" xml:space="preserve">
     <value>Pfad</value>
@@ -330,14 +330,14 @@
   <data name="blobTrigger_path_help" xml:space="preserve">
     <value>Dies ist der Pfad innerhalb Ihres Speicherkontos, der vom Trigger überwacht wird.</value>
   </data>
-  <data name="blobTrigger_path_errorTex" xml:space="preserve">
+  <data name="blobTrigger_path_errorText" xml:space="preserve">
     <value>Beim Blobpfad muss es sich um einen Containernamen aus 3 bis 63 Zeichen handeln, gefolgt von einem Blobnamen von 1 bis 1.024 Zeichen. Der Blobname kann aus einer beliebigen Zeichenkombination bestehen und darf maximal 254 Pfadsegmente enthalten, die durch einen Schrägstrich (/) voneinander getrennt sind.</value>
   </data>
   <data name="apiHubFileIn_name_label" xml:space="preserve">
     <value>Dateiparametername</value>
   </data>
   <data name="apiHubFileIn_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den die Ausgabebindung gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="apiHubFileIn_path_label" xml:space="preserve">
     <value>Pfad</value>
@@ -349,13 +349,13 @@
     <value>Verbindung mit externer Datei</value>
   </data>
   <data name="apiHubFileIn_connection_help" xml:space="preserve">
-    <value>Die Verbindungszeichenfolge für Ihre Verbindung mit einer externen Datei.</value>
+    <value>Der Name der App-Einstellung, die Ihre Verbindungszeichenfolge für externe Dateien enthält.</value>
   </data>
   <data name="apiHubFileTrigger_name_label" xml:space="preserve">
     <value>Dateiparametername</value>
   </data>
   <data name="apiHubFileTrigger_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den der Trigger gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieses Triggers in Ihrem Code verwendet wird</value>
   </data>
   <data name="apiHubFileTrigger_path_label" xml:space="preserve">
     <value>Pfad</value>
@@ -367,13 +367,13 @@
     <value>Verbindung mit externer Datei</value>
   </data>
   <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
-    <value>Die Verbindungszeichenfolge für Ihre Verbindung mit einer externen Datei.</value>
+    <value>Der Name der App-Einstellung, die Ihre Verbindungszeichenfolge für externe Dateien enthält.</value>
   </data>
   <data name="apiHubTableIn_displayName" xml:space="preserve">
-    <value>External Table</value>
+    <value>Externe Tabelle (experimentell)</value>
   </data>
   <data name="apiHubTableOut_displayName" xml:space="preserve">
-    <value>External Table</value>
+    <value>Externe Tabelle (experimentell)</value>
   </data>
   <data name="httpTrigger_displayName" xml:space="preserve">
     <value>HTTP</value>
@@ -382,7 +382,7 @@
     <value>Anforderungsparametername</value>
   </data>
   <data name="httpTrigger_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den der Trigger gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieses Triggers in Ihrem Code verwendet wird</value>
   </data>
   <data name="httpTrigger_webHookType_label" xml:space="preserve">
     <value>Webhooktyp</value>
@@ -418,10 +418,10 @@
     <value>Dies ist der Modus des Triggers. \"Standard\" bedeutet, dass es sich um eine Standard-HTTP-Anforderung ohne zusätzliche Semantik handelt. \"Webhook\" bedeutet, dass die Anforderung gemäß einem angegebenen Webhooktyp verarbeitet wird.</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
-    <value>Externe Datei</value>
+    <value>Externe Datei (Vorschau)</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>Externe Datei</value>
+    <value>Externe Datei (Vorschau)</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
     <value>Azure-Blobspeicher</value>
@@ -439,28 +439,28 @@
     <value>Sammlungsname</value>
   </data>
   <data name="documentDBIn_connection_help" xml:space="preserve">
-    <value>Dies ist die Verbindungszeichenfolge für das DocumentDB-Konto.</value>
+    <value>Der Name der App-Einstellung, die Ihre DocumentDB-Verbindungszeichenfolge enthält.</value>
   </data>
   <data name="documentDBIn_connection_label" xml:space="preserve">
     <value>DocumentDB-Kontoverbindung</value>
   </data>
   <data name="documentDBIn_databaseName_help" xml:space="preserve">
-    <value>Dies ist der Name der Datenbank innerhalb Ihres DocumentDB-Kontos, aus der Daten gelesen werden.</value>
+    <value>Name der Datenbank innerhalb Ihres DocumentDB-Kontos, aus der Daten gelesen werden.</value>
   </data>
   <data name="documentDBIn_databaseName_label" xml:space="preserve">
     <value>Datenbankname</value>
   </data>
   <data name="documentDBIn_displayName" xml:space="preserve">
-    <value>Azure DocumentDB-Dokument</value>
+    <value>Azure DocumentDB</value>
   </data>
   <data name="documentDBIn_id_help" xml:space="preserve">
-    <value>Dies ist die ID des Dokuments, das gelesen wird.</value>
+    <value>Dies ist die ID des Dokuments, das gelesen wird. Wenn weder eine SQL-Abfrage noch eine ID angegeben werden, werden alle Dokumente in der Sammlung zurückgegeben.</value>
   </data>
   <data name="documentDBIn_id_label" xml:space="preserve">
-    <value>Dokument-ID</value>
+    <value>Dokument-ID (optional)</value>
   </data>
   <data name="documentDBIn_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den die Eingabebindung gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="documentDBIn_name_label" xml:space="preserve">
     <value>Dokumentparametername</value>
@@ -472,7 +472,7 @@
     <value>Sammlungsname</value>
   </data>
   <data name="documentDBOut_connection_help" xml:space="preserve">
-    <value>Dies ist die Verbindungszeichenfolge für das DocumentDB-Konto.</value>
+    <value>Der Name der App-Einstellung, die Ihre DocumentDB-Verbindungszeichenfolge enthält.</value>
   </data>
   <data name="documentDBOut_connection_label" xml:space="preserve">
     <value>DocumentDB-Kontoverbindung</value>
@@ -493,7 +493,7 @@
     <value>Azure DocumentDB-Dokument</value>
   </data>
   <data name="documentDBOut_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den die Ausgabebindung gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="documentDBOut_name_label" xml:space="preserve">
     <value>Dokumentparametername</value>
@@ -502,16 +502,16 @@
     <value>HTTP</value>
   </data>
   <data name="httpOut_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den die Ausgabebindung gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="httpOut_name_label" xml:space="preserve">
     <value>Antwortparametername</value>
   </data>
   <data name="httpTrigger_authLevel_help" xml:space="preserve">
-    <value>Über die Autorisierungsstufe wird gesteuert, ob Sie einen API-Schlüssel benötigen und welcher Schlüssel verwendet werden soll. Bei "Funktion" wird der Funktionsschlüssel, bei "Admin" Ihr Hauptschlüssel verwendet. Der Funktions- und der Hauptschlüssel sind im Abschnitt für die Schlüsselverwaltung im Portal zu finden. Für eine benutzerbasierte Authentifizierung wechseln Sie zu den Einstellungen der Funktionen-App.</value>
+    <value>Über die Autorisierungsstufe wird gesteuert, ob Sie für die Funktion einen API-Schlüssel benötigen und welcher Schlüssel verwendet werden soll. Bei "Funktion" wird der Funktionsschlüssel, bei "Admin" Ihr Hauptschlüssel verwendet. Der Funktions- und der Hauptschlüssel sind im Abschnitt für die Schlüsselverwaltung im Portal zu finden. Für eine benutzerbasierte Authentifizierung wechseln Sie zu den Einstellungen der Funktionen-App.</value>
   </data>
   <data name="manualTrigger_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den der Trigger gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="manualTrigger_name_label" xml:space="preserve">
     <value>Parametername</value>
@@ -523,7 +523,7 @@
     <value>API-Schlüsselsuche (optional)</value>
   </data>
   <data name="mobileTableIn_connection_help" xml:space="preserve">
-    <value>Dies ist der Name der App-Einstellung, die die URL Ihrer mobilen App angibt.</value>
+    <value>Der Name der App-Einstellung, die die URL Ihrer mobilen App enthält.</value>
   </data>
   <data name="mobileTableIn_connection_label" xml:space="preserve">
     <value>Suche der URL für mobile App</value>
@@ -538,13 +538,13 @@
     <value>Datensatz-ID</value>
   </data>
   <data name="mobileTableIn_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den die Eingabebindung gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="mobileTableIn_name_label" xml:space="preserve">
     <value>Datensatzparametername</value>
   </data>
   <data name="mobileTableIn_tableName_help" xml:space="preserve">
-    <value>Dies ist der Name der Tabelle innerhalb Ihrer mobilen App, aus der Daten gelesen werden.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="mobileTableIn_tableName_label" xml:space="preserve">
     <value>Tabellenname</value>
@@ -556,7 +556,7 @@
     <value>API-Schlüsselsuche (optional)</value>
   </data>
   <data name="mobileTableOut_connection_help" xml:space="preserve">
-    <value>Dies ist der Name der App-Einstellung, die die URL Ihrer mobilen App angibt.</value>
+    <value>Der Name der App-Einstellung, die die URL Ihrer mobilen App enthält.</value>
   </data>
   <data name="mobileTableOut_connection_label" xml:space="preserve">
     <value>Suche der URL für mobile App</value>
@@ -565,19 +565,19 @@
     <value>Mobiler Azure-Tabelleneintrag</value>
   </data>
   <data name="mobileTableOut_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den die Ausgabebindung gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="mobileTableOut_name_label" xml:space="preserve">
     <value>Datensatzparametername</value>
   </data>
   <data name="mobileTableOut_tableName_help" xml:space="preserve">
-    <value>Dies ist der Name der Tabelle innerhalb Ihrer mobilen App, in die Daten geschrieben werden.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="mobileTableOut_tableName_label" xml:space="preserve">
     <value>Tabellenname</value>
   </data>
   <data name="notificationHubOut_connection_help" xml:space="preserve">
-    <value>Dies ist die Verbindungszeichenfolge für den Namespace Ihres Notification Hubs.</value>
+    <value>Der Name der App-Einstellung mit der Verbindungszeichenfolge für den Namespace Ihres Notification Hubs.</value>
   </data>
   <data name="notificationHubOut_connection_label" xml:space="preserve">
     <value>Namespaceverbindung für Notification Hubs</value>
@@ -592,7 +592,7 @@
     <value>Notification Hub-Name</value>
   </data>
   <data name="notificationHubOut_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den die Ausgabebindung gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="notificationHubOut_name_label" xml:space="preserve">
     <value>Benachrichtigungsparametername</value>
@@ -628,37 +628,37 @@
     <value>Von Adresse</value>
   </data>
   <data name="sendGrid_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den die Ausgabebindung gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="sendGrid_name_label" xml:space="preserve">
     <value>Nachrichtenparametername</value>
   </data>
   <data name="sendGrid_subject_help" xml:space="preserve">
-    <value>Dies ist die Betreffzeile der Nachricht. Wenn sie hier nicht festgelegt ist, kann der Wert im Code angegeben werden.</value>
+    <value>Betreffzeile der Nachricht. Wenn sie hier nicht angegeben ist, kann der Wert im Code angegeben werden.</value>
   </data>
   <data name="sendGrid_subject_label" xml:space="preserve">
     <value>Nachrichtenbetreff</value>
   </data>
   <data name="sendGrid_text_help" xml:space="preserve">
-    <value>Dies ist der Text der Nachricht. Wenn er hier nicht festgelegt ist, kann der Wert im Code angegeben werden.</value>
+    <value>Text, der für die Nachricht verwendet werden soll. Wenn er hier nicht angegeben ist, kann der Wert im Code festgelegt werden.</value>
   </data>
   <data name="sendGrid_text_label" xml:space="preserve">
     <value>Nachrichtentext</value>
   </data>
   <data name="sendGrid_to_help" xml:space="preserve">
-    <value>Dies ist die E-Mail-Adresse, an die die Nachricht gesendet wird. Sie kann im Format "benutzer@host.com" oder "Anzeigename &lt;user@host.com&gt;" vorliegen. Wenn sie hier nicht festgelegt ist, kann der Wert im Code angegeben werden.</value>
+    <value>E-Mail-Adresse, an die die Nachricht gesendet wird. Sie kann im Format "benutzer@host.com" oder "Anzeigename &lt;user@host.com&gt;" vorliegen. Wenn sie hier nicht angegeben ist, kann der Wert im Code festgelegt werden.</value>
   </data>
   <data name="sendGrid_to_label" xml:space="preserve">
     <value>Empfänger</value>
   </data>
   <data name="serviceBusOut_accessRights_help" xml:space="preserve">
-    <value>Dies sind die Zugriffsrechte des Clients für das Warteschlangen- oder Themenabonnement.</value>
+    <value>Die Zugriffsrechte der Service Bus-Verbindungszeichenfolge. Legen Sie sie auf "Senden" fest, wenn Sie eine Verbindungszeichenfolge ohne Verwaltungsberechtigungen verwenden.</value>
   </data>
   <data name="serviceBusOut_accessRights_label" xml:space="preserve">
-    <value>AccessRights</value>
+    <value>Zugriffsrechte</value>
   </data>
   <data name="serviceBusOut_connection_help" xml:space="preserve">
-    <value>Dies ist die Verbindungszeichenfolge für Ihren Service Bus. Stellen Sie sicher, dass er über Senderechte verfügt.</value>
+    <value>Der Name der App-Einstellung, die Ihre Service Bus-Verbindungszeichenfolge enthält. Die Verbindungszeichenfolge muss über Senderechte verfügen.</value>
   </data>
   <data name="serviceBusOut_connection_label" xml:space="preserve">
     <value>Service Bus-Verbindung</value>
@@ -667,7 +667,7 @@
     <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusOut_messageType_help" xml:space="preserve">
-    <value>Dies ist der Typ der Service Bus-Nachricht. Sie können zwischen Warteschlangen oder Themen wählen.</value>
+    <value>Typ der Service Bus-Nachricht, entweder Warteschlangen oder Themen.</value>
   </data>
   <data name="serviceBusOut_messageType_label" xml:space="preserve">
     <value>Nachrichtentyp</value>
@@ -679,37 +679,37 @@
     <value>Service Bus-Thema</value>
   </data>
   <data name="serviceBusOut_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den die Ausgabebindung gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="serviceBusOut_name_label" xml:space="preserve">
     <value>Nachrichtenparametername</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>Der Warteschlangenname muss mit einem Buchstaben oder einer Zahl beginnen und enden und kann nur Kleinbuchstaben, Zahlen, Punkte und Bindestriche enthalten. Der Name muss 3 bis 63 Zeichen umfassen.</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
-    <value>Dies ist die Warteschlange, an die die Nachricht gesendet wird.</value>
+    <value>Die Warteschlange, an die die Nachricht gesendet wird.</value>
   </data>
   <data name="serviceBusOut_queueName_label" xml:space="preserve">
     <value>Warteschlangenname</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>Der Themenname muss mit einem Buchstaben oder einer Zahl beginnen und enden und kann nur Kleinbuchstaben, Zahlen, Punkte und Bindestriche enthalten. Der Name muss 3 bis 63 Zeichen umfassen.</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
-    <value>Dies ist das Thema, an das die Nachricht gesendet wird.</value>
+    <value>Das Thema, an das die Nachricht gesendet wird.</value>
   </data>
   <data name="serviceBusOut_topicName_label" xml:space="preserve">
     <value>Topicname</value>
   </data>
   <data name="serviceBusTrigger_accessRights_help" xml:space="preserve">
-    <value>Dies sind die Zugriffsrechte des Clients für das Warteschlangen- oder Themenabonnement.</value>
+    <value>Die Zugriffsrechte der Service Bus-Verbindungszeichenfolge. Legen Sie sie auf "Senden" fest, wenn Sie eine Verbindungszeichenfolge ohne Verwaltungsberechtigungen verwenden.</value>
   </data>
   <data name="serviceBusTrigger_accessRights_label" xml:space="preserve">
-    <value>AccessRights</value>
+    <value>Zugriffsrechte</value>
   </data>
   <data name="serviceBusTrigger_connection_help" xml:space="preserve">
-    <value>Dies ist die Verbindungszeichenfolge für Ihren Service Bus. Stellen Sie sicher, dass er über Lauschrechte verfügt.</value>
+    <value>Der Name der App-Einstellung, die Ihre Service Bus-Verbindungszeichenfolge enthält. Die Verbindungszeichenfolge muss über Lauschrechte verfügen.</value>
   </data>
   <data name="serviceBusTrigger_connection_label" xml:space="preserve">
     <value>Service Bus-Verbindung</value>
@@ -718,7 +718,7 @@
     <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusTrigger_messageType_help" xml:space="preserve">
-    <value>Dies ist der Typ der Service Bus-Nachricht. Sie können zwischen Warteschlangen oder Themen wählen.</value>
+    <value>Typ der Service Bus-Nachricht, entweder Warteschlangen oder Themen.</value>
   </data>
   <data name="serviceBusTrigger_messageType_label" xml:space="preserve">
     <value>Nachrichtentyp</value>
@@ -730,34 +730,34 @@
     <value>Service Bus-Thema</value>
   </data>
   <data name="serviceBusTrigger_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den der Trigger gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieses Triggers in Ihrem Code verwendet wird</value>
   </data>
   <data name="serviceBusTrigger_name_label" xml:space="preserve">
     <value>Nachrichtenparametername</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>Der Warteschlangenname muss mit einem Buchstaben oder einer Zahl beginnen und enden und kann nur Kleinbuchstaben, Zahlen, Punkte und Bindestriche enthalten. Der Name muss 3 bis 63 Zeichen umfassen.</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
-    <value>Dies ist der Name der Warteschlange, aus der die Nachricht gelesen wird.</value>
+    <value>Die Warteschlange, aus der die Nachricht gelesen wird.</value>
   </data>
   <data name="serviceBusTrigger_queueName_label" xml:space="preserve">
     <value>Warteschlangenname</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>Der Abonnementname muss mit einem Buchstaben oder einer Zahl beginnen und enden und kann nur Kleinbuchstaben, Zahlen, Punkte und Bindestriche enthalten. Der Name muss 3 bis 63 Zeichen umfassen.</value>
+    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
-    <value>Dies ist der Name des Abonnements innerhalb des Themas, an das die Bindung erfolgt.</value>
+    <value>Der Name des Abonnements innerhalb des Themas, an das die Bindung erfolgt.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_label" xml:space="preserve">
     <value>Abonnementname</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>Der Themenname muss mit einem Buchstaben oder einer Zahl beginnen und enden und kann nur Kleinbuchstaben, Zahlen, Punkte und Bindestriche enthalten. Der Name muss 3 bis 63 Zeichen umfassen.</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
-    <value>Dies ist der Name des Themas, aus dem die Nachricht gelesen wird.</value>
+    <value>Der Name des Themas, aus dem die Nachricht gelesen wird.</value>
   </data>
   <data name="serviceBusTrigger_topicName_label" xml:space="preserve">
     <value>Topicname</value>
@@ -766,40 +766,40 @@
     <value>Azure Table Storage</value>
   </data>
   <data name="tableIn_filter_help" xml:space="preserve">
-    <value>Dies ist ein optionaler Abfrageausdruck zum Filtern der Ergebnisse der Tabellenabfrage. Diese Einstellung gilt nicht für eine C#-Funktion.</value>
+    <value>Optionaler Abfrageausdruck zum Filtern der Ergebnisse der Tabellenabfrage. Diese Einstellung gilt nicht für C#-Funktionen.</value>
   </data>
   <data name="tableIn_filter_label" xml:space="preserve">
     <value>Abfragefilter (optional)</value>
   </data>
   <data name="tableIn_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den die Eingabebindung gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="tableIn_name_label" xml:space="preserve">
     <value>Tabellenparametername</value>
   </data>
   <data name="tableIn_partitionKey_help" xml:space="preserve">
-    <value>Dies ist der Wert der Partitionsschlüsselspalte in der Tabelle. Datensätze mit übereinstimmendem Partitions- und Zeilenschlüssel werden zurückgegeben. Die Zeilenschlüsseleinstellung muss mit der Partitionsschlüsseleinstellung konfiguriert werden.</value>
+    <value>Der Name der Partitionsschlüsselspalte in der Tabelle. Datensätze mit übereinstimmendem Partitions- und Zeilenschlüssel werden zurückgegeben. Wenn der Partitionsschlüssel angegeben wird, muss auch der Zeilenschlüssel angegeben werden.</value>
   </data>
   <data name="tableIn_partitionKey_label" xml:space="preserve">
     <value>Partitionsschlüssel (optional)</value>
   </data>
   <data name="tableIn_rowKey_help" xml:space="preserve">
-    <value>Dies ist der Wert der Zeilenschlüsselspalte in der Tabelle. Datensätze mit übereinstimmendem Zeilen- und Partitionsschlüssel werden zurückgegeben. Die Partitionsschlüsseleinstellung muss mit der Zeilenschlüsseleinstellung konfiguriert werden.</value>
+    <value>Der Name der Partitionsschlüsselspalte in der Tabelle. Datensätze mit übereinstimmendem Partitions- und Zeilenschlüssel werden zurückgegeben. Wenn der Partitionsschlüssel angegeben wird, muss auch der Zeilenschlüssel angegeben werden.</value>
   </data>
   <data name="tableIn_rowKey_label" xml:space="preserve">
     <value>Zeilenschlüssel (optional)</value>
   </data>
   <data name="tableIn_tableName_errorText" xml:space="preserve">
-    <value>Der Tabellenname muss eine alphanumerische Zeichenfolge aus 3 bis 63 Zeichen sein. Er kann nicht mit einer Zahl beginnen.</value>
+    <value>Der Tabellenname muss eine alphanumerische Zeichenfolge aus 3 bis 63 Zeichen sein und kann nicht mit einer Zahl beginnen.</value>
   </data>
   <data name="tableIn_tableName_help" xml:space="preserve">
-    <value>Dies ist der Name der Tabelle innerhalb Ihres Speicherkontos, aus der die Daten gelesen werden.</value>
+    <value>Der Name der Tabelle im Speicherkonto, aus der Daten gelesen werden.</value>
   </data>
   <data name="tableIn_tableName_label" xml:space="preserve">
     <value>Tabellenname</value>
   </data>
   <data name="tableIn_take_help" xml:space="preserve">
-    <value>Dies ist eine ganze Zahl für die Anzahl der Datensätze. Möglicherweise erhalten Sie weniger Datensätze als durch diesen Wert angegeben, je nach Inhalt der Tabelle und dem angewendeten Filter. Diese Einstellung gilt nicht für eine C#-Funktion.</value>
+    <value>Ganzzahliger Wert für die Höchstzahl zurückzugebender Datensätze. Möglicherweise erhalten Sie weniger Datensätze als durch diesen Wert angegeben, je nach Tabelleninhalt und Filter. Diese Einstellung gilt nicht für C#-Funktionen.</value>
   </data>
   <data name="tableIn_take_label" xml:space="preserve">
     <value>Maximale Anzahl zu lesender Datensätze (optional)</value>
@@ -808,7 +808,7 @@
     <value>Azure Table Storage</value>
   </data>
   <data name="tableout_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den die Ausgabebindung gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="tableout_name_label" xml:space="preserve">
     <value>Tabellenparametername</value>
@@ -817,7 +817,7 @@
     <value>Der Tabellenname muss eine alphanumerische Zeichenfolge aus 3 bis 63 Zeichen sein. Er kann nicht mit einer Zahl beginnen.</value>
   </data>
   <data name="table_tableName_help" xml:space="preserve">
-    <value>Dies ist der Name der Tabelle innerhalb Ihres Speicherkontos, in die die Daten geschrieben werden.</value>
+    <value>Name der Tabelle im Speicherkonto, in die die Daten geschrieben werden.</value>
   </data>
   <data name="table_tableName_label" xml:space="preserve">
     <value>Tabellenname</value>
@@ -829,7 +829,7 @@
     <value>Eine C#-Funktion, die ausgeführt wird, wenn einem angegebenen Container ein Blob hinzugefügt wird</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>(Vorschau) Eine F#-Funktion, die immer dann ausgeführt wird, wenn einem angegebenen Container ein Blob hinzugefügt wird</value>
+    <value>Eine F#-Funktion, die ausgeführt wird, wenn einem angegebenen Container ein Blob hinzugefügt wird</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
     <value>Eine JavaScript-Funktion, die ausgeführt wird, wenn einem angegebenen Container ein Blob hinzugefügt wird</value>
@@ -865,7 +865,7 @@
     <value>Eine C#-Funktion, die ausgeführt wird, wenn ein Event Hub ein neues Ereignis empfängt</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>(Vorschau) Eine F#-Funktion, die immer dann ausgeführt wird, wenn ein Event Hub ein neues Ereignis empfängt</value>
+    <value>Eine F#-Funktion, die ausgeführt wird, wenn ein Event Hub ein neues Ereignis empfängt</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
     <value>Eine JavaScript-Funktion, die ausgeführt wird, wenn ein Event Hub ein neues Ereignis empfängt</value>
@@ -877,7 +877,7 @@
     <value>Eine C#-Funktion, die Images verarbeitet und das umgebende Rechteck der Flächen ausgibt</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>(Vorschau) Eine F#-Funktion, die Images verarbeitet und das umgebende Rechteck der Flächen ausgibt</value>
+    <value>Eine F#-Funktion, die Images verarbeitet und das umgebende Rechteck der Flächen ausgibt</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
     <value>Eine JavaScript-Funktion, die Images verarbeitet und das umgebende Rechteck der Flächen ausgibt</value>
@@ -886,7 +886,7 @@
     <value>Eine C#-Funktion, die ausgeführt wird, wenn sie eine Webhookanforderung empfängt</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>(Vorschau) Eine F#-Funktion, die immer dann ausgeführt wird, wenn sie eine Webhookanforderung empfängt</value>
+    <value>Eine F#-Funktion, die ausgeführt wird, wenn sie eine Webhookanforderung empfängt</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
     <value>Eine JavaScript-Funktion, die ausgeführt wird, wenn sie eine Webhookanforderung empfängt</value>
@@ -895,13 +895,13 @@
     <value>Eine JavaScript-Funktion, die ausgeführt wird, wenn sie eine GitHub-Webhookanforderung empfängt</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>(Vorschau) Eine F#-Funktion, die immer dann ausgeführt wird, wenn sie eine GitHub-Webhookanforderung empfängt</value>
+    <value>Eine F#-Funktion, die ausgeführt wird, wenn sie eine GitHub-Webhookanforderung empfängt</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>Eine C#-Funktion, die ausgeführt wird, wenn sie eine GitHub-Webhookanforderung empfängt</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>(Vorschau) Eine F#-Funktion, die immer dann ausgeführt wird, wenn sie eine GitHub-Webhookanforderung empfängt</value>
+    <value>Eine F#-Funktion, die ausgeführt wird, wenn sie eine GitHub-Webhookanforderung empfängt</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
     <value>Eine JavaScript-Funktion, die ausgeführt wird, wenn sie eine GitHub-Webhookanforderung empfängt</value>
@@ -910,7 +910,7 @@
     <value>Eine C#-Funktion, die Entitäten aus einer Speichertabelle abruft, wenn sie eine HTTP-Anforderung erhält</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>(Vorschau) Eine F#-Funktion, die Entitäten aus einer Storage-Tabelle abruft, wenn sie eine HTTP-Anforderung empfängt</value>
+    <value>Eine F#-Funktion, die Entitäten aus einer Speichertabelle abruft, wenn sie eine HTTP-Anforderung erhält</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
     <value>Eine JavaScript-Funktion, die Entitäten aus einer Speichertabelle abruft, wenn sie eine HTTP-Anforderung erhält</value>
@@ -922,7 +922,7 @@
     <value>Eine C#-Funktion, die einer Speichertabelle Entitäten hinzufügt, wenn sie eine HTTP-Anforderung erhält</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>(Vorschau) Eine F#-Funktion, die einer Storage-Tabelle Entitäten hinzufügt, wenn sie eine HTTP-Anforderung empfängt</value>
+    <value>Eine F#-Funktion, die einer Speichertabelle Entitäten hinzufügt, wenn sie eine HTTP-Anforderung erhält</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
     <value>Eine JavaScript-Funktion, die einer Speichertabelle Entitäten hinzufügt, wenn sie eine HTTP-Anforderung erhält</value>
@@ -931,7 +931,7 @@
     <value>Eine C#-Funktion, die Entitäten in einer Speichertabelle aktualisiert, wenn sie eine HTTP-Anforderung erhält</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>(Vorschau) Eine F#-Funktion, die Entitäten in einer Storage-Tabelle aktualisiert, wenn sie eine HTTP-Anforderung empfängt</value>
+    <value>Eine F#-Funktion, die Entitäten in einer Speichertabelle aktualisiert, wenn sie eine HTTP-Anforderung erhält</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
     <value>(Experimentell) Eine Batch-Funktion, die immer dann ausgeführt wird, wenn sie eine HTTP-Anforderung empfängt</value>
@@ -940,7 +940,7 @@
     <value>Eine C#-Funktion, die ausgeführt wird, wenn sie eine HTTP-Anforderung empfängt</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>(Vorschau) Eine F#-Funktion, die immer dann ausgeführt wird, wenn sie eine HTTP-Anforderung empfängt</value>
+    <value>Eine F#-Funktion, die ausgeführt wird, wenn sie eine HTTP-Anforderung empfängt</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
     <value>Eine JavaScript-Funktion, die ausgeführt wird, wenn sie eine HTTP-Anforderung empfängt</value>
@@ -952,13 +952,13 @@
     <value>Eine C#-Funktion, die Images mit geänderter Größe erstellt, wenn einem angegebenen Container ein Blob hinzugefügt wird</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>(Vorschau) Eine F#-Funktion, die immer dann Images mit geänderter Größe erstellt, wenn einem angegebenen Container ein Blob hinzugefügt wird</value>
+    <value>Eine F#-Funktion, die Images mit geänderter Größe erstellt, wenn einem angegebenen Container ein Blob hinzugefügt wird</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>Eine C#-Funktion, die manuell über das Portal mithilfe der Schaltfläche "Ausführen" ausgelöst wird</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>(Vorschau) Eine F#-Funktion, die manuell über das Portal mithilfe der Schaltfläche "Ausführen" ausgelöst wird</value>
+    <value>Eine F#-Funktion, die manuell über das Portal mithilfe der Schaltfläche "Ausführen" ausgelöst wird</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>Eine JavaScript-Funktion, die über das Portal mithilfe der Schaltfläche "Ausführen" manuell ausgelöst wird</value>
@@ -973,7 +973,7 @@
     <value>Eine C#-Funktion, die immer dann ausgeführt wird, wenn einer angegebenen Azure Queue Storage-Instanz eine Nachricht hinzugefügt wird</value>
   </data>
   <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>(Vorschau) Eine F#-Funktion, die immer dann ausgeführt wird, wenn einer angegebenen Azure Queue Storage-Instanz eine Nachricht hinzugefügt wird</value>
+    <value>Eine F#-Funktion, die immer dann ausgeführt wird, wenn einer angegebenen Azure Queue Storage-Instanz eine Nachricht hinzugefügt wird</value>
   </data>
   <data name="QueueTriggerNodeJS_description" xml:space="preserve">
     <value>Eine JavaScript-Funktion, die immer dann ausgeführt wird, wenn einer angegebenen Azure Queue Storage-Instanz eine Nachricht hinzugefügt wird</value>
@@ -988,49 +988,49 @@
     <value>(Experimentell) Eine Python-Funktion, die immer dann ausgeführt wird, wenn einer angegebenen Azure Queue Storage-Instanz eine Nachricht hinzugefügt wird</value>
   </data>
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
-    <value>(Experimental) A Batch function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Experimentell) Eine Batch-Funktion, die immer dann ausgeführt wird, wenn einem externen Dateianbieter eine Datei hinzugefügt wird.</value>
   </data>
   <data name="SaasFileTriggerCSharp_description" xml:space="preserve">
-    <value>(Preview) A C# function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Vorschau) Eine C#-Funktion, die immer dann ausgeführt wird, wenn einem externen Dateianbieter eine Datei hinzugefügt wird.</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) An F# function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Vorschau) Eine F#-Funktion, die immer dann ausgeführt wird, wenn einem externen Dateianbieter eine Datei hinzugefügt wird.</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
-    <value>(Preview) A JavaScript function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Vorschau) Eine JavaScript-Funktion, die immer dann ausgeführt wird, wenn einem externen Dateianbieter eine Datei hinzugefügt wird.</value>
   </data>
   <data name="SaasFileTokenNodeJS_description" xml:space="preserve">
-    <value>A JavaScript function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Vorschau) Eine JavaScript-Funktion, die immer dann ausgeführt wird, wenn einem externen Dateianbieter eine Datei hinzugefügt wird.</value>
   </data>
   <data name="SaasTableCSharp_description" xml:space="preserve">
-    <value>(Experimental) A C# function that fetches entities from a External Table when it receives an HTTP request.</value>
+    <value>(Experimentell) Eine C#-Funktion, die Entitäten aus einer externen Tabelle abruft, wenn sie eine HTTP-Anforderung empfängt.</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>(Experimental) An F# function that fetches entities from a External Table when it receives an HTTP request.</value>
+    <value>(Experimentell) Eine F#-Funktion, die Entitäten aus einer externen Tabelle abruft, wenn sie eine HTTP-Anforderung empfängt.</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>(Vorschau) Eine F#-Funktion, die ein SAS-Token für Azure Storage für einen angegebenen Container- und Blobnamen generiert.</value>
+    <value>Eine F#-Funktion, die ein SAS-Token für Azure Storage für einen angegebenen Container- und Blobnamen generiert.</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>(Vorschau) Eine C#-Funktion, die eine Bestätigungs-E-Mail sendet, wenn einer bestimmten Warteschlange ein neues Element hinzugefügt wird</value>
+    <value>Eine C#-Funktion, die eine Bestätigungs-E-Mail sendet, wenn einer bestimmten Warteschlange ein neues Element hinzugefügt wird</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>(Vorschau) Eine F#-Funktion, die eine Bestätigungs-E-Mail sendet, wenn einer bestimmten Warteschlange ein neues Element hinzugefügt wird</value>
+    <value>Eine F#-Funktion, die eine Bestätigungs-E-Mail sendet, wenn einer bestimmten Warteschlange ein neues Element hinzugefügt wird</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>(Vorschau) Eine C#-Funktion, die eine Bestätigungs-E-Mail sendet, wenn einer bestimmten Warteschlange ein neues Element hinzugefügt wird</value>
+    <value>Eine JavaScript-Funktion, die eine Bestätigungs-E-Mail sendet, wenn einer bestimmten Warteschlange ein neues Element hinzugefügt wird</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
-    <value>Eine JavaScript-Funktion, die ausgeführt wird, wenn einer angegebenen Service Bus-Warteschlange eine Nachricht hinzugefügt wird</value>
+    <value>Eine C#-Funktion, die ausgeführt wird, wenn einer angegebenen Service Bus-Warteschlange eine Nachricht hinzugefügt wird</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>(Vorschau) Eine F#-Funktion, die immer dann ausgeführt wird, wenn einer angegebenen Service Bus-Warteschlange eine Nachricht hinzugefügt wird</value>
+    <value>Eine F#-Funktion, die ausgeführt wird, wenn einer angegebenen Service Bus-Warteschlange eine Nachricht hinzugefügt wird</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
     <value>Eine JavaScript-Funktion, die ausgeführt wird, wenn einer angegebenen Service Bus-Warteschlange eine Nachricht hinzugefügt wird</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>(Vorschau) Eine F#-Funktion, die immer dann ausgeführt wird, wenn dem angegebenen Service Bus-Thema eine Nachricht hinzugefügt wird</value>
+    <value>Eine F#-Funktion, die ausgeführt wird, wenn dem angegebenen Service Bus-Thema eine Nachricht hinzugefügt wird</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>Eine JavaScript-Funktion, die ausgeführt wird, wenn dem angegebenen Service Bus-Thema eine Nachricht hinzugefügt wird</value>
@@ -1039,7 +1039,7 @@
     <value>Eine C#-Funktion, die nach einem angegebenen Zeitplan ausgeführt wird</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>(Vorschau) Eine F#-Funktion, die nach einem angegebenen Zeitplan ausgeführt wird</value>
+    <value>Eine F#-Funktion, die nach einem angegebenen Zeitplan ausgeführt wird</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
     <value>Eine JavaScript-Funktion, die nach einem angegebenen Zeitplan ausgeführt wird</value>
@@ -1063,7 +1063,7 @@
     <value>Authentifizierungstokeneinstellung</value>
   </data>
   <data name="twilioSms_body_help" xml:space="preserve">
-    <value>Dies ist der Text der Nachricht. Wenn er hier nicht festgelegt ist, kann der Wert im Code angegeben werden.</value>
+    <value>Text, der für die Nachricht verwendet werden soll. Wenn er hier nicht angegeben ist, kann der Wert im Code festgelegt werden.</value>
   </data>
   <data name="twilioSms_body_label" xml:space="preserve">
     <value>Nachrichtentext</value>
@@ -1072,31 +1072,31 @@
     <value>Twilio-SMS</value>
   </data>
   <data name="twilioSms_from_help" xml:space="preserve">
-    <value>Dies ist die Twilio-Telefonnummer, von der aus die Nachricht gesendet werden soll. Sofern nicht hier angegeben, kann der Wert im Code angegeben werden.</value>
+    <value>Die Twilio-Telefonnummer, von der aus die Nachricht gesendet werden soll. Sofern nicht hier angegeben, kann der Wert im Code festgelegt werden.</value>
   </data>
   <data name="twilioSms_from_label" xml:space="preserve">
     <value>Nummer des Absenders</value>
   </data>
   <data name="twilioSms_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den die Ausgabebindung gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="twilioSms_name_label" xml:space="preserve">
     <value>Nachrichtenparametername</value>
   </data>
   <data name="twilioSms_to_help" xml:space="preserve">
-    <value>Dies ist die Telefonnummer, an die die Nachricht gesendet werden soll. Sofern nicht hier angegeben, kann der Wert im Code angegeben werden.</value>
+    <value>Die Telefonnummer, an die die Nachricht gesendet werden soll. Sofern nicht hier angegeben, kann der Wert im Code festgelegt werden.</value>
   </data>
   <data name="twilioSms_to_label" xml:space="preserve">
     <value>Nummer des Empfängers</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>Der Name der Consumergruppe muss mit einem Buchstaben oder einer Zahl beginnen und enden und kann nur Kleinbuchstaben, Zahlen, Bindestriche, Punkte und Unterstriche enthalten.</value>
+    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>Azure DocumentDB-Dokument</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>Dies ist Ihr SendGrid-API-Schlüssel.</value>
+    <value>SendGrid-Entwickler-API-Schlüssel</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
     <value>SendGrid-API-Schlüssel</value>
@@ -1108,10 +1108,10 @@
     <value>Absender-ID</value>
   </data>
   <data name="bot_in_displayName" xml:space="preserve">
-    <value>Bot-Framework</value>
+    <value>Bot-Framework (Vorschau)</value>
   </data>
   <data name="bot_out_displayName" xml:space="preserve">
-    <value>Bot-Framework</value>
+    <value>Bot-Framework (Vorschau)</value>
   </data>
   <data name="bot_in_secret_help" xml:space="preserve">
     <value>Ein Schlüssel für Direktverbindungen kann im Bot-Frameworkportal auf der Seite zur Kanalkonfiguration für Direktverbindungen generiert werden. Wenn Sie dieses Feld leer lassen, wird der Wert in der Anwendungseinstellung "AzureWebJobsBotFrameworkDirectLineSecret" nachgesehen.</value>
@@ -1126,15 +1126,24 @@
     <value>Schlüssel für Direktverbindungen</value>
   </data>
   <data name="bot_in_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den die Eingabebindung gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="bot_in_name_label" xml:space="preserve">
     <value>Bot-Parametername</value>
   </data>
   <data name="bot_out_name_help" xml:space="preserve">
-    <value>Dies ist der Name des Parameters im Code, an den die Ausgabebindung gebunden werden soll.</value>
+    <value>Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird</value>
   </data>
   <data name="bot_out_name_label" xml:space="preserve">
     <value>Bot-Parametername</value>
+  </data>
+  <data name="ScheduledMailCSharp_description" xml:space="preserve">
+    <value>(Vorschau) Eine C#-Funktion, die regelmäßig E-Mails sendet</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
+    <value>Dies ist eine optionale DocumentDB-SQL-Abfrage zum Abrufen eines Satzes von Dokumenten. Wenn weder eine SQL-Abfrage noch eine ID angegeben werden, werden alle Dokumente in der Sammlung zurückgegeben.</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
+    <value>SQL-Abfrage (optional)</value>
   </data>
 </root>

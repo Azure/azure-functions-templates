@@ -6,9 +6,9 @@ An HTTP trigger Azure Function that returns a SAS token for Azure Storage for th
 
 To request a SAS token, send an HTTP post to your function URI, including the API key if you've specified one. The request body format is:
 
-- `container` - *required*. Name of container in storage account
-- `blobName` - *optional*. Used to scope permissions to a particular blob
-- `permissions` - *optional*. Default value is read permissions. The format matches the enum values of SharedAccessBlobPermissions. Possible values are "Read", "Write", "Delete", "List", "Add", "Create". Comma-separate multiple permissions, such as "Read, Write, Create".
+- `ContainerName` - *required*. Name of container in storage account
+- `BlobName` - *optional*. Used to scope permissions to a particular blob
+- `Permission` - *optional*. Default value is read permissions. The format matches the enum values of SharedAccessBlobPermissions. Possible values are "Read", "Write", "Delete", "List", "Add", "Create". Comma-separate multiple permissions, such as "Read, Write, Create".
 
 ## How it works
 
