@@ -1762,6 +1762,57 @@
                     "help": "$bot_in_secret_help"
                 }
             ]
-        }
+        },
+        {
+              "type": "aadToken",
+              "displayName": "$AADToken_in_displayName",
+              "direction": "in",
+              "enabledInTryMode": false,
+              "documentation": "$content=Documentation\\aadTokenIn.md",
+              "settings": [
+                {
+                  "name": "name",
+                  "value": "string",
+                  "defaultValue": "aad",
+                  "required": true,
+                  "label": "$AADToken_in_name_label",
+                  "help": "$AADToken_in_name_help",
+                  "validators": [
+                    {
+                      "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+                      "errorText": "[variables('parameterName')]"
+                    }
+                  ]
+                },
+                {
+                    "name": "resource",
+                    "value": "string",
+                    "required": true,
+                    "label": "$AADToken_in_resource_label",
+                    "help": "$AADToken_in_resource_help"
+                },
+                {
+                    "name": "tockenSource",
+                    "value": "string",
+                    "required": false,
+                    "label": "$AADToken_in_tokenSource_label",
+                    "help": "$AADToken_in_tokenSource_help"
+                },
+            ],
+          "warnings": [
+            {
+              "text": "$ADDToken_warningCongigured",
+              "type": "Info",
+              "variablePath": "authSettings.AADConfigured",
+              "addLinkToAuth": true
+            },
+            {
+              "text": "$ADDToken_warningNotCongigured",
+              "type":  "Warning",
+              "variablePath": "authSettings.AADNotConfigured",
+              "addLinkToAuth": true
+            }
+          ]
+       }
     ]
 }
