@@ -86,7 +86,7 @@
                     "help": "$eventHubTrigger_path_help",
                     "validators": [
                         {
-                            "expression": "^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+                            "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
                             "errorText": "$eventHubTrigger_path_errorText"
                         }
                     ]
@@ -100,7 +100,7 @@
                     "help": "$eventHubTrigger_consumerGroup_help",
                     "validators": [
                         {
-                            "expression": "(^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$)|^\\$Default$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+                            "expression": "(^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$)|^\\$Default$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
                             "errorText": "$eventHubTrigger_consumerGroup_errorText"
                         }
                     ]
@@ -113,6 +113,24 @@
                     "label": "$eventHubTrigger_connection_label",
                     "help": "$eventHubTrigger_connection_help",
                     "placeholder": "[variables('selectConnection')]"
+                },
+                {
+                    "name": "cardinality",
+                    "value": "enum",
+                    "required": false,
+                    "defaultValue": "many",
+                    "enum": [
+                        {
+                            "value": "one",
+                            "display": "One"
+                        },
+                        {
+                            "value": "many",
+                            "display": "Many"
+                        }
+                    ],
+                    "label": "$eventHubTrigger_cardinality_label",
+                    "help": "$eventHubTrigger_cardinality_help"
                 }
             ]
         },
@@ -156,7 +174,7 @@
                     "help": "$eventHubOut_path_help",
                     "validators": [
                         {
-                            "expression": "^[a-z0-9]$|^[a-z0-9][a-z0-9-_.]{0,48}[a-z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+                            "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
                             "errorText": "$eventHubOut_path_errorText"
                         }
                     ]
@@ -314,7 +332,7 @@
                     "help": "$blobOut_path_help",
                     "validators": [
                         {
-                            "expression": "^[a-z0-9{](?:[a-z0-9{}]|(?:\\-(?!\\-))){1,61}[a-z0-9{}][\\/](\\S){0,1023}[^\\/]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+                            "expression": "((^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9])|(^[{][a-zA-Z0-9]{1,126}[}])|(^[%][a-zA-Z0-9]{1,126}[%]))[\\/](\\S){0,1023}[^\\/]$",
                             "errorText": "$blobOut_path_errorText"
                         }
                     ]
@@ -360,7 +378,7 @@
                     "help": "$blobIn_path_help",
                     "validators": [
                         {
-                            "expression": "^[a-z0-9{](?:[a-z0-9{}]|(?:\\-(?!\\-))){1,61}[a-z0-9{}][\\/](\\S){0,1023}[^\\/]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+                            "expression": "((^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9])|(^[{][a-zA-Z0-9]{1,126}[}])|(^[%][a-zA-Z0-9]{1,126}[%]))[\\/](\\S){0,1023}[^\\/]$",
                             "errorText": "$blobIn_patherrorText"
                         }
                     ]
@@ -406,7 +424,7 @@
                     "help": "$blobTrigger_path_help",
                     "validators": [
                         {
-                            "expression": "(^[a-z0-9{](?:[a-z0-9{}]|(?:\\-(?!\\-))){1,61}[a-z0-9{}]$)|(^[a-z0-9{](?:[a-z0-9{}]|(?:\\-(?!\\-))){1,61}[a-z0-9{}][\\/](\\S){0,1023}[^\\/]$)|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+                            "expression": "(((^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9])|(^[{][a-zA-Z0-9]{1,126}[}])|(^[%][a-zA-Z0-9]{1,126}[%]))[\\/](\\S){0,1023}[^\\/]$)|(((^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9]$)|(^[{][a-zA-Z0-9]{1,126}[}]$)|(^[%][a-zA-Z0-9]{1,126}[%]$)))",
                             "errorText": "$blobTrigger_path_errorText"
                         }
                     ]
@@ -905,7 +923,7 @@
                     "help": "$serviceBusTrigger_queueName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+                            "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
                             "errorText": "$serviceBusTrigger_queueName_errorText"
                         }
                     ]
@@ -919,7 +937,7 @@
                     "help": "$serviceBusTrigger_topicName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+                            "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
                             "errorText": "$serviceBusTrigger_topicName_errorText"
                         }
                     ]
@@ -933,7 +951,7 @@
                     "help": "$serviceBusTrigger_subscriptionName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-zA-Z][a-zA-Z0-9_.-]{1,48}[0-9a-zA-Z]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+                            "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
                             "errorText": "$serviceBusTrigger_subscriptionName_errorText"
                         }
                     ]
@@ -1027,7 +1045,7 @@
                     "help": "$serviceBusOut_queueName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+                            "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
                             "errorText": "$serviceBusOut_queueName_errorText"
                         }
                     ]
@@ -1041,7 +1059,7 @@
                     "help": "$serviceBusOut_topicName_help",
                     "validators": [
                         {
-                            "expression": "^[0-9a-z][a-z0-9_.-]{1,48}[0-9a-z]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+                            "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
                             "errorText": "$serviceBusOut_topicName_errorText"
                         }
                     ]

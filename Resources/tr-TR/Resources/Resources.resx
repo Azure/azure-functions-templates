@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="eventHubOut_connection_help" xml:space="preserve">
-    <value>Bu, olay hub'ınızın bağlantı dizesidir. Gönderme izinlerine sahip olduğundan emin olun.</value>
+    <value>Olay hub'ı bağlantı dizenizi içeren uygulama ayarının adı. Bağlantı dizesi, Gönderme izinlerine sahip olmalıdır.</value>
   </data>
   <data name="eventHubOut_connection_label" xml:space="preserve">
     <value>Olay Hub'ı bağlantısı</value>
@@ -127,13 +127,13 @@
     <value>Azure Olay Hub'ı</value>
   </data>
   <data name="eventHubOut_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve çıkış bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="eventHubOut_name_label" xml:space="preserve">
     <value>Olay parametresi adı</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>Olay hub'ınızın adı bir harf veya sayıyla başlayıp bitmelidir ve yalnızca küçük harfler, sayılar, nokta, kısa çizgi ve alt çizgi içerebilir.</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>Bu, olayın gönderileceği olay hub'ının adıdır.</value>
@@ -142,13 +142,13 @@
     <value>Olay Hub'ı adı</value>
   </data>
   <data name="eventHubTrigger_connection_help" xml:space="preserve">
-    <value>Bu, olay hub'ınızın bağlantı dizesidir. Alma izinlerine sahip olduğundan emin olun.</value>
+    <value>Olay Hub'ı bağlantı dizenizi içeren uygulama ayarının adı. Bağlantı dizesi, Alma izinlerine sahip olmalıdır.</value>
   </data>
   <data name="eventHubTrigger_connection_label" xml:space="preserve">
     <value>Olay Hub'ı bağlantısı</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_help" xml:space="preserve">
-    <value>Olayların alınacağı Olay Hub'ı tüketici grubu.</value>
+    <value>Alınacak olayları içeren, olay hub'ı tüketici grubu</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_label" xml:space="preserve">
     <value>Olay Hub'ı tüketici grubu</value>
@@ -157,16 +157,16 @@
     <value>Azure Olay Hub'ı</value>
   </data>
   <data name="eventHubTrigger_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve tetikleyicinin bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu tetikleyiciyi tanımlamak için kullanılan ad</value>
   </data>
   <data name="eventHubTrigger_name_label" xml:space="preserve">
     <value>Olay parametresi adı</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>Olay hub'ınızın adı bir harf veya sayıyla başlayıp bitmelidir ve yalnızca küçük harfler, sayılar, kısa çizgi, nokta ve alt çizgi içerebilir.</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
-    <value>Bu, tetikleme için kullanmak istediğiniz olay hub'ının adıdır.</value>
+    <value>Tetiklemenin yapılacağı olay hub'ının adı</value>
   </data>
   <data name="eventHubTrigger_path_label" xml:space="preserve">
     <value>Olay Hub'ı adı</value>
@@ -175,7 +175,7 @@
     <value>Azure Kuyruk Depolama</value>
   </data>
   <data name="queueOut_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve çıkış bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="queueOut_name_label" xml:space="preserve">
     <value>İleti parametresi adı</value>
@@ -205,22 +205,22 @@
     <value>Zamanlayıcı</value>
   </data>
   <data name="timerTrigger_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve tetikleyicinin bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu tetikleyiciyi tanımlamak için kullanılan ad</value>
   </data>
   <data name="timerTrigger_name_label" xml:space="preserve">
     <value>Zaman damgası parametresi adı</value>
   </data>
   <data name="timerTrigger_schedule_help" xml:space="preserve">
-    <value>Zamanlamanızı belirtmek için '{second} {minute} {hour} {day} {month} {day of week}' biçiminde bir cron ifadesi girin. Daha fazla bilgi için lütfen belgelere bakın.</value>
+    <value>Zamanlamayı belirtmek için '{second} {minute} {hour} {day} {month} {day of week}' biçiminde bir Cron ifadesi girin. Örnekler için aşağıdaki belgelere bakın.</value>
   </data>
   <data name="timerTrigger_schedule_label" xml:space="preserve">
     <value>Zamanla</value>
   </data>
   <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
-    <value>The connection string for your External Table connection.</value>
+    <value>Dış Tablo bağlantınızı içeren uygulama ayarının adı.</value>
   </data>
   <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
-    <value>External Table connection</value>
+    <value>Dış Tablo bağlantısı</value>
   </data>
   <data name="variables_apiHubTableDataSetHelp" xml:space="preserve">
     <value>Bağlanacak veri kümesinin adı. Bir tablo veya varlığa bağlanıyorsa bu değeri 'varsayılan' olarak bırakın.</value>
@@ -244,7 +244,7 @@
     <value>Bu, depolama hesabınızın bağlantı dizesidir.</value>
   </data>
   <data name="variables_parameterName" xml:space="preserve">
-    <value>Parametre adı karakter sınırlaması olmayan alfasayısal bir dize olmalıdır. Bir sayı ile başlayamaz.</value>
+    <value>Parametre adı, karakter sınırlaması olmayan alfasayısal bir dize olmalıdır ve sayıyla başlayamaz.</value>
   </data>
   <data name="variables_paramNameInputHelp" xml:space="preserve">
     <value>Bu, kodda bulunan ve giriş bağlamasının bağlanacağı parametrenin adıdır.</value>
@@ -274,22 +274,22 @@
     <value>Örnekler</value>
   </data>
   <data name="blobOut_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve çıkış bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="blobOut_name_label" xml:space="preserve">
     <value>Blob parametresi adı</value>
   </data>
   <data name="queueTrigger_queueName_help" xml:space="preserve">
-    <value>Bu, iletinin okunacağı kuyruğun adıdır.</value>
+    <value>İletinin okunacağı kuyruğun adı</value>
   </data>
   <data name="queueTrigger_name_label" xml:space="preserve">
     <value>İleti parametresi adı</value>
   </data>
   <data name="queueTrigger_queueName_errorText" xml:space="preserve">
-    <value>Kuyruğunuzun adı bir harf veya sayıyla başlayıp bitmelidir ve yalnızca küçük harfler, sayılar ve kısa çizgi içerebilir. Ad, 3-63 karakter arasında olmalıdır.</value>
+    <value>Kuyruk adının ilk ve son karakteri, harf veya sayı olmalıdır. Ad yalnızca küçük harf, sayı, kısa çizgi karakterlerini içerebilir ve 3 ile 63 karakter arası uzunlukta olabilir.</value>
   </data>
   <data name="queueTrigger_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve tetikleyicinin bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu tetikleyiciyi tanımlamak için kullanılan ad</value>
   </data>
   <data name="queueTrigger_queueName_label" xml:space="preserve">
     <value>Kuyruk adı</value>
@@ -297,14 +297,14 @@
   <data name="blobOut_path_help" xml:space="preserve">
     <value>Bu, depolama hesabınızda blob'un yazılacağı yoldur.</value>
   </data>
-  <data name="blobOut_path_errorTex" xml:space="preserve">
+  <data name="blobOut_path_errorText" xml:space="preserve">
     <value>Blob yolunuzun 3-63 karakter arasında bir kapsayıcı adı olması ve 1-1024 karakter arasındaki bir blob adından önce gelmesi gerekir. Blob adı herhangi bir karakter birleşiminden oluşabilir ve eğik çizgiyle (/) ayrılan en fazla 254 yol segmenti içerebilir.</value>
   </data>
   <data name="blobOut_path_label" xml:space="preserve">
     <value>Yol</value>
   </data>
   <data name="blobIn_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve giriş bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="blobIn_name_label" xml:space="preserve">
     <value>Blob parametresi adı</value>
@@ -322,7 +322,7 @@
     <value>Blob parametresi adı</value>
   </data>
   <data name="blobTrigger_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve tetikleyicinin bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu tetikleyiciyi tanımlamak için kullanılan ad</value>
   </data>
   <data name="blobTrigger_path_label" xml:space="preserve">
     <value>Yol</value>
@@ -330,14 +330,14 @@
   <data name="blobTrigger_path_help" xml:space="preserve">
     <value>Bu, depolama hesabınızda tetikleyicinin izleyeceği yoldur.</value>
   </data>
-  <data name="blobTrigger_path_errorTex" xml:space="preserve">
+  <data name="blobTrigger_path_errorText" xml:space="preserve">
     <value>Blob yolunuzun 3-63 karakter arasında bir kapsayıcı adı olması ve 1-1024 karakter arasındaki bir blob adından önce gelmesi gerekir. Blob adı herhangi bir karakter birleşiminden oluşabilir ve eğik çizgiyle (/) ayrılan en fazla 254 yol segmenti içerebilir.</value>
   </data>
   <data name="apiHubFileIn_name_label" xml:space="preserve">
     <value>Dosya parametresi adı</value>
   </data>
   <data name="apiHubFileIn_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve çıkış bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="apiHubFileIn_path_label" xml:space="preserve">
     <value>Yol</value>
@@ -349,13 +349,13 @@
     <value>Dış Dosya bağlantısı</value>
   </data>
   <data name="apiHubFileIn_connection_help" xml:space="preserve">
-    <value>Dış Dosya bağlantınıza yönelik bağlantı dizesi.</value>
+    <value>Dış Dosya bağlantınızı içeren uygulama ayarının adı</value>
   </data>
   <data name="apiHubFileTrigger_name_label" xml:space="preserve">
     <value>Dosya parametresi adı</value>
   </data>
   <data name="apiHubFileTrigger_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve tetikleyicinin bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu tetikleyiciyi tanımlamak için kullanılan ad</value>
   </data>
   <data name="apiHubFileTrigger_path_label" xml:space="preserve">
     <value>Yol</value>
@@ -367,13 +367,13 @@
     <value>Dış Dosya bağlantısı</value>
   </data>
   <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
-    <value>Dış Dosya bağlantınıza yönelik bağlantı dizesi.</value>
+    <value>Dış Dosya bağlantınızı içeren uygulama ayarının adı</value>
   </data>
   <data name="apiHubTableIn_displayName" xml:space="preserve">
-    <value>External Table</value>
+    <value>Dış Tablo (Deneysel)</value>
   </data>
   <data name="apiHubTableOut_displayName" xml:space="preserve">
-    <value>External Table</value>
+    <value>Dış Tablo (Deneysel)</value>
   </data>
   <data name="httpTrigger_displayName" xml:space="preserve">
     <value>HTTP</value>
@@ -382,7 +382,7 @@
     <value>İstek parametresi adı</value>
   </data>
   <data name="httpTrigger_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve tetikleyicinin bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu tetikleyiciyi tanımlamak için kullanılan ad</value>
   </data>
   <data name="httpTrigger_webHookType_label" xml:space="preserve">
     <value>Web kancası türü</value>
@@ -418,10 +418,10 @@
     <value>Bu, tetikleyicinin modudur. "Standart", isteğin ek semantik içermeyen standart HTTP olacağını gösterir. "Web kancası", isteğin belirtilen bir web kancası türüne göre işleneceği anlamına gelir.</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
-    <value>Dış Dosya</value>
+    <value>Dış Dosya (Önizleme)</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>Dış Dosya</value>
+    <value>Dış Dosya (Önizleme)</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
     <value>Azure Blob Depolama</value>
@@ -439,28 +439,28 @@
     <value>Koleksiyon Adı</value>
   </data>
   <data name="documentDBIn_connection_help" xml:space="preserve">
-    <value>Bu, DocumentDB hesabınızın bağlantı dizesidir.</value>
+    <value>DocumentDB bağlantı dizenizi içeren uygulama ayarının adı</value>
   </data>
   <data name="documentDBIn_connection_label" xml:space="preserve">
     <value>DocumentDB hesap bağlantısı</value>
   </data>
   <data name="documentDBIn_databaseName_help" xml:space="preserve">
-    <value>Bu, DocumentDB hesabınızda verilerin okunacağı veritabanının adıdır.</value>
+    <value>DocumentDB hesabınızda yer alan ve okunacak verileri içeren veritabanının adı.</value>
   </data>
   <data name="documentDBIn_databaseName_label" xml:space="preserve">
     <value>Veritabanı adı</value>
   </data>
   <data name="documentDBIn_displayName" xml:space="preserve">
-    <value>Azure DocumentDB Belgesi</value>
+    <value>Azure DocumentDB</value>
   </data>
   <data name="documentDBIn_id_help" xml:space="preserve">
-    <value>Bu okunacak belgenin kimliğidir.</value>
+    <value>Bu, okunacak belgenin kimliğidir. Bir SQL sorgusu veya kimlik belirtilmezse, koleksiyondaki tüm belgeler döndürülür.</value>
   </data>
   <data name="documentDBIn_id_label" xml:space="preserve">
-    <value>Belge Kimliği</value>
+    <value>Belge Kimliği (isteğe bağlı)</value>
   </data>
   <data name="documentDBIn_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve giriş bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="documentDBIn_name_label" xml:space="preserve">
     <value>Belge parametresi adı</value>
@@ -472,7 +472,7 @@
     <value>Koleksiyon Adı</value>
   </data>
   <data name="documentDBOut_connection_help" xml:space="preserve">
-    <value>Bu, DocumentDB hesabınızın bağlantı dizesidir.</value>
+    <value>DocumentDB bağlantı dizenizi içeren uygulama ayarının adı</value>
   </data>
   <data name="documentDBOut_connection_label" xml:space="preserve">
     <value>DocumentDB hesap bağlantısı</value>
@@ -493,7 +493,7 @@
     <value>Azure DocumentDB Belgesi</value>
   </data>
   <data name="documentDBOut_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve çıkış bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="documentDBOut_name_label" xml:space="preserve">
     <value>Belge parametresi adı</value>
@@ -502,16 +502,16 @@
     <value>HTTP</value>
   </data>
   <data name="httpOut_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve çıkış bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="httpOut_name_label" xml:space="preserve">
     <value>Yanıt parametresi adı</value>
   </data>
   <data name="httpTrigger_authLevel_help" xml:space="preserve">
-    <value>Yetkilendirme düzeyi, bir API anahtarına ihtiyacınız olup olmadığını ve hangi anahtarın kullanılacağını denetler. İşlev, bir işlev anahtarı kullanır, Yönetici ise ana anahtarınızı kullanır. İşlev anahtarı ve ana anahtar, işlevinizin seçilmesi durumunda portaldaki 'anahtarlar' yönetim panelinde görüntülenir. Kullanıcı tabanlı kimlik doğrulaması için, İşlev Uygulaması Ayarları'na gidin.</value>
+    <value>Yetkilendirme düzeyi, işlevin bir API anahtarına ihtiyacı olup olmadığını ve hangi anahtarın kullanılacağını denetler. İşlev, bir işlev anahtarı kullanır; Yönetici ise ana anahtarınızı kullanır. İşlev anahtarı ve ana anahtar, işlevinizin seçilmesi durumunda portaldaki 'anahtarlar' yönetim panelinde görüntülenir. Kullanıcı tabanlı kimlik doğrulaması için, İşlev Uygulaması Ayarları'na gidin.</value>
   </data>
   <data name="manualTrigger_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve tetikleyicinin bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="manualTrigger_name_label" xml:space="preserve">
     <value>Parametre adı</value>
@@ -523,7 +523,7 @@
     <value>API anahtarı arama (isteğe bağlı)</value>
   </data>
   <data name="mobileTableIn_connection_help" xml:space="preserve">
-    <value>Bu, Mobil Uygulamanızın URL'sini belirten uygulama ayarı adıdır.</value>
+    <value>Mobil Uygulamanızın URL'sini içeren uygulama ayarının adı</value>
   </data>
   <data name="mobileTableIn_connection_label" xml:space="preserve">
     <value>Mobil Uygulama URL arama</value>
@@ -538,13 +538,13 @@
     <value>Kayıt Kimliği</value>
   </data>
   <data name="mobileTableIn_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve giriş bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="mobileTableIn_name_label" xml:space="preserve">
     <value>Kayıt parametresi adı</value>
   </data>
   <data name="mobileTableIn_tableName_help" xml:space="preserve">
-    <value>Bu, Mobil Uygulamanızda verilerin okunacağı tablonun adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="mobileTableIn_tableName_label" xml:space="preserve">
     <value>Tablo adı</value>
@@ -556,7 +556,7 @@
     <value>API anahtarı arama (isteğe bağlı)</value>
   </data>
   <data name="mobileTableOut_connection_help" xml:space="preserve">
-    <value>Bu, Mobil Uygulamanızın URL'sini belirten uygulama ayarı adıdır.</value>
+    <value>Mobil Uygulamanızın URL'sini içeren uygulama ayarının adı</value>
   </data>
   <data name="mobileTableOut_connection_label" xml:space="preserve">
     <value>Mobil Uygulama URL arama</value>
@@ -565,19 +565,19 @@
     <value>Azure Mobil Tablo Kaydı</value>
   </data>
   <data name="mobileTableOut_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve çıkış bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="mobileTableOut_name_label" xml:space="preserve">
     <value>Kayıt parametresi adı</value>
   </data>
   <data name="mobileTableOut_tableName_help" xml:space="preserve">
-    <value>Bu, Mobil Uygulamanızda verilerin yazılacağı tablonun adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="mobileTableOut_tableName_label" xml:space="preserve">
     <value>Tablo adı</value>
   </data>
   <data name="notificationHubOut_connection_help" xml:space="preserve">
-    <value>Bu, bildirim hub'ı ad alanınızın bağlantı dizesidir.</value>
+    <value>Bildirim hub'ı ad alanınızın bağlantı dizesini içeren uygulama ayarının adı</value>
   </data>
   <data name="notificationHubOut_connection_label" xml:space="preserve">
     <value>Notification Hubs ad alanı bağlantısı</value>
@@ -592,7 +592,7 @@
     <value>Bildirim Hub'ı adı</value>
   </data>
   <data name="notificationHubOut_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve çıkış bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="notificationHubOut_name_label" xml:space="preserve">
     <value>Bildirim parametresi adı</value>
@@ -628,37 +628,37 @@
     <value>Gönderici adresi</value>
   </data>
   <data name="sendGrid_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve çıkış bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="sendGrid_name_label" xml:space="preserve">
     <value>İleti parametresi adı</value>
   </data>
   <data name="sendGrid_subject_help" xml:space="preserve">
-    <value>Bu, ileti için kullanılacak konu satırıdır. Burada belirtilmediyse, değer kodda belirtilebilir.</value>
+    <value>İleti için kullanılacak konu satırı. Değer, burada sağlanmadıysa kodda belirtilebilir.</value>
   </data>
   <data name="sendGrid_subject_label" xml:space="preserve">
-    <value>İleti Konusu</value>
+    <value>İleti konusu</value>
   </data>
   <data name="sendGrid_text_help" xml:space="preserve">
-    <value>Bu, ileti için kullanılacak metin gövdesidir. Burada belirtilmediyse, değer kodda belirtilebilir.</value>
+    <value>İleti için kullanılacak metin gövdesi. Değer, burada sağlanmadıysa kodda belirtilebilir.</value>
   </data>
   <data name="sendGrid_text_label" xml:space="preserve">
     <value>İleti Metni</value>
   </data>
   <data name="sendGrid_to_help" xml:space="preserve">
-    <value>Bu, iletinin gönderilmesi gereken e-posta adresidir. 'kullanıcı@anabilgisayar.com' veya 'Görünen Ad &lt;kullanıcı@anabilgisayar.com&gt;' biçiminde olabilir. Burada belirtilmediyse, değer kodda belirtilebilir.</value>
+    <value>İletinin gönderilmesi gereken hedef e-posta adresi. 'kullanici@anabilgisayar.com' veya 'Görünen Ad &lt;kullanici@anabilgisayar.com&gt;' biçiminde olabilir. Değer, burada sağlanmadıysa kodda belirtilebilir.</value>
   </data>
   <data name="sendGrid_to_label" xml:space="preserve">
     <value>Alıcı adresi</value>
   </data>
   <data name="serviceBusOut_accessRights_help" xml:space="preserve">
-    <value>Bu, istemcinin kuyruk veya konu aboneliğinde sahip olduğu erişim haklarıdır.</value>
+    <value>Service Bus bağlantı dizesinin erişim hakları. Yönetme izinlerine sahip olmayan bir bağlantı dizesi kullanıyorsanız, Gönderme olarak ayarlayın.</value>
   </data>
   <data name="serviceBusOut_accessRights_label" xml:space="preserve">
-    <value>AccessRights</value>
+    <value>Erişim hakları</value>
   </data>
   <data name="serviceBusOut_connection_help" xml:space="preserve">
-    <value>Bu, service bus bağlantı dizesidir. Gönderme haklarına sahip olduğundan emin olun.</value>
+    <value>Service Bus bağlantı dizenizi içeren uygulama ayarının adı. Bağlantı dizesi, Gönderme haklarına sahip olmalıdır.</value>
   </data>
   <data name="serviceBusOut_connection_label" xml:space="preserve">
     <value>Service Bus bağlantısı</value>
@@ -667,7 +667,7 @@
     <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusOut_messageType_help" xml:space="preserve">
-    <value>Bu, service bus iletisinin türüdür. Bu, Kuyruk veya Konu kullanma arasında seçim yapmanıza olanak sağlar.</value>
+    <value>Service Bus iletisinin türü (Kuyruklar veya Konu Başlıkları).</value>
   </data>
   <data name="serviceBusOut_messageType_label" xml:space="preserve">
     <value>İleti türü</value>
@@ -679,37 +679,37 @@
     <value>Service Bus Konusu</value>
   </data>
   <data name="serviceBusOut_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve çıkış bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="serviceBusOut_name_label" xml:space="preserve">
     <value>İleti parametresi adı</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>Kuyruğunuzun adı bir harf veya sayıyla başlayıp bitmelidir ve yalnızca küçük harfler, sayılar, nokta ve kısa çizgi içerebilir. Ad, 3-63 karakter arasında olmalıdır.</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
-    <value>Bu, iletinin gönderileceği kuyruktur.</value>
+    <value>Gönderilecek iletinin hedefi olan kuyruk.</value>
   </data>
   <data name="serviceBusOut_queueName_label" xml:space="preserve">
     <value>Kuyruk adı</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>Konunuzun adı bir harf veya sayıyla başlayıp bitmelidir ve yalnızca küçük harfler, sayılar, nokta ve kısa çizgi içerebilir. Ad, 3-63 karakter arasında olmalıdır.</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
-    <value>Bu, iletinin gönderileceği konudur.</value>
+    <value>Gönderilecek iletinin hedefi olan konu başlığı.</value>
   </data>
   <data name="serviceBusOut_topicName_label" xml:space="preserve">
     <value>Konu Adı</value>
   </data>
   <data name="serviceBusTrigger_accessRights_help" xml:space="preserve">
-    <value>Bu, istemcinin kuyruk veya konu aboneliğinde sahip olduğu erişim haklarıdır.</value>
+    <value>Service Bus bağlantı dizesinin erişim hakları. Yönetme izinlerine sahip olmayan bir bağlantı dizesi kullanıyorsanız, Gönderme olarak ayarlayın.</value>
   </data>
   <data name="serviceBusTrigger_accessRights_label" xml:space="preserve">
-    <value>AccessRights</value>
+    <value>Erişim hakları</value>
   </data>
   <data name="serviceBusTrigger_connection_help" xml:space="preserve">
-    <value>Bu, service bus'ınızın bağlantı dizesidir. Dinleme haklarına sahip olduğundan emin olun.</value>
+    <value>Service Bus bağlantı dizenizi içeren uygulama ayarının adı. Bağlantı dizesi, Dinleme haklarına sahip olmalıdır.</value>
   </data>
   <data name="serviceBusTrigger_connection_label" xml:space="preserve">
     <value>Service Bus bağlantısı</value>
@@ -718,7 +718,7 @@
     <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusTrigger_messageType_help" xml:space="preserve">
-    <value>Bu, service bus iletisinin türüdür. Bu, Kuyruk veya Konu kullanma arasında seçim yapmanıza olanak sağlar.</value>
+    <value>Service Bus iletisinin türü (Kuyruklar veya Konu Başlıkları).</value>
   </data>
   <data name="serviceBusTrigger_messageType_label" xml:space="preserve">
     <value>İleti türü</value>
@@ -730,34 +730,34 @@
     <value>Service Bus Konusu</value>
   </data>
   <data name="serviceBusTrigger_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve tetikleyicinin bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu tetikleyiciyi tanımlamak için kullanılan ad</value>
   </data>
   <data name="serviceBusTrigger_name_label" xml:space="preserve">
     <value>İleti parametresi adı</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>Kuyruğunuzun adı bir harf veya sayıyla başlayıp bitmelidir ve yalnızca küçük harfler, sayılar, nokta ve kısa çizgi içerebilir. Ad, 3-63 karakter arasında olmalıdır.</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
-    <value>Bu, iletinin okunacağı kuyruğun adıdır.</value>
+    <value>İletinin okunacağı kuyruk.</value>
   </data>
   <data name="serviceBusTrigger_queueName_label" xml:space="preserve">
     <value>Kuyruk adı</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>Aboneliğinizin adı bir harf veya sayıyla başlayıp bitmelidir ve yalnızca küçük harfler, sayılar, nokta ve kısa çizgi içerebilir. Ad, 3-63 karakter arasında olmalıdır.</value>
+    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
-    <value>Bu, bağlanacak konunun içindeki aboneliğin adıdır.</value>
+    <value>Bağlanılacak konu başlığı içindeki abonelik adı.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_label" xml:space="preserve">
     <value>Abonelik adı</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>Konunuzun adı bir harf veya sayıyla başlayıp bitmelidir ve yalnızca küçük harfler, sayılar, nokta ve kısa çizgi içerebilir. Ad, 3-63 karakter arasında olmalıdır.</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
-    <value>Bu, iletinin okunacağı konunun adıdır.</value>
+    <value>İletinin okunacağı konu başlığının adı.</value>
   </data>
   <data name="serviceBusTrigger_topicName_label" xml:space="preserve">
     <value>Konu Adı</value>
@@ -766,40 +766,40 @@
     <value>Azure Tablo Depolaması</value>
   </data>
   <data name="tableIn_filter_help" xml:space="preserve">
-    <value>Bu, tablo sorgusu sonuçlarını filtrelemek için kullanılan isteğe bağlı bir sorgu ifadesidir. Bu ayar C# işlevlerine uygulanamaz.</value>
+    <value>Tablo sorgusu sonuçlarını filtrelemek için kullanılan, isteğe bağlı bir sorgu ifadesi. Bu ayar, C# işlevlerine uygulanamaz.</value>
   </data>
   <data name="tableIn_filter_label" xml:space="preserve">
     <value>Sorgu filtresi (isteğe bağlı)</value>
   </data>
   <data name="tableIn_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve giriş bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="tableIn_name_label" xml:space="preserve">
     <value>Tablo parametresi adı</value>
   </data>
   <data name="tableIn_partitionKey_help" xml:space="preserve">
-    <value>Bu, tablonun Bölüm anahtarı sütununun değeridir. Eşleşen Bölüm anahtarı ve Satır anahtarını içeren kayıtlar döndürülür. Satır anahtarı ayarı Bölüm anahtarı ayarıyla yapılandırılmalıdır.</value>
+    <value>Tablonun bölüm anahtarı sütununun adı. Bölüm anahtarı ve Satır anahtarı eşleşen kayıtlar döndürülür. Bölüm anahtarı sağlanırsa, satır anahtarı da sağlanmalıdır.</value>
   </data>
   <data name="tableIn_partitionKey_label" xml:space="preserve">
     <value>Bölüm anahtarı (isteğe bağlı)</value>
   </data>
   <data name="tableIn_rowKey_help" xml:space="preserve">
-    <value>Bu, tablonun Satır anahtarı sütununun değeridir. Eşleşen Satır anahtarı ve Bölüm anahtarını içeren kayıt döndürülür. Bölüm anahtarı ayarı Satır anahtarı ayarıyla yapılandırılmalıdır.</value>
+    <value>Tablonun bölüm anahtarı sütununun adı. Bölüm anahtarı ve Satır anahtarı eşleşen kayıtlar döndürülür. Bölüm anahtarı sağlanırsa, satır anahtarı da sağlanmalıdır.</value>
   </data>
   <data name="tableIn_rowKey_label" xml:space="preserve">
     <value>Satır anahtarı (isteğe bağlı)</value>
   </data>
   <data name="tableIn_tableName_errorText" xml:space="preserve">
-    <value>Tablonuzun adı 3-63 karakterden oluşan alfasayısal bir dize olmalıdır. Bir sayı ile başlayamaz.</value>
+    <value>Tablo adı, 3 ila 63 karakterden oluşan alfasayısal bir dize olmalıdır ve sayıyla başlayamaz.</value>
   </data>
   <data name="tableIn_tableName_help" xml:space="preserve">
-    <value>Bu, depolama hesabınızda verilerin okunacağı tablonun adıdır.</value>
+    <value>Depolama hesabında, okunacak verileri içeren tablonun adı.</value>
   </data>
   <data name="tableIn_tableName_label" xml:space="preserve">
     <value>Tablo adı</value>
   </data>
   <data name="tableIn_take_help" xml:space="preserve">
-    <value>Bu, kayıt sayısı için bir tamsayıdır. Tablo içeriği ve uygulanan filtreye bağlı olarak bu değerden daha az kayıt alabilirsiniz. Bu ayar C# işlevlerine uygulanamaz.</value>
+    <value>Döndürülecek en fazla kayıt sayısını belirten bir tamsayı. Tablo içeriklerine ve filtrelerine bağlı olarak, bu değerden daha az sayıda kayıt alabilirsiniz. Bu ayar, C# işlevlerine uygulanamaz.</value>
   </data>
   <data name="tableIn_take_label" xml:space="preserve">
     <value>Okunacak en fazla kayıt sayısı (isteğe bağlı)</value>
@@ -808,16 +808,16 @@
     <value>Azure Tablo Depolaması</value>
   </data>
   <data name="tableout_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve çıkış bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="tableout_name_label" xml:space="preserve">
     <value>Tablo parametresi adı</value>
   </data>
   <data name="table_tableName_errorText" xml:space="preserve">
-    <value>Tablonuzun adı 3-63 karakterden oluşan alfasayısal bir dize olmalıdır. Bir sayı ile başlayamaz.</value>
+    <value>Tablo adı, 3 ila 63 karakterden oluşan alfasayısal bir dize olmalıdır ve sayı ile başlayamaz.</value>
   </data>
   <data name="table_tableName_help" xml:space="preserve">
-    <value>Bu, depolama hesabınızda verilerin yazılacağı tablonun adıdır.</value>
+    <value>Depolama hesabında, verilerin yazılacağı tablonun adı.</value>
   </data>
   <data name="table_tableName_label" xml:space="preserve">
     <value>Tablo adı</value>
@@ -829,7 +829,7 @@
     <value>Belirtilen kapsayıcıya bir blob eklendiğinde çalıştırılacak C# işlevi</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>(Önizleme) Belirtilen kapsayıcıya her blob eklendiğinde çalıştırılacak bir F# işlevi</value>
+    <value>Belirtilen kapsayıcıya bir blob eklendiğinde çalıştırılacak F# işlevi</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
     <value>Belirtilen kapsayıcıya bir blob eklendiğinde çalıştırılacak JavaScript işlevi</value>
@@ -865,7 +865,7 @@
     <value>Bir olay hub'ı her yeni olay aldığında çalıştırılacak C# işlevi</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>(Önizleme) Olay hub'ı her yeni olay aldığında çalıştırılacak bir F# işlevi</value>
+    <value>Olay hub'ı yeni bir olay aldığında çalıştırılacak F# işlevi</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
     <value>Bir olay hub'ı her yeni olay aldığında çalıştırılacak JavaScript işlevi</value>
@@ -877,7 +877,7 @@
     <value>Resimleri işleyen ve yüzlerin sınırlayıcı dikdörtgenlerini çıkaran bir C# işlevi</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>(Önizleme) Resimleri işleyen ve yüzlerin sınırlayıcı dikdörtgenlerini çıkaran bir F# işlevi</value>
+    <value>Resimleri işleyen ve yüzlerin sınırlayıcı dikdörtgenlerini çıkaran bir F# işlevi</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
     <value>Resimleri işleyen ve yüzlerin sınırlayıcı dikdörtgenlerini çıkaran bir JavaScript işlevi</value>
@@ -886,7 +886,7 @@
     <value>Bir web kancası isteğini her aldığında çalıştırılacak C# işlevi</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>(Önizleme) Her Web kancası isteği aldığında çalıştırılacak bir F# işlevi</value>
+    <value>Bir Web kancası isteği aldığında çalıştırılacak F# işlevi</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
     <value>Her Web kancası isteği aldığında çalıştırılacak JavaScript işlevi</value>
@@ -895,13 +895,13 @@
     <value>Her GitHub Web kancası isteği aldığında çalıştırılacak JavaScript işlevi</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>(Önizleme) Her GitHub Web kancası isteği aldığında çalıştırılacak bir F# işlevi</value>
+    <value>Bir GitHub Web kancası isteği aldığında çalıştırılacak F# işlevi</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>Bir GitHub web kancası isteği aldığında çalıştırılacak C# işlevi</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>(Önizleme) Her GitHub Web kancası isteği aldığında çalıştırılacak bir F# işlevi</value>
+    <value>Bir GitHub Web kancası isteği aldığında çalıştırılacak F# işlevi</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
     <value>Her GitHub Web kancası isteği aldığında çalıştırılacak JavaScript işlevi</value>
@@ -910,7 +910,7 @@
     <value>HTTP isteği aldığında bir Depolama Tablosundaki varlıkları getiren C# işlevi</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>(Önizleme) HTTP isteği aldığında Depolama Tablosundaki varlıkları getiren bir F# işlevi</value>
+    <value>Bir HTTP isteği aldığında Depolama Tablosundaki varlıkları getiren F# işlevi</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
     <value>HTTP isteği aldığında bir Depolama Tablosundaki varlıkları getiren JavaScript işlevi</value>
@@ -922,7 +922,7 @@
     <value>HTTP isteği aldığında bir Depolama Tablosundaki varlıkları ekleyen C# işlevi</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>(Önizleme) HTTP isteği aldığında varlıkları bir Depolama Tablosuna ekleyen bir F# işlevi</value>
+    <value>HTTP isteği aldığında varlıkları bir Depolama Tablosuna ekleyen F# işlevi</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
     <value>HTTP isteği aldığında varlıkları bir Depolama Tablosuna ekleyen JavaScript işlevi</value>
@@ -931,7 +931,7 @@
     <value>HTTP isteği aldığında bir Depolama Tablosundaki varlığı güncelleştiren C# işlevi</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>(Önizleme) HTTP isteği aldığında Depolama Tablosundaki varlığı güncelleştiren bir F# işlevi</value>
+    <value>HTTP isteği aldığında bir Depolama Tablosundaki varlığı güncelleştiren F# işlevi</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
     <value>(Deneysel) Her HTTP isteği aldığında çalıştırılacak bir Batch işlevi</value>
@@ -940,7 +940,7 @@
     <value>Her HTTP isteği aldığında çalıştırılacak C# işlevi</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>(Önizleme) Her HTTP isteği aldığında çalıştırılacak bir F# işlevi</value>
+    <value>Bir HTTP isteği aldığında çalıştırılacak F# işlevi</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
     <value>Her HTTP isteği aldığında çalıştırılacak JavaScript işlevi</value>
@@ -952,13 +952,13 @@
     <value>Belirtilen kapsayıcıya bir blob eklendiğinde yeniden boyutlandırılmış görüntüler oluşturan C# işlevi</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>(Önizleme) Belirtilen kapsayıcıya her blob eklendiğinde yeniden boyutlandırılmış resimler oluşturan bir F# işlevi</value>
+    <value>Belirtilen kapsayıcıya bir blob eklendiğinde yeniden boyutlandırılmış görüntüler oluşturan F# işlevi</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>Portal "Çalıştır" düğmesi aracılığıyla el ile tetiklenen C# işlevi</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>(Önizleme) Portaldaki "Çalıştır" düğmesi aracılığıyla el ile tetiklenen bir F# işlevi</value>
+    <value>Portaldaki "Çalıştır" düğmesi aracılığıyla el ile tetiklenen F# işlevi</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>Portaldaki "Çalıştır" düğmesi aracılığıyla el ile tetiklenen JavaScript işlevi</value>
@@ -973,7 +973,7 @@
     <value>Belirtilen Azure Kuyruk Depolama'ya her ileti eklendiğinde çalıştırılacak bir C# işlevi</value>
   </data>
   <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>(Önizleme) Belirtilen Azure Kuyruk Depolama'ya her ileti eklendiğinde çalıştırılacak bir F# işlevi</value>
+    <value>Belirtilen Azure Kuyruk Depolama'ya her ileti eklendiğinde çalıştırılacak bir F# işlevi</value>
   </data>
   <data name="QueueTriggerNodeJS_description" xml:space="preserve">
     <value>Belirtilen Azure Kuyruk Depolama'ya her ileti eklendiğinde çalıştırılacak bir JavaScript işlevi</value>
@@ -988,49 +988,49 @@
     <value>(Deneysel) Belirtilen Azure Kuyruk Depolama'ya her ileti eklendiğinde çalıştırılacak bir Python işlevi</value>
   </data>
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
-    <value>(Experimental) A Batch function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Deneysel) Bir Dış Dosya sağlayıcısına dosya eklendiğinde çalıştırılacak bir Batch işlevi.</value>
   </data>
   <data name="SaasFileTriggerCSharp_description" xml:space="preserve">
-    <value>(Preview) A C# function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Önizleme) Dış Dosya sağlayıcısına dosya eklendiğinde çalıştırılacak bir C# işlevi.</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) An F# function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Önizleme) Dış Dosya sağlayıcısına dosya eklendiğinde çalıştırılacak bir F# işlevi.</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
-    <value>(Preview) A JavaScript function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Önizleme) Dış Dosya sağlayıcısına dosya eklendiğinde çalıştırılacak bir JavaScript işlevi.</value>
   </data>
   <data name="SaasFileTokenNodeJS_description" xml:space="preserve">
-    <value>A JavaScript function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Önizleme) Dış Dosya sağlayıcısına dosya eklendiğinde çalıştırılacak bir JavaScript işlevi.</value>
   </data>
   <data name="SaasTableCSharp_description" xml:space="preserve">
-    <value>(Experimental) A C# function that fetches entities from a External Table when it receives an HTTP request.</value>
+    <value>(Deneysel) HTTP isteği aldığında Dış Tablodaki varlıkları getiren bir C# işlevi.</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>(Experimental) An F# function that fetches entities from a External Table when it receives an HTTP request.</value>
+    <value>(Deneysel) HTTP isteği aldığında Dış Tablodaki varlıkları getiren bir F# işlevi.</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>(Önizleme) Belirli bir kapsayıcı ve blob adı için Azure Depolama'ya yönelik SAS belirteci oluşturan bir F# işlevi.</value>
+    <value>Belirli bir kapsayıcı ve blob adı için Azure Depolama'ya yönelik SAS belirteci oluşturan F# işlevi.</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>(Önizleme) Belirli bir kuyruğa yeni öğe eklendiğinde onay e-postası gönderen bir C# işlevi</value>
+    <value>Belirli bir kuyruğa yeni öğe eklendiğinde onay e-postası gönderen bir C# işlevi</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>(Önizleme) Belirli bir kuyruğa yeni öğe eklendiğinde onay e-postası gönderen bir F# işlevi</value>
+    <value>Belirli bir kuyruğa yeni öğe eklendiğinde onay e-postası gönderen bir F# işlevi</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>(Önizleme) Belirli bir kuyruğa yeni öğe eklendiğinde onay e-postası gönderen bir C# işlevi</value>
+    <value>Belirli bir kuyruğa yeni öğe eklendiğinde onay e-postası gönderen bir JavaScript işlevi</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
-    <value>Belirtilen Service Bus kuyruğuna her ileti eklendiğinde çalıştırılacak bir JavaScript işlevi</value>
+    <value>Belirtilen Service Bus kuyruğuna bir ileti eklendiğinde çalıştırılacak C# işlevi</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>(Önizleme) Belirtilen Service Bus kuyruğuna her ileti eklendiğinde çalıştırılacak bir F# işlevi</value>
+    <value>Belirtilen Service Bus kuyruğuna bir ileti eklendiğinde çalıştırılacak F# işlevi</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
     <value>Belirtilen Service Bus kuyruğuna bir ileti eklendiğinde çalıştırılacak JavaScript işlevi</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>(Önizleme) Belirtilen Service Bus konu başlığına her ileti eklendiğinde çalıştırılacak bir F# işlevi</value>
+    <value>Belirtilen Service Bus konu başlığına bir ileti eklendiğinde çalıştırılacak F# işlevi</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>Belirtilen Service Bus konusuna bir ileti eklendiğinde çalıştırılacak JavaScript işlevi</value>
@@ -1039,7 +1039,7 @@
     <value>Belirtilen zamanlamaya göre çalıştırılacak C# işlevi</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>(Önizleme) Belirtilen zamanlamaya göre çalıştırılacak bir F# işlevi</value>
+    <value>Belirtilen zamanlamada çalıştırılacak F# işlevi</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
     <value>Belirtilen bir zamanlamaya göre çalıştırılacak JavaScript işlevi</value>
@@ -1063,7 +1063,7 @@
     <value>Kimlik Doğrulama Belirteci ayarı</value>
   </data>
   <data name="twilioSms_body_help" xml:space="preserve">
-    <value>Bu, ileti için kullanılacak metin gövdesidir. Burada belirtilmediyse, değer kodda belirtilebilir.</value>
+    <value>İleti için kullanılacak metin gövdesi. Değer, burada sağlanmadıysa kodda belirtilebilir.</value>
   </data>
   <data name="twilioSms_body_label" xml:space="preserve">
     <value>İleti metni</value>
@@ -1072,31 +1072,31 @@
     <value>Twilio SMS</value>
   </data>
   <data name="twilioSms_from_help" xml:space="preserve">
-    <value>Bu, iletiyi göndermesi gereken Twilio telefon numarasıdır. Değer, burada belirtilmemişse kod içinde belirtilebilir.</value>
+    <value>İletiyi göndermesi gereken Twilio telefon numarası. Değer, burada sağlanmadıysa kod içinde belirtilebilir.</value>
   </data>
   <data name="twilioSms_from_label" xml:space="preserve">
     <value>Kaynak numara</value>
   </data>
   <data name="twilioSms_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve çıkış bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="twilioSms_name_label" xml:space="preserve">
     <value>İleti parametresi adı</value>
   </data>
   <data name="twilioSms_to_help" xml:space="preserve">
-    <value>Bu, iletinin gönderilmesi gereken hedef telefon numarasıdır. Değer, burada belirtilmezse kod içinde belirtilebilir.</value>
+    <value>İletinin gönderilmesi gereken hedef telefon numarası. Değer, burada sağlanmadıysa kod içinde belirtilebilir.</value>
   </data>
   <data name="twilioSms_to_label" xml:space="preserve">
     <value>Hedef numara</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>Tüketici grubunuzun adı bir harf veya sayıyla başlayıp bitmelidir ve yalnızca küçük harfler, sayılar, kısa çizgi, nokta ve alt çizgi içerebilir. $Default grubuna da izin verilir.</value>
+    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>Azure DocumentDB Belgesi</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>Bu, SendGrid API Anahtarınızdır</value>
+    <value>SendGrid geliştirici API anahtarı</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
     <value>SendGrid API Anahtarı</value>
@@ -1108,10 +1108,10 @@
     <value>Gönderen Kimliği</value>
   </data>
   <data name="bot_in_displayName" xml:space="preserve">
-    <value>Bot Framework</value>
+    <value>Bot Framework (Önizleme)</value>
   </data>
   <data name="bot_out_displayName" xml:space="preserve">
-    <value>Bot Framework</value>
+    <value>Bot Framework (Önizleme)</value>
   </data>
   <data name="bot_in_secret_help" xml:space="preserve">
     <value>Doğrudan Hat Anahtarı, Bot Framework portalında bulunan Doğrudan Hat kanalı yapılandırma sayfasından oluşturulabilir. Bu alanın boş bırakılması durumunda 'AzureWebJobsBotFrameworkDirectLineSecret' Uygulama Ayarındaki değer aranır</value>
@@ -1126,15 +1126,24 @@
     <value>Doğrudan Hat Anahtarı</value>
   </data>
   <data name="bot_in_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve giriş bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="bot_in_name_label" xml:space="preserve">
     <value>Robot parametresi adı</value>
   </data>
   <data name="bot_out_name_help" xml:space="preserve">
-    <value>Bu, kodda bulunan ve çıkış bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
   </data>
   <data name="bot_out_name_label" xml:space="preserve">
     <value>Robot parametresi adı</value>
+  </data>
+  <data name="ScheduledMailCSharp_description" xml:space="preserve">
+    <value>(Önizleme) Düzenli aralıklarla e-posta gönderen bir C# işlevi</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
+    <value>Bu, belirli bir belge kümesini almak üzere kullanılan, isteğe bağlı bir DocumentDB SQL sorgusudur. Bir SQL sorgusu veya kimlik belirtilmezse, koleksiyondaki tüm belgeler döndürülür.</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
+    <value>SQL Sorgusu (isteğe bağlı)</value>
   </data>
 </root>

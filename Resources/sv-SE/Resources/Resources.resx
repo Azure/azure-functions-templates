@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="eventHubOut_connection_help" xml:space="preserve">
-    <value>Anslutningssträngen för händelshubben. Se till att den har behörighet för att skicka.</value>
+    <value>Namnet på den appinställning som innehåller händelsehubbens anslutningssträng. Anslutningssträngen måste ha behörighet att skicka.</value>
   </data>
   <data name="eventHubOut_connection_label" xml:space="preserve">
     <value>Händelsehubbanslutning</value>
@@ -127,13 +127,13 @@
     <value>Azure händelsehubb</value>
   </data>
   <data name="eventHubOut_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utdatabindningen ska bindas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="eventHubOut_name_label" xml:space="preserve">
     <value>Händelseparameternamn</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>Namnet på händelsehubben måste börja och sluta med en bokstav eller siffra och får bara innehålla gemener, siffror, punkt, bindestreck och understreck.</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>Namnet på den händelsehubb som händelsen ska skickas till.</value>
@@ -142,13 +142,13 @@
     <value>Namn på händelsehubb</value>
   </data>
   <data name="eventHubTrigger_connection_help" xml:space="preserve">
-    <value>Anslutningssträngen för händelshubben. Se till att den har behörighet för att ta emot.</value>
+    <value>Namnet på den appinställning som innehåller händelsehubbens anslutningssträng. Anslutningssträngen måste ha behörighet att ta emot.</value>
   </data>
   <data name="eventHubTrigger_connection_label" xml:space="preserve">
     <value>Händelsehubbanslutning</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_help" xml:space="preserve">
-    <value>Namnet på händelsehubbkonsumentgruppen som händelser ska tas emot från.</value>
+    <value>Konsumentgrupp i händelsehubb som händelser ska tas emot från</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_label" xml:space="preserve">
     <value>Händelsehubbkonsumentgrupp</value>
@@ -157,16 +157,16 @@
     <value>Azure händelsehubb</value>
   </data>
   <data name="eventHubTrigger_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utlösaren ska bindas till.</value>
+    <value>Namnet som identifierar den här utlösaren i koden</value>
   </data>
   <data name="eventHubTrigger_name_label" xml:space="preserve">
     <value>Händelseparameternamn</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>Namnet på händelsehubben måste börja och sluta med en bokstav eller siffra och får bara innehålla gemener, siffror, bindestreck, punkt och understreck.</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
-    <value>Namnet på den händelsehubb som du vill aktivera från.</value>
+    <value>Namnet på den händelsehubb som aktiveringen ska ske från</value>
   </data>
   <data name="eventHubTrigger_path_label" xml:space="preserve">
     <value>Namn på händelsehubb</value>
@@ -175,7 +175,7 @@
     <value>Azure Queue Storage</value>
   </data>
   <data name="queueOut_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utdatabindningen ska bindas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="queueOut_name_label" xml:space="preserve">
     <value>Meddelandeparameternamn</value>
@@ -205,22 +205,22 @@
     <value>Timer</value>
   </data>
   <data name="timerTrigger_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utlösaren ska bindas till.</value>
+    <value>Namnet som identifierar den här utlösaren i koden</value>
   </data>
   <data name="timerTrigger_name_label" xml:space="preserve">
     <value>Tidsstämpelparameternamn</value>
   </data>
   <data name="timerTrigger_schedule_help" xml:space="preserve">
-    <value>Ange ett Cron-uttryck i formatet {second} {minute} {hour} {day} {month} {day of week} och ställ in ditt schema. I dokumentationen hittar du mer information.</value>
+    <value>Ange ett Cron-uttryck i formatet {second} {minute} {hour} {day} {month} {day of week} och ställ in schemat. Exempel finns i dokumentationen nedan.</value>
   </data>
   <data name="timerTrigger_schedule_label" xml:space="preserve">
     <value>Schema</value>
   </data>
   <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
-    <value>The connection string for your External Table connection.</value>
+    <value>Namnet på den appinställning som innehåller den externa tabellanslutningen.</value>
   </data>
   <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
-    <value>External Table connection</value>
+    <value>Extern tabellanslutning</value>
   </data>
   <data name="variables_apiHubTableDataSetHelp" xml:space="preserve">
     <value>Namnet på den datauppsättning som bindningen ska ske till. Ange standardvärdet om bindningen sker till en tabell eller enhet.</value>
@@ -244,7 +244,7 @@
     <value>Anslutningssträngen för lagringskontot.</value>
   </data>
   <data name="variables_parameterName" xml:space="preserve">
-    <value>Parameternamnet måste vara en alfanumerisk sträng med valfritt antal tecken. Det får inte börja med en siffra.</value>
+    <value>Parameternamnet måste vara en alfanumerisk sträng med valfritt antal tecken och får inte börja med en siffra.</value>
   </data>
   <data name="variables_paramNameInputHelp" xml:space="preserve">
     <value>Namnet på parametern i koden som indatabindningen ska bindas till.</value>
@@ -274,22 +274,22 @@
     <value>Exempel</value>
   </data>
   <data name="blobOut_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utdatabindningen ska bindas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="blobOut_name_label" xml:space="preserve">
     <value>Blobbparameternamn</value>
   </data>
   <data name="queueTrigger_queueName_help" xml:space="preserve">
-    <value>Namnet på kön som meddelandet ska läsas från.</value>
+    <value>Namnet på kön som meddelandet ska läsas från</value>
   </data>
   <data name="queueTrigger_name_label" xml:space="preserve">
     <value>Meddelandeparameternamn</value>
   </data>
   <data name="queueTrigger_queueName_errorText" xml:space="preserve">
-    <value>Könamnet måste börja och sluta med en bokstav eller siffra och får bara innehålla gemener, siffror och bindestreck. Namnet måste bestå av 3 till 63 tecken.</value>
+    <value>Könamn måste börja och sluta med en bokstav eller siffra och får bara innehålla gemener, siffror och bindestreck. Namnet måste bestå av 3 till 63 tecken.</value>
   </data>
   <data name="queueTrigger_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utlösaren ska bindas till.</value>
+    <value>Namnet som identifierar den här utlösaren i koden</value>
   </data>
   <data name="queueTrigger_queueName_label" xml:space="preserve">
     <value>Könamn</value>
@@ -297,14 +297,14 @@
   <data name="blobOut_path_help" xml:space="preserve">
     <value>Sökvägen i ditt lagringskonto som blobben ska skrivas till.</value>
   </data>
-  <data name="blobOut_path_errorTex" xml:space="preserve">
+  <data name="blobOut_path_errorText" xml:space="preserve">
     <value>Blobbsökvägen måste vara ett behållarnamn på 3 till 63 tecken följt av ett blobbnamn på 1 till 1 024 tecken. Blobbnamnet kan vara vilken kombination som helst av tecken och får bestå av högst 254 sökvägssegment åtskilda av ett snedstreck.(/).</value>
   </data>
   <data name="blobOut_path_label" xml:space="preserve">
     <value>Sökväg</value>
   </data>
   <data name="blobIn_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som indatabindningen ska bindas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="blobIn_name_label" xml:space="preserve">
     <value>Blobbparameternamn</value>
@@ -322,7 +322,7 @@
     <value>Blobbparameternamn</value>
   </data>
   <data name="blobTrigger_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utlösaren ska bindas till.</value>
+    <value>Namnet som identifierar den här utlösaren i koden</value>
   </data>
   <data name="blobTrigger_path_label" xml:space="preserve">
     <value>Sökväg</value>
@@ -330,14 +330,14 @@
   <data name="blobTrigger_path_help" xml:space="preserve">
     <value>Sökvägen i lagringskontot som utlösaren ska övervaka.</value>
   </data>
-  <data name="blobTrigger_path_errorTex" xml:space="preserve">
+  <data name="blobTrigger_path_errorText" xml:space="preserve">
     <value>Blobbsökvägen måste vara ett behållarnamn på 3 till 63 tecken följt av ett blobbnamn på 1 till 1 024 tecken. Blobbnamnet kan vara vilken kombination som helst av tecken och får bestå av högst 254 sökvägssegment åtskilda av ett snedstreck (/).</value>
   </data>
   <data name="apiHubFileIn_name_label" xml:space="preserve">
     <value>Filparameternamn</value>
   </data>
   <data name="apiHubFileIn_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utdatabindningen ska bindas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="apiHubFileIn_path_label" xml:space="preserve">
     <value>Sökväg</value>
@@ -349,13 +349,13 @@
     <value>Extern filanslutning</value>
   </data>
   <data name="apiHubFileIn_connection_help" xml:space="preserve">
-    <value>Anslutningssträngen till den externa filanslutningen.</value>
+    <value>Namnet på den appinställning som innehåller den externa filanslutningssträngen</value>
   </data>
   <data name="apiHubFileTrigger_name_label" xml:space="preserve">
     <value>Filparameternamn</value>
   </data>
   <data name="apiHubFileTrigger_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utlösaren ska bindas till.</value>
+    <value>Namnet som identifierar den här utlösaren i koden</value>
   </data>
   <data name="apiHubFileTrigger_path_label" xml:space="preserve">
     <value>Sökväg</value>
@@ -367,13 +367,13 @@
     <value>Extern filanslutning</value>
   </data>
   <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
-    <value>Anslutningssträngen till den externa filanslutningen.</value>
+    <value>Namnet på den appinställning som innehåller den externa filanslutningssträngen</value>
   </data>
   <data name="apiHubTableIn_displayName" xml:space="preserve">
-    <value>External Table</value>
+    <value>Extern tabell (experimentell)</value>
   </data>
   <data name="apiHubTableOut_displayName" xml:space="preserve">
-    <value>External Table</value>
+    <value>Extern tabell (experimentell)</value>
   </data>
   <data name="httpTrigger_displayName" xml:space="preserve">
     <value>HTTP</value>
@@ -382,7 +382,7 @@
     <value>Parameternamn för förfrågan</value>
   </data>
   <data name="httpTrigger_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utlösaren ska bindas till.</value>
+    <value>Namnet som identifierar den här utlösaren i koden</value>
   </data>
   <data name="httpTrigger_webHookType_label" xml:space="preserve">
     <value>Typ av webbhook</value>
@@ -418,10 +418,10 @@
     <value>Utlösarens läge. ”Standard” innebär att förfrågan är en vanlig HTTP-förfrågan utan ytterligare semantik. ”Webhook” innebär att förfrågan bearbetas enligt en angiven typ av webbhook.</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
-    <value>Extern fil</value>
+    <value>Extern fil (förhandsversion)</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>Extern fil</value>
+    <value>Extern fil (förhandsversion)</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
     <value>Azure Blob Storage</value>
@@ -439,7 +439,7 @@
     <value>Samlingsnamn</value>
   </data>
   <data name="documentDBIn_connection_help" xml:space="preserve">
-    <value>Anslutningssträngen för DocumentDB-kontot.</value>
+    <value>Namnet på den appinställning som innehåller DocumentDB-anslutningssträngen</value>
   </data>
   <data name="documentDBIn_connection_label" xml:space="preserve">
     <value>DocumentDB-kontoanslutning</value>
@@ -451,16 +451,16 @@
     <value>Databasnamn</value>
   </data>
   <data name="documentDBIn_displayName" xml:space="preserve">
-    <value>DocumentDB-dokument i Azure</value>
+    <value>Azure DocumentDB</value>
   </data>
   <data name="documentDBIn_id_help" xml:space="preserve">
-    <value>Id:t för det dokument som ska läsas.</value>
+    <value>ID:t för det dokument som ska läsas. Om varken en SQL-fråga eller ett ID har angetts returneras alla dokument i samlingen.</value>
   </data>
   <data name="documentDBIn_id_label" xml:space="preserve">
-    <value>Dokument-id</value>
+    <value>Dokument-ID (valfritt)</value>
   </data>
   <data name="documentDBIn_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som indatabindningen ska bindas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="documentDBIn_name_label" xml:space="preserve">
     <value>Dokumentparameternamn</value>
@@ -472,7 +472,7 @@
     <value>Samlingsnamn</value>
   </data>
   <data name="documentDBOut_connection_help" xml:space="preserve">
-    <value>Anslutningssträngen för DocumentDB-kontot.</value>
+    <value>Namnet på den appinställning som innehåller DocumentDB-anslutningssträngen</value>
   </data>
   <data name="documentDBOut_connection_label" xml:space="preserve">
     <value>DocumentDB-kontoanslutning</value>
@@ -493,7 +493,7 @@
     <value>DocumentDB-dokument i Azure</value>
   </data>
   <data name="documentDBOut_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utdatabindningen ska bindas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="documentDBOut_name_label" xml:space="preserve">
     <value>Dokumentparameternamn</value>
@@ -502,16 +502,16 @@
     <value>HTTP</value>
   </data>
   <data name="httpOut_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utdatabindningen ska bindas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="httpOut_name_label" xml:space="preserve">
     <value>Svarsparameternamn</value>
   </data>
   <data name="httpTrigger_authLevel_help" xml:space="preserve">
-    <value>Auktorisationsnivån styr huruvida du kräver en API-nyckel och vilken nyckel som ska användas. Funktion använder en funktionsnyckel, Admin använder huvudnyckeln. Funktions- och huvudnycklarna finns på hanteringspanelen "nycklar" på portalen om funktionen har valts. För användarbaserad autentisering går du till funktionsappinställningarna.</value>
+    <value>Auktorisationsnivån styr om funktionen kräver en API-nyckel och vilken nyckel som ska användas. Funktion använder funktionsnyckel, Admin använder huvudnyckel. Funktions- och huvudnycklarna finns på hanteringspanelen ”nycklar” på portalen om funktionen är markerad. För användarbaserad autentisering går du till funktionsappinställningarna.</value>
   </data>
   <data name="manualTrigger_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utlösaren ska bindas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="manualTrigger_name_label" xml:space="preserve">
     <value>Parameternamn</value>
@@ -523,7 +523,7 @@
     <value>Sökning efter API-nyckel (valfritt)</value>
   </data>
   <data name="mobileTableIn_connection_help" xml:space="preserve">
-    <value>Namnet på den appinställning som anger webbadressen till din mobilapp.</value>
+    <value>Namnet på den appinställning som innehåller webbadressen till din mobilapp</value>
   </data>
   <data name="mobileTableIn_connection_label" xml:space="preserve">
     <value>Sökning efter mobilappwebbadress</value>
@@ -538,13 +538,13 @@
     <value>Post-id</value>
   </data>
   <data name="mobileTableIn_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som indatabindningen ska bindas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="mobileTableIn_name_label" xml:space="preserve">
     <value>Postparameternamn</value>
   </data>
   <data name="mobileTableIn_tableName_help" xml:space="preserve">
-    <value>Namnet på tabellen i din mobilapp som data ska läsas från.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="mobileTableIn_tableName_label" xml:space="preserve">
     <value>Tabellnamn</value>
@@ -556,7 +556,7 @@
     <value>Sökning efter API-nyckel (valfritt)</value>
   </data>
   <data name="mobileTableOut_connection_help" xml:space="preserve">
-    <value>Namnet på den appinställning som anger webbadressen till din mobilapp.</value>
+    <value>Namnet på den appinställning som innehåller webbadressen till din mobilapp</value>
   </data>
   <data name="mobileTableOut_connection_label" xml:space="preserve">
     <value>Sökning efter mobilappwebbadress</value>
@@ -565,19 +565,19 @@
     <value>Azure Mobile-tabellpost</value>
   </data>
   <data name="mobileTableOut_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utdatabindningen ska bindas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="mobileTableOut_name_label" xml:space="preserve">
     <value>Postparameternamn</value>
   </data>
   <data name="mobileTableOut_tableName_help" xml:space="preserve">
-    <value>Namnet på tabellen i din mobilapp som data ska skrivas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="mobileTableOut_tableName_label" xml:space="preserve">
     <value>Tabellnamn</value>
   </data>
   <data name="notificationHubOut_connection_help" xml:space="preserve">
-    <value>Anslutningssträngen för meddelandehubbens namnrymd.</value>
+    <value>Namnet på den appinställning som innehåller anslutningssträngen till meddelandehubbens namnområde</value>
   </data>
   <data name="notificationHubOut_connection_label" xml:space="preserve">
     <value>Notification Hubs-namnrymdsanslutning</value>
@@ -592,7 +592,7 @@
     <value>Namn på meddelandehubb</value>
   </data>
   <data name="notificationHubOut_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utdatabindningen ska bindas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="notificationHubOut_name_label" xml:space="preserve">
     <value>Parameternamn för meddelande</value>
@@ -628,19 +628,19 @@
     <value>Från adress</value>
   </data>
   <data name="sendGrid_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utdatabindningen ska bindas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="sendGrid_name_label" xml:space="preserve">
     <value>Meddelandeparameternamn</value>
   </data>
   <data name="sendGrid_subject_help" xml:space="preserve">
-    <value>Ämnesraden som ska användas för meddelandet. Om värdet inte anges här kan det anges i koden.</value>
+    <value>Ämnesrad som ska användas för meddelandet. Om värdet inte anges här kan det anges i koden.</value>
   </data>
   <data name="sendGrid_subject_label" xml:space="preserve">
     <value>Meddelandeämne</value>
   </data>
   <data name="sendGrid_text_help" xml:space="preserve">
-    <value>Brödtexten som ska användas för meddelandet. Om värdet inte anges här kan det anges i koden.</value>
+    <value>Brödtext som ska användas för meddelandet. Om värdet inte anges här kan det anges i koden.</value>
   </data>
   <data name="sendGrid_text_label" xml:space="preserve">
     <value>Meddelandetext</value>
@@ -652,13 +652,13 @@
     <value>Till-adress</value>
   </data>
   <data name="serviceBusOut_accessRights_help" xml:space="preserve">
-    <value>Klientens åtkomsträttigheter till kö- eller ämnesprenumerationen.</value>
+    <value>Åtkomstbehörighet för Service Bus-anslutningssträngen. Ställ in på Skicka om du använder en anslutningssträng som saknar hanteringsbehörighet.</value>
   </data>
   <data name="serviceBusOut_accessRights_label" xml:space="preserve">
-    <value>AccessRights</value>
+    <value>Åtkomstbehörighet</value>
   </data>
   <data name="serviceBusOut_connection_help" xml:space="preserve">
-    <value>Anslutningssträngen för din Service Bus. Se till att den har sändningsrättigheter.</value>
+    <value>Namnet på den appinställning som innehåller Service Bus-anslutningssträngen. Anslutningssträngen måste ha behörighet att skicka.</value>
   </data>
   <data name="serviceBusOut_connection_label" xml:space="preserve">
     <value>Service Bus-anslutning</value>
@@ -667,7 +667,7 @@
     <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusOut_messageType_help" xml:space="preserve">
-    <value>Typ av Service Bus-meddelande. Du kan välja mellan köer eller ämnen.</value>
+    <value>Typ av Service Bus-meddelande, antingen köer eller ämnen.</value>
   </data>
   <data name="serviceBusOut_messageType_label" xml:space="preserve">
     <value>Meddelandetyp</value>
@@ -679,13 +679,13 @@
     <value>Service Bus-ämne</value>
   </data>
   <data name="serviceBusOut_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utdatabindningen ska bindas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="serviceBusOut_name_label" xml:space="preserve">
     <value>Meddelandeparameternamn</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>Könamnet måste börja och sluta med en bokstav eller siffra och får bara innehålla gemener, siffror, punkt och bindestreck. Namnet måste bestå av 3 till 63 tecken.</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
     <value>Kön som meddelandet ska skickas till.</value>
@@ -694,7 +694,7 @@
     <value>Könamn</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>Namnet på ämnet måste börja och sluta med en bokstav eller siffra och får bara innehålla gemener, siffror, punkt och bindestreck. Namnet måste bestå av 3 till 63 tecken.</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
     <value>Ämnet som meddelandet ska skickas till.</value>
@@ -703,13 +703,13 @@
     <value>Ämnesnamn</value>
   </data>
   <data name="serviceBusTrigger_accessRights_help" xml:space="preserve">
-    <value>Klientens åtkomsträttigheter till kö- eller ämnesprenumerationen.</value>
+    <value>Åtkomstbehörighet för Service Bus-anslutningssträngen. Ställ in på Skicka om du använder en anslutningssträng som saknar hanteringsbehörighet.</value>
   </data>
   <data name="serviceBusTrigger_accessRights_label" xml:space="preserve">
-    <value>AccessRights</value>
+    <value>Åtkomstbehörighet</value>
   </data>
   <data name="serviceBusTrigger_connection_help" xml:space="preserve">
-    <value>Anslutningssträngen för din Service Bus. Se till att den har lyssnarrättigheter.</value>
+    <value>Namnet på den appinställning som innehåller Service Bus-anslutningssträngen. Anslutningssträngen måste ha behörighet att lyssna.</value>
   </data>
   <data name="serviceBusTrigger_connection_label" xml:space="preserve">
     <value>Service Bus-anslutning</value>
@@ -718,7 +718,7 @@
     <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusTrigger_messageType_help" xml:space="preserve">
-    <value>Typ av Service Bus-meddelande. Du kan välja mellan köer eller ämnen.</value>
+    <value>Typ av Service Bus-meddelande, antingen köer eller ämnen.</value>
   </data>
   <data name="serviceBusTrigger_messageType_label" xml:space="preserve">
     <value>Meddelandetyp</value>
@@ -730,22 +730,22 @@
     <value>Service Bus-ämne</value>
   </data>
   <data name="serviceBusTrigger_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utlösaren ska bindas till.</value>
+    <value>Namnet som identifierar den här utlösaren i koden</value>
   </data>
   <data name="serviceBusTrigger_name_label" xml:space="preserve">
     <value>Meddelandeparameternamn</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>Könamnet måste börja och sluta med en bokstav eller siffra och får bara innehålla gemener, siffror, punkt och bindestreck. Namnet måste bestå av 3 till 63 tecken.</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
-    <value>Namnet på kön som meddelandet ska läsas från.</value>
+    <value>Kön som meddelandet ska läsas från.</value>
   </data>
   <data name="serviceBusTrigger_queueName_label" xml:space="preserve">
     <value>Könamn</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>Namnet på prenumerationen måste börja och sluta med en bokstav eller siffra och får bara innehålla gemener, siffror, punkt och bindestreck. Namnet måste bestå av 3 till 63 tecken.</value>
+    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
     <value>Namnet på prenumerationen i ämnet som bindningen ska ske till.</value>
@@ -754,7 +754,7 @@
     <value>Prenumerationsnamn</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>Namnet på ämnet måste börja och sluta med en bokstav eller siffra och får bara innehålla gemener, siffror, punkt och bindestreck. Namnet måste bestå av 3 till 63 tecken.</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
     <value>Namnet på ämnet som meddelandet ska läsas från.</value>
@@ -766,40 +766,40 @@
     <value>Azure Table Storage</value>
   </data>
   <data name="tableIn_filter_help" xml:space="preserve">
-    <value>Ett valfritt frågeuttryck som används för att filtrera resultaten i tabellfrågan. Inställningen kan inte användas för C#-funktioner.</value>
+    <value>Valfritt frågeuttryck som används för att filtrera resultaten i tabellfrågan. Inställningen kan inte användas för C#-funktioner.</value>
   </data>
   <data name="tableIn_filter_label" xml:space="preserve">
     <value>Frågefilter (valfritt)</value>
   </data>
   <data name="tableIn_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som indatabindningen ska bindas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="tableIn_name_label" xml:space="preserve">
     <value>Tabellparameternamn</value>
   </data>
   <data name="tableIn_partitionKey_help" xml:space="preserve">
-    <value>Värdet för kolumnen Partitionsnyckel i tabellen. Poster med matchande partitionsnyckel och radnyckel returneras. Radnyckelinställningen måste konfigureras med partitionsnyckelinställningen.</value>
+    <value>Namnet på tabellens partitionsnyckelkolumn. Poster med matchande partitionsnyckel och radnyckel returneras. Om partitionsnyckel anges måste även radnyckel anges.</value>
   </data>
   <data name="tableIn_partitionKey_label" xml:space="preserve">
     <value>Partitionsnyckel (valfritt)</value>
   </data>
   <data name="tableIn_rowKey_help" xml:space="preserve">
-    <value>Värdet för kolumnen Radnyckel i tabellen. Posten med matchande radnyckel och partitionsnyckel returneras. Partitionsnyckelinställningen måste konfigureras med radnyckelinställningen.</value>
+    <value>Namnet på tabellens partitionsnyckelkolumn. Poster med matchande partitionsnyckel och radnyckel returneras. Om partitionsnyckel anges måste även radnyckel anges.</value>
   </data>
   <data name="tableIn_rowKey_label" xml:space="preserve">
     <value>Radnyckel (valfritt)</value>
   </data>
   <data name="tableIn_tableName_errorText" xml:space="preserve">
-    <value>Tabellnamnet måste vara en alfanumerisk sträng på 3 till 63 tecken. Det får inte börja med en siffra.</value>
+    <value>Tabellnamnet måste vara en alfanumerisk sträng på 3 till 63 tecken och får inte börja med en siffra.</value>
   </data>
   <data name="tableIn_tableName_help" xml:space="preserve">
-    <value>Namnet på tabellen i ditt lagringskonto som data ska läsas från.</value>
+    <value>Tabellnamnet i lagringskontot som data ska läsas från.</value>
   </data>
   <data name="tableIn_tableName_label" xml:space="preserve">
     <value>Tabellnamn</value>
   </data>
   <data name="tableIn_take_help" xml:space="preserve">
-    <value>Ett heltal för antalet poster. Du kan få färre poster än det här värdet, baserat på tabellinnehållet och det filter som används. Inställningen kan inte användas för C#-funktioner.</value>
+    <value>Heltal för maxantalet poster som ska returneras. Du kan få färre poster än det här värdet beroende på tabellinnehåll och filter. Inställningen kan inte användas för C#-funktioner.</value>
   </data>
   <data name="tableIn_take_label" xml:space="preserve">
     <value>Maxantalet poster som ska läsas (valfritt)</value>
@@ -808,7 +808,7 @@
     <value>Azure Table Storage</value>
   </data>
   <data name="tableout_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utdatabindningen ska bindas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="tableout_name_label" xml:space="preserve">
     <value>Tabellparameternamn</value>
@@ -817,7 +817,7 @@
     <value>Tabellnamnet måste vara en alfanumerisk sträng på 3 till 63 tecken. Det får inte börja med en siffra.</value>
   </data>
   <data name="table_tableName_help" xml:space="preserve">
-    <value>Namnet på tabellen i ditt lagringskonto som data ska skrivas till.</value>
+    <value>Tabellnamnet i lagringskontot där data ska skrivas.</value>
   </data>
   <data name="table_tableName_label" xml:space="preserve">
     <value>Tabellnamn</value>
@@ -829,7 +829,7 @@
     <value>En C#-funktion som körs när en blobb läggs till i en angiven behållare</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En F#-funktion som körs när en blob läggs till i en angiven behållare</value>
+    <value>En F#-funktion som ska köras när en blobb läggs till i en angiven behållare</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
     <value>En JavaScript-funktion körs när en blob läggs till i en angiven behållare</value>
@@ -865,7 +865,7 @@
     <value>En C#-funktion som körs när en händelsehubb tar emot en ny händelse</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En F#-funktion som körs när en händelsehubb tar emot en ny händelse</value>
+    <value>En F#-funktion som ska köras när en händelsehubb tar emot en ny händelse</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
     <value>En JavaScript-funktion som körs när en händelsehubb tar emot en ny händelse</value>
@@ -877,7 +877,7 @@
     <value>En C#-funktion som bearbetar avbildningar och visar blobens avgränsningsrektangel</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En F#-funktion som bearbetar avbildningar och visar blobens avgränsningsrektangel</value>
+    <value>En F#-funktion som bearbetar avbildningar och visar blobens avgränsningsrektangel</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
     <value>En JavaScript-funktion som bearbetar avbildningar och visar blobens avgränsningsrektangel</value>
@@ -886,7 +886,7 @@
     <value>En C#-funktion som körs när den får en webbhookförfrågan</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En F#-funktion som körs när den får en webbhookförfrågan</value>
+    <value>En F#-funktion som ska köras när den får en webbhookförfrågan</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
     <value>En JavaScript-funktion som körs när den får en webbhookförfrågan</value>
@@ -895,13 +895,13 @@
     <value>En JavaScript-funktion som körs när den får en GitHub-webbhookförfrågan</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En F#-funktion som körs när den får en GitHub-webbhookförfrågan</value>
+    <value>En F#-funktion som ska köras när den får en GitHub-webbhookförfrågan</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>En C#-funktion som körs när den får en GitHub-webbhookförfrågan</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En F#-funktion som körs när den får en GitHub-webbhookförfrågan</value>
+    <value>En F#-funktion som ska köras när den får en GitHub-webbhookförfrågan</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
     <value>En JavaScript-funktion som körs när den får en GitHub-webbhookförfrågan</value>
@@ -910,7 +910,7 @@
     <value>En C#-funktion som hämtar enheter från en lagringstabell när den får en HTTP-förfrågan</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En F#-funktion som hämtar enheter från en lagringstabell när den får en HTTP-förfrågan</value>
+    <value>En F#-funktion som hämtar enheter från en lagringstabell när den får en HTTP-förfrågan</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
     <value>En JavaScript-funktion som hämtar enheter från en lagringstabell när den får en HTTP-förfrågan</value>
@@ -922,7 +922,7 @@
     <value>En C#-funktion som lägger till enheter i en lagringstabell när den får en HTTP-förfrågan</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En F#-funktion som lägger till enheter i en lagringstabell när den får en HTTP-förfrågan</value>
+    <value>En F#-funktion som lägger till enheter i en lagringstabell när den får en HTTP-förfrågan</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
     <value>En JavaScript-funktion som lägger till enheter i en lagringstabell när den får en HTTP-förfrågan</value>
@@ -931,7 +931,7 @@
     <value>En C#-funktion som uppdaterar enheter i en lagringstabell när den får en HTTP-förfrågan</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En F#-funktion som uppdaterar enheter i en lagringstabell när den får en HTTP-förfrågan</value>
+    <value>En C#-funktion som uppdaterar enheter i en lagringstabell när den får en HTTP-förfrågan</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
     <value>(Experimentell) En Batch-funktion som körs när den får en HTTP-förfrågan</value>
@@ -940,7 +940,7 @@
     <value>En C#-funktion som körs när den får en HTTP-förfrågan</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En F#-funktion som körs när den får en HTTP-förfrågan</value>
+    <value>En F#-funktion som ska köras när den får en HTTP-förfrågan</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
     <value>En JavaScript-funktion som körs när den får en HTTP-förfrågan</value>
@@ -952,13 +952,13 @@
     <value>En C#-funktion som skapar storleksändrade avbildningar när en blobb läggs till i en angiven behållare</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En F#-funktion som skapar storleksändrade avbildningar när en blob läggs till i en angiven behållare</value>
+    <value>En F#-funktion som skapar storleksändrade avbildningar när en blobb läggs till i en angiven behållare</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>En C#-funktion som utlöses manuellt via portalknappen Kör</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En F#-funktion som utlöses manuellt via portalknappen Kör</value>
+    <value>En F#-funktion som utlöses manuellt via portalknappen Kör</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>En JavaScript-funktion som utlöses manuellt via portalknappen Kör</value>
@@ -973,7 +973,7 @@
     <value>En C#-funktion som körs när ett meddelande läggs till i en angiven Azure Queue Storage</value>
   </data>
   <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En F#-funktion som körs när ett meddelande läggs till i en angiven Azure Queue Storage</value>
+    <value>En F#-funktion som körs när ett meddelande läggs till i en angiven Azure Queue Storage</value>
   </data>
   <data name="QueueTriggerNodeJS_description" xml:space="preserve">
     <value>En JavaScript-funktion som körs när ett meddelande läggs till i en angiven Azure Queue Storage</value>
@@ -988,49 +988,49 @@
     <value>(Experimentell) En Python-funktion som körs när ett meddelande läggs till i en angiven Azure Queue Storage</value>
   </data>
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
-    <value>(Experimental) A Batch function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Experimentell) En Batch-funktion som körs när en fil läggs till i en extern filprovider.</value>
   </data>
   <data name="SaasFileTriggerCSharp_description" xml:space="preserve">
-    <value>(Preview) A C# function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Förhandsversion) En C#-funktion som körs när en fil läggs till i en extern filprovider.</value>
   </data>
   <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) An F# function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Förhandsversion) En F#-funktion som körs när en fil läggs till i en extern filprovider.</value>
   </data>
   <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
-    <value>(Preview) A JavaScript function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Förhandsversion) En JavaScript-funktion som körs när en fil läggs till i en extern filprovider.</value>
   </data>
   <data name="SaasFileTokenNodeJS_description" xml:space="preserve">
-    <value>A JavaScript function that will be run whenever a file is added to a External File provider.</value>
+    <value>(Förhandsversion) En JavaScript-funktion som körs när en fil läggs till i en extern filprovider.</value>
   </data>
   <data name="SaasTableCSharp_description" xml:space="preserve">
-    <value>(Experimental) A C# function that fetches entities from a External Table when it receives an HTTP request.</value>
+    <value>(Experimentell) En C#-funktion som hämtar enheter från en extern tabell när den får en HTTP-förfrågan.</value>
   </data>
   <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>(Experimental) An F# function that fetches entities from a External Table when it receives an HTTP request.</value>
+    <value>(Experimentell) En F#-funktion som hämtar enheter från en extern tabell när den får en HTTP-förfrågan.</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En F#-funktion som genererar en SAS-token för Azure Storage för en angiven behållare och blobnamn.</value>
+    <value>En F#-funktion som genererar en SAS-token för Azure Storage för en angiven behållare och blobbnamn.</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En C#-funktion som skickar ett bekräftelsemejl när ett nytt objekt läggs till i en viss kö</value>
+    <value>En C#-funktion som skickar en bekräftelse via e-post när ett nytt objekt läggs till i en viss kö</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En F#-funktion som skickar ett bekräftelsemejl när ett nytt objekt läggs till i en viss kö</value>
+    <value>En F#-funktion som skickar en bekräftelse via e-post när ett nytt objekt läggs till i en viss kö</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>(Förhandsversion) En C#-funktion som skickar ett bekräftelsemejl när ett nytt objekt läggs till i en viss kö</value>
+    <value>En JavaScript-funktion som skickar en bekräftelse via e-post när ett nytt objekt läggs till i en viss kö</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
-    <value>En JavaScript-funktion som körs när ett meddelande läggs till i en angiven Service Bus-kö</value>
+    <value>En C#-funktion som körs när ett meddelande läggs till i en angiven Service Bus-kö</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En F#-funktion som körs när ett meddelande läggs till i en angiven Service Bus-kö</value>
+    <value>En F#-funktion som ska köras när ett meddelande läggs till i en angiven Service Bus-kö</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
     <value>En JavaScript-funktion som körs när ett meddelande läggs till i en angiven Service Bus-kö</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En F#-funktion som körs när ett meddelande läggs till i det angivna Service Bus-ämnet</value>
+    <value>En F#-funktion som ska köras när ett meddelande läggs till i det angivna Service Bus-ämnet</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>En JavaScript-funktion som körs när ett meddelande läggs till i det angivna Service Bus-ämnet</value>
@@ -1039,7 +1039,7 @@
     <value>En C#-funktion som körs enligt ett angivet schema</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En F#-funktion som körs enligt ett angivet schema</value>
+    <value>En F#-funktion som ska köras enligt ett angivet schema</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
     <value>En JavaScript-funktion som körs enligt ett angivet schema</value>
@@ -1063,7 +1063,7 @@
     <value>Autentiseringstokeninställning</value>
   </data>
   <data name="twilioSms_body_help" xml:space="preserve">
-    <value>Brödtexten som ska användas för meddelandet. Om värdet inte anges här kan det anges i koden.</value>
+    <value>Brödtext som ska användas för meddelandet. Om värdet inte anges här kan det anges i koden.</value>
   </data>
   <data name="twilioSms_body_label" xml:space="preserve">
     <value>Meddelandetext</value>
@@ -1072,31 +1072,31 @@
     <value>Twilio-SMS</value>
   </data>
   <data name="twilioSms_from_help" xml:space="preserve">
-    <value>Det här är det Twilio-telefonnummer som meddelandet ska skickas från. Om det inte anges här kan värdet anges i koden.</value>
+    <value>Det Twilio-telefonnummer som meddelandet ska skickas från. Om värdet inte anges här kan det anges i koden.</value>
   </data>
   <data name="twilioSms_from_label" xml:space="preserve">
     <value>Från nummer</value>
   </data>
   <data name="twilioSms_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utdatabindningen ska bindas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="twilioSms_name_label" xml:space="preserve">
     <value>Meddelandeparameternamn</value>
   </data>
   <data name="twilioSms_to_help" xml:space="preserve">
-    <value>Det här är det telefonnummer som meddelandet ska skickas till. Om det inte anges här kan värdet anges i koden.</value>
+    <value>Telefonnumret som meddelandet ska skickas till. Om värdet inte anges här kan det anges i koden.</value>
   </data>
   <data name="twilioSms_to_label" xml:space="preserve">
     <value>Till nummer</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>Namnet på konsumentgruppen måste börja och sluta med en bokstav eller siffra och får bara innehålla gemener, siffror, punkt, bindestreck och understreck. Gruppen $Default tillåst också.</value>
+    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>DocumentDB-dokument i Azure</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>Det här är din API-nyckel för SendGrid</value>
+    <value>API-nyckel för SendGrid-utvecklare</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
     <value>API-nyckel för SendGrid</value>
@@ -1108,10 +1108,10 @@
     <value>Avsändar-ID</value>
   </data>
   <data name="bot_in_displayName" xml:space="preserve">
-    <value>Bot Framework</value>
+    <value>Bot Framework (förhandsversion)</value>
   </data>
   <data name="bot_out_displayName" xml:space="preserve">
-    <value>Bot Framework</value>
+    <value>Bot Framework (förhandsversion)</value>
   </data>
   <data name="bot_in_secret_help" xml:space="preserve">
     <value>Direct Line-nyckeln kan skapas från sidan för Direct Line-kanalkonfiguration i Bot Framework-portalen. Om fältet är tomt hämtas värdet från programinställningen AzureWebJobsBotFrameworkDirectLineSecret</value>
@@ -1126,15 +1126,24 @@
     <value>Direct Line-nyckel</value>
   </data>
   <data name="bot_in_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som indatabindningen ska bindas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="bot_in_name_label" xml:space="preserve">
     <value>Robotparameternamn</value>
   </data>
   <data name="bot_out_name_help" xml:space="preserve">
-    <value>Namnet på parametern i koden som utdatabindningen ska bindas till.</value>
+    <value>Namnet som identifierar den här bindningen i koden</value>
   </data>
   <data name="bot_out_name_label" xml:space="preserve">
     <value>Robotparameternamn</value>
+  </data>
+  <data name="ScheduledMailCSharp_description" xml:space="preserve">
+    <value>(Förhandsversion) En C#-funktion som periodvis skickar e-postmeddelanden</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
+    <value>Det här är en valfri DocumentDB SQL-fråga som används för att hämta en uppsättning dokument. Om varken en SQL-fråga eller ett ID har angetts returneras alla dokument i samlingen.</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
+    <value>SQL-fråga (valfritt)</value>
   </data>
 </root>
