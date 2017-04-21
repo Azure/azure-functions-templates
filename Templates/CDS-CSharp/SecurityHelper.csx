@@ -26,6 +26,6 @@ internal class SecurityHelper
             }
         };
 
-        return settings.CreateClient(requestMessage, logger as TraceWriterTelemetryBridge ?? new TraceWriterTelemetryBridge());
+        return settings.CreateClient(requestMessage, new TraceWriterTelemetryBridge(logger));
     }
 }
