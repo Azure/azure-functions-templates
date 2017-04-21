@@ -1,7 +1,4 @@
-﻿// The contents of this template are subject to license terms of the 
-// Microsoft Common Data Service Software Development Kit (https://go.microsoft.com/fwlink/?linkid=842862).
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -21,8 +18,15 @@ class TraceWriterTelemetryBridge : TraceWriter, ITelemetryService
         Verbose
     }
 
+    private readonly TraceWriter logger;
+
     public TraceWriterTelemetryBridge() : base(TraceLevel.Verbose)
     {
+    }
+
+    public TraceWriterTelemetryBridge(TraceWriter log) : this()
+    {
+        logger = log;
     }
 
     private void WriteToTraceWriter(string message, MessageLevel messageLevel)
@@ -30,16 +34,16 @@ class TraceWriterTelemetryBridge : TraceWriter, ITelemetryService
         switch (messageLevel)
         {
             case MessageLevel.Error:
-                Error(message);
+                logger.Error(message);
                 break;
             case MessageLevel.Warning:
-                Warning(message);
+                logger.Warning(message);
                 break;
             case MessageLevel.Info:
-                Info(message);
+                logger.Info(message);
                 break;
             case MessageLevel.Verbose:
-                Verbose(message);
+                logger.Verbose(message);
                 break;
         }
     }
