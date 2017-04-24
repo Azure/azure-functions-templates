@@ -14,7 +14,7 @@ using System.Net;
 
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log)
 {
-    log.Info($"C# HTTP trigger function processed a request. RequestUri={req.RequestUri}");
+    log.Info($"C# CDS trigger function processed a request. RequestUri={req.RequestUri}");
 
     dynamic data = await req.Content.ReadAsAsync<object>();
     string name = data?.name;
@@ -30,8 +30,8 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
         EnvironmentId = "[[Replace with PowerApps environment ID value]]",
         Credentials = new UserImpersonationCredentialsSettings
         {
-            ApplicationId = "[[Replace with Function application ID value]]",
-            ApplicationSecret = "[[Replace with Function application secret value]]"
+            ApplicationId = Environment.GetEnvironmentVariable("WEBSITE_AUTH_CLIENT_ID"),
+            ApplicationSecret = Environment.GetEnvironmentVariable("WEBSITE_AUTH_CLIENT_SECRET")
         }
     };
 
@@ -88,7 +88,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
         }
         await updateExecutor.ExecuteAsync();
 
-        log.Info($"C# HTTP trigger function completed.");
+        log.Info($"C# CDS trigger function completed.");
         return req.CreateResponse(HttpStatusCode.OK);
     }
 }
