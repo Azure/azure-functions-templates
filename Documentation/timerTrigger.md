@@ -3,8 +3,8 @@
 The settings provide a schedule expression. For example, the following schedule runs the function every minute:
 
  - `schedule`: Cron tab expression which defines schedule 
- - `name`: The variable name used in function code for the table binding. 
- - `type`: must be *tableTrigger*
+ - `name`: The variable name used in function code for the TimerTrigger. 
+ - `type`: must be *timerTrigger*
  - `direction`: must be *in*
 
 The timer trigger handles multi-instance scale-out automatically: only a single instance of a particular timer function will be running across all instances.

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="eventHubOut_connection_help" xml:space="preserve">
-    <value>Toto je připojovací řetězec pro centrum událostí. Ujistěte se, že má oprávnění k odesílání.</value>
+    <value>Název nastavení aplikace, které obsahuje připojovací řetězec centra událostí. Připojovací řetězec musí mít oprávnění k odesílání.</value>
   </data>
   <data name="eventHubOut_connection_label" xml:space="preserve">
     <value>Připojení centra událostí</value>
@@ -127,13 +127,13 @@
     <value>Centrum událostí Azure</value>
   </data>
   <data name="eventHubOut_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže výstupní vazba.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="eventHubOut_name_label" xml:space="preserve">
     <value>Název parametru události</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>Název centra události musí začínat a končit písmenem nebo číslem a může obsahovat jenom malá písmena, čísla, tečku, spojovník a podtržítko.</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>Toto je název centra událostí, do kterého se budou posílat události.</value>
@@ -142,13 +142,13 @@
     <value>Název centra událostí</value>
   </data>
   <data name="eventHubTrigger_connection_help" xml:space="preserve">
-    <value>Toto je připojovací řetězec pro centrum událostí. Ujistěte se, že má oprávnění k přijímání.</value>
+    <value>Název nastavení aplikace, které obsahuje připojovací řetězec centra událostí. Připojovací řetězec musí mít oprávnění k přijímání.</value>
   </data>
   <data name="eventHubTrigger_connection_label" xml:space="preserve">
     <value>Připojení centra událostí</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_help" xml:space="preserve">
-    <value>Název skupiny uživatelů centra událostí, od které se budou přijímat události.</value>
+    <value>Skupina uživatelů centra událostí, od které se budou přijímat události</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_label" xml:space="preserve">
     <value>Skupina uživatelů centra událostí</value>
@@ -157,16 +157,16 @@
     <value>Centrum událostí Azure</value>
   </data>
   <data name="eventHubTrigger_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže aktivační událost.</value>
+    <value>Název, pomocí kterého tato vazba aktivuje v kódu</value>
   </data>
   <data name="eventHubTrigger_name_label" xml:space="preserve">
     <value>Název parametru události</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>Název centra události musí začínat a končit písmenem nebo číslem a může obsahovat jenom malá písmena, čísla, tečku, spojovník a podtržítko.</value>
+    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
-    <value>Toto je název centra událostí, ze kterého chcete spouštět aktivační události.</value>
+    <value>Název centra událostí, ze kterého se budou spouštět aktivační události</value>
   </data>
   <data name="eventHubTrigger_path_label" xml:space="preserve">
     <value>Název centra událostí</value>
@@ -175,7 +175,7 @@
     <value>Azure Queue Storage</value>
   </data>
   <data name="queueOut_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže výstupní vazba.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="queueOut_name_label" xml:space="preserve">
     <value>Název parametru zprávy</value>
@@ -205,19 +205,19 @@
     <value>Časovač</value>
   </data>
   <data name="timerTrigger_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže aktivační událost.</value>
+    <value>Název, pomocí kterého tato vazba aktivuje v kódu</value>
   </data>
   <data name="timerTrigger_name_label" xml:space="preserve">
     <value>Název parametru časového razítka</value>
   </data>
   <data name="timerTrigger_schedule_help" xml:space="preserve">
-    <value>Zadejte svůj plán tak, že zadáte výraz Cronu ve formátu {second} {minute} {hour} {day} {month} {day of week}. Další informace najdete v dokumentaci.</value>
+    <value>Zadejte plán tak, že zadáte výraz Cronu ve formátu {second} {minute} {hour} {day} {month} {day of week}. Příklady najdete v dokumentaci níže.</value>
   </data>
   <data name="timerTrigger_schedule_label" xml:space="preserve">
     <value>Plán</value>
   </data>
   <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
-    <value>Připojovací řetězec pro připojení externí tabulky</value>
+    <value>Název nastavení aplikace, které obsahuje připojení externí tabulky</value>
   </data>
   <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
     <value>Připojení externí tabulky</value>
@@ -244,7 +244,7 @@
     <value>Toto je připojovací řetězec pro účet úložiště.</value>
   </data>
   <data name="variables_parameterName" xml:space="preserve">
-    <value>Název parametru musí být libovolně dlouhý alfanumerický řetězec. Nemůže začínat číslem.</value>
+    <value>Název parametru musí být libovolně dlouhý alfanumerický řetězec. Nemůže začínat číslicí.</value>
   </data>
   <data name="variables_paramNameInputHelp" xml:space="preserve">
     <value>Toto je název parametru v kódu, se kterým se sváže vstupní vazba.</value>
@@ -274,22 +274,22 @@
     <value>Ukázky</value>
   </data>
   <data name="blobOut_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže výstupní vazba.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="blobOut_name_label" xml:space="preserve">
     <value>Název parametru objektu blob</value>
   </data>
   <data name="queueTrigger_queueName_help" xml:space="preserve">
-    <value>Toto je název fronty, ze které se bude číst zpráva.</value>
+    <value>Název fronty, ze které se bude číst zpráva</value>
   </data>
   <data name="queueTrigger_name_label" xml:space="preserve">
     <value>Název parametru zprávy</value>
   </data>
   <data name="queueTrigger_queueName_errorText" xml:space="preserve">
-    <value>Název fronty musí začínat a končit písmenem nebo číslem a může obsahovat jenom malá písmena, čísla a spojovník. Název musí být dlouhý od 3 do 63 znaků.</value>
+    <value>Název fronty musí začínat a končit písmenem nebo číslicí a může obsahovat jenom malá písmena, číslice a spojovník. Název musí být dlouhý od 3 do 63 znaků.</value>
   </data>
   <data name="queueTrigger_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže aktivační událost.</value>
+    <value>Název, pomocí kterého tato vazba aktivuje v kódu</value>
   </data>
   <data name="queueTrigger_queueName_label" xml:space="preserve">
     <value>Název fronty</value>
@@ -297,14 +297,14 @@
   <data name="blobOut_path_help" xml:space="preserve">
     <value>Toto je cesta v účtu úložiště, do které se zapíše objekt blob.</value>
   </data>
-  <data name="blobOut_path_errorTex" xml:space="preserve">
+  <data name="blobOut_path_errorText" xml:space="preserve">
     <value>Cesta objektu blob musí být název kontejneru dlouhý 3 až 63 znaků, za kterým následuje název objektu blob dlouhý 1 až 1024 znaků. Název objektu blob může být libovolná kombinace znaků a může obsahovat až 254 segmentů cesty oddělených lomítkem (/).</value>
   </data>
   <data name="blobOut_path_label" xml:space="preserve">
     <value>Cesta</value>
   </data>
   <data name="blobIn_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže vstupní vazba.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="blobIn_name_label" xml:space="preserve">
     <value>Název parametru objektu blob</value>
@@ -322,7 +322,7 @@
     <value>Název parametru objektu blob</value>
   </data>
   <data name="blobTrigger_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže aktivační událost.</value>
+    <value>Název, pomocí kterého tato vazba aktivuje v kódu</value>
   </data>
   <data name="blobTrigger_path_label" xml:space="preserve">
     <value>Cesta</value>
@@ -330,14 +330,14 @@
   <data name="blobTrigger_path_help" xml:space="preserve">
     <value>Toto je cesta v účtu úložiště, kterou bude aktivační událost monitorovat.</value>
   </data>
-  <data name="blobTrigger_path_errorTex" xml:space="preserve">
+  <data name="blobTrigger_path_errorText" xml:space="preserve">
     <value>Cesta objektu blob musí být název kontejneru dlouhý 3 až 63 znaků, za kterým následuje název objektu blob dlouhý 1 až 1024 znaků. Název objektu blob může být libovolná kombinace znaků a může obsahovat až 254 segmentů cesty oddělených lomítkem (/).</value>
   </data>
   <data name="apiHubFileIn_name_label" xml:space="preserve">
     <value>Název parametru souboru</value>
   </data>
   <data name="apiHubFileIn_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže výstupní vazba.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="apiHubFileIn_path_label" xml:space="preserve">
     <value>Cesta</value>
@@ -349,13 +349,13 @@
     <value>Připojení externího souboru</value>
   </data>
   <data name="apiHubFileIn_connection_help" xml:space="preserve">
-    <value>Připojovací řetězec pro připojení externího souboru</value>
+    <value>Název nastavení aplikace, které obsahuje připojovací řetězec externího souboru</value>
   </data>
   <data name="apiHubFileTrigger_name_label" xml:space="preserve">
     <value>Název parametru souboru</value>
   </data>
   <data name="apiHubFileTrigger_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže aktivační událost.</value>
+    <value>Název, pomocí kterého tato vazba aktivuje v kódu</value>
   </data>
   <data name="apiHubFileTrigger_path_label" xml:space="preserve">
     <value>Cesta</value>
@@ -367,13 +367,13 @@
     <value>Připojení externího souboru</value>
   </data>
   <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
-    <value>Připojovací řetězec pro připojení externího souboru</value>
+    <value>Název nastavení aplikace, které obsahuje připojovací řetězec externího souboru</value>
   </data>
   <data name="apiHubTableIn_displayName" xml:space="preserve">
-    <value>Externí tabulka</value>
+    <value>Externí tabulka (experimentální)</value>
   </data>
   <data name="apiHubTableOut_displayName" xml:space="preserve">
-    <value>Externí tabulka</value>
+    <value>Externí tabulka (experimentální)</value>
   </data>
   <data name="httpTrigger_displayName" xml:space="preserve">
     <value>HTTP</value>
@@ -382,7 +382,7 @@
     <value>Název parametru požadavku</value>
   </data>
   <data name="httpTrigger_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže aktivační událost.</value>
+    <value>Název, pomocí kterého tato vazba aktivuje v kódu</value>
   </data>
   <data name="httpTrigger_webHookType_label" xml:space="preserve">
     <value>Typ webhooku</value>
@@ -418,10 +418,10 @@
     <value>Toto je režim aktivační události. Standard znamená, že požadavek bude standardní HTTP bez další sémantiky. Webhook znamená, že se požadavek bude zpracovávat podle konkrétního typu webhooku.</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
-    <value>Externí soubor</value>
+    <value>Externí soubor (Preview)</value>
   </data>
   <data name="apiHubFileTrigger_displayName" xml:space="preserve">
-    <value>Externí soubor</value>
+    <value>Externí soubor (Preview)</value>
   </data>
   <data name="blobIn_displayName" xml:space="preserve">
     <value>Azure Blob Storage</value>
@@ -439,28 +439,28 @@
     <value>Název kolekce</value>
   </data>
   <data name="documentDBIn_connection_help" xml:space="preserve">
-    <value>Toto je připojovací řetězec pro účet DocumentDB.</value>
+    <value>Název nastavení aplikace, které obsahuje připojovací řetězec DocumentDB</value>
   </data>
   <data name="documentDBIn_connection_label" xml:space="preserve">
     <value>Připojení účtu DocumentDB</value>
   </data>
   <data name="documentDBIn_databaseName_help" xml:space="preserve">
-    <value>Toto je název databáze v účtu DocumentDB, ze kterého se budou číst data.</value>
+    <value>Název databáze v účtu DocumentDB, ze kterého se budou číst data</value>
   </data>
   <data name="documentDBIn_databaseName_label" xml:space="preserve">
     <value>Název databáze</value>
   </data>
   <data name="documentDBIn_displayName" xml:space="preserve">
-    <value>Dokument Azure DocumentDB</value>
+    <value>Azure DocumentDB</value>
   </data>
   <data name="documentDBIn_id_help" xml:space="preserve">
-    <value>Toto je ID dokumentu, který se bude číst.</value>
+    <value>Toto je ID dokumentu, který se bude číst. Pokud se nezadá ani ID, ani dotaz SQL, vrátí se všechny dokumenty v kolekci.</value>
   </data>
   <data name="documentDBIn_id_label" xml:space="preserve">
-    <value>ID dokumentu</value>
+    <value>ID dokumentu (nepovinné)</value>
   </data>
   <data name="documentDBIn_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže vstupní vazba.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="documentDBIn_name_label" xml:space="preserve">
     <value>Název parametru dokumentu</value>
@@ -472,7 +472,7 @@
     <value>Název kolekce</value>
   </data>
   <data name="documentDBOut_connection_help" xml:space="preserve">
-    <value>Toto je připojovací řetězec pro účet DocumentDB.</value>
+    <value>Název nastavení aplikace, které obsahuje připojovací řetězec DocumentDB</value>
   </data>
   <data name="documentDBOut_connection_label" xml:space="preserve">
     <value>Připojení účtu DocumentDB</value>
@@ -493,7 +493,7 @@
     <value>Dokument Azure DocumentDB</value>
   </data>
   <data name="documentDBOut_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže výstupní vazba.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="documentDBOut_name_label" xml:space="preserve">
     <value>Název parametru dokumentu</value>
@@ -502,16 +502,16 @@
     <value>HTTP</value>
   </data>
   <data name="httpOut_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže výstupní vazba.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="httpOut_name_label" xml:space="preserve">
     <value>Název parametru odpovědi</value>
   </data>
   <data name="httpTrigger_authLevel_help" xml:space="preserve">
-    <value>Úroveň autorizace určuje, jestli vyžadujete klíč rozhraní API a který klíč se má použít. Funkce používá klíč funkce, zatímco správce používá váš hlavní klíč. Když je vybraná vaše funkce, hlavní klíč a klíč funkce se zobrazují na portálu na panelu pro správu klíčů. Pokud chcete používat ověřování podle uživatelů, přejděte na nastavení aplikace Function App.</value>
+    <value>Úroveň autorizace určuje, jestli funkce vyžaduje klíč rozhraní API a který klíč se má použít. Funkce používá klíč funkce, zatímco správce používá váš hlavní klíč. Když vyberete svoji funkci, hlavní klíč a klíč funkce se zobrazí na portálu na panelu pro správu klíčů. Pokud chcete používat ověřování podle uživatelů, přejděte na nastavení aplikace Function App.</value>
   </data>
   <data name="manualTrigger_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže aktivační událost.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="manualTrigger_name_label" xml:space="preserve">
     <value>Název parametru</value>
@@ -523,7 +523,7 @@
     <value>Vyhledání klíče API (volitelné)</value>
   </data>
   <data name="mobileTableIn_connection_help" xml:space="preserve">
-    <value>Toto je název nastavení aplikace, který určuje adresu URL mobilní aplikace.</value>
+    <value>Název nastavení aplikace, které obsahuje adresu URL mobilní aplikace</value>
   </data>
   <data name="mobileTableIn_connection_label" xml:space="preserve">
     <value>Vyhledání adresy URL mobilní aplikace</value>
@@ -538,13 +538,13 @@
     <value>ID záznamu</value>
   </data>
   <data name="mobileTableIn_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže vstupní vazba.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="mobileTableIn_name_label" xml:space="preserve">
     <value>Název parametru záznamu</value>
   </data>
   <data name="mobileTableIn_tableName_help" xml:space="preserve">
-    <value>Toto je název tabulky v mobilní aplikaci, ze které se budou číst data.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="mobileTableIn_tableName_label" xml:space="preserve">
     <value>Název tabulky</value>
@@ -556,7 +556,7 @@
     <value>Vyhledání klíče API (volitelné)</value>
   </data>
   <data name="mobileTableOut_connection_help" xml:space="preserve">
-    <value>Toto je název nastavení aplikace, který určuje adresu URL mobilní aplikace.</value>
+    <value>Název nastavení aplikace, které obsahuje adresu URL mobilní aplikace</value>
   </data>
   <data name="mobileTableOut_connection_label" xml:space="preserve">
     <value>Vyhledání adresy URL mobilní aplikace</value>
@@ -565,19 +565,19 @@
     <value>Záznam tabulky Azure Mobile</value>
   </data>
   <data name="mobileTableOut_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže výstupní vazba.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="mobileTableOut_name_label" xml:space="preserve">
     <value>Název parametru záznamu</value>
   </data>
   <data name="mobileTableOut_tableName_help" xml:space="preserve">
-    <value>Toto je název tabulky v mobilní aplikaci, do které se budou zapisovat data.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="mobileTableOut_tableName_label" xml:space="preserve">
     <value>Název tabulky</value>
   </data>
   <data name="notificationHubOut_connection_help" xml:space="preserve">
-    <value>Toto je připojovací řetězec pro obor názvů centra oznámení.</value>
+    <value>Název nastavení aplikace, které obsahuje připojovací řetězec pro obor názvů centra oznámení.</value>
   </data>
   <data name="notificationHubOut_connection_label" xml:space="preserve">
     <value>Připojení oboru názvů Notification Hubs</value>
@@ -592,7 +592,7 @@
     <value>Název Centra oznámení</value>
   </data>
   <data name="notificationHubOut_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže výstupní vazba.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="notificationHubOut_name_label" xml:space="preserve">
     <value>Název parametru oznámení</value>
@@ -628,37 +628,37 @@
     <value>Adresa odesílatele</value>
   </data>
   <data name="sendGrid_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže výstupní vazba.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="sendGrid_name_label" xml:space="preserve">
     <value>Název parametru zprávy</value>
   </data>
   <data name="sendGrid_subject_help" xml:space="preserve">
-    <value>Toto je řádek předmětu, který se použije ve zprávě. Pokud se nezadá tady, dá se zadat v kódu.</value>
+    <value>Řádek předmětu, který se použije ve zprávě. Pokud se neposkytne tady, dá se zadat v kódu.</value>
   </data>
   <data name="sendGrid_subject_label" xml:space="preserve">
     <value>Předmět zprávy</value>
   </data>
   <data name="sendGrid_text_help" xml:space="preserve">
-    <value>Toto je text zprávy, který se použije ve zprávě. Pokud se nezadá tady, dá se zadat v kódu.</value>
+    <value>Text zprávy, který se použije ve zprávě. Pokud se neposkytne tady, dá se zadat v kódu.</value>
   </data>
   <data name="sendGrid_text_label" xml:space="preserve">
     <value>Text zprávy</value>
   </data>
   <data name="sendGrid_to_help" xml:space="preserve">
-    <value>Toto je e-mailová adresa, na kterou se má zpráva poslat. Může mít tvar user@host.com nebo Zobrazované jméno &lt;user@host.com&gt;. Pokud se tato hodnota nezadá tady, dá se zadat v kódu.</value>
+    <value>E-mailová adresa, na kterou se má zpráva poslat. Může mít tvar user@host.com nebo Zobrazované jméno &lt;user@host.com&gt;. Pokud se tato hodnota neposkytne tady, dá se zadat v kódu.</value>
   </data>
   <data name="sendGrid_to_label" xml:space="preserve">
     <value>Na adresu</value>
   </data>
   <data name="serviceBusOut_accessRights_help" xml:space="preserve">
-    <value>Toto jsou přístupová práva, která klient má k předplatnému fronty nebo tématu.</value>
+    <value>Přístupová práva připojovacího řetězce služby Service Bus. Pokud používáte připojovací řetězec, který nemá oprávnění pro správu, povolte pomocí tohoto oprávnění možnost odesílat.</value>
   </data>
   <data name="serviceBusOut_accessRights_label" xml:space="preserve">
-    <value>AccessRights</value>
+    <value>Přístupová práva</value>
   </data>
   <data name="serviceBusOut_connection_help" xml:space="preserve">
-    <value>Toto je připojovací řetězec pro Service Bus. Ujistěte se, že má oprávnění k odesílání.</value>
+    <value>Název nastavení aplikace, které obsahuje připojovací řetězec služby Service Bus. Připojovací řetězec musí mít oprávnění k odesílání.</value>
   </data>
   <data name="serviceBusOut_connection_label" xml:space="preserve">
     <value>Připojení k Service Bus</value>
@@ -667,7 +667,7 @@
     <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusOut_messageType_help" xml:space="preserve">
-    <value>Toto je typ zprávy Service Bus. Umožňuje vám zvolit si mezi Frontami a Tématy.</value>
+    <value>Typ zprávy Service Bus (buď Fronty, nebo Témata)</value>
   </data>
   <data name="serviceBusOut_messageType_label" xml:space="preserve">
     <value>Typ zprávy</value>
@@ -679,37 +679,37 @@
     <value>Téma Service Bus</value>
   </data>
   <data name="serviceBusOut_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže výstupní vazba.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="serviceBusOut_name_label" xml:space="preserve">
     <value>Název parametru zprávy</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>Název fronty musí začínat a končit písmenem nebo číslem a může obsahovat jenom malá písmena, čísla, tečku a spojovník. Název musí být dlouhý od 3 do 63 znaků.</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
-    <value>Toto je fronta, na kterou se pošle zpráva.</value>
+    <value>Fronta, na kterou se pošle zpráva</value>
   </data>
   <data name="serviceBusOut_queueName_label" xml:space="preserve">
     <value>Název fronty</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>Název tématu musí začínat a končit písmenem nebo číslem a může obsahovat jenom malá písmena, čísla, tečku a spojovník. Název musí být dlouhý od 3 do 63 znaků.</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
-    <value>Toto je téma, na které se pošle zpráva.</value>
+    <value>Téma, na které se pošle zpráva</value>
   </data>
   <data name="serviceBusOut_topicName_label" xml:space="preserve">
     <value>Název tématu</value>
   </data>
   <data name="serviceBusTrigger_accessRights_help" xml:space="preserve">
-    <value>Toto jsou přístupová práva, která klient má k předplatnému fronty nebo tématu.</value>
+    <value>Přístupová práva připojovacího řetězce služby Service Bus. Pokud používáte připojovací řetězec, který nemá oprávnění pro správu, povolte pomocí tohoto oprávnění možnost odesílat.</value>
   </data>
   <data name="serviceBusTrigger_accessRights_label" xml:space="preserve">
-    <value>AccessRights</value>
+    <value>Přístupová práva</value>
   </data>
   <data name="serviceBusTrigger_connection_help" xml:space="preserve">
-    <value>Toto je připojovací řetězec pro Service Bus. Ujistěte se, že má oprávnění naslouchat.</value>
+    <value>Název nastavení aplikace, které obsahuje připojovací řetězec služby Service Bus. Připojovací řetězec musí mít oprávnění k naslouchání.</value>
   </data>
   <data name="serviceBusTrigger_connection_label" xml:space="preserve">
     <value>Připojení k Service Bus</value>
@@ -718,7 +718,7 @@
     <value>Azure Service Bus</value>
   </data>
   <data name="serviceBusTrigger_messageType_help" xml:space="preserve">
-    <value>Toto je typ zprávy Service Bus. Umožňuje vám zvolit si mezi Frontami a Tématy.</value>
+    <value>Typ zprávy Service Bus (buď Fronty, nebo Témata)</value>
   </data>
   <data name="serviceBusTrigger_messageType_label" xml:space="preserve">
     <value>Typ zprávy</value>
@@ -730,34 +730,34 @@
     <value>Téma Service Bus</value>
   </data>
   <data name="serviceBusTrigger_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže aktivační událost.</value>
+    <value>Název, pomocí kterého tato vazba aktivuje v kódu</value>
   </data>
   <data name="serviceBusTrigger_name_label" xml:space="preserve">
     <value>Název parametru zprávy</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>Název fronty musí začínat a končit písmenem nebo číslem a může obsahovat jenom malá písmena, čísla, tečku a spojovník. Název musí být dlouhý od 3 do 63 znaků.</value>
+    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
-    <value>Toto je název fronty, ze které se bude číst zpráva.</value>
+    <value>Fronta, ze které se bude číst zpráva</value>
   </data>
   <data name="serviceBusTrigger_queueName_label" xml:space="preserve">
     <value>Název fronty</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>Název předplatného musí začínat a končit písmenem nebo číslem a může obsahovat jenom malá písmena, čísla, tečku a spojovník. Název musí být dlouhý od 3 do 63 znaků.</value>
+    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
-    <value>Toto je název předplatného v tématu, se kterým se vytvoří vazba.</value>
+    <value>Název předplatného v tématu, se kterým se vytvoří vazba</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_label" xml:space="preserve">
     <value>Název předplatného</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>Název tématu musí začínat a končit písmenem nebo číslem a může obsahovat jenom malá písmena, čísla, tečku a spojovník. Název musí být dlouhý od 3 do 63 znaků.</value>
+    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
-    <value>Toto je název tématu, ze kterého se bude číst zpráva.</value>
+    <value>Název tématu, ze kterého se bude číst zpráva</value>
   </data>
   <data name="serviceBusTrigger_topicName_label" xml:space="preserve">
     <value>Název tématu</value>
@@ -766,40 +766,40 @@
     <value>Azure Table Storage</value>
   </data>
   <data name="tableIn_filter_help" xml:space="preserve">
-    <value>Toto je volitelný výraz dotazu, který se použije k filtrování výsledků dotazu na tabulku. Toto nastavení nejde použít pro funkci jazyka C#.</value>
+    <value>Volitelný výraz dotazu, který se použije k filtrování výsledků dotazu na tabulku. Toto nastavení nejde použít pro funkce jazyka C#.</value>
   </data>
   <data name="tableIn_filter_label" xml:space="preserve">
     <value>Filtr dotazu (volitelné)</value>
   </data>
   <data name="tableIn_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže vstupní vazba.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="tableIn_name_label" xml:space="preserve">
     <value>Název parametru tabulky</value>
   </data>
   <data name="tableIn_partitionKey_help" xml:space="preserve">
-    <value>Toto je hodnota sloupce s klíči oddílů v tabulce. Vrátí se záznamy s odpovídajícím klíčem oddílu nebo řádku. Spolu s nastavením klíče řádku je nutné nakonfigurovat i nastavení klíče oddílu.</value>
+    <value>Název sloupce s klíči oddílů v tabulce. Vrátí se záznamy s odpovídajícím klíčem oddílu a klíčem řádku. Když se poskytne klíč oddílu, musí se poskytnout i klíč řádku.</value>
   </data>
   <data name="tableIn_partitionKey_label" xml:space="preserve">
     <value>Klíč oddílu (volitelné)</value>
   </data>
   <data name="tableIn_rowKey_help" xml:space="preserve">
-    <value>Toto je hodnota sloupce s klíči řádků v tabulce. Vrátí se záznamy s odpovídajícím klíčem řádku nebo oddílu. Spolu s nastavením klíče řádku je nutné nakonfigurovat i nastavení klíče oddílu.</value>
+    <value>Název sloupce s klíči oddílů v tabulce. Vrátí se záznamy s odpovídajícím klíčem oddílu a klíčem řádku. Když se poskytne klíč oddílu, musí se poskytnout i klíč řádku.</value>
   </data>
   <data name="tableIn_rowKey_label" xml:space="preserve">
     <value>Klíč řádku (volitelné)</value>
   </data>
   <data name="tableIn_tableName_errorText" xml:space="preserve">
-    <value>Název tabulky musí být alfanumerický řetězec dlouhý 3 až 63 znaků. Nemůže začínat číslem.</value>
+    <value>Název tabulky musí být alfanumerický řetězec dlouhý 3 až 63 znaků. Nemůže začínat číslicí.</value>
   </data>
   <data name="tableIn_tableName_help" xml:space="preserve">
-    <value>Toto je název tabulky v účtu úložiště, ze které se budou číst data.</value>
+    <value>Název tabulky v účtu úložiště, ze které se budou číst data</value>
   </data>
   <data name="tableIn_tableName_label" xml:space="preserve">
     <value>Název tabulky</value>
   </data>
   <data name="tableIn_take_help" xml:space="preserve">
-    <value>Toto je celé číslo pro počet záznamů. Podle toho, jaký je obsah tabulky a jaké filtry se použily, můžete dostat méně výsledků, než je toto číslo. Toto nastavení nejde použít pro funkci jazyka C#.</value>
+    <value>Celočíselná hodnota pro maximální počet vrácených záznamů. Podle toho, jaký je obsah tabulky a jaké filtry se použily, můžete dostat méně výsledků, než je toto číslo. Toto nastavení nejde použít pro funkce jazyka C#.</value>
   </data>
   <data name="tableIn_take_label" xml:space="preserve">
     <value>Maximální počet záznamů, které se přečtou (volitelné)</value>
@@ -808,16 +808,16 @@
     <value>Azure Table Storage</value>
   </data>
   <data name="tableout_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže výstupní vazba.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="tableout_name_label" xml:space="preserve">
     <value>Název parametru tabulky</value>
   </data>
   <data name="table_tableName_errorText" xml:space="preserve">
-    <value>Název tabulky musí být alfanumerický řetězec dlouhý 3 až 63 znaků. Nemůže začínat číslem.</value>
+    <value>Název tabulky musí být alfanumerický řetězec dlouhý 3 až 63 znaků. Nemůže začínat číslicí.</value>
   </data>
   <data name="table_tableName_help" xml:space="preserve">
-    <value>Toto je název tabulky v účtu úložiště, do které se budou zapisovat data.</value>
+    <value>Název tabulky v účtu úložiště, do které se budou zapisovat data</value>
   </data>
   <data name="table_tableName_label" xml:space="preserve">
     <value>Název tabulky</value>
@@ -829,7 +829,7 @@
     <value>Funkce jazyka C#, která se spustí pokaždé, když se do zadaného kontejneru přidá objekt blob</value>
   </data>
   <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka F#, která se spustí pokaždé, když se do zadaného kontejneru přidá objekt blob</value>
+    <value>Funkce jazyka F#, která se spustí pokaždé, když se do zadaného kontejneru přidá objekt blob</value>
   </data>
   <data name="BlobTriggerNodeJS_description" xml:space="preserve">
     <value>Funkce JavaScriptu, která se spustí pokaždé, když se do zadaného kontejneru přidá objekt blob</value>
@@ -865,7 +865,7 @@
     <value>Funkce jazyka C#, která se spustí pokaždé, když centrum událostí přijme novou událost</value>
   </data>
   <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka F#, která se spustí pokaždé, když centrum událostí přijme novou událost</value>
+    <value>Funkce jazyka F#, která se spustí pokaždé, když centrum událostí přijme novou událost</value>
   </data>
   <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
     <value>Funkce JavaScriptu, která se spustí pokaždé, když centrum událostí přijme novou událost</value>
@@ -877,7 +877,7 @@
     <value>Funkce jazyka C#, která zpracovává obrázky a vrací ohraničující obdélník ploch</value>
   </data>
   <data name="FaceLocatorFSharp_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka F#, která zpracovává obrázky a vrací ohraničující obdélník ploch</value>
+    <value>Funkce jazyka F#, která zpracovává obrázky a vrací ohraničující obdélník ploch</value>
   </data>
   <data name="FaceLocatorNodeJS_description" xml:space="preserve">
     <value>Funkce jazyka JavaScript, která zpracovává obrázky a vrací ohraničující obdélník ploch</value>
@@ -886,7 +886,7 @@
     <value>Funkce jazyka C#, která se spustí pokaždé, když přijme požadavek webhooku</value>
   </data>
   <data name="GenericWebhookFSharp_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka F#, která se spustí pokaždé, když přijme požadavek webhooku</value>
+    <value>Funkce jazyka F#, která se spustí pokaždé, když dostane požadavek webhooku</value>
   </data>
   <data name="GenericWebhookNodeJS_description" xml:space="preserve">
     <value>Funkce JavaScriptu, která se spustí pokaždé, když přijme požadavek webhooku</value>
@@ -895,13 +895,13 @@
     <value>Funkce JavaScriptu, která se spustí pokaždé, když přijme požadavek webhooku GitHub</value>
   </data>
   <data name="GitHubCommenterFSharp_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka F#, která se spustí pokaždé, když přijme požadavek webhooku GitHubu</value>
+    <value>Funkce jazyka F#, která se spustí pokaždé, když dostane požadavek webhooku GitHubu</value>
   </data>
   <data name="GithubWebhookCSharp_description" xml:space="preserve">
     <value>Funkce jazyka C#, která se spustí pokaždé, když přijme požadavek webhooku GitHub</value>
   </data>
   <data name="GithubWebhookFSharp_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka F#, která se spustí pokaždé, když přijme požadavek webhooku GitHubu</value>
+    <value>Funkce jazyka F#, která se spustí pokaždé, když dostane požadavek webhooku GitHubu</value>
   </data>
   <data name="GithubWebhookNodeJS_description" xml:space="preserve">
     <value>Funkce JavaScriptu, která se spustí pokaždé, když přijme požadavek webhooku GitHub</value>
@@ -910,7 +910,7 @@
     <value>Funkce jazyka C#, která načte entity z tabulky úložiště, když přijme požadavek HTTP</value>
   </data>
   <data name="HttpGETCRUDFSharp_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka F#, která načítá entity z tabulky úložiště, když přijme požadavek HTTP</value>
+    <value>Funkce jazyka F#, která načítá entity z tabulky úložiště, když přijme požadavek HTTP</value>
   </data>
   <data name="HttpGETCRUDNodeJS_description" xml:space="preserve">
     <value>Funkce JavaScriptu, která načte entity z tabulky úložiště, když přijme požadavek HTTP</value>
@@ -922,7 +922,7 @@
     <value>Funkce jazyka C#, která přidá entity do tabulky úložiště, když přijme požadavek HTTP</value>
   </data>
   <data name="HttpPOSTCRUDFSharp_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka F#, která přidává entity do tabulky úložiště, když přijme požadavek HTTP</value>
+    <value>Funkce jazyka F#, která přidává entity do tabulky úložiště, když přijme požadavek HTTP</value>
   </data>
   <data name="HttpPOSTCRUDNodeJS_description" xml:space="preserve">
     <value>Funkce JavaScriptu, která přidá entity do tabulky úložiště, když přijme požadavek HTTP</value>
@@ -931,7 +931,7 @@
     <value>Funkce jazyka C#, která aktualizuje entity v tabulce úložiště, když přijme požadavek HTTP</value>
   </data>
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka F#, která aktualizuje entity v tabulce úložiště, když přijme požadavek HTTP</value>
+    <value>Funkce jazyka F#, která aktualizuje entity v tabulce úložiště, když přijme požadavek HTTP</value>
   </data>
   <data name="HttpTriggerBatch_description" xml:space="preserve">
     <value>(Experimentální) Funkce jazyka Batch, která se spustí pokaždé, když přijme požadavek HTTP</value>
@@ -940,7 +940,7 @@
     <value>Funkce jazyka C#, která se spustí pokaždé, když přijme požadavek HTTP</value>
   </data>
   <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka F#, která se spustí pokaždé, když dostane požadavek HTTP</value>
+    <value>Funkce jazyka F#, která se spustí pokaždé, když dostane požadavek HTTP</value>
   </data>
   <data name="HttpTriggerNodeJS_description" xml:space="preserve">
     <value>Funkce JavaScriptu, která se spustí pokaždé, když přijme požadavek HTTP</value>
@@ -952,13 +952,13 @@
     <value>Funkce jazyka C#, která vytvoří obrázky se změněnou velikostí pokaždé, když se do zadaného kontejneru přidá objekt blob</value>
   </data>
   <data name="ImageResizerFSharp_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka F#, která vytvoří obrázky se změněnou velikostí pokaždé, když se do zadaného kontejneru přidá objekt blob</value>
+    <value>Funkce jazyka F#, která vytvoří obrázky se změněnou velikostí pokaždé, když se do zadaného kontejneru přidá objekt blob</value>
   </data>
   <data name="ManualTriggerCSharp_description" xml:space="preserve">
     <value>Funkce jazyka C#, která se spouští ručně přes tlačítko Spustit na portálu</value>
   </data>
   <data name="ManualTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka F#, která se aktivuje ručně tlačítkem Spustit na portálu</value>
+    <value>Funkce jazyka F#, která se aktivuje ručně tlačítkem Spustit na portálu</value>
   </data>
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>Funkce JavaScriptu, která se aktivuje ručně přes tlačítko Spustit na portálu</value>
@@ -973,7 +973,7 @@
     <value>Funkce jazyka C#, která se spustí pokaždé, když se do zadaného úložiště Azure Queue Storage přidá zpráva</value>
   </data>
   <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka F#, která se spustí pokaždé, když se do zadaného úložiště Azure Queue Storage přidá zpráva</value>
+    <value>Funkce jazyka F#, která se spustí pokaždé, když se do zadaného úložiště Azure Queue Storage přidá zpráva</value>
   </data>
   <data name="QueueTriggerNodeJS_description" xml:space="preserve">
     <value>Funkce JavaScriptu, která se spustí pokaždé, když se do zadaného úložiště Azure Queue Storage přidá zpráva</value>
@@ -1000,7 +1000,7 @@
     <value>(Preview) Funkce JavaScriptu, která se spustí pokaždé, když se do poskytovatele externích souborů přidá soubor</value>
   </data>
   <data name="SaasFileTokenNodeJS_description" xml:space="preserve">
-    <value>Funkce jazyka JavaScript, která se spustí pokaždé, když se k poskytovateli externích souborů přidá soubor</value>
+    <value>(Preview) Funkce JavaScriptu, která se spustí pokaždé, když se do poskytovatele externích souborů přidá soubor</value>
   </data>
   <data name="SaasTableCSharp_description" xml:space="preserve">
     <value>(Experimentální) Funkce jazyka C#, která načte entity externí tabulky, když přijme požadavek HTTP</value>
@@ -1009,28 +1009,28 @@
     <value>(Experimentální) Funkce jazyka F#, která načítá entity z externí tabulky, když přijme požadavek HTTP</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka F#, která pro zadaný název kontejneru a objektu blob vygeneruje token SAS pro Azure Storage</value>
+    <value>Funkce jazyka F#, která pro zadaný název kontejneru a objektu blob generuje token SAS pro Azure Storage</value>
   </data>
   <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka C#, která pošle e-mail s potvrzením, když se do konkrétní fronty přidá nová položka</value>
+    <value>Funkce jazyka C#, která pošle e-mail s potvrzením, když se do konkrétní fronty přidá nová položka</value>
   </data>
   <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka F#, která pošle e-mail s potvrzením, když se do konkrétní fronty přidá nová položka</value>
+    <value>Funkce jazyka F#, která pošle e-mail s potvrzením, když se do konkrétní fronty přidá nová položka</value>
   </data>
   <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka C#, která pošle e-mail s potvrzením, když se do konkrétní fronty přidá nová položka</value>
+    <value>Funkce JavaScriptu, která pošle e-mail s potvrzením, když se do konkrétní fronty přidá nová položka</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
-    <value>Funkce JavaScriptu, která se spustí pokaždé, když se do zadané fronty Service Bus přidá zpráva</value>
+    <value>Funkce jazyka C#, která se spustí pokaždé, když se do zadané fronty Service Bus přidá zpráva</value>
   </data>
   <data name="ServiceBusQueueTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka F#, která se spustí pokaždé, když se do zadané fronty služby Service Bus přidá zpráva</value>
+    <value>Funkce jazyka F#, která se spustí pokaždé, když se do zadané fronty služby Service Bus přidá zpráva</value>
   </data>
   <data name="ServiceBusQueueTriggerNodeJS_description" xml:space="preserve">
     <value>Funkce JavaScriptu, která se spustí pokaždé, když se do zadané fronty Service Bus přidá zpráva</value>
   </data>
   <data name="ServiceBusTopicTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka F#, která se spustí pokaždé, když se do zadaného tématu služby Service Bus přidá zpráva</value>
+    <value>Funkce jazyka F#, která se spustí pokaždé, když se do zadaného tématu služby Service Bus přidá zpráva</value>
   </data>
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>Funkce JavaScriptu, která se spustí pokaždé, když se do zadaného tématu Service Bus přidá zpráva</value>
@@ -1039,7 +1039,7 @@
     <value>Funkce jazyka C#, která se bude spouštět podle zadaného plánu</value>
   </data>
   <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) Funkce jazyka F#, která se spustí podle zadaného plánu</value>
+    <value>Funkce jazyka F#, která se spustí podle zadaného plánu</value>
   </data>
   <data name="TimerTriggerNodeJS_description" xml:space="preserve">
     <value>Funkce JavaScriptu, která se bude spouštět podle zadaného plánu</value>
@@ -1063,7 +1063,7 @@
     <value>Nastavení ověřovacího tokenu</value>
   </data>
   <data name="twilioSms_body_help" xml:space="preserve">
-    <value>Toto je text zprávy, který se použije ve zprávě. Pokud se nezadá tady, dá se zadat v kódu.</value>
+    <value>Text zprávy, který se použije ve zprávě. Pokud se neposkytne tady, dá se zadat v kódu.</value>
   </data>
   <data name="twilioSms_body_label" xml:space="preserve">
     <value>Text zprávy</value>
@@ -1072,31 +1072,31 @@
     <value>Twilio SMS</value>
   </data>
   <data name="twilioSms_from_help" xml:space="preserve">
-    <value>Toto je telefonní číslo Twilio, ze kterého se má zpráva poslat. Pokud se nezadá tady, dá se zadat v kódu.</value>
+    <value>Telefonní číslo Twilio, ze kterého se má zpráva poslat. Pokud se neposkytne tady, dá se zadat v kódu.</value>
   </data>
   <data name="twilioSms_from_label" xml:space="preserve">
     <value>Z čísla</value>
   </data>
   <data name="twilioSms_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže výstupní vazba.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="twilioSms_name_label" xml:space="preserve">
     <value>Název parametru zprávy</value>
   </data>
   <data name="twilioSms_to_help" xml:space="preserve">
-    <value>Toto je telefonní číslo, na které se má zpráva poslat. Pokud se nezadá tady, dá se zadat v kódu.</value>
+    <value>Telefonní číslo, na které se má zpráva poslat. Pokud se neposkytne tady, dá se zadat v kódu.</value>
   </data>
   <data name="twilioSms_to_label" xml:space="preserve">
     <value>Na číslo</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>Název skupiny uživatelů musí začínat a končit písmenem nebo číslem a může obsahovat jenom malá písmena, čísla, tečku, spojovník a podtržítko. Je povolená i skupina $Default.</value>
+    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>Dokument Azure DocumentDB</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>Toto je váš klíč rozhraní API SendGrid.</value>
+    <value>Klíč rozhraní API SendGrid pro vývojáře.</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
     <value>Klíč rozhraní API SendGrid</value>
@@ -1108,10 +1108,10 @@
     <value>ID odesílatele</value>
   </data>
   <data name="bot_in_displayName" xml:space="preserve">
-    <value>Bot Framework</value>
+    <value>Bot Framework (Preview)</value>
   </data>
   <data name="bot_out_displayName" xml:space="preserve">
-    <value>Bot Framework</value>
+    <value>Bot Framework (Preview)</value>
   </data>
   <data name="bot_in_secret_help" xml:space="preserve">
     <value>Klíč Direct Line se dá vygenerovat na stránce konfigurace kanálu Direct Line na portálu Bot Framework. Když toto pole necháte prázdné, bude se hodnota hledat v nastavení aplikace AzureWebJobsBotFrameworkDirectLineSecret.</value>
@@ -1126,15 +1126,24 @@
     <value>Klíč Direct Line</value>
   </data>
   <data name="bot_in_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže vstupní vazba.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="bot_in_name_label" xml:space="preserve">
     <value>Název parametru robota</value>
   </data>
   <data name="bot_out_name_help" xml:space="preserve">
-    <value>Toto je název parametru v kódu, se kterým se sváže výstupní vazba.</value>
+    <value>Název, pomocí kterého tato vazba identifikuje v kódu</value>
   </data>
   <data name="bot_out_name_label" xml:space="preserve">
     <value>Název parametru robota</value>
+  </data>
+  <data name="ScheduledMailCSharp_description" xml:space="preserve">
+    <value>(Preview) Funkce jazyka C#, která pravidelně posílá e-maily</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
+    <value>Toto je nepovinný dotaz SQL, který se používá k načtení sady dokumentů. Pokud se nezadá ani ID, ani dotaz SQL, vrátí se všechny dokumenty v kolekci.</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
+    <value>Dotaz SQL (nepovinný)</value>
   </data>
 </root>
