@@ -26,7 +26,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
 
     var connection = new ConnectionSettings
     {
-        Tenant = "[[Replace with AAD tenant value]]",
+        Tenant = "common",
         EnvironmentId = "[[Replace with PowerApps environment ID value]]",
         Credentials = new UserImpersonationCredentialsSettings
         {
