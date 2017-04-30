@@ -4,7 +4,8 @@ using System.Diagnostics;
 using Microsoft.ApplicationInsights;
 using Microsoft.ApplicationInsights.DataContracts;
 
-private static TelemetryClient telemetryClient = new TelemetryClient { InstrumentationKey = ConfigurationManager.AppSettings["AIIKEY"] };
+// configure AI_IKEY accordingly for your Application Insights compnent
+private static TelemetryClient telemetryClient = new TelemetryClient { InstrumentationKey = ConfigurationManager.AppSettings["AI_IKEY"] };
 private static HttpClient httpClient = new HttpClient();
 
 public static async Task Run(TimerInfo myTimer, TraceWriter log)
@@ -14,7 +15,7 @@ public static async Task Run(TimerInfo myTimer, TraceWriter log)
         log.Warning($"[Warning]: Timer is running late! Last ran at: {myTimer.ScheduleStatus.Last}");
     }
 
-    log.Info($"Executing availability test run at: {DateTime.Now}");
+    // configure URL accordingly for your web app
     await AvailabilityTestRun(
         name: "AvailabilityTestFunction",
         uri: "https://azure.microsoft.com/en-us/services/application-insights",
@@ -24,10 +25,11 @@ public static async Task Run(TimerInfo myTimer, TraceWriter log)
 
 private static async Task AvailabilityTestRun(string name, string uri, TraceWriter log)
 {
-    log.Info($"Executing availability test run for {name}.");
+    log.Info($"Executing availability test run for {name} at: {DateTime.Now}");
 
     try
     {
+        // REGION_NAME is a default environment variable that comes with App Service
         AvailabilityTelemetry availability = new AvailabilityTelemetry
         {
             Name = name,
