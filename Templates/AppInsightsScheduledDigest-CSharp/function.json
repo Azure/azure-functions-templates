@@ -1,0 +1,19 @@
+{
+    "disabled": false,
+    "bindings": [
+        {
+            "type": "timerTrigger",
+            "name": "myTimer",
+            "direction": "in",
+            "schedule": "0 0 2 * * *"
+        },
+        {
+            "type": "sendGrid",
+            "name": "$return",
+            "direction": "out",
+            "apiKey": "SendGridApiKey",
+            "from": "Application Insights <ai-noreply@mail.windowsazure.com>",
+            "to": "{EmailAddressToReceiveDigestReport}"
+        }
+    ]
+}

@@ -4,7 +4,8 @@ The `AppInsightsHttpAvailability` makes it incredibly easy to have a custom func
 which monitor availability and responsiveness of any web app with Application Insights executed on a schedule. 
 This sample demonstrates a simple use case of calling your web app every 5 minutes.
 
-You can also create this monitoring function from multiple supported regions so that the test can be executed from multiple locations.
+> Note that you can also create multiple `AppInsightsHttpAvailability` function from multiple [Azure regions](https://azure.microsoft.com/en-us/regions) 
+> to monitor the availability from multiple locations around the world.
 
 ## How it works
 
