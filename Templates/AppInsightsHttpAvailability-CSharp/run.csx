@@ -4,7 +4,9 @@ using System.Diagnostics;
 using Microsoft.ApplicationInsights;
 using Microsoft.ApplicationInsights.DataContracts;
 
-// configure AI_IKEY accordingly for your Application Insights compnent
+// [CONFIGURATION_REQUIRED] configure {AI_IKEY} accordingly in App Settings with Instrumentation Key obtained from Application Insights
+// [Get an Application Insights Instrumentation Key] https://docs.microsoft.com/en-us/azure/application-insights/app-insights-create-new-resource
+// [Configure Azure Function Application settings] https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings
 private static TelemetryClient telemetryClient = new TelemetryClient { InstrumentationKey = ConfigurationManager.AppSettings["AI_IKEY"] };
 private static HttpClient httpClient = new HttpClient();
 
@@ -15,7 +17,7 @@ public static async Task Run(TimerInfo myTimer, TraceWriter log)
         log.Warning($"[Warning]: Timer is running late! Last ran at: {myTimer.ScheduleStatus.Last}");
     }
 
-    // configure URL accordingly for your web app
+    // [CONFIGURATION_REQUIRED] configure {uri} accordingly for your web app
     await AvailabilityTestRun(
         name: "AvailabilityTestFunction",
         uri: "https://azure.microsoft.com/en-us/services/application-insights",
