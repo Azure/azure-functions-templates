@@ -7,8 +7,8 @@ using Microsoft.ApplicationInsights.DataContracts;
 // [CONFIGURATION_REQUIRED] configure {AI_IKEY} accordingly in App Settings with Instrumentation Key obtained from Application Insights
 // [Get an Application Insights Instrumentation Key] https://docs.microsoft.com/en-us/azure/application-insights/app-insights-create-new-resource
 // [Configure Azure Function Application settings] https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings
-private static TelemetryClient telemetryClient = new TelemetryClient { InstrumentationKey = ConfigurationManager.AppSettings["AI_IKEY"] };
-private static HttpClient httpClient = new HttpClient();
+private static readonly TelemetryClient TelemetryClient = new TelemetryClient { InstrumentationKey = ConfigurationManager.AppSettings["AI_IKEY"] };
+private static readonly HttpClient HttpClient = new HttpClient();
 
 public static async Task Run(TimerInfo myTimer, TraceWriter log)
 {
@@ -41,7 +41,7 @@ private static async Task AvailabilityTestRun(string name, string uri, TraceWrit
         var stopwatch = new Stopwatch();
         stopwatch.Start();
 
-        using (var httpResponse = await httpClient.GetAsync(uri))
+        using (var httpResponse = await HttpClient.GetAsync(uri))
         {
             // add test results to availability telemetry property
             availability.Success = httpResponse.IsSuccessStatusCode;
@@ -59,13 +59,13 @@ private static async Task AvailabilityTestRun(string name, string uri, TraceWrit
         stopwatch.Stop();
         availability.Duration = stopwatch.Elapsed;
         availability.Timestamp = DateTimeOffset.UtcNow;
-        telemetryClient.TrackAvailability(availability);
+        TelemetryClient.TrackAvailability(availability);
         log.Info($"Availability telemetry for {name} is sent.");
     }
     catch (Exception ex)
     {
         // track exception when unable to determine the Uri state
-        telemetryClient.TrackException(ex, new Dictionary<string, string>
+        TelemetryClient.TrackException(ex, new Dictionary<string, string>
             {
                 {"TestName", name},
                 {"TestUri", uri}
@@ -78,6 +78,6 @@ private static async Task AvailabilityTestRun(string name, string uri, TraceWrit
     finally
     {
         // call flush to ensure telemetries are sent
-        telemetryClient.Flush();
+        TelemetryClient.Flush();
     }
 }
