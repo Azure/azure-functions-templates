@@ -27,3 +27,5 @@ Here's how you can [Configure Azure Function Application settings](https://docs.
 Here's how you can [Setup alerts](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-alerts)  
 Here's where you can find out more about [Application Insights Analytics](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-analytics)  
 Here's where you can find out more about [Application Insights Dashboards](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-dashboards)
+
+Questions? [Application Insights forum](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights)
