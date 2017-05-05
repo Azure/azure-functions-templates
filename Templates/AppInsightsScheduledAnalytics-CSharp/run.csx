@@ -25,7 +25,9 @@ public static async Task Run(TimerInfo myTimer, TraceWriter log)
         log.Warning($"[Warning]: Timer is running late! Last ran at: {myTimer.ScheduleStatus.Last}");
     }
 
-    // update the query accordingly for your need (be sure to run it against Application Insights Analytics portal first for validation)
+    // [CONFIGURATION_REQUIRED] update the query accordingly for your need
+    // be sure to run it against Application Insights Analytics portal first for validation
+    // output should be a number if sending derived metrics
     // [Application Insights Analytics] https://docs.microsoft.com/en-us/azure/application-insights/app-insights-analytics
     await ScheduledAnalyticsRun(
         name: "ScheduledAnalyticsFunction",
