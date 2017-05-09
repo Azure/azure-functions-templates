@@ -192,13 +192,28 @@ Create a and configure a new Azure function using templates:
         1. Enter the **AAD function application secret** value from previous steps under **Client secret**.
         1. Click **OK**
     1. Click **Save** to finalize **Authentication / Authorization**.
+1. Change the **Autohrization level** to **Anonymous** to disable Function Keys, since we already configured authentication with Azure AD. Without this step, the function will not work.
 1. Name the new Function **UpdateProjectCategory**, and click **Create**.
 1. **Note** the sample code window opens under the header section marked with an **'f'** symbol.
 1. Record the configuration value **Function URL** for upcoming steps by clicking on **Get function URL** on the top right, and clicking copy.
 
-Configure the target environment and security setting of the app by replacing the corresponding bracket text in code with configuration values:
+Update the template code:
 
 1. **PowerApps environment ID** should replace `[[Replace with PowerApps environment ID value]]`.
+1. Fix an issue with the function sample code:
+    1. Replace the line of code for assigning value to the `name` variable from this:
+
+        ```cs
+        dynamic data = await req.Content.ReadAsAsync<object>();
+        string name = data?.name;
+        ```
+
+        to this:
+
+        ```cs
+        string name = await req.Content.ReadAsAsync<string>();
+        ```
+
 1. Click **Save** at the top of the pane.
 
 # Console client app creation and configuration
@@ -264,7 +279,7 @@ In **Program.cs**, copy the following code to replace the contents of **`Program
             // Get HTTP client and send request
             var client = await GetHttpClientAsync();
             var updateUriString = $"{AzureHostedResetUriString}";
-            var response = await client.PostAsJsonAsync(updateUriString, new { name = "Surface" });
+            var response = await client.PostAsJsonAsync(updateUriString, "Surface");
             Console.WriteLine($"Status: '{response.StatusCode}'");
             Console.WriteLine($"Contents: {await response.Content.ReadAsStringAsync()}");
         }
@@ -307,69 +322,53 @@ Configure the target environment and security setting of the app by replacing th
 # Advanced - PowerApps Custom API creation and configuration
 In order to call the Azure Function from an app, it first needs to be wrapped by a Custom API that defines its API structure and authentication settings.
 
-Prepare the [swagger](http://swagger.io/) file that defines your function by copying the content below to a .json file and modifying the **host** and **default code** values. You can get these values by going to the Azure Function edit page and clicking on **Copy function URL** on the top right.
+Prepare the [swagger](http://swagger.io/) file that defines your function by copying the content below to a .json file and modifying the **host** value. You can get these values by going to the Azure Function edit page and clicking on **Copy function URL** on the top right.
 
 ```javascript
 {
   "swagger": "2.0",
   "info": {
     "version": "v1",
-    "title": "ProductCategory",
-    "description": "Product Category test operations."
+    "title": "ProductCategory"
   },
   "host": "[[Replace with Azure Function app name value]].azurewebsites.net",
   "schemes": [
     "https"
   ],
-  "paths": {
+  "paths": {    
     "/api/UpdateProductCategory": {
-      "get": {
-        "tags": [
-          "UpdateProductCategory"
-        ],
+      "post": {
         "operationId": "UpdateProductCategory",
         "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json",
-          "application/xml",
-          "text/xml"
-        ],
+        "produces": [],
         "parameters": [
           {
             "name": "name",
             "in": "body",
             "required": true,
-            "type": "string"
-          },
-          {
-            "name": "code",
-            "in": "query",
-            "description": "code",
-            "default": "[[Replace with the Azure Function code value]]",
-            "type": "string"
+            "schema": {
+                "type" : "string"
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "type": "string"
-            }
+            "description": "OK"
           }
-        },
-        "summary": "Updates the description of a Product Category given a name.",
-        "description": "Update Product Category"
+        }
       }
     }
   },
-  "definitions": {},
+  "definitions": {
+  },
   "securityDefinitions": {
     "oauth2": {
       "type": "oauth2",
       "flow": "implicit",
       "authorizationUrl": "https://login.windows.net/common/oauth2/authorize",
-      "scopes": {}
+      "scopes": {
+        
+      }
     }
   }
 }
