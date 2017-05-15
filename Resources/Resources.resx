@@ -1121,6 +1121,7 @@
   </data>
   <data name="bot_out_secret_help" xml:space="preserve">
     <value>Direct Line Key can be generated from Direct Line channel configuration page in the Bot Framework portal; leaving this field empty will look for value in Application Setting 'AzureWebJobsBotFrameworkDirectLineSecret'</value>
+
   </data>
   <data name="bot_out_secret_label" xml:space="preserve">
     <value>Direct Line Key</value>
@@ -1164,7 +1165,7 @@
   <data name="cdsTemplate_warningNotConfigured" xml:space="preserve">
     <value>This template requires an AAD configuration for the function app. The template needs the following permissions:
 
-PowerApps Runtime Service - Access  PowerApps Runtime Service
+Common Data Service - Access Common Data Service
 Windows Azure Service Management API - Access Azure Service Management as organization users (preview).</value>
   </data>
   <data name="temp_category_monitoring" xml:space="preserve">
@@ -1187,5 +1188,8 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   </data>
   <data name="AppInsightsScheduledDigestCSharp_description" xml:space="preserve">
     <value>A C# function which sends a daily Application Insights telemetry report via email</value>
+  </data>
+  <data name="HttpPOST(CRUD)Queue-FSharp_description" xml:space="preserve">
+    <value>F# function that will push data to a queue on receiving a Http Post.</value>
   </data>
 </root>
