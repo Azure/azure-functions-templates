@@ -1,0 +1,67 @@
+﻿{
+    "author": "Microsoft",
+    "classifications": [
+        "Azure Function"
+    ],
+    "name": "SasToken",
+    "identity": "Azure.Function.CSharp.SasToken",
+    "groupIdentity": "Azure.Function.SasToken",
+    "shortName": "SasToken",
+    "tags": {
+        "language": "C#",
+        "type": "item"
+    },
+    "sourceName": "SasTokenCSharp",
+    "symbols": {
+        "namespace": {
+            "description": "namespace for the generated code",
+            "replaces": "Company.Function",
+            "type": "parameter"
+        },
+        "FunctionName": {
+            "type": "parameter",
+            "description": "Name of the function",
+            "defaultValue": "SasTokenCSharp",
+            "replaces": "FunctionNameValue"
+        },
+        "AccessRights": {
+            "type": "parameter",
+            "description": "Authorization level controls whether the function requires an API key and which key to use; Function uses a function key; Admin uses your master key. The function and master keys are found in the 'keys' management panel on the portal, when your function is selected.",
+            "datatype": "choice",
+            "choices": [
+                {
+                    "choice": "Function",
+                    "description": "Function"
+                },
+                {
+                    "choice": "Anonymous",
+                    "description": "Anonymous"
+                },
+                {
+                    "choice": "Admin",
+                    "description": "Admin"
+                }
+            ],
+            "replaces": "AuthLevelValue",
+            "defaultValue": "Function"
+        },
+        "Connection": {
+            "description": "The name of the app setting containing your Storage connection.",
+            "type": "parameter",
+            "defaultValue": "",
+            "replaces": "ConnectionValue"
+        },
+        "Path": {
+            "description": "This is the path within your storage account that the trigger will monitor.",
+            "type": "parameter",
+            "defaultValue": "{ContainerName}",
+            "replaces": "PathValue"
+        }
+    },
+    "primaryOutputs": [
+        {
+            "path": "SasTokenCSharp.cs"
+        }
+    ],
+    "defaultName": "SasTokenCSharp"
+}
