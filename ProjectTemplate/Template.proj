@@ -1,0 +1,36 @@
+<Project ToolsVersion="15.0" DefaultTargets="Build">
+
+  <PropertyGroup>
+    <TemplatesFolder Condition="'$(TemplatesFolder)' == ''">$(MSBuildThisFileDirectory)bin\</TemplatesFolder>
+    <IntermediateFolder Condition="'$(IntermediateFolder)' == ''">$(MSBuildThisFileDirectory)obj\</IntermediateFolder>
+    <PackageVersion Condition="'$(PackageVersion)' == ''">1.0.0</PackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <TopLevelContent Include="$([System.IO.Directory]::GetDirectories(&quot;$(MSBuildThisFileDirectory)\&quot;))" />
+    <TopLevelContent Remove="$(IntermediateFolder);$(TemplatesFolder)" />
+    <TopLevelDirectories Include="@(TopLevelContent->'%(Identity)')" />
+  </ItemGroup>
+
+  <Target Name="Deduplicate">
+    <RemoveDuplicates Inputs="@(TopLevelDirectories)">
+      <Output TaskParameter="Filtered" ItemName="TemplatePack"/>
+    </RemoveDuplicates>
+  </Target>
+
+  <Target Name="Clean">
+    <ItemGroup>
+      <ExistingPackages Include="$(TemplatesFolder)\*.nupkg" />
+    </ItemGroup>
+    <Delete Files="%(ExistingPackages.FullPath)" />
+  </Target>
+
+  <Target Name="Build" DependsOnTargets="Deduplicate" Outputs="%(TemplatePack.Identity)">
+    <RemoveDir Directories="$(IntermediateFolder);$(TemplatesFolder)\netstandard1.0" />
+    <Copy SourceFiles="build.projgen" DestinationFiles="%(TemplatePack.FullPath)\build.csproj" />
+    <MSBuild Targets="Restore;Pack" Projects="%(TemplatePack.FullPath)\build.csproj" Properties="NoWarn=2008;PackageVersion=$(PackageVersion);IntermediateFolder=$(IntermediateFolder);TemplatesFolder=$(TemplatesFolder)" />
+    <Delete Files="%(TemplatePack.FullPath)\build.csproj" />
+    <RemoveDir Directories="$(IntermediateFolder);$(TemplatesFolder)\netstandard1.0" />
+  </Target>
+
+</Project>
