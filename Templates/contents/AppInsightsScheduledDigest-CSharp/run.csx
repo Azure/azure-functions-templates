@@ -34,11 +34,13 @@ public static async Task<Mail> Run(TimerInfo myTimer, TraceWriter log)
         log: log
     );
 
+    // [CONFIGURATION_REQUIRED] configure {appName} accordingly for your app/email
+    string appName = "Your";
     var today = DateTime.Today.ToShortDateString();
     Content content = new Content
     {
         Type = "text/html",
-        Value = GetHtmlContentValue(today, result)
+        Value = GetHtmlContentValue(appName, today, result)
     };
     Mail message = new Mail()
     {
@@ -81,7 +83,8 @@ private static async Task<DigestResult> ScheduledDigestRun(string query, TraceWr
                     DependenciesDuration = resultJson.SelectToken("Tables[0].Rows[0][5]")?.ToString(),
                     TotalViews = resultJson.SelectToken("Tables[0].Rows[0][6]")?.ToObject<long>().ToString("N0"),
                     TotalExceptions = resultJson.SelectToken("Tables[0].Rows[0][7]")?.ToObject<long>().ToString("N0"),
-                    OverallAvailability = resultJson.SelectToken("Tables[0].Rows[0][8]")?.ToString()
+                    OverallAvailability = resultJson.SelectToken("Tables[0].Rows[0][8]")?.ToString(),
+                    AvailabilityDuration = resultJson.SelectToken("Tables[0].Rows[0][9]")?.ToString()
                 };
                 return result;
             }
@@ -121,18 +124,19 @@ exceptions
 ) on Row | join (
 availabilityResults
 | where timestamp > ago(1d)
-| summarize Row = 1, OverallAvailability = iff(isnan(avg(toint(success))), '------', tostring(toint(avg(toint(success)) * 10000) / 100.0))
+| summarize Row = 1, OverallAvailability = iff(isnan(avg(toint(success))), '------', tostring(toint(avg(toint(success)) * 10000) / 100.0)),
+    AvailabilityDuration = iff(isnan(avg(duration)), '------', tostring(toint(avg(duration) * 100) / 100.0))
 ) on Row
-| project TotalRequests, FailedRequests, RequestsDuration, TotalDependencies, FailedDependencies, DependenciesDuration, TotalViews, TotalExceptions, OverallAvailability
+| project TotalRequests, FailedRequests, RequestsDuration, TotalDependencies, FailedDependencies, DependenciesDuration, TotalViews, TotalExceptions, OverallAvailability, AvailabilityDuration
 ";
 }
 
-private static string GetHtmlContentValue(string today, DigestResult result)
+private static string GetHtmlContentValue(string appName, string today, DigestResult result)
 {
     // update the HTML template accordingly for your need
     return $@"
 <html><body>
-<p style='text-align: center;'><strong>Your daily telemetry report {today}</strong></p>
+<p style='text-align: center;'><strong>{appName} daily telemetry report {today}</strong></p>
 <p style='text-align: center;'>The following data shows insights based on telemetry from last 24 hours.</p>
 <table align='center' style='width: 95%; max-width: 480px;'><tbody>
 <tr>
@@ -180,6 +184,10 @@ private static string GetHtmlContentValue(string today, DigestResult result)
 <td style='min-width: 150px; text-align: left;'><strong>Overall Availability</strong></td>
 <td style='min-width: 100px; text-align: right;'><strong>{result.OverallAvailability} %</strong></td>
 </tr>
+<tr>
+<td style='min-width: 120px; padding-left: 5%; text-align: left;'>Average response time</td>
+<td style='min-width: 100px; text-align: right;'>{result.AvailabilityDuration} ms</td>
+</tr>
 </tbody></table>
 </body></html>
 ";
@@ -196,4 +204,5 @@ private struct DigestResult
     public string TotalViews;
     public string TotalExceptions;
     public string OverallAvailability;
+    public string AvailabilityDuration;
 }
