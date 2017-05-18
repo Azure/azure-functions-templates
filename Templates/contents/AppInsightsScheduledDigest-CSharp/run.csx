@@ -6,6 +6,12 @@ using System.Configuration;
 using Newtonsoft.Json.Linq;
 using SendGrid.Helpers.Mail;
 
+// This sample demonstrates a simple use case of getting digest email once a day.
+
+// Note that you can also update the query for weekly or monthly digest reports, or even to provide deeper insights.
+
+// For questions or feedbacks, please visit [Application Insights forum] https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights
+
 private const string AppInsightsApi = "https://api.applicationinsights.io/beta/apps";
 
 // [CONFIGURATION_REQUIRED] configure {AI_APP_ID} and {AI_APP_KEY} accordingly in App Settings with values obtained from Application Insights

@@ -5,7 +5,8 @@ which monitor availability and responsiveness of any web app with Application In
 This sample demonstrates a simple use case of calling your web app every 5 minutes.
 
 > Note that you can also create multiple `AppInsightsHttpAvailability` function from multiple [Azure regions](https://azure.microsoft.com/en-us/regions) 
-> to monitor the availability from multiple locations around the world.
+> to monitor the availability from multiple locations around the world.  
+> RunLocation will be configured accordingly from these regions.
 
 ## How it works
 
@@ -22,4 +23,6 @@ You also have to provide the `Application Insights Instrumentation Key` by addin
 Here's how you can [Create an Application Insights resource](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-create-new-resource)  
 Here's how you can [Configure Azure Function Application settings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings)
 
-Questions? [Application Insights forum](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights)
+## Feedbacks or Questions
+
+Please visit [Application Insights forum](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights)

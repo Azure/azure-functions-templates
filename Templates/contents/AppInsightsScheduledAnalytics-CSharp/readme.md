@@ -1,7 +1,7 @@
 # AppInsightsScheduledAnalytics - C<span>#</span>
 
 The `AppInsightsScheduledAnalytics` makes it incredibly easy to generate derived metric from your query. 
-This sample demonstrates a simple use case of calling your function every 5 minutes.
+This sample demonstrates a simple use case of generating derived metric every 5 minutes.
 
 > Note that the idea with this derived metric is that you can easily use it to setup _query-like_ alerting or dashboard.
 
@@ -28,4 +28,6 @@ Here's how you can [Setup alerts](https://docs.microsoft.com/en-us/azure/applica
 Here's where you can find out more about [Application Insights Analytics](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-analytics)  
 Here's where you can find out more about [Application Insights Dashboards](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-dashboards)
 
-Questions? [Application Insights forum](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights)
+## Feedbacks or Questions
+
+Please visit [Application Insights forum](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights)

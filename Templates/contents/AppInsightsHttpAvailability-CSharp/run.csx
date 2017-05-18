@@ -4,6 +4,14 @@ using System.Diagnostics;
 using Microsoft.ApplicationInsights;
 using Microsoft.ApplicationInsights.DataContracts;
 
+// This sample demonstrates a simple use case of calling your web app every 5 minutes.
+
+// Note that you can also create multiple functions from multiple [Azure regions](https://azure.microsoft.com/en-us/regions) 
+// to monitor the availability from multiple locations around the world.
+// RunLocation will be configured accordingly from these regions.
+
+// For questions or feedbacks, please visit [Application Insights forum] https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights
+
 // [CONFIGURATION_REQUIRED] configure {AI_IKEY} accordingly in App Settings with Instrumentation Key obtained from Application Insights
 // [Get an Application Insights Instrumentation Key] https://docs.microsoft.com/en-us/azure/application-insights/app-insights-create-new-resource
 // [Configure Azure Function Application settings] https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings

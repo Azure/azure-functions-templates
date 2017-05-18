@@ -6,6 +6,12 @@ using Microsoft.ApplicationInsights;
 using Microsoft.ApplicationInsights.DataContracts;
 using Newtonsoft.Json.Linq;
 
+// This sample demonstrates a simple use case of generating derived metric every 5 minutes.
+
+// Note that the idea with this derived metric is that you can easily use it to setup _query-like_ alerting or dashboard.
+
+// For questions or feedbacks, please visit [Application Insights forum] https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights
+
 private const string AppInsightsApi = "https://api.applicationinsights.io/beta/apps";
 
 // [CONFIGURATION_REQUIRED] configure {AI_IKEY} accordingly in App Settings with Instrumentation Key obtained from Application Insights
