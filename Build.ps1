@@ -4,19 +4,19 @@ param (
     [System.String]$templateVersion
 )
 
+$ProgressPreference = "SilentlyContinue"
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 
 function LogErrorAndExit($errorMessage, $exception) {    
-    Write-Host $errorMessage -ForegroundColor Yellow        
-    if ($exception -ne $null) {
-        Write-Host "Error occured at line:" + $exception.InvocationInfo.ScriptLineNumber -ForegroundColor Yellow
-        Write-Host $exception.Message -ForegroundColor Red
+    Write-Output $errorMessage
+    if ($exception -ne $null) {        
+        Write-Output $exception|format-list -force
     }    
     Exit
 }
 
 function LogSuccess($message) {
-    Write-Host $message -ForegroundColor Green    
+    Write-Output $message
 }
 
 function Download([string]$url, [string]$outputFilePath) {        
@@ -42,13 +42,7 @@ function Unzip([string]$zipfilePath, [string]$outputpath) {
 try {       
     $rootPath = Get-Location
     $binDirectory = Join-Path $rootPath -ChildPath "bin"
-    $templatesPath = Join-Path $rootPath -ChildPath "\Templates\"    
-       
-    Enum TargetHost {
-        Portal
-        VS
-        All
-    }
+    $templatesPath = Join-Path $rootPath -ChildPath "\Templates\"        
 
     # Start with a clean slate
     if (Test-Path $binDirectory) {
@@ -95,7 +89,7 @@ try {
     }
 
     # Build templates for portal
-    if ($target -eq [TargetHost]::All.ToString() -or $target -eq [TargetHost]::Portal.ToString()) {        
+    if ($target -eq "Portal" -or $target -eq "All") {        
 
         $portalDirectory = Join-Path $binDirectory -ChildPath "portal"
         New-Item $portalDirectory -ItemType Directory
@@ -138,7 +132,7 @@ try {
         }
     }
 
-    if ($target -eq [TargetHost]::All.ToString() -or $target -eq [TargetHost]::VS.ToString()) {        
+    if ($target -eq "VS" -or $target -eq "All") {        
         $vsDirectory = Join-Path $binDirectory -ChildPath "VS"
         New-Item $vsDirectory -ItemType Directory
 
@@ -158,7 +152,7 @@ try {
 
         # Generate a nuget package for portal templates
         $vsNuspec = Join-Path $vsSourceDirectory -ChildPath "ItemTemplates.nuspec"
-        Write-Host "nuget.exe pack $vsNuspec -Version $templateVersion -OutputDirectory $NugetPackageDir"
+        Write-Output "nuget.exe pack $vsNuspec -Version $templateVersion -OutputDirectory $NugetPackageDir"
         nuget.exe pack $vsNuspec -Version $templateVersion -OutputDirectory $NugetPackageDir
         if ($LastExitCode -ne 0) {
             LogErrorAndExit "Error creating nuget package"
