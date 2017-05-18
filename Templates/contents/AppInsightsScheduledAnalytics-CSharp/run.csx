@@ -52,6 +52,7 @@ private static async Task ScheduledAnalyticsRun(string name, string query, Trace
     try
     {
         MetricTelemetry metric = new MetricTelemetry { Name = name };
+        metric.Context.Operation.Id = requestId;
         metric.Properties.Add("TestAppId", AiAppId);
         metric.Properties.Add("TestQuery", query);
         metric.Properties.Add("TestRequestId", requestId);
@@ -86,13 +87,13 @@ private static async Task ScheduledAnalyticsRun(string name, string query, Trace
     catch (Exception ex)
     {
         // track exception when unable to determine the metric value
-        TelemetryClient.TrackException(ex, new Dictionary<string, string>
-            {
-                {"TestName", name},
-                {"TestAppId", AiAppId},
-                {"TestQuery", query},
-                {"TestRequestId", requestId}
-            });
+        var exceptionTelemetry = new ExceptionTelemetry(ex);
+        exceptionTelemetry.Context.Operation.Id = requestId;
+        exceptionTelemetry.Properties.Add("TestName", name);
+        exceptionTelemetry.Properties.Add("TestAppId", AiAppId);
+        exceptionTelemetry.Properties.Add("TestQuery", query);
+        exceptionTelemetry.Properties.Add("TestRequestId", requestId);
+        TelemetryClient.TrackException(exceptionTelemetry);
         log.Error($"[Error]: Client Request ID {requestId}: {ex.Message}");
 
         // optional - throw to fail the function
