@@ -332,7 +332,7 @@
                     "help": "$blobOut_path_help",
                     "validators": [
                         {
-                            "expression": "((^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9])|(^[{][a-zA-Z0-9]{1,126}[}])|(^[%][a-zA-Z0-9]{1,126}[%]))[\\/](\\S){0,1023}[^\\/]$",
+                            "expression": "((^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9])|(^[{][a-zA-Z0-9]{1,126}[}])|(^[%][a-zA-Z0-9]{1,126}[%]))[\\/](\\S){0,1023}[^\\/]$|(^[{][a-zA-Z0-9]{1,126}[}]$)|(^[%][a-zA-Z0-9]{1,126}[%]$)",
                             "errorText": "$blobOut_path_errorText"
                         }
                     ]
@@ -378,7 +378,7 @@
                     "help": "$blobIn_path_help",
                     "validators": [
                         {
-                            "expression": "((^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9])|(^[{][a-zA-Z0-9]{1,126}[}])|(^[%][a-zA-Z0-9]{1,126}[%]))[\\/](\\S){0,1023}[^\\/]$",
+                            "expression": "((^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9])|(^[{][a-zA-Z0-9]{1,126}[}])|(^[%][a-zA-Z0-9]{1,126}[%]))[\\/](\\S){0,1023}[^\\/]$|(^[{][a-zA-Z0-9]{1,126}[}]$)|(^[%][a-zA-Z0-9]{1,126}[%]$)",
                             "errorText": "$blobIn_patherrorText"
                         }
                     ]
@@ -923,7 +923,7 @@
                     "help": "$serviceBusTrigger_queueName_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+                            "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
                             "errorText": "$serviceBusTrigger_queueName_errorText"
                         }
                     ]
@@ -951,7 +951,7 @@
                     "help": "$serviceBusTrigger_subscriptionName_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+                            "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
                             "errorText": "$serviceBusTrigger_subscriptionName_errorText"
                         }
                     ]
@@ -1045,7 +1045,7 @@
                     "help": "$serviceBusOut_queueName_help",
                     "validators": [
                         {
-                            "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+                            "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
                             "errorText": "$serviceBusOut_queueName_errorText"
                         }
                     ]
