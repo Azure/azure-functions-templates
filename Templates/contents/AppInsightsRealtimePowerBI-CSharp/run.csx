@@ -6,7 +6,7 @@ using System.Text;
 using Newtonsoft.Json.Linq;
 
 // This sample demonstrates a simple use case of getting real-time availability percentage 
-// over last 20 minutes on Power BI at per minute refresh with specified target availability percentage.
+// over last 20 minutes onto Power BI at per minute refresh with specified target availability percentage.
 
 // Note that you can also change the query to use different metrics/segments/aggregations/filters for your need
 
@@ -43,7 +43,7 @@ public static async Task Run(TimerInfo myTimer, TraceWriter log)
         log.Warning($"[Warning]: Timer is running late! Last ran at: {myTimer.ScheduleStatus.Last}");
     }
 
-    log.Info($"Executing availability BI run at: {DateTime.Now}");
+    log.Info($"Executing real-time Power BI run at: {DateTime.Now}");
 
     // [CONFIGURATION_REQUIRED] update accordingly for your scenario
     TimeSpan availabilityInterval = TimeSpan.FromMinutes(20);

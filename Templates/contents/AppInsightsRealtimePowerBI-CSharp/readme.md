@@ -1,6 +1,6 @@
-# AppInsightsAvailabilityBI - C<span>#</span>
+# AppInsightsRealtimePowerBI - C<span>#</span>
 
-The `AppInsightsAvailabilityBI` makes it incredibly easy to push real-time data from Application Insights to Power BI. 
+The `AppInsightsRealtimePowerBI` makes it incredibly easy to push real-time data from Application Insights to Power BI. 
 This sample demonstrates a simple use case of getting real-time availability percentage 
 over last 20 minutes on Power BI at per minute refresh with specified target availability percentage.
 
@@ -11,7 +11,7 @@ over last 20 minutes on Power BI at per minute refresh with specified target ava
 
 ## How it works
 
-For a `AppInsightsAvailabilityBI` to work, 
+For a `AppInsightsRealtimePowerBI` to work, 
 you provide a schedule in the form of a [cron expression](https://en.wikipedia.org/wiki/Cron#CRON_expression) (See the link for full details). 
 A cron expression is a string with 6 separate expressions which represent a given schedule via patterns. 
 The pattern we use to represent every day is `0 * * * * *`. 
