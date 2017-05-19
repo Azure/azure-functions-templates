@@ -3,7 +3,9 @@
 The `AppInsightsScheduledAnalytics` makes it incredibly easy to generate derived metric from your query. 
 This sample demonstrates a simple use case of generating derived metric every 5 minutes.
 
-> Note that the idea with this derived metric is that you can easily use it to setup _query-like_ alerting or dashboard.
+> Note that the idea with this derived metric is that you can easily use it to setup _query-like_ alerting or dashboard. 
+> Another important usage of this is to support Autoscale, you can use this derived metric as the source for an Autoscale setting. 
+> [Get started with auto scale by custom metric in Azure](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-autoscale-scale-by-custom-metric)
 
 ## How it works
 
