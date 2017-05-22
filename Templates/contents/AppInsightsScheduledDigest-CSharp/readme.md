@@ -29,4 +29,6 @@ Here's how you can [Get your Application ID and API key](https://dev.application
 Here's how you can [Configure Azure Function Application settings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings)  
 Here's where you can find out more about [SendGrid API Key](https://sendgrid.com/docs/Classroom/Basics/API/what_is_my_api_key.html)
 
-Questions? [Application Insights forum](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights)
+## Feedbacks or Questions
+
+Please visit [Application Insights forum](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights)
