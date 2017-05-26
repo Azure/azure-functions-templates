@@ -133,7 +133,7 @@
     <value>事件参数名称</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>事件中心名称必须以字母或数字开头和结尾，并且只能包含字母、数字、连字符、句点和下划线。名称必须介于 1 到 50 个字符之间。</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>这是将接收事件的事件中心的名称。</value>
@@ -163,7 +163,7 @@
     <value>事件参数名称</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>事件中心名称必须以字母或数字开头和结尾，并且只能包含字母、数字、连字符、句点和下划线。名称必须介于 1 到 50 个字符之间。</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
     <value>从中进行触发的事件中心的名称</value>
@@ -685,7 +685,7 @@
     <value>消息参数名称</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>队列名称必须以字母或数字开头和结尾，并且只能包含字母、数字、连字符、句点和下划线。名称必须介于 1 到 50 个字符之间。</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
     <value>将向其发送消息的队列。</value>
@@ -694,7 +694,7 @@
     <value>队列名称</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>主题名称必须以字母或数字开头和结尾，并且只能包含字母、数字、连字符、句点和下划线。名称必须介于 1 到 50 个字符之间。</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
     <value>将向其发送消息的主题。</value>
@@ -736,7 +736,7 @@
     <value>消息参数名称</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>队列名称必须以字母或数字开头和结尾，并且只能包含字母、数字、连字符、句点和下划线。名称必须介于 1 到 50 个字符之间。</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
     <value>将从中读取消息的队列。</value>
@@ -745,7 +745,7 @@
     <value>队列名称</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>订阅名称必须以字母或数字开头和结尾，并且只能包含字母、数字、连字符、句点和下划线。名称必须介于 1 到 50 个字符之间。</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
     <value>要绑定到的主题内的订阅名称。</value>
@@ -754,7 +754,7 @@
     <value>订阅名</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>主题名称必须以字母或数字开头和结尾，并且只能包含字母、数字、连字符、句点和下划线。名称必须介于 1 到 50 个字符之间。</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
     <value>将从中读取消息的主题的名称。</value>
@@ -948,6 +948,9 @@
   <data name="HttpTriggerPowerShell_description" xml:space="preserve">
     <value>(预览)一个 PowerShell 函数，每当它收到 HTTP 请求时都会运行</value>
   </data>
+  <data name="HttpTriggerPython_description" xml:space="preserve">
+    <value>(试验)一个 Python 3 函数，它将在接收 HTTP 请求的任何时候运行</value>
+  </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>一个 C# 函数，每当将 blob 添加到指定容器时它都会创建已调整大小的映像</value>
   </data>
@@ -1090,7 +1093,7 @@
     <value>接收号码</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
+    <value>使用者组必须以字母或数字开头和结尾，并且只能包含字母、数字、连字符、句点和下划线。还允许使用 $Default 组。名称必须介于 1 到 50 个字符之间。</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>Azure DocumentDB 文档</value>
@@ -1121,6 +1124,7 @@
   </data>
   <data name="bot_out_secret_help" xml:space="preserve">
     <value>Direct Line 键可从 Bot Framework 门户的 Direct Line 通道配置页面生成；将此字段留空将在应用程序设置 "AzureWebJobsBotFrameworkDirectLineSecret" 中查找值</value>
+
   </data>
   <data name="bot_out_secret_label" xml:space="preserve">
     <value>Direct Line 键</value>
@@ -1145,5 +1149,56 @@
   </data>
   <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
     <value>SQL 查询 (可选)</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_help" xml:space="preserve">
+    <value>触发器输入的基数。如果输入为一条单独的消息，则选择“1 条”，如果输入为一系列消息，则选择“多条”。未指定时默认选择“1 条”。</value>
+  </data>
+  <data name="HttpTriggerCSharpWithParameters_description" xml:space="preserve">
+    <value>一个 C# 函数，每当它收到 HTTP 请求时都会运行</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_label" xml:space="preserve">
+    <value>事件中心基数</value>
+  </data>
+  <data name="HttpTriggerWithParametersNodeJS_description" xml:space="preserve">
+    <value>一个 JavaScript 函数，每当它收到 HTTP 请求时都会运行</value>
+  </data>
+  <data name="cdsWebHookCSharp_description" xml:space="preserve">
+    <value>(实验)可使用 CDS SDK 调入 CDS 环境的 CDS 函数。</value>
+  </data>
+  <data name="cdsTemplate_warningNotConfigured" xml:space="preserve">
+    <value>此模板需要针对 Function App 的 AAD 配置。模板需要下列权限:
+
+Common Data Service - 访问 Common Data Service
+Microsoft Azure Service Management API - 以组织用户身份访问 Azure Service Management (预览)。</value>
+  </data>
+  <data name="temp_category_monitoring" xml:space="preserve">
+    <value>监视</value>
+  </data>
+  <data name="AppInsightsHttpAvailability_name" xml:space="preserve">
+    <value>AppInsights Http 可用性</value>
+  </data>
+  <data name="AppInsightsHttpAvailabilityCSharp_description" xml:space="preserve">
+    <value>一个 C# 函数，它使用 Application Insights 监视任何 Web 应用的可用性和响应能力</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBI_name" xml:space="preserve">
+    <value>AppInsights 实时 Power BI</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBICSharp_description" xml:space="preserve">
+    <value>将实时可用性数据从 Application Insights 推送到 Power BI 的 C# 函数</value>
+  </data>
+  <data name="AppInsightsScheduledAnalytics_name" xml:space="preserve">
+    <value>AppInsights 计划分析</value>
+  </data>
+  <data name="AppInsightsScheduledAnalyticsCSharp_description" xml:space="preserve">
+    <value>一个 C# 函数，它从借助 Application Insights 执行应用遥测深度分析中获得指标</value>
+  </data>
+  <data name="AppInsightsScheduledDigest_name" xml:space="preserve">
+    <value>AppInsights 计划摘要</value>
+  </data>
+  <data name="AppInsightsScheduledDigestCSharp_description" xml:space="preserve">
+    <value>一个 C# 函数，它通过电子邮件发送每日 Application Insights 遥测报表</value>
+  </data>
+  <data name="HttpPOST(CRUD)Queue-FSharp_description" xml:space="preserve">
+    <value>将数据推送到队列以接收 Http Post 的 F# 函数。</value>
   </data>
 </root>

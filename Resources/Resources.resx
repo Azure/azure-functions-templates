@@ -241,7 +241,7 @@
     <value>Table Name</value>
   </data>
   <data name="variables_appSettingsHelp" xml:space="preserve">
-    <value>This is the connection string for your storage account.</value>
+    <value>The name of the app setting containing your storage account connection string.</value>
   </data>
   <data name="variables_parameterName" xml:space="preserve">
     <value>The parameter name must be an alphanumeric string of any number of characters and cannot start with a number.</value>
@@ -948,6 +948,9 @@
   <data name="HttpTriggerPowerShell_description" xml:space="preserve">
     <value>(Preview) A PowerShell function that will be run whenever it receives an HTTP request</value>
   </data>
+  <data name="HttpTriggerPython_description" xml:space="preserve">
+    <value>(Experimental) A Python 3 function that will be run whenever it receives an HTTP request</value>
+  </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>A C# function that creates resized images whenever a blob is added to a specified container</value>
   </data>
@@ -1096,7 +1099,7 @@
     <value>Azure DocumentDB Document</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>SendGrid developer API Key</value>
+    <value>The name of the app setting containing your SendGrid developer API key.</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
     <value>SendGrid API Key</value>
@@ -1121,6 +1124,7 @@
   </data>
   <data name="bot_out_secret_help" xml:space="preserve">
     <value>Direct Line Key can be generated from Direct Line channel configuration page in the Bot Framework portal; leaving this field empty will look for value in Application Setting 'AzureWebJobsBotFrameworkDirectLineSecret'</value>
+
   </data>
   <data name="bot_out_secret_label" xml:space="preserve">
     <value>Direct Line Key</value>
@@ -1164,10 +1168,37 @@
   <data name="cdsTemplate_warningNotConfigured" xml:space="preserve">
     <value>This template requires an AAD configuration for the function app. The template needs the following permissions:
 
-PowerApps Runtime Service - Access  PowerApps Runtime Service
+Common Data Service - Access Common Data Service
 Windows Azure Service Management API - Access Azure Service Management as organization users (preview).</value>
+  </data>
+  <data name="temp_category_monitoring" xml:space="preserve">
+    <value>Monitoring</value>
+  </data>
+  <data name="AppInsightsHttpAvailability_name" xml:space="preserve">
+    <value>AppInsights Http Availability</value>
   </data>
   <data name="AppInsightsHttpAvailabilityCSharp_description" xml:space="preserve">
     <value>A C# function which monitors availability and responsiveness of any web app with Application Insights</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBI_name" xml:space="preserve">
+    <value>AppInsights Real-time Power BI</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBICSharp_description" xml:space="preserve">
+    <value>A C# function which pushes real-time availability data from Application Insights to Power BI</value>
+  </data>
+  <data name="AppInsightsScheduledAnalytics_name" xml:space="preserve">
+    <value>AppInsights Scheduled Analytics</value>
+  </data>
+  <data name="AppInsightsScheduledAnalyticsCSharp_description" xml:space="preserve">
+    <value>A C# function which derives metrics from performing deep analysis of your app telemetry with Application Insights</value>
+  </data>
+  <data name="AppInsightsScheduledDigest_name" xml:space="preserve">
+    <value>AppInsights Scheduled Digest</value>
+  </data>
+  <data name="AppInsightsScheduledDigestCSharp_description" xml:space="preserve">
+    <value>A C# function which sends a daily Application Insights telemetry report via email</value>
+  </data>
+  <data name="HttpPOST(CRUD)Queue-FSharp_description" xml:space="preserve">
+    <value>F# function that will push data to a queue on receiving a Http Post.</value>
   </data>
 </root>

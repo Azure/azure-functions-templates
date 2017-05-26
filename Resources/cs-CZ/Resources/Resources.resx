@@ -133,7 +133,7 @@
     <value>Název parametru události</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Název centra událostí musí začínat a končit písmenem nebo číslicí a může obsahovat jenom písmena, číslice, spojovník, tečku a podtržítko. Název musí být dlouhý od 1 do 50 znaků.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>Toto je název centra událostí, do kterého se budou posílat události.</value>
@@ -163,7 +163,7 @@
     <value>Název parametru události</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Název centra událostí musí začínat a končit písmenem nebo číslicí a může obsahovat jenom písmena, číslice, spojovník, tečku a podtržítko. Název musí být dlouhý od 1 do 50 znaků.</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
     <value>Název centra událostí, ze kterého se budou spouštět aktivační události</value>
@@ -685,7 +685,7 @@
     <value>Název parametru zprávy</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Název fronty musí začínat a končit písmenem nebo číslicí a může obsahovat jenom písmena, číslice, spojovník, tečku a podtržítko. Název musí být dlouhý od 1 do 50 znaků.</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
     <value>Fronta, na kterou se pošle zpráva</value>
@@ -694,7 +694,7 @@
     <value>Název fronty</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Název tématu musí začínat a končit písmenem nebo číslicí a může obsahovat jenom písmena, číslice, spojovník, tečku a podtržítko. Název musí být dlouhý od 1 do 50 znaků.</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
     <value>Téma, na které se pošle zpráva</value>
@@ -736,7 +736,7 @@
     <value>Název parametru zprávy</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Název fronty musí začínat a končit písmenem nebo číslicí a může obsahovat jenom písmena, číslice, spojovník, tečku a podtržítko. Název musí být dlouhý od 1 do 50 znaků.</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
     <value>Fronta, ze které se bude číst zpráva</value>
@@ -745,7 +745,7 @@
     <value>Název fronty</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Název předplatného musí začínat a končit písmenem nebo číslicí a může obsahovat jenom písmena, číslice, spojovník, tečku a podtržítko. Název musí být dlouhý od 1 do 50 znaků.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
     <value>Název předplatného v tématu, se kterým se vytvoří vazba</value>
@@ -754,7 +754,7 @@
     <value>Název předplatného</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Název tématu musí začínat a končit písmenem nebo číslicí a může obsahovat jenom písmena, číslice, spojovník, tečku a podtržítko. Název musí být dlouhý od 1 do 50 znaků.</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
     <value>Název tématu, ze kterého se bude číst zpráva</value>
@@ -948,6 +948,9 @@
   <data name="HttpTriggerPowerShell_description" xml:space="preserve">
     <value>(Preview) Funkce PowerShellu, která se spustí pokaždé, když přijme požadavek HTTP</value>
   </data>
+  <data name="HttpTriggerPython_description" xml:space="preserve">
+    <value>(Experimentální) Funkce jazyka Python 3, která se spustí pokaždé, když přijme požadavek HTTP</value>
+  </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>Funkce jazyka C#, která vytvoří obrázky se změněnou velikostí pokaždé, když se do zadaného kontejneru přidá objekt blob</value>
   </data>
@@ -1090,7 +1093,7 @@
     <value>Na číslo</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
+    <value>Skupina uživatelů musí začínat a končit písmenem nebo číslicí a může obsahovat jenom písmena, číslice, tečku, spojovník a podtržítko. Použít se může i skupina $Default. Název musí být dlouhý od 1 do 50 znaků.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>Dokument Azure DocumentDB</value>
@@ -1121,6 +1124,7 @@
   </data>
   <data name="bot_out_secret_help" xml:space="preserve">
     <value>Klíč Direct Line se dá vygenerovat na stránce konfigurace kanálu Direct Line na portálu Bot Framework. Když toto pole necháte prázdné, bude se hodnota hledat v nastavení aplikace AzureWebJobsBotFrameworkDirectLineSecret.</value>
+
   </data>
   <data name="bot_out_secret_label" xml:space="preserve">
     <value>Klíč Direct Line</value>
@@ -1145,5 +1149,56 @@
   </data>
   <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
     <value>Dotaz SQL (nepovinný)</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_help" xml:space="preserve">
+    <value>Kardinalita vstupu triggeru. Pokud je vstup jen jedna zpráva, zvolte jedna, pokud je vstup pole zpráv, zvolte mnoho. Když se nic nezadá, výchozí hodnotou je jedna.</value>
+  </data>
+  <data name="HttpTriggerCSharpWithParameters_description" xml:space="preserve">
+    <value>Funkce jazyka C#, která se spustí pokaždé, když přijme požadavek HTTP</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_label" xml:space="preserve">
+    <value>Kardinalita centra událostí</value>
+  </data>
+  <data name="HttpTriggerWithParametersNodeJS_description" xml:space="preserve">
+    <value>Funkce JavaScriptu, která se spustí pokaždé, když přijme požadavek HTTP</value>
+  </data>
+  <data name="cdsWebHookCSharp_description" xml:space="preserve">
+    <value>(Experimentální) Funkce CDS, která může volat do prostředí CDS pomocí sady CDS SDK</value>
+  </data>
+  <data name="cdsTemplate_warningNotConfigured" xml:space="preserve">
+    <value>Tato šablona vyžaduje konfiguraci služby AAD pro aplikaci Function App. Šablona potřebuje tato oprávnění:
+
+Common Data Service – Přístup ke službě Common Data Service
+Windows Azure Service Management API – Přístup ke službě Azure Service Management jako uživatelé organizace (Preview).</value>
+  </data>
+  <data name="temp_category_monitoring" xml:space="preserve">
+    <value>Monitorování</value>
+  </data>
+  <data name="AppInsightsHttpAvailability_name" xml:space="preserve">
+    <value>Dostupnost protokolu HTTP AppInsights</value>
+  </data>
+  <data name="AppInsightsHttpAvailabilityCSharp_description" xml:space="preserve">
+    <value>Funkce jazyka C#, která monitoruje dostupnost a odezvu libovolné webové aplikace pomocí Application Insights.</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBI_name" xml:space="preserve">
+    <value>AppInsights do Power BI v reálném čase</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBICSharp_description" xml:space="preserve">
+    <value>Funkce jazyka C#, která odesílá data o dostupnosti v reálném čase z Application Insights do Power BI</value>
+  </data>
+  <data name="AppInsightsScheduledAnalytics_name" xml:space="preserve">
+    <value>Naplánovaná analýza AppInsights</value>
+  </data>
+  <data name="AppInsightsScheduledAnalyticsCSharp_description" xml:space="preserve">
+    <value>Funkce jazyka C#, která odvodí metriky na základě hloubkové analýzy telemetrie vaší aplikace pomocí Application Insights</value>
+  </data>
+  <data name="AppInsightsScheduledDigest_name" xml:space="preserve">
+    <value>Naplánovaný přehled AppInsights</value>
+  </data>
+  <data name="AppInsightsScheduledDigestCSharp_description" xml:space="preserve">
+    <value>Funkce jazyka C#, která e-mailem posílá denní sestavy telemetrie Application Insights</value>
+  </data>
+  <data name="HttpPOST(CRUD)Queue-FSharp_description" xml:space="preserve">
+    <value>Funkce jazyka F#, která při přijetí operace HTTP POST zařadí data do fronty</value>
   </data>
 </root>

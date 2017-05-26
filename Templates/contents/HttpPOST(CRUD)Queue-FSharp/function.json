@@ -1,0 +1,25 @@
+﻿{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "queue",
+      "name": "personItem",
+      "queueName": "person",
+      "connection": "",
+      "direction": "out"
+    }
+  ],
+    "disabled": false
+}

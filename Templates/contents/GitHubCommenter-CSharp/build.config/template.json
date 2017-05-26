@@ -1,0 +1,34 @@
+﻿{
+    "author": "Microsoft",
+    "classifications": [
+        "Azure Function"
+    ],
+    "name": "GitHubCommenter",
+    "identity": "Azure.Function.CSharp.GitHubCommenter",
+    "groupIdentity": "Azure.Function.GitHubCommenter",
+    "shortName": "GitHubComment",
+    "tags": {
+        "language": "C#",
+        "type": "item"
+    },
+    "sourceName": "GitHubCommenterCSharp",
+    "symbols": {
+        "namespace": {
+            "description": "namespace for the generated code",
+            "replaces": "Company.Function",
+            "type": "parameter"
+        },
+        "FunctionName": {
+            "type": "parameter",
+            "description": "Name of the function",
+            "defaultValue": "GitHubCommenterCSharp",
+            "replaces": "FunctionNameValue"
+        }
+    },
+    "primaryOutputs": [
+        {
+            "path": "GitHubCommenterCSharp.cs"
+        }
+    ],
+    "defaultName": "GitHubCommenterCSharp"    
+}
