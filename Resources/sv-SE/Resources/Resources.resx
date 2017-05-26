@@ -133,7 +133,7 @@
     <value>Händelseparameternamn</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Namnet på händelsehubben måste börja och sluta med en bokstav eller siffra och får bara innehålla bokstäver, siffror, bindestreck, punkt och understreck. Namnet måste bestå av 1 till 50 tecken.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>Namnet på den händelsehubb som händelsen ska skickas till.</value>
@@ -163,7 +163,7 @@
     <value>Händelseparameternamn</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Namnet på händelsehubben måste börja och sluta med en bokstav eller siffra och får bara innehålla bokstäver, siffror, bindestreck, punkt och understreck. Namnet måste bestå av 1 till 50 tecken.</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
     <value>Namnet på den händelsehubb som aktiveringen ska ske från</value>
@@ -685,7 +685,7 @@
     <value>Meddelandeparameternamn</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Könamn måste börja och sluta med en bokstav eller siffra och får bara innehålla bokstäver, siffror, bindestreck, punkt och understreck. Namnet måste bestå av 1 till 50 tecken.</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
     <value>Kön som meddelandet ska skickas till.</value>
@@ -694,7 +694,7 @@
     <value>Könamn</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Ämnesnamn måste börja och sluta med en bokstav eller siffra och får bara innehålla bokstäver, siffror, bindestreck, punkt och understreck. Namnet måste bestå av 1 till 50 tecken.</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
     <value>Ämnet som meddelandet ska skickas till.</value>
@@ -736,7 +736,7 @@
     <value>Meddelandeparameternamn</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Könamn måste börja och sluta med en bokstav eller siffra och får bara innehålla bokstäver, siffror, bindestreck, punkt och understreck. Namnet måste bestå av 1 till 50 tecken.</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
     <value>Kön som meddelandet ska läsas från.</value>
@@ -745,7 +745,7 @@
     <value>Könamn</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Prenumerationsnamn måste börja och sluta med en bokstav eller siffra och får bara innehålla bokstäver, siffror, bindestreck, punkt och understreck. Namnet måste bestå av 1 till 50 tecken.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
     <value>Namnet på prenumerationen i ämnet som bindningen ska ske till.</value>
@@ -754,7 +754,7 @@
     <value>Prenumerationsnamn</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Ämnesnamn måste börja och sluta med en bokstav eller siffra och får bara innehålla bokstäver, siffror, bindestreck, punkt och understreck. Namnet måste bestå av 1 till 50 tecken.</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
     <value>Namnet på ämnet som meddelandet ska läsas från.</value>
@@ -948,6 +948,9 @@
   <data name="HttpTriggerPowerShell_description" xml:space="preserve">
     <value>(Förhandsversion) En PowerShell-funktion som körs när den får en HTTP-förfrågan</value>
   </data>
+  <data name="HttpTriggerPython_description" xml:space="preserve">
+    <value>(Experimentellt) En Python 3-funktion som körs när en HTTP-begäran tas emot</value>
+  </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>En C#-funktion som skapar storleksändrade avbildningar när en blobb läggs till i en angiven behållare</value>
   </data>
@@ -1090,7 +1093,7 @@
     <value>Till nummer</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
+    <value>Konsumentgruppen måste börja och sluta med en bokstav eller siffra och får bara innehålla bokstäver, siffror, bindestreck, punkt och understreck. Gruppen $Default tillåts också. Namnet måste bestå av 1 till 50 tecken.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>DocumentDB-dokument i Azure</value>
@@ -1121,6 +1124,7 @@
   </data>
   <data name="bot_out_secret_help" xml:space="preserve">
     <value>Direct Line-nyckeln kan skapas från sidan för Direct Line-kanalkonfiguration i Bot Framework-portalen. Om fältet är tomt hämtas värdet från programinställningen AzureWebJobsBotFrameworkDirectLineSecret</value>
+
   </data>
   <data name="bot_out_secret_label" xml:space="preserve">
     <value>Direct Line-nyckel</value>
@@ -1145,5 +1149,56 @@
   </data>
   <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
     <value>SQL-fråga (valfritt)</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_help" xml:space="preserve">
+    <value>Kardinaliteten för utlösarindata. Välj "ett" om dina indata är ett enda meddelande eller "många" om dina indata är en matris med meddelanden. "Ett" är standard om inget anges</value>
+  </data>
+  <data name="HttpTriggerCSharpWithParameters_description" xml:space="preserve">
+    <value>En C#-funktion som körs när den får en HTTP-förfrågan</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_label" xml:space="preserve">
+    <value>Kardinalitet för händelsehubben</value>
+  </data>
+  <data name="HttpTriggerWithParametersNodeJS_description" xml:space="preserve">
+    <value>En JavaScript-funktion som körs när den får en HTTP-förfrågan</value>
+  </data>
+  <data name="cdsWebHookCSharp_description" xml:space="preserve">
+    <value>(Experimentell) En CDS-funktion som kan anropa en CDS-miljö med SDK:n för CDS.</value>
+  </data>
+  <data name="cdsTemplate_warningNotConfigured" xml:space="preserve">
+    <value>För den här mallen krävs en AAD-konfiguration för funktionsappen. Mallen kräver följande behörigheter:
+
+Common Data Service – åtkomst till Common Data Service
+API för Windows Azure-tjänsthantering – åtkomst till Azure-tjänsthantering som organisationsanvändare (förhandsversion).</value>
+  </data>
+  <data name="temp_category_monitoring" xml:space="preserve">
+    <value>Övervakning</value>
+  </data>
+  <data name="AppInsightsHttpAvailability_name" xml:space="preserve">
+    <value>HTTP-tillgänglighet för AppInsights</value>
+  </data>
+  <data name="AppInsightsHttpAvailabilityCSharp_description" xml:space="preserve">
+    <value>En C#-funktion som övervakar tillgängligheten och svarstiden för en webbapp med Application Insights</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBI_name" xml:space="preserve">
+    <value>AppInsights till Power BI i realtid</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBICSharp_description" xml:space="preserve">
+    <value>En C#-funktion som skickar tillgänglighetsdata i realtid från Application Insights till Power BI</value>
+  </data>
+  <data name="AppInsightsScheduledAnalytics_name" xml:space="preserve">
+    <value>Schemalagd AppInsights-analys</value>
+  </data>
+  <data name="AppInsightsScheduledAnalyticsCSharp_description" xml:space="preserve">
+    <value>En C#-funktion som härleder mått från djupanalys av apptelemetrin med Application Insights</value>
+  </data>
+  <data name="AppInsightsScheduledDigest_name" xml:space="preserve">
+    <value>Schemalagt AppInsights-sammandrag</value>
+  </data>
+  <data name="AppInsightsScheduledDigestCSharp_description" xml:space="preserve">
+    <value>En C#-funktion som skickar en daglig Application Insights Telemetry-rapport via e-post</value>
+  </data>
+  <data name="HttpPOST(CRUD)Queue-FSharp_description" xml:space="preserve">
+    <value>F#-funktion som skickar data till en kö när en HTTP-post tas emot.</value>
   </data>
 </root>

@@ -133,7 +133,7 @@
     <value>イベント パラメーター名</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>イベント ハブ名の先頭と末尾は英字または数字でなければなりません。名前に使用できるのは、英字、数字、ハイフン、ピリオド、およびアンダースコアのみです。名前は 1 から 50 文字にする必要があります。</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>これはイベントの送信先のイベント ハブの名前です。</value>
@@ -163,7 +163,7 @@
     <value>イベント パラメーター名</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>イベント ハブ名の先頭と末尾は英字または数字でなければなりません。名前に使用できるのは、英字、数字、ハイフン、ピリオド、およびアンダースコアのみです。名前は 1 から 50 文字にする必要があります。</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
     <value>トリガー元となるイベント ハブの名前</value>
@@ -685,7 +685,7 @@
     <value>メッセージ パラメーター名</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>キュー名の先頭と末尾は英字または数字でなければなりません。名前に使用できるのは、英字、数字、ハイフン、ピリオド、およびアンダースコアのみです。名前は 1 から 50 文字にする必要があります。</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
     <value>メッセージの送信先のキューです。</value>
@@ -694,7 +694,7 @@
     <value>キュー名</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>トピック名の先頭と末尾は英字または数字でなければなりません。名前に使用できるのは、英字、数字、ハイフン、ピリオド、およびアンダースコアのみです。名前は 1 から 50 文字にする必要があります。</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
     <value>メッセージの送信先のトピックです。</value>
@@ -736,7 +736,7 @@
     <value>メッセージ パラメーター名</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>キュー名の先頭と末尾は英字または数字でなければなりません。名前に使用できるのは、英字、数字、ハイフン、ピリオド、およびアンダースコアのみです。名前は 1 から 50 文字にする必要があります。</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
     <value>メッセージの読み取り元のキューの名前です。</value>
@@ -745,7 +745,7 @@
     <value>キュー名</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>サブスクリプション名の先頭と末尾は英字または数字でなければなりません。名前に使用できるのは、英字、数字、ハイフン、ピリオド、およびアンダースコアのみです。名前は 1 から 50 文字にする必要があります。</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
     <value>バインド先のトピック内のサブスクリプションの名前です。</value>
@@ -754,7 +754,7 @@
     <value>サブスクリプション名</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>トピック名の先頭と末尾は英字または数字でなければなりません。名前に使用できるのは、英字、数字、ハイフン、ピリオド、およびアンダースコアのみです。名前は 1 から 50 文字にする必要があります。</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
     <value>メッセージの読み取り元のトピックの名前です。</value>
@@ -948,6 +948,9 @@
   <data name="HttpTriggerPowerShell_description" xml:space="preserve">
     <value>(プレビュー) HTTP 要求を受信すると実行される PowerShell 関数</value>
   </data>
+  <data name="HttpTriggerPython_description" xml:space="preserve">
+    <value>(試験段階) HTTP 要求を受信すると実行される Python 3 関数</value>
+  </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>指定したコンテナーに BLOB が追加されるたびにサイズを変更した画像を作成する C# 関数</value>
   </data>
@@ -1090,7 +1093,7 @@
     <value>送信先電話番号</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
+    <value>コンシューマー グループの先頭と末尾は英字または数字でなければなりません。名前に使用できるのは、英字、数字、ハイフン、ピリオド、およびアンダースコアのみです。$Default グループも使用できます。名前は 1 から 50 文字にする必要があります。</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>Azure DocumentDB ドキュメント</value>
@@ -1121,6 +1124,7 @@
   </data>
   <data name="bot_out_secret_help" xml:space="preserve">
     <value>ダイレクト ライン キーはボット フレームワーク ポータルの [Direct Line channel configuration] ページで生成できます。このフィールドを空にした場合には、アプリケーションの設定 'AzureWebJobsBotFrameworkDirectLineSecret' から値が検索されます</value>
+
   </data>
   <data name="bot_out_secret_label" xml:space="preserve">
     <value>ダイレクト ライン キー</value>
@@ -1145,5 +1149,56 @@
   </data>
   <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
     <value>SQL クエリ (省略可)</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_help" xml:space="preserve">
+    <value>トリガー入力のカーディナリティ。入力が単一のメッセージの場合には [1] を、入力がメッセージの配列の場合には [多] を、それぞれ選択してください。指定がなかった場合には、既定値の [1] が適用されます</value>
+  </data>
+  <data name="HttpTriggerCSharpWithParameters_description" xml:space="preserve">
+    <value>HTTP 要求を受信するたびに実行される C# 関数</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_label" xml:space="preserve">
+    <value>イベント ハブのカーディナリティ</value>
+  </data>
+  <data name="HttpTriggerWithParametersNodeJS_description" xml:space="preserve">
+    <value>HTTP 要求を受信するたびに実行される JavaScript 関数</value>
+  </data>
+  <data name="cdsWebHookCSharp_description" xml:space="preserve">
+    <value>(試験段階) CDS SDK を使って CDS 環境を呼び出すことができる CDS 関数。</value>
+  </data>
+  <data name="cdsTemplate_warningNotConfigured" xml:space="preserve">
+    <value>このテンプレートでは、Function App の AAD 構成が必要です。必要なアクセス許可は次のとおりです。
+
+Common Data Service - Common Data Service に対するアクセス
+Microsoft Azure Service Management API - Azure Service Management に対する組織ユーザーとしてのアクセス (プレビュー)。</value>
+  </data>
+  <data name="temp_category_monitoring" xml:space="preserve">
+    <value>監視</value>
+  </data>
+  <data name="AppInsightsHttpAvailability_name" xml:space="preserve">
+    <value>AppInsights HTTP 可用性</value>
+  </data>
+  <data name="AppInsightsHttpAvailabilityCSharp_description" xml:space="preserve">
+    <value>Application Insights を使って Web アプリの可用性と応答性を監視する C# 関数</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBI_name" xml:space="preserve">
+    <value>AppInsights リアルタイム Power BI</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBICSharp_description" xml:space="preserve">
+    <value>Application Insights から Power BI にリアルタイムの可用性データをプッシュする C# 関数</value>
+  </data>
+  <data name="AppInsightsScheduledAnalytics_name" xml:space="preserve">
+    <value>AppInsights スケジュールされた分析</value>
+  </data>
+  <data name="AppInsightsScheduledAnalyticsCSharp_description" xml:space="preserve">
+    <value>Application Insights でアプリのテレメトリの詳細な分析を実行し、そこからメトリックを取得する C# 関数</value>
+  </data>
+  <data name="AppInsightsScheduledDigest_name" xml:space="preserve">
+    <value>AppInsights スケジュールされたダイジェスト</value>
+  </data>
+  <data name="AppInsightsScheduledDigestCSharp_description" xml:space="preserve">
+    <value>1 日 1 回メールで Application Insights のテレメトリ レポートを送信する C# 関数</value>
+  </data>
+  <data name="HttpPOST(CRUD)Queue-FSharp_description" xml:space="preserve">
+    <value>HTTP POST を受信するとデータをキューにプッシュする F# 関数。</value>
   </data>
 </root>

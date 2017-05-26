@@ -133,7 +133,7 @@
     <value>이벤트 매개 변수 이름</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>이벤트 허브 이름은 문자, 숫자, 하이픈, 마침표 및 밑줄만 포함할 수 있으며 문자나 숫자로 시작하고 끝나야 합니다. 이름은 1자에서 50자 사이여야 합니다.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>이벤트를 보낼 이벤트 허브의 이름입니다.</value>
@@ -163,7 +163,7 @@
     <value>이벤트 매개 변수 이름</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>이벤트 허브 이름은 문자, 숫자, 하이픈, 마침표 및 밑줄만 포함할 수 있으며 문자나 숫자로 시작하고 끝나야 합니다. 이름은 1자에서 50자 사이여야 합니다.</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
     <value>트리거할 이벤트 허브의 이름입니다.</value>
@@ -685,7 +685,7 @@
     <value>메시지 매개 변수 이름</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>큐 이름은 문자, 숫자, 하이픈, 마침표 및 밑줄만 포함할 수 있으며 문자나 숫자로 시작하고 끝나야 합니다. 이름은 1자에서 50자 사이여야 합니다.</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
     <value>메시지가 전송될 큐입니다.</value>
@@ -694,7 +694,7 @@
     <value>큐 이름</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>토픽 이름은 문자, 숫자, 하이픈, 마침표 및 밑줄만 포함할 수 있으며 문자나 숫자로 시작하고 끝나야 합니다. 이름은 1자에서 50자 사이여야 합니다.</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
     <value>메시지가 전송될 토픽입니다.</value>
@@ -736,7 +736,7 @@
     <value>메시지 매개 변수 이름</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>큐 이름은 문자, 숫자, 하이픈, 마침표 및 밑줄만 포함할 수 있으며 문자나 숫자로 시작하고 끝나야 합니다. 이름은 1자에서 50자 사이여야 합니다.</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
     <value>메시지가 읽힐 큐입니다.</value>
@@ -745,7 +745,7 @@
     <value>큐 이름</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>구독 이름은 문자, 숫자, 하이픈, 마침표 및 밑줄만 포함할 수 있으며 문자나 숫자로 시작하고 끝나야 합니다. 이름은 1자에서 50자 사이여야 합니다.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
     <value>바인딩할 토픽 내에 있는 구독 이름입니다.</value>
@@ -754,7 +754,7 @@
     <value>구독 이름</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>토픽 이름은 문자, 숫자, 하이픈, 마침표 및 밑줄만 포함할 수 있으며 문자나 숫자로 시작하고 끝나야 합니다. 이름은 1자에서 50자 사이여야 합니다.</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
     <value>메시지가 읽힐 토픽의 이름입니다.</value>
@@ -948,6 +948,9 @@
   <data name="HttpTriggerPowerShell_description" xml:space="preserve">
     <value>(미리 보기) HTTP 요청을 받을 때마다 실행되는 PowerShell 함수입니다.</value>
   </data>
+  <data name="HttpTriggerPython_description" xml:space="preserve">
+    <value>(실험적) HTTP 요청을 받을 때마다 실행되는 Python 3 함수</value>
+  </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>Blob이 지정된 컨테이너에 추가될 때마다 크기 조정된 이미지를 만드는 C# 함수입니다.</value>
   </data>
@@ -1090,7 +1093,7 @@
     <value>받는 사람 번호</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
+    <value>소비자 그룹 이름은 문자, 숫자, 하이픈, 마침표 및 밑줄만 포함할 수 있으며 문자 또는 숫자로 시작하고 끝나야 합니다. $Default 그룹도 사용할 수 있습니다. 이름은 1자에서 50자 사이여야 합니다.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>Azure DocumentDB 문서</value>
@@ -1121,6 +1124,7 @@
   </data>
   <data name="bot_out_secret_help" xml:space="preserve">
     <value>직접 회선 키는 Bot Framework 포털의 직접 회선 채널 구성 페이지에서 생성할 수 있습니다. 이 필드를 비워 두면 응용 프로그램 설정 'AzureWebJobsBotFrameworkDirectLineSecret'의 값이 검색됩니다.</value>
+
   </data>
   <data name="bot_out_secret_label" xml:space="preserve">
     <value>직접 회선 키</value>
@@ -1145,5 +1149,56 @@
   </data>
   <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
     <value>SQL 쿼리(선택 사항)</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_help" xml:space="preserve">
+    <value>트리거 입력의 카디널리티입니다. 입력이 단일 메시지인 경우 '1개' 또는 입력이 메시지 배열인 경우 '여러 개'를 선택합니다. 지정하지 않는 경우 '1개'가 기본값입니다.</value>
+  </data>
+  <data name="HttpTriggerCSharpWithParameters_description" xml:space="preserve">
+    <value>HTTP 요청을 받을 때마다 실행되는 C# 함수입니다.</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_label" xml:space="preserve">
+    <value>이벤트 허브 카디널리티</value>
+  </data>
+  <data name="HttpTriggerWithParametersNodeJS_description" xml:space="preserve">
+    <value>HTTP 요청을 받을 때마다 실행되는 JavaScript 함수입니다.</value>
+  </data>
+  <data name="cdsWebHookCSharp_description" xml:space="preserve">
+    <value>(실험적) CDS SDK를 사용하여 CDS 환경을 호출할 수 있는 CDS 함수입니다.</value>
+  </data>
+  <data name="cdsTemplate_warningNotConfigured" xml:space="preserve">
+    <value>이 템플릿을 사용하려면 함수 앱에 대한 AAD 구성이 필요합니다. 템플릿에는 다음과 같은 권한이 필요합니다.
+
+Common Data Service - Common Data Service 액세스
+Microsoft Azure Service Management API - Azure 서비스 관리에 조직 사용자로 액세스(미리 보기)</value>
+  </data>
+  <data name="temp_category_monitoring" xml:space="preserve">
+    <value>모니터링</value>
+  </data>
+  <data name="AppInsightsHttpAvailability_name" xml:space="preserve">
+    <value>AppInsights Http 가용성</value>
+  </data>
+  <data name="AppInsightsHttpAvailabilityCSharp_description" xml:space="preserve">
+    <value>Application Insights를 사용하여 웹앱의 가용성과 응답성을 모니터링하는 C# 함수입니다.</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBI_name" xml:space="preserve">
+    <value>AppInsights 실시간 Power BI</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBICSharp_description" xml:space="preserve">
+    <value>실시간 가용성 데이터를 Application Insights에서 Power BI로 푸시하는 C# 함수</value>
+  </data>
+  <data name="AppInsightsScheduledAnalytics_name" xml:space="preserve">
+    <value>AppInsights 예약된 분석</value>
+  </data>
+  <data name="AppInsightsScheduledAnalyticsCSharp_description" xml:space="preserve">
+    <value>Application Insights를 통해 심층적인 앱 원격 분석을 수행하여 메트릭을 도출하는 C# 함수</value>
+  </data>
+  <data name="AppInsightsScheduledDigest_name" xml:space="preserve">
+    <value>AppInsights 예약된 요약</value>
+  </data>
+  <data name="AppInsightsScheduledDigestCSharp_description" xml:space="preserve">
+    <value>메일을 통해 일일 Application Insights 원격 분석 보고서를 보내는 C# 함수</value>
+  </data>
+  <data name="HttpPOST(CRUD)Queue-FSharp_description" xml:space="preserve">
+    <value>HTTP POST를 수신하는 대기열로 데이터를 푸시하는 F# 함수입니다.</value>
   </data>
 </root>
