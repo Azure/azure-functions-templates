@@ -1,8 +1,10 @@
 param (    
     [ValidateSet('Portal', 'VS', 'All')]
-    [System.String]$target,    
-    [System.String]$templateVersion
+    [System.String]$target = "Portal",    
+    [System.String]$templateVersion = "1.0.0"
 )
+
+Write-Output "Executing with target $target and template version $templateVersion"
 
 $ProgressPreference = "SilentlyContinue"
 Add-Type -AssemblyName System.IO.Compression.FileSystem
@@ -81,11 +83,6 @@ try {
     Invoke-Expression -Command "$dotnetExe new -i $templatesPath"
     if ($LastExitCode -ne 0) {
         LogErrorAndExit "Failed to install templates"
-    }
-
-    if ($templateVersion -eq [String]::Empty)
-    {
-        $templateVersion = "1.0.0"
     }
 
     # Build templates for portal
