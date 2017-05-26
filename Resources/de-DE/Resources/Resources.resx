@@ -133,7 +133,7 @@
     <value>Ereignisparametername</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Der Event Hub-Name muss mit einem Buchstaben oder einer Ziffer beginnen und enden und darf nur Buchstaben, Ziffern, Bindestriche, Punkte und Unterstriche enthalten. Der Name muss 1–50 Zeichen umfassen.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>Dies ist der Name des Event Hubs, an den das Ereignis gesendet wird.</value>
@@ -163,7 +163,7 @@
     <value>Ereignisparametername</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Der Event Hub-Name muss mit einem Buchstaben oder einer Ziffer beginnen und enden und darf nur Buchstaben, Ziffern, Bindestriche, Punkte und Unterstriche enthalten. Der Name muss 1–50 Zeichen umfassen.</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
     <value>Der Name des Event Hubs, von dem aus Sie auslösen möchten.</value>
@@ -685,7 +685,7 @@
     <value>Nachrichtenparametername</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Der Warteschlangenname muss mit einem Buchstaben oder einer Ziffer beginnen und enden und darf nur Buchstaben, Ziffern, Bindestriche, Punkte und Unterstriche enthalten. Der Name muss 1–50 Zeichen umfassen.</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
     <value>Die Warteschlange, an die die Nachricht gesendet wird.</value>
@@ -694,7 +694,7 @@
     <value>Warteschlangenname</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Der Themenname muss mit einem Buchstaben oder einer Ziffer beginnen und enden und darf nur Buchstaben, Ziffern, Bindestriche, Punkte und Unterstriche enthalten. Der Name muss 1–50 Zeichen umfassen.</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
     <value>Das Thema, an das die Nachricht gesendet wird.</value>
@@ -736,7 +736,7 @@
     <value>Nachrichtenparametername</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Der Warteschlangenname muss mit einem Buchstaben oder einer Ziffer beginnen und enden und darf nur Buchstaben, Ziffern, Bindestriche, Punkte und Unterstriche enthalten. Der Name muss 1–50 Zeichen umfassen.</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
     <value>Die Warteschlange, aus der die Nachricht gelesen wird.</value>
@@ -745,7 +745,7 @@
     <value>Warteschlangenname</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Der Abonnementname muss mit einem Buchstaben oder einer Ziffer beginnen und enden und darf nur Buchstaben, Ziffern, Bindestriche, Punkte und Unterstriche enthalten. Der Name muss 1–50 Zeichen umfassen.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
     <value>Der Name des Abonnements innerhalb des Themas, an das die Bindung erfolgt.</value>
@@ -754,7 +754,7 @@
     <value>Abonnementname</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Der Themenname muss mit einem Buchstaben oder einer Ziffer beginnen und enden und darf nur Buchstaben, Ziffern, Bindestriche, Punkte und Unterstriche enthalten. Der Name muss 1–50 Zeichen umfassen.</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
     <value>Der Name des Themas, aus dem die Nachricht gelesen wird.</value>
@@ -948,6 +948,9 @@
   <data name="HttpTriggerPowerShell_description" xml:space="preserve">
     <value>(Vorschau) Eine PowerShell-Funktion, die immer dann ausgeführt wird, wenn sie eine HTTP-Anforderung empfängt</value>
   </data>
+  <data name="HttpTriggerPython_description" xml:space="preserve">
+    <value>(Experimentell) Eine Python 3-Funktion, die immer dann ausgeführt wird, wenn eine HTTP-Anforderung empfangen wird.</value>
+  </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>Eine C#-Funktion, die Images mit geänderter Größe erstellt, wenn einem angegebenen Container ein Blob hinzugefügt wird</value>
   </data>
@@ -1090,7 +1093,7 @@
     <value>Nummer des Empfängers</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
+    <value>Der Name der Consumergruppe muss mit einem Buchstaben oder einer Ziffer beginnen und enden und darf nur Buchstaben, Ziffern, Bindestriche, Punkte und Unterstriche enthalten. Die $Default-Gruppe ist ebenfalls zulässig. Der Name muss 1–50 Zeichen umfassen.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>Azure DocumentDB-Dokument</value>
@@ -1121,6 +1124,7 @@
   </data>
   <data name="bot_out_secret_help" xml:space="preserve">
     <value>Ein Schlüssel für Direktverbindungen kann im Bot-Frameworkportal auf der Seite zur Kanalkonfiguration für Direktverbindungen generiert werden. Wenn Sie dieses Feld leer lassen, wird der Wert in der Anwendungseinstellung "AzureWebJobsBotFrameworkDirectLineSecret" nachgesehen.</value>
+
   </data>
   <data name="bot_out_secret_label" xml:space="preserve">
     <value>Schlüssel für Direktverbindungen</value>
@@ -1145,5 +1149,56 @@
   </data>
   <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
     <value>SQL-Abfrage (optional)</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_help" xml:space="preserve">
+    <value>Die Kardinalität der Triggereingabe. Wählen Sie 1 aus, wenn es sich bei der Eingabe um eine einzelne Nachricht handelt, oder wählen Sie "Viele" aus, wenn es sich um ein Array aus Nachrichten handelt. Der Standardwert lautet 1, wenn keine Angabe gemacht wird.</value>
+  </data>
+  <data name="HttpTriggerCSharpWithParameters_description" xml:space="preserve">
+    <value>Eine C#-Funktion, die ausgeführt wird, wenn sie eine HTTP-Anforderung empfängt</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_label" xml:space="preserve">
+    <value>Die Event Hub-Kardinalität</value>
+  </data>
+  <data name="HttpTriggerWithParametersNodeJS_description" xml:space="preserve">
+    <value>Eine JavaScript-Funktion, die ausgeführt wird, wenn sie eine HTTP-Anforderung empfängt</value>
+  </data>
+  <data name="cdsWebHookCSharp_description" xml:space="preserve">
+    <value>(Experimentell) Eine CDS-Funktion, die über das CDS-SDK in eine CDS-Umgebung integriert werden kann.</value>
+  </data>
+  <data name="cdsTemplate_warningNotConfigured" xml:space="preserve">
+    <value>Diese Vorlage erfordert eine AAD-Konfiguration für die Funktionen-App. Die Vorlage benötigt folgende Berechtigungen:
+
+Common Data Service: Zugriff auf Common Data Service
+Microsoft Azure-Dienstverwaltungs-API: Als Organisationsbenutzer auf die Azure-Dienstverwaltung zugreifen (Vorschau).</value>
+  </data>
+  <data name="temp_category_monitoring" xml:space="preserve">
+    <value>Überwachung</value>
+  </data>
+  <data name="AppInsightsHttpAvailability_name" xml:space="preserve">
+    <value>AppInsights: HTTP-Verfügbarkeit</value>
+  </data>
+  <data name="AppInsightsHttpAvailabilityCSharp_description" xml:space="preserve">
+    <value>Eine C#-Funktion, mit der die Verfügbarkeit und Reaktionsfähigkeit einer beliebigen Web-App in Application Insights überwacht wird.</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBI_name" xml:space="preserve">
+    <value>AppInsights-Echtzeitdaten an Power BI</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBICSharp_description" xml:space="preserve">
+    <value>Eine C#-Funktion, die Echzeitdaten mithilfe von Push von Application Insights an Power BI übertragt</value>
+  </data>
+  <data name="AppInsightsScheduledAnalytics_name" xml:space="preserve">
+    <value>AppInsights: Geplante Analyse</value>
+  </data>
+  <data name="AppInsightsScheduledAnalyticsCSharp_description" xml:space="preserve">
+    <value>Eine C#-Funktion, die Metriken aus einer umfassenden Analyse Ihrer App-Telemetrie mit Application Insights ableitet.</value>
+  </data>
+  <data name="AppInsightsScheduledDigest_name" xml:space="preserve">
+    <value>AppInsights: Geplante Übersicht</value>
+  </data>
+  <data name="AppInsightsScheduledDigestCSharp_description" xml:space="preserve">
+    <value>Eine C#-Funktion, die täglich einen Application Insights-Telemetriebericht per E-Mail sendet.</value>
+  </data>
+  <data name="HttpPOST(CRUD)Queue-FSharp_description" xml:space="preserve">
+    <value>F#-Funktion, die bei einem HTTP POST-Empfang mithilfe von Push Daten in eine Warteschlange überträgt.</value>
   </data>
 </root>

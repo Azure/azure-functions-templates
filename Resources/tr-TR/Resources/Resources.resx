@@ -133,7 +133,7 @@
     <value>Olay parametresi adı</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Olay hub'ı adının ilk ve son karakteri, harf veya sayı olmalıdır. Ad yalnızca harf, sayı, kısa çizgi, nokta ve alt çizgi karakterlerini içerebilir ve 1 ile 50 karakter arası uzunlukta olabilir.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>Bu, olayın gönderileceği olay hub'ının adıdır.</value>
@@ -163,7 +163,7 @@
     <value>Olay parametresi adı</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Olay hub'ı adının ilk ve son karakteri, harf veya sayı olmalıdır. Ad yalnızca harf, sayı, kısa çizgi, nokta ve alt çizgi karakterlerini içerebilir ve 1 ile 50 karakter arası uzunlukta olabilir.</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
     <value>Tetiklemenin yapılacağı olay hub'ının adı</value>
@@ -685,7 +685,7 @@
     <value>İleti parametresi adı</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Kuyruk adının ilk ve son karakteri, harf veya sayı olmalıdır. Ad yalnızca harf, sayı, kısa çizgi, nokta ve alt çizgi karakterlerini içerebilir ve 1 ile 50 karakter arası uzunlukta olabilir.</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
     <value>Gönderilecek iletinin hedefi olan kuyruk.</value>
@@ -694,7 +694,7 @@
     <value>Kuyruk adı</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Konu başlığı adının ilk ve son karakteri, harf veya sayı olmalıdır. Ad yalnızca harf, sayı, kısa çizgi, nokta ve alt çizgi karakterlerini içerebilir ve 1 ile 50 karakter arası uzunlukta olabilir.</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
     <value>Gönderilecek iletinin hedefi olan konu başlığı.</value>
@@ -736,7 +736,7 @@
     <value>İleti parametresi adı</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Kuyruk adının ilk ve son karakteri, harf veya sayı olmalıdır. Ad yalnızca harf, sayı, kısa çizgi, nokta ve alt çizgi karakterlerini içerebilir ve 1 ile 50 karakter arası uzunlukta olabilir.</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
     <value>İletinin okunacağı kuyruk.</value>
@@ -745,7 +745,7 @@
     <value>Kuyruk adı</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Abonelik adının ilk ve son karakteri, harf veya sayı olmalıdır. Ad yalnızca harf, sayı, kısa çizgi, nokta ve alt çizgi karakterlerini içerebilir ve 1 ile 50 karakter arası uzunlukta olabilir.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
     <value>Bağlanılacak konu başlığı içindeki abonelik adı.</value>
@@ -754,7 +754,7 @@
     <value>Abonelik adı</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Konu başlığı adının ilk ve son karakteri, harf veya sayı olmalıdır. Ad yalnızca harf, sayı, kısa çizgi, nokta ve alt çizgi karakterlerini içerebilir ve 1 ile 50 karakter arası uzunlukta olabilir.</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
     <value>İletinin okunacağı konu başlığının adı.</value>
@@ -948,6 +948,9 @@
   <data name="HttpTriggerPowerShell_description" xml:space="preserve">
     <value>(Önizleme) Her HTTP isteği aldığında çalıştırılacak bir PowerShell işlevi</value>
   </data>
+  <data name="HttpTriggerPython_description" xml:space="preserve">
+    <value>(Deneysel) Her HTTP isteği aldığında çalıştırılacak Python 3 işlevi</value>
+  </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>Belirtilen kapsayıcıya bir blob eklendiğinde yeniden boyutlandırılmış görüntüler oluşturan C# işlevi</value>
   </data>
@@ -1090,7 +1093,7 @@
     <value>Hedef numara</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
+    <value>Tüketici grubunun ilk ve son karakteri, harf veya sayı olmalıdır. Ad yalnızca harf, sayı, kısa çizgi, nokta ve alt çizgi karakterlerini içerebilir. $Default grubuna da izin verilir. Ad, 1 ile 50 karakter arası uzunlukta olabilir.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>Azure DocumentDB Belgesi</value>
@@ -1121,6 +1124,7 @@
   </data>
   <data name="bot_out_secret_help" xml:space="preserve">
     <value>Doğrudan Hat Anahtarı, Bot Framework portalında bulunan Doğrudan Hat kanalı yapılandırma sayfasından oluşturulabilir. Bu alanın boş bırakılması durumunda 'AzureWebJobsBotFrameworkDirectLineSecret' Uygulama Ayarındaki değer aranır</value>
+
   </data>
   <data name="bot_out_secret_label" xml:space="preserve">
     <value>Doğrudan Hat Anahtarı</value>
@@ -1145,5 +1149,56 @@
   </data>
   <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
     <value>SQL Sorgusu (isteğe bağlı)</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_help" xml:space="preserve">
+    <value>Tetikleyici girişinin kardinalitesi. Giriş tek bir iletiyse 'bir', ileti dizisiyse 'çok' öğesini seçin. Belirtilmezse varsayılan olarak 'bir' kullanılır</value>
+  </data>
+  <data name="HttpTriggerCSharpWithParameters_description" xml:space="preserve">
+    <value>Her HTTP isteği aldığında çalıştırılacak C# işlevi</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_label" xml:space="preserve">
+    <value>Olay hub'ı önem düzeyi</value>
+  </data>
+  <data name="HttpTriggerWithParametersNodeJS_description" xml:space="preserve">
+    <value>Her HTTP isteği aldığında çalıştırılacak JavaScript işlevi</value>
+  </data>
+  <data name="cdsWebHookCSharp_description" xml:space="preserve">
+    <value>(Deneysel) CDS SDK'sını kullanarak CDS ortamına çağırabilen bir CDS işlevi.</value>
+  </data>
+  <data name="cdsTemplate_warningNotConfigured" xml:space="preserve">
+    <value>Bu şablon, işlev uygulaması için AAD yapılandırması gerektirir. Şablon için şu izinler gereklidir:
+
+Common Data Service - Common Data Service erişimi
+Microsoft Azure Hizmet Yönetim API'si - Azure Hizmet Yönetimi'ne kuruluş kullanıcıları olarak erişim (önizleme).</value>
+  </data>
+  <data name="temp_category_monitoring" xml:space="preserve">
+    <value>İzleme</value>
+  </data>
+  <data name="AppInsightsHttpAvailability_name" xml:space="preserve">
+    <value>AppInsights Http Kullanılabilirliği</value>
+  </data>
+  <data name="AppInsightsHttpAvailabilityCSharp_description" xml:space="preserve">
+    <value>Application Insights ile tüm web uygulamalarının erişilebilirlik ve yanıt verme hızını izleyen bir C# işlevi</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBI_name" xml:space="preserve">
+    <value>AppInsights Real-time Power BI</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBICSharp_description" xml:space="preserve">
+    <value>A C# function which pushes real-time availability data from Application Insights to Power BI</value>
+  </data>
+  <data name="AppInsightsScheduledAnalytics_name" xml:space="preserve">
+    <value>Zamanlanmış AppInsights Analizleri</value>
+  </data>
+  <data name="AppInsightsScheduledAnalyticsCSharp_description" xml:space="preserve">
+    <value>Application Insights ile uygulama telemetrinizde gerçekleştirilen derin analizden ölçümler türeten bir C# işlevi</value>
+  </data>
+  <data name="AppInsightsScheduledDigest_name" xml:space="preserve">
+    <value>Zamanlanmış AppInsights Özeti</value>
+  </data>
+  <data name="AppInsightsScheduledDigestCSharp_description" xml:space="preserve">
+    <value>E-posta ile günlük Application Insights telemetrisi gönderen bir C# işlevi</value>
+  </data>
+  <data name="HttpPOST(CRUD)Queue-FSharp_description" xml:space="preserve">
+    <value>Bir HTTP Post alındığında bir kuyruğa veri gönderen F# işlevi.</value>
   </data>
 </root>

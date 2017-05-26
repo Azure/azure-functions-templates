@@ -133,7 +133,7 @@
     <value>Nome do parâmetro de eventos</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>O nome do hub de eventos deve começar e terminar com uma letra ou um número e apenas pode conter letras, números, o hífen, o ponto final, e o caráter de sublinhado. O nome deve ter entre 1 e 50 carateres.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>Este é o nome do hub de eventos para o qual o evento será enviado.</value>
@@ -163,7 +163,7 @@
     <value>Nome do parâmetro de eventos</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>O nome do hub de eventos deve começar e terminar com uma letra ou um número e apenas pode conter letras, números, o hífen, o ponto final, e o caráter de sublinhado. O nome deve ter entre 1 e 50 carateres.</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
     <value>O nome do hub de eventos a partir do qual quer acionar</value>
@@ -685,7 +685,7 @@
     <value>Nome do parâmetro de mensagem</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>O nome da fila deve começar e terminar com uma letra ou um número e apenas pode conter letras, números, o hífen, o ponto final e o caráter de sublinhado. O nome deve ter entre 1 e 50 carateres.</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
     <value>A fila para a qual a mensagem será enviada.</value>
@@ -694,7 +694,7 @@
     <value>Nome da fila</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>O nome do tópico deve começar e terminar com uma letra ou um número e apenas pode conter letras, números, o hífen, o ponto final e o caráter de sublinhado. O nome deve ter entre 1 e 50 carateres.</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
     <value>Tópico para o qual a mensagem será enviada.</value>
@@ -736,7 +736,7 @@
     <value>Nome do parâmetro de mensagem</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>O nome da fila deve começar e terminar com uma letra ou um número e apenas pode conter letras, números, o hífen, o ponto final e o caráter de sublinhado. O nome deve ter entre 1 e 50 carateres.</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
     <value>A fila a partir da qual a mensagem será lida.</value>
@@ -745,7 +745,7 @@
     <value>Nome da fila</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>O nome da subscrição deve começar e terminar com uma letra ou um número e apenas pode conter letras, números, o hífen, o ponto final e o caráter de sublinhado. O nome deve ter entre 1 e 50 carateres.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
     <value>Nome da subscrição dentro do tópico a vincular.</value>
@@ -754,7 +754,7 @@
     <value>Nome da subscrição</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>O nome do tópico deve começar e terminar com uma letra ou um número e apenas pode conter letras, números, o hífen, o ponto final e o caráter de sublinhado. O nome deve ter entre 1 e 50 carateres.</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
     <value>O nome do tópico a partir da qual a mensagem será lida.</value>
@@ -948,6 +948,9 @@
   <data name="HttpTriggerPowerShell_description" xml:space="preserve">
     <value>(Pré-visualização) Uma função PowerShell que vai ser executada sempre que recebe um pedido HTTP</value>
   </data>
+  <data name="HttpTriggerPython_description" xml:space="preserve">
+    <value>(Experimental) Uma função Python 3 que será executada sempre que receba um pedido HTTP</value>
+  </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>Uma função C# que cria imagens redimensionadas sempre que um blob é adicionado a um contentor especificado</value>
   </data>
@@ -1090,7 +1093,7 @@
     <value>Para o número</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
+    <value>O grupo de consumidor deve começar e terminar com uma letra ou um número e apenas pode conter letras minúsculas, números, hífen, ponto final e caráter de sublinhado. O grupo $Predefinido também é permitido. O nome deve ter entre 1 e 50 carateres.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>Documento do Azure DocumentDB</value>
@@ -1121,6 +1124,7 @@
   </data>
   <data name="bot_out_secret_help" xml:space="preserve">
     <value>A Chave de Linha Direta pode ser gerada a partir da página de configuração do canal Linha Direta no portal Arquitetura de Bot; deixando este campo vazio vão ser procurados valores na Definição de Aplicação 'AzureWebJobsBotFrameworkDirectLineSecret'</value>
+
   </data>
   <data name="bot_out_secret_label" xml:space="preserve">
     <value>Chave de Linha Direta</value>
@@ -1145,5 +1149,56 @@
   </data>
   <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
     <value>Consulta SQL (opcional)</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_help" xml:space="preserve">
+    <value>Cardinalidade da entrada de acionador. Escolha "um" se a entrada for uma única mensagem ou "vários" se a entrada é uma matriz de mensagens. "um" é a predefinição se não for especificado</value>
+  </data>
+  <data name="HttpTriggerCSharpWithParameters_description" xml:space="preserve">
+    <value>Uma função C# que será executada sempre que recebe um pedido HTTP</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_label" xml:space="preserve">
+    <value>A cardinalidade do hub de eventos</value>
+  </data>
+  <data name="HttpTriggerWithParametersNodeJS_description" xml:space="preserve">
+    <value>Uma função de JavaScript que será executada sempre que recebe um pedido HTTP</value>
+  </data>
+  <data name="cdsWebHookCSharp_description" xml:space="preserve">
+    <value>(Experimental) Uma função CDS que também pode chamar para um ambiente CDS utilizando o SDK de CDS.</value>
+  </data>
+  <data name="cdsTemplate_warningNotConfigured" xml:space="preserve">
+    <value>Este modelo requere uma configuração AAD para a aplicação de função. O modelo necessita as seguintes permissões:
+
+Common Data Service - acesso ao Common Data Service
+API de Gestão de Serviço do Windows Azure - Acesso à Gestão do Serviço do Azure como utilizadores da organização (pré-visualização).</value>
+  </data>
+  <data name="temp_category_monitoring" xml:space="preserve">
+    <value>Monitorização</value>
+  </data>
+  <data name="AppInsightsHttpAvailability_name" xml:space="preserve">
+    <value>Disponibilidade de Http de AppInsights</value>
+  </data>
+  <data name="AppInsightsHttpAvailabilityCSharp_description" xml:space="preserve">
+    <value>Uma função C# que monitoriza a disponibilidade e capacidade de resposta de qualquer aplicação web com Application Insights</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBI_name" xml:space="preserve">
+    <value>AppInsights Real-time Power BI</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBICSharp_description" xml:space="preserve">
+    <value>A C# function which pushes real-time availability data from Application Insights to Power BI</value>
+  </data>
+  <data name="AppInsightsScheduledAnalytics_name" xml:space="preserve">
+    <value>Análise Agendada AppInsights</value>
+  </data>
+  <data name="AppInsightsScheduledAnalyticsCSharp_description" xml:space="preserve">
+    <value>Uma função C# que deriva métricas de efetuar análises exaustivas da telemetria da aplicação com o Application Insights</value>
+  </data>
+  <data name="AppInsightsScheduledDigest_name" xml:space="preserve">
+    <value>Resumo Agendado AppInsights</value>
+  </data>
+  <data name="AppInsightsScheduledDigestCSharp_description" xml:space="preserve">
+    <value>Uma função C# que envia um relatório de telemetria diário do Application Insights através de e-mail</value>
+  </data>
+  <data name="HttpPOST(CRUD)Queue-FSharp_description" xml:space="preserve">
+    <value>Função F# que vai emitir os dados para uma fila para a receção de um Http Post.</value>
   </data>
 </root>
