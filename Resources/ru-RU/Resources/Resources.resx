@@ -133,7 +133,7 @@
     <value>Имя параметра события</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Имя концентратора событий должно начинаться и заканчиваться буквой или цифрой и может содержать только буквы, цифры, дефисы, точки и символы подчеркивания. Длина имени должна составлять от 1 до 50 символов.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>Это имя концентратора событий, куда будет отправлено событие.</value>
@@ -163,7 +163,7 @@
     <value>Имя параметра события</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Имя концентратора событий должно начинаться и заканчиваться буквой или цифрой и может содержать только буквы, цифры, дефисы, точки и символы подчеркивания. Длина имени должна составлять от 1 до 50 символов.</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
     <value>Имя концентратора событий, из которого требуется активация</value>
@@ -685,7 +685,7 @@
     <value>Имя параметра сообщения</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Имя очереди должно начинаться и заканчиваться буквой или цифрой и может содержать только буквы, цифры, дефисы, точки и символы подчеркивания. Длина имени должна составлять от 1 до 50 символов.</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
     <value>Очередь, куда будет отправлено сообщение.</value>
@@ -694,7 +694,7 @@
     <value>Имя очереди</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Имя раздела должно начинаться и заканчиваться буквой или цифрой и может содержать только буквы, цифры, дефисы, точки и символы подчеркивания. Длина имени должна составлять от 1 до 50 символов.</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
     <value>Раздел, куда будет отправлено сообщение.</value>
@@ -736,7 +736,7 @@
     <value>Имя параметра сообщения</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Имя очереди должно начинаться и заканчиваться буквой или цифрой и может содержать только буквы, цифры, дефисы, точки и символы подчеркивания. Длина имени должна составлять от 1 до 50 символов.</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
     <value>Очередь, откуда будет считано сообщение.</value>
@@ -745,7 +745,7 @@
     <value>Имя очереди</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Имя подписки должно начинаться и заканчиваться буквой или цифрой и может содержать только буквы, цифры, дефис, точку и символ подчеркивания. Длина имени должна быть от 1 до 50 символов.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
     <value>Имя подписки в разделе, к которой требуется выполнить привязку.</value>
@@ -754,7 +754,7 @@
     <value>Имя подписки</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Имя раздела должно начинаться и заканчиваться буквой или цифрой и может содержать только буквы, цифры, дефисы, точки и символы подчеркивания. Длина имени должна составлять от 1 до 50 символов.</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
     <value>Имя раздела, откуда будет считано сообщение.</value>
@@ -948,6 +948,9 @@
   <data name="HttpTriggerPowerShell_description" xml:space="preserve">
     <value>Функция PowerShell, которая будет выполняться при каждом получении HTTP-запроса (предварительная версия).</value>
   </data>
+  <data name="HttpTriggerPython_description" xml:space="preserve">
+    <value>(Экспериментальная функция) Функция Python 3, которая будет запускаться при получении HTTP-запроса</value>
+  </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>Функция C#, которая создает изображения с измененным размером при каждом добавлении BLOB-объекта в указанный контейнер</value>
   </data>
@@ -1090,7 +1093,7 @@
     <value>На номер</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
+    <value>Имя группы потребителей должно начинаться и заканчиваться буквой или цифрой и может содержать только буквы, цифры, дефис, точку и символ подчеркивания. Группа $Default также допустима. Длина имени должна быть от 1 до 50 символов.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>Документ Azure DocumentDB</value>
@@ -1121,6 +1124,7 @@
   </data>
   <data name="bot_out_secret_help" xml:space="preserve">
     <value>Ключ прямой линии можно создать на странице настройки канала прямой линии портала Bot Framework; если оставить после пустым, значение будет искаться в параметре приложения AzureWebJobsBotFrameworkDirectLineSecret.</value>
+
   </data>
   <data name="bot_out_secret_label" xml:space="preserve">
     <value>Ключ прямой линии</value>
@@ -1145,5 +1149,56 @@
   </data>
   <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
     <value>Запрос SQL (необязательный)</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_help" xml:space="preserve">
+    <value>Кратность входных данных триггера. Выберите "один", если входные данные — одно сообщение, или "многие", если входные данные — массив сообщений. Значение по умолчанию: "один"</value>
+  </data>
+  <data name="HttpTriggerCSharpWithParameters_description" xml:space="preserve">
+    <value>Функция C#, которая будет запускаться при каждом получении HTTP-запроса</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_label" xml:space="preserve">
+    <value>Кратность концентратора событий</value>
+  </data>
+  <data name="HttpTriggerWithParametersNodeJS_description" xml:space="preserve">
+    <value>Функция JavaScript, которая будет запускаться при каждом получении HTTP-запроса.</value>
+  </data>
+  <data name="cdsWebHookCSharp_description" xml:space="preserve">
+    <value>(Экспериментальная функция) Функция CDS, которая может делать вызовы в окружении CDS с помощью пакета SDK для CDS.</value>
+  </data>
+  <data name="cdsTemplate_warningNotConfigured" xml:space="preserve">
+    <value>Этому шаблону требуется конфигурация AAD для приложения-функции. Шаблону нужны следующие разрешения.
+
+Common Data Service — доступ к Common Data Service.
+API управления служб Microsoft Azure — доступ к управлению службами Azure в качестве пользователей организации (предварительная версия).</value>
+  </data>
+  <data name="temp_category_monitoring" xml:space="preserve">
+    <value>Мониторинг</value>
+  </data>
+  <data name="AppInsightsHttpAvailability_name" xml:space="preserve">
+    <value>Доступность HTTP AppInsights</value>
+  </data>
+  <data name="AppInsightsHttpAvailabilityCSharp_description" xml:space="preserve">
+    <value>Функция C#, которая отслеживает доступность и скорость отклика для любого веб-приложения с помощью Application Insights</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBI_name" xml:space="preserve">
+    <value>Данные AppInsights в реальном времени для Power BI</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBICSharp_description" xml:space="preserve">
+    <value>Функция C#, которая передает данные о доступности в режиме реального времени из Application Insights в Power BI</value>
+  </data>
+  <data name="AppInsightsScheduledAnalytics_name" xml:space="preserve">
+    <value>Аналитика по расписанию AppInsights</value>
+  </data>
+  <data name="AppInsightsScheduledAnalyticsCSharp_description" xml:space="preserve">
+    <value>Функция C#, выводящая метрики путем подробного анализа телеметрии приложений с помощью Application Insights</value>
+  </data>
+  <data name="AppInsightsScheduledDigest_name" xml:space="preserve">
+    <value>Дайджест по расписанию AppInsights</value>
+  </data>
+  <data name="AppInsightsScheduledDigestCSharp_description" xml:space="preserve">
+    <value>Функция C#, которая отправляет ежедневный отчет о телеметрии Application Insights по электронной почте</value>
+  </data>
+  <data name="HttpPOST(CRUD)Queue-FSharp_description" xml:space="preserve">
+    <value>Функция F#, которая будет отправлять данные в очередь при получении HTTP Post.</value>
   </data>
 </root>

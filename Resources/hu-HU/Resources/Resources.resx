@@ -133,7 +133,7 @@
     <value>Eseményparaméter neve</value>
   </data>
   <data name="eventHubOut_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Az eseményközpont neve csak betűvel vagy számmal kezdődhet és végződhet, valamint csak betűket, számokat, kötőjelet, pontot és aláhúzásjelet tartalmazhat. A név hossza 1–50 karakter lehet.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
     <value>Ez annak az eseményközpontnak a neve, amelybe az esemény küldve lesz.</value>
@@ -163,7 +163,7 @@
     <value>Eseményparaméter neve</value>
   </data>
   <data name="eventHubTrigger_path_errorText" xml:space="preserve">
-    <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Az eseményközpont neve csak betűvel vagy számmal kezdődhet és végződhet, valamint csak betűket, számokat, kötőjelet, pontot és aláhúzásjelet tartalmazhat. A név hossza 1–50 karakter lehet.</value>
   </data>
   <data name="eventHubTrigger_path_help" xml:space="preserve">
     <value>Annak az eseményközpontnak a neve, amelyből eseményt szeretne indítani.</value>
@@ -685,7 +685,7 @@
     <value>Üzenetparaméter neve</value>
   </data>
   <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Az üzenetsor neve csak betűvel vagy számmal kezdődhet és végződhet, valamint csak betűket, számokat, kötőjelet, pontot és aláhúzásjelet tartalmazhat. A név hossza 1–50 karakter lehet.</value>
   </data>
   <data name="serviceBusOut_queueName_help" xml:space="preserve">
     <value>Az az üzenetsor, amelybe el kell küldeni az üzenetet.</value>
@@ -694,7 +694,7 @@
     <value>Üzenetsor neve</value>
   </data>
   <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>A témakör neve csak betűvel vagy számmal kezdődhet és végződhet, valamint csak betűket, számokat, kötőjelet, pontot és aláhúzásjelet tartalmazhat. A név hossza 1–50 karakter lehet.</value>
   </data>
   <data name="serviceBusOut_topicName_help" xml:space="preserve">
     <value>Az a témakör, amelybe el kell küldeni az üzenetet.</value>
@@ -736,7 +736,7 @@
     <value>Üzenetparaméter neve</value>
   </data>
   <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
-    <value>Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Az üzenetsor neve csak betűvel vagy számmal kezdődhet és végződhet, valamint csak betűket, számokat, kötőjelet, pontot és aláhúzásjelet tartalmazhat. A név hossza 1–50 karakter lehet.</value>
   </data>
   <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
     <value>Az az üzenetsor, amelyből be kell olvasni az üzenetet.</value>
@@ -745,7 +745,7 @@
     <value>Üzenetsor neve</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
-    <value>Subscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>Az előfizetés neve csak betűvel vagy számmal kezdődhet és végződhet, valamint csak betűket, számokat, kötőjelet, pontot és aláhúzásjelet tartalmazhat. A név hossza 1–50 karakter lehet.</value>
   </data>
   <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
     <value>A témában szereplő azon előfizetés neve, amellyel kötést kell létesíteni.</value>
@@ -754,7 +754,7 @@
     <value>Előfizetés neve</value>
   </data>
   <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
-    <value>Topic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+    <value>A témakör neve csak betűvel vagy számmal kezdődhet és végződhet, valamint csak betűket, számokat, kötőjelet, pontot és aláhúzásjelet tartalmazhat. A név hossza 1–50 karakter lehet.</value>
   </data>
   <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
     <value>Azon témakör neve, amelyből be kell olvasni az üzenetet.</value>
@@ -948,6 +948,9 @@
   <data name="HttpTriggerPowerShell_description" xml:space="preserve">
     <value>(Előzetes verzió) PowerShell-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
   </data>
+  <data name="HttpTriggerPython_description" xml:space="preserve">
+    <value>(Kísérleti funkció) Python 3-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
+  </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>C#-függvény, amely átméretezett képeket hoz létre, amikor egy blob bekerül egy adott tárolóba</value>
   </data>
@@ -1090,7 +1093,7 @@
     <value>Erre a számra</value>
   </data>
   <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
-    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
+    <value>A fogyasztói csoport neve csak betűvel vagy számmal kezdődhet és végződhet, valamint csak betűket, számokat, kötőjelet, pontot és aláhúzásjelet tartalmazhat. A $Default csoportnév használata is engedélyezett. A név hossza 1–50 karakter lehet.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
     <value>Azure DocumentDB-dokumentum</value>
@@ -1121,6 +1124,7 @@
   </data>
   <data name="bot_out_secret_help" xml:space="preserve">
     <value>A közvetlen vonal kulcsát a közvetlen vonal csatornakonfigurációs lapján lehet létrehozni a Bot Framework portálon. Ha üresen hagyja ezt a mezőt, a rendszer az értéket az AzureWebJobsBotFrameworkDirectLineSecret alkalmazásbeállításban fogja keresni</value>
+
   </data>
   <data name="bot_out_secret_label" xml:space="preserve">
     <value>Közvetlen vonal kulcsa</value>
@@ -1145,5 +1149,56 @@
   </data>
   <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
     <value>SQL-lekérdezés (nem kötelező)</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_help" xml:space="preserve">
+    <value>A trigger bemenetének számossága. Válassza az „egy” értéket, ha a bemenet egyetlen üzenet, vagy a „több” értéket, ha a bemenet egy üzenetekből álló tömb. Ha a beállítás nincs megadva, az „egy” az alapértelmezett érték</value>
+  </data>
+  <data name="HttpTriggerCSharpWithParameters_description" xml:space="preserve">
+    <value>C#-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_label" xml:space="preserve">
+    <value>Az eseményközpont számossága</value>
+  </data>
+  <data name="HttpTriggerWithParametersNodeJS_description" xml:space="preserve">
+    <value>JavaScript-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
+  </data>
+  <data name="cdsWebHookCSharp_description" xml:space="preserve">
+    <value>(Kísérleti funkció) CDS-függvény, amely a CDS SDK használatával CDS-környezetbe irányuló hívásokat hajthat végre.</value>
+  </data>
+  <data name="cdsTemplate_warningNotConfigured" xml:space="preserve">
+    <value>E sablon használatához a függvényalkalmazást konfigurálni kell az AAD-ben, és a következő engedélyeket kell biztosítani:
+
+Common Data Service – Hozzáférés a Common Data Service szolgáltatáshoz
+Windowsos Azure Service Management API – Hozzáférés céges felhasználóként az Azure Service Management szolgáltatáshoz (előzetes verzió).</value>
+  </data>
+  <data name="temp_category_monitoring" xml:space="preserve">
+    <value>Figyelés</value>
+  </data>
+  <data name="AppInsightsHttpAvailability_name" xml:space="preserve">
+    <value>AppInsights – HTTP elérhetősége</value>
+  </data>
+  <data name="AppInsightsHttpAvailabilityCSharp_description" xml:space="preserve">
+    <value>C# függvény, amely az Application Insights segítségével figyeli egy adott webalkalmazás elérhetőségét és válaszképességét.</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBI_name" xml:space="preserve">
+    <value>AppInsights – Valós idejű Power BI</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBICSharp_description" xml:space="preserve">
+    <value>C#-függvény, amely a valós idejű rendelkezésre állási adatokat leküldi az Application Insights szolgáltatásból a Power BI-ba</value>
+  </data>
+  <data name="AppInsightsScheduledAnalytics_name" xml:space="preserve">
+    <value>AppInsights – ütemezett elemzés</value>
+  </data>
+  <data name="AppInsightsScheduledAnalyticsCSharp_description" xml:space="preserve">
+    <value>C#-függvény, mely metrikákat származtat az alkalmazás telemetriai adatainak az Application Insights szolgáltatással végzett mélyelemzéséből</value>
+  </data>
+  <data name="AppInsightsScheduledDigest_name" xml:space="preserve">
+    <value>AppInsights – ütemezett összefoglaló</value>
+  </data>
+  <data name="AppInsightsScheduledDigestCSharp_description" xml:space="preserve">
+    <value>C#-függvény, mely elküldi az Application Insights napi telemetriai jelentését e-mailben</value>
+  </data>
+  <data name="HttpPOST(CRUD)Queue-FSharp_description" xml:space="preserve">
+    <value>F#-függvény, mely adatokat küld le egy várólistába HTTP Post érkezése esetén.</value>
   </data>
 </root>
