@@ -63,7 +63,6 @@ private static async Task AvailabilityTestRun(string name, string location, stri
 
     HttpClient.DefaultRequestHeaders.Add(SyntheticTestRunId, operationId);
 
-    // REGION_NAME is a default environment variable that comes with App Service
     var availability = new AvailabilityTelemetry
     {
         Id = operationId,
