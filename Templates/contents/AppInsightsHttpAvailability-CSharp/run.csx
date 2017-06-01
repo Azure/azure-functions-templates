@@ -13,6 +13,7 @@ using Microsoft.ApplicationInsights.DataContracts;
 // For questions or feedbacks, please visit [Application Insights forum] https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights
 
 // setup synthetic headers used for client-server telemetry correlation
+private const string SyntheticTestId = "SyntheticTest-Id";
 private const string SyntheticTestRunId = "SyntheticTest-RunId";
 private const string SyntheticTestLocation = "SyntheticTest-Location";
 
@@ -21,7 +22,7 @@ private const string SyntheticTestLocation = "SyntheticTest-Location";
 // [Configure Azure Function Application settings] https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings
 private static readonly TelemetryClient TelemetryClient = new TelemetryClient { InstrumentationKey = ConfigurationManager.AppSettings["AI_IKEY"] };
 
-// [CONFIGURATION_REQUIRED] configure test timeout for which the test should run
+// [CONFIGURATION_REQUIRED] configure test timeout accordingly for which your request should run
 private static readonly HttpClient HttpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(30) };
 
 public static async Task Run(TimerInfo myTimer, TraceWriter log)
@@ -29,6 +30,13 @@ public static async Task Run(TimerInfo myTimer, TraceWriter log)
     if (myTimer.IsPastDue)
     {
         log.Warning($"[Warning]: Timer is running late! Last ran at: {myTimer.ScheduleStatus.Last}");
+    }
+
+    // [CONFIGURATION_REQUIRED] provide {testName} accordingly for your test function
+    string testName = "AvailabilityTestFunction";
+    if (!HttpClient.DefaultRequestHeaders.Contains(SyntheticTestId))
+    {
+        HttpClient.DefaultRequestHeaders.Add(SyntheticTestId, testName);
     }
 
     // REGION_NAME is a default environment variable that comes with App Service
@@ -40,7 +48,7 @@ public static async Task Run(TimerInfo myTimer, TraceWriter log)
 
     // [CONFIGURATION_REQUIRED] configure {uri} and {contentMatch} accordingly for your web app
     await AvailabilityTestRun(
-        name: "AvailabilityTestFunction",
+        name: testName,
         location: location,
         uri: "https://azure.microsoft.com/en-us/services/application-insights",
         contentMatch: "Application Insights",
@@ -56,6 +64,7 @@ private static async Task AvailabilityTestRun(string name, string location, stri
     string operationId = Guid.NewGuid().ToString();
     log.Verbose($"[Verbose]: Operation ID is {operationId}");
 
+    // always update the run Id for every run
     if (HttpClient.DefaultRequestHeaders.Contains(SyntheticTestRunId))
     {
         HttpClient.DefaultRequestHeaders.Remove(SyntheticTestRunId);
