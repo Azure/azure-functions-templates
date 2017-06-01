@@ -12,12 +12,17 @@ using Microsoft.ApplicationInsights.DataContracts;
 
 // For questions or feedbacks, please visit [Application Insights forum] https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights
 
+// setup synthetic headers used for client-server telemetry correlation
+private const string SyntheticTestId = "SyntheticTest-Id";
+private const string SyntheticTestRunId = "SyntheticTest-RunId";
+private const string SyntheticTestLocation = "SyntheticTest-Location";
+
 // [CONFIGURATION_REQUIRED] configure {AI_IKEY} accordingly in App Settings with Instrumentation Key obtained from Application Insights
 // [Get an Application Insights Instrumentation Key] https://docs.microsoft.com/en-us/azure/application-insights/app-insights-create-new-resource
 // [Configure Azure Function Application settings] https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings
 private static readonly TelemetryClient TelemetryClient = new TelemetryClient { InstrumentationKey = ConfigurationManager.AppSettings["AI_IKEY"] };
 
-// [CONFIGURATION_REQUIRED] configure test timeout for which the test should run
+// [CONFIGURATION_REQUIRED] configure test timeout accordingly for which your request should run
 private static readonly HttpClient HttpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(30) };
 
 public static async Task Run(TimerInfo myTimer, TraceWriter log)
@@ -27,16 +32,31 @@ public static async Task Run(TimerInfo myTimer, TraceWriter log)
         log.Warning($"[Warning]: Timer is running late! Last ran at: {myTimer.ScheduleStatus.Last}");
     }
 
+    // [CONFIGURATION_REQUIRED] provide {testName} accordingly for your test function
+    string testName = "AvailabilityTestFunction";
+    if (!HttpClient.DefaultRequestHeaders.Contains(SyntheticTestId))
+    {
+        HttpClient.DefaultRequestHeaders.Add(SyntheticTestId, testName);
+    }
+
+    // REGION_NAME is a default environment variable that comes with App Service
+    string location = Environment.GetEnvironmentVariable("REGION_NAME");
+    if (!HttpClient.DefaultRequestHeaders.Contains(SyntheticTestLocation))
+    {
+        HttpClient.DefaultRequestHeaders.Add(SyntheticTestLocation, location);
+    }
+
     // [CONFIGURATION_REQUIRED] configure {uri} and {contentMatch} accordingly for your web app
     await AvailabilityTestRun(
-        name: "AvailabilityTestFunction",
+        name: testName,
+        location: location,
         uri: "https://azure.microsoft.com/en-us/services/application-insights",
         contentMatch: "Application Insights",
         log: log
     );
 }
 
-private static async Task AvailabilityTestRun(string name, string uri, string contentMatch, TraceWriter log)
+private static async Task AvailabilityTestRun(string name, string location, string uri, string contentMatch, TraceWriter log)
 {
     log.Info($"Executing availability test run for {name} at: {DateTime.Now}");
 
@@ -44,11 +64,19 @@ private static async Task AvailabilityTestRun(string name, string uri, string co
     string operationId = Guid.NewGuid().ToString();
     log.Verbose($"[Verbose]: Operation ID is {operationId}");
 
-    // REGION_NAME is a default environment variable that comes with App Service
+    // always update the run Id for every run
+    if (HttpClient.DefaultRequestHeaders.Contains(SyntheticTestRunId))
+    {
+        HttpClient.DefaultRequestHeaders.Remove(SyntheticTestRunId);
+    }
+
+    HttpClient.DefaultRequestHeaders.Add(SyntheticTestRunId, operationId);
+
     var availability = new AvailabilityTelemetry
     {
+        Id = operationId,
         Name = name,
-        RunLocation = Environment.GetEnvironmentVariable("REGION_NAME"),
+        RunLocation = location,
         Success = false
     };
     availability.Context.Operation.Id = operationId;
@@ -97,6 +125,7 @@ private static async Task AvailabilityTestRun(string name, string uri, string co
         var exceptionTelemetry = new ExceptionTelemetry(ex);
         exceptionTelemetry.Context.Operation.Id = operationId;
         exceptionTelemetry.Properties.Add("TestName", name);
+        exceptionTelemetry.Properties.Add("TestLocation", location);
         exceptionTelemetry.Properties.Add("TestUri", uri);
         TelemetryClient.TrackException(exceptionTelemetry);
         log.Error($"[Error]: {ex.Message}");
