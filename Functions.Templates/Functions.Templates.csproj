@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="PortalTemplates" InitialTargets="Clean;dotnetcliCheck;codeformatterCheck;nugetCheck">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0EC16A67-C60A-4950-A533-07D8783C88B0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Functions.Templates</RootNamespace>
+    <AssemblyName>Functions.Templates</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageVersion Condition="'$(PackageVersion)' == ''">1.0.0</PackageVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Templates\BlobTrigger-CSharp\run.cs" />
+    <None Include="Templates\EventHubTrigger-CSharp\run.cs" />
+    <None Include="Templates\FaceLocator-CSharp\run.cs" />
+    <None Include="Templates\GenericWebHook-CSharp\run.cs" />
+    <None Include="Templates\GitHubCommenter-CSharp\run.cs" />
+    <None Include="Templates\GitHubWebHook-CSharp\run.cs" />
+    <None Include="Templates\HttpGET%28CRUD%29-CSharp\run.cs" />
+    <None Include="Templates\HttpPOST%28CRUD%29-CSharp\run.cs" />
+    <None Include="Templates\HttpPUT%28CRUD%29-CSharp\run.cs" />
+    <None Include="Templates\HttpTrigger-CSharp\run.cs" />
+    <None Include="Templates\HttpTriggerWithParameters-CSharp\run.cs" />
+    <None Include="Templates\QueueTrigger-CSharp\run.cs" />
+    <None Include="Templates\SasToken-CSharp\run.cs" />
+    <None Include="Templates\ServiceBusQueueTrigger-CSharp\run.cs" />
+    <None Include="Templates\ServiceBusTopicTrigger-CSharp\run.cs" />
+    <None Include="Templates\TimerTrigger-CSharp\run.cs" />
+    <None Include=".template.config\template.json" />
+    <None Include="Bindings\bindings.json" />
+    <None Include="Documentation\apiHubFileIn.md" />
+    <None Include="Documentation\apiHubFileOut.md" />
+    <None Include="Documentation\apiHubFileTrigger.md" />
+    <None Include="Documentation\apiHubTable.md" />
+    <None Include="Documentation\apiHubTableOut.md" />
+    <None Include="Documentation\blobIn.md" />
+    <None Include="Documentation\blobOut.md" />
+    <None Include="Documentation\blobTrigger.md" />
+    <None Include="Documentation\botIn.md" />
+    <None Include="Documentation\botOut.md" />
+    <None Include="Documentation\cdsIn.md" />
+    <None Include="Documentation\documentDBIn.md" />
+    <None Include="Documentation\documentDBOut.md" />
+    <None Include="Documentation\eventHubOut.md" />
+    <None Include="Documentation\eventHubTrigger.md" />
+    <None Include="Documentation\httpOut.md" />
+    <None Include="Documentation\httpTrigger.md" />
+    <None Include="Documentation\manualTrigger.md" />
+    <None Include="Documentation\mobileTableIn.md" />
+    <None Include="Documentation\mobileTableOut.md" />
+    <None Include="Documentation\notificationHubOut.md" />
+    <None Include="Documentation\queueOut.md" />
+    <None Include="Documentation\queueTrigger.md" />
+    <None Include="Documentation\sendGridOut.md" />
+    <None Include="Documentation\serviceBusOut.md" />
+    <None Include="Documentation\serviceBusTrigger.md" />
+    <None Include="Documentation\tableIn.md" />
+    <None Include="Documentation\tableOut.md" />
+    <None Include="Documentation\timerTrigger.md" />
+    <None Include="Documentation\twilioSmsOut.md" />
+    <None Include="ItemTemplates.nuspec" />
+    <None Include="PortalTemplates.nuspec" />
+    <None Include="Templates\AppInsightsHttpAvailability-CSharp\function.json" />
+    <None Include="Templates\AppInsightsHttpAvailability-CSharp\metadata.json" />
+    <None Include="Templates\AppInsightsHttpAvailability-CSharp\project.json" />
+    <None Include="Templates\AppInsightsHttpAvailability-CSharp\readme.md" />
+    <None Include="Templates\AppInsightsHttpAvailability-CSharp\run.csx" />
+    <None Include="Templates\AppInsightsRealtimePowerBI-CSharp\function.json" />
+    <None Include="Templates\AppInsightsRealtimePowerBI-CSharp\metadata.json" />
+    <None Include="Templates\AppInsightsRealtimePowerBI-CSharp\readme.md" />
+    <None Include="Templates\AppInsightsRealtimePowerBI-CSharp\run.csx" />
+    <None Include="Templates\AppInsightsScheduledAnalytics-CSharp\function.json" />
+    <None Include="Templates\AppInsightsScheduledAnalytics-CSharp\metadata.json" />
+    <None Include="Templates\AppInsightsScheduledAnalytics-CSharp\project.json" />
+    <None Include="Templates\AppInsightsScheduledAnalytics-CSharp\readme.md" />
+    <None Include="Templates\AppInsightsScheduledAnalytics-CSharp\run.csx" />
+    <None Include="Templates\AppInsightsScheduledDigest-CSharp\function.json" />
+    <None Include="Templates\AppInsightsScheduledDigest-CSharp\metadata.json" />
+    <None Include="Templates\AppInsightsScheduledDigest-CSharp\readme.md" />
+    <None Include="Templates\AppInsightsScheduledDigest-CSharp\run.csx" />
+    <None Include="Templates\BlobTrigger-Batch\function.json" />
+    <None Include="Templates\BlobTrigger-Batch\metadata.json" />
+    <None Include="Templates\BlobTrigger-Batch\run.bat" />
+    <None Include="Templates\BlobTrigger-Batch\sample.dat" />
+    <None Include="Templates\BlobTrigger-CSharp\build.config\template.json" />
+    <None Include="Templates\BlobTrigger-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\BlobTrigger-CSharp\function.json" />
+    <None Include="Templates\BlobTrigger-CSharp\metadata.json" />
+    <None Include="Templates\BlobTrigger-CSharp\readme.md" />
+    <None Include="Templates\BlobTrigger-CSharp\sample.dat" />
+    <None Include="Templates\BlobTrigger-FSharp\function.json" />
+    <None Include="Templates\BlobTrigger-FSharp\metadata.json" />
+    <None Include="Templates\BlobTrigger-FSharp\readme.md" />
+    <None Include="Templates\BlobTrigger-FSharp\sample.dat" />
+    <None Include="Templates\BlobTrigger-JavaScript\function.json" />
+    <None Include="Templates\BlobTrigger-JavaScript\metadata.json" />
+    <None Include="Templates\BlobTrigger-JavaScript\readme.md" />
+    <None Include="Templates\BlobTrigger-JavaScript\sample.dat" />
+    <None Include="Templates\CDS-CSharp\function.json" />
+    <None Include="Templates\CDS-CSharp\metadata.json" />
+    <None Include="Templates\CDS-CSharp\project.json" />
+    <None Include="Templates\CDS-CSharp\readme.md" />
+    <None Include="Templates\CDS-CSharp\run.csx" />
+    <None Include="Templates\CDS-CSharp\sample.dat" />
+    <None Include="Templates\CDS-CSharp\telemetrybridge.csx" />
+    <None Include="Templates\EventHubTrigger-CSharp\build.config\template.json" />
+    <None Include="Templates\EventHubTrigger-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\EventHubTrigger-CSharp\function.json" />
+    <None Include="Templates\EventHubTrigger-CSharp\metadata.json" />
+    <None Include="Templates\EventHubTrigger-CSharp\sample.dat" />
+    <None Include="Templates\EventHubTrigger-FSharp\function.json" />
+    <None Include="Templates\EventHubTrigger-FSharp\metadata.json" />
+    <None Include="Templates\EventHubTrigger-FSharp\sample.dat" />
+    <None Include="Templates\EventHubTrigger-JavaScript\function.json" />
+    <None Include="Templates\EventHubTrigger-JavaScript\metadata.json" />
+    <None Include="Templates\EventHubTrigger-JavaScript\sample.dat" />
+    <None Include="Templates\ExternalFileTrigger-Batch\function.json" />
+    <None Include="Templates\ExternalFileTrigger-Batch\metadata.json" />
+    <None Include="Templates\ExternalFileTrigger-Batch\run.bat" />
+    <None Include="Templates\ExternalFileTrigger-Batch\sample.dat" />
+    <None Include="Templates\ExternalFileTrigger-CSharp\function.json" />
+    <None Include="Templates\ExternalFileTrigger-CSharp\metadata.json" />
+    <None Include="Templates\ExternalFileTrigger-CSharp\run.csx" />
+    <None Include="Templates\ExternalFileTrigger-CSharp\sample.dat" />
+    <None Include="Templates\ExternalFileTrigger-FSharp\function.json" />
+    <None Include="Templates\ExternalFileTrigger-FSharp\metadata.json" />
+    <None Include="Templates\ExternalFileTrigger-FSharp\sample.dat" />
+    <None Include="Templates\ExternalFileTrigger-JavaScript\function.json" />
+    <None Include="Templates\ExternalFileTrigger-JavaScript\metadata.json" />
+    <None Include="Templates\ExternalFileTrigger-JavaScript\sample.dat" />
+    <None Include="Templates\ExternalTable-CSharp\function.json" />
+    <None Include="Templates\ExternalTable-CSharp\metadata.json" />
+    <None Include="Templates\ExternalTable-CSharp\run.csx" />
+    <None Include="Templates\ExternalTable-FSharp\function.json" />
+    <None Include="Templates\ExternalTable-FSharp\metadata.json" />
+    <None Include="Templates\ExternalTable-FSharp\project.json" />
+    <None Include="Templates\FaceLocator-CSharp\build.config\template.json" />
+    <None Include="Templates\FaceLocator-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\FaceLocator-CSharp\function.json" />
+    <None Include="Templates\FaceLocator-CSharp\metadata.json" />
+    <None Include="Templates\FaceLocator-CSharp\sample.dat" />
+    <None Include="Templates\FaceLocator-FSharp\function.json" />
+    <None Include="Templates\FaceLocator-FSharp\metadata.json" />
+    <None Include="Templates\FaceLocator-FSharp\sample.dat" />
+    <None Include="Templates\FaceLocator-JavaScript\function.json" />
+    <None Include="Templates\FaceLocator-JavaScript\metadata.json" />
+    <None Include="Templates\FaceLocator-JavaScript\package.json" />
+    <None Include="Templates\FaceLocator-JavaScript\sample.dat" />
+    <None Include="Templates\GenericWebHook-CSharp\build.config\template.json" />
+    <None Include="Templates\GenericWebHook-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\GenericWebHook-CSharp\function.json" />
+    <None Include="Templates\GenericWebHook-CSharp\metadata.json" />
+    <None Include="Templates\GenericWebHook-CSharp\sample.dat" />
+    <None Include="Templates\GenericWebHook-FSharp\function.json" />
+    <None Include="Templates\GenericWebHook-FSharp\metadata.json" />
+    <None Include="Templates\GenericWebHook-FSharp\sample.dat" />
+    <None Include="Templates\GenericWebHook-JavaScript\function.json" />
+    <None Include="Templates\GenericWebHook-JavaScript\metadata.json" />
+    <None Include="Templates\GenericWebHook-JavaScript\sample.dat" />
+    <None Include="Templates\GitHubCommenter-CSharp\build.config\template.json" />
+    <None Include="Templates\GitHubCommenter-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\GitHubCommenter-CSharp\function.json" />
+    <None Include="Templates\GitHubCommenter-CSharp\metadata.json" />
+    <None Include="Templates\GitHubCommenter-CSharp\sample.dat" />
+    <None Include="Templates\GitHubCommenter-FSharp\function.json" />
+    <None Include="Templates\GitHubCommenter-FSharp\metadata.json" />
+    <None Include="Templates\GitHubCommenter-FSharp\sample.dat" />
+    <None Include="Templates\GitHubCommenter-JavaScript\function.json" />
+    <None Include="Templates\GitHubCommenter-JavaScript\metadata.json" />
+    <None Include="Templates\GitHubCommenter-JavaScript\package.json" />
+    <None Include="Templates\GitHubCommenter-JavaScript\sample.dat" />
+    <None Include="Templates\GitHubWebHook-CSharp\build.config\template.json" />
+    <None Include="Templates\GitHubWebHook-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\GitHubWebHook-CSharp\function.json" />
+    <None Include="Templates\GitHubWebHook-CSharp\metadata.json" />
+    <None Include="Templates\GitHubWebHook-CSharp\sample.dat" />
+    <None Include="Templates\GitHubWebHook-FSharp\function.json" />
+    <None Include="Templates\GitHubWebHook-FSharp\metadata.json" />
+    <None Include="Templates\GitHubWebHook-FSharp\sample.dat" />
+    <None Include="Templates\GitHubWebHook-JavaScript\function.json" />
+    <None Include="Templates\GitHubWebHook-JavaScript\metadata.json" />
+    <None Include="Templates\GitHubWebHook-JavaScript\sample.dat" />
+    <None Include="Templates\HttpGET%28CRUD%29-CSharp\build.config\template.json" />
+    <None Include="Templates\HttpGET%28CRUD%29-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\HttpGET%28CRUD%29-CSharp\function.json" />
+    <None Include="Templates\HttpGET%28CRUD%29-CSharp\metadata.json" />
+    <None Include="Templates\HttpGET%28CRUD%29-CSharp\sample.dat" />
+    <None Include="Templates\HttpGET%28CRUD%29-FSharp\function.json" />
+    <None Include="Templates\HttpGET%28CRUD%29-FSharp\metadata.json" />
+    <None Include="Templates\HttpGET%28CRUD%29-FSharp\sample.dat" />
+    <None Include="Templates\HttpGET%28CRUD%29-JavaScript\function.json" />
+    <None Include="Templates\HttpGET%28CRUD%29-JavaScript\metadata.json" />
+    <None Include="Templates\HttpGET%28CRUD%29-JavaScript\sample.dat" />
+    <None Include="Templates\HttpGET%28CRUD%29-PHP\function.json" />
+    <None Include="Templates\HttpGET%28CRUD%29-PHP\metadata.json" />
+    <None Include="Templates\HttpGET%28CRUD%29-PHP\sample.dat" />
+    <None Include="Templates\HttpPOST%28CRUD%29-CSharp\build.config\template.json" />
+    <None Include="Templates\HttpPOST%28CRUD%29-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\HttpPOST%28CRUD%29-CSharp\function.json" />
+    <None Include="Templates\HttpPOST%28CRUD%29-CSharp\metadata.json" />
+    <None Include="Templates\HttpPOST%28CRUD%29-CSharp\sample.dat" />
+    <None Include="Templates\HttpPOST%28CRUD%29-FSharp\function.json" />
+    <None Include="Templates\HttpPOST%28CRUD%29-FSharp\metadata.json" />
+    <None Include="Templates\HttpPOST%28CRUD%29-FSharp\sample.dat" />
+    <None Include="Templates\HttpPOST%28CRUD%29-JavaScript\function.json" />
+    <None Include="Templates\HttpPOST%28CRUD%29-JavaScript\metadata.json" />
+    <None Include="Templates\HttpPOST%28CRUD%29-JavaScript\sample.dat" />
+    <None Include="Templates\HttpPOST%28CRUD%29Queue-FSharp\function.json" />
+    <None Include="Templates\HttpPOST%28CRUD%29Queue-FSharp\metadata.json" />
+    <None Include="Templates\HttpPOST%28CRUD%29Queue-FSharp\sample.dat" />
+    <None Include="Templates\HttpPUT%28CRUD%29-CSharp\build.config\template.json" />
+    <None Include="Templates\HttpPUT%28CRUD%29-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\HttpPUT%28CRUD%29-CSharp\function.json" />
+    <None Include="Templates\HttpPUT%28CRUD%29-CSharp\metadata.json" />
+    <None Include="Templates\HttpPUT%28CRUD%29-CSharp\sample.dat" />
+    <None Include="Templates\HttpPUT%28CRUD%29-FSharp\function.json" />
+    <None Include="Templates\HttpPUT%28CRUD%29-FSharp\metadata.json" />
+    <None Include="Templates\HttpPUT%28CRUD%29-FSharp\sample.dat" />
+    <None Include="Templates\HttpTrigger-Batch\function.json" />
+    <None Include="Templates\HttpTrigger-Batch\metadata.json" />
+    <None Include="Templates\HttpTrigger-Batch\run.bat" />
+    <None Include="Templates\HttpTrigger-CSharp\build.config\template.json" />
+    <None Include="Templates\HttpTrigger-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\HttpTrigger-CSharp\function.json" />
+    <None Include="Templates\HttpTrigger-CSharp\metadata.json" />
+    <None Include="Templates\HttpTrigger-CSharp\readme.md" />
+    <None Include="Templates\HttpTrigger-CSharp\sample.dat" />
+    <None Include="Templates\HttpTrigger-FSharp\function.json" />
+    <None Include="Templates\HttpTrigger-FSharp\metadata.json" />
+    <None Include="Templates\HttpTrigger-FSharp\project.json" />
+    <None Include="Templates\HttpTrigger-FSharp\readme.md" />
+    <None Include="Templates\HttpTrigger-FSharp\sample.dat" />
+    <None Include="Templates\HttpTrigger-JavaScript\function.json" />
+    <None Include="Templates\HttpTrigger-JavaScript\metadata.json" />
+    <None Include="Templates\HttpTrigger-JavaScript\sample.dat" />
+    <None Include="Templates\HttpTrigger-Powershell\function.json" />
+    <None Include="Templates\HttpTrigger-Powershell\metadata.json" />
+    <None Include="Templates\HttpTrigger-Powershell\readme.md" />
+    <None Include="Templates\HttpTrigger-Powershell\run.ps1" />
+    <None Include="Templates\HttpTrigger-Powershell\sample.dat" />
+    <None Include="Templates\HttpTrigger-Python\function.json" />
+    <None Include="Templates\HttpTrigger-Python\metadata.json" />
+    <None Include="Templates\HttpTrigger-Python\sample.dat" />
+    <None Include="Templates\HttpTriggerWithParameters-CSharp\build.config\template.json" />
+    <None Include="Templates\HttpTriggerWithParameters-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\HttpTriggerWithParameters-CSharp\function.json" />
+    <None Include="Templates\HttpTriggerWithParameters-CSharp\metadata.json" />
+    <None Include="Templates\HttpTriggerWithParameters-CSharp\readme.md" />
+    <None Include="Templates\HttpTriggerWithParameters-JavaScript\function.json" />
+    <None Include="Templates\HttpTriggerWithParameters-JavaScript\metadata.json" />
+    <None Include="Templates\ImageResizer-CSharp\function.json" />
+    <None Include="Templates\ImageResizer-CSharp\metadata.json" />
+    <None Include="Templates\ImageResizer-CSharp\project.json" />
+    <None Include="Templates\ImageResizer-CSharp\readme.md" />
+    <None Include="Templates\ImageResizer-CSharp\run.csx" />
+    <None Include="Templates\ImageResizer-FSharp\function.json" />
+    <None Include="Templates\ImageResizer-FSharp\metadata.json" />
+    <None Include="Templates\ImageResizer-FSharp\project.json" />
+    <None Include="Templates\ImageResizer-FSharp\readme.md" />
+    <None Include="Templates\ManualTrigger-CSharp\function.json" />
+    <None Include="Templates\ManualTrigger-CSharp\metadata.json" />
+    <None Include="Templates\ManualTrigger-CSharp\run.csx" />
+    <None Include="Templates\ManualTrigger-CSharp\sample.dat" />
+    <None Include="Templates\ManualTrigger-FSharp\function.json" />
+    <None Include="Templates\ManualTrigger-FSharp\metadata.json" />
+    <None Include="Templates\ManualTrigger-FSharp\sample.dat" />
+    <None Include="Templates\ManualTrigger-JavaScript\function.json" />
+    <None Include="Templates\ManualTrigger-JavaScript\metadata.json" />
+    <None Include="Templates\ManualTrigger-JavaScript\sample.dat" />
+    <None Include="Templates\QueueTrigger-Bash\function.json" />
+    <None Include="Templates\QueueTrigger-Bash\metadata.json" />
+    <None Include="Templates\QueueTrigger-Bash\run.sh" />
+    <None Include="Templates\QueueTrigger-Bash\sample.dat" />
+    <None Include="Templates\QueueTrigger-Batch\function.json" />
+    <None Include="Templates\QueueTrigger-Batch\metadata.json" />
+    <None Include="Templates\QueueTrigger-Batch\run.bat" />
+    <None Include="Templates\QueueTrigger-Batch\sample.dat" />
+    <None Include="Templates\QueueTrigger-CSharp\build.config\template.json" />
+    <None Include="Templates\QueueTrigger-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\QueueTrigger-CSharp\function.json" />
+    <None Include="Templates\QueueTrigger-CSharp\metadata.json" />
+    <None Include="Templates\QueueTrigger-CSharp\readme.md" />
+    <None Include="Templates\QueueTrigger-CSharp\sample.dat" />
+    <None Include="Templates\QueueTrigger-FSharp\function.json" />
+    <None Include="Templates\QueueTrigger-FSharp\metadata.json" />
+    <None Include="Templates\QueueTrigger-FSharp\readme.md" />
+    <None Include="Templates\QueueTrigger-FSharp\sample.dat" />
+    <None Include="Templates\QueueTrigger-JavaScript\function.json" />
+    <None Include="Templates\QueueTrigger-JavaScript\metadata.json" />
+    <None Include="Templates\QueueTrigger-JavaScript\readme.md" />
+    <None Include="Templates\QueueTrigger-JavaScript\sample.dat" />
+    <None Include="Templates\QueueTrigger-Php\function.json" />
+    <None Include="Templates\QueueTrigger-Php\metadata.json" />
+    <None Include="Templates\QueueTrigger-Php\sample.dat" />
+    <None Include="Templates\QueueTrigger-Powershell\function.json" />
+    <None Include="Templates\QueueTrigger-Powershell\metadata.json" />
+    <None Include="Templates\QueueTrigger-Powershell\run.ps1" />
+    <None Include="Templates\QueueTrigger-Powershell\sample.dat" />
+    <None Include="Templates\QueueTrigger-Python\function.json" />
+    <None Include="Templates\QueueTrigger-Python\metadata.json" />
+    <None Include="Templates\QueueTrigger-Python\sample.dat" />
+    <None Include="Templates\SasToken-CSharp\build.config\template.json" />
+    <None Include="Templates\SasToken-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\SasToken-CSharp\function.json" />
+    <None Include="Templates\SasToken-CSharp\metadata.json" />
+    <None Include="Templates\SasToken-CSharp\readme.md" />
+    <None Include="Templates\SasToken-CSharp\sample.dat" />
+    <None Include="Templates\SasToken-FSharp\function.json" />
+    <None Include="Templates\SasToken-FSharp\metadata.json" />
+    <None Include="Templates\SasToken-FSharp\readme.md" />
+    <None Include="Templates\SasToken-FSharp\sample.dat" />
+    <None Include="Templates\SasToken-JavaScript\function.json" />
+    <None Include="Templates\SasToken-JavaScript\metadata.json" />
+    <None Include="Templates\SasToken-JavaScript\package.json" />
+    <None Include="Templates\SasToken-JavaScript\readme.md" />
+    <None Include="Templates\SasToken-JavaScript\sample.dat" />
+    <None Include="Templates\ScheduledMail-CSharp\function.json" />
+    <None Include="Templates\ScheduledMail-CSharp\metadata.json" />
+    <None Include="Templates\ScheduledMail-CSharp\run.csx" />
+    <None Include="Templates\SendGrid-CSharp\function.json" />
+    <None Include="Templates\SendGrid-CSharp\metadata.json" />
+    <None Include="Templates\SendGrid-CSharp\run.csx" />
+    <None Include="Templates\SendGrid-CSharp\sample.dat" />
+    <None Include="Templates\SendGrid-FSharp\function.json" />
+    <None Include="Templates\SendGrid-FSharp\metadata.json" />
+    <None Include="Templates\SendGrid-FSharp\sample.dat" />
+    <None Include="Templates\SendGrid-JavaScript\function.json" />
+    <None Include="Templates\SendGrid-JavaScript\metadata.json" />
+    <None Include="Templates\SendGrid-JavaScript\sample.dat" />
+    <None Include="Templates\ServiceBusQueueTrigger-CSharp\build.config\template.json" />
+    <None Include="Templates\ServiceBusQueueTrigger-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\ServiceBusQueueTrigger-CSharp\function.json" />
+    <None Include="Templates\ServiceBusQueueTrigger-CSharp\metadata.json" />
+    <None Include="Templates\ServiceBusQueueTrigger-CSharp\sample.dat" />
+    <None Include="Templates\ServiceBusQueueTrigger-FSharp\function.json" />
+    <None Include="Templates\ServiceBusQueueTrigger-FSharp\metadata.json" />
+    <None Include="Templates\ServiceBusQueueTrigger-FSharp\sample.dat" />
+    <None Include="Templates\ServiceBusQueueTrigger-JavaScript\function.json" />
+    <None Include="Templates\ServiceBusQueueTrigger-JavaScript\metadata.json" />
+    <None Include="Templates\ServiceBusQueueTrigger-JavaScript\sample.dat" />
+    <None Include="Templates\ServiceBusTopicTrigger-CSharp\build.config\template.json" />
+    <None Include="Templates\ServiceBusTopicTrigger-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\ServiceBusTopicTrigger-CSharp\function.json" />
+    <None Include="Templates\ServiceBusTopicTrigger-CSharp\metadata.json" />
+    <None Include="Templates\ServiceBusTopicTrigger-CSharp\sample.dat" />
+    <None Include="Templates\ServiceBusTopicTrigger-FSharp\function.json" />
+    <None Include="Templates\ServiceBusTopicTrigger-FSharp\metadata.json" />
+    <None Include="Templates\ServiceBusTopicTrigger-FSharp\sample.dat" />
+    <None Include="Templates\ServiceBusTopicTrigger-JavaScript\function.json" />
+    <None Include="Templates\ServiceBusTopicTrigger-JavaScript\metadata.json" />
+    <None Include="Templates\ServiceBusTopicTrigger-JavaScript\sample.dat" />
+    <None Include="Templates\TimerTrigger-CSharp\build.config\template.json" />
+    <None Include="Templates\TimerTrigger-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\TimerTrigger-CSharp\function.json" />
+    <None Include="Templates\TimerTrigger-CSharp\metadata.json" />
+    <None Include="Templates\TimerTrigger-CSharp\readme.md" />
+    <None Include="Templates\TimerTrigger-CSharp\sample.dat" />
+    <None Include="Templates\TimerTrigger-FSharp\function.json" />
+    <None Include="Templates\TimerTrigger-FSharp\metadata.json" />
+    <None Include="Templates\TimerTrigger-FSharp\readme.md" />
+    <None Include="Templates\TimerTrigger-FSharp\sample.dat" />
+    <None Include="Templates\TimerTrigger-JavaScript\function.json" />
+    <None Include="Templates\TimerTrigger-JavaScript\metadata.json" />
+    <None Include="Templates\TimerTrigger-JavaScript\readme.md" />
+    <None Include="Templates\TimerTrigger-JavaScript\sample.dat" />
+    <None Include="Templates\TimerTrigger-Powershell\function.json" />
+    <None Include="Templates\TimerTrigger-Powershell\metadata.json" />
+    <None Include="Templates\TimerTrigger-Powershell\readme.md" />
+    <None Include="Templates\TimerTrigger-Powershell\run.ps1" />
+    <None Include="Templates\TimerTrigger-Powershell\sample.dat" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\cs-CZ\Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\de-DE\Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\es-ES\Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\fr-FR\Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\hu-HU\Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\it-IT\Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\ja-JP\Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\ko-KR\Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\nl-NL\Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\pl-PL\Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\pt-BR\Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\pt-PT\Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\qps-ploc\Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\ru-RU\Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\sv-SE\Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\tr-TR\Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\zh-CN\Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\zh-TW\Resources\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\BlobTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\BlobTrigger-FSharp\run.fsx" />
+    <Content Include="Templates\BlobTrigger-JavaScript\index.js" />
+    <Content Include="Templates\EventHubTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\EventHubTrigger-FSharp\run.fsx" />
+    <Content Include="Templates\EventHubTrigger-JavaScript\index.js" />
+    <Content Include="Templates\ExternalFileTrigger-FSharp\run.fsx" />
+    <Content Include="Templates\ExternalFileTrigger-JavaScript\index.js" />
+    <Content Include="Templates\ExternalTable-FSharp\run.fsx" />
+    <Content Include="Templates\FaceLocator-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\FaceLocator-FSharp\run.fsx" />
+    <Content Include="Templates\FaceLocator-JavaScript\index.js" />
+    <Content Include="Templates\GenericWebHook-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\GenericWebHook-FSharp\run.fsx" />
+    <Content Include="Templates\GenericWebHook-JavaScript\index.js" />
+    <Content Include="Templates\GitHubCommenter-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\GitHubCommenter-FSharp\run.fsx" />
+    <Content Include="Templates\GitHubCommenter-JavaScript\index.js" />
+    <Content Include="Templates\GitHubWebHook-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\GitHubWebHook-FSharp\run.fsx" />
+    <Content Include="Templates\GitHubWebHook-JavaScript\index.js" />
+    <Content Include="Templates\HttpGET%28CRUD%29-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\HttpGET%28CRUD%29-FSharp\run.fsx" />
+    <Content Include="Templates\HttpGET%28CRUD%29-JavaScript\index.js" />
+    <Content Include="Templates\HttpGET%28CRUD%29-PHP\run.php" />
+    <Content Include="Templates\HttpPOST%28CRUD%29-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\HttpPOST%28CRUD%29-FSharp\run.fsx" />
+    <Content Include="Templates\HttpPOST%28CRUD%29-JavaScript\index.js" />
+    <Content Include="Templates\HttpPOST%28CRUD%29Queue-FSharp\run.fsx" />
+    <Content Include="Templates\HttpPUT%28CRUD%29-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\HttpPUT%28CRUD%29-FSharp\run.fsx" />
+    <Content Include="Templates\HttpTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\HttpTrigger-FSharp\run.fsx" />
+    <Content Include="Templates\HttpTrigger-JavaScript\index.js" />
+    <Content Include="Templates\HttpTrigger-Python\run.py" />
+    <Content Include="Templates\HttpTriggerWithParameters-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\HttpTriggerWithParameters-JavaScript\index.js" />
+    <Content Include="Templates\ImageResizer-FSharp\run.fsx" />
+    <Content Include="Templates\ManualTrigger-FSharp\run.fsx" />
+    <Content Include="Templates\ManualTrigger-JavaScript\index.js" />
+    <Content Include="Templates\QueueTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\QueueTrigger-FSharp\run.fsx" />
+    <Content Include="Templates\QueueTrigger-JavaScript\index.js" />
+    <Content Include="Templates\QueueTrigger-Php\run.php" />
+    <Content Include="Templates\QueueTrigger-Python\run.py" />
+    <Content Include="Templates\SasToken-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\SasToken-FSharp\run.fsx" />
+    <Content Include="Templates\SasToken-JavaScript\index.js" />
+    <Content Include="Templates\SendGrid-FSharp\run.fsx" />
+    <Content Include="Templates\SendGrid-JavaScript\index.js" />
+    <Content Include="Templates\ServiceBusQueueTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\ServiceBusQueueTrigger-FSharp\run.fsx" />
+    <Content Include="Templates\ServiceBusQueueTrigger-JavaScript\index.js" />
+    <Content Include="Templates\ServiceBusTopicTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\ServiceBusTopicTrigger-FSharp\run.fsx" />
+    <Content Include="Templates\ServiceBusTopicTrigger-JavaScript\index.js" />
+    <Content Include="Templates\TimerTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\TimerTrigger-FSharp\run.fsx" />
+    <Content Include="Templates\TimerTrigger-JavaScript\index.js" />
+  </ItemGroup>
+  <Target Name="Clean" BeforeTargets="PrepareForBuild">
+    <RemoveDir Directories=".\bin\Portal" />
+  </Target>
+  <Target Name="dotnetcliCheck" BeforeTargets="PrepareForBuild">
+    <Error Condition="!Exists('..\tools\cli\dotnet.exe')" Text="Dotnet cli not found in the ..\tools\cli folder, Please execute getTools.ps1 or download and unzip into the ..\tools\cli folder from https://dotnetcli.blob.core.windows.net/dotnet/Sdk/release/2.0.0/dotnet-dev-win-x86.latest.zip" />
+  </Target>
+  <Target Name="codeformatterCheck" BeforeTargets="PrepareForBuild">
+    <Error Condition="!Exists('..\tools\CodeFormatter\CodeFormatter.exe')" Text="Code Formatter tool not found in the ..\tools folder,Please execute getTools.ps1 or download and unzip into the ..\tools folder from https://github.com/dotnet/codeformatter/releases/download/v1.0.0-alpha6/CodeFormatter.zip" />
+  </Target>
+  <Target Name="nugetCheck" BeforeTargets="PrepareForBuild">
+    <Error Condition="!Exists('..\tools\nuget.exe')" Text="Nuget.exe not found in the ..\tools folder. Please execute getTools.ps1 or Please download nuget.exe to the ..\tools folder" />
+  </Target>
+  <Target Name="PortalTemplates">
+    <Exec Command="..\tools\cli\dotnet.exe new -i .\" />
+    <Exec Command="..\tools\cli\dotnet.exe new functions -o .\bin\Portal\temp --force" IgnoreExitCode="true" />
+    <Exec Command="..\tools\CodeFormatter\CodeFormatter.exe ..\tools\codeFormat.csproj /nocopyright" IgnoreExitCode="true" />
+    <Delete Files=".\bin\Portal\Functions.Templates.csproj" />
+    <Exec Command="for /R .\bin\Portal\temp\Templates\ %%x in (*.cs) do ren &quot;%%x&quot; *.csx" />
+    <Exec Command="..\tools\nuget.exe pack .\bin\Portal\temp\PortalTemplates.nuspec -Version $(PackageVersion) -OutputDirectory .\bin\Portal\temp\nuget\" />
+    <Exec Command="..\tools\nuget.exe install Azure.Functions.Templates.Portal -Version $(PackageVersion) -Source $(MSBuildProjectDirectory)\bin\Portal\temp\nuget -OutputDirectory .\bin\Portal\release\ -ExcludeVersion" />
+    <RemoveDir Directories=".\bin\Portal\temp" />
+  </Target>
+  <Target Name="VisualStudioTemplates">
+    <Exec Command="..\tools\cli\dotnet.exe new -i .\" />
+    <Exec Command="..\tools\cli\dotnet.exe new functions --portalTemplates false --vsTemplates true -o .\bin\VS\temp --force" IgnoreExitCode="true" />
+    <Exec Command="..\tools\CodeFormatter\CodeFormatter.exe ..\tools\codeFormat.csproj /nocopyright" IgnoreExitCode="true" />
+    <Delete Files=".\bin\VS\Functions.Templates.csproj" />
+    <Exec Command="..\tools\nuget.exe pack .\bin\VS\temp\ItemTemplates.nuspec -Version $(PackageVersion) -OutputDirectory .\bin\VS\release\" />
+    <MSBuild Targets="Clean;Build" Projects="..\ProjectTemplate\Template.proj" Properties="PackageVersion=$(PackageVersion)" />
+    <Copy SourceFiles="..\ProjectTemplate\bin\Microsoft.AzureFunctions.ProjectTemplates.$(PackageVersion).nupkg" DestinationFiles=".\bin\VS\release\Microsoft.AzureFunctions.ProjectTemplates.$(PackageVersion).nupkg" />
+    <RemoveDir Directories=".\bin\VS\temp" />
+  </Target>
+</Project>
