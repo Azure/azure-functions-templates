@@ -1,0 +1,8 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Include="..\Functions.Templates\bin\**\*.cs" />
+  </ItemGroup>
+  <Target Name="Compile">
+    <Csc Sources="@(Compile)"/>
+  </Target>
+</Project>
