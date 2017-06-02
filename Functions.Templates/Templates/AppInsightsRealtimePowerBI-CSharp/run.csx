@@ -33,8 +33,8 @@ private const string RealTimePushURL = "REAL_TIME_PUSH_URL";
 // [CONFIGURATION_REQUIRED] configure {AI_APP_ID} and {AI_APP_KEY} accordingly in App Settings with values obtained from Application Insights
 // [Get your Application ID and API key] https://dev.applicationinsights.io/documentation/Authorization/API-key-and-App-ID
 // [Configure Azure Function Application settings] https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings
-private static readonly string s_aiAppId = ConfigurationManager.AppSettings["AI_APP_ID"];
-private static readonly string s_aiAppKey = ConfigurationManager.AppSettings["AI_APP_KEY"];
+private static readonly string AiAppId = ConfigurationManager.AppSettings["AI_APP_ID"];
+private static readonly string AiAppKey = ConfigurationManager.AppSettings["AI_APP_KEY"];
 
 public static async Task Run(TimerInfo myTimer, TraceWriter log)
 {

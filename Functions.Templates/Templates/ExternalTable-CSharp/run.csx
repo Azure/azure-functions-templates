@@ -16,7 +16,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, ITable
 {
     log.Info("C# HTTP trigger function processed a request.");
     ContinuationToken continuationToken = null;
-
+    
     do
     {
         var segment = await inputTable.ListEntitiesAsync(continuationToken: continuationToken);

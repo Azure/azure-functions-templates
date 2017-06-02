@@ -1,5 +1,5 @@
 ﻿#if (portalTemplates)
-        public static void Run(Stream myBlob, string name, TraceWriter log)
+public static void Run(Stream myBlob, string name, TraceWriter log)
 #endif
 #if (vsTemplates)
 using System.IO;
@@ -10,7 +10,7 @@ namespace Company.Function
 {
     public static class BlobTriggerCSharp
     {
-        [FunctionName("FunctionNameValue")]        
+        [FunctionName("FunctionNameValue")]
         public static void Run([BlobTrigger("PathValue/{name}", Connection = "ConnectionValue")]Stream myBlob, string name, TraceWriter log)
 #endif
         {

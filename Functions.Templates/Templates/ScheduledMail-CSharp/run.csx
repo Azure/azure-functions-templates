@@ -14,28 +14,25 @@ using Microsoft.Azure.WebJobs.Host;
 //      "from": "Azure Functions <samples@functions.com>"
 //   }
 // }
-public static Mail Run(Order order, TraceWriter log)
+public static Mail Run(TimerInfo myTimer, TraceWriter log)
 {
-    log.Info($"C# Queue trigger function processed order: {order.OrderId}");
-
+    var today = DateTime.Today.ToShortDateString();
+    log.Info($"Generating daily report for {today} at {DateTime.Now}");
+    
     Mail message = new Mail()
     {
-        Subject = $"Thanks for your order (#{order.OrderId})!"
+        Subject = $"Daily Report for {today}"
     };
+
+    // TODO: Customize this code to generate your specific mail message
+    var orderCount = 100;
 
     Content content = new Content
     {
         Type = "text/plain",
-        Value = $"{order.CustomerName}, your order ({order.OrderId}) is being processed!"
+        Value = $"You had {orderCount} orders today!"
     };
 
     message.AddContent(content);
     return message;
-}
-
-public class Order
-{
-    public string OrderId { get; set; }
-    public string CustomerName { get; set; }
-    public string CustomerEmail { get; set; }
 }

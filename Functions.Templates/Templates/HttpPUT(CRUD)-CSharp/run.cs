@@ -24,25 +24,25 @@ namespace Company.Function
         public static HttpResponseMessage Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "put")]Person person, [Table("TableNameValue", Connection = "ConnectionValue")]CloudTable outTable, TraceWriter log)
 #endif
         {
-            if (string.private IsNullOrEmpty(person.Name))
+            if (string.IsNullOrEmpty(person.Name))
             {
-                return private new HttpResponseMessage(HttpStatusCode.BadRequest)
-{
-    Content = new StringContent("A non-empty Name must be specified.")
+                return new HttpResponseMessage(HttpStatusCode.BadRequest)
+                {
+                    Content = new StringContent("A non-empty Name must be specified.")
                 };
             };
 
             log.Info($"PersonName={person.Name}");
 
-            private TableOperation _updateOperation = TableOperation.InsertOrReplace(person);
-private TableResult _result = outTable.Execute(updateOperation);
-            return private new HttpResponseMessage((HttpStatusCode)result.HttpStatusCode);
+            TableOperation updateOperation = TableOperation.InsertOrReplace(person);
+            TableResult result = outTable.Execute(updateOperation);
+            return new HttpResponseMessage((HttpStatusCode)result.HttpStatusCode);
         }
 
         public class Person : TableEntity
-{
-    public string Name { get; set; }
-}
+        {
+            public string Name { get; set; }
+        }
 #if (vsTemplates)
     }
 }

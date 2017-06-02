@@ -16,17 +16,17 @@ namespace Company.Function
 {
     public static class GenericWebHookCSharp
     {
-        [FunctionName("FunctionNameValue")]        
+        [FunctionName("FunctionNameValue")]
         public static async Task<HttpResponseMessage> Run([HttpTrigger(WebHookType = "github")]HttpRequestMessage req, TraceWriter log)
 #endif
         {
             log.Info("C# HTTP trigger function processed a request.");
 
             // Get request body
-            private dynamic _data = await req.Content.ReadAsAsync<object>();
+            dynamic data = await req.Content.ReadAsAsync<object>();
 
-// Extract github comment from request body
-private string _gitHubComment = data?.comment?.body;
+            // Extract github comment from request body
+            string gitHubComment = data?.comment?.body;
 
             return req.CreateResponse(HttpStatusCode.OK, "From Github:" + gitHubComment);
         }

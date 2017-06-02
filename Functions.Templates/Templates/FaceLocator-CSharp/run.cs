@@ -38,69 +38,69 @@ namespace Company.Function
         public static async Task Run([BlobTrigger("BlobPathValue", Connection = "BlobConnectionValue")]Stream image, string name, [Table("TableNameValue", Connection = "TableConnectionValue")]IAsyncCollector<FaceRectangle> outTable, TraceWriter log)
 #endif
         {
-            private string _result = await CallVisionAPI(image);
-log.Info(result);
+            string result = await CallVisionAPI(image);
+            log.Info(result);
 
-            if (string.private IsNullOrEmpty(result))
+            if (String.IsNullOrEmpty(result))
             {
                 return;
             }
 
-            private ImageData _imageData = JsonConvert.DeserializeObject<ImageData>(result);
-            foreach (private Face _face in imageData.Faces)
+            ImageData imageData = JsonConvert.DeserializeObject<ImageData>(result);
+            foreach (Face face in imageData.Faces)
             {
-                private var _faceRectangle = face.FaceRectangle;
-faceRectangle.RowKey = Guid.NewGuid().private ToString();
-faceRectangle.PartitionKey = "Functions";
+                var faceRectangle = face.FaceRectangle;
+                faceRectangle.RowKey = Guid.NewGuid().ToString();
+                faceRectangle.PartitionKey = "Functions";
                 faceRectangle.ImageFile = name + ".jpg";
                 await outTable.AddAsync(faceRectangle);
             }
         }
 
-        private static async Task<string> CallVisionAPI(Stream image)
-{
-    using (var client = new HttpClient())
-    {
-        var content = new StreamContent(image);
-        var url = "https://api.projectoxford.ai/vision/v1.0/analyze?visualFeatures=Faces";
-        client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", Environment.GetEnvironmentVariable("Vision_API_Subscription_Key"));
-        content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
-        var httpResponse = await client.PostAsync(url, content);
-
-        if (httpResponse.StatusCode == HttpStatusCode.OK)
+        static async Task<string> CallVisionAPI(Stream image)
         {
-            return await httpResponse.Content.ReadAsStringAsync();
+            using (var client = new HttpClient())
+            {
+                var content = new StreamContent(image);
+                var url = "https://api.projectoxford.ai/vision/v1.0/analyze?visualFeatures=Faces";
+                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", Environment.GetEnvironmentVariable("Vision_API_Subscription_Key"));
+                content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+                var httpResponse = await client.PostAsync(url, content);
+
+                if (httpResponse.StatusCode == HttpStatusCode.OK)
+                {
+                    return await httpResponse.Content.ReadAsStringAsync();
+                }
+            }
+            return null;
         }
-    }
-    return null;
-}
 
-public class ImageData
-{
-    public List<Face> Faces { get; set; }
-}
+        public class ImageData
+        {
+            public List<Face> Faces { get; set; }
+        }
 
-public class Face
-{
-    public int Age { get; set; }
+        public class Face
+        {
+            public int Age { get; set; }
 
-    public string Gender { get; set; }
+            public string Gender { get; set; }
 
-    public FaceRectangle FaceRectangle { get; set; }
-}
+            public FaceRectangle FaceRectangle { get; set; }
+        }
 
-public class FaceRectangle : TableEntity
-{
-    public string ImageFile { get; set; }
+        public class FaceRectangle : TableEntity
+        {
+            public string ImageFile { get; set; }
 
-    public int Left { get; set; }
+            public int Left { get; set; }
 
-    public int Top { get; set; }
+            public int Top { get; set; }
 
-    public int Width { get; set; }
+            public int Width { get; set; }
 
-    public int Height { get; set; }
-}
+            public int Height { get; set; }
+        }
 #if (vsTemplates)
     }
 }

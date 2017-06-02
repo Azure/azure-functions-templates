@@ -4,6 +4,7 @@
 using System;
 using System.Net;
 using Newtonsoft.Json;
+
 public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
 #endif
 #if (vsTemplates)
@@ -25,8 +26,8 @@ namespace Company.Function
         {
             log.Info($"Webhook was triggered!");
 
-            private string _jsonContent = await req.Content.ReadAsStringAsync();
-private dynamic _data = JsonConvert.DeserializeObject(jsonContent);
+            string jsonContent = await req.Content.ReadAsStringAsync();
+            dynamic data = JsonConvert.DeserializeObject(jsonContent);
 
             if (data.first == null || data.last == null)
             {

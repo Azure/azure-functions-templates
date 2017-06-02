@@ -24,17 +24,17 @@ namespace Company.Function
         public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "post")]HttpRequestMessage req, [Table("TableNameValue", Connection = "ConnectionValue")]ICollector<Person> outTable, TraceWriter log)
 #endif
         {
-            private dynamic _data = await req.Content.ReadAsAsync<object>();
-private string _name = data?.name;
+            dynamic data = await req.Content.ReadAsAsync<object>();
+            string name = data?.name;
 
             if (name == null)
             {
                 return req.CreateResponse(HttpStatusCode.BadRequest, "Please pass a name in the request body");
             }
 
-            outTable.Add(private new Person()
-{
-    PartitionKey = "Functions",
+            outTable.Add(new Person()
+            {
+                PartitionKey = "Functions",
                 RowKey = Guid.NewGuid().ToString(),
                 Name = name
             });
@@ -42,9 +42,9 @@ private string _name = data?.name;
         }
 
         public class Person : TableEntity
-{
-    public string Name { get; set; }
-}
+        {
+            public string Name { get; set; }
+        }
 #if (vsTemplates)
     }
 }

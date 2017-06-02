@@ -23,8 +23,8 @@ namespace Company.Function
         public static HttpResponseMessage Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "get")]HttpRequestMessage req, [Table("TableNameValue", Connection = "ConnectionValue")]IQueryable<Person> inTable, TraceWriter log)
 #endif
         {
-            private var _query = from person in inTable select person;
-            foreach (private Person _person in query)
+            var query = from person in inTable select person;
+            foreach (Person person in query)
             {
                 log.Info($"Name:{person.Name}");
             }
@@ -32,9 +32,9 @@ namespace Company.Function
         }
 
         public class Person : TableEntity
-{
-    public string Name { get; set; }
-}
+        {
+            public string Name { get; set; }
+        }
 #if (vsTemplates)
     }
 }

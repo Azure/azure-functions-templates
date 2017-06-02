@@ -1,5 +1,5 @@
 using ImageResizer;
-
+ 
 public static void Run(
     Stream image,                           // input blob, large size
     Stream imageSmall, Stream imageMedium)  // output blobs
@@ -8,7 +8,7 @@ public static void Run(
     var size = imageDimensionsTable[ImageSize.Small];
 
     imageBuilder.Build(
-        image, imageSmall,
+        image, imageSmall, 
         new ResizeSettings(size.Item1, size.Item2, FitMode.Max, null), false);
 
     image.Position = 0;
@@ -24,7 +24,7 @@ public enum ImageSize
     ExtraSmall, Small, Medium
 }
 
-private static Dictionary<ImageSize, Tuple<int, int>> s_imageDimensionsTable = new Dictionary<ImageSize, Tuple<int, int>>()
+private static Dictionary<ImageSize, Tuple<int, int>> imageDimensionsTable = new Dictionary<ImageSize, Tuple<int, int>>()
 {
     { ImageSize.ExtraSmall, Tuple.Create(320, 200) },
     { ImageSize.Small,      Tuple.Create(640, 400) },

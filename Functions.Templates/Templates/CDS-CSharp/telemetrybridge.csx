@@ -8,9 +8,9 @@ using Microsoft.Azure.WebJobs.Host;
 using Microsoft.CommonDataService;
 using Microsoft.CommonDataService.Common.Internal;
 
-internal class TraceWriterTelemetryBridge : TraceWriter, ITelemetryService
+class TraceWriterTelemetryBridge : TraceWriter, ITelemetryService
 {
-    private enum MessageLevel
+    enum MessageLevel
     {
         Error,
         Warning,
@@ -18,7 +18,7 @@ internal class TraceWriterTelemetryBridge : TraceWriter, ITelemetryService
         Verbose
     }
 
-    private readonly TraceWriter _logger;
+    private readonly TraceWriter logger;
 
     public TraceWriterTelemetryBridge() : base(TraceLevel.Verbose)
     {
@@ -26,7 +26,7 @@ internal class TraceWriterTelemetryBridge : TraceWriter, ITelemetryService
 
     public TraceWriterTelemetryBridge(TraceWriter log) : this()
     {
-        _logger = log;
+        logger = log;
     }
 
     private void WriteToTraceWriter(string message, MessageLevel messageLevel)
@@ -34,16 +34,16 @@ internal class TraceWriterTelemetryBridge : TraceWriter, ITelemetryService
         switch (messageLevel)
         {
             case MessageLevel.Error:
-                _logger.Error(message);
+                logger.Error(message);
                 break;
             case MessageLevel.Warning:
-                _logger.Warning(message);
+                logger.Warning(message);
                 break;
             case MessageLevel.Info:
-                _logger.Info(message);
+                logger.Info(message);
                 break;
             case MessageLevel.Verbose:
-                _logger.Verbose(message);
+                logger.Verbose(message);
                 break;
         }
     }

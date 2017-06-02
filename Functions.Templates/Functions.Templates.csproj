@@ -486,7 +486,7 @@
   <Target Name="PortalTemplates">
     <Exec Command="..\tools\cli\dotnet.exe new -i .\" />
     <Exec Command="..\tools\cli\dotnet.exe new functions -o .\bin\Portal\temp --force" IgnoreExitCode="true" />
-    <Exec Command="..\tools\CodeFormatter\CodeFormatter.exe ..\tools\codeFormat.csproj /nocopyright" IgnoreExitCode="true" />
+    <Exec Command="..\tools\CodeFormatter\CodeFormatter.exe ..\tools\codeFormat.csproj /nocopyright  /rule-:NewLineAbove,ExplicitVisibility,IllegalHeaders,FieldNames,ExplicitThis,BraceNewLine,UsingLocation,UnicodeLiterals,ReadonlyFields /verbose" IgnoreExitCode="true" />
     <Delete Files=".\bin\Portal\Functions.Templates.csproj" />
     <Exec Command="for /R .\bin\Portal\temp\Templates\ %%x in (*.cs) do ren &quot;%%x&quot; *.csx" />
     <Exec Command="..\tools\nuget.exe pack .\bin\Portal\temp\PortalTemplates.nuspec -Version $(PackageVersion) -OutputDirectory .\bin\Portal\temp\nuget\" />
@@ -496,7 +496,7 @@
   <Target Name="VisualStudioTemplates">
     <Exec Command="..\tools\cli\dotnet.exe new -i .\" />
     <Exec Command="..\tools\cli\dotnet.exe new functions --portalTemplates false --vsTemplates true -o .\bin\VS\temp --force" IgnoreExitCode="true" />
-    <Exec Command="..\tools\CodeFormatter\CodeFormatter.exe ..\tools\codeFormat.csproj /nocopyright" IgnoreExitCode="true" />
+    <Exec Command="..\tools\CodeFormatter\CodeFormatter.exe ..\tools\codeFormat.csproj /nocopyright  /rule-:NewLineAbove,ExplicitVisibility,IllegalHeaders,FieldNames,ExplicitThis,BraceNewLine,UsingLocation,UnicodeLiterals,ReadonlyFields /verbose" IgnoreExitCode="true" />
     <Delete Files=".\bin\VS\Functions.Templates.csproj" />
     <Exec Command="..\tools\nuget.exe pack .\bin\VS\temp\ItemTemplates.nuspec -Version $(PackageVersion) -OutputDirectory .\bin\VS\release\" />
     <MSBuild Targets="Clean;Build" Projects="..\ProjectTemplate\Template.proj" Properties="PackageVersion=$(PackageVersion)" />
