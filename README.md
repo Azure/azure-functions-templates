@@ -17,10 +17,9 @@ A template requires specific metadata files and folder structure so that [Azure 
 ## Testing templates
 
 ### Testing via Azure Functions Portal
-1. Download and extract contents of [Template tools](https://github.com/Azure/azure-webjobs-sdk-templates/releases/download/0.9/Tools.zip) zip file.
-2. Execute the following command from the root of the folder containing the extracted files.    
-`CreateTemplateConfig.exe <TemplateRepositoryRootPath>`
-3. The tool will generate the following files.
+1. Execute the [getTools](getTools.ps1) script from the root of the repository
+2. Build the Functions.Templates/Functions.Templates.csproj via Visual studio
+3. The build solution will generate the following files in the Functions.Templates\bin\Portal\Test.
     - templates.json
     - bindings.json
 4. Open [https://functions.azure.com](https://functions.azure.com) in chrome and login with your credentials.
