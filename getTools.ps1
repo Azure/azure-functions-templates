@@ -67,6 +67,18 @@ try {
         # Unzip code formatter tool    
         Unzip $codeFormatterZip $toolsDir      
     }
+
+    # Check if createTemplateConfigPath is present
+    $createTemplateConfigPath = Join-Path $toolsDir -ChildPath "\CreateTemplateConfig\"    
+    if (-Not(Test-Path $createTemplateConfigPath)) {        
+        # Download code formatter tool
+        $createTemplateConfigZip = Join-Path $toolsDir -ChildPath "CreateTemplateConfig.zip"
+        $createTemplateConfigDownloadUrl = "https://github.com/Azure/azure-webjobs-sdk-templates/releases/download/1/CreateTemplateConfig.zip"    
+        Download $createTemplateConfigDownloadUrl $createTemplateConfigZip    
+
+        # Unzip code formatter tool        
+        Unzip $createTemplateConfigZip $toolsDir        
+    }    
     
     # Check if the nugetExe is present
     $nugetExe = Join-Path $toolsDir -ChildPath "nuget.exe"
