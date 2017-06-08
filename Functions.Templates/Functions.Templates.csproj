@@ -14,7 +14,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>    
+    <Optimize>true</Optimize>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -55,7 +55,6 @@
     <None Include="Documentation\blobIn.md" />
     <None Include="Documentation\blobOut.md" />
     <None Include="Documentation\blobTrigger.md" />
-    <None Include="Documentation\botIn.md" />
     <None Include="Documentation\botOut.md" />
     <None Include="Documentation\cdsIn.md" />
     <None Include="Documentation\documentDBIn.md" />
@@ -493,7 +492,7 @@
     <Exec Command="for /R .\bin\Portal\temp\Templates\ %%x in (*.cs) do ren &quot;%%x&quot; *.csx" />
     <Exec Command="..\tools\nuget.exe pack .\bin\Portal\temp\PortalTemplates.nuspec -Version $(PackageVersion) -OutputDirectory .\bin\Portal\temp\nuget\" />
     <Exec Command="..\tools\nuget.exe install Azure.Functions.Templates.Portal -Version $(PackageVersion) -Source $(MSBuildProjectDirectory)\bin\Portal\temp\nuget -OutputDirectory .\bin\Portal\Release\ -ExcludeVersion" />
-    <Exec Command="..\tools\CreateTemplateConfig\CreateTemplateConfig.exe $(MSBuildProjectDirectory)\bin\Portal\Release\Azure.Functions.Templates.Portal\ $(MSBuildProjectDirectory)\bin\Portal\Test"/>
+    <Exec Command="..\tools\CreateTemplateConfig\CreateTemplateConfig.exe $(MSBuildProjectDirectory)\bin\Portal\Release\Azure.Functions.Templates.Portal\ $(MSBuildProjectDirectory)\bin\Portal\Test" />
     <RemoveDir Directories=".\bin\Portal\temp" />
   </Target>
   <Target Name="VisualStudioTemplates">
