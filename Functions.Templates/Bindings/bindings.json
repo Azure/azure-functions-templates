@@ -1732,36 +1732,6 @@
                     "help": "$bot_out_secret_help"
                 }
             ]
-        },
-        {
-            "type": "bot",
-            "displayName": "$bot_in_displayName",
-            "direction": "in",
-            "enabledInTryMode": false,
-            "documentation": "$content=Documentation\\botIn.md",
-            "settings": [
-                {
-                    "name": "name",
-                    "value": "string",
-                    "defaultValue": "bot",
-                    "required": true,
-                    "label": "$bot_in_name_label",
-                    "help": "$bot_in_name_help",
-                    "validators": [
-                        {
-                            "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
-                            "errorText": "[variables('parameterName')]"
-                        }
-                    ]
-                },
-                {
-                    "name": "secret",
-                    "value": "string",
-                    "required": false,
-                    "label": "$bot_in_secret_label",
-                    "help": "$bot_in_secret_help"
-                }
-            ]
         }
     ]
 }
