@@ -27,23 +27,50 @@
     </PreBuildEvent>
   </PropertyGroup>
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Templates\BlobTrigger-CSharp\run.cs" />
+    <None Include="Templates\BlobTrigger-TypeScript\function.json" />
+    <None Include="Templates\BlobTrigger-TypeScript\metadata.json" />
+    <None Include="Templates\BlobTrigger-TypeScript\readme.md" />
+    <None Include="Templates\BlobTrigger-TypeScript\sample.dat" />
     <None Include="Templates\EventHubTrigger-CSharp\run.cs" />
+    <None Include="Templates\EventHubTrigger-TypeScript\function.json" />
+    <None Include="Templates\EventHubTrigger-TypeScript\metadata.json" />
+    <None Include="Templates\EventHubTrigger-TypeScript\sample.dat" />
     <None Include="Templates\FaceLocator-CSharp\run.cs" />
     <None Include="Templates\GenericWebHook-CSharp\run.cs" />
+    <None Include="Templates\GenericWebHook-TypeScript\function.json" />
+    <None Include="Templates\GenericWebHook-TypeScript\metadata.json" />
+    <None Include="Templates\GenericWebHook-TypeScript\sample.dat" />
     <None Include="Templates\GitHubCommenter-CSharp\run.cs" />
     <None Include="Templates\GitHubWebHook-CSharp\run.cs" />
+    <None Include="Templates\GitHubWebHook-TypeScript\function.json" />
+    <None Include="Templates\GitHubWebHook-TypeScript\metadata.json" />
+    <None Include="Templates\GitHubWebHook-TypeScript\sample.dat" />
     <None Include="Templates\HttpGET%28CRUD%29-CSharp\run.cs" />
     <None Include="Templates\HttpPOST%28CRUD%29-CSharp\run.cs" />
     <None Include="Templates\HttpPUT%28CRUD%29-CSharp\run.cs" />
     <None Include="Templates\HttpTrigger-CSharp\run.cs" />
+    <None Include="Templates\HttpTrigger-TypeScript\function.json" />
+    <None Include="Templates\HttpTrigger-TypeScript\metadata.json" />
+    <None Include="Templates\HttpTrigger-TypeScript\sample.dat" />
     <None Include="Templates\HttpTriggerWithParameters-CSharp\run.cs" />
+    <None Include="Templates\ManualTrigger-TypeScript\function.json" />
+    <None Include="Templates\ManualTrigger-TypeScript\metadata.json" />
+    <None Include="Templates\ManualTrigger-TypeScript\sample.dat" />
     <None Include="Templates\QueueTrigger-CSharp\run.cs" />
+    <None Include="Templates\QueueTrigger-TypeScript\function.json" />
+    <None Include="Templates\QueueTrigger-TypeScript\metadata.json" />
+    <None Include="Templates\QueueTrigger-TypeScript\readme.md" />
+    <None Include="Templates\QueueTrigger-TypeScript\sample.dat" />
     <None Include="Templates\SasToken-CSharp\run.cs" />
     <None Include="Templates\ServiceBusQueueTrigger-CSharp\run.cs" />
+    <None Include="Templates\ServiceBusQueueTrigger-TypeScript\function.json" />
+    <None Include="Templates\ServiceBusQueueTrigger-TypeScript\metadata.json" />
+    <None Include="Templates\ServiceBusQueueTrigger-TypeScript\sample.dat" />
     <None Include="Templates\ServiceBusTopicTrigger-CSharp\run.cs" />
+    <None Include="Templates\ServiceBusTopicTrigger-TypeScript\function.json" />
+    <None Include="Templates\ServiceBusTopicTrigger-TypeScript\metadata.json" />
+    <None Include="Templates\ServiceBusTopicTrigger-TypeScript\sample.dat" />
     <None Include="Templates\TimerTrigger-CSharp\run.cs" />
     <None Include=".template.config\template.json" />
     <None Include="Bindings\bindings.json" />
@@ -386,6 +413,20 @@
     <None Include="Templates\TimerTrigger-Powershell\readme.md" />
     <None Include="Templates\TimerTrigger-Powershell\run.ps1" />
     <None Include="Templates\TimerTrigger-Powershell\sample.dat" />
+    <None Include="Templates\TimerTrigger-TypeScript\function.json" />
+    <None Include="Templates\TimerTrigger-TypeScript\metadata.json" />
+    <None Include="Templates\TimerTrigger-TypeScript\readme.md" />
+    <None Include="Templates\TimerTrigger-TypeScript\sample.dat" />
+    <None Include="Templates\BlobTrigger-TypeScript\index.ts" />
+    <None Include="Templates\EventHubTrigger-TypeScript\index.ts" />
+    <None Include="Templates\GenericWebHook-TypeScript\index.ts" />
+    <None Include="Templates\GitHubWebHook-TypeScript\index.ts" />
+    <None Include="Templates\HttpTrigger-TypeScript\index.ts" />
+    <None Include="Templates\ManualTrigger-TypeScript\index.ts" />
+    <None Include="Templates\QueueTrigger-TypeScript\index.ts" />
+    <None Include="Templates\ServiceBusQueueTrigger-TypeScript\index.ts" />
+    <None Include="Templates\ServiceBusTopicTrigger-TypeScript\index.ts" />
+    <None Include="Templates\TimerTrigger-TypeScript\index.ts" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\cs-CZ\Resources\Resources.resx" />
@@ -469,6 +510,7 @@
     <Content Include="Templates\TimerTrigger-FSharp\run.fsx" />
     <Content Include="Templates\TimerTrigger-JavaScript\index.js" />
   </ItemGroup>
+  <ItemGroup />
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
     <RemoveDir Directories=".\bin\Portal" />
   </Target>
