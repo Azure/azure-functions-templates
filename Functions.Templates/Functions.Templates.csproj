@@ -417,6 +417,16 @@
     <None Include="Templates\TimerTrigger-TypeScript\metadata.json" />
     <None Include="Templates\TimerTrigger-TypeScript\readme.md" />
     <None Include="Templates\TimerTrigger-TypeScript\sample.dat" />
+    <None Include="Templates\BlobTrigger-TypeScript\index.ts" />
+    <None Include="Templates\EventHubTrigger-TypeScript\index.ts" />
+    <None Include="Templates\GenericWebHook-TypeScript\index.ts" />
+    <None Include="Templates\GitHubWebHook-TypeScript\index.ts" />
+    <None Include="Templates\HttpTrigger-TypeScript\index.ts" />
+    <None Include="Templates\ManualTrigger-TypeScript\index.ts" />
+    <None Include="Templates\QueueTrigger-TypeScript\index.ts" />
+    <None Include="Templates\ServiceBusQueueTrigger-TypeScript\index.ts" />
+    <None Include="Templates\ServiceBusTopicTrigger-TypeScript\index.ts" />
+    <None Include="Templates\TimerTrigger-TypeScript\index.ts" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\cs-CZ\Resources\Resources.resx" />
@@ -499,18 +509,6 @@
     <Content Include="Templates\TimerTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\TimerTrigger-FSharp\run.fsx" />
     <Content Include="Templates\TimerTrigger-JavaScript\index.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="Templates\BlobTrigger-TypeScript\index.ts" />
-    <TypeScriptCompile Include="Templates\EventHubTrigger-TypeScript\index.ts" />
-    <TypeScriptCompile Include="Templates\GenericWebHook-TypeScript\index.ts" />
-    <TypeScriptCompile Include="Templates\GitHubWebHook-TypeScript\index.ts" />
-    <TypeScriptCompile Include="Templates\HttpTrigger-TypeScript\index.ts" />
-    <TypeScriptCompile Include="Templates\ManualTrigger-TypeScript\index.ts" />
-    <TypeScriptCompile Include="Templates\QueueTrigger-TypeScript\index.ts" />
-    <TypeScriptCompile Include="Templates\ServiceBusQueueTrigger-TypeScript\index.ts" />
-    <TypeScriptCompile Include="Templates\ServiceBusTopicTrigger-TypeScript\index.ts" />
-    <TypeScriptCompile Include="Templates\TimerTrigger-TypeScript\index.ts" />
   </ItemGroup>
   <ItemGroup />
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
