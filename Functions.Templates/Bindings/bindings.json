@@ -1311,6 +1311,13 @@
                     "help": "$documentDBOut_createIfNotExists_help"
                 },
                 {
+                    "name": "partitionKey",
+                    "value": "string",
+                    "required": false,
+                    "label": "$documentDB_partitionKey_label",
+                    "help": "$documentDBOut_partitionKey_help"
+                },
+                {
                     "name": "connection",
                     "value": "string",
                     "resource": "DocumentDB",
@@ -1365,6 +1372,13 @@
                     "required": false,
                     "label": "$documentDBIn_id_label",
                     "help": "$documentDBIn_id_help"
+                },
+                {
+                    "name": "partitionKey",
+                    "value": "string",
+                    "required": false,
+                    "label": "$documentDB_partitionKey_label",
+                    "help": "$documentDBIn_partitionKey_help"
                 },
                 {
                     "name": "sqlQuery",
