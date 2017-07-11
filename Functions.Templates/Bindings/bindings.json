@@ -1733,6 +1733,630 @@
                     "help": "$bot_out_secret_help"
                 }
             ]
-        }
+        },
+        {
+            "type": "token",
+            "displayName": "$token_displayName",
+            "direction": "in",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\Token.md",
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "token",
+                    "required": true,
+                    "label": "$token_in_name_label",
+                    "help": "$token_in_name_help"
+                },
+                {
+                    "name": "Resource",
+                    "value": "string",
+                    "defaultValue": "",
+                    "required": false,
+                    "label": "$token_in_resource_label",
+                    "help": "$token_in_resource_help"
+                },
+                {
+                    "name": "PrincipalId",
+                    "value": "token",
+                    "resource": "MSGraph",
+                    "required": false,
+                    "label": "$principal_id_label",
+                    "help": "$principal_id_help"
+                },
+                {
+                    "name": "idToken",
+                    "value": "string",
+                    "required": false,
+                    "label": "$idToken_label",
+                    "help": "$idToken_help"
+                }
+                ],
+                "rules": [
+                  {
+                    "name": "disable",
+                    "type": "NAND",
+                    "values": [
+                      { "value": "idToken" },
+                      { "value": "PrincipalId" }
+                    ]
+                  }
+            ]
+      },
+      {
+            "type": "excel",
+            "displayName": "$excel_in_displayName",
+            "direction": "in",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\ExcelIn.md",
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "inputTable",
+                    "required": true,
+                    "label": "$excel_in_name_label",
+                    "help": "$excel_in_name_help"
+                },
+                {
+                    "name": "Path",
+                    "value": "string",
+                    "defaultValue": "Workbook.xlsx",
+                    "required": true,
+                    "label": "$excel_in_path_label",
+                    "help": "$excel_in_path_help"
+                },
+                {
+                    "name": "WorksheetName",
+                    "value": "string",
+                    "defaultValue": "Sheet1",
+                    "required": true,
+                    "label": "$excel_in_worksheetName_label",
+                    "help": "$excel_in_worksheetName_help"
+                },
+                {
+                    "name": "TableName",
+                    "value": "string",
+                    "defaultValue": "Table1",
+                    "required": false,
+                    "label": "$excel_in_tableName_label",
+                    "help": "$excel_in_tableName_help"
+                },
+                {
+                    "name": "PrincipalId",
+                    "value": "token",
+                    "resource": "MSGraph",
+                    "required": false,
+                    "label": "$principal_id_label",
+                    "help": "$principal_id_help"
+                },
+                {
+                    "name": "idToken",
+                    "value": "string",
+                    "required": false,
+                    "label": "$idToken_label",
+                    "help": "$idToken_help"
+                }
+            ],
+            "rules": [
+              {
+                "name": "disable",
+                "type": "NAND",
+                "values": [
+                  { "value": "idToken" },
+                  { "value": "PrincipalId" }
+                ]
+              }
+            ]
+      },
+      {
+            "type": "excel",
+            "displayName": "$excel_out_displayName",
+            "direction": "out",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\ExcelOut.md",
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "outputTable",
+                    "required": true,
+                    "label": "$excel_out_name_label",
+                    "help": "$excel_out_name_help"
+                },
+                {
+                    "name": "Path",
+                    "value": "string",
+                    "defaultValue": "path/to/file.xlsx",
+                    "required": true,
+                    "label": "$excel_out_path_label",
+                    "help": "$excel_out_path_help"
+                },
+                {
+                    "name": "WorksheetName",
+                    "value": "string",
+                    "defaultValue": "Sheet1",
+                    "required": true,
+                    "label": "$excel_out_worksheetName_label",
+                    "help": "$excel_out_worksheetName_help"
+                },
+                {
+                    "name": "TableName",
+                    "value": "string",
+                    "defaultValue": "Table1",
+                    "required": false,
+                    "label": "$excel_out_tableName_label",
+                    "help": "$excel_out_tableName_help"
+                },
+                {
+                    "name": "UpdateType",
+                    "value": "enum",
+                    "defaultValue": "Append",
+                    "enum": [
+                      {
+                        "value": "Append",
+                        "display": "Append"
+                      },
+                      {
+                        "value": "Update",
+                        "display": "Update"
+                      }
+                    ],
+                    "required": false,
+                    "label": "$excel_out_updateType_label",
+                    "help": "$excel_out_updateType_help"
+                },
+                {
+                    "name": "PrincipalId",
+                    "value": "token",
+                    "resource": "MSGraph",
+                    "required": false,
+                    "label": "$principal_id_label",
+                    "help": "$principal_id_help"
+                },
+                {
+                    "name": "idToken",
+                    "value": "string",
+                    "required": false,
+                    "label": "$idToken_label",
+                    "help": "$idToken_help"
+                }
+            ],
+            "rules": [
+                {
+                    "name": "disable",
+                    "type": "NAND",
+                    "values": [
+                        { 
+                            "value": "idToken" 
+                        },
+                        { 
+                            "value": "PrincipalId"
+                        }
+                    ]
+                }
+            ]
+      },
+      {
+            "type": "outlook",
+            "displayName": "$outlook_displayName",
+            "direction": "out",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\Outlook.md",
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "email",
+                    "required": true,
+                    "label": "$outlook_out_name_label",
+                    "help": "$outlook_out_name_help"
+                },
+                {
+                    "name": "PrincipalId",
+                    "value": "token",
+                    "resource": "MSGraph",
+                    "required": false,
+                    "label": "$principal_id_label",
+                    "help": "$principal_id_help"
+                },
+                {
+                    "name": "idToken",
+                    "value": "string",
+                    "required": false,
+                    "label": "$idToken_label",
+                    "help": "$idToken_help"
+                }
+            ],
+            "rules": [
+              {
+                "name": "disable",
+                "type": "NAND",
+                "values": [
+                    { 
+                        "value": "idToken" 
+                    },
+                    { 
+                        "value": "PrincipalId" 
+                    }
+                ]
+              }
+            ]
+      },
+      {
+            "type": "onedrive",
+            "displayName": "$oneDrive_displayName",
+            "direction": "in",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\OneDriveIn.md",
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "file",
+                    "required": true,
+                    "label": "$oneDrive_name_label",
+                    "help": "$oneDrive_name_help"
+                },
+                {
+                    "name": "Path",
+                    "value": "string",
+                    "defaultValue": "Documents/test.txt",
+                    "required": true,
+                    "label": "$oneDrive_path_label",
+                    "help": "$oneDrive_path_help"
+                },
+                {
+                    "name": "PrincipalId",
+                    "value": "token",
+                    "resource": "MSGraph",
+                    "required": false,
+                    "label": "$principal_id_label",
+                    "help": "$principal_id_help"
+                },
+                {
+                    "name": "idToken",
+                    "value": "string",
+                    "required": false,
+                    "label": "$idToken_label",
+                    "help": "$idToken_help"
+                }
+            ],
+            "rules": [
+                {
+                    "name": "disable",
+                    "type": "NAND",
+                    "values": [
+                        { 
+                            "value": "idToken" 
+                        },
+                        {
+                            "value": "PrincipalId" 
+                        }
+                    ]
+                }
+            ]
+      },
+      {
+            "type": "onedrive",
+            "displayName": "$oneDrive_displayName",
+            "direction": "out",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\OneDriveOut.md",
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "file",
+                    "required": true,
+                    "label": "$oneDrive_name_label",
+                    "help": "$oneDrive_name_help"
+                },
+                {
+                    "name": "Path",
+                    "value": "string",
+                    "defaultValue": "Documents/test.txt",
+                    "required": true,
+                    "label": "$oneDrive_path_label",
+                    "help": "$oneDrive_path_help"
+                },
+                {
+                    "name": "PrincipalId",
+                    "value": "token",
+                    "resource": "MSGraph",
+                    "required": false,
+                    "label": "$principal_id_label",
+                    "help": "$principal_id_help"
+                },
+                {
+                    "name": "idToken",
+                    "value": "string",
+                    "required": false,
+                    "label": "$idToken_label",
+                    "help": "$idToken_help"
+                }
+            ],
+            "rules": [
+                {
+                    "name": "disable",
+                    "type": "NAND",
+                    "values": [
+                        { 
+                            "value": "idToken" 
+                        },
+                        {
+                            "value": "PrincipalId" 
+                        }
+                    ]
+                }
+            ]
+      },
+      {
+            "type": "GraphWebhook",
+            "displayName": "$MSGraphWebhook_displayName",
+            "direction": "in",
+            "enabledInTryMode": false,
+            "documentation": "$content-Documentation\\GraphWebhook.md",
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "webhook",
+                    "required": false,
+                    "label": "$MSGraphWebhook_in_name_label",
+                    "help": "$MSGraphWebhook_in_name_help"
+                }
+            ]
+      },
+      {
+            "type": "GraphWebhookCreator",
+            "displayName": "$MSGraphWebhookCreator_displayName",
+            "direction": "in",
+            "enabledInTryMode": false,
+            "documentation": "$content=Documentation\\GraphWebhookCreator.md",
+            "settings": [
+              {
+                "name": "name",
+                "value": "string",
+                "defaultValue": "creator",
+                "required": false,
+                "label": "$MSGraphWebhookCreator_in_name_label",
+                "help": "$MSGraphWebhookCreator_in_name_help"
+              },
+              {
+                "name": "changeType",
+                "value": "checkBoxList",
+                "defaultValue": [
+                  "created",
+                  "updated",
+                  "deleted"
+                ],
+                "enum": [
+                  {
+                    "value": "Created",
+                    "display": "Created"
+                  },
+                  {
+                    "value": "Updated",
+                    "display": "Updated"
+                  },
+                  {
+                    "value": "Deleted",
+                    "display": "Deleted"
+                  }
+                ],
+                "required": true,
+                "label": "$MSGraphWebhook_in_changeType_label",
+                "help": "$MSGraphWebhook_in_changeType_help"
+              },
+              {
+                "name": "Listen",
+                "value": "enum",
+                "enum": [
+                  {
+                    "value": "me/mailFolders('Inbox')/Messages",
+                    "display": "Email Messages"
+                  },
+                  {
+                    "value": "me/drive/root",
+                    "display": "OneDrive Root"
+                  },
+                  {
+                    "value": "me/events",
+                    "display": "Calendar events"
+                  },
+                  {
+                    "value": "me/contacts",
+                    "display": "Contacts"
+                  }
+                ],
+                "label": "$MSGraphWebhook_in_listen_label",
+                "help": "$MSGraphWebhook_in_listen_help"
+              },
+              {
+                "name": "PrincipalId",
+                "value": "token",
+                "resource": "MSGraph",
+                "required": false,
+                "label": "$principal_id_label",
+                "help": "$principal_id_help"
+              },
+              {
+                "name": "idToken",
+                "value": "string",
+                "required": false,
+                "label": "$idToken_label",
+                "help": "$idToken_help"
+              }
+            ],
+            "rules": [
+              {
+                "name": "disable",
+                "type": "NAND",
+                "values": [
+                  { "value": "idToken" },
+                  { "value": "PrincipalId" }
+                ]
+              }
+            ]
+      },
+      {
+            "type": "GraphWebhookTrigger",
+            "direction": "trigger",
+            "displayName": "$MSGraphWebhookTrigger_displayName",
+            "documentation": "$content=Documentation\\GraphWebhookTrigger.md",
+            "enabledInTryMode": false,
+            "settings": [
+                {
+                    "name": "name",
+                    "value": "string",
+                    "defaultValue": "notification",
+                    "required": true,
+                    "label": "$MSGraphWebhookTrigger_in_name_label",
+                    "help": "$MSGraphWebhookTrigger_in_help_label"
+                },
+                {
+                    "name": "Type",
+                    "value": "enum",
+                    "defaultValue": "#Microsoft.Graph.Message",
+                    "required": true,
+                    "isHidden": true,
+                    "enum": [
+                        {
+                            "value": "#Microsoft.Graph.Message",
+                            "display": "[Outlook] Emails"
+                        },
+                        {
+                            "value": "#Microsoft.Graph.DriveItem",
+                            "display": "Drive"
+                        },
+                        {
+                            "value": "#Microsoft.Graph.Event",
+                            "display": "Calendar Events"
+                        },
+                        {
+                            "value": "#Microsoft.Graph.Contact",
+                            "display": "Contacts"
+                        }
+                    ],
+                    "label": "$MSGraphWebhookTrigger_Type_label",
+                    "help": "$MSGraphWebhookTrigger_Type_help"
+                },
+                {
+                    "name": "ChangeType",
+                    "value": "checkBoxList",
+                    "defaultValue": [
+                        "created",
+                        "updated",
+                        "deleted"
+                    ],
+                        "enum": [
+                        {
+                            "value": "created",
+                            "display": "Created"
+                        },
+                        {
+                            "value": "updated",
+                            "display": "Updated"
+                        },
+                        {
+                            "value": "deleted",
+                            "display": "Deleted"
+                        }
+                    ],
+                    "required": true,
+                    "label": "$MSGraphWebhook_in_changeType_label",
+                    "help": "$MSGraphWebhook_in_changeType_help"
+                }
+            ],
+            "rules": [
+              {
+                "name": "Listen",
+                "type": "changeOptionsDisplayed",
+                "values": [
+                    {
+                        "value": "me/mailFolders('Inbox')/messages",
+                        "display": "Email Messages",
+                        "shownCheckboxOptions": {
+                          "name": "ChangeType",
+                          "values": [
+                            {
+                              "value": "updated",
+                              "display": "Updated"
+                            },
+                            {
+                              "value": "created",
+                              "display": "Created"
+                            },
+                            {
+                              "value": "deleted",
+                              "display": "Deleted"
+                            }
+                          ]
+                        }
+                    },
+                    {
+                        "value": "me/drive/root",
+                        "display": "OneDrive Item",
+                        "shownCheckboxOptions": 
+                            {
+                          "name": "ChangeType",
+                          "values": [
+                            {
+                              "value": "updated",
+                              "display": "Updated"
+                            }
+                          ]
+                    }
+                  },
+                  {
+                    "value": "me/events",
+                    "display": "Calendar events",
+                    "shownCheckboxOptions": {
+                        "name": "ChangeType",
+                        "values": [
+                            {
+                              "value": "updated",
+                              "display": "Updated"
+                            },
+                            {
+                              "value": "created",
+                              "display": "Created"
+                            },
+                            {
+                              "value": "deleted",
+                              "display": "Deleted"
+                            }
+                        ]
+                    }
+                  },
+                  {
+                    "value": "me/contacts",
+                    "display": "Contacts",
+                    "shownCheckboxOptions": {
+                        "name": "ChangeType",
+                        "values": [
+                            {
+                              "value": "updated",
+                              "display": "Updated"
+                            },
+                            {
+                              "value": "created",
+                              "display": "Created"
+                            },
+                            {
+                              "value": "deleted",
+                              "display": "Deleted"
+                            }
+                        ]
+                    }
+                  }
+                ],
+                "label": "$MSGraphWebhook_in_listen_label",
+                "help": "$MSGraphWebhook_in_listen_help"
+              }
+            ]
+      }
     ]
 }

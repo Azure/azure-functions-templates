@@ -27,6 +27,15 @@
     </PreBuildEvent>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="Documentation\GraphWebhookCreator.md" />
+    <None Include="Documentation\GraphWebhook.md" />
+    <None Include="Documentation\Token.md" />
+    <None Include="Documentation\OneDriveOut.md" />
+    <None Include="Documentation\OneDriveIn.md" />
+    <None Include="Documentation\Outlook.md" />
+    <None Include="Documentation\ExcelOut.md" />
+    <None Include="Documentation\ExcelIn.md" />
+    <None Include="Documentation\GraphWebhookTrigger.md" />
     <None Include="Templates\BlobTrigger-CSharp\run.cs" />
     <None Include="Templates\BlobTrigger-TypeScript\function.json" />
     <None Include="Templates\BlobTrigger-TypeScript\metadata.json" />
@@ -57,6 +66,12 @@
     <None Include="Templates\ManualTrigger-TypeScript\function.json" />
     <None Include="Templates\ManualTrigger-TypeScript\metadata.json" />
     <None Include="Templates\ManualTrigger-TypeScript\sample.dat" />
+    <None Include="Templates\MSGraphWebhook-CSharp\build.config\template.json" />
+    <None Include="Templates\MSGraphWebhook-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\MSGraphWebhook-CSharp\function.json" />
+    <None Include="Templates\MSGraphWebhook-CSharp\metadata.json" />
+    <Compile Include="Templates\MSGraphWebhook-CSharp\run.cs" />
+    <None Include="Templates\MSGraphWebhook-CSharp\sample.dat" />
     <None Include="Templates\QueueTrigger-CSharp\run.cs" />
     <None Include="Templates\QueueTrigger-TypeScript\function.json" />
     <None Include="Templates\QueueTrigger-TypeScript\metadata.json" />
@@ -71,7 +86,11 @@
     <None Include="Templates\ServiceBusTopicTrigger-TypeScript\function.json" />
     <None Include="Templates\ServiceBusTopicTrigger-TypeScript\metadata.json" />
     <None Include="Templates\ServiceBusTopicTrigger-TypeScript\sample.dat" />
+    <None Include="Templates\TimerTrigger-CSharpWebhookHandler\function.json" />
+    <None Include="Templates\TimerTrigger-CSharpWebhookHandler\metadata.json" />
+    <None Include="Templates\TimerTrigger-CSharpWebhookHandler\run.csx" />
     <None Include="Templates\TimerTrigger-CSharp\run.cs" />
+    <None Include="Templates\TimerTrigger-CSharpExcel\run.csx" />
     <None Include=".template.config\template.json" />
     <None Include="Bindings\bindings.json" />
     <None Include="Documentation\apiHubFileIn.md" />
@@ -103,7 +122,9 @@
     <None Include="Documentation\tableOut.md" />
     <None Include="Documentation\timerTrigger.md" />
     <None Include="Documentation\twilioSmsOut.md" />
-    <None Include="ItemTemplates.nuspec" />
+    <None Include="ItemTemplates.nuspec">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="PortalTemplates.nuspec" />
     <None Include="Templates\AppInsightsHttpAvailability-CSharp\function.json" />
     <None Include="Templates\AppInsightsHttpAvailability-CSharp\metadata.json" />
@@ -400,6 +421,9 @@
     <None Include="Templates\TimerTrigger-CSharp\metadata.json" />
     <None Include="Templates\TimerTrigger-CSharp\readme.md" />
     <None Include="Templates\TimerTrigger-CSharp\sample.dat" />
+    <None Include="Templates\TimerTrigger-CSharpExcel\function.json" />
+    <None Include="Templates\TimerTrigger-CSharpExcel\metadata.json" />
+    <None Include="Templates\TimerTrigger-CSharpExcel\sample.dat" />
     <None Include="Templates\TimerTrigger-FSharp\function.json" />
     <None Include="Templates\TimerTrigger-FSharp\metadata.json" />
     <None Include="Templates\TimerTrigger-FSharp\readme.md" />
@@ -490,6 +514,7 @@
     <Content Include="Templates\ImageResizer-FSharp\run.fsx" />
     <Content Include="Templates\ManualTrigger-FSharp\run.fsx" />
     <Content Include="Templates\ManualTrigger-JavaScript\index.js" />
+    <Content Include="Templates\MSGraphWebhook-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\QueueTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\QueueTrigger-FSharp\run.fsx" />
     <Content Include="Templates\QueueTrigger-JavaScript\index.js" />

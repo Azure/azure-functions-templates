@@ -1,0 +1,18 @@
+﻿{
+  "bindings": [
+    {
+      "type": "timerTrigger",
+      "direction": "in",
+      "name": "timer",
+      "schedule": "0 15 2 * * *"
+    },
+    {
+      "type": "GraphWebhook",
+      "name": "g",
+      "direction": "in",
+      "PrincipalId": "",
+      "idToken": ""
+    }
+  ],
+  "disabled": false
+}
