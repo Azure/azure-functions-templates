@@ -78,6 +78,15 @@
           ]
         },
         {
+          "name": "connection",
+          "value": "string",
+          "resource": "EventHub",
+          "required": true,
+          "label": "$eventHubTrigger_connection_label",
+          "help": "$eventHubTrigger_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
           "name": "path",
           "value": "string",
           "defaultValue": "myeventhub",
@@ -104,15 +113,6 @@
               "errorText": "$eventHubTrigger_consumerGroup_errorText"
             }
           ]
-        },
-        {
-          "name": "connection",
-          "value": "string",
-          "resource": "EventHub",
-          "required": true,
-          "label": "$eventHubTrigger_connection_label",
-          "help": "$eventHubTrigger_connection_help",
-          "placeholder": "[variables('selectConnection')]"
         },
         {
           "name": "cardinality",
@@ -144,8 +144,8 @@
           "template": "EventHubTrigger",
           "binding": "eventHubTrigger",
           "settings": [
-            "path",
-            "connection"
+            "connection",
+            "path"
           ]
         }
       ],
@@ -166,6 +166,15 @@
           ]
         },
         {
+          "name": "connection",
+          "value": "string",
+          "resource": "EventHub",
+          "required": true,
+          "label": "$eventHubOut_connection_label",
+          "help": "$eventHubOut_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
           "name": "path",
           "value": "string",
           "defaultValue": "outeventhub",
@@ -178,15 +187,6 @@
               "errorText": "$eventHubOut_path_errorText"
             }
           ]
-        },
-        {
-          "name": "connection",
-          "value": "string",
-          "resource": "EventHub",
-          "required": true,
-          "label": "$eventHubOut_connection_label",
-          "help": "$eventHubOut_connection_help",
-          "placeholder": "[variables('selectConnection')]"
         }
       ]
     },
@@ -915,6 +915,15 @@
           ]
         },
         {
+          "name": "connection",
+          "value": "string",
+          "resource": "ServiceBus",
+          "required": true,
+          "label": "$serviceBusTrigger_connection_label",
+          "help": "$serviceBusTrigger_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
           "name": "queueName",
           "value": "string",
           "defaultValue": "mysbqueue",
@@ -955,15 +964,6 @@
               "errorText": "$serviceBusTrigger_subscriptionName_errorText"
             }
           ]
-        },
-        {
-          "name": "connection",
-          "value": "string",
-          "resource": "ServiceBus",
-          "required": true,
-          "label": "$serviceBusTrigger_connection_label",
-          "help": "$serviceBusTrigger_connection_help",
-          "placeholder": "[variables('selectConnection')]"
         },
         {
           "name": "accessRights",
@@ -1023,6 +1023,15 @@
       "documentation": "$content=Documentation\\serviceBusOut.md",
       "settings": [
         {
+          "name": "connection",
+          "value": "string",
+          "resource": "ServiceBus",
+          "required": true,
+          "label": "$serviceBusOut_connection_label",
+          "help": "$serviceBusOut_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
           "name": "name",
           "value": "string",
           "defaultValue": "outputSbMsg",
@@ -1063,15 +1072,6 @@
               "errorText": "$serviceBusOut_topicName_errorText"
             }
           ]
-        },
-        {
-          "name": "connection",
-          "value": "string",
-          "resource": "ServiceBus",
-          "required": true,
-          "label": "$serviceBusOut_connection_label",
-          "help": "$serviceBusOut_connection_help",
-          "placeholder": "[variables('selectConnection')]"
         },
         {
           "name": "accessRights",
@@ -1803,8 +1803,12 @@
           "name": "disable",
           "type": "NAND",
           "values": [
-            { "value": "idToken" },
-            { "value": "PrincipalId" }
+            {
+              "value": "idToken"
+            },
+            {
+              "value": "PrincipalId"
+            }
           ]
         }
       ]
@@ -1910,8 +1914,12 @@
           "name": "disable",
           "type": "NAND",
           "values": [
-            { "value": "idToken" },
-            { "value": "PrincipalId" }
+            {
+              "value": "idToken"
+            },
+            {
+              "value": "PrincipalId"
+            }
           ]
         }
       ]
@@ -2279,6 +2287,7 @@
           "label": "$oneDrive_out_name_label",
           "help": "$oneDrive_out_name_help"
         },
+
         {
           "name": "Path",
           "value": "string",
