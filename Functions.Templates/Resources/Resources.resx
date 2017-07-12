@@ -1401,6 +1401,48 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   <data name="ManualTriggerNodeTS_description" xml:space="preserve">
     <value>(Experimental) A TypeScript function that is triggered manually via the portal "Run" button</value>
   </data>
+  <data name="IoTHubTriggerCSharp_description" xml:space="preserve">
+    <value>A C# function that will be run whenever an IoT Hub receives a new event</value>
+  </data>
+  <data name="ioTHubTrigger_connection_help" xml:space="preserve">
+    <value>The name of IoT Hub existing in your subscription. It is the app setting containing your IoT Hub connection string, which must have Receive permissions. If you do not have any, click new to create one.</value>
+  </data>
+  <data name="ioTHubTrigger_connection_label" xml:space="preserve">
+    <value>Pick your IoT Hub</value>
+  </data>
+  <data name="ioTHubOut_path_label" xml:space="preserve">
+    <value>IoT Hub Name</value>
+  </data>
+  <data name="ioTHubTrigger_cardinality_help" xml:space="preserve">
+    <value>Cardinality of the trigger input. Choose 'one' if the input is a single message or 'many' if the input is an array of messages. 'one' is the default if unspecified</value>
+  </data>
+  <data name="ioTHubTrigger_cardinality_label" xml:space="preserve">
+    <value>The IoT hub cardinality</value>
+  </data>
+  <data name="ioTHubTrigger_consumerGroup_errorText" xml:space="preserve">
+    <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
+  </data>
+  <data name="ioTHubTrigger_consumerGroup_help" xml:space="preserve">
+    <value>IoT Hub consumer group from which to receive events</value>
+  </data>
+  <data name="ioTHubTrigger_consumerGroup_label" xml:space="preserve">
+    <value>IoT Hub consumer group</value>
+  </data>
+  <data name="ioTHubTrigger_displayName" xml:space="preserve">
+    <value>Azure IoT Hub</value>
+  </data>
+  <data name="ioTHubTrigger_name_help" xml:space="preserve">
+    <value>The name of IoT Hub from which to trigger</value>
+  </data>
+  <data name="ioTHubTrigger_name_label" xml:space="preserve">
+    <value>IoT Hub Name</value>
+  </data>
+  <data name="ioTHubTrigger_path_errorTex" xml:space="preserve">
+    <value>The IoT hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
+  </data>
+  <data name="ioTHubTrigger_path_help" xml:space="preserve">
+    <value>The name of IoT Hub from which to trigger</value>
+  </data>
   <data name="oneDrive_in_displayName" xml:space="preserve">
     <value>OneDrive</value>
   </data>

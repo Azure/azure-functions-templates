@@ -45,6 +45,12 @@
     <None Include="Templates\BlobTrigger-TypeScript\metadata.json" />
     <None Include="Templates\BlobTrigger-TypeScript\readme.md" />
     <None Include="Templates\BlobTrigger-TypeScript\sample.dat" />
+    <None Include="Templates\IoTHubTrigger-CSharp\build.config\template.json" />
+    <None Include="Templates\IoTHubTrigger-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\IoTHubTrigger-CSharp\function.json" />
+    <None Include="Templates\IoTHubTrigger-CSharp\metadata.json" />
+    <None Include="Templates\IoTHubTrigger-CSharp\sample.dat" />
+    <None Include="Templates\EventHubTrigger-CSharp\run.cs" />
     <Content Include="Templates\EventGridTrigger-JavaScript\index.js" />
     <None Include="Templates\EventGridTrigger-JavaScript\function.json" />
     <None Include="Templates\EventGridTrigger-JavaScript\metadata.json" />
@@ -489,6 +495,7 @@
     <Content Include="Templates\BlobTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\BlobTrigger-FSharp\run.fsx" />
     <Content Include="Templates\BlobTrigger-JavaScript\index.js" />
+    <Content Include="Templates\IoTHubTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\CosmosDBTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\EventHubTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\EventHubTrigger-FSharp\run.fsx" />
@@ -547,6 +554,11 @@
     <Content Include="Templates\TimerTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\TimerTrigger-FSharp\run.fsx" />
     <Content Include="Templates\TimerTrigger-JavaScript\index.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Templates\IoTHubTrigger-CSharp\run.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Templates\ImageResizer-CSharp\ImageResizerCSharp.cs" />
   </ItemGroup>  
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
