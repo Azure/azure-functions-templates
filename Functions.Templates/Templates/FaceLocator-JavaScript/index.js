@@ -1,12 +1,13 @@
 // Setup
 // 1) Go to https://www.microsoft.com/cognitive-services/en-us/computer-vision-api 
 //    Sign up for computer vision api
-// 2) Go to Function app settings -> App Service settings -> Settings -> Application settings
+// 2) Go to Platform features -> Application settings
 //    create a new app setting Vision_API_Subscription_Key and use Computer vision key as value
-// 3) Go to Function app settings -> App Service settings -> Tools -> Console
+// 3) Go to Platform features -> Console
 //    Enter the following commands: 
 //    > cd <functionName>
 //    > npm install
+
 var request = require('request-promise');
 var guid = require('node-uuid');
 
@@ -14,7 +15,7 @@ module.exports = function (context, image) {
 
     context.log("Image Size:", image.length);
     var options = {
-        uri: "https://api.projectoxford.ai/vision/v1.0/analyze?visualFeatures=Faces",
+        uri: "https://westus.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Faces&language=en",
         method: 'POST',
         body: image,
         headers: {
