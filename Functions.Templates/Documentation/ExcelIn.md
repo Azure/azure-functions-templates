@@ -12,9 +12,38 @@ The settings specify the following properties.
 - `PrincipalId` : Should be set to either an app setting containing the Principal id/OID to be used to communicate with MS Graph or an expression to evaluate to a Principal id/OID
 - `idToken` : Should be set to an expression that evaluates to an id token. Either Principal id or id token must be set, but not both.
 
+#### Example bindings.json
+```json
+{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "name": "info",
+      "authLevel": "anonymous",
+      "methods": [
+        "get",
+        "post",
+        "put"
+      ],
+      "direction": "in"
+    },
+    {
+      "type": "excel",
+      "name": "inputTable",
+      "Path": "Workbook.xlsx",
+      "WorksheetName": "Sheet1",
+      "TableName": "Table1",
+      "PrincipalId": "{userId}",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
+```
 #### C# Example code
 ```csharp
-public static void Run(TimerInfo timer, TraceWriter log, TableRow[] table)
+// This function receives a user's principal ID via a HTTP Request, then reads their Excel table and prints it out
+public static void Run(UserInfo info, TraceWriter log, TableRow[] table)
 {
 	foreach(var row in table) {
 		log.Info($"Recieved input: {row.id}")
@@ -26,8 +55,13 @@ public class TableRow {
 	public string name { get; set; }
 	public string number { get; set; }
 }
-```
 
+public class UserInfo
+{     
+    [JsonProperty(PropertyName = "userId", NullValueHandling = NullValueHandling.Ignore)]
+    public string UserId { get; set; }
+}
+```
 #### Supported types
 
 [Input] Excel data can be deserialized to any of the following types:

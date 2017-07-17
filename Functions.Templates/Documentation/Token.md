@@ -9,11 +9,47 @@ The settings specify the following properties:
 - `PrincipalId` : Should be set to either an app setting containing the Principal id/OID to be used to communicate with the specific Resource or an expression to evaluate to a Principal id/OID
 - `idToken` : Should be set to an expression that evaluates to an id token. Either Principal id or id token must be set, but not both.
 
+#### Example bindings.json
+```json
+{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "name": "info",
+      "authLevel": "anonymous",
+      "methods": [
+        "get",
+        "post",
+      ],
+      "direction": "in"
+    },   
+    {
+      "type": "token",
+      "name": "token",
+      "Resource": "https://graph.windows.net",
+      "idToken": {idToken}
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
+```
+
 #### C# Example code
 ```csharp
-public static void Run(TimerInfo timer, TraceWriter log, string token)
+#r "Newtonsoft.Json"
+
+using Newtonsoft.Json;
+
+public static async Task Run(UserInfo info, TraceWriter log, string token)
 {
-    log.Info($"Timer triggered! Retrieved token: {token}");
+    log.Info($"Retrieved AD Graph token: {token}");
+}
+
+public class UserInfo
+{     
+    [JsonProperty(PropertyName = "idToken", NullValueHandling = NullValueHandling.Ignore)]
+    public string idToken { get; set; }
 }
 ```
 

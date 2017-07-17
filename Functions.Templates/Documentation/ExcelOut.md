@@ -17,11 +17,33 @@ This binding can only be used with Excel files that reside in OneDrive.
 
 This binding can be used to update existing Excel tables and worksheets. If a worksheet name is provided without a table name, the specified worksheet will be updated. If a worksheet and table name are provided, the specified table will be updated.
 
+#### Example bindings.json
+{
+  "bindings": [
+    {
+      "name": "myTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 */5 * * * *"
+    },
+    {
+      "type": "excel",
+      "name": "table",
+      "Path": "Documents/test.xlsx",
+      "WorksheetName": "MySheet",
+      "TableName": "MyTable",
+      "UpdateType": "Append",
+      "PrincipalId": "%Principal_ID%",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
 
 
 #### C# Example code
+##### Update or append multiple rows using a POCO[]
 ```csharp
-// Updating or appending multiple rows using a POCO[]
 public static void Run(TimerInfo timer, TraceWriter log, out TableRow[] table)
 {
     table = new TableRow[] {
@@ -45,8 +67,8 @@ public class TableRow {
 }
 ```
 
+##### Update a single column using a JObject
 ```csharp
-// Update a single column using a JObject
 public static void Run(TimerInfo timer, TraceWriter log, out JObject col)
 {
     col = new JObject();

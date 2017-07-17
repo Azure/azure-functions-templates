@@ -7,9 +7,30 @@ The settings specify the following properties.
 - `PrincipalId` : Should be set to either an app setting containing the Principal id/OID to be used to communicate with MS Graph or an expression to evaluate to a Principal id/OID
 - `idToken` : Should be set to an expression that evaluates to an id token. Either Principal id or id token must be set, but not both.
 
+#### Example bindings.json
+```json
+{
+  "bindings": [
+    {
+      "type": "timerTrigger",
+      "direction": "in",
+      "name": "timer",
+      "schedule": "0 45 9 * * *"
+    },
+    {
+      "type": "outlook",
+      "name": "email",
+      "PrincipalId": "%Identity.<alias>%",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
+```
 #### C# Example code
+
+##### Send one email to one person using JObjects
 ```csharp
-// Send one email to one person using JObjects
 public static void Run(TimerInfo timer, TraceWriter log, out JObject msg)
 {
 	msg = new JObject();
@@ -22,8 +43,8 @@ public static void Run(TimerInfo timer, TraceWriter log, out JObject msg)
 	msg["recipient"] = recipient;		
 }
 ```
+##### Send one email to multiple people using JObjects
 ```csharp
-// Send one email to multiple people using JObjects
 public static void Run(TimerInfo timer, TraceWriter log, out JObject msg)
 {
 	msg = new JObject();
@@ -44,8 +65,9 @@ public static void Run(TimerInfo timer, TraceWriter log, out JObject msg)
 	msg["recipients"] = recipients;		
 }
 ```
-```csharp
-// Send one email to one person using simple string array
+
+##### Send one email to one person using simple string array
+```csharp 
 public static void Run(TimerInfo timer, TraceWriter log, out string[] msg)
 {
 	msg = new string[3];

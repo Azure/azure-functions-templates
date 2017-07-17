@@ -7,6 +7,27 @@ The settings specify the following properties.
 - `Path` : Path from root OneDrive directory to file (e.g. Documents/test.txt).
 - `PrincipalId` : Should be set to either an app setting containing the Principal id/OID to be used to communicate with MS Graph or an expression to evaluate to a Principal id/OID
 - `idToken` : Should be set to an expression that evaluates to an id token. Either Principal id or id token must be set, but not both.
+#### Example bindings.json
+```json
+{
+  "bindings": [
+    {
+      "type": "timerTrigger",
+      "direction": "in",
+      "name": "timer",
+      "schedule": "0 45 9 * * *"
+    },
+    {
+      "type": "onedrive",
+      "name": "output",
+      "Path": "Documents/test.txt",
+      "PrincipalId": "%Identity.<alias>%",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
+```
 
 #### C# Example code
 ```csharp

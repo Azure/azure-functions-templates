@@ -8,6 +8,35 @@ The settings specify the following properties:
 - `changeType` : Kinds of changes function subscribes to.
 - `PrincipalId` : Should be set to either an app setting containing the Principal id/OID to be used to communicate with MS Graph or an expression to evaluate to a Principal id/OID
 - `idToken` : Should be set to an expression that evaluates to an id token. Either Principal id or id token must be set, but not both.
+#### Example bindings.json
+```json
+{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "name": "info",
+      "authLevel": "anonymous",
+      "methods": [
+        "get",
+        "post"
+      ],
+      "direction": "in"
+    },
+    {
+      "type": "GraphWebhookCreator",
+      "name": "creator",
+      "changeType": [
+        "Created"
+      ],
+      "Listen": "me/events",
+      "PrincipalId": "",
+      "idToken": "{idToken}",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
+```
 
 #### C# Example code
 ```csharp
@@ -19,18 +48,18 @@ using Microsoft.Graph;
 using Newtonsoft.Json;
 using O365Extensions;
 
-// Create a new Microsoft Graph subscription using an incoming 'userId' parameter from an Http Trigger
-public static async Task Run(UserInfo info, TraceWriter log, GraphWebhookCreator g)
+// Create a new Microsoft Graph subscription using an incoming 'idToken' parameter from an Http Trigger
+public static async Task Run(UserInfo info, TraceWriter log, GraphWebhookCreator creator)
 {
-    var sub = await g.SubscribeAsync();
+    var sub = await creator.SubscribeAsync();
 
-    log.Info($"Created subscription with client state: {sub.ClientState} using User ID: {info.UserId}");
+    log.Info($"Created subscription with client state: {sub.ClientState}");
 }
 
 public class UserInfo
 {     
-    [JsonProperty(PropertyName = "userId", NullValueHandling = NullValueHandling.Ignore)]
-    public string UserId { get; set; }
+    [JsonProperty(PropertyName = "idToken", NullValueHandling = NullValueHandling.Ignore)]
+    public string idToken { get; set; }
 }
 ```
 
