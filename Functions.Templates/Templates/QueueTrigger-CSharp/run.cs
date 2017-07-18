@@ -12,7 +12,7 @@ namespace Company.Function
 {
     public static class QueueTriggerCSharp
     {
-        [FunctionName("FunctionNameValue")]        
+        [FunctionName("QueueTriggerCSharp")]
         public static void Run([QueueTrigger("PathValue", Connection = "ConnectionValue")]string myQueueItem, TraceWriter log)
 #endif
         {

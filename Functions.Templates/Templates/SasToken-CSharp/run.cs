@@ -32,7 +32,7 @@ namespace Company.Function
 {
     public static class SasTokenCSharp
     {
-        [FunctionName("FunctionNameValue")]
+        [FunctionName("SasTokenCSharp")]
         public static HttpResponseMessage Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "post")]Input input, [Blob("PathValue", FileAccess.Read, Connection = "ConnectionValue")]CloudBlobDirectory blobDirectory, TraceWriter log)
 #endif
         {

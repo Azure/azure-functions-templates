@@ -20,7 +20,7 @@ namespace Company.Function
 {
     public static class HttpPostCRUDCSharp
     {
-        [FunctionName("FunctionNameValue")]
+        [FunctionName("HttpPostCRUDCSharp")]
         public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "post")]HttpRequestMessage req, [Table("TableNameValue", Connection = "ConnectionValue")]ICollector<Person> outTable, TraceWriter log)
 #endif
         {

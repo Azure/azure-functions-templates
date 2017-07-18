@@ -34,7 +34,7 @@ namespace Company.Function
 {
     public static class FaceLocatorCSharp
     {
-        [FunctionName("FunctionNameValue")]
+        [FunctionName("FaceLocatorCSharp")]
         public static async Task Run([BlobTrigger("BlobPathValue", Connection = "BlobConnectionValue")]Stream image, string name, [Table("TableNameValue", Connection = "TableConnectionValue")]IAsyncCollector<FaceRectangle> outTable, TraceWriter log)
 #endif
         {
