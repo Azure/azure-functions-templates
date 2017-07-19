@@ -12,7 +12,7 @@ namespace Company.Function
 {
     public static class EventHubTriggerCSharp
     {
-        [FunctionName("FunctionNameValue")]
+        [FunctionName("EventHubTriggerCSharp")]
         public static void Run([EventHubTrigger("PathValue", Connection = "ConnectionValue")]string myEventHubMessage, TraceWriter log)
 #endif
         {

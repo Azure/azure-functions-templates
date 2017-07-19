@@ -21,7 +21,7 @@ namespace Company.Function
 {
     public static class GitHubCommenterCSharp
     {
-        [FunctionName("FunctionNameValue")]
+        [FunctionName("GitHubCommenterCSharp")]
         public static async Task Run([HttpTrigger(WebHookType = "github")]dynamic payload, TraceWriter log)
 #endif
         {

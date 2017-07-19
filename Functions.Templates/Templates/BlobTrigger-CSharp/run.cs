@@ -10,7 +10,7 @@ namespace Company.Function
 {
     public static class BlobTriggerCSharp
     {
-        [FunctionName("FunctionNameValue")]
+        [FunctionName("BlobTriggerCSharp")]
         public static void Run([BlobTrigger("PathValue/{name}", Connection = "ConnectionValue")]Stream myBlob, string name, TraceWriter log)
 #endif
         {

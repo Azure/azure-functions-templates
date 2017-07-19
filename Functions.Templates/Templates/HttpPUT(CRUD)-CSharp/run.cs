@@ -20,7 +20,7 @@ namespace Company.Function
 {
     public static class HttpPutCRUDCSharp
     {
-        [FunctionName("FunctionNameValue")]
+        [FunctionName("HttpPutCRUDCSharp")]
         public static HttpResponseMessage Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "put")]Person person, [Table("TableNameValue", Connection = "ConnectionValue")]CloudTable outTable, TraceWriter log)
 #endif
         {

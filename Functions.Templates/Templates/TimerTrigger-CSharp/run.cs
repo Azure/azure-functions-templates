@@ -12,7 +12,7 @@ namespace Company.Function
 {
     public static class TimerTriggerCSharp
     {
-        [FunctionName("FunctionNameValue")]
+        [FunctionName("TimerTriggerCSharp")]
         public static void Run([TimerTrigger("ScheduleValue")]TimerInfo myTimer, TraceWriter log)
 #endif
         {
