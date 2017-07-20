@@ -5,7 +5,7 @@ The settings specify the following properties:
 - `direction` : Must be set to *in*. 
 - `Type` : Must be set to *GraphWebhook*.
 
-#### Example bindings.json
+#### Example function.json
 ```json
 {
   "bindings": [

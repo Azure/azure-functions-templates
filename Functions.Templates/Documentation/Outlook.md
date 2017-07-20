@@ -7,7 +7,7 @@ The settings specify the following properties.
 - `PrincipalId` : Should be set to either an app setting containing the Principal id/OID to be used to communicate with MS Graph or an expression to evaluate to a Principal id/OID
 - `idToken` : Should be set to an expression that evaluates to an id token. Either Principal id or id token must be set, but not both.
 
-#### Example bindings.json
+#### Example function.json
 ```json
 {
   "bindings": [

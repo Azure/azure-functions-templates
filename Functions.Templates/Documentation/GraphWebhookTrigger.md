@@ -14,7 +14,7 @@ Currently, notifications from webhooks are processed at the **application** leve
 
 If viewing from Portal, one must click 'Subscribe' in order to initialize subscription.
 
-#### Example bindings.json
+#### Example function.json
 ```json
 {
   "bindings": [

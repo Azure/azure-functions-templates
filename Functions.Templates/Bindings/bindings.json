@@ -1754,6 +1754,7 @@
             "direction": "in",
             "enabledInTryMode": false,
             "documentation": "$content=Documentation\\Token.md",
+            "filters": ["MSGraph"],
             "settings": [
                 {
                     "name": "name",
@@ -1766,25 +1767,24 @@
                 {
                     "name": "Resource",
                     "value": "string",
-                    "defaultValue": "",
                     "required": false,
                     "label": "$token_in_resource_label",
                     "help": "$token_in_resource_help"
                 },
                 {
                     "name": "PrincipalId",
-                    "value": "token",
+                    "value": "appSetting",
                     "resource": "MSGraph",
                     "required": false,
-                    "label": "$principal_id_label",
-                    "help": "$principal_id_help"
+                    "label": "$principal_id_label_token",
+                    "help": "$principal_id_help_token"
                 },
                 {
                     "name": "idToken",
                     "value": "string",
                     "required": false,
-                    "label": "$idToken_label",
-                    "help": "$idToken_help"
+                    "label": "$idToken_label_token",
+                    "help": "$idToken_help_token"
                 }
                 ],
                 "rules": [
@@ -1803,6 +1803,7 @@
             "displayName": "$excel_in_displayName",
             "direction": "in",
             "enabledInTryMode": false,
+            "filters": ["MSGraph"],
             "documentation": "$content=Documentation\\ExcelIn.md",
             "settings": [
                 {
@@ -1839,18 +1840,18 @@
                 },
                 {
                     "name": "PrincipalId",
-                    "value": "token",
+                    "value": "appSetting",
                     "resource": "MSGraph",
                     "required": false,
-                    "label": "$principal_id_label",
-                    "help": "$principal_id_help"
+                    "label": "$principal_id_label_excel_in",
+                    "help": "$principal_id_help_excel_in"
                 },
                 {
                     "name": "idToken",
                     "value": "string",
                     "required": false,
-                    "label": "$idToken_label",
-                    "help": "$idToken_help"
+                    "label": "$idToken_label_excel_in",
+                    "help": "$idToken_help_excel_in"
                 }
             ],
             "rules": [
@@ -1869,6 +1870,7 @@
             "displayName": "$excel_out_displayName",
             "direction": "out",
             "enabledInTryMode": false,
+            "filters": ["MSGraph"],
             "documentation": "$content=Documentation\\ExcelOut.md",
             "settings": [
                 {
@@ -1917,24 +1919,24 @@
                         "display": "Update"
                       }
                     ],
-                    "required": false,
+                    "required": true,
                     "label": "$excel_out_updateType_label",
                     "help": "$excel_out_updateType_help"
                 },
                 {
                     "name": "PrincipalId",
-                    "value": "token",
+                    "value": "appSetting",
                     "resource": "MSGraph",
                     "required": false,
-                    "label": "$principal_id_label",
-                    "help": "$principal_id_help"
+                    "label": "$principal_id_label_excel_out",
+                    "help": "$principal_id_help_excel_out"
                 },
                 {
                     "name": "idToken",
                     "value": "string",
                     "required": false,
-                    "label": "$idToken_label",
-                    "help": "$idToken_help"
+                    "label": "$idToken_label_excel_out",
+                    "help": "$idToken_help_excel_out"
                 }
             ],
             "rules": [
@@ -1957,6 +1959,7 @@
             "displayName": "$outlook_displayName",
             "direction": "out",
             "enabledInTryMode": false,
+            "filters": ["MSGraph"],
             "documentation": "$content=Documentation\\Outlook.md",
             "settings": [
                 {
@@ -1969,18 +1972,18 @@
                 },
                 {
                     "name": "PrincipalId",
-                    "value": "token",
+                    "value": "appSetting",
                     "resource": "MSGraph",
                     "required": false,
-                    "label": "$principal_id_label",
-                    "help": "$principal_id_help"
+                    "label": "$principal_id_label_outlook",
+                    "help": "$principal_id_help_outlook"
                 },
                 {
                     "name": "idToken",
                     "value": "string",
                     "required": false,
-                    "label": "$idToken_label",
-                    "help": "$idToken_help"
+                    "label": "$idToken_label_outlook",
+                    "help": "$idToken_help_outlook"
                 }
             ],
             "rules": [
@@ -2003,6 +2006,7 @@
             "displayName": "$oneDrive_displayName",
             "direction": "in",
             "enabledInTryMode": false,
+            "filters": ["MSGraph"],
             "documentation": "$content=Documentation\\OneDriveIn.md",
             "settings": [
                 {
@@ -2019,22 +2023,22 @@
                     "defaultValue": "Documents/test.txt",
                     "required": true,
                     "label": "$oneDrive_path_label",
-                    "help": "$oneDrive_path_help"
+                    "help": "$oneDrive_path_help"            
                 },
                 {
                     "name": "PrincipalId",
-                    "value": "token",
+                    "value": "appSetting",
                     "resource": "MSGraph",
                     "required": false,
-                    "label": "$principal_id_label",
-                    "help": "$principal_id_help"
+                    "label": "$principal_id_label_onedrive_in",
+                    "help": "$principal_id_help_onedrive_in"
                 },
                 {
                     "name": "idToken",
                     "value": "string",
                     "required": false,
-                    "label": "$idToken_label",
-                    "help": "$idToken_help"
+                    "label": "$idToken_label_onedrive_in",
+                    "help": "$idToken_help_onedrive_in"
                 }
             ],
             "rules": [
@@ -2057,6 +2061,7 @@
             "displayName": "$oneDrive_displayName",
             "direction": "out",
             "enabledInTryMode": false,
+            "filters": ["MSGraph"],
             "documentation": "$content=Documentation\\OneDriveOut.md",
             "settings": [
                 {
@@ -2073,22 +2078,22 @@
                     "defaultValue": "Documents/test.txt",
                     "required": true,
                     "label": "$oneDrive_path_label",
-                    "help": "$oneDrive_path_help"
+                    "help": "$oneDrive_path_help"           
                 },
                 {
                     "name": "PrincipalId",
-                    "value": "token",
+                    "value": "appSetting",
                     "resource": "MSGraph",
                     "required": false,
-                    "label": "$principal_id_label",
-                    "help": "$principal_id_help"
+                    "label": "$principal_id_label_onedrive_out",
+                    "help": "$principal_id_help_onedrive_out"
                 },
                 {
                     "name": "idToken",
                     "value": "string",
                     "required": false,
-                    "label": "$idToken_label",
-                    "help": "$idToken_help"
+                    "label": "$idToken_label_onedrive_out",
+                    "help": "$idToken_help_onedrive_out"
                 }
             ],
             "rules": [
@@ -2111,13 +2116,14 @@
             "displayName": "$MSGraphWebhook_displayName",
             "direction": "in",
             "enabledInTryMode": false,
+            "filters": ["MSGraph"],
             "documentation": "$content-Documentation\\GraphWebhook.md",
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "webhook",
-                    "required": false,
+                    "required": true,
                     "label": "$MSGraphWebhook_in_name_label",
                     "help": "$MSGraphWebhook_in_name_help"
                 }
@@ -2128,13 +2134,14 @@
             "displayName": "$MSGraphWebhookCreator_displayName",
             "direction": "in",
             "enabledInTryMode": false,
+            "filters": ["MSGraph"],
             "documentation": "$content=Documentation\\GraphWebhookCreator.md",
             "settings": [
               {
                 "name": "name",
                 "value": "string",
                 "defaultValue": "creator",
-                "required": false,
+                "required": true,
                 "label": "$MSGraphWebhookCreator_in_name_label",
                 "help": "$MSGraphWebhookCreator_in_name_help"
               },
@@ -2186,22 +2193,23 @@
                   }
                 ],
                 "label": "$MSGraphWebhook_in_listen_label",
-                "help": "$MSGraphWebhook_in_listen_help"
+                "help": "$MSGraphWebhook_in_listen_help",
+                "required": true
               },
               {
                 "name": "PrincipalId",
-                "value": "token",
+                "value": "appSetting",
                 "resource": "MSGraph",
                 "required": false,
-                "label": "$principal_id_label",
-                "help": "$principal_id_help"
+                "label": "$principal_id_label_graphwebhook",
+                "help": "$principal_id_help_graphwebhook"
               },
               {
                 "name": "idToken",
                 "value": "string",
                 "required": false,
-                "label": "$idToken_label",
-                "help": "$idToken_help"
+                "label": "$idToken_label_graphwebhook",
+                "help": "$idToken_help_graphwebhook"
               }
             ],
             "rules": [
@@ -2220,6 +2228,7 @@
             "direction": "trigger",
             "displayName": "$MSGraphWebhookTrigger_displayName",
             "documentation": "$content=Documentation\\GraphWebhookTrigger.md",
+            "filters": ["MSGraph"],
             "enabledInTryMode": false,
             "settings": [
                 {

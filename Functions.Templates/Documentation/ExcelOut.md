@@ -17,7 +17,7 @@ This binding can only be used with Excel files that reside in OneDrive.
 
 This binding can be used to update existing Excel tables and worksheets. If a worksheet name is provided without a table name, the specified worksheet will be updated. If a worksheet and table name are provided, the specified table will be updated.
 
-#### Example bindings.json
+#### Example function.json
 {
   "bindings": [
     {

@@ -4,18 +4,22 @@ using System;
 using System.Net;
 using Microsoft.Graph;
 
+/// <summary>
+/// 1. Read Excel table
+/// 2. Use that information to send an email to each customer
+/// 3. Update Excel table with the time an email was last sent.
+/// </summary>
 public static void Run(TimerInfo timer, TraceWriter log,
-    EmailRow[] customers, BodyRow[] body,
-    out EmailRow[] update, ICollector<Message> emails)
+    EmailRow[] customers, out EmailRow[] update, ICollector<Message> emails)
 {
     foreach (var row in customers)
     {
         var email = new Message
         {
-            Subject = body[0].Subject,
+            Subject = "Greetings from Azure Functions",
             Body = new ItemBody
             {
-                Content = body[0].Body,
+                Content = "<h1> hi! </h1>",
                 ContentType = BodyType.Html
             },
             ToRecipients = new Recipient[] {
@@ -35,15 +39,12 @@ public static void Run(TimerInfo timer, TraceWriter log,
     Array.Copy(customers, update, customers.Length);
 }
 
+/// <summary>
+/// POCO type; fields match table header names exactly
+/// </summary>
 public class EmailRow
 {
     public string Name { get; set; }
     public string Email { get; set; }
     public string Sent { get; set; }
-}
-
-public class BodyRow
-{
-    public string Body { get; set; }
-    public string Subject { get; set; }
 }
