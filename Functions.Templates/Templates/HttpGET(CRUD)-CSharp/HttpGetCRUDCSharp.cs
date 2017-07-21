@@ -19,7 +19,7 @@ namespace Company.Function
 {
     public static class HttpGetCRUDCSharp
     {
-        [FunctionName("FunctionNameValue")]
+        [FunctionName("HttpGetCRUDCSharp")]
         public static HttpResponseMessage Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "get")]HttpRequestMessage req, [Table("TableNameValue", Connection = "ConnectionValue")]IQueryable<Person> inTable, TraceWriter log)
 #endif
         {

@@ -1267,7 +1267,7 @@
         },
         {
             "type": "documentDB",
-            "displayName": "$documentDB_displayName",
+            "displayName": "$documentDBOut_displayName",
             "direction": "out",
             "enabledInTryMode": false,
             "documentation": "$content=Documentation\\documentDBOut.md",
@@ -1309,6 +1309,13 @@
                     "required": true,
                     "label": "$documentDBOut_createIfNotExists_label",
                     "help": "$documentDBOut_createIfNotExists_help"
+                },
+                {
+                    "name": "partitionKey",
+                    "value": "string",
+                    "required": false,
+                    "label": "$documentDB_partitionKey_label",
+                    "help": "$documentDBOut_partitionKey_help"
                 },
                 {
                     "name": "connection",
@@ -1365,6 +1372,13 @@
                     "required": false,
                     "label": "$documentDBIn_id_label",
                     "help": "$documentDBIn_id_help"
+                },
+                {
+                    "name": "partitionKey",
+                    "value": "string",
+                    "required": false,
+                    "label": "$documentDB_partitionKey_label",
+                    "help": "$documentDBIn_partitionKey_help"
                 },
                 {
                     "name": "sqlQuery",

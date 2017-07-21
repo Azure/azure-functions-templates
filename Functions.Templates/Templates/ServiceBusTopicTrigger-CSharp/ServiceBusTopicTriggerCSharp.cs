@@ -13,7 +13,7 @@ namespace Company.Function
 {
     public static class ServiceBusTopicTriggerCSharp
     {
-        [FunctionName("FunctionNameValue")]
+        [FunctionName("ServiceBusTopicTriggerCSharp")]
         public static void Run([ServiceBusTrigger("TopicNameValue", "SubscriptionNameValue", AccessRights.AccessRightsValue, Connection = "ConnectionValue")]string mySbMsg, TraceWriter log)
 #endif
         {

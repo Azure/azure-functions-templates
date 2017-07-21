@@ -124,7 +124,7 @@
     <value>Event Hub connection</value>
   </data>
   <data name="eventHubOut_displayName" xml:space="preserve">
-    <value>Azure Event Hub</value>
+    <value>Azure Event Hubs</value>
   </data>
   <data name="eventHubOut_name_help" xml:space="preserve">
     <value>The name used to identify this binding in your code</value>
@@ -136,7 +136,7 @@
     <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
-    <value>This is the name of the event hub to which the event will be sent.</value>
+    <value>The name of the event hub to which the event will be sent.</value>
   </data>
   <data name="eventHubOut_path_label" xml:space="preserve">
     <value>Event Hub name</value>
@@ -154,7 +154,7 @@
     <value>Event Hub consumer group</value>
   </data>
   <data name="eventHubTrigger_displayName" xml:space="preserve">
-    <value>Azure Event Hub</value>
+    <value>Azure Event Hubs</value>
   </data>
   <data name="eventHubTrigger_name_help" xml:space="preserve">
     <value>The name used to identify this trigger in your code</value>
@@ -187,7 +187,7 @@
     <value>Queue name</value>
   </data>
   <data name="queueOut_queueName_help" xml:space="preserve">
-    <value>This is the queue to which the message will be sent. If the queue doesn't exist yet, one will be created for you in the specifed storage account.</value>
+    <value>The queue to which the message will be sent. If the queue doesn't exist yet, one will be created for you in the specifed storage account.</value>
   </data>
   <data name="temp_category_core" xml:space="preserve">
     <value>Core</value>
@@ -247,10 +247,10 @@
     <value>The parameter name must be an alphanumeric string of any number of characters and cannot start with a number.</value>
   </data>
   <data name="variables_paramNameInputHelp" xml:space="preserve">
-    <value>This is the name of the parameter in code for the input binding to bind to.</value>
+    <value>The name of the parameter in code for the input binding to bind to.</value>
   </data>
   <data name="variables_paramNameOutputHelp" xml:space="preserve">
-    <value>This is the name of the parameter in code for the output binding to bind to.</value>
+    <value>The name of the parameter in code for the output binding to bind to.</value>
   </data>
   <data name="variables_selectConnection" xml:space="preserve">
     <value>Click select to choose a connection</value>
@@ -295,7 +295,7 @@
     <value>Queue name</value>
   </data>
   <data name="blobOut_path_help" xml:space="preserve">
-    <value>This is the path within your storage account to which the blob will be written.</value>
+    <value>The path within your storage account to which the blob will be written.</value>
   </data>
   <data name="blobOut_path_errorText" xml:space="preserve">
     <value>Your blob path must be a container name of 3 to 63 characters, followed by a blob name of 1 to 1,024 characters.The blob name can be any combination of characters and can contain a maximum of 254 path segments, which are separated by the forward slash(/).</value>
@@ -310,7 +310,7 @@
     <value>Blob parameter name</value>
   </data>
   <data name="blobIn_path_help" xml:space="preserve">
-    <value>This is the path within your storage account from which the blob will be read.</value>
+    <value>The path within your storage account from which the blob will be read.</value>
   </data>
   <data name="blobIn_path_label" xml:space="preserve">
     <value>Path</value>
@@ -328,7 +328,7 @@
     <value>Path</value>
   </data>
   <data name="blobTrigger_path_help" xml:space="preserve">
-    <value>This is the path within your storage account that the trigger will monitor.</value>
+    <value>The path within your storage account that the trigger will monitor.</value>
   </data>
   <data name="blobTrigger_path_errorText" xml:space="preserve">
     <value>Your blob path must be a container name of 3 to 63 characters, followed by a blob name of 1 to 1,024 characters. The blob name can be any combination of characters and can contain a maximum of 254 path segments, which are separated by the forward slash (/).</value>
@@ -415,7 +415,7 @@
     <value>Mode</value>
   </data>
   <data name="httpTrigger_mode_help" xml:space="preserve">
-    <value>This is the mode of the trigger. "Standard" means that the request will be standard HTTP with no additional semantics. "Webhook" means that the request will be processed according to a specified webhook type.</value>
+    <value>The mode of the trigger. "Standard" means that the request will be standard HTTP with no additional semantics. "Webhook" means that the request will be processed according to a specified webhook type.</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
     <value>External File (Preview)</value>
@@ -433,28 +433,28 @@
     <value>Azure Blob Storage</value>
   </data>
   <data name="documentDBIn_collectionName_help" xml:space="preserve">
-    <value>This is the name of the collection within your database from which data will be read.</value>
+    <value>Database collection where data will be read.</value>
   </data>
   <data name="documentDBIn_collectionName_label" xml:space="preserve">
     <value>Collection Name</value>
   </data>
   <data name="documentDBIn_connection_help" xml:space="preserve">
-    <value>The name of the app setting containing your DocumentDB connection string</value>
+    <value>The name of the app setting containing your Cosmos DB connection string</value>
   </data>
   <data name="documentDBIn_connection_label" xml:space="preserve">
-    <value>DocumentDB account connection</value>
+    <value>Cosmos DB account connection</value>
   </data>
   <data name="documentDBIn_databaseName_help" xml:space="preserve">
-    <value>Name of the database within your DocumentDB account from which data will be read.</value>
+    <value>Cosmos DB database where data will be read.</value>
   </data>
   <data name="documentDBIn_databaseName_label" xml:space="preserve">
     <value>Database name</value>
   </data>
   <data name="documentDBIn_displayName" xml:space="preserve">
-    <value>Azure DocumentDB</value>
+    <value>Azure Cosmos DB</value>
   </data>
   <data name="documentDBIn_id_help" xml:space="preserve">
-    <value>This is the ID of the document that will be read. If neither a SQL query nor an ID are specified, all documents in the collection are returned.</value>
+    <value>The ID of the document that will be read. If neither a SQL query nor an ID are specified, all documents in the collection are returned.</value>
   </data>
   <data name="documentDBIn_id_label" xml:space="preserve">
     <value>Document ID (optional)</value>
@@ -466,31 +466,31 @@
     <value>Document parameter name</value>
   </data>
   <data name="documentDBOut_collectionName_help" xml:space="preserve">
-    <value>This is the name of the collection within your database to which data will be written.</value>
+    <value>Database collection where data will be written.</value>
   </data>
   <data name="documentDBOut_collectionName_label" xml:space="preserve">
     <value>Collection Name</value>
   </data>
   <data name="documentDBOut_connection_help" xml:space="preserve">
-    <value>The name of the app setting containing your DocumentDB connection string</value>
+    <value>The name of the app setting containing your Cosmos DB connection string</value>
   </data>
   <data name="documentDBOut_connection_label" xml:space="preserve">
-    <value>DocumentDB account connection</value>
+    <value>Cosmos DB account connection</value>
   </data>
   <data name="documentDBOut_createIfNotExists_help" xml:space="preserve">
-    <value>When true, your database and collection will be created automatically.</value>
+    <value>If true, creates the Cosmos DB database and collection.</value>
   </data>
   <data name="documentDBOut_createIfNotExists_label" xml:space="preserve">
-    <value>Would you like the DocumentDB database and collection to be created for you?</value>
+    <value>If true, creates the Cosmos DB database and collection</value>
   </data>
   <data name="documentDBOut_databaseName_help" xml:space="preserve">
-    <value>This is the name of the database within your DocumentDB account to which data will be written.</value>
+    <value>The Cosmos DB database where data will be written.</value>
   </data>
   <data name="documentDBOut_databaseName_label" xml:space="preserve">
     <value>Database name</value>
   </data>
   <data name="documentDBOut_displayName" xml:space="preserve">
-    <value>Azure DocumentDB Document</value>
+    <value>Azure Cosmos DB</value>
   </data>
   <data name="documentDBOut_name_help" xml:space="preserve">
     <value>The name used to identify this binding in your code</value>
@@ -517,7 +517,7 @@
     <value>Parameter name</value>
   </data>
   <data name="mobileTableIn_apiKey_help" xml:space="preserve">
-    <value>This is the app setting name that specifies the API Key for your Mobile App. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;More information&lt;/a&gt;.</value>
+    <value>The app setting name that specifies the API Key for your Mobile App. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;More information&lt;/a&gt;.</value>
   </data>
   <data name="mobileTableIn_apiKey_label" xml:space="preserve">
     <value>API key lookup (optional)</value>
@@ -529,10 +529,10 @@
     <value>Mobile App URL lookup</value>
   </data>
   <data name="mobileTableIn_displayName" xml:space="preserve">
-    <value>Azure Mobile Table Record</value>
+    <value>Azure Mobile Tables</value>
   </data>
   <data name="mobileTableIn_id_help" xml:space="preserve">
-    <value>This is the id for the record to retrieve.</value>
+    <value>The id for the record to retrieve.</value>
   </data>
   <data name="mobileTableIn_id_label" xml:space="preserve">
     <value>Record ID</value>
@@ -550,7 +550,7 @@
     <value>Table name</value>
   </data>
   <data name="mobileTableOut_apiKey_help" xml:space="preserve">
-    <value>This is app setting name that specifies the API Key for your Mobile App. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;More information&lt;/a&gt;.</value>
+    <value>The app setting name that specifies the API Key for your Mobile App. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;More information&lt;/a&gt;.</value>
   </data>
   <data name="mobileTableOut_apiKey_label" xml:space="preserve">
     <value>API key lookup (optional)</value>
@@ -562,7 +562,7 @@
     <value>Mobile App URL lookup</value>
   </data>
   <data name="mobileTableOut_displayName" xml:space="preserve">
-    <value>Azure Mobile Table Record</value>
+    <value>Azure Mobile Tables</value>
   </data>
   <data name="mobileTableOut_name_help" xml:space="preserve">
     <value>The name used to identify this binding in your code</value>
@@ -583,10 +583,10 @@
     <value>Notification Hubs namespace connection</value>
   </data>
   <data name="notificationHubOut_displayName" xml:space="preserve">
-    <value>Azure Notification Hub</value>
+    <value>Azure Notification Hubs</value>
   </data>
   <data name="notificationHubOut_hubName_help" xml:space="preserve">
-    <value>This is the name of the Notification Hub to be used for sending push notifications.</value>
+    <value>The Notification Hub to be used for sending push notifications.</value>
   </data>
   <data name="notificationHubOut_hubName_label" xml:space="preserve">
     <value>Notification Hub name</value>
@@ -622,7 +622,7 @@
     <value>SendGrid</value>
   </data>
   <data name="sendGrid_from_help" xml:space="preserve">
-    <value>This is the email address the message is sent from. Can be of the form 'user@host.com' or 'Display Name &lt;user@host.com&gt;'. If not specified here, the value can be specified in code.</value>
+    <value>The email address the message is sent from. Can be of the form 'user@host.com' or 'Display Name &lt;user@host.com&gt;'. If not specified here, the value can be specified in code.</value>
   </data>
   <data name="sendGrid_from_label" xml:space="preserve">
     <value>From address</value>
@@ -949,7 +949,7 @@
     <value>(Preview) A PowerShell function that will be run whenever it receives an HTTP request</value>
   </data>
   <data name="HttpTriggerPython_description" xml:space="preserve">
-    <value>(Experimental) A Python 3 function that will be run whenever it receives an HTTP request</value>
+    <value>(Experimental) A Python function that will be run whenever it receives an HTTP request</value>
   </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>A C# function that creates resized images whenever a blob is added to a specified container</value>
@@ -1096,16 +1096,16 @@
     <value>The consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
-    <value>Azure DocumentDB Document</value>
+    <value>Azure Cosmos DB</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
     <value>The name of the app setting containing your SendGrid developer API key.</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
-    <value>SendGrid API Key</value>
+    <value>SendGrid API Key App Setting</value>
   </data>
   <data name="bot_botId_help" xml:space="preserve">
-    <value>This is the Id that will used in From property of Activity while creating and sending message to the bot, this is populates ChannelAccount.Id of a sent activity.</value>
+    <value>The Id that will used in From property of Activity while creating and sending message to the bot, this is populates ChannelAccount.Id of a sent activity.</value>
   </data>
   <data name="bot_botId_label" xml:space="preserve">
     <value>Sender Id</value>
@@ -1144,13 +1144,13 @@
     <value>(Preview) A C# function that will periodically send emails</value>
   </data>
   <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
-    <value>This is an optional DocumentDB SQL query used to retrieve a set of documents. If neither a SQL query nor an ID are specified, all documents in the collection are returned.</value>
+    <value>An optional DocumentDB API SQL query used to retrieve a set of documents. If neither a SQL query nor an ID are specified, all documents in the collection are returned.</value>
   </data>
   <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
     <value>SQL Query (optional)</value>
   </data>
   <data name="eventHubTrigger_cardinality_help" xml:space="preserve">
-    <value>Cardinality of the trigger input. Choose 'one' if the input is a single message or 'many' if the input is an array of messages. 'one' is the default if unspecified</value>
+    <value>Cardinality of the trigger input. Choose 'one' if the input is a single message or 'many' if the input is an array of messages. 'Many' is the default if unspecified</value>
   </data>
   <data name="HttpTriggerCSharpWithParameters_description" xml:space="preserve">
     <value>A C# function that will be run whenever it receives an HTTP request</value>
@@ -1229,5 +1229,14 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   </data>
   <data name="ManualTriggerNodeTS_description" xml:space="preserve">
     <value>(Experimental) A TypeScript function that is triggered manually via the portal "Run" button</value>
+  </data>
+  <data name="documentDBIn_partitionKey_help" xml:space="preserve">
+    <value>The partition key of the document to be read. Only applies if an ID is specified.</value>
+  </data>
+  <data name="documentDBOut_partitionKey_help" xml:space="preserve">
+    <value>The partition key to use when creating a new collection. Only applies if you have selected to automatically create the collection if it does not exist.</value>
+  </data>
+  <data name="documentDB_partitionKey_label" xml:space="preserve">
+    <value>Partition key (optional)</value>
   </data>
 </root>

@@ -14,9 +14,9 @@ using Newtonsoft.Json;
 
 namespace Company.Function
 {
-    public static class GenericWebHookCSharp
+    public static class GitHubWebHookCsharp
     {
-        [FunctionName("FunctionNameValue")]
+        [FunctionName("GitHubWebHookCsharp")]
         public static async Task<HttpResponseMessage> Run([HttpTrigger(WebHookType = "github")]HttpRequestMessage req, TraceWriter log)
 #endif
         {
