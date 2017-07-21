@@ -25,7 +25,7 @@ You can find more information on the templatting engine at the [wiki page](https
 
 ### Generate templates for portal
 1. Execute the [getTools](getTools.ps1) script from the root of the repository
-2. Build the Functions.Templates/Functions.Templates.csproj via Visual studio or Execute `msbuild Functions.Templates.csproj` from Functions.Templates folder
+2. Build the Functions.Templates/Functions.Templates.csproj via Visual studio or Execute `msbuild Functions.Templates.csproj /p:ItemTemplateVersion=1.0.0 /p:ProjectTemplateVersion=1.0.0 /target:VisualStudioTemplates` from Functions.Templates folder
 3. The generated templates should be present in the `Functions.Templates\bin\Portal\Release\Azure.Functions.Templates.Portal` folder
 
 ### Generate templates for Visual Studio
@@ -44,7 +44,7 @@ You can find more information on the templatting engine at the [wiki page](https
 3. Add the respective files in the solution
 4. Add the following entries to this [nuspec file](Functions.Templates/PortalTemplates.nuspec)
 ```XML
-<file src="Templates/<TemplateFolderName>/<codeFile>" target="Templates/<TemplateFolderName>/<codeFile>" />
+<file src="Templates/<TemplateFolderName>/<CodeFileName>" target="Templates/<TemplateFolderName>/run.<ext>" />
 <file src="Templates/<TemplateFolderName>/function.json" target="Templates/<TemplateFolderName>/function.json" />
 <file src="Templates/<TemplateFolderName>/metadata.json" target="Templates/<TemplateFolderName>/metadata.json" />
 <file src="Templates/<TemplateFolderName>/project.json" target="Templates/<TemplateFolderName>/project.json" />
@@ -62,7 +62,7 @@ You can find more information on the templatting engine at the [wiki page](https
 3. Add the respective files in the solution
 4. Add the following entries to this [nuspec file](Functions.Templates/ItemTemplates.nuspec)
 ```XML
-<file src="Templates/<TemplateFolderName>/run.cs" target="content/<TemplateFolderName>/run.cs" />
+<file src="Templates/<TemplateFolderName>/<CodeFileName>.cs" target="content/<TemplateFolderName>/<CodeFileName>.cs" />
 <file src="Templates/<TemplateFolderName>/build.config/template.json" target="content/<TemplateFolderName>/.template.config/template.json" />
 <file src="Templates/<TemplateFolderName>/build.config/vs-2017.3.host.json" target="content/<TemplateFolderName>/.template.config/vs-2017.3.host.json" />
 <file src="Templates/<TemplateFolderName>/build.config/vs-2017.3/function_f.png" target="content/<TemplateFolderName>/.template.config/vs-2017.3/function_f.png" />
