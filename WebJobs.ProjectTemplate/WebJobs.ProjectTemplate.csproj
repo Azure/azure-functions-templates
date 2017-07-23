@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<PackageType>Template</PackageType>
+		<PackageVersion>0.1-dev</PackageVersion>
+		<PackageId>Microsoft.Azure.WebJobs.ProjectTemplate</PackageId>
+		<Title>Microsoft.Azure.WebJobs.ProjectTemplate template for "dotnet new"</Title>
+		<Authors>Microsoft</Authors>
+		<Description>Microsoft.Azure.WebJobs.ProjectTemplate template(s) for "dotnet new".</Description>
+		<Tags>dotnet-new;templates;azure;webjobs</Tags>
+		
+		<ContentTargetFolders>content</ContentTargetFolders>
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		
+		<!--
+			NuGet package analysis is a little brain-dead in the .NET Core world,
+			so disable it until we can selectively disable individual package-analysis rules.
+		-->
+		<NoPackageAnalysis>true</NoPackageAnalysis>
+
+		<TargetFramework>netstandard2.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Directory Include="content" />
+		<Content Include="content/**/*.*" />
+	</ItemGroup>
+
+	<!-- Ignore source code (if any) in the content folder; it's part of the template(s) -->
+	<ItemGroup>
+		<Compile Remove="content/**/*.cs" />
+	</ItemGroup>
+</Project>
