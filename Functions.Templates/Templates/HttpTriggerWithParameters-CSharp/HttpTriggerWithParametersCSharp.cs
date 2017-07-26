@@ -15,7 +15,7 @@ namespace Company.Function
 {
     public static class HttpTriggerWithParametersCSharp
     {
-        [FunctionName("FunctionNameValue")]
+        [FunctionName("HttpTriggerWithParametersCSharp")]
         public static HttpResponseMessage Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = "HttpTriggerCSharp/name/{name}")]HttpRequestMessage req, string name, TraceWriter log)
 #endif
         {

@@ -14,7 +14,7 @@ namespace Company.Function
 {
     public static class ServiceBusQueueTriggerCSharp
     {
-        [FunctionName("FunctionNameValue")]                    
+        [FunctionName("ServiceBusQueueTriggerCSharp")]
         public static void Run([ServiceBusTrigger("QueueNameValue", AccessRights.AccessRightsValue, Connection = "ConnectionValue")]string myQueueItem, TraceWriter log)
 #endif
         {

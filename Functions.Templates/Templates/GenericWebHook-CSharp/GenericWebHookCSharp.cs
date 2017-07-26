@@ -20,7 +20,7 @@ namespace Company.Function
 {
     public static class GenericWebHookCSharp
     {
-        [FunctionName("FunctionNameValue")]
+        [FunctionName("GenericWebHookCSharp")]
         public static async Task<object> Run([HttpTrigger(WebHookType = "genericJson")]HttpRequestMessage req, TraceWriter log)
 #endif
         {

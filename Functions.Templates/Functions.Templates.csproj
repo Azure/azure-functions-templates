@@ -20,7 +20,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <PackageVersion Condition="'$(PackageVersion)' == ''">1.0.0</PackageVersion>
+    <ProjectTemplateVersion>
+    </ProjectTemplateVersion>
+    <ItemTemplateVersion>
+    </ItemTemplateVersion>
+    <PortalTemplateVersion>1.0.0</PortalTemplateVersion>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>
@@ -36,58 +40,58 @@
     <None Include="Documentation\ExcelOut.md" />
     <None Include="Documentation\ExcelIn.md" />
     <None Include="Documentation\GraphWebhookTrigger.md" />
-    <None Include="Templates\BlobTrigger-CSharp\run.cs" />
+    <None Include="Templates\BlobTrigger-CSharp\BlobTriggerCSharp.cs" />
     <None Include="Templates\BlobTrigger-TypeScript\function.json" />
     <None Include="Templates\BlobTrigger-TypeScript\metadata.json" />
     <None Include="Templates\BlobTrigger-TypeScript\readme.md" />
     <None Include="Templates\BlobTrigger-TypeScript\sample.dat" />
-    <None Include="Templates\EventHubTrigger-CSharp\run.cs" />
+    <None Include="Templates\EventHubTrigger-CSharp\EventHubTriggerCSharp.cs" />
     <None Include="Templates\EventHubTrigger-TypeScript\function.json" />
     <None Include="Templates\EventHubTrigger-TypeScript\metadata.json" />
     <None Include="Templates\EventHubTrigger-TypeScript\sample.dat" />
-    <None Include="Templates\FaceLocator-CSharp\run.cs" />
-    <None Include="Templates\GenericWebHook-CSharp\run.cs" />
+    <None Include="Templates\FaceLocator-CSharp\FaceLocatorCSharp.cs" />
+    <None Include="Templates\GenericWebHook-CSharp\GenericWebHookCSharp.cs" />
     <None Include="Templates\GenericWebHook-TypeScript\function.json" />
     <None Include="Templates\GenericWebHook-TypeScript\metadata.json" />
     <None Include="Templates\GenericWebHook-TypeScript\sample.dat" />
-    <None Include="Templates\GitHubCommenter-CSharp\run.cs" />
-    <None Include="Templates\GitHubWebHook-CSharp\run.cs" />
+    <None Include="Templates\GitHubCommenter-CSharp\GitHubCommenterCSharp.cs" />
+    <None Include="Templates\GitHubWebHook-CSharp\GitHubWebHookCSharp.cs" />
     <None Include="Templates\GitHubWebHook-TypeScript\function.json" />
     <None Include="Templates\GitHubWebHook-TypeScript\metadata.json" />
     <None Include="Templates\GitHubWebHook-TypeScript\sample.dat" />
-    <None Include="Templates\HttpGET%28CRUD%29-CSharp\run.cs" />
-    <None Include="Templates\HttpPOST%28CRUD%29-CSharp\run.cs" />
-    <None Include="Templates\HttpPUT%28CRUD%29-CSharp\run.cs" />
-    <None Include="Templates\HttpTrigger-CSharp\run.cs" />
+    <None Include="Templates\HttpGET%28CRUD%29-CSharp\HttpGetCRUDCSharp.cs" />
+    <None Include="Templates\HttpPOST%28CRUD%29-CSharp\HttpPostCRUDCSharp.cs" />
+    <None Include="Templates\HttpPUT%28CRUD%29-CSharp\HttpPutCRUDCSharp.cs" />
+    <None Include="Templates\HttpTrigger-CSharp\HttpTriggerCSharp.cs" />
     <None Include="Templates\HttpTrigger-TypeScript\function.json" />
     <None Include="Templates\HttpTrigger-TypeScript\metadata.json" />
     <None Include="Templates\HttpTrigger-TypeScript\sample.dat" />
-    <None Include="Templates\HttpTriggerWithParameters-CSharp\run.cs" />
+    <None Include="Templates\HttpTriggerWithParameters-CSharp\HttpTriggerWithParametersCSharp.cs" />
     <None Include="Templates\ManualTrigger-TypeScript\function.json" />
     <None Include="Templates\ManualTrigger-TypeScript\metadata.json" />
     <None Include="Templates\ManualTrigger-TypeScript\sample.dat" />
     <None Include="Templates\MSGraphWebhook-CSharp\function.json" />
     <None Include="Templates\MSGraphWebhook-CSharp\metadata.json" />
     <None Include="Templates\MSGraphWebhook-CSharp\run.csx" />
-    <None Include="Templates\QueueTrigger-CSharp\run.cs" />
+    <None Include="Templates\QueueTrigger-CSharp\QueueTriggerCSharp.cs" />
     <None Include="Templates\QueueTrigger-TypeScript\function.json" />
     <None Include="Templates\QueueTrigger-TypeScript\metadata.json" />
     <None Include="Templates\QueueTrigger-TypeScript\readme.md" />
     <None Include="Templates\QueueTrigger-TypeScript\sample.dat" />
-    <None Include="Templates\SasToken-CSharp\run.cs" />
-    <None Include="Templates\ServiceBusQueueTrigger-CSharp\run.cs" />
+    <None Include="Templates\SasToken-CSharp\SasTokenCSharp.cs" />
+    <None Include="Templates\ServiceBusQueueTrigger-CSharp\ServiceBusQueueTriggerCSharp.cs" />
     <None Include="Templates\ServiceBusQueueTrigger-TypeScript\function.json" />
     <None Include="Templates\ServiceBusQueueTrigger-TypeScript\metadata.json" />
     <None Include="Templates\ServiceBusQueueTrigger-TypeScript\sample.dat" />
-    <None Include="Templates\ServiceBusTopicTrigger-CSharp\run.cs" />
+    <None Include="Templates\ServiceBusTopicTrigger-CSharp\ServiceBusTopicTriggerCSharp.cs" />
     <None Include="Templates\ServiceBusTopicTrigger-TypeScript\function.json" />
     <None Include="Templates\ServiceBusTopicTrigger-TypeScript\metadata.json" />
     <None Include="Templates\ServiceBusTopicTrigger-TypeScript\sample.dat" />
     <None Include="Templates\TimerTrigger-CSharpWebhookHandler\function.json" />
     <None Include="Templates\TimerTrigger-CSharpWebhookHandler\metadata.json" />
     <None Include="Templates\TimerTrigger-CSharpWebhookHandler\run.csx" />
-    <None Include="Templates\TimerTrigger-CSharp\run.cs" />
     <None Include="Templates\TimerTrigger-CSharpExcel\run.csx" />
+    <None Include="Templates\TimerTrigger-CSharp\TimerTriggerCSharp.cs" />
     <None Include=".template.config\template.json" />
     <None Include="Bindings\bindings.json" />
     <None Include="Documentation\apiHubFileIn.md" />
@@ -551,8 +555,8 @@
     <Exec Command="..\tools\CodeFormatter\CodeFormatter.exe ..\tools\codeFormat.csproj /nocopyright  /rule-:NewLineAbove,ExplicitVisibility,IllegalHeaders,FieldNames,ExplicitThis,BraceNewLine,UsingLocation,UnicodeLiterals,ReadonlyFields /verbose" IgnoreExitCode="true" />
     <Delete Files=".\bin\Portal\Functions.Templates.csproj" />
     <Exec Command="for /R .\bin\Portal\temp\Templates\ %%x in (*.cs) do ren &quot;%%x&quot; *.csx" />
-    <Exec Command="..\tools\nuget.exe pack .\bin\Portal\temp\PortalTemplates.nuspec -Version $(PackageVersion) -OutputDirectory .\bin\Portal\temp\nuget\" />
-    <Exec Command="..\tools\nuget.exe install Azure.Functions.Templates.Portal -Version $(PackageVersion) -Source $(MSBuildProjectDirectory)\bin\Portal\temp\nuget -OutputDirectory .\bin\Portal\Release\ -ExcludeVersion" />
+    <Exec Command="..\tools\nuget.exe pack .\bin\Portal\temp\PortalTemplates.nuspec -Version $(PortalTemplateVersion) -OutputDirectory .\bin\Portal\temp\nuget\" />
+    <Exec Command="..\tools\nuget.exe install Azure.Functions.Templates.Portal -Version $(PortalTemplateVersion) -Source $(MSBuildProjectDirectory)\bin\Portal\temp\nuget -OutputDirectory .\bin\Portal\Release\ -ExcludeVersion" />
     <Exec Command="..\tools\CreateTemplateConfig\CreateTemplateConfig.exe $(MSBuildProjectDirectory)\bin\Portal\Release\Azure.Functions.Templates.Portal\ $(MSBuildProjectDirectory)\bin\Portal\Test" />
     <RemoveDir Directories=".\bin\Portal\temp" />
   </Target>
@@ -561,9 +565,9 @@
     <Exec Command="..\tools\cli\dotnet.exe new functions --portalTemplates false --vsTemplates true -o .\bin\VS\temp --force" IgnoreExitCode="true" />
     <Exec Command="..\tools\CodeFormatter\CodeFormatter.exe ..\tools\codeFormat.csproj /nocopyright  /rule-:NewLineAbove,ExplicitVisibility,IllegalHeaders,FieldNames,ExplicitThis,BraceNewLine,UsingLocation,UnicodeLiterals,ReadonlyFields /verbose" IgnoreExitCode="true" />
     <Delete Files=".\bin\VS\Functions.Templates.csproj" />
-    <Exec Command="..\tools\nuget.exe pack .\bin\VS\temp\ItemTemplates.nuspec -Version $(PackageVersion) -OutputDirectory .\bin\VS\Release\" />
-    <MSBuild Targets="Clean;Build" Projects="..\ProjectTemplate\Template.proj" Properties="PackageVersion=$(PackageVersion)" />
-    <Copy SourceFiles="..\ProjectTemplate\bin\Microsoft.AzureFunctions.ProjectTemplates.$(PackageVersion).nupkg" DestinationFiles=".\bin\VS\Release\Microsoft.AzureFunctions.ProjectTemplates.$(PackageVersion).nupkg" />
+    <Exec Condition="'$(ItemTemplateVersion)' != ''" Command="..\tools\nuget.exe pack .\bin\VS\temp\ItemTemplates.nuspec -Version $(ItemTemplateVersion) -OutputDirectory .\bin\VS\Release\" />
+    <MSBuild Condition="'$(ProjectTemplateVersion)' != ''" Targets="Clean;Build" Projects="..\ProjectTemplate\Template.proj" Properties="PackageVersion=$(ProjectTemplateVersion)" />
+    <Copy Condition="'$(ProjectTemplateVersion)' != ''" SourceFiles="..\ProjectTemplate\bin\Microsoft.AzureFunctions.ProjectTemplates.$(ProjectTemplateVersion).nupkg" DestinationFiles=".\bin\VS\Release\Microsoft.AzureFunctions.ProjectTemplates.$(ProjectTemplateVersion).nupkg" />
     <RemoveDir Directories=".\bin\VS\temp" />
   </Target>
 </Project>
