@@ -36,6 +36,10 @@
     <None Include="Templates\BlobTrigger-TypeScript\metadata.json" />
     <None Include="Templates\BlobTrigger-TypeScript\readme.md" />
     <None Include="Templates\BlobTrigger-TypeScript\sample.dat" />
+    <None Include="Templates\EventGridTrigger-CSharp\EventGridTriggerCSharp.csx" />
+    <None Include="Templates\EventGridTrigger-CSharp\function.json" />
+    <None Include="Templates\EventGridTrigger-CSharp\metadata.json" />
+    <None Include="Templates\EventGridTrigger-CSharp\sample.dat" />
     <None Include="Templates\EventHubTrigger-CSharp\EventHubTriggerCSharp.cs" />
     <None Include="Templates\EventHubTrigger-TypeScript\function.json" />
     <None Include="Templates\EventHubTrigger-TypeScript\metadata.json" />
@@ -447,7 +451,9 @@
     <EmbeddedResource Include="Resources\pt-PT\Resources\Resources.resx" />
     <EmbeddedResource Include="Resources\qps-ploc\Resources\Resources.resx" />
     <EmbeddedResource Include="Resources\Resources.resx" />
-    <EmbeddedResource Include="Resources\ru-RU\Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\ru-RU\Resources\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\sv-SE\Resources\Resources.resx" />
     <EmbeddedResource Include="Resources\tr-TR\Resources\Resources.resx" />
     <EmbeddedResource Include="Resources\zh-CN\Resources\Resources.resx" />
