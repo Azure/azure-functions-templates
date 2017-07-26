@@ -1,0 +1,13 @@
+﻿{
+  "bindings": [
+    {
+      "type": "GraphWebhookTrigger",
+      "direction": "in",
+      "name": "msg",
+      "Type": "#Microsoft.Graph.Message",
+      "ChangeType": [],
+      "Listen": "me/mailFolders('Inbox')/messages"
+    }
+  ],
+  "disabled": false
+}

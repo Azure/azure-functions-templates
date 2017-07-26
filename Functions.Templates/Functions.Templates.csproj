@@ -31,6 +31,15 @@
     </PreBuildEvent>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="Documentation\GraphWebhookCreator.md" />
+    <None Include="Documentation\GraphWebhook.md" />
+    <None Include="Documentation\Token.md" />
+    <None Include="Documentation\OneDriveOut.md" />
+    <None Include="Documentation\OneDriveIn.md" />
+    <None Include="Documentation\Outlook.md" />
+    <None Include="Documentation\ExcelOut.md" />
+    <None Include="Documentation\ExcelIn.md" />
+    <None Include="Documentation\GraphWebhookTrigger.md" />
     <None Include="Templates\BlobTrigger-CSharp\BlobTriggerCSharp.cs" />
     <None Include="Templates\BlobTrigger-TypeScript\function.json" />
     <None Include="Templates\BlobTrigger-TypeScript\metadata.json" />
@@ -65,6 +74,9 @@
     <None Include="Templates\ManualTrigger-TypeScript\function.json" />
     <None Include="Templates\ManualTrigger-TypeScript\metadata.json" />
     <None Include="Templates\ManualTrigger-TypeScript\sample.dat" />
+    <None Include="Templates\MSGraphWebhook-CSharp\function.json" />
+    <None Include="Templates\MSGraphWebhook-CSharp\metadata.json" />
+    <None Include="Templates\MSGraphWebhook-CSharp\run.csx" />
     <None Include="Templates\QueueTrigger-CSharp\QueueTriggerCSharp.cs" />
     <None Include="Templates\QueueTrigger-TypeScript\function.json" />
     <None Include="Templates\QueueTrigger-TypeScript\metadata.json" />
@@ -79,6 +91,10 @@
     <None Include="Templates\ServiceBusTopicTrigger-TypeScript\function.json" />
     <None Include="Templates\ServiceBusTopicTrigger-TypeScript\metadata.json" />
     <None Include="Templates\ServiceBusTopicTrigger-TypeScript\sample.dat" />
+    <None Include="Templates\TimerTrigger-CSharpWebhookHandler\function.json" />
+    <None Include="Templates\TimerTrigger-CSharpWebhookHandler\metadata.json" />
+    <None Include="Templates\TimerTrigger-CSharpWebhookHandler\run.csx" />
+    <None Include="Templates\TimerTrigger-CSharpExcel\run.csx" />
     <None Include="Templates\TimerTrigger-CSharp\TimerTriggerCSharp.cs" />
     <None Include=".template.config\template.json" />
     <None Include="Bindings\bindings.json" />
@@ -408,6 +424,9 @@
     <None Include="Templates\TimerTrigger-CSharp\metadata.json" />
     <None Include="Templates\TimerTrigger-CSharp\readme.md" />
     <None Include="Templates\TimerTrigger-CSharp\sample.dat" />
+    <None Include="Templates\TimerTrigger-CSharpExcel\function.json" />
+    <None Include="Templates\TimerTrigger-CSharpExcel\metadata.json" />
+    <None Include="Templates\TimerTrigger-CSharpExcel\sample.dat" />
     <None Include="Templates\TimerTrigger-FSharp\function.json" />
     <None Include="Templates\TimerTrigger-FSharp\metadata.json" />
     <None Include="Templates\TimerTrigger-FSharp\readme.md" />
