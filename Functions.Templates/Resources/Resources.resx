@@ -1398,25 +1398,40 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   <data name="ManualTriggerNodeTS_description" xml:space="preserve">
     <value>(Experimental) A TypeScript function that is triggered manually via the portal "Run" button</value>
   </data>
-  <data name="oneDrive_displayName" xml:space="preserve">
+  <data name="oneDrive_in_displayName" xml:space="preserve">
     <value>OneDrive</value>
   </data>
-  <data name="oneDrive_name_help" xml:space="preserve">
+  <data name="oneDrive_in_name_help" xml:space="preserve">
     <value>Name used to identify this binding in your function code.</value>
   </data>
-  <data name="oneDrive_name_label" xml:space="preserve">
+  <data name="oneDrive_in_name_label" xml:space="preserve">
     <value>File parameter name</value>
   </data>
-  <data name="oneDrive_path_help" xml:space="preserve">
+  <data name="oneDrive_in_path_help" xml:space="preserve">
+    <value>Path from root OneDrive folder to file</value>
+  </data>
+  <data name="oneDrive_in_path_label" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="oneDrive_in_path_error" xml:space="preserve">
+    <value>Path must be valid</value>
+  </data>
+  <data name="oneDrive_out_displayName" xml:space="preserve">
+    <value>OneDrive</value>
+  </data>
+  <data name="oneDrive_out_name_help" xml:space="preserve">
+    <value>Name used to identify this binding in your function code.</value>
+  </data>
+  <data name="oneDrive_out_name_label" xml:space="preserve">
+    <value>File parameter name</value>
+  </data>
+  <data name="oneDrive_out_path_help" xml:space="preserve">
     <value>Path from root OneDrive folder to file</value>
   </data>
   <data name="oneDrive_out_path_label" xml:space="preserve">
     <value>Path</value>
   </data>
   <data name="oneDrive_out_path_error" xml:space="preserve">
-    <value>Path must be valid</value>
-  </data>
-  <data name="oneDrive_in_path_error" xml:space="preserve">
     <value>Path must be valid</value>
   </data>
   <data name="MSGraphWebhook_displayName" xml:space="preserve">
@@ -1452,7 +1467,7 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   <data name="MSGraphWebhook_description" xml:space="preserve">
     <value>A C# function that runs when it receives an O365 webhook request.</value>
   </data>
-  <data name="RefreshOfficeSubscriptions_description" xml:space="preserve">
+  <data name="RefreshMSGraphSubscriptions_description" xml:space="preserve">
     <value>Periodically refreshes all O365 subscriptions</value>
   </data>
   <data name="token_displayName" xml:space="preserve">

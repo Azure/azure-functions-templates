@@ -1755,6 +1755,17 @@
             "enabledInTryMode": false,
             "documentation": "$content=Documentation\\Token.md",
             "filters": ["MSGraph"],
+            "AADPermissions": [
+              {
+                "resourceAppId": "00000002-0000-0000-c000-000000000000",
+                "resourceAccess": [
+                  {
+                    "type": "Scope",
+                    "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+                  }
+                ]
+              }
+            ],
             "settings": [
                 {
                     "name": "name",
@@ -1804,6 +1815,46 @@
             "direction": "in",
             "enabledInTryMode": false,
             "filters": ["MSGraph"],
+            "AADPermissions": [
+              {
+                "resourceAppId": "00000002-0000-0000-c000-000000000000",
+                "resourceAccess": [
+                  {
+                    "type": "Scope",
+                    "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+                  }
+                ]
+              },
+              {
+                "resourceAppId": "00000003-0000-0000-c000-000000000000",
+                "resourceAccess": [
+                  {
+                    "type": "Scope",
+                    "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "37f7f235-527c-4136-accd-4a02d197296e"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "863451e7-0667-486c-a5d6-d135439485f0"
+                  }
+                ]
+              }
+            ],
             "documentation": "$content=Documentation\\ExcelIn.md",
             "settings": [
                 {
@@ -1872,6 +1923,46 @@
             "enabledInTryMode": false,
             "filters": ["MSGraph"],
             "documentation": "$content=Documentation\\ExcelOut.md",
+            "AADPermissions": [
+              {
+                "resourceAppId": "00000002-0000-0000-c000-000000000000",
+                "resourceAccess": [
+                  {
+                    "type": "Scope",
+                    "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+                  }
+                ]
+              },
+              {
+                "resourceAppId": "00000003-0000-0000-c000-000000000000",
+                "resourceAccess": [
+                  {
+                    "type": "Scope",
+                    "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "37f7f235-527c-4136-accd-4a02d197296e"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "863451e7-0667-486c-a5d6-d135439485f0"
+                  }
+                ]
+              }
+            ],
             "settings": [
                 {
                     "name": "name",
@@ -1961,6 +2052,42 @@
             "enabledInTryMode": false,
             "filters": ["MSGraph"],
             "documentation": "$content=Documentation\\Outlook.md",
+            "AADPermissions": [
+              {
+                "resourceAppId": "00000002-0000-0000-c000-000000000000",
+                "resourceAccess": [
+                  {
+                    "type": "Scope",
+                    "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+                  }
+                ]
+              },
+              {
+                "resourceAppId": "00000003-0000-0000-c000-000000000000",
+                "resourceAccess": [
+                  {
+                    "type": "Scope",
+                    "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "37f7f235-527c-4136-accd-4a02d197296e"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "024d486e-b451-40bb-833d-3e66d98c5c73"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "570282fd-fa5c-430d-a7fd-fc8dc98a9dca"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "e383f46e-2787-4529-855e-0e479a3ffac0"
+                  }
+                ]
+              }
+            ],
             "settings": [
                 {
                     "name": "name",
@@ -2003,27 +2130,67 @@
       },
       {
             "type": "onedrive",
-            "displayName": "$oneDrive_displayName",
+            "displayName": "$oneDrive_in_displayName",
             "direction": "in",
             "enabledInTryMode": false,
             "filters": ["MSGraph"],
             "documentation": "$content=Documentation\\OneDriveIn.md",
+            "AADPermissions": [
+              {
+                "resourceAppId": "00000002-0000-0000-c000-000000000000",
+                "resourceAccess": [
+                  {
+                    "type": "Scope",
+                    "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+                  }
+                ]
+              },
+              {
+                "resourceAppId": "00000003-0000-0000-c000-000000000000",
+                "resourceAccess": [
+                  {
+                    "type": "Scope",
+                    "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "37f7f235-527c-4136-accd-4a02d197296e"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "863451e7-0667-486c-a5d6-d135439485f0"
+                  }
+                ]
+              }
+            ],            
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "file",
                     "required": true,
-                    "label": "$oneDrive_name_label",
-                    "help": "$oneDrive_name_help"
+                    "label": "$oneDrive_in_name_label",
+                    "help": "$oneDrive_in_name_help"
                 },
                 {
                     "name": "Path",
                     "value": "string",
                     "defaultValue": "Documents/test.txt",
                     "required": true,
-                    "label": "$oneDrive_path_label",
-                    "help": "$oneDrive_path_help"            
+                    "label": "$oneDrive_in_path_label",
+                    "help": "$oneDrive_in_path_help"            
                 },
                 {
                     "name": "PrincipalId",
@@ -2058,27 +2225,67 @@
       },
       {
             "type": "onedrive",
-            "displayName": "$oneDrive_displayName",
+            "displayName": "$oneDrive_out_displayName",
             "direction": "out",
             "enabledInTryMode": false,
             "filters": ["MSGraph"],
             "documentation": "$content=Documentation\\OneDriveOut.md",
+            "AADPermissions": [
+              {
+                "resourceAppId": "00000002-0000-0000-c000-000000000000",
+                "resourceAccess": [
+                  {
+                    "type": "Scope",
+                    "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+                  }
+                ]
+              },
+              {
+                "resourceAppId": "00000003-0000-0000-c000-000000000000",
+                "resourceAccess": [
+                  {
+                    "type": "Scope",
+                    "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "37f7f235-527c-4136-accd-4a02d197296e"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "863451e7-0667-486c-a5d6-d135439485f0"
+                  }
+                ]
+              }
+            ],
             "settings": [
                 {
                     "name": "name",
                     "value": "string",
                     "defaultValue": "file",
                     "required": true,
-                    "label": "$oneDrive_name_label",
-                    "help": "$oneDrive_name_help"
+                    "label": "$oneDrive_out_name_label",
+                    "help": "$oneDrive_out_name_help"
                 },
                 {
                     "name": "Path",
                     "value": "string",
                     "defaultValue": "Documents/test.txt",
                     "required": true,
-                    "label": "$oneDrive_path_label",
-                    "help": "$oneDrive_path_help"           
+                    "label": "$oneDrive_out_path_label",
+                    "help": "$oneDrive_out_path_help"           
                 },
                 {
                     "name": "PrincipalId",
@@ -2118,6 +2325,70 @@
             "enabledInTryMode": false,
             "filters": ["MSGraph"],
             "documentation": "$content-Documentation\\GraphWebhook.md",
+            "AADPermissions": [
+              {
+                "resourceAppId": "00000002-0000-0000-c000-000000000000",
+                "resourceAccess": [
+                  {
+                    "type": "Scope",
+                    "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+                  }
+                ]
+              },
+              {
+                "resourceAppId": "00000003-0000-0000-c000-000000000000",
+                "resourceAccess": [
+                  {
+                    "type": "Scope",
+                    "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "37f7f235-527c-4136-accd-4a02d197296e"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "863451e7-0667-486c-a5d6-d135439485f0"
+                  },
+                  {
+                    "type": "xxScope",
+                    "id": "ff74d97f-43af-4b68-9f2a-b77ee6968c5d"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "465a38f9-76ea-45b9-9f34-9e8b0d4b0b42"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "e383f46e-2787-4529-855e-0e479a3ffac0"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "024d486e-b451-40bb-833d-3e66d98c5c73"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "570282fd-fa5c-430d-a7fd-fc8dc98a9dca"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "5778995a-e1bf-45b8-affa-663a9f3f4d04"
+                  }
+                ]
+              }
+            ],
             "settings": [
                 {
                     "name": "name",
@@ -2136,6 +2407,70 @@
             "enabledInTryMode": false,
             "filters": ["MSGraph"],
             "documentation": "$content=Documentation\\GraphWebhookCreator.md",
+            "AADPermissions": [
+              {
+                "resourceAppId": "00000002-0000-0000-c000-000000000000",
+                "resourceAccess": [
+                  {
+                    "type": "Scope",
+                    "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+                  }
+                ]
+              },
+              {
+                "resourceAppId": "00000003-0000-0000-c000-000000000000",
+                "resourceAccess": [
+                  {
+                    "type": "Scope",
+                    "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "37f7f235-527c-4136-accd-4a02d197296e"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "863451e7-0667-486c-a5d6-d135439485f0"
+                  },
+                  {
+                    "type": "xxScope",
+                    "id": "ff74d97f-43af-4b68-9f2a-b77ee6968c5d"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "465a38f9-76ea-45b9-9f34-9e8b0d4b0b42"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "e383f46e-2787-4529-855e-0e479a3ffac0"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "024d486e-b451-40bb-833d-3e66d98c5c73"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "570282fd-fa5c-430d-a7fd-fc8dc98a9dca"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "5778995a-e1bf-45b8-affa-663a9f3f4d04"
+                  }
+                ]
+              }
+            ],
             "settings": [
               {
                 "name": "name",
@@ -2230,6 +2565,70 @@
             "documentation": "$content=Documentation\\GraphWebhookTrigger.md",
             "filters": ["MSGraph"],
             "enabledInTryMode": false,
+            "AADPermissions": [
+              {
+                "resourceAppId": "00000002-0000-0000-c000-000000000000",
+                "resourceAccess": [
+                  {
+                    "type": "Scope",
+                    "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+                  }
+                ]
+              },
+              {
+                "resourceAppId": "00000003-0000-0000-c000-000000000000",
+                "resourceAccess": [
+                  {
+                    "type": "Scope",
+                    "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "37f7f235-527c-4136-accd-4a02d197296e"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "863451e7-0667-486c-a5d6-d135439485f0"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "ff74d97f-43af-4b68-9f2a-b77ee6968c5d"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "465a38f9-76ea-45b9-9f34-9e8b0d4b0b42"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "e383f46e-2787-4529-855e-0e479a3ffac0"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "024d486e-b451-40bb-833d-3e66d98c5c73"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "570282fd-fa5c-430d-a7fd-fc8dc98a9dca"
+                  },
+                  {
+                    "type": "Scope",
+                    "id": "5778995a-e1bf-45b8-affa-663a9f3f4d04"
+                  }
+                ]
+              }
+            ],
             "settings": [
                 {
                     "name": "name",

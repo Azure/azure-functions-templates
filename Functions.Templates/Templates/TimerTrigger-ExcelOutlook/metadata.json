@@ -1,10 +1,9 @@
 ﻿{
-  "defaultFunctionName": "MSGraphWebhookCSharp",
-  "description": "$MSGraphWebhook_description",
-  "name": "MS Graph Email Webhook",
-  "trigger": "GraphWebhookTrigger",
+  "defaultFunctionName": "TimerTrigger-ExcelOutlook",
+  "description": "$Read two Excel tables, send emails based on the data, and then update an Excel table.",
+  "name": "Send Emails",
   "language": "C#",
-  "enabledInTryMode": false,
+  "enabledInTryMode": true,
   "category": [ "$temp_category_msgraph" ],
   "filters": [ "MSGraph" ],
   "AADPermissions": [
@@ -39,6 +38,22 @@
         {
           "type": "Scope",
           "id": "e383f46e-2787-4529-855e-0e479a3ffac0"
+        },
+        {
+          "type": "Scope",
+          "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
+        },
+        {
+          "type": "Scope",
+          "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
+        },
+        {
+          "type": "Scope",
+          "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283"
+        },
+        {
+          "type": "Scope",
+          "id": "863451e7-0667-486c-a5d6-d135439485f0"
         }
       ]
     }
