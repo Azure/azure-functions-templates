@@ -16,7 +16,6 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 
 public static HttpResponseMessage Run(Input input, CloudBlobDirectory blobDirectory, TraceWriter log)
-{
 #endif
 #if (vsTemplates)
 using System;
