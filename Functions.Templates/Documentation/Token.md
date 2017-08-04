@@ -9,20 +9,25 @@ The settings specify the following properties:
 - `PrincipalId` : Should be set to either an app setting containing the Principal ID/OID to be used to communicate with the specific Resource or an expression to evaluate to a Principal ID/OID
 - `idToken` : Should be set to an expression that evaluates to an ID token. Either Principal ID or ID token must be set, but not both.
 
-#### Example function.json
+#### Example function.json #1
 ```json
 {
   "bindings": [
     {
       "type": "httpTrigger",
-      "name": "info",
+      "name": "req",
       "authLevel": "anonymous",
       "methods": [
         "get",
-        "post",
+        "post"
       ],
       "direction": "in"
-    },   
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
     {
       "type": "token",
       "name": "token",
@@ -40,16 +45,51 @@ The settings specify the following properties:
 #r "Newtonsoft.Json"
 
 using Newtonsoft.Json;
+using System.Net;
 
-public static async Task Run(UserInfo info, TraceWriter log, string token)
+public static HttpResponseMessage Run(UserInfo req, TraceWriter log, string token)
 {
-    log.Info($"Retrieved AD Graph token: {token}");
+    var response = new HttpResponseMessage();
+    response.Content = new StringContent("Retrieved token: " + token);
+    return response;
 }
 
 public class UserInfo
 {     
     [JsonProperty(PropertyName = "principalId", NullValueHandling = NullValueHandling.Ignore)]
-    public string idToken { get; set; }
+    public string principalId { get; set; }
+}
+```
+
+#### Python Example Code
+```python
+import os
+import json
+
+token = open(os.environ['token']).read()
+response = open(os.environ['res'], 'w')
+response.write("token: "+ token)
+response.close()
+```
+
+#### Example function.json #2
+```json
+{
+  "bindings": [
+    {
+      "type": "manualTrigger",
+      "direction": "in",
+      "name": "input"
+    },
+    {
+      "type": "token",
+      "name": "token",
+      "PrincipalId": "Identity.alias",
+      "direction": "in",
+      "Resource": "https://graph.windows.net"
+    }
+  ],
+  "disabled": false
 }
 ```
 
