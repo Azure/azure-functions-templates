@@ -6,8 +6,8 @@ The settings specify the following properties:
 - `Type` : Must be set to *GraphWebhookCreator*.
 - `Listen`: MS Graph-specific resource to subscribe to (e.g. 'me/events')
 - `changeType` : Kinds of changes function subscribes to.
-- `PrincipalId` : Should be set to either an app setting containing the Principal id/OID to be used to communicate with MS Graph or an expression to evaluate to a Principal id/OID
-- `idToken` : Should be set to an expression that evaluates to an id token. Either Principal id or id token must be set, but not both.
+- `PrincipalId` : Should be set to either an app setting containing the Principal ID/OID to be used to communicate with MS Graph or an expression to evaluate to a Principal ID/OID
+- `idToken` : Should be set to an expression that evaluates to an ID token. Either Principal ID or ID token must be set, but not both.
 #### Example function.json
 ```json
 {

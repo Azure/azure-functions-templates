@@ -3,14 +3,14 @@
 The settings specify the following properties.
 
 - `name` : The variable name used in function code for the Excel input. 
-- `direction` : Must be set to *in*. 
+- `direction` : Must be set to *out*. 
 - `Type` : Must be set to *Excel*.
 - `UpdateType` : If set to updated, specified rows will replace existing rows in table. If set to append, output rows will be appended to existing rows in table.
 - `Path` : Path from root OneDrive to Excel workbook (e.g. Documents/test.xlsx)
 - `WorksheetName` : Worksheet from which user wishes to get data.
 - `TableName` : If specified, data will be retrieved from this table. If not, data will be retrieved from the worksheet itself. 
-- `PrincipalId` : Should be set to either an app setting containing the Principal id/OID to be used to communicate with MS Graph or an expression to evaluate to a Principal id/OID. A new app setting containing this user's Principal id can be created by clicking 'retrieve'.
-- `idToken` : Should be set to an expression that evaluates to an id token. Either Principal id or id token must be set, but not both.
+- `PrincipalId` : Should be set to either an app setting containing the Principal ID/OID to be used to communicate with MS Graph or an expression to evaluate to a Principal ID/OID. A new app setting containing this user's Principal ID can be created by clicking 'retrieve'.
+- `idToken` : Should be set to an expression that evaluates to an ID token. Either Principal ID or ID token must be set, but not both.
 
 #### General Information
 This binding can only be used with Excel files that reside in OneDrive.
@@ -33,7 +33,7 @@ This binding can be used to update existing Excel tables and worksheets. If a wo
       "WorksheetName": "MySheet",
       "TableName": "MyTable",
       "UpdateType": "Append",
-      "PrincipalId": "%Principal_ID%",
+      "PrincipalId": "Principal_ID",
       "direction": "out"
     }
   ],
@@ -48,12 +48,12 @@ public static void Run(TimerInfo timer, TraceWriter log, out TableRow[] table)
 {
     table = new TableRow[] {
         new TableRow {
-            id = "3",
+            ID = "3",
             name = "testItem",
             number = "15"
         },
 	new TableRow {
-            id = "4",
+            ID = "4",
             name = "testItem2",
             number = "7"
         }
@@ -61,7 +61,7 @@ public static void Run(TimerInfo timer, TraceWriter log, out TableRow[] table)
 }
 
 public class TableRow {
-	public string id { get; set; }
+	public string ID { get; set; }
 	public string name { get; set; }
 	public string number { get; set; }
 }
@@ -69,17 +69,17 @@ public class TableRow {
 
 ##### Update a single column using a JObject
 ```csharp
-public static void Run(TimerInfo timer, TraceWriter log, out JObject col)
+public static void Run(TimerInfo timer, TraceWriter log, out JObject table)
 {
-    col = new JObject();
-    col["column"] = "number";
-    col["value"] = "13";  
+    table = new JObject();
+    table["column"] = "number";
+    table["value"] = "13";  
 }
 ```
 
 #### Supported types
 
-[Output] Excel data can be serialized to any of the following types:
+[Output] Excel data can be manipulated by any of the following types:
 
 * object[][]
 * List<POCO>*
