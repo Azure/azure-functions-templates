@@ -1,0 +1,36 @@
+﻿{
+  "bindings": [
+    {
+      "type": "timerTrigger",
+      "direction": "in",
+      "name": "timer",
+      "schedule": "0 */45 * * * *"
+    },
+    {
+      "type": "excel",
+      "name": "customers",
+      "direction": "in",
+      "PrincipalId": "%Identity.<alias>%",
+      "Path": "Customers.xlsx",
+      "WorksheetName": "Emails",
+      "TableName": "Emails"
+    },
+    {
+      "type": "excel",
+      "name": "update",
+      "direction": "out",
+      "PrincipalId": "%Identity.<alias>%",
+      "Path": "Customers.xlsx",
+      "WorksheetName": "Emails",
+      "TableName": "Emails",
+      "UpdateType": "Update"
+    },
+    {
+      "type": "outlook",
+      "name": "emails",
+      "direction": "out",
+      "PrincipalId": "%Identity.<alias>%"
+    }
+  ],
+  "disabled": false
+}
