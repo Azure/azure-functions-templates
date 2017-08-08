@@ -1,4 +1,4 @@
-module.exports = function (context, myBlob) {
-    context.log(typeof myBlob);
-    context.log(myBlob);
+module.exports = function (context, eventGridEvent) {
+    context.log(typeof eventGridEvent);
+    context.log(eventGridEvent);
 };
