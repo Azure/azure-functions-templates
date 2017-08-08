@@ -9,8 +9,8 @@ The settings specify the following properties.
 - `Path` : Path from root OneDrive to Excel workbook (e.g. Documents/test.xlsx)
 - `WorksheetName` : Worksheet from which user wishes to get data.
 - `TableName` : If specified, data will be retrieved from this table. If not, data will be retrieved from the worksheet itself. 
-- `PrincipalId` : Should be set to either an app setting containing the Principal id/OID to be used to communicate with MS Graph or an expression to evaluate to a Principal id/OID
-- `idToken` : Should be set to an expression that evaluates to an id token. Either Principal id or id token must be set, but not both.
+- `PrincipalId` : Should be set to either an app setting containing the Principal ID/OID to be used to communicate with MS Graph or an expression to evaluate to a Principal ID/OID
+- `idToken` : Should be set to an expression that evaluates to an ID token. Either Principal ID or ID token must be set, but not both.
 
 #### Example function.json
 ```json
@@ -43,15 +43,15 @@ The settings specify the following properties.
 #### C# Example code
 ```csharp
 // This function receives a user's principal ID via a HTTP Request, then reads their Excel table and prints it out
-public static void Run(UserInfo info, TraceWriter log, TableRow[] table)
+public static void Run(UserInfo info, TraceWriter log, TableRow[] inputTable)
 {
-	foreach(var row in table) {
-		log.Info($"Recieved input: {row.id}")
+	foreach(var row in inputTable) {
+		log.Info($"Recieved input: {row.ID}")
 	}
 }
 
 public class TableRow {
-	public string id { get; set; }
+	public string ID { get; set; }
 	public string name { get; set; }
 	public string number { get; set; }
 }
@@ -62,14 +62,28 @@ public class UserInfo
     public string UserId { get; set; }
 }
 ```
-#### Supported types
 
-[Input] Excel data can be deserialized to any of the following types:
+#### C# Supported types
+
+[Input] Excel data can be imported to user code using any of the following types:
 
 * WorkbookTable
 * string[][]
 * List<POCO>*
 * POCO[]*
-* GraphServiceClient
 
 *Where POCO is a user-specified type whose fields exactly match the headers of your table. 
+
+#### JavaScript Example Code
+```javascript
+module.exports = function (context, req, inputTable) {
+
+    var multiDimensionalArray = JSON.parse(inputTable);
+
+    context.log(multiDimensionalArray[0][0]);
+    context.log("--------------");
+    context.log(tableInput)
+    
+    context.done();
+};
+```
