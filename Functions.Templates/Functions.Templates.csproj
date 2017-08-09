@@ -75,6 +75,8 @@
     <None Include="Templates\HttpTrigger-TypeScript\metadata.json" />
     <None Include="Templates\HttpTrigger-TypeScript\sample.dat" />
     <None Include="Templates\HttpTriggerWithParameters-CSharp\HttpTriggerWithParametersCSharp.cs" />
+    <None Include="Templates\ImageResizer-CSharp\build.config\template.json" />
+    <None Include="Templates\ImageResizer-CSharp\build.config\vs-2017.3.host.json" />
     <None Include="Templates\ManualTrigger-TypeScript\function.json" />
     <None Include="Templates\ManualTrigger-TypeScript\metadata.json" />
     <None Include="Templates\ManualTrigger-TypeScript\sample.dat" />
@@ -324,7 +326,6 @@
     <None Include="Templates\ImageResizer-CSharp\metadata.json" />
     <None Include="Templates\ImageResizer-CSharp\project.json" />
     <None Include="Templates\ImageResizer-CSharp\readme.md" />
-    <None Include="Templates\ImageResizer-CSharp\run.csx" />
     <None Include="Templates\ImageResizer-FSharp\function.json" />
     <None Include="Templates\ImageResizer-FSharp\metadata.json" />
     <None Include="Templates\ImageResizer-FSharp\project.json" />
@@ -517,6 +518,7 @@
     <Content Include="Templates\HttpTrigger-Python\run.py" />
     <Content Include="Templates\HttpTriggerWithParameters-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\HttpTriggerWithParameters-JavaScript\index.js" />
+    <Content Include="Templates\ImageResizer-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\ImageResizer-FSharp\run.fsx" />
     <Content Include="Templates\ManualTrigger-FSharp\run.fsx" />
     <Content Include="Templates\ManualTrigger-JavaScript\index.js" />
@@ -539,8 +541,8 @@
     <Content Include="Templates\TimerTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\TimerTrigger-FSharp\run.fsx" />
     <Content Include="Templates\TimerTrigger-JavaScript\index.js" />
-  </ItemGroup>
-  <ItemGroup />
+    <Content Include="Templates\ImageResizer-CSharp\ImageResizerCSharp.cs" />
+  </ItemGroup>  
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
     <RemoveDir Directories=".\bin\Portal" />
   </Target>
