@@ -41,11 +41,11 @@ namespace Company.Function
         }
 
         private static Dictionary<ImageSize, Tuple<int, int>> imageDimensionsTable = new Dictionary<ImageSize, Tuple<int, int>>()
-{
-    { ImageSize.ExtraSmall, Tuple.Create(320, 200) },
-    { ImageSize.Small,      Tuple.Create(640, 400) },
-    { ImageSize.Medium,     Tuple.Create(800, 600) }
-};
+        {
+            { ImageSize.ExtraSmall, Tuple.Create(320, 200) },
+            { ImageSize.Small,      Tuple.Create(640, 400) },
+            { ImageSize.Medium,     Tuple.Create(800, 600) }
+        };
 #if (vsTemplates)
     }
 }
