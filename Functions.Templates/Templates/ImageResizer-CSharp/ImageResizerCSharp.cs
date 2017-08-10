@@ -3,7 +3,8 @@ using ImageResizer;
 
 public static void Run(
     Stream image,                           // input blob, large size
-    Stream imageSmall, Stream imageMedium)  // output blobs
+    Stream imageSmall, 
+    Stream imageMedium)  // output blobs
 #endif
 #if (vsTemplates)
 using System;
@@ -17,7 +18,10 @@ namespace Company.Function
     public static class ImageResizerCSharp
     {
         [FunctionName("ImageResizerCSharp")]
-        public static void Run([BlobTrigger("ImageBlobPathValue", Connection = "ImageBlobConnectionValue")]Stream image, [Blob("SmallImageBlobPathValue", Connection = "SmallImageBlobConnectionValue")]Stream imageSmall, [Blob("MedImageBlobPathValue", Connection = "MedImageBlobConnectionValue")]Stream imageMedium)  // output blobs
+        public static void Run(
+            [BlobTrigger("ImageBlobPathValue", Connection = "ImageBlobConnectionValue")]Stream image, 
+            [Blob("SmallImageBlobPathValue", FileAccess.Write, Connection = "SmallImageBlobConnectionValue")]Stream imageSmall,
+            [Blob("MedImageBlobPathValue", FileAccess.Write, Connection = "MedImageBlobConnectionValue")]Stream imageMedium)  // output blobs
 #endif
         {
             var imageBuilder = ImageResizer.ImageBuilder.Current;
