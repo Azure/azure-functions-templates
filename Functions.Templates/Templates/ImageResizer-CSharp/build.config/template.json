@@ -1,0 +1,96 @@
+﻿{
+  "author": "Microsoft",
+  "classifications": [
+    "Azure Function"
+  ],
+  "name": "ImageResizer",
+  "identity": "Azure.Function.CSharp.ImageResizer",
+  "groupIdentity": "Azure.Function.ImageResizer",
+  "shortName": "ImageResizer",
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  },
+  "sourceName": "ImageResizerCSharp",
+  "symbols": {
+    "namespace": {
+      "description": "namespace for the generated code",
+      "replaces": "Company.Function",
+      "type": "parameter"
+    },
+    "ImageBlobConnection": {
+      "description": "The name of the app setting containing your Storage connection.",
+      "type": "parameter",
+      "defaultValue": "",
+      "replaces": "ImageBlobConnectionValue"
+    },
+    "ImageBlobPath": {
+      "description": "This is the path within your storage account that the trigger will monitor.",
+      "type": "parameter",
+      "defaultValue": "sample-images/{name}",
+      "replaces": "ImageBlobPathValue"
+    },
+    "SmallImageBlobConnection": {
+      "description": "The name of the app setting containing your Storage connection.",
+      "type": "parameter",
+      "defaultValue": "",
+      "replaces": "SmallImageBlobConnectionValue"
+    },
+    "SmallImageBlobPath": {
+      "description": "This is the path within your storage account that the trigger will monitor.",
+      "type": "parameter",
+      "defaultValue": "sample-images-sm/{name}",
+      "replaces": "SmallImageBlobPathValue"
+    },
+    "MedImageBlobConnection": {
+      "description": "The name of the app setting containing your Storage connection.",
+      "type": "parameter",
+      "defaultValue": "",
+      "replaces": "MedImageBlobConnectionValue"
+    },
+    "MedImageBlobPath": {
+      "description": "This is the path within your storage account that the trigger will monitor.",
+      "type": "parameter",
+      "defaultValue": "sample-images-md/{name}",
+      "replaces": "MedImageBlobPathValue"
+    }
+  },
+  "primaryOutputs": [
+    {
+      "path": "ImageResizerCSharp.cs"
+    }
+  ],
+  "defaultName": "ImageResizerCSharp",
+  "postActions": [
+    {
+      "Description": "Adding Reference to ImageResizer Nuget package",
+      "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+      "ContinueOnError": "true",
+      "ManualInstructions": [],
+      "args": {
+        "referenceType": "package",
+        "reference": "ImageResizer",
+        "version": "4.0.5",
+        "projectFileExtensions": ".csproj"
+      }
+    },
+    {
+      "Description": "Adding Reference to Microsoft.NET.Sdk.Functions Nuget package",
+      "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+      "ContinueOnError": "true",
+      "ManualInstructions": [],
+      "args": {
+        "referenceType": "package",
+        "reference": "Microsoft.NET.Sdk.Functions",
+        "version": "1.0.0",
+        "projectFileExtensions": ".csproj"
+      }
+    },
+    {
+      "description": "Restore NuGet packages required by this project.",
+      "manualInstructions": [],
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "continueOnError": true
+    }
+  ]
+}
