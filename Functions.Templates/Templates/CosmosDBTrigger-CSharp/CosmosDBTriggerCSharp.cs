@@ -2,7 +2,7 @@
 // DocumentDB output binding has been added to this function with no functional use. 
 // This has been done as workaround of a bug that is present in functions runtime. 
 // It forces functions runtime to load certain binaries needed for CosmosDBTrigger to work properly.
-// The DocumentDB binding can has to be present in any one of function with in the function app for the workaround to be effective.
+// The DocumentDB binding just needs to be present in one of the function with in the function app for the workaround to be effective.
 #r "Microsoft.Azure.Documents.Client"
 using System;
 using System.Collections.Generic;
