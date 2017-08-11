@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Azure.Documents;
 
-public static void Run(IReadOnlyList<Document> input, TraceWriter log)
+public static void Run(IReadOnlyList<Document> input, Document outputDocument, TraceWriter log)
 #endif
 #if (vsTemplates)
 using System;
