@@ -2813,7 +2813,7 @@
         {
           "name": "name",
           "value": "string",
-          "defaultValue": "inputDocument",
+          "defaultValue": "inputDocuments",
           "required": true,
           "label": "$cosmosDBIn_name_label",
           "help": "$cosmosDBIn_name_help",
@@ -2825,9 +2825,10 @@
           ]
         },
         {
-          "name": "connection",
+          "name": "connectionStringSetting",
           "value": "string",
           "required": true,
+          "resource": "DocumentDB",
           "label": "$cosmosDBIn_connection_label",
           "help": "$cosmosDBIn_connection_help",
           "placeholder": "[variables('selectConnection')]"
@@ -2835,7 +2836,7 @@
         {
           "name": "databaseName",
           "value": "string",
-          "defaultValue": "inDatabase",
+          "defaultValue": "DatabaseToMonitor",
           "required": true,
           "label": "$cosmosDBIn_databaseName_label",
           "help": "$cosmosDBIn_databaseName_help"
@@ -2843,20 +2844,20 @@
         {
           "name": "collectionName",
           "value": "string",
-          "defaultValue": "MyCollection",
+          "defaultValue": "CollectionToMonitor",
           "required": true,
           "label": "$cosmosDBIn_collectionName_label",
           "help": "$cosmosDBIn_collectionName_help"
         },
         {
-          "name": "leaseDatabase",
+          "name": "leaseDatabaseName",
           "value": "string",
           "required": false,
           "label": "$cosmosDBIn_leaseDatabaseName_label",
           "help": "$cosmosDBIn_leaseDatabaseName_help"
         },
         {
-          "name": "leaseCollection",
+          "name": "leaseCollectionName",
           "value": "string",
           "required": false,
           "label": "$cosmosDBIn_leaseCollectionName_label",
