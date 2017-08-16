@@ -45,6 +45,36 @@
     <None Include="Templates\BlobTrigger-TypeScript\metadata.json" />
     <None Include="Templates\BlobTrigger-TypeScript\readme.md" />
     <None Include="Templates\BlobTrigger-TypeScript\sample.dat" />
+    <None Include="Templates\IoTHubServiceBusQueueTrigger-CSharp\build.config\template.json" />
+    <None Include="Templates\IoTHubServiceBusQueueTrigger-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\IoTHubServiceBusQueueTrigger-CSharp\function.json" />
+    <None Include="Templates\IoTHubServiceBusQueueTrigger-CSharp\metadata.json" />
+    <None Include="Templates\IoTHubServiceBusQueueTrigger-CSharp\sample.dat" />
+    <None Include="Templates\IoTHubServiceBusQueueTrigger-FSharp\function.json" />
+    <None Include="Templates\IoTHubServiceBusQueueTrigger-FSharp\metadata.json" />
+    <None Include="Templates\IoTHubServiceBusQueueTrigger-FSharp\run.fsx" />
+    <None Include="Templates\IoTHubServiceBusQueueTrigger-FSharp\sample.dat" />
+    <None Include="Templates\IoTHubServiceBusQueueTrigger-JavaScript\function.json" />
+    <None Include="Templates\IoTHubServiceBusQueueTrigger-JavaScript\metadata.json" />
+    <None Include="Templates\IoTHubServiceBusQueueTrigger-JavaScript\sample.dat" />
+    <None Include="Templates\IoTHubServiceBusQueueTrigger-TypeScript\function.json" />
+    <None Include="Templates\IoTHubServiceBusQueueTrigger-TypeScript\metadata.json" />
+    <None Include="Templates\IoTHubServiceBusQueueTrigger-TypeScript\sample.dat" />
+    <None Include="Templates\IoTHubServiceBusTopicTrigger-CSharp\build.config\template.json" />
+    <None Include="Templates\IoTHubServiceBusTopicTrigger-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\IoTHubServiceBusTopicTrigger-CSharp\function.json" />
+    <None Include="Templates\IoTHubServiceBusTopicTrigger-CSharp\metadata.json" />
+    <None Include="Templates\IoTHubServiceBusTopicTrigger-CSharp\sample.dat" />
+    <None Include="Templates\IoTHubServiceBusTopicTrigger-FSharp\function.json" />
+    <None Include="Templates\IoTHubServiceBusTopicTrigger-FSharp\metadata.json" />
+    <None Include="Templates\IoTHubServiceBusTopicTrigger-FSharp\run.fsx" />
+    <None Include="Templates\IoTHubServiceBusTopicTrigger-FSharp\sample.dat" />
+    <None Include="Templates\IoTHubServiceBusTopicTrigger-JavaScript\function.json" />
+    <None Include="Templates\IoTHubServiceBusTopicTrigger-JavaScript\metadata.json" />
+    <None Include="Templates\IoTHubServiceBusTopicTrigger-JavaScript\sample.dat" />
+    <None Include="Templates\IoTHubServiceBusTopicTrigger-TypeScript\function.json" />
+    <None Include="Templates\IoTHubServiceBusTopicTrigger-TypeScript\metadata.json" />
+    <None Include="Templates\IoTHubServiceBusTopicTrigger-TypeScript\sample.dat" />
     <None Include="Templates\IoTHubTrigger-CSharp\build.config\template.json" />
     <None Include="Templates\IoTHubTrigger-CSharp\build.config\vs-2017.3.host.json" />
     <None Include="Templates\IoTHubTrigger-CSharp\function.json" />
@@ -85,6 +115,17 @@
     <None Include="Templates\HttpTrigger-TypeScript\function.json" />
     <None Include="Templates\HttpTrigger-TypeScript\metadata.json" />
     <None Include="Templates\HttpTrigger-TypeScript\sample.dat" />
+    <None Include="Templates\HttpTriggerWithParameters-CSharp\run.cs" />
+    <None Include="Templates\IoTHubTrigger-FSharp\function.json" />
+    <None Include="Templates\IoTHubTrigger-FSharp\metadata.json" />
+    <None Include="Templates\IoTHubTrigger-FSharp\run.fsx" />
+    <None Include="Templates\IoTHubTrigger-FSharp\sample.dat" />
+    <None Include="Templates\IoTHubTrigger-JavaScript\function.json" />
+    <None Include="Templates\IoTHubTrigger-JavaScript\metadata.json" />
+    <None Include="Templates\IoTHubTrigger-JavaScript\sample.dat" />
+    <None Include="Templates\IoTHubTrigger-TypeScript\function.json" />
+    <None Include="Templates\IoTHubTrigger-TypeScript\metadata.json" />
+    <None Include="Templates\IoTHubTrigger-TypeScript\sample.dat" />
     <None Include="Templates\HttpTriggerWithParameters-CSharp\HttpTriggerWithParametersCSharp.cs" />
     <None Include="Templates\ImageResizer-CSharp\build.config\template.json" />
     <None Include="Templates\ImageResizer-CSharp\build.config\vs-2017.3.host.json" />
@@ -484,7 +525,9 @@
     <EmbeddedResource Include="Resources\pt-BR\Resources\Resources.resx" />
     <EmbeddedResource Include="Resources\pt-PT\Resources\Resources.resx" />
     <EmbeddedResource Include="Resources\qps-ploc\Resources\Resources.resx" />
-    <EmbeddedResource Include="Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\ru-RU\Resources\Resources.resx" />
     <EmbeddedResource Include="Resources\sv-SE\Resources\Resources.resx" />
     <EmbeddedResource Include="Resources\tr-TR\Resources\Resources.resx" />
@@ -495,6 +538,10 @@
     <Content Include="Templates\BlobTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\BlobTrigger-FSharp\run.fsx" />
     <Content Include="Templates\BlobTrigger-JavaScript\index.js" />
+    <Content Include="Templates\IoTHubServiceBusQueueTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\IoTHubServiceBusQueueTrigger-JavaScript\index.js" />
+    <Content Include="Templates\IoTHubServiceBusTopicTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\IoTHubServiceBusTopicTrigger-JavaScript\index.js" />
     <Content Include="Templates\IoTHubTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\CosmosDBTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\EventHubTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
@@ -533,6 +580,7 @@
     <Content Include="Templates\HttpTriggerWithParameters-JavaScript\index.js" />
     <Content Include="Templates\ImageResizer-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\ImageResizer-FSharp\run.fsx" />
+    <Content Include="Templates\IoTHubTrigger-JavaScript\index.js" />
     <Content Include="Templates\ManualTrigger-FSharp\run.fsx" />
     <Content Include="Templates\ManualTrigger-JavaScript\index.js" />
     <Content Include="Templates\QueueTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
@@ -557,6 +605,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Templates\IoTHubTrigger-CSharp\run.cs" />
+  </ItemGroup>
+    <TypeScriptCompile Include="Templates\IoTHubServiceBusQueueTrigger-TypeScript\index.ts" />
+    <TypeScriptCompile Include="Templates\IoTHubServiceBusTopicTrigger-TypeScript\index.ts" />
+    <TypeScriptCompile Include="Templates\IoTHubTrigger-TypeScript\index.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Templates\IoTHubServiceBusQueueTrigger-CSharp\run.cs" />
+    <Compile Include="Templates\IoTHubServiceBusTopicTrigger-CSharp\run.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Templates\ImageResizer-CSharp\ImageResizerCSharp.cs" />

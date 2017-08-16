@@ -1,7 +1,7 @@
 #if (portalTemplates)
 using System;
 
-public static void Run(string myEventHubMessage, TraceWriter log)
+public static void Run(string myIoTHubMessage, TraceWriter log)
 #endif
 #if (vsTemplates)
 using Microsoft.Azure.WebJobs;
@@ -13,10 +13,10 @@ namespace Company.Function
     public static class EventHubTriggerCSharp
     {
         [FunctionName("FunctionNameValue")]
-        public static void Run([EventHubTrigger("PathValue", Connection = "ConnectionValue")]string myEventHubMessage, TraceWriter log)
+        public static void Run([EventHubTrigger("PathValue", Connection = "ConnectionValue")]string myIoTHubMessage, TraceWriter log)
 #endif
         {
-            log.Info($"C# Event Hub trigger function processed a message: {myEventHubMessage}");
+            log.Info($"C# IoT Hub trigger function processed a message: {myIoTHubMessage}");
         }
 #if (vsTemplates)
     }

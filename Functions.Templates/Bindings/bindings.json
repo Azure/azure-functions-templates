@@ -500,6 +500,15 @@
             ]
           },
           {
+            "name": "connection",
+            "value": "string",
+            "resource": "EventHub",
+            "required": true,
+            "label": "$eventHubTrigger_connection_label",
+            "help": "$eventHubTrigger_connection_help",
+            "placeholder": "[variables('selectConnection')]"
+          },
+          {
             "name": "path",
             "value": "string",
             "defaultValue": "myeventhub",
@@ -511,7 +520,54 @@
                 "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
                 "errorText": "$eventHubTrigger_path_errorText"
               }
+            ]
+          },
+          {
+            "name": "consumerGroup",
+            "value": "string",
+            "defaultValue": "$Default",
+            "required": true,
+            "label": "$eventHubTrigger_consumerGroup_label",
+            "help": "$eventHubTrigger_consumerGroup_help",
+            "validators": [
+              {
+                "expression": "(^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$)|^\\$Default$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+                "errorText": "$eventHubTrigger_consumerGroup_errorText"
+              }
+            ]
+          },
+          {
+            "name": "cardinality",
+            "value": "enum",
+            "required": false,
+            "defaultValue": "many",
+            "enum": [
+              {
+                "value": "one",
+                "display": "One"
+              },
+              {
+                "value": "many",
+                "display": "Many"
+              }
+            ],
+            "label": "$eventHubTrigger_cardinality_label",
+            "help": "$eventHubTrigger_cardinality_help"
           }
+        ]
+      },
+      {
+        "type": "eventHub",
+        "displayName": "$eventHubOut_displayName",
+        "direction": "out",
+        "enabledInTryMode": false,
+        "actions": [
+          {
+            "template": "EventHubTrigger",
+            "binding": "eventHubTrigger",
+            "settings": [
+              "connection",
+              "path"
         }
       ]
     },
@@ -559,66 +615,45 @@
               "azureblob"
             ]
           }
-        }
-      ]
-    },
-    {
-      "type": "apiHubTable",
-      "displayName": "$apiHubTableIn_displayName",
-      "direction": "in",
-      "enabledInTryMode": false,
-      "documentation": "$content=Documentation\\apiHubTable.md",
-      "settings": [
-        {
-          "name": "name",
-          "value": "string",
-          "defaultValue": "inputTable",
-          "required": true,
-          "label": "[variables('paramNameLabel')]",
-          "help": "[variables('paramNameInputHelp')]",
-          "validators": [
-            {
-              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
-              "errorText": "[variables('parameterName')]"
-            }
-          ]
-        },
-        {
-          "name": "dataSetName",
-          "value": "string",
-          "defaultValue": "default",
-          "required": false,
-          "label": "[variables('apiHubTableDataSetLabel')]",
-          "help": "[variables('apiHubTableDataSetHelp')]",
-          "validators": []
-        },
-        {
-          "name": "tableName",
-          "value": "string",
-          "defaultValue": null,
-          "required": false,
-          "label": "[variables('apiHubTableNameLabel')]",
-          "help": "[variables('apiHubTableHelp')]",
-          "validators": []
-        },
-        {
-          "name": "entityId",
-          "value": "string",
-          "defaultValue": null,
-          "required": false,
-          "label": "[variables('apiHubTableEntityLabel')]",
-          "help": "[variables('apiHubTableEntityHelp')]",
-          "validators": []
-        },
-        {
-          "name": "connection",
-          "value": "string",
-          "resource": "ApiHub",
-          "required": true,
-          "label": "[variables('apiHubTableConnectionLabel')]",
-          "help": "[variables('apiHubTableConnectionHelp')]",
-          "metadata": {
-            "capability": "tabular"
+        ],
+        "documentation": "$content=Documentation\\eventHubOut.md",
+        "settings": [
+          {
+            "name": "name",
+            "value": "string",
+            "defaultValue": "outputEventHubMessage",
+            "required": true,
+            "label": "$eventHubOut_name_label",
+            "help": "$eventHubOut_name_help",
+            "validators": [
+              {
+                "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+                "errorText": "[variables('parameterName')]"
+              }
+            ]
+          },
+          {
+            "name": "connection",
+            "value": "string",
+            "resource": "EventHub",
+            "required": true,
+            "label": "$eventHubOut_connection_label",
+            "help": "$eventHubOut_connection_help",
+            "placeholder": "[variables('selectConnection')]"
+          },
+          {
+            "name": "path",
+            "value": "string",
+            "defaultValue": "outeventhub",
+            "required": true,
+            "label": "$eventHubOut_path_label",
+            "help": "$eventHubOut_path_help",
+            "validators": [
+              {
+                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+                "errorText": "$eventHubOut_path_errorText"
+              }
+            ]
           }
         }
       ]
@@ -2552,6 +2587,15 @@
             ]
           },
           {
+            "name": "connection",
+            "value": "string",
+            "resource": "ServiceBus",
+            "required": true,
+            "label": "$serviceBusTrigger_connection_label",
+            "help": "$serviceBusTrigger_connection_help",
+            "placeholder": "[variables('selectConnection')]"
+          },
+          {
             "name": "queueName",
             "value": "string",
             "defaultValue": "mysbqueue",
@@ -2592,15 +2636,6 @@
                 "errorText": "$serviceBusTrigger_subscriptionName_errorText"
               }
             ]
-          },
-          {
-            "name": "connection",
-            "value": "string",
-            "resource": "ServiceBus",
-            "required": true,
-            "label": "$serviceBusTrigger_connection_label",
-            "help": "$serviceBusTrigger_connection_help",
-            "placeholder": "[variables('selectConnection')]"
           },
           {
             "name": "accessRights",
@@ -2660,6 +2695,15 @@
         "documentation": "$content=Documentation\\serviceBusOut.md",
         "settings": [
           {
+            "name": "connection",
+            "value": "string",
+            "resource": "ServiceBus",
+            "required": true,
+            "label": "$serviceBusOut_connection_label",
+            "help": "$serviceBusOut_connection_help",
+            "placeholder": "[variables('selectConnection')]"
+          },
+          {
             "name": "name",
             "value": "string",
             "defaultValue": "outputSbMsg",
@@ -2700,15 +2744,6 @@
                 "errorText": "$serviceBusOut_topicName_errorText"
               }
             ]
-          },
-          {
-            "name": "connection",
-            "value": "string",
-            "resource": "ServiceBus",
-            "required": true,
-            "label": "$serviceBusOut_connection_label",
-            "help": "$serviceBusOut_connection_help",
-            "placeholder": "[variables('selectConnection')]"
           },
           {
             "name": "accessRights",

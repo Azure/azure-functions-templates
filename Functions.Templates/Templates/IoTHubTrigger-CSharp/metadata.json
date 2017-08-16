@@ -1,7 +1,7 @@
 {
-  "defaultFunctionName": "IoTHubTriggerCSharp",
+  "defaultFunctionName": "IoTHubTriggerCSharp_EventHub",
   "description": "$IoTHubTriggerCSharp_description",
-  "name": "IoTHubTrigger",
+  "name": "IoTHubTrigger (EventHub)",
   "language": "C#",
   "category": [
     "$temp_category_core",
@@ -9,6 +9,8 @@
   ],
   "enabledInTryMode": false,
   "userPrompt": [
-    "connection"
+    "connection",
+    "path",
+    "consumerGroup"
   ]
 }
