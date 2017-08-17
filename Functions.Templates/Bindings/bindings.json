@@ -1,4 +1,4 @@
-﻿  {
+﻿{
   "$schema": "<TBD>",
   "contentVersion": "2016-03-04-alpha",
   "variables": {
@@ -78,6 +78,15 @@
           ]
         },
         {
+          "name": "connection",
+          "value": "string",
+          "resource": "EventHub",
+          "required": true,
+          "label": "$eventHubTrigger_connection_label",
+          "help": "$eventHubTrigger_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
           "name": "path",
           "value": "string",
           "defaultValue": "myeventhub",
@@ -95,7 +104,7 @@
           "name": "consumerGroup",
           "value": "string",
           "defaultValue": "$Default",
-          "required": false,
+          "required": true,
           "label": "$eventHubTrigger_consumerGroup_label",
           "help": "$eventHubTrigger_consumerGroup_help",
           "validators": [
@@ -104,15 +113,6 @@
               "errorText": "$eventHubTrigger_consumerGroup_errorText"
             }
           ]
-        },
-        {
-          "name": "connection",
-          "value": "string",
-          "resource": "EventHub",
-          "required": true,
-          "label": "$eventHubTrigger_connection_label",
-          "help": "$eventHubTrigger_connection_help",
-          "placeholder": "[variables('selectConnection')]"
         },
         {
           "name": "cardinality",
@@ -144,8 +144,8 @@
           "template": "EventHubTrigger",
           "binding": "eventHubTrigger",
           "settings": [
-            "path",
-            "connection"
+            "connection",
+            "path"
           ]
         }
       ],
@@ -166,6 +166,15 @@
           ]
         },
         {
+          "name": "connection",
+          "value": "string",
+          "resource": "EventHub",
+          "required": true,
+          "label": "$eventHubOut_connection_label",
+          "help": "$eventHubOut_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
           "name": "path",
           "value": "string",
           "defaultValue": "outeventhub",
@@ -178,15 +187,6 @@
               "errorText": "$eventHubOut_path_errorText"
             }
           ]
-        },
-        {
-          "name": "connection",
-          "value": "string",
-          "resource": "EventHub",
-          "required": true,
-          "label": "$eventHubOut_connection_label",
-          "help": "$eventHubOut_connection_help",
-          "placeholder": "[variables('selectConnection')]"
         }
       ]
     },
@@ -440,134 +440,89 @@
         }
       ]
     },
-    "bindings": [
-      {
-        "type": "timerTrigger",
-        "displayName": "$timerTrigger_displayName",
-        "direction": "trigger",
-        "enabledInTryMode": true,
-        "documentation": "$content=Documentation\\timerTrigger.md",
-        "settings": [
-          {
-            "name": "name",
-            "value": "string",
-            "defaultValue": "myTimer",
-            "required": true,
-            "label": "$timerTrigger_name_label",
-            "help": "$timerTrigger_name_help",
-            "validators": [
-              {
-                "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
-                "errorText": "[variables('parameterName')]"
-              }
-            ]
-          },
-          {
-            "name": "schedule",
-            "value": "string",
-            "defaultValue": "0 * * * * *",
-            "required": true,
-            "label": "$timerTrigger_schedule_label",
-            "help": "$timerTrigger_schedule_help",
-            "validators": [
-              {
-                "expression": "^(\\*|((([1-5]\\d)|\\d)(\\-(([1-5]\\d)|\\d)(\\/\\d+)?)?)(,((([1-5]\\d)|\\d)(\\-(([1-5]\\d)|\\d)(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|((([1-5]\\d)|\\d)(\\-(([1-5]\\d)|\\d)(\\/\\d+)?)?)(,((([1-5]\\d)|\\d)(\\-(([1-5]\\d)|\\d)(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|(((1\\d)|(2[0-3])|\\d)(\\-((1\\d)|(2[0-3])|\\d)(\\/\\d+)?)?)(,(((1\\d)|(2[0-3])|\\d)(\\-((1\\d)|(2[0-3])|\\d)(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|((([1-2]\\d)|(3[0-1])|[1-9])(\\-(([1-2]\\d)|(3[0-1])|[1-9])(\\/\\d+)?)?)(,((([1-2]\\d)|(3[0-1])|[1-9])(\\-(([1-2]\\d)|(3[0-1])|[1-9])(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|(([A-Za-z]+|(1[0-2])|[1-9])(\\-([A-Za-z]+|(1[0-2])|[1-9])(\\/\\d+)?)?)(,(([A-Za-z]+|(1[0-2])|[1-9])(\\-([A-Za-z]+|(1[0-2])|[1-9])(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|(([A-Za-z]+|[0-6])(\\-([A-Za-z]+|[0-6])(\\/\\d+)?)?)(,(([A-Za-z]+|[0-6])(\\-([A-Za-z]+|[0-6])(\\/\\d+)?)?))*)(\\/\\d+)?$",
-                "errorText": "$timerTrigger_schedule_errorText"
-              }
-            ]
+    {
+      "type": "apiHubFile",
+      "displayName": "$apiHubFileIn_displayName",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\apiHubFileIn.md",
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "inputFile",
+          "required": true,
+          "label": "$apiHubFileIn_name_label",
+          "help": "$apiHubFileIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "path",
+          "value": "string",
+          "defaultValue": "path/{file}",
+          "required": true,
+          "label": "$apiHubFileIn_path_label",
+          "help": "$apiHubFileIn_path_help",
+          "validators": []
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "ApiHub",
+          "required": true,
+          "label": "$apiHubFileIn_connection_label",
+          "help": "$apiHubFileIn_connection_help",
+          "metadata": {
+            "capability": "blob"
           }
-        ]
-      },
-      {
-        "type": "eventHubTrigger",
-        "displayName": "$eventHubTrigger_displayName",
-        "direction": "trigger",
-        "enabledInTryMode": false,
-        "documentation": "$content=Documentation\\eventHubTrigger.md",
-        "settings": [
-          {
-            "name": "name",
-            "value": "string",
-            "defaultValue": "myEventHubMessage",
-            "required": true,
-            "label": "$eventHubTrigger_name_label",
-            "help": "$eventHubTrigger_name_help",
-            "validators": [
-              {
-                "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
-                "errorText": "[variables('parameterName')]"
-              }
-            ]
-          },
-          {
-            "name": "connection",
-            "value": "string",
-            "resource": "EventHub",
-            "required": true,
-            "label": "$eventHubTrigger_connection_label",
-            "help": "$eventHubTrigger_connection_help",
-            "placeholder": "[variables('selectConnection')]"
-          },
-          {
-            "name": "path",
-            "value": "string",
-            "defaultValue": "myeventhub",
-            "required": true,
-            "label": "$eventHubOut_path_label",
-            "help": "$eventHubTrigger_path_help",
-            "validators": [
-              {
-                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
-                "errorText": "$eventHubTrigger_path_errorText"
-              }
-            ]
-          },
-          {
-            "name": "consumerGroup",
-            "value": "string",
-            "defaultValue": "$Default",
-            "required": true,
-            "label": "$eventHubTrigger_consumerGroup_label",
-            "help": "$eventHubTrigger_consumerGroup_help",
-            "validators": [
-              {
-                "expression": "(^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$)|^\\$Default$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
-                "errorText": "$eventHubTrigger_consumerGroup_errorText"
-              }
-            ]
-          },
-          {
-            "name": "cardinality",
-            "value": "enum",
-            "required": false,
-            "defaultValue": "many",
-            "enum": [
-              {
-                "value": "one",
-                "display": "One"
-              },
-              {
-                "value": "many",
-                "display": "Many"
-              }
-            ],
-            "label": "$eventHubTrigger_cardinality_label",
-            "help": "$eventHubTrigger_cardinality_help"
+        }
+      ]
+    },
+    {
+      "type": "apiHubFile",
+      "displayName": "$apiHubFileIn_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\apiHubFileOut.md",
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "outputFile",
+          "required": true,
+          "label": "$apiHubFileIn_name_label",
+          "help": "$apiHubFileIn_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "path",
+          "value": "string",
+          "defaultValue": "path/{file}",
+          "required": true,
+          "label": "$apiHubFileIn_path_label",
+          "help": "$apiHubFileIn_path_help",
+          "validators": []
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "ApiHub",
+          "required": true,
+          "label": "$apiHubFileIn_connection_label",
+          "help": "$apiHubFileIn_connection_help",
+          "metadata": {
+            "capability": "blob"
           }
-        ]
-      },
-      {
-        "type": "eventHub",
-        "displayName": "$eventHubOut_displayName",
-        "direction": "out",
-        "enabledInTryMode": false,
-        "actions": [
-          {
-            "template": "EventHubTrigger",
-            "binding": "eventHubTrigger",
-            "settings": [
-              "connection",
-              "path"
         }
       ]
     },
@@ -615,45 +570,66 @@
               "azureblob"
             ]
           }
-        ],
-        "documentation": "$content=Documentation\\eventHubOut.md",
-        "settings": [
-          {
-            "name": "name",
-            "value": "string",
-            "defaultValue": "outputEventHubMessage",
-            "required": true,
-            "label": "$eventHubOut_name_label",
-            "help": "$eventHubOut_name_help",
-            "validators": [
-              {
-                "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
-                "errorText": "[variables('parameterName')]"
-              }
-            ]
-          },
-          {
-            "name": "connection",
-            "value": "string",
-            "resource": "EventHub",
-            "required": true,
-            "label": "$eventHubOut_connection_label",
-            "help": "$eventHubOut_connection_help",
-            "placeholder": "[variables('selectConnection')]"
-          },
-          {
-            "name": "path",
-            "value": "string",
-            "defaultValue": "outeventhub",
-            "required": true,
-            "label": "$eventHubOut_path_label",
-            "help": "$eventHubOut_path_help",
-            "validators": [
-              {
-                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
-                "errorText": "$eventHubOut_path_errorText"
-              }
-            ]
+        }
+      ]
+    },
+    {
+      "type": "apiHubTable",
+      "displayName": "$apiHubTableIn_displayName",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\apiHubTable.md",
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "inputTable",
+          "required": true,
+          "label": "[variables('paramNameLabel')]",
+          "help": "[variables('paramNameInputHelp')]",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "dataSetName",
+          "value": "string",
+          "defaultValue": "default",
+          "required": false,
+          "label": "[variables('apiHubTableDataSetLabel')]",
+          "help": "[variables('apiHubTableDataSetHelp')]",
+          "validators": []
+        },
+        {
+          "name": "tableName",
+          "value": "string",
+          "defaultValue": null,
+          "required": false,
+          "label": "[variables('apiHubTableNameLabel')]",
+          "help": "[variables('apiHubTableHelp')]",
+          "validators": []
+        },
+        {
+          "name": "entityId",
+          "value": "string",
+          "defaultValue": null,
+          "required": false,
+          "label": "[variables('apiHubTableEntityLabel')]",
+          "help": "[variables('apiHubTableEntityHelp')]",
+          "validators": []
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "ApiHub",
+          "required": true,
+          "label": "[variables('apiHubTableConnectionLabel')]",
+          "help": "[variables('apiHubTableConnectionHelp')]",
+          "metadata": {
+            "capability": "tabular"
           }
         }
       ]
@@ -939,6 +915,15 @@
           ]
         },
         {
+          "name": "connection",
+          "value": "string",
+          "resource": "ServiceBus",
+          "required": true,
+          "label": "$serviceBusTrigger_connection_label",
+          "help": "$serviceBusTrigger_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
           "name": "queueName",
           "value": "string",
           "defaultValue": "mysbqueue",
@@ -979,15 +964,6 @@
               "errorText": "$serviceBusTrigger_subscriptionName_errorText"
             }
           ]
-        },
-        {
-          "name": "connection",
-          "value": "string",
-          "resource": "ServiceBus",
-          "required": true,
-          "label": "$serviceBusTrigger_connection_label",
-          "help": "$serviceBusTrigger_connection_help",
-          "placeholder": "[variables('selectConnection')]"
         },
         {
           "name": "accessRights",
@@ -1047,6 +1023,15 @@
       "documentation": "$content=Documentation\\serviceBusOut.md",
       "settings": [
         {
+          "name": "connection",
+          "value": "string",
+          "resource": "ServiceBus",
+          "required": true,
+          "label": "$serviceBusOut_connection_label",
+          "help": "$serviceBusOut_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
           "name": "name",
           "value": "string",
           "defaultValue": "outputSbMsg",
@@ -1087,15 +1072,6 @@
               "errorText": "$serviceBusOut_topicName_errorText"
             }
           ]
-        },
-        {
-          "name": "connection",
-          "value": "string",
-          "resource": "ServiceBus",
-          "required": true,
-          "label": "$serviceBusOut_connection_label",
-          "help": "$serviceBusOut_connection_help",
-          "placeholder": "[variables('selectConnection')]"
         },
         {
           "name": "accessRights",
@@ -1827,8 +1803,12 @@
           "name": "disable",
           "type": "NAND",
           "values": [
-            { "value": "idToken" },
-            { "value": "PrincipalId" }
+            {
+              "value": "idToken"
+            },
+            {
+              "value": "PrincipalId"
+            }
           ]
         }
       ]
@@ -1934,8 +1914,12 @@
           "name": "disable",
           "type": "NAND",
           "values": [
-            { "value": "idToken" },
-            { "value": "PrincipalId" }
+            {
+              "value": "idToken"
+            },
+            {
+              "value": "PrincipalId"
+            }
           ]
         }
       ]
@@ -2302,1140 +2286,7 @@
           "required": true,
           "label": "$oneDrive_out_name_label",
           "help": "$oneDrive_out_name_help"
-            }
-          }
-        ]
-      },
-      {
-        "type": "apiHubTable",
-        "displayName": "$apiHubTableOut_displayName",
-        "direction": "out",
-        "enabledInTryMode": false,
-        "documentation": "$content=Documentation\\apiHubTableOut.md",
-        "settings": [
-          {
-            "name": "name",
-            "value": "string",
-            "defaultValue": "outputTable",
-            "required": true,
-            "label": "[variables('paramNameLabel')]",
-            "help": "[variables('paramNameOutputHelp')]",
-            "validators": [
-              {
-                "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
-                "errorText": "[variables('parameterName')]"
-              }
-            ]
-          },
-          {
-            "name": "dataSetName",
-            "value": "string",
-            "defaultValue": "default",
-            "required": false,
-            "label": "[variables('apiHubTableDataSetLabel')]",
-            "help": "[variables('apiHubTableDataSetHelp')]",
-            "validators": []
-          },
-          {
-            "name": "tableName",
-            "value": "string",
-            "defaultValue": null,
-            "required": false,
-            "label": "[variables('apiHubTableNameLabel')]",
-            "help": "[variables('apiHubTableHelp')]",
-            "validators": []
-          },
-          {
-            "name": "entityId",
-            "value": "string",
-            "defaultValue": null,
-            "required": false,
-            "label": "[variables('apiHubTableEntityLabel')]",
-            "help": "[variables('apiHubTableEntityHelp')]",
-            "validators": []
-          },
-          {
-            "name": "connection",
-            "value": "string",
-            "resource": "ApiHub",
-            "required": true,
-            "label": "[variables('apiHubTableConnectionLabel')]",
-            "help": "[variables('apiHubTableConnectionHelp')]",
-            "metadata": {
-              "capability": "tabular"
-            }
-          }
-        ]
-      },
-      {
-        "type": "httpTrigger",
-        "displayName": "$httpTrigger_displayName",
-        "direction": "trigger",
-        "enabledInTryMode": true,
-        "documentation": "$content=Documentation\\httpTrigger.md",
-        "settings": [
-          {
-            "name": "name",
-            "value": "string",
-            "defaultValue": "req",
-            "required": true,
-            "label": "$httpTrigger_name_label",
-            "help": "$httpTrigger_name_help",
-            "validators": [
-              {
-                "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
-                "errorText": "[variables('parameterName')]"
-              }
-            ]
-          },
-          {
-            "name": "route",
-            "value": "string",
-            "required": false,
-            "label": "$httpTrigger_route_label",
-            "help": "$httpTrigger_route_help",
-            "validators": []
-          },
-          {
-            "name": "webHookType",
-            "value": "enum",
-            "enum": [
-              {
-                "value": "github",
-                "display": "GitHub"
-              },
-              {
-                "value": "genericJson",
-                "display": "Generic JSON"
-              },
-              {
-                "value": "slack",
-                "display": "Slack"
-              }
-            ],
-            "label": "$httpTrigger_webHookType_label",
-            "help": "$httpTrigger_webHookType_help"
-          },
-          {
-            "name": "authLevel",
-            "value": "enum",
-            "enum": [
-              {
-                "value": "function",
-                "display": "Function"
-              },
-              {
-                "value": "anonymous",
-                "display": "Anonymous"
-              },
-              {
-                "value": "admin",
-                "display": "Admin"
-              }
-            ],
-            "label": "$httpTrigger_authLevel_label",
-            "help": "$httpTrigger_authLevel_help"
-          },
-          {
-            "name": "methods",
-            "value": "checkBoxList",
-            "defaultValue": [
-              "get",
-              "post",
-              "delete",
-              "head",
-              "patch",
-              "put",
-              "options",
-              "trace"
-            ],
-            "enum": [
-              {
-                "value": "get",
-                "display": "GET"
-              },
-              {
-                "value": "post",
-                "display": "POST"
-              },
-              {
-                "value": "delete",
-                "display": "DELETE"
-              },
-              {
-                "value": "head",
-                "display": "HEAD"
-              },
-              {
-                "value": "patch",
-                "display": "PATCH"
-              },
-              {
-                "value": "put",
-                "display": "PUT"
-              },
-              {
-                "value": "options",
-                "display": "OPTIONS"
-              },
-              {
-                "value": "trace",
-                "display": "TRACE"
-              }
-            ],
-            "label": "$httpTrigger_methods_label",
-            "help": "$httpTrigger_methods_help"
-          }
-        ],
-        "rules": [
-          {
-            "name": "mode",
-            "type": "exclusivity",
-            "values": [
-              {
-                "value": "authLevel",
-                "display": "Standard",
-                "hiddenSettings": [
-                  "webHookType"
-                ],
-                "shownSettings": [
-                  "authLevel"
-                ]
-              },
-              {
-                "value": "webHookType",
-                "display": "Webhook",
-                "hiddenSettings": [
-                  "authLevel"
-                ],
-                "shownSettings": [
-                  "webHookType"
-                ]
-              }
-            ],
-            "label": "$httpTrigger_mode_label",
-            "help": "$httpTrigger_mode_help"
-          },
-          {
-            "name": "methodRule",
-            "type": "exclusivity",
-            "values": [
-              {
-                "value": "allMethods",
-                "display": "All methods",
-                "hiddenSettings": [
-                  "methods"
-                ],
-                "shownSettings": []
-              },
-              {
-                "value": "methods",
-                "display": "Selected methods",
-                "hiddenSettings": [],
-                "shownSettings": [
-                  "methods"
-                ]
-              }
-            ],
-            "label": "$httpTrigger_methodRule_label",
-            "help": "$httpTrigger_methodRule_help"
-          }
-        ]
-      },
-      {
-        "type": "http",
-        "displayName": "$httpOut_displayName",
-        "direction": "out",
-        "enabledInTryMode": true,
-        "documentation": "$content=Documentation\\httpOut.md",
-        "settings": [
-          {
-            "name": "name",
-            "value": "string",
-            "defaultValue": "res",
-            "required": true,
-            "label": "$httpOut_name_label",
-            "help": "$httpOut_name_help",
-            "validators": [
-              {
-                "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
-                "errorText": "[variables('parameterName')]"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "serviceBusTrigger",
-        "displayName": "$serviceBusTrigger_displayName",
-        "direction": "trigger",
-        "enabledInTryMode": false,
-        "documentation": "$content=Documentation\\serviceBusTrigger.md",
-        "settings": [
-          {
-            "name": "name",
-            "value": "string",
-            "defaultValue": "mySbMsg",
-            "required": true,
-            "label": "$serviceBusTrigger_name_label",
-            "help": "$serviceBusTrigger_name_help",
-            "validators": [
-              {
-                "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
-                "errorText": "[variables('parameterName')]"
-              }
-            ]
-          },
-          {
-            "name": "connection",
-            "value": "string",
-            "resource": "ServiceBus",
-            "required": true,
-            "label": "$serviceBusTrigger_connection_label",
-            "help": "$serviceBusTrigger_connection_help",
-            "placeholder": "[variables('selectConnection')]"
-          },
-          {
-            "name": "queueName",
-            "value": "string",
-            "defaultValue": "mysbqueue",
-            "required": true,
-            "label": "$serviceBusTrigger_queueName_label",
-            "help": "$serviceBusTrigger_queueName_help",
-            "validators": [
-              {
-                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
-                "errorText": "$serviceBusTrigger_queueName_errorText"
-              }
-            ]
-          },
-          {
-            "name": "topicName",
-            "value": "string",
-            "defaultValue": "mysbtopic",
-            "required": true,
-            "label": "$serviceBusTrigger_topicName_label",
-            "help": "$serviceBusTrigger_topicName_help",
-            "validators": [
-              {
-                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
-                "errorText": "$serviceBusTrigger_topicName_errorText"
-              }
-            ]
-          },
-          {
-            "name": "subscriptionName",
-            "value": "string",
-            "defaultValue": "mysubscription",
-            "required": true,
-            "label": "$serviceBusTrigger_subscriptionName_label",
-            "help": "$serviceBusTrigger_subscriptionName_help",
-            "validators": [
-              {
-                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
-                "errorText": "$serviceBusTrigger_subscriptionName_errorText"
-              }
-            ]
-          },
-          {
-            "name": "accessRights",
-            "value": "enum",
-            "enum": [
-              {
-                "value": "Manage",
-                "display": "Manage"
-              },
-              {
-                "value": "Listen",
-                "display": "Listen"
-              }
-            ],
-            "label": "$serviceBusTrigger_accessRights_label",
-            "help": "$serviceBusTrigger_accessRights_help"
-          }
-        ],
-        "rules": [
-          {
-            "name": "messageType",
-            "type": "exclusivity",
-            "values": [
-              {
-                "value": "queueName",
-                "display": "$serviceBusTrigger_messageType_queueName",
-                "hiddenSettings": [
-                  "topicName",
-                  "subscriptionName"
-                ],
-                "shownSettings": [
-                  "queueName"
-                ]
-              },
-              {
-                "value": "topicName",
-                "display": "$serviceBusTrigger_messageType_topicName",
-                "hiddenSettings": [
-                  "queueName"
-                ],
-                "shownSettings": [
-                  "topicName",
-                  "subscriptionName"
-                ]
-              }
-            ],
-            "label": "$serviceBusTrigger_messageType_label",
-            "help": "$serviceBusTrigger_messageType_help"
-          }
-        ]
-      },
-      {
-        "type": "serviceBus",
-        "displayName": "$serviceBusOut_displayName",
-        "direction": "out",
-        "enabledInTryMode": false,
-        "documentation": "$content=Documentation\\serviceBusOut.md",
-        "settings": [
-          {
-            "name": "connection",
-            "value": "string",
-            "resource": "ServiceBus",
-            "required": true,
-            "label": "$serviceBusOut_connection_label",
-            "help": "$serviceBusOut_connection_help",
-            "placeholder": "[variables('selectConnection')]"
-          },
-          {
-            "name": "name",
-            "value": "string",
-            "defaultValue": "outputSbMsg",
-            "required": true,
-            "label": "$serviceBusOut_name_label",
-            "help": "$serviceBusOut_name_help",
-            "validators": [
-              {
-                "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
-                "errorText": "[variables('parameterName')]"
-              }
-            ]
-          },
-          {
-            "name": "queueName",
-            "value": "string",
-            "defaultValue": "outqueue",
-            "required": true,
-            "label": "$serviceBusOut_queueName_label",
-            "help": "$serviceBusOut_queueName_help",
-            "validators": [
-              {
-                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
-                "errorText": "$serviceBusOut_queueName_errorText"
-              }
-            ]
-          },
-          {
-            "name": "topicName",
-            "value": "string",
-            "defaultValue": "outtopic",
-            "required": true,
-            "label": "$serviceBusOut_topicName_label",
-            "help": "$serviceBusOut_topicName_help",
-            "validators": [
-              {
-                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
-                "errorText": "$serviceBusOut_topicName_errorText"
-              }
-            ]
-          },
-          {
-            "name": "accessRights",
-            "value": "enum",
-            "enum": [
-              {
-                "value": "Manage",
-                "display": "Manage"
-              },
-              {
-                "value": "Send",
-                "display": "Send"
-              }
-            ],
-            "label": "$serviceBusOut_accessRights_label",
-            "help": "$serviceBusOut_accessRights_help"
-          }
-        ],
-        "rules": [
-          {
-            "name": "messageType",
-            "type": "exclusivity",
-            "values": [
-              {
-                "value": "queueName",
-                "display": "$serviceBusOut_messageType_queueName",
-                "hiddenSettings": [
-                  "topicName"
-                ],
-                "shownSettings": [
-                  "queueName"
-                ]
-              },
-              {
-                "value": "topicName",
-                "display": "$serviceBusOut_messageType_topicName",
-                "hiddenSettings": [
-                  "queueName"
-                ],
-                "shownSettings": [
-                  "topicName"
-                ]
-              }
-            ],
-            "label": "$serviceBusOut_messageType_label",
-            "help": "$serviceBusOut_messageType_help"
-          }
-        ]
-      },
-      {
-        "type": "manualTrigger",
-        "displayName": "Manual",
-        "direction": "trigger",
-        "enabledInTryMode": true,
-        "documentation": "$content=Documentation\\manualTrigger.md",
-        "settings": [
-          {
-            "name": "name",
-            "value": "string",
-            "defaultValue": "input",
-            "required": true,
-            "label": "$manualTrigger_name_label",
-            "help": "$manualTrigger_name_help",
-            "validators": [
-              {
-                "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
-                "errorText": "[variables('parameterName')]"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "table",
-        "displayName": "$tableout_displayName",
-        "direction": "out",
-        "enabledInTryMode": true,
-        "documentation": "$content=Documentation\\tableOut.md",
-        "settings": [
-          {
-            "name": "name",
-            "value": "string",
-            "defaultValue": "outputTable",
-            "required": true,
-            "label": "$tableout_name_label",
-            "help": "$tableout_name_help",
-            "validators": [
-              {
-                "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
-                "errorText": "[variables('parameterName')]"
-              }
-            ]
-            "rules": [
-                {
-                    "name": "messageType",
-                    "type": "exclusivity",
-                    "values": [
-                        {
-                            "value": "queueName",
-                            "display": "$serviceBusOut_messageType_queueName",
-                            "hiddenSettings": [
-                                "topicName"
-                            ],
-                            "shownSettings": [
-                                "queueName"
-                            ]
-                        },
-                        {
-                            "value": "topicName",
-                            "display": "$serviceBusOut_messageType_topicName",
-                            "hiddenSettings": [
-                                "queueName"
-                            ],
-                            "shownSettings": [
-                                "topicName"
-                            ]
-                        }
-                    ],
-                    "label": "$serviceBusOut_messageType_label",
-                    "help": "$serviceBusOut_messageType_help"
-                }
-            ]
-          },
-          {
-            "name": "tableName",
-            "value": "string",
-            "defaultValue": "outTable",
-            "required": true,
-            "label": "$table_tableName_label",
-            "help": "$table_tableName_help",
-            "validators": [
-              {
-                "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
-                "errorText": "$table_tableName_errorText"
-              }
-            ]
-          },
-          {
-            "name": "connection",
-            "value": "string",
-            "resource": "Storage",
-            "required": true,
-            "label": "[variables('storageConnStringLabel')]",
-            "help": "[variables('appSettingsHelp')]",
-            "placeholder": "[variables('selectConnection')]"
-          }
-        ]
-      },
-      {
-        "type": "table",
-        "displayName": "$tableIn_displayName",
-        "direction": "in",
-        "enabledInTryMode": true,
-        "documentation": "$content=Documentation\\tableIn.md",
-        "settings": [
-          {
-            "name": "name",
-            "value": "string",
-            "defaultValue": "inputTable",
-            "required": true,
-            "label": "$tableIn_name_label",
-            "help": "$tableIn_name_help",
-            "validators": [
-              {
-                "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
-                "errorText": "[variables('parameterName')]"
-              }
-            ]
-          },
-          {
-            "name": "tableName",
-            "value": "string",
-            "defaultValue": "inTable",
-            "required": true,
-            "label": "$tableIn_tableName_label",
-            "help": "$tableIn_tableName_help",
-            "validators": [
-              {
-                "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
-                "errorText": "$tableIn_tableName_errorText"
-              }
-            ]
-          },
-          {
-            "name": "partitionKey",
-            "value": "string",
-            "required": false,
-            "label": "$tableIn_partitionKey_label",
-            "help": "$tableIn_partitionKey_help"
-          },
-          {
-            "name": "rowKey",
-            "value": "string",
-            "required": false,
-            "label": "$tableIn_rowKey_label",
-            "help": "$tableIn_rowKey_help"
-          },
-          {
-            "name": "take",
-            "value": "int",
-            "defaultValue": 50,
-            "required": false,
-            "label": "$tableIn_take_label",
-            "help": "$tableIn_take_help"
-          },
-          {
-            "name": "filter",
-            "value": "string",
-            "required": false,
-            "label": "$tableIn_filter_label",
-            "help": "$tableIn_filter_help"
-          },
-          {
-            "name": "connection",
-            "value": "string",
-            "resource": "Storage",
-            "required": true,
-            "label": "[variables('storageConnStringLabel')]",
-            "help": "[variables('appSettingsHelp')]",
-            "placeholder": "[variables('selectConnection')]"
-          }
-        ]
-      },
-      {
-        "type": "documentDB",
-        "displayName": "$documentDB_displayName",
-        "direction": "out",
-        "enabledInTryMode": false,
-        "documentation": "$content=Documentation\\documentDBOut.md",
-        "settings": [
-          {
-            "name": "name",
-            "value": "string",
-            "defaultValue": "outputDocument",
-            "required": true,
-            "label": "$documentDBOut_name_label",
-            "help": "$documentDBOut_name_help",
-            "validators": [
-              {
-                "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
-                "errorText": "[variables('parameterName')]"
-              }
-            ]
-          },
-          {
-            "name": "databaseName",
-            "value": "string",
-            "defaultValue": "outDatabase",
-            "required": true,
-            "label": "$documentDBOut_databaseName_label",
-            "help": "$documentDBOut_databaseName_help"
-          },
-          {
-            "name": "collectionName",
-            "value": "string",
-            "defaultValue": "MyCollection",
-            "required": true,
-            "label": "$documentDBOut_collectionName_label",
-            "help": "$documentDBOut_collectionName_help"
-          },
-          {
-            "name": "createIfNotExists",
-            "value": "boolean",
-            "defaultValue": false,
-            "required": true,
-            "label": "$documentDBOut_createIfNotExists_label",
-            "help": "$documentDBOut_createIfNotExists_help"
-          },
-          {
-            "name": "connection",
-            "value": "string",
-            "resource": "DocumentDB",
-            "required": true,
-            "label": "$documentDBOut_connection_label",
-            "help": "$documentDBOut_connection_help",
-            "placeholder": "[variables('selectConnection')]"
-          }
-        ]
-      },
-      {
-        "type": "documentDB",
-        "displayName": "$documentDBIn_displayName",
-        "direction": "in",
-        "enabledInTryMode": false,
-        "documentation": "$content=Documentation\\documentDBIn.md",
-        "settings": [
-          {
-            "name": "name",
-            "value": "string",
-            "defaultValue": "inputDocument",
-            "required": true,
-            "label": "$documentDBIn_name_label",
-            "help": "$documentDBIn_name_help",
-            "validators": [
-              {
-                "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
-                "errorText": "[variables('parameterName')]"
-              }
-            ]
-          },
-          {
-            "name": "databaseName",
-            "value": "string",
-            "defaultValue": "inDatabase",
-            "required": true,
-            "label": "$documentDBIn_databaseName_label",
-            "help": "$documentDBIn_databaseName_help"
-          },
-          {
-            "name": "collectionName",
-            "value": "string",
-            "defaultValue": "MyCollection",
-            "required": true,
-            "label": "$documentDBIn_collectionName_label",
-            "help": "$documentDBIn_collectionName_help"
-          },
-          {
-            "name": "id",
-            "value": "string",
-            "defaultValue": "",
-            "required": false,
-            "label": "$documentDBIn_id_label",
-            "help": "$documentDBIn_id_help"
-          },
-          {
-            "name": "sqlQuery",
-            "value": "string",
-            "defaultValue": "",
-            "required": false,
-            "label": "$documentDBIn_sqlQuery_label",
-            "help": "$documentDBIn_sqlQuery_help"
-          },
-          {
-            "name": "connection",
-            "value": "string",
-            "resource": "DocumentDB",
-            "required": true,
-            "label": "$documentDBIn_connection_label",
-            "help": "$documentDBIn_connection_help",
-            "placeholder": "[variables('selectConnection')]"
-          }
-        ]
-      },
-      {
-        "type": "mobileTable",
-        "displayName": "$mobileTableOut_displayName",
-        "direction": "out",
-        "enabledInTryMode": false,
-        "documentation": "$content=Documentation\\mobileTableOut.md",
-        "settings": [
-          {
-            "name": "name",
-            "value": "string",
-            "defaultValue": "outputRecord",
-            "required": true,
-            "label": "$mobileTableOut_name_label",
-            "help": "$mobileTableOut_name_help",
-            "validators": [
-              {
-                "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
-                "errorText": "[variables('parameterName')]"
-              }
-            ]
-          },
-          {
-            "name": "tableName",
-            "value": "string",
-            "defaultValue": "outTable",
-            "required": true,
-            "label": "$mobileTableOut_tableName_label",
-            "help": "$mobileTableOut_tableName_help"
-          },
-          {
-            "name": "connection",
-            "value": "string",
-            "defaultValue": "My_MobileApp_Uri",
-            "required": true,
-            "label": "$mobileTableOut_connection_label",
-            "help": "$mobileTableOut_connection_help"
-          },
-          {
-            "name": "apiKey",
-            "value": "string",
-            "required": false,
-            "label": "$mobileTableOut_apiKey_label",
-            "help": "$mobileTableOut_apiKey_help"
-          }
-        ]
-      },
-      {
-        "type": "mobileTable",
-        "displayName": "$mobileTableIn_displayName",
-        "direction": "in",
-        "enabledInTryMode": false,
-        "documentation": "$content=Documentation\\mobileTableIn.md",
-        "settings": [
-          {
-            "name": "name",
-            "value": "string",
-            "defaultValue": "inputRecord",
-            "required": true,
-            "label": "$mobileTableIn_name_label",
-            "help": "$mobileTableIn_name_help",
-            "validators": [
-              {
-                "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
-                "errorText": "[variables('parameterName')]"
-              }
-            ]
-          },
-          {
-            "name": "tableName",
-            "value": "string",
-            "defaultValue": "inTable",
-            "required": true,
-            "label": "$mobileTableIn_tableName_label",
-            "help": "$mobileTableIn_tableName_help"
-          },
-          {
-            "name": "id",
-            "value": "string",
-            "defaultValue": "{itemId}",
-            "required": true,
-            "label": "$mobileTableIn_id_label",
-            "help": "$mobileTableIn_id_help"
-          },
-          {
-            "name": "connection",
-            "value": "string",
-            "defaultValue": "My_MobileApp_Uri",
-            "required": true,
-            "label": "$mobileTableIn_connection_label",
-            "help": "$mobileTableIn_connection_help"
-          },
-          {
-            "name": "apiKey",
-            "value": "string",
-            "required": false,
-            "label": "$mobileTableIn_apiKey_label",
-            "help": "$mobileTableIn_apiKey_help"
-          }
-        ]
-      },
-      {
-        "type": "notificationHub",
-        "displayName": "$notificationHubOut_displayName",
-        "direction": "out",
-        "enabledInTryMode": false,
-        "documentation": "$content=Documentation\\notificationHubOut.md",
-        "settings": [
-          {
-            "name": "name",
-            "value": "string",
-            "defaultValue": "notification",
-            "required": true,
-            "label": "$notificationHubOut_name_label",
-            "help": "$notificationHubOut_name_help",
-            "validators": [
-              {
-                "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
-                "errorText": "[variables('parameterName')]"
-              }
-            ]
-          },
-          {
-            "name": "hubName",
-            "value": "string",
-            "required": true,
-            "label": "$notificationHubOut_hubName_label",
-            "help": "$notificationHubOut_hubName_help"
-          },
-          {
-            "name": "connection",
-            "value": "string",
-            "resource": "ServiceBus",
-            "required": true,
-            "label": "$notificationHubOut_connection_label",
-            "help": "$notificationHubOut_connection_help",
-            "placeholder": "[variables('selectConnection')]"
-          },
-          {
-            "name": "tagExpression",
-            "value": "string",
-            "required": false,
-            "label": "$notificationHubOut_tagExpression_label",
-            "help": "$notificationHubOut_tagExpression_help"
-          },
-          {
-            "name": "enableTestSend",
-            "value": "boolean",
-            "required": false,
-            "label": "$notificationHubOut_enableTestSend_label",
-            "help": "$notificationHubOut_enableTestSend_help"
-          },
-          {
-            "name": "platform",
-            "value": "enum",
-            "enum": [
-              {
-                "value": "",
-                "display": "Template"
-              },
-              {
-                "value": "apns",
-                "display": "Apple (APNS)"
-              },
-              {
-                "value": "adm",
-                "display": "Amazon (ADM)"
-              },
-              {
-                "value": "gcm",
-                "display": "Google (GCM)"
-              },
-              {
-                "value": "wns",
-                "display": "Windows (WNS)"
-              },
-              {
-                "value": "mpns",
-                "display": "Windows Phone (MPNS)"
-              }
-            ],
-            "label": "$notificationHubOut_platform_label",
-            "help": "$notificationHubOut_platform_help"
-          }
-        ]
-      },
-      {
-        "type": "sendGrid",
-        "displayName": "$sendGrid_displayName",
-        "direction": "out",
-        "enabledInTryMode": false,
-        "documentation": "$content=Documentation\\sendGridOut.md",
-        "settings": [
-          {
-            "name": "name",
-            "value": "string",
-            "defaultValue": "message",
-            "required": true,
-            "label": "$sendGrid_name_label",
-            "help": "$sendGrid_name_help",
-            "validators": [
-              {
-                "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
-                "errorText": "[variables('parameterName')]"
-              }
-            ]
-          },
-          {
-            "name": "apiKey",
-            "resource": "AppSetting",
-            "value": "string",
-            "defaultValue": "SendGridApiKey",
-            "required": true,
-            "label": "$sendGrid_apiKey_label",
-            "help": "$sendGrid_apiKey_help"
-          },
-          {
-            "name": "to",
-            "value": "string",
-            "defaultValue": "",
-            "required": false,
-            "label": "$sendGrid_to_label",
-            "help": "$sendGrid_to_help"
-          },
-          {
-            "name": "from",
-            "value": "string",
-            "defaultValue": "",
-            "required": false,
-            "label": "$sendGrid_from_label",
-            "help": "$sendGrid_from_help"
-          },
-          {
-            "name": "subject",
-            "value": "string",
-            "defaultValue": "",
-            "required": false,
-            "label": "$sendGrid_subject_label",
-            "help": "$sendGrid_subject_help"
-          },
-          {
-            "name": "text",
-            "value": "string",
-            "defaultValue": "",
-            "required": false,
-            "label": "$sendGrid_text_label",
-            "help": "$sendGrid_text_help"
-          }
-        ]
-      },
-      {
-        "type": "twilioSms",
-        "displayName": "$twilioSms_displayName",
-        "direction": "out",
-        "enabledInTryMode": false,
-        "documentation": "$content=Documentation\\twilioSmsOut.md",
-        "settings": [
-          {
-            "name": "name",
-            "value": "string",
-            "defaultValue": "message",
-            "required": true,
-            "label": "$twilioSms_name_label",
-            "help": "$twilioSms_name_help",
-            "validators": [
-              {
-                "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
-                "errorText": "[variables('parameterName')]"
-              }
-            ]
-          },
-          {
-            "name": "accountSid",
-            "value": "string",
-            "defaultValue": "TwilioAccountSid",
-            "required": true,
-            "label": "$twilioSms_accountsid_label",
-            "help": "$twilioSms_accountsid_help"
-          },
-          {
-            "name": "authToken",
-            "value": "string",
-            "defaultValue": "TwilioAuthToken",
-            "required": true,
-            "label": "$twilioSms_authtoken_label",
-            "help": "$twilioSms_authtoken_help"
-          },
-          {
-            "name": "to",
-            "value": "string",
-            "defaultValue": "",
-            "required": false,
-            "label": "$twilioSms_to_label",
-            "help": "$twilioSms_to_help"
-          },
-          {
-            "name": "from",
-            "value": "string",
-            "defaultValue": "",
-            "required": false,
-            "label": "$twilioSms_from_label",
-            "help": "$twilioSms_from_help"
-          },
-          {
-            "name": "body",
-            "value": "string",
-            "defaultValue": "",
-            "required": false,
-            "label": "$twilioSms_body_label",
-            "help": "$twilioSms_body_help"
-          }
-        ]
-      },
-      {
-        "type": "bot",
-        "displayName": "$bot_out_displayName",
-        "direction": "out",
-        "enabledInTryMode": false,
-        "documentation": "$content=Documentation\\botOut.md",
-        "settings": [
-          {
-            "name": "name",
-            "value": "string",
-            "defaultValue": "$return",
-            "required": true,
-            "label": "$bot_out_name_label",
-            "help": "$bot_out_name_help",
-            "validators": [
-              {
-                "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
-                "errorText": "[variables('parameterName')]"
-              }
-            ]
-          },
-          {
-            "name": "botId",
-            "value": "string",
-            "required": true,
-            "label": "$bot_botId_label",
-            "help": "$bot_botId_help"
-          },
-          {
-            "name": "secret",
-            "value": "string",
-            "required": false,
-            "label": "$bot_out_secret_label",
-            "help": "$bot_out_secret_help"
-          }
-        ]
-      }
+        }
       ]
     }
   ]
