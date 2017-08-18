@@ -3,10 +3,11 @@
     "bindings": [
       {
         "type": "eventHubTrigger",
-        "name": "myEventHubMessage",
+        "name": "IoTHubMessages",
         "direction": "in",
         "path": "samples-workitems",
         "connection": "",
+        "cardinality": "many",
         "consumerGroup": "$Default"
       }
     ]
