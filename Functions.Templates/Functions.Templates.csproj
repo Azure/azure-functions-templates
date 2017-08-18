@@ -45,8 +45,6 @@
     <None Include="Templates\BlobTrigger-TypeScript\metadata.json" />
     <None Include="Templates\BlobTrigger-TypeScript\readme.md" />
     <None Include="Templates\BlobTrigger-TypeScript\sample.dat" />
-    <None Include="Templates\IoTHubServiceBusQueueTrigger-CSharp\build.config\template.json" />
-    <None Include="Templates\IoTHubServiceBusQueueTrigger-CSharp\build.config\vs-2017.3.host.json" />
     <None Include="Templates\IoTHubServiceBusQueueTrigger-CSharp\function.json" />
     <None Include="Templates\IoTHubServiceBusQueueTrigger-CSharp\metadata.json" />
     <None Include="Templates\IoTHubServiceBusQueueTrigger-CSharp\sample.dat" />
@@ -60,8 +58,6 @@
     <None Include="Templates\IoTHubServiceBusQueueTrigger-TypeScript\function.json" />
     <None Include="Templates\IoTHubServiceBusQueueTrigger-TypeScript\metadata.json" />
     <None Include="Templates\IoTHubServiceBusQueueTrigger-TypeScript\sample.dat" />
-    <None Include="Templates\IoTHubServiceBusTopicTrigger-CSharp\build.config\template.json" />
-    <None Include="Templates\IoTHubServiceBusTopicTrigger-CSharp\build.config\vs-2017.3.host.json" />
     <None Include="Templates\IoTHubServiceBusTopicTrigger-CSharp\function.json" />
     <None Include="Templates\IoTHubServiceBusTopicTrigger-CSharp\metadata.json" />
     <None Include="Templates\IoTHubServiceBusTopicTrigger-CSharp\sample.dat" />
@@ -75,8 +71,6 @@
     <None Include="Templates\IoTHubServiceBusTopicTrigger-TypeScript\function.json" />
     <None Include="Templates\IoTHubServiceBusTopicTrigger-TypeScript\metadata.json" />
     <None Include="Templates\IoTHubServiceBusTopicTrigger-TypeScript\sample.dat" />
-    <None Include="Templates\IoTHubTrigger-CSharp\build.config\template.json" />
-    <None Include="Templates\IoTHubTrigger-CSharp\build.config\vs-2017.3.host.json" />
     <None Include="Templates\IoTHubTrigger-CSharp\function.json" />
     <None Include="Templates\IoTHubTrigger-CSharp\metadata.json" />
     <None Include="Templates\IoTHubTrigger-CSharp\sample.dat" />
@@ -536,11 +530,8 @@
     <Content Include="Templates\BlobTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\BlobTrigger-FSharp\run.fsx" />
     <Content Include="Templates\BlobTrigger-JavaScript\index.js" />
-    <Content Include="Templates\IoTHubServiceBusQueueTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\IoTHubServiceBusQueueTrigger-JavaScript\index.js" />
-    <Content Include="Templates\IoTHubServiceBusTopicTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\IoTHubServiceBusTopicTrigger-JavaScript\index.js" />
-    <Content Include="Templates\IoTHubTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\CosmosDBTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\EventHubTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\EventHubTrigger-FSharp\run.fsx" />
@@ -606,7 +597,7 @@
     <Content Include="Templates\IoTHubTrigger-TypeScript\index.ts" />
     <Content Include="Templates\IoTHubServiceBusQueueTrigger-CSharp\run.cs" />
     <Content Include="Templates\IoTHubServiceBusTopicTrigger-CSharp\run.cs" />
-  </ItemGroup>  
+  </ItemGroup>
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
     <RemoveDir Directories=".\bin\Portal" />
   </Target>

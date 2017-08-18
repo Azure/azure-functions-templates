@@ -2286,6 +2286,591 @@
           "required": true,
           "label": "$oneDrive_out_name_label",
           "help": "$oneDrive_out_name_help"
+        },
+
+        {
+          "name": "Path",
+          "value": "string",
+          "defaultValue": "Documents/test.txt",
+          "required": true,
+          "label": "$oneDrive_out_path_label",
+          "help": "$oneDrive_out_path_help"
+        },
+        {
+          "name": "PrincipalId",
+          "value": "string",
+          "resource": "AppSetting",
+          "required": false,
+          "label": "$principal_id_label_onedrive_out",
+          "help": "$principal_id_help_onedrive_out"
+        },
+        {
+          "name": "idToken",
+          "value": "string",
+          "required": false,
+          "label": "$idToken_label_onedrive_out",
+          "help": "$idToken_help_onedrive_out"
+        }
+      ],
+      "rules": [
+        {
+          "name": "disable",
+          "type": "NAND",
+          "values": [
+            {
+              "value": "idToken"
+            },
+            {
+              "value": "PrincipalId"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "GraphWebhook",
+      "displayName": "$MSGraphWebhook_displayName",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "filters": [ "MSGraph" ],
+      "documentation": "$content-Documentation\\GraphWebhook.md",
+      "AADPermissions": [
+        {
+          "resourceAppId": "00000002-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+            }
+          ]
+        },
+        {
+          "resourceAppId": "00000003-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
+            },
+            {
+              "type": "Scope",
+              "id": "37f7f235-527c-4136-accd-4a02d197296e"
+            },
+            {
+              "type": "Scope",
+              "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
+            },
+            {
+              "type": "Scope",
+              "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
+            },
+            {
+              "type": "Scope",
+              "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283"
+            },
+            {
+              "type": "Scope",
+              "id": "863451e7-0667-486c-a5d6-d135439485f0"
+            },
+            {
+              "type": "Scope",
+              "id": "ff74d97f-43af-4b68-9f2a-b77ee6968c5d"
+            },
+            {
+              "type": "Scope",
+              "id": "465a38f9-76ea-45b9-9f34-9e8b0d4b0b42"
+            },
+            {
+              "type": "Scope",
+              "id": "e383f46e-2787-4529-855e-0e479a3ffac0"
+            },
+            {
+              "type": "Scope",
+              "id": "024d486e-b451-40bb-833d-3e66d98c5c73"
+            },
+            {
+              "type": "Scope",
+              "id": "570282fd-fa5c-430d-a7fd-fc8dc98a9dca"
+            },
+            {
+              "type": "Scope",
+              "id": "5778995a-e1bf-45b8-affa-663a9f3f4d04"
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "webhook",
+          "required": true,
+          "label": "$MSGraphWebhook_in_name_label",
+          "help": "$MSGraphWebhook_in_name_help"
+        }
+      ]
+    },
+    {
+      "type": "GraphWebhookCreator",
+      "displayName": "$MSGraphWebhookCreator_displayName",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "filters": [ "MSGraph" ],
+      "documentation": "$content=Documentation\\GraphWebhookCreator.md",
+      "AADPermissions": [
+        {
+          "resourceAppId": "00000002-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+            }
+          ]
+        },
+        {
+          "resourceAppId": "00000003-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
+            },
+            {
+              "type": "Scope",
+              "id": "37f7f235-527c-4136-accd-4a02d197296e"
+            },
+            {
+              "type": "Scope",
+              "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
+            },
+            {
+              "type": "Scope",
+              "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
+            },
+            {
+              "type": "Scope",
+              "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283"
+            },
+            {
+              "type": "Scope",
+              "id": "863451e7-0667-486c-a5d6-d135439485f0"
+            },
+            {
+              "type": "Scope",
+              "id": "ff74d97f-43af-4b68-9f2a-b77ee6968c5d"
+            },
+            {
+              "type": "Scope",
+              "id": "465a38f9-76ea-45b9-9f34-9e8b0d4b0b42"
+            },
+            {
+              "type": "Scope",
+              "id": "e383f46e-2787-4529-855e-0e479a3ffac0"
+            },
+            {
+              "type": "Scope",
+              "id": "024d486e-b451-40bb-833d-3e66d98c5c73"
+            },
+            {
+              "type": "Scope",
+              "id": "570282fd-fa5c-430d-a7fd-fc8dc98a9dca"
+            },
+            {
+              "type": "Scope",
+              "id": "5778995a-e1bf-45b8-affa-663a9f3f4d04"
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "creator",
+          "required": true,
+          "label": "$MSGraphWebhookCreator_in_name_label",
+          "help": "$MSGraphWebhookCreator_in_name_help"
+        },
+        {
+          "name": "changeType",
+          "value": "checkBoxList",
+          "defaultValue": [
+            "Created",
+            "Updated",
+            "Deleted"
+          ],
+          "enum": [
+            {
+              "value": "Created",
+              "display": "Created"
+            },
+            {
+              "value": "Updated",
+              "display": "Updated"
+            },
+            {
+              "value": "Deleted",
+              "display": "Deleted"
+            }
+          ],
+          "required": true,
+          "label": "$MSGraphWebhook_in_changeType_label",
+          "help": "$MSGraphWebhook_in_changeType_help"
+        },
+        {
+          "name": "Listen",
+          "value": "enum",
+          "enum": [
+            {
+              "value": "me/mailFolders('Inbox')/Messages",
+              "display": "Email Messages"
+            },
+            {
+              "value": "me/drive/root",
+              "display": "OneDrive Root"
+            },
+            {
+              "value": "me/events",
+              "display": "Calendar events"
+            },
+            {
+              "value": "me/contacts",
+              "display": "Contacts"
+            }
+          ],
+          "label": "$MSGraphWebhook_in_listen_label",
+          "help": "$MSGraphWebhook_in_listen_help",
+          "required": true
+        },
+        {
+          "name": "PrincipalId",
+          "value": "string",
+          "resource": "AppSetting",
+          "required": false,
+          "label": "$principal_id_label_graphwebhook",
+          "help": "$principal_id_help_graphwebhook"
+        },
+        {
+          "name": "idToken",
+          "value": "string",
+          "required": false,
+          "label": "$idToken_label_graphwebhook",
+          "help": "$idToken_help_graphwebhook"
+        }
+      ],
+      "rules": [
+        {
+          "name": "disable",
+          "type": "NAND",
+          "values": [
+            { "value": "idToken" },
+            { "value": "PrincipalId" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "GraphWebhookTrigger",
+      "direction": "trigger",
+      "displayName": "$MSGraphWebhookTrigger_displayName",
+      "documentation": "$content=Documentation\\GraphWebhookTrigger.md",
+      "filters": [ "MSGraph" ],
+      "enabledInTryMode": false,
+      "AADPermissions": [
+        {
+          "resourceAppId": "00000002-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+            }
+          ]
+        },
+        {
+          "resourceAppId": "00000003-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
+            },
+            {
+              "type": "Scope",
+              "id": "37f7f235-527c-4136-accd-4a02d197296e"
+            },
+            {
+              "type": "Scope",
+              "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
+            },
+            {
+              "type": "Scope",
+              "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
+            },
+            {
+              "type": "Scope",
+              "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283"
+            },
+            {
+              "type": "Scope",
+              "id": "863451e7-0667-486c-a5d6-d135439485f0"
+            },
+            {
+              "type": "Scope",
+              "id": "ff74d97f-43af-4b68-9f2a-b77ee6968c5d"
+            },
+            {
+              "type": "Scope",
+              "id": "465a38f9-76ea-45b9-9f34-9e8b0d4b0b42"
+            },
+            {
+              "type": "Scope",
+              "id": "e383f46e-2787-4529-855e-0e479a3ffac0"
+            },
+            {
+              "type": "Scope",
+              "id": "024d486e-b451-40bb-833d-3e66d98c5c73"
+            },
+            {
+              "type": "Scope",
+              "id": "570282fd-fa5c-430d-a7fd-fc8dc98a9dca"
+            },
+            {
+              "type": "Scope",
+              "id": "5778995a-e1bf-45b8-affa-663a9f3f4d04"
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "notification",
+          "required": true,
+          "label": "$MSGraphWebhookTrigger_in_name_label",
+          "help": "$MSGraphWebhookTrigger_in_help_label"
+        },
+        {
+          "name": "Type",
+          "value": "enum",
+          "defaultValue": "#Microsoft.Graph.Message",
+          "required": true,
+          "isHidden": true,
+          "enum": [
+            {
+              "value": "#Microsoft.Graph.Message",
+              "display": "[Outlook] Emails"
+            },
+            {
+              "value": "#Microsoft.Graph.DriveItem",
+              "display": "Drive"
+            },
+            {
+              "value": "#Microsoft.Graph.Event",
+              "display": "Calendar Events"
+            },
+            {
+              "value": "#Microsoft.Graph.Contact",
+              "display": "Contacts"
+            }
+          ],
+          "label": "$MSGraphWebhookTrigger_Type_label",
+          "help": "$MSGraphWebhookTrigger_Type_help"
+        },
+        {
+          "name": "ChangeType",
+          "value": "checkBoxList",
+          "defaultValue": [
+            "created",
+            "updated",
+            "deleted"
+          ],
+          "enum": [
+            {
+              "value": "created",
+              "display": "Created"
+            },
+            {
+              "value": "updated",
+              "display": "Updated"
+            },
+            {
+              "value": "deleted",
+              "display": "Deleted"
+            }
+          ],
+          "required": true,
+          "label": "$MSGraphWebhook_in_changeType_label",
+          "help": "$MSGraphWebhook_in_changeType_help"
+        }
+      ],
+      "rules": [
+        {
+          "name": "Listen",
+          "type": "changeOptionsDisplayed",
+          "values": [
+            {
+              "value": "me/mailFolders('Inbox')/messages",
+              "display": "Email Messages",
+              "shownCheckboxOptions": {
+                "name": "ChangeType",
+                "values": [
+                  {
+                    "value": "updated",
+                    "display": "Updated"
+                  },
+                  {
+                    "value": "created",
+                    "display": "Created"
+                  },
+                  {
+                    "value": "deleted",
+                    "display": "Deleted"
+                  }
+                ]
+              }
+            },
+            {
+              "value": "me/drive/root",
+              "display": "OneDrive Item",
+              "shownCheckboxOptions": {
+                "name": "ChangeType",
+                "values": [
+                  {
+                    "value": "updated",
+                    "display": "Updated"
+                  }
+                ]
+              }
+            },
+            {
+              "value": "me/events",
+              "display": "Calendar events",
+              "shownCheckboxOptions": {
+                "name": "ChangeType",
+                "values": [
+                  {
+                    "value": "updated",
+                    "display": "Updated"
+                  },
+                  {
+                    "value": "created",
+                    "display": "Created"
+                  },
+                  {
+                    "value": "deleted",
+                    "display": "Deleted"
+                  }
+                ]
+              }
+            },
+            {
+              "value": "me/contacts",
+              "display": "Contacts",
+              "shownCheckboxOptions": {
+                "name": "ChangeType",
+                "values": [
+                  {
+                    "value": "updated",
+                    "display": "Updated"
+                  },
+                  {
+                    "value": "created",
+                    "display": "Created"
+                  },
+                  {
+                    "value": "deleted",
+                    "display": "Deleted"
+                  }
+                ]
+              }
+            }
+          ],
+          "label": "$MSGraphWebhook_in_listen_label",
+          "help": "$MSGraphWebhook_in_listen_help"
+        }
+      ]
+    },
+    {
+      "type": "eventGridTrigger",
+      "displayName": "$eventGrid_trigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\eventGridTrigger.md",
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "EventGridTrigger",
+          "required": true,
+          "label": "$eventGrid_trigger_name_label",
+          "help": "$eventGrid_trigger_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cosmosDBTrigger",
+      "displayName": "$cosmosDB_trigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": false,
+      "filters": [ "CosmosDB" ],
+      "documentation": "$content=Documentation\\cosmosDBTrigger.md",
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "inputDocuments",
+          "required": true,
+          "label": "$cosmosDBIn_name_label",
+          "help": "$cosmosDBIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "required": true,
+          "resource": "DocumentDB",
+          "label": "$cosmosDBIn_connection_label",
+          "help": "$cosmosDBIn_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "databaseName",
+          "value": "string",
+          "defaultValue": "DatabaseToMonitor",
+          "required": true,
+          "label": "$cosmosDBIn_databaseName_label",
+          "help": "$cosmosDBIn_databaseName_help"
+        },
+        {
+          "name": "collectionName",
+          "value": "string",
+          "defaultValue": "CollectionToMonitor",
+          "required": true,
+          "label": "$cosmosDBIn_collectionName_label",
+          "help": "$cosmosDBIn_collectionName_help"
+        },
+        {
+          "name": "leaseDatabaseName",
+          "value": "string",
+          "required": false,
+          "label": "$cosmosDBIn_leaseDatabaseName_label",
+          "help": "$cosmosDBIn_leaseDatabaseName_help"
+        },
+        {
+          "name": "leaseCollectionName",
+          "value": "string",
+          "required": false,
+          "label": "$cosmosDBIn_leaseCollectionName_label",
+          "help": "$cosmosDBIn_leaseCollectionName_help"
         }
       ]
     }
