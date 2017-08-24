@@ -1,1 +1,0 @@
-Write-Output "PowerShell Timer trigger function executed at:$(get-date)";
