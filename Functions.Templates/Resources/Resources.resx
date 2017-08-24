@@ -1401,6 +1401,51 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   <data name="ManualTriggerNodeTS_description" xml:space="preserve">
     <value>(Experimental) A TypeScript function that is triggered manually via the portal "Run" button</value>
   </data>
+  <data name="IoTHubTriggerCSharp_description" xml:space="preserve">
+    <value>A C# function that will be run whenever an IoT Hub receives a new event from IoT Hub (Event Hub)</value>
+  </data>
+  <data name="ioTHubTrigger_connection_help" xml:space="preserve">
+    <value>It is the key to IoT Hub connection string stored in the app setting, which must have Receive permissions. If you do not have any, click new to create one.</value>
+  </data>
+  <data name="ioTHubTrigger_connection_label" xml:space="preserve">
+    <value>Connection string</value>
+  </data>
+  <data name="ioTHubTrigger_displayName" xml:space="preserve">
+    <value>Azure IoT Hub</value>
+  </data>
+  <data name="ioTHubTrigger_EntityPath" xml:space="preserve">
+    <value>Entity path</value>
+  </data>
+  <data name="defaultConsumerGroup" xml:space="preserve">
+    <value>$Default</value>
+  </data>
+  <data name="defaultQueueName" xml:space="preserve">
+    <value>myqueue</value>
+  </data>
+  <data name="defaultsubscriptionName" xml:space="preserve">
+    <value>mysubscription</value>
+  </data>
+  <data name="defaultTopicName" xml:space="preserve">
+    <value>mytopic</value>
+  </data>
+  <data name="servicebusQueuePicker_queueName" xml:space="preserve">
+    <value>Queue</value>
+  </data>
+  <data name="IoTHubTriggerFSharp_description" xml:space="preserve">
+    <value>An F# function that will be run whenever an IoT Hub receives a new event from IoT Hub (Event Hub)</value>
+  </data>
+  <data name="IoTHubTriggerNodeJS_description" xml:space="preserve">
+    <value>A Javascript function that will be run whenever an IoT Hub receives a new event from IoT Hub (Event Hub)</value>
+  </data>
+  <data name="IoTHubTriggerNodeTS_description" xml:space="preserve">
+    <value>A Typescript function that will be run whenever an IoT Hub receives a new event from IoT Hub (Event Hub)</value>
+  </data>
+  <data name="myEventHub" xml:space="preserve">
+    <value>myEventHub</value>
+  </data>
+  <data name="eventHubName" xml:space="preserve">
+    <value>eventHubName</value>
+  </data>
   <data name="oneDrive_in_displayName" xml:space="preserve">
     <value>OneDrive</value>
   </data>
@@ -1568,5 +1613,20 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   </data>
   <data name="cosmosDB_trigger_displayName" xml:space="preserve">
     <value>Azure Cosmos DB (Preview)</value>
+  </data>
+  <data name="IoTHubServiceBusTopicTriggerCSharp_description" xml:space="preserve">
+    <value>A C# function that will be run whenever a message is added to the specified Service Bus topic</value>
+  </data>
+  <data name="temp_category_IoTHub" xml:space="preserve">
+    <value>IoT Hub</value>
+  </data>
+  <data name="cosmosDBIn_createIfNotExists_help" xml:space="preserve">
+    <value>Checks for existence and automatically creates the leases collection.</value>
+  </data>
+  <data name="cosmosDBIn_createIfNotExists_label" xml:space="preserve">
+    <value>Create lease collection if it does not exist</value>
+  </data>
+  <data name="EventGridTriggerJavascript_description" xml:space="preserve">
+    <value>A JavaScript function that will be run whenever an event grid receives a new event</value>
   </data>
 </root>
