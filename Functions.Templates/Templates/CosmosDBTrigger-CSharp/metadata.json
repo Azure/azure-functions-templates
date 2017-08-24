@@ -6,11 +6,15 @@
   "category": [
     "$temp_category_experimental"
   ],
-  "filters": ["CosmosDB"],
+  "filters": [
+    "CosmosDB"
+  ],
   "enabledInTryMode": false,
   "userPrompt": [
     "connectionStringSetting",
     "databaseName",
-    "collectionName"
+    "collectionName",
+    "leaseCollectionName",
+    "createLeaseCollectionIfNotExists"
   ]
 }

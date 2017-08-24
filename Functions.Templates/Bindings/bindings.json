@@ -1754,7 +1754,9 @@
       "direction": "in",
       "enabledInTryMode": false,
       "documentation": "$content=Documentation\\Token.md",
-      "filters": [ "MSGraph" ],
+      "filters": [
+        "MSGraph"
+      ],
       "AADPermissions": [
         {
           "resourceAppId": "00000002-0000-0000-c000-000000000000",
@@ -1818,7 +1820,9 @@
       "displayName": "$excel_in_displayName",
       "direction": "in",
       "enabledInTryMode": false,
-      "filters": [ "MSGraph" ],
+      "filters": [
+        "MSGraph"
+      ],
       "AADPermissions": [
         {
           "resourceAppId": "00000002-0000-0000-c000-000000000000",
@@ -1929,7 +1933,9 @@
       "displayName": "$excel_out_displayName",
       "direction": "out",
       "enabledInTryMode": false,
-      "filters": [ "MSGraph" ],
+      "filters": [
+        "MSGraph"
+      ],
       "documentation": "$content=Documentation\\ExcelOut.md",
       "AADPermissions": [
         {
@@ -2058,7 +2064,9 @@
       "displayName": "$outlook_displayName",
       "direction": "out",
       "enabledInTryMode": false,
-      "filters": [ "MSGraph" ],
+      "filters": [
+        "MSGraph"
+      ],
       "documentation": "$content=Documentation\\Outlook.md",
       "AADPermissions": [
         {
@@ -2141,7 +2149,9 @@
       "displayName": "$oneDrive_in_displayName",
       "direction": "in",
       "enabledInTryMode": false,
-      "filters": [ "MSGraph" ],
+      "filters": [
+        "MSGraph"
+      ],
       "documentation": "$content=Documentation\\OneDriveIn.md",
       "AADPermissions": [
         {
@@ -2236,7 +2246,9 @@
       "displayName": "$oneDrive_out_displayName",
       "direction": "out",
       "enabledInTryMode": false,
-      "filters": [ "MSGraph" ],
+      "filters": [
+        "MSGraph"
+      ],
       "documentation": "$content=Documentation\\OneDriveOut.md",
       "AADPermissions": [
         {
@@ -2287,7 +2299,6 @@
           "label": "$oneDrive_out_name_label",
           "help": "$oneDrive_out_name_help"
         },
-
         {
           "name": "Path",
           "value": "string",
@@ -2332,7 +2343,9 @@
       "displayName": "$MSGraphWebhook_displayName",
       "direction": "in",
       "enabledInTryMode": false,
-      "filters": [ "MSGraph" ],
+      "filters": [
+        "MSGraph"
+      ],
       "documentation": "$content-Documentation\\GraphWebhook.md",
       "AADPermissions": [
         {
@@ -2414,7 +2427,9 @@
       "displayName": "$MSGraphWebhookCreator_displayName",
       "direction": "in",
       "enabledInTryMode": false,
-      "filters": [ "MSGraph" ],
+      "filters": [
+        "MSGraph"
+      ],
       "documentation": "$content=Documentation\\GraphWebhookCreator.md",
       "AADPermissions": [
         {
@@ -2561,8 +2576,12 @@
           "name": "disable",
           "type": "NAND",
           "values": [
-            { "value": "idToken" },
-            { "value": "PrincipalId" }
+            {
+              "value": "idToken"
+            },
+            {
+              "value": "PrincipalId"
+            }
           ]
         }
       ]
@@ -2572,7 +2591,9 @@
       "direction": "trigger",
       "displayName": "$MSGraphWebhookTrigger_displayName",
       "documentation": "$content=Documentation\\GraphWebhookTrigger.md",
-      "filters": [ "MSGraph" ],
+      "filters": [
+        "MSGraph"
+      ],
       "enabledInTryMode": false,
       "AADPermissions": [
         {
@@ -2816,7 +2837,9 @@
       "displayName": "$cosmosDB_trigger_displayName",
       "direction": "trigger",
       "enabledInTryMode": false,
-      "filters": [ "CosmosDB" ],
+      "filters": [
+        "CosmosDB"
+      ],
       "documentation": "$content=Documentation\\cosmosDBTrigger.md",
       "settings": [
         {
@@ -2845,7 +2868,7 @@
         {
           "name": "databaseName",
           "value": "string",
-          "defaultValue": "DatabaseToMonitor",
+          "defaultValue": "",
           "required": true,
           "label": "$cosmosDBIn_databaseName_label",
           "help": "$cosmosDBIn_databaseName_help"
@@ -2853,24 +2876,25 @@
         {
           "name": "collectionName",
           "value": "string",
-          "defaultValue": "CollectionToMonitor",
+          "defaultValue": "",
           "required": true,
           "label": "$cosmosDBIn_collectionName_label",
           "help": "$cosmosDBIn_collectionName_help"
         },
         {
-          "name": "leaseDatabaseName",
-          "value": "string",
-          "required": false,
-          "label": "$cosmosDBIn_leaseDatabaseName_label",
-          "help": "$cosmosDBIn_leaseDatabaseName_help"
-        },
-        {
           "name": "leaseCollectionName",
           "value": "string",
-          "required": false,
+          "required": true,
           "label": "$cosmosDBIn_leaseCollectionName_label",
           "help": "$cosmosDBIn_leaseCollectionName_help"
+        },
+        {
+          "name": "createLeaseCollectionIfNotExists",
+          "value": "boolean",
+          "defaultValue": true,
+          "required": true,
+          "label": "$cosmosDBIn_createIfNotExists_label",
+          "help": "$cosmosDBIn_createIfNotExists_help"
         }
       ]
     }
