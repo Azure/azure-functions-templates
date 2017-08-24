@@ -48,6 +48,7 @@
     <None Include="Templates\BlobTrigger-TypeScript\sample.dat" />
     <None Include="Templates\IoTHubServiceBusQueueTrigger-CSharp\function.json" />
     <None Include="Templates\IoTHubServiceBusQueueTrigger-CSharp\metadata.json" />
+    <None Include="Templates\IoTHubServiceBusQueueTrigger-CSharp\run.csx" />
     <None Include="Templates\IoTHubServiceBusQueueTrigger-CSharp\sample.dat" />
     <None Include="Templates\IoTHubServiceBusQueueTrigger-FSharp\function.json" />
     <None Include="Templates\IoTHubServiceBusQueueTrigger-FSharp\metadata.json" />
@@ -61,6 +62,7 @@
     <None Include="Templates\IoTHubServiceBusQueueTrigger-TypeScript\sample.dat" />
     <None Include="Templates\IoTHubServiceBusTopicTrigger-CSharp\function.json" />
     <None Include="Templates\IoTHubServiceBusTopicTrigger-CSharp\metadata.json" />
+    <None Include="Templates\IoTHubServiceBusTopicTrigger-CSharp\run.csx" />
     <None Include="Templates\IoTHubServiceBusTopicTrigger-CSharp\sample.dat" />
     <None Include="Templates\IoTHubServiceBusTopicTrigger-FSharp\function.json" />
     <None Include="Templates\IoTHubServiceBusTopicTrigger-FSharp\metadata.json" />
@@ -74,6 +76,7 @@
     <None Include="Templates\IoTHubServiceBusTopicTrigger-TypeScript\sample.dat" />
     <None Include="Templates\IoTHubTrigger-CSharp\function.json" />
     <None Include="Templates\IoTHubTrigger-CSharp\metadata.json" />
+    <None Include="Templates\IoTHubTrigger-CSharp\run.csx" />
     <None Include="Templates\IoTHubTrigger-CSharp\sample.dat" />
     <None Include="Templates\EventHubTrigger-CSharp\run.cs" />
     <Content Include="Templates\EventGridTrigger-JavaScript\index.js" />
@@ -593,12 +596,9 @@
     <Content Include="Templates\TimerTrigger-FSharp\run.fsx" />
     <Content Include="Templates\TimerTrigger-JavaScript\index.js" />
     <Content Include="Templates\ImageResizer-CSharp\ImageResizerCSharp.cs" />
-    <Content Include="Templates\IoTHubTrigger-CSharp\run.cs" />
     <Content Include="Templates\IoTHubServiceBusQueueTrigger-TypeScript\index.ts" />
     <Content Include="Templates\IoTHubServiceBusTopicTrigger-TypeScript\index.ts" />
     <Content Include="Templates\IoTHubTrigger-TypeScript\index.ts" />
-    <Content Include="Templates\IoTHubServiceBusQueueTrigger-CSharp\run.cs" />
-    <Content Include="Templates\IoTHubServiceBusTopicTrigger-CSharp\run.cs" />
   </ItemGroup>
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
     <RemoveDir Directories=".\bin\Portal" />
