@@ -17,7 +17,7 @@
             "description": "namespace for the generated code",
             "replaces": "Company.Function",
             "type": "parameter"
-        },        
+        },
         "Connection": {
             "description": "The name of the app setting containing your Storage connection.",
             "type": "parameter",
@@ -36,5 +36,17 @@
             "path": "BlobTriggerCSharp.cs"
         }
     ],
-    "defaultName": "BlobTriggerCSharp"    
+    "defaultName": "BlobTriggerCSharp",
+    "postActions": [
+        {
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+            "description": "Opens the function class file in the editor",
+            "manualInstructions": [],
+            "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+            "args": {
+                "files": "0"
+            },
+            "continueOnError": true
+        }
+    ]
 }
