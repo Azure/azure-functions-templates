@@ -1757,6 +1757,10 @@
       "filters": [
         "MSGraph"
       ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Samples.Extension",
+        "version": "1.0.0"
+      },
       "AADPermissions": [
         {
           "resourceAppId": "00000002-0000-0000-c000-000000000000",
@@ -1785,33 +1789,64 @@
           "help": "$token_in_resource_help"
         },
         {
-          "name": "PrincipalId",
+          "name": "UserId",
           "value": "string",
-          "resource": "AppSetting",
-          "required": false,
-          "label": "$principal_id_label_token",
-          "help": "$principal_id_help_token"
+          "label": "$userid_label",
+          "help": "$userid_help"
         },
         {
-          "name": "idToken",
+          "name": "UserToken",
           "value": "string",
-          "required": false,
-          "label": "$idToken_label_token",
-          "help": "$idToken_help_token"
+          "label": "$usertoken_help",
+          "help": "$usertoken_help"
         }
       ],
       "rules": [
         {
-          "name": "disable",
-          "type": "NAND",
+          "name": "Identity",
+          "type": "exclusivity",
           "values": [
             {
-              "value": "idToken"
+              "value": "UserFromRequest",
+              "display": "UserFromRequest",
+              "hiddenSettings": [
+                "UserId",
+                "UserToken"
+              ],
+              "shownSettings": []
             },
             {
-              "value": "PrincipalId"
+              "value": "UserId",
+              "display": "UserFromId",
+              "hiddenSettings": [
+                "UserToken"
+              ],
+              "shownSettings": [
+                "UserId"
+              ]
+            },
+            {
+              "value": "UserToken",
+              "display": "UserFromToken",
+              "hiddenSettings": [
+                "UserId"
+              ],
+              "shownSettings": [
+                "UserToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "ClientCredentials",
+              "hiddenSettings": [
+                "UserId",
+                "UserToken"
+              ],
+              "shownSettings": []
             }
-          ]
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
         }
       ]
     },
@@ -1823,6 +1858,10 @@
       "filters": [
         "MSGraph"
       ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Samples.Extension",
+        "version": "1.0.0"
+      },
       "AADPermissions": [
         {
           "resourceAppId": "00000002-0000-0000-c000-000000000000",
@@ -1898,33 +1937,64 @@
           "help": "$excel_in_tableName_help"
         },
         {
-          "name": "PrincipalId",
+          "name": "UserId",
           "value": "string",
-          "resource": "AppSetting",
-          "required": false,
-          "label": "$principal_id_label_excel_in",
-          "help": "$principal_id_help_excel_in"
+          "label": "$userid_label",
+          "help": "$userid_help"
         },
         {
-          "name": "idToken",
+          "name": "UserToken",
           "value": "string",
-          "required": false,
-          "label": "$idToken_label_excel_in",
-          "help": "$idToken_help_excel_in"
+          "label": "$usertoken_help",
+          "help": "$usertoken_help"
         }
       ],
       "rules": [
         {
-          "name": "disable",
-          "type": "NAND",
+          "name": "Identity",
+          "type": "exclusivity",
           "values": [
             {
-              "value": "idToken"
+              "value": "UserFromRequest",
+              "display": "UserFromRequest",
+              "hiddenSettings": [
+                "UserId",
+                "UserToken"
+              ],
+              "shownSettings": []
             },
             {
-              "value": "PrincipalId"
+              "value": "UserId",
+              "display": "UserFromId",
+              "hiddenSettings": [
+                "UserToken"
+              ],
+              "shownSettings": [
+                "UserId"
+              ]
+            },
+            {
+              "value": "UserToken",
+              "display": "UserFromToken",
+              "hiddenSettings": [
+                "UserId"
+              ],
+              "shownSettings": [
+                "UserToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "ClientCredentials",
+              "hiddenSettings": [
+                "UserId",
+                "UserToken"
+              ],
+              "shownSettings": []
             }
-          ]
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
         }
       ]
     },
@@ -1936,6 +2006,10 @@
       "filters": [
         "MSGraph"
       ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Samples.Extension",
+        "version": "1.0.0"
+      },
       "documentation": "$content=Documentation\\ExcelOut.md",
       "AADPermissions": [
         {
@@ -2029,33 +2103,64 @@
           "help": "$excel_out_updateType_help"
         },
         {
-          "name": "PrincipalId",
+          "name": "UserId",
           "value": "string",
-          "resource": "AppSetting",
-          "required": false,
-          "label": "$principal_id_label_excel_out",
-          "help": "$principal_id_help_excel_out"
+          "label": "$userid_label",
+          "help": "$userid_help"
         },
         {
-          "name": "idToken",
+          "name": "UserToken",
           "value": "string",
-          "required": false,
-          "label": "$idToken_label_excel_out",
-          "help": "$idToken_help_excel_out"
+          "label": "$usertoken_help",
+          "help": "$usertoken_help"
         }
       ],
       "rules": [
         {
-          "name": "disable",
-          "type": "NAND",
+          "name": "Identity",
+          "type": "exclusivity",
           "values": [
             {
-              "value": "idToken"
+              "value": "UserFromRequest",
+              "display": "UserFromRequest",
+              "hiddenSettings": [
+                "UserId",
+                "UserToken"
+              ],
+              "shownSettings": []
             },
             {
-              "value": "PrincipalId"
+              "value": "UserId",
+              "display": "UserFromId",
+              "hiddenSettings": [
+                "UserToken"
+              ],
+              "shownSettings": [
+                "UserId"
+              ]
+            },
+            {
+              "value": "UserToken",
+              "display": "UserFromToken",
+              "hiddenSettings": [
+                "UserId"
+              ],
+              "shownSettings": [
+                "UserToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "ClientCredentials",
+              "hiddenSettings": [
+                "UserId",
+                "UserToken"
+              ],
+              "shownSettings": []
             }
-          ]
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
         }
       ]
     },
@@ -2067,6 +2172,10 @@
       "filters": [
         "MSGraph"
       ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Samples.Extension",
+        "version": "1.0.0"
+      },
       "documentation": "$content=Documentation\\Outlook.md",
       "AADPermissions": [
         {
@@ -2114,33 +2223,64 @@
           "help": "$outlook_out_name_help"
         },
         {
-          "name": "PrincipalId",
+          "name": "UserId",
           "value": "string",
-          "resource": "AppSetting",
-          "required": false,
-          "label": "$principal_id_label_outlook",
-          "help": "$principal_id_help_outlook"
+          "label": "$userid_label",
+          "help": "$userid_help"
         },
         {
-          "name": "idToken",
+          "name": "UserToken",
           "value": "string",
-          "required": false,
-          "label": "$idToken_label_outlook",
-          "help": "$idToken_help_outlook"
+          "label": "$usertoken_help",
+          "help": "$usertoken_help"
         }
       ],
       "rules": [
         {
-          "name": "disable",
-          "type": "NAND",
+          "name": "Identity",
+          "type": "exclusivity",
           "values": [
             {
-              "value": "idToken"
+              "value": "UserFromRequest",
+              "display": "UserFromRequest",
+              "hiddenSettings": [
+                "UserId",
+                "UserToken"
+              ],
+              "shownSettings": []
             },
             {
-              "value": "PrincipalId"
+              "value": "UserId",
+              "display": "UserFromId",
+              "hiddenSettings": [
+                "UserToken"
+              ],
+              "shownSettings": [
+                "UserId"
+              ]
+            },
+            {
+              "value": "UserToken",
+              "display": "UserFromToken",
+              "hiddenSettings": [
+                "UserId"
+              ],
+              "shownSettings": [
+                "UserToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "ClientCredentials",
+              "hiddenSettings": [
+                "UserId",
+                "UserToken"
+              ],
+              "shownSettings": []
             }
-          ]
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
         }
       ]
     },
@@ -2152,6 +2292,10 @@
       "filters": [
         "MSGraph"
       ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Samples.Extension",
+        "version": "1.0.0"
+      },
       "documentation": "$content=Documentation\\OneDriveIn.md",
       "AADPermissions": [
         {
@@ -2211,33 +2355,64 @@
           "help": "$oneDrive_in_path_help"
         },
         {
-          "name": "PrincipalId",
+          "name": "UserId",
           "value": "string",
-          "resource": "AppSetting",
-          "required": false,
-          "label": "$principal_id_label_onedrive_in",
-          "help": "$principal_id_help_onedrive_in"
+          "label": "$userid_label",
+          "help": "$userid_help"
         },
         {
-          "name": "idToken",
+          "name": "UserToken",
           "value": "string",
-          "required": false,
-          "label": "$idToken_label_onedrive_in",
-          "help": "$idToken_help_onedrive_in"
+          "label": "$usertoken_help",
+          "help": "$usertoken_help"
         }
       ],
       "rules": [
         {
-          "name": "disable",
-          "type": "NAND",
+          "name": "Identity",
+          "type": "exclusivity",
           "values": [
             {
-              "value": "idToken"
+              "value": "UserFromRequest",
+              "display": "UserFromRequest",
+              "hiddenSettings": [
+                "UserId",
+                "UserToken"
+              ],
+              "shownSettings": []
             },
             {
-              "value": "PrincipalId"
+              "value": "UserId",
+              "display": "UserFromId",
+              "hiddenSettings": [
+                "UserToken"
+              ],
+              "shownSettings": [
+                "UserId"
+              ]
+            },
+            {
+              "value": "UserToken",
+              "display": "UserFromToken",
+              "hiddenSettings": [
+                "UserId"
+              ],
+              "shownSettings": [
+                "UserToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "ClientCredentials",
+              "hiddenSettings": [
+                "UserId",
+                "UserToken"
+              ],
+              "shownSettings": []
             }
-          ]
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
         }
       ]
     },
@@ -2249,6 +2424,10 @@
       "filters": [
         "MSGraph"
       ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Samples.Extension",
+        "version": "1.0.0"
+      },
       "documentation": "$content=Documentation\\OneDriveOut.md",
       "AADPermissions": [
         {
@@ -2308,33 +2487,64 @@
           "help": "$oneDrive_out_path_help"
         },
         {
-          "name": "PrincipalId",
+          "name": "UserId",
           "value": "string",
-          "resource": "AppSetting",
-          "required": false,
-          "label": "$principal_id_label_onedrive_out",
-          "help": "$principal_id_help_onedrive_out"
+          "label": "$userid_label",
+          "help": "$userid_help"
         },
         {
-          "name": "idToken",
+          "name": "UserToken",
           "value": "string",
-          "required": false,
-          "label": "$idToken_label_onedrive_out",
-          "help": "$idToken_help_onedrive_out"
+          "label": "$usertoken_help",
+          "help": "$usertoken_help"
         }
       ],
       "rules": [
         {
-          "name": "disable",
-          "type": "NAND",
+          "name": "Identity",
+          "type": "exclusivity",
           "values": [
             {
-              "value": "idToken"
+              "value": "UserFromRequest",
+              "display": "UserFromRequest",
+              "hiddenSettings": [
+                "UserId",
+                "UserToken"
+              ],
+              "shownSettings": []
             },
             {
-              "value": "PrincipalId"
+              "value": "UserId",
+              "display": "UserFromId",
+              "hiddenSettings": [
+                "UserToken"
+              ],
+              "shownSettings": [
+                "UserId"
+              ]
+            },
+            {
+              "value": "UserToken",
+              "display": "UserFromToken",
+              "hiddenSettings": [
+                "UserId"
+              ],
+              "shownSettings": [
+                "UserToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "ClientCredentials",
+              "hiddenSettings": [
+                "UserId",
+                "UserToken"
+              ],
+              "shownSettings": []
             }
-          ]
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
         }
       ]
     },
@@ -2346,6 +2556,10 @@
       "filters": [
         "MSGraph"
       ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Samples.Extension",
+        "version": "1.0.0"
+      },
       "documentation": "$content-Documentation\\GraphWebhook.md",
       "AADPermissions": [
         {
@@ -2419,6 +2633,66 @@
           "required": true,
           "label": "$MSGraphWebhook_in_name_label",
           "help": "$MSGraphWebhook_in_name_help"
+        },
+        {
+          "name": "UserId",
+          "value": "string",
+          "label": "$userid_label",
+          "help": "$userid_help"
+        },
+        {
+          "name": "UserToken",
+          "value": "string",
+          "label": "$usertoken_help",
+          "help": "$usertoken_help"
+        }
+      ],
+      "rules": [
+        {
+          "name": "Identity",
+          "type": "exclusivity",
+          "values": [
+            {
+              "value": "UserFromRequest",
+              "display": "UserFromRequest",
+              "hiddenSettings": [
+                "UserId",
+                "UserToken"
+              ],
+              "shownSettings": []
+            },
+            {
+              "value": "UserId",
+              "display": "UserFromId",
+              "hiddenSettings": [
+                "UserToken"
+              ],
+              "shownSettings": [
+                "UserId"
+              ]
+            },
+            {
+              "value": "UserToken",
+              "display": "UserFromToken",
+              "hiddenSettings": [
+                "UserId"
+              ],
+              "shownSettings": [
+                "UserToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "ClientCredentials",
+              "hiddenSettings": [
+                "UserId",
+                "UserToken"
+              ],
+              "shownSettings": []
+            }
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
         }
       ]
     },
@@ -2430,6 +2704,10 @@
       "filters": [
         "MSGraph"
       ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Samples.Extension",
+        "version": "1.0.0"
+      },
       "documentation": "$content=Documentation\\GraphWebhookCreator.md",
       "AADPermissions": [
         {
@@ -2556,33 +2834,64 @@
           "required": true
         },
         {
-          "name": "PrincipalId",
+          "name": "UserId",
           "value": "string",
-          "resource": "AppSetting",
-          "required": false,
-          "label": "$principal_id_label_graphwebhook",
-          "help": "$principal_id_help_graphwebhook"
+          "label": "$userid_label",
+          "help": "$userid_help"
         },
         {
-          "name": "idToken",
+          "name": "UserToken",
           "value": "string",
-          "required": false,
-          "label": "$idToken_label_graphwebhook",
-          "help": "$idToken_help_graphwebhook"
+          "label": "$usertoken_help",
+          "help": "$usertoken_help"
         }
       ],
       "rules": [
         {
-          "name": "disable",
-          "type": "NAND",
+          "name": "Identity",
+          "type": "exclusivity",
           "values": [
             {
-              "value": "idToken"
+              "value": "UserFromRequest",
+              "display": "UserFromRequest",
+              "hiddenSettings": [
+                "UserId",
+                "UserToken"
+              ],
+              "shownSettings": []
             },
             {
-              "value": "PrincipalId"
+              "value": "UserId",
+              "display": "UserFromId",
+              "hiddenSettings": [
+                "UserToken"
+              ],
+              "shownSettings": [
+                "UserId"
+              ]
+            },
+            {
+              "value": "UserToken",
+              "display": "UserFromToken",
+              "hiddenSettings": [
+                "UserId"
+              ],
+              "shownSettings": [
+                "UserToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "ClientCredentials",
+              "hiddenSettings": [
+                "UserId",
+                "UserToken"
+              ],
+              "shownSettings": []
             }
-          ]
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
         }
       ]
     },
@@ -2594,6 +2903,10 @@
       "filters": [
         "MSGraph"
       ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Samples.Extension",
+        "version": "1.0.0"
+      },
       "enabledInTryMode": false,
       "AADPermissions": [
         {
@@ -2720,6 +3033,18 @@
           "required": true,
           "label": "$MSGraphWebhook_in_changeType_label",
           "help": "$MSGraphWebhook_in_changeType_help"
+        },
+        {
+          "name": "UserId",
+          "value": "string",
+          "label": "$userid_label",
+          "help": "$userid_help"
+        },
+        {
+          "name": "UserToken",
+          "value": "string",
+          "label": "$usertoken_help",
+          "help": "$usertoken_help"
         }
       ],
       "rules": [
@@ -2806,6 +3131,52 @@
           ],
           "label": "$MSGraphWebhook_in_listen_label",
           "help": "$MSGraphWebhook_in_listen_help"
+        },
+        {
+          "name": "Identity",
+          "type": "exclusivity",
+          "values": [
+            {
+              "value": "UserFromRequest",
+              "display": "UserFromRequest",
+              "hiddenSettings": [
+                "UserId",
+                "UserToken"
+              ],
+              "shownSettings": []
+            },
+            {
+              "value": "UserId",
+              "display": "UserFromId",
+              "hiddenSettings": [
+                "UserToken"
+              ],
+              "shownSettings": [
+                "UserId"
+              ]
+            },
+            {
+              "value": "UserToken",
+              "display": "UserFromToken",
+              "hiddenSettings": [
+                "UserId"
+              ],
+              "shownSettings": [
+                "UserToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "ClientCredentials",
+              "hiddenSettings": [
+                "UserId",
+                "UserToken"
+              ],
+              "shownSettings": []
+            }
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
         }
       ]
     },

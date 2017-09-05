@@ -1629,4 +1629,25 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   <data name="EventGridTriggerJavascript_description" xml:space="preserve">
     <value>A JavaScript function that will be run whenever an event grid receives a new event</value>
   </data>
+  <data name="Identity_help" xml:space="preserve">
+    <value>UserFromRequest: Same as UserFromToken with the user token taken from the X-MS-TOKEN-AAD-ID-TOKEN header. Only works for HttpTrigger
+UserFromToken: Obtains the access token on behalf of the user whose token is in the userToken field of metadata. 
+UserFromId: Obtains the access token for the user with the id found in the userId field of metadata.
+ClientCredentials: Obtains the access token for the client credentials found in the application settings.</value>
+  </data>
+  <data name="Identity_label" xml:space="preserve">
+    <value>Identity</value>
+  </data>
+  <data name="userid_help" xml:space="preserve">
+    <value>The user id to be used for the token.</value>
+  </data>
+  <data name="userid_label" xml:space="preserve">
+    <value>UserId</value>
+  </data>
+  <data name="usertoken_help" xml:space="preserve">
+    <value>The user token of the user to be used for the token.</value>
+  </data>
+  <data name="usertoken_label" xml:space="preserve">
+    <value>UserToken</value>
+  </data>
 </root>
