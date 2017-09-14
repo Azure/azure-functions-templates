@@ -1,7 +1,7 @@
 #### Settings for Cosmos DB input binding
 
 - `name` : Variable name used in function code for the document.
-- `type` : must be set to "Cosmos DB".
+- `type` : must be set to "documentdb".
 - `databaseName` : The database containing the document.
 - `collectionName` : The collection containing the document.
 - `id` : The Id of the document to retrieve. This property supports bindings similar to `{queueTrigger}`, which will use the string value of the queue message as the document Id.
