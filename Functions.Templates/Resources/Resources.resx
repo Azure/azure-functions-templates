@@ -1147,7 +1147,7 @@
     <value>Click to retrieve your Principal ID</value>
   </data>
   <data name="excel_in_displayName" xml:space="preserve">
-    <value>Excel</value>
+    <value>Excel table</value>
   </data>
   <data name="excel_in_name_label" xml:space="preserve">
     <value>Table parameter name</value>
@@ -1156,19 +1156,19 @@
     <value>Name used to identify this binding in your function code.</value>
   </data>
   <data name="excel_in_path_label" xml:space="preserve">
-    <value>Path to Excel workbook</value>
+    <value>Path to the Excel workbook</value>
   </data>
   <data name="excel_in_path_help" xml:space="preserve">
     <value>Path from root of OneDrive to Excel workbook to be read (e.g. "Documents/Test.xlsx")</value>
   </data>
   <data name="excel_in_worksheetName_label" xml:space="preserve">
-    <value>Excel Worksheet Name</value>
+    <value>Worksheet Name</value>
   </data>
   <data name="excel_in_worksheetName_help" xml:space="preserve">
     <value>Name of worksheet within specified workbook (e.g. "Sheet1")</value>
   </data>
   <data name="excel_in_tableName_label" xml:space="preserve">
-    <value>Excel table name</value>
+    <value>Table name</value>
   </data>
   <data name="excel_in_tableName_help" xml:space="preserve">
     <value>Name of table within specified worksheet of workbook (e.g. "Table1")</value>
@@ -1177,7 +1177,7 @@
     <value>Path must be valid</value>
   </data>
   <data name="excel_out_displayName" xml:space="preserve">
-    <value>Excel</value>
+    <value>Excel table</value>
   </data>
   <data name="excel_out_name_label" xml:space="preserve">
     <value>Table parameter name</value>
@@ -1186,25 +1186,25 @@
     <value>Name used to identify this binding in your function code.</value>
   </data>
   <data name="excel_out_path_label" xml:space="preserve">
-    <value>Path to Excel workbook</value>
+    <value>Path to the Excel workbook</value>
   </data>
   <data name="excel_out_path_help" xml:space="preserve">
     <value>Path from root of OneDrive to Excel workbook to be modified (e.g. "Documents/Test.xlsx")</value>
   </data>
   <data name="excel_out_worksheetName_label" xml:space="preserve">
-    <value>Excel Worksheet Name</value>
+    <value>Worksheet Name</value>
   </data>
   <data name="excel_out_worksheetName_help" xml:space="preserve">
     <value>Name of worksheet within specified workbook (e.g. "Sheet1")</value>
   </data>
   <data name="excel_out_tableName_label" xml:space="preserve">
-    <value>Excel table name</value>
+    <value>Table name</value>
   </data>
   <data name="excel_out_tableName_help" xml:space="preserve">
     <value>Name of table within specified worksheet of workbook (e.g. "Table1")</value>
   </data>
   <data name="excel_out_updateType_label" xml:space="preserve">
-    <value>Append rows or update existing</value>
+    <value>Edit mode</value>
   </data>
   <data name="excel_out_updateType_help" xml:space="preserve">
     <value>Either append rows or update (replace) the table or worksheet's existing rows</value>
@@ -1213,19 +1213,19 @@
     <value>Path must be valid</value>
   </data>
   <data name="outlook_displayName" xml:space="preserve">
-    <value>Outlook Email</value>
+    <value>Outlook mail message</value>
   </data>
   <data name="outlook_out_label_help" xml:space="preserve">
     <value>Name used to identify this binding in your function code</value>
   </data>
   <data name="outlook_out_label_name" xml:space="preserve">
-    <value>Email parameter name</value>
+    <value>Message parameter name</value>
   </data>
   <data name="outlook_out_name_help" xml:space="preserve">
     <value>Name used to identify this binding in your function code</value>
   </data>
   <data name="outlook_out_name_label" xml:space="preserve">
-    <value>Email parameter name</value>
+    <value>Message parameter name</value>
   </data>
   <data name="principal_id_label_token" xml:space="preserve">
     <value>Principal ID App Setting name</value>
@@ -1447,7 +1447,7 @@ Windows Azure Service Management API - Access Azure Service Management as organi
     <value>eventHubName</value>
   </data>
   <data name="oneDrive_in_displayName" xml:space="preserve">
-    <value>OneDrive</value>
+    <value>OneDrive file</value>
   </data>
   <data name="oneDrive_in_name_help" xml:space="preserve">
     <value>Name used to identify this binding in your function code.</value>
@@ -1456,16 +1456,16 @@ Windows Azure Service Management API - Access Azure Service Management as organi
     <value>File parameter name</value>
   </data>
   <data name="oneDrive_in_path_help" xml:space="preserve">
-    <value>Path from root OneDrive folder to file</value>
+    <value>Path from root OneDrive folder to file (e.g. "Documents/Test.xlsx")</value>
   </data>
   <data name="oneDrive_in_path_label" xml:space="preserve">
-    <value>Path</value>
+    <value>Path to file</value>
   </data>
   <data name="oneDrive_in_path_error" xml:space="preserve">
     <value>Path must be valid</value>
   </data>
   <data name="oneDrive_out_displayName" xml:space="preserve">
-    <value>OneDrive</value>
+    <value>OneDrive file</value>
   </data>
   <data name="oneDrive_out_name_help" xml:space="preserve">
     <value>Name used to identify this binding in your function code.</value>
@@ -1474,10 +1474,10 @@ Windows Azure Service Management API - Access Azure Service Management as organi
     <value>File parameter name</value>
   </data>
   <data name="oneDrive_out_path_help" xml:space="preserve">
-    <value>Path from root OneDrive folder to file</value>
+    <value>Path from root OneDrive folder to file (e.g. "Documents/Test.xlsx")</value>
   </data>
   <data name="oneDrive_out_path_label" xml:space="preserve">
-    <value>Path</value>
+    <value>Path to file</value>
   </data>
   <data name="oneDrive_out_path_error" xml:space="preserve">
     <value>Path must be valid</value>
@@ -1486,7 +1486,7 @@ Windows Azure Service Management API - Access Azure Service Management as organi
     <value>O365 Webhook Handler</value>
   </data>
   <data name="MSGraphWebhook_in_name_label" xml:space="preserve">
-    <value>Webhook parameter name</value>
+    <value>Subscription parameter name</value>
   </data>
   <data name="MSGraphWebhook_in_changeType_help" xml:space="preserve">
     <value>Webhook will trigger when the specified resource is created, updated, and/or deleted </value>
@@ -1498,13 +1498,13 @@ Windows Azure Service Management API - Access Azure Service Management as organi
     <value>List of resources currently supported by Microsoft Graph for webhook subscription</value>
   </data>
   <data name="MSGraphWebhook_in_listen_label" xml:space="preserve">
-    <value>Resource to Subscribe to</value>
+    <value>Resource to subscribe to</value>
   </data>
   <data name="MSGraphWebhookTrigger_displayName" xml:space="preserve">
-    <value>O365 Webhook</value>
+    <value>Microsoft Graph webhook</value>
   </data>
   <data name="MSGraphWebhookTrigger_in_name_label" xml:space="preserve">
-    <value>Trigger parameter name</value>
+    <value>Modified resource parameter name</value>
   </data>
   <data name="MSGraphWebhookTrigger_Type_help" xml:space="preserve">
     <value>The type of this will determine what kinds of notifications will trigger your function</value>
@@ -1519,34 +1519,34 @@ Windows Azure Service Management API - Access Azure Service Management as organi
     <value>Periodically refreshes all O365 subscriptions</value>
   </data>
   <data name="token_displayName" xml:space="preserve">
-    <value>Token</value>
+    <value>Auth token</value>
   </data>
   <data name="token_in_name_help" xml:space="preserve">
     <value>Name of the parameter used to identify this token in your code</value>
   </data>
   <data name="token_in_name_label" xml:space="preserve">
-    <value>Token Name</value>
+    <value>Auth token parameter name</value>
   </data>
   <data name="token_in_resource_help" xml:space="preserve">
-    <value>Binding will do a token exchange for the specified resource. Example: https://graph.microsoft.com</value>
+    <value>The binding will obtain a token for the specified resource. Example: https://graph.microsoft.com</value>
   </data>
   <data name="token_in_resource_label" xml:space="preserve">
-    <value>Resource</value>
+    <value>Resource URL</value>
   </data>
   <data name="MSGraphWebhookCreator_displayName" xml:space="preserve">
-    <value>MS Graph Webhook Creator</value>
+    <value>Microsoft Graph webhook subscription</value>
   </data>
   <data name="MSGraphWebhookCreator_in_name_help" xml:space="preserve">
-    <value>Name used to identify webhook creator in your function code</value>
+    <value>Name used to identify this binding in your function code.</value>
   </data>
   <data name="MSGraphWebhookCreator_in_name_label" xml:space="preserve">
-    <value>Creator name</value>
+    <value>Subscription parameter name</value>
   </data>
   <data name="MSGraphWebhookTrigger_in_help_label" xml:space="preserve">
-    <value>Name used to identify trigger payload/notification in your function code</value>
+    <value>Name used to identify the modified resource in your function code</value>
   </data>
   <data name="MSGraphWebhook_in_name_help" xml:space="preserve">
-    <value>Name used to identify webhook handler in your function code</value>
+    <value>Name used to identify this binding in your function code</value>
   </data>
   <data name="temp_category_msgraph" xml:space="preserve">
     <value>MSGraph</value>
@@ -1642,15 +1642,15 @@ ClientCredentials: Obtains the access token for the client credentials found in 
     <value>Identity</value>
   </data>
   <data name="userid_help" xml:space="preserve">
-    <value>The user id to be used for the token.</value>
+    <value>The user ID of a user who has previously logged into the app.</value>
   </data>
   <data name="userid_label" xml:space="preserve">
-    <value>UserId</value>
+    <value>User ID</value>
   </data>
   <data name="usertoken_help" xml:space="preserve">
-    <value>The user token of the user to be used for the token.</value>
+    <value>A token with the function app as the audience.</value>
   </data>
   <data name="usertoken_label" xml:space="preserve">
-    <value>UserToken</value>
+    <value>User token</value>
   </data>
 </root>
