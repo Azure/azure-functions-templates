@@ -1782,20 +1782,20 @@
           "help": "$token_in_name_help"
         },
         {
-          "name": "Resource",
+          "name": "resource",
           "value": "string",
           "required": false,
           "label": "$token_in_resource_label",
           "help": "$token_in_resource_help"
         },
         {
-          "name": "UserId",
+          "name": "userId",
           "value": "string",
           "label": "$userid_label",
           "help": "$userid_help"
         },
         {
-          "name": "UserToken",
+          "name": "userToken",
           "value": "string",
           "label": "$usertoken_help",
           "help": "$usertoken_help"
@@ -1810,37 +1810,37 @@
               "value": "UserFromRequest",
               "display": "UserFromRequest",
               "hiddenSettings": [
-                "UserId",
-                "UserToken"
+                "userId",
+                "userToken"
               ],
               "shownSettings": []
             },
             {
-              "value": "UserId",
+              "value": "userId",
               "display": "UserFromId",
               "hiddenSettings": [
-                "UserToken"
+                "userToken"
               ],
               "shownSettings": [
-                "UserId"
+                "userId"
               ]
             },
             {
-              "value": "UserToken",
+              "value": "userToken",
               "display": "UserFromToken",
               "hiddenSettings": [
-                "UserId"
+                "userId"
               ],
               "shownSettings": [
-                "UserToken"
+                "userToken"
               ]
             },
             {
               "value": "ClientCredentials",
               "display": "ClientCredentials",
               "hiddenSettings": [
-                "UserId",
-                "UserToken"
+                "userId",
+                "userToken"
               ],
               "shownSettings": []
             }
@@ -1913,7 +1913,7 @@
           "help": "$excel_in_name_help"
         },
         {
-          "name": "Path",
+          "name": "path",
           "value": "string",
           "defaultValue": "Workbook.xlsx",
           "required": true,
@@ -1921,7 +1921,7 @@
           "help": "$excel_in_path_help"
         },
         {
-          "name": "WorksheetName",
+          "name": "worksheetName",
           "value": "string",
           "defaultValue": "Sheet1",
           "required": true,
@@ -1929,7 +1929,7 @@
           "help": "$excel_in_worksheetName_help"
         },
         {
-          "name": "TableName",
+          "name": "tableName",
           "value": "string",
           "defaultValue": "Table1",
           "required": false,
@@ -1937,13 +1937,13 @@
           "help": "$excel_in_tableName_help"
         },
         {
-          "name": "UserId",
+          "name": "userId",
           "value": "string",
           "label": "$userid_label",
           "help": "$userid_help"
         },
         {
-          "name": "UserToken",
+          "name": "userToken",
           "value": "string",
           "label": "$usertoken_help",
           "help": "$usertoken_help"
@@ -1951,44 +1951,44 @@
       ],
       "rules": [
         {
-          "name": "Identity",
+          "name": "identity",
           "type": "exclusivity",
           "values": [
             {
               "value": "UserFromRequest",
               "display": "UserFromRequest",
               "hiddenSettings": [
-                "UserId",
-                "UserToken"
+                "userId",
+                "userToken"
               ],
               "shownSettings": []
             },
             {
-              "value": "UserId",
+              "value": "userId",
               "display": "UserFromId",
               "hiddenSettings": [
-                "UserToken"
+                "userToken"
               ],
               "shownSettings": [
-                "UserId"
+                "userId"
               ]
             },
             {
-              "value": "UserToken",
+              "value": "userToken",
               "display": "UserFromToken",
               "hiddenSettings": [
-                "UserId"
+                "userId"
               ],
               "shownSettings": [
-                "UserToken"
+                "userToken"
               ]
             },
             {
               "value": "ClientCredentials",
               "display": "ClientCredentials",
               "hiddenSettings": [
-                "UserId",
-                "UserToken"
+                "userId",
+                "userToken"
               ],
               "shownSettings": []
             }
@@ -2061,7 +2061,7 @@
           "help": "$excel_out_name_help"
         },
         {
-          "name": "Path",
+          "name": "path",
           "value": "string",
           "defaultValue": "path/to/file.xlsx",
           "required": true,
@@ -2069,7 +2069,7 @@
           "help": "$excel_out_path_help"
         },
         {
-          "name": "WorksheetName",
+          "name": "worksheetName",
           "value": "string",
           "defaultValue": "Sheet1",
           "required": true,
@@ -2077,7 +2077,7 @@
           "help": "$excel_out_worksheetName_help"
         },
         {
-          "name": "TableName",
+          "name": "tableName",
           "value": "string",
           "defaultValue": "Table1",
           "required": false,
@@ -2085,7 +2085,7 @@
           "help": "$excel_out_tableName_help"
         },
         {
-          "name": "UpdateType",
+          "name": "updateType",
           "value": "enum",
           "defaultValue": "Append",
           "enum": [
@@ -2103,13 +2103,13 @@
           "help": "$excel_out_updateType_help"
         },
         {
-          "name": "UserId",
+          "name": "userId",
           "value": "string",
           "label": "$userid_label",
           "help": "$userid_help"
         },
         {
-          "name": "UserToken",
+          "name": "userToken",
           "value": "string",
           "label": "$usertoken_help",
           "help": "$usertoken_help"
@@ -2117,44 +2117,44 @@
       ],
       "rules": [
         {
-          "name": "Identity",
+          "name": "identity",
           "type": "exclusivity",
           "values": [
             {
               "value": "UserFromRequest",
               "display": "UserFromRequest",
               "hiddenSettings": [
-                "UserId",
-                "UserToken"
+                "userId",
+                "userToken"
               ],
               "shownSettings": []
             },
             {
-              "value": "UserId",
+              "value": "userId",
               "display": "UserFromId",
               "hiddenSettings": [
-                "UserToken"
+                "userToken"
               ],
               "shownSettings": [
-                "UserId"
+                "userId"
               ]
             },
             {
-              "value": "UserToken",
+              "value": "userToken",
               "display": "UserFromToken",
               "hiddenSettings": [
-                "UserId"
+                "userId"
               ],
               "shownSettings": [
-                "UserToken"
+                "userToken"
               ]
             },
             {
               "value": "ClientCredentials",
               "display": "ClientCredentials",
               "hiddenSettings": [
-                "UserId",
-                "UserToken"
+                "userId",
+                "userToken"
               ],
               "shownSettings": []
             }
@@ -2223,13 +2223,13 @@
           "help": "$outlook_out_name_help"
         },
         {
-          "name": "UserId",
+          "name": "userId",
           "value": "string",
           "label": "$userid_label",
           "help": "$userid_help"
         },
         {
-          "name": "UserToken",
+          "name": "userToken",
           "value": "string",
           "label": "$usertoken_help",
           "help": "$usertoken_help"
@@ -2244,37 +2244,37 @@
               "value": "UserFromRequest",
               "display": "UserFromRequest",
               "hiddenSettings": [
-                "UserId",
-                "UserToken"
+                "userId",
+                "userToken"
               ],
               "shownSettings": []
             },
             {
-              "value": "UserId",
+              "value": "userId",
               "display": "UserFromId",
               "hiddenSettings": [
-                "UserToken"
+                "userToken"
               ],
               "shownSettings": [
-                "UserId"
+                "userId"
               ]
             },
             {
-              "value": "UserToken",
+              "value": "userToken",
               "display": "UserFromToken",
               "hiddenSettings": [
-                "UserId"
+                "userId"
               ],
               "shownSettings": [
-                "UserToken"
+                "userToken"
               ]
             },
             {
               "value": "ClientCredentials",
               "display": "ClientCredentials",
               "hiddenSettings": [
-                "UserId",
-                "UserToken"
+                "userId",
+                "userToken"
               ],
               "shownSettings": []
             }
@@ -2355,13 +2355,13 @@
           "help": "$oneDrive_in_path_help"
         },
         {
-          "name": "UserId",
+          "name": "userId",
           "value": "string",
           "label": "$userid_label",
           "help": "$userid_help"
         },
         {
-          "name": "UserToken",
+          "name": "userToken",
           "value": "string",
           "label": "$usertoken_help",
           "help": "$usertoken_help"
@@ -2376,37 +2376,37 @@
               "value": "UserFromRequest",
               "display": "UserFromRequest",
               "hiddenSettings": [
-                "UserId",
-                "UserToken"
+                "userId",
+                "userToken"
               ],
               "shownSettings": []
             },
             {
-              "value": "UserId",
+              "value": "userId",
               "display": "UserFromId",
               "hiddenSettings": [
-                "UserToken"
+                "userToken"
               ],
               "shownSettings": [
-                "UserId"
+                "userId"
               ]
             },
             {
-              "value": "UserToken",
+              "value": "userToken",
               "display": "UserFromToken",
               "hiddenSettings": [
-                "UserId"
+                "userId"
               ],
               "shownSettings": [
-                "UserToken"
+                "userToken"
               ]
             },
             {
               "value": "ClientCredentials",
               "display": "ClientCredentials",
               "hiddenSettings": [
-                "UserId",
-                "UserToken"
+                "userId",
+                "userToken"
               ],
               "shownSettings": []
             }
@@ -2487,13 +2487,13 @@
           "help": "$oneDrive_out_path_help"
         },
         {
-          "name": "UserId",
+          "name": "userId",
           "value": "string",
           "label": "$userid_label",
           "help": "$userid_help"
         },
         {
-          "name": "UserToken",
+          "name": "userToken",
           "value": "string",
           "label": "$usertoken_help",
           "help": "$usertoken_help"
@@ -2508,37 +2508,37 @@
               "value": "UserFromRequest",
               "display": "UserFromRequest",
               "hiddenSettings": [
-                "UserId",
-                "UserToken"
+                "userId",
+                "userToken"
               ],
               "shownSettings": []
             },
             {
-              "value": "UserId",
+              "value": "userId",
               "display": "UserFromId",
               "hiddenSettings": [
-                "UserToken"
+                "userToken"
               ],
               "shownSettings": [
-                "UserId"
+                "userId"
               ]
             },
             {
-              "value": "UserToken",
+              "value": "userToken",
               "display": "UserFromToken",
               "hiddenSettings": [
-                "UserId"
+                "userId"
               ],
               "shownSettings": [
-                "UserToken"
+                "userToken"
               ]
             },
             {
               "value": "ClientCredentials",
               "display": "ClientCredentials",
               "hiddenSettings": [
-                "UserId",
-                "UserToken"
+                "userId",
+                "userToken"
               ],
               "shownSettings": []
             }
@@ -2635,13 +2635,13 @@
           "help": "$MSGraphWebhook_in_name_help"
         },
         {
-          "name": "UserId",
+          "name": "userId",
           "value": "string",
           "label": "$userid_label",
           "help": "$userid_help"
         },
         {
-          "name": "UserToken",
+          "name": "userToken",
           "value": "string",
           "label": "$usertoken_help",
           "help": "$usertoken_help"
@@ -2656,37 +2656,37 @@
               "value": "UserFromRequest",
               "display": "UserFromRequest",
               "hiddenSettings": [
-                "UserId",
-                "UserToken"
+                "userId",
+                "userToken"
               ],
               "shownSettings": []
             },
             {
-              "value": "UserId",
+              "value": "userId",
               "display": "UserFromId",
               "hiddenSettings": [
-                "UserToken"
+                "userToken"
               ],
               "shownSettings": [
-                "UserId"
+                "userId"
               ]
             },
             {
-              "value": "UserToken",
+              "value": "userToken",
               "display": "UserFromToken",
               "hiddenSettings": [
-                "UserId"
+                "userId"
               ],
               "shownSettings": [
-                "UserToken"
+                "userToken"
               ]
             },
             {
               "value": "ClientCredentials",
               "display": "ClientCredentials",
               "hiddenSettings": [
-                "UserId",
-                "UserToken"
+                "userId",
+                "userToken"
               ],
               "shownSettings": []
             }
@@ -2785,11 +2785,6 @@
         {
           "name": "changeType",
           "value": "checkBoxList",
-          "defaultValue": [
-            "Created",
-            "Updated",
-            "Deleted"
-          ],
           "enum": [
             {
               "value": "Created",
@@ -2809,38 +2804,19 @@
           "help": "$MSGraphWebhook_in_changeType_help"
         },
         {
-          "name": "Listen",
-          "value": "enum",
-          "enum": [
-            {
-              "value": "me/mailFolders('Inbox')/Messages",
-              "display": "Email Messages"
-            },
-            {
-              "value": "me/drive/root",
-              "display": "OneDrive Root"
-            },
-            {
-              "value": "me/events",
-              "display": "Calendar events"
-            },
-            {
-              "value": "me/contacts",
-              "display": "Contacts"
-            }
-          ],
-          "label": "$MSGraphWebhook_in_listen_label",
-          "help": "$MSGraphWebhook_in_listen_help",
-          "required": true
-        },
-        {
-          "name": "UserId",
+          "name": "resource",
           "value": "string",
           "label": "$userid_label",
           "help": "$userid_help"
         },
         {
-          "name": "UserToken",
+          "name": "userId",
+          "value": "string",
+          "label": "$userid_label",
+          "help": "$userid_help"
+        },
+        {
+          "name": "userToken",
           "value": "string",
           "label": "$usertoken_help",
           "help": "$usertoken_help"
@@ -2855,37 +2831,37 @@
               "value": "UserFromRequest",
               "display": "UserFromRequest",
               "hiddenSettings": [
-                "UserId",
-                "UserToken"
+                "userId",
+                "userToken"
               ],
               "shownSettings": []
             },
             {
-              "value": "UserId",
+              "value": "userId",
               "display": "UserFromId",
               "hiddenSettings": [
-                "UserToken"
+                "userToken"
               ],
               "shownSettings": [
-                "UserId"
+                "userId"
               ]
             },
             {
-              "value": "UserToken",
+              "value": "userToken",
               "display": "UserFromToken",
               "hiddenSettings": [
-                "UserId"
+                "userId"
               ],
               "shownSettings": [
-                "UserToken"
+                "userToken"
               ]
             },
             {
               "value": "ClientCredentials",
               "display": "ClientCredentials",
               "hiddenSettings": [
-                "UserId",
-                "UserToken"
+                "userId",
+                "userToken"
               ],
               "shownSettings": []
             }
@@ -2982,40 +2958,15 @@
           "help": "$MSGraphWebhookTrigger_in_help_label"
         },
         {
-          "name": "Type",
-          "value": "enum",
-          "defaultValue": "#Microsoft.Graph.Message",
-          "required": true,
-          "isHidden": true,
-          "enum": [
-            {
-              "value": "#Microsoft.Graph.Message",
-              "display": "[Outlook] Emails"
-            },
-            {
-              "value": "#Microsoft.Graph.DriveItem",
-              "display": "Drive"
-            },
-            {
-              "value": "#Microsoft.Graph.Event",
-              "display": "Calendar Events"
-            },
-            {
-              "value": "#Microsoft.Graph.Contact",
-              "display": "Contacts"
-            }
-          ],
-          "label": "$MSGraphWebhookTrigger_Type_label",
-          "help": "$MSGraphWebhookTrigger_Type_help"
-        },
+          "name": "resource",
+          "value": "string",
+          "required": false,
+          "label": "$token_in_resource_label",
+          "help": "$token_in_resource_help"
+        },,
         {
-          "name": "ChangeType",
+          "name": "changeType",
           "value": "checkBoxList",
-          "defaultValue": [
-            "created",
-            "updated",
-            "deleted"
-          ],
           "enum": [
             {
               "value": "created",
@@ -3035,13 +2986,13 @@
           "help": "$MSGraphWebhook_in_changeType_help"
         },
         {
-          "name": "UserId",
+          "name": "userId",
           "value": "string",
           "label": "$userid_label",
           "help": "$userid_help"
         },
         {
-          "name": "UserToken",
+          "name": "userToken",
           "value": "string",
           "label": "$usertoken_help",
           "help": "$usertoken_help"
@@ -3049,128 +3000,44 @@
       ],
       "rules": [
         {
-          "name": "Listen",
-          "type": "changeOptionsDisplayed",
-          "values": [
-            {
-              "value": "me/mailFolders('Inbox')/messages",
-              "display": "Email Messages",
-              "shownCheckboxOptions": {
-                "name": "ChangeType",
-                "values": [
-                  {
-                    "value": "updated",
-                    "display": "Updated"
-                  },
-                  {
-                    "value": "created",
-                    "display": "Created"
-                  },
-                  {
-                    "value": "deleted",
-                    "display": "Deleted"
-                  }
-                ]
-              }
-            },
-            {
-              "value": "me/drive/root",
-              "display": "OneDrive Item",
-              "shownCheckboxOptions": {
-                "name": "ChangeType",
-                "values": [
-                  {
-                    "value": "updated",
-                    "display": "Updated"
-                  }
-                ]
-              }
-            },
-            {
-              "value": "me/events",
-              "display": "Calendar events",
-              "shownCheckboxOptions": {
-                "name": "ChangeType",
-                "values": [
-                  {
-                    "value": "updated",
-                    "display": "Updated"
-                  },
-                  {
-                    "value": "created",
-                    "display": "Created"
-                  },
-                  {
-                    "value": "deleted",
-                    "display": "Deleted"
-                  }
-                ]
-              }
-            },
-            {
-              "value": "me/contacts",
-              "display": "Contacts",
-              "shownCheckboxOptions": {
-                "name": "ChangeType",
-                "values": [
-                  {
-                    "value": "updated",
-                    "display": "Updated"
-                  },
-                  {
-                    "value": "created",
-                    "display": "Created"
-                  },
-                  {
-                    "value": "deleted",
-                    "display": "Deleted"
-                  }
-                ]
-              }
-            }
-          ],
-          "label": "$MSGraphWebhook_in_listen_label",
-          "help": "$MSGraphWebhook_in_listen_help"
-        },
-        {
-          "name": "Identity",
+          "name": "identity",
           "type": "exclusivity",
           "values": [
             {
               "value": "UserFromRequest",
               "display": "UserFromRequest",
               "hiddenSettings": [
-                "UserId",
-                "UserToken"
+                "userId",
+                "userToken"
               ],
               "shownSettings": []
             },
             {
-              "value": "UserId",
+              "value": "userId",
               "display": "UserFromId",
               "hiddenSettings": [
-                "UserToken"
+                "userToken"
               ],
               "shownSettings": [
-                "UserId"
+                "userId"
               ]
             },
             {
-              "value": "UserToken",
+              "value": "userToken",
               "display": "UserFromToken",
               "hiddenSettings": [
-                "UserId"
+                "userId"
               ],
               "shownSettings": [
-                "UserToken"
+                "userToken"
               ]
             },
             {
               "value": "ClientCredentials",
               "display": "ClientCredentials",
               "hiddenSettings": [
-                "UserId",
-                "UserToken"
+                "userId",
+                "userToken"
               ],
               "shownSettings": []
             }
