@@ -4,9 +4,8 @@
       "type": "GraphWebhookTrigger",
       "direction": "in",
       "name": "msg",
-      "Type": "#Microsoft.Graph.Message",
-      "ChangeType": [],
-      "Listen": "me/mailFolders('Inbox')/messages"
+      "resource": "#Microsoft.Graph.Message",
+      "changeType": []
     }
   ],
   "disabled": false

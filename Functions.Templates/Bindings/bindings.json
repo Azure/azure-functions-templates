@@ -567,7 +567,9 @@
             "capability": "blob",
             "excluded": [
               "googledrive",
-              "azureblob"
+              "azureblob",
+              "azurefile",
+              "filesystem"
             ]
           }
         }
@@ -1757,6 +1759,10 @@
       "filters": [
         "MSGraph"
       ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extension.AuthTokens",
+        "version": "1.0.0-beta1-10000"
+      },
       "AADPermissions": [
         {
           "resourceAppId": "00000002-0000-0000-c000-000000000000",
@@ -1778,40 +1784,71 @@
           "help": "$token_in_name_help"
         },
         {
-          "name": "Resource",
+          "name": "resource",
           "value": "string",
           "required": false,
           "label": "$token_in_resource_label",
           "help": "$token_in_resource_help"
         },
         {
-          "name": "PrincipalId",
+          "name": "userId",
           "value": "string",
-          "resource": "AppSetting",
-          "required": false,
-          "label": "$principal_id_label_token",
-          "help": "$principal_id_help_token"
+          "label": "$userid_label",
+          "help": "$userid_help"
         },
         {
-          "name": "idToken",
+          "name": "userToken",
           "value": "string",
-          "required": false,
-          "label": "$idToken_label_token",
-          "help": "$idToken_help_token"
+          "label": "$usertoken_help",
+          "help": "$usertoken_help"
         }
       ],
       "rules": [
         {
-          "name": "disable",
-          "type": "NAND",
+          "name": "Identity",
+          "type": "exclusivity",
           "values": [
             {
-              "value": "idToken"
+              "value": "UserFromRequest",
+              "display": "User from HTTP request",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
             },
             {
-              "value": "PrincipalId"
+              "value": "userId",
+              "display": "User from ID",
+              "hiddenSettings": [
+                "userToken"
+              ],
+              "shownSettings": [
+                "userId"
+              ]
+            },
+            {
+              "value": "userToken",
+              "display": "User from token",
+              "hiddenSettings": [
+                "userId"
+              ],
+              "shownSettings": [
+                "userToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "Client credentials",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
             }
-          ]
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
         }
       ]
     },
@@ -1823,6 +1860,10 @@
       "filters": [
         "MSGraph"
       ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta1-10000"
+      },
       "AADPermissions": [
         {
           "resourceAppId": "00000002-0000-0000-c000-000000000000",
@@ -1838,27 +1879,7 @@
           "resourceAccess": [
             {
               "type": "Scope",
-              "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
-            },
-            {
-              "type": "Scope",
-              "id": "37f7f235-527c-4136-accd-4a02d197296e"
-            },
-            {
-              "type": "Scope",
               "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
-            },
-            {
-              "type": "Scope",
-              "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
-            },
-            {
-              "type": "Scope",
-              "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283"
-            },
-            {
-              "type": "Scope",
-              "id": "863451e7-0667-486c-a5d6-d135439485f0"
             }
           ]
         }
@@ -1874,7 +1895,7 @@
           "help": "$excel_in_name_help"
         },
         {
-          "name": "Path",
+          "name": "path",
           "value": "string",
           "defaultValue": "Workbook.xlsx",
           "required": true,
@@ -1882,7 +1903,7 @@
           "help": "$excel_in_path_help"
         },
         {
-          "name": "WorksheetName",
+          "name": "worksheetName",
           "value": "string",
           "defaultValue": "Sheet1",
           "required": true,
@@ -1890,7 +1911,7 @@
           "help": "$excel_in_worksheetName_help"
         },
         {
-          "name": "TableName",
+          "name": "tableName",
           "value": "string",
           "defaultValue": "Table1",
           "required": false,
@@ -1898,33 +1919,64 @@
           "help": "$excel_in_tableName_help"
         },
         {
-          "name": "PrincipalId",
+          "name": "userId",
           "value": "string",
-          "resource": "AppSetting",
-          "required": false,
-          "label": "$principal_id_label_excel_in",
-          "help": "$principal_id_help_excel_in"
+          "label": "$userid_label",
+          "help": "$userid_help"
         },
         {
-          "name": "idToken",
+          "name": "userToken",
           "value": "string",
-          "required": false,
-          "label": "$idToken_label_excel_in",
-          "help": "$idToken_help_excel_in"
+          "label": "$usertoken_help",
+          "help": "$usertoken_help"
         }
       ],
       "rules": [
         {
-          "name": "disable",
-          "type": "NAND",
+          "name": "identity",
+          "type": "exclusivity",
           "values": [
             {
-              "value": "idToken"
+              "value": "UserFromRequest",
+              "display": "UserFromRequest",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
             },
             {
-              "value": "PrincipalId"
+              "value": "userId",
+              "display": "UserFromId",
+              "hiddenSettings": [
+                "userToken"
+              ],
+              "shownSettings": [
+                "userId"
+              ]
+            },
+            {
+              "value": "userToken",
+              "display": "UserFromToken",
+              "hiddenSettings": [
+                "userId"
+              ],
+              "shownSettings": [
+                "userToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "ClientCredentials",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
             }
-          ]
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
         }
       ]
     },
@@ -1936,6 +1988,10 @@
       "filters": [
         "MSGraph"
       ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta1-10000"
+      },
       "documentation": "$content=Documentation\\ExcelOut.md",
       "AADPermissions": [
         {
@@ -1952,27 +2008,7 @@
           "resourceAccess": [
             {
               "type": "Scope",
-              "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
-            },
-            {
-              "type": "Scope",
-              "id": "37f7f235-527c-4136-accd-4a02d197296e"
-            },
-            {
-              "type": "Scope",
-              "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
-            },
-            {
-              "type": "Scope",
               "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
-            },
-            {
-              "type": "Scope",
-              "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283"
-            },
-            {
-              "type": "Scope",
-              "id": "863451e7-0667-486c-a5d6-d135439485f0"
             }
           ]
         }
@@ -1987,7 +2023,7 @@
           "help": "$excel_out_name_help"
         },
         {
-          "name": "Path",
+          "name": "path",
           "value": "string",
           "defaultValue": "path/to/file.xlsx",
           "required": true,
@@ -1995,7 +2031,7 @@
           "help": "$excel_out_path_help"
         },
         {
-          "name": "WorksheetName",
+          "name": "worksheetName",
           "value": "string",
           "defaultValue": "Sheet1",
           "required": true,
@@ -2003,7 +2039,7 @@
           "help": "$excel_out_worksheetName_help"
         },
         {
-          "name": "TableName",
+          "name": "tableName",
           "value": "string",
           "defaultValue": "Table1",
           "required": false,
@@ -2011,7 +2047,7 @@
           "help": "$excel_out_tableName_help"
         },
         {
-          "name": "UpdateType",
+          "name": "updateType",
           "value": "enum",
           "defaultValue": "Append",
           "enum": [
@@ -2029,33 +2065,64 @@
           "help": "$excel_out_updateType_help"
         },
         {
-          "name": "PrincipalId",
+          "name": "userId",
           "value": "string",
-          "resource": "AppSetting",
-          "required": false,
-          "label": "$principal_id_label_excel_out",
-          "help": "$principal_id_help_excel_out"
+          "label": "$userid_label",
+          "help": "$userid_help"
         },
         {
-          "name": "idToken",
+          "name": "userToken",
           "value": "string",
-          "required": false,
-          "label": "$idToken_label_excel_out",
-          "help": "$idToken_help_excel_out"
+          "label": "$usertoken_help",
+          "help": "$usertoken_help"
         }
       ],
       "rules": [
         {
-          "name": "disable",
-          "type": "NAND",
+          "name": "identity",
+          "type": "exclusivity",
           "values": [
             {
-              "value": "idToken"
+              "value": "UserFromRequest",
+              "display": "UserFromRequest",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
             },
             {
-              "value": "PrincipalId"
+              "value": "userId",
+              "display": "UserFromId",
+              "hiddenSettings": [
+                "userToken"
+              ],
+              "shownSettings": [
+                "userId"
+              ]
+            },
+            {
+              "value": "userToken",
+              "display": "UserFromToken",
+              "hiddenSettings": [
+                "userId"
+              ],
+              "shownSettings": [
+                "userToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "ClientCredentials",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
             }
-          ]
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
         }
       ]
     },
@@ -2067,6 +2134,10 @@
       "filters": [
         "MSGraph"
       ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta1-10000"
+      },
       "documentation": "$content=Documentation\\Outlook.md",
       "AADPermissions": [
         {
@@ -2081,22 +2152,6 @@
         {
           "resourceAppId": "00000003-0000-0000-c000-000000000000",
           "resourceAccess": [
-            {
-              "type": "Scope",
-              "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
-            },
-            {
-              "type": "Scope",
-              "id": "37f7f235-527c-4136-accd-4a02d197296e"
-            },
-            {
-              "type": "Scope",
-              "id": "024d486e-b451-40bb-833d-3e66d98c5c73"
-            },
-            {
-              "type": "Scope",
-              "id": "570282fd-fa5c-430d-a7fd-fc8dc98a9dca"
-            },
             {
               "type": "Scope",
               "id": "e383f46e-2787-4529-855e-0e479a3ffac0"
@@ -2114,33 +2169,64 @@
           "help": "$outlook_out_name_help"
         },
         {
-          "name": "PrincipalId",
+          "name": "userId",
           "value": "string",
-          "resource": "AppSetting",
-          "required": false,
-          "label": "$principal_id_label_outlook",
-          "help": "$principal_id_help_outlook"
+          "label": "$userid_label",
+          "help": "$userid_help"
         },
         {
-          "name": "idToken",
+          "name": "userToken",
           "value": "string",
-          "required": false,
-          "label": "$idToken_label_outlook",
-          "help": "$idToken_help_outlook"
+          "label": "$usertoken_help",
+          "help": "$usertoken_help"
         }
       ],
       "rules": [
         {
-          "name": "disable",
-          "type": "NAND",
+          "name": "Identity",
+          "type": "exclusivity",
           "values": [
             {
-              "value": "idToken"
+              "value": "UserFromRequest",
+              "display": "UserFromRequest",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
             },
             {
-              "value": "PrincipalId"
+              "value": "userId",
+              "display": "UserFromId",
+              "hiddenSettings": [
+                "userToken"
+              ],
+              "shownSettings": [
+                "userId"
+              ]
+            },
+            {
+              "value": "userToken",
+              "display": "UserFromToken",
+              "hiddenSettings": [
+                "userId"
+              ],
+              "shownSettings": [
+                "userToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "ClientCredentials",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
             }
-          ]
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
         }
       ]
     },
@@ -2152,6 +2238,10 @@
       "filters": [
         "MSGraph"
       ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta1-10000"
+      },
       "documentation": "$content=Documentation\\OneDriveIn.md",
       "AADPermissions": [
         {
@@ -2168,27 +2258,7 @@
           "resourceAccess": [
             {
               "type": "Scope",
-              "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
-            },
-            {
-              "type": "Scope",
-              "id": "37f7f235-527c-4136-accd-4a02d197296e"
-            },
-            {
-              "type": "Scope",
               "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
-            },
-            {
-              "type": "Scope",
-              "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
-            },
-            {
-              "type": "Scope",
-              "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283"
-            },
-            {
-              "type": "Scope",
-              "id": "863451e7-0667-486c-a5d6-d135439485f0"
             }
           ]
         }
@@ -2211,33 +2281,64 @@
           "help": "$oneDrive_in_path_help"
         },
         {
-          "name": "PrincipalId",
+          "name": "userId",
           "value": "string",
-          "resource": "AppSetting",
-          "required": false,
-          "label": "$principal_id_label_onedrive_in",
-          "help": "$principal_id_help_onedrive_in"
+          "label": "$userid_label",
+          "help": "$userid_help"
         },
         {
-          "name": "idToken",
+          "name": "userToken",
           "value": "string",
-          "required": false,
-          "label": "$idToken_label_onedrive_in",
-          "help": "$idToken_help_onedrive_in"
+          "label": "$usertoken_help",
+          "help": "$usertoken_help"
         }
       ],
       "rules": [
         {
-          "name": "disable",
-          "type": "NAND",
+          "name": "Identity",
+          "type": "exclusivity",
           "values": [
             {
-              "value": "idToken"
+              "value": "UserFromRequest",
+              "display": "UserFromRequest",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
             },
             {
-              "value": "PrincipalId"
+              "value": "userId",
+              "display": "UserFromId",
+              "hiddenSettings": [
+                "userToken"
+              ],
+              "shownSettings": [
+                "userId"
+              ]
+            },
+            {
+              "value": "userToken",
+              "display": "UserFromToken",
+              "hiddenSettings": [
+                "userId"
+              ],
+              "shownSettings": [
+                "userToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "ClientCredentials",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
             }
-          ]
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
         }
       ]
     },
@@ -2249,6 +2350,10 @@
       "filters": [
         "MSGraph"
       ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta1-10000"
+      },
       "documentation": "$content=Documentation\\OneDriveOut.md",
       "AADPermissions": [
         {
@@ -2265,27 +2370,7 @@
           "resourceAccess": [
             {
               "type": "Scope",
-              "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
-            },
-            {
-              "type": "Scope",
-              "id": "37f7f235-527c-4136-accd-4a02d197296e"
-            },
-            {
-              "type": "Scope",
-              "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
-            },
-            {
-              "type": "Scope",
               "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
-            },
-            {
-              "type": "Scope",
-              "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283"
-            },
-            {
-              "type": "Scope",
-              "id": "863451e7-0667-486c-a5d6-d135439485f0"
             }
           ]
         }
@@ -2308,44 +2393,79 @@
           "help": "$oneDrive_out_path_help"
         },
         {
-          "name": "PrincipalId",
+          "name": "userId",
           "value": "string",
-          "resource": "AppSetting",
-          "required": false,
-          "label": "$principal_id_label_onedrive_out",
-          "help": "$principal_id_help_onedrive_out"
+          "label": "$userid_label",
+          "help": "$userid_help"
         },
         {
-          "name": "idToken",
+          "name": "userToken",
           "value": "string",
-          "required": false,
-          "label": "$idToken_label_onedrive_out",
-          "help": "$idToken_help_onedrive_out"
+          "label": "$usertoken_help",
+          "help": "$usertoken_help"
         }
       ],
       "rules": [
         {
-          "name": "disable",
-          "type": "NAND",
+          "name": "Identity",
+          "type": "exclusivity",
           "values": [
             {
-              "value": "idToken"
+              "value": "UserFromRequest",
+              "display": "UserFromRequest",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
             },
             {
-              "value": "PrincipalId"
+              "value": "userId",
+              "display": "UserFromId",
+              "hiddenSettings": [
+                "userToken"
+              ],
+              "shownSettings": [
+                "userId"
+              ]
+            },
+            {
+              "value": "userToken",
+              "display": "UserFromToken",
+              "hiddenSettings": [
+                "userId"
+              ],
+              "shownSettings": [
+                "userToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "ClientCredentials",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
             }
-          ]
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
         }
       ]
     },
     {
-      "type": "GraphWebhook",
+      "type": "GraphWebhookSubscription",
       "displayName": "$MSGraphWebhook_displayName",
       "direction": "in",
       "enabledInTryMode": false,
       "filters": [
         "MSGraph"
       ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta1-10000"
+      },
       "documentation": "$content-Documentation\\GraphWebhook.md",
       "AADPermissions": [
         {
@@ -2354,59 +2474,6 @@
             {
               "type": "Scope",
               "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
-            }
-          ]
-        },
-        {
-          "resourceAppId": "00000003-0000-0000-c000-000000000000",
-          "resourceAccess": [
-            {
-              "type": "Scope",
-              "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
-            },
-            {
-              "type": "Scope",
-              "id": "37f7f235-527c-4136-accd-4a02d197296e"
-            },
-            {
-              "type": "Scope",
-              "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
-            },
-            {
-              "type": "Scope",
-              "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
-            },
-            {
-              "type": "Scope",
-              "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283"
-            },
-            {
-              "type": "Scope",
-              "id": "863451e7-0667-486c-a5d6-d135439485f0"
-            },
-            {
-              "type": "Scope",
-              "id": "ff74d97f-43af-4b68-9f2a-b77ee6968c5d"
-            },
-            {
-              "type": "Scope",
-              "id": "465a38f9-76ea-45b9-9f34-9e8b0d4b0b42"
-            },
-            {
-              "type": "Scope",
-              "id": "e383f46e-2787-4529-855e-0e479a3ffac0"
-            },
-            {
-              "type": "Scope",
-              "id": "024d486e-b451-40bb-833d-3e66d98c5c73"
-            },
-            {
-              "type": "Scope",
-              "id": "570282fd-fa5c-430d-a7fd-fc8dc98a9dca"
-            },
-            {
-              "type": "Scope",
-              "id": "5778995a-e1bf-45b8-affa-663a9f3f4d04"
             }
           ]
         }
@@ -2419,17 +2486,81 @@
           "required": true,
           "label": "$MSGraphWebhook_in_name_label",
           "help": "$MSGraphWebhook_in_name_help"
+        },
+        {
+          "name": "userId",
+          "value": "string",
+          "label": "$userid_label",
+          "help": "$userid_help"
+        },
+        {
+          "name": "userToken",
+          "value": "string",
+          "label": "$usertoken_help",
+          "help": "$usertoken_help"
+        }
+      ],
+      "rules": [
+        {
+          "name": "Identity",
+          "type": "exclusivity",
+          "values": [
+            {
+              "value": "UserFromRequest",
+              "display": "UserFromRequest",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
+            },
+            {
+              "value": "userId",
+              "display": "UserFromId",
+              "hiddenSettings": [
+                "userToken"
+              ],
+              "shownSettings": [
+                "userId"
+              ]
+            },
+            {
+              "value": "userToken",
+              "display": "UserFromToken",
+              "hiddenSettings": [
+                "userId"
+              ],
+              "shownSettings": [
+                "userToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "ClientCredentials",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
+            }
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
         }
       ]
     },
     {
-      "type": "GraphWebhookCreator",
+      "type": "GraphWebhookSubscription",
       "displayName": "$MSGraphWebhookCreator_displayName",
-      "direction": "in",
+      "direction": "out",
       "enabledInTryMode": false,
       "filters": [
         "MSGraph"
       ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta1-10000"
+      },
       "documentation": "$content=Documentation\\GraphWebhookCreator.md",
       "AADPermissions": [
         {
@@ -2438,59 +2569,6 @@
             {
               "type": "Scope",
               "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
-            }
-          ]
-        },
-        {
-          "resourceAppId": "00000003-0000-0000-c000-000000000000",
-          "resourceAccess": [
-            {
-              "type": "Scope",
-              "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
-            },
-            {
-              "type": "Scope",
-              "id": "37f7f235-527c-4136-accd-4a02d197296e"
-            },
-            {
-              "type": "Scope",
-              "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
-            },
-            {
-              "type": "Scope",
-              "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
-            },
-            {
-              "type": "Scope",
-              "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283"
-            },
-            {
-              "type": "Scope",
-              "id": "863451e7-0667-486c-a5d6-d135439485f0"
-            },
-            {
-              "type": "Scope",
-              "id": "ff74d97f-43af-4b68-9f2a-b77ee6968c5d"
-            },
-            {
-              "type": "Scope",
-              "id": "465a38f9-76ea-45b9-9f34-9e8b0d4b0b42"
-            },
-            {
-              "type": "Scope",
-              "id": "e383f46e-2787-4529-855e-0e479a3ffac0"
-            },
-            {
-              "type": "Scope",
-              "id": "024d486e-b451-40bb-833d-3e66d98c5c73"
-            },
-            {
-              "type": "Scope",
-              "id": "570282fd-fa5c-430d-a7fd-fc8dc98a9dca"
-            },
-            {
-              "type": "Scope",
-              "id": "5778995a-e1bf-45b8-affa-663a9f3f4d04"
             }
           ]
         }
@@ -2507,11 +2585,6 @@
         {
           "name": "changeType",
           "value": "checkBoxList",
-          "defaultValue": [
-            "Created",
-            "Updated",
-            "Deleted"
-          ],
           "enum": [
             {
               "value": "Created",
@@ -2531,58 +2604,70 @@
           "help": "$MSGraphWebhook_in_changeType_help"
         },
         {
-          "name": "Listen",
-          "value": "enum",
-          "enum": [
-            {
-              "value": "me/mailFolders('Inbox')/Messages",
-              "display": "Email Messages"
-            },
-            {
-              "value": "me/drive/root",
-              "display": "OneDrive Root"
-            },
-            {
-              "value": "me/events",
-              "display": "Calendar events"
-            },
-            {
-              "value": "me/contacts",
-              "display": "Contacts"
-            }
-          ],
+          "name": "resource",
+          "value": "string",
           "label": "$MSGraphWebhook_in_listen_label",
-          "help": "$MSGraphWebhook_in_listen_help",
-          "required": true
+          "help": "$MSGraphWebhook_in_listen_help"
         },
         {
-          "name": "PrincipalId",
+          "name": "userId",
           "value": "string",
-          "resource": "AppSetting",
-          "required": false,
-          "label": "$principal_id_label_graphwebhook",
-          "help": "$principal_id_help_graphwebhook"
+          "label": "$userid_label",
+          "help": "$userid_help"
         },
         {
-          "name": "idToken",
+          "name": "userToken",
           "value": "string",
-          "required": false,
-          "label": "$idToken_label_graphwebhook",
-          "help": "$idToken_help_graphwebhook"
+          "label": "$usertoken_help",
+          "help": "$usertoken_help"
         }
       ],
       "rules": [
         {
-          "name": "disable",
-          "type": "NAND",
+          "name": "Identity",
+          "type": "exclusivity",
           "values": [
             {
-              "value": "idToken"
+              "value": "UserFromRequest",
+              "display": "UserFromRequest",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
             },
             {
-              "value": "PrincipalId"
+              "value": "userId",
+              "display": "UserFromId",
+              "hiddenSettings": [
+                "userToken"
+              ],
+              "shownSettings": [
+                "userId"
+              ]
+            },
+            {
+              "value": "userToken",
+              "display": "UserFromToken",
+              "hiddenSettings": [
+                "userId"
+              ],
+              "shownSettings": [
+                "userToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "ClientCredentials",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
             }
-          ]
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
         }
       ]
     },
@@ -2594,6 +2679,10 @@
       "filters": [
         "MSGraph"
       ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta1-10000"
+      },
       "enabledInTryMode": false,
       "AADPermissions": [
         {
@@ -2602,59 +2691,6 @@
             {
               "type": "Scope",
               "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
-            }
-          ]
-        },
-        {
-          "resourceAppId": "00000003-0000-0000-c000-000000000000",
-          "resourceAccess": [
-            {
-              "type": "Scope",
-              "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
-            },
-            {
-              "type": "Scope",
-              "id": "37f7f235-527c-4136-accd-4a02d197296e"
-            },
-            {
-              "type": "Scope",
-              "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
-            },
-            {
-              "type": "Scope",
-              "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
-            },
-            {
-              "type": "Scope",
-              "id": "df85f4d6-205c-4ac5-a5ea-6bf408dba283"
-            },
-            {
-              "type": "Scope",
-              "id": "863451e7-0667-486c-a5d6-d135439485f0"
-            },
-            {
-              "type": "Scope",
-              "id": "ff74d97f-43af-4b68-9f2a-b77ee6968c5d"
-            },
-            {
-              "type": "Scope",
-              "id": "465a38f9-76ea-45b9-9f34-9e8b0d4b0b42"
-            },
-            {
-              "type": "Scope",
-              "id": "e383f46e-2787-4529-855e-0e479a3ffac0"
-            },
-            {
-              "type": "Scope",
-              "id": "024d486e-b451-40bb-833d-3e66d98c5c73"
-            },
-            {
-              "type": "Scope",
-              "id": "570282fd-fa5c-430d-a7fd-fc8dc98a9dca"
-            },
-            {
-              "type": "Scope",
-              "id": "5778995a-e1bf-45b8-affa-663a9f3f4d04"
             }
           ]
         }
@@ -2669,40 +2705,15 @@
           "help": "$MSGraphWebhookTrigger_in_help_label"
         },
         {
-          "name": "Type",
-          "value": "enum",
-          "defaultValue": "#Microsoft.Graph.Message",
-          "required": true,
-          "isHidden": true,
-          "enum": [
-            {
-              "value": "#Microsoft.Graph.Message",
-              "display": "[Outlook] Emails"
-            },
-            {
-              "value": "#Microsoft.Graph.DriveItem",
-              "display": "Drive"
-            },
-            {
-              "value": "#Microsoft.Graph.Event",
-              "display": "Calendar Events"
-            },
-            {
-              "value": "#Microsoft.Graph.Contact",
-              "display": "Contacts"
-            }
-          ],
-          "label": "$MSGraphWebhookTrigger_Type_label",
-          "help": "$MSGraphWebhookTrigger_Type_help"
+          "name": "resource",
+          "value": "string",
+          "required": false,
+          "label": "$MSGraphWebhook_in_listen_label",
+          "help": "$MSGraphWebhook_in_listen_help"
         },
         {
-          "name": "ChangeType",
+          "name": "changeType",
           "value": "checkBoxList",
-          "defaultValue": [
-            "created",
-            "updated",
-            "deleted"
-          ],
           "enum": [
             {
               "value": "created",
@@ -2720,92 +2731,66 @@
           "required": true,
           "label": "$MSGraphWebhook_in_changeType_label",
           "help": "$MSGraphWebhook_in_changeType_help"
+        },
+        {
+          "name": "userId",
+          "value": "string",
+          "label": "$userid_label",
+          "help": "$userid_help"
+        },
+        {
+          "name": "userToken",
+          "value": "string",
+          "label": "$usertoken_help",
+          "help": "$usertoken_help"
         }
       ],
       "rules": [
         {
-          "name": "Listen",
-          "type": "changeOptionsDisplayed",
+          "name": "identity",
+          "type": "exclusivity",
           "values": [
             {
-              "value": "me/mailFolders('Inbox')/messages",
-              "display": "Email Messages",
-              "shownCheckboxOptions": {
-                "name": "ChangeType",
-                "values": [
-                  {
-                    "value": "updated",
-                    "display": "Updated"
-                  },
-                  {
-                    "value": "created",
-                    "display": "Created"
-                  },
-                  {
-                    "value": "deleted",
-                    "display": "Deleted"
-                  }
-                ]
-              }
+              "value": "UserFromRequest",
+              "display": "UserFromRequest",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
             },
             {
-              "value": "me/drive/root",
-              "display": "OneDrive Item",
-              "shownCheckboxOptions": {
-                "name": "ChangeType",
-                "values": [
-                  {
-                    "value": "updated",
-                    "display": "Updated"
-                  }
-                ]
-              }
+              "value": "userId",
+              "display": "UserFromId",
+              "hiddenSettings": [
+                "userToken"
+              ],
+              "shownSettings": [
+                "userId"
+              ]
             },
             {
-              "value": "me/events",
-              "display": "Calendar events",
-              "shownCheckboxOptions": {
-                "name": "ChangeType",
-                "values": [
-                  {
-                    "value": "updated",
-                    "display": "Updated"
-                  },
-                  {
-                    "value": "created",
-                    "display": "Created"
-                  },
-                  {
-                    "value": "deleted",
-                    "display": "Deleted"
-                  }
-                ]
-              }
+              "value": "userToken",
+              "display": "UserFromToken",
+              "hiddenSettings": [
+                "userId"
+              ],
+              "shownSettings": [
+                "userToken"
+              ]
             },
             {
-              "value": "me/contacts",
-              "display": "Contacts",
-              "shownCheckboxOptions": {
-                "name": "ChangeType",
-                "values": [
-                  {
-                    "value": "updated",
-                    "display": "Updated"
-                  },
-                  {
-                    "value": "created",
-                    "display": "Created"
-                  },
-                  {
-                    "value": "deleted",
-                    "display": "Deleted"
-                  }
-                ]
-              }
+              "value": "ClientCredentials",
+              "display": "ClientCredentials",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
             }
           ],
-          "label": "$MSGraphWebhook_in_listen_label",
-          "help": "$MSGraphWebhook_in_listen_help"
+          "label": "$Identity_label",
+          "help": "$Identity_help"
         }
       ]
     },

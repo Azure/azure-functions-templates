@@ -9,27 +9,24 @@
     {
       "type": "excel",
       "name": "customers",
-      "direction": "in",
-      "PrincipalId": "%Identity.<alias>%",
-      "Path": "Customers.xlsx",
-      "WorksheetName": "Emails",
-      "TableName": "Emails"
+      "direction": "in",      
+      "path": "Customers.xlsx",
+      "worksheetName": "Emails",
+      "tableName": "Emails"
     },
     {
       "type": "excel",
       "name": "update",
-      "direction": "out",
-      "PrincipalId": "%Identity.<alias>%",
-      "Path": "Customers.xlsx",
-      "WorksheetName": "Emails",
-      "TableName": "Emails",
-      "UpdateType": "Update"
+      "direction": "out",      
+      "path": "Customers.xlsx",
+      "worksheetName": "Emails",
+      "tableName": "Emails",
+      "updateType": "Update"
     },
     {
       "type": "outlook",
       "name": "emails",
-      "direction": "out",
-      "PrincipalId": "%Identity.<alias>%"
+      "direction": "out"      
     }
   ],
   "disabled": false
