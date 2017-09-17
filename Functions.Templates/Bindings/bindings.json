@@ -2604,6 +2604,26 @@
           "help": "$MSGraphWebhook_in_changeType_help"
         },
         {
+          "name": "action",
+          "value": "enum",
+          "enum": [
+            {
+              "value": "create",
+              "display": "Create"
+            },
+            {
+              "value": "refresh",
+              "display": "Refresh"
+            },
+            {
+              "value": "delete",
+              "display": "Delete"
+            }
+          ],
+          "label": "$MSGraphWebhook_out_action_label",
+          "help": "$MSGraphWebhook_out_action_help"
+        },
+        {
           "name": "resource",
           "value": "string",
           "label": "$MSGraphWebhook_in_listen_label",
