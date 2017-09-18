@@ -1,0 +1,31 @@
+﻿{
+  "defaultFunctionName": "OultookMessageWebhookCreatorCSharp",
+  "description": "$OultookMessageWebhookCreatorCSharp_description",
+  "name": "Outlook webhook creator",
+  "trigger": "HttpTrigger",
+  "language": "C#",
+  "enabledInTryMode": false,
+  "category": [
+    "$temp_category_msgraph"
+  ],
+  "filters": [
+    "MSGraph"
+  ],
+  "extensions": [
+    {
+      "id": "Microsoft.Azure.WebJobs.Extension.AuthTokens",
+      "version": "1.0.0-beta1-10005"
+    }
+  ],
+  "AADPermissions": [
+    {
+      "resourceAppId": "00000002-0000-0000-c000-000000000000",
+      "resourceAccess": [
+        {
+          "type": "Scope",
+          "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+        }
+      ]
+    }
+  ]
+}
