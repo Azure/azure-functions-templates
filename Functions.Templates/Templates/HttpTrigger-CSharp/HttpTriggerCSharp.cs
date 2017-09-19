@@ -1,41 +1,31 @@
 #if (portalTemplates)
 using System.Net;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Primitives;
 
-public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log)
+public static IActionResult Run(HttpRequest req, TraceWriter log)
 #endif
 #if (vsTemplates)
-using System.Linq;
 using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.Azure.WebJobs.Host;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Primitives;
 
 namespace Company.Function
 {
     public static class HttpTriggerCSharp
     {
         [FunctionName("HttpTriggerCSharp")]
-        public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = null)]HttpRequestMessage req, TraceWriter log)
+        public static IActionResult Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = null)]HttpRequest req, TraceWriter log)
 #endif
         {
             log.Info("C# HTTP trigger function processed a request.");
 
-            // parse query parameter
-            string name = req.GetQueryNameValuePairs()
-                .FirstOrDefault(q => string.Compare(q.Key, "name", true) == 0)
-                .Value;
+            if (req.Query.TryGetValue("name", out StringValues value))
+            {
+                return new OkObjectResult($"Hello, {value.First()}");
+            }
 
-            // Get request body
-            dynamic data = await req.Content.ReadAsAsync<object>();
-
-            // Set name to query string or body data
-            name = name ?? data?.name;
-
-            return name == null
-                ? req.CreateResponse(HttpStatusCode.BadRequest, "Please pass a name on the query string or in the request body")
-                : req.CreateResponse(HttpStatusCode.OK, "Hello " + name);
+            return new BadRequestObjectResult("Please pass a name on the query string");
         }
 #if (vsTemplates)
     }
