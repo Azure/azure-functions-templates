@@ -23,8 +23,10 @@ namespace Company.Function
         public static void Run([CosmosDBTrigger("DatabaseValue", "CollectionValue", ConnectionStringSetting = "ConnectionValue", LeaseDatabaseName = "LeaseDatabaseValue", LeaseCollectionName = "LeaseCollectionValue")] IReadOnlyList<Document> input, TraceWriter log)
 #endif
         {
-            log.Verbose("Documents modified " + input.Count);
-            log.Verbose("First document Id " + input[0].Id);
+            if (input != null && input.Count > 0) {
+                log.Verbose("Documents modified " + input.Count);
+                log.Verbose("First document Id " + input[0].Id);
+            }
         }
 #if (vsTemplates)
     }
