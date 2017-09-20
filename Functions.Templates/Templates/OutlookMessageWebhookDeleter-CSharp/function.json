@@ -3,18 +3,13 @@
     {
       "name": "req",
       "type": "httpTrigger",
-      "direction": "in",
-      "authLevel": "anonymous",
-      "methods": [
-        "get"
-      ],
-      "route": "create"
+      "direction": "in"
     },
     {
       "type": "graphWebhookSubscription",
       "name": "existingSubscriptions",
       "direction": "in",
-      "identity": "userFromRequest"
+      "filter": "userFromRequest"
     },
     {
       "type": "graphWebhookSubscription",
@@ -25,7 +20,7 @@
     },
     {
       "type": "http",
-      "name": "$return",
+      "name": "res",
       "direction": "out"
     }
   ],
