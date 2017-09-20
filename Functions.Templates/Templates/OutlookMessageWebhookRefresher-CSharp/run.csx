@@ -1,13 +1,27 @@
 using System;
 
-public static void Run(TimerInfo myTimer, string[] existingSubscriptions, ICollector<string> subscriptionsToRefresh, TraceWriter log)
+public static async Task Run(TimerInfo myTimer, UserSubscription[] existingSubscriptions, IBinder binder, TraceWriter log)
 {
-    // This template uses application permissions and requires consent from an Azure Active Directory admin.
-    // See https://go.microsoft.com/fwlink/?linkid=858780
-    log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
+  log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
 	foreach (var subscription in existingSubscriptions)
 	{
-		log.Info($"Refreshing subscription {subscription}");
-        subscriptionsToRefresh.Add(subscription);
+        // binding in code to allow dynamic identity
+        using (var subscriptionsToRefresh = await binder.BindAsync<IAsyncCollector<string>>(
+            new GraphWebhookSubscriptionAttribute() {
+                Action = "refresh",
+                Identity = "userFromId",
+                UserId = subscription.UserId
+            }
+        ))
+        {
+    		log.Info($"Refreshing subscription {subscription}");
+            await subscriptionsToRefresh.AddAsync(subscription);
+        }
+
     }
+}
+
+public class UserSubscription {
+    public string UserId {get; set;}
+    public string Id {get; set;}
 }
