@@ -3,12 +3,7 @@
     {
       "name": "req",
       "type": "httpTrigger",
-      "direction": "in",
-      "authLevel": "anonymous",
-      "methods": [
-        "get"
-      ],
-      "route": "create"
+      "direction": "in"
     },
     {
       "type": "graphwebhook",
@@ -16,12 +11,14 @@
       "direction": "out",
       "action": "create",
       "listen": "me/mailFolders('Inbox')/messages",
-      "changeTypes": [ "created", "updated" ],
+      "changeTypes": [
+        "created"
+      ],
       "identity": "userFromRequest"
     },
     {
       "type": "http",
-      "name": "res",
+      "name": "$return",
       "direction": "out"
     }
   ],
