@@ -1159,19 +1159,19 @@
     <value>Path to the Excel workbook</value>
   </data>
   <data name="excel_in_path_help" xml:space="preserve">
-    <value>Path from root of OneDrive to Excel workbook to be read (e.g. "Documents/Test.xlsx")</value>
+    <value>The path in OneDrive to the Excel workbook.</value>
   </data>
   <data name="excel_in_worksheetName_label" xml:space="preserve">
     <value>Worksheet Name</value>
   </data>
   <data name="excel_in_worksheetName_help" xml:space="preserve">
-    <value>Name of worksheet within specified workbook (e.g. "Sheet1")</value>
+    <value>The worksheet in which the table is found.</value>
   </data>
   <data name="excel_in_tableName_label" xml:space="preserve">
     <value>Table name</value>
   </data>
   <data name="excel_in_tableName_help" xml:space="preserve">
-    <value>Name of table within specified worksheet of workbook (e.g. "Table1")</value>
+    <value>The name of the table. If not specified, the contents of the worksheet will be used.</value>
   </data>
   <data name="excel_in_path_error" xml:space="preserve">
     <value>Path must be valid</value>
@@ -1189,25 +1189,25 @@
     <value>Path to the Excel workbook</value>
   </data>
   <data name="excel_out_path_help" xml:space="preserve">
-    <value>Path from root of OneDrive to Excel workbook to be modified (e.g. "Documents/Test.xlsx")</value>
+    <value>The path in OneDrive to the Excel workbook.</value>
   </data>
   <data name="excel_out_worksheetName_label" xml:space="preserve">
     <value>Worksheet Name</value>
   </data>
   <data name="excel_out_worksheetName_help" xml:space="preserve">
-    <value>Name of worksheet within specified workbook (e.g. "Sheet1")</value>
+    <value>The worksheet in which the table is found.</value>
   </data>
   <data name="excel_out_tableName_label" xml:space="preserve">
     <value>Table name</value>
   </data>
   <data name="excel_out_tableName_help" xml:space="preserve">
-    <value>Name of table within specified worksheet of workbook (e.g. "Table1")</value>
+    <value>The name of the table. If not specified, the contents of the worksheet will be used.</value>
   </data>
   <data name="excel_out_updateType_label" xml:space="preserve">
     <value>Edit mode</value>
   </data>
   <data name="excel_out_updateType_help" xml:space="preserve">
-    <value>Either append rows or update (replace) the table or worksheet's existing rows</value>
+    <value>The type of change to make to the table.</value>
   </data>
   <data name="excel_out_path_error" xml:space="preserve">
     <value>Path must be valid</value>
@@ -1456,7 +1456,7 @@ Windows Azure Service Management API - Access Azure Service Management as organi
     <value>File parameter name</value>
   </data>
   <data name="oneDrive_in_path_help" xml:space="preserve">
-    <value>Path from root OneDrive folder to file (e.g. "Documents/Test.xlsx")</value>
+    <value>The path in OneDrive to the file.</value>
   </data>
   <data name="oneDrive_in_path_label" xml:space="preserve">
     <value>Path to file</value>
@@ -1474,7 +1474,7 @@ Windows Azure Service Management API - Access Azure Service Management as organi
     <value>File parameter name</value>
   </data>
   <data name="oneDrive_out_path_help" xml:space="preserve">
-    <value>Path from root OneDrive folder to file (e.g. "Documents/Test.xlsx")</value>
+    <value>The path in OneDrive to the file.</value>
   </data>
   <data name="oneDrive_out_path_label" xml:space="preserve">
     <value>Path to file</value>
@@ -1489,13 +1489,13 @@ Windows Azure Service Management API - Access Azure Service Management as organi
     <value>Subscription parameter name</value>
   </data>
   <data name="MSGraphWebhook_in_changeType_help" xml:space="preserve">
-    <value>Webhook will trigger when the specified resource is created, updated, and/or deleted </value>
+    <value>Needed if and only if the action is set to create . Indicates the type of change in the subscribed resource that will raise a notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.</value>
   </data>
   <data name="MSGraphWebhook_in_changeType_label" xml:space="preserve">
     <value>Types of changes to subscribe to</value>
   </data>
   <data name="MSGraphWebhook_in_listen_help" xml:space="preserve">
-    <value>List of resources currently supported by Microsoft Graph for webhook subscription</value>
+    <value>The graph resource for which this function should respond to webhooks. A function app can only have one function which is registered against a given resourceType value.</value>
   </data>
   <data name="MSGraphWebhook_in_listen_label" xml:space="preserve">
     <value>Resource to subscribe to</value>
@@ -1528,7 +1528,7 @@ Windows Azure Service Management API - Access Azure Service Management as organi
     <value>Auth token parameter name</value>
   </data>
   <data name="token_in_resource_help" xml:space="preserve">
-    <value>The binding will obtain a token for the specified resource. Example: https://graph.microsoft.com</value>
+    <value>An AAD resource URL for which the token is being requested</value>
   </data>
   <data name="token_in_resource_label" xml:space="preserve">
     <value>Resource URL</value>
@@ -1549,7 +1549,7 @@ Windows Azure Service Management API - Access Azure Service Management as organi
     <value>Name used to identify this binding in your function code</value>
   </data>
   <data name="temp_category_msgraph" xml:space="preserve">
-    <value>MSGraph</value>
+    <value>Microsoft Graph</value>
   </data>
   <data name="documentDBIn_partitionKey_help" xml:space="preserve">
     <value>The partition key of the document to be read. Only applies if an ID is specified.</value>
@@ -1633,22 +1633,20 @@ Windows Azure Service Management API - Access Azure Service Management as organi
     <value>A JavaScript function that will be run whenever an event grid receives a new event</value>
   </data>
   <data name="Identity_help" xml:space="preserve">
-    <value>UserFromRequest: Same as UserFromToken with the user token taken from the X-MS-TOKEN-AAD-ID-TOKEN header. Only works for HttpTrigger
-UserFromToken: Obtains the access token on behalf of the user whose token is in the userToken field of metadata. 
-UserFromId: Obtains the access token for the user with the id found in the userId field of metadata.
-ClientCredentials: Obtains the access token for the client credentials found in the application settings.</value>
+    <value>The identity that will be used to perform the action.</value>
   </data>
   <data name="Identity_label" xml:space="preserve">
     <value>Identity</value>
   </data>
   <data name="userid_help" xml:space="preserve">
-    <value>The user ID of a user who has previously logged into the app.</value>
+    <value>Needed if and only if identity is set to userFromId . A user principal ID associated with a previously logged-in user.</value>
   </data>
   <data name="userid_label" xml:space="preserve">
     <value>User ID</value>
   </data>
   <data name="usertoken_help" xml:space="preserve">
-    <value>A token with the function app as the audience.</value>
+    <value>Needed if and only if identity is set to userFromToken. A token valid for the
+function app.</value>
   </data>
   <data name="usertoken_label" xml:space="preserve">
     <value>User token</value>
@@ -1685,5 +1683,11 @@ ClientCredentials: Obtains the access token for the client credentials found in 
   </data>
   <data name="MSGraphWebhook_out_action_help" xml:space="preserve">
     <value>The action to be performed on the subscription</value>
+  </data>
+  <data name="GraphWebhookSubscription_in_filter_help" xml:space="preserve">
+    <value>If set to userFromRequest , then the binding will only retrieve subscriptions owned by the calling user (valid only with HTTP trigger).</value>
+  </data>
+  <data name="GraphWebhookSubscription_in_filter_label" xml:space="preserve">
+    <value>Filter</value>
   </data>
 </root>

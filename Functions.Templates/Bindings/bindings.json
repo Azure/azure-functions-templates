@@ -632,12 +632,9 @@
       "direction": "in",
       "enabledInTryMode": false,
       "documentation": "$content=Documentation\\Token.md",
-      "filters": [
-        "MSGraph"
-      ],
       "extension": {
-        "id": "Microsoft.Azure.WebJobs.Extension.AuthTokens",
-        "version": "1.0.0-beta1-10005"
+        "id": "Microsoft.Azure.WebJobs.Extensions.AuthTokens",
+        "version": "1.0.0-beta1"
       },
       "AADPermissions": [
         {
@@ -662,26 +659,28 @@
         {
           "name": "resource",
           "value": "string",
-          "required": false,
+          "required": true,
           "label": "$token_in_resource_label",
           "help": "$token_in_resource_help"
         },
         {
           "name": "userId",
           "value": "string",
+          "required": false,
           "label": "$userid_label",
           "help": "$userid_help"
         },
         {
           "name": "userToken",
           "value": "string",
-          "label": "$usertoken_help",
+          "required": false,
+          "label": "$usertoken_label",
           "help": "$usertoken_help"
         }
       ],
       "rules": [
         {
-          "name": "Identity",
+          "name": "identity",
           "type": "exclusivity",
           "values": [
             {
@@ -733,12 +732,9 @@
       "displayName": "$excel_in_displayName",
       "direction": "in",
       "enabledInTryMode": false,
-      "filters": [
-        "MSGraph"
-      ],
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta1-10005"
+        "version": "1.0.0-beta1"
       },
       "AADPermissions": [
         {
@@ -782,7 +778,6 @@
           "name": "worksheetName",
           "value": "string",
           "defaultValue": "Sheet1",
-          "required": true,
           "label": "$excel_in_worksheetName_label",
           "help": "$excel_in_worksheetName_help"
         },
@@ -790,7 +785,6 @@
           "name": "tableName",
           "value": "string",
           "defaultValue": "Table1",
-          "required": false,
           "label": "$excel_in_tableName_label",
           "help": "$excel_in_tableName_help"
         },
@@ -803,7 +797,7 @@
         {
           "name": "userToken",
           "value": "string",
-          "label": "$usertoken_help",
+          "label": "$usertoken_label",
           "help": "$usertoken_help"
         }
       ],
@@ -861,12 +855,9 @@
       "displayName": "$excel_out_displayName",
       "direction": "out",
       "enabledInTryMode": false,
-      "filters": [
-        "MSGraph"
-      ],
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta1-10005"
+        "version": "1.0.0-beta1"
       },
       "documentation": "$content=Documentation\\ExcelOut.md",
       "AADPermissions": [
@@ -910,7 +901,6 @@
           "name": "worksheetName",
           "value": "string",
           "defaultValue": "Sheet1",
-          "required": true,
           "label": "$excel_out_worksheetName_label",
           "help": "$excel_out_worksheetName_help"
         },
@@ -918,7 +908,6 @@
           "name": "tableName",
           "value": "string",
           "defaultValue": "Table1",
-          "required": false,
           "label": "$excel_out_tableName_label",
           "help": "$excel_out_tableName_help"
         },
@@ -949,7 +938,7 @@
         {
           "name": "userToken",
           "value": "string",
-          "label": "$usertoken_help",
+          "label": "$usertoken_label",
           "help": "$usertoken_help"
         }
       ],
@@ -1007,12 +996,9 @@
       "displayName": "$outlook_displayName",
       "direction": "out",
       "enabledInTryMode": false,
-      "filters": [
-        "MSGraph"
-      ],
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta1-10005"
+        "version": "1.0.0-beta1"
       },
       "documentation": "$content=Documentation\\Outlook.md",
       "AADPermissions": [
@@ -1053,13 +1039,13 @@
         {
           "name": "userToken",
           "value": "string",
-          "label": "$usertoken_help",
+          "label": "$usertoken_label",
           "help": "$usertoken_help"
         }
       ],
       "rules": [
         {
-          "name": "Identity",
+          "name": "identity",
           "type": "exclusivity",
           "values": [
             {
@@ -1111,12 +1097,9 @@
       "displayName": "$oneDrive_in_displayName",
       "direction": "in",
       "enabledInTryMode": false,
-      "filters": [
-        "MSGraph"
-      ],
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta1-10005"
+        "version": "1.0.0-beta1"
       },
       "documentation": "$content=Documentation\\OneDriveIn.md",
       "AADPermissions": [
@@ -1149,7 +1132,7 @@
           "help": "$oneDrive_in_name_help"
         },
         {
-          "name": "Path",
+          "name": "path",
           "value": "string",
           "defaultValue": "Documents/test.txt",
           "required": true,
@@ -1165,13 +1148,13 @@
         {
           "name": "userToken",
           "value": "string",
-          "label": "$usertoken_help",
+          "label": "$usertoken_label",
           "help": "$usertoken_help"
         }
       ],
       "rules": [
         {
-          "name": "Identity",
+          "name": "identity",
           "type": "exclusivity",
           "values": [
             {
@@ -1223,12 +1206,9 @@
       "displayName": "$oneDrive_out_displayName",
       "direction": "out",
       "enabledInTryMode": false,
-      "filters": [
-        "MSGraph"
-      ],
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta1-10005"
+        "version": "1.0.0-beta1"
       },
       "documentation": "$content=Documentation\\OneDriveOut.md",
       "AADPermissions": [
@@ -1261,7 +1241,7 @@
           "help": "$oneDrive_out_name_help"
         },
         {
-          "name": "Path",
+          "name": "path",
           "value": "string",
           "defaultValue": "Documents/test.txt",
           "required": true,
@@ -1277,367 +1257,7 @@
         {
           "name": "userToken",
           "value": "string",
-          "label": "$usertoken_help",
-          "help": "$usertoken_help"
-        }
-      ],
-      "rules": [
-        {
-          "name": "Identity",
-          "type": "exclusivity",
-          "values": [
-            {
-              "value": "UserFromRequest",
-              "display": "$identity_option_userFromRequest_label",
-              "hiddenSettings": [
-                "userId",
-                "userToken"
-              ],
-              "shownSettings": []
-            },
-            {
-              "value": "userId",
-              "display": "$identity_option_userFromId_label",
-              "hiddenSettings": [
-                "userToken"
-              ],
-              "shownSettings": [
-                "userId"
-              ]
-            },
-            {
-              "value": "userToken",
-              "display": "$identity_option_userFromToken_label",
-              "hiddenSettings": [
-                "userId"
-              ],
-              "shownSettings": [
-                "userToken"
-              ]
-            },
-            {
-              "value": "ClientCredentials",
-              "display": "$identity_option_clientCredentials_label",
-              "hiddenSettings": [
-                "userId",
-                "userToken"
-              ],
-              "shownSettings": []
-            }
-          ],
-          "label": "$Identity_label",
-          "help": "$Identity_help"
-        }
-      ]
-    },
-    {
-      "type": "GraphWebhookSubscription",
-      "displayName": "$MSGraphWebhook_displayName",
-      "direction": "in",
-      "enabledInTryMode": false,
-      "filters": [
-        "MSGraph"
-      ],
-      "extension": {
-        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta1-10005"
-      },
-      "documentation": "$content-Documentation\\GraphWebhook.md",
-      "AADPermissions": [
-        {
-          "resourceAppId": "00000002-0000-0000-c000-000000000000",
-          "resourceAccess": [
-            {
-              "type": "Scope",
-              "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
-            }
-          ]
-        }
-      ],
-      "settings": [
-        {
-          "name": "name",
-          "value": "string",
-          "defaultValue": "webhook",
-          "required": true,
-          "label": "$MSGraphWebhook_in_name_label",
-          "help": "$MSGraphWebhook_in_name_help"
-        },
-        {
-          "name": "userId",
-          "value": "string",
-          "label": "$userid_label",
-          "help": "$userid_help"
-        },
-        {
-          "name": "userToken",
-          "value": "string",
-          "label": "$usertoken_help",
-          "help": "$usertoken_help"
-        }
-      ],
-      "rules": [
-        {
-          "name": "Identity",
-          "type": "exclusivity",
-          "values": [
-            {
-              "value": "UserFromRequest",
-              "display": "$identity_option_userFromRequest_label",
-              "hiddenSettings": [
-                "userId",
-                "userToken"
-              ],
-              "shownSettings": []
-            },
-            {
-              "value": "userId",
-              "display": "$identity_option_userFromId_label",
-              "hiddenSettings": [
-                "userToken"
-              ],
-              "shownSettings": [
-                "userId"
-              ]
-            },
-            {
-              "value": "userToken",
-              "display": "$identity_option_userFromToken_label",
-              "hiddenSettings": [
-                "userId"
-              ],
-              "shownSettings": [
-                "userToken"
-              ]
-            },
-            {
-              "value": "ClientCredentials",
-              "display": "$identity_option_clientCredentials_label",
-              "hiddenSettings": [
-                "userId",
-                "userToken"
-              ],
-              "shownSettings": []
-            }
-          ],
-          "label": "$Identity_label",
-          "help": "$Identity_help"
-        }
-      ]
-    },
-    {
-      "type": "GraphWebhookSubscription",
-      "displayName": "$MSGraphWebhookCreator_displayName",
-      "direction": "out",
-      "enabledInTryMode": false,
-      "filters": [
-        "MSGraph"
-      ],
-      "extension": {
-        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta1-10005"
-      },
-      "documentation": "$content=Documentation\\GraphWebhookCreator.md",
-      "AADPermissions": [
-        {
-          "resourceAppId": "00000002-0000-0000-c000-000000000000",
-          "resourceAccess": [
-            {
-              "type": "Scope",
-              "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
-            }
-          ]
-        }
-      ],
-      "settings": [
-        {
-          "name": "name",
-          "value": "string",
-          "defaultValue": "creator",
-          "required": true,
-          "label": "$MSGraphWebhookCreator_in_name_label",
-          "help": "$MSGraphWebhookCreator_in_name_help"
-        },
-        {
-          "name": "changeType",
-          "value": "checkBoxList",
-          "enum": [
-            {
-              "value": "Created",
-              "display": "Created"
-            },
-            {
-              "value": "Updated",
-              "display": "Updated"
-            },
-            {
-              "value": "Deleted",
-              "display": "Deleted"
-            }
-          ],
-          "required": true,
-          "label": "$MSGraphWebhook_in_changeType_label",
-          "help": "$MSGraphWebhook_in_changeType_help"
-        },
-        {
-          "name": "action",
-          "value": "enum",
-          "enum": [
-            {
-              "value": "create",
-              "display": "Create"
-            },
-            {
-              "value": "refresh",
-              "display": "Refresh"
-            },
-            {
-              "value": "delete",
-              "display": "Delete"
-            }
-          ],
-          "label": "$MSGraphWebhook_out_action_label",
-          "help": "$MSGraphWebhook_out_action_help"
-        },
-        {
-          "name": "resource",
-          "value": "string",
-          "label": "$MSGraphWebhook_in_listen_label",
-          "help": "$MSGraphWebhook_in_listen_help"
-        },
-        {
-          "name": "userId",
-          "value": "string",
-          "label": "$userid_label",
-          "help": "$userid_help"
-        },
-        {
-          "name": "userToken",
-          "value": "string",
-          "label": "$usertoken_help",
-          "help": "$usertoken_help"
-        }
-      ],
-      "rules": [
-        {
-          "name": "Identity",
-          "type": "exclusivity",
-          "values": [
-            {
-              "value": "UserFromRequest",
-              "display": "$identity_option_userFromRequest_label",
-              "hiddenSettings": [
-                "userId",
-                "userToken"
-              ],
-              "shownSettings": []
-            },
-            {
-              "value": "userId",
-              "display": "$identity_option_userFromId_label",
-              "hiddenSettings": [
-                "userToken"
-              ],
-              "shownSettings": [
-                "userId"
-              ]
-            },
-            {
-              "value": "userToken",
-              "display": "$identity_option_userFromToken_label",
-              "hiddenSettings": [
-                "userId"
-              ],
-              "shownSettings": [
-                "userToken"
-              ]
-            },
-            {
-              "value": "ClientCredentials",
-              "display": "$identity_option_clientCredentials_label",
-              "hiddenSettings": [
-                "userId",
-                "userToken"
-              ],
-              "shownSettings": []
-            }
-          ],
-          "label": "$Identity_label",
-          "help": "$Identity_help"
-        }
-      ]
-    },
-    {
-      "type": "GraphWebhookTrigger",
-      "direction": "trigger",
-      "displayName": "$MSGraphWebhookTrigger_displayName",
-      "documentation": "$content=Documentation\\GraphWebhookTrigger.md",
-      "filters": [
-        "MSGraph"
-      ],
-      "extension": {
-        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta1-10005"
-      },
-      "enabledInTryMode": false,
-      "AADPermissions": [
-        {
-          "resourceAppId": "00000002-0000-0000-c000-000000000000",
-          "resourceAccess": [
-            {
-              "type": "Scope",
-              "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
-            }
-          ]
-        }
-      ],
-      "settings": [
-        {
-          "name": "name",
-          "value": "string",
-          "defaultValue": "notification",
-          "required": true,
-          "label": "$MSGraphWebhookTrigger_in_name_label",
-          "help": "$MSGraphWebhookTrigger_in_help_label"
-        },
-        {
-          "name": "resource",
-          "value": "string",
-          "required": false,
-          "label": "$MSGraphWebhook_in_listen_label",
-          "help": "$MSGraphWebhook_in_listen_help"
-        },
-        {
-          "name": "changeType",
-          "value": "checkBoxList",
-          "enum": [
-            {
-              "value": "created",
-              "display": "Created"
-            },
-            {
-              "value": "updated",
-              "display": "Updated"
-            },
-            {
-              "value": "deleted",
-              "display": "Deleted"
-            }
-          ],
-          "required": true,
-          "label": "$MSGraphWebhook_in_changeType_label",
-          "help": "$MSGraphWebhook_in_changeType_help"
-        },
-        {
-          "name": "userId",
-          "value": "string",
-          "label": "$userid_label",
-          "help": "$userid_help"
-        },
-        {
-          "name": "userToken",
-          "value": "string",
-          "label": "$usertoken_help",
+          "label": "$usertoken_label",
           "help": "$usertoken_help"
         }
       ],
@@ -1687,6 +1307,240 @@
           ],
           "label": "$Identity_label",
           "help": "$Identity_help"
+        }
+      ]
+    },
+    {
+      "type": "graphWebhookSubscription",
+      "displayName": "$MSGraphWebhook_displayName",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta1"
+      },
+      "documentation": "$content-Documentation\\GraphWebhook.md",
+      "AADPermissions": [
+        {
+          "resourceAppId": "00000002-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "webhook",
+          "required": true,
+          "label": "$MSGraphWebhook_in_name_label",
+          "help": "$MSGraphWebhook_in_name_help"
+        },
+        {
+          "name": "filter",
+          "value": "string",
+          "label": "$GraphWebhookSubscription_in_filter_label",
+          "help": "$GraphWebhookSubscription_in_filter_help"
+        }
+      ]
+    },
+    {
+      "type": "graphWebhookSubscription",
+      "displayName": "$MSGraphWebhookCreator_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta1"
+      },
+      "documentation": "$content=Documentation\\GraphWebhookCreator.md",
+      "AADPermissions": [
+        {
+          "resourceAppId": "00000002-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "creator",
+          "required": true,
+          "label": "$MSGraphWebhookCreator_in_name_label",
+          "help": "$MSGraphWebhookCreator_in_name_help"
+        },
+        {
+          "name": "changeTypes",
+          "value": "checkBoxList",
+          "enum": [
+            {
+              "value": "created",
+              "display": "Created"
+            },
+            {
+              "value": "updated",
+              "display": "Updated"
+            },
+            {
+              "value": "deleted",
+              "display": "Deleted"
+            }
+          ],
+          "required": true,
+          "label": "$MSGraphWebhook_in_changeType_label",
+          "help": "$MSGraphWebhook_in_changeType_help"
+        },
+        {
+          "name": "action",
+          "value": "enum",
+          "enum": [
+            {
+              "value": "create",
+              "display": "Create"
+            },
+            {
+              "value": "refresh",
+              "display": "Refresh"
+            },
+            {
+              "value": "delete",
+              "display": "Delete"
+            }
+          ],
+          "label": "$MSGraphWebhook_out_action_label",
+          "help": "$MSGraphWebhook_out_action_help"
+        },
+        {
+          "name": "subscriptionResource",
+          "value": "string",
+          "label": "$MSGraphWebhook_in_listen_label",
+          "help": "$MSGraphWebhook_in_listen_help"
+        },
+        {
+          "name": "userId",
+          "value": "string",
+          "label": "$userid_label",
+          "help": "$userid_help"
+        },
+        {
+          "name": "userToken",
+          "value": "string",
+          "label": "$usertoken_label",
+          "help": "$usertoken_help"
+        }
+      ],
+      "rules": [
+        {
+          "name": "identity",
+          "type": "exclusivity",
+          "values": [
+            {
+              "value": "UserFromRequest",
+              "display": "$identity_option_userFromRequest_label",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
+            },
+            {
+              "value": "userId",
+              "display": "$identity_option_userFromId_label",
+              "hiddenSettings": [
+                "userToken"
+              ],
+              "shownSettings": [
+                "userId"
+              ]
+            },
+            {
+              "value": "userToken",
+              "display": "$identity_option_userFromToken_label",
+              "hiddenSettings": [
+                "userId"
+              ],
+              "shownSettings": [
+                "userToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "$identity_option_clientCredentials_label",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
+            }
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
+        }
+      ]
+    },
+    {
+      "type": "graphWebhookTrigger",
+      "direction": "trigger",
+      "displayName": "$MSGraphWebhookTrigger_displayName",
+      "documentation": "$content=Documentation\\GraphWebhookTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta1"
+      },
+      "enabledInTryMode": false,
+      "AADPermissions": [
+        {
+          "resourceAppId": "00000002-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "notification",
+          "required": true,
+          "label": "$MSGraphWebhookTrigger_in_name_label",
+          "help": "$MSGraphWebhookTrigger_in_help_label"
+        },
+        {
+          "name": "resourceType",
+          "value": "enum",
+          "required": true,
+          "label": "$MSGraphWebhook_in_listen_label",
+          "help": "$MSGraphWebhook_in_listen_help",
+          "enum": [
+            {
+              "value": "#Microsoft.Graph.Message",
+              "display": "Microsoft Graph Message"
+            },
+            {
+              "value": "#Microsoft.Graph.DriveItem",
+              "display": "Microsoft Graph DriveItem"
+            },
+            {
+              "value": "#Microsoft.Graph.Contact",
+              "display": "Microsoft Graph Contact"
+            },
+            {
+              "value": "#Microsoft.Graph.Event",
+              "display": "Microsoft Graph Event"
+            }
+          ]
         }
       ]
     }
