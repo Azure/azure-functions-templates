@@ -1,0 +1,39 @@
+﻿{
+  "defaultFunctionName": "OultookMessageWebhookDeleterCSharp",
+  "description": "$OultookMessageWebhookDeleterCSharp_description",
+  "name": "Outlook webhook subscription deleter",
+  "language": "C#",
+  "enabledInTryMode": false,
+  "category": [
+    "$temp_category_msgraph"
+  ],
+  "filters": [
+    "MSGraph"
+  ],
+  "extensions": [
+    {
+      "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+      "version": "1.0.0-beta1-10005"
+    }
+  ],
+  "AADPermissions": [
+    {
+      "resourceAppId": "00000002-0000-0000-c000-000000000000",
+      "resourceAccess": [
+        {
+          "type": "Scope",
+          "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+        }
+      ]
+    },
+    {
+      "resourceAppId": "00000003-0000-0000-c000-000000000000",
+      "resourceAccess": [
+        {
+          "type": "Scope",
+          "id": "570282fd-fa5c-430d-a7fd-fc8dc98a9dca"
+        }
+      ]
+    }
+  ]
+}

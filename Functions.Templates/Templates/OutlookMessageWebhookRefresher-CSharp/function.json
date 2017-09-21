@@ -1,0 +1,16 @@
+﻿{
+  "bindings": [
+    {
+      "name": "myTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 * * */2 * *"
+    },
+    {
+      "type": "graphWebhookSubscription",
+      "name": "existingSubscriptions",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
