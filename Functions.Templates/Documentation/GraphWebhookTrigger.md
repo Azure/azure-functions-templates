@@ -1,59 +1,25 @@
-#### Settings for MS Graph Webhook Trigger
+#### Microsoft Graph webhook trigger
 
-The settings specify the following properties.
+This trigger allows a function to react to an incoming webhook from the Microsoft Graph. Each instance of this trigger can react to one Microsoft Graph resource type.
 
-- `name` : The variable name used in function code for the payloads. 
-- `type` : Must be set to *GraphWebhookTrigger*.
-- `direction` : Must be set to *in*. 
-- `Resource` : Resource this function will subscribe to.
-- `ChangeType` : Kinds of changes function subscribes to.
-- `Type` : Corresponds directly to resource. Specifies how notifications will be transformed after being received. Current options: #Microsoft.Graph.Message, #Microsoft.Graph.DriveItem, #Microsoft.Graph.Contact, #Microsoft.Graph.Event
+#### Configuring a Microsoft Graph webhook trigger
 
-#### Additional Information
-Currently, notifications from webhooks are processed at the **application** level and then distributed to the proper function within the app. This means that if multiple functions are subscribed to the same resource (e.g. two functions have GraphWebhookTrigger triggers that are being serialized to Microsoft.Graph.Message), **only one will actually be triggered**. This only applies to functions within the same Function App that are subscribed to the same resource.
+The binding supports the following properties:
 
-If viewing from Portal, one must click 'Subscribe' in order to initialize subscription.
+- `name`: *(required)* the variable name used in function code for the mail message.
+- `type`: *(required)* must be set to `graphWebhook`.
+- `direction`: *(required)* must be set to `trigger`.
+`resourceType`: *(required)* the graph resource for which this function should respond to webhooks. Can be one of the following values:
+   - `#Microsoft.Graph.Message`: changes made to Outlook messages.
+   - `#Microsoft.Graph.DriveItem`: changes made to OneDrive root items.
+   - `#Microsoft.Graph.Contact`: changes made to personal contacts in Outlook.
+   - `#Microsoft.Graph.Event`: changes made to Outlook calendar items.
 
-#### Example function.json
-```json
-{
-  "bindings": [
-    {
-      "type": "GraphWebhookTrigger",
-      "name": "msg",
-      "Type": "#Microsoft.Graph.Message",
-      "ChangeType": [
-        "created"
-      ],
-      "Listen": "me/mailFolders('Inbox')/messages",
-      "direction": "in"
-    }
-  ],
-  "disabled": false
-}
-```
+> Note
+> A function app can only have one function which is registered against a given `resourceType` value.
 
-#### C# Example code
-```csharp
-#r "O365Extensions"
-#r "Microsoft.Graph"
+#### Using a Microsoft Graph webhook trigger from code
 
-using System;
-using Microsoft.Graph;
-using O365Extensions;
-
-public static void Run(Message msg, TraceWriter log)
-{
-    log.Info($"Received email with subject: {msg.Subject} at {msg.SentDateTime.ToString()}");
-}
-
-```
-
-#### Supported types
-
-Notifications can be deserialized to any of the following types:
-
-* Microsoft.Graph.Message
-* Microsoft.Graph.DriveItem
-* Microsoft.Graph.Contact
-* Microsoft.Graph.Event
+The binding exposes the following types to .NET functions:
+- Microsoft Graph SDK types relevant to the resource type, e.g., Microsoft.Graph.Message, Microsoft.Graph.DriveItem
+- Custom object types (using structural model binding)

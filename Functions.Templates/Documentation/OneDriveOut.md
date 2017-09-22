@@ -1,81 +1,58 @@
-### MS Graph OneDrive Binding
+#### OneDrive file output binding
 
-#### Summary
-This output binding can be used to update the contents of a file stored in a user's OneDrive. The authentication information provided must correspond to a user with access to the desired file.
+This binding modifies the contents of a file stored in OneDrive.
 
-#### Settings for MS Graph OneDrive Binding
-The settings specify the following properties.
+#### Configuring a OneDrive file output binding
 
-- `name` : The variable name used in function code for the OneDrive file. 
-- `direction` : Must be set to *out*. 
-- `Type` : Must be set to *OneDrive*.
-- `Path` : Path from root OneDrive directory to file (e.g. Documents/test.txt).
-- `PrincipalId` : Should be set to either an app setting containing the Principal ID/OID to be used to communicate with MS Graph or an expression to evaluate to a Principal ID/OID
-- `idToken` : Should be set to an expression that evaluates to an ID token. Either Principal ID or ID token must be set, but not both.
+This binding requires the following AAD permissions:
+- `Resource`: Microsoft Graph
+- `Permission`: Have full access to user files
 
-#### Example function.json
-function.json is language independent, but not all triggers are supported by all languages.
-```json
-{
-  "bindings": [
-    {
-      "type": "timerTrigger",
-      "direction": "in",
-      "name": "timer",
-      "schedule": "0 45 9 * * *"
-    },
-    {
-      "type": "onedrive",
-      "name": "output",
-      "Path": "Documents/test.txt",
-      "PrincipalId": "%Identity.<alias>%",
-      "direction": "out"
-    }
-  ],
-  "disabled": false
-}
-```
+The binding supports the following properties:
 
-#### Language Support
-##### C# 
+- `name`: *(required)* the variable name used in function code for file.
+- `type`: *(required)* must be set to `onedrive`.
+- `direction`: *(required)* must be set to `out`.
+- `identity`: *(required)* The identity that will be used to perform the action. Can be one of the following values:
+  - userFromRequest: Only valid with HTTP trigger. Uses the identity of the calling user.
+  - userFromId: Uses the identity of a previously logged-in user with the specified ID. See the `userId` property.
+  - userFromToken: Uses the identity represented by the specified token. See the `userToken` property.
+  - clientCredentials: Uses the identity of the function app.
+- `userId: Needed if and only if `identity` is set to `userFromId`. A user principal ID associated with a previously logged-in user.
+- `userToken:Needed if and only if `identity` is set to `userFromToken`. A token valid for the function app.
+- `path`: *(required)* the path in OneDrive to the file.
 
-###### Example code
-```csharp
-using System.Text;
+### Using a OneDrive file output binding from code
 
-// Update contents of file
-public static void Run(TimerInfo timer, TraceWriter log, out byte[] file)
-{
-	file = Encoding.UTF8.GetBytes("Update contents of specified file");
-}
-```
+The binding exposes the following types to .NET functions:
+- byte[]
+- Stream
+- string
+- Microsoft.Graph.DriveItem
 
-###### Supported types
+#### Sample: Writing to a file in OneDrive
 
-The data used to update a file can come from any of the following types:
+Suppose you have the following function.json that defines an HTTP trigger with a OneDrive output binding:
 
-* byte[]
-* Stream
-
-##### Python
-###### function.json
 ```json
 {
   "bindings": [
     {
       "authLevel": "anonymous",
-      "type": "httpTrigger",
-      "direction": "in",
       "name": "req",
-      "methods": [
-        "post"
-      ]
+      "type": "httpTrigger",
+      "direction": "in"
     },
     {
+      "name": "myOneDriveFile",
       "type": "onedrive",
-      "name": "fileOutput",
-      "Path": "Documents/test.txt",
-      "PrincipalId": "Identity.alias",
+      "direction": "out",
+      "path": "FunctionsTest.txt",
+      "identity": "userFromRequest"
+    },
+    {
+      "name": "$return",
+      "type": "http",
       "direction": "out"
     }
   ],
@@ -83,21 +60,26 @@ The data used to update a file can come from any of the following types:
 }
 ```
 
-###### Example code
+The following C# sample gets text from the query string and writes it to a text file (FunctionsTest.txt as defined in the config above) at the root of the caller's OneDrive:
 
-```python
-import os
-import json
+```csharp
+using System.Net;
+using System.Text;
 
-# Write value of json property of HTTP Request to file
-postreqdata = json.loads(open(os.environ['req']).read()) # read HTTP request
-
-data = open(os.environ['fileOutput'], 'w')
-data.write(postreqdata['testProperty'])
-data.close()
+public static async Task Run(HttpRequest req, TraceWriter log, Stream myOneDriveFile)
+{
+    string data = req.Query
+        .FirstOrDefault(q => string.Compare(q.Key, "text", true) == 0)
+        .Value;
+    await myOneDriveFile.WriteAsync(Encoding.UTF8.GetBytes(data), 0, data.Length);
+    return;
+}
 ```
+The following JS sample gets text from the query string and writes it to a text file (FunctionsTest.txt as defined in the config above) at the root of the caller's OneDrive. In the `function.json` above, change `$return` to `res` first.
 
-###### Supported types
-Output file data can come from any of the following types:
-
-* string
+```js
+module.exports = function (context, req) {
+    context.bindings.myOneDriveFile = req.query.text;
+    context.done();
+};
+```

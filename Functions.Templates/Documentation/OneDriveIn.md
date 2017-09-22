@@ -1,115 +1,82 @@
-### MS Graph OneDrive Binding
+#### OneDrive file input binding
 
-#### Summary
-This input binding can be used to retrieve the contents of a file stored in a user's OneDrive. The authentication information provided must correspond to a user with access to the desired file.
+This binding reads the contents of a file stored in OneDrive.
 
-#### Settings
-The settings specify the following properties.
+#### Configuring a OneDrive file input binding
 
-- `name` : The variable name used in function code for the OneDrive file. 
-- `direction` : Must be set to *in*. 
-- `Type` : Must be set to *OneDrive*.
-- `Path` : Path from root OneDrive directory to file (e.g. Documents/test.txt).
-- `PrincipalId` : Should be set to either an app setting containing the Principal ID/OID to be used to communicate with MS Graph or an expression to evaluate to a Principal ID/OID
-- `idToken` : Should be set to an expression that evaluates to an ID token. Either Principal ID or ID token must be set, but not both.
+This binding requires the following AAD permissions:
+|Resource|Permission|
 
-#### Example function.json
-function.json is language independent, but not all triggers are supported by all languages.
-```json
-{
-  "bindings": [
-    {
-      "type": "timerTrigger",
-      "direction": "in",
-      "name": "timer",
-      "schedule": "0 0 3 * * *"
-    },
-    {
-      "type": "onedrive",
-      "name": "fileInput",
-      "Path": "Documents/test.txt",
-      "PrincipalId": "appsetting_principal_id",
-      "direction": "in"
-    }
-  ],
-  "disabled": false
-}
-```
+|Microsoft Graph|Read user files|
 
-#### Language Support
+The binding supports the following properties:
 
-##### C# 
 
-###### Example code
-```csharp
-public static void Run(TimerInfo timer, TraceWriter log, Stream fileInput)
-{
-    StreamReader reader = new StreamReader(fileInput);
-    log.Info($"File contents: {reader.ReadToEnd()}");
-}
-```
 
-###### Supported types
-Input files can be bound to any of the following types:
+`name`: *(required)* the variable name used in function code for the file.
+`type`: *(required)* must be set to `onedrive`.
+`direction`: *(required)* must be set to `in`.
+`identity`: *(required)* The identity that will be used to perform the action. Can be one of the following values:- `userFromRequest`: Only valid with HTTP trigger. Uses the identity of the calling user.- ` userFromId`: Uses the identity of a previously logged-in user with the specified ID. See the <code>userId`  property.- ` userFromToken`: Uses the identity represented by the specified token. See the <code>userToken`  property.- ` clientCredentials`: Uses the identity of the function app.
+`userId: Needed if and only if `identity` is set to `userFromId`. A user principal ID associated with a previously logged-in user.
+`userToken:Needed if and only if `identity` is set to `userFromToken`. A token valid for the function app.
+`path`: *(required)* the path in OneDrive to the file.
 
-* byte[]
-* Stream
-* DriveItem
+### Using a OneDrive file input binding from code
 
-##### Python
-###### Example function.json
+The binding exposes the following types to .NET functions:
+- byte[]
+- Stream
+- string
+- Microsoft.Graph.DriveItem
+
+#### Sample: Reading a file from OneDrive
+
+Suppose you have the following function.json that defines an HTTP trigger with a OneDrive input binding:
+
 ```json
 {
   "bindings": [
     {
       "authLevel": "anonymous",
-      "type": "httpTrigger",
-      "direction": "in",
       "name": "req",
-      "methods": [
-        "post"
-      ]
-    },
-    {
-      "type": "http",
-      "direction": "out",
-      "name": "res"
-    },
-    {
-      "type": "onedrive",
-      "name": "fileInput",
-      "Path": "Documents/test.txt",
-      "PrincipalId": "{principalID}",
+      "type": "httpTrigger",
       "direction": "in"
+    },
+    {
+      "name": "myOneDriveFile",
+      "type": "onedrive",
+      "direction": "in",
+      "path": "{query.filename}",
+      "identity": "userFromRequest"
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
     }
   ],
   "disabled": false
 }
 ```
-###### Example code
-```python
-import os
-import json
 
-# Write entire contents of file to HTTP response
-response = open(os.environ['res'], 'w')
-data = open(os.environ['fileInput']).read()
-response.write(data);
-response.close()
+The following C# sample reads the file specified in the query string and logs its length:
+
+```csharp
+using System.Net;
+
+public static void Run(HttpRequestMessage req, Stream myOneDriveFile, TraceWriter log)
+{
+    log.Info(myOneDriveFile.Length.ToString());
+}
 ```
 
-```python
-import os
-import json
+The following JS sample reads the file specified in the query string and returns its length. In the `function.json` above, change `$return` to `res` first.
 
-# Read json file and write a key, value pair to HTTP response
-response = open(os.environ['res'], 'w')
-data = json.loads(open(os.environ['fileInput']).read())
-response.write("testKey: " + data['testKey']);
-response.close()
+```js
+module.exports = function (context, req) {
+    context.res = {
+        body: context.bindings.myOneDriveFile.length
+    };
+    context.done();
+};
 ```
-
-###### Supported types
-Input files can be bound to any of the following types:
-
-* string

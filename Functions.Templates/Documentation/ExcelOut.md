@@ -1,92 +1,100 @@
-#### Settings for MS Graph Excel Binding
+#### Excel table output binding
 
-The settings specify the following properties.
+This binding modifies the contents of an Excel table stored in OneDrive.
 
-- `name` : The variable name used in function code for the Excel input. 
-- `direction` : Must be set to *out*. 
-- `Type` : Must be set to *Excel*.
-- `UpdateType` : If set to updated, specified rows will replace existing rows in table. If set to append, output rows will be appended to existing rows in table.
-- `Path` : Path from root OneDrive to Excel workbook (e.g. Documents/test.xlsx)
-- `WorksheetName` : Worksheet from which user wishes to get data.
-- `TableName` : If specified, data will be retrieved from this table. If not, data will be retrieved from the worksheet itself. 
-- `PrincipalId` : Should be set to either an app setting containing the Principal ID/OID to be used to communicate with MS Graph or an expression to evaluate to a Principal ID/OID. A new app setting containing this user's Principal ID can be created by clicking 'retrieve'.
-- `idToken` : Should be set to an expression that evaluates to an ID token. Either Principal ID or ID token must be set, but not both.
+#### Configuring an Excel table output binding
 
-#### General Information
-This binding can only be used with Excel files that reside in OneDrive.
+This binding requires the following AAD permissions:
+- `Resource`: Microsoft Graph
+- `Permission`: Have full access to user files
 
-This binding can be used to update existing Excel tables and worksheets. If a worksheet name is provided without a table name, the specified worksheet will be updated. If a worksheet and table name are provided, the specified table will be updated.
+The binding supports the following properties:
 
-#### Example function.json
+`name`: *(required)* the variable name used in function code for the auth token.
+`type`: *(required)* must be set to `excel`.
+`direction`: *(required)* must be set to `out`.
+- `identity`: *(required)* The identity that will be used to perform the action. Can be one of the following values:
+  - userFromRequest: Only valid with HTTP trigger. Uses the identity of the calling user.
+  - userFromId: Uses the identity of a previously logged-in user with the specified ID. See the `userId` property.
+  - userFromToken: Uses the identity represented by the specified token. See the `userToken` property.
+  - clientCredentials: Uses the identity of the function app.
+`userId: Needed if and only if `identity` is set to `userFromId`. A user principal ID associated with a previously logged-in user.
+`userToken:Needed if and only if `identity` is set to `userFromToken`. A token valid for the function app.
+`path`: *(required)* the path in OneDrive to the Excel workbook.
+`worksheetName:The worksheet in which the table is found.
+`tableName:The name of the table. If not specified, the contents of the worksheet will be used.
+`updateType`: *(required)* The type of change to make to the table. Can be one of the following values:
+   - `update`: Replaces the contents of the table in OneDrive.
+   - `append`: Adds the payload to the end of the table in OneDrive by creating new rows.
+
+#### Using an Excel table output binding from code
+
+The binding exposes the following types to .NET functions:
+- string[][]
+- Newtonsoft.Json.Linq.JObject
+- Microsoft.Graph.WorkbookTable
+- Custom object types (using structural model binding)
+
+#### Sample: Adding rows to an Excel table
+
+Suppose you have the following function.json that defines an HTTP trigger with an Excel output binding:
+
+```json
 {
   "bindings": [
     {
-      "name": "myTimer",
-      "type": "timerTrigger",
-      "direction": "in",
-      "schedule": "0 */5 * * * *"
+      "authLevel": "anonymous",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in"
     },
     {
+      "name": "newExcelRow",
       "type": "excel",
-      "name": "table",
-      "Path": "Documents/test.xlsx",
-      "WorksheetName": "MySheet",
-      "TableName": "MyTable",
-      "UpdateType": "Append",
-      "PrincipalId": "Principal_ID",
+      "direction": "out",
+      "identity": "userFromRequest",
+      "updateType": "append",
+      "path": "{query.workbook}",
+      "tableName": "{query.table}"
+    },
+    {
+      "name": "$return",
+      "type": "http",
       "direction": "out"
     }
   ],
   "disabled": false
 }
+```
 
 
-#### C# Example code
-##### Update or append multiple rows using a POCO[]
+The following C# sample adds a new row to the table (assumed to be single-column) based on input from the query string:
+
 ```csharp
-public static void Run(TimerInfo timer, TraceWriter log, out TableRow[] table)
-{
-    table = new TableRow[] {
-        new TableRow {
-            ID = "3",
-            name = "testItem",
-            number = "15"
-        },
-	new TableRow {
-            ID = "4",
-            name = "testItem2",
-            number = "7"
-        }
-    };  
-}
+using System.Net;
+using System.Text;
 
-public class TableRow {
-	public string ID { get; set; }
-	public string name { get; set; }
-	public string number { get; set; }
+public static async Task Run(HttpRequest req, IAsyncCollector<object> newExcelRow, TraceWriter log)
+{
+    string input = req.Query
+        .FirstOrDefault(q => string.Compare(q.Key, "text", true) == 0)
+        .Value;
+    await newExcelRow.AddAsync(new {
+        Text = input
+        // Add other properties for additional columns here
+    });
+    return;
 }
 ```
 
-##### Update a single column using a JObject
-```csharp
-public static void Run(TimerInfo timer, TraceWriter log, out JObject table)
-{
-    table = new JObject();
-    table["column"] = "number";
-    table["value"] = "13";  
-}
+The following JS sample adds a new row to the table (assumed to be single-column) based on input from the query string. In the `function.json` above, change `$return` to `res` first.
+
+```js
+module.exports = function (context, req) {
+    context.bindings.newExcelRow = {
+        text: req.query.text
+        // Add other properties for additional columns here
+    }
+    context.done();
+};
 ```
-
-#### Supported types
-
-[Output] Excel data can be manipulated by any of the following types:
-
-* object[][]
-* List<POCO>*
-* POCO*
-* POCO[]*
-* JObject**
-
-*Where POCO is a user-specified type whose fields exactly match the headers of your table. 
-
-**JObjects can be used to update a single column with a specific value by settings the "column" and "value" keys.

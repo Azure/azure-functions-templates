@@ -1,89 +1,87 @@
-#### Settings for MS Graph Excel Binding
-This binding can only be used with Excel files that reside in OneDrive.
+#### Excel table input binding
 
-The settings specify the following properties.
+This binding reads the contents of an Excel table stored in OneDrive.
 
-- `name` : The variable name used in function code for the Excel input. 
-- `direction` : Must be set to *in*. 
-- `Type` : Must be set to *Excel*.
-- `Path` : Path from root OneDrive to Excel workbook (e.g. Documents/test.xlsx)
-- `WorksheetName` : Worksheet from which user wishes to get data.
-- `TableName` : If specified, data will be retrieved from this table. If not, data will be retrieved from the worksheet itself. 
-- `PrincipalId` : Should be set to either an app setting containing the Principal ID/OID to be used to communicate with MS Graph or an expression to evaluate to a Principal ID/OID
-- `idToken` : Should be set to an expression that evaluates to an ID token. Either Principal ID or ID token must be set, but not both.
+#### Configuring an Excel table input binding
 
-#### Example function.json
+This binding requires the following AAD permissions:
+- `Resource`: Microsoft Graph
+- `Permission`: Read user files
+
+The binding supports the following properties:
+
+- `name`: *(required)* the variable name used in function code for the Excel table.
+- `type`: *(required)* must be set to `excel`.
+- `direction`: *(required)* must be set to `in`.
+- `path`: *(required)* the path in OneDrive to the Excel workbook.
+- `identity`: *(required)* The identity that will be used to perform the action. Can be one of the following values:
+  - userFromRequest: Only valid with HTTP trigger. Uses the identity of the calling user.
+  - userFromId: Uses the identity of a previously logged-in user with the specified ID. See the `userId` property.
+  - userFromToken: Uses the identity represented by the specified token. See the `userToken` property.
+  - clientCredentials: Uses the identity of the function app.
+- `userId`: Needed if and only if `identity` is set to `userFromId`. A user principal ID associated with a previously logged-in user.
+- `userToken`: Needed if and only if `identity` is set to `userFromToken`. A token valid for the function app.
+- `worksheetName`: The worksheet in which the table is found.
+- `tableName`: The name of the table. If not specified, the contents of the worksheet will be used.
+
+#### Using an Excel table input binding from code
+
+The binding exposes the following types to .NET functions:
+- string[][]
+- Microsoft.Graph.WorkbookTable
+- Custom object types (using structural model binding)
+
+#### Sample: Reading an Excel table
+
+Suppose you have the following function.json that defines an HTTP trigger with an Excel input binding:
+
 ```json
 {
   "bindings": [
     {
-      "type": "httpTrigger",
-      "name": "info",
       "authLevel": "anonymous",
-      "methods": [
-        "get",
-        "post",
-        "put"
-      ],
+      "name": "req",
+      "type": "httpTrigger",
       "direction": "in"
     },
     {
       "type": "excel",
-      "name": "inputTable",
-      "Path": "Workbook.xlsx",
-      "WorksheetName": "Sheet1",
-      "TableName": "Table1",
-      "PrincipalId": "{userId}",
-      "direction": "in"
+      "direction": "in",
+      "name": "excelTableData",
+      "path": "{query.workbook}",
+      "identity": "UserFromRequest",
+      "tableName": "{query.table}"
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
     }
   ],
   "disabled": false
 }
 ```
-#### C# Example code
+
+The following C# sample adds reads the contents of the specified table and returns them to the user:
+
 ```csharp
-// This function receives a user's principal ID via a HTTP Request, then reads their Excel table and prints it out
-public static void Run(UserInfo info, TraceWriter log, TableRow[] inputTable)
+using System.Net;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Primitives; 
+
+public static IActionResult Run(HttpRequest req, string[][] excelTableData, TraceWriter log)
 {
-	foreach(var row in inputTable) {
-		log.Info($"Recieved input: {row.ID}")
-	}
-}
-
-public class TableRow {
-	public string ID { get; set; }
-	public string name { get; set; }
-	public string number { get; set; }
-}
-
-public class UserInfo
-{     
-    [JsonProperty(PropertyName = "userId", NullValueHandling = NullValueHandling.Ignore)]
-    public string UserId { get; set; }
+    return new OkObjectResult(excelTableData);
 }
 ```
 
-#### C# Supported types
+The following JS sample adds reads the contents of the specified table and returns them to the user. In the `function.json` above, change `$return` to `res` first.
 
-[Input] Excel data can be imported to user code using any of the following types:
-
-* WorkbookTable
-* string[][]
-* List<POCO>*
-* POCO[]*
-
-*Where POCO is a user-specified type whose fields exactly match the headers of your table. 
-
-#### JavaScript Example Code
-```javascript
-module.exports = function (context, req, inputTable) {
-
-    var multiDimensionalArray = JSON.parse(inputTable);
-
-    context.log(multiDimensionalArray[0][0]);
-    context.log("--------------");
-    context.log(tableInput)
-    
+```js
+module.exports = function (context, req) {
+    context.res = {
+        body: context.bindings.excelTableData
+    };
     context.done();
 };
 ```

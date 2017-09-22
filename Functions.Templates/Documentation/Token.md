@@ -1,112 +1,101 @@
-#### Settings for Token Input Binding
+#### Auth token input binding
 
-The settings specify the following properties:
+This binding gets an AAD token for a given resource and provides it to your code as a string. The resource can be any for which the application has permissions. 
 
-- `name` : The variable name used in function code to identify the token.
-- `type` : Must be set to *token*.
-- `direction` : Must be set to *in*. 
-- `Resource` : Resource to retrieve an authentication token for. Default is Microsoft Graph.
-- `PrincipalId` : Should be set to either an app setting containing the Principal ID/OID to be used to communicate with the specific Resource or an expression to evaluate to a Principal ID/OID
-- `idToken` : Should be set to an expression that evaluates to an ID token. Either Principal ID or ID token must be set, but not both.
+#### Configuring an auth token input binding
 
-#### Example function.json #1
+The binding itself does not require any AAD permissions, but depending on how the token is used, you may need to request additional permissions. Check the requirements of the resource you intend to access with the token.
+
+The binding supports the following properties:
+
+- `name` (*required*): the variable name used in function code for the auth token.
+- `type` (*required*): must be set to `token`.
+- `direction` (*required*): must be set to `in`.
+- `resource` (*required*): An AAD resource URL for which the token is being requested.
+- `identity`: *(required)* The identity that will be used to perform the action. Can be one of the following values:
+  - userFromRequest: Only valid with HTTP trigger. Uses the identity of the calling user.
+  - userFromId: Uses the identity of a previously logged-in user with the specified ID. See the `userId` property.
+  - userFromToken: Uses the identity represented by the specified token. See the `userToken` property.
+  - clientCredentials: Uses the identity of the function app.
+- `userId`: Needed if and only if `identity` is set to `userFromId`. A user principal ID associated with a previously logged-in user.
+- `userToken`:  Needed if and only if `identity` is set to `userFromToken`. A token valid for the function app.
+
+### Using an auth token input binding from code
+
+The token is always presented to code as a string.
+
+#### Sample: Getting user profile information
+
+Suppose you have the following function.json that defines an HTTP trigger with a token input binding:
+
 ```json
 {
   "bindings": [
     {
-      "type": "httpTrigger",
       "name": "req",
-      "authLevel": "anonymous",
-      "methods": [
-        "get",
-        "post"
-      ],
+      "type": "httpTrigger",
       "direction": "in"
     },
     {
+      "type": "token",
+      "direction": "in",
+      "name": "graphToken",
+      "resource": "https://graph.microsoft.com",
+      "identity": "userFromRequest"
+    },
+    {
+      "name": "$return",
       "type": "http",
-      "direction": "out",
-      "name": "res"
-    },
-    {
-      "type": "token",
-      "name": "token",
-      "Resource": "https://graph.windows.net",
-      "PrincipalId": "{principalId}",
-      "direction": "in"
+      "direction": "out"
     }
   ],
   "disabled": false
 }
 ```
 
-#### C# Example Code
+The following C# sample uses the token to make an HTTP call to the Microsoft Graph and returns the result:
+
 ```csharp
-#r "Newtonsoft.Json"
+using System.Net; 
+using System.Net.Http; 
+using System.Net.Http.Headers; 
 
-using Newtonsoft.Json;
-using System.Net;
-
-public static HttpResponseMessage Run(UserInfo req, TraceWriter log, string token)
+public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, string graphToken, TraceWriter log)
 {
-    var response = new HttpResponseMessage();
-    response.Content = new StringContent("Retrieved token: " + token);
-    return response;
-}
-
-public class UserInfo
-{     
-    [JsonProperty(PropertyName = "principalId", NullValueHandling = NullValueHandling.Ignore)]
-    public string principalId { get; set; }
+    HttpClient client = new HttpClient();
+    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", graphToken);
+    return await client.GetAsync("https://graph.microsoft.com/v1.0/me/");
 }
 ```
 
-#### Python Example Code
-```python
-import os
-import json
+The following JS sample uses the token to make an HTTP call to the Microsoft Graph and returns the result. In the `function.json` above, change `$return` to `res` first.
 
-token = open(os.environ['token']).read()
-response = open(os.environ['res'], 'w')
-response.write("token: "+ token)
-response.close()
-```
+```js
+const rp = require('request-promise');
 
-#### Example function.json #2
-```json
-{
-  "bindings": [
-    {
-      "type": "manualTrigger",
-      "direction": "in",
-      "name": "input"
-    },
-    {
-      "type": "token",
-      "name": "token",
-      "PrincipalId": "Identity.alias",
-      "direction": "in",
-      "Resource": "https://graph.windows.net"
-    }
-  ],
-  "disabled": false
-}
-```
+module.exports = function (context, req) {
+    let token = "Bearer " + context.bindings.graphToken;
 
-#### JavaScript Example Code
-```javascript
-module.exports = function (context, input, token) {
-    context.log('JavaScript manually triggered function called with token:', token);
-    context.done();
+    let options = {
+        uri: 'https://graph.microsoft.com/v1.0/me/',
+        headers: {
+            'Authorization': token
+        }
+    };
+    
+    rp(options)
+        .then(function(profile) {
+            context.res = {
+                body: profile
+            };
+            context.done();
+        })
+        .catch(function(err) {
+            context.res = {
+                status: 500,
+                body: err
+            };
+            context.done();
+        });
 };
 ```
-#### TypeScript Example Code
-```typescript
-export function run(context: any, input: any, token: any) {
-    context.log(`TypeScript manually triggered function called with token: ${token}`);
-    context.done();
-};
-```
-#### Supported types
-
-Token will be input in the form of a *string*
