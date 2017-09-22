@@ -7,9 +7,9 @@ This trigger allows a function to react to an incoming webhook from the Microsof
 The binding supports the following properties:
 
 - `name`: *(required)* the variable name used in function code for the mail message.
-- `type`: *(required)* must be set to `graphWebhook`.
+- `type`: *(required)* must be set to `graphWebhookTrigger`.
 - `direction`: *(required)* must be set to `trigger`.
-`resourceType`: *(required)* the graph resource for which this function should respond to webhooks. Can be one of the following values:
+- `resourceType`: *(required)* the graph resource for which this function should respond to webhooks. Can be one of the following values:
    - `#Microsoft.Graph.Message`: changes made to Outlook messages.
    - `#Microsoft.Graph.DriveItem`: changes made to OneDrive root items.
    - `#Microsoft.Graph.Contact`: changes made to personal contacts in Outlook.

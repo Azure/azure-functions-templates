@@ -5,21 +5,22 @@ This binding reads the contents of a file stored in OneDrive.
 #### Configuring a OneDrive file input binding
 
 This binding requires the following AAD permissions:
-|Resource|Permission|
-
-|Microsoft Graph|Read user files|
+- `Resource`: Microsoft Graph
+- `Permission`: Read user files
 
 The binding supports the following properties:
 
-
-
-`name`: *(required)* the variable name used in function code for the file.
-`type`: *(required)* must be set to `onedrive`.
-`direction`: *(required)* must be set to `in`.
-`identity`: *(required)* The identity that will be used to perform the action. Can be one of the following values:- `userFromRequest`: Only valid with HTTP trigger. Uses the identity of the calling user.- ` userFromId`: Uses the identity of a previously logged-in user with the specified ID. See the <code>userId`  property.- ` userFromToken`: Uses the identity represented by the specified token. See the <code>userToken`  property.- ` clientCredentials`: Uses the identity of the function app.
-`userId: Needed if and only if `identity` is set to `userFromId`. A user principal ID associated with a previously logged-in user.
-`userToken:Needed if and only if `identity` is set to `userFromToken`. A token valid for the function app.
-`path`: *(required)* the path in OneDrive to the file.
+- `name`: *(required)* the variable name used in function code for the file.
+- `type`: *(required)* must be set to `onedrive`.
+- `direction`: *(required)* must be set to `in`.
+- `path`: *(required)* the path in OneDrive to the file.
+- `identity`: *(required)* The identity that will be used to perform the action. Can be one of the following values:
+  - userFromRequest: Only valid with HTTP trigger. Uses the identity of the calling user.
+  - userFromId: Uses the identity of a previously logged-in user with the specified ID. See the `userId` property.
+  - userFromToken: Uses the identity represented by the specified token. See the `userToken` property.
+  - clientCredentials: Uses the identity of the function app.
+- `userId`: Needed if and only if `identity` is set to `userFromId`. A user principal ID associated with a previously logged-in user.
+- `userToken`: Needed if and only if `identity` is set to `userFromToken`. A token valid for the function app.
 
 ### Using a OneDrive file input binding from code
 

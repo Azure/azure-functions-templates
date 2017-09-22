@@ -1,4 +1,4 @@
-#++## Microsoft Graph webhook subscription output binding
+#### Microsoft Graph webhook subscription output binding
 
 This binding allows you to create, delete, and refresh webhook subscriptions in the Microsoft Graph.
 

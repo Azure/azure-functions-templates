@@ -10,20 +10,20 @@ This binding requires the following AAD permissions:
 
 The binding supports the following properties:
 
-`name`: *(required)* the variable name used in function code for the auth token.
-`type`: *(required)* must be set to `excel`.
-`direction`: *(required)* must be set to `out`.
+- `name`: *(required)* the variable name used in function code for the auth token.
+- `type`: *(required)* must be set to `excel`.
+- `direction`: *(required)* must be set to `out`.
 - `identity`: *(required)* The identity that will be used to perform the action. Can be one of the following values:
   - userFromRequest: Only valid with HTTP trigger. Uses the identity of the calling user.
   - userFromId: Uses the identity of a previously logged-in user with the specified ID. See the `userId` property.
   - userFromToken: Uses the identity represented by the specified token. See the `userToken` property.
   - clientCredentials: Uses the identity of the function app.
-`userId: Needed if and only if `identity` is set to `userFromId`. A user principal ID associated with a previously logged-in user.
-`userToken:Needed if and only if `identity` is set to `userFromToken`. A token valid for the function app.
-`path`: *(required)* the path in OneDrive to the Excel workbook.
-`worksheetName:The worksheet in which the table is found.
-`tableName:The name of the table. If not specified, the contents of the worksheet will be used.
-`updateType`: *(required)* The type of change to make to the table. Can be one of the following values:
+- `userId`: Needed if and only if `identity` is set to `userFromId`. A user principal ID associated with a previously logged-in user.
+- `userToken`: Needed if and only if `identity` is set to `userFromToken`. A token valid for the function app.
+- `path`: *(required)* the path in OneDrive to the Excel workbook.
+- `worksheetName`: The worksheet in which the table is found.
+- `tableName`: The name of the table. If not specified, the contents of the worksheet will be used.
+- `updateType`: *(required)* The type of change to make to the table. Can be one of the following values:
    - `update`: Replaces the contents of the table in OneDrive.
    - `append`: Adds the payload to the end of the table in OneDrive by creating new rows.
 

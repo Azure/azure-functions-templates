@@ -18,8 +18,8 @@ The binding supports the following properties:
   - userFromId: Uses the identity of a previously logged-in user with the specified ID. See the `userId` property.
   - userFromToken: Uses the identity represented by the specified token. See the `userToken` property.
   - clientCredentials: Uses the identity of the function app.
-- `userId: Needed if and only if `identity` is set to `userFromId`. A user principal ID associated with a previously logged-in user.
-- `userToken:Needed if and only if `identity` is set to `userFromToken`. A token valid for the function app.
+- `userId`: Needed if and only if `identity` is set to `userFromId`. A user principal ID associated with a previously logged-in user.
+- `userToken`: Needed if and only if `identity` is set to `userFromToken`. A token valid for the function app.
 - `path`: *(required)* the path in OneDrive to the file.
 
 ### Using a OneDrive file output binding from code
