@@ -8,8 +8,8 @@ public static void Run(IReadOnlyList<Document> input, TraceWriter log)
 #endif
 #if (vsTemplates)
 using System.Collections.Generic;
-using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.Documents;
+using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
 
 namespace Company.Function
