@@ -627,6 +627,148 @@
       ]
     },
     {
+      "type": "eventHubTrigger",
+      "displayName": "$eventHubTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\eventHubTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.EventHubs",
+        "version": "3.0.0-beta3"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "myEventHubMessage",
+          "required": true,
+          "label": "$eventHubTrigger_name_label",
+          "help": "$eventHubTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "EventHub",
+          "required": true,
+          "label": "$eventHubTrigger_connection_label",
+          "help": "$eventHubTrigger_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "eventHubName",
+          "value": "string",
+          "defaultValue": "myeventhub",
+          "required": true,
+          "label": "$eventHubOut_path_label",
+          "help": "$eventHubTrigger_path_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+              "errorText": "$eventHubTrigger_path_errorText"
+            }
+          ]
+        },
+        {
+          "name": "consumerGroup",
+          "value": "string",
+          "defaultValue": "$Default",
+          "required": false,
+          "label": "$eventHubTrigger_consumerGroup_label",
+          "help": "$eventHubTrigger_consumerGroup_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$)|^\\$Default$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+              "errorText": "$eventHubTrigger_consumerGroup_errorText"
+            }
+          ]
+        },
+        {
+          "name": "cardinality",
+          "value": "enum",
+          "required": false,
+          "defaultValue": "many",
+          "enum": [
+            {
+              "value": "one",
+              "display": "One"
+            },
+            {
+              "value": "many",
+              "display": "Many"
+            }
+          ],
+          "label": "$eventHubTrigger_cardinality_label",
+          "help": "$eventHubTrigger_cardinality_help"
+        }
+      ]
+    },
+    {
+      "type": "eventHub",
+      "displayName": "$eventHubOut_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "actions": [
+        {
+          "template": "EventHubTrigger",
+          "binding": "eventHubTrigger",
+          "settings": [
+            "connection",
+            "path"
+          ]
+        }
+      ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.EventHubs",
+        "version": "3.0.0-beta3"
+      },
+      "documentation": "$content=Documentation\\eventHubOut.md",
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "outputEventHubMessage",
+          "required": true,
+          "label": "$eventHubOut_name_label",
+          "help": "$eventHubOut_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "EventHub",
+          "required": true,
+          "label": "$eventHubOut_connection_label",
+          "help": "$eventHubOut_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "eventHubName",
+          "value": "string",
+          "defaultValue": "outeventhub",
+          "required": true,
+          "label": "$eventHubOut_path_label",
+          "help": "$eventHubOut_path_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+              "errorText": "$eventHubOut_path_errorText"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "token",
       "displayName": "$token_displayName",
       "direction": "in",

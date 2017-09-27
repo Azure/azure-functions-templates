@@ -1,0 +1,22 @@
+{
+  "defaultFunctionName": "EventHubTriggerJS",
+  "description": "$EventHubTriggerNodeJS_description",
+  "name": "EventHubTrigger",
+  "language": "JavaScript",
+  "category": [
+    "$temp_category_core",
+    "$temp_category_dataProcessing"
+  ],
+  "enabledInTryMode": false,
+  "userPrompt": [
+    "connection",
+    "eventHubName",
+    "consumerGroup"
+  ],
+  "extensions": [
+    {
+      "id": "Microsoft.Azure.WebJobs.Extensions.EventHubs",
+      "version": "3.0.0-beta3"
+    }
+  ]
+}

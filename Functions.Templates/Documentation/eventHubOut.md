@@ -4,7 +4,7 @@ The settings for an Azure Event Hub output binding specifies the following prope
 
 - `type` : Must be set to *eventHub*.
 - `name` : The variable name used in function code for the event hub message. 
-- `path` : The name of the event hub.
+- `eventHubName` : The name of the event hub.
 - `connection` : The name of an app setting that contains the connection string to the namespace that the event hub resides in. Copy this connection string by clicking the **Connection Information** button for the namespace, not the event hub itself.  This connection string must have send permissions to send the message to the Event Hub stream.
 - `direction` : Must be set to *out*. 
 
