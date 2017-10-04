@@ -1685,6 +1685,101 @@
           ]
         }
       ]
+    },
+    {
+      "type": "activityTrigger",
+      "displayName": "$activityTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\activityTrigger.md",
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "context",
+          "required": true,
+          "label": "$activityTrigger_name_label",
+          "help": "$activityTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "activity",
+          "value": "string",
+          "required": false,
+          "label": "$activityTrigger_activity_label",
+          "help": "$activityTrigger_activity_help",
+          "validators": [
+            {
+              "expression": "^[0-9a-z][a-z0-9-]{1,61}[0-9a-z]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+              "errorText": "$activityTrigger_activity_errorText"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "orchestrationTrigger",
+      "displayName": "$orchestrationTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\orchestrationTrigger.md",
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "context",
+          "required": true,
+          "label": "$orchestrationTrigger_name_label",
+          "help": "$orchestrationTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "orchestration",
+          "value": "string",
+          "required": false,
+          "label": "$orchestrationTrigger_orchestration_label",
+          "help": "$orchestrationTrigger_orchestration_help",
+          "validators": [
+            {
+              "expression": "^[0-9a-z][a-z0-9-]{1,61}[0-9a-z]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+              "errorText": "$orchestrationTrigger_orchestration_errorText"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "orchestrationClient",
+      "displayName": "$orchestrationClientIn_displayName",
+      "direction": "in",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\orchestrationClientIn.md",
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "client",
+          "required": true,
+          "label": "$orchestrationClientIn_name_label",
+          "help": "$orchestrationClientIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
