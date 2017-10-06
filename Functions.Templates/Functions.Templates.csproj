@@ -31,11 +31,14 @@
     </PreBuildEvent>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="Documentation\activityTrigger.md" />
     <None Include="Documentation\cosmosDBTrigger.md" />
     <None Include="Documentation\eventGridTrigger.md" />
     <None Include="Documentation\GraphWebhookIn.md" />
     <None Include="Documentation\GraphWebhookOut.md" />
     <None Include="Documentation\ioTHubTrigger.md" />
+    <None Include="Documentation\orchestrationClientIn.md" />
+    <None Include="Documentation\orchestrationTrigger.md" />
     <None Include="Documentation\OutlookOut.md" />
     <None Include="Documentation\Token.md" />
     <None Include="Documentation\OneDriveOut.md" />
@@ -48,10 +51,20 @@
     <None Include="Templates\BlobTrigger-JavaScript\metadata.json" />
     <None Include="Templates\BlobTrigger-JavaScript\readme.md" />
     <None Include="Templates\BlobTrigger-JavaScript\sample.dat" />
+    <None Include="Templates\DurableFunctionsActivity-CSharp\build.config\template.json" />
+    <None Include="Templates\DurableFunctionsActivity-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\DurableFunctionsActivity-CSharp\function.json" />
+    <None Include="Templates\DurableFunctionsActivity-CSharp\metadata.json" />
+    <None Include="Templates\DurableFunctionsActivity-CSharp\sample.dat" />
     <None Include="Templates\EventGridTrigger-CSharp\EventGridTriggerCSharp.csx" />
     <None Include="Templates\EventGridTrigger-CSharp\function.json" />
     <None Include="Templates\EventGridTrigger-CSharp\metadata.json" />
     <None Include="Templates\EventGridTrigger-CSharp\sample.dat" />
+    <None Include="Templates\DurableFunctionsOrchestrator-CSharp\build.config\template.json" />
+    <None Include="Templates\DurableFunctionsOrchestrator-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\DurableFunctionsOrchestrator-CSharp\function.json" />
+    <None Include="Templates\DurableFunctionsOrchestrator-CSharp\metadata.json" />
+    <None Include="Templates\DurableFunctionsOrchestrator-CSharp\sample.dat" />
     <None Include="Templates\EventHubTrigger-CSharp\build.config\template.json" />
     <None Include="Templates\EventHubTrigger-CSharp\build.config\vs-2017.3.host.json" />
     <None Include="Templates\EventHubTrigger-CSharp\function.json" />
@@ -178,6 +191,8 @@
   <ItemGroup>
     <Content Include="Templates\BlobTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\BlobTrigger-JavaScript\index.js" />
+    <Content Include="Templates\DurableFunctionsActivity-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\DurableFunctionsOrchestrator-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\EventHubTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\EventHubTrigger-JavaScript\index.js" />
     <Content Include="Templates\HttpTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
@@ -189,6 +204,8 @@
     <Content Include="Templates\TimerTrigger-JavaScript\index.js" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Templates\DurableFunctionsActivity-CSharp\DurableFunctionsActivityCSharp.cs" />
+    <Compile Include="Templates\DurableFunctionsOrchestrator-CSharp\DurableFunctionsOrchestratorCSharp.cs" />
     <Compile Include="Templates\EventHubTrigger-CSharp\EventHubTriggerCSharp.cs" />
   </ItemGroup>
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
