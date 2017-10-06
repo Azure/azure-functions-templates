@@ -56,6 +56,9 @@
     <None Include="Templates\DurableFunctionsActivity-CSharp\function.json" />
     <None Include="Templates\DurableFunctionsActivity-CSharp\metadata.json" />
     <None Include="Templates\DurableFunctionsActivity-CSharp\sample.dat" />
+    <None Include="Templates\DurableFunctionsHttpStart\function.json" />
+    <None Include="Templates\DurableFunctionsHttpStart\metadata.json" />
+    <None Include="Templates\DurableFunctionsHttpStart\run.csx" />
     <None Include="Templates\EventGridTrigger-CSharp\EventGridTriggerCSharp.csx" />
     <None Include="Templates\EventGridTrigger-CSharp\function.json" />
     <None Include="Templates\EventGridTrigger-CSharp\metadata.json" />
@@ -202,11 +205,9 @@
     <Content Include="Templates\QueueTrigger-JavaScript\index.js" />
     <Content Include="Templates\TimerTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\TimerTrigger-JavaScript\index.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Templates\DurableFunctionsActivity-CSharp\DurableFunctionsActivityCSharp.cs" />
-    <Compile Include="Templates\DurableFunctionsOrchestrator-CSharp\DurableFunctionsOrchestratorCSharp.cs" />
-    <Compile Include="Templates\EventHubTrigger-CSharp\EventHubTriggerCSharp.cs" />
+    <Content Include="Templates\DurableFunctionsActivity-CSharp\DurableFunctionsActivityCSharp.cs" />
+    <Content Include="Templates\DurableFunctionsOrchestrator-CSharp\DurableFunctionsOrchestratorCSharp.cs" />
+    <Content Include="Templates\EventHubTrigger-CSharp\EventHubTriggerCSharp.cs" />
   </ItemGroup>
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
     <RemoveDir Directories=".\bin\Portal" />

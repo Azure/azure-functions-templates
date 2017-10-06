@@ -1700,7 +1700,7 @@ function app.</value>
     <value>Activity name</value>
   </data>
   <data name="activityTrigger_displayName" xml:space="preserve">
-    <value>Activity trigger</value>
+    <value>Activity</value>
   </data>
   <data name="activityTrigger_name_help" xml:space="preserve">
     <value>The name used to identify this binding in your code</value>
@@ -1718,7 +1718,7 @@ function app.</value>
     <value>Orchestration Client parameter name</value>
   </data>
   <data name="orchestrationTrigger_displayName" xml:space="preserve">
-    <value>Orchestration trigger</value>
+    <value>Orchestration</value>
   </data>
   <data name="orchestrationTrigger_name_help" xml:space="preserve">
     <value>The name used to identify this binding in your code</value>
@@ -1734,5 +1734,14 @@ function app.</value>
   </data>
   <data name="orchestrationTrigger_orchestration_label" xml:space="preserve">
     <value>Orchestration name</value>
+  </data>
+  <data name="DurableFunctionsActivityCSharp_description" xml:space="preserve">
+    <value>A C# function that will be run whenever an Activity is called by an orchestrator function</value>
+  </data>
+  <data name="DurableFunctionsOrchestratorCSharp_description" xml:space="preserve">
+    <value>A C# orchestrator function that will execute an activity.</value>
+  </data>
+  <data name="DurableFunctionsHttpStart_description" xml:space="preserve">
+    <value>A C# function that will be run by whenever it receives an HTTP request to execute an orchestrator function.</value>
   </data>
 </root>

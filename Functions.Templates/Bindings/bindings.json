@@ -1690,8 +1690,12 @@
       "type": "activityTrigger",
       "displayName": "$activityTrigger_displayName",
       "direction": "trigger",
-      "enabledInTryMode": true,
+      "enabledInTryMode": false,
       "documentation": "$content=Documentation\\activityTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask",
+        "version": "1.0.0-beta"
+      },
       "settings": [
         {
           "name": "name",
@@ -1712,13 +1716,7 @@
           "value": "string",
           "required": false,
           "label": "$activityTrigger_activity_label",
-          "help": "$activityTrigger_activity_help",
-          "validators": [
-            {
-              "expression": "^[0-9a-z][a-z0-9-]{1,61}[0-9a-z]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
-              "errorText": "$activityTrigger_activity_errorText"
-            }
-          ]
+          "help": "$activityTrigger_activity_help"
         }
       ]
     },
@@ -1726,8 +1724,12 @@
       "type": "orchestrationTrigger",
       "displayName": "$orchestrationTrigger_displayName",
       "direction": "trigger",
-      "enabledInTryMode": true,
+      "enabledInTryMode": false,
       "documentation": "$content=Documentation\\orchestrationTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask",
+        "version": "1.0.0-beta"
+      },
       "settings": [
         {
           "name": "name",
@@ -1748,13 +1750,7 @@
           "value": "string",
           "required": false,
           "label": "$orchestrationTrigger_orchestration_label",
-          "help": "$orchestrationTrigger_orchestration_help",
-          "validators": [
-            {
-              "expression": "^[0-9a-z][a-z0-9-]{1,61}[0-9a-z]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
-              "errorText": "$orchestrationTrigger_orchestration_errorText"
-            }
-          ]
+          "help": "$orchestrationTrigger_orchestration_help"
         }
       ]
     },
@@ -1762,8 +1758,12 @@
       "type": "orchestrationClient",
       "displayName": "$orchestrationClientIn_displayName",
       "direction": "in",
-      "enabledInTryMode": true,
+      "enabledInTryMode": false,
       "documentation": "$content=Documentation\\orchestrationClientIn.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask",
+        "version": "1.0.0-beta"
+      },
       "settings": [
         {
           "name": "name",

@@ -23,10 +23,10 @@ namespace Company.Function
         {
             var outputs = new List<string>();
 
-            // "hello", the first parameter to CallFunctionAsync, is the name of your Activity Function.
-            outputs.Add(await context.CallFunctionAsync<string>("hello", "Tokyo"));
-            outputs.Add(await context.CallFunctionAsync<string>("hello", "Seattle"));
-            outputs.Add(await context.CallFunctionAsync<string>("hello", "London"));
+            // Replace "hello" with the name of your Durable Activity Function.
+            outputs.Add(await context.CallActivityAsync<string>("Hello", "Tokyo"));
+            outputs.Add(await context.CallActivityAsync<string>("Hello", "Seattle"));
+            outputs.Add(await context.CallActivityAsync<string>("Hello", "London"));
 
             // returns ["Hello Tokyo!", "Hello Seattle!", "Hello London!"]
             return outputs;

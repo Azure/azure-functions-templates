@@ -1,18 +1,17 @@
 {
-  "defaultFunctionName": "DurableFunctionsOrchestratorCSharp",
-  "description": "$DurableFunctionsOrchestratorCSharp_description",
-  "name": "DurableFunctionsOrchestratorCSharp",
+  "defaultFunctionName": "Hello",
+  "description": "$DurableFunctionsActivityCSharp_description",
+  "name": "Durable Functions Activity",
   "language": "C#",
   "category": [
-    "$temp_category_core",
-    "$temp_category_dataProcessing"
+    "$temp_category_api"
   ],
   "enabledInTryMode": false,
   "userPrompt": [],
   "extensions": [
     {
       "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask",
-      "version": "0.3.0-beta"
+      "version": "1.0.0-beta"
     }
   ]
 }
