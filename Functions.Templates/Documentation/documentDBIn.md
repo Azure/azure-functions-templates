@@ -1,4 +1,4 @@
-#### Settings for Cosmos DB input binding
+#### Settings for Azure Cosmos DB input binding
 
 The following settings can be specified in either the portal or by using the `function.json` in the Advanced Editor with the corresponding property names:
 
@@ -7,15 +7,15 @@ The following settings can be specified in either the portal or by using the `fu
 - **Database name** or `databaseName` : The database containing the document.
 - **Collection name** or `collectionName` : The collection containing the document.
 - **Document ID** or `id` : The Id of the document to retrieve. This property supports bindings similar to `{queueTrigger}`, which will use the string value of the queue message as the document Id. This property is optional in the Azure Portal.
-- **SQL Query** or `sqlQuery` : A Cosmos DB SQL query used for retrieving multiple documents. The query supports runtime bindings. For example: `SELECT * FROM c where c.departmentId = {departmentId}`
-- **Cosmos DB account connection** or `connection` : This string must be an Application Setting set to the endpoint for your Cosmos DB account. 
+- **SQL Query** or `sqlQuery` : Azure Cosmos DB SQL query used for retrieving multiple documents. The query supports runtime bindings. For example: `SELECT * FROM c where c.departmentId = {departmentId}`
+- **Azure Cosmos DB account connection** or `connection` : This string must be an Application Setting set to the endpoint for your Azure Cosmos DB account. 
 - **Input direction** or `direction`  : must be set to *"in"*. This parameter is automatically set if using the Azure Portal.
 
 The properties `id` and `sqlQuery` cannot be set at the same time. If neither `id` nor `sqlQuery` is set, the entire collection is retrieved.
 
 #### Azure Cosmos DB single document input code example for a C# queue trigger
 
-In this example, the Cosmos DB input binding will retrieve the document with the id that matches the queue message string and pass it to the 'document' parameter. If that document is not found, the 'document' parameter will be null. The document is then replaced with the modified document when the function exits.
+In this example, the Azure Cosmos DB input binding will retrieve the document with the id that matches the queue message string and pass it to the 'document' parameter. If that document is not found, the 'document' parameter will be null. The document is then replaced with the modified document when the function exits.
 
 Input binding settings:
 ```javascript
@@ -26,7 +26,7 @@ Input binding settings:
     "databaseName": "MyDb",
     "collectionName": "MyCollection",
     "id": "{queueTrigger}"
-    "connection": "Cosmos DBConnection"
+    "connection": "Azure Cosmos DBConnection"
 }
 ```
 
@@ -40,7 +40,7 @@ public static void Run(string myQueueItem, dynamic document)
 
 #### Azure Cosmos DB input code example for a JavaScript queue trigger
 
-In this example, the Cosmos DB input binding will retrieve the document with the id that matches the queue message string and pass it to the `documentIn` binding property. In JavaScript functions, updated documents are not sent back to the collection. However, you can pass the input binding directly to a Cosmos DB output binding named `documentOut` to support updates. This code example updates the text property of the input document and sets it as the output document.
+In this example, the Azure Cosmos DB input binding will retrieve the document with the id that matches the queue message string and pass it to the `documentIn` binding property. In JavaScript functions, updated documents are not sent back to the collection. However, you can pass the input binding directly to a Azure Cosmos DB output binding named `documentOut` to support updates. This code example updates the text property of the input document and sets it as the output document.
  
 
 Input binding settings:
@@ -67,7 +67,7 @@ module.exports = function (context, input) {
 
 #### Azure Cosmos DB multiple document input code example for a C# queue trigger
  
-In this example, the Cosmos DB input binding will retrieve all documents returned by the specified `sqlQuery`. The `departmentId` value is automatically inserted to the query from the input trigger. For example, a queue message of `{ "departmentId" : "Finance" }` would return all records for the Finance department.
+In this example, the Azure Cosmos DB input binding will retrieve all documents returned by the specified `sqlQuery`. The `departmentId` value is automatically inserted to the query from the input trigger. For example, a queue message of `{ "departmentId" : "Finance" }` would return all records for the Finance department.
 
 Input binding settings:
 ```javascript
@@ -100,7 +100,7 @@ public class QueuePayload
 
 #### Azure Cosmos DB multiple document input code example for a JavaScript queue trigger
  
-In this example, the Cosmos DB input binding will retrieve all documents returned by the specified `sqlQuery`. The `departmentId` value is automatically inserted to the query from the input trigger. For example, a queue message of `{ "departmentId" : "Finance" }` would return all records for the Finance department.
+In this example, the Azure Cosmos DB input binding will retrieve all documents returned by the specified `sqlQuery`. The `departmentId` value is automatically inserted to the query from the input trigger. For example, a queue message of `{ "departmentId" : "Finance" }` would return all records for the Finance department.
 
 Input binding settings:
 ```javascript
