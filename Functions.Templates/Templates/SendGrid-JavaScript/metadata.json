@@ -1,0 +1,24 @@
+{
+    "defaultFunctionName": "SendGridJS",
+    "description": "$SendGridNodeJS_description",
+    "name": "SendGrid",
+    "language": "JavaScript",
+    "category": [
+        "$temp_category_samples",
+        "$temp_category_dataProcessing"
+    ],
+    "enabledInTryMode": false,
+    "userPrompt": [
+        "to",
+        "from",
+        "subject",
+        "text",
+        "apiKey"
+    ],
+    "extensions": [
+      {
+        "id": "Microsoft.Azure.WebJobs.Extensions.SendGrid",
+        "version": "3.0.0-beta3"
+      }
+    ]
+}

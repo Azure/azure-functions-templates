@@ -769,6 +769,74 @@
       ]
     },
     {
+      "type": "sendGrid",
+      "displayName": "$sendGrid_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\sendGridOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.SendGrid",
+        "version": "3.0.0-beta3"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "message",
+          "required": true,
+          "label": "$sendGrid_name_label",
+          "help": "$sendGrid_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "apiKey",
+          "resource": "AppSetting",
+          "value": "string",
+          "defaultValue": "SendGridApiKey",
+          "required": true,
+          "label": "$sendGrid_apiKey_label",
+          "help": "$sendGrid_apiKey_help"
+        },
+        {
+          "name": "to",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$sendGrid_to_label",
+          "help": "$sendGrid_to_help"
+        },
+        {
+          "name": "from",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$sendGrid_from_label",
+          "help": "$sendGrid_from_help"
+        },
+        {
+          "name": "subject",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$sendGrid_subject_label",
+          "help": "$sendGrid_subject_help"
+        },
+        {
+          "name": "text",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$sendGrid_text_label",
+          "help": "$sendGrid_text_help"
+        }
+      ]
+    },
+    {
       "type": "token",
       "displayName": "$token_displayName",
       "direction": "in",
