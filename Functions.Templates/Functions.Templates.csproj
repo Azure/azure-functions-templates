@@ -242,8 +242,8 @@
     <Delete Files=".\bin\Portal\Functions.Templates.csproj" />
     <Exec Command="for /R .\bin\Portal\temp\Templates\ %%x in (*.cs) do ren &quot;%%x&quot; *.csx" />
     <Exec Command="..\tools\nuget.exe pack .\bin\Portal\temp\PortalTemplates.nuspec -Version $(PortalTemplateVersion) -OutputDirectory .\bin\Portal\temp\nuget\" />
-    <Exec Command="..\tools\nuget.exe install Azure.Functions.Templates.Portal -Version $(PortalTemplateVersion) -Source $(MSBuildProjectDirectory)\bin\Portal\temp\nuget -OutputDirectory .\bin\Portal\Release\ -ExcludeVersion" />
-    <Exec Command="..\tools\CreateTemplateConfig\CreateTemplateConfig.exe $(MSBuildProjectDirectory)\bin\Portal\Release\Azure.Functions.Templates.Portal\ $(MSBuildProjectDirectory)\bin\Portal\Test" />
+    <Exec Command="..\tools\nuget.exe install Azure.Functions.UX.Templates -Version $(PortalTemplateVersion) -Source $(MSBuildProjectDirectory)\bin\Portal\temp\nuget -OutputDirectory .\bin\Portal\Release\ -ExcludeVersion" />
+    <Exec Command="..\tools\CreateTemplateConfig\CreateTemplateConfig.exe $(MSBuildProjectDirectory)\bin\Portal\Release\Azure.Functions.UX.Templates\ $(MSBuildProjectDirectory)\bin\Portal\Test" />
     <RemoveDir Directories=".\bin\Portal\temp" />
   </Target>
   <Target Name="VisualStudioTemplates">
