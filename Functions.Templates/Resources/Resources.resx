@@ -933,29 +933,8 @@
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>A JavaScript function that is triggered manually via the portal "Run" button</value>
   </data>
-  <data name="QueueTriggerBash_description" xml:space="preserve">
-    <value>(Experimental) A bash function that will be run whenever a message is added to a specified Azure Queue Storage</value>
-  </data>
-  <data name="QueueTriggerBatch_description" xml:space="preserve">
-    <value>(Experimental) A Batch function that will be run whenever a message is added to a specified Azure Queue Storage</value>
-  </data>
-  <data name="QueueTriggerCSharp_description" xml:space="preserve">
-    <value>A C# function that will be run whenever a message is added to a specified Azure Queue Storage</value>
-  </data>
-  <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a message is added to a specified Azure Queue Storage</value>
-  </data>
-  <data name="QueueTriggerNodeJS_description" xml:space="preserve">
-    <value>A JavaScript function that will be run whenever a message is added to a specified Azure Queue Storage</value>
-  </data>
-  <data name="QueueTriggerPHP_description" xml:space="preserve">
-    <value>(Experimental) A PHP function that will be run whenever a message is added to a specified Azure Queue Storage</value>
-  </data>
-  <data name="QueueTriggerPowerShell_description" xml:space="preserve">
-    <value>(Preview) A PowerShell function that will be run whenever a message is added to a specified Azure Queue Storage</value>
-  </data>
-  <data name="QueueTriggerPython_description" xml:space="preserve">
-    <value>(Experimental) A Python function that will be run whenever a message is added to a specified Azure Queue Storage</value>
+  <data name="QueueTrigger_description" xml:space="preserve">
+    <value>A function that will be run whenever a message is added to a specified Azure Storage queue</value>
   </data>
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
     <value>(Experimental) A Batch function that will be run whenever a file is added to a External File provider.</value>
@@ -1618,8 +1597,8 @@ function app.</value>
   <data name="usertoken_label" xml:space="preserve">
     <value>User token</value>
   </data>
-  <data name="ProfilePhotoAPICSharp_description" xml:space="preserve">
-    <value>A C# function that will return the profile photo of the calling Azure Active Directory user</value>
+  <data name="ProfilePhotoAPI_description" xml:space="preserve">
+    <value>A function that will return the profile photo of the calling Azure Active Directory user</value>
   </data>
   <data name="OutlookMessageWebhookCreator_description" xml:space="preserve">
     <value>A function that will register a webhook subscription for messages in the calling Azure Active Directory user's mailbox</value>
@@ -1734,5 +1713,11 @@ function app.</value>
   </data>
   <data name="OutlookMessageWebhookRefresher_name" xml:space="preserve">
     <value>Outlook message webhook subscription refresher</value>
+  </data>
+  <data name="ProfilePhotoAPI_name" xml:space="preserve">
+    <value>Microsoft Graph profile photo API</value>
+  </data>
+  <data name="QueueTrigger_name" xml:space="preserve">
+    <value>Queue trigger</value>
   </data>
 </root>
