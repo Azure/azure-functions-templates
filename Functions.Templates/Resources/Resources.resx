@@ -1621,17 +1621,17 @@ function app.</value>
   <data name="ProfilePhotoAPICSharp_description" xml:space="preserve">
     <value>A C# function that will return the profile photo of the calling Azure Active Directory user</value>
   </data>
-  <data name="OultookMessageWebhookCreatorCSharp_description" xml:space="preserve">
-    <value>A C# function that will register a webhook subscription for messages in the calling Azure Active Directory user's mailbox</value>
+  <data name="OutlookMessageWebhookCreator_description" xml:space="preserve">
+    <value>A function that will register a webhook subscription for messages in the calling Azure Active Directory user's mailbox</value>
   </data>
-  <data name="OultookMessageWebhookDeleterCSharp_description" xml:space="preserve">
-    <value>A C# function that will unregister all webhook subscriptions to this app for the calling Azure Active Directory user</value>
+  <data name="OutlookMessageWebhookDeleter_description" xml:space="preserve">
+    <value>A function that will unregister all Microsoft Graph webhook subscriptions to this app for the calling Azure Active Directory user</value>
   </data>
-  <data name="OultookMessageWebhookHandlerCSharp_description" xml:space="preserve">
-    <value>A C# function that will receive webhooks for Outlook messages</value>
+  <data name="OutlookMessageWebhookHandler_description" xml:space="preserve">
+    <value>A function that will receive webhooks for Outlook messages</value>
   </data>
-  <data name="OultookMessageWebhookRefresherCSharp_description" xml:space="preserve">
-    <value>A C# function that will refresh all webhook subscriptions for this app</value>
+  <data name="OutlookMessageWebhookRefresher_description" xml:space="preserve">
+    <value>A function that will refresh all Microsoft Graph webhook subscriptions for this app</value>
   </data>
   <data name="identity_option_userFromRequest_label" xml:space="preserve">
     <value>User from HTTP request</value>
@@ -1722,5 +1722,17 @@ function app.</value>
   </data>
   <data name="HttpTrigger_name" xml:space="preserve">
     <value>HTTP trigger</value>
+  </data>
+  <data name="OutlookMessageWebhookCreator_name" xml:space="preserve">
+    <value>Outlook message webhook subscription creator</value>
+  </data>
+  <data name="OutlookMessageWebhookDeleter_name" xml:space="preserve">
+    <value>Outlook message webhook subscription deleter</value>
+  </data>
+  <data name="OutlookMessageWebhookHandler_name" xml:space="preserve">
+    <value>Outlook message webhook handler</value>
+  </data>
+  <data name="OutlookMessageWebhookRefresher_name" xml:space="preserve">
+    <value>Outlook message webhook subscription refresher</value>
   </data>
 </root>
