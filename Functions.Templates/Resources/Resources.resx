@@ -960,14 +960,8 @@
   <data name="SasTokenFSharp_description" xml:space="preserve">
     <value>An F# function that generates a SAS token for Azure Storage for a given container and blob name.</value>
   </data>
-  <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>A C# function that sends a confirmation e-mail when a new item is added to a particular queue</value>
-  </data>
-  <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>An F# function that sends a confirmation e-mail when a new item is added to a particular queue</value>
-  </data>
-  <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>A JavaScript function that sends a confirmation e-mail when a new item is added to a particular queue</value>
+  <data name="SendGrid_description" xml:space="preserve">
+    <value>A function that sends a confirmation e-mail when a new item is added to a particular queue</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
     <value>A C# function that will be run whenever a message is added to a specified Service Bus queue</value>
@@ -984,17 +978,8 @@
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>A JavaScript function that will be run whenever a message is added to the specified Service Bus topic</value>
   </data>
-  <data name="TimerTriggerCSharp_description" xml:space="preserve">
-    <value>A C# function that will be run on a specified schedule</value>
-  </data>
-  <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run on a specified schedule</value>
-  </data>
-  <data name="TimerTriggerNodeJS_description" xml:space="preserve">
-    <value>A JavaScript function that will be run on a specified schedule</value>
-  </data>
-  <data name="TimerTriggerPowerShell_description" xml:space="preserve">
-    <value>(Preview) A PowerShell function that will be run on a specified schedule</value>
+  <data name="TimerTrigger_description" xml:space="preserve">
+    <value>A function that will be run on a specified schedule</value>
   </data>
   <data name="TimerTriggerExcelOutlook_description" xml:space="preserve">
     <value>Read two Excel tables, send emails based on the data, and then update an Excel table.</value>
@@ -1257,8 +1242,8 @@
   <data name="idToken_help_graphwebhook" xml:space="preserve">
     <value>Expression or explicit id token used for authenticating to MS Graph </value>
   </data>
-  <data name="ScheduledMailCSharp_description" xml:space="preserve">
-    <value>(Preview) A C# function that will periodically send emails</value>
+  <data name="ScheduledMail_description" xml:space="preserve">
+    <value>(Preview) A function that will periodically send emails</value>
   </data>
   <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
     <value>An optional Cosmos DB API SQL query used to retrieve a set of documents. If neither a SQL query nor an ID are specified, all documents in the collection are returned.</value>
@@ -1340,9 +1325,6 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   </data>
   <data name="ServiceBusTopicTriggerNodeTS_description" xml:space="preserve">
     <value>(Experimental) A TypeScript function that will be run whenever a message is added to the specified Service Bus topic</value>
-  </data>
-  <data name="TimerTriggerNodeTS_description" xml:space="preserve">
-    <value>(Experimental) A TypeScript function that will be run on a specified schedule</value>
   </data>
   <data name="ManualTriggerNodeTS_description" xml:space="preserve">
     <value>(Experimental) A TypeScript function that is triggered manually via the portal "Run" button</value>
@@ -1719,5 +1701,14 @@ function app.</value>
   </data>
   <data name="QueueTrigger_name" xml:space="preserve">
     <value>Queue trigger</value>
+  </data>
+  <data name="ScheduledMail_name" xml:space="preserve">
+    <value>Scheduled mail</value>
+  </data>
+  <data name="SendGrid_name" xml:space="preserve">
+    <value>SendGrid</value>
+  </data>
+  <data name="TimerTrigger_name" xml:space="preserve">
+    <value>Timer trigger</value>
   </data>
 </root>
