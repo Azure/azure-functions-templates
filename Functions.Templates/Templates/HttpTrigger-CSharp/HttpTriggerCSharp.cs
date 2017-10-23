@@ -9,9 +9,14 @@ using Newtonsoft.Json;
 public static IActionResult Run(HttpRequest req, TraceWriter log)
 #endif
 #if (vsTemplates)
-using System.Net;
+
+using System.IO;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Primitives;
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Extensions.Http;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Azure.WebJobs.Host;
+using Newtonsoft.Json;
 
 namespace Company.Function
 {

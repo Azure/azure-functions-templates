@@ -24,11 +24,11 @@
       "defaultValue": "",
       "replaces": "ConnectionValue"
     },
-    "Path": {
+    "EventHubName": {
       "description": "This is the name of the event hub to which the event will be sent.",
       "type": "parameter",
       "defaultValue": "samples-workitems",
-      "replaces": "PathValue"
+      "replaces": "eventHubNameValue"
     }
   },
   "primaryOutputs": [
@@ -39,14 +39,14 @@
   "defaultName": "EventHubTriggerCSharp",
   "postActions": [
     {
-      "Description": "Adding Reference to Microsoft.Azure.WebJobs.ServiceBus NuGet package",
+      "Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.EventHubs NuGet package",
       "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
       "ContinueOnError": "true",
       "ManualInstructions": [],
       "args": {
         "referenceType": "package",
-        "reference": "Microsoft.Azure.WebJobs.ServiceBus",
-        "version": "2.1.0-beta4",
+        "reference": "Microsoft.Azure.WebJobs.Extensions.EventHubs",
+        "version": "3.0.0-beta3",
         "projectFileExtensions": ".csproj"
       }
     },
@@ -57,14 +57,14 @@
       "continueOnError": true
     },
     {
-        "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
-        "description": "Opens the function class file in the editor",
-        "manualInstructions": [],
-        "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
-        "args": {
-            "files": "0"
-        },
-        "continueOnError": true
+      "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+      "description": "Opens the function class file in the editor",
+      "manualInstructions": [],
+      "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+      "args": {
+        "files": "0"
+      },
+      "continueOnError": true
     }
   ]
 }

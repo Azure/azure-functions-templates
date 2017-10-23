@@ -13,7 +13,7 @@ namespace Company.Function
     public static class EventHubTriggerCSharp
     {
         [FunctionName("EventHubTriggerCSharp")]
-        public static void Run([EventHubTrigger("PathValue", Connection = "ConnectionValue")]string myEventHubMessage, TraceWriter log)
+        public static void Run([EventHubTrigger("eventHubNameValue", Connection = "ConnectionValue")]string myEventHubMessage, TraceWriter log)
 #endif
         {
             log.Info($"C# Event Hub trigger function processed a message: {myEventHubMessage}");
