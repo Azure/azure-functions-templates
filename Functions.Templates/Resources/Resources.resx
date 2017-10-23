@@ -852,17 +852,8 @@
   <data name="EmptyPython_description" xml:space="preserve">
     <value>An empty Python function without triggers, inputs, or outputs</value>
   </data>
-  <data name="EventHubTriggerCSharp_description" xml:space="preserve">
+  <data name="EventHubTrigger_description" xml:space="preserve">
     <value>A C# function that will be run whenever an event hub receives a new event</value>
-  </data>
-  <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>An F# function that will be run whenever an event hub receives a new event</value>
-  </data>
-  <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
-    <value>A JavaScript function that will be run whenever an event hub receives a new event</value>
-  </data>
-  <data name="EventHubTriggerPython_description" xml:space="preserve">
-    <value>(Experimental) A Python function that will be run whenever an event hub receives a new event</value>
   </data>
   <data name="FaceLocatorCSharp_description" xml:space="preserve">
     <value>A C# function that processes images and outputs the bounding rectangle of faces</value>
@@ -981,26 +972,14 @@
   <data name="QueueTriggerPython_description" xml:space="preserve">
     <value>(Experimental) A Python function that will be run whenever a message is added to a specified Azure Queue Storage</value>
   </data>
-  <data name="SaasFileTriggerBatch_description" xml:space="preserve">
+  <data name="SaasFileTrigger_description" xml:space="preserve">
     <value>(Experimental) A Batch function that will be run whenever a file is added to a External File provider.</value>
-  </data>
-  <data name="SaasFileTriggerCSharp_description" xml:space="preserve">
-    <value>(Preview) A C# function that will be run whenever a file is added to a External File provider.</value>
-  </data>
-  <data name="SaasFileTriggerFSharp_description" xml:space="preserve">
-    <value>(Preview) An F# function that will be run whenever a file is added to a External File provider.</value>
-  </data>
-  <data name="SaasFileTriggerNodeJS_description" xml:space="preserve">
-    <value>(Preview) A JavaScript function that will be run whenever a file is added to a External File provider.</value>
   </data>
   <data name="SaasFileTokenNodeJS_description" xml:space="preserve">
     <value>(Preview) A JavaScript function that will be run whenever a file is added to a External File provider.</value>
   </data>
-  <data name="SaasTableCSharp_description" xml:space="preserve">
+  <data name="SaasTable_description" xml:space="preserve">
     <value>(Experimental) A C# function that fetches entities from a External Table when it receives an HTTP request.</value>
-  </data>
-  <data name="SaasTableFSharp_description" xml:space="preserve">
-    <value>(Experimental) An F# function that fetches entities from a External Table when it receives an HTTP request.</value>
   </data>
   <data name="SasTokenFSharp_description" xml:space="preserve">
     <value>An F# function that generates a SAS token for Azure Storage for a given container and blob name.</value>
@@ -1362,9 +1341,6 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   <data name="HttpPOST(CRUD)Queue-FSharp_description" xml:space="preserve">
     <value>F# function that will push data to a queue on receiving a Http Post.</value>
   </data>
-  <data name="EventHubTriggerNodeTS_description" xml:space="preserve">
-    <value>(Experimental) A TypeScript function that will be run whenever an event hub receives a new event</value>
-  </data>
   <data name="GenericWebhookNodeTS_description" xml:space="preserve">
     <value>(Experimental) A TypeScript function that will be run whenever it receives a webhook request</value>
   </data>
@@ -1548,7 +1524,7 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   <data name="documentDB_partitionKey_label" xml:space="preserve">
     <value>Partition key (optional)</value>
   </data>
-  <data name="EventGridTriggerCSharp_description" xml:space="preserve">
+  <data name="EventGridTrigger_description" xml:space="preserve">
     <value>A C# function that will be run whenever an event grid receives a new event</value>
   </data>
   <data name="eventGrid_trigger_displayName" xml:space="preserve">
@@ -1560,11 +1536,8 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   <data name="eventGrid_trigger_name_label" xml:space="preserve">
     <value>Event Trigger parameter name</value>
   </data>
-  <data name="CosmosDBTriggerCSharp_description" xml:space="preserve">
+  <data name="CosmosDBTrigger_description" xml:space="preserve">
     <value>A C# function that will be run whenever documents change in a document collection.</value>
-  </data>
-  <data name="CosmosDBTriggerJavascript_description" xml:space="preserve">
-    <value>A JavaScript function that will be run whenever documents change in a document collection.</value>
   </data>
   <data name="cosmosDBIn_collectionName_help" xml:space="preserve">
     <value>Name of the collection to be monitored.</value>
@@ -1616,9 +1589,6 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   </data>
   <data name="cosmosDBIn_createIfNotExists_label" xml:space="preserve">
     <value>Create lease collection if it does not exist</value>
-  </data>
-  <data name="EventGridTriggerJavascript_description" xml:space="preserve">
-    <value>A JavaScript function that will be run whenever an event grid receives a new event</value>
   </data>
   <data name="Identity_help" xml:space="preserve">
     <value>UserFromRequest: Same as UserFromToken with the user token taken from the X-MS-TOKEN-AAD-ID-TOKEN header. Only works for HttpTrigger
