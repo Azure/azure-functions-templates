@@ -823,7 +823,7 @@
     <value>Table name</value>
   </data>
   <data name="BlobTrigger_description" xml:space="preserve">
-    <value>(Experimental) A Batch function that will be run whenever a blob is added to a specified container</value>
+    <value>A function that will be run whenever a blob is added to a specified container</value>
   </data>
   <data name="CSharp_description" xml:space="preserve">
     <value>A C# function that will be run whenever it receives a GitHub webhook request</value>
@@ -853,61 +853,61 @@
     <value>An empty Python function without triggers, inputs, or outputs</value>
   </data>
   <data name="EventHubTrigger_description" xml:space="preserve">
-    <value>A C# function that will be run whenever an event hub receives a new event</value>
+    <value>A function that will be run whenever an event hub receives a new event</value>
   </data>
   <data name="FaceLocator_description" xml:space="preserve">
-    <value>A C# function that processes images and outputs the bounding rectangle of faces</value>
+    <value>A function that processes images and outputs the bounding rectangle of faces using Cognitive Services</value>
   </data>
   <data name="GenericWebhook_description" xml:space="preserve">
-    <value>A C# function that will be run whenever it receives a webhook request</value>
+    <value>A function that will be run whenever it receives a webhook</value>
   </data>
   <data name="GitHubCommenter_description" xml:space="preserve">
-    <value>A JavaScript function that will be run whenever it receives a GitHub webhook request</value>
+    <value>A function that will be run whenever it receives a GitHub webhook for an issue or pull request and adds a comment</value>
   </data>
   <data name="GithubWebhook_description" xml:space="preserve">
-    <value>A C# function that will be run whenever it receives a GitHub webhook request</value>
+    <value>A function that willl be run whenever it receives a GitHub webhook</value>
   </data>
   <data name="HttpGETCRUD_description" xml:space="preserve">
-    <value>A C# function that fetches entities from a Storage Table when it receives an HTTP request</value>
+    <value>A function that fetches entities from a Storage table when it receives an HTTP request</value>
   </data>
   <data name="HttpPOSTCRUD_description" xml:space="preserve">
-    <value>A C# function that adds entities to a Storage Table when it receives an HTTP request</value>
+    <value>A function that adds entities to a Storage table when it receives an HTTP request</value>
   </data>
   <data name="HttpPUTCRUD_description" xml:space="preserve">
-    <value>A C# function that updates entity in a Storage Table when it receives an HTTP request</value>
+    <value>A function that updates entity in a Storage table when it receives an HTTP request</value>
   </data>
   <data name="HttpTrigger_description" xml:space="preserve">
-    <value>(Experimental) A Batch function that will be run whenever it receives an HTTP request</value>
+    <value>A function that will be run whenever it receives an HTTP request, responding based on data in the body or query string</value>
   </data>
   <data name="ImageResizer_description" xml:space="preserve">
-    <value>A C# function that creates resized images whenever a blob is added to a specified container</value>
+    <value>A function that creates resized images whenever a blob is added to a specified container</value>
   </data>
   <data name="ManualTrigger_description" xml:space="preserve">
-    <value>A C# function that is triggered manually via the portal "Run" button</value>
+    <value>A function that is triggered manually via the portal "Run" button</value>
   </data>
   <data name="QueueTrigger_description" xml:space="preserve">
-    <value>A C# function that will be run whenever a message is added to a specified Azure Queue Storage</value>
+    <value>A function that will be run whenever a message is added to a specified Azure Storage queue</value>
   </data>
   <data name="SaasFileTrigger_description" xml:space="preserve">
-    <value>(Experimental) A Batch function that will be run whenever a file is added to a External File provider.</value>
+    <value>A function that will be run whenever a file is added to an external file store</value>
   </data>
   <data name="SaasTable_description" xml:space="preserve">
-    <value>(Experimental) A C# function that fetches entities from a External Table when it receives an HTTP request.</value>
+    <value>A function that will be run whenever data is added to an external table store</value>
   </data>
   <data name="SasToken_description" xml:space="preserve">
-    <value>An F# function that generates a SAS token for Azure Storage for a given container and blob name.</value>
+    <value>A function that generates a SAS token for a given Azure Storage container and blob name</value>
   </data>
   <data name="SendGrid_description" xml:space="preserve">
-    <value>A C# function that sends a confirmation e-mail when a new item is added to a particular queue</value>
+    <value>A function that sends a confirmation e-mail when a new item is added to a particular queue</value>
   </data>
   <data name="ServiceBusQueueTrigger_description" xml:space="preserve">
-    <value>A C# function that will be run whenever a message is added to a specified Service Bus queue</value>
+    <value>A function that will be run whenever a message is added to a specficied Service Bus queue</value>
   </data>
   <data name="ServiceBusTopicTrigger_description" xml:space="preserve">
-    <value>An F# function that will be run whenever a message is added to the specified Service Bus topic</value>
+    <value>A function that will be run whenever a message is added to the specified Service Bus Topic</value>
   </data>
   <data name="TimerTrigger_description" xml:space="preserve">
-    <value>A C# function that will be run on a specified schedule</value>
+    <value>A function that will be run on a specified schedule</value>
   </data>
   <data name="TimerTriggerExcelOutlook_description" xml:space="preserve">
     <value>Read two Excel tables, send emails based on the data, and then update an Excel table.</value>
@@ -1171,7 +1171,7 @@
     <value>Expression or explicit id token used for authenticating to MS Graph </value>
   </data>
   <data name="ScheduledMail_description" xml:space="preserve">
-    <value>(Preview) A C# function that will periodically send emails</value>
+    <value>A function that will periodically send emails</value>
   </data>
   <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
     <value>An optional Azure Cosmos DB API SQL query used to retrieve a set of documents. If neither a SQL query nor an ID are specified, all documents in the collection are returned.</value>
@@ -1183,7 +1183,7 @@
     <value>Cardinality of the trigger input. Choose 'one' if the input is a single message or 'many' if the input is an array of messages. 'Many' is the default if unspecified</value>
   </data>
   <data name="HttpTriggerWithParameters_description" xml:space="preserve">
-    <value>A C# function that will be run whenever it receives an HTTP request</value>
+    <value>A function that will be run whenever it receives an HTTP request, responding based on data in the URL path</value>
   </data>
   <data name="eventHubTrigger_cardinality_label" xml:space="preserve">
     <value>The event hub cardinality</value>
@@ -1204,31 +1204,31 @@ Windows Azure Service Management API - Access Azure Service Management as organi
     <value>AppInsights Http Availability</value>
   </data>
   <data name="AppInsightsHttpAvailability_description" xml:space="preserve">
-    <value>A C# function which monitors availability and responsiveness of any web app with Application Insights</value>
+    <value>A function which monitors availability and responsiveness of any web app with Application Insights</value>
   </data>
   <data name="AppInsightsRealtimePowerBI_name" xml:space="preserve">
     <value>AppInsights Real-time Power BI</value>
   </data>
   <data name="AppInsightsRealtimePowerBI_description" xml:space="preserve">
-    <value>A C# function which pushes real-time availability data from Application Insights to Power BI</value>
+    <value>A function that pushes real-time availability data from Application Insights to Power BI</value>
   </data>
   <data name="AppInsightsScheduledAnalytics_name" xml:space="preserve">
     <value>AppInsights Scheduled Analytics</value>
   </data>
   <data name="AppInsightsScheduledAnalytics_description" xml:space="preserve">
-    <value>A C# function which derives metrics from performing deep analysis of your app telemetry with Application Insights</value>
+    <value>A function that derives metrics by performing deep analysis of  app telemetry with Application Insights</value>
   </data>
   <data name="AppInsightsScheduledDigest_name" xml:space="preserve">
     <value>AppInsights Scheduled Digest</value>
   </data>
   <data name="AppInsightsScheduledDigest_description" xml:space="preserve">
-    <value>A C# function which sends a daily Application Insights telemetry report via email</value>
+    <value>A function that sends a daily Application Insights telemetry report via email</value>
   </data>
   <data name="HttpPOST(CRUD)Queue_description" xml:space="preserve">
-    <value>F# function that will push data to a queue on receiving a Http Post.</value>
+    <value>A function that will push data to a queue on receiving a Http Post</value>
   </data>
   <data name="IoTHubTrigger_description" xml:space="preserve">
-    <value>A C# function that will be run whenever an IoT Hub receives a new event from IoT Hub (Event Hub)</value>
+    <value>A function that will be run whenever an IoT Hub delivers a new message for Event Hub-compatible endpoints</value>
   </data>
   <data name="ioTHubTrigger_connection_help" xml:space="preserve">
     <value>It is the key to IoT Hub connection string stored in the app setting, which must have Receive permissions. If you do not have any, click new to create one.</value>
@@ -1330,7 +1330,7 @@ Windows Azure Service Management API - Access Azure Service Management as organi
     <value>Type of notification to listen to</value>
   </data>
   <data name="MSGraphWebhook_description" xml:space="preserve">
-    <value>A C# function that runs when it receives an O365 webhook request.</value>
+    <value>A function that runs when it receives an O365 webhook request</value>
   </data>
   <data name="RefreshMSGraphSubscriptions_description" xml:space="preserve">
     <value>Periodically refreshes all O365 subscriptions</value>
@@ -1378,7 +1378,7 @@ Windows Azure Service Management API - Access Azure Service Management as organi
     <value>Partition key (optional)</value>
   </data>
   <data name="EventGridTrigger_description" xml:space="preserve">
-    <value>A C# function that will be run whenever an event grid receives a new event</value>
+    <value>A function that will be run whenever an event grid receives a new event</value>
   </data>
   <data name="eventGrid_trigger_displayName" xml:space="preserve">
     <value>Event Grid Trigger</value>
@@ -1390,7 +1390,7 @@ Windows Azure Service Management API - Access Azure Service Management as organi
     <value>Event Trigger parameter name</value>
   </data>
   <data name="CosmosDBTrigger_description" xml:space="preserve">
-    <value>A C# function that will be run whenever documents change in a document collection.</value>
+    <value>A function that will be run whenever documents change in a document collection</value>
   </data>
   <data name="cosmosDBIn_collectionName_help" xml:space="preserve">
     <value>Name of the collection to be monitored.</value>
@@ -1465,19 +1465,19 @@ ClientCredentials: Obtains the access token for the client credentials found in 
     <value>User token</value>
   </data>
   <data name="ProfilePhotoAPI_description" xml:space="preserve">
-    <value>A C# function that will return the profile photo of the calling Azure Active Directory user</value>
+    <value>A function that will return the profile photo of the calling Azure Active Directory user</value>
   </data>
   <data name="OutlookMessageWebhookCreator_description" xml:space="preserve">
-    <value>A C# function that will register a webhook subscription for messages in the calling Azure Active Directory user's mailbox</value>
+    <value>A function that will register a webhook subscription for messages in the calling Azure Active Directory user's mailbox</value>
   </data>
   <data name="OutlookMessageWebhookDeleter_description" xml:space="preserve">
-    <value>A C# function that will unregister all webhook subscriptions to this app for the calling Azure Active Directory user</value>
+    <value>A function that will unregister all Microsoft Graph webhook subscriptions to this app for the calling Azure Active Directory user</value>
   </data>
   <data name="OutlookMessageWebhookHandler_description" xml:space="preserve">
-    <value>A C# function that will receive webhooks for Outlook messages</value>
+    <value>A function that will receive webhooks for Outlook messages</value>
   </data>
   <data name="OutlookMessageWebhookRefresher_description" xml:space="preserve">
-    <value>A C# function that will refresh all webhook subscriptions for this app</value>
+    <value>A function that will refresh all Microsoft Graph webhook subscriptions for this app</value>
   </data>
   <data name="identity_option_userFromRequest_label" xml:space="preserve">
     <value>User from HTTP request</value>
