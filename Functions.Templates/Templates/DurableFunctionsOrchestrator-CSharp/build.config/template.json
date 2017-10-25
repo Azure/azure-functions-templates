@@ -3,10 +3,10 @@
   "classifications": [
     "Azure Function"
   ],
-  "name": "DurableFunctionsOrchestratorCSharp",
-  "identity": "Azure.Function.CSharp.DurableFunctionsOrchestratorTrigger",
-  "groupIdentity": "Azure.Function.DurableFunctionsOrchestratorTrigger",
-  "shortName": "EventHub",
+  "name": "DurableFunctionsOrchestrator",
+  "identity": "Azure.Function.CSharp.DurableFunctionsOrchestrator",
+  "groupIdentity": "Azure.Function.DurableFunctionsOrchestrator",
+  "shortName": "DurableFunctionsOrchestrator",
   "tags": {
     "language": "C#",
     "type": "item"
@@ -17,11 +17,11 @@
       "description": "namespace for the generated code",
       "replaces": "Company.Function",
       "type": "parameter"
-    }
+    }    
   },
   "primaryOutputs": [
     {
-      "path": "EventHubTriggerCSharp.cs"
+      "path": "DurableFunctionsOrchestratorCSharp.cs"
     }
   ],
   "defaultName": "DurableFunctionsOrchestratorCSharp",
@@ -34,7 +34,7 @@
       "args": {
         "referenceType": "package",
         "reference": "Microsoft.Azure.WebJobs.Extensions.DurableTask",
-        "version": "0.3.0-beta",
+        "version": "1.0.0-beta",
         "projectFileExtensions": ".csproj"
       }
     },

@@ -56,9 +56,10 @@
     <None Include="Templates\DurableFunctionsActivity-CSharp\function.json" />
     <None Include="Templates\DurableFunctionsActivity-CSharp\metadata.json" />
     <None Include="Templates\DurableFunctionsActivity-CSharp\sample.dat" />
-    <None Include="Templates\DurableFunctionsHttpStart\function.json" />
-    <None Include="Templates\DurableFunctionsHttpStart\metadata.json" />
-    <None Include="Templates\DurableFunctionsHttpStart\run.csx" />
+    <None Include="Templates\DurableFunctionsHttpStart-CSharp\build.config\template.json" />
+    <None Include="Templates\DurableFunctionsHttpStart-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\DurableFunctionsHttpStart-CSharp\function.json" />
+    <None Include="Templates\DurableFunctionsHttpStart-CSharp\metadata.json" />
     <None Include="Templates\EventGridTrigger-CSharp\EventGridTriggerCSharp.csx" />
     <None Include="Templates\EventGridTrigger-CSharp\function.json" />
     <None Include="Templates\EventGridTrigger-CSharp\metadata.json" />
@@ -205,6 +206,7 @@
     <Content Include="Templates\BlobTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\BlobTrigger-JavaScript\index.js" />
     <Content Include="Templates\DurableFunctionsActivity-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\DurableFunctionsHttpStart-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\DurableFunctionsOrchestrator-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\EventHubTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\EventHubTrigger-JavaScript\index.js" />
@@ -219,7 +221,8 @@
     <Content Include="Templates\DurableFunctionsActivity-CSharp\DurableFunctionsActivityCSharp.cs" />
     <Content Include="Templates\DurableFunctionsOrchestrator-CSharp\DurableFunctionsOrchestratorCSharp.cs" />
     <Content Include="Templates\EventHubTrigger-CSharp\EventHubTriggerCSharp.cs" />
-  </ItemGroup>
+    <Content Include="Templates\DurableFunctionsHttpStart-CSharp\DurableFunctionsHttpStartCSharp.cs" />
+  </ItemGroup>  
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
     <RemoveDir Directories=".\bin\Portal" />
   </Target>
