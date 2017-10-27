@@ -16,12 +16,13 @@
     },
     "sourceName": "Company.FunctionApp",
     "symbols": {
-        "StorageConnectionStringValue": {
-            "description": "The connection string for your Azure WebJobs Storage.",
-            "type": "parameter",
-            "defaultValue": "",
-            "replaces": "AzureWebJobsStorageConnectionStringValue"
-        }
+      "StorageConnectionStringValue": {
+        "description": "The connection string for your Azure WebJobs Storage.",
+        "type": "parameter",
+        "defaultValue": "",
+        "replaces": "AzureWebJobsStorageConnectionStringValue",
+        "DataType": "AzureStorage"
+      }
     },
     "sources": [
         {
