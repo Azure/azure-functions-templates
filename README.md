@@ -25,12 +25,12 @@ You can find more information on the templatting engine at the [wiki page](https
 
 ### Generate templates for portal
 1. Execute the [getTools](getTools.ps1) script from the root of the repository
-2. Build the Functions.Templates/Functions.Templates.csproj via Visual studio or Execute `msbuild Functions.Templates.csproj /p:ItemTemplateVersion=1.0.0 /p:ProjectTemplateVersion=1.0.0 /target:VisualStudioTemplates` from Functions.Templates folder
+2. Build the Functions.Templates/Functions.Templates.csproj via Visual studio or Execute `msbuild Functions.Templates.csproj` from Functions.Templates folder
 3. The generated templates should be present in the `Functions.Templates\bin\Portal\Release\Azure.Functions.Templates.Portal` folder
 
 ### Generate templates for Visual Studio
 1. Execute the [getTools](getTools.ps1) script from the root of the repository
-2. Execute `msbuild Functions.Templates.csproj /target:VisualStudioTemplates` from Functions.Templates folder
+2. Execute `msbuild Functions.Templates.csproj /target:VisualStudioTemplates  /p:TemplatesVersion=1.0.0` from Functions.Templates folder
 3. The generated templates should be present in the `Functions.Templates\bin\VS\Release\` folder, Azure.Functions.Templates nuget pacakges
 
 ## Adding New Templates

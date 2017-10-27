@@ -20,10 +20,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ProjectTemplateVersion>
-    </ProjectTemplateVersion>
-    <ItemTemplateVersion>
-    </ItemTemplateVersion>
+    <TemplatesVersion>
+    </TemplatesVersion>
     <PortalTemplateVersion>1.0.0</PortalTemplateVersion>
   </PropertyGroup>
   <PropertyGroup>
@@ -98,6 +96,11 @@
     <None Include="Templates\ProfilePhotoAPI-CSharp\function.json" />
     <None Include="Templates\ProfilePhotoAPI-CSharp\metadata.json" />
     <None Include="Templates\ProfilePhotoAPI-CSharp\run.csx" />
+    <None Include="Templates\ProjectTemplate\build.config\dotnetcli.host.json" />
+    <None Include="Templates\ProjectTemplate\build.config\template.json" />
+    <None Include="Templates\ProjectTemplate\host.json" />
+    <None Include="Templates\ProjectTemplate\local.settings.json" />
+    <None Include="Templates\ProjectTemplate\_gitignore" />
     <None Include="Templates\QueueTrigger-CSharp\QueueTriggerCSharp.cs" />
     <None Include="Templates\QueueTrigger-JavaScript\function.json" />
     <None Include="Templates\QueueTrigger-JavaScript\metadata.json" />
@@ -145,7 +148,6 @@
     <None Include="Documentation\tableOut.md" />
     <None Include="Documentation\timerTrigger.md" />
     <None Include="Documentation\twilioSmsOut.md" />
-    <None Include="ItemTemplates.nuspec" />
     <None Include="PortalTemplates.nuspec" />
     <None Include="Templates\BlobTrigger-CSharp\build.config\template.json" />
     <None Include="Templates\BlobTrigger-CSharp\build.config\vs-2017.3.host.json" />
@@ -180,6 +182,7 @@
     <None Include="Templates\TimerTrigger-JavaScript\metadata.json" />
     <None Include="Templates\TimerTrigger-JavaScript\readme.md" />
     <None Include="Templates\TimerTrigger-JavaScript\sample.dat" />
+    <None Include="VSTemplates.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\cs-CZ\Resources\Resources.resx" />
@@ -213,6 +216,7 @@
     <Content Include="Templates\HttpTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\HttpTrigger-JavaScript\index.js" />
     <Content Include="Templates\HttpTriggerWithParameters-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\ProjectTemplate\Company.FunctionApp.csproj" />
     <Content Include="Templates\QueueTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\QueueTrigger-JavaScript\index.js" />
     <Content Include="Templates\SendGrid-JavaScript\index.js" />
@@ -222,9 +226,10 @@
     <Content Include="Templates\DurableFunctionsOrchestrator-CSharp\DurableFunctionsOrchestratorCSharp.cs" />
     <Content Include="Templates\EventHubTrigger-CSharp\EventHubTriggerCSharp.cs" />
     <Content Include="Templates\DurableFunctionsHttpStart-CSharp\DurableFunctionsHttpStartCSharp.cs" />
-  </ItemGroup>  
+  </ItemGroup>
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
     <RemoveDir Directories=".\bin\Portal" />
+    <RemoveDir Directories=".\bin\VS" />
   </Target>
   <Target Name="dotnetcliCheck" BeforeTargets="PrepareForBuild">
     <Error Condition="!Exists('..\tools\cli\dotnet.exe')" Text="Dotnet cli not found in the ..\tools\cli folder, Please execute getTools.ps1 or download and unzip into the ..\tools\cli folder from https://dotnetcli.blob.core.windows.net/dotnet/Sdk/Release/2.0.0/dotnet-dev-win-x86.latest.zip" />
@@ -254,9 +259,7 @@
     <Exec Command="..\tools\cli\dotnet.exe new functions --portalTemplates false --vsTemplates true -o .\bin\VS\temp --force" IgnoreExitCode="true" />
     <Exec Command="..\tools\CodeFormatter\CodeFormatter.exe ..\tools\codeFormat.csproj /nocopyright  /rule-:NewLineAbove,ExplicitVisibility,IllegalHeaders,FieldNames,ExplicitThis,BraceNewLine,UsingLocation,UnicodeLiterals,ReadonlyFields /verbose" IgnoreExitCode="true" />
     <Delete Files=".\bin\VS\Functions.Templates.csproj" />
-    <Exec Condition="'$(ItemTemplateVersion)' != ''" Command="..\tools\nuget.exe pack .\bin\VS\temp\ItemTemplates.nuspec -Version $(ItemTemplateVersion) -OutputDirectory .\bin\VS\Release\" />
-    <MSBuild Condition="'$(ProjectTemplateVersion)' != ''" Targets="Clean;Build" Projects="..\ProjectTemplate\Template.proj" Properties="PackageVersion=$(ProjectTemplateVersion)" />
-    <Copy Condition="'$(ProjectTemplateVersion)' != ''" SourceFiles="..\ProjectTemplate\bin\Microsoft.AzureFunctions.ProjectTemplates.$(ProjectTemplateVersion).nupkg" DestinationFiles=".\bin\VS\Release\Microsoft.AzureFunctions.ProjectTemplates.$(ProjectTemplateVersion).nupkg" />
+    <Exec Condition="'$(TemplatesVersion)' != ''" Command="..\tools\nuget.exe pack .\bin\VS\temp\VSTemplates.nuspec -Version $(TemplatesVersion) -OutputDirectory .\bin\VS\Release\" />
     <RemoveDir Directories=".\bin\VS\temp" />
   </Target>
 </Project>
