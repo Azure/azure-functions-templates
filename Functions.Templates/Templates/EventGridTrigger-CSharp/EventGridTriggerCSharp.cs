@@ -5,6 +5,8 @@ using Microsoft.Azure.WebJobs.Extensions.EventGrid;
 public static void Run(EventGridEvent eventGridEvent, TraceWriter log)
 #endif
 #if (vsTemplates)
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Azure.WebJobs.Extensions.EventGrid;
 namespace Company.Function
 {

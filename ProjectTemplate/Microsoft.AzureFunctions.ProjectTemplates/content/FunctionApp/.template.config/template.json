@@ -1,18 +1,29 @@
 {
-  "author": "Microsoft",
-  "classifications": ["AzureFunctions", "ClassLib"],
-  "name": "Azure Functions",
-  "generatorVersions": "[1.0.0.0-*)",
-  "groupIdentity": "Microsoft.AzureFunctions.ProjectTemplates",
-  "precedence": "100",
-  "identity": "Microsoft.AzureFunctions.ProjectTemplate.CSharp",
-  "shortName": "azureFunctionsProjectTemplates",
-  "tags": {
-    "language": "C#",
-    "type": "project"
-  },
-  "sourceName": "Company.FunctionApp",
-  "sources": [
+    "author": "Microsoft",
+    "classifications": [
+        "AzureFunctions",
+        "ClassLib"
+    ],
+    "name": "Azure Functions",
+    "generatorVersions": "[1.0.0.0-*)",
+    "groupIdentity": "Microsoft.AzureFunctions.ProjectTemplates",
+    "precedence": "100",
+    "identity": "Microsoft.AzureFunctions.ProjectTemplate.CSharp.1.x",
+    "shortName": "azureFunctionsProjectTemplates",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "sourceName": "Company.FunctionApp",
+    "symbols": {
+        "StorageConnectionStringValue": {
+            "description": "The connection string for your Azure WebJobs Storage.",
+            "type": "parameter",
+            "defaultValue": "",
+            "replaces": "AzureWebJobsStorageConnectionStringValue"
+        }
+    },
+    "sources": [
         {
             "modifiers": [
                 {
@@ -23,6 +34,10 @@
             ]
         }
     ],
-  "primaryOutputs": [ { "path": "Company.FunctionApp.csproj" } ],
-  "defaultName": "Company.FunctionApp"
+    "primaryOutputs": [
+        {
+            "path": "Company.FunctionApp.csproj"
+        }
+    ],
+    "defaultName": "Company.FunctionApp"
 }

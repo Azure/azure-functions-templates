@@ -4,7 +4,7 @@
     "Azure Function"
   ],
   "name": "CosmosDBTrigger",
-  "identity": "Azure.Function.CSharp.CosmosDBTrigger",
+  "identity": "Azure.Function.CSharp.CosmosDBTrigger.1.x",
   "groupIdentity": "Azure.Function.CosmosDBTrigger",
   "shortName": "CosmosDB",
   "tags": {
@@ -18,36 +18,24 @@
       "replaces": "Company.Function",
       "type": "parameter"
     },
-    "Connection": {
+    "ConnectionStringSetting": {
       "description": "The name of the App Setting containing the connection string to the service that contains the collection to be monitored.",
       "type": "parameter",
       "defaultValue": "",
       "replaces": "ConnectionValue"
     },
-    "Database": {
+    "DatabaseName": {
       "description": "This is the name of the database that includes the collection to be monitored.",
       "type": "parameter",
-      "defaultValue": "aDatabase",
+      "defaultValue": "databaseName",
       "replaces": "DatabaseValue"
     },
-    "Collection": {
+    "CollectionName": {
       "description": "This is the name of the collection to be monitored.",
       "type": "parameter",
-      "defaultValue": "aCollection",
+      "defaultValue": "collectionName",
       "replaces": "CollectionValue"
-    },
-    "LeaseDatabase": {
-      "description": "This is the name of the database that includes the collection to store the leases.",
-      "type": "parameter",
-      "defaultValue": "aLeaseDatabase",
-      "replaces": "LeaseDatabaseValue"
-    },
-    "LeaseCollection": {
-      "description": "This is the name of the collection to store the leases.",
-      "type": "parameter",
-      "defaultValue": "aLeaseCollection",
-      "replaces": "LeaseCollectionValue"
-    }
+    }  
   },
   "primaryOutputs": [
     {
@@ -64,7 +52,7 @@
       "args": {
         "referenceType": "package",
         "reference": "Microsoft.Azure.WebJobs.Extensions.DocumentDB",
-        "version": "1.1.0-beta1-10467",
+        "version": "1.1.0-beta4",
         "projectFileExtensions": ".csproj"
       }
     },

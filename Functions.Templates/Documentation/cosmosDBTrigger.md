@@ -1,6 +1,6 @@
-#### Settings for Cosmos DB trigger binding
+#### Settings for Azure Cosmos DB trigger binding
 
-The Cosmos DB Trigger leverages the [Cosmos DB Change Feed](https://docs.microsoft.com/azure/cosmos-db/change-feed) to listen for changes across partitions. It uses a **second collection** to store *leases* over the partitions.
+The Azure Cosmos DB Trigger leverages the [Azure Cosmos DB Change Feed](https://docs.microsoft.com/azure/cosmos-db/change-feed) to listen for changes across partitions. It uses a **second collection** to store *leases* over the partitions.
 
 Both the collection being monitored for changes and the collection that will hold the leases need to be available for the trigger to work.
 
@@ -9,10 +9,10 @@ The settings for an Azure Cosmos DB trigger specifies the following properties a
 - **Trigger type** or `type` : Must be set to *cosmosDBTrigger*.
 - **Document collection parameter name** or `name` : The variable name used in function code for the list of documents. 
 - **Trigger direction** or `direction` : Must be set to *in*. This parameter is automatically set if using the Azure Portal.
-- **Cosmos DB account connection** or `connectionStringSetting` : The name of an app setting that contains the connection string to the service which holds the collection to monitor.
+- **Azure Cosmos DB account connection** or `connectionStringSetting` : The name of an app setting that contains the connection string to the service which holds the collection to monitor.
 - **Database name** or `databaseName` : The name of the database that holds the collection to monitor.
 - **Collection name** or `collectionName` : The name of the collection to monitor.
-- **Cosmos DB account connection for leases** or `leaseConnectionStringSetting` : Optional. The name of an app setting that contains the connection string to the service which holds the lease collection. If not set it will connect to the service defined by `connectionStringSetting`. This parameter is automatically set if using the Azure Portal.
+- **Azure Cosmos DB account connection for leases** or `leaseConnectionStringSetting` : Optional. The name of an app setting that contains the connection string to the service which holds the lease collection. If not set it will connect to the service defined by `connectionStringSetting`. This parameter is automatically set if using the Azure Portal.
 - **Database name for leases** or `leaseDatabaseName` : The name of the database that holds the collection to store leases. If not set, it will use the value of `databaseName`. This parameter is automatically set if using the Azure Portal.
 - **Collection name for leases** or `leaseCollectionName` : The name of the collection to store leases. If not set, it will use "leases".
 - **Create lease collection if it does not exist** or `createLeaseCollectionIfNotExists` : true/false. Checks for existence and automatically creates the leases collection. Default is `false`.
