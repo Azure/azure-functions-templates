@@ -1,0 +1,24 @@
+version: 1.0.1.{build}
+pull_requests:
+  do_not_increment_build_number: true
+branches:
+  only:
+  - dev
+  - master
+  - v2.x
+max_jobs: 1
+image: Visual Studio 2017
+clone_folder: c:\projects\azure-webjobs-sdk-templates
+install:
+- ps: >-
+    .\getTools.ps1
+build_script:
+- ps: >-
+    Set-Location .\Functions.Templates
+
+    msbuild Functions.Templates.csproj /p:TemplateVersion=$env:APPVEYOR_BUILD_VERSION /target:PortalTemplatesPkg /target:VisualStudioTemplates
+artifacts:
+  - path: Functions.Templates\bin\Portal\Nuget\*.nupkg
+    name: Portal templates
+  - path: Functions.Templates\bin\VS\Release\*.nupkg
+    name: Visual Studio templates

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="PortalTemplates" InitialTargets="Clean;dotnetcliCheck;codeformatterCheck;CreateTemplateConfig;nugetCheck">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="PkgInstall" InitialTargets="Clean;dotnetcliCheck;codeformatterCheck;nugetCheck;PortalTemplatesPkg">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />  
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -20,11 +20,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ProjectTemplateVersion>
-    </ProjectTemplateVersion>
-    <ItemTemplateVersion>
-    </ItemTemplateVersion>
-    <PortalTemplateVersion>1.0.0</PortalTemplateVersion>
+    <TemplateVersion>1.0.0</TemplateVersion>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>
@@ -622,25 +618,30 @@
   <Target Name="CreateTemplateConfig" BeforeTargets="PrepareForBuild">
     <Error Condition="!Exists('..\tools\CreateTemplateConfig\CreateTemplateConfig.exe')" Text="CreateTemplateConfig.exe not found in the ..\tools\CreateTemplateConfig folder. Please execute getTools.ps1 or Please download nuget.exe to the ..\tools folder" />
   </Target>
-  <Target Name="PortalTemplates">
+  <Target Name="PortalTemplatesPkg">
     <Exec Command="..\tools\cli\dotnet.exe new -i .\" />
     <Exec Command="..\tools\cli\dotnet.exe new functions -o .\bin\Portal\temp --force" IgnoreExitCode="true" />
     <Exec Command="..\tools\CodeFormatter\CodeFormatter.exe ..\tools\codeFormat.csproj /nocopyright  /rule-:NewLineAbove,ExplicitVisibility,IllegalHeaders,FieldNames,ExplicitThis,BraceNewLine,UsingLocation,UnicodeLiterals,ReadonlyFields /verbose" IgnoreExitCode="true" />
     <Delete Files=".\bin\Portal\Functions.Templates.csproj" />
     <Exec Command="for /R .\bin\Portal\temp\Templates\ %%x in (*.cs) do ren &quot;%%x&quot; *.csx" />
-    <Exec Command="..\tools\nuget.exe pack .\bin\Portal\temp\PortalTemplates.nuspec -Version $(PortalTemplateVersion) -OutputDirectory .\bin\Portal\temp\nuget\" />
-    <Exec Command="..\tools\nuget.exe install Azure.Functions.Ux.Templates -Version $(PortalTemplateVersion) -Source $(MSBuildProjectDirectory)\bin\Portal\temp\nuget -OutputDirectory .\bin\Portal\Release\ -ExcludeVersion" />
-    <Exec Command="..\tools\CreateTemplateConfig\CreateTemplateConfig.exe $(MSBuildProjectDirectory)\bin\Portal\Release\Azure.Functions.Ux.Templates\ $(MSBuildProjectDirectory)\bin\Portal\Test" />
+    <Exec Command="..\tools\nuget.exe pack .\bin\Portal\temp\PortalTemplates.nuspec -Version $(TemplateVersion) -OutputDirectory .\bin\Portal\temp\nuget\" />
+    <Copy SourceFiles=".\bin\Portal\temp\nuget\Azure.Functions.Ux.Templates.$(TemplateVersion).nupkg" DestinationFiles=".\bin\Portal\Nuget\Azure.Functions.Ux.Templates.$(TemplateVersion).nupkg" />
     <RemoveDir Directories=".\bin\Portal\temp" />
+  </Target>
+  <Target Name="PkgInstall" DependsOnTargets="PortalTemplatesPkg">
+    <Exec Command="..\tools\nuget.exe install Azure.Functions.Ux.Templates -Version $(TemplateVersion) -Source $(MSBuildProjectDirectory)\bin\Portal\Nuget -OutputDirectory .\bin\Portal\Release -ExcludeVersion" />
+  </Target>
+  <Target Name="TestConfig" DependsOnTargets="CreateTemplateConfig;PkgInstall">
+    <Exec Command="..\tools\CreateTemplateConfig\CreateTemplateConfig.exe $(MSBuildProjectDirectory)\bin\Portal\Release\Azure.Functions.Ux.Templates\ $(MSBuildProjectDirectory)\bin\Portal\Test" />
   </Target>
   <Target Name="VisualStudioTemplates">
     <Exec Command="..\tools\cli\dotnet.exe new -i .\" />
     <Exec Command="..\tools\cli\dotnet.exe new functions --portalTemplates false --vsTemplates true -o .\bin\VS\temp --force" IgnoreExitCode="true" />
     <Exec Command="..\tools\CodeFormatter\CodeFormatter.exe ..\tools\codeFormat.csproj /nocopyright  /rule-:NewLineAbove,ExplicitVisibility,IllegalHeaders,FieldNames,ExplicitThis,BraceNewLine,UsingLocation,UnicodeLiterals,ReadonlyFields /verbose" IgnoreExitCode="true" />
     <Delete Files=".\bin\VS\Functions.Templates.csproj" />
-    <Exec Condition="'$(ItemTemplateVersion)' != ''" Command="..\tools\nuget.exe pack .\bin\VS\temp\ItemTemplates.nuspec -Version $(ItemTemplateVersion) -OutputDirectory .\bin\VS\Release\" />
-    <MSBuild Condition="'$(ProjectTemplateVersion)' != ''" Targets="Clean;Build" Projects="..\ProjectTemplate\Template.proj" Properties="PackageVersion=$(ProjectTemplateVersion)" />
-    <Copy Condition="'$(ProjectTemplateVersion)' != ''" SourceFiles="..\ProjectTemplate\bin\Microsoft.AzureFunctions.ProjectTemplates.$(ProjectTemplateVersion).nupkg" DestinationFiles=".\bin\VS\Release\Microsoft.AzureFunctions.ProjectTemplates.$(ProjectTemplateVersion).nupkg" />
+    <Exec Condition="'$(TemplateVersion)' != ''" Command="..\tools\nuget.exe pack .\bin\VS\temp\ItemTemplates.nuspec -Version $(TemplateVersion) -OutputDirectory .\bin\VS\Release\" />
+    <MSBuild Condition="'$(TemplateVersion)' != ''" Targets="Clean;Build" Projects="..\ProjectTemplate\Template.proj" Properties="PackageVersion=$(TemplateVersion)" />
+    <Copy Condition="'$(TemplateVersion)' != ''" SourceFiles="..\ProjectTemplate\bin\Microsoft.AzureFunctions.ProjectTemplates.$(TemplateVersion).nupkg" DestinationFiles=".\bin\VS\Release\Microsoft.AzureFunctions.ProjectTemplates.$(TemplateVersion).nupkg" />
     <RemoveDir Directories=".\bin\VS\temp" />
   </Target>
 </Project>
