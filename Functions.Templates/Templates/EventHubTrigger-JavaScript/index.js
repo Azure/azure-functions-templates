@@ -1,4 +1,4 @@
-﻿module.exports = function (context, eventHubMessages) {
+module.exports = function (context, eventHubMessages) {
     context.log(`JavaScript eventhub trigger function called for message array ${eventHubMessages}`);
     
     eventHubMessages.forEach(message => {

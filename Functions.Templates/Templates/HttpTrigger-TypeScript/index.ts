@@ -1,4 +1,4 @@
-﻿export function run(context: any, req: any): void {
+export function run(context: any, req: any): void {
     context.log("TypeScript HTTP trigger function processed a request.");
 
     if (req.query.name || (req.body && req.body.name)) {

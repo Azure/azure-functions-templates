@@ -1,4 +1,4 @@
-﻿export function run(context: any, data: IData): void {
+export function run(context: any, data: IData): void {
     context.log("Webhook was triggered!");
 
     // check if we got first/last properties

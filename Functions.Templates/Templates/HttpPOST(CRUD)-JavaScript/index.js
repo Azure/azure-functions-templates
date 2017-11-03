@@ -1,4 +1,4 @@
-﻿module.exports = function (context, req) {
+module.exports = function (context, req) {
     var statusCode = 400;
     var responseBody = "Invalid request object";
 

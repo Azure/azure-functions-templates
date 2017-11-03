@@ -1,4 +1,4 @@
-﻿#r "System.Net.Http"
+#r "System.Net.Http"
 #r "Newtonsoft.Json"
 
 open System.Net
