@@ -1,4 +1,4 @@
-﻿#if (portalTemplates)
+#if (portalTemplates)
 public static void Run(Stream myBlob, string name, TraceWriter log)
 #endif
 #if (vsTemplates)
