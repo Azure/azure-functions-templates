@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="PkgInstall" InitialTargets="Clean;dotnetcliCheck;codeformatterCheck;nugetCheck;PortalTemplatesPkg">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />  
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -42,6 +42,13 @@
     <None Include="Documentation\ExcelOut.md" />
     <None Include="Documentation\ExcelIn.md" />
     <None Include="Documentation\GraphWebhookTrigger.md" />
+    <None Include="ItemTemplates.nuspec" />
+    <None Include="ProjectTemplates.nuspec" />
+    <None Include="ProjectTemplate\build.config\dotnetcli.host.json" />
+    <None Include="ProjectTemplate\build.config\template.json" />
+    <None Include="ProjectTemplate\host.json" />
+    <None Include="ProjectTemplate\local.settings.json" />
+    <None Include="ProjectTemplate\_gitignore" />
     <None Include="Templates\BlobTrigger-CSharp\BlobTriggerCSharp.cs" />
     <None Include="Templates\BlobTrigger-JavaScript\function.json" />
     <None Include="Templates\BlobTrigger-JavaScript\metadata.json" />
@@ -180,7 +187,6 @@
     <None Include="Templates\TimerTrigger-JavaScript\metadata.json" />
     <None Include="Templates\TimerTrigger-JavaScript\readme.md" />
     <None Include="Templates\TimerTrigger-JavaScript\sample.dat" />
-    <None Include="VSTemplates.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\cs-CZ\Resources\Resources.resx" />
@@ -204,6 +210,7 @@
     <EmbeddedResource Include="Resources\zh-TW\Resources\Resources.resx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ProjectTemplate\Company.FunctionApp.csproj" />
     <Content Include="Templates\BlobTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\BlobTrigger-JavaScript\index.js" />
     <Content Include="Templates\DurableFunctionsActivity-CSharp\build.config\vs-2017.3\function_f.png" />
