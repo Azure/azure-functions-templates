@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.AzureFunctions.ProjectTemplates</id>
+    <version>1.0.0</version>
+    <authors>Microsoft</authors>
+    <description>Azure Functions Project Template Pack for Microsoft Template Engine</description>
+    <language>en-US</language>
+    <projectUrl>https://go.microsoft.com/fwlink/?linkid=848145</projectUrl>
+    <licenseUrl>https://raw.githubusercontent.com/Azure/azure-webjobs-sdk-templates/8ba7a6f1f907edb5de30c1ef4791d97711d84cb6/LICENSE.txt</licenseUrl>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+  </metadata>
+  <files>
+    <file src="ProjectTemplate/_gitignore" target="content/ProjectTemplate/_gitignore" />
+    <file src="ProjectTemplate/Company.FunctionApp.csproj" target="content/ProjectTemplate/Company.FunctionApp.csproj" />
+    <file src="ProjectTemplate/host.json" target="content/ProjectTemplate/host.json" />
+    <file src="ProjectTemplate/local.settings.json" target="content/ProjectTemplate/local.settings.json" />
+    <file src="ProjectTemplate/build.config/template.json" target="content/ProjectTemplate/.template.config/template.json" />
+    <file src="ProjectTemplate/build.config/dotnetcli.host.json" target="content/ProjectTemplate/.template.config/dotnetcli.host.json" />
+  </files>
+</package>

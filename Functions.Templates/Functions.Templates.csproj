@@ -605,6 +605,7 @@
   </ItemGroup>
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
     <RemoveDir Directories=".\bin\Portal" />
+    <RemoveDir Directories=".\bin\VS" />
   </Target>
   <Target Name="dotnetcliCheck" BeforeTargets="PrepareForBuild">
     <Error Condition="!Exists('..\tools\cli\dotnet.exe')" Text="Dotnet cli not found in the ..\tools\cli folder, Please execute getTools.ps1 or download and unzip into the ..\tools\cli folder from https://dotnetcli.blob.core.windows.net/dotnet/Sdk/Release/2.0.0/dotnet-dev-win-x86.latest.zip" />
@@ -640,8 +641,7 @@
     <Exec Command="..\tools\CodeFormatter\CodeFormatter.exe ..\tools\codeFormat.csproj /nocopyright  /rule-:NewLineAbove,ExplicitVisibility,IllegalHeaders,FieldNames,ExplicitThis,BraceNewLine,UsingLocation,UnicodeLiterals,ReadonlyFields /verbose" IgnoreExitCode="true" />
     <Delete Files=".\bin\VS\Functions.Templates.csproj" />
     <Exec Condition="'$(TemplateVersion)' != ''" Command="..\tools\nuget.exe pack .\bin\VS\temp\ItemTemplates.nuspec -Version $(TemplateVersion) -OutputDirectory .\bin\VS\Release\" />
-    <MSBuild Condition="'$(TemplateVersion)' != ''" Targets="Clean;Build" Projects="..\ProjectTemplate\Template.proj" Properties="PackageVersion=$(TemplateVersion)" />
-    <Copy Condition="'$(TemplateVersion)' != ''" SourceFiles="..\ProjectTemplate\bin\Microsoft.AzureFunctions.ProjectTemplates.$(TemplateVersion).nupkg" DestinationFiles=".\bin\VS\Release\Microsoft.AzureFunctions.ProjectTemplates.$(TemplateVersion).nupkg" />
+    <Exec Condition="'$(TemplateVersion)' != ''" Command="..\tools\nuget.exe pack .\bin\VS\temp\ProjectTemplates.nuspec -Version $(TemplateVersion) -OutputDirectory .\bin\VS\Release\" />
     <RemoveDir Directories=".\bin\VS\temp" />
   </Target>
 </Project>
