@@ -1,4 +1,4 @@
-﻿var util = require('util');
+var util = require('util');
 
 // The 'From' and 'To' fields are automatically populated with the values specified by the binding settings.
 //

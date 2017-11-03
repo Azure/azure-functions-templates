@@ -1,4 +1,4 @@
-﻿# CdsWebHook - C<span>#</span>
+# CdsWebHook - C<span>#</span>
 
 The `CdsWebHook` makes it incredibly easy to have your CDS functions executed via an HTTP call to your function.
 
