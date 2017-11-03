@@ -262,7 +262,8 @@
     <Exec Command="..\tools\cli\dotnet.exe new functions --portalTemplates false --vsTemplates true -o .\bin\VS\temp --force" IgnoreExitCode="true" />
     <Exec Command="..\tools\CodeFormatter\CodeFormatter.exe ..\tools\codeFormat.csproj /nocopyright  /rule-:NewLineAbove,ExplicitVisibility,IllegalHeaders,FieldNames,ExplicitThis,BraceNewLine,UsingLocation,UnicodeLiterals,ReadonlyFields /verbose" IgnoreExitCode="true" />
     <Delete Files=".\bin\VS\Functions.Templates.csproj" />
-    <Exec Condition="'$(TemplateVersion)' != ''" Command="..\tools\nuget.exe pack .\bin\VS\temp\VSTemplates.nuspec -Version $(TemplateVersion) -OutputDirectory .\bin\VS\Release\" />
+    <Exec Condition="'$(TemplateVersion)' != ''" Command="..\tools\nuget.exe pack .\bin\VS\temp\ItemTemplates.nuspec -Version $(TemplateVersion) -OutputDirectory .\bin\VS\Release\" />
+    <Exec Condition="'$(TemplateVersion)' != ''" Command="..\tools\nuget.exe pack .\bin\VS\temp\ProjectTemplates.nuspec -Version $(TemplateVersion) -OutputDirectory .\bin\VS\Release\" />
     <RemoveDir Directories=".\bin\VS\temp" />
   </Target>
 </Project>
