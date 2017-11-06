@@ -4,7 +4,6 @@ using System.Net;
 public static HttpResponseMessage Run(HttpRequestMessage req, string name, TraceWriter log)
 #endif
 #if (vsTemplates)
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using Microsoft.Azure.WebJobs;
