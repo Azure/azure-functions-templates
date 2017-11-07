@@ -12,11 +12,11 @@ public static async Task<HttpResponseMessage> Run(
 #endif
 #if (vsTemplates)
 
+using System.Net.Http;
+using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
-using System.Net.Http;
-using System.Threading.Tasks;
 
 namespace Company.Function
 {
