@@ -3,28 +3,28 @@
   "classifications": [
     "Azure Function"
   ],
-  "name": "DurableFunctionsOrchestrator",
-  "identity": "Azure.Function.CSharp.DurableFunctionsOrchestrator.2.x",
-  "groupIdentity": "Azure.Function.DurableFunctionsOrchestrator",
-  "shortName": "DurableFunctionsOrchestrator",
+  "name": "DurableFunctionsOrchestration",
+  "identity": "Azure.Function.CSharp.DurableFunctionsOrchestration.2.x",
+  "groupIdentity": "Azure.Function.DurableFunctionsOrchestration",
+  "shortName": "DurableFunctionsOrchestration",
   "tags": {
     "language": "C#",
     "type": "item"
   },
-  "sourceName": "DurableFunctionsOrchestratorCSharp",
+  "sourceName": "DurableFunctionsOrchestrationCSharp",
   "symbols": {
     "namespace": {
       "description": "namespace for the generated code",
       "replaces": "Company.Function",
       "type": "parameter"
-    }    
+    }
   },
   "primaryOutputs": [
     {
-      "path": "DurableFunctionsOrchestratorCSharp.cs"
+      "path": "DurableFunctionsOrchestrationCSharp.cs"
     }
   ],
-  "defaultName": "DurableFunctionsOrchestratorCSharp",
+  "defaultName": "DurableFunctionsOrchestrationCSharp",
   "postActions": [
     {
       "Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.DurableTask NuGet package",

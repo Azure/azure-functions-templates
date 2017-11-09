@@ -65,11 +65,11 @@
     <None Include="Templates\DurableFunctionsHttpStart-CSharp\DurableFunctionsHttpStartCSharp.csx" />
     <None Include="Templates\DurableFunctionsHttpStart-CSharp\function.json" />
     <None Include="Templates\DurableFunctionsHttpStart-CSharp\metadata.json" />
-    <None Include="Templates\DurableFunctionsOrchestration\build.config\template.json" />
-    <None Include="Templates\DurableFunctionsOrchestration\build.config\vs-2017.3.host.json" />
-    <None Include="Templates\DurableFunctionsOrchestration\function.json" />
-    <None Include="Templates\DurableFunctionsOrchestration\metadata.json" />
-    <None Include="Templates\DurableFunctionsOrchestration\sample.dat" />
+    <None Include="Templates\DurableFunctionsOrchestration-CSharp\build.config\template.json" />
+    <None Include="Templates\DurableFunctionsOrchestration-CSharp\build.config\vs-2017.3.host.json" />
+    <None Include="Templates\DurableFunctionsOrchestration-CSharp\function.json" />
+    <None Include="Templates\DurableFunctionsOrchestration-CSharp\metadata.json" />
+    <None Include="Templates\DurableFunctionsOrchestration-CSharp\sample.dat" />
     <None Include="Templates\DurableFunctionsOrchestrator-CSharp\DurableFunctionsOrchestratorCSharp.csx" />
     <None Include="Templates\DurableFunctionsOrchestrator-CSharp\function.json" />
     <None Include="Templates\DurableFunctionsOrchestrator-CSharp\metadata.json" />
@@ -204,7 +204,7 @@
     <Content Include="Templates\BlobTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\BlobTrigger-JavaScript\index.js" />
     <Content Include="Templates\CosmosDBTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
-    <Content Include="Templates\DurableFunctionsOrchestration\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\DurableFunctionsOrchestration-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\EventHubTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\EventHubTrigger-JavaScript\index.js" />
     <Content Include="Templates\HttpTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
@@ -216,8 +216,8 @@
     <Content Include="Templates\TimerTrigger-JavaScript\index.js" />
     <Content Include="Templates\EventHubTrigger-CSharp\EventHubTriggerCSharp.cs" />
     <Content Include="Templates\CosmosDBTrigger-CSharp\CosmosDBTriggerCSharp.cs" />
-    <Content Include="Templates\DurableFunctionsOrchestration\DurableFunctionsOrchestratorCSharp.cs" />
-  </ItemGroup>  
+    <Content Include="Templates\DurableFunctionsOrchestration-CSharp\DurableFunctionsOrchestrationCSharp.cs" />
+  </ItemGroup>
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
     <RemoveDir Directories=".\bin\Portal" />
     <RemoveDir Directories=".\bin\VS" />
