@@ -1,23 +1,29 @@
-using System;
+#r "Microsoft.Azure.WebJobs.Extensions.Tokens"
+#r "Microsoft.Azure.WebJobs.Extensions.O365"
+
+using System.Net;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Primitives;
+using Microsoft.Azure.WebJobs;
 
 public static async Task Run(TimerInfo myTimer, UserSubscription[] existingSubscriptions, IBinder binder, TraceWriter log)
 {
-  log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
-	foreach (var subscription in existingSubscriptions)
-	{
+    log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
+    foreach (var subscription in existingSubscriptions)
+    {
         // binding in code to allow dynamic identity
-        using (var subscriptionsToRefresh = await binder.BindAsync<IAsyncCollector<string>>(
-            new GraphWebhookSubscriptionAttribute() {
-                Action = "refresh",
-                Identity = "userFromId",
+        var subscriptionsToRefresh = await binder.BindAsync<IAsyncCollector<string>>(
+            new GraphWebhookSubscriptionAttribute()
+            {
+                Action = GraphWebhookSubscriptionAction.Refresh,
+                Identity = TokenIdentityMode.UserFromId,
                 UserId = subscription.UserId
             }
-        ))
+        );
         {
-    		log.Info($"Refreshing subscription {subscription}");
-            await subscriptionsToRefresh.AddAsync(subscription);
+            log.Info($"Refreshing subscription {subscription.Id}");
+            await subscriptionsToRefresh.AddAsync(subscription.Id);
         }
-
     }
 }
 
