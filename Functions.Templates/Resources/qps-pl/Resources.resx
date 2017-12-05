@@ -1,0 +1,1497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="eventHubOut_connection_help" xml:space="preserve">
+    <value>[dqCTj][äÁThe name of the app setting containing your Event Hub connection string. The connection string must have Send permissions. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="eventHubOut_connection_label" xml:space="preserve">
+    <value>[VX3m6][ÙËEvent Hub connection !!! !!! ]</value>
+  </data>
+  <data name="eventHubOut_displayName" xml:space="preserve">
+    <value>[sQ65r][ÐëAzure Event Hubs !!! !!!]</value>
+  </data>
+  <data name="eventHubOut_name_help" xml:space="preserve">
+    <value>[YqOVc][ìñThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="eventHubOut_name_label" xml:space="preserve">
+    <value>[xLL8Z][ÿÙEvent parameter name !!! !!! ]</value>
+  </data>
+  <data name="eventHubOut_path_errorText" xml:space="preserve">
+    <value>[JkbYf][£úThe event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="eventHubOut_path_help" xml:space="preserve">
+    <value>[n5qz6][ÇÏThe name of the event hub to which the event will be sent. !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="eventHubOut_path_label" xml:space="preserve">
+    <value>[NePEY][ÉêEvent Hub name !!! !!]</value>
+  </data>
+  <data name="eventHubTrigger_connection_help" xml:space="preserve">
+    <value>[Eb9Ye][ãõThe name of the app setting containing your your Event Hub connection string. The connection string must have Receive permissions. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="eventHubTrigger_connection_label" xml:space="preserve">
+    <value>[bfn2r][ÑàEvent Hub connection !!! !!! ]</value>
+  </data>
+  <data name="eventHubTrigger_consumerGroup_help" xml:space="preserve">
+    <value>[Xu4lc][ðýEvent Hub consumer group from which to receive events !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="eventHubTrigger_consumerGroup_label" xml:space="preserve">
+    <value>[4uitP][ÓÏEvent Hub consumer group !!! !!! !]</value>
+  </data>
+  <data name="eventHubTrigger_displayName" xml:space="preserve">
+    <value>[SSID7][ÿµAzure Event Hubs !!! !!!]</value>
+  </data>
+  <data name="eventHubTrigger_name_help" xml:space="preserve">
+    <value>[QnQa6][ÅÖThe name used to identify this trigger in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="eventHubTrigger_name_label" xml:space="preserve">
+    <value>[DpDPx][ÆóEvent parameter name !!! !!! ]</value>
+  </data>
+  <data name="eventHubTrigger_path_errorText" xml:space="preserve">
+    <value>[mNTYi][øÇThe event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="eventHubTrigger_path_help" xml:space="preserve">
+    <value>[njozR][Ç£The name of the event hub from which to trigger !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="eventHubTrigger_path_label" xml:space="preserve">
+    <value>[Np9jG][ì§Event Hub name !!! !!]</value>
+  </data>
+  <data name="queueOut_displayName" xml:space="preserve">
+    <value>[7SPRV][ðùAzure Queue Storage !!! !!! ]</value>
+  </data>
+  <data name="queueOut_name_help" xml:space="preserve">
+    <value>[RgelQ][ßõThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="queueOut_name_label" xml:space="preserve">
+    <value>[9K1nc][øåMessage parameter name !!! !!! !]</value>
+  </data>
+  <data name="queueOut_queueName_errorText" xml:space="preserve">
+    <value>[bTg0q][ìÍYour queue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, and the hyphen. The name must be 3 to 63 characters. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="queueOut_queueName_label" xml:space="preserve">
+    <value>[WO9FS][éþQueue name !!! !]</value>
+  </data>
+  <data name="queueOut_queueName_help" xml:space="preserve">
+    <value>[gw0xq][ïÂThe queue to which the message will be sent. If the queue doesn't exist yet, one will be created for you in the specifed storage account. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="temp_category_core" xml:space="preserve">
+    <value>[dirkB][ýÅCore !!]</value>
+  </data>
+  <data name="temp_category_dataProcessing" xml:space="preserve">
+    <value>[0YGs0][ÉØData Processing !!! !!]</value>
+  </data>
+  <data name="temp_timerTrigger_CSharp_desc" xml:space="preserve">
+    <value>[O4dKt][ÊØA C# function that will be run on a specified schedule !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="temp_timerTrigger_CSharp_name" xml:space="preserve">
+    <value>[EFM3O][ÛÀTimerTrigger - C# !!! !!!]</value>
+  </data>
+  <data name="timerTrigger_displayName" xml:space="preserve">
+    <value>[V0oLE][ë©Timer !!!]</value>
+  </data>
+  <data name="timerTrigger_name_help" xml:space="preserve">
+    <value>[DBNN8][íÊThe name used to identify this trigger in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="timerTrigger_name_label" xml:space="preserve">
+    <value>[X5W71][ÄøTimestamp parameter name !!! !!! !]</value>
+  </data>
+  <data name="timerTrigger_schedule_help" xml:space="preserve">
+    <value>[nFQdp][éÇEnter a cron expression of the format '{second} {minute} {hour} {day} {month} {day of week}' to specify the schedule. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="timerTrigger_schedule_label" xml:space="preserve">
+    <value>[ReCJp][ÄçSchedule !!! ]</value>
+  </data>
+  <data name="variables_apiHubTableConnectionHelp" xml:space="preserve">
+    <value>[3Reh0][îÓThe name of the app setting containing your External Table connection. !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="variables_apiHubTableConnectionLabel" xml:space="preserve">
+    <value>[xrYbj][æòExternal Table connection !!! !!! !!]</value>
+  </data>
+  <data name="variables_apiHubTableDataSetHelp" xml:space="preserve">
+    <value>[iyoc4][áÞThe name of the data set to bind to.  Leave as 'default' if binding to a table or entity. !!! !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="variables_apiHubTableDataSetLabel" xml:space="preserve">
+    <value>[ml4y3][ÈÜData Set Name !!! !!]</value>
+  </data>
+  <data name="variables_apiHubTableEntityHelp" xml:space="preserve">
+    <value>[NgOAa][©ßThe ID of the entity to bind to. Leave empty if binding to a data set or table. !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="variables_apiHubTableEntityLabel" xml:space="preserve">
+    <value>[OL8UV][ËÄEntity ID !!! ]</value>
+  </data>
+  <data name="variables_apiHubTableHelp" xml:space="preserve">
+    <value>[CXR2m][ÄÓThe name of the table to bind to. Leave empty if binding to a data set or entity. !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="variables_apiHubTableNameLabel" xml:space="preserve">
+    <value>[yrztQ][èáTable Name !!! !]</value>
+  </data>
+  <data name="variables_appSettingsHelp" xml:space="preserve">
+    <value>[cGCSO][úàThe name of the app setting containing your storage account connection string. !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="variables_parameterName" xml:space="preserve">
+    <value>[O45Bt][ÆÚThe parameter name must be an alphanumeric string of any number of characters and cannot start with a number. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="variables_paramNameInputHelp" xml:space="preserve">
+    <value>[yJaOT][µïThe name of the parameter in code for the input binding to bind to. !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="variables_paramNameOutputHelp" xml:space="preserve">
+    <value>[Zw7l2][ôÐThe name of the parameter in code for the output binding to bind to. !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="variables_selectConnection" xml:space="preserve">
+    <value>[VpKYz][êáClick select to choose a connection !!! !!! !!! !]</value>
+  </data>
+  <data name="variables_storageConnStringLabel" xml:space="preserve">
+    <value>[L7eh2][ÇùStorage account connection !!! !!! !!]</value>
+  </data>
+  <data name="variables_paramNameLabel" xml:space="preserve">
+    <value>[EAWkg][íªParameter Name !!! !!]</value>
+  </data>
+  <data name="temp_category_all" xml:space="preserve">
+    <value>[SICpu][ÒÂAll !!]</value>
+  </data>
+  <data name="temp_category_api" xml:space="preserve">
+    <value>[R5si4][ðæAPI  Webhooks !!! !!](&amp; )</value>
+  </data>
+  <data name="temp_category_experimental" xml:space="preserve">
+    <value>[ELqPh][ÒØExperimental !!! !]</value>
+  </data>
+  <data name="temp_category_samples" xml:space="preserve">
+    <value>[626F7][ãÇSamples !!!]</value>
+  </data>
+  <data name="blobOut_name_help" xml:space="preserve">
+    <value>[wxE4b][ÂÄThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="blobOut_name_label" xml:space="preserve">
+    <value>[WYA3U][éîBlob parameter name !!! !!! ]</value>
+  </data>
+  <data name="queueTrigger_queueName_help" xml:space="preserve">
+    <value>[PsDwD][ìôName of the queue from which the message will be read !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="queueTrigger_name_label" xml:space="preserve">
+    <value>[QHarE][ôÆMessage parameter name !!! !!! !]</value>
+  </data>
+  <data name="queueTrigger_queueName_errorText" xml:space="preserve">
+    <value>[fYAKh][@ÕQueue name must start and end with a letter or number, and it can contain only lowercase letters, numbers, and the hyphen. The name must be 3 to 63 characters. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="queueTrigger_name_help" xml:space="preserve">
+    <value>[AkVLg][åÁThe name used to identify this trigger in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="queueTrigger_queueName_label" xml:space="preserve">
+    <value>[cVCjj][üðQueue name !!! !]</value>
+  </data>
+  <data name="blobOut_path_help" xml:space="preserve">
+    <value>[vczyr][æçThe path within your storage account to which the blob will be written. !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="blobOut_path_errorText" xml:space="preserve">
+    <value>[YaEIk][ê¥Your blob path must be a container name of 3 to 63 characters, followed by a blob name of 1 to 1,024 characters.The blob name can be any combination of characters and can contain a maximum of 254 path segments, which are separated by the forward slash(/). !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="blobOut_path_label" xml:space="preserve">
+    <value>[77mtm][äÕPath !!]</value>
+  </data>
+  <data name="blobIn_name_help" xml:space="preserve">
+    <value>[MvcPi][þªThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="blobIn_name_label" xml:space="preserve">
+    <value>[XHbLT][Û£Blob parameter name !!! !!! ]</value>
+  </data>
+  <data name="blobIn_path_help" xml:space="preserve">
+    <value>[QZ3W9][Ê©The path within your storage account from which the blob will be read. !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="blobIn_path_label" xml:space="preserve">
+    <value>[shrUx][Ì©Path !!]</value>
+  </data>
+  <data name="blobIn_patherrorText" xml:space="preserve">
+    <value>[LdEUd][úäYour blob path must be a container name of 3 to 63 characters, followed by a blob name of 1 to 1,024 characters. The blob name can be any combination of characters and can contain a maximum of 254 path segments, which are separated by the forward slash (/). !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="blobTrigger_name_label" xml:space="preserve">
+    <value>[JkXLQ][àÎBlob parameter name !!! !!! ]</value>
+  </data>
+  <data name="blobTrigger_name_help" xml:space="preserve">
+    <value>[qn13p][ÝïThe name used to identify this trigger in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="blobTrigger_path_label" xml:space="preserve">
+    <value>[VqzR7][üàPath !!]</value>
+  </data>
+  <data name="blobTrigger_path_help" xml:space="preserve">
+    <value>[KcZ3g][ÌèThe path within your storage account that the trigger will monitor. !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="blobTrigger_path_errorText" xml:space="preserve">
+    <value>[zeN03][á¥Your blob path must be a container name of 3 to 63 characters, followed by a blob name of 1 to 1,024 characters. The blob name can be any combination of characters and can contain a maximum of 254 path segments, which are separated by the forward slash (/). !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="apiHubFileIn_name_label" xml:space="preserve">
+    <value>[3CY5T][õÃFile parameter name !!! !!! ]</value>
+  </data>
+  <data name="apiHubFileIn_name_help" xml:space="preserve">
+    <value>[8S6MO][ÛÎThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="apiHubFileIn_path_label" xml:space="preserve">
+    <value>[LLgrR][ÓÐPath !!]</value>
+  </data>
+  <data name="apiHubFileIn_path_help" xml:space="preserve">
+    <value>[zKNhQ][ÀèThe input file path !!! !!! ]</value>
+  </data>
+  <data name="apiHubFileIn_connection_label" xml:space="preserve">
+    <value>[J70ot][ãäExternal File connection !!! !!! !]</value>
+  </data>
+  <data name="apiHubFileIn_connection_help" xml:space="preserve">
+    <value>[YetUw][ÒÒThe name of the app setting containing your External File connection string !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="apiHubFileTrigger_name_label" xml:space="preserve">
+    <value>[B2Mys][ø©File parameter name !!! !!! ]</value>
+  </data>
+  <data name="apiHubFileTrigger_name_help" xml:space="preserve">
+    <value>[nAjsg][äÁThe name used to identify this trigger in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="apiHubFileTrigger_path_label" xml:space="preserve">
+    <value>[RnrEN][ßÖPath !!]</value>
+  </data>
+  <data name="apiHubFileTrigger_path_help" xml:space="preserve">
+    <value>[RC12G][ãÃThe path to trigger on. This path must exist. !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="apiHubFileTrigger_connection_label" xml:space="preserve">
+    <value>[PE0V6][ÀèExternal File connection !!! !!! !]</value>
+  </data>
+  <data name="apiHubFileTrigger_connection_help" xml:space="preserve">
+    <value>[qe9F0][éáThe name of the app setting containing your External File connection string !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="apiHubTableIn_displayName" xml:space="preserve">
+    <value>[5Bj80][ÔïExternal Table (Experimental) !!! !!! !!!]</value>
+  </data>
+  <data name="apiHubTableOut_displayName" xml:space="preserve">
+    <value>[lwhTj][ÃðExternal Table (Experimental) !!! !!! !!!]</value>
+  </data>
+  <data name="httpTrigger_displayName" xml:space="preserve">
+    <value>[NIuRA][ìäHTTP !!]</value>
+  </data>
+  <data name="httpTrigger_name_label" xml:space="preserve">
+    <value>[I5L8R][ÔáRequest parameter name !!! !!! !]</value>
+  </data>
+  <data name="httpTrigger_name_help" xml:space="preserve">
+    <value>[5j4H4][ýäThe name used to identify this trigger in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="httpTrigger_webHookType_label" xml:space="preserve">
+    <value>[tbdBL][äãWebhook type !!! !]</value>
+  </data>
+  <data name="httpTrigger_webHookType_help" xml:space="preserve">
+    <value>[vEl3F][åèWebhooks allow services to call one another easily. !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="httpTrigger_authLevel_label" xml:space="preserve">
+    <value>[R8bIX][ü@Authorization level !!! !!! ]</value>
+  </data>
+  <data name="httpTrigger_methods_label" xml:space="preserve">
+    <value>[fwPvD][ÂÃSelected HTTP methods !!! !!! ]</value>
+  </data>
+  <data name="httpTrigger_methods_help" xml:space="preserve">
+    <value>[00B1T][þÕThese are the only methods to which this function will respond. !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="httpTrigger_methodRule_label" xml:space="preserve">
+    <value>[sv1LJ][è¢Allowed HTTP methods !!! !!! ]</value>
+  </data>
+  <data name="httpTrigger_route_label" xml:space="preserve">
+    <value>[VjyS2][üôRoute template !!! !!]</value>
+  </data>
+  <data name="httpTrigger_route_help" xml:space="preserve">
+    <value>[42ASS][ÉøThe route template setting allows you to change the URI that triggers this function. The values should be a relative path. Path segments may be treated as parameters by surrounding them with curly braces. For example: customer/{customerId} !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="httpTrigger_methodRule_help" xml:space="preserve">
+    <value>[WhS9t][ÕÔHttpTrigger can respond to any HTTP method. If you wish to restrict support to specific methods, choose the 'Selected methods' option. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="httpTrigger_mode_label" xml:space="preserve">
+    <value>[flkHU][©üMode !!]</value>
+  </data>
+  <data name="httpTrigger_mode_help" xml:space="preserve">
+    <value>[xE5NM][üÇThe mode of the trigger. "Standard" means that the request will be standard HTTP with no additional semantics. "Webhook" means that the request will be processed according to a specified webhook type. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="apiHubFileIn_displayName" xml:space="preserve">
+    <value>[NqesS][ØµExternal File (Preview) !!! !!! !]</value>
+  </data>
+  <data name="apiHubFileTrigger_displayName" xml:space="preserve">
+    <value>[GcOIQ][ùÅExternal File (Preview) !!! !!! !]</value>
+  </data>
+  <data name="blobIn_displayName" xml:space="preserve">
+    <value>[Ay7Q9][ÁØAzure Blob Storage !!! !!!]</value>
+  </data>
+  <data name="blobOut_displayName" xml:space="preserve">
+    <value>[f9AwD][µ¥Azure Blob Storage !!! !!!]</value>
+  </data>
+  <data name="blobTrigger_displayName" xml:space="preserve">
+    <value>[5DeAR][ÇöAzure Blob Storage !!! !!!]</value>
+  </data>
+  <data name="documentDBIn_collectionName_help" xml:space="preserve">
+    <value>[JuD4t][ÖòDatabase collection where data will be read. !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="documentDBIn_collectionName_label" xml:space="preserve">
+    <value>[aNXTy][ÆàCollection Name !!! !!]</value>
+  </data>
+  <data name="documentDBIn_connection_help" xml:space="preserve">
+    <value>[iJdCu][ãÚThe name of the app setting containing your Azure Cosmos DB connection string !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="documentDBIn_connection_label" xml:space="preserve">
+    <value>[FxnuK][ÛýAzure Cosmos DB account connection !!! !!! !!! !]</value>
+  </data>
+  <data name="documentDBIn_databaseName_help" xml:space="preserve">
+    <value>[QiOOq][ªýAzure Cosmos DB database where data will be read. !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="documentDBIn_databaseName_label" xml:space="preserve">
+    <value>[Ng5NT][@ÑDatabase name !!! !!]</value>
+  </data>
+  <data name="documentDBIn_displayName" xml:space="preserve">
+    <value>[ogBng][ôËAzure Cosmos DB !!! !!]</value>
+  </data>
+  <data name="documentDBIn_id_help" xml:space="preserve">
+    <value>[rfnQ9][ôïThe ID of the document that will be read. If neither a SQL query nor an ID are specified, all documents in the collection are returned. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="documentDBIn_id_label" xml:space="preserve">
+    <value>[nKJDd][ÚÖDocument ID (optional) !!! !!! !]</value>
+  </data>
+  <data name="documentDBIn_name_help" xml:space="preserve">
+    <value>[So2rB][Ç¥The name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="documentDBIn_name_label" xml:space="preserve">
+    <value>[TadEE][ÒåDocument parameter name !!! !!! !]</value>
+  </data>
+  <data name="documentDBOut_collectionName_help" xml:space="preserve">
+    <value>[OmQHb][ÆÕDatabase collection where data will be written. !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="documentDBOut_collectionName_label" xml:space="preserve">
+    <value>[8yif0][ßÅCollection Name !!! !!]</value>
+  </data>
+  <data name="documentDBOut_connection_help" xml:space="preserve">
+    <value>[feCF5][ÍóThe name of the app setting containing your Azure Cosmos DB connection string !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="documentDBOut_connection_label" xml:space="preserve">
+    <value>[sMdaO][ÿéAzure Cosmos DB account connection !!! !!! !!! !]</value>
+  </data>
+  <data name="documentDBOut_createIfNotExists_help" xml:space="preserve">
+    <value>[LpTa8][¢ÞIf true, creates the Azure Cosmos DB database and collection. !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="documentDBOut_createIfNotExists_label" xml:space="preserve">
+    <value>[YcKq4][ÉõIf true, creates the Azure Cosmos DB database and collection !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="documentDBOut_databaseName_help" xml:space="preserve">
+    <value>[ENn5j][îÆThe Azure Cosmos DB database where data will be written. !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="documentDBOut_databaseName_label" xml:space="preserve">
+    <value>[SicQO][ÉÈDatabase name !!! !!]</value>
+  </data>
+  <data name="documentDBOut_displayName" xml:space="preserve">
+    <value>[ca3Bu][óüAzure Cosmos DB !!! !!]</value>
+  </data>
+  <data name="documentDBOut_name_help" xml:space="preserve">
+    <value>[zYqsW][úèThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="documentDBOut_name_label" xml:space="preserve">
+    <value>[i1Eax][ûÚDocument parameter name !!! !!! !]</value>
+  </data>
+  <data name="httpOut_displayName" xml:space="preserve">
+    <value>[NLUk9][ÄÃHTTP !!]</value>
+  </data>
+  <data name="httpOut_name_help" xml:space="preserve">
+    <value>[uKfiF][ÆðThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="httpOut_name_label" xml:space="preserve">
+    <value>[JXdrO][ÍòResponse parameter name !!! !!! !]</value>
+  </data>
+  <data name="httpTrigger_authLevel_help" xml:space="preserve">
+    <value>[164fp][ÙæAuthorization level controls whether the function requires an API key and which key to use; Function uses a function key; Admin uses your master key. The function and master keys are found in the 'keys' management panel on the portal, when your function is selected. For user-based authentication, go to Function App Settings. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="manualTrigger_name_help" xml:space="preserve">
+    <value>[vQ5LD][õÐThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="manualTrigger_name_label" xml:space="preserve">
+    <value>[UhlU4][ÿöParameter name !!! !!]</value>
+  </data>
+  <data name="mobileTableIn_apiKey_help" xml:space="preserve">
+    <value>[VcnqD][ëËThe app setting name that specifies the API Key for your Mobile App. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;More information&lt;/a&gt;. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="mobileTableIn_apiKey_label" xml:space="preserve">
+    <value>[J1VJY][ÔüAPI key lookup (optional) !!! !!! !!]</value>
+  </data>
+  <data name="mobileTableIn_connection_help" xml:space="preserve">
+    <value>[TRuHc][ðßThe name of the app setting containing the URL of your Mobile App !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="mobileTableIn_connection_label" xml:space="preserve">
+    <value>[8geMi][ÝòMobile App URL lookup !!! !!! ]</value>
+  </data>
+  <data name="mobileTableIn_displayName" xml:space="preserve">
+    <value>[rlMcP][ôüAzure Mobile Tables !!! !!! ]</value>
+  </data>
+  <data name="mobileTableIn_id_help" xml:space="preserve">
+    <value>[vE4uG][Ã¥The id for the record to retrieve. !!! !!! !!! !]</value>
+  </data>
+  <data name="mobileTableIn_id_label" xml:space="preserve">
+    <value>[d5GkJ][ýÉRecord ID !!! ]</value>
+  </data>
+  <data name="mobileTableIn_name_help" xml:space="preserve">
+    <value>[qdWgP][äìThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="mobileTableIn_name_label" xml:space="preserve">
+    <value>[zrM3B][@ÊRecord parameter name !!! !!! ]</value>
+  </data>
+  <data name="mobileTableIn_tableName_help" xml:space="preserve">
+    <value>[ui5yg][ÁèThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="mobileTableIn_tableName_label" xml:space="preserve">
+    <value>[16Pqs][þÇTable name !!! !]</value>
+  </data>
+  <data name="mobileTableOut_apiKey_help" xml:space="preserve">
+    <value>[f6Tjd][ÎäThe app setting name that specifies the API Key for your Mobile App. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;More information&lt;/a&gt;. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="mobileTableOut_apiKey_label" xml:space="preserve">
+    <value>[pzisv][¥ÄAPI key lookup (optional) !!! !!! !!]</value>
+  </data>
+  <data name="mobileTableOut_connection_help" xml:space="preserve">
+    <value>[MuilS][æÇThe name of the app setting containing the URL of your Mobile App !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="mobileTableOut_connection_label" xml:space="preserve">
+    <value>[How2G][ìÄMobile App URL lookup !!! !!! ]</value>
+  </data>
+  <data name="mobileTableOut_displayName" xml:space="preserve">
+    <value>[QBiyH][ÏåAzure Mobile Tables !!! !!! ]</value>
+  </data>
+  <data name="mobileTableOut_name_help" xml:space="preserve">
+    <value>[Wklys][ÒùThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="mobileTableOut_name_label" xml:space="preserve">
+    <value>[Uijmp][ùÝRecord parameter name !!! !!! ]</value>
+  </data>
+  <data name="mobileTableOut_tableName_help" xml:space="preserve">
+    <value>[bQKUD][ôØThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="mobileTableOut_tableName_label" xml:space="preserve">
+    <value>[DXrEK][îÏTable name !!! !]</value>
+  </data>
+  <data name="notificationHubOut_connection_help" xml:space="preserve">
+    <value>[IbPtt][éÆThe name of the app setting containing the connection string to your Notification Hub namespace !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="notificationHubOut_connection_label" xml:space="preserve">
+    <value>[5IsqC][ÞÇNotification Hubs namespace connection !!! !!! !!! !!]</value>
+  </data>
+  <data name="notificationHubOut_displayName" xml:space="preserve">
+    <value>[3q4kh][ªÆAzure Notification Hubs !!! !!! !]</value>
+  </data>
+  <data name="notificationHubOut_hubName_help" xml:space="preserve">
+    <value>[1AbP2][ëæThe Notification Hub to be used for sending push notifications. !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="notificationHubOut_hubName_label" xml:space="preserve">
+    <value>[sBfux][ÍëNotification Hub name !!! !!! ]</value>
+  </data>
+  <data name="notificationHubOut_name_help" xml:space="preserve">
+    <value>[EWw1I][ÝÆThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="notificationHubOut_name_label" xml:space="preserve">
+    <value>[BO36L][ÄñNotification parameter name !!! !!! !!]</value>
+  </data>
+  <data name="notificationHubOut_platform_help" xml:space="preserve">
+    <value>[mSUBz][ËåChoose platform to send native notifcations. Select Template to send template notification. !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="notificationHubOut_platform_label" xml:space="preserve">
+    <value>[Dw2hA][ÙõNotification Platform !!! !!! ]</value>
+  </data>
+  <data name="notificationHubOut_tagExpression_help" xml:space="preserve">
+    <value>[Jrmil][µÂTag expressions enable you to target specific sets of devices/registrations, when sending a push notification through notification hubs. Leave this blank to broadcast to all registered devices &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=785094'&gt;More information&lt;/a&gt;. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="notificationHubOut_tagExpression_label" xml:space="preserve">
+    <value>[Son8q][ÁôTag expression (optional) !!! !!! !!]</value>
+  </data>
+  <data name="notificationHubOut_enableTestSend_help" xml:space="preserve">
+    <value>[HzSv5][ÁìTo get detailed status about the PNS errors encountered while sending the notification, set enableTestSend to true &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=832692'&gt;More information&lt;/a&gt;. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="notificationHubOut_enableTestSend_label" xml:space="preserve">
+    <value>[nSbnm][¢äEnable Test Send (optional) !!! !!! !!]</value>
+  </data>
+  <data name="queueTrigger_displayName" xml:space="preserve">
+    <value>[L99nk][çÀAzure Queue Storage !!! !!! ]</value>
+  </data>
+  <data name="sendGrid_displayName" xml:space="preserve">
+    <value>[bojZn][ÑæSendGrid !!! ]</value>
+  </data>
+  <data name="sendGrid_from_help" xml:space="preserve">
+    <value>[Jibd0][ùÐThe email address the message is sent from. Can be of the form 'user@host.com' or 'Display Name &lt;user@host.com&gt;'. If not specified here, the value can be specified in code. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="sendGrid_from_label" xml:space="preserve">
+    <value>[MI4xG][ýÎFrom address !!! !]</value>
+  </data>
+  <data name="sendGrid_name_help" xml:space="preserve">
+    <value>[FqYWp][ÝªThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="sendGrid_name_label" xml:space="preserve">
+    <value>[pm2L7][äþMessage parameter name !!! !!! !]</value>
+  </data>
+  <data name="sendGrid_subject_help" xml:space="preserve">
+    <value>[OBMZO][äÕSubject line to use for the message. If not provided here, the value can be specified in code. !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="sendGrid_subject_label" xml:space="preserve">
+    <value>[5YQla][ØªMessage subject !!! !!]</value>
+  </data>
+  <data name="sendGrid_text_help" xml:space="preserve">
+    <value>[AXY87][ÖäText body to use for the message. If not provided here, the value can be specified in code. !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="sendGrid_text_label" xml:space="preserve">
+    <value>[Sd4On][ÅèMessage Text !!! !]</value>
+  </data>
+  <data name="sendGrid_to_help" xml:space="preserve">
+    <value>[TViNd][ÚæEmail address to which the message should be sent. Can be of the form 'user@host.com' or 'Display Name &lt;user@host.com&gt;'. If not provided here, the value can be specified in code. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="sendGrid_to_label" xml:space="preserve">
+    <value>[2hJO0][èÒTo address !!! !]</value>
+  </data>
+  <data name="serviceBusOut_accessRights_help" xml:space="preserve">
+    <value>[WJZrM][ä¥The access rights of the Service Bus connection string. Set to Send if you're using a connection string that doesn't have Manage permissions. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="serviceBusOut_accessRights_label" xml:space="preserve">
+    <value>[WgD5Z][ÚðAccess rights !!! !!]</value>
+  </data>
+  <data name="serviceBusOut_connection_help" xml:space="preserve">
+    <value>[X2tIp][ÉÒThe name of the app setting containing your Service Bus connection string. The connection string must have Send rights. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="serviceBusOut_connection_label" xml:space="preserve">
+    <value>[MNk9U][ãÕService Bus connection !!! !!! !]</value>
+  </data>
+  <data name="serviceBusOut_displayName" xml:space="preserve">
+    <value>[VmPrO][áÛAzure Service Bus !!! !!!]</value>
+  </data>
+  <data name="serviceBusOut_messageType_help" xml:space="preserve">
+    <value>[65Is7][ýçType of Service Bus message, either Queues or Topics. !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="serviceBusOut_messageType_label" xml:space="preserve">
+    <value>[h4AFX][ìÉMessage type !!! !]</value>
+  </data>
+  <data name="serviceBusOut_messageType_queueName" xml:space="preserve">
+    <value>[N0Iul][£òService Bus Queue !!! !!!]</value>
+  </data>
+  <data name="serviceBusOut_messageType_topicName" xml:space="preserve">
+    <value>[tJE6Z][ßòService Bus Topic !!! !!!]</value>
+  </data>
+  <data name="serviceBusOut_name_help" xml:space="preserve">
+    <value>[4HMQu][òÊThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="serviceBusOut_name_label" xml:space="preserve">
+    <value>[e54EP][àóMessage parameter name !!! !!! !]</value>
+  </data>
+  <data name="serviceBusOut_queueName_errorText" xml:space="preserve">
+    <value>[XWKS7][£@Queue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="serviceBusOut_queueName_help" xml:space="preserve">
+    <value>[1dA8O][éÁThe queue to which the message will be sent. !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="serviceBusOut_queueName_label" xml:space="preserve">
+    <value>[3gLOn][µäQueue name !!! !]</value>
+  </data>
+  <data name="serviceBusOut_topicName_errorText" xml:space="preserve">
+    <value>[6ZJIQ][ßÛTopic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="serviceBusOut_topicName_help" xml:space="preserve">
+    <value>[T3G9A][ÃÂTopic to which the message will be sent. !!! !!! !!! !!!]</value>
+  </data>
+  <data name="serviceBusOut_topicName_label" xml:space="preserve">
+    <value>[JcfyW][ÖÚTopic name !!! !]</value>
+  </data>
+  <data name="serviceBusTrigger_accessRights_help" xml:space="preserve">
+    <value>[yxmlr][áùThe access rights of the Service Bus connection string. Set to Send if you're using a connection string that doesn't have Manage permissions. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="serviceBusTrigger_accessRights_label" xml:space="preserve">
+    <value>[ubiph][É£Access rights !!! !!]</value>
+  </data>
+  <data name="serviceBusTrigger_connection_help" xml:space="preserve">
+    <value>[L4aLu][ÀÞThe name of the app setting containing your Service Bus connection string. The connection string must have Listen rights. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="serviceBusTrigger_connection_label" xml:space="preserve">
+    <value>[a89RA][Ü©Service Bus connection !!! !!! !]</value>
+  </data>
+  <data name="serviceBusTrigger_displayName" xml:space="preserve">
+    <value>[4OLrJ][ÅÁAzure Service Bus !!! !!!]</value>
+  </data>
+  <data name="serviceBusTrigger_messageType_help" xml:space="preserve">
+    <value>[zB8RI][§îType of Service Bus message, either Queues or Topics. !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="serviceBusTrigger_messageType_label" xml:space="preserve">
+    <value>[DqEMl][ïÐMessage type !!! !]</value>
+  </data>
+  <data name="serviceBusTrigger_messageType_queueName" xml:space="preserve">
+    <value>[Hr4y4][ìÎService Bus Queue !!! !!!]</value>
+  </data>
+  <data name="serviceBusTrigger_messageType_topicName" xml:space="preserve">
+    <value>[YwbGf][åçService Bus Topic !!! !!!]</value>
+  </data>
+  <data name="serviceBusTrigger_name_help" xml:space="preserve">
+    <value>[8MQJU][ìÚThe name used to identify this trigger in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="serviceBusTrigger_name_label" xml:space="preserve">
+    <value>[8qz2e][öÈMessage parameter name !!! !!! !]</value>
+  </data>
+  <data name="serviceBusTrigger_queueName_errorText" xml:space="preserve">
+    <value>[Qru2B][êØQueue name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="serviceBusTrigger_queueName_help" xml:space="preserve">
+    <value>[gjtVh][ÝçThe queue from which the message will be read. !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="serviceBusTrigger_queueName_label" xml:space="preserve">
+    <value>[YqTHv][úÝQueue name !!! !]</value>
+  </data>
+  <data name="serviceBusTrigger_subscriptionName_errorText" xml:space="preserve">
+    <value>[TY2nE][íæSubscription name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="serviceBusTrigger_subscriptionName_help" xml:space="preserve">
+    <value>[PPY7D][ÔØSubscription name within the topic to bind to. !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="serviceBusTrigger_subscriptionName_label" xml:space="preserve">
+    <value>[fiwap][îÏSubscription name !!! !!!]</value>
+  </data>
+  <data name="serviceBusTrigger_topicName_errorText" xml:space="preserve">
+    <value>[CsAxz][ëÕTopic name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="serviceBusTrigger_topicName_help" xml:space="preserve">
+    <value>[gweuF][ÅôThe name of the topic from which the message will be read. !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="serviceBusTrigger_topicName_label" xml:space="preserve">
+    <value>[N2L5D][íéTopic name !!! !]</value>
+  </data>
+  <data name="tableIn_displayName" xml:space="preserve">
+    <value>[WgFyg][îÒAzure Table Storage !!! !!! ]</value>
+  </data>
+  <data name="tableIn_filter_help" xml:space="preserve">
+    <value>[ObaOn][ÊÊOptional query expression used to filter the results of the table query. This setting is not applicable for C# functions. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="tableIn_filter_label" xml:space="preserve">
+    <value>[9xRTF][©üQuery filter (optional) !!! !!! !]</value>
+  </data>
+  <data name="tableIn_name_help" xml:space="preserve">
+    <value>[3khT5][òÍThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="tableIn_name_label" xml:space="preserve">
+    <value>[R3ufw][ñøTable parameter name !!! !!! ]</value>
+  </data>
+  <data name="tableIn_partitionKey_help" xml:space="preserve">
+    <value>[clTon][úÚThe name of the partition key column of the table. Records with matching Partition key and Row key will be returned. If partition key is provided, row key must also be provided. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="tableIn_partitionKey_label" xml:space="preserve">
+    <value>[PGvlf][öüPartition key (optional) !!! !!! !]</value>
+  </data>
+  <data name="tableIn_rowKey_help" xml:space="preserve">
+    <value>[QotfE][ÅÑThe name of the partition key column of the table. Records with matching Partition key and Row key will be returned. If partition key is provided, row key must also be provided. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="tableIn_rowKey_label" xml:space="preserve">
+    <value>[uVX6m][ÉòRow key (optional) !!! !!!]</value>
+  </data>
+  <data name="tableIn_tableName_errorText" xml:space="preserve">
+    <value>[fbJBg][ÑûTable name must be an alphanumeric string of 3 to 63 characters and cannot start with a number. !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="tableIn_tableName_help" xml:space="preserve">
+    <value>[5J05A][ÈÿTable name in storage account from which data will be read. !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="tableIn_tableName_label" xml:space="preserve">
+    <value>[WUvKg][§åTable name !!! !]</value>
+  </data>
+  <data name="tableIn_take_help" xml:space="preserve">
+    <value>[zcS7o][ëªInteger value for maxium number of records to be returned. You may receive fewer records than this value, depending on table contents and filters. This setting is not applicable for C# functions. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="tableIn_take_label" xml:space="preserve">
+    <value>[FDcGO][ªÜMaximum number of records to read (optional) !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="tableout_displayName" xml:space="preserve">
+    <value>[zNLad][ÜøAzure Table Storage !!! !!! ]</value>
+  </data>
+  <data name="tableout_name_help" xml:space="preserve">
+    <value>[Tws9j][èÈThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="tableout_name_label" xml:space="preserve">
+    <value>[GtZaH][ÖæTable parameter name !!! !!! ]</value>
+  </data>
+  <data name="table_tableName_errorText" xml:space="preserve">
+    <value>[JKY92][êÝTable name must be an alphanumeric string of 3 to 63 characters. It can’t start with a number. !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="table_tableName_help" xml:space="preserve">
+    <value>[CnpVR][ÿýTable name in storage account where data will be written. !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="table_tableName_label" xml:space="preserve">
+    <value>[BnnKh][ì@Table name !!! !]</value>
+  </data>
+  <data name="BlobTrigger_description" xml:space="preserve">
+    <value>[x9CNV][óçA function that will be run whenever a blob is added to a specified container !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="CSharp_description" xml:space="preserve">
+    <value>[X9dnt][éØA C# function that will be run whenever it receives a GitHub webhook request !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="EmptyBash_description" xml:space="preserve">
+    <value>[UNw7c][çúAn empty Bash function without triggers, inputs, or outputs !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="EmptyBatch_description" xml:space="preserve">
+    <value>[d0DFj][æòAn empty Batch function without triggers, inputs, or outputs !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="EmptyCSharp_description" xml:space="preserve">
+    <value>[2NrXO][èÖAn empty C# function without triggers, inputs, or outputs !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="EmptyFSharp_description" xml:space="preserve">
+    <value>[jAhZf][ÐÏAn empty F# function without triggers, inputs, or outputs !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="EmptyNodeJS_description" xml:space="preserve">
+    <value>[z9MVU][âòAn empty JavaScript function without triggers, inputs, or outputs !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="EmptyPHP_description" xml:space="preserve">
+    <value>[gPtbI][ÿÍAn empty PHP function without triggers, inputs, or outputs !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="EmptyPowerShell_description" xml:space="preserve">
+    <value>[fX0kp][ÚèAn empty PowerShell function without triggers, inputs, or outputs !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="EmptyPython_description" xml:space="preserve">
+    <value>[N93WN][á¢An empty Python function without triggers, inputs, or outputs !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="EventHubTrigger_description" xml:space="preserve">
+    <value>[z6xCI][ûöA function that will be run whenever an event hub receives a new event !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="FaceLocator_description" xml:space="preserve">
+    <value>[RYTUn][ÑÙA function that processes images and outputs the bounding rectangle of faces using Cognitive Services !!! !!! !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="GenericWebhook_description" xml:space="preserve">
+    <value>[1b7NM][ðëA function that will be run whenever it receives a webhook !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="GitHubCommenter_description" xml:space="preserve">
+    <value>[RP4mO][@£A function that will be run whenever it receives a GitHub webhook for an issue or pull request and adds a comment !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="GithubWebhook_description" xml:space="preserve">
+    <value>[T2Jkl][ìþA function that willl be run whenever it receives a GitHub webhook !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="HttpGETCRUD_description" xml:space="preserve">
+    <value>[JeOGw][óìA function that fetches entities from a Storage table when it receives an HTTP request !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="HttpPOSTCRUD_description" xml:space="preserve">
+    <value>[lsjtv][ÁîA function that adds entities to a Storage table when it receives an HTTP request !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="HttpPUTCRUD_description" xml:space="preserve">
+    <value>[SV4Rw][ÅÀA function that updates entity in a Storage table when it receives an HTTP request !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="HttpTrigger_description" xml:space="preserve">
+    <value>[mhEjx][ÏªA function that will be run whenever it receives an HTTP request, responding based on data in the body or query string !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="ImageResizer_description" xml:space="preserve">
+    <value>[dPhsl][§ÎA function that creates resized images whenever a blob is added to a specified container !!! !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="ManualTrigger_description" xml:space="preserve">
+    <value>[4Vp6m][ÚèA function that is triggered manually via the portal "Run" button !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="QueueTrigger_description" xml:space="preserve">
+    <value>[QZad7][ÎÁA function that will be run whenever a message is added to a specified Azure Storage queue !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="SaasFileTrigger_description" xml:space="preserve">
+    <value>[pzvtV][éÖA function that will be run whenever a file is added to an external file store !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="SaasTable_description" xml:space="preserve">
+    <value>[sncrk][éÀA function that will be run whenever data is added to an external table store !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="SasToken_description" xml:space="preserve">
+    <value>[pWFdw][ÁúA function that generates a SAS token for a given Azure Storage container and blob name !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="SendGrid_description" xml:space="preserve">
+    <value>[PdqH7][ã£A function that sends a confirmation e-mail when a new item is added to a particular queue !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="ServiceBusQueueTrigger_description" xml:space="preserve">
+    <value>[2wizJ][ÚÃA function that will be run whenever a message is added to a specficied Service Bus queue !!! !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="ServiceBusTopicTrigger_description" xml:space="preserve">
+    <value>[eNOs0][ßýA function that will be run whenever a message is added to the specified Service Bus Topic !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="TimerTrigger_description" xml:space="preserve">
+    <value>[cPpME][ôíA function that will be run on a specified schedule !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="TimerTriggerExcelOutlook_description" xml:space="preserve">
+    <value>[zYsEa][ÊµRead two Excel tables, send emails based on the data, and then update an Excel table. !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="timerTrigger_schedule_errorText" xml:space="preserve">
+    <value>[7iqJc][øïInvalid Cron Expression. Please consult the &lt;a target='_blank' href='https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/'&gt;documentation&lt;/a&gt; to learn more. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="twilioSms_accountsid_help" xml:space="preserve">
+    <value>[nToXV][ÂÀThe name of the app setting containing your Twilio account SID !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="twilioSms_accountsid_label" xml:space="preserve">
+    <value>[Lojjx][ÀûAccount SID setting !!! !!! ]</value>
+  </data>
+  <data name="twilioSms_authtoken_help" xml:space="preserve">
+    <value>[TPMc8][ÈÍThe name of the app setting containing your Twilio Auth Token !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="twilioSms_authtoken_label" xml:space="preserve">
+    <value>[LoCe2][ÉùAuth Token setting !!! !!!]</value>
+  </data>
+  <data name="twilioSms_body_help" xml:space="preserve">
+    <value>[CLNbK][ÝÚText body to use for the message. If not provided here, the value can be specified in code. !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="twilioSms_body_label" xml:space="preserve">
+    <value>[sDPGT][ÎìMessage text !!! !]</value>
+  </data>
+  <data name="twilioSms_displayName" xml:space="preserve">
+    <value>[sOxT6][êìTwilio SMS !!! !]</value>
+  </data>
+  <data name="twilioSms_from_help" xml:space="preserve">
+    <value>[C1MVD][ÀìThe Twilio phone number from which the message should be sent. If not provided here, the value can be specified in code. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="twilioSms_from_label" xml:space="preserve">
+    <value>[6dOys][ïÎFrom number !!! !]</value>
+  </data>
+  <data name="twilioSms_name_help" xml:space="preserve">
+    <value>[lWp3t][á¥The name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="twilioSms_name_label" xml:space="preserve">
+    <value>[NXqFL][ÊòMessage parameter name !!! !!! !]</value>
+  </data>
+  <data name="twilioSms_to_help" xml:space="preserve">
+    <value>[SCZwI][ÂãThe phone number the message should be sent to. If not provided here, the value can be specified in code. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="twilioSms_to_label" xml:space="preserve">
+    <value>[fMSlE][ÎÿTo number !!! ]</value>
+  </data>
+  <data name="eventHubTrigger_consumerGroup_errorText" xml:space="preserve">
+    <value>[gwUEy][þÞThe consumer group must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The $Default group is also allowed. The name must be 1 to 50 characters. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="documentDB_displayName" xml:space="preserve">
+    <value>[YzsO3][ìåAzure Cosmos DB !!! !!]</value>
+  </data>
+  <data name="sendGrid_apiKey_help" xml:space="preserve">
+    <value>[aC4dm][ÎÛThe name of the app setting containing your SendGrid developer API key. !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="sendGrid_apiKey_label" xml:space="preserve">
+    <value>[qVUJr][ûêSendGrid API Key App Setting !!! !!! !!!]</value>
+  </data>
+  <data name="bot_botId_help" xml:space="preserve">
+    <value>[FZEJD][ÅÈThe Id that will used in From property of Activity while creating and sending message to the bot, this is populates ChannelAccount.Id of a sent activity. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="bot_botId_label" xml:space="preserve">
+    <value>[6jBIt][àïSender Id !!! ]</value>
+  </data>
+  <data name="bot_in_displayName" xml:space="preserve">
+    <value>[LJmQs][èùBot Framework (Preview) !!! !!! !]</value>
+  </data>
+  <data name="bot_out_displayName" xml:space="preserve">
+    <value>[7diGO][øÇBot Framework (Preview) !!! !!! !]</value>
+  </data>
+  <data name="bot_in_secret_help" xml:space="preserve">
+    <value>[4v7Nt][üÂThe name of the app setting containing your Direct Line Key. It can be generated from Direct Line channel configuration page in the Bot Framework portal. If this field is empty, the app setting 'AzureWebJobsBotFrameworkDirectLineSecret' !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="bot_in_secret_label" xml:space="preserve">
+    <value>[3AwYi][áÉDirect Line Key !!! !!]</value>
+  </data>
+  <data name="bot_out_secret_help" xml:space="preserve">
+    <value>[bxelM][ØÖDirect Line Key can be generated from Direct Line channel configuration page in the Bot Framework portal; leaving this field empty will look for value in Application Setting 'AzureWebJobsBotFrameworkDirectLineSecret' !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="bot_out_secret_label" xml:space="preserve">
+    <value>[F7FyP][ùÃDirect Line Key !!! !!]</value>
+  </data>
+  <data name="bot_in_name_help" xml:space="preserve">
+    <value>[JsUIM][ÿÙThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="bot_in_name_label" xml:space="preserve">
+    <value>[WFppL][ûÒBot parameter name !!! !!!]</value>
+  </data>
+  <data name="bot_out_name_help" xml:space="preserve">
+    <value>[nmaLU][äïThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="bot_out_name_label" xml:space="preserve">
+    <value>[pRRbs][ÿãBot parameter name !!! !!!]</value>
+  </data>
+  <data name="variables_loginToAAD" xml:space="preserve">
+    <value>[OcWP1][çËClick to retrieve your Principal ID !!! !!! !!! !]</value>
+  </data>
+  <data name="excel_in_displayName" xml:space="preserve">
+    <value>[vfeKs][©ÃExcel table !!! !]</value>
+  </data>
+  <data name="excel_in_name_label" xml:space="preserve">
+    <value>[rUIjt][ðµTable parameter name !!! !!! ]</value>
+  </data>
+  <data name="excel_in_name_help" xml:space="preserve">
+    <value>[70LgY][ÐóName used to identify this binding in your function code. !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="excel_in_path_label" xml:space="preserve">
+    <value>[1sylx][Ñ¥Path to the Excel workbook !!! !!! !!]</value>
+  </data>
+  <data name="excel_in_path_help" xml:space="preserve">
+    <value>[84NpI][çøPath from root of OneDrive to Excel workbook to be read (e.g. "Documents/Test.xlsx") !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="excel_in_worksheetName_label" xml:space="preserve">
+    <value>[4FGSQ][ËªWorksheet Name !!! !!]</value>
+  </data>
+  <data name="excel_in_worksheetName_help" xml:space="preserve">
+    <value>[kftzY][ÅÅName of worksheet within specified workbook (e.g. "Sheet1") !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="excel_in_tableName_label" xml:space="preserve">
+    <value>[zX48E][ç@Table name !!! !]</value>
+  </data>
+  <data name="excel_in_tableName_help" xml:space="preserve">
+    <value>[rKtaK][ÖªName of table within specified worksheet of workbook (e.g. "Table1") !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="excel_in_path_error" xml:space="preserve">
+    <value>[877ys][áÀPath must be valid !!! !!!]</value>
+  </data>
+  <data name="excel_out_displayName" xml:space="preserve">
+    <value>[wvWdv][ÂËExcel table !!! !]</value>
+  </data>
+  <data name="excel_out_name_label" xml:space="preserve">
+    <value>[PlmoC][É¢Table parameter name !!! !!! ]</value>
+  </data>
+  <data name="excel_out_name_help" xml:space="preserve">
+    <value>[X831j][@ôName used to identify this binding in your function code. !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="excel_out_path_label" xml:space="preserve">
+    <value>[r0PBr][äÀPath to the Excel workbook !!! !!! !!]</value>
+  </data>
+  <data name="excel_out_path_help" xml:space="preserve">
+    <value>[VdTMo][ÇöPath from root of OneDrive to Excel workbook to be modified (e.g. "Documents/Test.xlsx") !!! !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="excel_out_worksheetName_label" xml:space="preserve">
+    <value>[8d4FQ][ËýWorksheet Name !!! !!]</value>
+  </data>
+  <data name="excel_out_worksheetName_help" xml:space="preserve">
+    <value>[y6i89][þÙName of worksheet within specified workbook (e.g. "Sheet1") !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="excel_out_tableName_label" xml:space="preserve">
+    <value>[vcYYW][ïÌTable name !!! !]</value>
+  </data>
+  <data name="excel_out_tableName_help" xml:space="preserve">
+    <value>[SeqAE][ÝÝName of table within specified worksheet of workbook (e.g. "Table1") !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="excel_out_updateType_label" xml:space="preserve">
+    <value>[E6B8Y][ùéEdit mode !!! ]</value>
+  </data>
+  <data name="excel_out_updateType_help" xml:space="preserve">
+    <value>[ELAdh][§§Either append rows or update (replace) the table or worksheet's existing rows !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="excel_out_path_error" xml:space="preserve">
+    <value>[lE4RE][î@Path must be valid !!! !!!]</value>
+  </data>
+  <data name="outlook_displayName" xml:space="preserve">
+    <value>[3EH4o][ÒÿOutlook mail message !!! !!! ]</value>
+  </data>
+  <data name="outlook_out_label_help" xml:space="preserve">
+    <value>[lYWhJ][õòName used to identify this binding in your function code !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="outlook_out_label_name" xml:space="preserve">
+    <value>[4YtdK][ÉýMessage parameter name !!! !!! !]</value>
+  </data>
+  <data name="outlook_out_name_help" xml:space="preserve">
+    <value>[hTZVn][ÓÿName used to identify this binding in your function code !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="outlook_out_name_label" xml:space="preserve">
+    <value>[eB5jC][áÁMessage parameter name !!! !!! !]</value>
+  </data>
+  <data name="principal_id_label_token" xml:space="preserve">
+    <value>[4I4Y9][¢úPrincipal ID App Setting name !!! !!! !!!]</value>
+  </data>
+  <data name="principal_id_help_token" xml:space="preserve">
+    <value>[Y9hc3][ÓâPrincipal ID used for authenticating requests to desired resource !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="principal_id_label_excel_in" xml:space="preserve">
+    <value>[fEysF][ÕõPrincipal ID App Setting name !!! !!! !!!]</value>
+  </data>
+  <data name="principal_id_help_excel_in" xml:space="preserve">
+    <value>[THUbj][ÎíPrincipal ID used for authenticating requests to desired resource !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="principal_id_label_excel_out" xml:space="preserve">
+    <value>[25aTW][ôÏPrincipal ID App Setting name !!! !!! !!!]</value>
+  </data>
+  <data name="principal_id_help_excel_out" xml:space="preserve">
+    <value>[4TRup][ÞïPrincipal ID used for authenticating requests to desired resource !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="principal_id_label_outlook" xml:space="preserve">
+    <value>[80uQf][Õ©Principal ID App Setting name !!! !!! !!!]</value>
+  </data>
+  <data name="principal_id_help_outlook" xml:space="preserve">
+    <value>[6TsTr][öÔPrincipal ID used for authenticating requests to desired resource !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="principal_id_label_onedrive_in" xml:space="preserve">
+    <value>[Gz4DY][Á§Principal ID App Setting name !!! !!! !!!]</value>
+  </data>
+  <data name="principal_id_help_onedrive_in" xml:space="preserve">
+    <value>[QHPr8][ÄóPrincipal ID used for authenticating requests to desired resource !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="principal_id_label_onedrive_out" xml:space="preserve">
+    <value>[Izbjd][ÇèPrincipal ID App Setting name !!! !!! !!!]</value>
+  </data>
+  <data name="principal_id_help_onedrive_out" xml:space="preserve">
+    <value>[CeeH0][ÿÇPrincipal ID used for authenticating requests to desired resource !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="principal_id_label_graphwebhook" xml:space="preserve">
+    <value>[RVjMy][ÏÂPrincipal ID App Setting name !!! !!! !!!]</value>
+  </data>
+  <data name="principal_id_help_graphwebhook" xml:space="preserve">
+    <value>[UrTED][¥ÉPrincipal ID used for authenticating requests to desired resource !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="idToken_label_token" xml:space="preserve">
+    <value>[qBHPb][öéID Token !!! ]</value>
+  </data>
+  <data name="idToken_help_token" xml:space="preserve">
+    <value>[wib5V][ýíExpression or explicit id token used for authenticating to MS Graph !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="idToken_label_excel_in" xml:space="preserve">
+    <value>[8HkIl][ÚäID Token !!! ]</value>
+  </data>
+  <data name="idToken_help_excel_in" xml:space="preserve">
+    <value>[oaTA7][ñõExpression or explicit id token used for authenticating to MS Graph !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="idToken_label_excel_out" xml:space="preserve">
+    <value>[yYps1][ØÛID Token !!! ]</value>
+  </data>
+  <data name="idToken_help_excel_out" xml:space="preserve">
+    <value>[CJTsK][ÅÁExpression or explicit id token used for authenticating to MS Graph !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="idToken_label_outlook" xml:space="preserve">
+    <value>[NRNqs][§ÇID Token !!! ]</value>
+  </data>
+  <data name="idToken_help_outlook" xml:space="preserve">
+    <value>[wWXfn][ÀÛExpression or explicit id token used for authenticating to MS Graph !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="idToken_label_onedrive_in" xml:space="preserve">
+    <value>[S5bvl][µÅID Token !!! ]</value>
+  </data>
+  <data name="idToken_help_onedrive_in" xml:space="preserve">
+    <value>[ooO1X][ÄéExpression or explicit id token used for authenticating to MS Graph  !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="idToken_label_onedrive_out" xml:space="preserve">
+    <value>[nFh6u][ýöID Token !!! ]</value>
+  </data>
+  <data name="idToken_help_onedrive_out" xml:space="preserve">
+    <value>[n9PIP][§ÜExpression or explicit id token used for authenticating to MS Graph  !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="idToken_label_graphwebhook" xml:space="preserve">
+    <value>[Qr8by][ÕêID Token !!! ]</value>
+  </data>
+  <data name="idToken_help_graphwebhook" xml:space="preserve">
+    <value>[8132L][ùÛExpression or explicit id token used for authenticating to MS Graph  !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="ScheduledMail_description" xml:space="preserve">
+    <value>[bGLow][µÈA function that will periodically send emails !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
+    <value>[jOsnH][ì£An optional Azure Cosmos DB API SQL query used to retrieve a set of documents. If neither a SQL query nor an ID are specified, all documents in the collection are returned. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
+    <value>[n7ixH][õÀSQL Query (optional) !!! !!! ]</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_help" xml:space="preserve">
+    <value>[gNI2O][§¢Cardinality of the trigger input. Choose 'one' if the input is a single message or 'many' if the input is an array of messages. 'Many' is the default if unspecified !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="HttpTriggerWithParameters_description" xml:space="preserve">
+    <value>[79l1H][ÑÔA function that will be run whenever it receives an HTTP request, responding based on data in the URL path !!! !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="eventHubTrigger_cardinality_label" xml:space="preserve">
+    <value>[B9Iry][ñõThe event hub cardinality !!! !!! !!]</value>
+  </data>
+  <data name="cdsWebHookCSharp_description" xml:space="preserve">
+    <value>[t8XDY][öà(Experimental) A CDS function that can call into a CDS environment using the CDS SDK. !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="cdsTemplate_warningNotConfigured" xml:space="preserve">
+    <value>[9TDtQ][ÿÆThis template requires an AAD configuration for the function app. The template needs the following permissions: !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! ]
+
+[9TDtQ][£âCommon Data Service - Access Common Data Service !!! !!! !!! !!! !!]
+[9TDtQ][úªWindows Azure Service Management API - Access Azure Service Management as organization users (preview). !!! !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="temp_category_monitoring" xml:space="preserve">
+    <value>[8nj46][ÆáMonitoring !!! !]</value>
+  </data>
+  <data name="AppInsightsHttpAvailability_name" xml:space="preserve">
+    <value>[560jP][ÉéAppInsights Http Availability !!! !!! !!!]</value>
+  </data>
+  <data name="AppInsightsHttpAvailability_description" xml:space="preserve">
+    <value>[AunQV][ÿñA function which monitors availability and responsiveness of any web app with Application Insights !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBI_name" xml:space="preserve">
+    <value>[wRBON][í¥AppInsights Real-time Power BI !!! !!! !!!]</value>
+  </data>
+  <data name="AppInsightsRealtimePowerBI_description" xml:space="preserve">
+    <value>[cW1vK][ÎàA function that pushes real-time availability data from Application Insights to Power BI !!! !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="AppInsightsScheduledAnalytics_name" xml:space="preserve">
+    <value>[6DE1X][ÓïAppInsights Scheduled Analytics !!! !!! !!! ]</value>
+  </data>
+  <data name="AppInsightsScheduledAnalytics_description" xml:space="preserve">
+    <value>[ffmIu][ßöA function that derives metrics by performing deep analysis of  app telemetry with Application Insights !!! !!! !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="AppInsightsScheduledDigest_name" xml:space="preserve">
+    <value>[KqTrI][ØèAppInsights Scheduled Digest !!! !!! !!!]</value>
+  </data>
+  <data name="AppInsightsScheduledDigest_description" xml:space="preserve">
+    <value>[RncI3][ÊñA function that sends a daily Application Insights telemetry report via email !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="HttpPOST(CRUD)Queue_description" xml:space="preserve">
+    <value>[T2rHH][ËõA function that will push data to a queue on receiving a Http Post !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="IoTHubTrigger_description" xml:space="preserve">
+    <value>[Wr2qP][îûA function that will be run whenever an IoT Hub delivers a new message for Event Hub-compatible endpoints !!! !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="ioTHubTrigger_connection_help" xml:space="preserve">
+    <value>[ocJ1B][¢ÀIt is the key to IoT Hub connection string stored in the app setting, which must have Receive permissions. If you do not have any, click new to create one. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="ioTHubTrigger_connection_label" xml:space="preserve">
+    <value>[nUXp8][£îConnection string !!! !!!]</value>
+  </data>
+  <data name="ioTHubTrigger_displayName" xml:space="preserve">
+    <value>[RqjRB][õÜAzure IoT Hub !!! !!]</value>
+  </data>
+  <data name="ioTHubTrigger_EntityPath" xml:space="preserve">
+    <value>[PDBBv][ÓÏEntity path !!! !]</value>
+  </data>
+  <data name="defaultConsumerGroup" xml:space="preserve">
+    <value>[nvnMm][ÐÒ$Default !!! ]</value>
+  </data>
+  <data name="defaultQueueName" xml:space="preserve">
+    <value>[FhGQf][Îùmyqueue !!!]</value>
+  </data>
+  <data name="defaultsubscriptionName" xml:space="preserve">
+    <value>[LkDGc][öúmysubscription !!! !!]</value>
+  </data>
+  <data name="defaultTopicName" xml:space="preserve">
+    <value>[ymrSa][Ýæmytopic !!!]</value>
+  </data>
+  <data name="servicebusQueuePicker_queueName" xml:space="preserve">
+    <value>[tjMfc][òäQueue !!!]</value>
+  </data>
+  <data name="myEventHub" xml:space="preserve">
+    <value>[UXH6d][ó§myEventHub !!! !]</value>
+  </data>
+  <data name="eventHubName" xml:space="preserve">
+    <value>[WGXVX][ÒñeventHubName !!! !]</value>
+  </data>
+  <data name="oneDrive_in_displayName" xml:space="preserve">
+    <value>[S5LnC][ªäOneDrive file !!! !!]</value>
+  </data>
+  <data name="oneDrive_in_name_help" xml:space="preserve">
+    <value>[Efy0X][ÈªName used to identify this binding in your function code. !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="oneDrive_in_name_label" xml:space="preserve">
+    <value>[daO5N][Æ£File parameter name !!! !!! ]</value>
+  </data>
+  <data name="oneDrive_in_path_help" xml:space="preserve">
+    <value>[iu9ld][ÖÝPath from root OneDrive folder to file (e.g. "Documents/Test.xlsx") !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="oneDrive_in_path_label" xml:space="preserve">
+    <value>[Ion3d][ÏÁPath to file !!! !]</value>
+  </data>
+  <data name="oneDrive_in_path_error" xml:space="preserve">
+    <value>[3HFog][íéPath must be valid !!! !!!]</value>
+  </data>
+  <data name="oneDrive_out_displayName" xml:space="preserve">
+    <value>[6Tw6b][Ô©OneDrive file !!! !!]</value>
+  </data>
+  <data name="oneDrive_out_name_help" xml:space="preserve">
+    <value>[J5ylD][ÖÊName used to identify this binding in your function code. !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="oneDrive_out_name_label" xml:space="preserve">
+    <value>[m6Hyx][ÛÍFile parameter name !!! !!! ]</value>
+  </data>
+  <data name="oneDrive_out_path_help" xml:space="preserve">
+    <value>[zJ0Pq][ß¥Path from root OneDrive folder to file (e.g. "Documents/Test.xlsx") !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="oneDrive_out_path_label" xml:space="preserve">
+    <value>[3ujUY][öªPath to file !!! !]</value>
+  </data>
+  <data name="oneDrive_out_path_error" xml:space="preserve">
+    <value>[lbfNd][ÿÉPath must be valid !!! !!!]</value>
+  </data>
+  <data name="MSGraphWebhook_displayName" xml:space="preserve">
+    <value>[q20Pw][¥ÿO365 Webhook Handler !!! !!! ]</value>
+  </data>
+  <data name="MSGraphWebhook_in_name_label" xml:space="preserve">
+    <value>[KP5UD][éðSubscription parameter name !!! !!! !!]</value>
+  </data>
+  <data name="MSGraphWebhook_in_changeType_help" xml:space="preserve">
+    <value>[8Ml8L][ÝêWebhook will trigger when the specified resource is created, updated, and/or deleted  !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="MSGraphWebhook_in_changeType_label" xml:space="preserve">
+    <value>[0fPGP][àöTypes of changes to subscribe to !!! !!! !!! ]</value>
+  </data>
+  <data name="MSGraphWebhook_in_listen_help" xml:space="preserve">
+    <value>[sR1hb][@öList of resources currently supported by Microsoft Graph for webhook subscription !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="MSGraphWebhook_in_listen_label" xml:space="preserve">
+    <value>[SyImf][@îResource to subscribe to !!! !!! !]</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_displayName" xml:space="preserve">
+    <value>[3CfLi][äõMicrosoft Graph webhook !!! !!! !]</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_in_name_label" xml:space="preserve">
+    <value>[U2kDd][øÀModified resource parameter name !!! !!! !!! ]</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_Type_help" xml:space="preserve">
+    <value>[D7SG0][ØðThe type of this will determine what kinds of notifications will trigger your function !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_Type_label" xml:space="preserve">
+    <value>[hLMi5][ÁëType of notification to listen to !!! !!! !!! !]</value>
+  </data>
+  <data name="MSGraphWebhook_description" xml:space="preserve">
+    <value>[6xNwW][ÐÇA function that runs when it receives an O365 webhook request !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="RefreshMSGraphSubscriptions_description" xml:space="preserve">
+    <value>[uqzf2][åõPeriodically refreshes all O365 subscriptions !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="token_displayName" xml:space="preserve">
+    <value>[fhUBb][ÇÃAuth token !!! !]</value>
+  </data>
+  <data name="token_in_name_help" xml:space="preserve">
+    <value>[F5zNm][ÁåName of the parameter used to identify this token in your code !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="token_in_name_label" xml:space="preserve">
+    <value>[Drnes][ÍÓAuth token parameter name !!! !!! !!]</value>
+  </data>
+  <data name="token_in_resource_help" xml:space="preserve">
+    <value>[WDzmt][ÚªThe binding will obtain a token for the specified resource. Example: https://graph.microsoft.com !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="token_in_resource_label" xml:space="preserve">
+    <value>[7vLak][@¥Resource URL !!! !]</value>
+  </data>
+  <data name="MSGraphWebhookCreator_displayName" xml:space="preserve">
+    <value>[k7akD][àßMicrosoft Graph webhook subscription !!! !!! !!! !!]</value>
+  </data>
+  <data name="MSGraphWebhookCreator_in_name_help" xml:space="preserve">
+    <value>[nF5D7][ÆÉName used to identify this binding in your function code. !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="MSGraphWebhookCreator_in_name_label" xml:space="preserve">
+    <value>[PmHTO][ªÄSubscription parameter name !!! !!! !!]</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_in_help_label" xml:space="preserve">
+    <value>[np45L][ÀØName used to identify the modified resource in your function code !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="MSGraphWebhook_in_name_help" xml:space="preserve">
+    <value>[xHSBV][ßâName used to identify this binding in your function code !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="temp_category_msgraph" xml:space="preserve">
+    <value>[M8iO3][ÄçMSGraph !!!]</value>
+  </data>
+  <data name="documentDBIn_partitionKey_help" xml:space="preserve">
+    <value>[IdszZ][éÞThe partition key of the document to be read. Only applies if an ID is specified. !!! !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="documentDBOut_partitionKey_help" xml:space="preserve">
+    <value>[BxHBL][û@The partition key to use when creating a new collection. Only applies if you have selected to automatically create the collection if it does not exist. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="documentDB_partitionKey_label" xml:space="preserve">
+    <value>[ECjJ2][ÄÐPartition key (optional) !!! !!! !]</value>
+  </data>
+  <data name="EventGridTrigger_description" xml:space="preserve">
+    <value>[TY5OX][üÎA function that will be run whenever an event grid receives a new event !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="eventGrid_trigger_displayName" xml:space="preserve">
+    <value>[TYqYh][æôEvent Grid Trigger !!! !!!]</value>
+  </data>
+  <data name="eventGrid_trigger_name_help" xml:space="preserve">
+    <value>[61P83][üøEvent Trigger parameter name !!! !!! !!!]</value>
+  </data>
+  <data name="eventGrid_trigger_name_label" xml:space="preserve">
+    <value>[LIEvG][à§Event Trigger parameter name !!! !!! !!!]</value>
+  </data>
+  <data name="CosmosDBTrigger_description" xml:space="preserve">
+    <value>[Ko3Y4][þÛA function that will be run whenever documents change in a document collection !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="cosmosDBIn_collectionName_help" xml:space="preserve">
+    <value>[FKzNk][ÁêName of the collection to be monitored. !!! !!! !!! !!!]</value>
+  </data>
+  <data name="cosmosDBIn_collectionName_label" xml:space="preserve">
+    <value>[Jjbdq][ÖæCollection name !!! !!]</value>
+  </data>
+  <data name="cosmosDBIn_connection_help" xml:space="preserve">
+    <value>[t7FJT][êåThe name of the App Setting containing the connection string to the service that contains the collection to be monitored. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="cosmosDBIn_connection_label" xml:space="preserve">
+    <value>[wq8AP][óÊAzure Cosmos DB account connection !!! !!! !!! !]</value>
+  </data>
+  <data name="cosmosDBIn_databaseName_help" xml:space="preserve">
+    <value>[HSfYX][ÛèName of the Azure Cosmos DB database that includes the collection to be monitored. !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="cosmosDBIn_databaseName_label" xml:space="preserve">
+    <value>[xi8IF][ðýDatabase name !!! !!]</value>
+  </data>
+  <data name="cosmosDBIn_leaseCollectionName_help" xml:space="preserve">
+    <value>[XAVFm][ßÌName of the collection to store the leases. !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="cosmosDBIn_leaseCollectionName_label" xml:space="preserve">
+    <value>[lIOE6][ãáCollection name for leases !!! !!! !!]</value>
+  </data>
+  <data name="cosmosDBIn_leaseDatabaseName_help" xml:space="preserve">
+    <value>[Fe5GZ][ìâName of the database that includes the collection to store the leases. !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="cosmosDBIn_leaseDatabaseName_label" xml:space="preserve">
+    <value>[dNEOu][§ÙDatabase name for leases !!! !!! !]</value>
+  </data>
+  <data name="cosmosDBIn_name_help" xml:space="preserve">
+    <value>[XPxC3][ÞÉThe name used to identify this binding in your code !!! !!! !!! !!! !!!]</value>
+  </data>
+  <data name="cosmosDBIn_name_label" xml:space="preserve">
+    <value>[JaLN2][ÍÎDocument collection parameter name !!! !!! !!! !]</value>
+  </data>
+  <data name="cosmosDB_trigger_displayName" xml:space="preserve">
+    <value>[rVPpI][ÁÎAzure Cosmos DB !!! !!]</value>
+  </data>
+  <data name="temp_category_IoTHub" xml:space="preserve">
+    <value>[ORBBJ][µðIoT Hub !!!]</value>
+  </data>
+  <data name="cosmosDBIn_createIfNotExists_help" xml:space="preserve">
+    <value>[Vxojx][êîChecks for existence and automatically creates the leases collection. !!! !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="cosmosDBIn_createIfNotExists_label" xml:space="preserve">
+    <value>[y1Y4q][ëÄCreate lease collection if it does not exist !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="Identity_help" xml:space="preserve">
+    <value>[Yop9o][ÿÅUserFromRequest: Same as UserFromToken with the user token taken from the X-MS-TOKEN-AAD-ID-TOKEN header. Only works for HttpTrigger !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!!]
+[Yop9o][óµUserFromToken: Obtains the access token on behalf of the user whose token is in the userToken field of metadata.  !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !]
+[Yop9o][çäUserFromId: Obtains the access token for the user with the id found in the userId field of metadata. !!! !!! !!! !!! !!! !!! !!! !!! !!! ]
+[Yop9o][µçClientCredentials: Obtains the access token for the client credentials found in the application settings. !!! !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="Identity_label" xml:space="preserve">
+    <value>[0atjS][£êIdentity !!! ]</value>
+  </data>
+  <data name="userid_help" xml:space="preserve">
+    <value>[57aNC][ÄùThe user ID of a user who has previously logged into the app. !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="userid_label" xml:space="preserve">
+    <value>[AEYt1][¥ÚUser ID !!!]</value>
+  </data>
+  <data name="usertoken_help" xml:space="preserve">
+    <value>[Qv0W2][¢ÎA token with the function app as the audience. !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="usertoken_label" xml:space="preserve">
+    <value>[W557p][ñúUser token !!! !]</value>
+  </data>
+  <data name="ProfilePhotoAPI_description" xml:space="preserve">
+    <value>[0l364][ÆÝA function that will return the profile photo of the calling Azure Active Directory user !!! !!! !!! !!! !!! !!! !!! !!! ]</value>
+  </data>
+  <data name="OutlookMessageWebhookCreator_description" xml:space="preserve">
+    <value>[V7KJz][¥ÐA function that will register a webhook subscription for messages in the calling Azure Active Directory user's mailbox !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="OutlookMessageWebhookDeleter_description" xml:space="preserve">
+    <value>[UN0mv][õøA function that will unregister all Microsoft Graph webhook subscriptions to this app for the calling Azure Active Directory user !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="OutlookMessageWebhookHandler_description" xml:space="preserve">
+    <value>[pYLLS][úÅA function that will receive webhooks for Outlook messages !!! !!! !!! !!! !!! !]</value>
+  </data>
+  <data name="OutlookMessageWebhookRefresher_description" xml:space="preserve">
+    <value>[aRT5P][ÿùA function that will refresh all Microsoft Graph webhook subscriptions for this app !!! !!! !!! !!! !!! !!! !!! !!]</value>
+  </data>
+  <data name="identity_option_userFromRequest_label" xml:space="preserve">
+    <value>[aZMmH][Å©User from HTTP request !!! !!! !]</value>
+  </data>
+  <data name="identity_option_userFromId_label" xml:space="preserve">
+    <value>[z8eYS][âëUser from ID !!! !]</value>
+  </data>
+  <data name="identity_option_userFromToken_label" xml:space="preserve">
+    <value>[Plo1l][ýÁUser from token !!! !!]</value>
+  </data>
+  <data name="identity_option_clientCredentials_label" xml:space="preserve">
+    <value>[4eOPZ][¥ãClient credentials !!! !!!]</value>
+  </data>
+  <data name="MSGraphWebhook_out_action_label" xml:space="preserve">
+    <value>[miu7P][ÙÄAction !!!]</value>
+  </data>
+  <data name="MSGraphWebhook_out_action_help" xml:space="preserve">
+    <value>[wOb6o][ÕëThe action to be performed on the subscription !!! !!! !!! !!! !]</value>
+  </data>
+</root>
