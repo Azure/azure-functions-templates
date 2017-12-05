@@ -1,4 +1,4 @@
-﻿export function run(context: any, eventHubMessages: any[]): void {
+export function run(context: any, eventHubMessages: any[]): void {
     context.log(`TypeScript eventhub trigger function called for message array ${eventHubMessages}`);
 
     eventHubMessages.forEach(message => {

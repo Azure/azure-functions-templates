@@ -1,4 +1,4 @@
-﻿import os
+import os
 import json
 
 postreqdata = json.loads(open(os.environ['req']).read())

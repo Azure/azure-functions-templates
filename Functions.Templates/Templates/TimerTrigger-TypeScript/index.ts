@@ -1,4 +1,4 @@
-﻿export function run(context: any, myTimer: any): any {
+export function run(context: any, myTimer: any): any {
     const timeStamp: string = new Date().toISOString();
 
     if(myTimer.isPastDue) {

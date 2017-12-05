@@ -9,13 +9,13 @@ using System.Text;
 public static async Task Run(dynamic payload, TraceWriter log)
 #endif
 #if (vsTemplates)
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Host;
 using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Host;
 
 namespace Company.Function
 {

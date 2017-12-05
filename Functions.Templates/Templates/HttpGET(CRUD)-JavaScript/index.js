@@ -1,4 +1,4 @@
-﻿module.exports = function (context, req, intable) {
+module.exports = function (context, req, intable) {
     context.log("Retrieved records:", intable);
     context.res = {
         status: 200,

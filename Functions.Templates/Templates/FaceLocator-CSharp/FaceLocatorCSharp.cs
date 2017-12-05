@@ -8,12 +8,12 @@
 #r "Microsoft.WindowsAzure.Storage"
 #r "Newtonsoft.Json"
 
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Microsoft.WindowsAzure.Storage.Table;
-using System.IO;
 
 public static async Task Run(Stream image, string name, IAsyncCollector<FaceRectangle> outTable, TraceWriter log)
 #endif

@@ -9,12 +9,11 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
 #endif
 #if (vsTemplates)
 using System.Net;
-using Newtonsoft.Json;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
+using Newtonsoft.Json;
 
 namespace Company.Function
 {

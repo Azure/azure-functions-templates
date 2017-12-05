@@ -1,4 +1,4 @@
-﻿#r "System.Net.Http"
+#r "System.Net.Http"
 #r "Microsoft.WindowsAzure.Storage"
 
 open System.Linq

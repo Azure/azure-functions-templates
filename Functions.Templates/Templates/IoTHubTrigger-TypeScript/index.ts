@@ -1,4 +1,4 @@
-﻿export function run(context: any, IoTHubMessages: any[]): void {
+export function run(context: any, IoTHubMessages: any[]): void {
     context.log(`TypeScript eventhub trigger function called for message array ${IoTHubMessages}`);
 
     IoTHubMessages.forEach(message => {

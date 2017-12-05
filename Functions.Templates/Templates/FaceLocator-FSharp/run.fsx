@@ -1,4 +1,4 @@
-﻿// Setup
+// Setup
 // 1) Go to https://www.microsoft.com/cognitive-services/en-us/computer-vision-api 
 //    Sign up for computer vision api
 // 2) Go to Platform features -> Application settings

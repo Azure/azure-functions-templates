@@ -1,12 +1,13 @@
 {
-    "name": "ServiceBusTopicTrigger",
     "defaultFunctionName": "ServiceBusTopicTriggerCSharp",
-    "description": "A C# function that will be run whenever a message is added to the specified Service Bus topic",
+    "description": "$ServiceBusTopicTrigger_description",
+    "name": "Service Bus Topic trigger",
     "language": "C#",
     "category": [
         "$temp_category_core",
         "$temp_category_dataProcessing"
     ],
+    "categoryStyle": "serviceBus",
     "enabledInTryMode": false,
     "userPrompt": [
         "connection",
