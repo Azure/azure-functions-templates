@@ -39,10 +39,10 @@
             "replaces": "AuthLevelValue",
             "defaultValue": "Function"
         },
-        "Connection": {
+        "ConnectionStringSetting": {
             "description": "The name of the app setting containing your Storage connection.",
             "type": "parameter",
-            "defaultValue": "",
+            "defaultValue": "AzureWebJobsStorage",
             "replaces": "ConnectionValue"
         },
         "TableName": {
