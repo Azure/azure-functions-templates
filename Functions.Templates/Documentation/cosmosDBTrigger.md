@@ -20,6 +20,16 @@ The settings for an Azure Cosmos DB trigger specifies the following properties a
 
 > Connection strings used for the Lease collection require **write permission**.
 
+The following settings customize the internal Change Feed mechanism and Lease collection usage, and can be set in the `function.json` in the Advanced Editor with the corresponding property names:
+
+- `leaseCollectionPrefix` : When set, it adds a prefix to the leases created in the Lease collection for this Function, effectively allowing two separate Azure Functions to share the same Lease collection by using different prefixes.
+- `feedPollDelay` : When set, it defines, in milliseconds, the delay in between polling a partition for new changes on the feed, after all current changes are drained. Default is 5000 (5 seconds).
+- `leaseAcquireInterval` : When set, it defines, in milliseconds, the interval to kick off a task to compute if partitions are distributed evenly among known host instances. Default is 13000 (13 seconds).
+- `leaseExpirationInterval` : When set, it defines, in milliseconds, the interval for which the lease is taken on a lease representing a partition. If the lease is not renewed within this interval, it will cause it to expire and ownership of the partition will move to another instance. Default is 60000 (60 seconds).
+- `leaseRenewInterval` : When set, it defines, in milliseconds, the renew interval for all leases for partitions currently held by an instance. Default is 17000 (17 seconds).
+- `checkpointFrequency` : When set, it defines, in milliseconds, the interval between lease checkpoints. Default is always after a successful Function call.
+- `maxItemsPerInvocation` : When set, it customizes the maximum amount of items received per Function call.
+
 #### Azure Cosmos DB trigger C# example
  
 	#r "Microsoft.Azure.Documents.Client"
