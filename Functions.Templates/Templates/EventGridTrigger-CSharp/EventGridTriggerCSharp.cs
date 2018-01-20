@@ -1,6 +1,9 @@
 #if (portalTemplates)
-#r "Microsoft.Azure.WebJobs.Extensions.EventGrid"
-using Microsoft.Azure.WebJobs.Extensions.EventGrid;
+#r "Microsoft.Azure.EventGrid"
+#r "Newtonsoft.Json"
+
+using Microsoft.Azure.EventGrid.Models;
+using Newtonsoft.Json;
 
 public static void Run(EventGridEvent eventGridEvent, TraceWriter log)
 #endif
@@ -8,6 +11,9 @@ public static void Run(EventGridEvent eventGridEvent, TraceWriter log)
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Azure.WebJobs.Extensions.EventGrid;
+using Microsoft.Azure.EventGrid.Models;
+using Newtonsoft.Json;
+
 namespace Company.Function
 {
     public static class EventGridTriggerCSharp
@@ -16,7 +22,7 @@ namespace Company.Function
         public static void Run([EventGridTrigger]EventGridEvent eventGridEvent, TraceWriter log)
 #endif
         {
-            log.Info(eventGridEvent.ToString());
+            log.Info(JsonConvert.SerializeObject(eventGridEvent, Formatting.Indented));
         }
 #if (vsTemplates)
     }
