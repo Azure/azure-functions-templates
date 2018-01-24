@@ -31,7 +31,6 @@ namespace Company.Function
             {
                 // Get request body
                 dynamic data = await req.Content.ReadAsAsync<object>();
-
                 name = data?.name;
             }
             
