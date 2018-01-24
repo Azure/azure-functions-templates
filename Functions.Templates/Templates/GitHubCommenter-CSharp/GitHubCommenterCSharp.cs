@@ -59,8 +59,7 @@ namespace Company.Function
             {
                 client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("username", "version"));
 
-                // Add the GITHUB_CREDENTIALS as an app setting, Value for the app setting is a base64 encoded string in the following format
-                // "PersonalAccessToken"
+                // Add the GITHUB_CREDENTIALS as an app setting, Value is the "PersonalAccessToken"
                 // Please follow the link https://developer.github.com/v3/oauth/ to get more information on GitHub authentication 
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("token", Environment.GetEnvironmentVariable("GITHUB_CREDENTIALS"));
                 var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
