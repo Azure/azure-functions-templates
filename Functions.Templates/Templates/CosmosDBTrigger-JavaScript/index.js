@@ -1,6 +1,6 @@
-module.exports = function (context, input) {
-    if (!!input && input.length > 0) {
-        context.log('Document Id: ', input[0].id);
+module.exports = function (context, documents) {
+    if (!!documents && documents.length > 0) {
+        context.log('Document Id: ', documents[0].id);
     }
 
     context.done();

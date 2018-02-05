@@ -87,7 +87,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
 ## Example JavaScript code for an HTTP trigger function 
 
 We support an [express-like api](https://expressjs.com/en/4x/api.html#res) for JavaScript http triggers.
-See supported methods for [context.req](https://github.com/Azure/azure-webjobs-sdk-script/blob/dev/src/WebJobs.Script/azurefunctions/http/request.js) and [context.res](https://github.com/Azure/azure-webjobs-sdk-script/blob/dev/src/WebJobs.Script/azurefunctions/http/response.js).
+See supported methods for [context.req](https://github.com/Azure/azure-functions-host/blob/v1.x/src/WebJobs.Script/azurefunctions/http/request.js) and [context.res](https://github.com/Azure/azure-functions-host/blob/v1.x/src/WebJobs.Script/azurefunctions/http/response.js).
 
 ```javascript
 module.exports = function(context, req) {

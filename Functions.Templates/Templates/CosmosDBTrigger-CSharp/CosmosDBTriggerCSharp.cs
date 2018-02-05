@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Azure.Documents;
 
-public static void Run(IReadOnlyList<Document> input, TraceWriter log)
+public static void Run(IReadOnlyList<Document> documents, TraceWriter log)
 #endif
 #if (vsTemplates)
 using System.Collections.Generic;
@@ -21,12 +21,12 @@ namespace Company.Function
             databaseName: "DatabaseValue",
             collectionName: "CollectionValue",
             ConnectionStringSetting = "ConnectionValue",
-            LeaseCollectionName = "leases")]IReadOnlyList<Document> input, TraceWriter log)
+            LeaseCollectionName = "leases")]IReadOnlyList<Document> documents, TraceWriter log)
 #endif
         {
-            if (input != null && input.Count > 0) {
-                log.Verbose("Documents modified " + input.Count);
-                log.Verbose("First document Id " + input[0].Id);
+            if (documents != null && documents.Count > 0) {
+                log.Verbose("Documents modified " + documents.Count);
+                log.Verbose("First document Id " + documents[0].Id);
             }
         }
 #if (vsTemplates)
