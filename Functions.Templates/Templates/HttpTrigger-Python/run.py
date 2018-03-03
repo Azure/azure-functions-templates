@@ -1,7 +1,8 @@
 import os
 import json
 
-postreqdata = json.loads(open(os.environ['req']).read())
-response = open(os.environ['res'], 'w')
-response.write("hello world from "+postreqdata['name'])
-response.close()
+with open(os.environ['req']) as requestFile:
+    postreqdata = json.loads(requestFile.read())
+
+with open(os.environ['res'], 'w') as response:
+    response.write("hello world from "+postreqdata['name'])
