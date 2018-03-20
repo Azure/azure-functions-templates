@@ -109,9 +109,10 @@
     <None Include="Templates\ScheduledMail-CSharp\function.json" />
     <None Include="Templates\ScheduledMail-CSharp\metadata.json" />
     <None Include="Templates\ScheduledMail-CSharp\run.csx" />
+    <None Include="Templates\SendGrid-CSharp\build.config\template.json" />
+    <None Include="Templates\SendGrid-CSharp\build.config\vs-2017.3.host.json" />
     <None Include="Templates\SendGrid-CSharp\function.json" />
     <None Include="Templates\SendGrid-CSharp\metadata.json" />
-    <None Include="Templates\SendGrid-CSharp\run.csx" />
     <None Include="Templates\SendGrid-CSharp\sample.dat" />
     <None Include="Templates\SendGrid-JavaScript\function.json" />
     <None Include="Templates\SendGrid-JavaScript\metadata.json" />
@@ -192,7 +193,9 @@
     <EmbeddedResource Include="Resources\pt-BR\Resources\Resources.resx" />
     <EmbeddedResource Include="Resources\pt-PT\Resources\Resources.resx" />
     <EmbeddedResource Include="Resources\qps-ploc\Resources\Resources.resx" />
-    <EmbeddedResource Include="Resources\Resources.resx" />
+    <EmbeddedResource Include="Resources\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\ru-RU\Resources\Resources.resx" />
     <EmbeddedResource Include="Resources\sv-SE\Resources\Resources.resx" />
     <EmbeddedResource Include="Resources\tr-TR\Resources\Resources.resx" />
@@ -211,13 +214,16 @@
     <Content Include="Templates\HttpTrigger-JavaScript\index.js" />
     <Content Include="Templates\QueueTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\QueueTrigger-JavaScript\index.js" />
+    <Content Include="Templates\SendGrid-CSharp\build.config\vs-2017.3\functionF-mac.png" />
+    <Content Include="Templates\SendGrid-CSharp\build.config\vs-2017.3\functionF.png" />
     <Content Include="Templates\SendGrid-JavaScript\index.js" />
     <Content Include="Templates\TimerTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\TimerTrigger-JavaScript\index.js" />
     <Content Include="Templates\EventHubTrigger-CSharp\EventHubTriggerCSharp.cs" />
     <Content Include="Templates\CosmosDBTrigger-CSharp\CosmosDBTriggerCSharp.cs" />
     <Content Include="Templates\DurableFunctionsOrchestration-CSharp\DurableFunctionsOrchestrationCSharp.cs" />
-  </ItemGroup>
+    <Content Include="Templates\SendGrid-CSharp\SendGridCSharp.cs" />
+  </ItemGroup>  
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
     <RemoveDir Directories=".\bin\Portal" />
     <RemoveDir Directories=".\bin\VS" />

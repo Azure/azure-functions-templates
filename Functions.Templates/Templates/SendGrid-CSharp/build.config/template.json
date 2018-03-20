@@ -1,0 +1,82 @@
+{
+  "author": "Microsoft",
+  "classifications": [
+    "Azure Function"
+  ],
+  "name": "SendGrid",
+  "identity": "Azure.Function.CSharp.SendGrid.2.x",
+  "groupIdentity": "Azure.Function.SendGrid",
+  "shortName": "SendGrid",
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  },
+  "sourceName": "SendGridCSharp",
+  "symbols": {
+    "namespace": {
+      "description": "namespace for the generated code",
+      "replaces": "Company.Function",
+      "type": "parameter"
+    },
+    "Connection": {
+      "description": "The name of the app setting containing your Storage connection.",
+      "type": "parameter",
+      "defaultValue": "",
+      "replaces": "ConnectionValue"
+    },
+    "Path": {
+      "description": "This is the path within your storage account that the trigger will monitor.",
+      "type": "parameter",
+      "defaultValue": "sampleMessages",
+      "replaces": "PathValue"
+    },
+    "ApiKey": {
+      "description": "The name of the app setting containing your SendGrid developer API key.",
+      "type": "parameter",
+      "defaultValue": "",
+      "replaces": "ApiKeyValue"
+    },
+    "FromEmail": {
+      "description": "The email address the message is sent from.",
+      "type": "parameter",
+      "defaultValue": "SenderEmail@org.com",
+      "replaces": "FromEmailValue"
+    }
+  },
+  "primaryOutputs": [
+    {
+      "path": "SendGridCSharp.cs"
+    }
+  ],
+  "defaultName": "SendGridCSharp",
+  "postActions": [
+    {
+      "Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.SendGrid NuGet package",
+      "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+      "ContinueOnError": "true",
+      "ManualInstructions": [],
+      "args": {
+        "referenceType": "package",
+        "reference": "Microsoft.Azure.WebJobs.Extensions.SendGrid",
+        "version": "3.0.0-beta4",
+        "projectFileExtensions": ".csproj"
+      }
+    },
+    {
+      "description": "Restore NuGet packages required by this project.",
+      "manualInstructions": [],
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "continueOnError": true
+    },
+    {
+      "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+      "description": "Opens the function class file in the editor",
+      "manualInstructions": [],
+      "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+      "args": {
+        "files": "0"
+      },
+      "continueOnError": true
+    }
+  ]
+}
