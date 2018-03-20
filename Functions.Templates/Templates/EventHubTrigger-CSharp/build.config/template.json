@@ -18,16 +18,16 @@
       "replaces": "Company.Function",
       "type": "parameter"
     },
-    "Connection": {
+    "ConnectionStringSetting": {
       "description": "The name of the app setting containing your Event Hub connection string. The connection string must have Send permissions.",
       "type": "parameter",
       "defaultValue": "",
       "replaces": "ConnectionValue"
     },
-    "Path": {
+    "EventHubName": {
       "description": "This is the name of the event hub to which the event will be sent.",
       "type": "parameter",
-      "defaultValue": "samples-workitems",
+      "defaultValue": "my-event-hub",
       "replaces": "PathValue"
     }
   },
