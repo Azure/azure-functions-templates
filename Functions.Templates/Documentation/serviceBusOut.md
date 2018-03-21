@@ -7,7 +7,6 @@ The settings specify the following properties.
 - `topicName` : For topic trigger only, the name of the topic to poll.
 - `subscriptionName` : For topic trigger only, the subscription name.
 - `connection` : Same as for Service Bus trigger.
-- `accessRights` : Specifies the access rights available for the connection string. Default value is `manage`. Set to `send` if you're using a connection string that doesn't provide manage permissions. Otherwise the Functions runtime might try and fail to do operations that require manage rights, such as creating queues.
 - `type` : Must be set to *serviceBus*.
 - `direction` : Must be set to *out*. 
 

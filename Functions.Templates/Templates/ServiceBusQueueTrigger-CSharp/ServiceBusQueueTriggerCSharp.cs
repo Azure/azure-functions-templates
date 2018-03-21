@@ -14,7 +14,7 @@ namespace Company.Function
     public static class ServiceBusQueueTriggerCSharp
     {
         [FunctionName("ServiceBusQueueTriggerCSharp")]
-        public static void Run([ServiceBusTrigger("QueueNameValue", AccessRights.AccessRightsValue, Connection = "ConnectionValue")]string myQueueItem, TraceWriter log)
+        public static void Run([ServiceBusTrigger("QueueNameValue", Connection = "ConnectionValue")]string myQueueItem, TraceWriter log)
 #endif
         {
             log.Info($"C# ServiceBus queue trigger function processed message: {myQueueItem}");

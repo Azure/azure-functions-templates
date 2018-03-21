@@ -29,23 +29,6 @@
             "description": "The queue to which the message will be sent",
             "defaultValue": "myqueue",
             "replaces": "QueueNameValue"
-        },
-        "AccessRights": {
-            "type": "parameter",
-            "description": "The access rights of the Service Bus connection string. Set to Send if you're using a connection string that doesn't have Manage permissions.",
-            "datatype": "choice",
-            "choices": [
-                {
-                    "choice": "Manage",
-                    "description": "Manage"
-                },
-                {
-                    "choice": "Listen",
-                    "description": "Listen"
-                }
-            ],
-            "replaces": "AccessRightsValue",
-            "defaultValue": "Manage"
         }
     },
     "primaryOutputs": [
