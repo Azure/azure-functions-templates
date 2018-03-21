@@ -510,6 +510,10 @@
       "direction": "trigger",
       "enabledInTryMode": false,
       "documentation": "$content=Documentation\\serviceBusTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.ServiceBus",
+        "version": "3.0.0-beta4"
+      },
       "settings": [
         {
           "name": "name",
@@ -607,6 +611,100 @@
           ],
           "label": "$serviceBusTrigger_messageType_label",
           "help": "$serviceBusTrigger_messageType_help"
+        }
+      ]
+    },
+    {
+      "type": "serviceBus",
+      "displayName": "$serviceBusOut_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\serviceBusOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.ServiceBus",
+        "version": "3.0.0-beta4"
+      },
+      "settings": [
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "ServiceBus",
+          "required": true,
+          "label": "$serviceBusOut_connection_label",
+          "help": "$serviceBusOut_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "outputSbMsg",
+          "required": true,
+          "label": "$serviceBusOut_name_label",
+          "help": "$serviceBusOut_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "queueName",
+          "value": "string",
+          "defaultValue": "outqueue",
+          "required": true,
+          "label": "$serviceBusOut_queueName_label",
+          "help": "$serviceBusOut_queueName_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
+              "errorText": "$serviceBusOut_queueName_errorText"
+            }
+          ]
+        },
+        {
+          "name": "topicName",
+          "value": "string",
+          "defaultValue": "outtopic",
+          "required": true,
+          "label": "$serviceBusOut_topicName_label",
+          "help": "$serviceBusOut_topicName_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+              "errorText": "$serviceBusOut_topicName_errorText"
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "name": "messageType",
+          "type": "exclusivity",
+          "values": [
+            {
+              "value": "queueName",
+              "display": "$serviceBusOut_messageType_queueName",
+              "hiddenSettings": [
+                "topicName"
+              ],
+              "shownSettings": [
+                "queueName"
+              ]
+            },
+            {
+              "value": "topicName",
+              "display": "$serviceBusOut_messageType_topicName",
+              "hiddenSettings": [
+                "queueName"
+              ],
+              "shownSettings": [
+                "topicName"
+              ]
+            }
+          ],
+          "label": "$serviceBusOut_messageType_label",
+          "help": "$serviceBusOut_messageType_help"
         }
       ]
     },
