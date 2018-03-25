@@ -1,0 +1,22 @@
+{
+    "defaultFunctionName": "ServiceBusQueueTriggerJS",
+    "description": "$ServiceBusQueueTrigger_description",
+    "name": "Service Bus Queue trigger",
+    "language": "JavaScript",
+    "category": [
+        "$temp_category_core",
+        "$temp_category_dataProcessing"
+    ],
+    "categoryStyle": "serviceBus",
+    "enabledInTryMode": false,
+    "userPrompt": [
+        "connection",
+        "queueName"
+    ],
+    "extensions": [
+        {
+            "id": "Microsoft.Azure.WebJobs.ServiceBus",
+            "version": "3.0.0-beta4"
+        }
+    ]
+}

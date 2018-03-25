@@ -1,0 +1,23 @@
+{
+    "defaultFunctionName": "ServiceBusTopicTriggerJS",
+    "description": "$ServiceBusTopicTrigger_description",
+    "name": "Service Bus Topic trigger",
+    "language": "JavaScript",
+    "category": [
+        "$temp_category_core",
+        "$temp_category_dataProcessing"
+    ],
+    "categoryStyle": "serviceBus",
+    "enabledInTryMode": false,
+    "userPrompt": [
+        "connection",
+        "topicName",
+        "subscriptionName"
+    ],
+    "extensions": [
+        {
+            "id": "Microsoft.Azure.WebJobs.ServiceBus",
+            "version": "3.0.0-beta4"
+        }
+    ]
+}
