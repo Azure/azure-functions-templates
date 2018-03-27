@@ -1,8 +1,8 @@
 #if (portalTemplates)
-#r "Microsoft.Azure.Documents.Client"
+#r "Microsoft.Azure.DocumentDB.Core"
 using System;
 using System.Collections.Generic;
-using Microsoft.Azure.Documents;
+using Microsoft.Azure.DocumentDB;
 
 public static void Run(IReadOnlyList<Document> input, TraceWriter log)
 #endif

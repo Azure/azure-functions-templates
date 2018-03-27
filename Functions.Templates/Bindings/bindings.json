@@ -1930,6 +1930,73 @@
           ]
         }
       ]
+    },
+    {
+      "type": "cosmosDBTrigger",
+      "displayName": "$cosmosDB_trigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\cosmosDBTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.CosmosDB",
+        "version": "3.0.0-beta7"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "inputDocuments",
+          "required": true,
+          "label": "$cosmosDBIn_name_label",
+          "help": "$cosmosDBIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "required": true,
+          "resource": "DocumentDB",
+          "label": "$cosmosDBIn_connection_label",
+          "help": "$cosmosDBIn_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "databaseName",
+          "value": "string",
+          "defaultValue": "",
+          "required": true,
+          "label": "$cosmosDBIn_databaseName_label",
+          "help": "$cosmosDBIn_databaseName_help"
+        },
+        {
+          "name": "collectionName",
+          "value": "string",
+          "defaultValue": "",
+          "required": true,
+          "label": "$cosmosDBIn_collectionName_label",
+          "help": "$cosmosDBIn_collectionName_help"
+        },
+        {
+          "name": "leaseCollectionName",
+          "value": "string",
+          "required": true,
+          "label": "$cosmosDBIn_leaseCollectionName_label",
+          "help": "$cosmosDBIn_leaseCollectionName_help"
+        },
+        {
+          "name": "createLeaseCollectionIfNotExists",
+          "value": "boolean",
+          "defaultValue": true,
+          "required": true,
+          "label": "$cosmosDBIn_createIfNotExists_label",
+          "help": "$cosmosDBIn_createIfNotExists_help"
+        }
+      ]
     }
   ]
 }
