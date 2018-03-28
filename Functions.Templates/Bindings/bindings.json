@@ -1932,6 +1932,33 @@
       ]
     },
     {
+      "type": "eventGridTrigger",
+      "displayName": "$eventGrid_trigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\eventGridTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.EventGrid",
+        "version": "1.0.0-beta3-10022"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "EventGridTrigger",
+          "required": true,
+          "label": "$eventGrid_trigger_name_label",
+          "help": "$eventGrid_trigger_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "cosmosDBTrigger",
       "displayName": "$cosmosDB_trigger_displayName",
       "direction": "trigger",
