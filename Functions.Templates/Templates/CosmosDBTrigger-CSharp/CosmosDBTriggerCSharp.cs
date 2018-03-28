@@ -2,7 +2,7 @@
 #r "Microsoft.Azure.DocumentDB.Core"
 using System;
 using System.Collections.Generic;
-using Microsoft.Azure.DocumentDB;
+using Microsoft.Azure.Documents;
 
 public static void Run(IReadOnlyList<Document> input, TraceWriter log)
 #endif
