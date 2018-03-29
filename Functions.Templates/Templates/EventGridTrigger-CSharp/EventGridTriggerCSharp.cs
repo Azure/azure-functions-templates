@@ -10,7 +10,7 @@ public static void Run(EventGridEvent eventGridEvent, TraceWriter log)
 
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
-using EventGridModels = Microsoft.Azure.EventGrid.Models;
+using Microsoft.Azure.EventGrid.Models;
 using Microsoft.Azure.WebJobs.Extensions.EventGrid;
 
 namespace Company.Function
@@ -18,7 +18,7 @@ namespace Company.Function
     public static class EventGridTriggerCSharp
     {
         [FunctionName("EventGridTriggerCSharp")]
-        public static void Run([EventGridTrigger]EventGridModels.EventGridEvent eventGridEvent, TraceWriter log)
+        public static void Run([EventGridTrigger]EventGridEvent eventGridEvent, TraceWriter log)
 #endif
         {
             log.Info(eventGridEvent.Data.ToString());
