@@ -1,56 +1,54 @@
 {
   "name": {
-    "text": "Service Bus Topic trigger",
+    "text": "SendGrid",
     "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}",
-    "id": "1170"
+    "id": "1280"
   },
   "description": {
-    "text": "A C# function that will be run whenever a message is added to the specified Service Bus topic",
+    "text": "A function that sends a confirmation e-mail when a new item is added to a particular queue.",
     "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}",
-    "id": "1171"
+    "id": "1281"
   },
-  "order": 80,
-  "icon": "vs-2017.3/servicebus.png",
+  "order": 800,
+  "icon": "vs-2017.3/functionF.png",
   "learnMoreLink": "https://go.microsoft.com/fwlink/?linkid=848145",
   "uiFilters": [
     "functions"
   ],
   "symbolInfo": [
     {
-      "id": "AccessRights",
-      "name": {
-        "id": "1172",
-        "text": "Access rights",
-        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
-      },
-      "isVisible": true
-    },
-    {
       "id": "Connection",
       "name": {
-        "id": "1173",
-        "text": "Connection String setting",
+        "id": "1282",
+        "text": "Queue connection string setting",
         "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
       },
       "isVisible": true
     },
     {
-      "id": "TopicName",
+      "id": "QueueName",
       "name": {
-        "id": "1174",
-        "text": "Topic name",
+        "id": "1283",
+        "text": "Queue name",
         "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
       },
       "isVisible": true
     },
     {
-      "id": "SubscriptionName",
+      "id": "ApiKey",
       "name": {
-        "id": "1175",
-        "text": "Subscription name",
+        "id": "1284",
+        "text": "Api key setting",
         "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
-      },
-      "isVisible": true
+      }
+    },
+    {
+      "id": "FromEmail",
+      "name": {
+        "id": "1285",
+        "text": "Email from",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      }
     }
   ]
 }

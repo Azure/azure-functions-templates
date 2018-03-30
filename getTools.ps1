@@ -1,9 +1,9 @@
 $ProgressPreference = "SilentlyContinue"
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 
-function LogErrorAndExit($errorMessage, $exception) {    
+function LogErrorAndExit($errorMessage, $exception) {
     Write-Output $errorMessage
-    if ($exception -ne $null) {        
+    if ($exception -ne $null) {
         Write-Output $exception|format-list -force
     }    
     Exit
@@ -13,18 +13,33 @@ function LogSuccess($message) {
     Write-Output $message
 }
 
-function Download([string]$url, [string]$outputFilePath) {        
+function Download([string]$url, [string]$outputFilePath) {
     try {
+        add-type @"
+        using System.Net;
+        using System.Security.Cryptography.X509Certificates;
+        public class TrustAllCertsPolicy : ICertificatePolicy {
+            public bool CheckValidationResult(
+                ServicePoint srvPoint, X509Certificate certificate,
+                WebRequest request, int certificateProblem) {
+                return true;
+            }
+        }
+"@
+        $AllProtocols = [System.Net.SecurityProtocolType]'Ssl3,Tls,Tls11,Tls12'
+        [System.Net.ServicePointManager]::SecurityProtocol = $AllProtocols
+        [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
         Invoke-WebRequest -Uri $url -OutFile $outputFilePath 
         LogSuccess "Download complete for $url"
-    } catch {        
+    }
+    catch {
         LogErrorAndExit "Download failed for $url" $_.Exception
     }   
 }
 
-function Unzip([string]$zipfilePath, [string]$outputpath) {    
+function Unzip([string]$zipfilePath, [string]$outputpath) {
     try {
-        [System.IO.Compression.ZipFile]::ExtractToDirectory($zipfilePath, $outputpath)        
+        [System.IO.Compression.ZipFile]::ExtractToDirectory($zipfilePath, $outputpath)
         LogSuccess "Unzipped:$zipfilePath"
     }
     catch {
@@ -33,7 +48,7 @@ function Unzip([string]$zipfilePath, [string]$outputpath) {
 }
 
 # Main Code Block
-try {       
+try {
     $rootPath = Get-Location
 
     $toolsDir = Join-Path $rootPath -ChildPath "\Tools\"      
@@ -58,7 +73,7 @@ try {
 
     # Check if code formatter is present
     $codeFormatterPath = Join-Path $toolsDir -ChildPath "\codeFormatter\"    
-    if (-Not(Test-Path $codeFormatterPath)) {        
+    if (-Not(Test-Path $codeFormatterPath)) {
         # Download code formatter tool
         $codeFormatterZip = Join-Path $toolsDir -ChildPath "codeFormatter.zip"
         $codeFormatterDownloadUrl = "https://github.com/dotnet/codeformatter/releases/download/v1.0.0-alpha6/CodeFormatter.zip"    
@@ -70,7 +85,7 @@ try {
 
     # Check if createTemplateConfigPath is present
     $createTemplateConfigPath = Join-Path $toolsDir -ChildPath "\CreateTemplateConfig\"    
-    if (-Not(Test-Path $createTemplateConfigPath)) {        
+    if (-Not(Test-Path $createTemplateConfigPath)) {
         # Download code formatter tool
         $createTemplateConfigZip = Join-Path $toolsDir -ChildPath "CreateTemplateConfig.zip"
         $createTemplateConfigDownloadUrl = "https://github.com/Azure/azure-webjobs-sdk-templates/releases/download/1/CreateTemplateConfig.zip"    

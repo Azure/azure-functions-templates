@@ -2,7 +2,7 @@
 
 The settings provide a schedule expression. For example, the following schedule runs the function every minute:
 
- - `schedule`: Cron tab expression which defines schedule 
+ - `schedule`: Cron tab expression which defines schedule.The cron expression are evaluated against UTC time zone.
  - `name`: The variable name used in function code for the TimerTrigger. 
  - `type`: must be *timerTrigger*
  - `direction`: must be *in*
