@@ -9,14 +9,14 @@ The settings for an Azure Cosmos DB trigger specifies the following properties a
 - **Trigger type** or `type` : Must be set to *cosmosDBTrigger*.
 - **Document collection parameter name** or `name` : The variable name used in function code for the list of documents. 
 - **Trigger direction** or `direction` : Must be set to *in*. This parameter is automatically set if using the Azure Portal.
-- **Azure Cosmos DB account connection** or `connectionStringSetting` : The name of an app setting that contains the connection string to the service which holds the collection to monitor.
+- **Azure Cosmos DB account connection** or `connectionStringSetting` : *optional*. The name of an app setting that contains the connection string to the service which holds the collection to monitor. If `connectionStringSetting` is not set then the value of AzureWebJobsDocumentDBConnectionStringName setting is used.
 - **Database name** or `databaseName` : The name of the database that holds the collection to monitor.
 - **Collection name** or `collectionName` : The name of the collection to monitor.
-- **Azure Cosmos DB account connection for leases** or `leaseConnectionStringSetting` : Optional. The name of an app setting that contains the connection string to the service which holds the lease collection. If not set it will connect to the service defined by `connectionStringSetting`. This parameter is automatically set if using the Azure Portal.
-- **Database name for leases** or `leaseDatabaseName` : The name of the database that holds the collection to store leases. If not set, it will use the value of `databaseName`. This parameter is automatically set if using the Azure Portal.
-- **Collection name for leases** or `leaseCollectionName` : The name of the collection to store leases. If not set, it will use "leases".
-- **Create lease collection if it does not exist** or `createLeaseCollectionIfNotExists` : true/false. Checks for existence and automatically creates the leases collection. Default is `false`.
-- **Collection throughput for leases** or `leaseCollectionThroughput` : When `createLeaseCollectionIfNotExists` is set to `true`, defines the amount of Request Units to assign to the created lease collection. This parameter is automatically set if using the Azure Portal.
+- **Azure Cosmos DB account connection for leases** or `leaseConnectionStringSetting` : *optional*. The name of an app setting that contains the connection string to the service which holds the lease collection. If not set it will connect to the service defined by `connectionStringSetting`. This parameter is automatically set if using the Azure Portal.
+- **Database name for leases** or `leaseDatabaseName` : *optional*. The name of the database that holds the collection to store leases. If not set, it will use the value of `databaseName`. This parameter is automatically set if using the Azure Portal.
+- **Collection name for leases** or `leaseCollectionName` : *optional*. The name of the collection to store leases. If not set, it will use "leases".
+- **Create lease collection if it does not exist** or `createLeaseCollectionIfNotExists` true/false: *optional*. Checks for existence and automatically creates the leases collection. Default is `false`.
+- **Collection throughput for leases** or `leaseCollectionThroughput` : *optional*. When `createLeaseCollectionIfNotExists` is set to `true`, defines the amount of Request Units to assign to the created lease collection. This parameter is automatically set if using the Azure Portal.
 
 > Connection strings used for the Lease collection require **write permission**.
 
