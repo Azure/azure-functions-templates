@@ -9,14 +9,14 @@ The settings for an Azure Cosmos DB trigger specifies the following properties:
 - `type` : Must be set to *cosmosDBTrigger*.
 - `name` : The variable name used in function code for the list of documents. 
 - `direction` : Must be set to *in*. 
-- `connectionStringSetting` : The name of an app setting that contains the connection string to the service which holds the collection to monitor.
 - `databaseName` : The name of the database that holds the collection to monitor.
 - `collectionName` : The name of the collection to monitor.
-- `leaseConnectionStringSetting` : Optional. The name of an app setting that contains the connection string to the service which holds the lease collection. If not set it will connect to the service defined by `connectionStringSetting`.
-- `leaseDatabaseName` : The name of the database that holds the collection to store leases. If not set, it will use the value of `databaseName`.
-- `leaseCollectionName` : The name of the collection to store leases. If not set, it will use "leases".
-- `createLeaseCollectionIfNotExists` : true/false. Checks for existence and automatically creates the leases collection. Default is `false`.
-- `leaseCollectionThroughput` : When `createLeaseCollectionIfNotExists` is set to `true`, defines the amount of Request Units to assign to the created lease collection.
+- `connectionStringSetting` *optional*: The name of an app setting that contains the connection string to the service which holds the collection to monitor. If `connectionStringSetting` is not set then the value of AzureWebJobsDocumentDBConnectionStringName setting is used.
+- `leaseConnectionStringSetting` : *optional*. The name of an app setting that contains the connection string to the service which holds the lease collection. If not set it will connect to the service defined by `connectionStringSetting`.
+- `leaseDatabaseName` : *optional*. The name of the database that holds the collection to store leases. If not set, it will use the value of `databaseName`.
+- `leaseCollectionName` : *optional*. The name of the collection to store leases. If not set, it will use "leases".
+- `createLeaseCollectionIfNotExists` : *optional*. true/false. Checks for existence and automatically creates the leases collection. Default is `false`.
+- `leaseCollectionThroughput` : *optional*. When `createLeaseCollectionIfNotExists` is set to `true`, defines the amount of Request Units to assign to the created lease collection.
 
 > Connection strings used for the Lease collection require **write permission**.
 
