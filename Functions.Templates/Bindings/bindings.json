@@ -919,6 +919,924 @@
       ]
     },
     {
+      "type": "token",
+      "displayName": "$token_displayName",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\Token.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta2"
+      },
+      "AADPermissions": [
+        {
+          "resourceAppId": "00000002-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "token",
+          "required": true,
+          "label": "$token_in_name_label",
+          "help": "$token_in_name_help"
+        },
+        {
+          "name": "resource",
+          "value": "string",
+          "required": true,
+          "label": "$token_in_resource_label",
+          "help": "$token_in_resource_help"
+        },
+        {
+          "name": "userId",
+          "value": "string",
+          "required": false,
+          "label": "$userid_label",
+          "help": "$userid_help"
+        },
+        {
+          "name": "userToken",
+          "value": "string",
+          "required": false,
+          "label": "$usertoken_label",
+          "help": "$usertoken_help"
+        }
+      ],
+      "rules": [
+        {
+          "name": "identity",
+          "type": "exclusivitySave",
+          "values": [
+            {
+              "value": "UserFromRequest",
+              "display": "$identity_option_userFromRequest_label",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
+            },
+            {
+              "value": "userFromId",
+              "display": "$identity_option_userFromId_label",
+              "hiddenSettings": [
+                "userToken"
+              ],
+              "shownSettings": [
+                "userId"
+              ]
+            },
+            {
+              "value": "userFromToken",
+              "display": "$identity_option_userFromToken_label",
+              "hiddenSettings": [
+                "userId"
+              ],
+              "shownSettings": [
+                "userToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "$identity_option_clientCredentials_label",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
+            }
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
+        }
+      ]
+    },
+    {
+      "type": "excel",
+      "displayName": "$excel_in_displayName",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta2"
+      },
+      "AADPermissions": [
+        {
+          "resourceAppId": "00000002-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+            }
+          ]
+        },
+        {
+          "resourceAppId": "00000003-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
+            }
+          ]
+        }
+      ],
+      "documentation": "$content=Documentation\\ExcelIn.md",
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "inputTable",
+          "required": true,
+          "label": "$excel_in_name_label",
+          "help": "$excel_in_name_help"
+        },
+        {
+          "name": "path",
+          "value": "string",
+          "defaultValue": "Workbook.xlsx",
+          "required": true,
+          "label": "$excel_in_path_label",
+          "help": "$excel_in_path_help"
+        },
+        {
+          "name": "worksheetName",
+          "value": "string",
+          "defaultValue": "Sheet1",
+          "label": "$excel_in_worksheetName_label",
+          "help": "$excel_in_worksheetName_help"
+        },
+        {
+          "name": "tableName",
+          "value": "string",
+          "defaultValue": "Table1",
+          "label": "$excel_in_tableName_label",
+          "help": "$excel_in_tableName_help"
+        },
+        {
+          "name": "userId",
+          "value": "string",
+          "label": "$userid_label",
+          "help": "$userid_help"
+        },
+        {
+          "name": "userToken",
+          "value": "string",
+          "label": "$usertoken_label",
+          "help": "$usertoken_help"
+        }
+      ],
+      "rules": [
+        {
+          "name": "identity",
+          "type": "exclusivitySave",
+          "values": [
+            {
+              "value": "UserFromRequest",
+              "display": "$identity_option_userFromRequest_label",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
+            },
+            {
+              "value": "userFromId",
+              "display": "$identity_option_userFromId_label",
+              "hiddenSettings": [
+                "userToken"
+              ],
+              "shownSettings": [
+                "userId"
+              ]
+            },
+            {
+              "value": "userFromToken",
+              "display": "$identity_option_userFromToken_label",
+              "hiddenSettings": [
+                "userId"
+              ],
+              "shownSettings": [
+                "userToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "$identity_option_clientCredentials_label",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
+            }
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
+        }
+      ]
+    },
+    {
+      "type": "excel",
+      "displayName": "$excel_out_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta2"
+      },
+      "documentation": "$content=Documentation\\ExcelOut.md",
+      "AADPermissions": [
+        {
+          "resourceAppId": "00000002-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+            }
+          ]
+        },
+        {
+          "resourceAppId": "00000003-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "outputTable",
+          "required": true,
+          "label": "$excel_out_name_label",
+          "help": "$excel_out_name_help"
+        },
+        {
+          "name": "path",
+          "value": "string",
+          "defaultValue": "path/to/file.xlsx",
+          "required": true,
+          "label": "$excel_out_path_label",
+          "help": "$excel_out_path_help"
+        },
+        {
+          "name": "worksheetName",
+          "value": "string",
+          "defaultValue": "Sheet1",
+          "label": "$excel_out_worksheetName_label",
+          "help": "$excel_out_worksheetName_help"
+        },
+        {
+          "name": "tableName",
+          "value": "string",
+          "defaultValue": "Table1",
+          "label": "$excel_out_tableName_label",
+          "help": "$excel_out_tableName_help"
+        },
+        {
+          "name": "updateType",
+          "value": "enum",
+          "defaultValue": "Append",
+          "enum": [
+            {
+              "value": "Append",
+              "display": "Append"
+            },
+            {
+              "value": "Update",
+              "display": "Update"
+            }
+          ],
+          "required": true,
+          "label": "$excel_out_updateType_label",
+          "help": "$excel_out_updateType_help"
+        },
+        {
+          "name": "userId",
+          "value": "string",
+          "label": "$userid_label",
+          "help": "$userid_help"
+        },
+        {
+          "name": "userToken",
+          "value": "string",
+          "label": "$usertoken_label",
+          "help": "$usertoken_help"
+        }
+      ],
+      "rules": [
+        {
+          "name": "identity",
+          "type": "exclusivitySave",
+          "values": [
+            {
+              "value": "UserFromRequest",
+              "display": "$identity_option_userFromRequest_label",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
+            },
+            {
+              "value": "userFromId",
+              "display": "$identity_option_userFromId_label",
+              "hiddenSettings": [
+                "userToken"
+              ],
+              "shownSettings": [
+                "userId"
+              ]
+            },
+            {
+              "value": "userFromToken",
+              "display": "$identity_option_userFromToken_label",
+              "hiddenSettings": [
+                "userId"
+              ],
+              "shownSettings": [
+                "userToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "$identity_option_clientCredentials_label",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
+            }
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
+        }
+      ]
+    },
+    {
+      "type": "outlook",
+      "displayName": "$outlook_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta2"
+      },
+      "documentation": "$content=Documentation\\OutlookOut.md",
+      "AADPermissions": [
+        {
+          "resourceAppId": "00000002-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+            }
+          ]
+        },
+        {
+          "resourceAppId": "00000003-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "e383f46e-2787-4529-855e-0e479a3ffac0"
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "email",
+          "required": true,
+          "label": "$outlook_out_name_label",
+          "help": "$outlook_out_name_help"
+        },
+        {
+          "name": "userId",
+          "value": "string",
+          "label": "$userid_label",
+          "help": "$userid_help"
+        },
+        {
+          "name": "userToken",
+          "value": "string",
+          "label": "$usertoken_label",
+          "help": "$usertoken_help"
+        }
+      ],
+      "rules": [
+        {
+          "name": "identity",
+          "type": "exclusivitySave",
+          "values": [
+            {
+              "value": "UserFromRequest",
+              "display": "$identity_option_userFromRequest_label",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
+            },
+            {
+              "value": "userFromId",
+              "display": "$identity_option_userFromId_label",
+              "hiddenSettings": [
+                "userToken"
+              ],
+              "shownSettings": [
+                "userId"
+              ]
+            },
+            {
+              "value": "userFromToken",
+              "display": "$identity_option_userFromToken_label",
+              "hiddenSettings": [
+                "userId"
+              ],
+              "shownSettings": [
+                "userToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "$identity_option_clientCredentials_label",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
+            }
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
+        }
+      ]
+    },
+    {
+      "type": "onedrive",
+      "displayName": "$oneDrive_in_displayName",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta2"
+      },
+      "documentation": "$content=Documentation\\OneDriveIn.md",
+      "AADPermissions": [
+        {
+          "resourceAppId": "00000002-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+            }
+          ]
+        },
+        {
+          "resourceAppId": "00000003-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "10465720-29dd-4523-a11a-6a75c743c9d9"
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "file",
+          "required": true,
+          "label": "$oneDrive_in_name_label",
+          "help": "$oneDrive_in_name_help"
+        },
+        {
+          "name": "path",
+          "value": "string",
+          "defaultValue": "Documents/test.txt",
+          "required": true,
+          "label": "$oneDrive_in_path_label",
+          "help": "$oneDrive_in_path_help"
+        },
+        {
+          "name": "userId",
+          "value": "string",
+          "label": "$userid_label",
+          "help": "$userid_help"
+        },
+        {
+          "name": "userToken",
+          "value": "string",
+          "label": "$usertoken_label",
+          "help": "$usertoken_help"
+        }
+      ],
+      "rules": [
+        {
+          "name": "identity",
+          "type": "exclusivitySave",
+          "values": [
+            {
+              "value": "UserFromRequest",
+              "display": "$identity_option_userFromRequest_label",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
+            },
+            {
+              "value": "userFromId",
+              "display": "$identity_option_userFromId_label",
+              "hiddenSettings": [
+                "userToken"
+              ],
+              "shownSettings": [
+                "userId"
+              ]
+            },
+            {
+              "value": "userFromToken",
+              "display": "$identity_option_userFromToken_label",
+              "hiddenSettings": [
+                "userId"
+              ],
+              "shownSettings": [
+                "userToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "$identity_option_clientCredentials_label",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
+            }
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
+        }
+      ]
+    },
+    {
+      "type": "onedrive",
+      "displayName": "$oneDrive_out_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta2"
+      },
+      "documentation": "$content=Documentation\\OneDriveOut.md",
+      "AADPermissions": [
+        {
+          "resourceAppId": "00000002-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+            }
+          ]
+        },
+        {
+          "resourceAppId": "00000003-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65"
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "file",
+          "required": true,
+          "label": "$oneDrive_out_name_label",
+          "help": "$oneDrive_out_name_help"
+        },
+        {
+          "name": "path",
+          "value": "string",
+          "defaultValue": "Documents/test.txt",
+          "required": true,
+          "label": "$oneDrive_out_path_label",
+          "help": "$oneDrive_out_path_help"
+        },
+        {
+          "name": "userId",
+          "value": "string",
+          "label": "$userid_label",
+          "help": "$userid_help"
+        },
+        {
+          "name": "userToken",
+          "value": "string",
+          "label": "$usertoken_label",
+          "help": "$usertoken_help"
+        }
+      ],
+      "rules": [
+        {
+          "name": "identity",
+          "type": "exclusivitySave",
+          "values": [
+            {
+              "value": "UserFromRequest",
+              "display": "$identity_option_userFromRequest_label",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
+            },
+            {
+              "value": "userFromId",
+              "display": "$identity_option_userFromId_label",
+              "hiddenSettings": [
+                "userToken"
+              ],
+              "shownSettings": [
+                "userId"
+              ]
+            },
+            {
+              "value": "userFromToken",
+              "display": "$identity_option_userFromToken_label",
+              "hiddenSettings": [
+                "userId"
+              ],
+              "shownSettings": [
+                "userToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "$identity_option_clientCredentials_label",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
+            }
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
+        }
+      ]
+    },
+    {
+      "type": "graphWebhookSubscription",
+      "displayName": "$MSGraphWebhook_displayName",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta2"
+      },
+      "documentation": "$content=Documentation\\GraphWebhookIn.md",
+      "AADPermissions": [
+        {
+          "resourceAppId": "00000002-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "webhook",
+          "required": true,
+          "label": "$MSGraphWebhook_in_name_label",
+          "help": "$MSGraphWebhook_in_name_help"
+        },
+        {
+          "name": "filter",
+          "value": "string",
+          "label": "$GraphWebhookSubscription_in_filter_label",
+          "help": "$GraphWebhookSubscription_in_filter_help"
+        }
+      ]
+    },
+    {
+      "type": "graphWebhookSubscription",
+      "displayName": "$MSGraphWebhookCreator_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta2"
+      },
+      "documentation": "$content=Documentation\\GraphWebhookOut.md",
+      "AADPermissions": [
+        {
+          "resourceAppId": "00000002-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "creator",
+          "required": true,
+          "label": "$MSGraphWebhookCreator_in_name_label",
+          "help": "$MSGraphWebhookCreator_in_name_help"
+        },
+        {
+          "name": "changeTypes",
+          "value": "checkBoxList",
+          "enum": [
+            {
+              "value": "created",
+              "display": "Created"
+            },
+            {
+              "value": "updated",
+              "display": "Updated"
+            },
+            {
+              "value": "deleted",
+              "display": "Deleted"
+            }
+          ],
+          "required": true,
+          "label": "$MSGraphWebhook_in_changeType_label",
+          "help": "$MSGraphWebhook_in_changeType_help"
+        },
+        {
+          "name": "action",
+          "value": "enum",
+          "enum": [
+            {
+              "value": "create",
+              "display": "Create"
+            },
+            {
+              "value": "refresh",
+              "display": "Refresh"
+            },
+            {
+              "value": "delete",
+              "display": "Delete"
+            }
+          ],
+          "label": "$MSGraphWebhook_out_action_label",
+          "help": "$MSGraphWebhook_out_action_help"
+        },
+        {
+          "name": "subscriptionResource",
+          "value": "string",
+          "label": "$MSGraphWebhook_in_listen_label",
+          "help": "$MSGraphWebhook_in_listen_help"
+        },
+        {
+          "name": "userId",
+          "value": "string",
+          "label": "$userid_label",
+          "help": "$userid_help"
+        },
+        {
+          "name": "userToken",
+          "value": "string",
+          "label": "$usertoken_label",
+          "help": "$usertoken_help"
+        }
+      ],
+      "rules": [
+        {
+          "name": "identity",
+          "type": "exclusivitySave",
+          "values": [
+            {
+              "value": "UserFromRequest",
+              "display": "$identity_option_userFromRequest_label",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
+            },
+            {
+              "value": "userFromId",
+              "display": "$identity_option_userFromId_label",
+              "hiddenSettings": [
+                "userToken"
+              ],
+              "shownSettings": [
+                "userId"
+              ]
+            },
+            {
+              "value": "userFromToken",
+              "display": "$identity_option_userFromToken_label",
+              "hiddenSettings": [
+                "userId"
+              ],
+              "shownSettings": [
+                "userToken"
+              ]
+            },
+            {
+              "value": "ClientCredentials",
+              "display": "$identity_option_clientCredentials_label",
+              "hiddenSettings": [
+                "userId",
+                "userToken"
+              ],
+              "shownSettings": []
+            }
+          ],
+          "label": "$Identity_label",
+          "help": "$Identity_help"
+        }
+      ]
+    },
+    {
+      "type": "graphWebhookTrigger",
+      "direction": "trigger",
+      "displayName": "$MSGraphWebhookTrigger_displayName",
+      "documentation": "$content=Documentation\\GraphWebhookTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
+        "version": "1.0.0-beta2"
+      },
+      "enabledInTryMode": false,
+      "AADPermissions": [
+        {
+          "resourceAppId": "00000002-0000-0000-c000-000000000000",
+          "resourceAccess": [
+            {
+              "type": "Scope",
+              "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6"
+            }
+          ]
+        }
+      ],
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "notification",
+          "required": true,
+          "label": "$MSGraphWebhookTrigger_in_name_label",
+          "help": "$MSGraphWebhookTrigger_in_help_label"
+        },
+        {
+          "name": "resourceType",
+          "value": "enum",
+          "required": true,
+          "label": "$MSGraphWebhook_in_listen_label",
+          "help": "$MSGraphWebhook_in_listen_help",
+          "enum": [
+            {
+              "value": "#Microsoft.Graph.Message",
+              "display": "Microsoft Graph Message"
+            },
+            {
+              "value": "#Microsoft.Graph.DriveItem",
+              "display": "Microsoft Graph DriveItem"
+            },
+            {
+              "value": "#Microsoft.Graph.Contact",
+              "display": "Microsoft Graph Contact"
+            },
+            {
+              "value": "#Microsoft.Graph.Event",
+              "display": "Microsoft Graph Event"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "activityTrigger",
       "displayName": "$activityTrigger_displayName",
       "direction": "trigger",
