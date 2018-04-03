@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="PkgInstall" InitialTargets="Clean;dotnetcliCheck;codeformatterCheck;nugetCheck;PortalTemplatesPkg">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />  
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -37,6 +37,12 @@
     <None Include="Documentation\ExcelOut.md" />
     <None Include="Documentation\ExcelIn.md" />
     <None Include="Documentation\GraphWebhookTrigger.md" />
+    <None Include="ProjectTemplates.nuspec" />
+    <None Include="ProjectTemplate\build.config\dotnetcli.host.json" />
+    <None Include="ProjectTemplate\build.config\template.json" />
+    <None Include="ProjectTemplate\host.json" />
+    <None Include="ProjectTemplate\local.settings.json" />
+    <None Include="ProjectTemplate\_gitignore" />
     <None Include="Templates\BlobTrigger-CSharp\BlobTriggerCSharp.cs" />
     <None Include="Templates\CosmosDBTrigger-JavaScript\function.json" />
     <None Include="Templates\CosmosDBTrigger-JavaScript\metadata.json" />
@@ -80,9 +86,14 @@
     <None Include="Templates\IoTHubTrigger-CSharp\metadata.json" />
     <None Include="Templates\IoTHubTrigger-CSharp\run.csx" />
     <None Include="Templates\IoTHubTrigger-CSharp\sample.dat" />
-    <None Include="Templates\EventHubTrigger-CSharp\run.cs" />
+    <Content Include="ProjectTemplate\Company.FunctionApp.csproj" />
+    <Content Include="Templates\BlobTrigger-CSharp\build.config\vs-2017.3\blob-mac.png" />
+    <Content Include="Templates\BlobTrigger-CSharp\build.config\vs-2017.3\blob.png" />
+    <Content Include="Templates\CosmosDBTrigger-CSharp\build.config\vs-2017.3\cosmosdb-mac.png" />
+    <Content Include="Templates\CosmosDBTrigger-CSharp\build.config\vs-2017.3\cosmosdb.png" />
     <Content Include="Templates\CosmosDBTrigger-JavaScript\index.js" />
-    <Content Include="Templates\EventGridTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\EventGridTrigger-CSharp\build.config\vs-2017.3\eventGrid-mac.png" />
+    <Content Include="Templates\EventGridTrigger-CSharp\build.config\vs-2017.3\eventGrid.png" />
     <Content Include="Templates\EventGridTrigger-JavaScript\index.js" />
     <None Include="Templates\EventGridTrigger-JavaScript\function.json" />
     <None Include="Templates\EventGridTrigger-JavaScript\metadata.json" />
@@ -133,15 +144,15 @@
     <None Include="Templates\ManualTrigger-TypeScript\function.json" />
     <None Include="Templates\ManualTrigger-TypeScript\metadata.json" />
     <None Include="Templates\ManualTrigger-TypeScript\sample.dat" />
-    <None Include="Templates\MSGraphWebhook-CSharp\function.json" />
-    <None Include="Templates\MSGraphWebhook-CSharp\metadata.json" />
-    <None Include="Templates\MSGraphWebhook-CSharp\run.csx" />
+    <None Include="Templates\QueueTrigger-Bash\run.sh" />
     <None Include="Templates\QueueTrigger-CSharp\QueueTriggerCSharp.cs" />
     <None Include="Templates\QueueTrigger-TypeScript\function.json" />
     <None Include="Templates\QueueTrigger-TypeScript\metadata.json" />
     <None Include="Templates\QueueTrigger-TypeScript\readme.md" />
     <None Include="Templates\QueueTrigger-TypeScript\sample.dat" />
     <None Include="Templates\SasToken-CSharp\SasTokenCSharp.cs" />
+    <None Include="Templates\SendGrid-CSharp\build.config\template.json" />
+    <None Include="Templates\SendGrid-CSharp\build.config\vs-2017.3.host.json" />
     <None Include="Templates\ServiceBusQueueTrigger-CSharp\ServiceBusQueueTriggerCSharp.cs" />
     <None Include="Templates\ServiceBusQueueTrigger-TypeScript\function.json" />
     <None Include="Templates\ServiceBusQueueTrigger-TypeScript\metadata.json" />
@@ -150,9 +161,6 @@
     <None Include="Templates\ServiceBusTopicTrigger-TypeScript\function.json" />
     <None Include="Templates\ServiceBusTopicTrigger-TypeScript\metadata.json" />
     <None Include="Templates\ServiceBusTopicTrigger-TypeScript\sample.dat" />
-    <None Include="Templates\TimerTrigger-CSharpWebhookHandler\function.json" />
-    <None Include="Templates\TimerTrigger-CSharpWebhookHandler\metadata.json" />
-    <None Include="Templates\TimerTrigger-CSharpWebhookHandler\run.csx" />
     <None Include="Templates\TimerTrigger-CSharp\TimerTriggerCSharp.cs" />
     <None Include=".template.config\template.json" />
     <None Include="Bindings\bindings.json" />
@@ -223,13 +231,6 @@
     <None Include="Templates\BlobTrigger-JavaScript\metadata.json" />
     <None Include="Templates\BlobTrigger-JavaScript\readme.md" />
     <None Include="Templates\BlobTrigger-JavaScript\sample.dat" />
-    <None Include="Templates\CDS-CSharp\function.json" />
-    <None Include="Templates\CDS-CSharp\metadata.json" />
-    <None Include="Templates\CDS-CSharp\project.json" />
-    <None Include="Templates\CDS-CSharp\readme.md" />
-    <None Include="Templates\CDS-CSharp\run.csx" />
-    <None Include="Templates\CDS-CSharp\sample.dat" />
-    <None Include="Templates\CDS-CSharp\telemetrybridge.csx" />
     <None Include="Templates\EventHubTrigger-CSharp\build.config\template.json" />
     <None Include="Templates\EventHubTrigger-CSharp\build.config\vs-2017.3.host.json" />
     <None Include="Templates\EventHubTrigger-CSharp\function.json" />
@@ -395,7 +396,6 @@
     <None Include="Templates\ManualTrigger-JavaScript\sample.dat" />
     <None Include="Templates\QueueTrigger-Bash\function.json" />
     <None Include="Templates\QueueTrigger-Bash\metadata.json" />
-    <None Include="Templates\QueueTrigger-Bash\run.sh" />
     <None Include="Templates\QueueTrigger-Bash\sample.dat" />
     <None Include="Templates\QueueTrigger-Batch\function.json" />
     <None Include="Templates\QueueTrigger-Batch\metadata.json" />
@@ -445,7 +445,6 @@
     <None Include="Templates\ScheduledMail-CSharp\run.csx" />
     <None Include="Templates\SendGrid-CSharp\function.json" />
     <None Include="Templates\SendGrid-CSharp\metadata.json" />
-    <None Include="Templates\SendGrid-CSharp\run.csx" />
     <None Include="Templates\SendGrid-CSharp\sample.dat" />
     <None Include="Templates\SendGrid-FSharp\function.json" />
     <None Include="Templates\SendGrid-FSharp\metadata.json" />
@@ -481,9 +480,6 @@
     <None Include="Templates\TimerTrigger-CSharp\metadata.json" />
     <None Include="Templates\TimerTrigger-CSharp\readme.md" />
     <None Include="Templates\TimerTrigger-CSharp\sample.dat" />
-    <None Include="Templates\TimerTrigger-ExcelOutlook\function.json" />
-    <None Include="Templates\TimerTrigger-ExcelOutlook\metadata.json" />
-    <None Include="Templates\TimerTrigger-ExcelOutlook\run.csx" />
     <None Include="Templates\TimerTrigger-FSharp\function.json" />
     <None Include="Templates\TimerTrigger-FSharp\metadata.json" />
     <None Include="Templates\TimerTrigger-FSharp\readme.md" />
@@ -534,74 +530,91 @@
     <EmbeddedResource Include="Resources\zh-TW\Resources\Resources.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Templates\BlobTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\BlobTrigger-FSharp\run.fsx" />
     <Content Include="Templates\BlobTrigger-JavaScript\index.js" />
+    <Content Include="Templates\EventHubTrigger-CSharp\build.config\vs-2017.3\eventhub-mac.png" />
+    <Content Include="Templates\EventHubTrigger-CSharp\build.config\vs-2017.3\eventhub.png" />
+    <Content Include="Templates\FaceLocator-CSharp\build.config\vs-2017.3\functionF-mac.png" />
+    <Content Include="Templates\FaceLocator-CSharp\build.config\vs-2017.3\functionF.png" />
+    <Content Include="Templates\GenericWebHook-CSharp\build.config\vs-2017.3\webhook-mac.png" />
+    <Content Include="Templates\GenericWebHook-CSharp\build.config\vs-2017.3\webhook.png" />
+    <Content Include="Templates\GitHubCommenter-CSharp\build.config\vs-2017.3\webhook-mac.png" />
+    <Content Include="Templates\GitHubCommenter-CSharp\build.config\vs-2017.3\webhook.png" />
+    <Content Include="Templates\GitHubWebHook-CSharp\build.config\vs-2017.3\webhook-mac.png" />
+    <Content Include="Templates\GitHubWebHook-CSharp\build.config\vs-2017.3\webhook.png" />
+    <Content Include="Templates\HttpGET%28CRUD%29-CSharp\build.config\vs-2017.3\httpTrigger-mac.png" />
+    <Content Include="Templates\HttpGET%28CRUD%29-CSharp\build.config\vs-2017.3\httpTrigger.png" />
+    <Content Include="Templates\HttpPOST%28CRUD%29-CSharp\build.config\vs-2017.3\httpTrigger-mac.png" />
+    <Content Include="Templates\HttpPOST%28CRUD%29-CSharp\build.config\vs-2017.3\httpTrigger.png" />
+    <Content Include="Templates\HttpPUT%28CRUD%29-CSharp\build.config\vs-2017.3\httpTrigger-mac.png" />
+    <Content Include="Templates\HttpPUT%28CRUD%29-CSharp\build.config\vs-2017.3\httpTrigger.png" />
+    <Content Include="Templates\HttpTrigger-CSharp\build.config\vs-2017.3\httpTrigger-mac.png" />
+    <Content Include="Templates\HttpTrigger-CSharp\build.config\vs-2017.3\httpTrigger.png" />
+    <Content Include="Templates\HttpTriggerWithParameters-CSharp\build.config\vs-2017.3\httpTrigger-mac.png" />
+    <Content Include="Templates\HttpTriggerWithParameters-CSharp\build.config\vs-2017.3\httpTrigger.png" />
+    <Content Include="Templates\ImageResizer-CSharp\build.config\vs-2017.3\functionF-mac.png" />
+    <Content Include="Templates\ImageResizer-CSharp\build.config\vs-2017.3\functionF.png" />
     <Content Include="Templates\IoTHubServiceBusQueueTrigger-JavaScript\index.js" />
     <Content Include="Templates\IoTHubServiceBusTopicTrigger-JavaScript\index.js" />
-    <Content Include="Templates\CosmosDBTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
-    <Content Include="Templates\EventHubTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\EventHubTrigger-FSharp\run.fsx" />
     <Content Include="Templates\EventHubTrigger-JavaScript\index.js" />
     <Content Include="Templates\ExternalFileTrigger-FSharp\run.fsx" />
     <Content Include="Templates\ExternalFileTrigger-JavaScript\index.js" />
     <Content Include="Templates\ExternalTable-FSharp\run.fsx" />
-    <Content Include="Templates\FaceLocator-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\FaceLocator-FSharp\run.fsx" />
     <Content Include="Templates\FaceLocator-JavaScript\index.js" />
-    <Content Include="Templates\GenericWebHook-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\GenericWebHook-FSharp\run.fsx" />
     <Content Include="Templates\GenericWebHook-JavaScript\index.js" />
-    <Content Include="Templates\GitHubCommenter-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\GitHubCommenter-FSharp\run.fsx" />
     <Content Include="Templates\GitHubCommenter-JavaScript\index.js" />
-    <Content Include="Templates\GitHubWebHook-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\GitHubWebHook-FSharp\run.fsx" />
     <Content Include="Templates\GitHubWebHook-JavaScript\index.js" />
-    <Content Include="Templates\HttpGET%28CRUD%29-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\HttpGET%28CRUD%29-FSharp\run.fsx" />
     <Content Include="Templates\HttpGET%28CRUD%29-JavaScript\index.js" />
     <Content Include="Templates\HttpGET%28CRUD%29-PHP\run.php" />
-    <Content Include="Templates\HttpPOST%28CRUD%29-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\HttpPOST%28CRUD%29-FSharp\run.fsx" />
     <Content Include="Templates\HttpPOST%28CRUD%29-JavaScript\index.js" />
     <Content Include="Templates\HttpPOST%28CRUD%29Queue-FSharp\run.fsx" />
-    <Content Include="Templates\HttpPUT%28CRUD%29-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\HttpPUT%28CRUD%29-FSharp\run.fsx" />
-    <Content Include="Templates\HttpTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\HttpTrigger-FSharp\run.fsx" />
     <Content Include="Templates\HttpTrigger-JavaScript\index.js" />
     <Content Include="Templates\HttpTrigger-Python\run.py" />
-    <Content Include="Templates\HttpTriggerWithParameters-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\HttpTriggerWithParameters-JavaScript\index.js" />
-    <Content Include="Templates\ImageResizer-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\ImageResizer-FSharp\run.fsx" />
     <Content Include="Templates\IoTHubTrigger-JavaScript\index.js" />
     <Content Include="Templates\ManualTrigger-FSharp\run.fsx" />
     <Content Include="Templates\ManualTrigger-JavaScript\index.js" />
-    <Content Include="Templates\QueueTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\QueueTrigger-CSharp\build.config\vs-2017.3\queue-mac.png" />
+    <Content Include="Templates\QueueTrigger-CSharp\build.config\vs-2017.3\queue.png" />
     <Content Include="Templates\QueueTrigger-FSharp\run.fsx" />
     <Content Include="Templates\QueueTrigger-JavaScript\index.js" />
     <Content Include="Templates\QueueTrigger-Php\run.php" />
     <Content Include="Templates\QueueTrigger-Python\run.py" />
-    <Content Include="Templates\SasToken-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\SasToken-CSharp\build.config\vs-2017.3\httpTrigger-mac.png" />
+    <Content Include="Templates\SasToken-CSharp\build.config\vs-2017.3\httpTrigger.png" />
     <Content Include="Templates\SasToken-FSharp\run.fsx" />
     <Content Include="Templates\SasToken-JavaScript\index.js" />
+    <Content Include="Templates\SendGrid-CSharp\build.config\vs-2017.3\functionF-mac.png" />
+    <Content Include="Templates\SendGrid-CSharp\build.config\vs-2017.3\functionF.png" />
     <Content Include="Templates\SendGrid-FSharp\run.fsx" />
     <Content Include="Templates\SendGrid-JavaScript\index.js" />
-    <Content Include="Templates\ServiceBusQueueTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\ServiceBusQueueTrigger-CSharp\build.config\vs-2017.3\servicebus-mac.png" />
+    <Content Include="Templates\ServiceBusQueueTrigger-CSharp\build.config\vs-2017.3\servicebus.png" />
     <Content Include="Templates\ServiceBusQueueTrigger-FSharp\run.fsx" />
     <Content Include="Templates\ServiceBusQueueTrigger-JavaScript\index.js" />
-    <Content Include="Templates\ServiceBusTopicTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\ServiceBusTopicTrigger-CSharp\build.config\vs-2017.3\servicebus-mac.png" />
+    <Content Include="Templates\ServiceBusTopicTrigger-CSharp\build.config\vs-2017.3\servicebus.png" />
     <Content Include="Templates\ServiceBusTopicTrigger-FSharp\run.fsx" />
     <Content Include="Templates\ServiceBusTopicTrigger-JavaScript\index.js" />
-    <Content Include="Templates\TimerTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\TimerTrigger-CSharp\build.config\vs-2017.3\timer-mac.png" />
+    <Content Include="Templates\TimerTrigger-CSharp\build.config\vs-2017.3\timer.png" />
     <Content Include="Templates\TimerTrigger-FSharp\run.fsx" />
     <Content Include="Templates\TimerTrigger-JavaScript\index.js" />
     <Content Include="Templates\ImageResizer-CSharp\ImageResizerCSharp.cs" />
     <Content Include="Templates\IoTHubServiceBusQueueTrigger-TypeScript\index.ts" />
     <Content Include="Templates\IoTHubServiceBusTopicTrigger-TypeScript\index.ts" />
     <Content Include="Templates\IoTHubTrigger-TypeScript\index.ts" />
+    <Content Include="Templates\SendGrid-CSharp\SendGridCSharp.cs" />
   </ItemGroup>
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
     <RemoveDir Directories=".\bin\Portal" />
