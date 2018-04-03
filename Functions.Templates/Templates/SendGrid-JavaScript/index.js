@@ -11,7 +11,7 @@ var util = require('util');
 //   }
 // }
 module.exports = function (context, order) {
-    context.log('JavaScript queue trigger function processed order', order.orderId);
+    context.log('JavaScript queue trigger function processed order:', order.orderId);
 
     context.done(null, {
         message: {
