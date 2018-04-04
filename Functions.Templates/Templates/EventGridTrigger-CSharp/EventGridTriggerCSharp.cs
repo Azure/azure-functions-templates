@@ -6,7 +6,7 @@ public static void Run(EventGridEvent eventGridEvent, TraceWriter log)
 #endif
 #if (vsTemplates)
 // Default URL for triggering event grid function in the local environment.
-// http://localhost:7071/admin/extensions/EventGridExtensionConfig?functionName={functionname} 
+// http://localhost:7071/runtime/webhooks/EventGridExtensionConfig?functionName={functionname}
 
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
