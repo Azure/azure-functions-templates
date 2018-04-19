@@ -1,7 +1,7 @@
 #if (portalTemplates)
 using System;
 
-public static void Run(string myEventHubMessage, TraceWriter log)
+public static void Run(string myIotHubMessage, TraceWriter log)
 #endif
 #if (vsTemplates)
 using IoTHubTrigger = Microsoft.Azure.WebJobs.ServiceBus.EventHubTriggerAttribute;
@@ -19,7 +19,7 @@ namespace Company.Function
 #endif
         {
 #if (portalTemplates)
-            log.Info($"C# IoT Hub trigger function processed a message: {myEventHubMessage}");
+            log.Info($"C# IoT Hub trigger function processed a message: {myIotHubMessage}");
 #endif
 #if (vsTemplates)
             log.Info($"C# IoT Hub trigger function processed a message: {Encoding.UTF8.GetString(message.Body.Array)}");
