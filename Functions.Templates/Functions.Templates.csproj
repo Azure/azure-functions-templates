@@ -59,6 +59,8 @@
     <None Include="Templates\BlobTrigger-Python\metadata.json" />
     <None Include="Templates\BlobTrigger-Python\readme.md" />
     <None Include="Templates\BlobTrigger-Python\sample.dat" />
+    <None Include="Templates\IotHubTrigger-CSharpVS\build.config\template.json" />
+    <None Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3.host.json" />
     <None Include="Templates\CosmosDBTrigger-CSharp\build.config\template.json" />
     <None Include="Templates\CosmosDBTrigger-CSharp\build.config\vs-2017.3.host.json" />
     <None Include="Templates\CosmosDBTrigger-CSharp\function.json" />
@@ -232,6 +234,15 @@
     <Content Include="Templates\HttpTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\HttpTrigger-JavaScript\index.js" />
     <Content Include="Templates\QueueTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3\eventhub-mac-32%402x.png" />
+    <Content Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3\eventhub-mac-32.png" />
+    <Content Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3\eventhub-mac-32~dark%402x.png" />
+    <Content Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3\eventhub-mac-32~dark.png" />
+    <Content Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3\eventhub-mac-32~dark~sel%402x.png" />
+    <Content Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3\eventhub-mac-32~dark~sel.png" />
+    <Content Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3\eventhub-mac-32~sel%402x.png" />
+    <Content Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3\eventhub-mac-32~sel.png" />
+    <Content Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3\eventhub.png" />
     <Content Include="Templates\QueueTrigger-JavaScript\index.js" />
     <Content Include="Templates\SendGrid-CSharp\build.config\vs-2017.3\functionF-mac.png" />
     <Content Include="Templates\SendGrid-CSharp\build.config\vs-2017.3\functionF.png" />
@@ -242,6 +253,9 @@
     <Content Include="Templates\CosmosDBTrigger-CSharp\CosmosDBTriggerCSharp.cs" />
     <Content Include="Templates\DurableFunctionsOrchestration-CSharp\DurableFunctionsOrchestrationCSharp.cs" />
     <Content Include="Templates\SendGrid-CSharp\SendGridCSharp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Templates\IotHubTrigger-CSharpVS\IotHubTriggerCSharp.cs" />
   </ItemGroup>  
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
     <RemoveDir Directories=".\bin\Portal" />
