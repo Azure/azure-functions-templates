@@ -167,10 +167,10 @@ try {
         
         if (-Not ($binDiff -eq $null)) { 
             $message = "Restore with fallback folder does not match for " + $extension.name
-            LogAppVeyorMessage $message $runningInAppveyorEnv
+            LogAppVeyorErrorMessage $message $runningInAppveyorEnv
         } else {
             $message = "Verification complete for" + $extension.name
-            LogAppVeyorErrorMessage $message $runningInAppveyorEnv
+            LogAppVeyorMessage $message $runningInAppveyorEnv
         }
     }
 }
