@@ -11,7 +11,7 @@ function LogErrorAndExit($errorMessage, $exception) {
     if ($exception -ne $null) {
         Write-Output $exception|format-list -force
     }    
-    Exit
+    Exit 1
 }
 
 function LogSuccess($message) {
@@ -168,14 +168,15 @@ try {
     if ($runningInAppveyorEnv) {
         $fallbackFolderVersion = $env:APPVEYOR_BUILD_VERSION
         $fallbackFolderParentDirectoryName = "FuncNugetFallback." + $fallbackFolderVersion
+        $fallbackFolderParentDirectoryPath = Join-Path ((Get-Item $Currentlocation).Parent).FullName -ChildPath $fallbackFolderParentDirectoryName
     }
     else {
         $fallbackFolderVersion = "1.0.0"
         $fallbackFolderParentDirectoryName = "FuncNugetFallback." + $fallbackFolderVersion
+        $fallbackFolderParentDirectoryPath = Join-Path $Currentlocation -ChildPath $fallbackFolderParentDirectoryName
     }
 
     $fallbackFolderChildDirectoryPath = Join-Path $Currentlocation -ChildPath $fallbackFolderVersion
-    $fallbackFolderParentDirectoryPath = Join-Path $Currentlocation -ChildPath $fallbackFolderParentDirectoryName
 
     Rename-Item $fallBackFolder $fallbackFolderChildDirectoryPath
     New-Item $fallbackFolderParentDirectoryPath -ItemType Directory
@@ -187,7 +188,7 @@ try {
         Remove-Item $fallBackFolderZipPath
     }
     
-    Out-File -filepath .\$fallbackFolderParentDirectoryName\$fallbackFolderVersion\marker.txt
+    Out-File -filepath ..\$fallbackFolderParentDirectoryName\$fallbackFolderVersion\marker.txt
     [IO.Compression.ZipFile]::CreateFromDirectory($fallbackFolderParentDirectoryPath, $fallBackFolderZipPath)
     
 }
