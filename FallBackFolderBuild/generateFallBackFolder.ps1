@@ -1,6 +1,6 @@
 param(
-        [Parameter(Mandatory=$false)][bool]$runningInAppveyorEnv
-    )
+    [Parameter(Mandatory = $false)][bool]$runningInAppveyorEnv
+)
 
 $ProgressPreference = "SilentlyContinue"
 Add-Type -AssemblyName System.IO.Compression.FileSystem
@@ -18,18 +18,14 @@ function LogSuccess($message) {
     Write-Output $message
 }
 
-function LogAppVeyorMessage($message, [bool]$runningInAppveyorEnv)
-{
-    if ($runningInAppveyorEnv)
-    {
+function LogAppVeyorMessage($message, [bool]$runningInAppveyorEnv) {
+    if ($runningInAppveyorEnv) {
         Add-AppveyorMessage $message -Category Information
     }
 }
 
-function LogAppVeyorErrorMessage($message, [bool]$runningInAppveyorEnv)
-{
-    if ($runningInAppveyorEnv)
-    {
+function LogAppVeyorErrorMessage($message, [bool]$runningInAppveyorEnv) {
+    if ($runningInAppveyorEnv) {
         Add-AppveyorMessage $message -Category Error
     }
 }
@@ -130,14 +126,6 @@ try {
     # renaming the nuget cache folder to Fallback
     Rename-Item .\.nuget fallBackFolder
 
-    if (Test-Path fallBackFolder.zip) {
-        Remove-Item .\fallBackFolder.zip
-    }
-
-    $fallBackFolderPath = Join-Path $Currentlocation -ChildPath "\fallBackFolder"
-    $fallBackFolderZipPath = Join-Path $Currentlocation -ChildPath "\fallBackFolder.zip"
-    [IO.Compression.ZipFile]::CreateFromDirectory($fallBackFolderPath, $fallBackFolderZipPath)
-    
     # for matching before and after
     foreach ($extension in $extensions) {
         if (Test-Path .\.nuget) {
@@ -168,11 +156,40 @@ try {
         if (-Not ($binDiff -eq $null)) { 
             $message = "Restore with fallback folder does not match for " + $extension.name
             LogAppVeyorErrorMessage $message $runningInAppveyorEnv
-        } else {
+        }
+        else {
             $message = "Verification complete for" + $extension.name
             LogAppVeyorMessage $message $runningInAppveyorEnv
         }
     }
+
+    
+
+    if ($runningInAppveyorEnv) {
+        $fallbackFolderVersion = $env:APPVEYOR_BUILD_VERSION
+        $fallbackFolderParentDirectoryName = "FuncNugetFallback." + $fallbackFolderVersion
+    }
+    else {
+        $fallbackFolderVersion = "1.0.0"
+        $fallbackFolderParentDirectoryName = "FuncNugetFallback." + $fallbackFolderVersion
+    }
+
+    $fallbackFolderChildDirectoryPath = Join-Path $Currentlocation -ChildPath $fallbackFolderVersion
+    $fallbackFolderParentDirectoryPath = Join-Path $Currentlocation -ChildPath $fallbackFolderParentDirectoryName
+
+    Rename-Item $fallBackFolder $fallbackFolderChildDirectoryPath
+    New-Item $fallbackFolderParentDirectoryPath -ItemType Directory
+    Move-Item $fallbackFolderChildDirectoryPath $fallbackFolderParentDirectoryPath
+
+    $fallBackFolderZipPath = Join-Path $Currentlocation -ChildPath "$fallbackFolderParentDirectoryName.zip"
+
+    if (Test-Path $fallBackFolderZipPath) {
+        Remove-Item $fallBackFolderZipPath
+    }
+    
+    Out-File -filepath .\$fallbackFolderParentDirectoryName\$fallbackFolderVersion\marker.txt
+    [IO.Compression.ZipFile]::CreateFromDirectory($fallbackFolderParentDirectoryPath, $fallBackFolderZipPath)
+    
 }
 catch {
     LogErrorAndExit "UnKnown Error" $_.Exception
