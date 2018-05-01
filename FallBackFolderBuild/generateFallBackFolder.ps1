@@ -125,12 +125,15 @@ try {
 
     # renaming the nuget cache folder to Fallback
     Rename-Item .\.nuget $fallBackFolder
-    $emptyDirectories = Get-ChildItem -Path $fallBackFolder -Directory -Recurse | Where-Object { $_.GetFileSystemInfos().Count -eq 0 }
-    Write-Host "Removing following empty directories"
-    $emptyDirectories | ForEach-Object {  
-        Write-Host $_.FullName
-        Remove-Item $_.FullName
-    }
+    
+    Do {
+        $emptyDirectories = Get-ChildItem -Path $fallBackFolder -Directory -Recurse | Where-Object { $_.GetFileSystemInfos().Count -eq 0 }
+        Write-Host "Removing following empty directories"
+        $emptyDirectories | ForEach-Object {  
+            Write-Host $_.FullName
+            Remove-Item $_.FullName
+        }
+    } while ($emptyDirectories -ne $null)
 
     # for matching before and after
     foreach ($extension in $extensions) {
