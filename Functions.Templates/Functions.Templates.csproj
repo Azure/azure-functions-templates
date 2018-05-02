@@ -65,6 +65,10 @@
     <None Include="Templates\CosmosDBTrigger-CSharp\build.config\vs-2017.3.host.json" />
     <None Include="Templates\CosmosDBTrigger-CSharp\function.json" />
     <None Include="Templates\CosmosDBTrigger-CSharp\metadata.json" />
+    <None Include="Templates\CosmosDBTrigger-Python\__init__.py" />
+    <None Include="Templates\CosmosDBTrigger-Python\function.json" />
+    <None Include="Templates\CosmosDBTrigger-Python\metadata.json" />
+    <None Include="Templates\CosmosDBTrigger-Python\sample.dat" />
     <None Include="Templates\DurableFunctionsActivity-CSharp\DurableFunctionsActivityCSharp.csx" />
     <None Include="Templates\DurableFunctionsActivity-CSharp\function.json" />
     <None Include="Templates\DurableFunctionsActivity-CSharp\metadata.json" />
@@ -256,7 +260,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Templates\IotHubTrigger-CSharpVS\IotHubTriggerCSharp.cs" />
-  </ItemGroup>  
+  </ItemGroup>
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
     <RemoveDir Directories=".\bin\Portal" />
     <RemoveDir Directories=".\bin\VS" />
