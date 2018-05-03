@@ -1,0 +1,44 @@
+{
+    "author": "Microsoft",
+    "classifications": [
+        "AzureFunctions",
+        "ClassLib"
+    ],
+    "name": "Azure Functions",
+    "generatorVersions": "[1.0.0.0-*)",
+    "groupIdentity": "Microsoft.AzureFunctions.ProjectTemplates",
+    "precedence": "100",
+    "identity": "Microsoft.AzureFunctions.ProjectTemplate.FSharp.2.x",
+    "shortName": "azureFunctionsProjectTemplates",
+    "tags": {
+        "language": "F#",
+        "type": "project"
+    },
+    "sourceName": "Company.FunctionApp",
+    "symbols": {
+      "StorageConnectionStringValue": {
+        "description": "The connection string for your Azure WebJobs Storage.",
+        "type": "parameter",
+        "defaultValue": "",
+        "replaces": "AzureWebJobsStorageConnectionStringValue",
+        "DataType": "AzureStorage"
+      }
+    },
+    "sources": [
+        {
+            "modifiers": [
+                {
+                    "rename": {
+                        "_gitignore": ".gitignore"
+                    }
+                }
+            ]
+        }
+    ],
+    "primaryOutputs": [
+        {
+            "path": "Company.FunctionApp.fsproj"
+        }
+    ],
+    "defaultName": "Company.FunctionApp"
+}
