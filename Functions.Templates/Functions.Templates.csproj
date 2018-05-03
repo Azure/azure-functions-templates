@@ -82,6 +82,8 @@
     <None Include="Templates\IoTHubServiceBusTopicTrigger-TypeScript\function.json" />
     <None Include="Templates\IoTHubServiceBusTopicTrigger-TypeScript\metadata.json" />
     <None Include="Templates\IoTHubServiceBusTopicTrigger-TypeScript\sample.dat" />
+    <None Include="Templates\IotHubTrigger-CSharpVS\build.config\template.json" />
+    <None Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3.host.json" />
     <None Include="Templates\IoTHubTrigger-CSharp\function.json" />
     <None Include="Templates\IoTHubTrigger-CSharp\metadata.json" />
     <None Include="Templates\IoTHubTrigger-CSharp\run.csx" />
@@ -581,6 +583,15 @@
     <Content Include="Templates\HttpTrigger-Python\run.py" />
     <Content Include="Templates\HttpTriggerWithParameters-JavaScript\index.js" />
     <Content Include="Templates\ImageResizer-FSharp\run.fsx" />
+    <Content Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3\eventhub-mac-32%402x.png" />
+    <Content Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3\eventhub-mac-32.png" />
+    <Content Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3\eventhub-mac-32~dark%402x.png" />
+    <Content Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3\eventhub-mac-32~dark.png" />
+    <Content Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3\eventhub-mac-32~dark~sel%402x.png" />
+    <Content Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3\eventhub-mac-32~dark~sel.png" />
+    <Content Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3\eventhub-mac-32~sel%402x.png" />
+    <Content Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3\eventhub-mac-32~sel.png" />
+    <Content Include="Templates\IotHubTrigger-CSharpVS\build.config\vs-2017.3\eventhub.png" />
     <Content Include="Templates\IoTHubTrigger-JavaScript\index.js" />
     <Content Include="Templates\ManualTrigger-FSharp\run.fsx" />
     <Content Include="Templates\ManualTrigger-JavaScript\index.js" />
@@ -615,6 +626,9 @@
     <Content Include="Templates\IoTHubServiceBusTopicTrigger-TypeScript\index.ts" />
     <Content Include="Templates\IoTHubTrigger-TypeScript\index.ts" />
     <Content Include="Templates\SendGrid-CSharp\SendGridCSharp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Templates\IotHubTrigger-CSharpVS\IotHubTriggerCSharp.cs" />
   </ItemGroup>
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
     <RemoveDir Directories=".\bin\Portal" />
