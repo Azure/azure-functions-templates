@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -124,7 +124,7 @@
     <value>Eseményközpont-kapcsolat</value>
   </data>
   <data name="eventHubOut_displayName" xml:space="preserve">
-    <value>Azure-eseményközpont</value>
+    <value>Azure Event Hubs</value>
   </data>
   <data name="eventHubOut_name_help" xml:space="preserve">
     <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
@@ -136,7 +136,7 @@
     <value>Az eseményközpont neve csak betűvel vagy számmal kezdődhet és végződhet, valamint csak betűket, számokat, kötőjelet, pontot és aláhúzásjelet tartalmazhat. A név hossza 1–50 karakter lehet.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
-    <value>Ez annak az eseményközpontnak a neve, amelybe az esemény küldve lesz.</value>
+    <value>Azon eseményközpont neve, amelybe a rendszer elküldi az eseményt.</value>
   </data>
   <data name="eventHubOut_path_label" xml:space="preserve">
     <value>Eseményközpont neve</value>
@@ -154,7 +154,7 @@
     <value>Eseményközpontbeli fogyasztói csoport</value>
   </data>
   <data name="eventHubTrigger_displayName" xml:space="preserve">
-    <value>Azure-eseményközpont</value>
+    <value>Azure Event Hubs</value>
   </data>
   <data name="eventHubTrigger_name_help" xml:space="preserve">
     <value>Ez a név szolgál az eseményindító azonosítására a kódban.</value>
@@ -187,7 +187,7 @@
     <value>Üzenetsor neve</value>
   </data>
   <data name="queueOut_queueName_help" xml:space="preserve">
-    <value>Az az üzenetsor, amelybe el kell küldeni az üzenetet. Ha az üzenetsor még nem létezik, a rendszer létrehozza a megadott tárfiókban.</value>
+    <value>Az üzenetsor, amelybe a rendszer elküldi az üzenetet. Ha az üzenetsor még nem létezik, a rendszer létrehozza azt a megadott tárfiókban.</value>
   </data>
   <data name="temp_category_core" xml:space="preserve">
     <value>Mag</value>
@@ -211,7 +211,7 @@
     <value>Időbélyeg-paraméter neve</value>
   </data>
   <data name="timerTrigger_schedule_help" xml:space="preserve">
-    <value>Írjon be egy „{second} {minute} {hour} {day} {month} {day of week}” formátumú CRON-kifejezést az ütemezés megadásához. Példákat az alábbi dokumentációban talál.</value>
+    <value>Írjon be egy „{second} {minute} {hour} {day} {month} {day of week}” formátumú CRON-kifejezést az ütemezés megadásához.</value>
   </data>
   <data name="timerTrigger_schedule_label" xml:space="preserve">
     <value>Ütemezés</value>
@@ -241,7 +241,7 @@
     <value>Táblanév</value>
   </data>
   <data name="variables_appSettingsHelp" xml:space="preserve">
-    <value>A tárfiók kapcsolati karakterlánca.</value>
+    <value>A tárfiók kapcsolati sztringjét tartalmazó alkalmazásbeállítás neve.</value>
   </data>
   <data name="variables_parameterName" xml:space="preserve">
     <value>A paraméternévnek tetszőleges számú karakterből álló, alfanumerikus karakterláncnak lennie, és a név nem kezdődhet számmal.</value>
@@ -295,7 +295,7 @@
     <value>Üzenetsor neve</value>
   </data>
   <data name="blobOut_path_help" xml:space="preserve">
-    <value>Ez az az útvonal a tárfiókon belül, ahová a blob írva lesz.</value>
+    <value>Azon útvonal a tárfiókban, ahová a rendszer írja a blobot.</value>
   </data>
   <data name="blobOut_path_errorText" xml:space="preserve">
     <value>A blob elérési útjának 3 és 63 karakter közötti hosszúságú tárolónévnek kell lennie, amelyet 1 és 1024 karakter közötti hosszúságú blobnévnek kell követnie. A blobnév lehet bármilyen karakterkombináció, és legfeljebb 254 útvonalszegmensből állhat, amelyeket perjel (/) választ el.</value>
@@ -310,7 +310,7 @@
     <value>Blobparaméter neve</value>
   </data>
   <data name="blobIn_path_help" xml:space="preserve">
-    <value>Ez az az útvonal a tárfiókon belül, ahonnan a blob ki lesz olvasva.</value>
+    <value>Azon útvonal a tárfiókban, ahonnan a rendszer beolvassa a blobot.</value>
   </data>
   <data name="blobIn_path_label" xml:space="preserve">
     <value>Elérési út</value>
@@ -328,7 +328,7 @@
     <value>Elérési út</value>
   </data>
   <data name="blobTrigger_path_help" xml:space="preserve">
-    <value>Ez az az útvonal a tárfiókon belül, amelyet az eseményindító figyelni fog.</value>
+    <value>Azon útvonal a tárfiókban, amelyet az eseményindító figyelni fog.</value>
   </data>
   <data name="blobTrigger_path_errorText" xml:space="preserve">
     <value>A blob elérési útjának 3 és 63 karakter közötti hosszúságú tárolónévnek kell lennie, amelyet 1 és 1024 karakter közötti hosszúságú blobnévnek kell követnie. A blobnév lehet bármilyen karakterkombináció, és legfeljebb 254 útvonalszegmensből állhat, amelyeket perjel (/) választ el.</value>
@@ -415,7 +415,7 @@
     <value>Üzemmód</value>
   </data>
   <data name="httpTrigger_mode_help" xml:space="preserve">
-    <value>Ez az eseményindító üzemmódja. A „Szokásos” azt jelenti, hogy a kérés normál HTTP-kérés további jelentés nélkül. A „Webhook” azt jelenti, hogy a kérés egy adott webhooktípus szerint lesz feldolgozva.</value>
+    <value>A trigger üzemmódja. A Szokásos azt jelenti, hogy a kérelem egy normál HTTP-kérelem további jelentés nélkül. A Webhook azt jelenti, hogy a kérelem egy adott webhooktípus szerint lesz feldolgozva.</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
     <value>Külső fájl (Előzetes verzió)</value>
@@ -433,28 +433,28 @@
     <value>Azure Blob Storage</value>
   </data>
   <data name="documentDBIn_collectionName_help" xml:space="preserve">
-    <value>Ez a neve annak a gyűjteménynek az adatbázison belül, amelyből az adatok ki lesznek olvasva.</value>
+    <value>Az adatbázis-gyűjtemény, melyből a rendszer beolvassa az adatokat.</value>
   </data>
   <data name="documentDBIn_collectionName_label" xml:space="preserve">
     <value>Gyűjtemény neve</value>
   </data>
   <data name="documentDBIn_connection_help" xml:space="preserve">
-    <value>A DocumentDB-kapcsolati sztringet tartalmazó alkalmazásbeállítás neve.</value>
+    <value>A Cosmos DB-kapcsolati sztringet tartalmazó alkalmazásbeállítás neve</value>
   </data>
   <data name="documentDBIn_connection_label" xml:space="preserve">
-    <value>DocumentDB-fiókkapcsolat</value>
+    <value>Cosmos DB-fiók-kapcsolat</value>
   </data>
   <data name="documentDBIn_databaseName_help" xml:space="preserve">
-    <value>A DocumentDB-fiók azon adatbázisának neve, amelyből az adatok be lesznek olvasva.</value>
+    <value>Az a Cosmos DB-adatbázis, amelyből be lesznek olvasva az adatok.</value>
   </data>
   <data name="documentDBIn_databaseName_label" xml:space="preserve">
     <value>Adatbázis neve</value>
   </data>
   <data name="documentDBIn_displayName" xml:space="preserve">
-    <value>Azure DocumentDB</value>
+    <value>Azure Cosmos DB</value>
   </data>
   <data name="documentDBIn_id_help" xml:space="preserve">
-    <value>Ez annak a dokumentumnak az azonosítója, amely be lesz olvasva. Ha sem SQL-lekérdezés, sem pedig azonosító nincs megadva, a rendszer az adott gyűjteményben lévő összes dokumentumot visszaadja.</value>
+    <value>A beolvasandó dokumentum azonosítója. Ha sem SQL-lekérdezés, sem pedig azonosító nincs megadva, a rendszer az adott gyűjteményben lévő összes dokumentumot visszaadja.</value>
   </data>
   <data name="documentDBIn_id_label" xml:space="preserve">
     <value>Dokumentumazonosító (nem kötelező)</value>
@@ -466,31 +466,31 @@
     <value>Dokumentumparaméter neve</value>
   </data>
   <data name="documentDBOut_collectionName_help" xml:space="preserve">
-    <value>Ez a neve annak a gyűjteménynek az adatbázison belül, amelybe az adatok írva lesznek.</value>
+    <value>Az adatbázis-gyűjtemény, melybe a rendszer írja az adatokat.</value>
   </data>
   <data name="documentDBOut_collectionName_label" xml:space="preserve">
     <value>Gyűjtemény neve</value>
   </data>
   <data name="documentDBOut_connection_help" xml:space="preserve">
-    <value>A DocumentDB-kapcsolati sztringet tartalmazó alkalmazásbeállítás neve.</value>
+    <value>A Cosmos DB-kapcsolati sztringet tartalmazó alkalmazásbeállítás neve</value>
   </data>
   <data name="documentDBOut_connection_label" xml:space="preserve">
-    <value>DocumentDB-fiókkapcsolat</value>
+    <value>Cosmos DB-fiók-kapcsolat</value>
   </data>
   <data name="documentDBOut_createIfNotExists_help" xml:space="preserve">
-    <value>Ha ez az érték igaz, akkor az adatbázis és a gyűjtemény automatikusan jön létre.</value>
+    <value>True érték esetén létrehozza a Cosmos DB-adatbázist és -gyűjteményt.</value>
   </data>
   <data name="documentDBOut_createIfNotExists_label" xml:space="preserve">
-    <value>Szeretné, ha automatikusan létrejönne a DocumentDB-adatbázis és -gyűjtemény?</value>
+    <value>True érték esetén létrehozza a Cosmos DB-adatbázist és -gyűjteményt</value>
   </data>
   <data name="documentDBOut_databaseName_help" xml:space="preserve">
-    <value>Ez a neve annak az adatbázisnak a DocumentDB-fiókban, amelybe az adatok írva lesznek.</value>
+    <value>Az a Cosmos DB-adatbázis, amelybe az adatok írva lesznek.</value>
   </data>
   <data name="documentDBOut_databaseName_label" xml:space="preserve">
     <value>Adatbázis neve</value>
   </data>
   <data name="documentDBOut_displayName" xml:space="preserve">
-    <value>Azure DocumentDB-dokumentum</value>
+    <value>Azure Cosmos DB</value>
   </data>
   <data name="documentDBOut_name_help" xml:space="preserve">
     <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
@@ -517,7 +517,7 @@
     <value>Paraméter neve</value>
   </data>
   <data name="mobileTableIn_apiKey_help" xml:space="preserve">
-    <value>Ez annak az alkalmazásbeállításnak a neve, amely megadja az API-kulcsot a mobilalkalmazáshoz. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;További információ&lt;/a&gt;.</value>
+    <value>Azon alkalmazásbeállítás neve, amely megadja az API-kulcsot a mobilalkalmazáshoz. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;További információ&lt;/a&gt;.</value>
   </data>
   <data name="mobileTableIn_apiKey_label" xml:space="preserve">
     <value>API-kulcskeresés (nem kötelező)</value>
@@ -529,10 +529,10 @@
     <value>Mobilalkalmazás URL-címének keresése</value>
   </data>
   <data name="mobileTableIn_displayName" xml:space="preserve">
-    <value>Azure Mobile-tábla rekordja</value>
+    <value>Azure Mobile Tables</value>
   </data>
   <data name="mobileTableIn_id_help" xml:space="preserve">
-    <value>Ez a beolvasandó rekord azonosítója.</value>
+    <value>A beolvasandó rekord azonosítója.</value>
   </data>
   <data name="mobileTableIn_id_label" xml:space="preserve">
     <value>Rekordazonosító</value>
@@ -550,7 +550,7 @@
     <value>Tábla neve</value>
   </data>
   <data name="mobileTableOut_apiKey_help" xml:space="preserve">
-    <value>Ez annak az alkalmazásbeállításnak a neve, amely megadja az API-kulcsot a mobilalkalmazáshoz. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;További információ&lt;/a&gt;.</value>
+    <value>Azon alkalmazásbeállítás neve, amely megadja az API-kulcsot a mobilalkalmazáshoz. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;További információ&lt;/a&gt;.</value>
   </data>
   <data name="mobileTableOut_apiKey_label" xml:space="preserve">
     <value>API-kulcskeresés (nem kötelező)</value>
@@ -562,7 +562,7 @@
     <value>Mobilalkalmazás URL-címének keresése</value>
   </data>
   <data name="mobileTableOut_displayName" xml:space="preserve">
-    <value>Azure Mobile-tábla rekordja</value>
+    <value>Azure Mobile Tables</value>
   </data>
   <data name="mobileTableOut_name_help" xml:space="preserve">
     <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
@@ -583,10 +583,10 @@
     <value>Notification Hubs névterének kapcsolata</value>
   </data>
   <data name="notificationHubOut_displayName" xml:space="preserve">
-    <value>Azure Notification Hub</value>
+    <value>Azure Notification Hubs</value>
   </data>
   <data name="notificationHubOut_hubName_help" xml:space="preserve">
-    <value>Azon Notification Hub neve, amelyet a leküldéses értesítések küldéséhez használni szeretne.</value>
+    <value>A leküldéses értesítések küldéséhez használandó értesítési központ neve.</value>
   </data>
   <data name="notificationHubOut_hubName_label" xml:space="preserve">
     <value>Értesítési központ neve</value>
@@ -622,7 +622,7 @@
     <value>SendGrid</value>
   </data>
   <data name="sendGrid_from_help" xml:space="preserve">
-    <value>Az e-mail-cím, amelyről az üzenet érkezik. Lehet „felhasználó@állomás.com” vagy „Megjelenített név &lt;felhasználó@állomás.com&gt;” formátumú. Ha itt nincs megadva, az érték kód segítségével is megadható.</value>
+    <value>Az e-mail-cím, amelyről az üzenet érkezett. „felhasználó@állomás.com” vagy „Megjelenített név &lt;felhasználó@állomás.com&gt;” formátumú lehet. Ha itt nincs megadva, az érték a kódban is megadható.</value>
   </data>
   <data name="sendGrid_from_label" xml:space="preserve">
     <value>Feladó címe</value>
@@ -822,17 +822,8 @@
   <data name="table_tableName_label" xml:space="preserve">
     <value>Tábla neve</value>
   </data>
-  <data name="BlobTriggerBatch_description" xml:space="preserve">
-    <value>(Kísérleti) Batch-függvény, amely akkor fut le, amikor egy blob bekerül egy adott tárolóba</value>
-  </data>
-  <data name="BlobTriggerCSharp_description" xml:space="preserve">
-    <value>C#-függvény, amely akkor fut le, amikor egy blob bekerül egy adott tárolóba</value>
-  </data>
-  <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely akkor fut le, ha egy adott tárolóhoz blobot adnak hozzá</value>
-  </data>
-  <data name="BlobTriggerNodeJS_description" xml:space="preserve">
-    <value>JavaScript-függvény, amely akkor fut le, amikor egy blob bekerül egy adott tárolóba</value>
+  <data name="BlobTrigger_description" xml:space="preserve">
+    <value>Függvény, amely akkor fut le, amikor egy blob bekerül egy adott tárolóba</value>
   </data>
   <data name="CSharp_description" xml:space="preserve">
     <value>C#-függvény, amely akkor fut le, amikor a GitHubtól webhookkérést kap</value>
@@ -861,17 +852,8 @@
   <data name="EmptyPython_description" xml:space="preserve">
     <value>Üres Python-függvény eseményindítók, bemenetek és kimenetek nélkül</value>
   </data>
-  <data name="EventHubTriggerCSharp_description" xml:space="preserve">
-    <value>C#-függvény, amely akkor fut le, amikor egy eseményközpont új eseményt kap</value>
-  </data>
-  <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely akkor fut le, ha egy eseményközpont új eseményt fogad</value>
-  </data>
-  <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
-    <value>JavaScript-függvény, amely akkor fut le, amikor egy eseményközpont új eseményt kap</value>
-  </data>
-  <data name="EventHubTriggerPython_description" xml:space="preserve">
-    <value>(Kísérleti) Python-függvény, amely akkor fut le, amikor egy eseményközpont új eseményt kap</value>
+  <data name="EventHubTrigger_description" xml:space="preserve">
+    <value>Függvény, amely akkor fut le, amikor egy eseményközpont új eseményt kap</value>
   </data>
   <data name="FaceLocatorCSharp_description" xml:space="preserve">
     <value>C#-függvény, amely képeket dolgoz fel, és arcokhoz tartozó határoló téglalapot ad vissza kimenetként</value>
@@ -933,23 +915,8 @@
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
     <value>F# függvény, amely frissít egy tárolótáblában lévő entitást, ha HTTP-kérést kap</value>
   </data>
-  <data name="HttpTriggerBatch_description" xml:space="preserve">
-    <value>(Kísérleti) Batch-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
-  </data>
-  <data name="HttpTriggerCSharp_description" xml:space="preserve">
-    <value>C#-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
-  </data>
-  <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely akkor fut le, ha HTTP-kérést kap</value>
-  </data>
-  <data name="HttpTriggerNodeJS_description" xml:space="preserve">
-    <value>JavaScript-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
-  </data>
-  <data name="HttpTriggerPowerShell_description" xml:space="preserve">
-    <value>(Előzetes verzió) PowerShell-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
-  </data>
-  <data name="HttpTriggerPython_description" xml:space="preserve">
-    <value>(Kísérleti funkció) Python 3-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
+  <data name="HttpTrigger_description" xml:space="preserve">
+    <value>Függvény, amely akkor fut le, amikor HTTP-kérelmet kap, és a törzs vagy a lekérdezési karakterlánc adatai alapján válaszol</value>
   </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>C#-függvény, amely átméretezett képeket hoz létre, amikor egy blob bekerül egy adott tárolóba</value>
@@ -966,29 +933,8 @@
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>JavaScript-függvény, amely manuálisan indítható a portál Futtatás gombjával</value>
   </data>
-  <data name="QueueTriggerBash_description" xml:space="preserve">
-    <value>(Kísérleti) Bash-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
-  </data>
-  <data name="QueueTriggerBatch_description" xml:space="preserve">
-    <value>(Kísérleti) Batch-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
-  </data>
-  <data name="QueueTriggerCSharp_description" xml:space="preserve">
-    <value>C#-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
-  </data>
-  <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>F#-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
-  </data>
-  <data name="QueueTriggerNodeJS_description" xml:space="preserve">
-    <value>JavaScript-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
-  </data>
-  <data name="QueueTriggerPHP_description" xml:space="preserve">
-    <value>(Kísérleti) PHP-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
-  </data>
-  <data name="QueueTriggerPowerShell_description" xml:space="preserve">
-    <value>(Előzetes verzió) PowerShell-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
-  </data>
-  <data name="QueueTriggerPython_description" xml:space="preserve">
-    <value>(Kísérleti) Python-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
+  <data name="QueueTrigger_description" xml:space="preserve">
+    <value>Függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Storage-üzenetsorba</value>
   </data>
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
     <value>(Kísérleti) Batch-függvény, amely akkor fut le, ha fájlt adnak hozzá egy külső fájlszolgáltatóhoz.</value>
@@ -1014,14 +960,8 @@
   <data name="SasTokenFSharp_description" xml:space="preserve">
     <value>F# függvény, amely létrehozza egy adott tároló és blobnév Azure Storage-beli SAS-jogkivonatát.</value>
   </data>
-  <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>C#-függvény, amely megerősítő e-mailt küld, ha egy adott üzenetsor új elemmel bővül.</value>
-  </data>
-  <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>F#-függvény, amely megerősítő e-mailt küld, ha egy adott üzenetsor új elemmel bővül.</value>
-  </data>
-  <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>JavaScript-függvény, amely megerősítő e-mailt küld, ha egy adott üzenetsor új elemmel bővül.</value>
+  <data name="SendGrid_description" xml:space="preserve">
+    <value>Függvény, amely megerősítő e-mailt küld, ha egy adott üzenetsor új elemmel bővül</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
     <value>C#-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-üzenetsorba</value>
@@ -1038,17 +978,11 @@
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>JavaScript-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-témakörbe</value>
   </data>
-  <data name="TimerTriggerCSharp_description" xml:space="preserve">
-    <value>C#-függvény, amely megadott ütemezés szerint fut</value>
+  <data name="TimerTrigger_description" xml:space="preserve">
+    <value>Függvény, amely megadott ütemezés szerint fut</value>
   </data>
-  <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>F# függvény, amely egy adott ütemezés szerint fut le</value>
-  </data>
-  <data name="TimerTriggerNodeJS_description" xml:space="preserve">
-    <value>JavaScript-függvény, amely egy adott ütemezés szerint fut le</value>
-  </data>
-  <data name="TimerTriggerPowerShell_description" xml:space="preserve">
-    <value>(Előzetes verzió) PowerShell-függvény, amely egy adott ütemezés szerint fut le</value>
+  <data name="TimerTriggerExcelOutlook_description" xml:space="preserve">
+    <value>Két Excel-táblázat beolvasása, e-mailek küldése az adatok alapján, majd egy Excel-táblázat frissítése.</value>
   </data>
   <data name="timerTrigger_schedule_errorText" xml:space="preserve">
     <value>Érvénytelen CRON-kifejezés. További információkért tanulmányozza a &lt;a target='_blank' href='https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/'&gt;dokumentációt&lt;/a&gt;.</value>
@@ -1096,16 +1030,16 @@
     <value>A fogyasztói csoport neve csak betűvel vagy számmal kezdődhet és végződhet, valamint csak betűket, számokat, kötőjelet, pontot és aláhúzásjelet tartalmazhat. A $Default csoportnév használata is engedélyezett. A név hossza 1–50 karakter lehet.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
-    <value>Azure DocumentDB-dokumentum</value>
+    <value>Azure Cosmos DB</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>A SendGrid-fejlesztő API-kulcsa.</value>
+    <value>A SendGrid-fejlesztői API-kulcsot tartalmazó alkalmazásbeállítás neve.</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
-    <value>SendGrid-API-kulcs</value>
+    <value>A SendGrid API-kulcs alkalmazásbeállítása</value>
   </data>
   <data name="bot_botId_help" xml:space="preserve">
-    <value>A rendszer ezt az azonosítót fogja használni üzenetek létrehozásakor és robotnak történő elküldésekor a tevékenység Feladó tulajdonságában, illetve ezzel tölti fel az elküldött tevékenység ChannelAccount.Id mezőjét.</value>
+    <value>A rendszer ezt az azonosítót fogja használni üzenetek létrehozásakor és a robotnak való elküldésekor a tevékenység Feladó tulajdonságában, illetve ezzel tölti fel az elküldött tevékenység ChannelAccount.Id mezőjét.</value>
   </data>
   <data name="bot_botId_label" xml:space="preserve">
     <value>Küldő azonosítója</value>
@@ -1117,14 +1051,13 @@
     <value>Bot Framework (előzetes verzió)</value>
   </data>
   <data name="bot_in_secret_help" xml:space="preserve">
-    <value>A közvetlen vonal kulcsát a közvetlen vonal csatornakonfigurációs lapján lehet létrehozni a Bot Framework portálon. Ha üresen hagyja ezt a mezőt, a rendszer az értéket az AzureWebJobsBotFrameworkDirectLineSecret alkalmazásbeállításban fogja keresni</value>
+    <value>A közvetlen vonal kulcsát tartalmazó alkalmazásbeállítás neve. Ezt a közvetlen vonal csatornakonfigurációs lapján lehet létrehozni a Bot Framework portálon. Ha a mező üres, a rendszer az AzureWebJobsBotFrameworkDirectLineSecret alkalmazásbeállítást fogja használni</value>
   </data>
   <data name="bot_in_secret_label" xml:space="preserve">
     <value>Közvetlen vonal kulcsa</value>
   </data>
   <data name="bot_out_secret_help" xml:space="preserve">
     <value>A közvetlen vonal kulcsát a közvetlen vonal csatornakonfigurációs lapján lehet létrehozni a Bot Framework portálon. Ha üresen hagyja ezt a mezőt, a rendszer az értéket az AzureWebJobsBotFrameworkDirectLineSecret alkalmazásbeállításban fogja keresni</value>
-
   </data>
   <data name="bot_out_secret_label" xml:space="preserve">
     <value>Közvetlen vonal kulcsa</value>
@@ -1141,17 +1074,185 @@
   <data name="bot_out_name_label" xml:space="preserve">
     <value>A robot paraméterneve</value>
   </data>
-  <data name="ScheduledMailCSharp_description" xml:space="preserve">
-    <value>(Előzetes verzió) C#-függvény, amely rendszeresen e-maileket küld</value>
+  <data name="variables_loginToAAD" xml:space="preserve">
+    <value>A résztvevő-azonosító beolvasásához kattintson ide</value>
+  </data>
+  <data name="excel_in_displayName" xml:space="preserve">
+    <value>Excel-táblázat</value>
+  </data>
+  <data name="excel_in_name_label" xml:space="preserve">
+    <value>Táblaparaméter neve</value>
+  </data>
+  <data name="excel_in_name_help" xml:space="preserve">
+    <value>Ez a név szolgál a kötés azonosítására a függvénykódban.</value>
+  </data>
+  <data name="excel_in_path_label" xml:space="preserve">
+    <value>Az Excel-munkafüzet elérési útja</value>
+  </data>
+  <data name="excel_in_path_help" xml:space="preserve">
+    <value>Az Excel-munkafüzet OneDrive-beli elérési útja</value>
+  </data>
+  <data name="excel_in_worksheetName_label" xml:space="preserve">
+    <value>Munkalap neve</value>
+  </data>
+  <data name="excel_in_worksheetName_help" xml:space="preserve">
+    <value>A táblázatot tartalmazó munkalap.</value>
+  </data>
+  <data name="excel_in_tableName_label" xml:space="preserve">
+    <value>Tábla neve</value>
+  </data>
+  <data name="excel_in_tableName_help" xml:space="preserve">
+    <value>A táblázat neve. Ha nincs megadva, a rendszer a munkalap tartalmát használja.</value>
+  </data>
+  <data name="excel_in_path_error" xml:space="preserve">
+    <value>Az elérési útnak érvényesnek kell lennie</value>
+  </data>
+  <data name="excel_out_displayName" xml:space="preserve">
+    <value>Excel-táblázat</value>
+  </data>
+  <data name="excel_out_name_label" xml:space="preserve">
+    <value>Táblaparaméter neve</value>
+  </data>
+  <data name="excel_out_name_help" xml:space="preserve">
+    <value>Ez a név szolgál a kötés azonosítására a függvénykódban.</value>
+  </data>
+  <data name="excel_out_path_label" xml:space="preserve">
+    <value>Az Excel-munkafüzet elérési útja</value>
+  </data>
+  <data name="excel_out_path_help" xml:space="preserve">
+    <value>Az Excel-munkafüzet OneDrive-beli elérési útja</value>
+  </data>
+  <data name="excel_out_worksheetName_label" xml:space="preserve">
+    <value>Munkalap neve</value>
+  </data>
+  <data name="excel_out_worksheetName_help" xml:space="preserve">
+    <value>A táblázatot tartalmazó munkalap.</value>
+  </data>
+  <data name="excel_out_tableName_label" xml:space="preserve">
+    <value>Tábla neve</value>
+  </data>
+  <data name="excel_out_tableName_help" xml:space="preserve">
+    <value>A táblázat neve. Ha nincs megadva, a rendszer a munkalap tartalmát használja.</value>
+  </data>
+  <data name="excel_out_updateType_label" xml:space="preserve">
+    <value>Szerkesztőmód</value>
+  </data>
+  <data name="excel_out_updateType_help" xml:space="preserve">
+    <value>A táblázaton végrehajtani kívánt módosítás típusa.</value>
+  </data>
+  <data name="excel_out_path_error" xml:space="preserve">
+    <value>Az elérési útnak érvényesnek kell lennie</value>
+  </data>
+  <data name="outlook_displayName" xml:space="preserve">
+    <value>Outlook-beli e-mail-üzenet</value>
+  </data>
+  <data name="outlook_out_label_help" xml:space="preserve">
+    <value>Ez a név szolgál a kötés azonosítására a függvénykódban</value>
+  </data>
+  <data name="outlook_out_label_name" xml:space="preserve">
+    <value>Üzenetparaméter neve</value>
+  </data>
+  <data name="outlook_out_name_help" xml:space="preserve">
+    <value>Ez a név szolgál a kötés azonosítására a függvénykódban</value>
+  </data>
+  <data name="outlook_out_name_label" xml:space="preserve">
+    <value>Üzenetparaméter neve</value>
+  </data>
+  <data name="principal_id_label_token" xml:space="preserve">
+    <value>Résztvevő-azonosító alkalmazásbeállításának neve</value>
+  </data>
+  <data name="principal_id_help_token" xml:space="preserve">
+    <value>A kívánt erőforrásra irányuló kérelmek hitelesítéséhez használt résztvevő-azonosító</value>
+  </data>
+  <data name="principal_id_label_excel_in" xml:space="preserve">
+    <value>Résztvevő-azonosító alkalmazásbeállításának neve</value>
+  </data>
+  <data name="principal_id_help_excel_in" xml:space="preserve">
+    <value>A kívánt erőforrásra irányuló kérelmek hitelesítéséhez használt résztvevő-azonosító</value>
+  </data>
+  <data name="principal_id_label_excel_out" xml:space="preserve">
+    <value>Résztvevő-azonosító alkalmazásbeállításának neve</value>
+  </data>
+  <data name="principal_id_help_excel_out" xml:space="preserve">
+    <value>A kívánt erőforrásra irányuló kérelmek hitelesítéséhez használt résztvevő-azonosító</value>
+  </data>
+  <data name="principal_id_label_outlook" xml:space="preserve">
+    <value>Résztvevő-azonosító alkalmazásbeállításának neve</value>
+  </data>
+  <data name="principal_id_help_outlook" xml:space="preserve">
+    <value>A kívánt erőforrásra irányuló kérelmek hitelesítéséhez használt résztvevő-azonosító</value>
+  </data>
+  <data name="principal_id_label_onedrive_in" xml:space="preserve">
+    <value>Résztvevő-azonosító alkalmazásbeállításának neve</value>
+  </data>
+  <data name="principal_id_help_onedrive_in" xml:space="preserve">
+    <value>A kívánt erőforrásra irányuló kérelmek hitelesítéséhez használt résztvevő-azonosító</value>
+  </data>
+  <data name="principal_id_label_onedrive_out" xml:space="preserve">
+    <value>Résztvevő-azonosító alkalmazásbeállításának neve</value>
+  </data>
+  <data name="principal_id_help_onedrive_out" xml:space="preserve">
+    <value>A kívánt erőforrásra irányuló kérelmek hitelesítéséhez használt résztvevő-azonosító</value>
+  </data>
+  <data name="principal_id_label_graphwebhook" xml:space="preserve">
+    <value>Résztvevő-azonosító alkalmazásbeállításának neve</value>
+  </data>
+  <data name="principal_id_help_graphwebhook" xml:space="preserve">
+    <value>A kívánt erőforrásra irányuló kérelmek hitelesítéséhez használt résztvevő-azonosító</value>
+  </data>
+  <data name="idToken_label_token" xml:space="preserve">
+    <value>Azonosító jogkivonat</value>
+  </data>
+  <data name="idToken_help_token" xml:space="preserve">
+    <value>Az MS Graph-ban való hitelesítéséhez használt kifejezés vagy explicit azonosító jogkivonat</value>
+  </data>
+  <data name="idToken_label_excel_in" xml:space="preserve">
+    <value>Azonosító jogkivonat</value>
+  </data>
+  <data name="idToken_help_excel_in" xml:space="preserve">
+    <value>Az MS Graph-ban való hitelesítéséhez használt kifejezés vagy explicit azonosító jogkivonat</value>
+  </data>
+  <data name="idToken_label_excel_out" xml:space="preserve">
+    <value>Azonosító jogkivonat</value>
+  </data>
+  <data name="idToken_help_excel_out" xml:space="preserve">
+    <value>Az MS Graph-ban való hitelesítéséhez használt kifejezés vagy explicit azonosító jogkivonat</value>
+  </data>
+  <data name="idToken_label_outlook" xml:space="preserve">
+    <value>Azonosító jogkivonat</value>
+  </data>
+  <data name="idToken_help_outlook" xml:space="preserve">
+    <value>Az MS Graph-ban való hitelesítéséhez használt kifejezés vagy explicit azonosító jogkivonat</value>
+  </data>
+  <data name="idToken_label_onedrive_in" xml:space="preserve">
+    <value>Azonosító jogkivonat</value>
+  </data>
+  <data name="idToken_help_onedrive_in" xml:space="preserve">
+    <value>Az MS Graph-ban való hitelesítéséhez használt kifejezés vagy explicit azonosító jogkivonat </value>
+  </data>
+  <data name="idToken_label_onedrive_out" xml:space="preserve">
+    <value>Azonosító jogkivonat</value>
+  </data>
+  <data name="idToken_help_onedrive_out" xml:space="preserve">
+    <value>Az MS Graph-ban való hitelesítéséhez használt kifejezés vagy explicit azonosító jogkivonat </value>
+  </data>
+  <data name="idToken_label_graphwebhook" xml:space="preserve">
+    <value>Azonosító jogkivonat</value>
+  </data>
+  <data name="idToken_help_graphwebhook" xml:space="preserve">
+    <value>Az MS Graph-ban való hitelesítéséhez használt kifejezés vagy explicit azonosító jogkivonat </value>
+  </data>
+  <data name="ScheduledMail_description" xml:space="preserve">
+    <value>Függvény, amely rendszeresen e-maileket küld</value>
   </data>
   <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
-    <value>Ez egy dokumentumkészlet beolvasására használható DocumentDB SQL-lekérdezés, melyet nem kötelező megadni. Ha sem SQL-lekérdezés, sem pedig azonosító nincs megadva, a rendszer az adott gyűjteményben lévő összes dokumentumot visszaadja.</value>
+    <value>A Cosmos DB API egyik nem kötelező, dokumentumkészlet beolvasására szolgáló SQL-lekérdezése. Ha sem SQL-lekérdezés, sem pedig azonosító nincs megadva, a lekérdezés a gyűjteményben lévő összes dokumentumot visszaadja.</value>
   </data>
   <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
     <value>SQL-lekérdezés (nem kötelező)</value>
   </data>
   <data name="eventHubTrigger_cardinality_help" xml:space="preserve">
-    <value>A trigger bemenetének számossága. Válassza az „egy” értéket, ha a bemenet egyetlen üzenet, vagy a „több” értéket, ha a bemenet egy üzenetekből álló tömb. Ha a beállítás nincs megadva, az „egy” az alapértelmezett érték</value>
+    <value>A trigger bemenetének számossága. Válassza az „Egy” értéket, ha a bemenet egyetlen üzenet, vagy a „Több” értéket, ha a bemenet egy üzenetekből álló tömb. Ha a beállítás nincs megadva, a „Több” az alapértelmezett érték</value>
   </data>
   <data name="HttpTriggerCSharpWithParameters_description" xml:space="preserve">
     <value>C#-függvény, amely akkor fut le, amikor HTTP-kérést kap</value>
@@ -1169,7 +1270,7 @@
     <value>E sablon használatához a függvényalkalmazást konfigurálni kell az AAD-ben, és a következő engedélyeket kell biztosítani:
 
 Common Data Service – Hozzáférés a Common Data Service szolgáltatáshoz
-Windowsos Azure Service Management API – Hozzáférés céges felhasználóként az Azure Service Management szolgáltatáshoz (előzetes verzió).</value>
+Windowsos Azure Szolgáltatásfelügyeleti API – Hozzáférés céges felhasználóként az Azure Service Management szolgáltatáshoz (előzetes verzió).</value>
   </data>
   <data name="temp_category_monitoring" xml:space="preserve">
     <value>Figyelés</value>
@@ -1200,5 +1301,423 @@ Windowsos Azure Service Management API – Hozzáférés céges felhasználóké
   </data>
   <data name="HttpPOST(CRUD)Queue-FSharp_description" xml:space="preserve">
     <value>F#-függvény, mely adatokat küld le egy várólistába HTTP Post érkezése esetén.</value>
+  </data>
+  <data name="BlobTriggerNodeTS_description" xml:space="preserve">
+    <value>(Kísérleti funkció) TypeScript-függvény, amely akkor fut le, amikor egy blob bekerül egy adott tárolóba</value>
+  </data>
+  <data name="EventHubTriggerNodeTS_description" xml:space="preserve">
+    <value>(Kísérleti funkció) TypeScript-függvény, amely akkor fut le, amikor egy eseményközpont új eseményt kap</value>
+  </data>
+  <data name="GenericWebhookNodeTS_description" xml:space="preserve">
+    <value>(Kísérleti funkció) TypeScript-függvény, amely akkor fut le, amikor webhookkérelmet kap</value>
+  </data>
+  <data name="GithubWebhookNodeTS_description" xml:space="preserve">
+    <value>(Kísérleti funkció) TypeScript-függvény, amely akkor fut le, amikor a GitHubtól webhookkérelmet kap</value>
+  </data>
+  <data name="HttpTriggerNodeTS_description" xml:space="preserve">
+    <value>(Kísérleti funkció) TypeScript-függvény, amely akkor fut le, amikor HTTP-kérelmet kap</value>
+  </data>
+  <data name="QueueTriggerNodeTS_description" xml:space="preserve">
+    <value>(Kísérleti funkció) TypeScript-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Azure Queue Storage-ba</value>
+  </data>
+  <data name="ServiceBusQueueTriggerNodeTS_description" xml:space="preserve">
+    <value>(Kísérleti funkció) TypeScript-függvény, amely akkor fut le, amikor egy üzenet bekerül egy adott Service Bus-üzenetsorba</value>
+  </data>
+  <data name="ServiceBusTopicTriggerNodeTS_description" xml:space="preserve">
+    <value>(Kísérleti funkció) TypeScript-függvény, amely akkor fut le, amikor egy üzenet bekerül a megadott Service Bus-témakörbe</value>
+  </data>
+  <data name="ManualTriggerNodeTS_description" xml:space="preserve">
+    <value>(Kísérleti funkció) TypeScript-függvény, amely manuálisan indítható a portál Futtatás gombjával</value>
+  </data>
+  <data name="IoTHubTriggerCSharp_description" xml:space="preserve">
+    <value>C#-függvény, amely akkor fut le, amikor egy IoT-központ új eseményt kap egy IoT-központból (eseményközpontból)</value>
+  </data>
+  <data name="ioTHubTrigger_connection_help" xml:space="preserve">
+    <value>Ez a kulcsa az IoT-központ kapcsolata az alkalmazásbeállításban tárolt kapcsolati sztringjének, melynek fogadási engedéllyel kell rendelkeznie. Ha eggyel sem rendelkezik, kattintson ide egy új létrehozásához.</value>
+  </data>
+  <data name="ioTHubTrigger_connection_label" xml:space="preserve">
+    <value>Kapcsolati sztring</value>
+  </data>
+  <data name="ioTHubTrigger_displayName" xml:space="preserve">
+    <value>Azure IoT Hub</value>
+  </data>
+  <data name="ioTHubTrigger_EntityPath" xml:space="preserve">
+    <value>Entitás elérési útja</value>
+  </data>
+  <data name="defaultConsumerGroup" xml:space="preserve">
+    <value>$Alapértelmezett</value>
+  </data>
+  <data name="defaultQueueName" xml:space="preserve">
+    <value>üzenetsor</value>
+  </data>
+  <data name="defaultsubscriptionName" xml:space="preserve">
+    <value>előfizetés</value>
+  </data>
+  <data name="defaultTopicName" xml:space="preserve">
+    <value>témakör</value>
+  </data>
+  <data name="servicebusQueuePicker_queueName" xml:space="preserve">
+    <value>Üzenetsor</value>
+  </data>
+  <data name="IoTHubTriggerFSharp_description" xml:space="preserve">
+    <value>F#-függvény, amely akkor fut le, amikor egy IoT-központ új eseményt kap egy IoT-központból (eseményközpontból)</value>
+  </data>
+  <data name="IoTHubTriggerNodeJS_description" xml:space="preserve">
+    <value>Javascript-függvény, amely akkor fut le, amikor egy IoT-központ új eseményt kap egy IoT-központból (eseményközpontból)</value>
+  </data>
+  <data name="IoTHubTriggerNodeTS_description" xml:space="preserve">
+    <value>Typescript-függvény, amely akkor fut le, amikor egy IoT-központ új eseményt kap egy IoT-központból (eseményközpontból)</value>
+  </data>
+  <data name="myEventHub" xml:space="preserve">
+    <value>eseményközpont</value>
+  </data>
+  <data name="eventHubName" xml:space="preserve">
+    <value>eseményközpontNeve</value>
+  </data>
+  <data name="oneDrive_in_displayName" xml:space="preserve">
+    <value>OneDrive-fájl</value>
+  </data>
+  <data name="oneDrive_in_name_help" xml:space="preserve">
+    <value>Ez a név szolgál a kötés azonosítására a függvénykódban.</value>
+  </data>
+  <data name="oneDrive_in_name_label" xml:space="preserve">
+    <value>Fájlparaméter neve</value>
+  </data>
+  <data name="oneDrive_in_path_help" xml:space="preserve">
+    <value>A fájl OneDrive-beli elérési útja.</value>
+  </data>
+  <data name="oneDrive_in_path_label" xml:space="preserve">
+    <value>A fájl elérési útja</value>
+  </data>
+  <data name="oneDrive_in_path_error" xml:space="preserve">
+    <value>Az elérési útnak érvényesnek kell lennie</value>
+  </data>
+  <data name="oneDrive_out_displayName" xml:space="preserve">
+    <value>OneDrive-fájl</value>
+  </data>
+  <data name="oneDrive_out_name_help" xml:space="preserve">
+    <value>Ez a név szolgál a kötés azonosítására a függvénykódban.</value>
+  </data>
+  <data name="oneDrive_out_name_label" xml:space="preserve">
+    <value>Fájlparaméter neve</value>
+  </data>
+  <data name="oneDrive_out_path_help" xml:space="preserve">
+    <value>A fájl OneDrive-beli elérési útja.</value>
+  </data>
+  <data name="oneDrive_out_path_label" xml:space="preserve">
+    <value>A fájl elérési útja</value>
+  </data>
+  <data name="oneDrive_out_path_error" xml:space="preserve">
+    <value>Az elérési útnak érvényesnek kell lennie</value>
+  </data>
+  <data name="MSGraphWebhook_displayName" xml:space="preserve">
+    <value>Microsoft Graph-webhookelőfizetés</value>
+  </data>
+  <data name="MSGraphWebhook_in_name_label" xml:space="preserve">
+    <value>Előfizetési paraméter neve</value>
+  </data>
+  <data name="MSGraphWebhook_in_changeType_help" xml:space="preserve">
+    <value>Akkor és csak akkor szükséges, ha a művelet létrehozásra van beállítva. A módosítás típusát jelzi abban az előfizetett erőforrásban, amely kiváltja az értesítést. A támogatott értékek a következők: created, updated, deleted. Több érték is megadható egy vesszővel tagolt lista használatával.</value>
+  </data>
+  <data name="MSGraphWebhook_in_changeType_label" xml:space="preserve">
+    <value>A módosítástípusok, melyekre elő szeretne fizetni</value>
+  </data>
+  <data name="MSGraphWebhook_in_listen_help" xml:space="preserve">
+    <value>Az a Graph-erőforrás, amelynek esetében ennek a függvénynek válaszolnia kell webhook-kérelmekre. A függvényalkalmazás csak egy olyan függvénnyel rendelkezhet, amely a resourceType egy adott értékében regisztrálva van.</value>
+  </data>
+  <data name="MSGraphWebhook_in_listen_label" xml:space="preserve">
+    <value>Az erőforrás, melyre elő kíván fizetni</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_displayName" xml:space="preserve">
+    <value>Microsoft Graph-webhook</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_in_name_label" xml:space="preserve">
+    <value>Módosított erőforrásparaméter neve</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_Type_help" xml:space="preserve">
+    <value>Ennek a típusa határozza meg, hogy milyen típusú értesítések indítják el a függvényt</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_Type_label" xml:space="preserve">
+    <value>A figyelni kívánt értesítéstípus</value>
+  </data>
+  <data name="MSGraphWebhook_description" xml:space="preserve">
+    <value>C#-függvény, amely akkor fut le, ha O365-webhookkérelmet kap.</value>
+  </data>
+  <data name="RefreshMSGraphSubscriptions_description" xml:space="preserve">
+    <value>Minden O365-előfizetés rendszeres frissítése</value>
+  </data>
+  <data name="token_displayName" xml:space="preserve">
+    <value>Hitelesítési jogkivonat</value>
+  </data>
+  <data name="token_in_name_help" xml:space="preserve">
+    <value>A kódban a jogkivonat azonosítására használt paraméter neve</value>
+  </data>
+  <data name="token_in_name_label" xml:space="preserve">
+    <value>Hitelesítési jogkivonat paraméterének neve</value>
+  </data>
+  <data name="token_in_resource_help" xml:space="preserve">
+    <value>Azon AAD erőforrás URL-címe, amelyre a jogkivonat-kérelem vonatkozik</value>
+  </data>
+  <data name="token_in_resource_label" xml:space="preserve">
+    <value>Erőforrás URL-címe</value>
+  </data>
+  <data name="MSGraphWebhookCreator_displayName" xml:space="preserve">
+    <value>Microsoft Graph-webhookelőfizetés</value>
+  </data>
+  <data name="MSGraphWebhookCreator_in_name_help" xml:space="preserve">
+    <value>Ez a név szolgál a kötés azonosítására a függvénykódban.</value>
+  </data>
+  <data name="MSGraphWebhookCreator_in_name_label" xml:space="preserve">
+    <value>Előfizetési paraméter neve</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_in_help_label" xml:space="preserve">
+    <value>A módosított erőforrás a függvénykódban való azonosítására használt név</value>
+  </data>
+  <data name="MSGraphWebhook_in_name_help" xml:space="preserve">
+    <value>Ez a név szolgál a kötés azonosítására a függvénykódban</value>
+  </data>
+  <data name="temp_category_msgraph" xml:space="preserve">
+    <value>Microsoft Graph</value>
+  </data>
+  <data name="documentDBIn_partitionKey_help" xml:space="preserve">
+    <value>A beolvasandó dokumentum partíciókulcsa. Csak akkor érvényes, ha van megadva azonosító.</value>
+  </data>
+  <data name="documentDBOut_partitionKey_help" xml:space="preserve">
+    <value>Az új gyűjtemény létrehozásakor használandó partíciókulcs. Csak akkor érvényes, ha bejelölte azt a beállítást, amely automatikusan létrehozza a gyűjteményt, ha az nem létezik.</value>
+  </data>
+  <data name="documentDB_partitionKey_label" xml:space="preserve">
+    <value>Partíciókulcs (nem kötelező)</value>
+  </data>
+  <data name="EventGridTriggerCSharp_description" xml:space="preserve">
+    <value>C#-függvény, amely akkor fut le, amikor egy eseményrács új eseményt kap</value>
+  </data>
+  <data name="eventGrid_trigger_displayName" xml:space="preserve">
+    <value>Event Grid-trigger</value>
+  </data>
+  <data name="eventGrid_trigger_name_help" xml:space="preserve">
+    <value>Eseménytrigger paraméterének neve</value>
+  </data>
+  <data name="eventGrid_trigger_name_label" xml:space="preserve">
+    <value>Eseménytrigger paraméterének neve</value>
+  </data>
+  <data name="CosmosDBTriggerCSharp_description" xml:space="preserve">
+    <value>C#-függvény, amely akkor fut le, amikor módosul egy dokumentum egy dokumentumgyűjteményben.</value>
+  </data>
+  <data name="CosmosDBTriggerJavascript_description" xml:space="preserve">
+    <value>JavaScript-függvény, amely akkor fut le, amikor módosul egy dokumentum egy dokumentumgyűjteményben.</value>
+  </data>
+  <data name="cosmosDBIn_collectionName_help" xml:space="preserve">
+    <value>A figyelni kívánt gyűjtemény neve.</value>
+  </data>
+  <data name="cosmosDBIn_collectionName_label" xml:space="preserve">
+    <value>Gyűjtemény neve</value>
+  </data>
+  <data name="cosmosDBIn_connection_help" xml:space="preserve">
+    <value>Azon alkalmazástulajdonság neve, mely tartalmazza az ahhoz a szolgáltatáshoz tartozó kapcsolati sztringet, amely a figyelni kívánt gyűjteményt tartalmazza.</value>
+  </data>
+  <data name="cosmosDBIn_connection_label" xml:space="preserve">
+    <value>Cosmos DB-fiók-kapcsolat</value>
+  </data>
+  <data name="cosmosDBIn_databaseName_help" xml:space="preserve">
+    <value>A figyelni kívánt gyűjteményt tartalmazó Cosmos DB-adatbázis neve.</value>
+  </data>
+  <data name="cosmosDBIn_databaseName_label" xml:space="preserve">
+    <value>Adatbázis neve</value>
+  </data>
+  <data name="cosmosDBIn_leaseCollectionName_help" xml:space="preserve">
+    <value>A bérletek tárolásához használni kívánt gyűjtemény neve.</value>
+  </data>
+  <data name="cosmosDBIn_leaseCollectionName_label" xml:space="preserve">
+    <value>A bérletek gyűjteményének neve</value>
+  </data>
+  <data name="cosmosDBIn_leaseDatabaseName_help" xml:space="preserve">
+    <value>A bérletek tárolásához használni kívánt gyűjteményt tartalmazó adatbázis neve.</value>
+  </data>
+  <data name="cosmosDBIn_leaseDatabaseName_label" xml:space="preserve">
+    <value>A bérletek adatbázisának neve</value>
+  </data>
+  <data name="cosmosDBIn_name_help" xml:space="preserve">
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
+  </data>
+  <data name="cosmosDBIn_name_label" xml:space="preserve">
+    <value>Dokumentumgyűjtemény paraméterének neve</value>
+  </data>
+  <data name="cosmosDB_trigger_displayName" xml:space="preserve">
+    <value>Azure Cosmos DB</value>
+  </data>
+  <data name="IoTHubServiceBusTopicTriggerCSharp_description" xml:space="preserve">
+    <value>C#-függvény, amely akkor fut le, amikor egy üzenet bekerül a megadott Service Bus-témakörbe</value>
+  </data>
+  <data name="temp_category_IoTHub" xml:space="preserve">
+    <value>IoT Hub</value>
+  </data>
+  <data name="cosmosDBIn_createIfNotExists_help" xml:space="preserve">
+    <value>A bérletek gyűjteménye létezésének ellenőrzése, és annak automatikus létrehozása.</value>
+  </data>
+  <data name="cosmosDBIn_createIfNotExists_label" xml:space="preserve">
+    <value>A bérletek gyűjteményének létrehozása, ha az nem létezik</value>
+  </data>
+  <data name="EventGridTriggerJavascript_description" xml:space="preserve">
+    <value>JavaScript-függvény, amely akkor fut le, amikor egy eseményrács új eseményt kap</value>
+  </data>
+  <data name="Identity_help" xml:space="preserve">
+    <value>Az az identitás, amelynek használatával a művelet végre lesz hajtva.</value>
+  </data>
+  <data name="Identity_label" xml:space="preserve">
+    <value>Identitás</value>
+  </data>
+  <data name="userid_help" xml:space="preserve">
+    <value>Akkor és csak akkor szükséges, ha az identitás a userFromId értékre van beállítva. Egyszerű felhasználónév azonosítója, amely egy korábban bejelentkezett felhasználóhoz van hozzárendelve.</value>
+  </data>
+  <data name="userid_label" xml:space="preserve">
+    <value>Felhasználóazonosító</value>
+  </data>
+  <data name="usertoken_help" xml:space="preserve">
+    <value>Akkor és csak akkor szükséges, ha az identitás a userFromToken értékre van beállítva. Jogkivonat, amely érvényes az
+adott föggvényalkalmazás esetében.</value>
+  </data>
+  <data name="usertoken_label" xml:space="preserve">
+    <value>Felhasználói jogkivonat</value>
+  </data>
+  <data name="ProfilePhotoAPI_description" xml:space="preserve">
+    <value>Függvény, amely visszaadja a hívó Azure Active Directory-felhasználó profilképét</value>
+  </data>
+  <data name="OutlookMessageWebhookCreator_description" xml:space="preserve">
+    <value>Függvény, amely regisztrál egy webhookelőfizetést a hívó Azure Active Directory-felhasználó postaládájában lévő üzenetekhez</value>
+  </data>
+  <data name="OutlookMessageWebhookDeleter_description" xml:space="preserve">
+    <value>Függvény, amely törli a hívó Azure Active Directory-felhasználó minden, az alkalmazásra vonatkozó Microsoft Graph-webhookelőfizetését</value>
+  </data>
+  <data name="OutlookMessageWebhookHandler_description" xml:space="preserve">
+    <value>Függvény, amely megkapja az Outlook-üzenetek webhookjait</value>
+  </data>
+  <data name="OutlookMessageWebhookRefresher_description" xml:space="preserve">
+    <value>Függvény, amely frissít minden, az alkalmazásra vonatkozó Microsoft Graph-webhookelőfizetést</value>
+  </data>
+  <data name="identity_option_userFromRequest_label" xml:space="preserve">
+    <value>HTTP-kérelemben szereplő felhasználó</value>
+  </data>
+  <data name="identity_option_userFromId_label" xml:space="preserve">
+    <value>Azonosítóban szereplő felhasználó</value>
+  </data>
+  <data name="identity_option_userFromToken_label" xml:space="preserve">
+    <value>Jogkivonatban szereplő felhasználó</value>
+  </data>
+  <data name="identity_option_clientCredentials_label" xml:space="preserve">
+    <value>Ügyfél-hitelesítő adatok</value>
+  </data>
+  <data name="MSGraphWebhook_out_action_label" xml:space="preserve">
+    <value>Művelet</value>
+  </data>
+  <data name="MSGraphWebhook_out_action_help" xml:space="preserve">
+    <value>Az előfizetésen végrehajtandó művelet</value>
+  </data>
+  <data name="GraphWebhookSubscription_in_filter_help" xml:space="preserve">
+    <value>Ha a userFromRequest értékre van beállítva, a kötés csak a hívást végrehajtó felhasználó tulajdonában lévő előfizetéseket olvassa be (csak a HTTP-eseményindító esetében érvényes).</value>
+  </data>
+  <data name="GraphWebhookSubscription_in_filter_label" xml:space="preserve">
+    <value>Szűrés</value>
+  </data>
+  <data name="activityTrigger_activity_errorText" xml:space="preserve">
+    <value>Érvénytelen tevékenységnév</value>
+  </data>
+  <data name="activityTrigger_activity_help" xml:space="preserve">
+    <value>(Nem kötelező) A tevékenység neve. Ha nincs megadva, az alapértelmezett érték a függvény neve.</value>
+  </data>
+  <data name="activityTrigger_activity_label" xml:space="preserve">
+    <value>Tevékenységnév</value>
+  </data>
+  <data name="activityTrigger_displayName" xml:space="preserve">
+    <value>Tevékenység</value>
+  </data>
+  <data name="activityTrigger_name_help" xml:space="preserve">
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
+  </data>
+  <data name="activityTrigger_name_label" xml:space="preserve">
+    <value>Tevékenységparaméter neve</value>
+  </data>
+  <data name="orchestrationClientIn_displayName" xml:space="preserve">
+    <value>Vezénylési ügyfél</value>
+  </data>
+  <data name="orchestrationClientIn_name_help" xml:space="preserve">
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
+  </data>
+  <data name="orchestrationClientIn_name_label" xml:space="preserve">
+    <value>Vezénylési ügyfél paraméterének neve</value>
+  </data>
+  <data name="orchestrationTrigger_displayName" xml:space="preserve">
+    <value>Vezénylés</value>
+  </data>
+  <data name="orchestrationTrigger_name_help" xml:space="preserve">
+    <value>Ez a név szolgál a kötés azonosítására a kódban.</value>
+  </data>
+  <data name="orchestrationTrigger_name_label" xml:space="preserve">
+    <value>Vezénylési paraméter neve</value>
+  </data>
+  <data name="orchestrationTrigger_orchestration_errorText" xml:space="preserve">
+    <value>Érvénytelen vezénylésnév</value>
+  </data>
+  <data name="orchestrationTrigger_orchestration_help" xml:space="preserve">
+    <value>(Nem kötelező) A vezénylés neve. Ha nincs megadva, az alapértelmezett érték a függvény neve.</value>
+  </data>
+  <data name="orchestrationTrigger_orchestration_label" xml:space="preserve">
+    <value>Vezénylés neve</value>
+  </data>
+  <data name="DurableFunctionsActivity_description" xml:space="preserve">
+    <value>Függvény, amely akkor fut, ha egy vezérlőfüggvény meghív egy tevékenységet.</value>
+  </data>
+  <data name="DurableFunctionsOrchestrator_description" xml:space="preserve">
+    <value>Tevékenységfüggvényeket szekvenciálisan meghívó vezénylőfüggvény.</value>
+  </data>
+  <data name="DurableFunctionsHttpStart_description" xml:space="preserve">
+    <value>Függvény, amely akkor fut, ha vezérlőfüggvény végrehajtására irányuló HTTP-kérést kap.</value>
+  </data>
+  <data name="temp_category_durableFunctions" xml:space="preserve">
+    <value>Durable Functions</value>
+  </data>
+  <data name="BlobTrigger_name" xml:space="preserve">
+    <value>Blobalapú eseményindító</value>
+  </data>
+  <data name="EventHubTrigger_name" xml:space="preserve">
+    <value>Eseményközpont-trigger</value>
+  </data>
+  <data name="HttpTrigger_name" xml:space="preserve">
+    <value>HTTP-eseményindító</value>
+  </data>
+  <data name="OutlookMessageWebhookCreator_name" xml:space="preserve">
+    <value>„Outlook-üzenet” webhook előfizetésének létrehozója</value>
+  </data>
+  <data name="OutlookMessageWebhookDeleter_name" xml:space="preserve">
+    <value>„Outlook-üzenet” webhook előfizetésének törlője</value>
+  </data>
+  <data name="OutlookMessageWebhookHandler_name" xml:space="preserve">
+    <value>„Outlook-üzenet” webhook előfizetésének kezelője</value>
+  </data>
+  <data name="OutlookMessageWebhookRefresher_name" xml:space="preserve">
+    <value>„Outlook-üzenet” webhook előfizetésének frissítője</value>
+  </data>
+  <data name="ProfilePhotoAPI_name" xml:space="preserve">
+    <value>Microsoft Graph-profilfénykép API</value>
+  </data>
+  <data name="QueueTrigger_name" xml:space="preserve">
+    <value>Várólista-eseményindító</value>
+  </data>
+  <data name="ScheduledMail_name" xml:space="preserve">
+    <value>Ütemezett e-mail</value>
+  </data>
+  <data name="SendGrid_name" xml:space="preserve">
+    <value>SendGrid</value>
+  </data>
+  <data name="TimerTrigger_name" xml:space="preserve">
+    <value>Időzítő-eseményindító</value>
+  </data>
+  <data name="DurableFunctionsActivity_name" xml:space="preserve">
+    <value>Durable Functions-tevékenység</value>
+  </data>
+  <data name="DurableFunctionsHttpStart_name" xml:space="preserve">
+    <value>Durable Functions – HTTP-alapkészlet</value>
+  </data>
+  <data name="DurableFunctionsOrchestrator_name" xml:space="preserve">
+    <value>Durable Functions-vezénylő</value>
   </data>
 </root>

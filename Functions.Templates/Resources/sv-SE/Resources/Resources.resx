@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -124,7 +124,7 @@
     <value>Händelsehubbanslutning</value>
   </data>
   <data name="eventHubOut_displayName" xml:space="preserve">
-    <value>Azure händelsehubb</value>
+    <value>Azure Event Hubs</value>
   </data>
   <data name="eventHubOut_name_help" xml:space="preserve">
     <value>Namnet som identifierar den här bindningen i koden</value>
@@ -154,7 +154,7 @@
     <value>Händelsehubbkonsumentgrupp</value>
   </data>
   <data name="eventHubTrigger_displayName" xml:space="preserve">
-    <value>Azure händelsehubb</value>
+    <value>Azure Event Hubs</value>
   </data>
   <data name="eventHubTrigger_name_help" xml:space="preserve">
     <value>Namnet som identifierar den här utlösaren i koden</value>
@@ -211,7 +211,7 @@
     <value>Tidsstämpelparameternamn</value>
   </data>
   <data name="timerTrigger_schedule_help" xml:space="preserve">
-    <value>Ange ett Cron-uttryck i formatet {second} {minute} {hour} {day} {month} {day of week} och ställ in schemat. Exempel finns i dokumentationen nedan.</value>
+    <value>Ange ett Cron-uttryck i formatet {second} {minute} {hour} {day} {month} {day of week} och ställ in schemat.</value>
   </data>
   <data name="timerTrigger_schedule_label" xml:space="preserve">
     <value>Schema</value>
@@ -241,7 +241,7 @@
     <value>Tabellnamn</value>
   </data>
   <data name="variables_appSettingsHelp" xml:space="preserve">
-    <value>Anslutningssträngen för lagringskontot.</value>
+    <value>Namnet på den appinställning som innehåller lagringskontoanslutningssträngen.</value>
   </data>
   <data name="variables_parameterName" xml:space="preserve">
     <value>Parameternamnet måste vara en alfanumerisk sträng med valfritt antal tecken och får inte börja med en siffra.</value>
@@ -295,7 +295,7 @@
     <value>Könamn</value>
   </data>
   <data name="blobOut_path_help" xml:space="preserve">
-    <value>Sökvägen i ditt lagringskonto som blobben ska skrivas till.</value>
+    <value>Sökvägen i ditt lagringskonto som bloben ska skrivas till.</value>
   </data>
   <data name="blobOut_path_errorText" xml:space="preserve">
     <value>Blobbsökvägen måste vara ett behållarnamn på 3 till 63 tecken följt av ett blobbnamn på 1 till 1 024 tecken. Blobbnamnet kan vara vilken kombination som helst av tecken och får bestå av högst 254 sökvägssegment åtskilda av ett snedstreck.(/).</value>
@@ -310,7 +310,7 @@
     <value>Blobbparameternamn</value>
   </data>
   <data name="blobIn_path_help" xml:space="preserve">
-    <value>Sökvägen i ditt lagringskonto som blobben ska läsas från.</value>
+    <value>Sökvägen i ditt lagringskonto som bloben ska läsas från.</value>
   </data>
   <data name="blobIn_path_label" xml:space="preserve">
     <value>Sökväg</value>
@@ -415,7 +415,7 @@
     <value>Läge</value>
   </data>
   <data name="httpTrigger_mode_help" xml:space="preserve">
-    <value>Utlösarens läge. ”Standard” innebär att förfrågan är en vanlig HTTP-förfrågan utan ytterligare semantik. ”Webhook” innebär att förfrågan bearbetas enligt en angiven typ av webbhook.</value>
+    <value>Utlösarens läge. ”Standard” innebär att förfrågan är en vanlig HTTP-förfrågan utan ytterligare semantik. ”Webhook” innebär att förfrågan bearbetas enligt en angiven typ av webhook.</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
     <value>Extern fil (förhandsversion)</value>
@@ -433,28 +433,28 @@
     <value>Azure Blob Storage</value>
   </data>
   <data name="documentDBIn_collectionName_help" xml:space="preserve">
-    <value>Namnet på samlingen i din databas som data ska läsas från.</value>
+    <value>Databassamlingen där data ska läsas.</value>
   </data>
   <data name="documentDBIn_collectionName_label" xml:space="preserve">
     <value>Samlingsnamn</value>
   </data>
   <data name="documentDBIn_connection_help" xml:space="preserve">
-    <value>Namnet på den appinställning som innehåller DocumentDB-anslutningssträngen</value>
+    <value>Namnet på den appinställning som innehåller din Cosmos DB-anslutningssträng</value>
   </data>
   <data name="documentDBIn_connection_label" xml:space="preserve">
-    <value>DocumentDB-kontoanslutning</value>
+    <value>Cosmos DB-kontoanslutning</value>
   </data>
   <data name="documentDBIn_databaseName_help" xml:space="preserve">
-    <value>Namnet på databasen i DocumentDB-kontot som data ska läsas från.</value>
+    <value>Cosmos DB-databasen där data kommer att läsas.</value>
   </data>
   <data name="documentDBIn_databaseName_label" xml:space="preserve">
     <value>Databasnamn</value>
   </data>
   <data name="documentDBIn_displayName" xml:space="preserve">
-    <value>Azure DocumentDB</value>
+    <value>Azure Cosmos DB</value>
   </data>
   <data name="documentDBIn_id_help" xml:space="preserve">
-    <value>ID:t för det dokument som ska läsas. Om varken en SQL-fråga eller ett ID har angetts returneras alla dokument i samlingen.</value>
+    <value>ID:t för det dokument som ska läsas. Om varken en SQL-fråga eller ett ID har angetts, returneras alla dokument i samlingen.</value>
   </data>
   <data name="documentDBIn_id_label" xml:space="preserve">
     <value>Dokument-ID (valfritt)</value>
@@ -466,31 +466,31 @@
     <value>Dokumentparameternamn</value>
   </data>
   <data name="documentDBOut_collectionName_help" xml:space="preserve">
-    <value>Namnet på samlingen i din databas som data ska skrivas till.</value>
+    <value>Databassamlingen där data ska skrivas.</value>
   </data>
   <data name="documentDBOut_collectionName_label" xml:space="preserve">
     <value>Samlingsnamn</value>
   </data>
   <data name="documentDBOut_connection_help" xml:space="preserve">
-    <value>Namnet på den appinställning som innehåller DocumentDB-anslutningssträngen</value>
+    <value>Namnet på den appinställning som innehåller din Cosmos DB-anslutningssträng</value>
   </data>
   <data name="documentDBOut_connection_label" xml:space="preserve">
-    <value>DocumentDB-kontoanslutning</value>
+    <value>Cosmos DB-kontoanslutning</value>
   </data>
   <data name="documentDBOut_createIfNotExists_help" xml:space="preserve">
-    <value>Med värdet SANT skapas databas och samling automatiskt.</value>
+    <value>Om sant så skapas Cosmos DB-databasen och samlingen.</value>
   </data>
   <data name="documentDBOut_createIfNotExists_label" xml:space="preserve">
-    <value>Vill du att DocumentDB-databasen och samlingen ska skapas åt dig?</value>
+    <value>Om sant så skapas Cosmos DB-databasen och samlingen</value>
   </data>
   <data name="documentDBOut_databaseName_help" xml:space="preserve">
-    <value>Namnet på databasen i DocumentDB-kontot som data ska skrivas till.</value>
+    <value>Cosmos DB-databasen där data ska skrivas.</value>
   </data>
   <data name="documentDBOut_databaseName_label" xml:space="preserve">
     <value>Databasnamn</value>
   </data>
   <data name="documentDBOut_displayName" xml:space="preserve">
-    <value>DocumentDB-dokument i Azure</value>
+    <value>Azure Cosmos DB</value>
   </data>
   <data name="documentDBOut_name_help" xml:space="preserve">
     <value>Namnet som identifierar den här bindningen i koden</value>
@@ -529,10 +529,10 @@
     <value>Sökning efter mobilappwebbadress</value>
   </data>
   <data name="mobileTableIn_displayName" xml:space="preserve">
-    <value>Azure Mobile-tabellpost</value>
+    <value>Azure Mobile-tabeller</value>
   </data>
   <data name="mobileTableIn_id_help" xml:space="preserve">
-    <value>Id:t för den post som ska hämtas.</value>
+    <value>ID för den post som ska hämtas.</value>
   </data>
   <data name="mobileTableIn_id_label" xml:space="preserve">
     <value>Post-id</value>
@@ -562,7 +562,7 @@
     <value>Sökning efter mobilappwebbadress</value>
   </data>
   <data name="mobileTableOut_displayName" xml:space="preserve">
-    <value>Azure Mobile-tabellpost</value>
+    <value>Azure Mobile-tabeller</value>
   </data>
   <data name="mobileTableOut_name_help" xml:space="preserve">
     <value>Namnet som identifierar den här bindningen i koden</value>
@@ -586,7 +586,7 @@
     <value>Azure Notification Hubs</value>
   </data>
   <data name="notificationHubOut_hubName_help" xml:space="preserve">
-    <value>Namnet på den meddelandehubb som ska användas för att skicka pushmeddelanden.</value>
+    <value>Den meddelandehubb som används för att skicka push-meddelanden.</value>
   </data>
   <data name="notificationHubOut_hubName_label" xml:space="preserve">
     <value>Namn på meddelandehubb</value>
@@ -822,17 +822,8 @@
   <data name="table_tableName_label" xml:space="preserve">
     <value>Tabellnamn</value>
   </data>
-  <data name="BlobTriggerBatch_description" xml:space="preserve">
-    <value>(Experimentell) En Batch-funktion som körs när en blob läggs till i en angiven behållare</value>
-  </data>
-  <data name="BlobTriggerCSharp_description" xml:space="preserve">
-    <value>En C#-funktion som körs när en blobb läggs till i en angiven behållare</value>
-  </data>
-  <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>En F#-funktion som ska köras när en blobb läggs till i en angiven behållare</value>
-  </data>
-  <data name="BlobTriggerNodeJS_description" xml:space="preserve">
-    <value>En JavaScript-funktion körs när en blob läggs till i en angiven behållare</value>
+  <data name="BlobTrigger_description" xml:space="preserve">
+    <value>En funktion som ska köras när en blob läggs till i en angiven behållare</value>
   </data>
   <data name="CSharp_description" xml:space="preserve">
     <value>En C#-funktion som körs när den får en GitHub-webbhookförfrågan</value>
@@ -861,17 +852,8 @@
   <data name="EmptyPython_description" xml:space="preserve">
     <value>En tom Python-funktion utan utlösare, indata eller utdata</value>
   </data>
-  <data name="EventHubTriggerCSharp_description" xml:space="preserve">
-    <value>En C#-funktion som körs när en händelsehubb tar emot en ny händelse</value>
-  </data>
-  <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>En F#-funktion som ska köras när en händelsehubb tar emot en ny händelse</value>
-  </data>
-  <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
-    <value>En JavaScript-funktion som körs när en händelsehubb tar emot en ny händelse</value>
-  </data>
-  <data name="EventHubTriggerPython_description" xml:space="preserve">
-    <value>(Experimentell) En Python-funktion som körs när en händelsehubb tar emot en ny händelse</value>
+  <data name="EventHubTrigger_description" xml:space="preserve">
+    <value>En funktion som ska köras när en händelsehubb tar emot en ny händelse</value>
   </data>
   <data name="FaceLocatorCSharp_description" xml:space="preserve">
     <value>En C#-funktion som bearbetar avbildningar och visar blobens avgränsningsrektangel</value>
@@ -933,23 +915,8 @@
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
     <value>En C#-funktion som uppdaterar enheter i en lagringstabell när den får en HTTP-förfrågan</value>
   </data>
-  <data name="HttpTriggerBatch_description" xml:space="preserve">
-    <value>(Experimentell) En Batch-funktion som körs när den får en HTTP-förfrågan</value>
-  </data>
-  <data name="HttpTriggerCSharp_description" xml:space="preserve">
-    <value>En C#-funktion som körs när den får en HTTP-förfrågan</value>
-  </data>
-  <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>En F#-funktion som ska köras när den får en HTTP-förfrågan</value>
-  </data>
-  <data name="HttpTriggerNodeJS_description" xml:space="preserve">
-    <value>En JavaScript-funktion som körs när den får en HTTP-förfrågan</value>
-  </data>
-  <data name="HttpTriggerPowerShell_description" xml:space="preserve">
-    <value>(Förhandsversion) En PowerShell-funktion som körs när den får en HTTP-förfrågan</value>
-  </data>
-  <data name="HttpTriggerPython_description" xml:space="preserve">
-    <value>(Experimentellt) En Python 3-funktion som körs när en HTTP-begäran tas emot</value>
+  <data name="HttpTrigger_description" xml:space="preserve">
+    <value>En funktion som ska köras när den tar emot en HTTP-förfrågan med svar baserat på data i meddelandetexten eller frågesträngen</value>
   </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>En C#-funktion som skapar storleksändrade avbildningar när en blobb läggs till i en angiven behållare</value>
@@ -966,29 +933,8 @@
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>En JavaScript-funktion som utlöses manuellt via portalknappen Kör</value>
   </data>
-  <data name="QueueTriggerBash_description" xml:space="preserve">
-    <value>(Experimentell) En bash-funktion som körs när ett meddelande läggs till i en angiven Azure Queue Storage</value>
-  </data>
-  <data name="QueueTriggerBatch_description" xml:space="preserve">
-    <value>(Experimentell) En Batch-funktion som körs när ett meddelande läggs till i en angiven Azure Queue Storage</value>
-  </data>
-  <data name="QueueTriggerCSharp_description" xml:space="preserve">
-    <value>En C#-funktion som körs när ett meddelande läggs till i en angiven Azure Queue Storage</value>
-  </data>
-  <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>En F#-funktion som körs när ett meddelande läggs till i en angiven Azure Queue Storage</value>
-  </data>
-  <data name="QueueTriggerNodeJS_description" xml:space="preserve">
-    <value>En JavaScript-funktion som körs när ett meddelande läggs till i en angiven Azure Queue Storage</value>
-  </data>
-  <data name="QueueTriggerPHP_description" xml:space="preserve">
-    <value>(Experimentell) En PHP-funktion som körs när ett meddelande läggs till i en angiven Azure Queue Storage</value>
-  </data>
-  <data name="QueueTriggerPowerShell_description" xml:space="preserve">
-    <value>(Förhandsversion) En PowerShell-funktion som körs när ett meddelande läggs till i en angiven Azure Queue Storage</value>
-  </data>
-  <data name="QueueTriggerPython_description" xml:space="preserve">
-    <value>(Experimentell) En Python-funktion som körs när ett meddelande läggs till i en angiven Azure Queue Storage</value>
+  <data name="QueueTrigger_description" xml:space="preserve">
+    <value>En funktion som ska köras när ett meddelande läggs till i en angiven Azure Storage-kö</value>
   </data>
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
     <value>(Experimentell) En Batch-funktion som körs när en fil läggs till i en extern filprovider.</value>
@@ -1014,14 +960,8 @@
   <data name="SasTokenFSharp_description" xml:space="preserve">
     <value>En F#-funktion som genererar en SAS-token för Azure Storage för en angiven behållare och blobbnamn.</value>
   </data>
-  <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>En C#-funktion som skickar en bekräftelse via e-post när ett nytt objekt läggs till i en viss kö</value>
-  </data>
-  <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>En F#-funktion som skickar en bekräftelse via e-post när ett nytt objekt läggs till i en viss kö</value>
-  </data>
-  <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>En JavaScript-funktion som skickar en bekräftelse via e-post när ett nytt objekt läggs till i en viss kö</value>
+  <data name="SendGrid_description" xml:space="preserve">
+    <value>En funktion som skickar ett e-postmeddelande med bekräftelse när ett nytt objekt läggs till i en viss kö</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
     <value>En C#-funktion som körs när ett meddelande läggs till i en angiven Service Bus-kö</value>
@@ -1038,17 +978,11 @@
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>En JavaScript-funktion som körs när ett meddelande läggs till i det angivna Service Bus-ämnet</value>
   </data>
-  <data name="TimerTriggerCSharp_description" xml:space="preserve">
-    <value>En C#-funktion som körs enligt ett angivet schema</value>
+  <data name="TimerTrigger_description" xml:space="preserve">
+    <value>En funktion som ska köras enligt ett angivet schema</value>
   </data>
-  <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>En F#-funktion som ska köras enligt ett angivet schema</value>
-  </data>
-  <data name="TimerTriggerNodeJS_description" xml:space="preserve">
-    <value>En JavaScript-funktion som körs enligt ett angivet schema</value>
-  </data>
-  <data name="TimerTriggerPowerShell_description" xml:space="preserve">
-    <value>(Förhandsversion) En PowerShell-funktion som körs enligt ett angivet schema</value>
+  <data name="TimerTriggerExcelOutlook_description" xml:space="preserve">
+    <value>Läs två Excel-tabeller, skicka e-post baserat på informationen och uppdatera sedan en Excel-tabell.</value>
   </data>
   <data name="timerTrigger_schedule_errorText" xml:space="preserve">
     <value>Ogiltigt Cron-uttryck. Mer information hittar du i &lt;a target='_blank' href='https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/'&gt;dokumentationen&lt;/a&gt;.</value>
@@ -1096,16 +1030,16 @@
     <value>Konsumentgruppen måste börja och sluta med en bokstav eller siffra och får bara innehålla bokstäver, siffror, bindestreck, punkt och understreck. Gruppen $Default tillåts också. Namnet måste bestå av 1 till 50 tecken.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
-    <value>DocumentDB-dokument i Azure</value>
+    <value>Azure Cosmos DB</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>API-nyckel för SendGrid-utvecklare</value>
+    <value>Namnet på den appinställning som innehåller utvecklings-API-nyckeln för SendGrid.</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
-    <value>API-nyckel för SendGrid</value>
+    <value>SendGrid API-nyckel för appinställning</value>
   </data>
   <data name="bot_botId_help" xml:space="preserve">
-    <value>Det här är det ID som används i aktivitetens Från-egenskap när ett meddelande skapas och skickas till roboten. Det här är ChannelAccount.Id för en sändningsaktivitet.</value>
+    <value>Det ID som används i aktivitetens Från-egenskap när ett meddelande skapas och skickas till roboten. Det här är ChannelAccount.Id för en sändningsaktivitet.</value>
   </data>
   <data name="bot_botId_label" xml:space="preserve">
     <value>Avsändar-ID</value>
@@ -1117,14 +1051,13 @@
     <value>Bot Framework (förhandsversion)</value>
   </data>
   <data name="bot_in_secret_help" xml:space="preserve">
-    <value>Direct Line-nyckeln kan skapas från sidan för Direct Line-kanalkonfiguration i Bot Framework-portalen. Om fältet är tomt hämtas värdet från programinställningen AzureWebJobsBotFrameworkDirectLineSecret</value>
+    <value>Namnet på den appinställning som innehåller Direct Line-nyckeln. Den kan skapas från sidan för Direct Line-kanalkonfiguration i Bot Framework-portalen. Om fältet är tomt kan appinställningen AzureWebJobsBotFrameworkDirectLineSecret</value>
   </data>
   <data name="bot_in_secret_label" xml:space="preserve">
     <value>Direct Line-nyckel</value>
   </data>
   <data name="bot_out_secret_help" xml:space="preserve">
     <value>Direct Line-nyckeln kan skapas från sidan för Direct Line-kanalkonfiguration i Bot Framework-portalen. Om fältet är tomt hämtas värdet från programinställningen AzureWebJobsBotFrameworkDirectLineSecret</value>
-
   </data>
   <data name="bot_out_secret_label" xml:space="preserve">
     <value>Direct Line-nyckel</value>
@@ -1141,17 +1074,185 @@
   <data name="bot_out_name_label" xml:space="preserve">
     <value>Robotparameternamn</value>
   </data>
-  <data name="ScheduledMailCSharp_description" xml:space="preserve">
-    <value>(Förhandsversion) En C#-funktion som periodvis skickar e-postmeddelanden</value>
+  <data name="variables_loginToAAD" xml:space="preserve">
+    <value>Klicka om du vill hämta huvudkontots ID</value>
+  </data>
+  <data name="excel_in_displayName" xml:space="preserve">
+    <value>Excel-tabell</value>
+  </data>
+  <data name="excel_in_name_label" xml:space="preserve">
+    <value>Tabellparameternamn</value>
+  </data>
+  <data name="excel_in_name_help" xml:space="preserve">
+    <value>Namn som identifierar den här bindningen i funktionskoden.</value>
+  </data>
+  <data name="excel_in_path_label" xml:space="preserve">
+    <value>Sökväg till Excel-arbetsbok</value>
+  </data>
+  <data name="excel_in_path_help" xml:space="preserve">
+    <value>Sökvägen i OneDrive till Excel-arbetsboken.</value>
+  </data>
+  <data name="excel_in_worksheetName_label" xml:space="preserve">
+    <value>Namn på kalkylblad</value>
+  </data>
+  <data name="excel_in_worksheetName_help" xml:space="preserve">
+    <value>Kalkylbladet där tabellen finns.</value>
+  </data>
+  <data name="excel_in_tableName_label" xml:space="preserve">
+    <value>Tabellnamn</value>
+  </data>
+  <data name="excel_in_tableName_help" xml:space="preserve">
+    <value>Namnet på tabellen. Om inget anges används innehållet i kalkylbladet.</value>
+  </data>
+  <data name="excel_in_path_error" xml:space="preserve">
+    <value>Sökvägen måste vara giltig</value>
+  </data>
+  <data name="excel_out_displayName" xml:space="preserve">
+    <value>Excel-tabell</value>
+  </data>
+  <data name="excel_out_name_label" xml:space="preserve">
+    <value>Tabellparameternamn</value>
+  </data>
+  <data name="excel_out_name_help" xml:space="preserve">
+    <value>Namn som identifierar den här bindningen i funktionskoden.</value>
+  </data>
+  <data name="excel_out_path_label" xml:space="preserve">
+    <value>Sökväg till Excel-arbetsbok</value>
+  </data>
+  <data name="excel_out_path_help" xml:space="preserve">
+    <value>Sökvägen i OneDrive till Excel-arbetsboken.</value>
+  </data>
+  <data name="excel_out_worksheetName_label" xml:space="preserve">
+    <value>Namn på kalkylblad</value>
+  </data>
+  <data name="excel_out_worksheetName_help" xml:space="preserve">
+    <value>Kalkylbladet där tabellen finns.</value>
+  </data>
+  <data name="excel_out_tableName_label" xml:space="preserve">
+    <value>Tabellnamn</value>
+  </data>
+  <data name="excel_out_tableName_help" xml:space="preserve">
+    <value>Namnet på tabellen. Om inget anges används innehållet i kalkylbladet.</value>
+  </data>
+  <data name="excel_out_updateType_label" xml:space="preserve">
+    <value>Redigeringsläge</value>
+  </data>
+  <data name="excel_out_updateType_help" xml:space="preserve">
+    <value>Typen av ändring som ska göras i tabellen.</value>
+  </data>
+  <data name="excel_out_path_error" xml:space="preserve">
+    <value>Sökvägen måste vara giltig</value>
+  </data>
+  <data name="outlook_displayName" xml:space="preserve">
+    <value>E-postmeddelande i Outlook</value>
+  </data>
+  <data name="outlook_out_label_help" xml:space="preserve">
+    <value>Namn som identifierar den här bindningen i funktionskoden</value>
+  </data>
+  <data name="outlook_out_label_name" xml:space="preserve">
+    <value>Meddelandeparameternamn</value>
+  </data>
+  <data name="outlook_out_name_help" xml:space="preserve">
+    <value>Namn som identifierar den här bindningen i funktionskoden</value>
+  </data>
+  <data name="outlook_out_name_label" xml:space="preserve">
+    <value>Meddelandeparameternamn</value>
+  </data>
+  <data name="principal_id_label_token" xml:space="preserve">
+    <value>Huvudkontots ID för appinställningsnamn</value>
+  </data>
+  <data name="principal_id_help_token" xml:space="preserve">
+    <value>Huvudkontots ID för autentisering av förfrågningar till önskad resurs</value>
+  </data>
+  <data name="principal_id_label_excel_in" xml:space="preserve">
+    <value>Huvudkontots ID för appinställningsnamn</value>
+  </data>
+  <data name="principal_id_help_excel_in" xml:space="preserve">
+    <value>Huvudkontots ID för autentisering av förfrågningar till önskad resurs</value>
+  </data>
+  <data name="principal_id_label_excel_out" xml:space="preserve">
+    <value>Huvudkontots ID för appinställningsnamn</value>
+  </data>
+  <data name="principal_id_help_excel_out" xml:space="preserve">
+    <value>Huvudkontots ID för autentisering av förfrågningar till önskad resurs</value>
+  </data>
+  <data name="principal_id_label_outlook" xml:space="preserve">
+    <value>Huvudkontots ID för appinställningsnamn</value>
+  </data>
+  <data name="principal_id_help_outlook" xml:space="preserve">
+    <value>Huvudkontots ID för autentisering av förfrågningar till önskad resurs</value>
+  </data>
+  <data name="principal_id_label_onedrive_in" xml:space="preserve">
+    <value>Huvudkontots ID för appinställningsnamn</value>
+  </data>
+  <data name="principal_id_help_onedrive_in" xml:space="preserve">
+    <value>Huvudkontots ID för autentisering av förfrågningar till önskad resurs</value>
+  </data>
+  <data name="principal_id_label_onedrive_out" xml:space="preserve">
+    <value>Huvudkontots ID för appinställningsnamn</value>
+  </data>
+  <data name="principal_id_help_onedrive_out" xml:space="preserve">
+    <value>Huvudkontots ID för autentisering av förfrågningar till önskad resurs</value>
+  </data>
+  <data name="principal_id_label_graphwebhook" xml:space="preserve">
+    <value>Huvudkontots ID för appinställningsnamn</value>
+  </data>
+  <data name="principal_id_help_graphwebhook" xml:space="preserve">
+    <value>Huvudkontots ID för autentisering av förfrågningar till önskad resurs</value>
+  </data>
+  <data name="idToken_label_token" xml:space="preserve">
+    <value>ID-token</value>
+  </data>
+  <data name="idToken_help_token" xml:space="preserve">
+    <value>Uttryck eller explicit ID-token som används för autentisering till MS Graph</value>
+  </data>
+  <data name="idToken_label_excel_in" xml:space="preserve">
+    <value>ID-token</value>
+  </data>
+  <data name="idToken_help_excel_in" xml:space="preserve">
+    <value>Uttryck eller explicit ID-token som används för autentisering till MS Graph</value>
+  </data>
+  <data name="idToken_label_excel_out" xml:space="preserve">
+    <value>ID-token</value>
+  </data>
+  <data name="idToken_help_excel_out" xml:space="preserve">
+    <value>Uttryck eller explicit ID-token som används för autentisering till MS Graph</value>
+  </data>
+  <data name="idToken_label_outlook" xml:space="preserve">
+    <value>ID-token</value>
+  </data>
+  <data name="idToken_help_outlook" xml:space="preserve">
+    <value>Uttryck eller explicit ID-token som används för autentisering till MS Graph</value>
+  </data>
+  <data name="idToken_label_onedrive_in" xml:space="preserve">
+    <value>ID-token</value>
+  </data>
+  <data name="idToken_help_onedrive_in" xml:space="preserve">
+    <value>Uttryck eller explicit ID-token som används för autentisering till MS Graph </value>
+  </data>
+  <data name="idToken_label_onedrive_out" xml:space="preserve">
+    <value>ID-token</value>
+  </data>
+  <data name="idToken_help_onedrive_out" xml:space="preserve">
+    <value>Uttryck eller explicit ID-token som används för autentisering till MS Graph </value>
+  </data>
+  <data name="idToken_label_graphwebhook" xml:space="preserve">
+    <value>ID-token</value>
+  </data>
+  <data name="idToken_help_graphwebhook" xml:space="preserve">
+    <value>Uttryck eller explicit ID-token som används för autentisering till MS Graph </value>
+  </data>
+  <data name="ScheduledMail_description" xml:space="preserve">
+    <value>En funktion som regelbundet skickar e-postmeddelanden</value>
   </data>
   <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
-    <value>Det här är en valfri DocumentDB SQL-fråga som används för att hämta en uppsättning dokument. Om varken en SQL-fråga eller ett ID har angetts returneras alla dokument i samlingen.</value>
+    <value>En valfri Cosmos DB API SQL-fråga som används för att hämta en uppsättning dokument. Om varken en SQL-fråga eller ett ID har angetts, returneras alla dokument i samlingen.</value>
   </data>
   <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
     <value>SQL-fråga (valfritt)</value>
   </data>
   <data name="eventHubTrigger_cardinality_help" xml:space="preserve">
-    <value>Kardinaliteten för utlösarindata. Välj "ett" om dina indata är ett enda meddelande eller "många" om dina indata är en matris med meddelanden. "Ett" är standard om inget anges</value>
+    <value>Kardinaliteten för utlösarens indata. Välj ”ett” om indata är ett enstaka meddelande eller ”många” om indata är en matris med meddelanden. ”Många” är standardvärdet om inget anges</value>
   </data>
   <data name="HttpTriggerCSharpWithParameters_description" xml:space="preserve">
     <value>En C#-funktion som körs när den får en HTTP-förfrågan</value>
@@ -1166,10 +1267,10 @@
     <value>(Experimentell) En CDS-funktion som kan anropa en CDS-miljö med SDK:n för CDS.</value>
   </data>
   <data name="cdsTemplate_warningNotConfigured" xml:space="preserve">
-    <value>För den här mallen krävs en AAD-konfiguration för funktionsappen. Mallen kräver följande behörigheter:
+    <value>För den här mallen krävs en AAD-konfiguration för funktionsappen. Följande behörighet krävs för mallen:
 
-Common Data Service – åtkomst till Common Data Service
-API för Windows Azure-tjänsthantering – åtkomst till Azure-tjänsthantering som organisationsanvändare (förhandsversion).</value>
+Common Data Service – Åtkomst till Common Data Service
+Windows Azure Service Management-API – Åtkomst till Azure Service Management som organisationsanvändare (förhandsversion).</value>
   </data>
   <data name="temp_category_monitoring" xml:space="preserve">
     <value>Övervakning</value>
@@ -1200,5 +1301,423 @@ API för Windows Azure-tjänsthantering – åtkomst till Azure-tjänsthantering
   </data>
   <data name="HttpPOST(CRUD)Queue-FSharp_description" xml:space="preserve">
     <value>F#-funktion som skickar data till en kö när en HTTP-post tas emot.</value>
+  </data>
+  <data name="BlobTriggerNodeTS_description" xml:space="preserve">
+    <value>(Experimentell) En TypeScript-funktion som körs när en blob läggs till i en angiven behållare</value>
+  </data>
+  <data name="EventHubTriggerNodeTS_description" xml:space="preserve">
+    <value>(Experimentell) En TypeScript-funktion som körs när en händelsehubb tar emot en ny händelse</value>
+  </data>
+  <data name="GenericWebhookNodeTS_description" xml:space="preserve">
+    <value>(Experimentell) En TypeScript-funktion som körs när den får en webhookförfrågan</value>
+  </data>
+  <data name="GithubWebhookNodeTS_description" xml:space="preserve">
+    <value>(Experimentell) En TypeScript-funktion som körs när den får en GitHub-webhookförfrågan</value>
+  </data>
+  <data name="HttpTriggerNodeTS_description" xml:space="preserve">
+    <value>(Experimentell) En TypeScript-funktion som körs när den får en HTTP-förfrågan</value>
+  </data>
+  <data name="QueueTriggerNodeTS_description" xml:space="preserve">
+    <value>(Experimentell) En TypeScript-funktion som körs när ett meddelande läggs till i en angiven Azure Queue Storage</value>
+  </data>
+  <data name="ServiceBusQueueTriggerNodeTS_description" xml:space="preserve">
+    <value>(Experimentell) En TypeScript-funktion som körs när ett meddelande läggs till i en angiven Service Bus-kö</value>
+  </data>
+  <data name="ServiceBusTopicTriggerNodeTS_description" xml:space="preserve">
+    <value>(Experimentell) En TypeScript-funktion som körs när ett meddelande läggs till i det angivna Service Bus-ämnet</value>
+  </data>
+  <data name="ManualTriggerNodeTS_description" xml:space="preserve">
+    <value>(Experimentell) En TypeScript-funktion som utlöses manuellt via portalknappen Kör</value>
+  </data>
+  <data name="IoTHubTriggerCSharp_description" xml:space="preserve">
+    <value>En C#-funktion som körs när en IoT-hubb får en ny händelse från IoT Hub (händelsehubb)</value>
+  </data>
+  <data name="ioTHubTrigger_connection_help" xml:space="preserve">
+    <value>Det här är nyckeln till den IoT Hub-anslutningssträng som är lagrad i appinställningen, som måste ha behörighet för att ta emot. Klicka på Ny om du vill skapa en ny.</value>
+  </data>
+  <data name="ioTHubTrigger_connection_label" xml:space="preserve">
+    <value>Anslutningssträng</value>
+  </data>
+  <data name="ioTHubTrigger_displayName" xml:space="preserve">
+    <value>Azure IoT Hub</value>
+  </data>
+  <data name="ioTHubTrigger_EntityPath" xml:space="preserve">
+    <value>Entitetssökväg</value>
+  </data>
+  <data name="defaultConsumerGroup" xml:space="preserve">
+    <value>$Standard</value>
+  </data>
+  <data name="defaultQueueName" xml:space="preserve">
+    <value>myqueue</value>
+  </data>
+  <data name="defaultsubscriptionName" xml:space="preserve">
+    <value>mysubscription</value>
+  </data>
+  <data name="defaultTopicName" xml:space="preserve">
+    <value>mytopic</value>
+  </data>
+  <data name="servicebusQueuePicker_queueName" xml:space="preserve">
+    <value>Kö</value>
+  </data>
+  <data name="IoTHubTriggerFSharp_description" xml:space="preserve">
+    <value>En F#-funktion som körs när en IoT-hubb får en ny händelse från IoT Hub (händelsehubb)</value>
+  </data>
+  <data name="IoTHubTriggerNodeJS_description" xml:space="preserve">
+    <value>En JavaScript-funktion som körs när en IoT-hubb får en ny händelse från IoT Hub (händelsehubb)</value>
+  </data>
+  <data name="IoTHubTriggerNodeTS_description" xml:space="preserve">
+    <value>En Typescript-funktion som körs när en IoT-hubb får en ny händelse från IoT Hub (händelsehubb)</value>
+  </data>
+  <data name="myEventHub" xml:space="preserve">
+    <value>myEventHub</value>
+  </data>
+  <data name="eventHubName" xml:space="preserve">
+    <value>eventHubName</value>
+  </data>
+  <data name="oneDrive_in_displayName" xml:space="preserve">
+    <value>OneDrive-fil</value>
+  </data>
+  <data name="oneDrive_in_name_help" xml:space="preserve">
+    <value>Namn som identifierar den här bindningen i funktionskoden.</value>
+  </data>
+  <data name="oneDrive_in_name_label" xml:space="preserve">
+    <value>Filparameternamn</value>
+  </data>
+  <data name="oneDrive_in_path_help" xml:space="preserve">
+    <value>Sökvägen i OneDrive till filen.</value>
+  </data>
+  <data name="oneDrive_in_path_label" xml:space="preserve">
+    <value>Sökväg till fil</value>
+  </data>
+  <data name="oneDrive_in_path_error" xml:space="preserve">
+    <value>Sökvägen måste vara giltig</value>
+  </data>
+  <data name="oneDrive_out_displayName" xml:space="preserve">
+    <value>OneDrive-fil</value>
+  </data>
+  <data name="oneDrive_out_name_help" xml:space="preserve">
+    <value>Namn som identifierar den här bindningen i funktionskoden.</value>
+  </data>
+  <data name="oneDrive_out_name_label" xml:space="preserve">
+    <value>Filparameternamn</value>
+  </data>
+  <data name="oneDrive_out_path_help" xml:space="preserve">
+    <value>Sökvägen i OneDrive till filen.</value>
+  </data>
+  <data name="oneDrive_out_path_label" xml:space="preserve">
+    <value>Sökväg till fil</value>
+  </data>
+  <data name="oneDrive_out_path_error" xml:space="preserve">
+    <value>Sökvägen måste vara giltig</value>
+  </data>
+  <data name="MSGraphWebhook_displayName" xml:space="preserve">
+    <value>Webhook-prenumeration för Microsoft Graph</value>
+  </data>
+  <data name="MSGraphWebhook_in_name_label" xml:space="preserve">
+    <value>Parameternamn för prenumeration</value>
+  </data>
+  <data name="MSGraphWebhook_in_changeType_help" xml:space="preserve">
+    <value>Krävs endast om åtgärden är inställd på skapa. Anger typen av ändring i den prenumererade resursen som skapar ett meddelande. Värden som stöds är: skapad, uppdaterad, borttagen. Flera värden kan kombineras med en kommaavgränsad lista.</value>
+  </data>
+  <data name="MSGraphWebhook_in_changeType_label" xml:space="preserve">
+    <value>Typer av ändringar att prenumerera på</value>
+  </data>
+  <data name="MSGraphWebhook_in_listen_help" xml:space="preserve">
+    <value>Graphresursen för vilken den här funktionen ska svara på webhookar. En funktionsapp kan bara ha en funktion som är registrerad mot ett givet resourceType-värde.</value>
+  </data>
+  <data name="MSGraphWebhook_in_listen_label" xml:space="preserve">
+    <value>Resurs att prenumerera på</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_displayName" xml:space="preserve">
+    <value>Microsoft Graph-webhook</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_in_name_label" xml:space="preserve">
+    <value>Parameternamn för ändrad resurs</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_Type_help" xml:space="preserve">
+    <value>Val av typ bestämmer vilken sorts meddelanden som ska utlösa den här funktionen</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_Type_label" xml:space="preserve">
+    <value>Typ av meddelande som ska lyssnas på</value>
+  </data>
+  <data name="MSGraphWebhook_description" xml:space="preserve">
+    <value>En C#-funktion som körs när den får en O365-webhookförfrågan.</value>
+  </data>
+  <data name="RefreshMSGraphSubscriptions_description" xml:space="preserve">
+    <value>Uppdaterar regelbundet alla O365-prenumerationer</value>
+  </data>
+  <data name="token_displayName" xml:space="preserve">
+    <value>Autentiseringstoken</value>
+  </data>
+  <data name="token_in_name_help" xml:space="preserve">
+    <value>Namn på den parameter som används för att identifiera den här token i din kod</value>
+  </data>
+  <data name="token_in_name_label" xml:space="preserve">
+    <value>Parameternamn för autentiseringstoken</value>
+  </data>
+  <data name="token_in_resource_help" xml:space="preserve">
+    <value>En AAD resurs-URL som token begärs för</value>
+  </data>
+  <data name="token_in_resource_label" xml:space="preserve">
+    <value>Resurs-URL</value>
+  </data>
+  <data name="MSGraphWebhookCreator_displayName" xml:space="preserve">
+    <value>Webhook-prenumeration för Microsoft Graph</value>
+  </data>
+  <data name="MSGraphWebhookCreator_in_name_help" xml:space="preserve">
+    <value>Namn som identifierar den här bindningen i funktionskoden.</value>
+  </data>
+  <data name="MSGraphWebhookCreator_in_name_label" xml:space="preserve">
+    <value>Parameternamn för prenumeration</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_in_help_label" xml:space="preserve">
+    <value>Namn som identifierar den ändrade resursen i funktionskoden</value>
+  </data>
+  <data name="MSGraphWebhook_in_name_help" xml:space="preserve">
+    <value>Namn som identifierar den här bindningen i funktionskoden</value>
+  </data>
+  <data name="temp_category_msgraph" xml:space="preserve">
+    <value>Microsoft Graph</value>
+  </data>
+  <data name="documentDBIn_partitionKey_help" xml:space="preserve">
+    <value>Partitionsnyckeln för det dokument som ska läsas. Gäller endast om ett ID har angetts.</value>
+  </data>
+  <data name="documentDBOut_partitionKey_help" xml:space="preserve">
+    <value>Den partitionsnyckel som ska användas när en ny samling skapas. Gäller bara om du har valt att skapa samlingen automatiskt om den inte finns.</value>
+  </data>
+  <data name="documentDB_partitionKey_label" xml:space="preserve">
+    <value>Partitionsnyckel (valfritt)</value>
+  </data>
+  <data name="EventGridTriggerCSharp_description" xml:space="preserve">
+    <value>En C#-funktion som ska köras när en Event Grid tar emot en ny händelse</value>
+  </data>
+  <data name="eventGrid_trigger_displayName" xml:space="preserve">
+    <value>Event Grid-utlösare</value>
+  </data>
+  <data name="eventGrid_trigger_name_help" xml:space="preserve">
+    <value>Parameternamn för händelseutlösare</value>
+  </data>
+  <data name="eventGrid_trigger_name_label" xml:space="preserve">
+    <value>Parameternamn för händelseutlösare</value>
+  </data>
+  <data name="CosmosDBTriggerCSharp_description" xml:space="preserve">
+    <value>En C#-funktion som körs när dokument ändras i en dokumentsamling.</value>
+  </data>
+  <data name="CosmosDBTriggerJavascript_description" xml:space="preserve">
+    <value>En JavaScript-funktion som körs när dokument ändras i en dokumentsamling.</value>
+  </data>
+  <data name="cosmosDBIn_collectionName_help" xml:space="preserve">
+    <value>Namn på den samling som ska övervakas.</value>
+  </data>
+  <data name="cosmosDBIn_collectionName_label" xml:space="preserve">
+    <value>Samlingsnamn</value>
+  </data>
+  <data name="cosmosDBIn_connection_help" xml:space="preserve">
+    <value>Namnet på appinställningen med anslutningssträngen till den tjänst som innehåller samlingen som ska övervakas.</value>
+  </data>
+  <data name="cosmosDBIn_connection_label" xml:space="preserve">
+    <value>Cosmos DB-kontoanslutning</value>
+  </data>
+  <data name="cosmosDBIn_databaseName_help" xml:space="preserve">
+    <value>Namn på Cosmos DB-databasen som innehåller den samling som ska övervakas.</value>
+  </data>
+  <data name="cosmosDBIn_databaseName_label" xml:space="preserve">
+    <value>Databasnamn</value>
+  </data>
+  <data name="cosmosDBIn_leaseCollectionName_help" xml:space="preserve">
+    <value>Namnet på samlingen som omfattar lånen.</value>
+  </data>
+  <data name="cosmosDBIn_leaseCollectionName_label" xml:space="preserve">
+    <value>Namn på samling för lån</value>
+  </data>
+  <data name="cosmosDBIn_leaseDatabaseName_help" xml:space="preserve">
+    <value>Namnet på den databas som innehåller samlingen där lånen lagras.</value>
+  </data>
+  <data name="cosmosDBIn_leaseDatabaseName_label" xml:space="preserve">
+    <value>Databasnamnet för lån</value>
+  </data>
+  <data name="cosmosDBIn_name_help" xml:space="preserve">
+    <value>Namnet som identifierar den här bindningen i koden</value>
+  </data>
+  <data name="cosmosDBIn_name_label" xml:space="preserve">
+    <value>Parameternamn för dokumentsamling</value>
+  </data>
+  <data name="cosmosDB_trigger_displayName" xml:space="preserve">
+    <value>Azure Cosmos DB</value>
+  </data>
+  <data name="IoTHubServiceBusTopicTriggerCSharp_description" xml:space="preserve">
+    <value>En C#-funktion som körs när ett meddelande läggs till i det angivna Service Bus-ämnet</value>
+  </data>
+  <data name="temp_category_IoTHub" xml:space="preserve">
+    <value>IoT-hubb</value>
+  </data>
+  <data name="cosmosDBIn_createIfNotExists_help" xml:space="preserve">
+    <value>Söker efter förekomst och skapar automatiskt lånsamlingen.</value>
+  </data>
+  <data name="cosmosDBIn_createIfNotExists_label" xml:space="preserve">
+    <value>Skapa en lånsamling om ingen finns</value>
+  </data>
+  <data name="EventGridTriggerJavascript_description" xml:space="preserve">
+    <value>En JavaScript-funktion som körs när en Event Grid tar emot en ny händelse</value>
+  </data>
+  <data name="Identity_help" xml:space="preserve">
+    <value>Identiteten som kommer att användas för att utföra åtgärden.</value>
+  </data>
+  <data name="Identity_label" xml:space="preserve">
+    <value>Identitet</value>
+  </data>
+  <data name="userid_help" xml:space="preserve">
+    <value>Krävs endast om identiteten har angetts till userFromId. Ett användarens huvudnamn-ID som är associerat med den tidigare inloggade användaren.</value>
+  </data>
+  <data name="userid_label" xml:space="preserve">
+    <value>Användar-ID</value>
+  </data>
+  <data name="usertoken_help" xml:space="preserve">
+    <value>Krävs endast om identitet har angetts till userFromToken. En token som är giltig för
+funktionsappen.</value>
+  </data>
+  <data name="usertoken_label" xml:space="preserve">
+    <value>Användartoken</value>
+  </data>
+  <data name="ProfilePhotoAPI_description" xml:space="preserve">
+    <value>En funktion som returnerar profilbilden för den anropande Azure Active Directory-användaren</value>
+  </data>
+  <data name="OutlookMessageWebhookCreator_description" xml:space="preserve">
+    <value>En funktion som registrerar en webbhook-prenumeration för meddelanden i postlådan för den anropande Azure Active Directory-användaren</value>
+  </data>
+  <data name="OutlookMessageWebhookDeleter_description" xml:space="preserve">
+    <value>En funktion som avregistrerar alla prenumerationer på Microsoft Graph-webbhookar på den här appen för den anropande Azure Active Directory-användaren</value>
+  </data>
+  <data name="OutlookMessageWebhookHandler_description" xml:space="preserve">
+    <value>En funktion som ska ta emot webbhookar för Outlook-meddelanden</value>
+  </data>
+  <data name="OutlookMessageWebhookRefresher_description" xml:space="preserve">
+    <value>En funktion som uppdaterar alla prenumerationer på Microsoft Graph-webbhookar för den här appen</value>
+  </data>
+  <data name="identity_option_userFromRequest_label" xml:space="preserve">
+    <value>Användare från HTTP-förfrågan</value>
+  </data>
+  <data name="identity_option_userFromId_label" xml:space="preserve">
+    <value>Användare från ID</value>
+  </data>
+  <data name="identity_option_userFromToken_label" xml:space="preserve">
+    <value>Användare från token</value>
+  </data>
+  <data name="identity_option_clientCredentials_label" xml:space="preserve">
+    <value>Klientautentiseringsuppgifter</value>
+  </data>
+  <data name="MSGraphWebhook_out_action_label" xml:space="preserve">
+    <value>Åtgärd</value>
+  </data>
+  <data name="MSGraphWebhook_out_action_help" xml:space="preserve">
+    <value>Åtgärd som ska utföras i prenumerationen</value>
+  </data>
+  <data name="GraphWebhookSubscription_in_filter_help" xml:space="preserve">
+    <value>Om det angetts till userFromRequest så kommer bindningen endast hämta prenumerationer som ägs av den anropande användaren (gäller endast med HTTP-utlösaren).</value>
+  </data>
+  <data name="GraphWebhookSubscription_in_filter_label" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="activityTrigger_activity_errorText" xml:space="preserve">
+    <value>Ogiltigt aktivitetsnamn</value>
+  </data>
+  <data name="activityTrigger_activity_help" xml:space="preserve">
+    <value>(Valfritt) Namnet på din aktivitet. Standard är namnet på din funktion om inget anges.</value>
+  </data>
+  <data name="activityTrigger_activity_label" xml:space="preserve">
+    <value>Aktivitetsnamn</value>
+  </data>
+  <data name="activityTrigger_displayName" xml:space="preserve">
+    <value>Aktivitet</value>
+  </data>
+  <data name="activityTrigger_name_help" xml:space="preserve">
+    <value>Namnet som identifierar den här bindningen i koden</value>
+  </data>
+  <data name="activityTrigger_name_label" xml:space="preserve">
+    <value>Namn på aktivitetsparametern</value>
+  </data>
+  <data name="orchestrationClientIn_displayName" xml:space="preserve">
+    <value>Orkestreringsklient</value>
+  </data>
+  <data name="orchestrationClientIn_name_help" xml:space="preserve">
+    <value>Namnet som identifierar den här bindningen i koden</value>
+  </data>
+  <data name="orchestrationClientIn_name_label" xml:space="preserve">
+    <value>Parameternamn för orkestreringsklienten</value>
+  </data>
+  <data name="orchestrationTrigger_displayName" xml:space="preserve">
+    <value>Orkestrering</value>
+  </data>
+  <data name="orchestrationTrigger_name_help" xml:space="preserve">
+    <value>Namnet som identifierar den här bindningen i koden</value>
+  </data>
+  <data name="orchestrationTrigger_name_label" xml:space="preserve">
+    <value>Namn på orkestreringsparametern</value>
+  </data>
+  <data name="orchestrationTrigger_orchestration_errorText" xml:space="preserve">
+    <value>Ogiltigt orkestreringsnamn</value>
+  </data>
+  <data name="orchestrationTrigger_orchestration_help" xml:space="preserve">
+    <value>(Valfritt) Namnet på din orkestrering. Standard är namnet på din funktion om inget anges.</value>
+  </data>
+  <data name="orchestrationTrigger_orchestration_label" xml:space="preserve">
+    <value>Orkestreringsnamn</value>
+  </data>
+  <data name="DurableFunctionsActivity_description" xml:space="preserve">
+    <value>En funktion körs när en aktivitet anropas av en Orchestrator-funktion.</value>
+  </data>
+  <data name="DurableFunctionsOrchestrator_description" xml:space="preserve">
+    <value>En Orchestrator-funktion som anropar aktivitetsfunktioner i en sekvens.</value>
+  </data>
+  <data name="DurableFunctionsHttpStart_description" xml:space="preserve">
+    <value>En funktion som aktiveras när den får en HTTP-förfrågan om att köra en Orchestrator-funktion.</value>
+  </data>
+  <data name="temp_category_durableFunctions" xml:space="preserve">
+    <value>Varaktiga funktioner</value>
+  </data>
+  <data name="BlobTrigger_name" xml:space="preserve">
+    <value>Blob-utlösare</value>
+  </data>
+  <data name="EventHubTrigger_name" xml:space="preserve">
+    <value>Händelsehubbutlösare</value>
+  </data>
+  <data name="HttpTrigger_name" xml:space="preserve">
+    <value>HTTP-utlösare</value>
+  </data>
+  <data name="OutlookMessageWebhookCreator_name" xml:space="preserve">
+    <value>Webhookprenumerationsskapare för Outlook-meddelanden</value>
+  </data>
+  <data name="OutlookMessageWebhookDeleter_name" xml:space="preserve">
+    <value>Webhookprenumerationsborttagare för Outlook-meddelanden</value>
+  </data>
+  <data name="OutlookMessageWebhookHandler_name" xml:space="preserve">
+    <value>Webhookhanterare för Outlook-meddelanden</value>
+  </data>
+  <data name="OutlookMessageWebhookRefresher_name" xml:space="preserve">
+    <value>Webhookprenumerationsuppdaterare för Outlook-meddelanden</value>
+  </data>
+  <data name="ProfilePhotoAPI_name" xml:space="preserve">
+    <value>Microsoft Graph-profilfoto API</value>
+  </data>
+  <data name="QueueTrigger_name" xml:space="preserve">
+    <value>Köutlösare</value>
+  </data>
+  <data name="ScheduledMail_name" xml:space="preserve">
+    <value>Schemalagt e-post</value>
+  </data>
+  <data name="SendGrid_name" xml:space="preserve">
+    <value>SendGrid</value>
+  </data>
+  <data name="TimerTrigger_name" xml:space="preserve">
+    <value>Timerutlösare</value>
+  </data>
+  <data name="DurableFunctionsActivity_name" xml:space="preserve">
+    <value>Aktivitet för beständiga funktioner</value>
+  </data>
+  <data name="DurableFunctionsHttpStart_name" xml:space="preserve">
+    <value>HTTP-starter för beständiga funktioner</value>
+  </data>
+  <data name="DurableFunctionsOrchestrator_name" xml:space="preserve">
+    <value>Orchestrator för beständiga funktioner</value>
   </data>
 </root>

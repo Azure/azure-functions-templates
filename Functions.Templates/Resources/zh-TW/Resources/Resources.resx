@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -136,7 +136,7 @@
     <value>事件中樞名稱的開頭與結尾必須是字母或數字，且只可包含字母、數字、連字號、句點 (.) 及底線。此名稱必須介於 1 到 50 個字元之間。</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
-    <value>此為事件傳送目標的事件中樞名稱。</value>
+    <value>事件中樞的名稱。事件將會傳送至該事件中樞。</value>
   </data>
   <data name="eventHubOut_path_label" xml:space="preserve">
     <value>事件中樞名稱</value>
@@ -187,7 +187,7 @@
     <value>佇列名稱</value>
   </data>
   <data name="queueOut_queueName_help" xml:space="preserve">
-    <value>此為訊息傳送目標的佇列。若佇列尚不存在，將於指定的儲存體帳戶中為您建立一個。</value>
+    <value>接收所傳送之訊息的佇列。若尚無此佇列，將會為您在指定的儲存體帳戶中建立一個。</value>
   </data>
   <data name="temp_category_core" xml:space="preserve">
     <value>核心</value>
@@ -211,7 +211,7 @@
     <value>時間戳記參數名稱</value>
   </data>
   <data name="timerTrigger_schedule_help" xml:space="preserve">
-    <value>以 '{second} {minute} {hour} {day} {month} {day of week}' 格式輸入 Cron 運算式以指定排程。如需範例，請參閱下列文件。</value>
+    <value>以 '{second} {minute} {hour} {day} {month} {day of week}' 格式輸入 Cron 運算式以指定排程。</value>
   </data>
   <data name="timerTrigger_schedule_label" xml:space="preserve">
     <value>排程</value>
@@ -241,16 +241,16 @@
     <value>資料表名稱</value>
   </data>
   <data name="variables_appSettingsHelp" xml:space="preserve">
-    <value>此為您儲存體帳戶的連接字串。</value>
+    <value>內含您儲存體帳戶連接字串之應用程式設定的名稱。</value>
   </data>
   <data name="variables_parameterName" xml:space="preserve">
     <value>參數名稱必須是包含任意字元數的英數字元字串，且其開頭不得為數字。</value>
   </data>
   <data name="variables_paramNameInputHelp" xml:space="preserve">
-    <value>此為程式碼中輸入繫結的繫結目標參數名稱。</value>
+    <value>程式碼中參數的名稱。輸入繫結將會繫結到該參數。</value>
   </data>
   <data name="variables_paramNameOutputHelp" xml:space="preserve">
-    <value>此為程式碼中輸出繫結的繫結目標參數名稱。</value>
+    <value>程式碼中參數的名稱。輸出繫結將會繫結到該參數。</value>
   </data>
   <data name="variables_selectConnection" xml:space="preserve">
     <value>按一下選取來選擇連線</value>
@@ -295,7 +295,7 @@
     <value>佇列名稱</value>
   </data>
   <data name="blobOut_path_help" xml:space="preserve">
-    <value>此為您儲存體帳戶中 Blob 寫入目標的路徑。</value>
+    <value>儲存體帳戶內的路徑，亦即 Blob 的寫入路徑。</value>
   </data>
   <data name="blobOut_path_errorText" xml:space="preserve">
     <value>您的 Blob 路徑必須為介於 3 到 63 個字元的容器名稱，且後面加上介於 1 到 1024 個字元的 Blob 名稱。Blob 名稱可以是任意字元的組合，且最多可包含 254 個路徑區段，其以斜線 (/) 分隔。</value>
@@ -310,7 +310,7 @@
     <value>Blob 參數名稱</value>
   </data>
   <data name="blobIn_path_help" xml:space="preserve">
-    <value>此為您儲存體帳戶中 Blob 讀取來源的路徑。</value>
+    <value>儲存體帳戶內的路徑，亦即 Blob 的讀取路徑。</value>
   </data>
   <data name="blobIn_path_label" xml:space="preserve">
     <value>路徑</value>
@@ -328,7 +328,7 @@
     <value>路徑</value>
   </data>
   <data name="blobTrigger_path_help" xml:space="preserve">
-    <value>此為您儲存體帳戶中觸發程序將監視的路徑。</value>
+    <value>儲存體帳戶內的路徑，亦即觸發程序所要監視的路徑。</value>
   </data>
   <data name="blobTrigger_path_errorText" xml:space="preserve">
     <value>您的 Blob 路徑必須為介於 3 到 63 個字元的容器名稱，且後面加上介於 1 到 1024 個字元的 Blob 名稱。Blob 名稱可以是任意字元的組合，且最多可包含 254 個路徑區段，其以斜線 (/) 分隔。</value>
@@ -415,7 +415,7 @@
     <value>模式</value>
   </data>
   <data name="httpTrigger_mode_help" xml:space="preserve">
-    <value>此為觸發程序模式。「標準」表示要求將為不具其他語意的標準 HTTP。「Webhook」表示要求將根據指定的 webhook 類型處理。</value>
+    <value>觸發程序的模式。「標準」表示要求是標準的 HTTP，不帶其他語意。"Webhook" 表示將會依據指定的 Webhook 類型處理要求。</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
     <value>外部檔案 (預覽)</value>
@@ -433,28 +433,28 @@
     <value>Azure Blob 儲存體</value>
   </data>
   <data name="documentDBIn_collectionName_help" xml:space="preserve">
-    <value>此為您資料庫中資料讀取來源的集合名稱。</value>
+    <value>資料庫集合。資料將從該資料庫集合讀取。</value>
   </data>
   <data name="documentDBIn_collectionName_label" xml:space="preserve">
     <value>集合名稱</value>
   </data>
   <data name="documentDBIn_connection_help" xml:space="preserve">
-    <value>內含您 DocumentDB 連接字串之應用程式設定的名稱</value>
+    <value>內含您 Cosmos DB 連接字串之應用程式設定的名稱</value>
   </data>
   <data name="documentDBIn_connection_label" xml:space="preserve">
-    <value>DocumentDB 帳戶連線</value>
+    <value>Cosmos DB 帳戶連線</value>
   </data>
   <data name="documentDBIn_databaseName_help" xml:space="preserve">
-    <value>您 DocumentDB 帳戶中之資料庫的名稱。資料將由此處讀取。</value>
+    <value>將讀取其資料的 Cosmos DB 資料庫。</value>
   </data>
   <data name="documentDBIn_databaseName_label" xml:space="preserve">
     <value>資料庫名稱</value>
   </data>
   <data name="documentDBIn_displayName" xml:space="preserve">
-    <value>Azure DocumentDB</value>
+    <value>Azure Cosmos DB</value>
   </data>
   <data name="documentDBIn_id_help" xml:space="preserve">
-    <value>此為將讀取的文件之識別碼。若 SQL 查詢或識別碼皆未指定，則會傳回該集合中的所有文件。</value>
+    <value>要讀取之文件的識別碼。若未指定 SQL 查詢或識別碼，將會傳回該集合中的所有文件。</value>
   </data>
   <data name="documentDBIn_id_label" xml:space="preserve">
     <value>文件識別碼 (選擇性)</value>
@@ -466,31 +466,31 @@
     <value>文件參數名稱</value>
   </data>
   <data name="documentDBOut_collectionName_help" xml:space="preserve">
-    <value>此為您資料庫中資料寫入目標的集合名稱。</value>
+    <value>資料庫集合。資料將會寫入該資料庫集合。</value>
   </data>
   <data name="documentDBOut_collectionName_label" xml:space="preserve">
     <value>集合名稱</value>
   </data>
   <data name="documentDBOut_connection_help" xml:space="preserve">
-    <value>內含您 DocumentDB 連接字串之應用程式設定的名稱</value>
+    <value>內含您 Cosmos DB 連接字串之應用程式設定的名稱</value>
   </data>
   <data name="documentDBOut_connection_label" xml:space="preserve">
-    <value>DocumentDB 帳戶連線</value>
+    <value>Cosmos DB 帳戶連線</value>
   </data>
   <data name="documentDBOut_createIfNotExists_help" xml:space="preserve">
-    <value>若為 true，即會自動建立您的資料庫及集合。</value>
+    <value>若為 true，則建立 Cosmos DB 資料庫與集合。</value>
   </data>
   <data name="documentDBOut_createIfNotExists_label" xml:space="preserve">
-    <value>需要為您建立 DocumentDB 資料庫及集合嗎?</value>
+    <value>若為 true，則建立 Cosmos DB 資料庫與集合</value>
   </data>
   <data name="documentDBOut_databaseName_help" xml:space="preserve">
-    <value>此為您 DocumentDB 帳戶中資料寫入目標的資料庫名稱。</value>
+    <value>資料要寫入的 Cosmos DB 資料庫。</value>
   </data>
   <data name="documentDBOut_databaseName_label" xml:space="preserve">
     <value>資料庫名稱</value>
   </data>
   <data name="documentDBOut_displayName" xml:space="preserve">
-    <value>Azure DocumentDB 文件</value>
+    <value>Azure Cosmos DB</value>
   </data>
   <data name="documentDBOut_name_help" xml:space="preserve">
     <value>用以在程式碼中識別此繫結的名稱</value>
@@ -517,7 +517,7 @@
     <value>參數名稱</value>
   </data>
   <data name="mobileTableIn_apiKey_help" xml:space="preserve">
-    <value>此為替您的行動應用程式指定 API 金鑰的應用程式設定名稱。&lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;詳細資訊&lt;/a&gt;。</value>
+    <value>此應用程式設定名稱會為您的行動裝置應用程式指定 API 金鑰。&lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;更多資訊&lt;/a&gt;。</value>
   </data>
   <data name="mobileTableIn_apiKey_label" xml:space="preserve">
     <value>API 金鑰查閱 (選用)</value>
@@ -529,10 +529,10 @@
     <value>行動應用程式 URL 查閱</value>
   </data>
   <data name="mobileTableIn_displayName" xml:space="preserve">
-    <value>Azure 行動資料表記錄</value>
+    <value>Azure 行動資料表</value>
   </data>
   <data name="mobileTableIn_id_help" xml:space="preserve">
-    <value>此為要擷取之記錄的識別碼。</value>
+    <value>要擷取之記錄的識別碼。</value>
   </data>
   <data name="mobileTableIn_id_label" xml:space="preserve">
     <value>記錄識別碼</value>
@@ -550,7 +550,7 @@
     <value>資料表名稱</value>
   </data>
   <data name="mobileTableOut_apiKey_help" xml:space="preserve">
-    <value>此為替您的行動應用程式指定 API 金鑰的應用程式設定名稱。&lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;詳細資訊&lt;/a&gt;。</value>
+    <value>此應用程式設定名稱會為您的行動裝置應用程式指定 API 金鑰。&lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;更多資訊&lt;/a&gt;。</value>
   </data>
   <data name="mobileTableOut_apiKey_label" xml:space="preserve">
     <value>API 金鑰查閱 (選用)</value>
@@ -562,7 +562,7 @@
     <value>行動應用程式 URL 查閱</value>
   </data>
   <data name="mobileTableOut_displayName" xml:space="preserve">
-    <value>Azure Mobile 資料表記錄</value>
+    <value>Azure 行動資料表</value>
   </data>
   <data name="mobileTableOut_name_help" xml:space="preserve">
     <value>用以在程式碼中識別此繫結的名稱</value>
@@ -586,7 +586,7 @@
     <value>Azure 通知中樞</value>
   </data>
   <data name="notificationHubOut_hubName_help" xml:space="preserve">
-    <value>此為用以傳送推播通知的通知中樞名稱。</value>
+    <value>用以傳送推播通知的通知中樞。</value>
   </data>
   <data name="notificationHubOut_hubName_label" xml:space="preserve">
     <value>通知中樞名稱</value>
@@ -622,7 +622,7 @@
     <value>SendGrid</value>
   </data>
   <data name="sendGrid_from_help" xml:space="preserve">
-    <value>此為訊息傳送來源的電子郵件。格式可以是 'user@host.com' 或 '顯示名稱 &lt;user@host.com&gt;'。若未在此處指定，可於程式碼中指定該值。</value>
+    <value>訊息的傳送電子郵件地址。格式可以是「使用者@主機.com」或「顯示名稱 &lt;使用者@主機.com&gt;」。若未在此指定，可以在程式碼中指定此值。</value>
   </data>
   <data name="sendGrid_from_label" xml:space="preserve">
     <value>來源位址</value>
@@ -709,7 +709,7 @@
     <value>存取權限</value>
   </data>
   <data name="serviceBusTrigger_connection_help" xml:space="preserve">
-    <value>內含您服務匯流排連接字串之應用程式設定的名稱。此連接字串必須具備「接聽」權限。</value>
+    <value>內含您服務匯流排連接字串之應用程式設定的名稱。連接字串必須具備接聽權限。</value>
   </data>
   <data name="serviceBusTrigger_connection_label" xml:space="preserve">
     <value>服務匯流排連接</value>
@@ -822,17 +822,8 @@
   <data name="table_tableName_label" xml:space="preserve">
     <value>資料表名稱</value>
   </data>
-  <data name="BlobTriggerBatch_description" xml:space="preserve">
-    <value>(實驗性) 每當 Blob 新增至指定的容器時，將會執行的 Batch 函式</value>
-  </data>
-  <data name="BlobTriggerCSharp_description" xml:space="preserve">
-    <value>每當 Blob 新增至指定的容器時，將會執行的 C# 函式</value>
-  </data>
-  <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>每當 Blob 新增至指定的容器時，將會執行的 F# 函式</value>
-  </data>
-  <data name="BlobTriggerNodeJS_description" xml:space="preserve">
-    <value>每當 Blob 新增至指定的容器時，將會執行的 JavaScript 函式</value>
+  <data name="BlobTrigger_description" xml:space="preserve">
+    <value>Blob 每次新增至指定的容器時，將會執行的函式</value>
   </data>
   <data name="CSharp_description" xml:space="preserve">
     <value>每當接收 GitHub webhook 要求時，將會執行的 C# 函式</value>
@@ -861,17 +852,8 @@
   <data name="EmptyPython_description" xml:space="preserve">
     <value>空白 Python 函式，不具觸發程序、輸入或輸出</value>
   </data>
-  <data name="EventHubTriggerCSharp_description" xml:space="preserve">
-    <value>每當事件中樞接收新事件時，將會執行的 C# 函式</value>
-  </data>
-  <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>每當事件中樞接收新事件時，將會執行的 F# 函式</value>
-  </data>
-  <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
-    <value>每當事件中樞接收新事件時，將會執行的 JavaScript 函式</value>
-  </data>
-  <data name="EventHubTriggerPython_description" xml:space="preserve">
-    <value>(實驗性) 每當事件中樞接收新事件時，將會執行的 Python 函式</value>
+  <data name="EventHubTrigger_description" xml:space="preserve">
+    <value>事件中樞接收到新的事件時，將會執行的函式</value>
   </data>
   <data name="FaceLocatorCSharp_description" xml:space="preserve">
     <value>C# 函式，會處理影像及輸出面的週框</value>
@@ -933,23 +915,8 @@
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
     <value>F# 函式，會在接收 HTTP 要求時更新儲存體資料表中的實體</value>
   </data>
-  <data name="HttpTriggerBatch_description" xml:space="preserve">
-    <value>(實驗性) 每當接收 HTTP 要求時，將會執行的 Batch 函式</value>
-  </data>
-  <data name="HttpTriggerCSharp_description" xml:space="preserve">
-    <value>每當接收 HTTP 要求時，將會執行的 C# 函式</value>
-  </data>
-  <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>每當接收 HTTP 要求時，將會執行的 F# 函式</value>
-  </data>
-  <data name="HttpTriggerNodeJS_description" xml:space="preserve">
-    <value>每當接收 HTTP 要求時，將會執行的 JavaScript 函式</value>
-  </data>
-  <data name="HttpTriggerPowerShell_description" xml:space="preserve">
-    <value>(預覽) 每當接收 HTTP 要求時，將會執行的 PowerShell 函式</value>
-  </data>
-  <data name="HttpTriggerPython_description" xml:space="preserve">
-    <value>(實驗性) Python 3 函數，會在收到 HTTP 要求時執行</value>
+  <data name="HttpTrigger_description" xml:space="preserve">
+    <value>接收到 HTTP 要求時，將會執行的函式，回應取決於本文或查詢字串中的資料</value>
   </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>C# 函式，會在每次 Blob 新增至指定的容器時建立重新調整大小的影像</value>
@@ -966,29 +933,8 @@
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>JavaScript 函式，透過入口網站「執行」按鈕手動觸發</value>
   </data>
-  <data name="QueueTriggerBash_description" xml:space="preserve">
-    <value>(實驗性) 每當訊息新增至指定的 Azure 佇列儲存體時，將會執行的 Bash 函式</value>
-  </data>
-  <data name="QueueTriggerBatch_description" xml:space="preserve">
-    <value>(實驗性) 每當訊息新增至指定的 Azure 佇列儲存體時，將會執行的 Batch 函式</value>
-  </data>
-  <data name="QueueTriggerCSharp_description" xml:space="preserve">
-    <value>每當訊息新增至指定的 Azure 佇列儲存體時，將會執行的 C# 函式</value>
-  </data>
-  <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>每當訊息新增至指定的 Azure 佇列儲存體時，將會執行的 F# 函數</value>
-  </data>
-  <data name="QueueTriggerNodeJS_description" xml:space="preserve">
-    <value>每當訊息新增至指定的 Azure 佇列儲存體時，將會執行的 JavaScript 函式</value>
-  </data>
-  <data name="QueueTriggerPHP_description" xml:space="preserve">
-    <value>(實驗性) 每當訊息新增至指定的 Azure 佇列儲存體時，將會執行的 PHP 函式</value>
-  </data>
-  <data name="QueueTriggerPowerShell_description" xml:space="preserve">
-    <value>(預覽) 每當訊息新增至指定的 Azure 佇列儲存體時，將會執行的 PowerShell 函式</value>
-  </data>
-  <data name="QueueTriggerPython_description" xml:space="preserve">
-    <value>(實驗性) 每當訊息新增至指定的 Azure 佇列儲存體時，將會執行的 Python 函式</value>
+  <data name="QueueTrigger_description" xml:space="preserve">
+    <value>訊息新增至指定的 Azure 儲存體佇列時，將會執行的函式</value>
   </data>
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
     <value>(實驗性) 每當檔案新增至外部檔案提供者時，將會執行的 Batch 函式。</value>
@@ -1014,14 +960,8 @@
   <data name="SasTokenFSharp_description" xml:space="preserve">
     <value>F# 函式，會為給定容器和 Blob 名稱產生 Azure 儲存體的 SAS 權杖。</value>
   </data>
-  <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>此 C# 函數可在有項目新增到特定佇列時傳送確認電子郵件</value>
-  </data>
-  <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>此 F# 函式可在有項目新增至特定佇列時傳送確認電子郵件</value>
-  </data>
-  <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>此 JavaScript 函數可在有項目新增到特定佇列時傳送確認電子郵件</value>
+  <data name="SendGrid_description" xml:space="preserve">
+    <value>新的項目新增到特定佇列時，會傳送確認電子郵件的函式</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
     <value>每當訊息新增至指定的服務匯流排佇列時，將會執行的 C# 函式</value>
@@ -1038,17 +978,11 @@
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>每當訊息新增至指定的服務匯流排主題時，將會執行的 JavaScript 函式</value>
   </data>
-  <data name="TimerTriggerCSharp_description" xml:space="preserve">
-    <value>C# 函式，會在指定的排程執行</value>
+  <data name="TimerTrigger_description" xml:space="preserve">
+    <value>於指定的排程執行之函式</value>
   </data>
-  <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>F# 函式，會在指定的排程執行</value>
-  </data>
-  <data name="TimerTriggerNodeJS_description" xml:space="preserve">
-    <value>JavaScript 函式，會在指定的排程執行</value>
-  </data>
-  <data name="TimerTriggerPowerShell_description" xml:space="preserve">
-    <value>(預覽) PowerShell 函式，會在指定的排程執行</value>
+  <data name="TimerTriggerExcelOutlook_description" xml:space="preserve">
+    <value>讀取兩份 Excel 表格，並依據資料傳送電子郵件，然後更新 Excel 表格。</value>
   </data>
   <data name="timerTrigger_schedule_errorText" xml:space="preserve">
     <value>Cron 運算式無效。如需深入了解，請參閱&lt;a target='_blank' href='https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/'&gt;文件&lt;/a&gt;。</value>
@@ -1096,16 +1030,16 @@
     <value>取用者群組的開頭與結尾必須是字母或數字，且只可包含字母、數字、連字號、句點 (.) 及底線。也可使用 $Default 群組。此名稱必須介於 1 到 50 個字元之間。</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
-    <value>Azure DocumentDB 文件</value>
+    <value>Azure Cosmos DB</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>SendGrid 開發人員的 API 金鑰</value>
+    <value>內含您 SendGrid 開發人員 API 金鑰之應用程式設定的名稱。</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
-    <value>SendGrid API 金鑰</value>
+    <value>SendGrid API 金鑰應用程式設定</value>
   </data>
   <data name="bot_botId_help" xml:space="preserve">
-    <value>建立並傳送訊息至 Bot 時，活動的 From 屬性將使用此識別碼，這會填入已傳送活動的 ChannelAccount.Id。</value>
+    <value>此識別碼會在建立訊息並將其傳送到 Bot 時，用於活動的 From 屬性。這會填入已傳送之活動的 ChannelAccount.Id。</value>
   </data>
   <data name="bot_botId_label" xml:space="preserve">
     <value>傳送者識別碼</value>
@@ -1117,14 +1051,13 @@
     <value>Bot Framework (預覽版)</value>
   </data>
   <data name="bot_in_secret_help" xml:space="preserve">
-    <value>直接線路金鑰可於 Bot Framework 入口網站的直接線路通道設定頁面直接產生; 若此欄位保留空白，則會在應用程式設定 'AzureWebJobsBotFrameworkDirectLineSecret' 中尋找值</value>
+    <value>包含直接線路金鑰之應用程式設定的名稱。其可於 Bot Framework 入口網站的直接線路通道組態頁面直接產生。若此欄位空白，則為應用程式設定 'AzureWebJobsBotFrameworkDirectLineSecret'</value>
   </data>
   <data name="bot_in_secret_label" xml:space="preserve">
     <value>直接線路金鑰</value>
   </data>
   <data name="bot_out_secret_help" xml:space="preserve">
     <value>直接線路金鑰可於 Bot Framework 入口網站的直接線路通道設定頁面直接產生; 若此欄位保留空白，則會在應用程式設定 'AzureWebJobsBotFrameworkDirectLineSecret' 中尋找值</value>
-
   </data>
   <data name="bot_out_secret_label" xml:space="preserve">
     <value>直接線路金鑰</value>
@@ -1141,17 +1074,185 @@
   <data name="bot_out_name_label" xml:space="preserve">
     <value>Bot 參數名稱</value>
   </data>
-  <data name="ScheduledMailCSharp_description" xml:space="preserve">
-    <value>(預覽) C# 函式，會定期傳送電子郵件</value>
+  <data name="variables_loginToAAD" xml:space="preserve">
+    <value>按一下可擷取您的主體識別碼</value>
+  </data>
+  <data name="excel_in_displayName" xml:space="preserve">
+    <value>Excel 表格</value>
+  </data>
+  <data name="excel_in_name_label" xml:space="preserve">
+    <value>資料表參數名稱</value>
+  </data>
+  <data name="excel_in_name_help" xml:space="preserve">
+    <value>在您函式程式碼中用以識別此繫結的名稱。</value>
+  </data>
+  <data name="excel_in_path_label" xml:space="preserve">
+    <value>Excel 活頁簿的路徑</value>
+  </data>
+  <data name="excel_in_path_help" xml:space="preserve">
+    <value>OneDrive 中進入 Excel 活頁簿的路徑。</value>
+  </data>
+  <data name="excel_in_worksheetName_label" xml:space="preserve">
+    <value>工作表名稱</value>
+  </data>
+  <data name="excel_in_worksheetName_help" xml:space="preserve">
+    <value>在其中找到資料表的工作表。</value>
+  </data>
+  <data name="excel_in_tableName_label" xml:space="preserve">
+    <value>資料表名稱</value>
+  </data>
+  <data name="excel_in_tableName_help" xml:space="preserve">
+    <value>資料表的名稱。若未指定，將會使用工作表的內容。</value>
+  </data>
+  <data name="excel_in_path_error" xml:space="preserve">
+    <value>必須是有效的路徑</value>
+  </data>
+  <data name="excel_out_displayName" xml:space="preserve">
+    <value>Excel 表格</value>
+  </data>
+  <data name="excel_out_name_label" xml:space="preserve">
+    <value>資料表參數名稱</value>
+  </data>
+  <data name="excel_out_name_help" xml:space="preserve">
+    <value>在您函式程式碼中用以識別此繫結的名稱。</value>
+  </data>
+  <data name="excel_out_path_label" xml:space="preserve">
+    <value>Excel 活頁簿的路徑</value>
+  </data>
+  <data name="excel_out_path_help" xml:space="preserve">
+    <value>OneDrive 中進入 Excel 活頁簿的路徑。</value>
+  </data>
+  <data name="excel_out_worksheetName_label" xml:space="preserve">
+    <value>工作表名稱</value>
+  </data>
+  <data name="excel_out_worksheetName_help" xml:space="preserve">
+    <value>在其中找到資料表的工作表。</value>
+  </data>
+  <data name="excel_out_tableName_label" xml:space="preserve">
+    <value>資料表名稱</value>
+  </data>
+  <data name="excel_out_tableName_help" xml:space="preserve">
+    <value>資料表的名稱。若未指定，將會使用工作表的內容。</value>
+  </data>
+  <data name="excel_out_updateType_label" xml:space="preserve">
+    <value>編輯模式</value>
+  </data>
+  <data name="excel_out_updateType_help" xml:space="preserve">
+    <value>要對資料表進行的變更類型。</value>
+  </data>
+  <data name="excel_out_path_error" xml:space="preserve">
+    <value>必須是有效的路徑</value>
+  </data>
+  <data name="outlook_displayName" xml:space="preserve">
+    <value>Outlook 郵件訊息</value>
+  </data>
+  <data name="outlook_out_label_help" xml:space="preserve">
+    <value>在您函式程式碼中用以識別此繫結的名稱</value>
+  </data>
+  <data name="outlook_out_label_name" xml:space="preserve">
+    <value>訊息參數名稱</value>
+  </data>
+  <data name="outlook_out_name_help" xml:space="preserve">
+    <value>在您函式程式碼中用以識別此繫結的名稱</value>
+  </data>
+  <data name="outlook_out_name_label" xml:space="preserve">
+    <value>訊息參數名稱</value>
+  </data>
+  <data name="principal_id_label_token" xml:space="preserve">
+    <value>主體識別碼應用程式設定名稱</value>
+  </data>
+  <data name="principal_id_help_token" xml:space="preserve">
+    <value>用以驗證對所需資源之要求的主體識別碼</value>
+  </data>
+  <data name="principal_id_label_excel_in" xml:space="preserve">
+    <value>主體識別碼應用程式設定名稱</value>
+  </data>
+  <data name="principal_id_help_excel_in" xml:space="preserve">
+    <value>用以驗證對所需資源之要求的主體識別碼</value>
+  </data>
+  <data name="principal_id_label_excel_out" xml:space="preserve">
+    <value>主體識別碼應用程式設定名稱</value>
+  </data>
+  <data name="principal_id_help_excel_out" xml:space="preserve">
+    <value>用以驗證對所需資源之要求的主體識別碼</value>
+  </data>
+  <data name="principal_id_label_outlook" xml:space="preserve">
+    <value>主體識別碼應用程式設定名稱</value>
+  </data>
+  <data name="principal_id_help_outlook" xml:space="preserve">
+    <value>用以驗證對所需資源之要求的主體識別碼</value>
+  </data>
+  <data name="principal_id_label_onedrive_in" xml:space="preserve">
+    <value>主體識別碼應用程式設定名稱</value>
+  </data>
+  <data name="principal_id_help_onedrive_in" xml:space="preserve">
+    <value>用以驗證對所需資源之要求的主體識別碼</value>
+  </data>
+  <data name="principal_id_label_onedrive_out" xml:space="preserve">
+    <value>主體識別碼應用程式設定名稱</value>
+  </data>
+  <data name="principal_id_help_onedrive_out" xml:space="preserve">
+    <value>用以驗證對所需資源之要求的主體識別碼</value>
+  </data>
+  <data name="principal_id_label_graphwebhook" xml:space="preserve">
+    <value>主體識別碼應用程式設定名稱</value>
+  </data>
+  <data name="principal_id_help_graphwebhook" xml:space="preserve">
+    <value>用以驗證對所需資源之要求的主體識別碼</value>
+  </data>
+  <data name="idToken_label_token" xml:space="preserve">
+    <value>識別碼權杖</value>
+  </data>
+  <data name="idToken_help_token" xml:space="preserve">
+    <value>運算式或明確的識別碼權杖，會在向 MS Graph 驗證時使用</value>
+  </data>
+  <data name="idToken_label_excel_in" xml:space="preserve">
+    <value>識別碼權杖</value>
+  </data>
+  <data name="idToken_help_excel_in" xml:space="preserve">
+    <value>運算式或明確的識別碼權杖，會在向 MS Graph 驗證時使用</value>
+  </data>
+  <data name="idToken_label_excel_out" xml:space="preserve">
+    <value>識別碼權杖</value>
+  </data>
+  <data name="idToken_help_excel_out" xml:space="preserve">
+    <value>運算式或明確的識別碼權杖，會在向 MS Graph 驗證時使用</value>
+  </data>
+  <data name="idToken_label_outlook" xml:space="preserve">
+    <value>識別碼權杖</value>
+  </data>
+  <data name="idToken_help_outlook" xml:space="preserve">
+    <value>運算式或明確的識別碼權杖，會在向 MS Graph 驗證時使用</value>
+  </data>
+  <data name="idToken_label_onedrive_in" xml:space="preserve">
+    <value>識別碼權杖</value>
+  </data>
+  <data name="idToken_help_onedrive_in" xml:space="preserve">
+    <value>運算式或明確的識別碼權杖，會在向 MS Graph 驗證時使用</value>
+  </data>
+  <data name="idToken_label_onedrive_out" xml:space="preserve">
+    <value>識別碼權杖</value>
+  </data>
+  <data name="idToken_help_onedrive_out" xml:space="preserve">
+    <value>運算式或明確的識別碼權杖，會在向 MS Graph 驗證時使用</value>
+  </data>
+  <data name="idToken_label_graphwebhook" xml:space="preserve">
+    <value>識別碼權杖</value>
+  </data>
+  <data name="idToken_help_graphwebhook" xml:space="preserve">
+    <value>運算式或明確的識別碼權杖，會在向 MS Graph 驗證時使用</value>
+  </data>
+  <data name="ScheduledMail_description" xml:space="preserve">
+    <value>將定期傳送電子郵件的函式</value>
   </data>
   <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
-    <value>此為用於擷取文件集合的選擇性 DocumentDB SQL 查詢。若 SQL 查詢或識別碼皆未指定，則會傳回該集合中的所有文件。</value>
+    <value>選擇性的 Cosmos DB API SQL 查詢，可用於擷取一組文件。若未指定 SQL 查詢或識別碼，將會傳回該集合中的所有文件。</value>
   </data>
   <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
     <value>SQL 查詢 (選擇性)</value>
   </data>
   <data name="eventHubTrigger_cardinality_help" xml:space="preserve">
-    <value>觸發程序輸入的基數。若輸入只包含一則訊息，請選擇 [一個]; 若輸入包含多則訊息，請選擇 [多個]。若未指定，將會採用預設值 [一個]</value>
+    <value>觸發程序輸入的基數。若輸入只包含一則訊息，請選擇 [一個]; 若輸入包含多則訊息，請選擇 [多個]。若未指定，預設值為 [多個]</value>
   </data>
   <data name="HttpTriggerCSharpWithParameters_description" xml:space="preserve">
     <value>每當接收 HTTP 要求時，將會執行的 C# 函式</value>
@@ -1166,9 +1267,9 @@
     <value>(實驗性質) CD 函數，可使用 CDS SDK 呼叫進入 CDS 環境。</value>
   </data>
   <data name="cdsTemplate_warningNotConfigured" xml:space="preserve">
-    <value>此範本對於函數應用程式需要 AAD 設定。範本需要下列權限: 
+    <value>此範本需要函式應用程式設定 AAD。此範本需要下列權限:
 
-nCommon Data Service - 存取 Common Data Service
+Common Data Service - 存取 Common Data Service
 Microsoft Azure 服務管理 API - 以組織使用者的身分存取 Azure 服務管理 (預覽)。</value>
   </data>
   <data name="temp_category_monitoring" xml:space="preserve">
@@ -1200,5 +1301,423 @@ Microsoft Azure 服務管理 API - 以組織使用者的身分存取 Azure 服�
   </data>
   <data name="HttpPOST(CRUD)Queue-FSharp_description" xml:space="preserve">
     <value>會在收到 Http Post 時將資料推送到佇列的 F# 函式。</value>
+  </data>
+  <data name="BlobTriggerNodeTS_description" xml:space="preserve">
+    <value>(實驗性) 此 TypeScript 函式會在有 Blob 新增至指定的容器時執行</value>
+  </data>
+  <data name="EventHubTriggerNodeTS_description" xml:space="preserve">
+    <value>(實驗性) 此 TypeScript 函式會在事件中樞收到新事件時執行</value>
+  </data>
+  <data name="GenericWebhookNodeTS_description" xml:space="preserve">
+    <value>(實驗性) 此 TypeScript 函式會在其收到 Webhook 要求時執行</value>
+  </data>
+  <data name="GithubWebhookNodeTS_description" xml:space="preserve">
+    <value>(實驗性) 此 TypeScript 函式會在其收到 GitHub Webhook 要求時執行</value>
+  </data>
+  <data name="HttpTriggerNodeTS_description" xml:space="preserve">
+    <value>(實驗性) 此 TypeScript 函式會在其收到 HTTP 要求時執行</value>
+  </data>
+  <data name="QueueTriggerNodeTS_description" xml:space="preserve">
+    <value>(實驗性) 此 TypeScript 函式會在有訊息新增到指定的 Azure 佇列儲存體時執行</value>
+  </data>
+  <data name="ServiceBusQueueTriggerNodeTS_description" xml:space="preserve">
+    <value>(實驗性) 此 TypeScript 函式會在有訊息新增到指定的服務匯流排佇列時執行</value>
+  </data>
+  <data name="ServiceBusTopicTriggerNodeTS_description" xml:space="preserve">
+    <value>(實驗性) 此 TypeScript 函式會在有訊息新增到指定的服務匯流排主題時執行</value>
+  </data>
+  <data name="ManualTriggerNodeTS_description" xml:space="preserve">
+    <value>(實驗性) 此 TypeScript 函式須透過入口網站的 [執行] 按鈕手動觸發</value>
+  </data>
+  <data name="IoTHubTriggerCSharp_description" xml:space="preserve">
+    <value>此 C# 函式會在 IoT 中樞從 IoT 中樞 (事件中樞) 收到新事件時執行</value>
+  </data>
+  <data name="ioTHubTrigger_connection_help" xml:space="preserve">
+    <value>這是儲存在應用程式設定中之 IoT 中樞連接字串的金鑰。該金鑰必須具備「接收」權限。若無任何金鑰，可按一下 [新增] 加以建立。</value>
+  </data>
+  <data name="ioTHubTrigger_connection_label" xml:space="preserve">
+    <value>連接字串</value>
+  </data>
+  <data name="ioTHubTrigger_displayName" xml:space="preserve">
+    <value>Azure IoT 中樞</value>
+  </data>
+  <data name="ioTHubTrigger_EntityPath" xml:space="preserve">
+    <value>實體路徑</value>
+  </data>
+  <data name="defaultConsumerGroup" xml:space="preserve">
+    <value>$Default</value>
+  </data>
+  <data name="defaultQueueName" xml:space="preserve">
+    <value>我的佇列</value>
+  </data>
+  <data name="defaultsubscriptionName" xml:space="preserve">
+    <value>我的訂閱</value>
+  </data>
+  <data name="defaultTopicName" xml:space="preserve">
+    <value>我的主題</value>
+  </data>
+  <data name="servicebusQueuePicker_queueName" xml:space="preserve">
+    <value>佇列</value>
+  </data>
+  <data name="IoTHubTriggerFSharp_description" xml:space="preserve">
+    <value>此 F# 函式會在 IoT 中樞從 IoT 中樞 (事件中樞) 收到新事件時執行</value>
+  </data>
+  <data name="IoTHubTriggerNodeJS_description" xml:space="preserve">
+    <value>此 Javascript 函式會在 IoT 中樞從 IoT 中樞 (事件中樞) 收到新事件時執行</value>
+  </data>
+  <data name="IoTHubTriggerNodeTS_description" xml:space="preserve">
+    <value>此 Typescript 函式會在 IoT 中樞從 IoT 中樞 (事件中樞) 收到新事件時執行</value>
+  </data>
+  <data name="myEventHub" xml:space="preserve">
+    <value>我的事件中樞</value>
+  </data>
+  <data name="eventHubName" xml:space="preserve">
+    <value>事件中樞名稱</value>
+  </data>
+  <data name="oneDrive_in_displayName" xml:space="preserve">
+    <value>OneDrive 檔案</value>
+  </data>
+  <data name="oneDrive_in_name_help" xml:space="preserve">
+    <value>在您函式程式碼中用以識別此繫結的名稱。</value>
+  </data>
+  <data name="oneDrive_in_name_label" xml:space="preserve">
+    <value>檔案參數名稱</value>
+  </data>
+  <data name="oneDrive_in_path_help" xml:space="preserve">
+    <value>OneDrive 中進入檔案的路徑。</value>
+  </data>
+  <data name="oneDrive_in_path_label" xml:space="preserve">
+    <value>檔案路徑</value>
+  </data>
+  <data name="oneDrive_in_path_error" xml:space="preserve">
+    <value>必須是有效的路徑</value>
+  </data>
+  <data name="oneDrive_out_displayName" xml:space="preserve">
+    <value>OneDrive 檔案</value>
+  </data>
+  <data name="oneDrive_out_name_help" xml:space="preserve">
+    <value>在您函式程式碼中用以識別此繫結的名稱。</value>
+  </data>
+  <data name="oneDrive_out_name_label" xml:space="preserve">
+    <value>檔案參數名稱</value>
+  </data>
+  <data name="oneDrive_out_path_help" xml:space="preserve">
+    <value>OneDrive 中進入檔案的路徑。</value>
+  </data>
+  <data name="oneDrive_out_path_label" xml:space="preserve">
+    <value>檔案路徑</value>
+  </data>
+  <data name="oneDrive_out_path_error" xml:space="preserve">
+    <value>必須是有效的路徑</value>
+  </data>
+  <data name="MSGraphWebhook_displayName" xml:space="preserve">
+    <value>Microsoft Graph Webhook 訂閱</value>
+  </data>
+  <data name="MSGraphWebhook_in_name_label" xml:space="preserve">
+    <value>訂閱參數名稱</value>
+  </data>
+  <data name="MSGraphWebhook_in_changeType_help" xml:space="preserve">
+    <value>僅當設定的動作為建立時才需要。指定訂閱的資源中，要發出通知的變更類型。支援的值包括: 建立、更新、 刪除。如有多個值，可使用逗號分隔清單加以合併。</value>
+  </data>
+  <data name="MSGraphWebhook_in_changeType_label" xml:space="preserve">
+    <value>要訂閱的變更類型</value>
+  </data>
+  <data name="MSGraphWebhook_in_listen_help" xml:space="preserve">
+    <value>此函式要回應之 Webhook 所屬的圖形資源。每個函式應用程式只可有一個函式註冊指定的 resourceType 值。</value>
+  </data>
+  <data name="MSGraphWebhook_in_listen_label" xml:space="preserve">
+    <value>要訂閱的資源</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_displayName" xml:space="preserve">
+    <value>Microsoft Graph Webhook</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_in_name_label" xml:space="preserve">
+    <value>修改過的資源參數名稱</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_Type_help" xml:space="preserve">
+    <value>此類型指定觸發您函式的通知種類</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_Type_label" xml:space="preserve">
+    <value>要接聽的通知類型</value>
+  </data>
+  <data name="MSGraphWebhook_description" xml:space="preserve">
+    <value>此 C# 函式會在收到 O365 Webhook 要求時執行。</value>
+  </data>
+  <data name="RefreshMSGraphSubscriptions_description" xml:space="preserve">
+    <value>定期重新整理所有的 O365 訂閱</value>
+  </data>
+  <data name="token_displayName" xml:space="preserve">
+    <value>驗證權杖</value>
+  </data>
+  <data name="token_in_name_help" xml:space="preserve">
+    <value>參數的名稱。在您的程式碼中，該名稱將用於識別此權杖</value>
+  </data>
+  <data name="token_in_name_label" xml:space="preserve">
+    <value>驗證權杖參數名稱</value>
+  </data>
+  <data name="token_in_resource_help" xml:space="preserve">
+    <value>正對其要求權杖的 AAD 資源 URL</value>
+  </data>
+  <data name="token_in_resource_label" xml:space="preserve">
+    <value>資源 URL</value>
+  </data>
+  <data name="MSGraphWebhookCreator_displayName" xml:space="preserve">
+    <value>Microsoft Graph Webhook 訂閱</value>
+  </data>
+  <data name="MSGraphWebhookCreator_in_name_help" xml:space="preserve">
+    <value>在您函式程式碼中用以識別此繫結的名稱。</value>
+  </data>
+  <data name="MSGraphWebhookCreator_in_name_label" xml:space="preserve">
+    <value>訂閱參數名稱</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_in_help_label" xml:space="preserve">
+    <value>在您函式程式碼中用以識別修改過之資源的名稱</value>
+  </data>
+  <data name="MSGraphWebhook_in_name_help" xml:space="preserve">
+    <value>在您函式程式碼中用以識別此繫結的名稱</value>
+  </data>
+  <data name="temp_category_msgraph" xml:space="preserve">
+    <value>Microsoft Graph</value>
+  </data>
+  <data name="documentDBIn_partitionKey_help" xml:space="preserve">
+    <value>要讀取之文件的分割區索引鍵。僅適用於指定了識別碼的情況。</value>
+  </data>
+  <data name="documentDBOut_partitionKey_help" xml:space="preserve">
+    <value>建立新集合時所要使用的分割區索引鍵。僅適用於選取要在集合不存在時自動建立集合的情況。</value>
+  </data>
+  <data name="documentDB_partitionKey_label" xml:space="preserve">
+    <value>分割區索引鍵 (選用)</value>
+  </data>
+  <data name="EventGridTriggerCSharp_description" xml:space="preserve">
+    <value>此 C# 函式會在事件格線收到新事件時執行</value>
+  </data>
+  <data name="eventGrid_trigger_displayName" xml:space="preserve">
+    <value>事件格線觸發程序</value>
+  </data>
+  <data name="eventGrid_trigger_name_help" xml:space="preserve">
+    <value>事件觸發程序參數名稱</value>
+  </data>
+  <data name="eventGrid_trigger_name_label" xml:space="preserve">
+    <value>事件觸發程序參數名稱</value>
+  </data>
+  <data name="CosmosDBTriggerCSharp_description" xml:space="preserve">
+    <value>此 C# 函式會在文件集合中的文件有所變更時執行。</value>
+  </data>
+  <data name="CosmosDBTriggerJavascript_description" xml:space="preserve">
+    <value>此 JavaScript 函式會在文件集合中的文件有所變更時執行。</value>
+  </data>
+  <data name="cosmosDBIn_collectionName_help" xml:space="preserve">
+    <value>要監視之集合的名稱。</value>
+  </data>
+  <data name="cosmosDBIn_collectionName_label" xml:space="preserve">
+    <value>集合名稱</value>
+  </data>
+  <data name="cosmosDBIn_connection_help" xml:space="preserve">
+    <value>應用程式設定的名稱。此應用程式設定包含對服務的連接字串，而該服務則包含要監視的集合。</value>
+  </data>
+  <data name="cosmosDBIn_connection_label" xml:space="preserve">
+    <value>Cosmos DB 帳戶連線</value>
+  </data>
+  <data name="cosmosDBIn_databaseName_help" xml:space="preserve">
+    <value>Cosmos DB 資料庫的名稱。該資料庫包含要監視的集合。</value>
+  </data>
+  <data name="cosmosDBIn_databaseName_label" xml:space="preserve">
+    <value>資料庫名稱</value>
+  </data>
+  <data name="cosmosDBIn_leaseCollectionName_help" xml:space="preserve">
+    <value>集合的名稱。該集合將用以存放租用。</value>
+  </data>
+  <data name="cosmosDBIn_leaseCollectionName_label" xml:space="preserve">
+    <value>租用的集合名稱</value>
+  </data>
+  <data name="cosmosDBIn_leaseDatabaseName_help" xml:space="preserve">
+    <value>資料庫的名稱。該資料庫包含用以存放租用的集合。</value>
+  </data>
+  <data name="cosmosDBIn_leaseDatabaseName_label" xml:space="preserve">
+    <value>租用的資料庫名稱</value>
+  </data>
+  <data name="cosmosDBIn_name_help" xml:space="preserve">
+    <value>用以在程式碼中識別此繫結的名稱</value>
+  </data>
+  <data name="cosmosDBIn_name_label" xml:space="preserve">
+    <value>文件集合參數名稱</value>
+  </data>
+  <data name="cosmosDB_trigger_displayName" xml:space="preserve">
+    <value>Azure Cosmos DB</value>
+  </data>
+  <data name="IoTHubServiceBusTopicTriggerCSharp_description" xml:space="preserve">
+    <value>此 C# 函式會在有訊息新增到指定的服務匯流排主題時執行</value>
+  </data>
+  <data name="temp_category_IoTHub" xml:space="preserve">
+    <value>IoT 中樞</value>
+  </data>
+  <data name="cosmosDBIn_createIfNotExists_help" xml:space="preserve">
+    <value>確定存在後自動建立租用集合。</value>
+  </data>
+  <data name="cosmosDBIn_createIfNotExists_label" xml:space="preserve">
+    <value>若不存在，則建立租用集合</value>
+  </data>
+  <data name="EventGridTriggerJavascript_description" xml:space="preserve">
+    <value>此 JavaScript 函式會在事件格線收到新事件時執行</value>
+  </data>
+  <data name="Identity_help" xml:space="preserve">
+    <value>用以執行動作的身分識別。</value>
+  </data>
+  <data name="Identity_label" xml:space="preserve">
+    <value>身分識別</value>
+  </data>
+  <data name="userid_help" xml:space="preserve">
+    <value>僅當身分識別設定為 userFromId 時才需要。與先前登入之使用者相關聯的使用者主體識別碼。</value>
+  </data>
+  <data name="userid_label" xml:space="preserve">
+    <value>使用者識別碼</value>
+  </data>
+  <data name="usertoken_help" xml:space="preserve">
+    <value>僅當身分識別設定為 userFromToken 時才需要。
+對函式應用程式有效的權杖。</value>
+  </data>
+  <data name="usertoken_label" xml:space="preserve">
+    <value>使用者權杖</value>
+  </data>
+  <data name="ProfilePhotoAPI_description" xml:space="preserve">
+    <value>將會傳回呼叫 Azure Active Directory 使用者個人資料相片的函式</value>
+  </data>
+  <data name="OutlookMessageWebhookCreator_description" xml:space="preserve">
+    <value>將會為呼叫 Azure Active Directory 使用者信箱中的訊息註冊 Webhook 訂用帳戶的函式</value>
+  </data>
+  <data name="OutlookMessageWebhookDeleter_description" xml:space="preserve">
+    <value>將會為呼叫 Azure Active Directory 使用者之此應用程式，取消註冊所有 Microsoft Graph Webhook 訂用帳戶的函式</value>
+  </data>
+  <data name="OutlookMessageWebhookHandler_description" xml:space="preserve">
+    <value>接收 Outlook 訊息 Webhook 的函式</value>
+  </data>
+  <data name="OutlookMessageWebhookRefresher_description" xml:space="preserve">
+    <value>將會重新整理此應用程式之所有 Microsoft Graph Webhook 訂用帳戶的函式</value>
+  </data>
+  <data name="identity_option_userFromRequest_label" xml:space="preserve">
+    <value>HTTP 要求中的使用者</value>
+  </data>
+  <data name="identity_option_userFromId_label" xml:space="preserve">
+    <value>識別碼中的使用者</value>
+  </data>
+  <data name="identity_option_userFromToken_label" xml:space="preserve">
+    <value>權杖中的使用者</value>
+  </data>
+  <data name="identity_option_clientCredentials_label" xml:space="preserve">
+    <value>用戶端認證</value>
+  </data>
+  <data name="MSGraphWebhook_out_action_label" xml:space="preserve">
+    <value>動作</value>
+  </data>
+  <data name="MSGraphWebhook_out_action_help" xml:space="preserve">
+    <value>要對訂閱執行的動作</value>
+  </data>
+  <data name="GraphWebhookSubscription_in_filter_help" xml:space="preserve">
+    <value>若設為 userFromRequest，則繫結只會擷取呼叫使用者擁有的訂閱 (僅適用於 HTTP 觸發程序)</value>
+  </data>
+  <data name="GraphWebhookSubscription_in_filter_label" xml:space="preserve">
+    <value>篩選</value>
+  </data>
+  <data name="activityTrigger_activity_errorText" xml:space="preserve">
+    <value>活動名稱無效</value>
+  </data>
+  <data name="activityTrigger_activity_help" xml:space="preserve">
+    <value>(選擇性) 您活動的名稱。若未指定，則預設為您 Function 的名稱。</value>
+  </data>
+  <data name="activityTrigger_activity_label" xml:space="preserve">
+    <value>活動名稱</value>
+  </data>
+  <data name="activityTrigger_displayName" xml:space="preserve">
+    <value>活動</value>
+  </data>
+  <data name="activityTrigger_name_help" xml:space="preserve">
+    <value>用以在程式碼中識別此繫結的名稱</value>
+  </data>
+  <data name="activityTrigger_name_label" xml:space="preserve">
+    <value>活動參數名稱</value>
+  </data>
+  <data name="orchestrationClientIn_displayName" xml:space="preserve">
+    <value>協調流程用戶端</value>
+  </data>
+  <data name="orchestrationClientIn_name_help" xml:space="preserve">
+    <value>用以在程式碼中識別此繫結的名稱</value>
+  </data>
+  <data name="orchestrationClientIn_name_label" xml:space="preserve">
+    <value>協調流程用戶端參數名稱</value>
+  </data>
+  <data name="orchestrationTrigger_displayName" xml:space="preserve">
+    <value>協調流程</value>
+  </data>
+  <data name="orchestrationTrigger_name_help" xml:space="preserve">
+    <value>用以在程式碼中識別此繫結的名稱</value>
+  </data>
+  <data name="orchestrationTrigger_name_label" xml:space="preserve">
+    <value>協調流程參數名稱</value>
+  </data>
+  <data name="orchestrationTrigger_orchestration_errorText" xml:space="preserve">
+    <value>協調流程名稱無效</value>
+  </data>
+  <data name="orchestrationTrigger_orchestration_help" xml:space="preserve">
+    <value>(選擇性) 您協調流程的名稱。若未指定，則預設為您 Function 的名稱。</value>
+  </data>
+  <data name="orchestrationTrigger_orchestration_label" xml:space="preserve">
+    <value>協調流程名稱</value>
+  </data>
+  <data name="DurableFunctionsActivity_description" xml:space="preserve">
+    <value>會在每次協調器函式呼叫活動時執行的函式。</value>
+  </data>
+  <data name="DurableFunctionsOrchestrator_description" xml:space="preserve">
+    <value>會在序列中叫用活動函式的協調器函式。</value>
+  </data>
+  <data name="DurableFunctionsHttpStart_description" xml:space="preserve">
+    <value>會在每次收到執行協調器函式的 HTTP 要求時觸發的函式。</value>
+  </data>
+  <data name="temp_category_durableFunctions" xml:space="preserve">
+    <value>Durable Functions</value>
+  </data>
+  <data name="BlobTrigger_name" xml:space="preserve">
+    <value>Blob 觸發程序</value>
+  </data>
+  <data name="EventHubTrigger_name" xml:space="preserve">
+    <value>事件中樞觸發程序</value>
+  </data>
+  <data name="HttpTrigger_name" xml:space="preserve">
+    <value>HTTP 觸發程序</value>
+  </data>
+  <data name="OutlookMessageWebhookCreator_name" xml:space="preserve">
+    <value>Outlook 訊息 Webhook 訂閱建立者</value>
+  </data>
+  <data name="OutlookMessageWebhookDeleter_name" xml:space="preserve">
+    <value>Outlook 訊息 Webhook 訂閱刪除者</value>
+  </data>
+  <data name="OutlookMessageWebhookHandler_name" xml:space="preserve">
+    <value>Outlook 訊息 Webhook 處理常式</value>
+  </data>
+  <data name="OutlookMessageWebhookRefresher_name" xml:space="preserve">
+    <value>Outlook 訊息 Webhook 訂閱重新整理者</value>
+  </data>
+  <data name="ProfilePhotoAPI_name" xml:space="preserve">
+    <value>Microsoft Graph 個人檔案相片 API</value>
+  </data>
+  <data name="QueueTrigger_name" xml:space="preserve">
+    <value>佇列觸發程序</value>
+  </data>
+  <data name="ScheduledMail_name" xml:space="preserve">
+    <value>排程的郵件</value>
+  </data>
+  <data name="SendGrid_name" xml:space="preserve">
+    <value>SendGrid</value>
+  </data>
+  <data name="TimerTrigger_name" xml:space="preserve">
+    <value>計時器觸發程序</value>
+  </data>
+  <data name="DurableFunctionsActivity_name" xml:space="preserve">
+    <value>耐久的 Functions 活動</value>
+  </data>
+  <data name="DurableFunctionsHttpStart_name" xml:space="preserve">
+    <value>耐久的 Functions Http 入門</value>
+  </data>
+  <data name="DurableFunctionsOrchestrator_name" xml:space="preserve">
+    <value>耐久的 Functions Orchestrator</value>
   </data>
 </root>

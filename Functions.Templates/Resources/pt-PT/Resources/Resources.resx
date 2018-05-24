@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -124,7 +124,7 @@
     <value>Ligação do Hub de Eventos</value>
   </data>
   <data name="eventHubOut_displayName" xml:space="preserve">
-    <value>Hub de Eventos do Azure</value>
+    <value>Hubs de Eventos do Azure</value>
   </data>
   <data name="eventHubOut_name_help" xml:space="preserve">
     <value>O nome utilizado para identificar este enlace no código</value>
@@ -136,7 +136,7 @@
     <value>O nome do hub de eventos deve começar e terminar com uma letra ou um número e apenas pode conter letras, números, o hífen, o ponto final, e o caráter de sublinhado. O nome deve ter entre 1 e 50 carateres.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
-    <value>Este é o nome do hub de eventos para o qual o evento será enviado.</value>
+    <value>O nome do hub de eventos para o qual o evento será enviado.</value>
   </data>
   <data name="eventHubOut_path_label" xml:space="preserve">
     <value>Nome do Hub de eventos</value>
@@ -154,7 +154,7 @@
     <value>Grupo de consumidor do Hub de Eventos</value>
   </data>
   <data name="eventHubTrigger_displayName" xml:space="preserve">
-    <value>Hub de Eventos do Azure</value>
+    <value>Hubs de Eventos do Azure</value>
   </data>
   <data name="eventHubTrigger_name_help" xml:space="preserve">
     <value>O nome utilizado para identificar este acionador no código</value>
@@ -187,7 +187,7 @@
     <value>Nome da fila</value>
   </data>
   <data name="queueOut_queueName_help" xml:space="preserve">
-    <value>Este é a fila para a qual a mensagem será enviada. Se a fila ainda não existir, será criada uma na conta de armazenamento especificada.</value>
+    <value>A fila para a qual a mensagem será enviada. Se a fila ainda não existir, será criada uma na conta de armazenamento especificada.</value>
   </data>
   <data name="temp_category_core" xml:space="preserve">
     <value>Núcleo</value>
@@ -211,7 +211,7 @@
     <value>Nome do parâmetro carimbo de data/hora</value>
   </data>
   <data name="timerTrigger_schedule_help" xml:space="preserve">
-    <value>Introduzir uma expressão cron com o formato "{second} {minute} {hour} {day} {month} {day of week}" para especificar a agenda. Consulte a documentação abaixo para obter exemplos.</value>
+    <value>Introduza uma expressão cron com o formato "{second} {minute} {hour} {day} {month} {day of week}" para especificar a agenda.</value>
   </data>
   <data name="timerTrigger_schedule_label" xml:space="preserve">
     <value>Agendar</value>
@@ -241,16 +241,16 @@
     <value>Nome da Tabela</value>
   </data>
   <data name="variables_appSettingsHelp" xml:space="preserve">
-    <value>Esta é a cadeia de ligação para a conta de armazenamento.</value>
+    <value>O nome da definição de aplicação que contém a cadeia de ligação da conta de armazenamento.</value>
   </data>
   <data name="variables_parameterName" xml:space="preserve">
     <value>O nome do parâmetro deve ser uma cadeia alfanumérica com qualquer número de carateres e não pode ser iniciada com um número.</value>
   </data>
   <data name="variables_paramNameInputHelp" xml:space="preserve">
-    <value>Este é o nome do parâmetro do código para o enlace de entrada ao qual vincular.</value>
+    <value>O nome do parâmetro no código ao qual o enlace de entrada se vincula.</value>
   </data>
   <data name="variables_paramNameOutputHelp" xml:space="preserve">
-    <value>Este é o nome do parâmetro do código para o enlace de saída ao qual vincular.</value>
+    <value>O nome do parâmetro no código ao qual o enlace de saída se vincula.</value>
   </data>
   <data name="variables_selectConnection" xml:space="preserve">
     <value>Clique em "selecionar" para escolher uma ligação</value>
@@ -295,7 +295,7 @@
     <value>Nome da fila</value>
   </data>
   <data name="blobOut_path_help" xml:space="preserve">
-    <value>Este é o caminho dentro da conta de armazenamento para o qual o blob será escrito.</value>
+    <value>O caminho na sua conta de armazenamento no qual o blob será escrito.</value>
   </data>
   <data name="blobOut_path_errorText" xml:space="preserve">
     <value>O caminho do blob deve ser um nome de contentor com 3 a 63 carateres, seguido de um nome de blob de 1 a 1,042 carateres. O nome de blob pode ser qualquer combinação de carateres e pode conter, no máximo, 254 segmentos de caminho, que são separados pela barra (/).</value>
@@ -310,7 +310,7 @@
     <value>Nome do parâmetro de blob</value>
   </data>
   <data name="blobIn_path_help" xml:space="preserve">
-    <value>Este é o caminho dentro da conta de armazenamento a partir do qual o blob será lido.</value>
+    <value>O caminho na sua conta de armazenamento a partir do qual o blob será lido.</value>
   </data>
   <data name="blobIn_path_label" xml:space="preserve">
     <value>Caminho</value>
@@ -328,7 +328,7 @@
     <value>Caminho</value>
   </data>
   <data name="blobTrigger_path_help" xml:space="preserve">
-    <value>Este é o caminho dentro da conta de armazenamento que o acionador irá monitorizar.</value>
+    <value>O caminho na sua conta de armazenamento que o acionador irá monitorizar.</value>
   </data>
   <data name="blobTrigger_path_errorText" xml:space="preserve">
     <value>O caminho do blob deve ser um nome de contentor com 3 a 63 carateres, seguido de um nome de blob de 1 a 1.042 carateres. O nome de blob pode ser qualquer combinação de carateres e pode conter, no máximo, 254 segmentos de caminho, que são separados pela barra (/).</value>
@@ -415,7 +415,7 @@
     <value>Modo</value>
   </data>
   <data name="httpTrigger_mode_help" xml:space="preserve">
-    <value>Este é o modo do acionador. "Standard" significa que o pedido será HTTP padrão sem semânticas adicionais. "Webhook" significa que o pedido será processado de acordo com tipo de webhook especificado.</value>
+    <value>O modo do acionador. "Standard" significa que o pedido será HTTP padrão sem semânticas adicionais. "Webhook" significa que o pedido será processado de acordo com um tipo de webhook especificado.</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
     <value>Ficheiro Externo (Pré-visualização)</value>
@@ -433,28 +433,28 @@
     <value>Armazenamento de Blobs do Azure</value>
   </data>
   <data name="documentDBIn_collectionName_help" xml:space="preserve">
-    <value>Este é o nome da coleção dentro da base de dados a partir da qual os dados serão lidos.</value>
+    <value>Coleção de base de dados onde os dados serão lidos.</value>
   </data>
   <data name="documentDBIn_collectionName_label" xml:space="preserve">
     <value>Nome da Coleção</value>
   </data>
   <data name="documentDBIn_connection_help" xml:space="preserve">
-    <value>O nome da definição de aplicação que contém a cadeia de ligação do DocumentDB</value>
+    <value>O nome da definição da aplicação que contém a cadeia de ligação do Cosmos DB</value>
   </data>
   <data name="documentDBIn_connection_label" xml:space="preserve">
-    <value>Ligação da conta do DocumentDB</value>
+    <value>Ligação de conta do Cosmos DB</value>
   </data>
   <data name="documentDBIn_databaseName_help" xml:space="preserve">
-    <value>Nome da base de dados dentro da conta do DocumentDB a partir da qual os dados serão lidos.</value>
+    <value>Base de dados do Cosmos DB onde os dados serão lidos.</value>
   </data>
   <data name="documentDBIn_databaseName_label" xml:space="preserve">
     <value>Nome da base de dados</value>
   </data>
   <data name="documentDBIn_displayName" xml:space="preserve">
-    <value>Azure DocumentDB</value>
+    <value>Azure Cosmos DB</value>
   </data>
   <data name="documentDBIn_id_help" xml:space="preserve">
-    <value>Este é o ID do documento que será lido. Se nem uma consulta SQL ou um ID forem especificados, todos os documentos na coleção são devolvidos.</value>
+    <value>O ID do documento que será lido. Se não especificar uma consulta SQL ou um ID, todos os documentos na coleção são devolvidos.</value>
   </data>
   <data name="documentDBIn_id_label" xml:space="preserve">
     <value>ID do documento (opcional)</value>
@@ -466,31 +466,31 @@
     <value>Nome do parâmetro do documento</value>
   </data>
   <data name="documentDBOut_collectionName_help" xml:space="preserve">
-    <value>Este é o nome da coleção dentro da base de dados na qual os dados serão escritos.</value>
+    <value>Coleção de base de dados onde os dados serão escritos.</value>
   </data>
   <data name="documentDBOut_collectionName_label" xml:space="preserve">
     <value>Nome da Coleção</value>
   </data>
   <data name="documentDBOut_connection_help" xml:space="preserve">
-    <value>O nome da definição de aplicação que contém a cadeia de ligação do DocumentDB</value>
+    <value>O nome da definição da aplicação que contém a cadeia de ligação do Cosmos DB</value>
   </data>
   <data name="documentDBOut_connection_label" xml:space="preserve">
-    <value>Ligação da conta do DocumentDB</value>
+    <value>Ligação de conta do Cosmos DB</value>
   </data>
   <data name="documentDBOut_createIfNotExists_help" xml:space="preserve">
-    <value>Ao ser verdadeiro, a base de dados e a coleção serão criadas automaticamente.</value>
+    <value>Se for true, cria a base de dados e coleção do Cosmos DB.</value>
   </data>
   <data name="documentDBOut_createIfNotExists_label" xml:space="preserve">
-    <value>Deseja que a base de dados e a coleção do DocumentDB sejam criados?</value>
+    <value>Se for true, cria a base de dados e coleção do Cosmos DB</value>
   </data>
   <data name="documentDBOut_databaseName_help" xml:space="preserve">
-    <value>Este é o nome da base de dados dentro da conta do DocumentDB para a qual os dados serão escritos.</value>
+    <value>A base de dados do Cosmos DB onde os dados serão escritos.</value>
   </data>
   <data name="documentDBOut_databaseName_label" xml:space="preserve">
     <value>Nome da base de dados</value>
   </data>
   <data name="documentDBOut_displayName" xml:space="preserve">
-    <value>Documento do Azure DocumentDB</value>
+    <value>Azure Cosmos DB</value>
   </data>
   <data name="documentDBOut_name_help" xml:space="preserve">
     <value>O nome utilizado para identificar este enlace no código</value>
@@ -517,7 +517,7 @@
     <value>Nome do parâmetro</value>
   </data>
   <data name="mobileTableIn_apiKey_help" xml:space="preserve">
-    <value>Este é o nome da definição da aplicação que especifica a Chave de API da sua Aplicação Móvel. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;Mais informação&lt;/a&gt;.</value>
+    <value>O nome da definição da aplicação que especifica a Chave de API para a sua Aplicação Móvel. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;Mais informações&lt;/a&gt;.</value>
   </data>
   <data name="mobileTableIn_apiKey_label" xml:space="preserve">
     <value>Pesquisa de chave de API (opcional)</value>
@@ -529,10 +529,10 @@
     <value>Pesquisa de URL da Aplicação Móvel</value>
   </data>
   <data name="mobileTableIn_displayName" xml:space="preserve">
-    <value>Registo de Tabela do Azure Mobile</value>
+    <value>Tabelas Móveis do Azure</value>
   </data>
   <data name="mobileTableIn_id_help" xml:space="preserve">
-    <value>Este é o id a ser obtido pelo registo.</value>
+    <value>O ID do registo a obter.</value>
   </data>
   <data name="mobileTableIn_id_label" xml:space="preserve">
     <value>ID de registo</value>
@@ -550,7 +550,7 @@
     <value>Nome da tabela</value>
   </data>
   <data name="mobileTableOut_apiKey_help" xml:space="preserve">
-    <value>Esta é a nome da configuração da aplicação que especifica a Chave de API Key para a Aplicação Móvel. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;Mais informação&lt;/a&gt;.</value>
+    <value>O nome da definição da aplicação que especifica a Chave de API para a sua Aplicação Móvel. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;Mais informações&lt;/a&gt;.</value>
   </data>
   <data name="mobileTableOut_apiKey_label" xml:space="preserve">
     <value>Pesquisa de chave de API (opcional)</value>
@@ -562,7 +562,7 @@
     <value>Pesquisa de URL da Aplicação Móvel</value>
   </data>
   <data name="mobileTableOut_displayName" xml:space="preserve">
-    <value>Registo de Tabela do Azure Mobile</value>
+    <value>Tabelas Móveis do Azure</value>
   </data>
   <data name="mobileTableOut_name_help" xml:space="preserve">
     <value>O nome utilizado para identificar este enlace no código</value>
@@ -583,10 +583,10 @@
     <value>Ligação do espaço de nomes dos Hubs de Notificação</value>
   </data>
   <data name="notificationHubOut_displayName" xml:space="preserve">
-    <value>Hub de Notificação do Azure</value>
+    <value>Hubs de Notificação do Azure</value>
   </data>
   <data name="notificationHubOut_hubName_help" xml:space="preserve">
-    <value>Este é o nome do Hub de Notificação a ser utilizado ao enviar notificações push.</value>
+    <value>O Hub de Notificação utilizado para enviar notificações push.</value>
   </data>
   <data name="notificationHubOut_hubName_label" xml:space="preserve">
     <value>Nome do Hub de Notificação</value>
@@ -622,7 +622,7 @@
     <value>SendGrid</value>
   </data>
   <data name="sendGrid_from_help" xml:space="preserve">
-    <value>Este é o endereço de e-mail a partir do qual a mensagem será enviada. Pode ter a forma "user@host.com" ou "Nome de Apresentação&lt;user@host.com&gt;". Caso não esteja especificado aqui, o valor pode ser especificado no código.</value>
+    <value>O endereço de e-mail do qual a mensagem é enviada. Pode ter o formato "user@host.com" ou "Nome a Apresentar&lt;user@host.com&gt;". Caso não esteja especificado aqui, o valor pode ser especificado no código.</value>
   </data>
   <data name="sendGrid_from_label" xml:space="preserve">
     <value>Do endereço</value>
@@ -822,17 +822,8 @@
   <data name="table_tableName_label" xml:space="preserve">
     <value>Nome da tabela</value>
   </data>
-  <data name="BlobTriggerBatch_description" xml:space="preserve">
-    <value>(Experimental) Uma função Batch que vai ser executada sempre que um blob é adicionado a um contentor especificado</value>
-  </data>
-  <data name="BlobTriggerCSharp_description" xml:space="preserve">
-    <value>Uma função C# que será executada sempre que um blob é adicionado a um contentor especificado</value>
-  </data>
-  <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>Uma função F# que vai ser executada sempre que um blob é adicionado a um contentor especificado</value>
-  </data>
-  <data name="BlobTriggerNodeJS_description" xml:space="preserve">
-    <value>Uma função de JavaScript que vai ser executada sempre que um blob é adicionado a um contentor especificado</value>
+  <data name="BlobTrigger_description" xml:space="preserve">
+    <value>Uma função que será executada sempre que um blob for adicionado a um contentor especificado</value>
   </data>
   <data name="CSharp_description" xml:space="preserve">
     <value>Uma função C# que será executada sempre que recebe um pedido webhook do GitHub</value>
@@ -861,17 +852,8 @@
   <data name="EmptyPython_description" xml:space="preserve">
     <value>Uma função Python vazia sem acionadores, entradas ou saídas</value>
   </data>
-  <data name="EventHubTriggerCSharp_description" xml:space="preserve">
-    <value>Uma função C# que será executada sempre que um hub de eventos recebe um novo evento</value>
-  </data>
-  <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>Uma função F# que vai ser executada sempre que um hub de eventos receber um novo evento</value>
-  </data>
-  <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
-    <value>Uma função de JavaScript que vai ser executada sempre que um hub de eventos recebe um novo evento</value>
-  </data>
-  <data name="EventHubTriggerPython_description" xml:space="preserve">
-    <value>(Experimental) Uma função Python que vai ser executada sempre que um hub de eventos recebe um novo evento</value>
+  <data name="EventHubTrigger_description" xml:space="preserve">
+    <value>Uma função que será executada sempre que um hub de eventos receber um novo evento</value>
   </data>
   <data name="FaceLocatorCSharp_description" xml:space="preserve">
     <value>Uma função C# que processa imagens e produz o retângulo delimitador de faces</value>
@@ -933,23 +915,8 @@
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
     <value>Uma função F# que atualiza a entidade numa Tabela de Armazenamento ao receber um pedido HTTP</value>
   </data>
-  <data name="HttpTriggerBatch_description" xml:space="preserve">
-    <value>(Experimental) Uma função Batch que vai ser executada sempre que recebe um pedido HTTP</value>
-  </data>
-  <data name="HttpTriggerCSharp_description" xml:space="preserve">
-    <value>Uma função C# que será executada sempre que recebe um pedido HTTP</value>
-  </data>
-  <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>Uma função F# que vai ser executada sempre que esta receber um pedido HTTP</value>
-  </data>
-  <data name="HttpTriggerNodeJS_description" xml:space="preserve">
-    <value>Uma função de JavaScript que será executada sempre que recebe um pedido HTTP</value>
-  </data>
-  <data name="HttpTriggerPowerShell_description" xml:space="preserve">
-    <value>(Pré-visualização) Uma função PowerShell que vai ser executada sempre que recebe um pedido HTTP</value>
-  </data>
-  <data name="HttpTriggerPython_description" xml:space="preserve">
-    <value>(Experimental) Uma função Python 3 que será executada sempre que receba um pedido HTTP</value>
+  <data name="HttpTrigger_description" xml:space="preserve">
+    <value>Uma função que será executada sempre que receber um pedido HTTP, respondendo com base nos dados no corpo ou na cadeia de consulta</value>
   </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>Uma função C# que cria imagens redimensionadas sempre que um blob é adicionado a um contentor especificado</value>
@@ -966,29 +933,8 @@
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>Uma função de JavaScript que é acionada manualmente através do botão "Executar" do portal</value>
   </data>
-  <data name="QueueTriggerBash_description" xml:space="preserve">
-    <value>(Experimental) Uma função bash que vai ser executada sempre que uma mensagem é adicionada ao Armazenamento de Filas do Azure especificada</value>
-  </data>
-  <data name="QueueTriggerBatch_description" xml:space="preserve">
-    <value>(Experimental) Uma função Batch que vai ser executada sempre que uma mensagem é adicionada a um Armazenamento de Filas do Azure específico</value>
-  </data>
-  <data name="QueueTriggerCSharp_description" xml:space="preserve">
-    <value>Uma função C# que vai ser executada sempre que uma mensagem é adicionada a um Armazenamento de Filas do Azure específico</value>
-  </data>
-  <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>Uma função F# que vai ser executada sempre que uma mensagem é adicionada a um Armazenamento de Filas do Azure específico</value>
-  </data>
-  <data name="QueueTriggerNodeJS_description" xml:space="preserve">
-    <value>Uma função de JavaScript que vai ser executada sempre que uma mensagem é adicionada a um Armazenamento de Filas do Azure específico</value>
-  </data>
-  <data name="QueueTriggerPHP_description" xml:space="preserve">
-    <value>(Experimental) Uma função PHP que vai ser executada sempre que uma mensagem é adicionada a um Armazenamento de Filas do Azure específico</value>
-  </data>
-  <data name="QueueTriggerPowerShell_description" xml:space="preserve">
-    <value>(Pré-visualização) Uma função PowerShell que vai ser executada sempre que uma mensagem é adicionada a um Armazenamento de Filas do Azure específico</value>
-  </data>
-  <data name="QueueTriggerPython_description" xml:space="preserve">
-    <value>(Experimental) Uma função Python que vai ser executada sempre que uma mensagem é adicionada a um Armazenamento de Filas do Azure específico</value>
+  <data name="QueueTrigger_description" xml:space="preserve">
+    <value>Uma função que será executada sempre que uma mensagem for adicionada a uma fila do Armazenamento do Azure especificada</value>
   </data>
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
     <value>(Experimental) Uma função Batch que será executada sempre que um ficheiro for adicionado a um fornecedor de Ficheiro Externo.</value>
@@ -1014,14 +960,8 @@
   <data name="SasTokenFSharp_description" xml:space="preserve">
     <value>Uma função F# que gera um token SAS para o Armazenamento do Azure para um determinado nome de contentor e blob.</value>
   </data>
-  <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>Uma função C# que envia um email de confirmação quando um novo item é adicionado a uma fila específica</value>
-  </data>
-  <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>Uma função F# que envia um e-mail de confirmação quando um novo item é adicionado a uma fila específica</value>
-  </data>
-  <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>Uma função JavaScript que envia um email de confirmação quando um novo item é adicionado a uma fila específica</value>
+  <data name="SendGrid_description" xml:space="preserve">
+    <value>Uma função que envia um e-mail de confirmação quando um novo item for adicionado a uma fila específica</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
     <value>Uma função C# que será executada sempre que uma mensagem é adicionada a uma fila do Service Bus especificada</value>
@@ -1038,17 +978,11 @@
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>Uma função de JavaScript que vai ser executada sempre que uma mensagem é adicionada ao tópico do Service Bus especificado</value>
   </data>
-  <data name="TimerTriggerCSharp_description" xml:space="preserve">
-    <value>Uma função C# que será executada numa agenda especificada</value>
+  <data name="TimerTrigger_description" xml:space="preserve">
+    <value>Uma função que será executada numa agenda especificada</value>
   </data>
-  <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>Uma função F# que vai ser executada numa agenda especificada</value>
-  </data>
-  <data name="TimerTriggerNodeJS_description" xml:space="preserve">
-    <value>Uma função de Javascript que será executada numa agenda especificada</value>
-  </data>
-  <data name="TimerTriggerPowerShell_description" xml:space="preserve">
-    <value>(Pré-visualização) Uma função PowerShell que vai ser executada numa agenda especificada</value>
+  <data name="TimerTriggerExcelOutlook_description" xml:space="preserve">
+    <value>Leia duas tabelas do Excel, envie e-mails com base nos dados e, em seguida, atualize uma tabela do Excel.</value>
   </data>
   <data name="timerTrigger_schedule_errorText" xml:space="preserve">
     <value>Expressão Cron inválida. Consulte a &lt;a target='_blank' href='https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/'&gt;documentação&lt;/a&gt; para saber mais.</value>
@@ -1096,16 +1030,16 @@
     <value>O grupo de consumidor deve começar e terminar com uma letra ou um número e apenas pode conter letras minúsculas, números, hífen, ponto final e caráter de sublinhado. O grupo $Predefinido também é permitido. O nome deve ter entre 1 e 50 carateres.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
-    <value>Documento do Azure DocumentDB</value>
+    <value>Azure Cosmos DB</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>Chave de API do SendGrid</value>
+    <value>O nome da definição de aplicação que contém a chave de API de programador do SendGrid.</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
-    <value>Chave de API do SendGrid</value>
+    <value>Definição de Aplicação da Chave de API do SendGrid</value>
   </data>
   <data name="bot_botId_help" xml:space="preserve">
-    <value>Este é o ID que vai ser utilizado na propriedade From da Atividade durante a criação e envio da mensagem para o bot. Isto preenche o ChannelAccount.Id de uma atividad enviada.</value>
+    <value>O ID que será utilizado na propriedade From da Atividade durante a criação e o envio de uma mensagem para o bot. Isto preenche o ChannelAccount.Id de uma atividade enviada.</value>
   </data>
   <data name="bot_botId_label" xml:space="preserve">
     <value>ID do Remetente</value>
@@ -1117,14 +1051,13 @@
     <value>Arquitetura de Bot (pré-visualização)</value>
   </data>
   <data name="bot_in_secret_help" xml:space="preserve">
-    <value>A Chave de Linha Direta pode ser gerada a partir da página de configuração do canal Linha Direta no portal Arquitetura de Bot; deixando este campo vazio vão ser procurados valores na Definição de Aplicação 'AzureWebJobsBotFrameworkDirectLineSecret'</value>
+    <value>O nome da definição de aplicação que contém a Chave de Linha Direta. Pode ser gerado a partir da página de configuração do canal Linha Direta no portal Arquitetura de Bot. Se este campo estiver vazio, a definição de aplicação "AzureWebJobsBotFrameworkDirectLineSecret"</value>
   </data>
   <data name="bot_in_secret_label" xml:space="preserve">
     <value>Chave de Linha Direta</value>
   </data>
   <data name="bot_out_secret_help" xml:space="preserve">
     <value>A Chave de Linha Direta pode ser gerada a partir da página de configuração do canal Linha Direta no portal Arquitetura de Bot; deixando este campo vazio vão ser procurados valores na Definição de Aplicação 'AzureWebJobsBotFrameworkDirectLineSecret'</value>
-
   </data>
   <data name="bot_out_secret_label" xml:space="preserve">
     <value>Chave de Linha Direta</value>
@@ -1141,17 +1074,185 @@
   <data name="bot_out_name_label" xml:space="preserve">
     <value>Nome do parâmetro Bot</value>
   </data>
-  <data name="ScheduledMailCSharp_description" xml:space="preserve">
-    <value>(Pré-visualização) Uma função C# que vai enviar e-mails periodicamente</value>
+  <data name="variables_loginToAAD" xml:space="preserve">
+    <value>Clique para obter o ID Principal</value>
+  </data>
+  <data name="excel_in_displayName" xml:space="preserve">
+    <value>Tabela do Excel</value>
+  </data>
+  <data name="excel_in_name_label" xml:space="preserve">
+    <value>Nome do parâmetro de tabela</value>
+  </data>
+  <data name="excel_in_name_help" xml:space="preserve">
+    <value>O nome utilizado para identificar este enlace no código da função.</value>
+  </data>
+  <data name="excel_in_path_label" xml:space="preserve">
+    <value>Caminho para o livro do Excel</value>
+  </data>
+  <data name="excel_in_path_help" xml:space="preserve">
+    <value>O caminho no OneDrive para o livro do Excel.</value>
+  </data>
+  <data name="excel_in_worksheetName_label" xml:space="preserve">
+    <value>Nome da Folha de Cálculo</value>
+  </data>
+  <data name="excel_in_worksheetName_help" xml:space="preserve">
+    <value>A folha de cálculo na qual é encontrada a tabela.</value>
+  </data>
+  <data name="excel_in_tableName_label" xml:space="preserve">
+    <value>Nome da tabela</value>
+  </data>
+  <data name="excel_in_tableName_help" xml:space="preserve">
+    <value>O nome da tabela. Se não for especificado, são utilizados os conteúdos da folha de cálculo.</value>
+  </data>
+  <data name="excel_in_path_error" xml:space="preserve">
+    <value>O caminho tem de ser válido</value>
+  </data>
+  <data name="excel_out_displayName" xml:space="preserve">
+    <value>Tabela do Excel</value>
+  </data>
+  <data name="excel_out_name_label" xml:space="preserve">
+    <value>Nome do parâmetro de tabela</value>
+  </data>
+  <data name="excel_out_name_help" xml:space="preserve">
+    <value>O nome utilizado para identificar este enlace no código da função.</value>
+  </data>
+  <data name="excel_out_path_label" xml:space="preserve">
+    <value>Caminho para o livro do Excel</value>
+  </data>
+  <data name="excel_out_path_help" xml:space="preserve">
+    <value>O caminho no OneDrive para o livro do Excel.</value>
+  </data>
+  <data name="excel_out_worksheetName_label" xml:space="preserve">
+    <value>Nome da Folha de Cálculo</value>
+  </data>
+  <data name="excel_out_worksheetName_help" xml:space="preserve">
+    <value>A folha de cálculo na qual é encontrada a tabela.</value>
+  </data>
+  <data name="excel_out_tableName_label" xml:space="preserve">
+    <value>Nome da tabela</value>
+  </data>
+  <data name="excel_out_tableName_help" xml:space="preserve">
+    <value>O nome da tabela. Se não for especificado, são utilizados os conteúdos da folha de cálculo.</value>
+  </data>
+  <data name="excel_out_updateType_label" xml:space="preserve">
+    <value>Modo de edição</value>
+  </data>
+  <data name="excel_out_updateType_help" xml:space="preserve">
+    <value>O tipo de alteração a fazer à tabela.</value>
+  </data>
+  <data name="excel_out_path_error" xml:space="preserve">
+    <value>O caminho tem de ser válido</value>
+  </data>
+  <data name="outlook_displayName" xml:space="preserve">
+    <value>Mensagem de e-mail do Outlook</value>
+  </data>
+  <data name="outlook_out_label_help" xml:space="preserve">
+    <value>O nome utilizado para identificar este enlace no código da função</value>
+  </data>
+  <data name="outlook_out_label_name" xml:space="preserve">
+    <value>Nome do parâmetro de mensagem</value>
+  </data>
+  <data name="outlook_out_name_help" xml:space="preserve">
+    <value>O nome utilizado para identificar este enlace no código da função</value>
+  </data>
+  <data name="outlook_out_name_label" xml:space="preserve">
+    <value>Nome do parâmetro de mensagem</value>
+  </data>
+  <data name="principal_id_label_token" xml:space="preserve">
+    <value>Nome da Definição de Aplicação do ID de Principal</value>
+  </data>
+  <data name="principal_id_help_token" xml:space="preserve">
+    <value>ID de Principal utilizado para autenticar pedidos no recurso desejado</value>
+  </data>
+  <data name="principal_id_label_excel_in" xml:space="preserve">
+    <value>Nome da Definição de Aplicação do ID de Principal</value>
+  </data>
+  <data name="principal_id_help_excel_in" xml:space="preserve">
+    <value>ID de Principal utilizado para autenticar pedidos no recurso desejado</value>
+  </data>
+  <data name="principal_id_label_excel_out" xml:space="preserve">
+    <value>Nome da Definição de Aplicação do ID de Principal</value>
+  </data>
+  <data name="principal_id_help_excel_out" xml:space="preserve">
+    <value>ID de Principal utilizado para autenticar pedidos no recurso desejado</value>
+  </data>
+  <data name="principal_id_label_outlook" xml:space="preserve">
+    <value>Nome da Definição de Aplicação do ID de Principal</value>
+  </data>
+  <data name="principal_id_help_outlook" xml:space="preserve">
+    <value>ID de Principal utilizado para autenticar pedidos no recurso desejado</value>
+  </data>
+  <data name="principal_id_label_onedrive_in" xml:space="preserve">
+    <value>Nome da Definição de Aplicação do ID de Principal</value>
+  </data>
+  <data name="principal_id_help_onedrive_in" xml:space="preserve">
+    <value>ID de Principal utilizado para autenticar pedidos no recurso desejado</value>
+  </data>
+  <data name="principal_id_label_onedrive_out" xml:space="preserve">
+    <value>Nome da Definição de Aplicação do ID de Principal</value>
+  </data>
+  <data name="principal_id_help_onedrive_out" xml:space="preserve">
+    <value>ID de Principal utilizado para autenticar pedidos no recurso desejado</value>
+  </data>
+  <data name="principal_id_label_graphwebhook" xml:space="preserve">
+    <value>Nome da Definição de Aplicação do ID de Principal</value>
+  </data>
+  <data name="principal_id_help_graphwebhook" xml:space="preserve">
+    <value>ID de Principal utilizado para autenticar pedidos no recurso desejado</value>
+  </data>
+  <data name="idToken_label_token" xml:space="preserve">
+    <value>Token de ID</value>
+  </data>
+  <data name="idToken_help_token" xml:space="preserve">
+    <value>Expressão ou token de ID explícito utilizado para autenticar no MS Graph</value>
+  </data>
+  <data name="idToken_label_excel_in" xml:space="preserve">
+    <value>Token de ID</value>
+  </data>
+  <data name="idToken_help_excel_in" xml:space="preserve">
+    <value>Expressão ou token de ID explícito utilizado para autenticar no MS Graph</value>
+  </data>
+  <data name="idToken_label_excel_out" xml:space="preserve">
+    <value>Token de ID</value>
+  </data>
+  <data name="idToken_help_excel_out" xml:space="preserve">
+    <value>Expressão ou token de ID explícito utilizado para autenticar no MS Graph</value>
+  </data>
+  <data name="idToken_label_outlook" xml:space="preserve">
+    <value>Token de ID</value>
+  </data>
+  <data name="idToken_help_outlook" xml:space="preserve">
+    <value>Expressão ou token de ID explícito utilizado para autenticar no MS Graph</value>
+  </data>
+  <data name="idToken_label_onedrive_in" xml:space="preserve">
+    <value>Token de ID</value>
+  </data>
+  <data name="idToken_help_onedrive_in" xml:space="preserve">
+    <value>Expressão ou token de ID explícito utilizado para autenticar no MS Graph </value>
+  </data>
+  <data name="idToken_label_onedrive_out" xml:space="preserve">
+    <value>Token de ID</value>
+  </data>
+  <data name="idToken_help_onedrive_out" xml:space="preserve">
+    <value>Expressão ou token de ID explícito utilizado para autenticar no MS Graph </value>
+  </data>
+  <data name="idToken_label_graphwebhook" xml:space="preserve">
+    <value>Token de ID</value>
+  </data>
+  <data name="idToken_help_graphwebhook" xml:space="preserve">
+    <value>Expressão ou token de ID explícito utilizado para autenticar no MS Graph </value>
+  </data>
+  <data name="ScheduledMail_description" xml:space="preserve">
+    <value>Uma função que irá enviar e-mails periodicamente</value>
   </data>
   <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
-    <value>Esta é uma consulta SQL opcional do DocumentDB utilizada para obter um conjunto de documentos. Se nem uma consulta SQL ou um ID forem especificados, todos os documentos na coleção são devolvidos.</value>
+    <value>Uma consulta SQL opcional da API do Cosmos DB utilizada para obter um conjunto de documentos. Se não especificar uma consulta SQL ou um ID, todos os documentos na coleção são devolvidos.</value>
   </data>
   <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
     <value>Consulta SQL (opcional)</value>
   </data>
   <data name="eventHubTrigger_cardinality_help" xml:space="preserve">
-    <value>Cardinalidade da entrada de acionador. Escolha "um" se a entrada for uma única mensagem ou "vários" se a entrada é uma matriz de mensagens. "um" é a predefinição se não for especificado</value>
+    <value>Cardinalidade da entrada do acionador. Escolha "um" se a entrada for uma única mensagem ou "vários" se a entrada for uma matriz de mensagens. "Vários" é a predefinição se não especificar outra opção</value>
   </data>
   <data name="HttpTriggerCSharpWithParameters_description" xml:space="preserve">
     <value>Uma função C# que será executada sempre que recebe um pedido HTTP</value>
@@ -1166,10 +1267,10 @@
     <value>(Experimental) Uma função CDS que também pode chamar para um ambiente CDS utilizando o SDK de CDS.</value>
   </data>
   <data name="cdsTemplate_warningNotConfigured" xml:space="preserve">
-    <value>Este modelo requere uma configuração AAD para a aplicação de função. O modelo necessita as seguintes permissões:
+    <value>Este modelo requer uma configuração AAD para a aplicação de funções. O modelo necessita das seguintes permissões:
 
-Common Data Service - acesso ao Common Data Service
-API de Gestão de Serviço do Windows Azure - Acesso à Gestão do Serviço do Azure como utilizadores da organização (pré-visualização).</value>
+Common Data Service - Acesso ao Common Data Service
+API de Gestão do Serviço do Microsoft Azure - Acesso à Gestão do Serviço do Azure como utilizadores da organização (pré-visualização).</value>
   </data>
   <data name="temp_category_monitoring" xml:space="preserve">
     <value>Monitorização</value>
@@ -1181,10 +1282,10 @@ API de Gestão de Serviço do Windows Azure - Acesso à Gestão do Serviço do A
     <value>Uma função C# que monitoriza a disponibilidade e capacidade de resposta de qualquer aplicação web com Application Insights</value>
   </data>
   <data name="AppInsightsRealtimePowerBI_name" xml:space="preserve">
-    <value>AppInsights Real-time Power BI</value>
+    <value>Power BI em Tempo Real de AppInsights</value>
   </data>
   <data name="AppInsightsRealtimePowerBICSharp_description" xml:space="preserve">
-    <value>A C# function which pushes real-time availability data from Application Insights to Power BI</value>
+    <value>Uma função C# que emite dados de disponibilidade em tempo real do Application Insights para o Power BI</value>
   </data>
   <data name="AppInsightsScheduledAnalytics_name" xml:space="preserve">
     <value>Análise Agendada AppInsights</value>
@@ -1200,5 +1301,423 @@ API de Gestão de Serviço do Windows Azure - Acesso à Gestão do Serviço do A
   </data>
   <data name="HttpPOST(CRUD)Queue-FSharp_description" xml:space="preserve">
     <value>Função F# que vai emitir os dados para uma fila para a receção de um Http Post.</value>
+  </data>
+  <data name="BlobTriggerNodeTS_description" xml:space="preserve">
+    <value>(Experimental) Uma função TypeScript que será executada sempre que um blob é adicionado a um contentor especificado</value>
+  </data>
+  <data name="EventHubTriggerNodeTS_description" xml:space="preserve">
+    <value>(Experimental) Uma função TypeScript que será executada sempre que um hub de eventos receber um novo evento</value>
+  </data>
+  <data name="GenericWebhookNodeTS_description" xml:space="preserve">
+    <value>(Experimental) Uma função TypeScript que será executada sempre que receber um pedido webhook</value>
+  </data>
+  <data name="GithubWebhookNodeTS_description" xml:space="preserve">
+    <value>(Experimental) Uma função TypeScript que será executada sempre que receber um pedido webhook do GitHub</value>
+  </data>
+  <data name="HttpTriggerNodeTS_description" xml:space="preserve">
+    <value>(Experimental) Uma função TypeScript que será executada sempre que receber um pedido HTTP</value>
+  </data>
+  <data name="QueueTriggerNodeTS_description" xml:space="preserve">
+    <value>(Experimental) Uma função TypeScript que será executada sempre que uma mensagem for adicionada a um Armazenamento de Filas do Azure especificado</value>
+  </data>
+  <data name="ServiceBusQueueTriggerNodeTS_description" xml:space="preserve">
+    <value>(Experimental) Uma função TypeScript que será executada sempre que uma mensagem for adicionada a uma fila do Service Bus especificada</value>
+  </data>
+  <data name="ServiceBusTopicTriggerNodeTS_description" xml:space="preserve">
+    <value>(Experimental) Uma função TypeScript que será executada sempre que uma mensagem for adicionada ao tópico do Service Bus especificado</value>
+  </data>
+  <data name="ManualTriggerNodeTS_description" xml:space="preserve">
+    <value>(Experimental) Uma função TypeScript que é acionada manualmente através do botão "Executar" do portal</value>
+  </data>
+  <data name="IoTHubTriggerCSharp_description" xml:space="preserve">
+    <value>Uma função C# que será executada sempre que um Hub IoT recebe um novo evento do Hub IoT (Hub de Eventos)</value>
+  </data>
+  <data name="ioTHubTrigger_connection_help" xml:space="preserve">
+    <value>É a chave da cadeia de ligação do Hub IoT armazenada na definição da aplicação, que tem de ter permissões de Receção. Se não tiver nenhumas, clique em nova para criar uma.</value>
+  </data>
+  <data name="ioTHubTrigger_connection_label" xml:space="preserve">
+    <value>Cadeia de ligação</value>
+  </data>
+  <data name="ioTHubTrigger_displayName" xml:space="preserve">
+    <value>Hub IoT do Azure</value>
+  </data>
+  <data name="ioTHubTrigger_EntityPath" xml:space="preserve">
+    <value>Caminho de entidade</value>
+  </data>
+  <data name="defaultConsumerGroup" xml:space="preserve">
+    <value>$Predefinição</value>
+  </data>
+  <data name="defaultQueueName" xml:space="preserve">
+    <value>myqueue</value>
+  </data>
+  <data name="defaultsubscriptionName" xml:space="preserve">
+    <value>mysubscription</value>
+  </data>
+  <data name="defaultTopicName" xml:space="preserve">
+    <value>mytopic</value>
+  </data>
+  <data name="servicebusQueuePicker_queueName" xml:space="preserve">
+    <value>Fila</value>
+  </data>
+  <data name="IoTHubTriggerFSharp_description" xml:space="preserve">
+    <value>Uma função F# que será executada sempre que um Hub IoT recebe um novo evento do Hub IoT (Hub de Eventos)</value>
+  </data>
+  <data name="IoTHubTriggerNodeJS_description" xml:space="preserve">
+    <value>Uma função de Javascript que será executada sempre que um Hub IoT recebe um novo evento do Hub IoT (Hub de Eventos)</value>
+  </data>
+  <data name="IoTHubTriggerNodeTS_description" xml:space="preserve">
+    <value>Uma função Typescript que será executada sempre que um Hub IoT recebe um novo evento do Hub IoT (Hub de Eventos)</value>
+  </data>
+  <data name="myEventHub" xml:space="preserve">
+    <value>myEventHub</value>
+  </data>
+  <data name="eventHubName" xml:space="preserve">
+    <value>eventHubName</value>
+  </data>
+  <data name="oneDrive_in_displayName" xml:space="preserve">
+    <value>Ficheiro do OneDrive</value>
+  </data>
+  <data name="oneDrive_in_name_help" xml:space="preserve">
+    <value>O nome utilizado para identificar este enlace no código da função.</value>
+  </data>
+  <data name="oneDrive_in_name_label" xml:space="preserve">
+    <value>Nome do parâmetro do ficheiro</value>
+  </data>
+  <data name="oneDrive_in_path_help" xml:space="preserve">
+    <value>O caminho no OneDrive para o ficheiro.</value>
+  </data>
+  <data name="oneDrive_in_path_label" xml:space="preserve">
+    <value>Caminho para o ficheiro</value>
+  </data>
+  <data name="oneDrive_in_path_error" xml:space="preserve">
+    <value>O caminho tem de ser válido</value>
+  </data>
+  <data name="oneDrive_out_displayName" xml:space="preserve">
+    <value>Ficheiro do OneDrive</value>
+  </data>
+  <data name="oneDrive_out_name_help" xml:space="preserve">
+    <value>O nome utilizado para identificar este enlace no código da função.</value>
+  </data>
+  <data name="oneDrive_out_name_label" xml:space="preserve">
+    <value>Nome do parâmetro do ficheiro</value>
+  </data>
+  <data name="oneDrive_out_path_help" xml:space="preserve">
+    <value>O caminho no OneDrive para o ficheiro.</value>
+  </data>
+  <data name="oneDrive_out_path_label" xml:space="preserve">
+    <value>Caminho para o ficheiro</value>
+  </data>
+  <data name="oneDrive_out_path_error" xml:space="preserve">
+    <value>O caminho tem de ser válido</value>
+  </data>
+  <data name="MSGraphWebhook_displayName" xml:space="preserve">
+    <value>Subscrição do webhook do Microsoft Graph</value>
+  </data>
+  <data name="MSGraphWebhook_in_name_label" xml:space="preserve">
+    <value>Nome do parâmetro de subscrição</value>
+  </data>
+  <data name="MSGraphWebhook_in_changeType_help" xml:space="preserve">
+    <value>Necessário se e apenas se a ação estiver definida para criar. Indica o tipo de alteração no recurso subscrito que vai criar uma notificação. Os valores suportados são: criado, atualizado, eliminado. Podem ser combinados vários valores com uma lista separada por vírgulas.</value>
+  </data>
+  <data name="MSGraphWebhook_in_changeType_label" xml:space="preserve">
+    <value>Tipos de alterações para subscrever</value>
+  </data>
+  <data name="MSGraphWebhook_in_listen_help" xml:space="preserve">
+    <value>O recurso de gráfico para o qual esta função deve responder a webhooks. Uma aplicação de função só pode ter uma função que está registada em relação a um dado valor de resourceType.</value>
+  </data>
+  <data name="MSGraphWebhook_in_listen_label" xml:space="preserve">
+    <value>Recurso para subscrever</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_displayName" xml:space="preserve">
+    <value>Webhook do Microsoft Graph</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_in_name_label" xml:space="preserve">
+    <value>Nome do parâmetro do recurso modificado</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_Type_help" xml:space="preserve">
+    <value>Este tipo irá determinar quais os tipos de notificações que irão acionar uma função</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_Type_label" xml:space="preserve">
+    <value>Tipo de notificação para ouvir</value>
+  </data>
+  <data name="MSGraphWebhook_description" xml:space="preserve">
+    <value>Uma função C# que é executada quando recebe um pedido de webhook O365.</value>
+  </data>
+  <data name="RefreshMSGraphSubscriptions_description" xml:space="preserve">
+    <value>Atualiza periodicamente todas as subscrições do O365</value>
+  </data>
+  <data name="token_displayName" xml:space="preserve">
+    <value>Token de autenticação</value>
+  </data>
+  <data name="token_in_name_help" xml:space="preserve">
+    <value>Nome do parâmetro utilizado para identificar este token no código</value>
+  </data>
+  <data name="token_in_name_label" xml:space="preserve">
+    <value>Nome do parâmetro do token de autenticação</value>
+  </data>
+  <data name="token_in_resource_help" xml:space="preserve">
+    <value>Um URL de recurso do AAD para o qual o token está a ser pedido</value>
+  </data>
+  <data name="token_in_resource_label" xml:space="preserve">
+    <value>URL do recurso</value>
+  </data>
+  <data name="MSGraphWebhookCreator_displayName" xml:space="preserve">
+    <value>Subscrição do webhook do Microsoft Graph</value>
+  </data>
+  <data name="MSGraphWebhookCreator_in_name_help" xml:space="preserve">
+    <value>O nome utilizado para identificar este enlace no código da função.</value>
+  </data>
+  <data name="MSGraphWebhookCreator_in_name_label" xml:space="preserve">
+    <value>Nome do parâmetro de subscrição</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_in_help_label" xml:space="preserve">
+    <value>Nome utilizado para identificar o recurso modificado no código de função</value>
+  </data>
+  <data name="MSGraphWebhook_in_name_help" xml:space="preserve">
+    <value>O nome utilizado para identificar este enlace no código da função</value>
+  </data>
+  <data name="temp_category_msgraph" xml:space="preserve">
+    <value>Microsoft Graph</value>
+  </data>
+  <data name="documentDBIn_partitionKey_help" xml:space="preserve">
+    <value>A chave de partição do documento a ser lido. Só se aplica se for especificado um ID.</value>
+  </data>
+  <data name="documentDBOut_partitionKey_help" xml:space="preserve">
+    <value>A chave de partição para utilizar quando cria uma nova coleção. Só se aplica se tiver selecionado para criar automaticamente a coleção, se não existir.</value>
+  </data>
+  <data name="documentDB_partitionKey_label" xml:space="preserve">
+    <value>Chave de Partição (opcional)</value>
+  </data>
+  <data name="EventGridTriggerCSharp_description" xml:space="preserve">
+    <value>Uma função C# que será executada sempre que uma grelha de eventos receber um novo evento</value>
+  </data>
+  <data name="eventGrid_trigger_displayName" xml:space="preserve">
+    <value>Acionador do Event Grid</value>
+  </data>
+  <data name="eventGrid_trigger_name_help" xml:space="preserve">
+    <value>Nome do parâmetro do Acionador de Eventos</value>
+  </data>
+  <data name="eventGrid_trigger_name_label" xml:space="preserve">
+    <value>Nome do parâmetro do Acionador de Eventos</value>
+  </data>
+  <data name="CosmosDBTriggerCSharp_description" xml:space="preserve">
+    <value>Uma função C# que será executada sempre os documentos forem alterados numa coleção de documentos.</value>
+  </data>
+  <data name="CosmosDBTriggerJavascript_description" xml:space="preserve">
+    <value>Uma função de JavaScript que será executada sempre que os documentos forem alterados numa coleção de documentos.</value>
+  </data>
+  <data name="cosmosDBIn_collectionName_help" xml:space="preserve">
+    <value>Nome da coleção a monitorizar.</value>
+  </data>
+  <data name="cosmosDBIn_collectionName_label" xml:space="preserve">
+    <value>Nome da Coleção</value>
+  </data>
+  <data name="cosmosDBIn_connection_help" xml:space="preserve">
+    <value>O nome da Definição de Aplicação que contém a cadeia de ligação ao serviço que contém a coleção a monitorizar.</value>
+  </data>
+  <data name="cosmosDBIn_connection_label" xml:space="preserve">
+    <value>Ligação de conta do Cosmos DB</value>
+  </data>
+  <data name="cosmosDBIn_databaseName_help" xml:space="preserve">
+    <value>Nome da base de dados do Cosmos DB que inclui a colecção a monitorizar.</value>
+  </data>
+  <data name="cosmosDBIn_databaseName_label" xml:space="preserve">
+    <value>Nome da base de dados</value>
+  </data>
+  <data name="cosmosDBIn_leaseCollectionName_help" xml:space="preserve">
+    <value>Nome da coleção para armazenar as concessões.</value>
+  </data>
+  <data name="cosmosDBIn_leaseCollectionName_label" xml:space="preserve">
+    <value>Nome da coleção das concessões</value>
+  </data>
+  <data name="cosmosDBIn_leaseDatabaseName_help" xml:space="preserve">
+    <value>Nome da base de dados que inclui a coleção para armazenar as concessões.</value>
+  </data>
+  <data name="cosmosDBIn_leaseDatabaseName_label" xml:space="preserve">
+    <value>Nome da base de dados das concessões</value>
+  </data>
+  <data name="cosmosDBIn_name_help" xml:space="preserve">
+    <value>O nome utilizado para identificar este enlace no código</value>
+  </data>
+  <data name="cosmosDBIn_name_label" xml:space="preserve">
+    <value>Nome do parâmetro da coleção de documentos</value>
+  </data>
+  <data name="cosmosDB_trigger_displayName" xml:space="preserve">
+    <value>Azure Cosmos DB</value>
+  </data>
+  <data name="IoTHubServiceBusTopicTriggerCSharp_description" xml:space="preserve">
+    <value>Uma função C# que será executada sempre que uma mensagem for adicionada ao tópico especificado do Service Bus</value>
+  </data>
+  <data name="temp_category_IoTHub" xml:space="preserve">
+    <value>Hub IoT</value>
+  </data>
+  <data name="cosmosDBIn_createIfNotExists_help" xml:space="preserve">
+    <value>Verifica a existência e cria automaticamente a coleção de concessões.</value>
+  </data>
+  <data name="cosmosDBIn_createIfNotExists_label" xml:space="preserve">
+    <value>Criar coleção de concessão, se não existir</value>
+  </data>
+  <data name="EventGridTriggerJavascript_description" xml:space="preserve">
+    <value>Uma função JavaScript que será executada sempre que uma grelha de eventos receber um novo evento</value>
+  </data>
+  <data name="Identity_help" xml:space="preserve">
+    <value>A identidade que vai ser utilizada para executar a ação.</value>
+  </data>
+  <data name="Identity_label" xml:space="preserve">
+    <value>Identidade</value>
+  </data>
+  <data name="userid_help" xml:space="preserve">
+    <value>Necessário se, e apenas se, a identidade estiver definida como userFromId. O ID principal de utilizador associado a utilizador anteriormente com uma sessão iniciada.</value>
+  </data>
+  <data name="userid_label" xml:space="preserve">
+    <value>ID de Utilizador</value>
+  </data>
+  <data name="usertoken_help" xml:space="preserve">
+    <value>Necessário se, e apenas se, a identidade estiver definida como userFromToken. Um token válido para a
+ aplicação de função.</value>
+  </data>
+  <data name="usertoken_label" xml:space="preserve">
+    <value>Token de utilizador</value>
+  </data>
+  <data name="ProfilePhotoAPI_description" xml:space="preserve">
+    <value>Uma função que irá devolver a fotografia de perfil do utilizador chamador do Azure Active Directory</value>
+  </data>
+  <data name="OutlookMessageWebhookCreator_description" xml:space="preserve">
+    <value>Uma função que irá registar uma subscrição de webhook para mensagens na caixa de correio do utilizador chamador do Azure Active Directory</value>
+  </data>
+  <data name="OutlookMessageWebhookDeleter_description" xml:space="preserve">
+    <value>Uma função que irá anular o registo de todas as subscrições de webhook do Microsoft Graph desta aplicação para o utilizador chamador do Azure Active Directory</value>
+  </data>
+  <data name="OutlookMessageWebhookHandler_description" xml:space="preserve">
+    <value>Uma função que irá receber webhooks de mensagens do Outlook</value>
+  </data>
+  <data name="OutlookMessageWebhookRefresher_description" xml:space="preserve">
+    <value>Uma função que irá atualizar todas as subscrições de webhook do Microsoft Graph para esta aplicação</value>
+  </data>
+  <data name="identity_option_userFromRequest_label" xml:space="preserve">
+    <value>Utilizador do pedido de HTTP</value>
+  </data>
+  <data name="identity_option_userFromId_label" xml:space="preserve">
+    <value>Utilizador do ID</value>
+  </data>
+  <data name="identity_option_userFromToken_label" xml:space="preserve">
+    <value>Utilizador do token</value>
+  </data>
+  <data name="identity_option_clientCredentials_label" xml:space="preserve">
+    <value>Credenciais de cliente</value>
+  </data>
+  <data name="MSGraphWebhook_out_action_label" xml:space="preserve">
+    <value>Acção</value>
+  </data>
+  <data name="MSGraphWebhook_out_action_help" xml:space="preserve">
+    <value>A ação a ser executada na subscrição</value>
+  </data>
+  <data name="GraphWebhookSubscription_in_filter_help" xml:space="preserve">
+    <value>Se estiver definido como userFromRequest, então o enlace só obtém as subscrições pertencentes ao utilizador que chama (apenas válidas com o acionador HTTP).</value>
+  </data>
+  <data name="GraphWebhookSubscription_in_filter_label" xml:space="preserve">
+    <value>Filtrar</value>
+  </data>
+  <data name="activityTrigger_activity_errorText" xml:space="preserve">
+    <value>Nome de Atividade inválido</value>
+  </data>
+  <data name="activityTrigger_activity_help" xml:space="preserve">
+    <value>(Opcional) Nome da sua Atividade. A predefinição é o nome da sua Função se não for especificado.</value>
+  </data>
+  <data name="activityTrigger_activity_label" xml:space="preserve">
+    <value>Nome da atividade</value>
+  </data>
+  <data name="activityTrigger_displayName" xml:space="preserve">
+    <value>Atividade</value>
+  </data>
+  <data name="activityTrigger_name_help" xml:space="preserve">
+    <value>O nome utilizado para identificar este enlace no código</value>
+  </data>
+  <data name="activityTrigger_name_label" xml:space="preserve">
+    <value>Nome do parâmetro de atividade</value>
+  </data>
+  <data name="orchestrationClientIn_displayName" xml:space="preserve">
+    <value>Cliente de Orquestração</value>
+  </data>
+  <data name="orchestrationClientIn_name_help" xml:space="preserve">
+    <value>O nome utilizado para identificar este enlace no código</value>
+  </data>
+  <data name="orchestrationClientIn_name_label" xml:space="preserve">
+    <value>Nome do parâmetro do Cliente de Orquestração</value>
+  </data>
+  <data name="orchestrationTrigger_displayName" xml:space="preserve">
+    <value>Orquestração</value>
+  </data>
+  <data name="orchestrationTrigger_name_help" xml:space="preserve">
+    <value>O nome utilizado para identificar este enlace no código</value>
+  </data>
+  <data name="orchestrationTrigger_name_label" xml:space="preserve">
+    <value>Nome do parâmetro de orquestração</value>
+  </data>
+  <data name="orchestrationTrigger_orchestration_errorText" xml:space="preserve">
+    <value>Nome de Orquestração Inválido</value>
+  </data>
+  <data name="orchestrationTrigger_orchestration_help" xml:space="preserve">
+    <value>(Opcional) Nome da sua Orquestração. Tem a predefinição do nome da sua Função se ainda não estiver especificado.</value>
+  </data>
+  <data name="orchestrationTrigger_orchestration_label" xml:space="preserve">
+    <value>Nome de orquestração</value>
+  </data>
+  <data name="DurableFunctionsActivity_description" xml:space="preserve">
+    <value>Uma função que será executada sempre que uma Atividade é chamada por uma função de orquestrador.</value>
+  </data>
+  <data name="DurableFunctionsOrchestrator_description" xml:space="preserve">
+    <value>Uma função de orquestrador que invoca funções de atividade numa sequência.</value>
+  </data>
+  <data name="DurableFunctionsHttpStart_description" xml:space="preserve">
+    <value>Uma função que irá acionar sempre que recebe um pedido de HTTP para executar uma função de orquestrador.</value>
+  </data>
+  <data name="temp_category_durableFunctions" xml:space="preserve">
+    <value>Funções Duráveis</value>
+  </data>
+  <data name="BlobTrigger_name" xml:space="preserve">
+    <value>Acionador de blob</value>
+  </data>
+  <data name="EventHubTrigger_name" xml:space="preserve">
+    <value>Acionador do Hub de Eventos</value>
+  </data>
+  <data name="HttpTrigger_name" xml:space="preserve">
+    <value>Accionador HTTP</value>
+  </data>
+  <data name="OutlookMessageWebhookCreator_name" xml:space="preserve">
+    <value>Criador de subscrição do webhook de mensagem do Outlook</value>
+  </data>
+  <data name="OutlookMessageWebhookDeleter_name" xml:space="preserve">
+    <value>Eliminador de subscrição do webhook de mensagem do Outlook de subscrição do Outlook mensagem webhook</value>
+  </data>
+  <data name="OutlookMessageWebhookHandler_name" xml:space="preserve">
+    <value>Processador do webhook de mensagens de Outlook</value>
+  </data>
+  <data name="OutlookMessageWebhookRefresher_name" xml:space="preserve">
+    <value>Atualizador de subscrição do webhook de mensagem do Outlook</value>
+  </data>
+  <data name="ProfilePhotoAPI_name" xml:space="preserve">
+    <value>API de fotografia do perfil do Microsoft Graph</value>
+  </data>
+  <data name="QueueTrigger_name" xml:space="preserve">
+    <value>Acionador de fila</value>
+  </data>
+  <data name="ScheduledMail_name" xml:space="preserve">
+    <value>Correio agendado</value>
+  </data>
+  <data name="SendGrid_name" xml:space="preserve">
+    <value>SendGrid</value>
+  </data>
+  <data name="TimerTrigger_name" xml:space="preserve">
+    <value>Acionador de temporizador</value>
+  </data>
+  <data name="DurableFunctionsActivity_name" xml:space="preserve">
+    <value>Atividade de Funções durável</value>
+  </data>
+  <data name="DurableFunctionsHttpStart_name" xml:space="preserve">
+    <value>Inicializador de Funções Http Durável</value>
+  </data>
+  <data name="DurableFunctionsOrchestrator_name" xml:space="preserve">
+    <value>Orquestrador de Funções duráveis</value>
   </data>
 </root>
