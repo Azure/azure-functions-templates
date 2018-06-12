@@ -13,9 +13,9 @@ The settings specify the following properties.
 #### C# code example that processes a Service Bus queue message
 
 ```csharp
-public static void Run(string myQueueItem, TraceWriter log)
+public static void Run(string myQueueItem, ILogger log)
 {
-    log.Info($"C# ServiceBus queue trigger function processed message: {myQueueItem}");
+    log.LogInformation($"C# ServiceBus queue trigger function processed message: {myQueueItem}");
 }
 ```
 

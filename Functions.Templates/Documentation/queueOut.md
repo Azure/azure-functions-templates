@@ -24,7 +24,7 @@ In C# you can also bind to `ICollector<T>` or `IAsyncCollector<T>` where `T` is 
 This C# code example writes a single output queue message for each input queue message.
 
 ```csharp
-public static void Run(string myQueueItem, out string myOutputQueueItem, TraceWriter log)
+public static void Run(string myQueueItem, out string myOutputQueueItem, ILogger log)
 {
     myOutputQueueItem = myQueueItem + "(next step)";
 }
@@ -33,7 +33,7 @@ public static void Run(string myQueueItem, out string myOutputQueueItem, TraceWr
 This C# code example writes multiple messages by using  `ICollector<T>` (use `IAsyncCollector<T>` in an async function):
 
 ```csharp
-public static void Run(string myQueueItem, ICollector<string> myQueue, TraceWriter log)
+public static void Run(string myQueueItem, ICollector<string> myQueue, ILogger log)
 {
     myQueue.Add(myQueueItem + "(step 1)");
     myQueue.Add(myQueueItem + "(step 2)");

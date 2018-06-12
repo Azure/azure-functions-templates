@@ -58,9 +58,9 @@ To trigger At 9:30 AM every weekday:
 This C# code example writes a single log each time the function is triggered.
 
 ```csharp
-public static void Run(TimerInfo myTimer, TraceWriter log)
+public static void Run(TimerInfo myTimer, ILogger log)
 {
-    log.Info($"C# Timer trigger function executed at: {DateTime.Now}");    
+    log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");    
 }
 ```
 

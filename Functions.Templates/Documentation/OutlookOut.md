@@ -56,7 +56,7 @@ The following C# sample sends a mail from the caller to a recipient specified in
 ```csharp
 using System.Net;
 
-public static void Run(HttpRequest req, out Message message, TraceWriter log)
+public static void Run(HttpRequest req, out Message message, ILogger log)
 { 
     string emailAddress = req.Query["to"];
     message = new Message(){

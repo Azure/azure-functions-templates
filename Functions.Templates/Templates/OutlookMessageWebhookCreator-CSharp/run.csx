@@ -1,9 +1,9 @@
 using System;
 using System.Net;
 
-public static HttpResponseMessage run(HttpRequestMessage req, out string clientState, TraceWriter log)
+public static HttpResponseMessage run(HttpRequestMessage req, out string clientState, ILogger log)
 {
-    log.Info("C# HTTP trigger function processed a request.");
+    log.LogInformation("C# HTTP trigger function processed a request.");
 	clientState = Guid.NewGuid().ToString();
 	return new HttpResponseMessage(HttpStatusCode.OK);
 }

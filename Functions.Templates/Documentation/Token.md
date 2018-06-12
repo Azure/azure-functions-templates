@@ -60,7 +60,7 @@ using System.Net;
 using System.Net.Http; 
 using System.Net.Http.Headers; 
 
-public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, string graphToken, TraceWriter log)
+public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, string graphToken, ILogger log)
 {
     HttpClient client = new HttpClient();
     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", graphToken);

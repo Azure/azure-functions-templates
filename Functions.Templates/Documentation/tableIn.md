@@ -40,10 +40,10 @@ The table binding supports the following scenarios:
 The queue message has the row key value and the table entity is read into a type that is user defined. The type includes `PartitionKey` and `RowKey` properties and does not derive from `TableEntity`. 
 
 ```csharp
-public static void Run(string myQueueItem, Person personEntity, TraceWriter log)
+public static void Run(string myQueueItem, Person personEntity, ILogger log)
 {
-    log.Info($"C# Queue trigger function processed: {myQueueItem}");
-    log.Info($"Name in Person entity: {personEntity.Name}");
+    log.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
+    log.LogInformation($"Name in Person entity: {personEntity.Name}");
 }
 
 public class Person
@@ -72,12 +72,12 @@ The C# code adds a reference to the Azure Storage SDK so that the entity type ca
 #r "Microsoft.WindowsAzure.Storage"
 using Microsoft.WindowsAzure.Storage.Table;
 
-public static void Run(string myQueueItem, IQueryable<Person> tableBinding, TraceWriter log)
+public static void Run(string myQueueItem, IQueryable<Person> tableBinding, ILogger log)
 {
-    log.Info($"C# Queue trigger function processed: {myQueueItem}");
+    log.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
     foreach (Person person in tableBinding.Where(p => p.PartitionKey == myQueueItem).ToList())
     {
-        log.Info($"Name: {person.Name}");
+        log.LogInformation($"Name: {person.Name}");
     }
 }
 

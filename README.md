@@ -75,23 +75,24 @@ You can find more information on the templatting engine at the [wiki page](https
 ```CSHARP
 #if (portalTemplates) // Code applicable to portal only
 using System;
-public static void Run(TimerInfo myTimer, TraceWriter log)
+public static void Run(TimerInfo myTimer, ILogger log)
 #endif
 #if (vsTemplates) // Code applicable to Visual Studio
 using System;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
+using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
     public static class TimerTriggerCSharp
     {
         [FunctionName("FunctionNameValue")]
-        public static void Run([TimerTrigger("ScheduleValue")]TimerInfo myTimer, TraceWriter log)
+        public static void Run([TimerTrigger("ScheduleValue")]TimerInfo myTimer, ILogger log)
 #endif
 // Code common to portal and Visual Studio
         {
-            log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
+            log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
         }
 #if (vsTemplates)
     }
