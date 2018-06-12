@@ -6,7 +6,11 @@
             "authLevel": "function",
             "type": "httpTrigger",
             "direction": "in",
-            "name": "req"
+            "name": "req",
+            "methods": [
+                "get",
+                "post"
+            ]
         },
         {
             "type": "http",
