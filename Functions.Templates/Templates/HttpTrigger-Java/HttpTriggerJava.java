@@ -1,8 +1,8 @@
 package $packageName$;
 
 import java.util.*;
-import com.microsoft.azure.serverless.functions.annotation.*;
-import com.microsoft.azure.serverless.functions.*;
+import com.microsoft.azure.functions.annotation.*;
+import com.microsoft.azure.functions.*;
 
 /**
  * Http trigger templates for Microsoft Azure Functions.

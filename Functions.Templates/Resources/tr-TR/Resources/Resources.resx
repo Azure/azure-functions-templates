@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -124,7 +124,7 @@
     <value>Olay Hub'ı bağlantısı</value>
   </data>
   <data name="eventHubOut_displayName" xml:space="preserve">
-    <value>Azure Olay Hub'ı</value>
+    <value>Azure Event Hubs</value>
   </data>
   <data name="eventHubOut_name_help" xml:space="preserve">
     <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
@@ -136,7 +136,7 @@
     <value>Olay hub'ı adının ilk ve son karakteri, harf veya sayı olmalıdır. Ad yalnızca harf, sayı, kısa çizgi, nokta ve alt çizgi karakterlerini içerebilir ve 1 ile 50 karakter arası uzunlukta olabilir.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
-    <value>Bu, olayın gönderileceği olay hub'ının adıdır.</value>
+    <value>Olayın gönderileceği olay hub'ının adı.</value>
   </data>
   <data name="eventHubOut_path_label" xml:space="preserve">
     <value>Olay Hub'ı adı</value>
@@ -154,7 +154,7 @@
     <value>Olay Hub'ı tüketici grubu</value>
   </data>
   <data name="eventHubTrigger_displayName" xml:space="preserve">
-    <value>Azure Olay Hub'ı</value>
+    <value>Azure Event Hubs</value>
   </data>
   <data name="eventHubTrigger_name_help" xml:space="preserve">
     <value>Kodunuzda bu tetikleyiciyi tanımlamak için kullanılan ad</value>
@@ -187,7 +187,7 @@
     <value>Kuyruk adı</value>
   </data>
   <data name="queueOut_queueName_help" xml:space="preserve">
-    <value>Bu, iletinin gönderileceği kuyruktur. Kuyruk henüz yoksa, belirtilen depolama hesabında sizin için bir tane oluşturulur.</value>
+    <value>İletinin gönderileceği kuyruk. Kuyruk henüz yoksa, belirtilen depolama hesabında sizin için bir tane oluşturulur.</value>
   </data>
   <data name="temp_category_core" xml:space="preserve">
     <value>Çekirdek</value>
@@ -211,7 +211,7 @@
     <value>Zaman damgası parametresi adı</value>
   </data>
   <data name="timerTrigger_schedule_help" xml:space="preserve">
-    <value>Zamanlamayı belirtmek için '{second} {minute} {hour} {day} {month} {day of week}' biçiminde bir Cron ifadesi girin. Örnekler için aşağıdaki belgelere bakın.</value>
+    <value>Zamanlamayı belirtmek için '{second} {minute} {hour} {day} {month} {day of week}' biçiminde bir Cron ifadesi girin.</value>
   </data>
   <data name="timerTrigger_schedule_label" xml:space="preserve">
     <value>Zamanla</value>
@@ -241,16 +241,16 @@
     <value>Tablo Adı</value>
   </data>
   <data name="variables_appSettingsHelp" xml:space="preserve">
-    <value>Bu, depolama hesabınızın bağlantı dizesidir.</value>
+    <value>Depolama hesabı bağlantı dizenizi içeren uygulama ayarının adı.</value>
   </data>
   <data name="variables_parameterName" xml:space="preserve">
     <value>Parametre adı, karakter sınırlaması olmayan alfasayısal bir dize olmalıdır ve sayıyla başlayamaz.</value>
   </data>
   <data name="variables_paramNameInputHelp" xml:space="preserve">
-    <value>Bu, kodda bulunan ve giriş bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodda bulunan ve giriş bağlamasının bağlanacağı parametrenin adı.</value>
   </data>
   <data name="variables_paramNameOutputHelp" xml:space="preserve">
-    <value>Bu, kodda bulunan ve çıkış bağlamasının bağlanacağı parametrenin adıdır.</value>
+    <value>Kodda bulunan ve çıkış bağlamasının bağlanacağı parametrenin adı.</value>
   </data>
   <data name="variables_selectConnection" xml:space="preserve">
     <value>Bir bağlantı seçmek için Seç'e tıklayın</value>
@@ -295,7 +295,7 @@
     <value>Kuyruk adı</value>
   </data>
   <data name="blobOut_path_help" xml:space="preserve">
-    <value>Bu, depolama hesabınızda blob'un yazılacağı yoldur.</value>
+    <value>Depolama hesabınızda blobun yazılacağı yol.</value>
   </data>
   <data name="blobOut_path_errorText" xml:space="preserve">
     <value>Blob yolunuzun 3-63 karakter arasında bir kapsayıcı adı olması ve 1-1024 karakter arasındaki bir blob adından önce gelmesi gerekir. Blob adı herhangi bir karakter birleşiminden oluşabilir ve eğik çizgiyle (/) ayrılan en fazla 254 yol segmenti içerebilir.</value>
@@ -310,7 +310,7 @@
     <value>Blob parametresi adı</value>
   </data>
   <data name="blobIn_path_help" xml:space="preserve">
-    <value>Bu, depolama hesabınızda blob'un okunacağı yoldur.</value>
+    <value>Depolama hesabınızda blobun okunacağı yol.</value>
   </data>
   <data name="blobIn_path_label" xml:space="preserve">
     <value>Yol</value>
@@ -328,7 +328,7 @@
     <value>Yol</value>
   </data>
   <data name="blobTrigger_path_help" xml:space="preserve">
-    <value>Bu, depolama hesabınızda tetikleyicinin izleyeceği yoldur.</value>
+    <value>Depolama hesabınızda tetikleyicinin izleyeceği yol.</value>
   </data>
   <data name="blobTrigger_path_errorText" xml:space="preserve">
     <value>Blob yolunuzun 3-63 karakter arasında bir kapsayıcı adı olması ve 1-1024 karakter arasındaki bir blob adından önce gelmesi gerekir. Blob adı herhangi bir karakter birleşiminden oluşabilir ve eğik çizgiyle (/) ayrılan en fazla 254 yol segmenti içerebilir.</value>
@@ -415,7 +415,7 @@
     <value>Mod</value>
   </data>
   <data name="httpTrigger_mode_help" xml:space="preserve">
-    <value>Bu, tetikleyicinin modudur. "Standart", isteğin ek semantik içermeyen standart HTTP olacağını gösterir. "Web kancası", isteğin belirtilen bir web kancası türüne göre işleneceği anlamına gelir.</value>
+    <value>Tetikleyicinin modu. "Standart", isteğin ek semantik içermeyen standart HTTP olacağını gösterir. "Web kancası", isteğin belirtilen bir web kancası türüne göre işleneceği anlamına gelir.</value>
   </data>
   <data name="apiHubFileIn_displayName" xml:space="preserve">
     <value>Dış Dosya (Önizleme)</value>
@@ -433,28 +433,28 @@
     <value>Azure Blob Depolama</value>
   </data>
   <data name="documentDBIn_collectionName_help" xml:space="preserve">
-    <value>Bu, veritabanınızda verilerin okunacağı koleksiyonun adıdır.</value>
+    <value>Verilerin okunacağı veritabanı koleksiyonu.</value>
   </data>
   <data name="documentDBIn_collectionName_label" xml:space="preserve">
     <value>Koleksiyon Adı</value>
   </data>
   <data name="documentDBIn_connection_help" xml:space="preserve">
-    <value>DocumentDB bağlantı dizenizi içeren uygulama ayarının adı</value>
+    <value>Cosmos DB bağlantı dizenizi içeren uygulama ayarının adı</value>
   </data>
   <data name="documentDBIn_connection_label" xml:space="preserve">
-    <value>DocumentDB hesap bağlantısı</value>
+    <value>Cosmos DB hesabı bağlantısı</value>
   </data>
   <data name="documentDBIn_databaseName_help" xml:space="preserve">
-    <value>DocumentDB hesabınızda yer alan ve okunacak verileri içeren veritabanının adı.</value>
+    <value>Verilerin okunacağı Cosmos DB veritabanı.</value>
   </data>
   <data name="documentDBIn_databaseName_label" xml:space="preserve">
     <value>Veritabanı adı</value>
   </data>
   <data name="documentDBIn_displayName" xml:space="preserve">
-    <value>Azure DocumentDB</value>
+    <value>Azure Cosmos DB</value>
   </data>
   <data name="documentDBIn_id_help" xml:space="preserve">
-    <value>Bu, okunacak belgenin kimliğidir. Bir SQL sorgusu veya kimlik belirtilmezse, koleksiyondaki tüm belgeler döndürülür.</value>
+    <value>Okunacak belgenin kimliği. Bir SQL sorgusu veya kimlik belirtilmezse, koleksiyondaki tüm belgeler döndürülür.</value>
   </data>
   <data name="documentDBIn_id_label" xml:space="preserve">
     <value>Belge Kimliği (isteğe bağlı)</value>
@@ -466,31 +466,31 @@
     <value>Belge parametresi adı</value>
   </data>
   <data name="documentDBOut_collectionName_help" xml:space="preserve">
-    <value>Bu, veritabanınızda verilerin yazılacağı koleksiyonun adıdır.</value>
+    <value>Verilerin yazılacağı veritabanı koleksiyonu.</value>
   </data>
   <data name="documentDBOut_collectionName_label" xml:space="preserve">
     <value>Koleksiyon Adı</value>
   </data>
   <data name="documentDBOut_connection_help" xml:space="preserve">
-    <value>DocumentDB bağlantı dizenizi içeren uygulama ayarının adı</value>
+    <value>Cosmos DB bağlantı dizenizi içeren uygulama ayarının adı</value>
   </data>
   <data name="documentDBOut_connection_label" xml:space="preserve">
-    <value>DocumentDB hesap bağlantısı</value>
+    <value>Cosmos DB hesabı bağlantısı</value>
   </data>
   <data name="documentDBOut_createIfNotExists_help" xml:space="preserve">
-    <value>True olduğunda, veritabanınız ve koleksiyonunuz otomatik olarak oluşturulur.</value>
+    <value>True ise, Cosmos DB veritabanı ve koleksiyonunu oluşturur.</value>
   </data>
   <data name="documentDBOut_createIfNotExists_label" xml:space="preserve">
-    <value>DocumentDB veritabanı ve koleksiyonunun sizin için oluşturulmasını istiyor musunuz?</value>
+    <value>True ise, Cosmos DB veritabanı ve koleksiyonunu oluşturur</value>
   </data>
   <data name="documentDBOut_databaseName_help" xml:space="preserve">
-    <value>Bu, DocumentDB hesabınızda verilerin yazılacağı veritabanının adıdır.</value>
+    <value>Verilerin yazılacağı Cosmos DB veritabanı.</value>
   </data>
   <data name="documentDBOut_databaseName_label" xml:space="preserve">
     <value>Veritabanı adı</value>
   </data>
   <data name="documentDBOut_displayName" xml:space="preserve">
-    <value>Azure DocumentDB Belgesi</value>
+    <value>Azure Cosmos DB</value>
   </data>
   <data name="documentDBOut_name_help" xml:space="preserve">
     <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
@@ -517,7 +517,7 @@
     <value>Parametre adı</value>
   </data>
   <data name="mobileTableIn_apiKey_help" xml:space="preserve">
-    <value>Bu, Mobil Uygulamanızın API Anahtarını belirten uygulama ayarı adıdır. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;Daha fazla bilgi&lt;/a&gt;.</value>
+    <value>Mobil Uygulamanız için API Anahtarını belirten uygulama ayarı adı. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;Daha fazla bilgi&lt;/a&gt;.</value>
   </data>
   <data name="mobileTableIn_apiKey_label" xml:space="preserve">
     <value>API anahtarı arama (isteğe bağlı)</value>
@@ -529,10 +529,10 @@
     <value>Mobil Uygulama URL arama</value>
   </data>
   <data name="mobileTableIn_displayName" xml:space="preserve">
-    <value>Azure Mobil Tablo Kaydı</value>
+    <value>Azure Mobil Tablolar</value>
   </data>
   <data name="mobileTableIn_id_help" xml:space="preserve">
-    <value>Bu, alınacak kaydın kimliğidir.</value>
+    <value>Alınacak kaydın kimliği.</value>
   </data>
   <data name="mobileTableIn_id_label" xml:space="preserve">
     <value>Kayıt Kimliği</value>
@@ -550,7 +550,7 @@
     <value>Tablo adı</value>
   </data>
   <data name="mobileTableOut_apiKey_help" xml:space="preserve">
-    <value>Bu, Mobil Uygulamanızın API Anahtarını belirten uygulama ayarı adıdır. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;Daha fazla bilgi&lt;/a&gt;.</value>
+    <value>Mobil Uygulamanız için API Anahtarını belirten uygulama ayarı adı. &lt;a target='_blank' href='http:go.microsoft.com/fwlink/?LinkId=780568'&gt;Daha fazla bilgi&lt;/a&gt;.</value>
   </data>
   <data name="mobileTableOut_apiKey_label" xml:space="preserve">
     <value>API anahtarı arama (isteğe bağlı)</value>
@@ -562,7 +562,7 @@
     <value>Mobil Uygulama URL arama</value>
   </data>
   <data name="mobileTableOut_displayName" xml:space="preserve">
-    <value>Azure Mobil Tablo Kaydı</value>
+    <value>Azure Mobil Tablolar</value>
   </data>
   <data name="mobileTableOut_name_help" xml:space="preserve">
     <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
@@ -583,10 +583,10 @@
     <value>Notification Hubs ad alanı bağlantısı</value>
   </data>
   <data name="notificationHubOut_displayName" xml:space="preserve">
-    <value>Azure Bildirim Hub'ı</value>
+    <value>Azure Notification Hubs</value>
   </data>
   <data name="notificationHubOut_hubName_help" xml:space="preserve">
-    <value>Bu, anında iletilen bildirimler göndermek için kullanılan Bildirim Hub'ının adıdır.</value>
+    <value>Anında iletilen bildirimler göndermek için kullanılan Bildirim Hub'ı.</value>
   </data>
   <data name="notificationHubOut_hubName_label" xml:space="preserve">
     <value>Bildirim Hub'ı adı</value>
@@ -622,7 +622,7 @@
     <value>SendGrid</value>
   </data>
   <data name="sendGrid_from_help" xml:space="preserve">
-    <value>Bu, iletinin gönderildiği e-posta adresidir. 'kullanıcı@anabilgisayar.com' veya 'Görünen Ad &lt;kullanıcı@anabilgisayar.com&gt;' biçiminde olabilir. Burada belirtilmediyse, değer kodda belirtilebilir.</value>
+    <value>İletinin gönderildiği e-posta adresi. 'kullanıcı@anabilgisayar.com' veya 'Görünen Ad &lt;kullanıcı@anabilgisayar.com&gt;' biçiminde olabilir. Burada belirtilmediyse, değer kodda belirtilebilir.</value>
   </data>
   <data name="sendGrid_from_label" xml:space="preserve">
     <value>Gönderici adresi</value>
@@ -822,17 +822,8 @@
   <data name="table_tableName_label" xml:space="preserve">
     <value>Tablo adı</value>
   </data>
-  <data name="BlobTriggerBatch_description" xml:space="preserve">
-    <value>(Deneysel) Belirtilen kapsayıcıya her blob eklendiğinde çalıştırılacak bir Batch işlevi</value>
-  </data>
-  <data name="BlobTriggerCSharp_description" xml:space="preserve">
-    <value>Belirtilen kapsayıcıya bir blob eklendiğinde çalıştırılacak C# işlevi</value>
-  </data>
-  <data name="BlobTriggerFSharp_description" xml:space="preserve">
-    <value>Belirtilen kapsayıcıya bir blob eklendiğinde çalıştırılacak F# işlevi</value>
-  </data>
-  <data name="BlobTriggerNodeJS_description" xml:space="preserve">
-    <value>Belirtilen kapsayıcıya bir blob eklendiğinde çalıştırılacak JavaScript işlevi</value>
+  <data name="BlobTrigger_description" xml:space="preserve">
+    <value>Belirtilen kapsayıcıya her blob eklendiğinde çalıştırılacak bir işlev</value>
   </data>
   <data name="CSharp_description" xml:space="preserve">
     <value>Bir GitHub web kancası isteği aldığında çalıştırılacak C# işlevi</value>
@@ -861,17 +852,8 @@
   <data name="EmptyPython_description" xml:space="preserve">
     <value>Tetikleyici, giriş veya çıkış içermeyen boş bir Python işlevi</value>
   </data>
-  <data name="EventHubTriggerCSharp_description" xml:space="preserve">
-    <value>Bir olay hub'ı her yeni olay aldığında çalıştırılacak C# işlevi</value>
-  </data>
-  <data name="EventHubTriggerFSharp_description" xml:space="preserve">
-    <value>Olay hub'ı yeni bir olay aldığında çalıştırılacak F# işlevi</value>
-  </data>
-  <data name="EventHubTriggerNodeJS_description" xml:space="preserve">
-    <value>Bir olay hub'ı her yeni olay aldığında çalıştırılacak JavaScript işlevi</value>
-  </data>
-  <data name="EventHubTriggerPython_description" xml:space="preserve">
-    <value>(Deneysel) Olay hub'ı her yeni olay aldığında çalıştırılacak bir Python işlevi</value>
+  <data name="EventHubTrigger_description" xml:space="preserve">
+    <value>Bir olay hub'ı her yeni olay aldığında çalıştırılacak bir işlev</value>
   </data>
   <data name="FaceLocatorCSharp_description" xml:space="preserve">
     <value>Resimleri işleyen ve yüzlerin sınırlayıcı dikdörtgenlerini çıkaran bir C# işlevi</value>
@@ -933,23 +915,8 @@
   <data name="HttpPUTCRUDFSharp_description" xml:space="preserve">
     <value>HTTP isteği aldığında bir Depolama Tablosundaki varlığı güncelleştiren F# işlevi</value>
   </data>
-  <data name="HttpTriggerBatch_description" xml:space="preserve">
-    <value>(Deneysel) Her HTTP isteği aldığında çalıştırılacak bir Batch işlevi</value>
-  </data>
-  <data name="HttpTriggerCSharp_description" xml:space="preserve">
-    <value>Her HTTP isteği aldığında çalıştırılacak C# işlevi</value>
-  </data>
-  <data name="HttpTriggerFSharp_description" xml:space="preserve">
-    <value>Bir HTTP isteği aldığında çalıştırılacak F# işlevi</value>
-  </data>
-  <data name="HttpTriggerNodeJS_description" xml:space="preserve">
-    <value>Her HTTP isteği aldığında çalıştırılacak JavaScript işlevi</value>
-  </data>
-  <data name="HttpTriggerPowerShell_description" xml:space="preserve">
-    <value>(Önizleme) Her HTTP isteği aldığında çalıştırılacak bir PowerShell işlevi</value>
-  </data>
-  <data name="HttpTriggerPython_description" xml:space="preserve">
-    <value>(Deneysel) Her HTTP isteği aldığında çalıştırılacak Python 3 işlevi</value>
+  <data name="HttpTrigger_description" xml:space="preserve">
+    <value>Her HTTP isteği aldığında çalıştırılan ve gövde veya sorgu dizesindeki verilere bağlı olarak yanıt veren bir işlev</value>
   </data>
   <data name="ImageResizerCSharp_description" xml:space="preserve">
     <value>Belirtilen kapsayıcıya bir blob eklendiğinde yeniden boyutlandırılmış görüntüler oluşturan C# işlevi</value>
@@ -966,29 +933,8 @@
   <data name="ManualTriggerNodeJS_description" xml:space="preserve">
     <value>Portaldaki "Çalıştır" düğmesi aracılığıyla el ile tetiklenen JavaScript işlevi</value>
   </data>
-  <data name="QueueTriggerBash_description" xml:space="preserve">
-    <value>(Deneysel) Belirtilen Azure Kuyruk Depolama'ya her ileti eklendiğinde çalıştırılacak bir bash işlevi</value>
-  </data>
-  <data name="QueueTriggerBatch_description" xml:space="preserve">
-    <value>(Deneysel) Belirtilen Azure Kuyruk Depolama'ya her ileti eklendiğinde çalıştırılacak bir Batch işlevi</value>
-  </data>
-  <data name="QueueTriggerCSharp_description" xml:space="preserve">
-    <value>Belirtilen Azure Kuyruk Depolama'ya her ileti eklendiğinde çalıştırılacak bir C# işlevi</value>
-  </data>
-  <data name="QueueTriggerFSharp_description" xml:space="preserve">
-    <value>Belirtilen Azure Kuyruk Depolama'ya her ileti eklendiğinde çalıştırılacak bir F# işlevi</value>
-  </data>
-  <data name="QueueTriggerNodeJS_description" xml:space="preserve">
-    <value>Belirtilen Azure Kuyruk Depolama'ya her ileti eklendiğinde çalıştırılacak bir JavaScript işlevi</value>
-  </data>
-  <data name="QueueTriggerPHP_description" xml:space="preserve">
-    <value>(Deneysel) Belirtilen Azure Kuyruk Depolama'ya her ileti eklendiğinde çalıştırılacak bir PHP işlevi</value>
-  </data>
-  <data name="QueueTriggerPowerShell_description" xml:space="preserve">
-    <value>(Önizleme) Belirtilen Azure Kuyruk Depolama'ya her ileti eklendiğinde çalıştırılacak bir PowerShell işlevi</value>
-  </data>
-  <data name="QueueTriggerPython_description" xml:space="preserve">
-    <value>(Deneysel) Belirtilen Azure Kuyruk Depolama'ya her ileti eklendiğinde çalıştırılacak bir Python işlevi</value>
+  <data name="QueueTrigger_description" xml:space="preserve">
+    <value>Belirtilen Azure Depolama kuyruğuna her ileti eklendiğinde çalıştırılacak işlev</value>
   </data>
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
     <value>(Deneysel) Bir Dış Dosya sağlayıcısına dosya eklendiğinde çalıştırılacak bir Batch işlevi.</value>
@@ -1014,14 +960,8 @@
   <data name="SasTokenFSharp_description" xml:space="preserve">
     <value>Belirli bir kapsayıcı ve blob adı için Azure Depolama'ya yönelik SAS belirteci oluşturan F# işlevi.</value>
   </data>
-  <data name="SendGridCSharp_description" xml:space="preserve">
-    <value>Belirli bir kuyruğa yeni öğe eklendiğinde onay e-postası gönderen bir C# işlevi</value>
-  </data>
-  <data name="SendGridFSharp_description" xml:space="preserve">
-    <value>Belirli bir kuyruğa yeni öğe eklendiğinde onay e-postası gönderen bir F# işlevi</value>
-  </data>
-  <data name="SendGridNodeJS_description" xml:space="preserve">
-    <value>Belirli bir kuyruğa yeni öğe eklendiğinde onay e-postası gönderen bir JavaScript işlevi</value>
+  <data name="SendGrid_description" xml:space="preserve">
+    <value>Belirli bir kuyruğa yeni öğe eklendiğinde onay e-postası gönderen bir işlev</value>
   </data>
   <data name="ServiceBusQueueTriggerCSharp_description" xml:space="preserve">
     <value>Belirtilen Service Bus kuyruğuna bir ileti eklendiğinde çalıştırılacak C# işlevi</value>
@@ -1038,17 +978,11 @@
   <data name="ServiceBusTopicTriggerNodeJS_description" xml:space="preserve">
     <value>Belirtilen Service Bus konusuna bir ileti eklendiğinde çalıştırılacak JavaScript işlevi</value>
   </data>
-  <data name="TimerTriggerCSharp_description" xml:space="preserve">
-    <value>Belirtilen zamanlamaya göre çalıştırılacak C# işlevi</value>
+  <data name="TimerTrigger_description" xml:space="preserve">
+    <value>Belirtilen bir zamanlamaya göre çalıştırılacak bir işlev</value>
   </data>
-  <data name="TimerTriggerFSharp_description" xml:space="preserve">
-    <value>Belirtilen zamanlamada çalıştırılacak F# işlevi</value>
-  </data>
-  <data name="TimerTriggerNodeJS_description" xml:space="preserve">
-    <value>Belirtilen bir zamanlamaya göre çalıştırılacak JavaScript işlevi</value>
-  </data>
-  <data name="TimerTriggerPowerShell_description" xml:space="preserve">
-    <value>(Önizleme) Belirtilen zamanlamaya göre çalıştırılacak bir PowerShell işlevi</value>
+  <data name="TimerTriggerExcelOutlook_description" xml:space="preserve">
+    <value>İki Excel tablosunu okur, verileri temel alan e-postalar gönderir ve sonra bir Excel tablosunu güncelleştirir.</value>
   </data>
   <data name="timerTrigger_schedule_errorText" xml:space="preserve">
     <value>Geçersiz Cron İfadesi. Daha fazla bilgi için lütfen &lt;a target='_blank' href='https://azure.microsoft.com/en-us/documentation/articles/functions-bindings-timer/'&gt;belgelere&lt;/a&gt; bakın.</value>
@@ -1096,16 +1030,16 @@
     <value>Tüketici grubunun ilk ve son karakteri, harf veya sayı olmalıdır. Ad yalnızca harf, sayı, kısa çizgi, nokta ve alt çizgi karakterlerini içerebilir. $Default grubuna da izin verilir. Ad, 1 ile 50 karakter arası uzunlukta olabilir.</value>
   </data>
   <data name="documentDB_displayName" xml:space="preserve">
-    <value>Azure DocumentDB Belgesi</value>
+    <value>Azure Cosmos DB</value>
   </data>
   <data name="sendGrid_apiKey_help" xml:space="preserve">
-    <value>SendGrid geliştirici API anahtarı</value>
+    <value>SendGrid geliştirici API anahtarınızı içeren uygulama ayarının adı.</value>
   </data>
   <data name="sendGrid_apiKey_label" xml:space="preserve">
-    <value>SendGrid API Anahtarı</value>
+    <value>SendGrid API Anahtarı Uygulama Ayarı</value>
   </data>
   <data name="bot_botId_help" xml:space="preserve">
-    <value>Bu, ileti oluştururken ve robota gönderirken Etkinlikteki Kimden özelliğinde kullanılan Kimliktir ve gönderme etkinliğindeki ChannelAccount.Id değerini doldurur.</value>
+    <value>İleti oluştururken ve robota gönderirken Etkinlikteki Kimden özelliğinde kullanılan Kimlik. Gönderme etkinliğindeki ChannelAccount.Id değerini doldurur.</value>
   </data>
   <data name="bot_botId_label" xml:space="preserve">
     <value>Gönderen Kimliği</value>
@@ -1117,14 +1051,13 @@
     <value>Bot Framework (Önizleme)</value>
   </data>
   <data name="bot_in_secret_help" xml:space="preserve">
-    <value>Doğrudan Hat Anahtarı, Bot Framework portalında bulunan Doğrudan Hat kanalı yapılandırma sayfasından oluşturulabilir. Bu alanın boş bırakılması durumunda 'AzureWebJobsBotFrameworkDirectLineSecret' Uygulama Ayarındaki değer aranır</value>
+    <value>Doğrudan Hat Anahtarınızı içeren uygulamanın adı. Doğrudan Hat Anahtarı, Bot Framework portalında bulunan Doğrudan Hat kanalı yapılandırma sayfasından oluşturulabilir. Bu alanın boş bırakılması durumunda uygulama ayarı: 'AzureWebJobsBotFrameworkDirectLineSecret'</value>
   </data>
   <data name="bot_in_secret_label" xml:space="preserve">
     <value>Doğrudan Hat Anahtarı</value>
   </data>
   <data name="bot_out_secret_help" xml:space="preserve">
     <value>Doğrudan Hat Anahtarı, Bot Framework portalında bulunan Doğrudan Hat kanalı yapılandırma sayfasından oluşturulabilir. Bu alanın boş bırakılması durumunda 'AzureWebJobsBotFrameworkDirectLineSecret' Uygulama Ayarındaki değer aranır</value>
-
   </data>
   <data name="bot_out_secret_label" xml:space="preserve">
     <value>Doğrudan Hat Anahtarı</value>
@@ -1141,17 +1074,185 @@
   <data name="bot_out_name_label" xml:space="preserve">
     <value>Robot parametresi adı</value>
   </data>
-  <data name="ScheduledMailCSharp_description" xml:space="preserve">
-    <value>(Önizleme) Düzenli aralıklarla e-posta gönderen bir C# işlevi</value>
+  <data name="variables_loginToAAD" xml:space="preserve">
+    <value>Asıl Kimliğinizi almak için tıklayın</value>
+  </data>
+  <data name="excel_in_displayName" xml:space="preserve">
+    <value>Excel tablosu</value>
+  </data>
+  <data name="excel_in_name_label" xml:space="preserve">
+    <value>Tablo parametresi adı</value>
+  </data>
+  <data name="excel_in_name_help" xml:space="preserve">
+    <value>İşlev kodunuzda bu bağlamayı tanımlamak için kullanılan ad.</value>
+  </data>
+  <data name="excel_in_path_label" xml:space="preserve">
+    <value>Excel çalışma kitabı yolu</value>
+  </data>
+  <data name="excel_in_path_help" xml:space="preserve">
+    <value>OneDrive'daki Excel çalışma kitabının yolu.</value>
+  </data>
+  <data name="excel_in_worksheetName_label" xml:space="preserve">
+    <value>Çalışma Sayfası Adı</value>
+  </data>
+  <data name="excel_in_worksheetName_help" xml:space="preserve">
+    <value>Tablonun bulunduğu çalışma sayfası.</value>
+  </data>
+  <data name="excel_in_tableName_label" xml:space="preserve">
+    <value>Tablo adı</value>
+  </data>
+  <data name="excel_in_tableName_help" xml:space="preserve">
+    <value>Tablonun adı. Belirtilmezse çalışma kitabının içeriği kullanılır.</value>
+  </data>
+  <data name="excel_in_path_error" xml:space="preserve">
+    <value>Yol geçerli olmalıdır</value>
+  </data>
+  <data name="excel_out_displayName" xml:space="preserve">
+    <value>Excel tablosu</value>
+  </data>
+  <data name="excel_out_name_label" xml:space="preserve">
+    <value>Tablo parametresi adı</value>
+  </data>
+  <data name="excel_out_name_help" xml:space="preserve">
+    <value>İşlev kodunuzda bu bağlamayı tanımlamak için kullanılan ad.</value>
+  </data>
+  <data name="excel_out_path_label" xml:space="preserve">
+    <value>Excel çalışma kitabı yolu</value>
+  </data>
+  <data name="excel_out_path_help" xml:space="preserve">
+    <value>OneDrive'daki Excel çalışma kitabının yolu.</value>
+  </data>
+  <data name="excel_out_worksheetName_label" xml:space="preserve">
+    <value>Çalışma Sayfası Adı</value>
+  </data>
+  <data name="excel_out_worksheetName_help" xml:space="preserve">
+    <value>Tablonun bulunduğu çalışma sayfası.</value>
+  </data>
+  <data name="excel_out_tableName_label" xml:space="preserve">
+    <value>Tablo adı</value>
+  </data>
+  <data name="excel_out_tableName_help" xml:space="preserve">
+    <value>Tablonun adı. Belirtilmezse çalışma kitabının içeriği kullanılır.</value>
+  </data>
+  <data name="excel_out_updateType_label" xml:space="preserve">
+    <value>Düzenleme modu</value>
+  </data>
+  <data name="excel_out_updateType_help" xml:space="preserve">
+    <value>Tabloya yapılacak değişikliğin türü.</value>
+  </data>
+  <data name="excel_out_path_error" xml:space="preserve">
+    <value>Yol geçerli olmalıdır</value>
+  </data>
+  <data name="outlook_displayName" xml:space="preserve">
+    <value>Outlook posta iletisi</value>
+  </data>
+  <data name="outlook_out_label_help" xml:space="preserve">
+    <value>İşlev kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
+  </data>
+  <data name="outlook_out_label_name" xml:space="preserve">
+    <value>İleti parametresi adı</value>
+  </data>
+  <data name="outlook_out_name_help" xml:space="preserve">
+    <value>İşlev kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
+  </data>
+  <data name="outlook_out_name_label" xml:space="preserve">
+    <value>İleti parametresi adı</value>
+  </data>
+  <data name="principal_id_label_token" xml:space="preserve">
+    <value>Asıl Kimlik Uygulama Ayarı adı</value>
+  </data>
+  <data name="principal_id_help_token" xml:space="preserve">
+    <value>İstenen kaynağa yönelik isteklerin kimliğini doğrulamak üzere kullanılan asıl kimlik</value>
+  </data>
+  <data name="principal_id_label_excel_in" xml:space="preserve">
+    <value>Asıl Kimlik Uygulama Ayarı adı</value>
+  </data>
+  <data name="principal_id_help_excel_in" xml:space="preserve">
+    <value>İstenen kaynağa yönelik isteklerin kimliğini doğrulamak üzere kullanılan asıl kimlik</value>
+  </data>
+  <data name="principal_id_label_excel_out" xml:space="preserve">
+    <value>Asıl Kimlik Uygulama Ayarı adı</value>
+  </data>
+  <data name="principal_id_help_excel_out" xml:space="preserve">
+    <value>İstenen kaynağa yönelik isteklerin kimliğini doğrulamak üzere kullanılan asıl kimlik</value>
+  </data>
+  <data name="principal_id_label_outlook" xml:space="preserve">
+    <value>Asıl Kimlik Uygulama Ayarı adı</value>
+  </data>
+  <data name="principal_id_help_outlook" xml:space="preserve">
+    <value>İstenen kaynağa yönelik isteklerin kimliğini doğrulamak üzere kullanılan asıl kimlik</value>
+  </data>
+  <data name="principal_id_label_onedrive_in" xml:space="preserve">
+    <value>Asıl Kimlik Uygulama Ayarı adı</value>
+  </data>
+  <data name="principal_id_help_onedrive_in" xml:space="preserve">
+    <value>İstenen kaynağa yönelik isteklerin kimliğini doğrulamak üzere kullanılan asıl kimlik</value>
+  </data>
+  <data name="principal_id_label_onedrive_out" xml:space="preserve">
+    <value>Asıl Kimlik Uygulama Ayarı adı</value>
+  </data>
+  <data name="principal_id_help_onedrive_out" xml:space="preserve">
+    <value>İstenen kaynağa yönelik isteklerin kimliğini doğrulamak üzere kullanılan asıl kimlik</value>
+  </data>
+  <data name="principal_id_label_graphwebhook" xml:space="preserve">
+    <value>Asıl Kimlik Uygulama Ayarı adı</value>
+  </data>
+  <data name="principal_id_help_graphwebhook" xml:space="preserve">
+    <value>İstenen kaynağa yönelik isteklerin kimliğini doğrulamak üzere kullanılan asıl kimlik</value>
+  </data>
+  <data name="idToken_label_token" xml:space="preserve">
+    <value>Kimlik Belirteci</value>
+  </data>
+  <data name="idToken_help_token" xml:space="preserve">
+    <value>MS Graph ile kimlik doğrulaması için kullanılan ifade veya açık kimlik belirteci</value>
+  </data>
+  <data name="idToken_label_excel_in" xml:space="preserve">
+    <value>Kimlik Belirteci</value>
+  </data>
+  <data name="idToken_help_excel_in" xml:space="preserve">
+    <value>MS Graph ile kimlik doğrulaması için kullanılan ifade veya açık kimlik belirteci</value>
+  </data>
+  <data name="idToken_label_excel_out" xml:space="preserve">
+    <value>Kimlik Belirteci</value>
+  </data>
+  <data name="idToken_help_excel_out" xml:space="preserve">
+    <value>MS Graph ile kimlik doğrulaması için kullanılan ifade veya açık kimlik belirteci</value>
+  </data>
+  <data name="idToken_label_outlook" xml:space="preserve">
+    <value>Kimlik Belirteci</value>
+  </data>
+  <data name="idToken_help_outlook" xml:space="preserve">
+    <value>MS Graph ile kimlik doğrulaması için kullanılan ifade veya açık kimlik belirteci</value>
+  </data>
+  <data name="idToken_label_onedrive_in" xml:space="preserve">
+    <value>Kimlik Belirteci</value>
+  </data>
+  <data name="idToken_help_onedrive_in" xml:space="preserve">
+    <value>MS Graph ile kimlik doğrulaması için kullanılan ifade veya açık kimlik belirteci </value>
+  </data>
+  <data name="idToken_label_onedrive_out" xml:space="preserve">
+    <value>Kimlik Belirteci</value>
+  </data>
+  <data name="idToken_help_onedrive_out" xml:space="preserve">
+    <value>MS Graph ile kimlik doğrulaması için kullanılan ifade veya açık kimlik belirteci </value>
+  </data>
+  <data name="idToken_label_graphwebhook" xml:space="preserve">
+    <value>Kimlik Belirteci</value>
+  </data>
+  <data name="idToken_help_graphwebhook" xml:space="preserve">
+    <value>MS Graph ile kimlik doğrulaması için kullanılan ifade veya açık kimlik belirteci </value>
+  </data>
+  <data name="ScheduledMail_description" xml:space="preserve">
+    <value>Düzenli aralıklarla e-posta gönderen bir işlev</value>
   </data>
   <data name="documentDBIn_sqlQuery_help" xml:space="preserve">
-    <value>Bu, belirli bir belge kümesini almak üzere kullanılan, isteğe bağlı bir DocumentDB SQL sorgusudur. Bir SQL sorgusu veya kimlik belirtilmezse, koleksiyondaki tüm belgeler döndürülür.</value>
+    <value>Bir belge kümesini almak üzere kullanılan, isteğe bağlı bir Cosmos DB API SQL sorgusu. Bir SQL sorgusu veya kimlik belirtilmezse, koleksiyondaki tüm belgeler döndürülür.</value>
   </data>
   <data name="documentDBIn_sqlQuery_label" xml:space="preserve">
     <value>SQL Sorgusu (isteğe bağlı)</value>
   </data>
   <data name="eventHubTrigger_cardinality_help" xml:space="preserve">
-    <value>Tetikleyici girişinin kardinalitesi. Giriş tek bir iletiyse 'bir', ileti dizisiyse 'çok' öğesini seçin. Belirtilmezse varsayılan olarak 'bir' kullanılır</value>
+    <value>Tetikleyici girişinin kardinalitesi. Giriş tek bir iletiyse 'bir', ileti dizisiyse 'çok' öğesini seçin. Belirtilmezse varsayılan olarak 'çok' kullanılır</value>
   </data>
   <data name="HttpTriggerCSharpWithParameters_description" xml:space="preserve">
     <value>Her HTTP isteği aldığında çalıştırılacak C# işlevi</value>
@@ -1181,10 +1282,10 @@ Microsoft Azure Hizmet Yönetim API'si - Azure Hizmet Yönetimi'ne kuruluş kull
     <value>Application Insights ile tüm web uygulamalarının erişilebilirlik ve yanıt verme hızını izleyen bir C# işlevi</value>
   </data>
   <data name="AppInsightsRealtimePowerBI_name" xml:space="preserve">
-    <value>AppInsights Real-time Power BI</value>
+    <value>AppInsights'tan Power BI'a Gerçek Zamanlı</value>
   </data>
   <data name="AppInsightsRealtimePowerBICSharp_description" xml:space="preserve">
-    <value>A C# function which pushes real-time availability data from Application Insights to Power BI</value>
+    <value>Gerçek zamanlı kullanılabilirlik verilerini Application Insights'tan Power BI'a gönderen bir C# işlevi</value>
   </data>
   <data name="AppInsightsScheduledAnalytics_name" xml:space="preserve">
     <value>Zamanlanmış AppInsights Analizleri</value>
@@ -1200,5 +1301,423 @@ Microsoft Azure Hizmet Yönetim API'si - Azure Hizmet Yönetimi'ne kuruluş kull
   </data>
   <data name="HttpPOST(CRUD)Queue-FSharp_description" xml:space="preserve">
     <value>Bir HTTP Post alındığında bir kuyruğa veri gönderen F# işlevi.</value>
+  </data>
+  <data name="BlobTriggerNodeTS_description" xml:space="preserve">
+    <value>(Deneysel) Belirtilen kapsayıcıya her blob eklendiğinde çalıştırılacak bir TypeScript işlevi</value>
+  </data>
+  <data name="EventHubTriggerNodeTS_description" xml:space="preserve">
+    <value>(Deneysel) Olay hub'ı her yeni olay aldığında çalıştırılacak bir TypeScript işlevi</value>
+  </data>
+  <data name="GenericWebhookNodeTS_description" xml:space="preserve">
+    <value>(Deneysel) Bir web kancası isteğini her aldığında çalıştırılacak bir TypeScript işlevi</value>
+  </data>
+  <data name="GithubWebhookNodeTS_description" xml:space="preserve">
+    <value>(Deneysel) Bir GitHub web kancası isteği aldığında çalıştırılacak bir TypeScript işlevi</value>
+  </data>
+  <data name="HttpTriggerNodeTS_description" xml:space="preserve">
+    <value>(Deneysel) Her HTTP isteği aldığında çalıştırılacak bir TypeScript işlevi</value>
+  </data>
+  <data name="QueueTriggerNodeTS_description" xml:space="preserve">
+    <value>(Deneysel) Belirtilen Azure Kuyruk Depolama'ya her ileti eklendiğinde çalıştırılacak bir TypeScript işlevi</value>
+  </data>
+  <data name="ServiceBusQueueTriggerNodeTS_description" xml:space="preserve">
+    <value>(Deneysel) Belirtilen Service Bus kuyruğuna bir ileti eklendiğinde çalıştırılacak bir TypeScript işlevi</value>
+  </data>
+  <data name="ServiceBusTopicTriggerNodeTS_description" xml:space="preserve">
+    <value>(Deneysel) Belirtilen Service Bus konu başlığına ileti eklendiğinde çalıştırılacak bir TypeScript işlevi</value>
+  </data>
+  <data name="ManualTriggerNodeTS_description" xml:space="preserve">
+    <value>(Deneysel) Portalın "Çalıştır" düğmesi kullanılarak el ile tetiklenen bir TypeScript işlevi</value>
+  </data>
+  <data name="IoTHubTriggerCSharp_description" xml:space="preserve">
+    <value>Bir IoT Hub, IoT Hub'dan (Event Hub) her yeni olay aldığında çalıştırılacak bir C# işlevi</value>
+  </data>
+  <data name="ioTHubTrigger_connection_help" xml:space="preserve">
+    <value>Uygulama ayarlarında depolanan IoT Hub bağlantı dizesinin anahtarıdır ve Alma izinlerine sahip olması gerekir. Yoksa, bir tane oluşturmak için Yeni'ye tıklayın.</value>
+  </data>
+  <data name="ioTHubTrigger_connection_label" xml:space="preserve">
+    <value>Bağlantı dizesi</value>
+  </data>
+  <data name="ioTHubTrigger_displayName" xml:space="preserve">
+    <value>Azure IoT Hub</value>
+  </data>
+  <data name="ioTHubTrigger_EntityPath" xml:space="preserve">
+    <value>Varlık yolu</value>
+  </data>
+  <data name="defaultConsumerGroup" xml:space="preserve">
+    <value>$Default</value>
+  </data>
+  <data name="defaultQueueName" xml:space="preserve">
+    <value>kuyruğum</value>
+  </data>
+  <data name="defaultsubscriptionName" xml:space="preserve">
+    <value>aboneliğim</value>
+  </data>
+  <data name="defaultTopicName" xml:space="preserve">
+    <value>konum</value>
+  </data>
+  <data name="servicebusQueuePicker_queueName" xml:space="preserve">
+    <value>Kuyruk</value>
+  </data>
+  <data name="IoTHubTriggerFSharp_description" xml:space="preserve">
+    <value>Bir IoT Hub, IoT Hub'dan (Event Hub) her yeni olay aldığında çalıştırılacak bir F# işlevi</value>
+  </data>
+  <data name="IoTHubTriggerNodeJS_description" xml:space="preserve">
+    <value>Bir IoT Hub, IoT Hub'dan (Event Hub) her yeni olay aldığında çalıştırılacak bir JavaScript işlevi</value>
+  </data>
+  <data name="IoTHubTriggerNodeTS_description" xml:space="preserve">
+    <value>Bir IoT Hub, IoT Hub'dan (Event Hub) her yeni olay aldığında çalıştırılacak bir TypeScript işlevi</value>
+  </data>
+  <data name="myEventHub" xml:space="preserve">
+    <value>myEventHub</value>
+  </data>
+  <data name="eventHubName" xml:space="preserve">
+    <value>eventHubName</value>
+  </data>
+  <data name="oneDrive_in_displayName" xml:space="preserve">
+    <value>OneDrive dosyası</value>
+  </data>
+  <data name="oneDrive_in_name_help" xml:space="preserve">
+    <value>İşlev kodunuzda bu bağlamayı tanımlamak için kullanılan ad.</value>
+  </data>
+  <data name="oneDrive_in_name_label" xml:space="preserve">
+    <value>Dosya parametresi adı</value>
+  </data>
+  <data name="oneDrive_in_path_help" xml:space="preserve">
+    <value>OneDrive'daki dosyanın yolu.</value>
+  </data>
+  <data name="oneDrive_in_path_label" xml:space="preserve">
+    <value>Dosya yolu</value>
+  </data>
+  <data name="oneDrive_in_path_error" xml:space="preserve">
+    <value>Yol geçerli olmalıdır</value>
+  </data>
+  <data name="oneDrive_out_displayName" xml:space="preserve">
+    <value>OneDrive dosyası</value>
+  </data>
+  <data name="oneDrive_out_name_help" xml:space="preserve">
+    <value>İşlev kodunuzda bu bağlamayı tanımlamak için kullanılan ad.</value>
+  </data>
+  <data name="oneDrive_out_name_label" xml:space="preserve">
+    <value>Dosya parametresi adı</value>
+  </data>
+  <data name="oneDrive_out_path_help" xml:space="preserve">
+    <value>OneDrive'daki dosyanın yolu.</value>
+  </data>
+  <data name="oneDrive_out_path_label" xml:space="preserve">
+    <value>Dosya yolu</value>
+  </data>
+  <data name="oneDrive_out_path_error" xml:space="preserve">
+    <value>Yol geçerli olmalıdır</value>
+  </data>
+  <data name="MSGraphWebhook_displayName" xml:space="preserve">
+    <value>Microsoft Graph web kancası aboneliği</value>
+  </data>
+  <data name="MSGraphWebhook_in_name_label" xml:space="preserve">
+    <value>Abonelik parametre adı</value>
+  </data>
+  <data name="MSGraphWebhook_in_changeType_help" xml:space="preserve">
+    <value>Yalnızca eylem create olarak ayarlandıysa gereklidir. Bildirim oluşturacak olan abone olunmuş kaynaktaki değişiklik türünü belirtir. Desteklenen değerler: created, updated, deleted. Virgülle ayrılmış liste kullanılarak birden çok değer birleştirilebilir.</value>
+  </data>
+  <data name="MSGraphWebhook_in_changeType_label" xml:space="preserve">
+    <value>Abone olunacak değişiklik türleri</value>
+  </data>
+  <data name="MSGraphWebhook_in_listen_help" xml:space="preserve">
+    <value>Bu işlevin, web kancalarına yanıt vermesi gereken grafik kaynağı. Bir işlev uygulamasında, yalnızca verilen resourceType değerine karşı kaydedilmiş bir işlev bulunabilir.</value>
+  </data>
+  <data name="MSGraphWebhook_in_listen_label" xml:space="preserve">
+    <value>Abone olunacak kaynaklar</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_displayName" xml:space="preserve">
+    <value>Microsoft Graph web kancası</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_in_name_label" xml:space="preserve">
+    <value>Değiştirilen kaynak parametre adı</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_Type_help" xml:space="preserve">
+    <value>Bu öğenin türü, işlevinizi tetikleyecek bildirim türlerini belirler</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_Type_label" xml:space="preserve">
+    <value>Dinlenecek bildirim türü</value>
+  </data>
+  <data name="MSGraphWebhook_description" xml:space="preserve">
+    <value>Bir O365 web kancası isteği aldığında çalıştırılan bir C# işlevi.</value>
+  </data>
+  <data name="RefreshMSGraphSubscriptions_description" xml:space="preserve">
+    <value>Düzenli olarak tüm O365 aboneliklerini yeniler</value>
+  </data>
+  <data name="token_displayName" xml:space="preserve">
+    <value>Kimlik doğrulama belirteci</value>
+  </data>
+  <data name="token_in_name_help" xml:space="preserve">
+    <value>Kodunuzda bu belirteci tanımlamak için kullanılan parametrenin adı</value>
+  </data>
+  <data name="token_in_name_label" xml:space="preserve">
+    <value>Kimlik doğrulama belirteci parametresi adı</value>
+  </data>
+  <data name="token_in_resource_help" xml:space="preserve">
+    <value>Belirtecin istendiği AAD kaynağının URL'si</value>
+  </data>
+  <data name="token_in_resource_label" xml:space="preserve">
+    <value>Kaynak URL'si</value>
+  </data>
+  <data name="MSGraphWebhookCreator_displayName" xml:space="preserve">
+    <value>Microsoft Graph web kancası aboneliği</value>
+  </data>
+  <data name="MSGraphWebhookCreator_in_name_help" xml:space="preserve">
+    <value>İşlev kodunuzda bu bağlamayı tanımlamak için kullanılan ad.</value>
+  </data>
+  <data name="MSGraphWebhookCreator_in_name_label" xml:space="preserve">
+    <value>Abonelik parametre adı</value>
+  </data>
+  <data name="MSGraphWebhookTrigger_in_help_label" xml:space="preserve">
+    <value>İşlev kodunuzda değiştirilen kaynağı tanımlamak için kullanılan ad</value>
+  </data>
+  <data name="MSGraphWebhook_in_name_help" xml:space="preserve">
+    <value>İşlev kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
+  </data>
+  <data name="temp_category_msgraph" xml:space="preserve">
+    <value>Microsoft Graph</value>
+  </data>
+  <data name="documentDBIn_partitionKey_help" xml:space="preserve">
+    <value>Okunacak belgenin bölüm anahtarı. Yalnızca kimlik belirtilmesi durumunda geçerlidir.</value>
+  </data>
+  <data name="documentDBOut_partitionKey_help" xml:space="preserve">
+    <value>Yeni bir koleksiyon oluştururken kullanılacak bölüm anahtarı. Yalnızca koleksiyon yoksa otomatik olarak oluşturmayı seçtiyseniz geçerlidir.</value>
+  </data>
+  <data name="documentDB_partitionKey_label" xml:space="preserve">
+    <value>Bölüm anahtarı (isteğe bağlı)</value>
+  </data>
+  <data name="EventGridTriggerCSharp_description" xml:space="preserve">
+    <value>Bir olay kılavuzu her yeni olay aldığında çalıştırılacak bir C# işlevi</value>
+  </data>
+  <data name="eventGrid_trigger_displayName" xml:space="preserve">
+    <value>Olay Kılavuzu Tetikleyicisi</value>
+  </data>
+  <data name="eventGrid_trigger_name_help" xml:space="preserve">
+    <value>Olay Tetikleyicisi parametre adı</value>
+  </data>
+  <data name="eventGrid_trigger_name_label" xml:space="preserve">
+    <value>Olay Tetikleyicisi parametre adı</value>
+  </data>
+  <data name="CosmosDBTriggerCSharp_description" xml:space="preserve">
+    <value>Belge koleksiyonundaki belgeler değiştirildiğinde çalıştırılacak bir C# işlevi.</value>
+  </data>
+  <data name="CosmosDBTriggerJavascript_description" xml:space="preserve">
+    <value>Belge koleksiyonundaki belgeler değiştirildiğinde çalıştırılacak bir JavaScript işlevi.</value>
+  </data>
+  <data name="cosmosDBIn_collectionName_help" xml:space="preserve">
+    <value>İzlenecek koleksiyonun adı.</value>
+  </data>
+  <data name="cosmosDBIn_collectionName_label" xml:space="preserve">
+    <value>Koleksiyon adı</value>
+  </data>
+  <data name="cosmosDBIn_connection_help" xml:space="preserve">
+    <value>İzlenecek koleksiyonu içeren hizmete yönelik bağlantı dizesini içeren Uygulama Ayarı adı.</value>
+  </data>
+  <data name="cosmosDBIn_connection_label" xml:space="preserve">
+    <value>Cosmos DB hesabı bağlantısı</value>
+  </data>
+  <data name="cosmosDBIn_databaseName_help" xml:space="preserve">
+    <value>İzlenecek koleksiyonu içeren Cosmos DB veritabanının adı.</value>
+  </data>
+  <data name="cosmosDBIn_databaseName_label" xml:space="preserve">
+    <value>Veritabanı adı</value>
+  </data>
+  <data name="cosmosDBIn_leaseCollectionName_help" xml:space="preserve">
+    <value>Kiraları depolamak için kullanılacak koleksiyonun adı.</value>
+  </data>
+  <data name="cosmosDBIn_leaseCollectionName_label" xml:space="preserve">
+    <value>Kiralar için koleksiyon adı</value>
+  </data>
+  <data name="cosmosDBIn_leaseDatabaseName_help" xml:space="preserve">
+    <value>Kiraların depolandığı koleksiyonu içeren veritabanının adı.</value>
+  </data>
+  <data name="cosmosDBIn_leaseDatabaseName_label" xml:space="preserve">
+    <value>Kiralar için veritabanı adı</value>
+  </data>
+  <data name="cosmosDBIn_name_help" xml:space="preserve">
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
+  </data>
+  <data name="cosmosDBIn_name_label" xml:space="preserve">
+    <value>Belge koleksiyonu parametre adı</value>
+  </data>
+  <data name="cosmosDB_trigger_displayName" xml:space="preserve">
+    <value>Azure Cosmos DB</value>
+  </data>
+  <data name="IoTHubServiceBusTopicTriggerCSharp_description" xml:space="preserve">
+    <value>Belirtilen Service Bus konu başlığına ileti eklendiğinde çalıştırılacak bir C# işlevi</value>
+  </data>
+  <data name="temp_category_IoTHub" xml:space="preserve">
+    <value>IoT Hub</value>
+  </data>
+  <data name="cosmosDBIn_createIfNotExists_help" xml:space="preserve">
+    <value>Koleksiyonun varlığını denetler ve koleksiyonu otomatik olarak oluşturup kiralar.</value>
+  </data>
+  <data name="cosmosDBIn_createIfNotExists_label" xml:space="preserve">
+    <value>Henüz yoksa kira koleksiyonu oluşturun</value>
+  </data>
+  <data name="EventGridTriggerJavascript_description" xml:space="preserve">
+    <value>Bir olay kılavuzu her yeni olay aldığında çalıştırılacak bir JavaScript işlevi</value>
+  </data>
+  <data name="Identity_help" xml:space="preserve">
+    <value>Eylemi gerçekleştirmek için kullanılacak kimlik.</value>
+  </data>
+  <data name="Identity_label" xml:space="preserve">
+    <value>Kimlik</value>
+  </data>
+  <data name="userid_help" xml:space="preserve">
+    <value>Yalnızca kimlik userFromId olarak ayarlandıysa gereklidir. Önceden oturum açmış bir kullanıcıyla ilişkili bir kullanıcı asıl adı kimliği.</value>
+  </data>
+  <data name="userid_label" xml:space="preserve">
+    <value>Kullanıcı Kimliği</value>
+  </data>
+  <data name="usertoken_help" xml:space="preserve">
+    <value>Yalnızca kimlik userFromToken olarak ayarlandıysa gereklidir. 
+İşlev uygulaması için geçerli bir belirteç.</value>
+  </data>
+  <data name="usertoken_label" xml:space="preserve">
+    <value>Kullanıcı belirteci</value>
+  </data>
+  <data name="ProfilePhotoAPI_description" xml:space="preserve">
+    <value>Çağrıyı yapan Azure Active Directory kullanıcısının profili fotoğrafını döndüren bir işlev</value>
+  </data>
+  <data name="OutlookMessageWebhookCreator_description" xml:space="preserve">
+    <value>Çağrıyı yapan Azure Active Directory kullanıcısının posta kutusundaki iletiler için bir web kancası aboneliği kaydeden bir işlev</value>
+  </data>
+  <data name="OutlookMessageWebhookDeleter_description" xml:space="preserve">
+    <value>Çağrıyı yapan Azure Active Directory kullanıcısı için bu uygulamaya yönelik tüm Microsoft Graph web kancası aboneliklerini kaldıran bir işlev</value>
+  </data>
+  <data name="OutlookMessageWebhookHandler_description" xml:space="preserve">
+    <value>Outlook iletileri için web kancalarını alan bir işlev</value>
+  </data>
+  <data name="OutlookMessageWebhookRefresher_description" xml:space="preserve">
+    <value>Bu uygulama için tüm Microsoft Graph web kancası aboneliklerini yenileyen bir işlev</value>
+  </data>
+  <data name="identity_option_userFromRequest_label" xml:space="preserve">
+    <value>HTTP isteğinden kullanıcı</value>
+  </data>
+  <data name="identity_option_userFromId_label" xml:space="preserve">
+    <value>Kimlikten Kullanıcı</value>
+  </data>
+  <data name="identity_option_userFromToken_label" xml:space="preserve">
+    <value>Belirteçten kullanıcı</value>
+  </data>
+  <data name="identity_option_clientCredentials_label" xml:space="preserve">
+    <value>İstemci kimlik bilgileri</value>
+  </data>
+  <data name="MSGraphWebhook_out_action_label" xml:space="preserve">
+    <value>Eylem</value>
+  </data>
+  <data name="MSGraphWebhook_out_action_help" xml:space="preserve">
+    <value>Abonelik üzerinde gerçekleştirilecek eylem</value>
+  </data>
+  <data name="GraphWebhookSubscription_in_filter_help" xml:space="preserve">
+    <value>userFromRequest olarak ayarlanırsa bağlama yalnızca çağrıyı yapan kullanıcının sahip olduğu abonelikleri alır (yalnızca HTTP tetikleyicisi ile geçerlidir).</value>
+  </data>
+  <data name="GraphWebhookSubscription_in_filter_label" xml:space="preserve">
+    <value>Filtrele</value>
+  </data>
+  <data name="activityTrigger_activity_errorText" xml:space="preserve">
+    <value>Geçersiz Etkinlik adı</value>
+  </data>
+  <data name="activityTrigger_activity_help" xml:space="preserve">
+    <value>(İsteğe bağlı) Etkinliğinizin adı. Belirtilmezse varsayılan olarak İşlevinizin adı belirlenir.</value>
+  </data>
+  <data name="activityTrigger_activity_label" xml:space="preserve">
+    <value>Etkinlik adı</value>
+  </data>
+  <data name="activityTrigger_displayName" xml:space="preserve">
+    <value>Aktivite</value>
+  </data>
+  <data name="activityTrigger_name_help" xml:space="preserve">
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
+  </data>
+  <data name="activityTrigger_name_label" xml:space="preserve">
+    <value>Etkinlik parametresi adı</value>
+  </data>
+  <data name="orchestrationClientIn_displayName" xml:space="preserve">
+    <value>Düzenleme İstemcisi</value>
+  </data>
+  <data name="orchestrationClientIn_name_help" xml:space="preserve">
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
+  </data>
+  <data name="orchestrationClientIn_name_label" xml:space="preserve">
+    <value>Düzenleme İstemcisi parametre adı</value>
+  </data>
+  <data name="orchestrationTrigger_displayName" xml:space="preserve">
+    <value>Düzenleme</value>
+  </data>
+  <data name="orchestrationTrigger_name_help" xml:space="preserve">
+    <value>Kodunuzda bu bağlamayı tanımlamak için kullanılan ad</value>
+  </data>
+  <data name="orchestrationTrigger_name_label" xml:space="preserve">
+    <value>Düzenleme parametresi adı</value>
+  </data>
+  <data name="orchestrationTrigger_orchestration_errorText" xml:space="preserve">
+    <value>Geçersiz Düzenleme Adı</value>
+  </data>
+  <data name="orchestrationTrigger_orchestration_help" xml:space="preserve">
+    <value>(İsteğe bağlı) Düzenlemenizin adı. Belirtilmezse varsayılan olarak İşlevinizin adı belirlenir.</value>
+  </data>
+  <data name="orchestrationTrigger_orchestration_label" xml:space="preserve">
+    <value>Düzenleme adı</value>
+  </data>
+  <data name="DurableFunctionsActivity_description" xml:space="preserve">
+    <value>Bir Etkinlik bir düzenleyici işlevi tarafından çağrıldığında çalıştırılacak işlev.</value>
+  </data>
+  <data name="DurableFunctionsOrchestrator_description" xml:space="preserve">
+    <value>Bir dizideki etkinlik işlevlerini çağıran bir düzenleyici işlevi.</value>
+  </data>
+  <data name="DurableFunctionsHttpStart_description" xml:space="preserve">
+    <value>Bir düzenleyici işlevini yürütmek için bir HTTP isteği alındığı zaman tetiklenecek işlev.</value>
+  </data>
+  <data name="temp_category_durableFunctions" xml:space="preserve">
+    <value>Dayanıklı İşlevler</value>
+  </data>
+  <data name="BlobTrigger_name" xml:space="preserve">
+    <value>Blob tetikleyicisi</value>
+  </data>
+  <data name="EventHubTrigger_name" xml:space="preserve">
+    <value>Olay Hub'ı tetikleyicisi</value>
+  </data>
+  <data name="HttpTrigger_name" xml:space="preserve">
+    <value>HTTP tetikleyicisi</value>
+  </data>
+  <data name="OutlookMessageWebhookCreator_name" xml:space="preserve">
+    <value>Outlook ileti web kancası aboneliği oluşturucusu</value>
+  </data>
+  <data name="OutlookMessageWebhookDeleter_name" xml:space="preserve">
+    <value>Outlook ileti web kancası aboneliği silicisi</value>
+  </data>
+  <data name="OutlookMessageWebhookHandler_name" xml:space="preserve">
+    <value>Outlook iletisi web kancası işleyicisi</value>
+  </data>
+  <data name="OutlookMessageWebhookRefresher_name" xml:space="preserve">
+    <value>Outlook ileti web kancası aboneliği yenileyicisi</value>
+  </data>
+  <data name="ProfilePhotoAPI_name" xml:space="preserve">
+    <value>Microsoft Graph profil fotoğrafı API'si</value>
+  </data>
+  <data name="QueueTrigger_name" xml:space="preserve">
+    <value>Kuyruk tetikleyicisi</value>
+  </data>
+  <data name="ScheduledMail_name" xml:space="preserve">
+    <value>Zamanlanmış posta</value>
+  </data>
+  <data name="SendGrid_name" xml:space="preserve">
+    <value>SendGrid</value>
+  </data>
+  <data name="TimerTrigger_name" xml:space="preserve">
+    <value>Süreölçer tetikleyicisi</value>
+  </data>
+  <data name="DurableFunctionsActivity_name" xml:space="preserve">
+    <value>Dayanıklı İşlevler etkinliği</value>
+  </data>
+  <data name="DurableFunctionsHttpStart_name" xml:space="preserve">
+    <value>Dayanıklı İşlevler Http başlatıcısı</value>
+  </data>
+  <data name="DurableFunctionsOrchestrator_name" xml:space="preserve">
+    <value>Dayanıklı İşlevler düzenleyicisi</value>
   </data>
 </root>

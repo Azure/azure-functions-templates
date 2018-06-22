@@ -1,8 +1,8 @@
 package $packageName$;
 
 import java.time.*;
-import com.microsoft.azure.serverless.functions.*;
-import com.microsoft.azure.serverless.functions.annotation.*;
+import com.microsoft.azure.functions.*;
+import com.microsoft.azure.functions.annotation.*;
 
 public class TimerTriggers {
     @FunctionName("$functionName$")

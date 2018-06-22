@@ -1,7 +1,7 @@
 package $packageName$;
 
-import com.microsoft.azure.serverless.functions.*;
-import com.microsoft.azure.serverless.functions.annotation.*;
+import com.microsoft.azure.functions.*;
+import com.microsoft.azure.functions.annotation.*;
 
 public class QueueTriggers {
     @FunctionName("$functionName$")
