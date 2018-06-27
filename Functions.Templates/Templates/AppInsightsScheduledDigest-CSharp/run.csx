@@ -12,7 +12,7 @@ using SendGrid.Helpers.Mail;
 
 // For questions or feedbacks, please visit [Application Insights forum] https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights
 
-private const string AppInsightsApi = "https://api.applicationinsights.io/beta/apps";
+private const string AppInsightsApi = "https://api.applicationinsights.io/v1/apps";
 
 // [CONFIGURATION_REQUIRED] configure {AI_APP_ID} and {AI_APP_KEY} accordingly in App Settings with values obtained from Application Insights
 // [Get your Application ID and API key] https://dev.applicationinsights.io/documentation/Authorization/API-key-and-App-ID
