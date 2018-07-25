@@ -15,12 +15,13 @@ using System;
 using SendGrid.Helpers.Mail;
 using Microsoft.Azure.WebJobs.Host;
 
-public static SendGridMessage Run(Order order, TraceWriter log)
+public static SendGridMessage Run(Order order, ILogger log)
 #endif
 #if (vsTemplates)
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
 using SendGrid.Helpers.Mail;
+using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
@@ -28,10 +29,10 @@ namespace Company.Function
     {
         [FunctionName("SendGridCSharp")]
         [return: SendGrid(ApiKey = "ApiKeyValue",To = "{CustomerEmail}", From = "FromEmailValue" )]
-        public static SendGridMessage Run([QueueTrigger("PathValue", Connection = "ConnectionValue")]Order order, TraceWriter log)
+        public static SendGridMessage Run([QueueTrigger("PathValue", Connection = "ConnectionValue")]Order order, ILogger log)
 #endif
         {
-            log.Info($"C# Queue trigger function processed order: {order.OrderId}");
+            log.LogInformation($"C# Queue trigger function processed order: {order.OrderId}");
 
             SendGridMessage message = new SendGridMessage()
             {

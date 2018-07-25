@@ -49,9 +49,9 @@ using System;
 using System.Threading.Tasks;
 using System.Collections.Generic;
     
-public static void Run(string myQueueItem,  out IDictionary<string, string> notification, TraceWriter log)
+public static void Run(string myQueueItem,  out IDictionary<string, string> notification, ILogger log)
 {
-    log.Info($"C# Queue trigger function processed: {myQueueItem}");
+    log.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
     notification = GetTemplateProperties(myQueueItem);
 }
     
@@ -66,9 +66,9 @@ private static IDictionary<string, string> GetTemplateProperties(string message)
 This example sends a notification for a [template registration](https://azure.microsoft.com/en-us/documentation/articles/notification-hubs-templates-cross-platform-push-messages/) that contains `message` using a valid JSON string.
 
 ```csharp    
-public static void Run(string myQueueItem,  out string notification, TraceWriter log)
+public static void Run(string myQueueItem,  out string notification, ILogger log)
 {
-    log.Info($"C# Queue trigger function processed: {myQueueItem}");
+    log.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
     notification = "{\"message\":\"Hello from C#. Processed a queue item!\"}";
 }
 ```
@@ -97,9 +97,9 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.Azure.NotificationHubs;
     
-public static void Run(string myQueueItem,  out Notification notification, TraceWriter log)
+public static void Run(string myQueueItem,  out Notification notification, ILogger log)
 {
-    log.Info($"C# Queue trigger function processed: {myQueueItem}");
+    log.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
     notification = GetTemplateNotification(myQueueItem);
 }
 private static TemplateNotification GetTemplateNotification(string message)

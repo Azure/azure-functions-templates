@@ -31,11 +31,11 @@ The table binding supports the following scenarios:
 #### Storage tables example: C# code that creates table entities
 
 ```csharp
-public static void Run(string input, ICollector<Person> tableBinding, TraceWriter log)
+public static void Run(string input, ICollector<Person> tableBinding, ILogger log)
 {
     for (int i = 1; i < 10; i++)
         {
-            log.Info($"Adding Person entity {i}");
+            log.LogInformation($"Adding Person entity {i}");
             tableBinding.Add(
                 new Person() { 
                     PartitionKey = "Test", 

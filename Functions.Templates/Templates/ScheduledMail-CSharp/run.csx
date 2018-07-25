@@ -14,10 +14,10 @@ using Microsoft.Azure.WebJobs.Host;
 //      "from": "Azure Functions <samples@functions.com>"
 //   }
 // }
-public static SendGridMessage Run(TimerInfo myTimer, TraceWriter log)
+public static SendGridMessage Run(TimerInfo myTimer, ILogger log)
 {
     var today = DateTime.Today.ToShortDateString();
-    log.Info($"Generating daily report for {today} at {DateTime.Now}");
+    log.LogInformation($"Generating daily report for {today} at {DateTime.Now}");
     
     SendGridMessage message = new SendGridMessage()
     {

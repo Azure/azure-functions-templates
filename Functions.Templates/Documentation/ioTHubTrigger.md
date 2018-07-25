@@ -13,9 +13,9 @@ The settings for an Azure Event Hub trigger specifies the following properties:
  
 	using System;
 	
-	public static void Run(string myEventHubMessage, TraceWriter log)
+	public static void Run(string myEventHubMessage, ILogger log)
 	{
-	    log.Info($"C# Event Hub trigger function processed a message: {myEventHubMessage}");
+	    log.LogInformation($"C# Event Hub trigger function processed a message: {myEventHubMessage}");
 	}
 
 #### Azure Event Hub trigger JavaScript example
