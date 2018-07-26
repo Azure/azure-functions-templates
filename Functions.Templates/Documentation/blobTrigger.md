@@ -59,9 +59,9 @@ In C# functions you can also bind to any of the following types:
 #### Blob trigger C# code example
 
 ```csharp
-public static void Run(string myBlob, TraceWriter log)
+public static void Run(string myBlob, ILogger log)
 {
-    log.Info($"C# Blob trigger function processed: {myBlob}");
+    log.LogInformation($"C# Blob trigger function processed: {myBlob}");
 }
 ```
 

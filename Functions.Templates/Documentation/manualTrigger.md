@@ -14,9 +14,9 @@ Manual trigger supports
  ```csharp
 using System;
 
-public static void Run(string trigger, TraceWriter log)
+public static void Run(string trigger, ILogger log)
 {
-    log.Info(trigger);
+    log.LogInformation(trigger);
 }
 ```
 

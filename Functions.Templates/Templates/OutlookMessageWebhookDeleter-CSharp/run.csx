@@ -7,12 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 using Newtonsoft.Json;
 
-public static async Task Run(HttpRequest req, Subscription[] existingSubscriptions, IAsyncCollector<string> subscriptionsToDelete, TraceWriter log)
+public static async Task Run(HttpRequest req, Subscription[] existingSubscriptions, IAsyncCollector<string> subscriptionsToDelete, ILogger log)
 {
-    log.Info("C# HTTP trigger function processed a request.");
+    log.LogInformation("C# HTTP trigger function processed a request.");
     foreach (var subscription in existingSubscriptions)
         {
-            log.Info($"Deleting subscription {subscription.Id}");
+            log.LogInformation($"Deleting subscription {subscription.Id}");
             await subscriptionsToDelete.AddAsync(subscription.Id);
         }
 }

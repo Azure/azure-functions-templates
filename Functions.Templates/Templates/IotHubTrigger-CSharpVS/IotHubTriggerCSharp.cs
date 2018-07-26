@@ -5,6 +5,7 @@ using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Azure.EventHubs;
 using System.Text;
 using System.Net.Http;
+using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
@@ -13,9 +14,9 @@ namespace Company.Function
         private static HttpClient client = new HttpClient();
 
         [FunctionName("IotHubTriggerCSharp")]
-        public static void Run([IoTHubTrigger("PathValue", Connection = "ConnectionValue")]EventData message, TraceWriter log)
+        public static void Run([IoTHubTrigger("PathValue", Connection = "ConnectionValue")]EventData message, ILogger log)
         {
-            log.Info($"C# IoT Hub trigger function processed a message: {Encoding.UTF8.GetString(message.Body.Array)}");
+            log.LogInformation($"C# IoT Hub trigger function processed a message: {Encoding.UTF8.GetString(message.Body.Array)}");
         }
     }
 }

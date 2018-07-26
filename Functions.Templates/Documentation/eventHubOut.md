@@ -14,11 +14,11 @@ This example uses a Timer Trigger input, but Event Hubs output can work with any
  
 	using System;
 	
-	public static void Run(TimerInfo myTimer, out string outputEventHubMessage, TraceWriter log)
+	public static void Run(TimerInfo myTimer, out string outputEventHubMessage, ILogger log)
 	{
 	    String msg = $"TimerTriggerCSharp1 executed at: {DateTime.Now}";
 	
-	    log.Verbose(msg);   
+	    log.LogInformation(msg);   
 	    
 	    outputEventHubMessage = msg;
 	}

@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 using Microsoft.Azure.WebJobs;
 
-public static async Task Run(TimerInfo myTimer, UserSubscription[] existingSubscriptions, IBinder binder, TraceWriter log)
+public static async Task Run(TimerInfo myTimer, UserSubscription[] existingSubscriptions, IBinder binder, ILogger log)
 {
-    log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
+    log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
     foreach (var subscription in existingSubscriptions)
     {
         // binding in code to allow dynamic identity
@@ -21,7 +21,7 @@ public static async Task Run(TimerInfo myTimer, UserSubscription[] existingSubsc
             }
         );
         {
-            log.Info($"Refreshing subscription {subscription.Id}");
+            log.LogInformation($"Refreshing subscription {subscription.Id}");
             await subscriptionsToRefresh.AddAsync(subscription.Id);
         }
     }

@@ -33,9 +33,9 @@ The output document:
 #### Azure DocumentDB output code example for a C# queue trigger
 
 ```csharp
-public static void Run(string myQueueItem, out object document, TraceWriter log)
+public static void Run(string myQueueItem, out object document, ILogger log)
 {
-    log.Info($"C# Queue trigger function processed: {myQueueItem}");
+    log.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
     
     document = new {
         text = $"I'm running in a C# function! {myQueueItem}"
@@ -64,9 +64,9 @@ using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-public static void Run(string myQueueItem, out object employeeDocument, TraceWriter log)
+public static void Run(string myQueueItem, out object employeeDocument, ILogger log)
 {
-    log.Info($"C# Queue trigger function processed: {myQueueItem}");
+    log.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
     
     dynamic employee = JObject.Parse(myQueueItem);
     

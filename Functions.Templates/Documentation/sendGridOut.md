@@ -59,9 +59,9 @@ using Microsoft.Azure.WebJobs.Host;
 //      "from": "Azure Functions <samples@functions.com>"
 //   }
 // }
-public static Mail Run(Order order, TraceWriter log)
+public static Mail Run(Order order, ILogger log)
 {
-    log.Info($"C# Queue trigger function processed order: {order.OrderId}");
+    log.LogInformation($"C# Queue trigger function processed order: {order.OrderId}");
     
     Mail message = new Mail()
     {
