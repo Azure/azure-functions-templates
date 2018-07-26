@@ -307,7 +307,7 @@
     <Exec Command="..\tools\CodeFormatter\CodeFormatter.exe ..\tools\codeFormat.csproj /nocopyright  /rule-:NewLineAbove,ExplicitVisibility,IllegalHeaders,FieldNames,ExplicitThis,BraceNewLine,UsingLocation,UnicodeLiterals,ReadonlyFields /verbose" IgnoreExitCode="true" />
     <Delete Files=".\bin\VS\Functions.Templates.csproj" />
     <Exec Condition="'$(TemplateVersion)' != ''" Command="..\tools\nuget.exe pack .\bin\VS\temp\ItemTemplates.nuspec -Version $(TemplateVersion) -OutputDirectory .\bin\VS\Release\" />
-    <Exec Condition="'$(TemplateVersion)' != ''" Command="..\tools\nuget.exe pack .\bin\VS\temp\ProjectTemplates.nuspec -Version $(TemplateVersion) -OutputDirectory .\bin\VS\Release\" />
+    <Exec Condition="'$(TemplateVersion)' != ''" Command="..\tools\nuget.exe pack .\ProjectTemplates.nuspec -Version $(TemplateVersion) -OutputDirectory .\bin\VS\Release\" />
     <RemoveDir Directories=".\bin\VS\temp" />
   </Target>
 </Project>
