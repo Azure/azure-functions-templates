@@ -1,5 +1,4 @@
-module.exports = function (context, eventGridEvent) {
+module.exports = async function (context, eventGridEvent) {
     context.log(typeof eventGridEvent);
     context.log(eventGridEvent);
-    context.done();
 };
