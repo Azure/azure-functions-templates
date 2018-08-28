@@ -6,7 +6,6 @@ public static void Run(string myEventHubMessage, ILogger log)
 #if (vsTemplates)
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
-using Microsoft.Azure.WebJobs.ServiceBus;
 using Microsoft.Extensions.Logging;
 
 namespace Company.Function
