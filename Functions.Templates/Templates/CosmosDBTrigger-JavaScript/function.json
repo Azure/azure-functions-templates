@@ -4,7 +4,11 @@
       "type": "cosmosDBTrigger",
       "name": "documents",
       "direction": "in",
-      "leaseCollectionName": "leases"
+      "leaseCollectionName": "leases",
+      "connectionStringSetting": "",
+      "databaseName": "",
+      "collectionName": "",
+      "createLeaseCollectionIfNotExists" : true
     }
   ]
 }
