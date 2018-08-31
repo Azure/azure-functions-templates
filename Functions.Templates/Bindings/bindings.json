@@ -352,26 +352,6 @@
           "validators": []
         },
         {
-          "name": "webHookType",
-          "value": "enum",
-          "enum": [
-            {
-              "value": "github",
-              "display": "GitHub"
-            },
-            {
-              "value": "genericJson",
-              "display": "Generic JSON"
-            },
-            {
-              "value": "slack",
-              "display": "Slack"
-            }
-          ],
-          "label": "$httpTrigger_webHookType_label",
-          "help": "$httpTrigger_webHookType_help"
-        },
-        {
           "name": "authLevel",
           "value": "enum",
           "enum": [
@@ -443,34 +423,6 @@
         }
       ],
       "rules": [
-        {
-          "name": "mode",
-          "type": "exclusivity",
-          "values": [
-            {
-              "value": "authLevel",
-              "display": "Standard",
-              "hiddenSettings": [
-                "webHookType"
-              ],
-              "shownSettings": [
-                "authLevel"
-              ]
-            },
-            {
-              "value": "webHookType",
-              "display": "Webhook",
-              "hiddenSettings": [
-                "authLevel"
-              ],
-              "shownSettings": [
-                "webHookType"
-              ]
-            }
-          ],
-          "label": "$httpTrigger_mode_label",
-          "help": "$httpTrigger_mode_help"
-        },
         {
           "name": "methodRule",
           "type": "exclusivity",

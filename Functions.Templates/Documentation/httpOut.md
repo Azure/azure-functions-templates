@@ -1,6 +1,6 @@
 You need this binding for http responses. Always use this with the HTTP Trigger.
 
-## Settings for HTTP and webhook bindings
+## Settings for HTTP bindings
 
 Properties for the HTTP response:
 
