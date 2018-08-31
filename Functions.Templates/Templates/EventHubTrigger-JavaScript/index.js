@@ -1,4 +1,4 @@
-module.exports = function (context, eventHubMessages) {
+module.exports = async function (context, eventHubMessages) {
     context.log(`JavaScript eventhub trigger function called for message array ${eventHubMessages}`);
     
     eventHubMessages.forEach((message, index) => {
@@ -7,6 +7,4 @@ module.exports = function (context, eventHubMessages) {
         context.log('SequenceNumber =', context.bindingData.sequenceNumberArray[index]);
         context.log('Offset =', context.bindingData.offsetArray[index]);
     });
-
-    context.done();
 };

@@ -1,4 +1,4 @@
-using IoTHubTrigger = Microsoft.Azure.WebJobs.ServiceBus.EventHubTriggerAttribute;
+using IoTHubTrigger = Microsoft.Azure.WebJobs.EventHubTriggerAttribute;
 
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;

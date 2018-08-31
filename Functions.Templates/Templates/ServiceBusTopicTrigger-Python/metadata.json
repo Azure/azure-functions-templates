@@ -1,8 +1,8 @@
 {
-    "defaultFunctionName": "ServiceBusQueueTriggerJS",
-    "description": "$ServiceBusQueueTrigger_description",
-    "name": "Service Bus Queue trigger",
-    "language": "JavaScript",
+    "defaultFunctionName": "ServiceBusTopicTriggerPython",
+    "description": "$ServiceBusTopicTrigger_description",
+    "name": "Service Bus Topic trigger",
+    "language": "Python",
     "category": [
         "$temp_category_core",
         "$temp_category_dataProcessing"
@@ -11,7 +11,8 @@
     "enabledInTryMode": false,
     "userPrompt": [
         "connection",
-        "queueName"
+        "topicName",
+        "subscriptionName"
     ],
     "extensions": [
         {

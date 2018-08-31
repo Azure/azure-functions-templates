@@ -72,6 +72,10 @@
         }
       ],
       "documentation": "$content=Documentation\\queueOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Storage",
+        "version": "3.0.0-beta8"
+      },
       "settings": [
         {
           "name": "name",
@@ -118,6 +122,10 @@
       "direction": "trigger",
       "enabledInTryMode": true,
       "documentation": "$content=Documentation\\queueTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Storage",
+        "version": "3.0.0-beta8"
+      },
       "settings": [
         {
           "name": "name",
@@ -174,6 +182,10 @@
         }
       ],
       "documentation": "$content=Documentation\\blobOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Storage",
+        "version": "3.0.0-beta8"
+      },
       "settings": [
         {
           "name": "name",
@@ -266,6 +278,10 @@
       "direction": "trigger",
       "enabledInTryMode": true,
       "documentation": "$content=Documentation\\blobTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Storage",
+        "version": "3.0.0-beta8"
+      },
       "settings": [
         {
           "name": "name",
@@ -512,7 +528,7 @@
       "documentation": "$content=Documentation\\serviceBusTrigger.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.ServiceBus",
-        "version": "3.0.0-beta5"
+        "version": "3.0.0-beta8"
       },
       "settings": [
         {
@@ -622,7 +638,7 @@
       "documentation": "$content=Documentation\\serviceBusOut.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.ServiceBus",
-        "version": "3.0.0-beta5"
+        "version": "3.0.0-beta8"
       },
       "settings": [
         {
@@ -716,7 +732,7 @@
       "documentation": "$content=Documentation\\eventHubTrigger.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.EventHubs",
-        "version": "3.0.0-beta5"
+        "version": "3.0.0-beta8"
       },
       "settings": [
         {
@@ -807,7 +823,7 @@
       ],
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.EventHubs",
-        "version": "3.0.0-beta5"
+        "version": "3.0.0-beta8"
       },
       "documentation": "$content=Documentation\\eventHubOut.md",
       "settings": [
@@ -858,7 +874,7 @@
       "documentation": "$content=Documentation\\sendGridOut.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.SendGrid",
-        "version": "3.0.0-beta5"
+        "version": "3.0.0-beta8"
       },
       "settings": [
         {
@@ -926,7 +942,7 @@
       "documentation": "$content=Documentation\\Token.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta3"
+        "version": "1.0.0-beta4"
       },
       "AADPermissions": [
         {
@@ -1026,7 +1042,7 @@
       "enabledInTryMode": false,
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta3"
+        "version": "1.0.0-beta4"
       },
       "AADPermissions": [
         {
@@ -1149,7 +1165,7 @@
       "enabledInTryMode": false,
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta3"
+        "version": "1.0.0-beta4"
       },
       "documentation": "$content=Documentation\\ExcelOut.md",
       "AADPermissions": [
@@ -1290,7 +1306,7 @@
       "enabledInTryMode": false,
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta3"
+        "version": "1.0.0-beta4"
       },
       "documentation": "$content=Documentation\\OutlookOut.md",
       "AADPermissions": [
@@ -1391,7 +1407,7 @@
       "enabledInTryMode": false,
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta3"
+        "version": "1.0.0-beta4"
       },
       "documentation": "$content=Documentation\\OneDriveIn.md",
       "AADPermissions": [
@@ -1500,7 +1516,7 @@
       "enabledInTryMode": false,
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta3"
+        "version": "1.0.0-beta4"
       },
       "documentation": "$content=Documentation\\OneDriveOut.md",
       "AADPermissions": [
@@ -1609,7 +1625,7 @@
       "enabledInTryMode": false,
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta3"
+        "version": "1.0.0-beta4"
       },
       "documentation": "$content=Documentation\\GraphWebhookIn.md",
       "AADPermissions": [
@@ -1647,7 +1663,7 @@
       "enabledInTryMode": false,
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta3"
+        "version": "1.0.0-beta4"
       },
       "documentation": "$content=Documentation\\GraphWebhookOut.md",
       "AADPermissions": [
@@ -1786,7 +1802,7 @@
       "documentation": "$content=Documentation\\GraphWebhookTrigger.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta3"
+        "version": "1.0.0-beta4"
       },
       "enabledInTryMode": false,
       "AADPermissions": [
@@ -1844,7 +1860,7 @@
       "documentation": "$content=Documentation\\activityTrigger.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask",
-        "version": "1.2.2-beta3"
+        "version": "1.6.0"
       },
       "settings": [
         {
@@ -1878,7 +1894,7 @@
       "documentation": "$content=Documentation\\orchestrationTrigger.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask",
-        "version": "1.2.2-beta3"
+        "version": "1.6.0"
       },
       "settings": [
         {
@@ -1912,7 +1928,7 @@
       "documentation": "$content=Documentation\\orchestrationClientIn.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask",
-        "version": "1.2.2-beta3"
+        "version": "1.6.0"
       },
       "settings": [
         {
@@ -1939,7 +1955,7 @@
       "documentation": "$content=Documentation\\eventGridTrigger.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.EventGrid",
-        "version": "2.0.0-beta1"
+        "version": "2.0.0-beta4"
       },
       "settings": [
         {
@@ -1966,7 +1982,7 @@
       "documentation": "$content=Documentation\\cosmosDBTrigger.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.CosmosDB",
-        "version": "3.0.0-beta7"
+        "version": "3.0.1-beta1"
       },
       "settings": [
         {
