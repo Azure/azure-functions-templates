@@ -71,6 +71,19 @@ function Unzip([string]$zipfilePath, [string]$outputpath) {
     }
 }
 
+
+function  RemoveEmptyDirectories($folderPath)
+{
+    Do {
+        $emptyDirectories = Get-ChildItem -Path $folderPath -Directory -Recurse | Where-Object { $_.GetFileSystemInfos().Count -eq 0 }
+        Write-Host "Removing following empty directories"
+        $emptyDirectories | ForEach-Object {  
+            Write-Host $_.FullName
+            Remove-Item $_.FullName
+        }
+    } while ($emptyDirectories -ne $null)
+}
+
 # Main Code Block
 try {
     $rootPath = Get-Location
@@ -125,15 +138,7 @@ try {
 
     # renaming the nuget cache folder to Fallback
     Rename-Item .\.nuget $fallBackFolder
-    
-    Do {
-        $emptyDirectories = Get-ChildItem -Path $fallBackFolder -Directory -Recurse | Where-Object { $_.GetFileSystemInfos().Count -eq 0 }
-        Write-Host "Removing following empty directories"
-        $emptyDirectories | ForEach-Object {  
-            Write-Host $_.FullName
-            Remove-Item $_.FullName
-        }
-    } while ($emptyDirectories -ne $null)
+    RemoveEmptyDirectories $fallBackFolder
 
     # for matching before and after
     foreach ($extension in $extensions) {
@@ -147,6 +152,7 @@ try {
 
         # with fallback folder
         restorePackage $extension $fallBackFolder
+        RemoveEmptyDirectories $binFolderLocation
         $binWith = Get-ChildItem -Recurse -path $binFolderLocation
         Remove-Item $binFolderLocation -Recurse
 
@@ -157,6 +163,7 @@ try {
 
         # without fallback folder
         restorePackage $extension $emptyFolder
+        RemoveEmptyDirectories $binFolderLocation
         $binWithOut = Get-ChildItem -Recurse -path $binFolderLocation
         Remove-Item $binFolderLocation -Recurse
 
@@ -171,8 +178,6 @@ try {
             LogAppVeyorMessage $message $runningInAppveyorEnv
         }
     }
-
-    
 
     if ($runningInAppveyorEnv) {
         $fallbackFolderVersion = $env:APPVEYOR_BUILD_VERSION
