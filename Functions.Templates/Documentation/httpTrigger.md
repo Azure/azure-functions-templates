@@ -1,4 +1,4 @@
-## Settings for HTTP and webhook bindings
+## Settings for HTTP bindings
 
 The settings provide properties that pertain to both the request and response.
 
@@ -7,24 +7,13 @@ Properties for the HTTP request:
 - `name` : Variable name used in function code for the request object (or the request body in the case of JavaScript functions).
 - `type` : Must be set to *httpTrigger*.
 - `direction` : Must be set to *in*. 
-- `webHookType` : For WebHook triggers, valid values are *github*, *slack*, and *genericJson*. 
-- `authLevel` : Doesn't apply to WebHook triggers. Set to "function" to require the API key, "anonymous" to drop the API key requirement, or "admin" to require the master API key.
+- `authLevel` : Set to "function" to require the API key, "anonymous" to drop the API key requirement, or "admin" to require the master API key.
 
 Properties for the HTTP response:
 
 - `name` : Variable name used in function code for the response object.
 - `type` : Must be set to *http*.
 - `direction` : Must be set to *out*. 
-
-## WebHook triggers
-
-A WebHook trigger is an HTTP trigger that has the following features designed for WebHooks:
-
-* For specific WebHook providers (currently GitHub and Slack are supported), the Functions runtime validates the provider's signature.
-* For JavaScript functions, the Functions runtime provides the request body instead of the request object. There is no special handling for C# functions, because you control what is provided by specifying the parameter type. If you specify `HttpRequestMessage` you get the request object. If you specify a POCO type, the Functions runtime tries to parse a JSON object in the body of the request to populate the object properties.
-* To trigger a WebHook function the HTTP request must include an API key. For non-WebHook HTTP triggers,  this requirement is optional.
-
-For information about how to set up a GitHub WebHook, see [GitHub Developer - Creating WebHooks](http://go.microsoft.com/fwlink/?LinkID=761099&clcid=0x409).
 
 ## URL to trigger the function
 
@@ -36,7 +25,7 @@ To trigger a function, you send an HTTP request to a URL that is a combination o
 
 ## API keys
 
-By default, an API key must be included with an HTTP request to trigger an HTTP or WebHook function. The key can be included in a query string variable named `code`, or it can be included in an `x-functions-key` HTTP header. For non-WebHook functions, you can indicate that an API key is not required by setting the `authLevel` property to "anonymous" in the *function.json* file.
+By default, an API key must be included with an HTTP request to trigger an HTTP function. The key can be included in a query string variable named `code`, or it can be included in an `x-functions-key` HTTP header. You can indicate that an API key is not required by setting the `authLevel` property to "anonymous" in the *function.json* file.
 
 You can find API key values in the *D:\home\data\Functions\secrets* folder in the file system of the function app.  The master key and function key are set in the *host.json* file, as shown in this example. 
 
@@ -110,37 +99,5 @@ module.exports = function(context, req) {
         };
         context.done();
     }
-};
-```
-
-## Example C# code for a GitHub WebHook function 
-
-```csharp
-#r "Newtonsoft.Json"
-
-using System;
-using System.Net;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-
-public static async Task<object> Run(HttpRequestMessage req, ILogger log)
-{
-    string jsonContent = await req.Content.ReadAsStringAsync();
-    dynamic data = JsonConvert.DeserializeObject(jsonContent);
-
-    log.LogInformation($"WebHook was triggered! Comment: {data.comment.body}");
-
-    return req.CreateResponse(HttpStatusCode.OK, new {
-        body = $"New GitHub comment: {data.comment.body}"
-    });
-}
-```
-
-## Example JavaScript code for a GitHub WebHook function 
-
-```javascript
-module.exports = function (context, data) {
-    context.log('GitHub WebHook triggered!', data.comment.body);
-    context.res.send('New GitHub comment: ' + data.comment.body);
 };
 ```
