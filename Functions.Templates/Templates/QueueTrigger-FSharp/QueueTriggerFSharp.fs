@@ -9,4 +9,4 @@ module QueueTriggerFSharp =
     [<FunctionName("QueueTriggerCSharp")>]
     let run([<QueueTrigger("PathValue", Connection = "ConnectionValue")>]myQueueItem: string, log: ILogger) =
         let msg = sprintf "C# Queue trigger function processed: %s" myQueueItem
-        log.LogInformation(msg)
+        log.LogInformation msg
