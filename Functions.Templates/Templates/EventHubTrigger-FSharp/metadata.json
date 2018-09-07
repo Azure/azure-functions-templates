@@ -1,0 +1,23 @@
+{
+  "defaultFunctionName": "EventHubTriggerFSharp",
+  "description": "$EventHubTrigger_description",
+  "name": "Event Hub trigger",
+  "language": "F#",
+  "category": [
+    "$temp_category_core",
+    "$temp_category_dataProcessing"
+  ],
+  "categoryStyle": "eventHub",
+  "enabledInTryMode": false,
+  "userPrompt": [
+    "connection",
+    "eventHubName",
+    "consumerGroup"
+  ],
+  "extensions": [
+    {
+      "id": "Microsoft.Azure.WebJobs.Extensions.EventHubs",
+      "version": "3.0.0-beta8"
+    }
+  ]
+}

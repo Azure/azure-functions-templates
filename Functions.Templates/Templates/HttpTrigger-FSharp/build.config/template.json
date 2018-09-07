@@ -1,0 +1,61 @@
+{
+    "author": "Microsoft",
+    "classifications": [
+        "Azure Function"
+    ],
+    "name": "HttpTrigger",
+    "identity": "Azure.Function.FSharp.HttpTrigger.2.x",
+    "groupIdentity": "Azure.Function.HttpTrigger",
+    "shortName": "Http",
+    "tags": {
+        "language": "F#",
+        "type": "item"
+    },
+    "sourceName": "HttpTriggerFSharp",
+    "symbols": {
+        "namespace": {
+            "description": "namespace for the generated code",
+            "replaces": "Company.Function",
+            "type": "parameter"
+        },
+        "AccessRights": {
+            "type": "parameter",
+            "description": "Authorization level controls whether the function requires an API key and which key to use; Function uses a function key; Admin uses your master key. The function and master keys are found in the 'keys' management panel on the portal, when your function is selected.",
+            "datatype": "choice",
+            "choices": [
+                {
+                    "choice": "Function",
+                    "description": "Function"
+                },
+                {
+                    "choice": "Anonymous",
+                    "description": "Anonymous"
+                },
+                {
+                    "choice": "Admin",
+                    "description": "Admin"
+                }
+            ],
+            "replaces": "AuthLevelValue",
+            "defaultValue": "Function"
+        }
+    },
+    "primaryOutputs": [
+        {
+            "path": "HttpTriggerFSharp.cs"
+        }
+    ],
+    "defaultName": "HttpTriggerFSharp",
+    "postActions": [
+        {
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+            "description": "Opens the function class file in the editor",
+            "manualInstructions": [],
+            "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+            "args": {
+                "files": "0"
+            },
+            "continueOnError": true
+        }
+    ]
+}
