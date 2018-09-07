@@ -1,0 +1,76 @@
+{
+  "author": "Microsoft",
+  "classifications": [
+    "Azure Function"
+  ],
+  "name": "CosmosDBTrigger",
+  "identity": "Azure.Function.FSharp.CosmosDBTrigger.2.x",
+  "groupIdentity": "Azure.Function.CosmosDBTrigger",
+  "shortName": "CosmosDB",
+  "tags": {
+    "language": "F#",
+    "type": "item"
+  },
+  "sourceName": "CosmosDBTriggerFSharp",
+  "symbols": {
+    "namespace": {
+      "description": "namespace for the generated code",
+      "replaces": "Company.Function",
+      "type": "parameter"
+    },
+    "ConnectionStringSetting": {
+      "description": "The name of the App Setting containing the connection string to the service that contains the collection to be monitored.",
+      "type": "parameter",
+      "defaultValue": "",
+      "replaces": "ConnectionValue"
+    },
+    "DatabaseName": {
+      "description": "This is the name of the database that includes the collection to be monitored.",
+      "type": "parameter",
+      "defaultValue": "databaseName",
+      "replaces": "DatabaseValue"
+    },
+    "CollectionName": {
+      "description": "This is the name of the collection to be monitored.",
+      "type": "parameter",
+      "defaultValue": "collectionName",
+      "replaces": "CollectionValue"
+    }  
+  },
+  "primaryOutputs": [
+    {
+      "path": "CosmosDBTriggerFSharp.fs"
+    }
+  ],
+  "defaultName": "CosmosDBTriggerFSharp",
+  "postActions": [
+    {
+      "Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.CosmosDB Nuget package",
+      "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+      "ContinueOnError": "true",
+      "ManualInstructions": [],
+      "args": {
+        "referenceType": "package",
+        "reference": "Microsoft.Azure.WebJobs.Extensions.CosmosDB",
+        "version": "3.0.3",
+        "projectFileExtensions": ".fsproj"
+      }
+    },
+    {
+      "description": "Restore NuGet packages required by this project.",
+      "manualInstructions": [],
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "continueOnError": true
+    },
+    {
+        "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+        "description": "Opens the function class file in the editor",
+        "manualInstructions": [],
+        "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+        "args": {
+            "files": "0"
+        },
+        "continueOnError": true
+    }
+  ]
+}

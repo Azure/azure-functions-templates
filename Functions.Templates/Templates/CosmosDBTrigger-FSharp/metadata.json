@@ -1,0 +1,25 @@
+{
+    "defaultFunctionName": "CosmosTriggerFSharp",
+    "description": "$CosmosDBTrigger_description",
+    "name": "Cosmos DB trigger",
+    "language": "F#",
+    "category": [
+      "$temp_category_core",
+      "$temp_category_dataProcessing"
+    ],
+    "categoryStyle": "cosmosDB",
+    "enabledInTryMode": false,
+    "userPrompt": [
+      "connectionStringSetting",
+      "databaseName",
+      "collectionName",
+      "leaseCollectionName",
+      "createLeaseCollectionIfNotExists"
+    ],
+    "extensions": [
+      {
+        "id": "Microsoft.Azure.WebJobs.Extensions.CosmosDB",
+        "version": "3.0.3"
+      }
+    ]
+  }
