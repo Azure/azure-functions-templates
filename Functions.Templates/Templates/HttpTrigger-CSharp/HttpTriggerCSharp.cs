@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 using Newtonsoft.Json;
 
-public static IActionResult Run(HttpRequest req, ILogger log)
+public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
 #endif
 #if (vsTemplates)
 
@@ -18,20 +18,22 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.WebJobs.Host;
 using Newtonsoft.Json;
 using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
+using System;
 
 namespace Company.Function
 {
     public static class HttpTriggerCSharp
     {
         [FunctionName("HttpTriggerCSharp")]
-        public static IActionResult Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = null)]HttpRequest req, ILogger log)
+        public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = null)]HttpRequest req, ILogger log)
 #endif
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
 
             string name = req.Query["name"];
 
-            string requestBody = new StreamReader(req.Body).ReadToEnd();
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             dynamic data = JsonConvert.DeserializeObject(requestBody);
             name = name ?? data?.name;
 
