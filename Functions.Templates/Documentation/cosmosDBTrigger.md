@@ -11,7 +11,7 @@ The settings for an Azure Cosmos DB trigger specifies the following properties:
 - `direction` : Must be set to *in*. 
 - `databaseName` : The name of the database that holds the collection to monitor.
 - `collectionName` : The name of the collection to monitor.
-- `connectionStringSetting` *optional*: The name of an app setting that contains the connection string to the service which holds the collection to monitor. If `connectionStringSetting` is not set then the value of AzureWebJobsDocumentDBConnectionStringName setting is used.
+- `connectionStringSetting` *optional*: The name of an app setting that contains the connection string to the service which holds the collection to monitor. If `connectionStringSetting` is not set then the value of AzureWebJobsCosmosDBConnectionStringName setting is used.
 - `leaseConnectionStringSetting` : *optional*. The name of an app setting that contains the connection string to the service which holds the lease collection. If not set it will connect to the service defined by `connectionStringSetting`.
 - `leaseDatabaseName` : *optional*. The name of the database that holds the collection to store leases. If not set, it will use the value of `databaseName`.
 - `leaseCollectionName` : *optional*. The name of the collection to store leases. If not set, it will use "leases".
