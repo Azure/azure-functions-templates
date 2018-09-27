@@ -1,14 +1,14 @@
-#### Settings for DocumentDB output binding
+#### Settings for Cosmos DB output binding
 
 - `name` : Variable name used in function code for the new document.
-- `type` : must be set to *"documentdb"*.
+- `type` : must be set to *"Cosmos DB"*.
 - `databaseName` : The database containing the collection where the new document will be created.
 - `collectionName` : The collection where the new document will be created.
-- `createIfNotExists` : This is a boolean value to indicate whether the collection will be created if it does not exist. The default is *false*. The reason for this is new collections are created with reserved throughput, which has pricing implications. For more details, please visit the [pricing page](https://azure.microsoft.com/pricing/details/documentdb/).
-- `connection` : This string must be an **Application Setting** set to the endpoint for your DocumentDB account. If you choose your account from the **Integrate** tab, a new App setting will be created for you with a name that takes the following form, `yourAccount_DOCUMENTDB`. If you need to manually create the App setting, the actual connection string must take the following form, `AccountEndpoint=<Endpoint for your account>;AccountKey=<Your primary access key>;`. 
+- `createIfNotExists` : This is a boolean value to indicate whether the collection will be created if it does not exist. The default is *false*. The reason for this is new collections are created with reserved throughput, which has pricing implications. For more details, please visit the [pricing page](https://azure.microsoft.com/pricing/details/Cosmos DB/).
+- `connection` : This string must be an **Application Setting** set to the endpoint for your Cosmos DB account. If you choose your account from the **Integrate** tab, a new App setting will be created for you with a name that takes the following form, `yourAccount_CosmosDB`. If you need to manually create the App setting, the actual connection string must take the following form, `AccountEndpoint=<Endpoint for your account>;AccountKey=<Your primary access key>;`. 
 - `direction` : must be set to *"out"*. 
 
-#### Azure DocumentDB output code example for a JavaScript queue trigger
+#### Azure Cosmos DB output code example for a JavaScript queue trigger
 
 ```javascript
 module.exports = function (context, input) {
@@ -30,7 +30,7 @@ The output document:
 }
 ```
 
-#### Azure DocumentDB output code example for a C# queue trigger
+#### Azure Cosmos DB output code example for a C# queue trigger
 
 ```csharp
 public static void Run(string myQueueItem, out object document, ILogger log)
@@ -43,7 +43,7 @@ public static void Run(string myQueueItem, out object document, ILogger log)
 }
 ```
 
-#### Azure DocumentDB output code example setting file name
+#### Azure Cosmos DB output code example setting file name
 
 If you want to set the name of the document in the function, just set the `id` value.  For example, if JSON content for an employee was being dropped into the queue similar to the following:
 
