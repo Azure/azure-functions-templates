@@ -1992,6 +1992,155 @@
           "help": "$cosmosDBIn_createIfNotExists_help"
         }
       ]
+    },
+    {
+      "type": "cosmosDB",
+      "displayName": "$documentDBOut_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\documentDBOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.CosmosDB",
+        "version": "3.0.1"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "outputDocument",
+          "required": true,
+          "label": "$documentDBOut_name_label",
+          "help": "$documentDBOut_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "databaseName",
+          "value": "string",
+          "defaultValue": "outDatabase",
+          "required": true,
+          "label": "$documentDBOut_databaseName_label",
+          "help": "$documentDBOut_databaseName_help"
+        },
+        {
+          "name": "collectionName",
+          "value": "string",
+          "defaultValue": "MyCollection",
+          "required": true,
+          "label": "$documentDBOut_collectionName_label",
+          "help": "$documentDBOut_collectionName_help"
+        },
+        {
+          "name": "createIfNotExists",
+          "value": "boolean",
+          "defaultValue": false,
+          "required": true,
+          "label": "$documentDBOut_createIfNotExists_label",
+          "help": "$documentDBOut_createIfNotExists_help"
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "resource": "DocumentDB",
+          "required": true,
+          "label": "$documentDBOut_connection_label",
+          "help": "$documentDBOut_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "partitionKey",
+          "value": "string",
+          "required": false,
+          "label": "$documentDB_partitionKey_label",
+          "help": "$documentDBOut_partitionKey_help"
+        },
+        {
+          "name": "collectionThroughput",
+          "value": "int",
+          "required": false,
+          "label": "$cosmosDB_collectionThroughput_label",
+          "help": "$cosmosDBOut_collectionThroughput_help"
+        }
+      ]
+    },
+    {
+      "type": "cosmosDB",
+      "displayName": "$documentDBIn_displayName",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\documentDBIn.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.CosmosDB",
+        "version": "3.0.1"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "inputDocument",
+          "required": true,
+          "label": "$documentDBIn_name_label",
+          "help": "$documentDBIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "databaseName",
+          "value": "string",
+          "defaultValue": "inDatabase",
+          "required": true,
+          "label": "$documentDBIn_databaseName_label",
+          "help": "$documentDBIn_databaseName_help"
+        },
+        {
+          "name": "collectionName",
+          "value": "string",
+          "defaultValue": "MyCollection",
+          "required": true,
+          "label": "$documentDBIn_collectionName_label",
+          "help": "$documentDBIn_collectionName_help"
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "resource": "DocumentDB",
+          "required": true,
+          "label": "$documentDBIn_connection_label",
+          "help": "$documentDBIn_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "id",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$documentDBIn_id_label",
+          "help": "$documentDBIn_id_help"
+        },
+        {
+          "name": "partitionKey",
+          "value": "string",
+          "required": false,
+          "label": "$documentDB_partitionKey_label",
+          "help": "$documentDBIn_partitionKey_help"
+        },
+        {
+          "name": "sqlQuery",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$documentDBIn_sqlQuery_label",
+          "help": "$documentDBIn_sqlQuery_help"
+        }
+      ]
     }
   ]
 }
