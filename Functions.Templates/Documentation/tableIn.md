@@ -13,11 +13,6 @@
 
 The `table` binding can serialize or deserialize objects in JavaScript or C# functions. The objects will have RowKey and PartitionKey properties. 
 
-In C# functions, you can also bind to the following types:
-
-* `T` where `T` implements `ITableEntity`
-* `IQueryable<T>` 
-
 #### Storage tables binding scenarios
 
 The table binding supports the following scenarios:
@@ -26,18 +21,14 @@ The table binding supports the following scenarios:
 
 	Set `partitionKey` and `rowKey`. The `filter` and `take` properties are not used in this scenario.
 
-* Read multiple rows in a C# function.
-
-	The Functions runtime provides an `IQueryable<T>` object bound to the table. Type `T` must derive from `TableEntity` or implement `ITableEntity`. The `partitionKey`, `rowKey`, `filter`, and `take` properties are not used in this scenario; you can use the `IQueryable` object to do any filtering required. 
-
-* Read multiple rows in a JavaScript function.
+* Read multiple rows in C# function and JavaScript functions.
 
 	Set the `filter` and `take` properties. Don't set `partitionKey` or `rowKey`.
 
 
 #### Storage tables example: Read a single table entity in C# or JavaScript
 
-The queue message has the row key value and the table entity is read into a type that is user defined. The type includes `PartitionKey` and `RowKey` properties and does not derive from `TableEntity`. 
+The queue message has the row key value and the table entity is read into a type that is user defined. The type includes `PartitionKey` and `RowKey`.
 
 ```csharp
 public static void Run(string myQueueItem, Person personEntity, ILogger log)
@@ -64,25 +55,32 @@ module.exports = function (context, myQueueItem) {
 };
 ```
 
-#### Storage tables example: C# example that reads multiple table entities
+#### Storage tables example: C# example that reads multiple table entities based on a queue trigger
 
-The C# code adds a reference to the Azure Storage SDK so that the entity type can derive from `TableEntity`.
+The C# code adds a reference to Newtonsoft JSON library so that we can utilize JSON constructs to process multiple table entries. The `queuePerson` argument is bound to a queue entry while the `inputTable` is bound to an Azure Storage Table. We can specify the `filter` property so that, for example, only table results for persons older than the person in the queue are returned ( specify `"Age gt {Age}"` where `{Age}` represents the age of the person from the queue). 
 
 ```csharp
-#r "Microsoft.WindowsAzure.Storage"
-using Microsoft.WindowsAzure.Storage.Table;
+#r "Newtonsoft.Json"
+using System;
 
-public static void Run(string myQueueItem, IQueryable<Person> tableBinding, ILogger log)
+public static void Run(Person queuePerson, Newtonsoft.Json.Linq.JArray inputTable, ILogger log)
 {
-    log.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
-    foreach (Person person in tableBinding.Where(p => p.PartitionKey == myQueueItem).ToList())
+    foreach (Newtonsoft.Json.Linq.JToken jToken in inputTable)
     {
-        log.LogInformation($"Name: {person.Name}");
+        Person p = Newtonsoft.Json.JsonConvert.DeserializeObject<Person>(jToken.ToString());
+        log.LogInformation(p.ToString());
     }
 }
 
-public class Person : TableEntity
+public class Person 
 {
+    public string PartitionKey { get; set; }
+    public string RowKey { get; set; }
+    public int Age { get; set; }
     public string Name { get; set; }
+
+    public override string ToString() {
+        return String.Format("Hi! My name is {0}. I am {1} years old.", Name, Age);
+    }
 }
 ``` 
