@@ -677,6 +677,127 @@
       ]
     },
     {
+      "type": "table",
+      "displayName": "$tableout_displayName",
+      "direction": "out",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\tableOut.md",
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "outputTable",
+          "required": true,
+          "label": "$tableout_name_label",
+          "help": "$tableout_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "tableName",
+          "value": "string",
+          "defaultValue": "outTable",
+          "required": true,
+          "label": "$table_tableName_label",
+          "help": "$table_tableName_help",
+          "validators": [
+            {
+              "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+              "errorText": "$table_tableName_errorText"
+            }
+          ]
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "Storage",
+          "required": true,
+          "label": "[variables('storageConnStringLabel')]",
+          "help": "[variables('appSettingsHelp')]",
+          "placeholder": "[variables('selectConnection')]"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "displayName": "$tableIn_displayName",
+      "direction": "in",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\tableIn.md",
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "inputTable",
+          "required": true,
+          "label": "$tableIn_name_label",
+          "help": "$tableIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "tableName",
+          "value": "string",
+          "defaultValue": "inTable",
+          "required": true,
+          "label": "$tableIn_tableName_label",
+          "help": "$tableIn_tableName_help",
+          "validators": [
+            {
+              "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+              "errorText": "$tableIn_tableName_errorText"
+            }
+          ]
+        },
+        {
+          "name": "partitionKey",
+          "value": "string",
+          "required": false,
+          "label": "$tableIn_partitionKey_label",
+          "help": "$tableIn_partitionKey_help"
+        },
+        {
+          "name": "rowKey",
+          "value": "string",
+          "required": false,
+          "label": "$tableIn_rowKey_label",
+          "help": "$tableIn_rowKey_help"
+        },
+        {
+          "name": "take",
+          "value": "int",
+          "defaultValue": 50,
+          "required": false,
+          "label": "$tableIn_take_label",
+          "help": "$tableIn_take_help"
+        },
+        {
+          "name": "filter",
+          "value": "string",
+          "required": false,
+          "label": "$tableIn_filter_label",
+          "help": "$tableIn_filter_help"
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "Storage",
+          "required": true,
+          "label": "[variables('storageConnStringLabel')]",
+          "help": "[variables('appSettingsHelp')]",
+          "placeholder": "[variables('selectConnection')]"
+        }
+      ]
+    },
+    {
       "type": "eventHubTrigger",
       "displayName": "$eventHubTrigger_displayName",
       "direction": "trigger",
