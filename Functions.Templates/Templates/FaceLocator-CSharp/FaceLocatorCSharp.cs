@@ -34,6 +34,7 @@ namespace Company.Function
 {
     public static class FaceLocatorCSharp
     {
+        private static HttpClient client = new HttpClient();
         [FunctionName("FaceLocatorCSharp")]
         public static async Task Run([BlobTrigger("BlobPathValue", Connection = "BlobConnectionValue")]Stream image, string name, [Table("TableNameValue", Connection = "TableConnectionValue")]IAsyncCollector<FaceRectangle> outTable, TraceWriter log)
 #endif
@@ -59,20 +60,20 @@ namespace Company.Function
 
         static async Task<string> CallVisionAPI(Stream image)
         {
-            using (var client = new HttpClient())
-            {
-                var content = new StreamContent(image);
-                var url = "https://westus.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Faces&language=en";
-                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", Environment.GetEnvironmentVariable("Vision_API_Subscription_Key"));
-                content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
-                var httpResponse = await client.PostAsync(url, content);
+            var content = new StreamContent(image);
+            var url = "https://westus.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Faces&language=en";
+            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", Environment.GetEnvironmentVariable("Vision_API_Subscription_Key"));
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+            var httpResponse = await client.PostAsync(url, content);
 
-                if (httpResponse.StatusCode == HttpStatusCode.OK)
-                {
-                    return await httpResponse.Content.ReadAsStringAsync();
-                }
+            if (httpResponse.StatusCode == HttpStatusCode.OK)
+            {
+                return await httpResponse.Content.ReadAsStringAsync();
             }
-            return null;
+            else
+            {
+                throw new HttpRequestException(await httpResponse.Content.ReadAsStringAsync());
+            }
         }
 
         public class ImageData
