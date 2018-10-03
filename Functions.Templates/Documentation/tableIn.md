@@ -13,6 +13,10 @@
 
 The `table` binding can serialize or deserialize objects in JavaScript or C# functions. The objects will have RowKey and PartitionKey properties. 
 
+In C# functions, you can also bind to the following type:
+
+ * `T` where `T` implements `ITableEntity`
+
 #### Storage tables binding scenarios
 
 The table binding supports the following scenarios:
