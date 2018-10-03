@@ -16,6 +16,7 @@ The `table` binding can serialize or deserialize objects in JavaScript or C# fun
 In C# functions, you can also bind to the following type:
 
  * `T` where `T` implements `ITableEntity`
+ * `CloudTable`
 
 #### Storage tables binding scenarios
 
@@ -59,9 +60,9 @@ module.exports = function (context, myQueueItem) {
 };
 ```
 
-#### Storage tables example: C# example that reads multiple table entities based on a queue trigger
+#### Storage tables example: C# example that reads multiple table entities
 
-The C# code adds a reference to Newtonsoft JSON library so that we can utilize JSON constructs to process multiple table entries. The `queuePerson` argument is bound to a queue entry while the `inputTable` is bound to an Azure Storage Table. We can specify the `filter` property so that, for example, only table results for persons older than the person in the queue are returned ( specify `"Age gt {Age}"` where `{Age}` represents the age of the person from the queue). 
+The C# code adds a reference to Newtonsoft JSON library so that we can utilize JSON constructs to process multiple table entries. The `queuePerson` argument is bound to a queue entry while the `inputTable` is bound to an Azure Storage Table. We can specify the `filter` property so that, for example, only table results for persons older than the person in the queue are returned (specify `"Age gt {Age}"` where `{Age}` represents the age of the person from the queue). 
 
 ```csharp
 #r "Newtonsoft.Json"
