@@ -25,9 +25,9 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class SendGridCSharp
+    public static class SendGrid
     {
-        [FunctionName("SendGridCSharp")]
+        [FunctionName("SendGrid")]
         [return: SendGrid(ApiKey = "ApiKeyValue",To = "{CustomerEmail}", From = "FromEmailValue" )]
         public static SendGridMessage Run([QueueTrigger("PathValue", Connection = "ConnectionValue")]Order order, ILogger log)
 #endif

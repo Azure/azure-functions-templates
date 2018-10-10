@@ -9,11 +9,11 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class IotHubTriggerCSharp
+    public static class IotHubTrigger
     {
         private static HttpClient client = new HttpClient();
 
-        [FunctionName("IotHubTriggerCSharp")]
+        [FunctionName("IotHubTrigger")]
         public static void Run([IoTHubTrigger("PathValue", Connection = "ConnectionValue")]EventData message, ILogger log)
         {
             log.LogInformation($"C# IoT Hub trigger function processed a message: {Encoding.UTF8.GetString(message.Body.Array)}");

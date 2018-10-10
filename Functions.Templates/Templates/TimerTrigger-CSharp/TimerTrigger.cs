@@ -11,9 +11,9 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class TimerTriggerCSharp
+    public static class TimerTrigger
     {
-        [FunctionName("TimerTriggerCSharp")]
+        [FunctionName("TimerTrigger")]
         public static void Run([TimerTrigger("ScheduleValue")]TimerInfo myTimer, ILogger log)
 #endif
         {

@@ -15,9 +15,9 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class CosmosDBTriggerCSharp
+    public static class CosmosDBTrigger
     {
-        [FunctionName("CosmosDBTriggerCSharp")]
+        [FunctionName("CosmosDBTrigger")]
         public static void Run([CosmosDBTrigger(
             databaseName: "DatabaseValue",
             collectionName: "CollectionValue",

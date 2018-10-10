@@ -11,9 +11,9 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class QueueTriggerCSharp
+    public static class QueueTrigger
     {
-        [FunctionName("QueueTriggerCSharp")]
+        [FunctionName("QueueTrigger")]
         public static void Run([QueueTrigger("PathValue", Connection = "ConnectionValue")]string myQueueItem, ILogger log)
 #endif
         {

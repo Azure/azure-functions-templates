@@ -16,9 +16,9 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class EventGridTriggerCSharp
+    public static class EventGridTrigger
     {
-        [FunctionName("EventGridTriggerCSharp")]
+        [FunctionName("EventGridTrigger")]
         public static void Run([EventGridTrigger]EventGridEvent eventGridEvent, ILogger log)
 #endif
         {
