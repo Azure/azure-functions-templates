@@ -9,9 +9,9 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class BlobTrigger
+    public static class BlobTriggerCSharp
     {
-        [FunctionName("BlobTrigger")]
+        [FunctionName("BlobTriggerCSharp")]
         public static void Run([BlobTrigger("PathValue/{name}", Connection = "ConnectionValue")]Stream myBlob, string name, ILogger log)
 #endif
         {

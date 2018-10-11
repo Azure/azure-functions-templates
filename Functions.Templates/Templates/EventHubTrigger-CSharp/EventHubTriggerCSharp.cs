@@ -10,9 +10,9 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class EventHubTrigger
+    public static class EventHubTriggerCSharp
     {
-        [FunctionName("EventHubTrigger")]
+        [FunctionName("EventHubTriggerCSharp")]
         public static void Run([EventHubTrigger("eventHubNameValue", Connection = "ConnectionValue")]string myEventHubMessage, ILogger log)
 #endif
         {

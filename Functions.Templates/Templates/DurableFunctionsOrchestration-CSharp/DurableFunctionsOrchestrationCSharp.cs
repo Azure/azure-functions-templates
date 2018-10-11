@@ -8,38 +8,38 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class DurableFunctionsOrchestration
+    public static class DurableFunctionsOrchestrationCSharp
     {
-        [FunctionName("DurableFunctionsOrchestration")]
+        [FunctionName("DurableFunctionsOrchestrationCSharp")]
         public static async Task<List<string>> RunOrchestrator(
             [OrchestrationTrigger] DurableOrchestrationContext context)
         {
             var outputs = new List<string>();
 
             // Replace "hello" with the name of your Durable Activity Function.
-            outputs.Add(await context.CallActivityAsync<string>("DurableFunctionsOrchestration_Hello", "Tokyo"));
-            outputs.Add(await context.CallActivityAsync<string>("DurableFunctionsOrchestration_Hello", "Seattle"));
-            outputs.Add(await context.CallActivityAsync<string>("DurableFunctionsOrchestration_Hello", "London"));
+            outputs.Add(await context.CallActivityAsync<string>("DurableFunctionsOrchestrationCSharp_Hello", "Tokyo"));
+            outputs.Add(await context.CallActivityAsync<string>("DurableFunctionsOrchestrationCSharp_Hello", "Seattle"));
+            outputs.Add(await context.CallActivityAsync<string>("DurableFunctionsOrchestrationCSharp_Hello", "London"));
 
             // returns ["Hello Tokyo!", "Hello Seattle!", "Hello London!"]
             return outputs;
         }
 
-        [FunctionName("DurableFunctionsOrchestration_Hello")]
+        [FunctionName("DurableFunctionsOrchestrationCSharp_Hello")]
         public static string SayHello([ActivityTrigger] string name, ILogger log)
         {
             log.LogInformation($"Saying hello to {name}.");
             return $"Hello {name}!";
         }
 
-        [FunctionName("DurableFunctionsOrchestration_HttpStart")]
+        [FunctionName("DurableFunctionsOrchestrationCSharp_HttpStart")]
         public static async Task<HttpResponseMessage> HttpStart(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")]HttpRequestMessage req,
             [OrchestrationClient]DurableOrchestrationClient starter,
             ILogger log)
         {
             // Function input comes from the request content.
-            string instanceId = await starter.StartNewAsync("DurableFunctionsOrchestration", null);
+            string instanceId = await starter.StartNewAsync("DurableFunctionsOrchestrationCSharp", null);
 
             log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
 

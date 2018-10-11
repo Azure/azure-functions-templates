@@ -21,9 +21,9 @@ using Newtonsoft.Json;
 
 namespace Company.Function
 {
-    public static class HttpTrigger
+    public static class HttpTriggerCSharp
     {
-        [FunctionName("HttpTrigger")]
+        [FunctionName("HttpTriggerCSharp")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger log)

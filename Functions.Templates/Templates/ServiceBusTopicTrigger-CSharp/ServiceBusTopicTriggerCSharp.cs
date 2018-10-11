@@ -11,9 +11,9 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class ServiceBusTopicTrigger
+    public static class ServiceBusTopicTriggerCSharp
     {
-        [FunctionName("ServiceBusTopicTrigger")]
+        [FunctionName("ServiceBusTopicTriggerCSharp")]
         public static void Run([ServiceBusTrigger("TopicNameValue", "SubscriptionNameValue", Connection = "ConnectionValue")]string mySbMsg, ILogger log)
 #endif
         {
