@@ -102,7 +102,7 @@ try {
     $cliDir = Join-Path $DotNetDir -ChildPath "\cli\"
     if (-Not (Test-Path $cliDir)) {
         # Download dotnet CLI
-        $dotnetCliDownloadUrl = "https://download.microsoft.com/download/1/2/E/12E2BC14-7A9F-4497-A351-02B7C2DDD599/dotnet-sdk-2.1.102-win-x86.zip"
+        $dotnetCliDownloadUrl = "https://github.com/Azure/azure-functions-templates/releases/download/2.0.0-10262/dotnet_sdk_with_fallback.zip"
         $dotnetCliZip = Join-Path $DotNetDir -ChildPath "dotnet.zip"
         Download $dotnetCliDownloadUrl $dotnetCliZip    
 
