@@ -1,1 +1,1 @@
-This feature is experimental. Docs will be coming soon!
+[Click Here for Detailed Documentation](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-twilio) 
