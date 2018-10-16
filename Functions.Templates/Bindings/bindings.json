@@ -1013,6 +1013,10 @@
       "direction": "out",
       "enabledInTryMode": false,
       "documentation": "$content=Documentation\\twilioSmsOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Twilio",
+        "version": "3.0.0"
+      },
       "settings": [
         {
           "name": "name",
@@ -1027,30 +1031,6 @@
               "errorText": "[variables('parameterName')]"
             }
           ]
-        },
-        {
-          "name": "accountSid",
-          "value": "string",
-          "defaultValue": "TwilioAccountSid",
-          "required": true,
-          "label": "$twilioSms_accountsid_label",
-          "help": "$twilioSms_accountsid_help"
-        },
-        {
-          "name": "authToken",
-          "value": "string",
-          "defaultValue": "TwilioAuthToken",
-          "required": true,
-          "label": "$twilioSms_authtoken_label",
-          "help": "$twilioSms_authtoken_help"
-        },
-        {
-          "name": "to",
-          "value": "string",
-          "defaultValue": "",
-          "required": false,
-          "label": "$twilioSms_to_label",
-          "help": "$twilioSms_to_help"
         },
         {
           "name": "from",
