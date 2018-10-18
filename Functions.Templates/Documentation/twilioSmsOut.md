@@ -8,14 +8,14 @@
 - `from` : This value is set to the phone number that the SMS text is sent from
 - `body` : This value can be used to hard code the SMS text message if you don't need to set it dynamically in the code for your function. 
 
-## Example - Functions 2.x
+## Example - Functions 
 
 See the language-specific example:
 
-* [2.x C# script (.csx)](#2x-c-script-example)
-* [2.x JavaScript](#2x-javascript-example)
+* [C# script (.csx)](#c-script-example)
+* [JavaScript](#javascript-example)
 
-### 2.x C# script example
+### C# script example
 
 The following example shows a Twilio output binding in a *function.json* file and a [C# script function](functions-reference-csharp.md) that uses the binding. The function uses an `out` parameter to send a text message.
 
@@ -99,7 +99,7 @@ public static async Task Run(string myQueueItem, IAsyncCollector<CreateMessageOp
 }
 ```
 
-### 2.x JavaScript example
+### JavaScript example
 
 The following example shows a Twilio output binding in a *function.json* file and a [JavaScript function](functions-reference-node.md) that uses the binding.
 
@@ -159,5 +159,3 @@ public static CreateMessageOptions Run(
     ...
 }
  ```
-
-For a complete example, see [C# example](#c-example).
