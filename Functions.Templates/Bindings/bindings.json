@@ -232,6 +232,10 @@
       "direction": "in",
       "enabledInTryMode": true,
       "documentation": "$content=Documentation\\blobIn.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Storage",
+        "version": "3.0.0"
+      },
       "settings": [
         {
           "name": "name",
@@ -682,6 +686,10 @@
       "direction": "out",
       "enabledInTryMode": true,
       "documentation": "$content=Documentation\\tableOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Storage",
+        "version": "3.0.0"
+      },
       "settings": [
         {
           "name": "name",
@@ -728,6 +736,10 @@
       "direction": "in",
       "enabledInTryMode": true,
       "documentation": "$content=Documentation\\tableIn.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Storage",
+        "version": "3.0.0"
+      },
       "settings": [
         {
           "name": "name",
@@ -1004,6 +1016,65 @@
           "required": false,
           "label": "$sendGrid_text_label",
           "help": "$sendGrid_text_help"
+        }
+      ]
+    },
+    {
+      "type": "twilioSms",
+      "displayName": "$twilioSms_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\twilioSmsOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Twilio",
+        "version": "3.0.0"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "message",
+          "required": true,
+          "label": "$twilioSms_name_label",
+          "help": "$twilioSms_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "accountSidSetting",
+          "value": "string",
+          "defaultValue": "TwilioAccountSid",
+          "required": true,
+          "label": "$twilioSms_accountsid_label",
+          "help": "$twilioSms_accountsid_help"
+        },
+        {
+          "name": "authTokenSetting",
+          "value": "string",
+          "defaultValue": "TwilioAuthToken",
+          "required": true,
+          "label": "$twilioSms_authtoken_label",
+          "help": "$twilioSms_authtoken_help"
+        },
+        {
+          "name": "from",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$twilioSms_from_label",
+          "help": "$twilioSms_from_help"
+        },
+        {
+          "name": "body",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$twilioSms_body_label",
+          "help": "$twilioSms_body_help"
         }
       ]
     },
