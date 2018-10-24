@@ -1,0 +1,22 @@
+{
+  "defaultFunctionName": "IoTHub_EventHub",
+  "description": "$IoTHubTrigger_description",
+  "name": "IoT Hub (Event Hub)",
+  "language": "C#",
+  "category": [
+    "$temp_category_IoTHub"
+  ],
+  "categoryStyle": "iot",
+  "enabledInTryMode": false,
+  "userPrompt": [
+    "connection",
+    "path",
+    "consumerGroup"
+  ],
+  "extensions": [
+    {
+      "id": "Microsoft.Azure.WebJobs.Extensions.EventHubs",
+      "version": "3.0.0"
+    }
+  ]
+}
