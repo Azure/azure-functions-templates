@@ -1,24 +1,28 @@
+using namespace System.Net
+
 # Input bindings are passed in via param block.
-param($req, $TriggerMetadata)
+param($Request, $TriggerMetadata)
 
 # Write to the Azure Functions Trace-level log stream.
 Write-Verbose "PowerShell HTTP trigger function processed a request." -Verbose
 
-# Interact with query parameters, the body of the request, etc.
-$name = $req.Query.Name
-if (-not $name) { $name = $req.Body.Name }
+# Interact with query parameters or the body of the request.
+$name = $Request.Query.Name
+if (-not $name) {
+    $name = $Request.Body.Name
+}
 
-if($name) {
-    $status = 200
-    $body = "Hello " + $name
+if ($name) {
+    $status = [HttpStatusCode]::OK
+    $body = "Hello $name"
 }
 else {
-    $status = 400
+    $status = [HttpStatusCode]::BadRequest
     $body = "Please pass a name on the query string or in the request body."
 }
 
 # Associate values to output bindings by calling 'Push-OutputBinding'.
-Push-OutputBinding -Name res -Value ([HttpResponseContext]@{
+Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
     StatusCode = $status
     Body = $body
 })
