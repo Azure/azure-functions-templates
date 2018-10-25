@@ -3,8 +3,8 @@ using namespace System.Net
 # Input bindings are passed in via param block.
 param($Request, $TriggerMetadata)
 
-# Write to the Azure Functions Trace-level log stream.
-Write-Verbose "PowerShell HTTP trigger function processed a request." -Verbose
+# Write to the Azure Functions log stream.
+Write-Host "PowerShell HTTP trigger function processed a request."
 
 # Interact with query parameters or the body of the request.
 $name = $Request.Query.Name
