@@ -59,6 +59,12 @@
     <None Include="Templates\BlobTrigger-Python\metadata.json" />
     <None Include="Templates\BlobTrigger-Python\readme.md" />
     <None Include="Templates\BlobTrigger-Python\sample.dat" />
+    <None Include="Templates\DurableFunctionsActivity-JavaScript\function.json" />
+    <None Include="Templates\DurableFunctionsActivity-JavaScript\metadata.json" />
+    <None Include="Templates\DurableFunctionsHttpStart-JavaScript\function.json" />
+    <None Include="Templates\DurableFunctionsHttpStart-JavaScript\metadata.json" />
+    <None Include="Templates\DurableFunctionsOrchestrator-JavaScript\function.json" />
+    <None Include="Templates\DurableFunctionsOrchestrator-JavaScript\metadata.json" />
     <None Include="Templates\BlobTrigger-PowerShell\function.json" />
     <None Include="Templates\BlobTrigger-PowerShell\metadata.json" />
     <None Include="Templates\BlobTrigger-PowerShell\readme.md" />
@@ -77,7 +83,6 @@
     <None Include="Templates\DurableFunctionsActivity-CSharp\DurableFunctionsActivityCSharp.csx" />
     <None Include="Templates\DurableFunctionsActivity-CSharp\function.json" />
     <None Include="Templates\DurableFunctionsActivity-CSharp\metadata.json" />
-    <None Include="Templates\DurableFunctionsActivity-CSharp\sample.dat" />
     <None Include="Templates\DurableFunctionsHttpStart-CSharp\DurableFunctionsHttpStartCSharp.csx" />
     <None Include="Templates\DurableFunctionsHttpStart-CSharp\function.json" />
     <None Include="Templates\DurableFunctionsHttpStart-CSharp\metadata.json" />
@@ -85,11 +90,9 @@
     <None Include="Templates\DurableFunctionsOrchestration-CSharp\build.config\vs-2017.3.host.json" />
     <None Include="Templates\DurableFunctionsOrchestration-CSharp\function.json" />
     <None Include="Templates\DurableFunctionsOrchestration-CSharp\metadata.json" />
-    <None Include="Templates\DurableFunctionsOrchestration-CSharp\sample.dat" />
     <None Include="Templates\DurableFunctionsOrchestrator-CSharp\DurableFunctionsOrchestratorCSharp.csx" />
     <None Include="Templates\DurableFunctionsOrchestrator-CSharp\function.json" />
     <None Include="Templates\DurableFunctionsOrchestrator-CSharp\metadata.json" />
-    <None Include="Templates\DurableFunctionsOrchestrator-CSharp\sample.dat" />
     <None Include="Templates\EventGridTrigger-Python\__init__.py" />
     <None Include="Templates\EventGridTrigger-Python\function.json" />
     <None Include="Templates\EventGridTrigger-Python\metadata.json" />
@@ -209,7 +212,9 @@
     <None Include="Documentation\tableOut.md" />
     <None Include="Documentation\timerTrigger.md" />
     <None Include="Documentation\twilioSmsOut.md" />
-    <None Include="PortalTemplates.nuspec" />
+    <None Include="PortalTemplates.nuspec">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Templates\BlobTrigger-CSharp\build.config\template.json" />
     <None Include="Templates\BlobTrigger-CSharp\build.config\vs-2017.3.host.json" />
     <None Include="Templates\BlobTrigger-CSharp\function.json" />
@@ -267,7 +272,10 @@
     <Content Include="Templates\BlobTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\BlobTrigger-JavaScript\index.js" />
     <Content Include="Templates\CosmosDBTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\DurableFunctionsActivity-JavaScript\index.js" />
+    <Content Include="Templates\DurableFunctionsHttpStart-JavaScript\index.js" />
     <Content Include="Templates\DurableFunctionsOrchestration-CSharp\build.config\vs-2017.3\function_f.png" />
+    <Content Include="Templates\DurableFunctionsOrchestrator-JavaScript\index.js" />
     <Content Include="Templates\EventHubTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
     <Content Include="Templates\EventHubTrigger-JavaScript\index.js" />
     <Content Include="Templates\HttpTrigger-CSharp\build.config\vs-2017.3\function_f.png" />
