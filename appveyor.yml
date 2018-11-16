@@ -1,4 +1,4 @@
-version: 2.0.0-{build}
+version: 2.0.{build}
 pull_requests:
   do_not_increment_build_number: true
 branches:
@@ -13,10 +13,15 @@ install:
 - ps: >-
     .\getTools.ps1
 build_script:
-- ps: >-
+- ps: |
     Set-Location .\Functions.Templates
-
-    msbuild Functions.Templates.csproj /p:TemplateVersion=$env:APPVEYOR_BUILD_VERSION /target:PortalTemplatesPkg /target:VisualStudioTemplates
+    $hasTag = Test-Path env:APPVEYOR_REPO_TAG_NAME
+    if ($hasTag)
+    {
+      msbuild Functions.Templates.csproj /p:TemplateVersion=$env:APPVEYOR_REPO_TAG_NAME /target:PortalTemplatesPkg /target:VisualStudioTemplates  
+    } else {
+      msbuild Functions.Templates.csproj /p:TemplateVersion=$env:APPVEYOR_BUILD_VERSION /target:PortalTemplatesPkg /target:VisualStudioTemplates
+    }
 artifacts:
   - path: Functions.Templates\bin\Portal\Nuget\*.nupkg
     name: Portal templates

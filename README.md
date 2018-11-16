@@ -47,7 +47,7 @@ You can find more information on the templatting engine at the [wiki page](https
 <file src="Templates/<TemplateFolderName>/<CodeFileName>" target="Templates/<TemplateFolderName>/run.<ext>" />
 <file src="Templates/<TemplateFolderName>/function.json" target="Templates/<TemplateFolderName>/function.json" />
 <file src="Templates/<TemplateFolderName>/metadata.json" target="Templates/<TemplateFolderName>/metadata.json" />
-<file src="Templates/<TemplateFolderName>/project.json" target="Templates/<TemplateFolderName>/project.json" />
+<file src="Templates/<TemplateFolderName>/sample.dat" target="Templates/<TemplateFolderName>/sample.dat" />
 ```
 5. Make sure the strings present in metadata.json are added to the [Resource file](Functions.Templates/Resources/Resources.resx). Strings are reference by adding '$' before the string name. For example `$TimerTriggerCSharp_description` present in the [metadata.json](Functions.Templates/Templates/TimerTrigger-CSharp/metadata.json)
 6. Build the solution, verify your template is present in the build output
