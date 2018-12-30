@@ -1,12 +1,15 @@
 {
     "author": "Microsoft",
     "classifications": [
-        "Azure Function"
+        "Azure Function",
+        "Trigger",
+        "Service Bus",
+        "Queue"
     ],
     "name": "ServiceBusQueueTrigger",
     "identity": "Azure.Function.CSharp.ServiceBusQueueTrigger.2.x",
     "groupIdentity": "Azure.Function.ServiceBusQueueTrigger",
-    "shortName": "SBQueue",
+    "shortName": "squeue",
     "tags": {
         "language": "C#",
         "type": "item"
@@ -39,14 +42,14 @@
     "defaultName": "ServiceBusQueueTriggerCSharp",
     "postActions": [
         {
-            "Description": "Adding Reference to Microsoft.Azure.WebJobs.ServiceBus Nuget package",
+            "Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.ServiceBus Nuget package",
             "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
             "ContinueOnError": "true",
             "ManualInstructions": [],
             "args": {
                 "referenceType": "package",
-                "reference": "Microsoft.Azure.WebJobs.ServiceBus",
-                "version": "3.0.0-beta8",
+                "reference": "Microsoft.Azure.WebJobs.Extensions.ServiceBus",
+                "version": "3.0.0",
                 "projectFileExtensions": ".csproj"
             }
         },

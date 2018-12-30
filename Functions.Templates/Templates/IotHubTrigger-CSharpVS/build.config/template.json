@@ -1,12 +1,14 @@
 {
   "author": "Microsoft",
   "classifications": [
-    "Azure Function"
+    "Azure Function",
+    "Trigger",
+    "IotHub"
   ],
   "name": "IotHubTrigger",
   "identity": "Azure.Function.CSharp.IotHubTrigger.2.x",
   "groupIdentity": "Azure.Function.IotHubTrigger",
-  "shortName": "IotHub",
+  "shortName": "iothub",
   "tags": {
     "language": "C#",
     "type": "item"
@@ -46,7 +48,7 @@
       "args": {
         "referenceType": "package",
         "reference": "Microsoft.Azure.WebJobs.Extensions.EventHubs",
-        "version": "3.0.0-beta8",
+        "version": "3.0.0",
         "projectFileExtensions": ".csproj"
       }
     },

@@ -1,7 +1,7 @@
 {
-  "defaultFunctionName": "EventHubTriggerPython",
+  "defaultFunctionName": "EventHubTrigger",
   "description": "$EventHubTrigger_description",
-  "name": "Event Hub trigger",
+  "name": "Azure Event Hub trigger",
   "language": "Python",
   "category": [
     "$temp_category_core",
@@ -17,7 +17,7 @@
   "extensions": [
     {
       "id": "Microsoft.Azure.WebJobs.Extensions.EventHubs",
-      "version": "3.0.0-beta8"
+      "version": "3.0.0"
     }
   ]
 }

@@ -1,12 +1,13 @@
 {
   "author": "Microsoft",
   "classifications": [
-    "Azure Function"
+    "Azure Function",
+    "Durable Functions Orchestration"
   ],
   "name": "DurableFunctionsOrchestration",
   "identity": "Azure.Function.CSharp.DurableFunctionsOrchestration.2.x",
   "groupIdentity": "Azure.Function.DurableFunctionsOrchestration",
-  "shortName": "DurableFunctionsOrchestration",
+  "shortName": "durable",
   "tags": {
     "language": "C#",
     "type": "item"
@@ -34,7 +35,7 @@
       "args": {
         "referenceType": "package",
         "reference": "Microsoft.Azure.WebJobs.Extensions.DurableTask",
-        "version": "1.6.0",
+        "version": "1.6.2",
         "projectFileExtensions": ".csproj"
       }
     },

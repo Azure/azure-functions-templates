@@ -1,12 +1,14 @@
 {
   "author": "Microsoft",
   "classifications": [
-    "Azure Function"
+    "Azure Function",
+    "Trigger",
+    "EventHub"
   ],
   "name": "EventHubTrigger",
   "identity": "Azure.Function.CSharp.EventHubTrigger.2.x",
   "groupIdentity": "Azure.Function.EventHubTrigger",
-  "shortName": "EventHub",
+  "shortName": "eventhub",
   "tags": {
     "language": "C#",
     "type": "item"
@@ -46,7 +48,7 @@
       "args": {
         "referenceType": "package",
         "reference": "Microsoft.Azure.WebJobs.Extensions.EventHubs",
-        "version": "3.0.0-beta8",
+        "version": "3.0.0",
         "projectFileExtensions": ".csproj"
       }
     },

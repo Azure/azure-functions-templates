@@ -2185,7 +2185,7 @@ namespace AzureFunctions.ResourcesBinding {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This is an optional query expression used to filter the results of the table query.This setting is not applicable to a C# function..
+        ///   Looks up a localized string similar to This is an optional query expression used to filter the results of the table query.
         /// </summary>
         internal static string tableIn_filter_help {
             get {

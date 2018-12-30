@@ -1,7 +1,7 @@
 {
-    "defaultFunctionName": "ServiceBusTopicTriggerCSharp",
+    "defaultFunctionName": "ServiceBusTopicTrigger",
     "description": "$ServiceBusTopicTrigger_description",
-    "name": "Service Bus Topic trigger",
+    "name": "Azure Service Bus Topic trigger",
     "language": "C#",
     "category": [
         "$temp_category_core",
@@ -16,8 +16,8 @@
     ],
     "extensions": [
         {
-            "id": "Microsoft.Azure.WebJobs.ServiceBus",
-            "version": "3.0.0-beta8"
+            "id": "Microsoft.Azure.WebJobs.Extensions.ServiceBus",
+            "version": "3.0.0"
         }
     ]
 }
