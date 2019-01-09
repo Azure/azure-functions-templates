@@ -1,0 +1,25 @@
+{
+    "defaultFunctionName": "SendGrid",
+    "description": "$SendGrid_description",
+    "name": "SendGrid",
+    "language": "PowerShell",
+    "category": [
+        "$temp_category_samples",
+        "$temp_category_dataProcessing"
+    ],
+    "categoryStyle": "other",
+    "enabledInTryMode": false,
+    "userPrompt": [
+        "to",
+        "from",
+        "subject",
+        "text",
+        "apiKey"
+    ],
+    "extensions": [
+      {
+        "id": "Microsoft.Azure.WebJobs.Extensions.SendGrid",
+        "version": "3.0.0"
+      }
+    ]
+}
