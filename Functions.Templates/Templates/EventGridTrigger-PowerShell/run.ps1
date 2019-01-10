@@ -1,3 +1,3 @@
 param($eventGridEvent, $TriggerMetadata)
 
-Write-Host $eventGridEvent
+$eventGridEvent | Out-String | Write-Host
