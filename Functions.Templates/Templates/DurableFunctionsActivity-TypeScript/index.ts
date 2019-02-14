@@ -9,6 +9,10 @@
  *   function app in Kudu
  */
 
-module.exports = async function (context) {
+import { AzureFunction, Context } from "@azure/functions"
+
+const activityFunction: AzureFunction = async function (context: Context) {
     return `Hello ${context.bindings.name}!`;
 };
+
+export default activityFunction;
