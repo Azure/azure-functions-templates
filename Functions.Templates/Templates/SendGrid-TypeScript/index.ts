@@ -11,7 +11,7 @@ import { AzureFunction, Context } from "@azure/functions"
 //   }
 // }
 
-const sendGrid: AzureFunction =  async function (context: Context, order) {
+const sendGrid: AzureFunction =  async function (context: Context, order: any): Promise<void> {
     context.log('Queue trigger function processed order', order.orderId);
 
     context.bindings.message = {
