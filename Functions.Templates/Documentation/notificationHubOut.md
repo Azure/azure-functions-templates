@@ -27,7 +27,7 @@ This example sends a notification for a [template registration](https://azure.mi
 module.exports = function (context, myTimer) {
     var timeStamp = new Date().toISOString();
     
-    if(myTimer.isPastDue)
+    if(myTimer.IsPastDue)
     {
         context.log('JavaScript is running late!');
     }
