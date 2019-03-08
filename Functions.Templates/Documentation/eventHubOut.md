@@ -30,7 +30,7 @@ This example uses a Timer Trigger input, but Event Hubs output can work with any
 	module.exports = function (context, myTimer) {
 	    var timeStamp = new Date().toISOString();
 	    
-	    if(myTimer.IsPastDue)
+	    if (myTimer.IsPastDue)
 	    {
 	        context.log('TimerTriggerJS1 is running late!');
 	    }

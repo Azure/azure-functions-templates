@@ -68,7 +68,7 @@ public static void Run(TimerInfo myTimer, ILogger log)
 
 ```JavaScript
 module.exports = function(context, myTimer) {
-    if(myTimer.IsPastDue)
+    if (myTimer.IsPastDue)
     {
         context.log('JavaScript is running late!');
     }
