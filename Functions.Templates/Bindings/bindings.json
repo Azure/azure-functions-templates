@@ -2333,6 +2333,58 @@
           "help": "$documentDBIn_sqlQuery_help"
         }
       ]
+    },
+    {
+      "type": "signalRConnectionInfo",
+      "displayName": "$signalRConnectionInfoIn_displayName",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\documentDBIn.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.SignalRService",
+        "version": "1.0.0"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "connectionInfo",
+          "required": true,
+          "label": "$signalRConnectionInfoIn_name_label",
+          "help": "$signalRConnectionInfoIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "hubName",
+          "value": "string",
+          "defaultValue": "chat",
+          "required": true,
+          "label": "$signalRConnectionInfoIn_hubName_label",
+          "help": "$signalRConnectionInfoIn_hubName_help"
+        },
+        {
+          "name": "userId",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$signalRConnectionInfoIn_userId_label",
+          "help": "$signalRConnectionInfoIn_userId_help"
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "resource": "SignalRGalleryPackage",
+          "required": true,
+          "label": "$signalRConnectionInfoIn_connectionString_label",
+          "help": "$signalRConnectionInfoIn_connectionString_help",
+          "placeholder": "[variables('selectConnection')]"
+        }
+      ]
     }
   ]
 }
