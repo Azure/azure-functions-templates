@@ -2260,7 +2260,7 @@
       ]
     },
     {
-      "type": "cosmosDB",
+      "type": "cosmosDBx",
       "displayName": "$documentDBIn_displayName",
       "direction": "in",
       "enabledInTryMode": false,
@@ -2378,11 +2378,51 @@
         {
           "name": "connectionStringSetting",
           "value": "string",
-          "resource": "SignalRGalleryPackage",
-          "required": true,
+          "required": false,
           "label": "$signalRConnectionInfoIn_connectionString_label",
-          "help": "$signalRConnectionInfoIn_connectionString_help",
-          "placeholder": "[variables('selectConnection')]"
+          "help": "$signalRConnectionInfoIn_connectionString_help"
+        }
+      ]
+    },
+    {
+      "type": "signalR",
+      "displayName": "$signalRIn_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\documentDBIn.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.SignalRService",
+        "version": "1.0.0"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "signalRMessages",
+          "required": true,
+          "label": "$signalRIn_name_label",
+          "help": "$signalRIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "hubName",
+          "value": "string",
+          "defaultValue": "chat",
+          "required": true,
+          "label": "$signalRIn_hubName_label",
+          "help": "$signalRIn_hubName_help"
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "required": false,
+          "label": "$signalRIn_connectionString_label",
+          "help": "$signalRIn_connectionString_help"
         }
       ]
     }
