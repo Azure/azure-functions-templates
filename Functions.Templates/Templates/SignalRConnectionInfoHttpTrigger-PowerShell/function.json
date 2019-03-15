@@ -1,0 +1,27 @@
+{
+  "disabled": false,
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "methods": [
+        "post"
+      ],
+      "name": "Request",
+      "route": "negotiate"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "Response"
+    },
+    {
+      "type": "signalRConnectionInfo",
+      "name": "ConnectionInfo",
+      "hubName": "default",
+      "connectionStringSetting": "AzureSignalRConnectionString",
+      "direction": "in"
+    }
+  ]
+}
