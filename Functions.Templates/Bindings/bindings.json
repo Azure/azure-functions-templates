@@ -2386,7 +2386,7 @@
     },
     {
       "type": "signalR",
-      "displayName": "$signalRIn_displayName",
+      "displayName": "$signalROut_displayName",
       "direction": "out",
       "enabledInTryMode": false,
       "documentation": "$content=Documentation\\signalR.md",
@@ -2400,8 +2400,8 @@
           "value": "string",
           "defaultValue": "signalRMessages",
           "required": true,
-          "label": "$signalRIn_name_label",
-          "help": "$signalRIn_name_help",
+          "label": "$signalROut_name_label",
+          "help": "$signalROut_name_help",
           "validators": [
             {
               "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
@@ -2414,15 +2414,15 @@
           "value": "string",
           "defaultValue": "chat",
           "required": true,
-          "label": "$signalRIn_hubName_label",
-          "help": "$signalRIn_hubName_help"
+          "label": "$signalROut_hubName_label",
+          "help": "$signalROut_hubName_help"
         },
         {
           "name": "connectionStringSetting",
           "value": "string",
           "required": false,
-          "label": "$signalRIn_connectionString_label",
-          "help": "$signalRIn_connectionString_help"
+          "label": "$signalROut_connectionString_label",
+          "help": "$signalROut_connectionString_help"
         }
       ]
     }
