@@ -190,6 +190,9 @@
     <None Include="Templates\QueueTrigger-PowerShell\readme.md" />
     <None Include="Templates\QueueTrigger-PowerShell\run.ps1" />
     <None Include="Templates\QueueTrigger-PowerShell\sample.dat" />
+    <None Include="Templates\SignalRConnectionInfoHttpTrigger-CSharp\function.json" />
+    <None Include="Templates\SignalRConnectionInfoHttpTrigger-CSharp\metadata.json" />
+    <None Include="Templates\SignalRConnectionInfoHttpTrigger-CSharp\sample.dat" />
     <None Include="Templates\SignalRConnectionInfoHttpTrigger-JavaScript\function.json" />
     <None Include="Templates\SignalRConnectionInfoHttpTrigger-JavaScript\metadata.json" />
     <None Include="Templates\SignalRConnectionInfoHttpTrigger-JavaScript\sample.dat" />
@@ -412,6 +415,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Templates\IotHubTrigger-CSharpVS\IotHubTriggerCSharp.cs" />
+    <Compile Include="Templates\SignalRConnectionInfoHttpTrigger-CSharp\SignalRConnectionInfoHttpTriggerCSharp.cs" />
   </ItemGroup>
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
     <RemoveDir Directories=".\bin\Portal" />
