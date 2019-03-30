@@ -9,6 +9,6 @@
  *   function app in Kudu
  */
 
-module.exports = function (context) {
-    context.done(null, `Hello ${context.bindings.name}!`);
+module.exports = async function (context) {
+    return `Hello ${context.bindings.name}!`;
 };

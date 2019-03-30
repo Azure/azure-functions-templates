@@ -1,0 +1,22 @@
+{
+    "defaultFunctionName": "BlobTrigger",
+    "description": "$BlobTrigger_description",
+    "name": "Azure Blob Storage trigger",
+    "language": "TypeScript",
+    "category": [
+        "$temp_category_core",
+        "$temp_category_dataProcessing"
+    ],
+    "categoryStyle": "blob",
+    "enabledInTryMode": true,
+    "userPrompt": [
+        "connection",
+        "path"
+    ],
+    "extensions": [
+      {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Storage",
+        "version": "3.0.4"
+      }
+    ]
+  }

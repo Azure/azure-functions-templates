@@ -1,0 +1,23 @@
+{
+  "defaultFunctionName": "EventHubTrigger",
+  "description": "$EventHubTrigger_description",
+  "name": "Azure Event Hub trigger",
+  "language": "PowerShell",
+  "category": [
+    "$temp_category_core",
+    "$temp_category_dataProcessing"
+  ],
+  "categoryStyle": "eventHub",
+  "enabledInTryMode": false,
+  "userPrompt": [
+    "connection",
+    "eventHubName",
+    "consumerGroup"
+  ],
+  "extensions": [
+    {
+      "id": "Microsoft.Azure.WebJobs.Extensions.EventHubs",
+      "version": "3.0.3"
+    }
+  ]
+}

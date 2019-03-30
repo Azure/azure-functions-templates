@@ -1,11 +1,11 @@
 {
-  "disabled": false,
   "bindings": [
     {
       "type": "eventHubTrigger",
-      "name": "myEventHubMessage",
+      "name": "events",
       "direction": "in",
       "eventHubName": "samples-workitems",
+      "cardinality": "many",
       "connection": "",
       "consumerGroup": "$Default"
     }
