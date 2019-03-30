@@ -1,7 +1,7 @@
 {
-    "defaultFunctionName": "QueueTriggerCSharp",
+    "defaultFunctionName": "QueueTrigger",
     "description": "$QueueTrigger_description",
-    "name": "Queue trigger",
+    "name": "Azure Queue Storage trigger",
     "language": "C#",
     "category": [
         "$temp_category_core",
@@ -16,7 +16,7 @@
     "extensions": [
       {
         "id": "Microsoft.Azure.WebJobs.Extensions.Storage",
-        "version": "3.0.0-beta8"
+        "version": "3.0.0"
       }
     ]
   }

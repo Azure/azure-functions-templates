@@ -12,7 +12,7 @@ open Microsoft.Extensions.Logging
 module HttpTriggerFSharp =
     [<FunctionName("HttpTriggerFSharp")>]
     let run ([<HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = null)>]req: HttpRequest) (log: ILogger) =
-        log.LogInformation("C# HTTP trigger function processed a request.")
+        log.LogInformation("F# HTTP trigger function processed a request.")
 
         let name = req.Query.["name"].[0]
 

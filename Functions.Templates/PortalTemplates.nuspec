@@ -4,7 +4,6 @@
     <id>Azure.Functions.UX.Templates</id>
     <version>1.0.0</version>
     <authors>Microsoft</authors>
-    <owners>Microsoft</owners>
     <licenseUrl>https://github.com/Azure/azure-webjobs-sdk-templates/blob/dev/LICENSE.txt</licenseUrl>
     <projectUrl>https://go.microsoft.com/fwlink/?linkid=848145</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -15,7 +14,7 @@
     <file src="Bindings/bindings.json" target="Bindings/bindings.json" />
     <file src="Documentation/" target="" />
     <file src="Resources/" target="" />
-    <file src="templates/BlobTrigger-CSharp/BlobTriggerCSharp.csx" target="templates/BlobTrigger-CSharp/BlobTriggerCSharp.csx" />
+    <file src="templates/BlobTrigger-CSharp/BlobTriggerCSharp.csx" target="templates/BlobTrigger-CSharp/run.csx" />
     <file src="templates/BlobTrigger-CSharp/function.json" target="templates/BlobTrigger-CSharp/function.json" />
     <file src="templates/BlobTrigger-CSharp/metadata.json" target="templates/BlobTrigger-CSharp/metadata.json" />
     <file src="templates/BlobTrigger-CSharp/readme.md" target="templates/BlobTrigger-CSharp/readme.md" />
@@ -52,23 +51,53 @@
     <file src="templates/TimerTrigger-JavaScript/function.json" target="templates/TimerTrigger-JavaScript/function.json" />
     <file src="templates/TimerTrigger-JavaScript/index.js" target="templates/TimerTrigger-JavaScript/index.js" />
     <file src="templates/TimerTrigger-JavaScript/metadata.json" target="templates/TimerTrigger-JavaScript/metadata.json" />
-    <file src="templates/TimerTrigger-JavaScript/readme.md" target="templates/TimerTrigger-JavaScript/readme.md" />
     <file src="templates/TimerTrigger-JavaScript/sample.dat" target="templates/TimerTrigger-JavaScript/sample.dat" />
+    <file src="templates/HttpTrigger-PowerShell/function.json" target="templates/HttpTrigger-PowerShell/function.json" />
+    <file src="templates/HttpTrigger-PowerShell/metadata.json" target="templates/HttpTrigger-PowerShell/metadata.json" />
+    <file src="templates/HttpTrigger-PowerShell/run.ps1" target="templates/HttpTrigger-PowerShell/run.ps1" />
+    <file src="templates/HttpTrigger-PowerShell/sample.dat" target="templates/HttpTrigger-PowerShell/sample.dat" />
+    <file src="templates/QueueTrigger-PowerShell/function.json" target="templates/QueueTrigger-PowerShell/function.json" />
+    <file src="templates/QueueTrigger-PowerShell/metadata.json" target="templates/QueueTrigger-PowerShell/metadata.json" />
+    <file src="templates/QueueTrigger-PowerShell/readme.md" target="templates/QueueTrigger-PowerShell/readme.md" />
+    <file src="templates/QueueTrigger-PowerShell/run.ps1" target="templates/QueueTrigger-PowerShell/run.ps1" />
+    <file src="templates/QueueTrigger-PowerShell/sample.dat" target="templates/QueueTrigger-PowerShell/sample.dat" />
+    <file src="templates/BlobTrigger-PowerShell/function.json" target="templates/BlobTrigger-PowerShell/function.json" />
+    <file src="templates/BlobTrigger-PowerShell/metadata.json" target="templates/BlobTrigger-PowerShell/metadata.json" />
+    <file src="templates/BlobTrigger-PowerShell/readme.md" target="templates/BlobTrigger-PowerShell/readme.md" />
+    <file src="templates/BlobTrigger-PowerShell/run.ps1" target="templates/BlobTrigger-PowerShell/run.ps1" />
+    <file src="templates/BlobTrigger-PowerShell/sample.dat" target="templates/BlobTrigger-PowerShell/sample.dat" />
+    <file src="templates/TimerTrigger-PowerShell/function.json" target="templates/TimerTrigger-PowerShell/function.json" />
+    <file src="templates/TimerTrigger-PowerShell/metadata.json" target="templates/TimerTrigger-PowerShell/metadata.json" />
+    <file src="templates/TimerTrigger-PowerShell/readme.md" target="templates/TimerTrigger-PowerShell/readme.md" />
+    <file src="templates/TimerTrigger-PowerShell/run.ps1" target="templates/TimerTrigger-PowerShell/run.ps1" />
+    <file src="templates/TimerTrigger-PowerShell/sample.dat" target="templates/TimerTrigger-PowerShell/sample.dat" />
     <file src="templates/EventHubTrigger-CSharp/function.json" target="templates/EventHubTrigger-CSharp/function.json" />
     <file src="templates/EventHubTrigger-CSharp/metadata.json" target="templates/EventHubTrigger-CSharp/metadata.json" />
     <file src="templates/EventHubTrigger-CSharp/EventHubTriggerCSharp.csx" target="templates/EventHubTrigger-CSharp/run.csx" />
     <file src="templates/EventHubTrigger-CSharp/sample.dat" target="templates/EventHubTrigger-CSharp/sample.dat" />
+    <file src="templates/EventHubTrigger-JavaScript/index.js" target="templates/EventHubTrigger-JavaScript/index.js" />
+    <file src="templates/EventHubTrigger-JavaScript/metadata.json" target="templates/EventHubTrigger-JavaScript/metadata.json" />
+    <file src="templates/EventHubTrigger-JavaScript/function.json" target="templates/EventHubTrigger-JavaScript/function.json" />
+    <file src="templates/TimerTrigger-JavaScript/readme.md" target="templates/TimerTrigger-JavaScript/readme.md" />
+    <file src="templates/EventHubTrigger-JavaScript/sample.dat" target="templates/EventHubTrigger-JavaScript/sample.dat" />
     <file src="templates/DurableFunctionsActivity-CSharp/function.json" target="templates/DurableFunctionsActivity-CSharp/function.json" />
     <file src="templates/DurableFunctionsActivity-CSharp/metadata.json" target="templates/DurableFunctionsActivity-CSharp/metadata.json" />
     <file src="templates/DurableFunctionsActivity-CSharp/DurableFunctionsActivityCSharp.csx" target="templates/DurableFunctionsActivity-CSharp/run.csx" />
-    <file src="templates/DurableFunctionsActivity-CSharp/sample.dat" target="templates/DurableFunctionsActivity-CSharp/sample.dat" />
+    <file src="templates/DurableFunctionsActivity-JavaScript/function.json" target="Templates/DurableFunctionsActivity-JavaScript/function.json" />
+    <file src="templates/DurableFunctionsActivity-JavaScript/index.js" target="templates/DurableFunctionsActivity-JavaScript/index.js" />
+    <file src="templates/DurableFunctionsActivity-JavaScript/metadata.json" target="Templates/DurableFunctionsActivity-JavaScript/metadata.json" />
     <file src="templates/DurableFunctionsOrchestrator-CSharp/function.json" target="templates/DurableFunctionsOrchestrator-CSharp/function.json" />
     <file src="templates/DurableFunctionsOrchestrator-CSharp/metadata.json" target="templates/DurableFunctionsOrchestrator-CSharp/metadata.json" />
     <file src="templates/DurableFunctionsOrchestrator-CSharp/DurableFunctionsOrchestratorCSharp.csx" target="templates/DurableFunctionsOrchestrator-CSharp/run.csx" />
-    <file src="templates/DurableFunctionsOrchestrator-CSharp/sample.dat" target="templates/DurableFunctionsOrchestrator-CSharp/sample.dat" />
+    <file src="templates/DurableFunctionsOrchestrator-JavaScript/function.json" target="Templates/DurableFunctionsOrchestrator-JavaScript/function.json" />
+    <file src="templates/DurableFunctionsOrchestrator-JavaScript/index.js" target="templates/DurableFunctionsOrchestrator-JavaScript/index.js" />
+    <file src="templates/DurableFunctionsOrchestrator-JavaScript/metadata.json" target="Templates/DurableFunctionsOrchestrator-JavaScript/metadata.json" />
     <file src="templates/DurableFunctionsHttpStart-CSharp/function.json" target="templates/DurableFunctionsHttpStart-CSharp/function.json" />
     <file src="templates/DurableFunctionsHttpStart-CSharp/metadata.json" target="templates/DurableFunctionsHttpStart-CSharp/metadata.json" />
     <file src="templates/DurableFunctionsHttpStart-CSharp/DurableFunctionsHttpStartCSharp.csx" target="templates/DurableFunctionsHttpStart-CSharp/run.csx" />
+    <file src="templates/DurableFunctionsHttpStart-JavaScript/function.json" target="templates/DurableFunctionsHttpStart-JavaScript/function.json" />
+    <file src="templates/DurableFunctionsHttpStart-JavaScript/metadata.json" target="templates/DurableFunctionsHttpStart-JavaScript/metadata.json" />
+    <file src="templates/DurableFunctionsHttpStart-JavaScript/index.js" target="templates/DurableFunctionsHttpStart-JavaScript/index.js" />    
     <file src="templates/SendGrid-CSharp/function.json" target="templates/SendGrid-CSharp/function.json" />
     <file src="templates/SendGrid-CSharp/metadata.json" target="templates/SendGrid-CSharp/metadata.json" />
     <file src="templates/SendGrid-CSharp/SendGridCSharp.csx" target="templates/SendGrid-CSharp/run.csx" />
@@ -100,6 +129,14 @@
     <file src="Templates/CosmosDBTrigger-JavaScript/metadata.json" target="Templates/CosmosDBTrigger-JavaScript/metadata.json" />
     <file src="Templates/CosmosDBTrigger-JavaScript/index.js" target="Templates/CosmosDBTrigger-JavaScript/index.js" />
     <file src="Templates/CosmosDBTrigger-JavaScript/sample.dat" target="Templates/CosmosDBTrigger-JavaScript/sample.dat" />
+    <file src="Templates/IoTHubTrigger-CSharp/function.json" target="Templates/IoTHubTrigger-CSharp/function.json" />
+    <file src="Templates/IoTHubTrigger-CSharp/metadata.json" target="Templates/IoTHubTrigger-CSharp/metadata.json" />
+    <file src="Templates/IoTHubTrigger-CSharp/run.csx" target="Templates/IoTHubTrigger-CSharp/run.csx" />
+    <file src="Templates/IoTHubTrigger-CSharp/sample.dat" target="Templates/IoTHubTrigger-CSharp/sample.dat" />
+    <file src="Templates/IoTHubTrigger-JavaScript/function.json" target="Templates/IoTHubTrigger-JavaScript/function.json" />
+    <file src="Templates/IoTHubTrigger-JavaScript/index.js" target="Templates/IoTHubTrigger-JavaScript/index.js" />
+    <file src="Templates/IoTHubTrigger-JavaScript/metadata.json" target="Templates/IoTHubTrigger-JavaScript/metadata.json" />
+    <file src="Templates/IoTHubTrigger-JavaScript/sample.dat" target="Templates/IoTHubTrigger-JavaScript/sample.dat" />
     <file src="Templates/EventGridTrigger-CSharp/EventGridTriggerCSharp.csx" target="Templates/EventGridTrigger-CSharp/run.csx" />
     <file src="Templates/EventGridTrigger-CSharp/function.json" target="Templates/EventGridTrigger-CSharp/function.json" />
     <file src="Templates/EventGridTrigger-CSharp/metadata.json" target="Templates/EventGridTrigger-CSharp/metadata.json" />

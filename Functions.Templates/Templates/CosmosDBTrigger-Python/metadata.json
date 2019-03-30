@@ -1,7 +1,7 @@
 {
-  "defaultFunctionName": "CosmosTriggerPython",
+  "defaultFunctionName": "CosmosTrigger",
   "description": "$CosmosDBTrigger_description",
-  "name": "Cosmos DB trigger",
+  "name": "Azure Cosmos DB trigger",
   "language": "Python",
   "category": [
     "$temp_category_core",
@@ -19,7 +19,7 @@
   "extensions": [
     {
       "id": "Microsoft.Azure.WebJobs.Extensions.CosmosDB",
-      "version": "3.0.1-beta1"
+      "version": "3.0.1"
     }
   ],
   "filters": [

@@ -74,7 +74,7 @@
       "documentation": "$content=Documentation\\queueOut.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.Storage",
-        "version": "3.0.0-beta8"
+        "version": "3.0.0"
       },
       "settings": [
         {
@@ -124,7 +124,7 @@
       "documentation": "$content=Documentation\\queueTrigger.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.Storage",
-        "version": "3.0.0-beta8"
+        "version": "3.0.0"
       },
       "settings": [
         {
@@ -184,7 +184,7 @@
       "documentation": "$content=Documentation\\blobOut.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.Storage",
-        "version": "3.0.0-beta8"
+        "version": "3.0.0"
       },
       "settings": [
         {
@@ -232,6 +232,10 @@
       "direction": "in",
       "enabledInTryMode": true,
       "documentation": "$content=Documentation\\blobIn.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Storage",
+        "version": "3.0.0"
+      },
       "settings": [
         {
           "name": "name",
@@ -280,7 +284,7 @@
       "documentation": "$content=Documentation\\blobTrigger.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.Storage",
-        "version": "3.0.0-beta8"
+        "version": "3.0.0"
       },
       "settings": [
         {
@@ -479,8 +483,8 @@
       "enabledInTryMode": false,
       "documentation": "$content=Documentation\\serviceBusTrigger.md",
       "extension": {
-        "id": "Microsoft.Azure.WebJobs.ServiceBus",
-        "version": "3.0.0-beta8"
+        "id": "Microsoft.Azure.WebJobs.Extensions.ServiceBus",
+        "version": "3.0.0"
       },
       "settings": [
         {
@@ -589,8 +593,8 @@
       "enabledInTryMode": false,
       "documentation": "$content=Documentation\\serviceBusOut.md",
       "extension": {
-        "id": "Microsoft.Azure.WebJobs.ServiceBus",
-        "version": "3.0.0-beta8"
+        "id": "Microsoft.Azure.WebJobs.Extensions.ServiceBus",
+        "version": "3.0.0"
       },
       "settings": [
         {
@@ -677,6 +681,135 @@
       ]
     },
     {
+      "type": "table",
+      "displayName": "$tableout_displayName",
+      "direction": "out",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\tableOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Storage",
+        "version": "3.0.0"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "outputTable",
+          "required": true,
+          "label": "$tableout_name_label",
+          "help": "$tableout_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "tableName",
+          "value": "string",
+          "defaultValue": "outTable",
+          "required": true,
+          "label": "$table_tableName_label",
+          "help": "$table_tableName_help",
+          "validators": [
+            {
+              "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+              "errorText": "$table_tableName_errorText"
+            }
+          ]
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "Storage",
+          "required": true,
+          "label": "[variables('storageConnStringLabel')]",
+          "help": "[variables('appSettingsHelp')]",
+          "placeholder": "[variables('selectConnection')]"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "displayName": "$tableIn_displayName",
+      "direction": "in",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\tableIn.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Storage",
+        "version": "3.0.0"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "inputTable",
+          "required": true,
+          "label": "$tableIn_name_label",
+          "help": "$tableIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "tableName",
+          "value": "string",
+          "defaultValue": "inTable",
+          "required": true,
+          "label": "$tableIn_tableName_label",
+          "help": "$tableIn_tableName_help",
+          "validators": [
+            {
+              "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+              "errorText": "$tableIn_tableName_errorText"
+            }
+          ]
+        },
+        {
+          "name": "partitionKey",
+          "value": "string",
+          "required": false,
+          "label": "$tableIn_partitionKey_label",
+          "help": "$tableIn_partitionKey_help"
+        },
+        {
+          "name": "rowKey",
+          "value": "string",
+          "required": false,
+          "label": "$tableIn_rowKey_label",
+          "help": "$tableIn_rowKey_help"
+        },
+        {
+          "name": "take",
+          "value": "int",
+          "defaultValue": 50,
+          "required": false,
+          "label": "$tableIn_take_label",
+          "help": "$tableIn_take_help"
+        },
+        {
+          "name": "filter",
+          "value": "string",
+          "required": false,
+          "label": "$tableIn_filter_label",
+          "help": "$tableIn_filter_help"
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "Storage",
+          "required": true,
+          "label": "[variables('storageConnStringLabel')]",
+          "help": "[variables('appSettingsHelp')]",
+          "placeholder": "[variables('selectConnection')]"
+        }
+      ]
+    },
+    {
       "type": "eventHubTrigger",
       "displayName": "$eventHubTrigger_displayName",
       "direction": "trigger",
@@ -684,7 +817,7 @@
       "documentation": "$content=Documentation\\eventHubTrigger.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.EventHubs",
-        "version": "3.0.0-beta8"
+        "version": "3.0.0"
       },
       "settings": [
         {
@@ -775,7 +908,7 @@
       ],
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.EventHubs",
-        "version": "3.0.0-beta8"
+        "version": "3.0.0"
       },
       "documentation": "$content=Documentation\\eventHubOut.md",
       "settings": [
@@ -826,7 +959,7 @@
       "documentation": "$content=Documentation\\sendGridOut.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.SendGrid",
-        "version": "3.0.0-beta8"
+        "version": "3.0.0"
       },
       "settings": [
         {
@@ -887,6 +1020,65 @@
       ]
     },
     {
+      "type": "twilioSms",
+      "displayName": "$twilioSms_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\twilioSmsOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Twilio",
+        "version": "3.0.0"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "message",
+          "required": true,
+          "label": "$twilioSms_name_label",
+          "help": "$twilioSms_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "accountSidSetting",
+          "value": "string",
+          "defaultValue": "TwilioAccountSid",
+          "required": true,
+          "label": "$twilioSms_accountsid_label",
+          "help": "$twilioSms_accountsid_help"
+        },
+        {
+          "name": "authTokenSetting",
+          "value": "string",
+          "defaultValue": "TwilioAuthToken",
+          "required": true,
+          "label": "$twilioSms_authtoken_label",
+          "help": "$twilioSms_authtoken_help"
+        },
+        {
+          "name": "from",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$twilioSms_from_label",
+          "help": "$twilioSms_from_help"
+        },
+        {
+          "name": "body",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$twilioSms_body_label",
+          "help": "$twilioSms_body_help"
+        }
+      ]
+    },
+    {
       "type": "token",
       "displayName": "$token_displayName",
       "direction": "in",
@@ -894,7 +1086,7 @@
       "documentation": "$content=Documentation\\Token.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.AuthTokens",
-        "version": "1.0.0-beta4"
+        "version": "1.0.0-beta6"
       },
       "AADPermissions": [
         {
@@ -994,7 +1186,7 @@
       "enabledInTryMode": false,
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta4"
+        "version": "1.0.0-beta6"
       },
       "AADPermissions": [
         {
@@ -1117,7 +1309,7 @@
       "enabledInTryMode": false,
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta4"
+        "version": "1.0.0-beta6"
       },
       "documentation": "$content=Documentation\\ExcelOut.md",
       "AADPermissions": [
@@ -1258,7 +1450,7 @@
       "enabledInTryMode": false,
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta4"
+        "version": "1.0.0-beta6"
       },
       "documentation": "$content=Documentation\\OutlookOut.md",
       "AADPermissions": [
@@ -1359,7 +1551,7 @@
       "enabledInTryMode": false,
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta4"
+        "version": "1.0.0-beta6"
       },
       "documentation": "$content=Documentation\\OneDriveIn.md",
       "AADPermissions": [
@@ -1468,7 +1660,7 @@
       "enabledInTryMode": false,
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta4"
+        "version": "1.0.0-beta6"
       },
       "documentation": "$content=Documentation\\OneDriveOut.md",
       "AADPermissions": [
@@ -1577,7 +1769,7 @@
       "enabledInTryMode": false,
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta4"
+        "version": "1.0.0-beta6"
       },
       "documentation": "$content=Documentation\\GraphWebhookIn.md",
       "AADPermissions": [
@@ -1615,7 +1807,7 @@
       "enabledInTryMode": false,
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta4"
+        "version": "1.0.0-beta6"
       },
       "documentation": "$content=Documentation\\GraphWebhookOut.md",
       "AADPermissions": [
@@ -1754,7 +1946,7 @@
       "documentation": "$content=Documentation\\GraphWebhookTrigger.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.MicrosoftGraph",
-        "version": "1.0.0-beta4"
+        "version": "1.0.0-beta6"
       },
       "enabledInTryMode": false,
       "AADPermissions": [
@@ -1812,7 +2004,7 @@
       "documentation": "$content=Documentation\\activityTrigger.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask",
-        "version": "1.6.0"
+        "version": "1.6.2"
       },
       "settings": [
         {
@@ -1846,7 +2038,7 @@
       "documentation": "$content=Documentation\\orchestrationTrigger.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask",
-        "version": "1.6.0"
+        "version": "1.6.2"
       },
       "settings": [
         {
@@ -1880,7 +2072,7 @@
       "documentation": "$content=Documentation\\orchestrationClientIn.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask",
-        "version": "1.6.0"
+        "version": "1.6.2"
       },
       "settings": [
         {
@@ -1907,7 +2099,7 @@
       "documentation": "$content=Documentation\\eventGridTrigger.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.EventGrid",
-        "version": "2.0.0-beta4"
+        "version": "2.0.0"
       },
       "settings": [
         {
@@ -1934,7 +2126,7 @@
       "documentation": "$content=Documentation\\cosmosDBTrigger.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.CosmosDB",
-        "version": "3.0.1-beta1"
+        "version": "3.0.1"
       },
       "settings": [
         {
@@ -1990,6 +2182,155 @@
           "required": true,
           "label": "$cosmosDBIn_createIfNotExists_label",
           "help": "$cosmosDBIn_createIfNotExists_help"
+        }
+      ]
+    },
+    {
+      "type": "cosmosDB",
+      "displayName": "$documentDBOut_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\documentDBOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.CosmosDB",
+        "version": "3.0.1"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "outputDocument",
+          "required": true,
+          "label": "$documentDBOut_name_label",
+          "help": "$documentDBOut_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "databaseName",
+          "value": "string",
+          "defaultValue": "outDatabase",
+          "required": true,
+          "label": "$documentDBOut_databaseName_label",
+          "help": "$documentDBOut_databaseName_help"
+        },
+        {
+          "name": "collectionName",
+          "value": "string",
+          "defaultValue": "MyCollection",
+          "required": true,
+          "label": "$documentDBOut_collectionName_label",
+          "help": "$documentDBOut_collectionName_help"
+        },
+        {
+          "name": "createIfNotExists",
+          "value": "boolean",
+          "defaultValue": false,
+          "required": true,
+          "label": "$documentDBOut_createIfNotExists_label",
+          "help": "$documentDBOut_createIfNotExists_help"
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "resource": "DocumentDB",
+          "required": true,
+          "label": "$documentDBOut_connection_label",
+          "help": "$documentDBOut_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "partitionKey",
+          "value": "string",
+          "required": false,
+          "label": "$documentDB_partitionKey_label",
+          "help": "$documentDBOut_partitionKey_help"
+        },
+        {
+          "name": "collectionThroughput",
+          "value": "int",
+          "required": false,
+          "label": "$cosmosDB_collectionThroughput_label",
+          "help": "$cosmosDBOut_collectionThroughput_help"
+        }
+      ]
+    },
+    {
+      "type": "cosmosDB",
+      "displayName": "$documentDBIn_displayName",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\documentDBIn.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.CosmosDB",
+        "version": "3.0.1"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "inputDocument",
+          "required": true,
+          "label": "$documentDBIn_name_label",
+          "help": "$documentDBIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "databaseName",
+          "value": "string",
+          "defaultValue": "inDatabase",
+          "required": true,
+          "label": "$documentDBIn_databaseName_label",
+          "help": "$documentDBIn_databaseName_help"
+        },
+        {
+          "name": "collectionName",
+          "value": "string",
+          "defaultValue": "MyCollection",
+          "required": true,
+          "label": "$documentDBIn_collectionName_label",
+          "help": "$documentDBIn_collectionName_help"
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "resource": "DocumentDB",
+          "required": true,
+          "label": "$documentDBIn_connection_label",
+          "help": "$documentDBIn_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "id",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$documentDBIn_id_label",
+          "help": "$documentDBIn_id_help"
+        },
+        {
+          "name": "partitionKey",
+          "value": "string",
+          "required": false,
+          "label": "$documentDB_partitionKey_label",
+          "help": "$documentDBIn_partitionKey_help"
+        },
+        {
+          "name": "sqlQuery",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$documentDBIn_sqlQuery_label",
+          "help": "$documentDBIn_sqlQuery_help"
         }
       ]
     }

@@ -1,10 +1,11 @@
 {
-    "defaultFunctionName": "EventGridTriggerJS",
+    "defaultFunctionName": "EventGridTrigger",
     "description": "$EventGridTrigger_description",
-    "name": "Event Grid trigger",
+    "name": "Azure Event Grid trigger",
     "language": "JavaScript",
     "category": [
-        "$temp_category_experimental"
+        "$temp_category_core",
+        "$temp_category_dataProcessing"
     ],
     "categoryStyle": "eventGrid",
     "enabledInTryMode": false,
@@ -12,7 +13,7 @@
     "extensions": [
         {
             "id": "Microsoft.Azure.WebJobs.Extensions.EventGrid",
-            "version": "2.0.0-beta4"
+            "version": "2.0.0"
         }
     ]
 }

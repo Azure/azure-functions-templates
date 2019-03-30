@@ -136,7 +136,7 @@
     <value>The event hub name must start and end with a letter or number, and it can contain only letters, numbers, the hyphen, the period, and the underscore. The name must be 1 to 50 characters.</value>
   </data>
   <data name="eventHubOut_path_help" xml:space="preserve">
-    <value>The name of the event hub to which the event will be sent.</value>
+    <value>The name of the event hub to which the event will be sent. It can also be mentioned as part of the connection string. If it is present in both locations (connection string and event hub) connection string takes precedence.</value>
   </data>
   <data name="eventHubOut_path_label" xml:space="preserve">
     <value>Event Hub name</value>
@@ -760,7 +760,7 @@
     <value>Azure Table Storage</value>
   </data>
   <data name="tableIn_filter_help" xml:space="preserve">
-    <value>Optional query expression used to filter the results of the table query. This setting is not applicable for C# functions.</value>
+    <value>Optional query expression used to filter the results of the table query.</value>
   </data>
   <data name="tableIn_filter_label" xml:space="preserve">
     <value>Query filter (optional)</value>
@@ -1713,5 +1713,11 @@ function app.</value>
   </data>
   <data name="DurableFunctionsOrchestrator_name" xml:space="preserve">
     <value>Durable Functions orchestrator</value>
+  </data>
+  <data name="cosmosDBOut_collectionThroughput_help" xml:space="preserve">
+    <value>When specified on an output binding and CreateIfNotExists is true, defines the throughput of the created</value>
+  </data>
+  <data name="cosmosDB_collectionThroughput_label" xml:space="preserve">
+    <value>Collection throughput (optional)</value>
   </data>
 </root>
