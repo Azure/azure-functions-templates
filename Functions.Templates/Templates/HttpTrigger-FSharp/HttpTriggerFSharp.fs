@@ -20,6 +20,14 @@ module HttpTriggerFSharp =
     let run ([<HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = null)>]req: HttpRequest) (log: ILogger) =
         log.LogInformation("F# HTTP trigger function processed a request.")
 
+    let badRequest = BadRequestObjectResult "Please pass a name on the query string or in the request body" :> IActionResult
+
+    let deserializeNameContainer body= 
+        try
+            Some <| JsonConvert.DeserializeObject<NameContainer>(body)
+        with
+        | :? JsonReaderException -> None
+
     let name = 
         match req.Query.ContainsKey Name with
         | true -> Some req.Query.[Name].[0]
@@ -32,13 +40,17 @@ module HttpTriggerFSharp =
         let input = 
             match body with
             | b when System.String.IsNullOrWhiteSpace b -> None
-            | _ -> Some (JsonConvert.DeserializeObject<NameContainer>(body))
+            | _ -> deserializeNameContainer body
 
         match input with
         | None -> 
-            return BadRequestObjectResult "Please pass a name on the query string or in the request body" :> IActionResult
+            return badRequest
         | Some n ->
-            return OkObjectResult (sprintf "Hello, %s" n.Name) :>IActionResult
+            log.LogInformation n.Name
+            match n.Name with
+            | null | "" -> return badRequest
+            | _ -> 
+                return OkObjectResult (sprintf "Hello, %s" n.Name) :>IActionResult
         }
     
 
