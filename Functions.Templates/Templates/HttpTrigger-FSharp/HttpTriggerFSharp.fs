@@ -1,20 +1,21 @@
 namespace Company.Function
 
+open System
 open System.IO
 open Microsoft.AspNetCore.Mvc
 open Microsoft.Azure.WebJobs
 open Microsoft.Azure.WebJobs.Extensions.Http
 open Microsoft.AspNetCore.Http
-open Microsoft.Azure.WebJobs.Host
 open Newtonsoft.Json
 open Microsoft.Extensions.Logging
 
-module HttpTriggerFSharp =
+module httptrigger1 =
+    type NameContainer = { Name: string }
     [<Literal>]
     let Name = "name"
 
-    [<FunctionName("HttpTriggerFSharp")>]
-    let run ([<HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = null)>]req: HttpRequest) (log: ILogger) =
+    [<FunctionName("httptrigger1")>]
+    let run ([<HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)>]req: HttpRequest) (log: ILogger) =
         async {
             log.LogInformation("F# HTTP trigger function processed a request.")
 
@@ -24,17 +25,18 @@ module HttpTriggerFSharp =
                 else
                     None
 
-            let reqBody = StreamReader(req.Body).ReadToEndAsync() |> Async.AwaitTask
+            use stream = new StreamReader(req.Body)
+            let! reqBody = stream.ReadToEndAsync() |> Async.AwaitTask
 
-            let data = JsonConvert.DeserializeObject(reqBody)
+            let data = JsonConvert.DeserializeObject<NameContainer>(reqBody)
             
             let name =
                 match nameOpt with
                 | Some n -> n
-                | None -> data?name
+                | None -> data.Name
             
-            if String.IsNullOrWhiteSpace(name) then
-                OkObjectResult(sprintf "Hello, %s" n) :> IActionResult
+            if not (String.IsNullOrWhiteSpace(name)) then
+                return OkObjectResult(sprintf "Hello, %s" name) :> IActionResult
             else
-                BadRequestObjectResult("Please pass a name on the query string or in the request body") :> IActionResult
+                return BadRequestObjectResult("Please pass a name on the query string or in the request body") :> IActionResult
         } |> Async.StartAsTask
