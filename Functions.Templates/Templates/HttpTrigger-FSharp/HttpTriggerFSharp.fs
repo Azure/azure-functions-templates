@@ -10,52 +10,31 @@ open Newtonsoft.Json
 open Microsoft.Extensions.Logging
 
 module HttpTriggerFSharp =
-    [<CLIMutable>]
-    type NameContainer = {Name:string}
-
     [<Literal>]
-    let Name = "Name"
+    let Name = "name"
 
     [<FunctionName("HttpTriggerFSharp")>]
     let run ([<HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = null)>]req: HttpRequest) (log: ILogger) =
-        log.LogInformation("F# HTTP trigger function processed a request.")
-
-    let badRequest = BadRequestObjectResult "Please pass a name on the query string or in the request body" :> IActionResult
-
-    let deserializeNameContainer body= 
-        try
-            Some <| JsonConvert.DeserializeObject<NameContainer>(body)
-        with
-        | :? JsonReaderException -> None
-
-    let name = 
-        match req.Query.ContainsKey Name with
-        | true -> Some req.Query.[Name].[0]
-        | false -> None
-
-    let reqBodyName = 
         async {
-        use stream = new StreamReader(req.Body)
-        let! body = stream.ReadToEndAsync() |> Async.AwaitTask
-        let input = 
-            match body with
-            | b when System.String.IsNullOrWhiteSpace b -> None
-            | _ -> deserializeNameContainer body
+            log.LogInformation("F# HTTP trigger function processed a request.")
 
-        match input with
-        | None -> 
-            return badRequest
-        | Some n ->
-            log.LogInformation n.Name
-            match n.Name with
-            | null | "" -> return badRequest
-            | _ -> 
-                return OkObjectResult (sprintf "Hello, %s" n.Name) :>IActionResult
-        }
-    
+            let nameOpt = 
+                if req.Query.ContainsKey(Name) then
+                    Some(req.Query.[Name].[0])
+                else
+                    None
 
-    match name with
-    | Some n ->
-        OkObjectResult(sprintf "Hello, %s" n) :>IActionResult
-    | None ->
-        reqBodyName |> Async.RunSynchronously
+            let reqBody = StreamReader(req.Body).ReadToEndAsync() |> Async.AwaitTask
+
+            let data = JsonConvert.DeserializeObject(reqBody)
+            
+            let name =
+                match nameOpt with
+                | Some n -> n
+                | None -> data?name
+            
+            if String.IsNullOrWhiteSpace(name) then
+                OkObjectResult(sprintf "Hello, %s" n) :> IActionResult
+            else
+                BadRequestObjectResult("Please pass a name on the query string or in the request body") :> IActionResult
+        } |> Async.StartAsTask
