@@ -9,12 +9,17 @@ open Microsoft.AspNetCore.Http
 open Newtonsoft.Json
 open Microsoft.Extensions.Logging
 
-module httptrigger1 =
-    type NameContainer = { Name: string }
+module HttpTriggerFSharp =
+    // Define a nullable container to deserialize into.
+    [<AllowNullLiteral>]
+    type NameContainer() =
+        member val Name = "" with get, set
+
+    // For convenience, it's better to have a central place for the literal.
     [<Literal>]
     let Name = "name"
 
-    [<FunctionName("httptrigger1")>]
+    [<FunctionName("HttpTriggerFSharp")>]
     let run ([<HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)>]req: HttpRequest) (log: ILogger) =
         async {
             log.LogInformation("F# HTTP trigger function processed a request.")
@@ -29,11 +34,14 @@ module httptrigger1 =
             let! reqBody = stream.ReadToEndAsync() |> Async.AwaitTask
 
             let data = JsonConvert.DeserializeObject<NameContainer>(reqBody)
-            
+
             let name =
                 match nameOpt with
                 | Some n -> n
-                | None -> data.Name
+                | None ->
+                   match data with
+                   | null -> ""
+                   | nc -> nc.Name
             
             if not (String.IsNullOrWhiteSpace(name)) then
                 return OkObjectResult(sprintf "Hello, %s" name) :> IActionResult
