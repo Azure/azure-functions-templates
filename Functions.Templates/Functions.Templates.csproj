@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="PkgInstall" InitialTargets="Clean;dotnetcliCheck;codeformatterCheck;nugetCheck;PortalTemplatesPkg">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="PkgInstall" InitialTargets="Clean;dotnetcliCheck;codeformatterCheck;nugetCheck;PortalTemplatesPkg;ExtensionBundleTemplatesPkg">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -267,9 +267,8 @@
     <None Include="Documentation\tableOut.md" />
     <None Include="Documentation\timerTrigger.md" />
     <None Include="Documentation\twilioSmsOut.md" />
-    <None Include="PortalTemplates.nuspec">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="PortalTemplates.nuspec" />
+	<None Include="ExtensionBundleTemplates.nuspec" />
     <None Include="Templates\BlobTrigger-CSharp\build.config\template.json" />
     <None Include="Templates\BlobTrigger-CSharp\build.config\vs-2017.3.host.json" />
     <None Include="Templates\BlobTrigger-CSharp\function.json" />
@@ -373,6 +372,7 @@
   </ItemGroup>
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
     <RemoveDir Directories=".\bin\Portal" />
+	<RemoveDir Directories=".\bin\ExtensionBundle" />
     <RemoveDir Directories=".\bin\VS" />
   </Target>
   <Target Name="dotnetcliCheck" BeforeTargets="PrepareForBuild">
@@ -397,8 +397,19 @@
     <Copy SourceFiles=".\bin\Portal\temp\nuget\Azure.Functions.Ux.Templates.$(TemplateVersion).nupkg" DestinationFiles=".\bin\Portal\Nuget\Azure.Functions.Ux.Templates.$(TemplateVersion).nupkg" />
     <RemoveDir Directories=".\bin\Portal\temp" />
   </Target>
-  <Target Name="PkgInstall" DependsOnTargets="PortalTemplatesPkg">
+  <Target Name="ExtensionBundleTemplatesPkg">
+    <Exec Command="..\tools\cli\dotnet.exe new -i .\" />
+    <Exec Command="..\tools\cli\dotnet.exe new functions -o .\bin\ExtensionBundle\temp --force" IgnoreExitCode="true" />
+    <Exec Command="..\tools\CodeFormatter\CodeFormatter.exe ..\tools\codeFormat.csproj /nocopyright  /rule-:NewLineAbove,ExplicitVisibility,IllegalHeaders,FieldNames,ExplicitThis,BraceNewLine,UsingLocation,UnicodeLiterals,ReadonlyFields /verbose" IgnoreExitCode="true" />
+    <Delete Files=".\bin\ExtensionBundle\Functions.Templates.csproj" />
+    <Exec Command="for /R .\bin\ExtensionBundle\temp\Templates\ %%x in (*.cs) do ren &quot;%%x&quot; *.csx" />
+    <Exec Command="..\tools\nuget.exe pack .\bin\ExtensionBundle\temp\ExtensionBundleTemplates.nuspec -Version $(TemplateVersion) -OutputDirectory .\bin\ExtensionBundle\temp\nuget\" />
+    <Copy SourceFiles=".\bin\ExtensionBundle\temp\nuget\Microsoft.Azure.Functions.ExtensionBundle.Templates.$(TemplateVersion).nupkg" DestinationFiles=".\bin\ExtensionBundle\Nuget\Microsoft.Azure.Functions.ExtensionBundle.Templates.$(TemplateVersion).nupkg" />
+    <RemoveDir Directories=".\bin\ExtensionBundle\temp" />
+  </Target>
+  <Target Name="PkgInstall" DependsOnTargets="PortalTemplatesPkg;ExtensionBundleTemplatesPkg">
     <Exec Command="..\tools\nuget.exe install Azure.Functions.Ux.Templates -Version $(TemplateVersion) -Source $(MSBuildProjectDirectory)\bin\Portal\Nuget -OutputDirectory .\bin\Portal\Release -ExcludeVersion" />
+	<Exec Command="..\tools\nuget.exe install Microsoft.Azure.Functions.ExtensionBundle.Templates -Version $(TemplateVersion) -Source $(MSBuildProjectDirectory)\bin\ExtensionBundle\Nuget -OutputDirectory .\bin\ExtensionBundle\Release -ExcludeVersion" />
   </Target>
   <Target Name="TestConfig" DependsOnTargets="CreateTemplateConfig;PkgInstall">
     <Exec Command="..\tools\CreateTemplateConfig\CreateTemplateConfig.exe $(MSBuildProjectDirectory)\bin\Portal\Release\Azure.Functions.Ux.Templates\ $(MSBuildProjectDirectory)\bin\Portal\Test" />
