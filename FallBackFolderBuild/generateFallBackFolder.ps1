@@ -22,11 +22,19 @@ function LogAppVeyorMessage($message, [bool]$runningInAppveyorEnv) {
     if ($runningInAppveyorEnv) {
         Add-AppveyorMessage $message -Category Information
     }
+    else
+    {
+        Write-Host $message -ForegroundColor blue
+    }
 }
 
 function LogAppVeyorErrorMessage($message, [bool]$runningInAppveyorEnv) {
     if ($runningInAppveyorEnv) {
         Add-AppveyorMessage $message -Category Error
+    }
+    else
+    {
+        Write-Host $message  -ForegroundColor red
     }
 }
 
@@ -41,8 +49,8 @@ function Download([string]$url, [string]$outputFilePath) {
 }
 
 function dotnetBuild($csprojPath, $fallBackFolderPath) {
-    Write-Host "$csprojPath -o bin --force --no-incremental -r win-x86 --packages .\.nuget  /p:RestoreFallbackFolders=$fallBackFolderPath --configfile NuGet.Config" -ForegroundColor yellow
-    .\DotNet\cli\dotnet.exe build "$csprojPath" -o bin --force --no-incremental -r win-x86 --packages .\.nuget  /p:RestoreFallbackFolders="$fallBackFolderPath" --configfile NuGet.Config
+    Write-Host "$csprojPath -o bin --force --no-incremental --packages .\.nuget  /p:RestoreFallbackFolders=$fallBackFolderPath --configfile NuGet.Config" -ForegroundColor yellow
+    .\DotNet\cli\dotnet.exe build "$csprojPath" -o bin --force --no-incremental --packages .\.nuget  /p:RestoreFallbackFolders="$fallBackFolderPath" --configfile NuGet.Config
 }
 
 function restorePackage($extension, $fallBackFolderPath) {
