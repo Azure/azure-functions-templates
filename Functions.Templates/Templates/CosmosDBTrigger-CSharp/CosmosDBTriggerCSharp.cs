@@ -7,6 +7,7 @@ using Microsoft.Azure.Documents;
 public static void Run(IReadOnlyList<Document> input, ILogger log)
 #endif
 #if (vsTemplates)
+using System;
 using System.Collections.Generic;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.WebJobs;

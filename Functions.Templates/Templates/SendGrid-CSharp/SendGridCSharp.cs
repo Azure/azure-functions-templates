@@ -18,6 +18,7 @@ using Microsoft.Azure.WebJobs.Host;
 public static SendGridMessage Run(Order order, ILogger log)
 #endif
 #if (vsTemplates)
+using System;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
 using SendGrid.Helpers.Mail;

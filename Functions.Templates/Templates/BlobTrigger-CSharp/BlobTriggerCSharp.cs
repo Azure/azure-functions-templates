@@ -2,6 +2,7 @@
 public static void Run(Stream myBlob, string name, ILogger log)
 #endif
 #if (vsTemplates)
+using System;
 using System.IO;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
