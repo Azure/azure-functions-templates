@@ -7,7 +7,7 @@ public static void Run(EventGridEvent eventGridEvent, ILogger log)
 #if (vsTemplates)
 // Default URL for triggering event grid function in the local environment.
 // http://localhost:7071/runtime/webhooks/EventGrid?functionName={functionname}
-
+using System;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Azure.EventGrid.Models;

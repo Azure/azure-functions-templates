@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 public static void Run(string mySbMsg, ILogger log)
 #endif
 #if (vsTemplates)
+using System;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
