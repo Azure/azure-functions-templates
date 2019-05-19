@@ -19,14 +19,14 @@
         "StorageConnectionStringValue": {
             "description": "The connection string for your Azure WebJobs Storage.",
             "type": "parameter",
-            "defaultValue": "",
+            "defaultValue": "UseDevelopmentStorage=true",
             "replaces": "AzureWebJobsStorageConnectionStringValue",
             "DataType": "AzureStorage"
         },
         "AzureFunctionsVersion": {
             "description": "The setting that determines the target release",
             "type": "parameter",
-            "defaultValue": "",
+            "defaultValue": "V2",
             "replaces": "AzureFunctionsVersionValue"
         }
     },
