@@ -10,7 +10,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         # Get value for `name` from parameters or JSON body
         name = req.params.get("name") or req.get_json().get("name")
     except ValueError:
-        pass
+        name = None
 
     return (
         func.HttpResponse(f"Hello {name}!")
