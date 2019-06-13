@@ -6,14 +6,11 @@ import azure.functions as func
 def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info("Python HTTP trigger function processed a request.")
 
-    name = req.params.get("name") or req.get_json().get("name")
-    if not name:
-        try:
-            req_body = req.get_json()
-        except ValueError:
-            pass
-        else:
-            name = req_body.get("name")
+    try:
+        # Get value for `name` from parameters or JSON body
+        name = req.params.get("name") or req.get_json().get("name")
+    except ValueError:
+        pass
 
     return (
         func.HttpResponse(f"Hello {name}!")
