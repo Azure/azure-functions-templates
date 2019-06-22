@@ -1,21 +1,23 @@
 # Python HttpTrigger
 
-The Azure Functions Python HTTP Trigger creates an endpoint: `<function-host>/api/<function-name>`. When an HTTP request is made against that endpoint, the `main()` function in `__init__.py` is called.
+The HTTP trigger lets you invoke a function with an HTTP request. You can use an HTTP trigger to build serverless APIs and respond to webhooks. It creates an endpoint like  `https://<app-name>.azurewebsites.net/api/api/<function-name>`. When an HTTP request is made against that endpoint, the `main()` function in `__init__.py` is called.
+
 
 > Throughout this documentation variables in angle brackets `<>` are placeholders and will be different in your application.
 
 ## Default Structure
 
 ``` text
-<function-name>/      # directory holding all files for the HttpTrigger Function
+<function-name>/    # directory holding all files for the HttpTrigger Function
 └── __init__.py     # this module will be called when the Function is run
     function.json   # defines that __init__.py will be called and which bindings are used
+    README.md       # documentation for using HTTP Trigger
     sample.dat      # contains a sample input for the Function
 ```
 
-## Testing the Template Function
+## Run the Function Locally
 
-The default function template when a new HttpTrigger is created takes a value for `name` and returns `Hello <name>!`. To test this functionality, from the root of the Azure Function App, execute
+The default function template when a new HttpTrigger is created takes a value for `name` and returns `Hello <name>!`. If you're running in VS Code, you can press F5 to test your function locally. Otherwise, from the root of the Azure Function App, execute
 
 ``` bash
 func host start
@@ -47,8 +49,8 @@ You should now get the response
 Hello Sophia!
 ```
 
-## Useful Resources
+## Resources
 
-- Software: [Postman](https://www.getpostman.com/) is a cross-platform application for testing HTTP requests.
-- Guide: [Create an HTTP triggered function in Azure](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-python)  
-- Examples: [Serverless Library - Python](https://serverlesslibrary.net/?technology=Functions%202.x&language=Python)
+- [Azure Functions Python developer reference](https://aka.ms/python-functions-guide)  
+- [HTTP triggers and bindings](https://docs.microsoft.com/azure/azure-functions/functions-bindings-http-webhook)
+- [Serverless Library](https://aka.ms/python-functions-samples)

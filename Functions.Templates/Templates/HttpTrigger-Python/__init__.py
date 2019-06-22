@@ -4,15 +4,15 @@ import azure.functions as func
 
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
-    # Parse the request to the HTTP endpoint for a value corresponding to `name`.
+    # Parse the HTTP request for the `name` parameter in the body or query string.
     # Return "Hello {name}!" if found or ask user for input.
 
     logging.info("Python HTTP trigger function processed a request.")
 
-    # Get the value for `name` from URL arguments. `None` if not present.
+    # Get the value of the `name` parameter from the query string of the URL.
     name = req.params.get("name")
 
-    # If `name` is not found in the URL arguments, check the JSON body if it exists.
+    # If `name` is not found in the query string, check if it exists in the JSON body.
     if not name and hasattr(req, "get_json"):
         name = req.get_json().get("name")
 
