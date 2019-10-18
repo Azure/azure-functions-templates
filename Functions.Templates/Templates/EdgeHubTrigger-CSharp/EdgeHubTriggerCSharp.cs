@@ -10,6 +10,7 @@ using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
+// Visit https://aka.ms/iot-edge-csharp-function-tutorial to learn how to use this trigger
 namespace Company.Function
 {
     public static class EdgeHubTriggerCSharp
