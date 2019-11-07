@@ -2067,6 +2067,32 @@
       ]
     },
     {
+      "type": "durableClient",
+      "displayName": "$durableClientIn_displayName",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\orchestrationClientIn.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask", "version": "2.0.0"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "client",
+          "required": true,
+          "label": "$durableClientIn_name_label",
+          "help": "$durableClientIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "type": "eventGridTrigger",
       "displayName": "$eventGrid_trigger_displayName",
       "direction": "trigger",
