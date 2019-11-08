@@ -460,8 +460,10 @@
     <Exec Command="..\tools\CodeFormatter\CodeFormatter.exe ..\tools\codeFormat.csproj /nocopyright  /rule-:NewLineAbove,ExplicitVisibility,IllegalHeaders,FieldNames,ExplicitThis,BraceNewLine,UsingLocation,UnicodeLiterals,ReadonlyFields /verbose" IgnoreExitCode="true" />
     <Delete Files=".\bin\ExtensionBundle\Functions.Templates.csproj" />
     <Exec Command="for /R .\bin\ExtensionBundle\temp\Templates\ %%x in (*.cs) do ren &quot;%%x&quot; *.csx" />
-    <Exec Command="..\tools\nuget.exe pack .\bin\ExtensionBundle\temp\ExtensionBundleTemplates.nuspec -Version $(TemplateVersion) -OutputDirectory .\bin\ExtensionBundle\temp\nuget\" />
-    <Copy SourceFiles=".\bin\ExtensionBundle\temp\nuget\Microsoft.Azure.Functions.ExtensionBundle.Templates.$(TemplateVersion).nupkg" DestinationFiles=".\bin\ExtensionBundle\Nuget\Microsoft.Azure.Functions.ExtensionBundle.Templates.$(TemplateVersion).nupkg" />
+    <Exec Command="..\tools\nuget.exe pack .\bin\ExtensionBundle\temp\ExtensionBundleTemplates-1.x.nuspec -Version $(TemplateVersion) -OutputDirectory .\bin\ExtensionBundle-1.x\temp\nuget\" />
+    <Exec Command="..\tools\nuget.exe pack .\bin\ExtensionBundle\temp\ExtensionBundleTemplates-2.x.nuspec -Version $(TemplateVersion) -OutputDirectory .\bin\ExtensionBundle-2.x\temp\nuget\" />
+    <Copy SourceFiles=".\bin\ExtensionBundle\temp\nuget\Microsoft.Azure.Functions.ExtensionBundle.Templates-1.x.$(TemplateVersion).nupkg" DestinationFiles=".\bin\ExtensionBundle\Nuget\Microsoft.Azure.Functions.ExtensionBundle.Templates-1.x.$(TemplateVersion).nupkg" />
+    <Copy SourceFiles=".\bin\ExtensionBundle\temp\nuget\Microsoft.Azure.Functions.ExtensionBundle.Templates-2.x.$(TemplateVersion).nupkg" DestinationFiles=".\bin\ExtensionBundle\Nuget\Microsoft.Azure.Functions.ExtensionBundle.Templates-2.x.$(TemplateVersion).nupkg" />
     <RemoveDir Directories=".\bin\ExtensionBundle\temp" />
   </Target>
   <Target Name="PkgInstall" DependsOnTargets="PortalTemplatesPkg;ExtensionBundleTemplatesPkg">
