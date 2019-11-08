@@ -462,8 +462,8 @@
     <Exec Command="for /R .\bin\ExtensionBundle\temp\Templates\ %%x in (*.cs) do ren &quot;%%x&quot; *.csx" />
     <Exec Command="..\tools\nuget.exe pack .\bin\ExtensionBundle\temp\ExtensionBundleTemplates-1.x.nuspec -Version $(TemplateVersion) -OutputDirectory .\bin\ExtensionBundle-1.x\temp\nuget\" />
     <Exec Command="..\tools\nuget.exe pack .\bin\ExtensionBundle\temp\ExtensionBundleTemplates-2.x.nuspec -Version $(TemplateVersion) -OutputDirectory .\bin\ExtensionBundle-2.x\temp\nuget\" />
-    <Copy SourceFiles=".\bin\ExtensionBundle\temp\nuget\Microsoft.Azure.Functions.ExtensionBundle.Templates-1.x.$(TemplateVersion).nupkg" DestinationFiles=".\bin\ExtensionBundle\Nuget\Microsoft.Azure.Functions.ExtensionBundle.Templates-1.x.$(TemplateVersion).nupkg" />
-    <Copy SourceFiles=".\bin\ExtensionBundle\temp\nuget\Microsoft.Azure.Functions.ExtensionBundle.Templates-2.x.$(TemplateVersion).nupkg" DestinationFiles=".\bin\ExtensionBundle\Nuget\Microsoft.Azure.Functions.ExtensionBundle.Templates-2.x.$(TemplateVersion).nupkg" />
+    <Copy SourceFiles=".\bin\ExtensionBundle-1.x\temp\nuget\Microsoft.Azure.Functions.ExtensionBundle.Templates-1.x.$(TemplateVersion).nupkg" DestinationFiles=".\bin\ExtensionBundle-1.x\Nuget\Microsoft.Azure.Functions.ExtensionBundle.Templates-1.x.$(TemplateVersion).nupkg" />
+    <Copy SourceFiles=".\bin\ExtensionBundle-2.x\temp\nuget\Microsoft.Azure.Functions.ExtensionBundle.Templates-2.x.$(TemplateVersion).nupkg" DestinationFiles=".\bin\ExtensionBundle-2.x\Nuget\Microsoft.Azure.Functions.ExtensionBundle.Templates-2.x.$(TemplateVersion).nupkg" />
     <RemoveDir Directories=".\bin\ExtensionBundle\temp" />
   </Target>
   <Target Name="PkgInstall" DependsOnTargets="PortalTemplatesPkg;ExtensionBundleTemplatesPkg">
