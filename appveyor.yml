@@ -26,7 +26,7 @@ build_script:
 artifacts:
   - path: Functions.Templates\bin\Portal\Nuget\*.nupkg
     name: Portal templates
-  - path: Functions.Templates\bin\ExtensionBundle\Nuget\*.nupkg
-    name: ExtensionBundle templates
+  - path: Functions.Templates\bin\ExtensionBundle-1.x\Nuget\*.nupkg
+    name: ExtensionBundle templates v1.x
 on_finish:
 - ps: ..\SignTools\PollSigningResults.ps1
