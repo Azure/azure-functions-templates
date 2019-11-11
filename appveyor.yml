@@ -25,7 +25,9 @@ build_script:
 artifacts:
   - path: Functions.Templates\bin\Portal\Nuget\*.nupkg
     name: Portal templates
-  - path: Functions.Templates\bin\ExtensionBundle\Nuget\*.nupkg
-    name: ExtensionBundle templates
+  - path: Functions.Templates\bin\ExtensionBundle-1.x\Nuget\*.nupkg
+    name: ExtensionBundle templates v1.x
+    - path: Functions.Templates\bin\ExtensionBundle-2.x\Nuget\*.nupkg
+    name: ExtensionBundle templates v2.x
   - path: Functions.Templates\bin\VS\Release\*.nupkg
     name: Visual Studio templates
