@@ -29,6 +29,8 @@
   <ItemGroup>
     <None Include="Documentation\signalRConnectionInfo.md" />
     <None Include="Documentation\signalR.md" />
+    <None Include="ExtensionBundleTemplates-1.x.nuspec" />
+    <None Include="ExtensionBundleTemplates-2.x.nuspec" />
     <None Include="Templates\EventGridTrigger-PowerShell\function.json" />
     <None Include="Templates\EventGridTrigger-PowerShell\metadata.json" />
     <None Include="Templates\EventGridTrigger-PowerShell\run.ps1" />
@@ -80,7 +82,7 @@
     <None Include="ProjectTemplate\local.settings.json" />
     <None Include="ProjectTemplate\_gitignore" />
     <None Include="Templates\BlobTrigger-CSharp\BlobTriggerCSharp.cs" />
-    <None Include="Templates\BlobTrigger-FSharp\BlobTriggerFSharp.fs"/>
+    <None Include="Templates\BlobTrigger-FSharp\BlobTriggerFSharp.fs" />
     <None Include="Templates\BlobTrigger-JavaScript\function.json" />
     <None Include="Templates\BlobTrigger-JavaScript\metadata.json" />
     <None Include="Templates\BlobTrigger-JavaScript\readme.md" />
@@ -295,7 +297,6 @@
     <None Include="Documentation\timerTrigger.md" />
     <None Include="Documentation\twilioSmsOut.md" />
     <None Include="PortalTemplates.nuspec" />
-	<None Include="ExtensionBundleTemplates.nuspec" />
     <None Include="Templates\BlobTrigger-CSharp\build.config\template.json" />
     <None Include="Templates\BlobTrigger-CSharp\build.config\vs-2017.3.host.json" />
     <None Include="Templates\BlobTrigger-CSharp\function.json" />
@@ -429,7 +430,7 @@
   </ItemGroup>
   <Target Name="Clean" BeforeTargets="PrepareForBuild">
     <RemoveDir Directories=".\bin\Portal" />
-	<RemoveDir Directories=".\bin\ExtensionBundle" />
+    <RemoveDir Directories=".\bin\ExtensionBundle" />
     <RemoveDir Directories=".\bin\VS" />
   </Target>
   <Target Name="dotnetcliCheck" BeforeTargets="PrepareForBuild">
@@ -468,7 +469,7 @@
   </Target>
   <Target Name="PkgInstall" DependsOnTargets="PortalTemplatesPkg;ExtensionBundleTemplatesPkg">
     <Exec Command="..\tools\nuget.exe install Azure.Functions.Ux.Templates -Version $(TemplateVersion) -Source $(MSBuildProjectDirectory)\bin\Portal\Nuget -OutputDirectory .\bin\Portal\Release -ExcludeVersion" />
-	<Exec Command="..\tools\nuget.exe install Microsoft.Azure.Functions.ExtensionBundle.Templates -Version $(TemplateVersion) -Source $(MSBuildProjectDirectory)\bin\ExtensionBundle\Nuget -OutputDirectory .\bin\ExtensionBundle\Release -ExcludeVersion" />
+    <Exec Command="..\tools\nuget.exe install Microsoft.Azure.Functions.ExtensionBundle.Templates -Version $(TemplateVersion) -Source $(MSBuildProjectDirectory)\bin\ExtensionBundle\Nuget -OutputDirectory .\bin\ExtensionBundle\Release -ExcludeVersion" />
   </Target>
   <Target Name="TestConfig" DependsOnTargets="CreateTemplateConfig;PkgInstall">
     <Exec Command="..\tools\CreateTemplateConfig\CreateTemplateConfig.exe $(MSBuildProjectDirectory)\bin\Portal\Release\Azure.Functions.Ux.Templates\ $(MSBuildProjectDirectory)\bin\Portal\Test" />
