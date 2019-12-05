@@ -28,7 +28,5 @@ artifacts:
     name: Portal templates
   - path: Functions.Templates\bin\ExtensionBundle\Nuget\*.nupkg
     name: ExtensionBundle templates
-  - path: Functions.Templates\bin\VS\Release\*.nupkg
-    name: Visual Studio templates
 on_finish:
 - ps: ..\SignTools\PollSigningResults.ps1
