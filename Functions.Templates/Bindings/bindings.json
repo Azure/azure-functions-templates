@@ -880,6 +880,27 @@
           ],
           "label": "$eventHubTrigger_cardinality_label",
           "help": "$eventHubTrigger_cardinality_help"
+        },
+        {
+          "name": "dataType",
+          "value": "enum",
+          "required": false,
+          "enum": [
+            {
+              "value": "string",
+              "display": "String"
+            },
+            {
+              "value": "binary",
+              "display": "Binary"
+            },
+            {
+              "value": "stream",
+              "display": "Stream"
+            }
+          ],
+          "label": "$eventHubTrigger_cardinality_label",
+          "help": "$eventHubTrigger_cardinality_help"
         }
       ]
     },
