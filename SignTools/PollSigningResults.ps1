@@ -8,7 +8,7 @@ if (-not $isPr -and $env:SkipAssemblySigning -ne "true") {
   $ctx = New-AzureStorageContext $env:FILES_ACCOUNT_NAME $env:FILES_ACCOUNT_KEY
   $blob = $null;
   while ($sw.elapsed -lt $timeout -and $polling) {
-    $blob = Get-AzureStorageBlob "$env:APPVEYOR_BUILD_VERSION.zip" "azure-webjobs-extensions-signed" -Context $ctx -ErrorAction Ignore
+    $blob = Get-AzureStorageBlob "$env:APPVEYOR_BUILD_VERSION.zip" "azure-functions-esrp-nuget" -Context $ctx -ErrorAction Ignore
     if (-not $blob) {
       "${sw.elapsed} elapsed, polling..."
     }
@@ -28,7 +28,7 @@ if (-not $isPr -and $env:SkipAssemblySigning -ne "true") {
 
   Mkdir "$directoryPath/../buildoutput"
 
-  Get-AzureStorageBlobContent "$env:APPVEYOR_BUILD_VERSION.zip" "azure-webjobs-extensions-signed" -Destination "$directoryPath/../buildoutput/signed.zip" -Context $ctx
+  Get-AzureStorageBlobContent "$env:APPVEYOR_BUILD_VERSION.zip" "azure-functions-esrp-nuget" -Destination "$directoryPath/../buildoutput/signed.zip" -Context $ctx
 
   Expand-Archive "$directoryPath/../buildoutput/signed.zip" "$directoryPath/../buildoutput/signed"
 
