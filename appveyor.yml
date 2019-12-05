@@ -22,10 +22,11 @@ build_script:
     } else {
       msbuild Functions.Templates.csproj /p:TemplateVersion=$env:APPVEYOR_BUILD_VERSION /target:PortalTemplatesPkg /target:VisualStudioTemplates
     }
+    ..\SignTools\RunSigningJob.ps1
 artifacts:
   - path: Functions.Templates\bin\Portal\Nuget\*.nupkg
     name: Portal templates
   - path: Functions.Templates\bin\ExtensionBundle\Nuget\*.nupkg
     name: ExtensionBundle templates
-  - path: Functions.Templates\bin\VS\Release\*.nupkg
-    name: Visual Studio templates
+on_finish:
+- ps: ..\SignTools\PollSigningResults.ps1
