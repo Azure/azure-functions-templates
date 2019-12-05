@@ -12,10 +12,10 @@ if (-not $isPr) {
   }
 
   $ctx = New-AzureStorageContext $env:FILES_ACCOUNT_NAME $env:FILES_ACCOUNT_KEY
-  Set-AzureStorageBlobContent "$directoryPath/../buildoutput/tosign.zip" "azure-webjobs-extensions" -Blob "$env:APPVEYOR_BUILD_VERSION.zip" -Context $ctx
+  Set-AzureStorageBlobContent "$directoryPath/../buildoutput/tosign.zip" "azure-functions-esrp-nuget" -Blob "$env:APPVEYOR_BUILD_VERSION.zip" -Context $ctx
 
   $queue = Get-AzureStorageQueue "signing-jobs" -Context $ctx
 
-  $messageBody = "SignNupkgs;azure-webjobs-extensions;$env:APPVEYOR_BUILD_VERSION.zip"
+  $messageBody = "SignNuget;azure-functions-esrp-nuget;$env:APPVEYOR_BUILD_VERSION.zip"
   $queue.CloudQueue.AddMessage($messageBody)
 }

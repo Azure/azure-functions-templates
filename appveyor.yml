@@ -31,4 +31,4 @@ artifacts:
   - path: Functions.Templates\bin\VS\Release\*.nupkg
     name: Visual Studio templates
 on_finish:
-- ps: .\tools\PollSigningResults.ps1
+- ps: .\SignTools\PollSigningResults.ps1
