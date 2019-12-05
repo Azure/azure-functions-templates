@@ -2,7 +2,9 @@ $isPr = Test-Path env:APPVEYOR_PULL_REQUEST_NUMBER
 $directoryPath = Split-Path $MyInvocation.MyCommand.Path -Parent
 
 if (-not $isPr) {
-  Compress-Archive ..\Functions.Templates\bin\VS\Release\* $directoryPath\..\buildoutput\tosign.zip
+  Mkdir "$directoryPath/../buildoutput"
+  Compress-Archive ../Functions.Templates/bin/VS/Release/* $directoryPath\..\buildoutput\tosign.zip
+
 
   if ($env:SkipAssemblySigning -eq "true") {
     "Assembly signing disabled. Skipping signing process."
