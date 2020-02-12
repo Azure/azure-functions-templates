@@ -12,6 +12,9 @@ clone_folder: c:\projects\azure-webjobs-sdk-templates
 install:
 - ps: >-
     .\getTools.ps1
+
+    Install-Product node 10.15.2 x64
+- cd .\Tools && npm install
 build_script:
 - ps: |
     Set-Location .\Functions.Templates
@@ -22,8 +25,19 @@ build_script:
     } else {
       msbuild Functions.Templates.csproj /p:TemplateVersion=$env:APPVEYOR_BUILD_VERSION /target:PortalTemplatesPkg /target:VisualStudioTemplates
     }
+- dir && cd ..\Tools && .\node_modules\.bin\gulp.cmd build-all
+- ps: |
+    if ($hasTag)
+    {
+      Rename-Item -Path ..\Functions.Templates\bin\Portal\out.zip -NewName "$env:APPVEYOR_REPO_TAG_NAME.zip"
+    } else {
+      Rename-Item -Path ..\Functions.Templates\bin\Portal\out.zip -NewName "$env:APPVEYOR_BUILD_VERSION.zip"
+    }
+    ..\SignTools\RunSigningJob.ps1
 artifacts:
   - path: Functions.Templates\bin\Portal\Nuget\*.nupkg
+    name: Portal templates
+  - path: Functions.Templates\bin\Portal\*.zip
     name: Portal templates
   - path: Functions.Templates\bin\ExtensionBundle-1.x\Nuget\*.nupkg
     name: ExtensionBundle templates v1.x
@@ -31,3 +45,5 @@ artifacts:
     name: ExtensionBundle templates v2.x
   - path: Functions.Templates\bin\VS\Release\*.nupkg
     name: Visual Studio templates
+on_finish:
+- ps: ..\SignTools\PollSigningResults.ps1
