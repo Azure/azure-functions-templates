@@ -38,8 +38,8 @@ namespace Company.Function
             name = name ?? data?.name;
 
             return name != null
-                ? (ActionResult)new OkObjectResult($"Hello, {name}")
-                : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
+                ? (ActionResult)new OkObjectResult($"Hello {name}, The HTTP trigger function executed succefully")
+                : new OkObjectResult("The HTTP trigger function executed succefully. Pass a name in the query string or in the request body for a personalized response.");
         }
 #if (vsTemplates)
     }

@@ -14,11 +14,11 @@ if (-not $name) {
 
 if ($name) {
     $status = [HttpStatusCode]::OK
-    $body = "Hello $name"
+    $body = "Hello $name. The HTTP trigger function executed succefully"
 }
 else {
-    $status = [HttpStatusCode]::BadRequest
-    $body = "Please pass a name on the query string or in the request body."
+    $status = [HttpStatusCode]::OK
+    $body = "The HTTP trigger function executed succefully. Pass a name in the query string or in the request body for a personalized response."
 }
 
 # Associate values to output bindings by calling 'Push-OutputBinding'.
