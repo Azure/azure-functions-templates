@@ -1,5 +1,5 @@
 #if (portalTemplates)
-#r "..\bin\Microsoft.Azure.EventHubs.dll"
+#r "Microsoft.Azure.EventHubs"
 
 
 using System;
