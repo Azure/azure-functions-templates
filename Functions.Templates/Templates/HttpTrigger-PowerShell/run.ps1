@@ -12,17 +12,14 @@ if (-not $name) {
     $name = $Request.Body.Name
 }
 
+$body = "This HTTP triggerred function executed successfully. Pass a name in the query string or in the request body for a personalized response."
+
 if ($name) {
-    $status = [HttpStatusCode]::OK
-    $body = "Hello $name"
-}
-else {
-    $status = [HttpStatusCode]::BadRequest
-    $body = "Please pass a name on the query string or in the request body."
+    $body = "Hello, $name. This HTTP triggerred function executed successfully."
 }
 
 # Associate values to output bindings by calling 'Push-OutputBinding'.
 Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
-    StatusCode = $status
+    StatusCode = [HttpStatusCode]::OK
     Body = $body
 })
