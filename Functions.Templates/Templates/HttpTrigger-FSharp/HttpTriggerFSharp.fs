@@ -43,8 +43,11 @@ module HttpTriggerFSharp =
                    | null -> ""
                    | nc -> nc.Name
             
-            if not (String.IsNullOrWhiteSpace(name)) then
-                return OkObjectResult(sprintf "Hello, %s" name) :> IActionResult
-            else
-                return BadRequestObjectResult("Please pass a name on the query string or in the request body") :> IActionResult
+            let responseMessage =             
+                if (String.IsNullOrWhiteSpace(name)) then
+                    "This HTTP triggerred function executed successfully. Pass a name in the query string or in the request body for a personalized response."
+                else
+                    "Hello, " +  name + ". This HTTP triggerred function executed successfully."
+
+            return OkObjectResult(responseMessage) :> IActionResult
         } |> Async.StartAsTask
