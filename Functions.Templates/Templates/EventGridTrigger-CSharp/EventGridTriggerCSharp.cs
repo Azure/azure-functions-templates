@@ -1,10 +1,3 @@
-#if (portalTemplates)
-#r "Microsoft.Azure.EventGrid"
-using Microsoft.Azure.EventGrid.Models;
-
-public static void Run(EventGridEvent eventGridEvent, ILogger log)
-#endif
-#if (vsTemplates)
 // Default URL for triggering event grid function in the local environment.
 // http://localhost:7071/runtime/webhooks/EventGrid?functionName={functionname}
 using System;
@@ -20,11 +13,8 @@ namespace Company.Function
     {
         [FunctionName("EventGridTriggerCSharp")]
         public static void Run([EventGridTrigger]EventGridEvent eventGridEvent, ILogger log)
-#endif
         {
             log.LogInformation(eventGridEvent.Data.ToString());
         }
-#if (vsTemplates)
     }
 }
-#endif

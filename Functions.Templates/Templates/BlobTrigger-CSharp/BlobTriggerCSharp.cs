@@ -1,7 +1,3 @@
-#if (portalTemplates)
-public static void Run(Stream myBlob, string name, ILogger log)
-#endif
-#if (vsTemplates)
 using System;
 using System.IO;
 using Microsoft.Azure.WebJobs;
@@ -14,11 +10,8 @@ namespace Company.Function
     {
         [FunctionName("BlobTriggerCSharp")]
         public static void Run([BlobTrigger("PathValue/{name}", Connection = "ConnectionValue")]Stream myBlob, string name, ILogger log)
-#endif
         {
             log.LogInformation($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
         }
-#if (vsTemplates)
     }
 }
-#endif

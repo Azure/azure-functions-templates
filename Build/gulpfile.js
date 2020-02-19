@@ -8,37 +8,70 @@ const path = require('path');
 const del = require('del');
 const decompress = require('gulp-decompress');
 const zip = require('gulp-zip');
+const request = require('request');
+const nuget = require('gulp-nuget');
 
+gulp.task('nuget-pack', function () {
+  var nugetPath = './nuget.exe';
+  var version = process.env.TestVar;
+  let streams = [];
+
+  streams.push(
+    gulp.src('./PackageFiles/ItemTemplates.nuspec')
+      .pipe(nuget.pack({ nuget: nugetPath, version: version }))
+      .pipe(gulp.dest('../bin/VS/'))
+  );
+
+  streams.push(
+    gulp.src('./PackageFiles/ProjectTemplates.nuspec')
+      .pipe(nuget.pack({ nuget: nugetPath, version: version }))
+      .pipe(gulp.dest('../bin/VS'))
+  );
+
+  streams.push(
+    gulp.src('./PackageFiles/Templates.nuspec')
+      .pipe(nuget.pack({ nuget: nugetPath, version: version }))
+      .pipe(gulp.dest('../bin/Temp/'))
+  );
+
+  return gulpMerge(streams);
+});
+
+gulp.task('nuget-download', function (done) {
+  if (fs.existsSync('nuget.exe')) {
+    return done();
+  }
+
+  request.get('https://dist.nuget.org/win-x86-commandline/v4.1.0/nuget.exe')
+    .pipe(fs.createWriteStream('nuget.exe'))
+    .on('close', done);
+});
 
 gulp.task('clean-output', function (cb) {
   return del([
-    '../Functions.Templates/bin/Portal/out'
+    '../../Functions.Templates/bin/Portal/out'
   ], { force: true });
 });
 
-gulp.task('resources-clean', function (cb) {
+gulp.task('clean', function (cb) {
   return del([
-    '../template-downloads',
-    '../Functions.Templates/bin/Portal/3',
-    '../Functions.Templates/bin/Portal/3-convert',
+    '../bin'
   ], { force: true });
 });
 
-/*****
- * Download and unzip nuget packages with templates
- */
-gulp.task('download-templates', function () {
-  return gulp.src('../Functions.Templates/bin/Portal/Nuget/*.nupkg')
-    .pipe(gulp.dest('../template-downloads/3/'));
+gulp.task('clean-temp', function (cb) {
+  return del([
+    '../bin/Temp'
+  ], { force: true });
 });
 
 gulp.task('unzip-templates', function () {
   let streams = [];
   streams.push(
     gulp
-      .src(`../template-downloads/3/*`)
+      .src(`../bin/Temp/*`)
       .pipe(decompress())
-      .pipe(gulp.dest(`../Functions.Templates/bin/Portal/3`))
+      .pipe(gulp.dest(`../bin/Temp/`))
   );
   return gulpMerge(streams);
 });
@@ -50,7 +83,7 @@ gulp.task('unzip-templates', function () {
 
 gulp.task('resources-convert', function () {
   return gulp
-    .src(['../Functions.Templates/bin/Portal/3/Resources/**/Resources.resx'])
+    .src(['../bin/Temp/Resources/**/Resources.resx'])
     .pipe(resx2())
     .pipe(
       rename(function (p) {
@@ -62,7 +95,7 @@ gulp.task('resources-convert', function () {
         p.extname = '.json';
       })
     )
-    .pipe(gulp.dest('../Functions.Templates/bin/Portal/3-convert/resources-convert'));
+    .pipe(gulp.dest('../bin/Temp/resources-convert'));
 });
 
 /********
@@ -73,10 +106,10 @@ gulp.task('resources-build', function () {
 
   streams.push(
     gulp
-      .src(['../Functions.Templates/bin/Portal/3-convert/resources-convert/**/Resources.*.json'])
+      .src(['../bin/Temp/resources-convert/**/Resources.*.json'])
       .pipe(
         jeditor(function (json) {
-          const enver = require(path.normalize('../Functions.Templates/bin/Portal/3-convert/resources-convert/Resources.json'));
+          const enver = require('../bin/Temp/resources-convert/Resources.json');
           const retVal = {
             lang: json,
             en: enver,
@@ -85,12 +118,12 @@ gulp.task('resources-build', function () {
           return retVal;
         })
       )
-      .pipe(gulp.dest('../Functions.Templates/bin/Portal/out/resources'))
+      .pipe(gulp.dest('../bin/Templates/resources'))
   );
 
   streams.push(
     gulp
-      .src(['../Functions.Templates/bin/Portal/3-convert/resources-convert/Resources.json'])
+      .src(['../bin/Temp/resources-convert/Resources.json'])
       .pipe(
         jeditor(function (json) {
           const retVal = {
@@ -100,16 +133,16 @@ gulp.task('resources-build', function () {
           return retVal;
         })
       )
-      .pipe(gulp.dest('../Functions.Templates/bin/Portal/out/resources'))
+      .pipe(gulp.dest('../bin/Templates/resources'))
   );
 
   return gulpMerge(streams);
 });
 
 gulp.task('resources-copy', function () {
-  return gulp.src('../Functions.Templates/bin/Portal/out/resources/Resources.json')
+  return gulp.src('../bin/Templates/resources/Resources.json')
     .pipe(rename('Resources.en-US.json'))
-    .pipe(gulp.dest('../Functions.Templates/bin/Portal/out/resources'));
+    .pipe(gulp.dest('../bin/Templates/resources'));
 });
 
 /***********************************************************
@@ -119,10 +152,10 @@ gulp.task('resources-copy', function () {
 gulp.task('build-templates', function (cb) {
   const version = '3';
   let templateListJson = [];
-  const templates = getSubDirectories(path.join('../Functions.Templates/bin/Portal/3', 'Templates'));
+  const templates = getSubDirectories(path.join('../bin/Temp', 'templates'));
   templates.forEach(template => {
     let templateObj = {};
-    const filePath = path.join('../Functions.Templates/bin/Portal/3', 'Templates', template);
+    const filePath = path.join('../bin/Temp', 'templates', template);
     let files = getFilesWithContent(filePath, ['function.json', 'metadata.json']);
 
     templateObj.id = template;
@@ -133,7 +166,7 @@ gulp.task('build-templates', function (cb) {
     templateObj.metadata = require(path.join(filePath, 'metadata.json'));
     templateListJson.push(templateObj);
   });
-  let writePath = path.join('../Functions.Templates/bin/Portal/out', 'templates');
+  let writePath = path.join('../bin/Templates', 'templates');
   if (!fs.existsSync(writePath)) {
     fs.mkdirSync(writePath);
   }
@@ -148,18 +181,18 @@ gulp.task('build-templates', function (cb) {
 
 gulp.task('build-bindings', function (cb) {
   const version = '3';
-  const bindingFile = require(path.join('../Functions.Templates/bin/Portal/3', 'Bindings', 'bindings.json'));
+  const bindingFile = require(path.join('../bin/Temp', 'Bindings', 'bindings.json'));
   bindingFile.bindings.forEach(binding => {
     if (binding.documentation) {
       const documentationSplit = binding.documentation.split('\\');
       const documentationFile = documentationSplit[documentationSplit.length - 1];
-      const documentationString = fs.readFileSync(path.join('../Functions.Templates/bin/Portal/3', 'Documentation', documentationFile), {
+      const documentationString = fs.readFileSync(path.join('../bin/Temp', 'Documentation', documentationFile), {
         encoding: 'utf8',
       });
       binding.documentation = documentationString;
     }
   });
-  let writePath = path.join('../Functions.Templates/bin/Portal/out', 'bindings');
+  let writePath = path.join('../bin/Templates', 'bindings');
   if (!fs.existsSync(writePath)) {
     fs.mkdirSync(writePath);
   }
@@ -169,17 +202,17 @@ gulp.task('build-bindings', function (cb) {
 });
 
 gulp.task('zip-output', function () {
-  return gulp.src('../Functions.Templates/bin/Portal/out/**/*.json')
+  return gulp.src('../bin/Portal/out/**/*.json')
     .pipe(zip('out.zip'))
-    .pipe(gulp.dest('../Functions.Templates/bin/Portal'));
+    .pipe(gulp.dest('../bin/Portal'));
 });
 
 gulp.task(
   'build-all',
   gulp.series(
-    'clean-output',
-    'resources-clean',
-    'download-templates',
+    'clean',
+    'nuget-download',
+    'nuget-pack',
     'unzip-templates',
     'resources-convert',
     'resources-build',
@@ -187,7 +220,7 @@ gulp.task(
     'build-templates',
     'build-bindings',
     'zip-output',
-    'resources-clean'
+    'clean-temp'
   )
 );
 
