@@ -10,31 +10,33 @@ const decompress = require('gulp-decompress');
 const zip = require('gulp-zip');
 const request = require('request');
 const nuget = require('gulp-nuget');
+const version = '2.1.' + process.env.devops_buildNumber;
 
-gulp.task('nuget-pack', function () {
+gulp.task('nuget-pack-itemTemplate', function () {
   var nugetPath = './nuget.exe';
-  var version = process.env.TestVar;
-  let streams = [];
 
-  streams.push(
-    gulp.src('./PackageFiles/ItemTemplates.nuspec')
-      .pipe(nuget.pack({ nuget: nugetPath, version: version }))
-      .pipe(gulp.dest('../bin/VS/'))
-  );
+  return gulp
+    .src('./PackageFiles/ItemTemplates.nuspec')
+    .pipe(nuget.pack({ nuget: nugetPath, version: version }))
+    .pipe(gulp.dest('../bin/VS/'));
+});
 
-  streams.push(
-    gulp.src('./PackageFiles/ProjectTemplates.nuspec')
-      .pipe(nuget.pack({ nuget: nugetPath, version: version }))
-      .pipe(gulp.dest('../bin/VS'))
-  );
+gulp.task('nuget-pack-projectTemplates', function () {
+  var nugetPath = './nuget.exe';
 
-  streams.push(
-    gulp.src('./PackageFiles/Templates.nuspec')
-      .pipe(nuget.pack({ nuget: nugetPath, version: version }))
-      .pipe(gulp.dest('../bin/Temp/'))
-  );
+  return gulp.src('./PackageFiles/ProjectTemplates.nuspec')
+    .pipe(nuget.pack({ nuget: nugetPath, version: version }))
+    .pipe(gulp.dest('../bin/VS'));
+});
 
-  return gulpMerge(streams);
+gulp.task('nuget-pack-Templates', function () {
+  var nugetPath = './nuget.exe';
+
+  return gulp
+    .src('./PackageFiles/Templates.nuspec')
+    .pipe(nuget.pack({ nuget: nugetPath, version: version }))
+    .pipe(gulp.dest('../bin/Temp/'));
+
 });
 
 gulp.task('nuget-download', function (done) {
@@ -202,9 +204,9 @@ gulp.task('build-bindings', function (cb) {
 });
 
 gulp.task('zip-output', function () {
-  return gulp.src('../bin/Portal/out/**/*.json')
-    .pipe(zip('out.zip'))
-    .pipe(gulp.dest('../bin/Portal'));
+  return gulp.src('../bin/Templates/**/*.json')
+    .pipe(zip(version + '.zip'))
+    .pipe(gulp.dest('../bin/'));
 });
 
 gulp.task(
@@ -212,7 +214,9 @@ gulp.task(
   gulp.series(
     'clean',
     'nuget-download',
-    'nuget-pack',
+    'nuget-pack-itemTemplate',
+    'nuget-pack-projectTemplates',
+    'nuget-pack-Templates',
     'unzip-templates',
     'resources-convert',
     'resources-build',
