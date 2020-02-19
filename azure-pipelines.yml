@@ -1,0 +1,54 @@
+name: $(Build.SourceBranchName)_$(Build.Reason)_$(devops_buildNumber)
+
+pr:
+  branches:
+    include:
+    - master
+    - dev
+
+trigger:
+  branches:
+    include:
+    - dev
+    - master
+
+pool:
+  vmImage: 'vs2017-win2016'
+
+variables:
+  devops_buildNumber: $[counter(format(''), 1500)]
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: '.\Build'
+
+- task: Gulp@1
+  inputs:
+    buildNumber: $(devops_buildNumber)
+    gulpFile: '.\Build\gulpfile.js'
+    targets: 'build-all'
+    enableCodeCoverage: false
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.Repository.LocalPath)\bin\VS'
+    Contents: '*.nupkg'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    CleanTargetFolder: true
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.Repository.LocalPath)\bin'
+    Contents: '*.zip'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    CleanTargetFolder: false
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
