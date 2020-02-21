@@ -1,14 +1,3 @@
-#if (portalTemplates)
-#r "Microsoft.Azure.EventHubs"
-
-
-using System;
-using System.Text;
-using Microsoft.Azure.EventHubs;
-
-public static async Task Run(EventData[] events, ILogger log)
-#endif
-#if (vsTemplates)
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,22 +13,21 @@ namespace Company.Function
     {
         [FunctionName("EventHubTriggerCSharp")]
         public static async Task Run([EventHubTrigger("eventHubNameValue", Connection = "ConnectionValue")] EventData[] events, ILogger log)
-#endif
         {
             var exceptions = new List<Exception>();
 
             foreach (EventData eventData in events)
             {
                 try
-                {                    
+                {
                     string messageBody = Encoding.UTF8.GetString(eventData.Body.Array, eventData.Body.Offset, eventData.Body.Count);
 
                     // Replace these two lines with your processing logic.
                     log.LogInformation($"C# Event Hub trigger function processed a message: {messageBody}");
-                    await Task.Yield();                    
+                    await Task.Yield();
                 }
                 catch (Exception e)
-                {                    
+                {
                     // We need to keep processing the rest of the batch - capture this exception and continue.
                     // Also, consider capturing details of the message that failed processing so it can be processed again later.
                     exceptions.Add(e);
@@ -54,7 +42,5 @@ namespace Company.Function
             if (exceptions.Count == 1)
                 throw exceptions.Single();
         }
-#if (vsTemplates)
     }
 }
-#endif

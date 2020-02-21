@@ -1,9 +1,3 @@
-#if (portalTemplates)
-using System;
-
-public static void Run(string myQueueItem, ILogger log)
-#endif
-#if (vsTemplates)
 using System;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
@@ -15,11 +9,8 @@ namespace Company.Function
     {
         [FunctionName("QueueTriggerCSharp")]
         public static void Run([QueueTrigger("PathValue", Connection = "ConnectionValue")]string myQueueItem, ILogger log)
-#endif
         {
             log.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
         }
-#if (vsTemplates)
     }
 }
-#endif
