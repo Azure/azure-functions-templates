@@ -10,7 +10,7 @@ const decompress = require('gulp-decompress');
 const zip = require('gulp-zip');
 const request = require('request');
 const nuget = require('gulp-nuget');
-const version = '2.1.' + process.env.devops_buildNumber;
+const version = '3.1.' + process.env.devops_buildNumber;
 
 gulp.task('nuget-pack-itemTemplate', function () {
   var nugetPath = './nuget.exe';
