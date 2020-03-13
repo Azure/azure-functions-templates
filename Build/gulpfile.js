@@ -10,7 +10,18 @@ const decompress = require('gulp-decompress');
 const zip = require('gulp-zip');
 const request = require('request');
 const nuget = require('gulp-nuget');
-const version = '2.1.' + process.env.devops_buildNumber;
+
+if (process.env.devops_buildNumber) {
+  version = '2.1.' + process.env.devops_buildNumber;
+}
+else {
+  version = '2.0.0';
+}
+
+gulp.copy = function (src, dest) {
+  return gulp.src(src)
+    .pipe(gulp.dest(dest));
+};
 
 gulp.task('nuget-pack-itemTemplate', function () {
   var nugetPath = './nuget.exe';
@@ -29,6 +40,14 @@ gulp.task('nuget-pack-projectTemplates', function () {
     .pipe(gulp.dest('../bin/VS'));
 });
 
+gulp.task('nuget-pack-bundle-v1', function () {
+  var nugetPath = './nuget.exe';
+
+  return gulp.src('./PackageFiles/ExtensionBundleTemplates-1.x.nuspec')
+    .pipe(nuget.pack({ nuget: nugetPath, version: version }))
+    .pipe(gulp.dest('../bin/Temp-ExtensionBundle.Templates-v1'));
+});
+
 gulp.task('nuget-pack-Templates', function () {
   var nugetPath = './nuget.exe';
 
@@ -36,7 +55,6 @@ gulp.task('nuget-pack-Templates', function () {
     .src('./PackageFiles/Templates.nuspec')
     .pipe(nuget.pack({ nuget: nugetPath, version: version }))
     .pipe(gulp.dest('../bin/Temp/'));
-
 });
 
 gulp.task('nuget-download', function (done) {
@@ -63,7 +81,8 @@ gulp.task('clean', function (cb) {
 
 gulp.task('clean-temp', function (cb) {
   return del([
-    '../bin/Temp'
+    '../bin/Temp',
+    '../bin/Temp-ExtensionBundle.Templates-v1'
   ], { force: true });
 });
 
@@ -75,8 +94,29 @@ gulp.task('unzip-templates', function () {
       .pipe(decompress())
       .pipe(gulp.dest(`../bin/Temp/`))
   );
+
+  streams.push(
+    gulp
+      .src(`../bin/Temp-ExtensionBundle.Templates-v1/*`)
+      .pipe(decompress())
+      .pipe(gulp.dest(`../bin/Temp-ExtensionBundle.Templates-v1/`))
+  );
   return gulpMerge(streams);
 });
+
+gulp.task('copy-bindings-resources-to-bundle', function () {
+  let streams = [];
+  streams.push(
+    gulp.copy('../bin/Templates/bindings/*', '../bin/ExtensionBundle.Templates-v1/bindings/')
+  );
+
+  streams.push(
+    gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Templates-v1/resources/')
+  );
+
+  return gulpMerge(streams);
+});
+
 
 /********
  *   This task takes the Resource Resx files from both templates folder and Portal Resources Folder and converts them to json, it drops them into a intermediate 'convert' folder.
@@ -152,7 +192,7 @@ gulp.task('resources-copy', function () {
  */
 
 gulp.task('build-templates', function (cb) {
-  const version = '3';
+  const version = '2';
   let templateListJson = [];
   const templates = getSubDirectories(path.join('../bin/Temp', 'templates'));
   templates.forEach(template => {
@@ -169,6 +209,32 @@ gulp.task('build-templates', function (cb) {
     templateListJson.push(templateObj);
   });
   let writePath = path.join('../bin/Templates', 'templates');
+  if (!fs.existsSync(writePath)) {
+    fs.mkdirSync(writePath);
+  }
+  writePath = path.join(writePath, 'templates.json');
+  fs.writeFileSync(writePath, new Buffer(JSON.stringify(templateListJson, null, 2)));
+  cb();
+});
+
+gulp.task('build-ExtensionBundle-v1-Templates', function (cb) {
+  const version = '2';
+  let templateListJson = [];
+  const templates = getSubDirectories(path.join('../bin/Temp-ExtensionBundle.Templates-v1', 'templates'));
+  templates.forEach(template => {
+    let templateObj = {};
+    const filePath = path.join('../bin/Temp-ExtensionBundle.Templates-v1', 'templates', template);
+    let files = getFilesWithContent(filePath, ['function.json', 'metadata.json']);
+
+    templateObj.id = template;
+    templateObj.runtime = version;
+    templateObj.files = files;
+
+    templateObj.function = require(path.join(filePath, 'function.json'));
+    templateObj.metadata = require(path.join(filePath, 'metadata.json'));
+    templateListJson.push(templateObj);
+  });
+  let writePath = path.join('../bin/ExtensionBundle.Templates-v1', 'templates');
   if (!fs.existsSync(writePath)) {
     fs.mkdirSync(writePath);
   }
@@ -204,9 +270,20 @@ gulp.task('build-bindings', function (cb) {
 });
 
 gulp.task('zip-output', function () {
-  return gulp.src('../bin/Templates/**/*.json')
-    .pipe(zip(version + '.zip'))
-    .pipe(gulp.dest('../bin/'));
+  let streams = [];
+  streams.push(
+    gulp.src('../bin/Templates/**/*.json')
+      .pipe(zip(version + '.zip'))
+      .pipe(gulp.dest('../bin/'))
+  );
+
+  streams.push(
+    gulp.src('../bin/ExtensionBundle.Templates-v1/**/*.json')
+      .pipe(zip('Microsoft.Azure.Functions.ExtensionBundle.Templates-v1-' +version + '.zip'))
+      .pipe(gulp.dest('../bin/'))
+  );
+
+  return gulpMerge(streams);
 });
 
 gulp.task(
@@ -217,12 +294,15 @@ gulp.task(
     'nuget-pack-itemTemplate',
     'nuget-pack-projectTemplates',
     'nuget-pack-Templates',
+    'nuget-pack-bundle-v1',
     'unzip-templates',
     'resources-convert',
     'resources-build',
     'resources-copy',
     'build-templates',
     'build-bindings',
+    'copy-bindings-resources-to-bundle',
+    'build-ExtensionBundle-v1-Templates',
     'zip-output',
     'clean-temp'
   )
