@@ -125,6 +125,11 @@ The templates includes metadata files in addition to the files required to execu
 
 # Adding dotnet templates
 Dotnet used in Visual studio are driven by dotnet templating engine. Follow this [documentation](https://docs.microsoft.com/en-us/dotnet/core/tools/custom-templates) to learn how to create dotnet templates. You can find more information on the templating engine at the [wiki page](https://github.com/dotnet/templating/wiki) of the dotnet templating repository.
+- After you have created a dotnet tempalte, Add the file entries to the ItemTemplates [nuspec file](Build/PackageFiles/ItemTemplates.nuspec).
+
+# Adding templates to extension bundle
+1. Follow the steps mentioned in the [adding a new tempalte](#adding-a-new-template) section.
+2. Add the file entries to the [ExtensionBundleTemplates-1.x nuspec file](Build/PackageFiles/ExtensionBundleTemplates-1.x.nuspec) or [ExtensionBundleTemplates-2.x nuspec file](Build/PackageFiles/ExtensionBundleTemplates-2.x.nuspec) depending on your requirement.
 
 # Testing templates
 
