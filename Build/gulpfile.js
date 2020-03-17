@@ -18,6 +18,13 @@ else {
   version = '2.0.0';
 }
 
+if (process.env.devops_buildNumber) {
+  bundleTemplateVersion = '1.0.' + process.env.devops_buildNumber;
+}
+else {
+  bundleTemplateVersion = '1.0.0';
+}
+
 gulp.copy = function (src, dest) {
   return gulp.src(src)
     .pipe(gulp.dest(dest));
@@ -279,7 +286,7 @@ gulp.task('zip-output', function () {
 
   streams.push(
     gulp.src('../bin/ExtensionBundle.Templates-v1/**/*.json')
-      .pipe(zip('Microsoft.Azure.Functions.ExtensionBundle.Templates-v1-' +version + '.zip'))
+      .pipe(zip('ExtensionBundle.v1.Templates.' + bundleTemplateVersion + '.zip'))
       .pipe(gulp.dest('../bin/'))
   );
 
