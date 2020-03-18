@@ -32,19 +32,22 @@ namespace CheckResourceStrings
             var resourceStrings = JsonConvert.DeserializeObject<ResourceStringsObj>(content);
             PrintMissingResourceStrings(resourceStrings.EnglishResourceMap, resoucesStringNames, defaultResourceFilePath);
 
-            defaultResourceFilePath = Path.Combine(resourcesLocation, $"Resources.en-US.json");
-            Helper.CheckJsonFilePath(defaultResourceFilePath);
-            content = File.ReadAllText(defaultResourceFilePath);
-            resourceStrings = JsonConvert.DeserializeObject<ResourceStringsObj>(content);
-            PrintMissingResourceStrings(resourceStrings.EnglishResourceMap, resoucesStringNames, defaultResourceFilePath);
-
-            foreach (var locale in FunctionsConstants.Locales)
+            if (args.Length > 1 && bool.TryParse(args[1], out bool checkAllLocales) && checkAllLocales)
             {
-                string resourceFilePath = Path.Combine(resourcesLocation, $"Resources.{locale}.json");
-                Helper.CheckJsonFilePath(resourceFilePath);
-                var fileContent = File.ReadAllText(resourceFilePath);
-                var bundleresourceStrings = JsonConvert.DeserializeObject<ResourceStringsObj>(fileContent);
-                PrintMissingResourceStrings(bundleresourceStrings.LanguageResourceMap, resoucesStringNames, resourceFilePath);
+                defaultResourceFilePath = Path.Combine(resourcesLocation, $"Resources.en-US.json");
+                Helper.CheckJsonFilePath(defaultResourceFilePath);
+                content = File.ReadAllText(defaultResourceFilePath);
+                resourceStrings = JsonConvert.DeserializeObject<ResourceStringsObj>(content);
+                PrintMissingResourceStrings(resourceStrings.EnglishResourceMap, resoucesStringNames, defaultResourceFilePath);
+
+                foreach (var locale in FunctionsConstants.Locales)
+                {
+                    string resourceFilePath = Path.Combine(resourcesLocation, $"Resources.{locale}.json");
+                    Helper.CheckJsonFilePath(resourceFilePath);
+                    var fileContent = File.ReadAllText(resourceFilePath);
+                    var bundleresourceStrings = JsonConvert.DeserializeObject<ResourceStringsObj>(fileContent);
+                    PrintMissingResourceStrings(bundleresourceStrings.LanguageResourceMap, resoucesStringNames, resourceFilePath);
+                }
             }
 
             Console.ReadLine();
