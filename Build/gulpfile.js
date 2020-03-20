@@ -25,6 +25,13 @@ else {
   bundleTemplateVersion = '1.0.0';
 }
 
+if (process.env.devops_buildNumber) {
+  bundleTemplateVersionV2 = '2.0.' + process.env.devops_buildNumber;
+}
+else {
+  bundleTemplateVersionV2 = '2.0.0';
+}
+
 gulp.copy = function (src, dest) {
   return gulp.src(src)
     .pipe(gulp.dest(dest));
@@ -342,7 +349,7 @@ gulp.task('zip-output', function () {
 
   streams.push(
     gulp.src('../bin/ExtensionBundle.Templates-v2/**/*.json')
-      .pipe(zip('ExtensionBundle.v2.Templates.' + bundleTemplateVersion + '.zip'))
+      .pipe(zip('ExtensionBundle.v2.Templates.' + bundleTemplateVersionV2 + '.zip'))
       .pipe(gulp.dest('../bin/'))
   );
 
