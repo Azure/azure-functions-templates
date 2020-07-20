@@ -1,0 +1,22 @@
+{
+  "defaultFunctionName": "negotiate",
+  "description": "$signalRConnectionInfoNegotiate_description",
+  "name": "SignalR negotiate HTTP trigger",
+  "language": "Custom",
+  "category": [
+    "$temp_category_core",
+    "$temp_category_api"
+  ],
+  "categoryStyle": "other",
+  "enabledInTryMode": false,
+  "userPrompt": [
+    "hubName",
+    "connectionStringSetting",
+    "route"
+  ],
+  "extensions": [
+    {
+      "id": "Microsoft.Azure.WebJobs.Extensions.SignalRService", "version": "1.0.2"
+    }
+  ]
+}
