@@ -1,0 +1,86 @@
+{
+    "author": "Microsoft",
+    "classifications": [
+        "Azure Function",
+        "Trigger",
+        "Http",
+        "SignalR"
+    ],
+    "name": "SignalRTrigger",
+    "identity": "Azure.Function.CSharp.SignalR.2.x",
+    "groupIdentity": "Azure.Function.SignalR",
+    "shortName": "signalr",
+    "tags": {
+        "language": "C#",
+        "type": "item"
+    },
+    "sourceName": "SignalRConnectionInfoHttpTriggerCSharp",
+    "symbols": {
+        "namespace": {
+            "description": "namespace for the generated code",
+            "replaces": "Company.Function",
+            "type": "parameter"
+        },
+        "AccessRights": {
+            "type": "parameter",
+            "description": "Authorization level controls whether the function requires an API key and which key to use; Function uses a function key; Admin uses your master key. The function and master keys are found in the 'keys' management panel on the portal, when your function is selected.",
+            "datatype": "choice",
+            "choices": [
+                {
+                    "choice": "Function",
+                    "description": "Function"
+                },
+                {
+                    "choice": "Anonymous",
+                    "description": "Anonymous"
+                },
+                {
+                    "choice": "Admin",
+                    "description": "Admin"
+                }
+            ],
+            "replaces": "AuthLevelValue",
+            "defaultValue": "Function"
+        },
+		"HubName": {
+			"description": "SignalR Hub Name",
+            "replaces": "HubValue",
+            "type": "parameter"
+		}
+    },
+    "primaryOutputs": [
+        {
+            "path": "SignalRConnectionInfoHttpTriggerCSharp.cs"
+        }
+    ],
+    "defaultName": "SignalRConnectionInfoHttpTriggerCSharp",
+	"postActions": [
+    {
+      "Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.SignalRService Nuget package",
+      "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+      "ContinueOnError": "true",
+      "ManualInstructions": [],
+      "args": {
+        "referenceType": "package",
+        "reference": "Microsoft.Azure.WebJobs.Extensions.SignalRService", "version": "1.2.0",
+        "projectFileExtensions": ".csproj"
+      }
+    },
+    {
+      "description": "Restore NuGet packages required by this project.",
+      "manualInstructions": [],
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "continueOnError": true
+    },
+    {
+      "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+      "description": "Opens the function class file in the editor",
+      "manualInstructions": [],
+      "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+      "args": {
+        "files": "0"
+      },
+      "continueOnError": true
+    }
+  ]
+}
