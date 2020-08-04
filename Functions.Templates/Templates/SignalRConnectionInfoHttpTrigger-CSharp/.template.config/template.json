@@ -7,14 +7,14 @@
         "SignalR"
     ],
     "name": "SignalRTrigger",
-    "identity": "Azure.Function.CSharp.SignalRTrigger.2.x",
-    "groupIdentity": "Azure.Function.SignalRTrigger",
+    "identity": "Azure.Function.CSharp.SignalR.2.x",
+    "groupIdentity": "Azure.Function.SignalR",
     "shortName": "signalr",
     "tags": {
         "language": "C#",
         "type": "item"
     },
-    "sourceName": "SignalRTriggerCSharp",
+    "sourceName": "SignalRConnectionInfoHttpTriggerCSharp",
     "symbols": {
         "namespace": {
             "description": "namespace for the generated code",
@@ -55,17 +55,6 @@
     ],
     "defaultName": "SignalRConnectionInfoHttpTriggerCSharp",
 	"postActions": [
-    {
-      "Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.SignalRService NuGet package",
-      "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
-      "ContinueOnError": "true",
-      "ManualInstructions": [],
-      "args": {
-        "referenceType": "package",
-        "reference": "Microsoft.Azure.WebJobs.Extensions.SignalRService", "version": "1.2.0",
-        "projectFileExtensions": ".csproj"
-      }
-    },
     {
       "Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.SignalRService Nuget package",
       "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
