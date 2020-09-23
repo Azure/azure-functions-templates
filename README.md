@@ -125,11 +125,12 @@ The templates includes metadata files in addition to the files required to execu
 
 # Adding dotnet templates
 Dotnet used in Visual studio are driven by dotnet templating engine. Follow this [documentation](https://docs.microsoft.com/en-us/dotnet/core/tools/custom-templates) to learn how to create dotnet templates. You can find more information on the templating engine at the [wiki page](https://github.com/dotnet/templating/wiki) of the dotnet templating repository.
-- After you have created a dotnet tempalte, Add the file entries to the ItemTemplates [nuspec file](Build/PackageFiles/ItemTemplates.nuspec).
+- After you have created a dotnet template, Add the file entries to the ItemTemplates [nuspec file](Build/PackageFiles/ItemTemplates.nuspec).
 
 # Adding templates to extension bundle
 1. Follow the steps mentioned in the [adding a new template](#adding-a-new-template) section.
 2. Add the file entries to the [ExtensionBundleTemplates-1.x nuspec file](Build/PackageFiles/ExtensionBundleTemplates-1.x.nuspec) or [ExtensionBundleTemplates-2.x nuspec file](Build/PackageFiles/ExtensionBundleTemplates-2.x.nuspec) depending on your requirement.
+3. Add the file entries to the [Templates nuspec file](Build/PackageFiles/Templates.nuspec)
 
 # Testing templates
 
@@ -147,21 +148,23 @@ Dotnet used in Visual studio are driven by dotnet templating engine. Follow this
 2. Make sure all instances of Visual Studio are closed
 2. Open the `LastKnownGood` found at `%userprofile%\AppData\Local\AzureFunctionsTools\Tags\v2`
 3. Note the release version present in the file
-4. Open the templates folder `%userprofile%\AppData\Local\AzureFunctionsTools\Releases\<releaseVersion>\templates` matching the release version found in step 2.
-5. Replace the contents of the folder with the one found in `..\bin\Templates`
-6. Delete the `%userprofile%\.templateengine` directory
-7. Select `Azure Functions v2 (.NET Core)` when creating a new function app via Visual Studio 
+4. Open the templates folder `%userprofile%\AppData\Local\AzureFunctionsTools\Releases\<releaseVersion>\templates` matching the release version found in step 2. (Note: if adding the files to the release version folder found in `LastKnownGood` doesn't work, then try other release version folders.)
+5. Replace the contents of the folder with the one found in `..\bin\VS`
+6. Rename `Microsoft.Azure.WebJobs.ItemTemplates.X.0.0.nupkg` to `ItemTemplates.nupkg`
+7. Delete the `%userprofile%\.templateengine` directory
+8. Select `Azure Functions v2 (.NET Core)` when creating a new function app via Visual Studio 
 
 ## Extension bundle template via Azure Function Core Tools
 1. Trigger extension bundle download
-   1. Create a new function app using `func init .`
-   2. Start a function app by running `func host start` or `func start`
+   1. Create a new function app using `func init .` (If you are testing .csx files then run `func init . --csx`)
 2. Once the template files have been added / updated, build the templates using the [Build Steps](#build-steps)
 3. Locate the built templates at `..\bin\ExtensionBundle.Templates-v1`
 4. Locate the bundle at `%userprofile%\AppData\Local\Temp\Functions\ExtensionBundles\`
 5. Replace the contents of the `StaticContent\v1` directory for the bundle you want to test
     - Sample Location: `%userprofile%\AppData\Local\Temp\Functions\ExtensionBundles\Microsoft.Azure.Functions.ExtensionBundle\1.1.1\StaticContent\v1`
-6. Create a new function app using `func init .`
+6. Create a new function app using `func init .` (If you are testing .csx files then run `func init . --csx`)
+7. Create a new function using  `func new` (If you are testing .csx files then run `func new --csx`)
+8. Start a function app by running `func host start` or `func start`
 
 # License
 
