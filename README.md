@@ -130,7 +130,6 @@ Dotnet used in Visual studio are driven by dotnet templating engine. Follow this
 # Adding templates to extension bundle
 1. Follow the steps mentioned in the [adding a new template](#adding-a-new-template) section.
 2. Add the file entries to the [ExtensionBundleTemplates-1.x nuspec file](Build/PackageFiles/ExtensionBundleTemplates-1.x.nuspec) or [ExtensionBundleTemplates-2.x nuspec file](Build/PackageFiles/ExtensionBundleTemplates-2.x.nuspec) depending on your requirement.
-3. Add the file entries to the [Templates nuspec file](Build/PackageFiles/Templates.nuspec)
 
 # Testing templates
 
