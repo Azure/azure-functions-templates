@@ -155,16 +155,13 @@ Dotnet used in Visual studio are driven by dotnet templating engine. Follow this
 8. Select `Azure Functions v2 (.NET Core)` when creating a new function app via Visual Studio 
 
 ## Extension bundle template via Azure Function Core Tools
-1. Trigger extension bundle download
-   1. Create a new function app using `func init .` (If you are testing .csx files then run `func init . --csx`)
-2. Once the template files have been added / updated, build the templates using the [Build Steps](#build-steps)
-3. Locate the built templates at `..\bin\ExtensionBundle.Templates-v1`
-4. Locate the bundle at `%userprofile%\AppData\Local\Temp\Functions\ExtensionBundles\`
-5. Replace the contents of the `StaticContent\v1` directory for the bundle you want to test
-    - Sample Location: `%userprofile%\AppData\Local\Temp\Functions\ExtensionBundles\Microsoft.Azure.Functions.ExtensionBundle\1.1.1\StaticContent\v1`
-6. Create a new function app using `func init .` (If you are testing .csx files then run `func init . --csx`)
-7. Create a new function using  `func new` (If you are testing .csx files then run `func new --csx`)
-8. Start a function app by running `func host start` or `func start`
+1. Once the template files have been added / updated, build the templates using the [Build Steps](#build-steps)
+2. Locate the built templates at `..\bin\ExtensionBundle.Templates-v2`
+3. Replace the contents of the `StaticContent\v1` directory for the bundle you want to test
+    - Sample Location: `%userprofile%\AppData\Local\Temp\Functions\ExtensionBundles\Microsoft.Azure.Functions.ExtensionBundle\2.0.1\StaticContent\v1`
+4. Create a new function app using `func init .` (If you are testing .csx files then run `func init . --csx`)
+5. Create a new function using  `func new` (If you are testing .csx files then run `func new --csx`)
+6. Start a function app by running `func host start` or `func start`
 
 # License
 
