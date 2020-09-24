@@ -1155,6 +1155,39 @@
       ]
     },
     {
+      "type": "entityTrigger",
+      "displayName": "$entityTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\entityTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask", "version": "2.3.0"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "context",
+          "required": true,
+          "label": "$entityTrigger_name_label",
+          "help": "$entityTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "activity",
+          "value": "string",
+          "required": false,
+          "label": "$entityTrigger_activity_label",
+          "help": "$entityTrigger_activity_help"
+        }
+      ]
+    },
+    {
       "type": "orchestrationClient",
       "displayName": "$orchestrationClientIn_displayName",
       "direction": "in",
