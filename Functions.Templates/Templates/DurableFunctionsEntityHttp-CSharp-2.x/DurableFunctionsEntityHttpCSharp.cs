@@ -16,7 +16,7 @@ namespace Company.Function
         [DurableClient] IDurableEntityClient client,
         string entityKey)
         {
-            var entityId = new EntityId("Counter", entityKey);
+            var entityId = new EntityId(nameof(Counter), entityKey);
 
             if (req.Method == HttpMethod.Post)
             {
@@ -28,7 +28,7 @@ namespace Company.Function
             return req.CreateResponse(HttpStatusCode.OK, stateResponse.EntityState);
         }
 
-        [FunctionName("Counter")]
+        [FunctionName(nameof(Counter))]
         public static void Counter([EntityTrigger] IDurableEntityContext context)
         {
             switch (context.OperationName.ToLowerInvariant())
