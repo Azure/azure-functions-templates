@@ -61,7 +61,7 @@ namespace CheckResourceStrings
                 }
             }
 
-            if (missingResources.Count > 0)
+            if (missingResources.Count > 3)
             {
                 Console.WriteLine($"Following items are missing in {ResourceFileName}\n Missing Count:{missingResources.Count}");
                 foreach (var item in missingResources)
@@ -72,7 +72,7 @@ namespace CheckResourceStrings
                 return;
             }
 
-            Console.WriteLine($"Nothing missing {ResourceFileName} \n\n");
+            Console.WriteLine($"Nothing missing in {ResourceFileName}. Everything looks good. \n\n");
         }
     }
 }
