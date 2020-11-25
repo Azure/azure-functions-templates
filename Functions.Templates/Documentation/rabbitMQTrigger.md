@@ -4,8 +4,6 @@ The settings specify the following properties.
 
 - `queueName` : The name of the queue to listen to.
 - `connectionStringSetting` : The name of an app setting that has connection string.
-- `type` : Must be set to *rabbitMqTrigger*.
-- `direction` : Must be set to *in*. 
 
 #### C# code example that processes a RabbitMQ queue message
 
