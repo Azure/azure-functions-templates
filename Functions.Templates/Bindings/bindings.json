@@ -116,6 +116,16 @@
       ]
     },
     {
+	    "type": "rabbitMQTrigger",
+      "displayName": "$rabbitMQTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\rabbitMQTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.RabbitMQ", "version": "1.0.0-beta"
+      }
+    },
+    {
       "type": "queueTrigger",
       "displayName": "$queueTrigger_displayName",
       "direction": "trigger",
