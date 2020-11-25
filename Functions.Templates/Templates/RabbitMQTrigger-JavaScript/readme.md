@@ -4,7 +4,7 @@ The `RabbitMQTrigger` makes it incredibly easy to react to new events from a Rab
 
 ## How it works
 
-For a `RabbitMQTrigger` to work, you must provide a queue name that defines the queue messages will be read from.
+For a `RabbitMQTrigger` to work, you must provide a queue name which dictates where the queue messages should be read from.
 
 ## Learn more
 
