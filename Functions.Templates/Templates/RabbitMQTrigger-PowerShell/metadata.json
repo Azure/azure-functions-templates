@@ -1,0 +1,22 @@
+{
+  "defaultFunctionName": "RabbitMQTrigger",
+  "description": "$RabbitMQTrigger_description",
+  "name": "RabbitMQ trigger",
+  "language": "Powershell",
+  "category": [
+    "$temp_category_core",
+    "$temp_category_dataProcessing"
+  ],
+  "categoryStyle": "RabbitMQ",
+  "enabledInTryMode": true,
+  "userPrompt": [
+    "connectionStringSetting",
+    "queueName"
+  ],
+  "extensions": [
+    {
+      "id": "Microsoft.Azure.WebJobs.Extensions.RabbitMQ",
+      "version": "1.0.0-beta"
+    }
+  ]
+}
