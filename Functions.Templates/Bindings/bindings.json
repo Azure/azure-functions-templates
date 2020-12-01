@@ -16,8 +16,7 @@
     "apiHubTableEntityLabel": "$variables_apiHubTableEntityLabel",
     "apiHubTableEntityHelp": "$variables_apiHubTableEntityHelp",
     "apiHubTableConnectionLabel": "$variables_apiHubTableConnectionLabel",
-    "apiHubTableConnectionHelp": "$variables_apiHubTableConnectionHelp",
-    "rabbitMQConnectionStringSettingLabel": "$variables_rabbitmq_connectionstringsetting_label"
+    "apiHubTableConnectionHelp": "$variables_apiHubTableConnectionHelp"
   },
   "bindings": [
     {
@@ -153,7 +152,7 @@
           "value": "string",
           "resource": "AppSetting",
           "required": true,
-          "label": "[variables('rabbitMQConnectionStringSettingLabel')]",
+          "label": "$rabbitmq_connectionstringsetting_label",
           "help": "[variables('appSettingsHelp')]"
         }
       ]
