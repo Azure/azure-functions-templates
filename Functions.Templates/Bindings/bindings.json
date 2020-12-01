@@ -116,14 +116,46 @@
       ]
     },
     {
-      "type": "rabbitMQTrigger",
+      "type": "rabbitMqTrigger",
       "displayName": "$rabbitMQTrigger_displayName",
       "direction": "trigger",
       "enabledInTryMode": true,
       "documentation": "$content=Documentation\\rabbitMQTrigger.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.RabbitMQ", "version": "1.0.0-beta"
-      }
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "myQueueItem",
+          "required": true,
+          "label": "$rabbitmq_name_label",
+          "help": "$rabbitmq_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "queueName",
+          "value": "string",
+          "defaultValue": "myqueue",
+          "required": true,
+          "label": "$rabbitmq_queuename_label",
+          "help": "$rabbitmq_queuename_help"
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "resource": "AppSetting",
+          "required": true,
+          "label": "$rabbitmq_connectionstringsetting_label",
+          "help": "[variables('appSettingsHelp')]"
+        }
+      ]
     },
     {
       "type": "queueTrigger",
