@@ -8,29 +8,103 @@
     "name": "KafkaTrigger",
     "identity": "Azure.Function.CSharp.KafkaTrigger.2.x",
     "groupIdentity": "Azure.Function.KafkaTrigger",
-    "shortName": "rqueue",
+    "shortName": "kafka",
     "tags": {
         "language": "C#",
         "type": "item"
     },
     "sourceName": "KafkaTriggerCSharp",
     "symbols": {
-            "namespace": {
+        "namespace": {
             "description": "namespace for the generated code",
             "replaces": "Company.Function",
             "type": "parameter"
         },
-        "ConnectionStringSetting": {
-            "description": "The name of the app setting containing your Kafka connection.",
+        "BrokerList": {
+            "description": "List of the brokers",
             "type": "parameter",
-            "defaultValue": "",
-            "replaces": "ConnectionValue"
+            "defaultValue": "BrokerList",
+            "replaces": "BrokerList"
         },
-        "QueueName": {
-            "description": "This is the queue name.",
+        "Topic": {
+            "description": "Name of the topic to receive kafka messages from",
             "type": "parameter",
-            "defaultValue": "myqueue",
-            "replaces": "NameOfQueue"
+            "defaultValue": "topic",
+            "replaces": "topic"
+        },
+        "Username": {
+            "description": "SASL username for use with the PLAIN and SASL_SCRAM",
+            "type": "parameter",
+            "defaultValue": "$ConnectionString",
+            "replaces": "$ConnectionString"
+        },
+        "Password": {
+            "description": "SASL password for use with the PLAIN and SASL_SCRAM",
+            "type": "parameter",
+            "defaultValue": "%Password%",
+            "replaces": "%Password%"
+        },
+        "Protocol": {
+            "description": "Security protocol used to communicate with brokers",
+            "datatype": "choice",
+            "choices": [
+                {
+                    "choice": "NotSet",
+                    "description": "NotSet"
+                },
+                {
+                    "choice": "Plaintext",
+                    "description": "Plaintext"
+                },
+                {
+                    "choice": "Ssl",
+                    "description": "Ssl"
+                },
+                {
+                    "choice": "SaslPlaintext",
+                    "description": "SaslPlaintext"
+                },
+                {
+                    "choice": "SaslSsl",
+                    "description": "SaslSsl"
+                }
+            ],
+            "defaultValue": "SaslSsl",
+            "replaces": "SaslSsl"
+        },
+        "AuthenticationMode": {
+            "description": "SASL mechanism to use for authentication",
+            "datatype": "choice",
+            "choices": [
+                {
+                    "choice": "NotSet",
+                    "description": "NotSet"
+                },
+                {
+                    "choice": "Gssapi",
+                    "description": "Gssapi"
+                },
+                {
+                    "choice": "Plain",
+                    "description": "Plain"
+                },
+                {
+                    "choice": "ScramSha256",
+                    "description": "ScramSha256"
+                },
+                {
+                    "choice": "ScramSha512",
+                    "description": "ScramSha512"
+                }
+            ],
+            "defaultValue": "Plain",
+            "replaces": "Plain"
+        },
+        "ConsumerGroup": {
+            "description": "Consumer Group",
+            "type": "parameter",
+            "defaultValue": "$Default",
+            "replaces": "$Default"
         }
     },
     "primaryOutputs": [
