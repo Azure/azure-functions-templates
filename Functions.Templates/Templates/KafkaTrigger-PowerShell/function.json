@@ -4,13 +4,13 @@
             "type": "kafkaTrigger",
             "name": "kafkaEvent",
             "direction": "in",
-            "brokerList" : "BrokerList",
-            "topic" : "topic",
-            "username" : "$ConnectionString",
-            "password" : "%Password%",
-            "protocol" : "SASLSSL",
-            "authenticationMode" : "PLAIN",
-            "consumerGroup" : "$Default"
+            "brokerList": "BrokerList",
+            "topic": "topic",
+            "username": "$ConnectionString",
+            "password": "%Password%",
+            "protocol": "saslSsl",
+            "authenticationMode": "plain",
+            "consumerGroup": "$Default"
         }
     ]
 }
