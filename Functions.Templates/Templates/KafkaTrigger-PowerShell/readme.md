@@ -1,6 +1,6 @@
 # KafkaTrigger - PowerShell
 
-The `KafkaTrigger` makes it incredibly easy to react to new events from a Kafka Broker. This sample demonstrates a simple use case of processing data from a given Kafka Broker using C#.
+The `KafkaTrigger` makes it incredibly easy to react to new events from a Kafka Broker. This sample demonstrates a simple use case of processing data from a given Kafka Broker using PowerShell.
 
 ## How it works
 
