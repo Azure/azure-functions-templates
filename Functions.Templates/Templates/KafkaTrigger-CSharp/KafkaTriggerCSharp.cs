@@ -11,7 +11,10 @@ namespace Company.Function
     {
         // KafkaTrigger sample 
         // Consume the message from "topic" on the LocalBroker.
-        // Add LocalBroker to the local.settings.json e.g. "LocalBroker": "localhost:9092"
+        // Add `BrokerList` and `Password` to the local.settings.json
+        // For EventHubs
+        // "BrokerList": "{EVENT_HUBS_NAMESPACE}.servicebus.windows.net:9093"
+        // "Password":"{EVENT_HUBS_CONNECTION_STRING}
         [FunctionName("KafkaTrigger")]
         public static void Run(
             [KafkaTrigger("BrokerList",
