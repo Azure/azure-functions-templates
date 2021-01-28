@@ -11,6 +11,7 @@ const zip = require('gulp-zip');
 const request = require('request');
 const nuget = require('gulp-nuget');
 const version = '3.1.' + process.env.devops_buildNumber;
+const isolatedVersion = '3.1.' + process.env.devops_buildNumber + '-preview1';
 
 gulp.task('nuget-pack-itemTemplate', function () {
   var nugetPath = './nuget.exe';
@@ -21,11 +22,28 @@ gulp.task('nuget-pack-itemTemplate', function () {
     .pipe(gulp.dest('../bin/VS/'));
 });
 
+gulp.task('nuget-pack-itemTemplate-isolated', function () {
+  var nugetPath = './nuget.exe';
+
+  return gulp
+    .src('./PackageFiles/ItemTemplates-Isolated.nuspec')
+    .pipe(nuget.pack({ nuget: nugetPath, version: isolatedVersion }))
+    .pipe(gulp.dest('../bin/VS/'));
+});
+
 gulp.task('nuget-pack-projectTemplates', function () {
   var nugetPath = './nuget.exe';
 
   return gulp.src('./PackageFiles/ProjectTemplates.nuspec')
     .pipe(nuget.pack({ nuget: nugetPath, version: version }))
+    .pipe(gulp.dest('../bin/VS'));
+});
+
+gulp.task('nuget-pack-projectTemplates-isolated', function () {
+  var nugetPath = './nuget.exe';
+
+  return gulp.src('./PackageFiles/ProjectTemplates-Isolated.nuspec')
+    .pipe(nuget.pack({ nuget: nugetPath, version: isolatedVersion }))
     .pipe(gulp.dest('../bin/VS'));
 });
 
@@ -215,7 +233,9 @@ gulp.task(
     'clean',
     'nuget-download',
     'nuget-pack-itemTemplate',
+    'nuget-pack-itemTemplate-isolated',
     'nuget-pack-projectTemplates',
+    'nuget-pack-projectTemplates-isolated',
     'nuget-pack-Templates',
     'unzip-templates',
     'resources-convert',
