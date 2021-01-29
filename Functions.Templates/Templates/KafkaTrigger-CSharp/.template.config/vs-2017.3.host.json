@@ -1,0 +1,83 @@
+{
+  "name": {
+    "text": "Kafka trigger",
+    "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}",
+    "id": "2100"
+  },
+  "description": {
+    "text": "A C# function that will be run whenever a message is added to a specified Kafka Topic",
+    "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}",
+    "id": "2101"
+  },
+  "order": 1010,
+  "icon": "vs-2017.3/functionF.png",
+  "learnMoreLink": "https://go.microsoft.com/fwlink/?linkid=848145",
+  "uiFilters": [
+    "functions"
+  ],
+  "symbolInfo": [
+    {
+      "id": "BrokerList",
+      "name": {
+        "id": "2102",
+        "text": "List of the brokers",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      },
+      "isVisible": true
+    },
+    {
+      "id": "Topic",
+      "name": {
+        "id": "2103",
+        "text": "Name of the topic to receive kafka messages from",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      },
+      "isVisible": true
+    },
+    {
+      "id": "Username",
+      "name": {
+        "id": "2104",
+        "text": "SASL username for use with the PLAIN and SASL_SCRAM",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      },
+      "isVisible": true
+    },
+    {
+      "id": "Password",
+      "name": {
+        "id": "2105",
+        "text": "SASL password for use with the PLAIN and SASL_SCRAM",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      },
+      "isVisible": true
+    },
+    {
+      "id": "Protocol",
+      "name": {
+        "id": "2106",
+        "text": "Security protocol used to communicate with brokers",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      },
+      "isVisible": true
+    },
+    {
+      "id": "AuthenticationMode",
+      "name": {
+        "id": "2107",
+        "text": "SASL mechanism to use for authentication",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      },
+      "isVisible": true
+    },
+    {
+      "id": "ConsumerGroup",
+      "name": {
+        "id": "2108",
+        "text": "Consumer Group",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      },
+      "isVisible": true
+    }
+  ]
+}
