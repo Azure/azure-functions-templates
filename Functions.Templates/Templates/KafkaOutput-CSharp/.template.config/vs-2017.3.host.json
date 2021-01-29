@@ -1,0 +1,74 @@
+{
+  "name": {
+    "text": "Kafka output",
+    "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}",
+    "id": "2200"
+  },
+  "description": {
+    "text": "A C# function that will send a message to a specified Kafka Topic",
+    "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}",
+    "id": "2201"
+  },
+  "order": 1020,
+  "icon": "vs-2017.3/functionF.png",
+  "learnMoreLink": "https://go.microsoft.com/fwlink/?linkid=848145",
+  "uiFilters": [
+    "functions"
+  ],
+  "symbolInfo": [
+    {
+      "id": "BrokerList",
+      "name": {
+        "id": "2202",
+        "text": "List of the brokers",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      },
+      "isVisible": true
+    },
+    {
+      "id": "Topic",
+      "name": {
+        "id": "2203",
+        "text": "Name of the topic to receive kafka messages from",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      },
+      "isVisible": true
+    },
+    {
+      "id": "Username",
+      "name": {
+        "id": "2204",
+        "text": "SASL username for use with the PLAIN and SASL_SCRAM",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      },
+      "isVisible": true
+    },
+    {
+      "id": "Password",
+      "name": {
+        "id": "2205",
+        "text": "SASL password for use with the PLAIN and SASL_SCRAM",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      },
+      "isVisible": true
+    },
+    {
+      "id": "Protocol",
+      "name": {
+        "id": "2206",
+        "text": "Security protocol used to communicate with brokers",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      },
+      "isVisible": true
+    },
+    {
+      "id": "AuthenticationMode",
+      "name": {
+        "id": "2207",
+        "text": "SASL mechanism to use for authentication",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      },
+      "isVisible": true
+    }
+  ]
+}
