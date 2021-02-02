@@ -1,0 +1,31 @@
+{
+    "scriptFile": "__init__.py",
+    "bindings": [
+      {
+        "authLevel": "function",
+        "type": "httpTrigger",
+        "direction": "in",
+        "name": "req",
+        "methods": [
+          "get",
+          "post"
+        ]
+      },
+      {
+        "type": "kafka",
+        "direction": "out",
+        "name": "out",
+        "brokerList" : "BrokerList",
+        "topic" : "topic",
+        "username" : "$ConnectionString",
+        "password" : "%Password%",
+        "protocol" : "SASLSSL",
+        "authenticationMode" : "PLAIN"
+      },
+      {
+        "type": "http",
+        "direction": "out",
+        "name": "$return"
+      }
+    ]
+}
