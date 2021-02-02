@@ -256,6 +256,96 @@
       ]
     },
     {
+      "type": "kafka",
+      "displayName": "$kafkaOutput_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\kafkaOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Kafka", "version": "3.2.1"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "eventData",
+          "required": true,
+          "label": "$kafka_name_label",
+          "help": "$kafka_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "brokerList",
+          "value": "string",
+          "resource": "AppSetting",
+          "defaultValue": "BrokerList",
+          "required": true,
+          "label": "$kafka_brokerlist_label",
+          "help": "[variables('appSettingsHelp')]"
+        },
+        {
+          "name": "topic",
+          "value": "string",
+          "defaultValue": "topic",
+          "required": true,
+          "label": "$kafka_topic_label",
+          "help": "$kafka_topic_help"
+        },
+        {
+          "name": "username",
+          "value": "string",
+          "defaultValue": "$ConnectionString",         
+          "required": false,
+          "label": "$kafka_username_label",
+          "help": "$kafka_username_help"
+        },
+        {
+          "name": "password",
+          "value": "string",
+          "defaultValue": "%Password%",           
+          "resource": "AppSetting",
+          "required": false,
+          "label": "$kafka_password_label",
+          "help": "[variables('appSettingsHelp')]"
+        },
+        {
+          "name": "protocol",
+          "value": "enum",
+          "required": true,
+          "defaultValue":"SASLSSL",
+          "enum": [
+            "NOTSET",
+            "PLAINTEXT",
+            "SSL",
+            "SASLPLAINTEXT",
+            "SASLSSL"
+          ],
+          "label": "$kafka_protocol_label",
+          "help": "$kafka_protocol_help"
+        },
+        {
+          "name": "authenticationMode",
+          "value": "enum",
+          "defaultValue": "PLAIN",
+          "required": false,
+          "enum": [
+            "NOTSET",
+            "GSSAPI",
+            "PLAIN",
+            "SCRAMSHA256",
+            "SCRAMSHA512"
+          ],
+          "label": "$kafka_authenticationmode_label",
+          "help": "$kafka_authenticationmode_help"
+        }
+      ]
+    }, 
+    {
       "type": "queueTrigger",
       "displayName": "$queueTrigger_displayName",
       "direction": "trigger",
