@@ -1,0 +1,26 @@
+{
+  "defaultFunctionName": "KafkaTrigger",
+  "description": "$KafkaTrigger_description",
+  "name": "Kafka trigger",
+  "language": "Custom",
+  "category": [
+      "$temp_category_core",
+      "$temp_category_dataProcessing"
+  ],
+  "categoryStyle": "other",
+  "enabledInTryMode": false,
+  "userPrompt": [
+    "brokerList",
+    "topic",
+    "username",
+    "password",
+    "protocol",
+    "authenticationMode",
+    "consumerGroup"
+  ],
+  "extensions": [
+    {
+      "id": "Microsoft.Azure.WebJobs.Extensions.Kafka", "version": "3.2.1"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "defaultFunctionName": "KafkaOutput",
+  "description": "$KafkaOutput_description",
+  "name": "Kafka output",
+  "language": "Python",
+  "category": [
+      "$temp_category_core",
+      "$temp_category_dataProcessing"
+  ],
+  "categoryStyle": "other",
+  "enabledInTryMode": false,
+  "userPrompt": [
+    "brokerList",
+    "topic",
+    "username",
+    "password",
+    "protocol",
+    "authenticationMode"
+  ],
+  "extensions": [
+    {
+      "id": "Microsoft.Azure.WebJobs.Extensions.Kafka", "version": "3.2.1"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+    "bindings": [
+        {
+            "authLevel": "function",
+            "type": "httpTrigger",
+            "direction": "in",
+            "name": "Request",
+            "methods": [
+              "get",
+              "post"
+            ]
+          },
+          {
+            "type": "kafka",
+            "name": "Message",
+            "brokerList" : "BrokerList",
+            "topic" : "topic",
+            "username" : "$ConnectionString",
+            "password" : "%Password%",
+            "protocol" : "SASLSSL",
+            "authenticationMode" : "PLAIN",
+            "direction": "out"
+          },
+          {
+            "type": "http",
+            "direction": "out",
+            "name": "Response"
+          }
+    ]
+}
