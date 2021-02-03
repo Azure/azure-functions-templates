@@ -936,6 +936,12 @@
   <data name="QueueTrigger_description" xml:space="preserve">
     <value>指定した Azure Storage キューにメッセージが追加されるたびに実行される関数</value>
   </data>
+  <data name="KafkaTrigger_description" xml:space="preserve">
+    <value>指定した Kafka topic にメッセージが追加されるたびに実行される関数</value>
+  </data>
+  <data name="KafkaOutput_description" xml:space="preserve">
+    <value>指定した Kafka topic にメッセージを送信する関数</value>
+  </data>  
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
     <value>(試験段階) 外部ファイル プロバイダーにファイルが追加されると実行されるバッチ関数。</value>
   </data>
@@ -1677,6 +1683,9 @@ Microsoft Azure Service Management API - Azure Service Management に対する�
   </data>
   <data name="kafkaTrigger_displayName" xml:space="preserve">
     <value>Kafka</value>
+  </data>
+  <data name="kafkaOutput_displayName" xml:space="preserve">
+    <value>Kafka アウトプット</value>
   </data>
   <data name="BlobTrigger_name" xml:space="preserve">
     <value>BLOB トリガー</value>
