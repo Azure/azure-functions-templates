@@ -612,6 +612,12 @@
   <data name="rabbitMQTrigger_displayName" xml:space="preserve">
     <value>RabbitMQ</value>
   </data>
+  <data name="kafkaTrigger_displayName" xml:space="preserve">
+    <value>Kafka</value>
+  </data>
+  <data name="kafkaOutput_displayName" xml:space="preserve">
+    <value>Kafka Output</value>
+  </data>
   <data name="queueTrigger_displayName" xml:space="preserve">
     <value>Azure Queue Storage</value>
   </data>
@@ -936,6 +942,12 @@
   <data name="RabbitMQTrigger_description" xml:space="preserve">
     <value>A function that will be run whenever a message is added to a specified RabbitMQ queue</value>
   </data>
+  <data name="KafkaTrigger_description" xml:space="preserve">
+    <value>A function that will be run whenever a message is added to a specified Kafka topic</value>
+  </data>
+  <data name="KafkaOutput_description" xml:space="preserve">
+    <value>A function that will send messages to a specified Kafka topic</value>
+  </data>  
   <data name="SaasFileTriggerBatch_description" xml:space="preserve">
     <value>(Experimental) A Batch function that will be run whenever a file is added to a External File provider.</value>
   </data>
@@ -1821,5 +1833,47 @@ function app.</value>
   </data>
   <data name="rabbitmq_queuename_label" xml:space="preserve">
     <value>RabbitMQ queue name</value>
+  </data>
+  <data name="kafka_brokerlist_label" xml:space="preserve">
+    <value>List of Brokers</value>
+  </data>
+  <data name="kafka_name_help" xml:space="preserve">
+    <value>Name used to identify trigger in code</value>
+  </data>
+  <data name="kafka_name_label" xml:space="preserve">
+    <value>Message parameter name</value>
+  </data>
+  <data name="kafka_topic_help" xml:space="preserve">
+    <value>Name of the topic to receive kafka messages from</value>
+  </data>
+  <data name="kafka_topic_label" xml:space="preserve">
+    <value>Kafka topic name</value>
+  </data>
+  <data name="kafka_username_help" xml:space="preserve">
+    <value>SASL username for use with the PLAIN and SASL_SCRAM</value>
+  </data>
+  <data name="kafka_username_label" xml:space="preserve">
+    <value>SASL username</value>
+  </data>
+    <data name="kafka_password_label" xml:space="preserve">
+    <value>SASL password for use with the PLAIN and SASL_SCRAM</value>
+  </data>
+  <data name="kafka_protocol_help" xml:space="preserve">
+    <value>Security protocol used to communicate with brokers</value>
+  </data>
+  <data name="kafka_protocol_label" xml:space="preserve">
+    <value>Security Protocol</value>
+  </data>
+  <data name="kafka_authenticationmode_help" xml:space="preserve">
+    <value>SASL mechanism to use for authentication</value>
+  </data>
+  <data name="kafka_authenticationmode_label" xml:space="preserve">
+    <value>SASL mechanism</value>
+  </data>
+  <data name="kafka_consumergroup_help" xml:space="preserve">
+    <value>Consumer Group</value>
+  </data>
+  <data name="kafka_consumergroup_label" xml:space="preserve">
+    <value>Consumer Group</value>
   </data>
 </root>
