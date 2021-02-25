@@ -11,7 +11,7 @@ namespace Company.Function
         {
             var logger = context.GetLogger("TimerTriggerCSharp");
             logger.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
-            logger.LogInformation($"Next timer schedule at: {timerInfo.ScheduleStatus.Next}");
+            logger.LogInformation($"Next timer schedule at: {myTimer.ScheduleStatus.Next}");
         }
     }
 
