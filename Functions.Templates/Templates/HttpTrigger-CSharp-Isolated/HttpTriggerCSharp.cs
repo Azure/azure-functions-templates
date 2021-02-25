@@ -10,17 +10,15 @@ namespace Company.Function
     {
         [Function("HttpTriggerCSharp")]
         public static HttpResponseData Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post")] HttpRequestData req,
-            FunctionExecutionContext executionContext)
+            FunctionContext executionContext)
         {
             var logger = executionContext.GetLogger("HttpTriggerCSharp");
             logger.LogInformation("C# HTTP trigger function processed a request.");
 
-            var response = new HttpResponseData(HttpStatusCode.OK);
-            var headers = new Dictionary<string, string>();
-            headers.Add("Content", "Content - Type: text / html; charset = utf - 8");
+            var response = req.CreateResponse(HttpStatusCode.OK);
+            response.Headers.Add("Content", "Content - Type: text / html; charset = utf - 8");
 
-            response.Headers = headers;
-            response.Body = "Welcome to Azure Functions!";
+            response.WriteString("Welcome to Azure Functions!");
 
             return response;
         }
