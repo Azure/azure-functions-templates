@@ -6,7 +6,7 @@ namespace Company.Function
 {
     public static class ServiceBusQueueTriggerCSharp
     {
-        [FunctionN("ServiceBusQueueTriggerCSharp")]
+        [Function("ServiceBusQueueTriggerCSharp")]
         public static void Run([ServiceBusTrigger("QueueNameValue", Connection = "ConnectionValue")] string myQueueItem, FunctionContext context)
         {
             var logger = context.GetLogger("ServiceBusQueueTriggerCSharp");

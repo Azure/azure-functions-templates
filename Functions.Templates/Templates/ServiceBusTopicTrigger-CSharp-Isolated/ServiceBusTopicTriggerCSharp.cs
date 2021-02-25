@@ -6,7 +6,7 @@ namespace Company.Function
 {
     public static class ServiceBusTopicTriggerCSharp
     {
-        [FunctionName("ServiceBusTopicTriggerCSharp")]
+        [Function("ServiceBusTopicTriggerCSharp")]
         public static void Run([ServiceBusTrigger("TopicNameValue", "SubscriptionNameValue", Connection = "ConnectionValue")] string mySbMsg, FunctionContext context)
         {
             var logger = context.GetLogger("ServiceBusTopicTriggerCSharp");

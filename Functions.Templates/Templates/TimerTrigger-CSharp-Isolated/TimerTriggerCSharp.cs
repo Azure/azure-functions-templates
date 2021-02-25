@@ -6,7 +6,7 @@ namespace Company.Function
 {
     public static class TimerTriggerCSharp
     {
-        [FunctionName("TimerTriggerCSharp")]
+        [Function("TimerTriggerCSharp")]
         public static void Run([TimerTrigger("ScheduleValue")] MyInfo myTimer, FunctionContext context)
         {
             var logger = context.GetLogger("TimerTriggerCSharp");
