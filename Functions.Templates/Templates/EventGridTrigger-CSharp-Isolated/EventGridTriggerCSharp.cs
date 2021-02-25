@@ -2,18 +2,16 @@
 // http://localhost:7071/runtime/webhooks/EventGrid?functionName={functionname}
 using System;
 using Microsoft.Azure.Functions.Worker;
-using Microsoft.Azure.Functions.Worker.Extensions.Abstractions;
-using Microsoft.Azure.Functions.Worker.Extensions.EventGrid;
 using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
     public static class EventGridTriggerCSharp
     {
-        [FunctionName("EventGridTriggerCSharp")]
+        [Function("EventGridTriggerCSharp")]
         public static void Run([EventGridTrigger] MyEvent input, FunctionContext context)
         {
-            var logger = context.Logger;
+            var logger = context.GetLogger("EventGridTriggerCSharp");
             logger.LogInformation(input.Data.ToString());
         }
     }
