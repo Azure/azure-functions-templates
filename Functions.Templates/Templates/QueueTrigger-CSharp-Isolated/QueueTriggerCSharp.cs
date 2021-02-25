@@ -8,7 +8,7 @@ namespace Company.Function
     {
         [Function("QueueTriggerCSharp")]
         public static void Run([QueueTrigger("PathValue", Connection = "ConnectionValue")] string myQueueItem,
-            FunctionContext executionContext)
+            FunctionContext context)
         {
             var logger = context.GetLogger("QueueTriggerCSharp");
             logger.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
