@@ -1,20 +1,18 @@
 using System.Collections.Generic;
 using System.Net;
 using Microsoft.Azure.Functions.Worker;
-using Microsoft.Azure.Functions.Worker.Extensions.Abstractions;
-using Microsoft.Azure.Functions.Worker.Extensions.Http;
-using Microsoft.Azure.Functions.Worker.Pipeline;
+using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
     public static class HttpTriggerCSharp
     {
-        [FunctionName("HttpTriggerCSharp")]
+        [Function("HttpTriggerCSharp")]
         public static HttpResponseData Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post")] HttpRequestData req,
             FunctionExecutionContext executionContext)
         {
-            var logger = executionContext.Logger;
+            var logger = executionContext.GetLogger("HttpTriggerCSharp");
             logger.LogInformation("C# HTTP trigger function processed a request.");
 
             var response = new HttpResponseData(HttpStatusCode.OK);

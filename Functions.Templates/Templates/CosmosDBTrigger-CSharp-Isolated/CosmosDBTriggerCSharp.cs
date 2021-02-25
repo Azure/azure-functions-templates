@@ -1,22 +1,20 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.Azure.Functions.Worker;
-using Microsoft.Azure.Functions.Worker.Extensions.Abstractions;
-using Microsoft.Azure.Functions.Worker.Extensions.CosmosDB;
 using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
     public static class CosmosDBTriggerCSharp
     {
-        [FunctionName("CosmosDBTriggerCSharp")]
+        [Function("CosmosDBTriggerCSharp")]
         public static void Run([CosmosDBTrigger(
             databaseName: "DatabaseValue",
             collectionName: "CollectionValue",
             ConnectionStringSetting = "ConnectionValue",
             LeaseCollectionName = "leases")] IReadOnlyList<MyDocument> input, FunctionContext context)
         {
-            var logger = context.Logger;
+            var logger = context.GetLogger("CosmosDBTriggerCSharp");
             if (input != null && input.Count > 0)
             {
                 logger.LogInformation("Documents modified " + input.Count);

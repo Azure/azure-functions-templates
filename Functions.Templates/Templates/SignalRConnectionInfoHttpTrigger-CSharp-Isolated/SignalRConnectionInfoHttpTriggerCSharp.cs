@@ -1,22 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Net;
 using Microsoft.Azure.Functions.Worker;
-using Microsoft.Azure.Functions.Worker.Extensions.Abstractions;
-using Microsoft.Azure.Functions.Worker.Extensions.Http;
-using Microsoft.Azure.Functions.Worker.Extensions.SignalRService;
-using Microsoft.Azure.Functions.Worker.Pipeline;
+using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
     public static class SignalRConnectionInfoHttpTriggerCSharp
     {
-        [FunctionName("negotiate")]
+        [Function("negotiate")]
         public static HttpResponseData Negotiate(
             [HttpTrigger(AuthorizationLevel.AuthLevelValue, "post")] HttpRequestData req,
             [SignalRConnectionInfoInput(HubName = "HubValue")] MyConnectionInfo connectionInfo, FunctionContext context)
         {
-            var logger = context.Logger;
+            var logger = context.GetLogger("negotiate");
             logger.LogInformation($"SignalR Connection URL = '{connectionInfo.Url}'");
 
             var response = new HttpResponseData(HttpStatusCode.OK);

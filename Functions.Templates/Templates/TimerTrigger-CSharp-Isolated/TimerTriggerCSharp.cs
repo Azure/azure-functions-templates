@@ -1,7 +1,5 @@
 using System;
 using Microsoft.Azure.Functions.Worker;
-using Microsoft.Azure.Functions.Worker.Extensions.Abstractions;
-using Microsoft.Azure.Functions.Worker.Extensions.Timer;
 using Microsoft.Extensions.Logging;
 
 namespace Company.Function
@@ -11,7 +9,7 @@ namespace Company.Function
         [FunctionName("TimerTriggerCSharp")]
         public static void Run([TimerTrigger("ScheduleValue")] MyInfo myTimer, FunctionContext context)
         {
-            var logger = context.Logger;
+            var logger = context.GetLogger("TimerTriggerCSharp");
             logger.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
             logger.LogInformation($"Next timer schedule at: {timerInfo.ScheduleStatus.Next}");
         }
