@@ -221,11 +221,26 @@
           "required": true,
           "defaultValue":"SASLSSL",
           "enum": [
-            "NOTSET",
-            "PLAINTEXT",
-            "SSL",
-            "SASLPLAINTEXT",
-            "SASLSSL"
+            {
+              "value": "NOTSET",
+              "display": "Not Set"
+            },
+            {
+              "value": "PLAINTEXT",
+              "display": "Plaintext"
+            },
+            {
+              "value": "SSL",
+              "display": "SSL"
+            },
+            {
+              "value": "SASLPLAINTEXT",
+              "display": "SASL Plaintext"
+            },
+            {
+              "value": "SASLSSL",
+              "display": "SASL SSL"
+            }
           ],
           "label": "$kafka_protocol_label",
           "help": "$kafka_protocol_help"
@@ -236,11 +251,26 @@
           "defaultValue": "PLAIN",
           "required": false,
           "enum": [
-            "NOTSET",
-            "GSSAPI",
-            "PLAIN",
-            "SCRAMSHA256",
-            "SCRAMSHA512"
+            {
+              "value": "NOTSET",
+              "display": "Not Set"
+            },
+            {
+              "value": "GSSAPI",
+              "display": "GSS API"
+            },
+            {
+              "value": "PLAIN",
+              "display": "Plain"
+            },
+            {
+              "value": "SCRAMSHA256",
+              "display": "SCRAM SHA-256"
+            },
+            {
+              "value": "SCRAMSHA512",
+              "display": "SCRAM SHA-512"
+            }
           ],
           "label": "$kafka_authenticationmode_label",
           "help": "$kafka_authenticationmode_help"
@@ -319,11 +349,26 @@
           "required": true,
           "defaultValue":"SASLSSL",
           "enum": [
-            "NOTSET",
-            "PLAINTEXT",
-            "SSL",
-            "SASLPLAINTEXT",
-            "SASLSSL"
+            {
+              "value": "NOTSET",
+              "display": "Not Set"
+            },
+            {
+              "value": "PLAINTEXT",
+              "display": "Plaintext"
+            },
+            {
+              "value": "SSL",
+              "display": "SSL"
+            },
+            {
+              "value": "SASLPLAINTEXT",
+              "display": "SASL Plaintext"
+            },
+            {
+              "value": "SASLSSL",
+              "display": "SASL SSL"
+            }
           ],
           "label": "$kafka_protocol_label",
           "help": "$kafka_protocol_help"
@@ -334,11 +379,26 @@
           "defaultValue": "PLAIN",
           "required": false,
           "enum": [
-            "NOTSET",
-            "GSSAPI",
-            "PLAIN",
-            "SCRAMSHA256",
-            "SCRAMSHA512"
+            {
+              "value": "NOTSET",
+              "display": "Not Set"
+            },
+            {
+              "value": "GSSAPI",
+              "display": "GSS API"
+            },
+            {
+              "value": "PLAIN",
+              "display": "Plain"
+            },
+            {
+              "value": "SCRAMSHA256",
+              "display": "SCRAM SHA-256"
+            },
+            {
+              "value": "SCRAMSHA512",
+              "display": "SCRAM SHA-512"
+            }
           ],
           "label": "$kafka_authenticationmode_label",
           "help": "$kafka_authenticationmode_help"
