@@ -16,7 +16,7 @@ namespace Company.Function
             logger.LogInformation("C# HTTP trigger function processed a request.");
 
             var response = req.CreateResponse(HttpStatusCode.OK);
-            response.Headers.Add("Content", "Content - Type: text / html; charset = utf - 8");
+            response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
 
             response.WriteString("Welcome to Azure Functions!");
 
