@@ -10,8 +10,15 @@ const decompress = require('gulp-decompress');
 const zip = require('gulp-zip');
 const request = require('request');
 const nuget = require('gulp-nuget');
-const version = '3.1.' + process.env.devops_buildNumber;
-const isolatedVersion = '3.1.' + process.env.devops_buildNumber + '-preview1';
+
+if (process.env.devops_buildNumber) {
+  version = '3.1.' + process.env.devops_buildNumber;
+  isolatedVersion = '3.1.' + process.env.devops_buildNumber + '-preview1';
+}
+else {
+  version = '3.0.0';
+  isolatedVersion = '3.0.0';
+}
 
 gulp.task('nuget-pack-itemTemplate', function () {
   var nugetPath = './nuget.exe';
