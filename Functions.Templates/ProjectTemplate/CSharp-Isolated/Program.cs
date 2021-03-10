@@ -5,15 +5,15 @@ using Microsoft.Azure.Functions.Worker.Configuration;
 
 namespace Company.FunctionApp
 {
-    class Program
+    public class Program
     {
-        static async Task Main(string[] args)
+        public static void Main()
         {
-            var host = Host.CreateDefaultBuilder(args)
+            var host = new HostBuilder()
                 .ConfigureFunctionsWorkerDefaults()
                 .Build();
 
-            await host.RunAsync();
+            host.Run();
         }
     }
 }
