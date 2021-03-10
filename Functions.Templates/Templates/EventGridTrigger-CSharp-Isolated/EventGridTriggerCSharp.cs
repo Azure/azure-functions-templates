@@ -24,7 +24,9 @@ namespace Company.Function
 
         public string Subject { get; set; }
 
-        public int EventType { get; set; }
+        public string EventType { get; set; }
+
+        public DateTime EventTime { get; set; }
 
         public object Data { get; set; }
     }
