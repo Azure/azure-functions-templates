@@ -12,7 +12,7 @@ namespace Company.Function
             FunctionContext context)
         {
             var logger = context.GetLogger("BlobTriggerCSharp");
-            logger.LogInformation($"C# Blob trigger function Processed blob\n Name:{name} \n Data: {myBlob}");
+            logger.LogInformation($"C# Blob trigger function Processed blob\n Name: {name} \n Data: {myBlob}");
         }
     }
 }

@@ -9,15 +9,8 @@ namespace Company.FunctionApp
     {
         static async Task Main(string[] args)
         {
-            var host = new HostBuilder()
-                .ConfigureAppConfiguration(c =>
-                {
-                    c.AddCommandLine(args);
-                })
-                .ConfigureFunctionsWorker((c, b) =>
-                {
-                    b.UseFunctionExecutionMiddleware();
-                })
+            var host = Host.CreateDefaultBuilder(args)
+                .ConfigureFunctionsWorkerDefaults()
                 .Build();
 
             await host.RunAsync();

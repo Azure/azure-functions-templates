@@ -17,8 +17,8 @@ namespace Company.Function
             var logger = context.GetLogger("CosmosDBTriggerCSharp");
             if (input != null && input.Count > 0)
             {
-                logger.LogInformation("Documents modified " + input.Count);
-                logger.LogInformation("First document Id " + input[0].Id);
+                logger.LogInformation("Documents modified: " + input.Count);
+                logger.LogInformation("First document Id: " + input[0].Id);
             }
         }
     }
