@@ -9,10 +9,25 @@ namespace Company.Function
     public static class EventGridTriggerCSharp
     {
         [Function("EventGridTriggerCSharp")]
-        public static void Run([EventGridTrigger] string input, FunctionContext context)
+        public static void Run([EventGridTrigger] MyEvent input, FunctionContext context)
         {
             var logger = context.GetLogger("EventGridTriggerCSharp");
-            logger.LogInformation("Event: " + input);
+            logger.LogInformation(input.Data.ToString());
         }
+    }
+
+    public class MyEvent
+    {
+        public string Id { get; set; }
+
+        public string Topic { get; set; }
+
+        public string Subject { get; set; }
+
+        public string EventType { get; set; }
+
+        public DateTime EventTime { get; set; }
+
+        public object Data { get; set; }
     }
 }
