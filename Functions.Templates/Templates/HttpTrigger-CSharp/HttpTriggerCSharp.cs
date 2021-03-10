@@ -1,15 +1,20 @@
-using System;
 using System.IO;
+#if (enableOpenApiSupport)
 using System.Net;
+#endif
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
+#if (enableOpenApiSupport)
 using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Attributes;
 using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Enums;
+#endif
 using Microsoft.Extensions.Logging;
+#if (enableOpenApiSupport)
 using Microsoft.OpenApi.Models;
+#endif
 using Newtonsoft.Json;
 
 namespace Company.Function
