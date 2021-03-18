@@ -24,18 +24,28 @@ steps:
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
+- task: OneLocBuild@2
+  inputs:
+    locProj: 'Build\Localize\LocProject.json'
+    outDir: '$(Build.Repository.LocalPath)'
+    packageSourceAuth: 'patAuth'
+    patVariable: '$(ONELOCBUILD)'
+- task: PowerShell@2
+  env:
+    localPath: $(Build.Repository.LocalPath)
+  inputs:
+    filePath: '.\Build\LocbuildPostProcessing.ps1'
+  displayName: 'Copy localized files'
 - task: Npm@1
   inputs:
     command: 'install'
     workingDir: '.\Build'
-
 - task: Gulp@1
   inputs:
     buildNumber: $(devops_buildNumber)
     gulpFile: '.\Build\gulpfile.js'
     targets: 'build-all'
     enableCodeCoverage: false
-
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(Build.Repository.LocalPath)\bin\VS'
