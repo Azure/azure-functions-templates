@@ -40,12 +40,6 @@
             ],
             "replaces": "AuthLevelValue",
             "defaultValue": "Function"
-        },
-        "enableOpenApiSupport": {
-            "type": "parameter",
-            "datatype": "bool",
-            "defaultValue": "false",
-            "description": "Enable Open Api Support"
         }
     },
     "primaryOutputs": [
@@ -55,26 +49,6 @@
     ],
     "defaultName": "HttpTriggerCSharp",
     "postActions": [
-        {
-            "condition": "enableOpenApiSupport",
-            "Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.OpenApi NuGet package",
-            "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
-            "ContinueOnError": "true",
-            "ManualInstructions": [],
-            "args": {
-                "referenceType": "package",
-                "reference": "Microsoft.Azure.WebJobs.Extensions.OpenApi",
-                "version": "0.5.1-preview",
-                "projectFileExtensions": ".csproj"
-            }
-        },
-        {
-            "condition": "enableOpenApiSupport",
-            "description": "Restore NuGet packages required by this project.",
-            "manualInstructions": [],
-            "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
-            "continueOnError": true
-        },
         {
             "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
             "description": "Opens the function class file in the editor",
