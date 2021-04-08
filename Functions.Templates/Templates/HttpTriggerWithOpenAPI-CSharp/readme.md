@@ -1,4 +1,4 @@
-# HttpTrigger With OpenAPI Support - C<span>#</span>
+# HttpTrigger with OpenAPI Support - C<span>#</span>
 
 The `HttpTrigger` makes it incredibly easy to have your functions executed via an HTTP call to your function.
 
