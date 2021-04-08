@@ -1,20 +1,11 @@
+using System;
 using System.IO;
-#if (enableOpenApiSupport)
-using System.Net;
-#endif
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-#if (enableOpenApiSupport)
-using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Attributes;
-using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Enums;
-#endif
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-#if (enableOpenApiSupport)
-using Microsoft.OpenApi.Models;
-#endif
 using Newtonsoft.Json;
 
 namespace Company.Function
@@ -22,12 +13,6 @@ namespace Company.Function
     public static class HttpTriggerCSharp
     {
         [FunctionName("HttpTriggerCSharp")]
-#if (enableOpenApiSupport)
-        [OpenApiOperation(operationId: "Run", tags: new[] { "name" })]
-        [OpenApiSecurity("function_key", SecuritySchemeType.ApiKey, Name = "code", In = OpenApiSecurityLocationType.Query)]
-        [OpenApiParameter(name: "name", In = ParameterLocation.Query, Required = true, Type = typeof(string), Description = "The **Name** parameter")]
-        [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(string), Description = "The OK response")]
-#endif
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
@@ -48,4 +33,3 @@ namespace Company.Function
         }
     }
 }
-
