@@ -12,8 +12,8 @@ const request = require('request');
 const nuget = require('gulp-nuget');
 
 if (process.env.devops_buildNumber) {
-  version = '3.1.' + process.env.devops_buildNumber;
-  isolatedVersion = '3.1.' + process.env.devops_buildNumber;
+  version = '4.0.' + process.env.devops_buildNumber;
+  isolatedVersion = '4.0.' + process.env.devops_buildNumber;
 }
 else {
   version = '3.0.0';
