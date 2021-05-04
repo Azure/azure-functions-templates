@@ -51,6 +51,8 @@ npm install
 gulp build-all
 ```
 
+> These build steps only work on Windows
+
 # Template files
 The templates includes metadata files in addition to the files required to execute a function. The metadata files help drive the user interface and development experience for creating a function using a template. You can find information on the metadata files in the section below:
 
