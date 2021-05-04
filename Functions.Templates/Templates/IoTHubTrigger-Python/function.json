@@ -1,0 +1,15 @@
+{
+    "scriptFile": "__init__.py",
+    "bindings": [
+      {
+        "type": "eventHubTrigger",
+        "name": "iotHubMessages",
+        "direction": "in",
+        "eventHubName": "samples-workitems",
+        "connection": "",
+        "cardinality": "many",
+        "consumerGroup": "$Default",
+        "dataType": "binary"
+      }
+    ]
+}
