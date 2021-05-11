@@ -17,7 +17,9 @@ namespace Company.Function
     {
         [FunctionName("HttpTriggerWithOpenAPICSharp")]
         [OpenApiOperation(operationId: "Run", tags: new[] { "name" })]
+#if (AuthEnabled)
         [OpenApiSecurity("function_key", SecuritySchemeType.ApiKey, Name = "code", In = OpenApiSecurityLocationType.Query)]
+#endif
         [OpenApiParameter(name: "name", In = ParameterLocation.Query, Required = true, Type = typeof(string), Description = "The **Name** parameter")]
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(string), Description = "The OK response")]
         public static async Task<IActionResult> Run(
