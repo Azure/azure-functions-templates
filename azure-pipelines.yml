@@ -31,7 +31,7 @@ steps:
     outDir: '$(Build.Repository.LocalPath)'
     packageSourceAuth: 'patAuth'
     patVariable: '$(ONELOCBUILD)'
-  
+    continueOnError: true
 - task: CopyFiles@2
   displayName: 'Copy Loc files to publish directories'
   inputs:
