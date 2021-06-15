@@ -11,7 +11,7 @@ For a `KafkaOutput` to work, you must provide a topic name which dictates where 
 ### EventHubs for Kafka
 
 Add `BrokerList` and `EventHubsConnectionString` to your `local.settings.json`
- 
+
 _local.settings.json_
 
 ```json
