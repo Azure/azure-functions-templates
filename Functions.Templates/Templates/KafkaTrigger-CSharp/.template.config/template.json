@@ -41,8 +41,8 @@
         "Password": {
             "description": "SASL password for use with the PLAIN and SASL_SCRAM",
             "type": "parameter",
-            "defaultValue": "%Password%",
-            "replaces": "%Password%"
+            "defaultValue": "%EventHubsConnectionString%",
+            "replaces": "%EventHubsConnectionString%"
         },
         "Protocol": {
             "description": "Security protocol used to communicate with brokers",
