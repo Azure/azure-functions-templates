@@ -10,7 +10,7 @@ For a `KafkaTrigger` to work, you must provide a topic name which dictates where
 
 ### EventHubs for Kafka
 
-Add `BrokerList` and `Password` to your `local.settings.json`
+Add `BrokerList` and `EventHubsConnectionString` to your `local.settings.json`
 
 _local.settings.json_
 
@@ -21,7 +21,7 @@ _local.settings.json_
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "python",
     "BrokerList": "{YOUR_EVENT_HUBS_NAMESPACE}.servicebus.windows.net:9093",
-    "Password": "{EVENT_HUBS_CONNECTION_STRING}"
+    "EventHubsConnectionString": "{EVENT_HUBS_CONNECTION_STRING}"
   }
 }
 ```
