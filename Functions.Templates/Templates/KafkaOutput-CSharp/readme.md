@@ -10,7 +10,7 @@ For a `KafkaOutput` to work, you must provide a topic name which dictates where 
 
 ### EventHubs for Kafka
 
-Add `BrokerList` and `EventHubsConnectionString` to your `local.settings.json`
+Add `BrokerList` and `KafkaPassword` to your `local.settings.json`
 
 _local.settings.json_
 
@@ -21,7 +21,7 @@ _local.settings.json_
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
     "BrokerList": "{YOUR_EVENT_HUBS_NAMESPACE}.servicebus.windows.net:9093",
-    "EventHubsConnectionString": "{EVENT_HUBS_CONNECTION_STRING}"
+    "KafkaPassword": "{EVENT_HUBS_CONNECTION_STRING}"
   }
 }
 ```

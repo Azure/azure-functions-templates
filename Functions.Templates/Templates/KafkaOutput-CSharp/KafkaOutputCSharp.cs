@@ -18,7 +18,7 @@ namespace Company.Function
             [Kafka("BrokerList",
                    "topic",
                    Username = "$ConnectionString",
-                   Password = "%EventHubsConnectionString%",
+                   Password = "%KafkaPassword%",
                    Protocol = BrokerProtocol.SaslSsl,
                    AuthenticationMode = BrokerAuthenticationMode.Plain
             )] out string eventData,
