@@ -8,16 +8,16 @@ namespace Company.Function
     {
         // KafkaTrigger sample 
         // Consume the message from "topic" on the LocalBroker.
-        // Add `BrokerList` and `EventHubsConnectionString` to the local.settings.json
+        // Add `BrokerList` and `KafkaPassword` to the local.settings.json
         // For EventHubs
         // "BrokerList": "{EVENT_HUBS_NAMESPACE}.servicebus.windows.net:9093"
-        // "EventHubsConnectionString":"{EVENT_HUBS_CONNECTION_STRING}
+        // "KafkaPassword":"{EVENT_HUBS_CONNECTION_STRING}
         [FunctionName("KafkaTriggerCSharp")]
         public static void Run(
             [KafkaTrigger("BrokerList",
                           "topic",
                           Username = "$ConnectionString",
-                          Password = "%EventHubsConnectionString%",
+                          Password = "%KafkaPassword%",
                           Protocol = BrokerProtocol.SaslSsl,
                           AuthenticationMode = BrokerAuthenticationMode.Plain,
                           ConsumerGroup = "$Default")] KafkaEventData<string>[] events, ILogger log)
