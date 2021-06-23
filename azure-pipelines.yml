@@ -26,6 +26,7 @@ steps:
   displayName: 'Install Node.js'
   
 - task: OneLocBuild@2
+  enabled: false
   inputs:
     locProj: 'Build\Localize\LocProject.json'
     outDir: '$(Build.Repository.LocalPath)'
@@ -33,12 +34,14 @@ steps:
     patVariable: '$(ONELOCBUILD)'
     continueOnError: true
 - task: CopyFiles@2
+  enabled: false
   displayName: 'Copy Loc files to publish directories'
   inputs:
     SourceFolder: $(System.DefaultWorkingDirectory)/loc
     TargetFolder: $(Build.ArtifactStagingDirectory)
 
 - task: PublishBuildArtifacts@1
+  enabled: false
   displayName: 'Publish Artifact: loc'
   inputs:
     ArtifactName: 'loc'
