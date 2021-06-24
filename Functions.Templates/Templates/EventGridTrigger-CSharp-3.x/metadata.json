@@ -1,0 +1,18 @@
+{
+    "defaultFunctionName": "EventGridTrigger",
+    "description": "$EventGridTrigger_description",
+    "name": "Azure Event Grid trigger",
+    "language": "C#",
+    "category": [
+        "$temp_category_core",
+        "$temp_category_dataProcessing"
+    ],
+    "categoryStyle": "eventGrid",
+    "enabledInTryMode": false,
+    "userPrompt": [],
+    "extensions": [
+        {
+            "id": "Microsoft.Azure.WebJobs.Extensions.EventGrid", "version": "3.0.0-beta.3"
+        }
+    ]
+}
