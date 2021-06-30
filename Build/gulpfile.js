@@ -12,12 +12,12 @@ const request = require('request');
 const nuget = require('gulp-nuget');
 
 if (process.env.devops_buildNumber) {
-  version = '4.0.' + process.env.devops_buildNumber;
-  isolatedVersion = '4.0.' + process.env.devops_buildNumber;
+  version = '4.0.' + process.env.devops_buildNumber + '-preview1';
+  isolatedVersion = '4.0.' + process.env.devops_buildNumber + '-preview1';
 }
 else {
-  version = '4.0.0';
-  isolatedVersion = '4.0.0';
+  version = '4.0.0-preview1';
+  isolatedVersion = '4.0.0-preview1';
 }
 
 gulp.task('nuget-pack-itemTemplate', function () {
