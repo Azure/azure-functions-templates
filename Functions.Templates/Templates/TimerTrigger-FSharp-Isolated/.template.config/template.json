@@ -1,0 +1,63 @@
+{
+    "author": "Microsoft",
+    "classifications": [
+        "Azure Function"
+    ],
+    "name": "TimerTrigger",
+    "identity": "Azure.Function.FSharp.TimerTrigger.2.x",
+    "groupIdentity": "Azure.Function.TimerTrigger",
+    "shortName": "Timer",
+    "tags": {
+        "language": "F#",
+        "type": "item"
+    },
+    "sourceName": "TimerTriggerFSharp",
+    "symbols": {
+        "namespace": {
+            "description": "namespace for the generated code",
+            "replaces": "Company.Function",
+            "type": "parameter"
+        },
+        "Schedule": {
+            "type": "parameter",
+            "description": "Enter a cron expression of the format '{second} {minute} {hour} {day} {month} {day of week}' to specify the schedule.",
+            "defaultValue": "0 */5 * * * *",
+            "replaces": "ScheduleValue"
+        }
+    },
+    "primaryOutputs": [
+        {
+            "path": "TimerTriggerFSharp.fs"
+        }
+    ],
+    "defaultName": "TimerTriggerFSharp",
+    "postActions": [
+        {
+            "description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Timer Nuget package",
+            "actionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+            "continueOnError": "true",
+            "manualInstructions": [],
+            "args": {
+              "referenceType": "package",
+              "reference": "Microsoft.Azure.Functions.Worker.Extensions.Timer", "version": "4.0.1",
+              "projectFileExtensions": ".csproj"
+            }
+        },
+        {
+            "description": "Restore NuGet packages required by this project.",
+            "manualInstructions": [],
+            "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+            "continueOnError": true
+        },
+        {
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+            "description": "Opens the function class file in the editor",
+            "manualInstructions": [],
+            "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+            "args": {
+                "files": "0"
+            },
+            "continueOnError": true
+        }
+    ]
+}
