@@ -110,6 +110,27 @@ steps:
       
       $fileName = "ExtensionBundle.v3.LastestVersion.json" 
       GenerateIndexJson $ctx $BundleV3Template $fileName $rootPath
+
+      $files= Get-ChildItem -Recurse -Path "$(System.ArtifactsDirectory)"
+      foreach($file in $files)
+      {
+          $fileName = $file.FullName.ToLower();
+          if  ($fileName.Endswith(".zip") -and !$fileName.Contains("bundle"))
+          {
+              $fileFullName = $file.FullName
+              $blobName = "TemplatesApi\" + $file.Name
+              Write-Host "Uploading file:$fileFullName"
+              Set-AzureStorageBlobContent -Container "public" -File $fileFullName -Blob $blobName -Context $ctx
+          }
+
+          if  ($fileName.Endswith(".zip") -and $fileName.Contains("bundle"))
+          {
+              $fileFullName = $file.FullName
+              $blobName = "ExtensionBundleTemplates\" + $file.Name
+              Write-Host "Uploading file:$fileFullName"
+              Set-AzureStorageBlobContent -Container "public" -File $fileFullName -Blob $blobName -Context $ctx
+          }
+      }
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/dev'))
   
 - task: PublishBuildArtifacts@1
