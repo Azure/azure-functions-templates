@@ -26,15 +26,16 @@ steps:
   displayName: 'Install Node.js'
   
 - task: OneLocBuild@2
-  enabled: false
+  enabled: true
   inputs:
     locProj: 'Build\Localize\LocProject.json'
     outDir: '$(Build.Repository.LocalPath)'
     packageSourceAuth: 'patAuth'
     patVariable: '$(ONELOCBUILD)'
     continueOnError: true
+
 - task: CopyFiles@2
-  enabled: false
+  enabled: true
   displayName: 'Copy Loc files to publish directories'
   inputs:
     SourceFolder: $(System.DefaultWorkingDirectory)/loc
