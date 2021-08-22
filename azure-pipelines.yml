@@ -86,7 +86,8 @@ steps:
               "commitId" : "$(Build.SourceVersion)"
           }
       "@
-      
+
+          New-Item -Path $filePath -Force
           $json | Out-File -FilePath $filePath -Encoding ascii
           $blobName = "ExtensionBundleTemplates\build\latest\" + $fileRelativePath
           Set-AzureStorageBlobContent -Container "public" -File $filePath -Blob $blobName -Context $ctx -Force
