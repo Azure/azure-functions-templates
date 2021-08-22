@@ -89,7 +89,7 @@ steps:
 
           New-Item -Path $filePath -Force
           $json | Out-File -FilePath $filePath -Encoding ascii
-          $blobName = "ExtensionBundleTemplates\build\latest\" + $fileRelativePath
+          $blobName = "ExtensionBundleTemplates\build\" + $fileRelativePath
           Set-AzureStorageBlobContent -Container "public" -File $filePath -Blob $blobName -Context $ctx -Force
       }
       
@@ -132,7 +132,7 @@ steps:
               Set-AzureStorageBlobContent -Container "public" -File $fileFullName -Blob $blobName -Context $ctx
           }
       }
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/dev'))
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   
 - task: PublishBuildArtifacts@1
   inputs:
