@@ -104,13 +104,13 @@ steps:
       # Storage Context
       $ctx = New-AzureStorageContext -StorageAccountName "$(ACCOUNT_NAME)" -SasToken "$(ACCOUNT_KEY)"
       
-      $fileName = "v1\latest\versions.json" 
+      $fileName = "v1\latest\version.json" 
       GenerateIndexJson $ctx $BundleV1Template $fileName $rootPath
       
-      $fileName = "v2\latest\versions.json" 
+      $fileName = "v2\latest\version.json" 
       GenerateIndexJson $ctx $BundleV2Template $fileName $rootPath
       
-      $fileName = "v3\latest\versions.json" 
+      $fileName = "v3\latest\version.json" 
       GenerateIndexJson $ctx $BundleV3Template $fileName $rootPath
 
       $files= Get-ChildItem -Recurse -Path "$(System.ArtifactsDirectory)"
