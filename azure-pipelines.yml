@@ -76,9 +76,9 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      function GenerateIndexJson($ctx, $bundleVersion, $fileName, $rootPath)
+      function GenerateIndexJson($ctx, $bundleVersion, $fileRelativePath, $rootPath)
       {
-      $filePath = Join-Path -Path $rootPath -ChildPath $fileName
+      $filePath = Join-Path -Path $rootPath -ChildPath $fileRelativePath
       
       $json = @"   
           {
@@ -88,7 +88,7 @@ steps:
       "@
       
           $json | Out-File -FilePath $filePath -Encoding ascii
-          $blobName = "ExtensionBundleTemplates\versions\" + $fileName
+          $blobName = "ExtensionBundleTemplates\build\latest\" + $fileRelativePath
           Set-AzureStorageBlobContent -Container "public" -File $filePath -Blob $blobName -Context $ctx -Force
       }
       
@@ -102,13 +102,13 @@ steps:
       # Storage Context
       $ctx = New-AzureStorageContext -StorageAccountName "$(ACCOUNT_NAME)" -SasToken "$(ACCOUNT_KEY)"
       
-      $fileName = "ExtensionBundle.v1.LastestVersion.json" 
+      $fileName = "v1\latest\versions.json" 
       GenerateIndexJson $ctx $BundleV1Template $fileName $rootPath
       
-      $fileName = "ExtensionBundle.v2.LastestVersion.json" 
+      $fileName = "v2\latest\versions.json" 
       GenerateIndexJson $ctx $BundleV2Template $fileName $rootPath
       
-      $fileName = "ExtensionBundle.v3.LastestVersion.json" 
+      $fileName = "v3\latest\versions.json" 
       GenerateIndexJson $ctx $BundleV3Template $fileName $rootPath
 
       $files= Get-ChildItem -Recurse -Path "$(System.ArtifactsDirectory)"
