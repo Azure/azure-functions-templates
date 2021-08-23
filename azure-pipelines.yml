@@ -83,7 +83,7 @@ steps:
       
       $json = @"   
           {
-              "version": "$BundleV1Template",
+              "version": "$bundleVersion",
               "commitId" : "$(Build.SourceVersion)"
           }
       "@
