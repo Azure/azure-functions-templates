@@ -1,6 +1,6 @@
 # SQL Input Binding - C<span>#</span>
 
-The `SQL Input Binding` makes it incredibly easy to take a SQL query to run on a provided object and returns the output of the query
+The `SQL Input Binding` makes it easy to take a SQL query to run on a provided object and returns the output of the query
 
 ## How it works
 
