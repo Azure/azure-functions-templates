@@ -3,16 +3,12 @@ name: 4.0.$(devops_buildNumber)
 pr:
   branches:
     include:
-    - master
-    - dev
-    - v3.x
     - v4.x
 
 trigger:
   branches:
     include:
-    - dev
-    - master
+    - v4.x   
 
 pool:
   vmImage: 'vs2017-win2016'
