@@ -10,14 +10,20 @@ using Newtonsoft.Json;
 
 namespace Company.Function
 {
-    public static class HttpTriggerCSharp
+    public class HttpTriggerCSharp
     {
-        [FunctionName("HttpTriggerCSharp")]
-        public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = null)] HttpRequest req,
-            ILogger log)
+        private readonly ILogger<HttpTriggerCSharp> log;
+
+        public HttpTriggerCSharp(ILogger<HttpTriggerCSharp> log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
+            this.log = log;
+        }
+
+        [FunctionName("HttpTriggerCSharp")]
+        public async Task<IActionResult> Run(
+            [HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = null)] HttpRequest req)
+        {
+            log.LogInformation("Test1 C# HTTP trigger function processed a request.");
 
             string name = req.Query["name"];
 
@@ -26,8 +32,8 @@ namespace Company.Function
             name = name ?? data?.name;
 
             string responseMessage = string.IsNullOrEmpty(name)
-                ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-                : $"Hello, {name}. This HTTP triggered function executed successfully.";
+                ? "Test1 This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
+                : $"Test1 Hello, {name}. Test1 This HTTP triggered function executed successfully.";
 
             return new OkObjectResult(responseMessage);
         }
