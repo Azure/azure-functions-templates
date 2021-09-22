@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 using Newtonsoft.Json;
 
-public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
+public async Task<IActionResult> Run(HttpRequest req)
 {
     log.LogInformation("C# HTTP trigger function processed a request.");
 

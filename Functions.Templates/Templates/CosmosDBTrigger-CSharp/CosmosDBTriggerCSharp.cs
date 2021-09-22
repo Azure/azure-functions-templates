@@ -7,14 +7,21 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class CosmosDBTriggerCSharp
+    public class CosmosDBTriggerCSharp
     {
+        private readonly ILogger<CosmosDBTriggerCSharp> log;
+
+        public CosmosDBTriggerCSharp(ILogger<CosmosDBTriggerCSharp> log)
+        {
+            this.log = log;
+        }
+
         [FunctionName("CosmosDBTriggerCSharp")]
-        public static void Run([CosmosDBTrigger(
+        public void Run([CosmosDBTrigger(
             databaseName: "DatabaseValue",
             collectionName: "CollectionValue",
             ConnectionStringSetting = "ConnectionValue",
-            LeaseCollectionName = "leases")]IReadOnlyList<Document> input, ILogger log)
+            LeaseCollectionName = "leases")]IReadOnlyList<Document> input)
         {
             if (input != null && input.Count > 0)
             {

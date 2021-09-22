@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Azure.Documents;
 
-public static void Run(IReadOnlyList<Document> input, ILogger log)
+public void Run(IReadOnlyList<Document> input)
 {
     if (input != null && input.Count > 0)
     {

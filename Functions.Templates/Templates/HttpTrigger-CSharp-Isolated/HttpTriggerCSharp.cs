@@ -6,13 +6,18 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class HttpTriggerCSharp
+    public class HttpTriggerCSharp
     {
-        [Function("HttpTriggerCSharp")]
-        public static HttpResponseData Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post")] HttpRequestData req,
-            FunctionContext executionContext)
+        private readonly ILogger<HttpTriggerCSharp> log;
+
+        public HttpTriggerCSharp(FunctionContext executionContext)
         {
-            var logger = executionContext.GetLogger("HttpTriggerCSharp");
+            this.log = executionContext.GetLogger("HttpTriggerCSharp"); ;
+        }
+
+        [Function("HttpTriggerCSharp")]
+        public HttpResponseData Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post")] HttpRequestData req)
+        {
             logger.LogInformation("C# HTTP trigger function processed a request.");
 
             var response = req.CreateResponse(HttpStatusCode.OK);
