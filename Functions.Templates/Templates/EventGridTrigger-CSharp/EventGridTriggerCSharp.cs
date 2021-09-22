@@ -9,10 +9,17 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class EventGridTriggerCSharp
+    public class EventGridTriggerCSharp
     {
+        private readonly ILogger<EventGridTriggerCSharp> log;
+
+        public EventGridTriggerCSharp(ILogger<EventGridTriggerCSharp> log)
+        {
+            this.log = log;
+        }
+
         [FunctionName("EventGridTriggerCSharp")]
-        public static void Run([EventGridTrigger]EventGridEvent eventGridEvent, ILogger log)
+        public void Run([EventGridTrigger]EventGridEvent eventGridEvent)
         {
             log.LogInformation(eventGridEvent.Data.ToString());
         }
