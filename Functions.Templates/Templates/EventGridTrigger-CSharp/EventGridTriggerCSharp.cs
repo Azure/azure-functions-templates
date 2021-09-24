@@ -11,17 +11,17 @@ namespace Company.Function
 {
     public class EventGridTriggerCSharp
     {
-        private readonly ILogger<EventGridTriggerCSharp> log;
+        private readonly ILogger<EventGridTriggerCSharp> _logger;
 
         public EventGridTriggerCSharp(ILogger<EventGridTriggerCSharp> log)
         {
-            this.log = log;
+            _logger = log;
         }
 
         [FunctionName("EventGridTriggerCSharp")]
         public void Run([EventGridTrigger]EventGridEvent eventGridEvent)
         {
-            log.LogInformation(eventGridEvent.Data.ToString());
+            _logger.LogInformation(eventGridEvent.Data.ToString());
         }
     }
 }

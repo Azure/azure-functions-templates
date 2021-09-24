@@ -1,7 +1,7 @@
 #r "Microsoft.Azure.EventGrid"
 using Microsoft.Azure.EventGrid.Models;
 
-public void Run(EventGridEvent eventGridEvent)
+public static void Run(EventGridEvent eventGridEvent, ILogger log)
 {
     log.LogInformation(eventGridEvent.Data.ToString());
 }

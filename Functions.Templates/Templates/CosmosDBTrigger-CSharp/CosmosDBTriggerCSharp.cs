@@ -9,11 +9,11 @@ namespace Company.Function
 {
     public class CosmosDBTriggerCSharp
     {
-        private readonly ILogger<CosmosDBTriggerCSharp> log;
+        private readonly ILogger<CosmosDBTriggerCSharp> _logger;
 
         public CosmosDBTriggerCSharp(ILogger<CosmosDBTriggerCSharp> log)
         {
-            this.log = log;
+            _logger = log;
         }
 
         [FunctionName("CosmosDBTriggerCSharp")]
@@ -25,8 +25,8 @@ namespace Company.Function
         {
             if (input != null && input.Count > 0)
             {
-                log.LogInformation("Documents modified " + input.Count);
-                log.LogInformation("First document Id " + input[0].Id);
+                _logger.LogInformation("Documents modified " + input.Count);
+                _logger.LogInformation("First document Id " + input[0].Id);
             }
         }
     }

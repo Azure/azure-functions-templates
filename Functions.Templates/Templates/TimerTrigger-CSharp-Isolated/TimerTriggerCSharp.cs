@@ -6,12 +6,18 @@ namespace Company.Function
 {
     public static class TimerTriggerCSharp
     {
-        [Function("TimerTriggerCSharp")]
-        public static void Run([TimerTrigger("ScheduleValue")] MyInfo myTimer, FunctionContext context)
+        private readonly ILogger<TimerTriggerCSharp> _logger;
+
+        public TimerTriggerCSharp(FunctionContext context)
         {
-            var logger = context.GetLogger("TimerTriggerCSharp");
-            logger.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
-            logger.LogInformation($"Next timer schedule at: {myTimer.ScheduleStatus.Next}");
+            _logger = context.GetLogger("TimerTriggerCSharp");
+        }
+
+        [Function("TimerTriggerCSharp")]
+        public static void Run([TimerTrigger("ScheduleValue")] MyInfo myTimer)
+        {
+            _logger.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
+            _logger.LogInformation($"Next timer schedule at: {myTimer.ScheduleStatus.Next}");
         }
     }
 

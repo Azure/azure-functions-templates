@@ -5,12 +5,19 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class ServiceBusTopicTriggerCSharp
+    public class ServiceBusTopicTriggerCSharp
     {
-        [FunctionName("ServiceBusTopicTriggerCSharp")]
-        public static void Run([ServiceBusTrigger("TopicNameValue", "SubscriptionNameValue", Connection = "ConnectionValue")]string mySbMsg, ILogger log)
+        private readonly ILogger<ServiceBusTopicTriggerCSharp> _logger;
+
+        public ServiceBusTopicTriggerCSharp(ILogger<ServiceBusTopicTriggerCSharp> log)
         {
-            log.LogInformation($"C# ServiceBus topic trigger function processed message: {mySbMsg}");
+            _logger = log;
+        }
+
+        [FunctionName("ServiceBusTopicTriggerCSharp")]
+        public void Run([ServiceBusTrigger("TopicNameValue", "SubscriptionNameValue", Connection = "ConnectionValue")]string mySbMsg)
+        {
+            _logger.LogInformation($"C# ServiceBus topic trigger function processed message: {mySbMsg}");
         }
     }
 }

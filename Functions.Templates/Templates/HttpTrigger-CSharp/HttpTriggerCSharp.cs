@@ -12,18 +12,18 @@ namespace Company.Function
 {
     public class HttpTriggerCSharp
     {
-        private readonly ILogger<HttpTriggerCSharp> log;
+        private readonly ILogger<HttpTriggerCSharp> _logger;
 
         public HttpTriggerCSharp(ILogger<HttpTriggerCSharp> log)
         {
-            this.log = log;
+            _logger = log;
         }
 
         [FunctionName("HttpTriggerCSharp")]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = null)] HttpRequest req)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
+            _logger.LogInformation("C# HTTP trigger function processed a request.");
 
             string name = req.Query["name"];
 
@@ -33,7 +33,7 @@ namespace Company.Function
 
             string responseMessage = string.IsNullOrEmpty(name)
                 ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-                : $"Hello, {name}. Test1 This HTTP triggered function executed successfully.";
+                : $"Hello, {name}. This HTTP triggered function executed successfully.";
 
             return new OkObjectResult(responseMessage);
         }

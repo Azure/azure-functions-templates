@@ -8,17 +8,17 @@ namespace Company.Function
 {
     public class HttpTriggerCSharp
     {
-        private readonly ILogger<HttpTriggerCSharp> log;
+        private readonly ILogger<HttpTriggerCSharp> _logger;
 
         public HttpTriggerCSharp(FunctionContext executionContext)
         {
-            this.log = executionContext.GetLogger("HttpTriggerCSharp"); ;
+            _logger = executionContext.GetLogger("HttpTriggerCSharp"); ;
         }
 
         [Function("HttpTriggerCSharp")]
         public HttpResponseData Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post")] HttpRequestData req)
         {
-            logger.LogInformation("C# HTTP trigger function processed a request.");
+            _logger.LogInformation("C# HTTP trigger function processed a request.");
 
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");

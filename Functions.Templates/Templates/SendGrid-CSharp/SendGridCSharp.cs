@@ -16,13 +16,20 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class SendGridCSharp
+    public class SendGridCSharp
     {
+        private readonly ILogger<SendGridCSharp> _logger;
+
+        public SendGridCSharp(ILogger<SendGridCSharp> log)
+        {
+            _logger = log;
+        }
+
         [FunctionName("SendGridCSharp")]
         [return: SendGrid(ApiKey = "ApiKeyValue", To = "{CustomerEmail}", From = "FromEmailValue")]
-        public static SendGridMessage Run([QueueTrigger("PathValue", Connection = "ConnectionValue")]Order order, ILogger log)
+        public SendGridMessage Run([QueueTrigger("PathValue", Connection = "ConnectionValue")]Order order)
         {
-            log.LogInformation($"C# Queue trigger function processed order: {order.OrderId}");
+            _logger.LogInformation($"C# Queue trigger function processed order: {order.OrderId}");
 
             SendGridMessage message = new SendGridMessage()
             {

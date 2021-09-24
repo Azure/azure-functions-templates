@@ -6,13 +6,19 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class EventGridTriggerCSharp
+    public class EventGridTriggerCSharp
     {
-        [Function("EventGridTriggerCSharp")]
-        public static void Run([EventGridTrigger] MyEvent input, FunctionContext context)
+        private readonly ILogger<EventGridTriggerCSharp> _logger;
+
+        public EventGridTriggerCSharp(FunctionContext context)
         {
-            var logger = context.GetLogger("EventGridTriggerCSharp");
-            logger.LogInformation(input.Data.ToString());
+            _logger = context.GetLogger("EventGridTriggerCSharp");
+        }
+
+        [Function("EventGridTriggerCSharp")]
+        public void Run([EventGridTrigger] MyEvent input)
+        {
+            _logger.LogInformation(input.Data.ToString());
         }
     }
 

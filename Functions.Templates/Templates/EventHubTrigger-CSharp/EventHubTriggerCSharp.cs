@@ -9,10 +9,17 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class EventHubTriggerCSharp
+    public class EventHubTriggerCSharp
     {
+        private readonly ILogger<EventHubTriggerCSharp> _logger;
+
+        public EventHubTriggerCSharp(ILogger<EventHubTriggerCSharp> log)
+        {
+            _logger = log;
+        }
+
         [FunctionName("EventHubTriggerCSharp")]
-        public static async Task Run([EventHubTrigger("eventHubNameValue", Connection = "ConnectionValue")] EventData[] events, ILogger log)
+        public async Task Run([EventHubTrigger("eventHubNameValue", Connection = "ConnectionValue")] EventData[] events)
         {
             var exceptions = new List<Exception>();
 
@@ -23,7 +30,7 @@ namespace Company.Function
                     string messageBody = Encoding.UTF8.GetString(eventData.Body.Array, eventData.Body.Offset, eventData.Body.Count);
 
                     // Replace these two lines with your processing logic.
-                    log.LogInformation($"C# Event Hub trigger function processed a message: {messageBody}");
+                    _logger.LogInformation($"C# Event Hub trigger function processed a message: {messageBody}");
                     await Task.Yield();
                 }
                 catch (Exception e)

@@ -5,12 +5,19 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class TimerTriggerCSharp
+    public class TimerTriggerCSharp
     {
-        [FunctionName("TimerTriggerCSharp")]
-        public static void Run([TimerTrigger("ScheduleValue")]TimerInfo myTimer, ILogger log)
+        private readonly ILogger<TimerTriggerCSharp> _logger;
+
+        public TimerTriggerCSharp(ILogger<TimerTriggerCSharp> log)
         {
-            log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
+            _logger = log;
+        }
+
+        [FunctionName("TimerTriggerCSharp")]
+        public void Run([TimerTrigger("ScheduleValue")]TimerInfo myTimer)
+        {
+            _logger.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
         }
     }
 }
