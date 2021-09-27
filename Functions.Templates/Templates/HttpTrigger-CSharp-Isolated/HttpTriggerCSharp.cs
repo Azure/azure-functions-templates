@@ -12,7 +12,7 @@ namespace Company.Function
 
         public HttpTriggerCSharp(FunctionContext executionContext)
         {
-            _logger = executionContext.GetLogger("HttpTriggerCSharp"); ;
+            _logger = executionContext.GetLogger("HttpTriggerCSharp");
         }
 
         [Function("HttpTriggerCSharp")]

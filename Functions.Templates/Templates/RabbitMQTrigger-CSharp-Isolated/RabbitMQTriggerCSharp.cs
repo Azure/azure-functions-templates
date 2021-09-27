@@ -6,9 +6,9 @@ namespace Company.Function
 {
     public class RabbitMQTriggerCSharp
     {
-        private readonly ILogger<QueueTriggerCSharp> _logger;
+        private readonly ILogger<RabbitMQTriggerCSharp> _logger;
 
-        public QueueTriggerCSharp(FunctionContext context)
+        public RabbitMQTriggerCSharp(FunctionContext context)
         {
             _logger = context.GetLogger("RabbitMQTriggerCSharp");
         }

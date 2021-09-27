@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class TimerTriggerCSharp
+    public class TimerTriggerCSharp
     {
         private readonly ILogger<TimerTriggerCSharp> _logger;
 
