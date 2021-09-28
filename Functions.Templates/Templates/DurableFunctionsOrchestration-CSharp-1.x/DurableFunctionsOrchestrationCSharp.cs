@@ -8,10 +8,17 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class DurableFunctionsOrchestrationCSharp
+    public class DurableFunctionsOrchestrationCSharp
     {
+        private readonly ILogger<DurableFunctionsOrchestrationCSharp> _logger;
+
+        public DurableFunctionsOrchestrationCSharp(ILogger<DurableFunctionsOrchestrationCSharp> log)
+        {
+            _logger = log;
+        }
+
         [FunctionName("DurableFunctionsOrchestrationCSharp")]
-        public static async Task<List<string>> RunOrchestrator(
+        public async Task<List<string>> RunOrchestrator(
             [OrchestrationTrigger] DurableOrchestrationContext context)
         {
             var outputs = new List<string>();
@@ -26,22 +33,21 @@ namespace Company.Function
         }
 
         [FunctionName("DurableFunctionsOrchestrationCSharp_Hello")]
-        public static string SayHello([ActivityTrigger] string name, ILogger log)
+        public string SayHello([ActivityTrigger] string name)
         {
-            log.LogInformation($"Saying hello to {name}.");
+            _logger.LogInformation($"Saying hello to {name}.");
             return $"Hello {name}!";
         }
 
         [FunctionName("DurableFunctionsOrchestrationCSharp_HttpStart")]
-        public static async Task<HttpResponseMessage> HttpStart(
+        public async Task<HttpResponseMessage> HttpStart(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")]HttpRequestMessage req,
-            [OrchestrationClient]DurableOrchestrationClient starter,
-            ILogger log)
+            [OrchestrationClient]DurableOrchestrationClient starter)
         {
             // Function input comes from the request content.
             string instanceId = await starter.StartNewAsync("DurableFunctionsOrchestrationCSharp", null);
 
-            log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
+            _logger.LogInformation($"Started orchestration with ID = '{instanceId}'.");
 
             return starter.CreateCheckStatusResponse(req, instanceId);
         }
