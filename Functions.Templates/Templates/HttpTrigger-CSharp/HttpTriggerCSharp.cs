@@ -10,14 +10,20 @@ using Newtonsoft.Json;
 
 namespace Company.Function
 {
-    public static class HttpTriggerCSharp
+    public class HttpTriggerCSharp
     {
-        [FunctionName("HttpTriggerCSharp")]
-        public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = null)] HttpRequest req,
-            ILogger log)
+        private readonly ILogger<HttpTriggerCSharp> _logger;
+
+        public HttpTriggerCSharp(ILogger<HttpTriggerCSharp> log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
+            _logger = log;
+        }
+
+        [FunctionName("HttpTriggerCSharp")]
+        public async Task<IActionResult> Run(
+            [HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = null)] HttpRequest req)
+        {
+            _logger.LogInformation("C# HTTP trigger function processed a request.");
 
             string name = req.Query["name"];
 

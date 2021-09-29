@@ -15,8 +15,15 @@ using Newtonsoft.Json;
 
 namespace Company.Function
 {
-    public static class HttpTriggerWithOpenAPICSharp
+    public class HttpTriggerWithOpenAPICSharp
     {
+        private readonly ILogger<HttpTriggerWithOpenAPICSharp> _logger;
+
+        public HttpTriggerWithOpenAPICSharp(ILogger<HttpTriggerWithOpenAPICSharp> log)
+        {
+            _logger = log;
+        }
+
         [FunctionName("HttpTriggerWithOpenAPICSharp")]
         [OpenApiOperation(operationId: "Run", tags: new[] { "name" })]
 #if (AuthEnabled)
@@ -24,11 +31,10 @@ namespace Company.Function
 #endif
         [OpenApiParameter(name: "name", In = ParameterLocation.Query, Required = true, Type = typeof(string), Description = "The **Name** parameter")]
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(string), Description = "The OK response")]
-        public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = null)] HttpRequest req,
-            ILogger log)
+        public async Task<IActionResult> Run(
+            [HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = null)] HttpRequest req)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
+            _logger.LogInformation("C# HTTP trigger function processed a request.");
 
             string name = req.Query["name"];
 

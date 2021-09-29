@@ -4,13 +4,19 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class EventHubTriggerCSharp
+    public class EventHubTriggerCSharp
     {
-        [Function("EventHubTriggerCSharp")]
-        public static void Run([EventHubTrigger("eventHubNameValue", Connection = "ConnectionValue")] string[] input, FunctionContext context)
+        private readonly ILogger<EventHubTriggerCSharp> _logger;
+
+        public EventHubTriggerCSharp(FunctionContext context)
         {
-            var logger = context.GetLogger("EventHubTriggerCSharp");
-            logger.LogInformation($"First Event Hubs triggered message: {input[0]}");
+            _logger = context.GetLogger("EventHubTriggerCSharp");
+        }
+
+        [Function("EventHubTriggerCSharp")]
+        public void Run([EventHubTrigger("eventHubNameValue", Connection = "ConnectionValue")] string[] input)
+        {
+            _logger.LogInformation($"First Event Hubs triggered message: {input[0]}");
         }
     }
 }

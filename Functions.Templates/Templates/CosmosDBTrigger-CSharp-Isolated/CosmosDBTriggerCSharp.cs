@@ -5,20 +5,26 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class CosmosDBTriggerCSharp
+    public class CosmosDBTriggerCSharp
     {
+        private readonly ILogger<CosmosDBTriggerCSharp> _logger;
+
+        public CosmosDBTriggerCSharp(FunctionContext context)
+        {
+            _logger = context.GetLogger("CosmosDBTriggerCSharp");
+        }
+
         [Function("CosmosDBTriggerCSharp")]
-        public static void Run([CosmosDBTrigger(
+        public void Run([CosmosDBTrigger(
             databaseName: "DatabaseValue",
             collectionName: "CollectionValue",
             ConnectionStringSetting = "ConnectionValue",
-            LeaseCollectionName = "leases")] IReadOnlyList<MyDocument> input, FunctionContext context)
+            LeaseCollectionName = "leases")] IReadOnlyList<MyDocument> input)
         {
-            var logger = context.GetLogger("CosmosDBTriggerCSharp");
             if (input != null && input.Count > 0)
             {
-                logger.LogInformation("Documents modified: " + input.Count);
-                logger.LogInformation("First document Id: " + input[0].Id);
+                _logger.LogInformation("Documents modified: " + input.Count);
+                _logger.LogInformation("First document Id: " + input[0].Id);
             }
         }
     }

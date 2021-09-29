@@ -5,12 +5,19 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class QueueTriggerCSharp
+    public class QueueTriggerCSharp
     {
-        [FunctionName("QueueTriggerCSharp")]
-        public static void Run([QueueTrigger("PathValue", Connection = "ConnectionValue")]string myQueueItem, ILogger log)
+        private readonly ILogger<QueueTriggerCSharp> _logger;
+
+        public QueueTriggerCSharp(ILogger<QueueTriggerCSharp> log)
         {
-            log.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
+            _logger = log;
+        }
+
+        [FunctionName("QueueTriggerCSharp")]
+        public void Run([QueueTrigger("PathValue", Connection = "ConnectionValue")]string myQueueItem)
+        {
+            _logger.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
         }
     }
 }

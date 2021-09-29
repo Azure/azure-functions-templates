@@ -6,15 +6,21 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class SignalRConnectionInfoHttpTriggerCSharp
+    public class SignalRConnectionInfoHttpTriggerCSharp
     {
-        [Function("negotiate")]
-        public static HttpResponseData Negotiate(
-            [HttpTrigger(AuthorizationLevel.AuthLevelValue, "post")] HttpRequestData req,
-            [SignalRConnectionInfoInput(HubName = "HubValue")] MyConnectionInfo connectionInfo, FunctionContext context)
+        private readonly ILogger<SignalRConnectionInfoHttpTriggerCSharp> _logger;
+
+        public SignalRConnectionInfoHttpTriggerCSharp(FunctionContext context)
         {
-            var logger = context.GetLogger("negotiate");
-            logger.LogInformation($"SignalR Connection URL = '{connectionInfo.Url}'");
+            _logger = context.GetLogger("negotiate");
+        }
+
+        [Function("negotiate")]
+        public HttpResponseData Negotiate(
+            [HttpTrigger(AuthorizationLevel.AuthLevelValue, "post")] HttpRequestData req,
+            [SignalRConnectionInfoInput(HubName = "HubValue")] MyConnectionInfo connectionInfo)
+        {
+            _logger.LogInformation($"SignalR Connection URL = '{connectionInfo.Url}'");
 
             var response = new HttpResponseData(HttpStatusCode.OK);
             var headers = new Dictionary<string, string>();

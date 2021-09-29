@@ -4,13 +4,19 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class RabbitMQTriggerCSharp
+    public class RabbitMQTriggerCSharp
     {
-        [Function("RabbitMQTriggerCSharp")]
-        public static void Run([RabbitMQTrigger("NameOfQueue", ConnectionStringSetting = "ConnectionValue")] string myQueueItem, FunctionContext context)
+        private readonly ILogger<RabbitMQTriggerCSharp> _logger;
+
+        public RabbitMQTriggerCSharp(FunctionContext context)
         {
-            var logger = context.GetLogger("RabbitMQTriggerCSharp");
-            logger.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
+            _logger = context.GetLogger("RabbitMQTriggerCSharp");
+        }
+
+        [Function("RabbitMQTriggerCSharp")]
+        public void Run([RabbitMQTrigger("NameOfQueue", ConnectionStringSetting = "ConnectionValue")] string myQueueItem)
+        {
+            _logger.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
         }
     }
 }

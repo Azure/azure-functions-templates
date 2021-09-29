@@ -5,14 +5,19 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class BlobTriggerCSharp
+    public class BlobTriggerCSharp
     {
-        [Function("BlobTriggerCSharp")]
-        public static void Run([BlobTrigger("PathValue/{name}", Connection = "ConnectionValue")] string myBlob, string name,
-            FunctionContext context)
+        private readonly ILogger<BlobTriggerCSharp> _logger;
+
+        public BlobTriggerCSharp(FunctionContext context)
         {
-            var logger = context.GetLogger("BlobTriggerCSharp");
-            logger.LogInformation($"C# Blob trigger function Processed blob\n Name: {name} \n Data: {myBlob}");
+            _logger = context.GetLogger("BlobTriggerCSharp");
+        }
+
+        [Function("BlobTriggerCSharp")]
+        public void Run([BlobTrigger("PathValue/{name}", Connection = "ConnectionValue")] string myBlob, string name)
+        {
+            _logger.LogInformation($"C# Blob trigger function Processed blob\n Name: {name} \n Data: {myBlob}");
         }
     }
 }

@@ -9,11 +9,17 @@ namespace Company.Function
 {
     public class KafkaOutputCSharp
     {
+        private readonly ILogger<KafkaOutputCSharp> _logger;
+
+        public KafkaOutputCSharp(ILogger<KafkaOutputCSharp> log)
+        {
+            _logger = log;
+        }
         // KafkaOutputBinding sample
         // This KafkaOutput binding will create a topic "topic" on the LocalBroker if it doesn't exists.
         // Call this function then the KafkaTrigger will be trigged.
         [FunctionName("KafkaOutputCSharp")]
-        public static IActionResult Output(
+        public IActionResult Output(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
             [Kafka("BrokerList",
                    "topic",
@@ -21,10 +27,9 @@ namespace Company.Function
                    Password = "%KafkaPassword%",
                    Protocol = BrokerProtocol.SaslSsl,
                    AuthenticationMode = BrokerAuthenticationMode.Plain
-            )] out string eventData,
-            ILogger log)
+            )] out string eventData)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
+            _logger.LogInformation("C# HTTP trigger function processed a request.");
 
             string message = req.Query["message"];
 
