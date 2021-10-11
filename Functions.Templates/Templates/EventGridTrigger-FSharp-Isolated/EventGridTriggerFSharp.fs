@@ -18,6 +18,6 @@ module EventGridTriggerFSharp =
     [<Function("EventGridTriggerFSharp")>]
     let run ([<EventGridTrigger>] eventGridEvent: MyEvent, context: FunctionContext) =
         let logger =
-            context.GetLogger("EventGridTriggerCSharp")
+            context.GetLogger("EventGridTriggerFSharp")
 
         log.LogInformation(eventGridEvent.Data.ToString())
