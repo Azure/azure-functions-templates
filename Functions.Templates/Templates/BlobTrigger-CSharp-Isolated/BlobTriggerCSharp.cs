@@ -7,7 +7,7 @@ namespace Company.Function
 {
     public class BlobTriggerCSharp
     {
-        private readonly ILogger<BlobTriggerCSharp> _logger;
+        private readonly ILogger _logger;
 
         public BlobTriggerCSharp(FunctionContext context)
         {

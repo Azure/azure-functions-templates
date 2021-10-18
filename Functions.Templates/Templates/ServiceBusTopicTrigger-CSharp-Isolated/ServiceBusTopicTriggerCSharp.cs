@@ -6,7 +6,7 @@ namespace Company.Function
 {
     public class ServiceBusTopicTriggerCSharp
     {
-        private readonly ILogger<ServiceBusTopicTriggerCSharp> _logger;
+        private readonly ILogger _logger;
 
         public ServiceBusTopicTriggerCSharp(FunctionContext context)
         {

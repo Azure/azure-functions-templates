@@ -8,7 +8,7 @@ namespace Company.Function
 {
     public class SignalRConnectionInfoHttpTriggerCSharp
     {
-        private readonly ILogger<SignalRConnectionInfoHttpTriggerCSharp> _logger;
+        private readonly ILogger _logger;
 
         public SignalRConnectionInfoHttpTriggerCSharp(FunctionContext context)
         {
