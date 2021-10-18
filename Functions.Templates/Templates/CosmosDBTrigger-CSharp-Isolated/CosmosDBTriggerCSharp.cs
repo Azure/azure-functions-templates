@@ -7,7 +7,7 @@ namespace Company.Function
 {
     public class CosmosDBTriggerCSharp
     {
-        private readonly ILogger<CosmosDBTriggerCSharp> _logger;
+        private readonly ILogger _logger;
 
         public CosmosDBTriggerCSharp(FunctionContext context)
         {

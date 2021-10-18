@@ -6,7 +6,7 @@ namespace Company.Function
 {
     public class TimerTriggerCSharp
     {
-        private readonly ILogger<TimerTriggerCSharp> _logger;
+        private readonly ILogger _logger;
 
         public TimerTriggerCSharp(FunctionContext context)
         {

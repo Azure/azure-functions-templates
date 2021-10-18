@@ -8,7 +8,7 @@ namespace Company.Function
 {
     public class EventGridTriggerCSharp
     {
-        private readonly ILogger<EventGridTriggerCSharp> _logger;
+        private readonly ILogger _logger;
 
         public EventGridTriggerCSharp(FunctionContext context)
         {

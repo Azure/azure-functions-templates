@@ -6,7 +6,7 @@ namespace Company.Function
 {
     public class EventHubTriggerCSharp
     {
-        private readonly ILogger<EventHubTriggerCSharp> _logger;
+        private readonly ILogger _logger;
 
         public EventHubTriggerCSharp(FunctionContext context)
         {

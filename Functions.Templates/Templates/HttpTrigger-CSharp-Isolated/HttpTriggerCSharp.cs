@@ -8,7 +8,7 @@ namespace Company.Function
 {
     public class HttpTriggerCSharp
     {
-        private readonly ILogger<HttpTriggerCSharp> _logger;
+        private readonly ILogger _logger;
 
         public HttpTriggerCSharp(FunctionContext context)
         {
