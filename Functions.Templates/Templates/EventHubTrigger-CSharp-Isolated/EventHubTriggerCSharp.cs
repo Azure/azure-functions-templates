@@ -10,7 +10,7 @@ namespace Company.Function
 
         public EventHubTriggerCSharp(FunctionContext context)
         {
-            _logger = context.GetLogger("EventHubTriggerCSharp");
+            _logger = context.GetLogger<EventHubTriggerCSharp>();
         }
 
         [Function("EventHubTriggerCSharp")]

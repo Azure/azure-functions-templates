@@ -11,7 +11,7 @@ namespace Company.Function
 
         public BlobTriggerCSharp(FunctionContext context)
         {
-            _logger = context.GetLogger("BlobTriggerCSharp");
+            _logger = context.GetLogger<BlobTriggerCSharp>();
         }
 
         [Function("BlobTriggerCSharp")]

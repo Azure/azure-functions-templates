@@ -11,7 +11,7 @@ namespace Company.Function
 
         public CosmosDBTriggerCSharp(FunctionContext context)
         {
-            _logger = context.GetLogger("CosmosDBTriggerCSharp");
+            _logger = context.GetLogger<CosmosDBTriggerCSharp>();
         }
 
         [Function("CosmosDBTriggerCSharp")]

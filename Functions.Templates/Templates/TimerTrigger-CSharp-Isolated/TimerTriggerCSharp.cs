@@ -10,7 +10,7 @@ namespace Company.Function
 
         public TimerTriggerCSharp(FunctionContext context)
         {
-            _logger = context.GetLogger("TimerTriggerCSharp");
+            _logger = context.GetLogger<TimerTriggerCSharp>();
         }
 
         [Function("TimerTriggerCSharp")]

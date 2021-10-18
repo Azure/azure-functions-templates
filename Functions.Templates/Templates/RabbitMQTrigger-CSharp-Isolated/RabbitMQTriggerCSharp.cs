@@ -10,7 +10,7 @@ namespace Company.Function
 
         public RabbitMQTriggerCSharp(FunctionContext context)
         {
-            _logger = context.GetLogger("RabbitMQTriggerCSharp");
+            _logger = context.GetLogger<RabbitMQTriggerCSharp>();
         }
 
         [Function("RabbitMQTriggerCSharp")]

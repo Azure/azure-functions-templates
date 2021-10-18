@@ -12,7 +12,7 @@ namespace Company.Function
 
         public EventGridTriggerCSharp(FunctionContext context)
         {
-            _logger = context.GetLogger("EventGridTriggerCSharp");
+            _logger = context.GetLogger<EventGridTriggerCSharp>();
         }
 
         [Function("EventGridTriggerCSharp")]

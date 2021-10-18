@@ -10,7 +10,7 @@ namespace Company.Function
 
         public ServiceBusQueueTriggerCSharp(FunctionContext context)
         {
-            _logger = context.GetLogger("ServiceBusQueueTriggerCSharp");
+            _logger = context.GetLogger<ServiceBusQueueTriggerCSharp>();
         }
 
         [Function("ServiceBusQueueTriggerCSharp")]
