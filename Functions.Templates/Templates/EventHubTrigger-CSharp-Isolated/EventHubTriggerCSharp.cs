@@ -8,9 +8,9 @@ namespace Company.Function
     {
         private readonly ILogger _logger;
 
-        public EventHubTriggerCSharp(FunctionContext context)
+        public EventHubTriggerCSharp(ILoggerFactory loggerFactory)
         {
-            _logger = context.GetLogger<EventHubTriggerCSharp>();
+            _logger = loggerFactory.CreateLogger<EventHubTriggerCSharp>();
         }
 
         [Function("EventHubTriggerCSharp")]

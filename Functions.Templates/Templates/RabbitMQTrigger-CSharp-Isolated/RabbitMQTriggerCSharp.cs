@@ -8,9 +8,9 @@ namespace Company.Function
     {
         private readonly ILogger _logger;
 
-        public RabbitMQTriggerCSharp(FunctionContext context)
+        public RabbitMQTriggerCSharp(ILoggerFactory loggerFactory)
         {
-            _logger = context.GetLogger<RabbitMQTriggerCSharp>();
+            _logger = loggerFactory.CreateLogger<RabbitMQTriggerCSharp>();
         }
 
         [Function("RabbitMQTriggerCSharp")]

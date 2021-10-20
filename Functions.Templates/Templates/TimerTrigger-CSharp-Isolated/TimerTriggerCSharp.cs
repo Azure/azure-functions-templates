@@ -8,9 +8,9 @@ namespace Company.Function
     {
         private readonly ILogger _logger;
 
-        public TimerTriggerCSharp(FunctionContext context)
+        public TimerTriggerCSharp(ILoggerFactory loggerFactory)
         {
-            _logger = context.GetLogger<TimerTriggerCSharp>();
+            _logger = loggerFactory.CreateLogger<TimerTriggerCSharp>();
         }
 
         [Function("TimerTriggerCSharp")]

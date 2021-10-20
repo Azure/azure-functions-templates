@@ -10,9 +10,9 @@ namespace Company.Function
     {
         private readonly ILogger _logger;
 
-        public SignalRConnectionInfoHttpTriggerCSharp(FunctionContext context)
+        public SignalRConnectionInfoHttpTriggerCSharp(ILoggerFactory loggerFactory)
         {
-            _logger = context.GetLogger("negotiate");
+            _logger = loggerFactory.CreateLogger("negotiate");
         }
 
         [Function("negotiate")]

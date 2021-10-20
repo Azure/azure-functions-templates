@@ -9,9 +9,9 @@ namespace Company.Function
     {
         private readonly ILogger _logger;
 
-        public CosmosDBTriggerCSharp(FunctionContext context)
+        public CosmosDBTriggerCSharp(ILoggerFactory loggerFactory)
         {
-            _logger = context.GetLogger<CosmosDBTriggerCSharp>();
+            _logger = loggerFactory.CreateLogger<CosmosDBTriggerCSharp>();
         }
 
         [Function("CosmosDBTriggerCSharp")]

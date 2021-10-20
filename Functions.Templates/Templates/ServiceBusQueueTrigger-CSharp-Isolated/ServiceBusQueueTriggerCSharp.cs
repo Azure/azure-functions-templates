@@ -8,9 +8,9 @@ namespace Company.Function
     {
         private readonly ILogger _logger;
 
-        public ServiceBusQueueTriggerCSharp(FunctionContext context)
+        public ServiceBusQueueTriggerCSharp(ILoggerFactory loggerFactory)
         {
-            _logger = context.GetLogger<ServiceBusQueueTriggerCSharp>();
+            _logger = loggerFactory.CreateLogger<ServiceBusQueueTriggerCSharp>();
         }
 
         [Function("ServiceBusQueueTriggerCSharp")]
