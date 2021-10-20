@@ -10,9 +10,9 @@ namespace Company.Function
     {
         private readonly ILogger _logger;
 
-        public HttpTriggerCSharp(FunctionContext context)
+        public HttpTriggerCSharp(ILoggerFactory loggerFactory)
         {
-            _logger = context.GetLogger<HttpTriggerCSharp>();
+            _logger = loggerFactory.CreateLogger<HttpTriggerCSharp>();
         }
 
         [Function("HttpTriggerCSharp")]

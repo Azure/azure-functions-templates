@@ -9,9 +9,9 @@ namespace Company.Function
     {
         private readonly ILogger _logger;
 
-        public BlobTriggerCSharp(FunctionContext context)
+        public BlobTriggerCSharp(ILoggerFactory loggerFactory)
         {
-            _logger = context.GetLogger<BlobTriggerCSharp>();
+            _logger = loggerFactory.CreateLogger<BlobTriggerCSharp>();
         }
 
         [Function("BlobTriggerCSharp")]

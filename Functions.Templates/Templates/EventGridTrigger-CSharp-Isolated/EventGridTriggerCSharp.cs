@@ -10,9 +10,9 @@ namespace Company.Function
     {
         private readonly ILogger _logger;
 
-        public EventGridTriggerCSharp(FunctionContext context)
+        public EventGridTriggerCSharp(ILoggerFactory loggerFactory)
         {
-            _logger = context.GetLogger<EventGridTriggerCSharp>();
+            _logger = loggerFactory.CreateLogger<EventGridTriggerCSharp>();
         }
 
         [Function("EventGridTriggerCSharp")]
