@@ -42,7 +42,7 @@ steps:
     TargetFolder: $(Build.ArtifactStagingDirectory)
 
 - task: PublishBuildArtifacts@1
-  enabled: false
+  enabled: true
   displayName: 'Publish Artifact: loc'
   inputs:
     ArtifactName: 'loc'
