@@ -42,8 +42,12 @@
             "defaultValue": "Function"
         },
         "AuthEnabled": {
-          "type": "computed",
-          "value": "(AccessRights == \"Function\" || AccessRights == \"Admin\")"
+            "type": "computed",
+            "value": "(AccessRights == \"Function\" || AccessRights == \"Admin\")"
+        },
+        "HostIdentifier": {
+            "type": "bind",
+            "binding": "HostIdentifier"
         }
     },
     "primaryOutputs": [

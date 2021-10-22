@@ -25,6 +25,10 @@
             "description": "Enter a cron expression of the format '{second} {minute} {hour} {day} {month} {day of week}' to specify the schedule.",
             "defaultValue": "0 */5 * * * *",
             "replaces": "ScheduleValue"
+        },
+        "HostIdentifier": {
+            "type": "bind",
+            "binding": "HostIdentifier"
         }
     },
     "primaryOutputs": [
@@ -40,9 +44,9 @@
             "continueOnError": "true",
             "manualInstructions": [],
             "args": {
-              "referenceType": "package",
+                "referenceType": "package",
               "reference": "Microsoft.Azure.Functions.Worker.Extensions.Timer", "version": "4.0.1",
-              "projectFileExtensions": ".csproj"
+                "projectFileExtensions": ".csproj"
             }
         },
         {

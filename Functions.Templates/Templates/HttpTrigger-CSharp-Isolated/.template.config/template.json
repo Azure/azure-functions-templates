@@ -40,6 +40,10 @@
             ],
             "replaces": "AuthLevelValue",
             "defaultValue": "Function"
+        },
+        "HostIdentifier": {
+            "type": "bind",
+            "binding": "HostIdentifier"
         }
     },
     "primaryOutputs": [
@@ -55,9 +59,9 @@
             "ContinueOnError": "true",
             "ManualInstructions": [],
             "args": {
-              "referenceType": "package",
+                "referenceType": "package",
               "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http", "version": "3.0.12",
-              "projectFileExtensions": ".csproj"
+                "projectFileExtensions": ".csproj"
             }
         },
         {
