@@ -32,6 +32,10 @@
             "description": "The queue to which the message will be sent",
             "defaultValue": "myqueue",
             "replaces": "QueueNameValue"
+        },
+        "HostIdentifier": {
+            "type": "bind",
+            "binding": "HostIdentifier"
         }
     },
     "primaryOutputs": [
