@@ -11,15 +11,8 @@ namespace Company.Function
 {
     public class EventHubTriggerCSharp
     {
-        private readonly ILogger<EventHubTriggerCSharp> _logger;
-
-        public EventHubTriggerCSharp(ILogger<EventHubTriggerCSharp> log)
-        {
-            _logger = log;
-        }
-
         [FunctionName("EventHubTriggerCSharp")]
-        public async Task Run([EventHubTrigger("eventHubNameValue", Connection = "ConnectionValue")] EventData[] events)
+        public async Task Run([EventHubTrigger("eventHubNameValue", Connection = "ConnectionValue")] EventData[] events, ILogger log)
         {
             var exceptions = new List<Exception>();
 
@@ -30,7 +23,7 @@ namespace Company.Function
                     string messageBody = Encoding.UTF8.GetString(eventData.Body.Array, eventData.Body.Offset, eventData.Body.Count);
 
                     // Replace these two lines with your processing logic.
-                    _logger.LogInformation($"C# Event Hub trigger function processed a message: {messageBody}");
+                    log.LogInformation($"C# Event Hub trigger function processed a message: {messageBody}");
                     await Task.Yield();
                 }
                 catch (Exception e)

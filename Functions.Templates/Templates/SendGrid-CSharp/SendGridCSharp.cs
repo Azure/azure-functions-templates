@@ -18,18 +18,11 @@ namespace Company.Function
 {
     public class SendGridCSharp
     {
-        private readonly ILogger<SendGridCSharp> _logger;
-
-        public SendGridCSharp(ILogger<SendGridCSharp> log)
-        {
-            _logger = log;
-        }
-
         [FunctionName("SendGridCSharp")]
         [return: SendGrid(ApiKey = "ApiKeyValue", To = "{CustomerEmail}", From = "FromEmailValue")]
-        public SendGridMessage Run([QueueTrigger("PathValue", Connection = "ConnectionValue")]Order order)
+        public SendGridMessage Run([QueueTrigger("PathValue", Connection = "ConnectionValue")]Order order, ILogger log)
         {
-            _logger.LogInformation($"C# Queue trigger function processed order: {order.OrderId}");
+            log.LogInformation($"C# Queue trigger function processed order: {order.OrderId}");
 
             SendGridMessage message = new SendGridMessage()
             {

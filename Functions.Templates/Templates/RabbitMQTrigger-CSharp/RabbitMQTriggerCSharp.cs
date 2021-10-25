@@ -7,17 +7,10 @@ namespace Company.Function
 {
     public class RabbitMQTriggerCSharp
     {
-        private readonly ILogger<RabbitMQTriggerCSharp> _logger;
-
-        public RabbitMQTriggerCSharp(ILogger<RabbitMQTriggerCSharp> log)
-        {
-            _logger = log;
-        }
-
         [FunctionName("RabbitMQTriggerCSharp")]
-        public void Run([RabbitMQTrigger("NameOfQueue", ConnectionStringSetting = "ConnectionValue")]string myQueueItem)
+        public void Run([RabbitMQTrigger("NameOfQueue", ConnectionStringSetting = "ConnectionValue")]string myQueueItem, ILogger log)
         {
-            _logger.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
+            log.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
         }
     }
 }

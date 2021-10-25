@@ -7,17 +7,10 @@ namespace Company.Function
 {
     public class TimerTriggerCSharp
     {
-        private readonly ILogger<TimerTriggerCSharp> _logger;
-
-        public TimerTriggerCSharp(ILogger<TimerTriggerCSharp> log)
-        {
-            _logger = log;
-        }
-
         [FunctionName("TimerTriggerCSharp")]
-        public void Run([TimerTrigger("ScheduleValue")]TimerInfo myTimer)
+        public void Run([TimerTrigger("ScheduleValue")]TimerInfo myTimer, ILogger log)
         {
-            _logger.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
+            log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
         }
     }
 }
