@@ -6,13 +6,6 @@ namespace Company.Function
 {
     public class KafkaTriggerCSharp
     {
-        private readonly ILogger<KafkaTriggerCSharp> _logger;
-
-        public KafkaTriggerCSharp(ILogger<KafkaTriggerCSharp> log)
-        {
-            _logger = log;
-        }
-
         // KafkaTrigger sample 
         // Consume the message from "topic" on the LocalBroker.
         // Add `BrokerList` and `KafkaPassword` to the local.settings.json
@@ -27,11 +20,12 @@ namespace Company.Function
                           Password = "%KafkaPassword%",
                           Protocol = BrokerProtocol.SaslSsl,
                           AuthenticationMode = BrokerAuthenticationMode.Plain,
-                          ConsumerGroup = "$Default")] KafkaEventData<string>[] events)
+                          ConsumerGroup = "$Default")] KafkaEventData<string>[] events,
+            ILogger log)
         {
             foreach (KafkaEventData<string> eventData in events)
             {
-                _logger.LogInformation($"C# Kafka trigger function processed a message: {eventData.Value}");
+                log.LogInformation($"C# Kafka trigger function processed a message: {eventData.Value}");
             }
         }
     }

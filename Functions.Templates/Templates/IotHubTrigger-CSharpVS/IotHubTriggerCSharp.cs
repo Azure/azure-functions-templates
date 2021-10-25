@@ -12,17 +12,11 @@ namespace Company.Function
     public class IotHubTriggerCSharp
     {
         private static HttpClient client = new HttpClient();
-        private readonly ILogger<IotHubTriggerCSharp> _logger;
-
-        public IotHubTriggerCSharp(ILogger<IotHubTriggerCSharp> log)
-        {
-            _logger = log;
-        }
-
+        
         [FunctionName("IotHubTriggerCSharp")]
-        public void Run([IoTHubTrigger("PathValue", Connection = "ConnectionValue")]EventData message)
+        public void Run([IoTHubTrigger("PathValue", Connection = "ConnectionValue")]EventData message, ILogger log)
         {
-            _logger.LogInformation($"C# IoT Hub trigger function processed a message: {Encoding.UTF8.GetString(message.Body.Array)}");
+            log.LogInformation($"C# IoT Hub trigger function processed a message: {Encoding.UTF8.GetString(message.Body.Array)}");
         }
     }
 }

@@ -7,17 +7,10 @@ namespace Company.Function
 {
     public class QueueTriggerCSharp
     {
-        private readonly ILogger<QueueTriggerCSharp> _logger;
-
-        public QueueTriggerCSharp(ILogger<QueueTriggerCSharp> log)
-        {
-            _logger = log;
-        }
-
         [FunctionName("QueueTriggerCSharp")]
-        public void Run([QueueTrigger("PathValue", Connection = "ConnectionValue")]string myQueueItem)
+        public void Run([QueueTrigger("PathValue", Connection = "ConnectionValue")]string myQueueItem, ILogger log)
         {
-            _logger.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
+            log.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
         }
     }
 }
