@@ -1,0 +1,21 @@
+{
+  "defaultFunctionName": "SqlInputBinding",
+  "description": "$SqlInputBinding_description",
+  "name": "SQL Input Binding",
+  "language": "C#",
+  "category": [
+    "$temp_category_core",
+    "$temp_category_api"
+  ],
+  "categoryStyle": "http",
+  "enabledInTryMode": true,
+  "userPrompt": [
+    "connectionStringSetting",
+    "object"
+  ],
+  "extensions": [
+    {
+      "id": "Microsoft.Azure.WebJobs.Extensions.Sql", "version": "1.0.0-preview3"
+    }
+  ]
+}
