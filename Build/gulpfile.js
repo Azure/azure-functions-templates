@@ -46,6 +46,13 @@ else {
   bundleTemplateV3 = '3.0.0';
 }
 
+if (process.env.devops_buildNumber) {
+  bundleTemplateV4Preview = '4.0.' + process.env.devops_buildNumber;
+}
+else {
+  bundleTemplateV4Preview = '4.0.0';
+}
+
 gulp.copy = function (src, dest) {
   return gulp.src(src)
     .pipe(gulp.dest(dest));
@@ -98,6 +105,22 @@ gulp.task('nuget-pack-bundle-v3', function () {
   return gulp.src('./PackageFiles/ExtensionBundleTemplates-3.x.nuspec')
     .pipe(nuget.pack({ nuget: nugetPath, version: version }))
     .pipe(gulp.dest('../bin/Temp-ExtensionBundle.Templates-v3'));
+});
+
+gulp.task('nuget-pack-bundle-v4-preview', function () {
+  var nugetPath = './nuget.exe';
+
+  return gulp.src('./PackageFiles/ExtensionBundlePreviewTemplates-4.x.nuspec')
+    .pipe(nuget.pack({ nuget: nugetPath, version: version }))
+    .pipe(gulp.dest('../bin/Temp-ExtensionBundle.Preview.Templates-v4'));
+});
+
+gulp.task('nuget-pack-bundle-v4', function () {
+  var nugetPath = './nuget.exe';
+
+  return gulp.src('./PackageFiles/ExtensionBundleTemplates-4.x.nuspec')
+    .pipe(nuget.pack({ nuget: nugetPath, version: version }))
+    .pipe(gulp.dest('../bin/Temp-ExtensionBundle.Templates-v4'));
 });
 
 gulp.task('nuget-pack-Templates', function () {
@@ -177,6 +200,13 @@ gulp.task('unzip-templates', function () {
       .pipe(gulp.dest(`../bin/Temp-ExtensionBundle.Templates-v3/`))
   );
 
+  streams.push(
+    gulp
+      .src(`../bin/Temp-ExtensionBundle.Templates-v4/*`)
+      .pipe(decompress())
+      .pipe(gulp.dest(`../bin/Temp-ExtensionBundle.Templates-v4/`))
+  );
+
   return gulpMerge(streams);
 });
 
@@ -212,6 +242,15 @@ gulp.task('copy-bindings-resources-to-bundle', function () {
 
   streams.push(
     gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Templates-v3/resources/')
+  );
+
+  
+  streams.push(
+    gulp.copy('../bin/Templates/bindings/*', '../bin/ExtensionBundle.Preview.Templates-v4/bindings/')
+  );
+
+  streams.push(
+    gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Preview.Templates-v4/resources/')
   );
 
   return gulpMerge(streams);
