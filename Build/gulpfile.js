@@ -460,6 +460,32 @@ gulp.task('build-ExtensionBundle-v3-Templates', function (cb) {
   cb();
 });
 
+gulp.task('build-ExtensionBundlePreview-v4-Templates', function (cb) {
+  const version = '4';
+  let templateListJson = [];
+  const templates = getSubDirectories(path.join('../bin/Temp-ExtensionBundle.Preview.Templates-v4', 'templates'));
+  templates.forEach(template => {
+    let templateObj = {};
+    const filePath = path.join('../bin/Temp-ExtensionBundle.Preview.Templates-v4', 'templates', template);
+    let files = getFilesWithContent(filePath, ['function.json', 'metadata.json']);
+
+    templateObj.id = template;
+    templateObj.runtime = version;
+    templateObj.files = files;
+
+    templateObj.function = require(path.join(filePath, 'function.json'));
+    templateObj.metadata = require(path.join(filePath, 'metadata.json'));
+    templateListJson.push(templateObj);
+  });
+  let writePath = path.join('../bin/ExtensionBundle.Preview.Templates-v4', 'templates');
+  if (!fs.existsSync(writePath)) {
+    fs.mkdirSync(writePath);
+  }
+  writePath = path.join(writePath, 'templates.json');
+  fs.writeFileSync(writePath, new Buffer(JSON.stringify(templateListJson, null, 2)));
+  cb();
+});
+
 /********
  * Place Binding Templates
  */
@@ -517,6 +543,12 @@ gulp.task('zip-output', function () {
       .pipe(gulp.dest('../bin/'))
   );
 
+  streams.push(
+    gulp.src('../bin/ExtensionBundle.Preview.Templates-v4/**/*.json')
+      .pipe(zip('ExtensionBundle.Preview.v4.Templates.' + bundleTemplateV3Preview + '.zip'))
+      .pipe(gulp.dest('../bin/'))
+  );
+
   return gulpMerge(streams);
 });
 
@@ -532,6 +564,7 @@ gulp.task(
     'nuget-pack-bundle-v2',
     'nuget-pack-bundle-v3-preview',
     'nuget-pack-bundle-v3',
+    'nuget-pack-bundle-v4-preview',
     'unzip-templates',
     'resources-convert',
     'resources-build',
@@ -543,6 +576,7 @@ gulp.task(
     'build-ExtensionBundle-v2-Templates',
     'build-ExtensionBundlePreview-v3-Templates',
     'build-ExtensionBundle-v3-Templates',
+    'build-ExtensionBundlePreview-v4-Templates',
     'zip-output',
     'clean-temp'
   )
