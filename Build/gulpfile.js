@@ -46,6 +46,13 @@ else {
   bundleTemplateV3 = '3.0.0';
 }
 
+if (process.env.devops_buildNumber) {
+  bundleTemplateV4Preview = '4.0.' + process.env.devops_buildNumber;
+}
+else {
+  bundleTemplateV4Preview = '4.0.0';
+}
+
 gulp.copy = function (src, dest) {
   return gulp.src(src)
     .pipe(gulp.dest(dest));
@@ -98,6 +105,22 @@ gulp.task('nuget-pack-bundle-v3', function () {
   return gulp.src('./PackageFiles/ExtensionBundleTemplates-3.x.nuspec')
     .pipe(nuget.pack({ nuget: nugetPath, version: version }))
     .pipe(gulp.dest('../bin/Temp-ExtensionBundle.Templates-v3'));
+});
+
+gulp.task('nuget-pack-bundle-v4-preview', function () {
+  var nugetPath = './nuget.exe';
+
+  return gulp.src('./PackageFiles/ExtensionBundlePreviewTemplates-4.x.nuspec')
+    .pipe(nuget.pack({ nuget: nugetPath, version: version }))
+    .pipe(gulp.dest('../bin/Temp-ExtensionBundle.Preview.Templates-v4'));
+});
+
+gulp.task('nuget-pack-bundle-v4', function () {
+  var nugetPath = './nuget.exe';
+
+  return gulp.src('./PackageFiles/ExtensionBundleTemplates-4.x.nuspec')
+    .pipe(nuget.pack({ nuget: nugetPath, version: version }))
+    .pipe(gulp.dest('../bin/Temp-ExtensionBundle.Templates-v4'));
 });
 
 gulp.task('nuget-pack-Templates', function () {
@@ -177,6 +200,13 @@ gulp.task('unzip-templates', function () {
       .pipe(gulp.dest(`../bin/Temp-ExtensionBundle.Templates-v3/`))
   );
 
+  streams.push(
+    gulp
+      .src(`../bin/Temp-ExtensionBundle.Templates-v4/*`)
+      .pipe(decompress())
+      .pipe(gulp.dest(`../bin/Temp-ExtensionBundle.Templates-v4/`))
+  );
+
   return gulpMerge(streams);
 });
 
@@ -212,6 +242,15 @@ gulp.task('copy-bindings-resources-to-bundle', function () {
 
   streams.push(
     gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Templates-v3/resources/')
+  );
+
+  
+  streams.push(
+    gulp.copy('../bin/Templates/bindings/*', '../bin/ExtensionBundle.Preview.Templates-v4/bindings/')
+  );
+
+  streams.push(
+    gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Preview.Templates-v4/resources/')
   );
 
   return gulpMerge(streams);
@@ -421,6 +460,32 @@ gulp.task('build-ExtensionBundle-v3-Templates', function (cb) {
   cb();
 });
 
+gulp.task('build-ExtensionBundlePreview-v4-Templates', function (cb) {
+  const version = '4';
+  let templateListJson = [];
+  const templates = getSubDirectories(path.join('../bin/Temp-ExtensionBundle.Preview.Templates-v4', 'templates'));
+  templates.forEach(template => {
+    let templateObj = {};
+    const filePath = path.join('../bin/Temp-ExtensionBundle.Preview.Templates-v4', 'templates', template);
+    let files = getFilesWithContent(filePath, ['function.json', 'metadata.json']);
+
+    templateObj.id = template;
+    templateObj.runtime = version;
+    templateObj.files = files;
+
+    templateObj.function = require(path.join(filePath, 'function.json'));
+    templateObj.metadata = require(path.join(filePath, 'metadata.json'));
+    templateListJson.push(templateObj);
+  });
+  let writePath = path.join('../bin/ExtensionBundle.Preview.Templates-v4', 'templates');
+  if (!fs.existsSync(writePath)) {
+    fs.mkdirSync(writePath);
+  }
+  writePath = path.join(writePath, 'templates.json');
+  fs.writeFileSync(writePath, new Buffer(JSON.stringify(templateListJson, null, 2)));
+  cb();
+});
+
 /********
  * Place Binding Templates
  */
@@ -478,6 +543,12 @@ gulp.task('zip-output', function () {
       .pipe(gulp.dest('../bin/'))
   );
 
+  streams.push(
+    gulp.src('../bin/ExtensionBundle.Preview.Templates-v4/**/*.json')
+      .pipe(zip('ExtensionBundle.Preview.v4.Templates.' + bundleTemplateV3Preview + '.zip'))
+      .pipe(gulp.dest('../bin/'))
+  );
+
   return gulpMerge(streams);
 });
 
@@ -493,6 +564,7 @@ gulp.task(
     'nuget-pack-bundle-v2',
     'nuget-pack-bundle-v3-preview',
     'nuget-pack-bundle-v3',
+    'nuget-pack-bundle-v4-preview',
     'unzip-templates',
     'resources-convert',
     'resources-build',
@@ -504,6 +576,7 @@ gulp.task(
     'build-ExtensionBundle-v2-Templates',
     'build-ExtensionBundlePreview-v3-Templates',
     'build-ExtensionBundle-v3-Templates',
+    'build-ExtensionBundlePreview-v4-Templates',
     'zip-output',
     'clean-temp'
   )
