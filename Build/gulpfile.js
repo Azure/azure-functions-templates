@@ -545,7 +545,7 @@ gulp.task('zip-output', function () {
 
   streams.push(
     gulp.src('../bin/ExtensionBundle.Preview.Templates-v4/**/*.json')
-      .pipe(zip('ExtensionBundle.Preview.v4.Templates.' + bundleTemplateV3Preview + '.zip'))
+      .pipe(zip('ExtensionBundle.Preview.v4.Templates.' + bundleTemplateV4Preview + '.zip'))
       .pipe(gulp.dest('../bin/'))
   );
 
