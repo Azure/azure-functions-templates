@@ -15,7 +15,7 @@ namespace Company.Function
         [FunctionName("SqlInputBinding")]
          public static IActionResult Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
-            [Sql("select * from object",
+            [Sql("SELECT * FROM object",
             CommandType = System.Data.CommandType.Text,
             ConnectionStringSetting = "SqlConnectionString")] IEnumerable<Object> result,
             ILogger log)

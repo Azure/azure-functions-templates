@@ -5,3 +5,5 @@ The `SQL Output Binding` makes it easy to take a list of rows and upsert them in
 ## How it works
 
 For a `SQL Output Binding` to work, you provide the existing table in the database to upsert rows into. For instance, you can set the table to `[dbo].[table1]` to upsert into this table.
+
+For more information, see the official [docs](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-azure-sql-output?tabs=csharp)
