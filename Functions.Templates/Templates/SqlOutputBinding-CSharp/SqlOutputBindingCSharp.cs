@@ -14,13 +14,27 @@ namespace Company.Function
         // and https://github.com/Azure/azure-functions-sql-extension#Output-Binding for more details
         [FunctionName("SqlOutputBinding")]
          public static Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
-            [Sql("table", ConnectionStringSetting = "SqlConnectionString")] out Object output,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "addtodoitem")] HttpRequest req,
+            [Sql("table", ConnectionStringSetting = "SqlConnectionString")] out ToDoItem output,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger with SQL Output Binding function processed a request.");
 
-            throw new NotImplementedException();
+            output = new ToDoItem
+            {
+                Id = "1",
+                Priority = 1,
+                Description = "Hello World"
+            };
+
+            return new CreatedResult($"/api/addtodoitem", output);
         }
+    }
+
+    public class ToDoItem
+    {
+        public string Id { get; set; }
+        public int Priority { get; set; }
+        public string Description { get; set; }
     }
 }
