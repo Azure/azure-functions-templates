@@ -1,5 +1,5 @@
-global using global::Microsoft.Azure.Functions.Worker;
-global using global::Microsoft.Azure.Functions.Worker.Http;
-global using global::Microsoft.Extensions.Hosting;
-global using global::Microsoft.Extensions.Logging;
-global using global::System.Net;
+global using Microsoft.Azure.Functions.Worker;
+global using Microsoft.Azure.Functions.Worker.Http;
+global using Microsoft.Extensions.Hosting;
+global using Microsoft.Extensions.Logging;
+global using System.Net;
