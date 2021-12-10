@@ -13,7 +13,7 @@ namespace Company.Function
         // Visit https://aka.ms/sqlbindingsoutput to learn how to use this output binding
         [FunctionName("SqlOutputBinding")]
          public static Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "addtodoitem")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "addtodoitem")] HttpRequest req,
             [Sql("table", ConnectionStringSetting = "SqlConnectionString")] out ToDoItem output,
             ILogger log)
         {
