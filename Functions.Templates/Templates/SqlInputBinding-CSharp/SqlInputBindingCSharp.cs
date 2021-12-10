@@ -10,8 +10,7 @@ namespace Company.Function
 {
     public static class SqlInputBindingCSharp
     {
-        // Visit https://github.com/Azure/azure-functions-sql-extension#Input-Binding-Tutorial to learn how to use this input binding
-        // and https://github.com/Azure/azure-functions-sql-extension#Input-Binding for more details
+        // Visit https://aka.ms/sqlbindingsinput to learn how to use this input binding
         [FunctionName("SqlInputBinding")]
          public static IActionResult Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
