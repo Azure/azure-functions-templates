@@ -10,8 +10,7 @@ namespace Company.Function
 {
     public static class SqlOutputBindingCSharp
     {
-        // Visit https://github.com/Azure/azure-functions-sql-extension#Output-Binding-Tutorial to learn how to use this output binding
-        // and https://github.com/Azure/azure-functions-sql-extension#Output-Binding for more details
+        // Visit https://aka.ms/sqlbindingsoutput to learn how to use this output binding
         [FunctionName("SqlOutputBinding")]
          public static Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "addtodoitem")] HttpRequest req,
