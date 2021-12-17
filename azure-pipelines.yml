@@ -24,22 +24,6 @@ steps:
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
-  
-- task: OneLocBuild@2
-  enabled: true
-  inputs:
-    locProj: 'Build\Localize\LocProject.json'
-    outDir: '$(Build.Repository.LocalPath)'
-    packageSourceAuth: 'patAuth'
-    patVariable: '$(ONELOCBUILD)'
-    continueOnError: true
-
-- task: CopyFiles@2
-  enabled: true
-  displayName: 'Copy Loc files to publish directories'
-  inputs:
-    SourceFolder: $(System.DefaultWorkingDirectory)/loc
-    TargetFolder: $(Build.ArtifactStagingDirectory)
 
 - task: PublishBuildArtifacts@1
   enabled: true
@@ -77,41 +61,28 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      function GenerateIndexJson($ctx, $bundleVersion, $fileRelativePath, $rootPath)
+      function GenerateIndexJson($ctx, $templateVersion, $fileRelativePath, $rootPath)
       {
       $filePath = Join-Path -Path $rootPath -ChildPath $fileRelativePath
-      
+            
       $json = @"   
           {
-              "version": "$bundleVersion",
+              "version": "$templateVersion",
               "commitId" : "$(Build.SourceVersion)"
           }
       "@
 
+          Write-Host $filePath
           New-Item -Path $filePath -Force
           $json | Out-File -FilePath $filePath -Encoding ascii
           $blobName = "ExtensionBundleTemplates\build\" + $fileRelativePath
           Set-AzureStorageBlobContent -Container "public" -File $filePath -Blob $blobName -Context $ctx -Force
       }
-      
-      # get the build version
-      $BundleV1Template = "1.0." + $env:devops_buildNumber
-      $BundleV2Template = "2.0." + $env:devops_buildNumber
-      $BundleV3Template = "3.0." + $env:devops_buildNumber
-      
+
       $rootPath = $pwd
-      
+            
       # Storage Context
       $ctx = New-AzureStorageContext -StorageAccountName "$(ACCOUNT_NAME)" -SasToken "$(ACCOUNT_KEY)"
-      
-      $fileName = "v1\latest\version.json" 
-      GenerateIndexJson $ctx $BundleV1Template $fileName $rootPath
-      
-      $fileName = "v2\latest\version.json" 
-      GenerateIndexJson $ctx $BundleV2Template $fileName $rootPath
-      
-      $fileName = "v3\latest\version.json" 
-      GenerateIndexJson $ctx $BundleV3Template $fileName $rootPath
 
       $files= Get-ChildItem -Recurse -Path "$(System.ArtifactsDirectory)"
       foreach($file in $files)
@@ -131,9 +102,20 @@ steps:
               $blobName = "ExtensionBundleTemplates\" + $file.Name
               Write-Host "Uploading file:$fileFullName"
               Set-AzureStorageBlobContent -Container "public" -File $fileFullName -Blob $blobName -Context $ctx
+
+              # upload version.file
+              $name = $file.Name
+              $bundleIdLength = $name.IndexOf(".Templates.") + 10
+              $bundleId = $name.Substring(0,$bundleIdLength)
+
+              $path = $bundleId + "\latest\version.json"
+
+              $templateVersion = $fileName.Substring($bundleIdLength+1, 8)
+
+              GenerateIndexJson $ctx $templateVersion $path $rootPath
+
           }
       }
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   
 - task: PublishBuildArtifacts@1
   inputs:
