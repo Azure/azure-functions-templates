@@ -24,6 +24,22 @@ steps:
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
+  
+- task: OneLocBuild@2
+  enabled: true
+  inputs:
+    locProj: 'Build\Localize\LocProject.json'
+    outDir: '$(Build.Repository.LocalPath)'
+    packageSourceAuth: 'patAuth'
+    patVariable: '$(ONELOCBUILD)'
+    continueOnError: true
+
+- task: CopyFiles@2
+  enabled: true
+  displayName: 'Copy Loc files to publish directories'
+  inputs:
+    SourceFolder: $(System.DefaultWorkingDirectory)/loc
+    TargetFolder: $(Build.ArtifactStagingDirectory)
 
 - task: PublishBuildArtifacts@1
   enabled: true
@@ -64,7 +80,7 @@ steps:
       function GenerateIndexJson($ctx, $templateVersion, $fileRelativePath, $rootPath)
       {
       $filePath = Join-Path -Path $rootPath -ChildPath $fileRelativePath
-            
+      
       $json = @"   
           {
               "version": "$templateVersion",
@@ -78,12 +94,12 @@ steps:
           $blobName = "ExtensionBundleTemplates\build\" + $fileRelativePath
           Set-AzureStorageBlobContent -Container "public" -File $filePath -Blob $blobName -Context $ctx -Force
       }
-
+      
       $rootPath = $pwd
-            
+      
       # Storage Context
       $ctx = New-AzureStorageContext -StorageAccountName "$(ACCOUNT_NAME)" -SasToken "$(ACCOUNT_KEY)"
-
+      
       $files= Get-ChildItem -Recurse -Path "$(System.ArtifactsDirectory)"
       foreach($file in $files)
       {
@@ -116,6 +132,7 @@ steps:
 
           }
       }
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   
 - task: PublishBuildArtifacts@1
   inputs:
