@@ -126,7 +126,7 @@ steps:
 
               $path = $bundleId + "\latest\version.json"
 
-              $templateVersion = $fileName.Substring($bundleIdLength+1, 8)
+              $templateVersion = $name.Substring($bundleIdLength+1, 8)
 
               GenerateIndexJson $ctx $templateVersion $path $rootPath
 
