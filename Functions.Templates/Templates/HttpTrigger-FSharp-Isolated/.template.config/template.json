@@ -48,6 +48,23 @@
     "defaultName": "HttpTriggerFSharp",
     "postActions": [
         {
+            "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Http Nuget package",
+            "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+            "ContinueOnError": "true",
+            "ManualInstructions": [],
+            "args": {
+                "referenceType": "package",
+              "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http", "version": "3.0.12",
+                "projectFileExtensions": ".csproj"
+            }
+        },
+        {
+            "description": "Restore NuGet packages required by this project.",
+            "manualInstructions": [],
+            "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+            "continueOnError": true
+        },
+        {
             "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
             "description": "Opens the function class file in the editor",
             "manualInstructions": [],
