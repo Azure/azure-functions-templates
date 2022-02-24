@@ -11,7 +11,7 @@ namespace Company.Function
     public static class SqlInputBindingCSharp
     {
         // Visit https://aka.ms/sqlbindingsinput to learn how to use this input binding
-        [FunctionName("SqlInputBinding")]
+        [FunctionName("SqlInputBindingCSharp")]
          public static IActionResult Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req,
             [Sql("SELECT * FROM object",
