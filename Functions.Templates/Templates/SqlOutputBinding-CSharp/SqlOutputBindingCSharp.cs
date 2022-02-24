@@ -11,7 +11,7 @@ namespace Company.Function
     public static class SqlOutputBindingCSharp
     {
         // Visit https://aka.ms/sqlbindingsoutput to learn how to use this output binding
-        [FunctionName("SqlOutputBinding")]
+        [FunctionName("SqlOutputBindingCSharp")]
          public static CreatedResult Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = "addtodoitem")] HttpRequest req,
             [Sql("table", ConnectionStringSetting = "SqlConnectionString")] out ToDoItem output,
