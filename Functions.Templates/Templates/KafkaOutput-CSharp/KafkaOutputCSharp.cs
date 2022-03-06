@@ -13,7 +13,7 @@ namespace Company.Function
         // This KafkaOutput binding will create a topic "topic" on the LocalBroker if it doesn't exists.
         // Call this function then the KafkaTrigger will be trigged.
         [FunctionName("KafkaOutputCSharp")]
-        public static IActionResult Output(
+        public IActionResult Output(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
             [Kafka("BrokerList",
                    "topic",

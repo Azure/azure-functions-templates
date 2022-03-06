@@ -6,7 +6,7 @@
         "EventGrid"
     ],
     "name": "EventGridTrigger",
-    "identity": "Azure.Function.FSharp.EventGridTrigger.1.x",
+    "identity": "Azure.Function.FSharp.EventGridTrigger.2.x",
     "groupIdentity": "Azure.Function.EventGridTrigger",
     "shortName": "eventgrid",
     "tags": {
@@ -19,6 +19,10 @@
             "description": "namespace for the generated code",
             "replaces": "Company.Function",
             "type": "parameter"
+        },
+        "HostIdentifier": {
+            "type": "bind",
+            "binding": "HostIdentifier"
         }
     },
     "primaryOutputs": [

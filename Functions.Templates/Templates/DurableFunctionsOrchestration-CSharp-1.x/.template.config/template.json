@@ -18,6 +18,10 @@
       "description": "namespace for the generated code",
       "replaces": "Company.Function",
       "type": "parameter"
+    },
+    "HostIdentifier": {
+      "type": "bind",
+      "binding": "HostIdentifier"
     }
   },
   "primaryOutputs": [
@@ -34,7 +38,7 @@
       "ManualInstructions": [],
       "args": {
         "referenceType": "package",
-        "reference": "Microsoft.Azure.WebJobs.Extensions.DurableTask", "version": "1.8.6",
+        "reference": "Microsoft.Azure.WebJobs.Extensions.DurableTask", "version": "1.8.7",
         "projectFileExtensions": ".csproj"
       }
     },

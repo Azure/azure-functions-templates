@@ -13,14 +13,15 @@ namespace Company.Function
         // "BrokerList": "{EVENT_HUBS_NAMESPACE}.servicebus.windows.net:9093"
         // "KafkaPassword":"{EVENT_HUBS_CONNECTION_STRING}
         [FunctionName("KafkaTriggerCSharp")]
-        public static void Run(
+        public void Run(
             [KafkaTrigger("BrokerList",
                           "topic",
                           Username = "$ConnectionString",
                           Password = "%KafkaPassword%",
                           Protocol = BrokerProtocol.SaslSsl,
                           AuthenticationMode = BrokerAuthenticationMode.Plain,
-                          ConsumerGroup = "$Default")] KafkaEventData<string>[] events, ILogger log)
+                          ConsumerGroup = "$Default")] KafkaEventData<string>[] events,
+            ILogger log)
         {
             foreach (KafkaEventData<string> eventData in events)
             {

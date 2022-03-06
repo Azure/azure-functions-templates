@@ -14,7 +14,8 @@ namespace Company.Function
             databaseName: "DatabaseValue",
             collectionName: "CollectionValue",
             ConnectionStringSetting = "ConnectionValue",
-            LeaseCollectionName = "leases")]IReadOnlyList<Document> input, ILogger log)
+            LeaseCollectionName = "leases")]IReadOnlyList<Document> input,
+            ILogger log)
         {
             if (input != null && input.Count > 0)
             {

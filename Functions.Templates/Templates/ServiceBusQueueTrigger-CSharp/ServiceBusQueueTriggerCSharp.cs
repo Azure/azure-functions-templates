@@ -5,10 +5,10 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class ServiceBusQueueTriggerCSharp
+    public class ServiceBusQueueTriggerCSharp
     {
         [FunctionName("ServiceBusQueueTriggerCSharp")]
-        public static void Run([ServiceBusTrigger("QueueNameValue", Connection = "ConnectionValue")]string myQueueItem, ILogger log)
+        public void Run([ServiceBusTrigger("QueueNameValue", Connection = "ConnectionValue")]string myQueueItem, ILogger log)
         {
             log.LogInformation($"C# ServiceBus queue trigger function processed message: {myQueueItem}");
         }

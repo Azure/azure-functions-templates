@@ -1,9 +1,9 @@
-#r "Azure.Messaging.EventHubs"
-#r "System.Memory.Data"
+#r "Microsoft.Azure.EventHubs"
+
 
 using System;
 using System.Text;
-using Azure.Messaging.EventHubs;
+using Microsoft.Azure.EventHubs;
 
 public static async Task Run(EventData[] events, ILogger log)
 {
@@ -13,8 +13,10 @@ public static async Task Run(EventData[] events, ILogger log)
     {
         try
         {
+            string messageBody = Encoding.UTF8.GetString(eventData.Body.Array, eventData.Body.Offset, eventData.Body.Count);
+
             // Replace these two lines with your processing logic.
-            log.LogInformation($"C# Event Hub trigger function processed a message: {eventData.EventBody}");
+            log.LogInformation($"C# Event Hub trigger function processed a message: {messageBody}");
             await Task.Yield();
         }
         catch (Exception e)

@@ -11,133 +11,50 @@ const zip = require('gulp-zip');
 const request = require('request');
 const nuget = require('gulp-nuget');
 
-if (process.env.devops_buildNumber) {
-  version = '2.1.' + process.env.devops_buildNumber;
-}
-else {
-  version = '2.0.0';
-}
+buildVersion = '1';
 
 if (process.env.devops_buildNumber) {
-  bundleTemplateVersion = '1.0.' + process.env.devops_buildNumber;
-}
-else {
-  bundleTemplateVersion = '1.0.0';
+  buildVersion = process.env.devops_buildNumber;
 }
 
-if (process.env.devops_buildNumber) {
-  bundleTemplateVersionV2 = '2.0.' + process.env.devops_buildNumber;
-}
-else {
-  bundleTemplateVersionV2 = '2.0.0';
-}
+gulp.task('nuget-pack', function () {
+  let streams = [];
+  var nugetPath = './nuget.exe';
+  var patchVersion = 'patchVersion=' + buildVersion
 
-if (process.env.devops_buildNumber) {
-  bundleTemplateV3Preview = '3.0.' + process.env.devops_buildNumber;
-}
-else {
-  bundleTemplateV3Preview = '3.0.0';
-}
+  let files = getFiles('./PackageFiles/Dotnet_precompiled');
+  for (let i = 0; i < files.length; i++) {
+    let filePath = './PackageFiles/Dotnet_precompiled/' + files[i];
+    streams.push(
+      gulp
+        .src(filePath)
+        .pipe(nuget.pack({ nuget: nugetPath, properties: patchVersion, outputDirectory: '../bin/VS/' }))
+    );
+  }
 
-if (process.env.devops_buildNumber) {
-  bundleTemplateV3 = '3.0.' + process.env.devops_buildNumber;
-}
-else {
-  bundleTemplateV3 = '3.0.0';
-}
+  files = getFiles('./PackageFiles/ExtensionBundle');
+  for (let i = 0; i < files.length; i++) {
+    let filePath = './PackageFiles/ExtensionBundle/' + files[i];
+    streams.push(
+      gulp
+        .src(filePath)
+        .pipe(nuget.pack({ nuget: nugetPath, properties: patchVersion, outputDirectory: "../bin/Temp/ExtensionBundle" }))
+    )
+  }
 
-if (process.env.devops_buildNumber) {
-  bundleTemplateV4Preview = '4.0.' + process.env.devops_buildNumber;
-}
-else {
-  bundleTemplateV4Preview = '4.0.0';
-}
+  return gulpMerge(streams);
+});
 
 gulp.copy = function (src, dest) {
-  return gulp.src(src)
-    .pipe(gulp.dest(dest));
+  return gulp.src(src).pipe(gulp.dest(dest));
 };
-
-gulp.task('nuget-pack-itemTemplate', function () {
-  var nugetPath = './nuget.exe';
-
-  return gulp
-    .src('./PackageFiles/ItemTemplates.nuspec')
-    .pipe(nuget.pack({ nuget: nugetPath, version: version }))
-    .pipe(gulp.dest('../bin/VS/'));
-});
-
-gulp.task('nuget-pack-projectTemplates', function () {
-  var nugetPath = './nuget.exe';
-
-  return gulp.src('./PackageFiles/ProjectTemplates.nuspec')
-    .pipe(nuget.pack({ nuget: nugetPath, version: version }))
-    .pipe(gulp.dest('../bin/VS'));
-});
-
-gulp.task('nuget-pack-bundle-v1', function () {
-  var nugetPath = './nuget.exe';
-
-  return gulp.src('./PackageFiles/ExtensionBundleTemplates-1.x.nuspec')
-    .pipe(nuget.pack({ nuget: nugetPath, version: version }))
-    .pipe(gulp.dest('../bin/Temp-ExtensionBundle.Templates-v1'));
-});
-
-gulp.task('nuget-pack-bundle-v2', function () {
-  var nugetPath = './nuget.exe';
-
-  return gulp.src('./PackageFiles/ExtensionBundleTemplates-2.x.nuspec')
-    .pipe(nuget.pack({ nuget: nugetPath, version: version }))
-    .pipe(gulp.dest('../bin/Temp-ExtensionBundle.Templates-v2'));
-});
-
-gulp.task('nuget-pack-bundle-v3-preview', function () {
-  var nugetPath = './nuget.exe';
-
-  return gulp.src('./PackageFiles/ExtensionBundlePreviewTemplates-3.x.nuspec')
-    .pipe(nuget.pack({ nuget: nugetPath, version: version }))
-    .pipe(gulp.dest('../bin/Temp-ExtensionBundle.Preview.Templates-v3'));
-});
-
-gulp.task('nuget-pack-bundle-v3', function () {
-  var nugetPath = './nuget.exe';
-
-  return gulp.src('./PackageFiles/ExtensionBundleTemplates-3.x.nuspec')
-    .pipe(nuget.pack({ nuget: nugetPath, version: version }))
-    .pipe(gulp.dest('../bin/Temp-ExtensionBundle.Templates-v3'));
-});
-
-gulp.task('nuget-pack-bundle-v4-preview', function () {
-  var nugetPath = './nuget.exe';
-
-  return gulp.src('./PackageFiles/ExtensionBundlePreviewTemplates-4.x.nuspec')
-    .pipe(nuget.pack({ nuget: nugetPath, version: version }))
-    .pipe(gulp.dest('../bin/Temp-ExtensionBundle.Preview.Templates-v4'));
-});
-
-gulp.task('nuget-pack-bundle-v4', function () {
-  var nugetPath = './nuget.exe';
-
-  return gulp.src('./PackageFiles/ExtensionBundleTemplates-4.x.nuspec')
-    .pipe(nuget.pack({ nuget: nugetPath, version: version }))
-    .pipe(gulp.dest('../bin/Temp-ExtensionBundle.Templates-v4'));
-});
-
-gulp.task('nuget-pack-Templates', function () {
-  var nugetPath = './nuget.exe';
-
-  return gulp
-    .src('./PackageFiles/Templates.nuspec')
-    .pipe(nuget.pack({ nuget: nugetPath, version: version }))
-    .pipe(gulp.dest('../bin/Temp/'));
-});
 
 gulp.task('nuget-download', function (done) {
   if (fs.existsSync('nuget.exe')) {
     return done();
   }
 
-  request.get('https://dist.nuget.org/win-x86-commandline/v4.1.0/nuget.exe')
+  request.get('https://dist.nuget.org/win-x86-commandline/v6.0.0/nuget.exe')
     .pipe(fs.createWriteStream('nuget.exe'))
     .on('close', done);
 });
@@ -156,105 +73,84 @@ gulp.task('clean', function (cb) {
 
 gulp.task('clean-temp', function (cb) {
   return del([
-    '../bin/Temp',
-    '../bin/Temp-ExtensionBundle.Templates-v1',
-    '../bin/Temp-ExtensionBundle.Templates-v2',
-    '../bin/Temp-ExtensionBundle.Preview.Templates-v3'
+    '../bin/Temp'
   ], { force: true });
 });
 
 gulp.task('unzip-templates', function () {
   let streams = [];
-  streams.push(
-    gulp
-      .src(`../bin/Temp/*`)
-      .pipe(decompress())
-      .pipe(gulp.dest(`../bin/Temp/`))
-  );
 
-  streams.push(
-    gulp
-      .src(`../bin/Temp-ExtensionBundle.Templates-v1/*`)
-      .pipe(decompress())
-      .pipe(gulp.dest(`../bin/Temp-ExtensionBundle.Templates-v1/`))
-  );
+  let files = getFiles('../bin/Temp/ExtensionBundle');
+  for (let i = 0; i < files.length; i++) {
+    let filePath = '../bin/Temp/Temp-' + files[i].replace(".nupkg", "")
 
-  streams.push(
-    gulp
-      .src(`../bin/Temp-ExtensionBundle.Templates-v2/*`)
-      .pipe(decompress())
-      .pipe(gulp.dest(`../bin/Temp-ExtensionBundle.Templates-v2/`))
-  );
-
-  streams.push(
-    gulp
-      .src(`../bin/Temp-ExtensionBundle.Preview.Templates-v3/*`)
-      .pipe(decompress())
-      .pipe(gulp.dest(`../bin/Temp-ExtensionBundle.Preview.Templates-v3/`))
-  );
-
-  streams.push(
-    gulp
-      .src(`../bin/Temp-ExtensionBundle.Templates-v3/*`)
-      .pipe(decompress())
-      .pipe(gulp.dest(`../bin/Temp-ExtensionBundle.Templates-v3/`))
-  );
-
-  streams.push(
-    gulp
-      .src(`../bin/Temp-ExtensionBundle.Templates-v4/*`)
-      .pipe(decompress())
-      .pipe(gulp.dest(`../bin/Temp-ExtensionBundle.Templates-v4/`))
-  );
+    streams.push(
+      gulp
+        .src(path.join('../bin/Temp/ExtensionBundle', files[i]))
+        .pipe(decompress())
+        .pipe(gulp.dest(filePath))
+    );
+  }
 
   return gulpMerge(streams);
+
 });
 
-gulp.task('copy-bindings-resources-to-bundle', function () {
-  let streams = [];
-  streams.push(
-    gulp.copy('../bin/Templates/bindings/*', '../bin/ExtensionBundle.Templates-v1/bindings/')
-  );
+// gulp
+//   .src('../bin/Temp/ExtensionBundle/*')
+//   .pipe(decompress())
+//   .pipe(gulp.dest('../bin/Temp/ExtensionBundle'))
+// gulp.task('copy-bindings-resources-to-bundle', function () {
+//   let streams = [];
 
-  streams.push(
-    gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Templates-v1/resources/')
-  );
+//   let files = getFiles('./PackageFiles/ExtensionBundle');
+//   for (let i = 0; i < files.length; i++) {
+//     let fileName = files[i].replace(".nuspec", "");
+//     let writeSubPath = path.join('../bin/Temp/', fileName);
 
-  streams.push(
-    gulp.copy('../bin/Templates/bindings/*', '../bin/ExtensionBundle.Templates-v2/bindings/')
-  );
+//     streams.push(
+//       gulp.copy('../bin/Templates/bindings/*', '../bin/ExtensionBundle.Templates-v1/bindings/')
+//     );
 
-  streams.push(
-    gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Templates-v2/resources/')
-  );
+//     streams.push(
+//       gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Templates-v1/resources/')
+//     );
 
-  streams.push(
-    gulp.copy('../bin/Templates/bindings/*', '../bin/ExtensionBundle.Preview.Templates-v3/bindings/')
-  );
+//   }
 
-  streams.push(
-    gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Preview.Templates-v3/resources/')
-  );
 
-  streams.push(
-    gulp.copy('../bin/Templates/bindings/*', '../bin/ExtensionBundle.Templates-v3/bindings/')
-  );
 
-  streams.push(
-    gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Templates-v3/resources/')
-  );
+// streams.push(
+//   gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Templates-v2/resources/')
+// );
 
-  
-  streams.push(
-    gulp.copy('../bin/Templates/bindings/*', '../bin/ExtensionBundle.Preview.Templates-v4/bindings/')
-  );
+// streams.push(
+//   gulp.copy('../bin/Templates/bindings/*', '../bin/ExtensionBundle.Preview.Templates-v3/bindings/')
+// );
 
-  streams.push(
-    gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Preview.Templates-v4/resources/')
-  );
+// streams.push(
+//   gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Preview.Templates-v3/resources/')
+// );
 
-  return gulpMerge(streams);
-});
+// streams.push(
+//   gulp.copy('../bin/Templates/bindings/*', '../bin/ExtensionBundle.Templates-v3/bindings/')
+// );
+
+// streams.push(
+//   gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Templates-v3/resources/')
+// );
+
+
+// streams.push(
+//   gulp.copy('../bin/Templates/bindings/*', '../bin/ExtensionBundle.Preview.Templates-v4/bindings/')
+// );
+
+// streams.push(
+//   gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Preview.Templates-v4/resources/')
+// );
+
+//   return gulpMerge(streams);
+// });
 
 
 /********
@@ -263,20 +159,34 @@ gulp.task('copy-bindings-resources-to-bundle', function () {
  */
 
 gulp.task('resources-convert', function () {
-  return gulp
-    .src(['../bin/Temp/Resources/**/Resources.resx'])
-    .pipe(resx2())
-    .pipe(
-      rename(function (p) {
-        const language = p.dirname.split(path.sep)[0];
-        if (!!language && language !== '.') {
-          p.basename = 'Resources.' + language;
-        }
-        p.dirname = '.';
-        p.extname = '.json';
-      })
-    )
-    .pipe(gulp.dest('../bin/Temp/resources-convert'));
+  const streams = [];
+
+  let files = getFiles('../bin/Temp/ExtensionBundle');
+  for (let i = 0; i < files.length; i++) {
+    let fileName = files[i].replace(".nupkg", "");
+    let dirPath = path.join('../bin/Temp/', 'Temp-' + fileName);
+    let resourceFile = path.join(dirPath, 'Resources') + '/**/Resources.resx';
+    let resourceFileSimple = path.join(dirPath, 'Resources', 'Resources.resx');
+    let convertPath = path.join(dirPath, 'resources-convert')
+
+    if (!fs.existsSync(resourceFileSimple)) {
+      continue;
+    }
+
+    streams.push(
+      gulp.src([resourceFile])
+        .pipe(resx2())
+        .pipe(rename(function (p) {
+          const language = p.dirname.split(path.sep)[0];
+          if (!!language && language !== '.') {
+            p.basename = 'Resources.' + language;
+          }
+          p.dirname = '.';
+          p.extname = '.json';
+        }))
+        .pipe(gulp.dest(convertPath)));
+  }
+  return gulpMerge(streams);
 });
 
 /********
@@ -284,46 +194,70 @@ gulp.task('resources-convert', function () {
  */
 gulp.task('resources-build', function () {
   const streams = [];
+  let files = getFiles('../bin/Temp/ExtensionBundle');
+  for (let i = 0; i < files.length; i++) {
+    let fileName = files[i].replace(".nupkg", "");
+    let dirPath = path.join('../bin/Temp/', 'Temp-' + fileName);
+    let resourceFileSimple = path.join(dirPath, 'Resources', 'Resources.resx');
 
-  streams.push(
-    gulp
-      .src(['../bin/Temp/resources-convert/**/Resources.*.json'])
-      .pipe(
-        jeditor(function (json) {
-          const enver = require('../bin/Temp/resources-convert/Resources.json');
-          const retVal = {
-            lang: json,
-            en: enver,
-          };
+    if (!fs.existsSync(resourceFileSimple)) {
+      continue;
+    }
 
-          return retVal;
-        })
-      )
-      .pipe(gulp.dest('../bin/Templates/resources'))
-  );
+    streams.push(
+      gulp
+        .src(['../bin/Temp/Temp-' + fileName + '/resources-convert/**/Resources.*.json'])
+        .pipe(
+          jeditor(function (json) {
+            const enver = require('../bin/Temp/Temp-' + fileName + '/resources-convert/Resources.json');
+            const retVal = {
+              lang: json,
+              en: enver,
+            };
 
-  streams.push(
-    gulp
-      .src(['../bin/Temp/resources-convert/Resources.json'])
-      .pipe(
-        jeditor(function (json) {
-          const retVal = {
-            en: json,
-          };
+            return retVal;
+          })
+        )
+        .pipe(gulp.dest('../bin/Temp/out/' + fileName + '/resources'))
+    );
 
-          return retVal;
-        })
-      )
-      .pipe(gulp.dest('../bin/Templates/resources'))
-  );
+    streams.push(
+      gulp
+        .src(['../bin/Temp/Temp-' + fileName + '/resources-convert/Resources.json'])
+        .pipe(
+          jeditor(function (json) {
+            const retVal = {
+              en: json,
+            };
 
+            return retVal;
+          })
+        )
+        .pipe(gulp.dest('../bin/Temp/out/' + fileName + '/resources'))
+    );
+  }
   return gulpMerge(streams);
 });
 
 gulp.task('resources-copy', function () {
-  return gulp.src('../bin/Templates/resources/Resources.json')
-    .pipe(rename('Resources.en-US.json'))
-    .pipe(gulp.dest('../bin/Templates/resources'));
+  const streams = [];
+  let files = getFiles('../bin/Temp/ExtensionBundle');
+  for (let i = 0; i < files.length; i++) {
+    let fileName = files[i].replace(".nupkg", "");
+    let dirPath = path.join('../bin/Temp/', 'Temp-' + fileName);
+    let resourceFileSimple = path.join(dirPath, 'Resources', 'Resources.resx');
+
+    if (!fs.existsSync(resourceFileSimple)) {
+      continue;
+    }
+
+    streams.push(
+      gulp.src('../bin/Temp/out/' + fileName + '/resources/Resources.json')
+        .pipe(rename('Resources.en-US.json'))
+        .pipe(gulp.dest('../bin/Temp/out/' + fileName + '/resources'))
+    );
+  }
+  return gulpMerge(streams);
 });
 
 /***********************************************************
@@ -331,159 +265,49 @@ gulp.task('resources-copy', function () {
  */
 
 gulp.task('build-templates', function (cb) {
-  const version = '2';
-  let templateListJson = [];
-  const templates = getSubDirectories(path.join('../bin/Temp', 'templates'));
-  templates.forEach(template => {
-    let templateObj = {};
-    const filePath = path.join('../bin/Temp', 'templates', template);
-    let files = getFilesWithContent(filePath, ['function.json', 'metadata.json']);
 
-    templateObj.id = template;
-    templateObj.runtime = version;
-    templateObj.files = files;
+  let files = getFiles('../bin/Temp/ExtensionBundle');
+  for (let i = 0; i < files.length; i++) {
+    let fileName = files[i].replace(".nupkg", "");
+    let dirPath = '../bin/Temp/Temp-' + fileName
+    let templatesDir = path.join(dirPath, 'templates');
 
-    templateObj.function = require(path.join(filePath, 'function.json'));
-    templateObj.metadata = require(path.join(filePath, 'metadata.json'));
-    templateListJson.push(templateObj);
-  });
-  let writePath = path.join('../bin/Templates', 'templates');
-  if (!fs.existsSync(writePath)) {
-    fs.mkdirSync(writePath);
+    if (!fs.existsSync(templatesDir)) {
+      continue;
+    }
+
+    const version = '2';
+    let templateListJson = [];
+    const templates = getSubDirectories(path.join(dirPath, 'templates'));
+    templates.forEach(template => {
+      let templateObj = {};
+      const filePath = path.join(dirPath, 'templates', template);
+      let files = getFilesWithContent(filePath, ['function.json', 'metadata.json']);
+
+      templateObj.id = template;
+      templateObj.runtime = version;
+      templateObj.files = files;
+
+      templateObj.function = require(path.join(filePath, 'function.json'));
+      templateObj.metadata = require(path.join(filePath, 'metadata.json'));
+      templateListJson.push(templateObj);
+    });
+
+    let writeSubPath = path.join('../bin/Temp/', fileName);
+    let writePath = path.join('../bin/Temp/out', fileName, 'templates');
+
+    if (!fs.existsSync(writeSubPath)) {
+      fs.mkdirSync(writeSubPath);
+    }
+
+    if (!fs.existsSync(writePath)) {
+      fs.mkdirSync(writePath);
+    }
+    writePath = path.join(writePath, 'templates.json');
+    fs.writeFileSync(writePath, new Buffer(JSON.stringify(templateListJson, null, 2)));
+    cb();
+
   }
-  writePath = path.join(writePath, 'templates.json');
-  fs.writeFileSync(writePath, new Buffer(JSON.stringify(templateListJson, null, 2)));
-  cb();
-});
-
-gulp.task('build-ExtensionBundle-v1-Templates', function (cb) {
-  const version = '2';
-  let templateListJson = [];
-  const templates = getSubDirectories(path.join('../bin/Temp-ExtensionBundle.Templates-v1', 'templates'));
-  templates.forEach(template => {
-    let templateObj = {};
-    const filePath = path.join('../bin/Temp-ExtensionBundle.Templates-v1', 'templates', template);
-    let files = getFilesWithContent(filePath, ['function.json', 'metadata.json']);
-
-    templateObj.id = template;
-    templateObj.runtime = version;
-    templateObj.files = files;
-
-    templateObj.function = require(path.join(filePath, 'function.json'));
-    templateObj.metadata = require(path.join(filePath, 'metadata.json'));
-    templateListJson.push(templateObj);
-  });
-  let writePath = path.join('../bin/ExtensionBundle.Templates-v1', 'templates');
-  if (!fs.existsSync(writePath)) {
-    fs.mkdirSync(writePath);
-  }
-  writePath = path.join(writePath, 'templates.json');
-  fs.writeFileSync(writePath, new Buffer(JSON.stringify(templateListJson, null, 2)));
-  cb();
-});
-
-gulp.task('build-ExtensionBundle-v2-Templates', function (cb) {
-  const version = '3';
-  let templateListJson = [];
-  const templates = getSubDirectories(path.join('../bin/Temp-ExtensionBundle.Templates-v2', 'templates'));
-  templates.forEach(template => {
-    let templateObj = {};
-    const filePath = path.join('../bin/Temp-ExtensionBundle.Templates-v2', 'templates', template);
-    let files = getFilesWithContent(filePath, ['function.json', 'metadata.json']);
-
-    templateObj.id = template;
-    templateObj.runtime = version;
-    templateObj.files = files;
-
-    templateObj.function = require(path.join(filePath, 'function.json'));
-    templateObj.metadata = require(path.join(filePath, 'metadata.json'));
-    templateListJson.push(templateObj);
-  });
-  let writePath = path.join('../bin/ExtensionBundle.Templates-v2', 'templates');
-  if (!fs.existsSync(writePath)) {
-    fs.mkdirSync(writePath);
-  }
-  writePath = path.join(writePath, 'templates.json');
-  fs.writeFileSync(writePath, new Buffer(JSON.stringify(templateListJson, null, 2)));
-  cb();
-});
-
-gulp.task('build-ExtensionBundlePreview-v3-Templates', function (cb) {
-  const version = '3';
-  let templateListJson = [];
-  const templates = getSubDirectories(path.join('../bin/Temp-ExtensionBundle.Preview.Templates-v3', 'templates'));
-  templates.forEach(template => {
-    let templateObj = {};
-    const filePath = path.join('../bin/Temp-ExtensionBundle.Preview.Templates-v3', 'templates', template);
-    let files = getFilesWithContent(filePath, ['function.json', 'metadata.json']);
-
-    templateObj.id = template;
-    templateObj.runtime = version;
-    templateObj.files = files;
-
-    templateObj.function = require(path.join(filePath, 'function.json'));
-    templateObj.metadata = require(path.join(filePath, 'metadata.json'));
-    templateListJson.push(templateObj);
-  });
-  let writePath = path.join('../bin/ExtensionBundle.Preview.Templates-v3', 'templates');
-  if (!fs.existsSync(writePath)) {
-    fs.mkdirSync(writePath);
-  }
-  writePath = path.join(writePath, 'templates.json');
-  fs.writeFileSync(writePath, new Buffer(JSON.stringify(templateListJson, null, 2)));
-  cb();
-});
-
-gulp.task('build-ExtensionBundle-v3-Templates', function (cb) {
-  const version = '3';
-  let templateListJson = [];
-  const templates = getSubDirectories(path.join('../bin/Temp-ExtensionBundle.Templates-v3', 'templates'));
-  templates.forEach(template => {
-    let templateObj = {};
-    const filePath = path.join('../bin/Temp-ExtensionBundle.Templates-v3', 'templates', template);
-    let files = getFilesWithContent(filePath, ['function.json', 'metadata.json']);
-
-    templateObj.id = template;
-    templateObj.runtime = version;
-    templateObj.files = files;
-
-    templateObj.function = require(path.join(filePath, 'function.json'));
-    templateObj.metadata = require(path.join(filePath, 'metadata.json'));
-    templateListJson.push(templateObj);
-  });
-  let writePath = path.join('../bin/ExtensionBundle.Templates-v3', 'templates');
-  if (!fs.existsSync(writePath)) {
-    fs.mkdirSync(writePath);
-  }
-  writePath = path.join(writePath, 'templates.json');
-  fs.writeFileSync(writePath, new Buffer(JSON.stringify(templateListJson, null, 2)));
-  cb();
-});
-
-gulp.task('build-ExtensionBundlePreview-v4-Templates', function (cb) {
-  const version = '4';
-  let templateListJson = [];
-  const templates = getSubDirectories(path.join('../bin/Temp-ExtensionBundle.Preview.Templates-v4', 'templates'));
-  templates.forEach(template => {
-    let templateObj = {};
-    const filePath = path.join('../bin/Temp-ExtensionBundle.Preview.Templates-v4', 'templates', template);
-    let files = getFilesWithContent(filePath, ['function.json', 'metadata.json']);
-
-    templateObj.id = template;
-    templateObj.runtime = version;
-    templateObj.files = files;
-
-    templateObj.function = require(path.join(filePath, 'function.json'));
-    templateObj.metadata = require(path.join(filePath, 'metadata.json'));
-    templateListJson.push(templateObj);
-  });
-  let writePath = path.join('../bin/ExtensionBundle.Preview.Templates-v4', 'templates');
-  if (!fs.existsSync(writePath)) {
-    fs.mkdirSync(writePath);
-  }
-  writePath = path.join(writePath, 'templates.json');
-  fs.writeFileSync(writePath, new Buffer(JSON.stringify(templateListJson, null, 2)));
-  cb();
 });
 
 /********
@@ -491,64 +315,53 @@ gulp.task('build-ExtensionBundlePreview-v4-Templates', function (cb) {
  */
 
 gulp.task('build-bindings', function (cb) {
-  const bindingFile = require(path.join('../bin/Temp', 'Bindings', 'bindings.json'));
-  bindingFile.bindings.forEach(binding => {
-    if (binding.documentation) {
-      const documentationSplit = binding.documentation.split('\\');
-      const documentationFile = documentationSplit[documentationSplit.length - 1];
-      const documentationString = fs.readFileSync(path.join('../bin/Temp', 'Documentation', documentationFile), {
-        encoding: 'utf8',
+  let files = getFiles('../bin/Temp/ExtensionBundle');
+  for (let i = 0; i < files.length; i++) {
+    let fileName = files[i].replace(".nupkg", "");
+    let dirPath = '../bin/Temp/Temp-' + fileName
+    const bindings = path.join(dirPath, 'Bindings', 'bindings.json');
+
+    if (fs.existsSync(bindings)) {
+      const bindingFile = require(path.join(dirPath, 'Bindings', 'bindings.json'));
+      bindingFile.bindings.forEach(binding => {
+        if (binding.documentation) {
+          const documentationSplit = binding.documentation.split('\\');
+          const documentationFile = documentationSplit[documentationSplit.length - 1];
+          const documentationString = fs.readFileSync(path.join('../Functions.Templates/', 'Documentation', documentationFile), {
+            encoding: 'utf8',
+          });
+          binding.documentation = documentationString;
+        }
       });
-      binding.documentation = documentationString;
+
+      let arifactPath = '../bin/Temp/out/' + fileName
+      let writePath = path.join(arifactPath, 'bindings');
+
+      if (!fs.existsSync(arifactPath)) {
+        fs.mkdirSync(arifactPath);
+      }
+
+      if (!fs.existsSync(writePath)) {
+        fs.mkdirSync(writePath);;
+      }
+      writePath = path.join(writePath, 'bindings.json');
+      fs.writeFileSync(writePath, new Buffer(JSON.stringify(bindingFile, null, 2)));
     }
-  });
-  let writePath = path.join('../bin/Templates', 'bindings');
-  if (!fs.existsSync(writePath)) {
-    fs.mkdirSync(writePath);
   }
-  writePath = path.join(writePath, 'bindings.json');
-  fs.writeFileSync(writePath, new Buffer(JSON.stringify(bindingFile, null, 2)));
   cb();
 });
 
 gulp.task('zip-output', function () {
+  let dirs = getSubDirectories("../bin/Temp/out")
   let streams = [];
-  streams.push(
-    gulp.src('../bin/Templates/**/*.json')
-      .pipe(zip(version + '.zip'))
-      .pipe(gulp.dest('../bin/'))
-  );
 
-  streams.push(
-    gulp.src('../bin/ExtensionBundle.Templates-v1/**/*.json')
-      .pipe(zip('ExtensionBundle.v1.Templates.' + bundleTemplateVersion + '.zip'))
-      .pipe(gulp.dest('../bin/'))
-  );
-
-  streams.push(
-    gulp.src('../bin/ExtensionBundle.Templates-v2/**/*.json')
-      .pipe(zip('ExtensionBundle.v2.Templates.' + bundleTemplateVersionV2 + '.zip'))
-      .pipe(gulp.dest('../bin/'))
-  );
-
-  streams.push(
-    gulp.src('../bin/ExtensionBundle.Preview.Templates-v3/**/*.json')
-      .pipe(zip('ExtensionBundle.Preview.v3.Templates.' + bundleTemplateV3Preview + '.zip'))
-      .pipe(gulp.dest('../bin/'))
-  );
-
-  streams.push(
-    gulp.src('../bin/ExtensionBundle.Templates-v3/**/*.json')
-      .pipe(zip('ExtensionBundle.v3.Templates.' + bundleTemplateV3Preview + '.zip'))
-      .pipe(gulp.dest('../bin/'))
-  );
-
-  streams.push(
-    gulp.src('../bin/ExtensionBundle.Preview.Templates-v4/**/*.json')
-      .pipe(zip('ExtensionBundle.Preview.v4.Templates.' + bundleTemplateV4Preview + '.zip'))
-      .pipe(gulp.dest('../bin/'))
-  );
-
+  for (let i = 0; i < dirs.length; i++) {
+    streams.push(
+      gulp.src('../bin/Temp/out/' + dirs[i] + '/**/*.json')
+        .pipe(zip(dirs[i] + '.zip'))
+        .pipe(gulp.dest('../bin/'))
+    );
+  }
   return gulpMerge(streams);
 });
 
@@ -557,26 +370,13 @@ gulp.task(
   gulp.series(
     'clean',
     'nuget-download',
-    'nuget-pack-itemTemplate',
-    'nuget-pack-projectTemplates',
-    'nuget-pack-Templates',
-    'nuget-pack-bundle-v1',
-    'nuget-pack-bundle-v2',
-    'nuget-pack-bundle-v3-preview',
-    'nuget-pack-bundle-v3',
-    'nuget-pack-bundle-v4-preview',
+    'nuget-pack',
     'unzip-templates',
     'resources-convert',
     'resources-build',
     'resources-copy',
     'build-templates',
     'build-bindings',
-    'copy-bindings-resources-to-bundle',
-    'build-ExtensionBundle-v1-Templates',
-    'build-ExtensionBundle-v2-Templates',
-    'build-ExtensionBundlePreview-v3-Templates',
-    'build-ExtensionBundle-v3-Templates',
-    'build-ExtensionBundlePreview-v4-Templates',
     'zip-output',
     'clean-temp'
   )
@@ -642,23 +442,10 @@ function newGuid() {
   });
 }
 
-function getFiles(folders) {
-  let possibleDirectory;
-
-  folders.forEach(function (folder, index) {
-    let tempFiles = fs.readdirSync('./' + folder);
-
-    tempFiles.forEach(function (fileOrDirectory) {
-      possibleDirectory = path.join(folder, fileOrDirectory);
-      if (fs.lstatSync(possibleDirectory).isDirectory()) {
-        getFiles([possibleDirectory]);
-      } else {
-        files.push(path.join(folder, fileOrDirectory));
-
-        if (baseNames.indexOf(fileOrDirectory) === -1) {
-          baseNames.push(fileOrDirectory);
-        }
-      }
-    });
-  });
+function getFiles(folder) {
+  if (!fs.existsSync(folder)) {
+    return {};
+  }
+  let obj = {};
+  return fileNames = fs.readdirSync(folder).filter(f => fs.statSync(path.join(folder, f)).isFile());
 }

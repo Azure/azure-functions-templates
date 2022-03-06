@@ -3,13 +3,12 @@
     "bindings": [
       {
         "type": "eventHubTrigger",
-        "name": "events",
+        "name": "event",
         "direction": "in",
         "eventHubName": "samples-workitems",
         "connection": "",
         "cardinality": "many",
-        "consumerGroup": "$Default",
-        "dataType": "binary"
+        "consumerGroup": "$Default"
       }
     ]
 }
