@@ -1826,6 +1826,64 @@
           "help": "$signalROut_connectionString_help"
         }
       ]
+    },
+    {
+      "type": "authenticationEventTrigger",
+      "displayName": "$authenticationEventTrigger",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\AuthenticationEventsTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents",
+        "version": "0.1.0"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "authenticationEventTrigger",
+          "required": true,
+          "label": "$authenticationEvent_trigger_name_label",
+          "help": "$authenticationEvent_trigger_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "onTokenIssuanceStartVersions",
+          "value": "enum",
+          "required": true,
+          "label": "$authenticationEvent_trigger_IssuanceStartVer_label",
+          "help": "$authenticationEvent_trigger_IssuanceStartVer_help",
+          "defaultValue": "preview_10_01_2021",
+          "enum": [
+            {
+              "value": "preview_10_01_2021",
+              "display": "preview_10_01_2021"
+            }
+          ]
+        },
+        {
+          "name": "tenantId",
+          "value": "string",
+          "required": true,
+          "label": "$authenticationEvent_trigger_tenantid_label",
+          "help": "$authenticationEvent_trigger_tenantid_help",
+          "defaultValue": "Your Tenant Id"
+        }
+        ,
+        {
+          "name": "applicationId",
+          "value": "string",
+          "required": true,
+          "label": "$authenticationEvent_trigger_appid_label",
+          "help": "$authenticationEvent_trigger_appid_help",
+          "defaultValue": "Your Application Id"
+        }
+      ]
     }
   ]
 }
