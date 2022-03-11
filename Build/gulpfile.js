@@ -93,65 +93,7 @@ gulp.task('unzip-templates', function () {
   }
 
   return gulpMerge(streams);
-
 });
-
-// gulp
-//   .src('../bin/Temp/ExtensionBundle/*')
-//   .pipe(decompress())
-//   .pipe(gulp.dest('../bin/Temp/ExtensionBundle'))
-// gulp.task('copy-bindings-resources-to-bundle', function () {
-//   let streams = [];
-
-//   let files = getFiles('./PackageFiles/ExtensionBundle');
-//   for (let i = 0; i < files.length; i++) {
-//     let fileName = files[i].replace(".nuspec", "");
-//     let writeSubPath = path.join('../bin/Temp/', fileName);
-
-//     streams.push(
-//       gulp.copy('../bin/Templates/bindings/*', '../bin/ExtensionBundle.Templates-v1/bindings/')
-//     );
-
-//     streams.push(
-//       gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Templates-v1/resources/')
-//     );
-
-//   }
-
-
-
-// streams.push(
-//   gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Templates-v2/resources/')
-// );
-
-// streams.push(
-//   gulp.copy('../bin/Templates/bindings/*', '../bin/ExtensionBundle.Preview.Templates-v3/bindings/')
-// );
-
-// streams.push(
-//   gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Preview.Templates-v3/resources/')
-// );
-
-// streams.push(
-//   gulp.copy('../bin/Templates/bindings/*', '../bin/ExtensionBundle.Templates-v3/bindings/')
-// );
-
-// streams.push(
-//   gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Templates-v3/resources/')
-// );
-
-
-// streams.push(
-//   gulp.copy('../bin/Templates/bindings/*', '../bin/ExtensionBundle.Preview.Templates-v4/bindings/')
-// );
-
-// streams.push(
-//   gulp.copy('../bin/Templates/resources/*', '../bin/ExtensionBundle.Preview.Templates-v4/resources/')
-// );
-
-//   return gulpMerge(streams);
-// });
-
 
 /********
  *   This task takes the Resource Resx files from both templates folder and Portal Resources Folder and converts them to json, it drops them into a intermediate 'convert' folder.
