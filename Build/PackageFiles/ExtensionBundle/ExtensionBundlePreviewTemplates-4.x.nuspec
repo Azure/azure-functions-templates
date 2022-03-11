@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>ExtensionBundle.Preview.v4.Templates</id>
+    <version>4.0.$patchVersion$</version>
+    <authors>Microsoft</authors>
+    <licenseUrl>https://github.com/Azure/azure-webjobs-sdk-templates/blob/dev/LICENSE.txt</licenseUrl>
+    <projectUrl>https://go.microsoft.com/fwlink/?linkid=848145</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Collection of templates for Microsoft.Azure.Functions.ExtensionBundle</description>
+    <language>en-US</language>
+  </metadata>
+  <files>
+    <file src="../../../Functions.Templates/Bindings/bindings.json" target="Bindings/bindings.json" />
+    <file src="..\..\..\Functions.Templates\Documentation\**" target="Documentation" />
+    <file src="..\..\..\Functions.Templates\Resources\**" target="Resources" />
+    <file src="..\..\..\Functions.Templates\templates\BlobTrigger-CSharp-5.x\*.*" target="templates\BlobTrigger-CSharp" exclude="**\*.cs"/>
+    <file src="..\..\..\Functions.Templates\templates\BlobTrigger-Custom\**" target="templates\BlobTrigger-Custom" />
+    <file src="..\..\..\Functions.Templates\templates\BlobTrigger-JavaScript\**" target="templates\BlobTrigger-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\BlobTrigger-PowerShell\**" target="templates\BlobTrigger-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\BlobTrigger-Python\**" target="templates\BlobTrigger-Python" />
+    <file src="..\..\..\Functions.Templates\templates\BlobTrigger-TypeScript\**" target="templates\BlobTrigger-TypeScript" />
+
+    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-CSharp\*.*" target="Templates\CosmosDBTrigger-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-Custom\**" target="Templates\CosmosDBTrigger-Custom" />
+    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-JavaScript\**" target="Templates\CosmosDBTrigger-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-PowerShell\**" target="Templates\CosmosDBTrigger-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-Python\**" target="templates\CosmosDBTrigger-Python" />
+    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-TypeScript\**" target="Templates\CosmosDBTrigger-TypeScript" />
+
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsActivity-CSharp-2.x\*.*" target="templates\DurableFunctionsActivity-CSharp" exclude="**\*.cs"/>
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsActivity-JavaScript\**" target="Templates\DurableFunctionsActivity-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsActivity-PowerShell\**" target="Templates\DurableFunctionsActivity-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsActivity-Python\**" target="Templates\DurableFunctionsActivity-Python" />
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsActivity-TypeScript\**" target="Templates\DurableFunctionsActivity-TypeScript" />
+
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsEntity-JavaScript\**" target="Templates\DurableFunctionsEntity-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsEntity-Python\**" target="Templates\DurableFunctionsEntity-Python" />
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsEntity-TypeScript\**" target="Templates\DurableFunctionsEntity-TypeScript" />
+
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsEntityClass-CSharp-2.x\*.*" target="templates\DurableFunctionsEntityClass-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsEntityFunction-CSharp-2.x\**" target="templates\DurableFunctionsEntityFunction-CSharp" />
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsEntityHttpStart-CSharp-2.x\**" target="templates\DurableFunctionsEntityHttpStart-CSharp" />
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsEntityHttpStart-JavaScript\**" target="Templates\DurableFunctionsEntityHttpStart-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsEntityHttpStart-TypeScript\**" target="Templates\DurableFunctionsEntityHttpStart-TypeScript" />
+
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsHttpStart-CSharp-2.x\*.*" target="templates\DurableFunctionsHttpStart-CSharp" exclude="**\*.cs"/>
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsHttpStart-JavaScript\**" target="templates\DurableFunctionsHttpStart-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsHttpStart-PowerShell-2.x\**" target="templates\DurableFunctionsHttpStart-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsHttpStart-Python-2.x\**" target="Templates\DurableFunctionsHttpStart-Python" />
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsHttpStart-TypeScript\**" target="templates\DurableFunctionsHttpStart-TypeScript" />
+    
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsOrchestrator-CSharp-2.x\*.*" target="templates\DurableFunctionsOrchestrator-CSharp" exclude="**\*.cs"/>
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsOrchestrator-JavaScript\**" target="Templates\DurableFunctionsOrchestrator-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsOrchestrator-PowerShell-2.x\**" target="Templates\DurableFunctionsOrchestrator-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsOrchestrator-Python-2.x\**" target="Templates\DurableFunctionsOrchestrator-Python" />
+    <file src="..\..\..\Functions.Templates\templates\DurableFunctionsOrchestrator-TypeScript\**" target="Templates\DurableFunctionsOrchestrator-TypeScript" />
+
+    <file src="..\..\..\Functions.Templates\templates\EventGridTrigger-CSharp-3.x\*.*" target="Templates\EventGridTrigger-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\EventGridTrigger-Custom\**" target="Templates\EventGridTrigger-Custom" />
+    <file src="..\..\..\Functions.Templates\templates\EventGridTrigger-JavaScript\**" target="Templates\EventGridTrigger-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\EventGridTrigger-PowerShell\**" target="Templates\EventGridTrigger-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\EventGridTrigger-Python\**" target="templates\EventGridTrigger-Python" />
+    <file src="..\..\..\Functions.Templates\templates\EventGridTrigger-TypeScript\**" target="Templates\EventGridTrigger-TypeScript" />
+
+    <file src="..\..\..\Functions.Templates\templates\EventHubTrigger-CSharp-5.x\*.*" target="templates\EventHubTrigger-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\EventHubTrigger-Custom\**" target="templates\EventHubTrigger-Custom" />
+    <file src="..\..\..\Functions.Templates\templates\EventHubTrigger-JavaScript\**" target="templates\EventHubTrigger-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\EventHubTrigger-PowerShell\**" target="Templates\EventHubTrigger-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\EventHubTrigger-Python\**" target="templates\EventHubTrigger-Python" />
+    <file src="..\..\..\Functions.Templates\templates\EventHubTrigger-TypeScript\**" target="templates\EventHubTrigger-TypeScript" />
+    
+    <file src="..\..\..\Functions.Templates\templates\HttpTrigger-CSharp\*.*" target="templates\HttpTrigger-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\HttpTrigger-Custom\**" target="templates\HttpTrigger-Custom" />
+    <file src="..\..\..\Functions.Templates\templates\HttpTrigger-JavaScript\**" target="templates\HttpTrigger-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\HttpTrigger-PowerShell\**" target="templates\HttpTrigger-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\HttpTrigger-Python\**" target="templates\HttpTrigger-Python" />
+    <file src="..\..\..\Functions.Templates\templates\HttpTrigger-TypeScript\**" target="templates\HttpTrigger-TypeScript" />
+
+    <file src="..\..\..\Functions.Templates\templates\IoTHubTrigger-CSharp\*.*" target="Templates\IoTHubTrigger-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\IoTHubTrigger-Custom\**" target="Templates\IoTHubTrigger-Custom" />
+    <file src="..\..\..\Functions.Templates\templates\IoTHubTrigger-JavaScript\**" target="Templates\IoTHubTrigger-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\IoTHubTrigger-PowerShell\**" target="Templates\IoTHubTrigger-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\IoTHubTrigger-TypeScript\**" target="Templates\IoTHubTrigger-TypeScript" />
+
+    <file src="..\..\..\Functions.Templates\templates\KafkaOutput-CSharp\*.*" target="templates\KafkaOutput-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\KafkaOutput-JavaScript\**" target="templates\KafkaOutput-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\KafkaOutput-PowerShell\**" target="templates\KafkaOutput-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\KafkaOutput-Python\**" target="templates\KafkaOutput-Python" />
+    <file src="..\..\..\Functions.Templates\templates\KafkaOutput-TypeScript\**" target="templates\KafkaOutput-TypeScript" />
+
+    <file src="..\..\..\Functions.Templates\templates\KafkaTrigger-CSharp\*.*" target="templates\KafkaTrigger-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\KafkaTrigger-Custom\**" target="templates\KafkaTrigger-Custom" />
+    <file src="..\..\..\Functions.Templates\templates\KafkaTrigger-JavaScript\**" target="templates\KafkaTrigger-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\KafkaTrigger-PowerShell\**" target="templates\KafkaTrigger-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\KafkaTrigger-Python\**" target="templates\KafkaTrigger-Python" />
+    <file src="..\..\..\Functions.Templates\templates\KafkaTrigger-TypeScript\**" target="templates\KafkaTrigger-TypeScript" />
+
+    <file src="..\..\..\Functions.Templates\templates\QueueTrigger-CSharp-3.x\*.*" target="templates\QueueTrigger-CSharp" exclude="**\*.cs;" />
+    <file src="..\..\..\Functions.Templates\templates\QueueTrigger-Custom\**" target="templates\QueueTrigger-Custom" />
+    <file src="..\..\..\Functions.Templates\templates\QueueTrigger-JavaScript\**" target="templates\QueueTrigger-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\QueueTrigger-PowerShell\**" target="templates\QueueTrigger-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\QueueTrigger-Python\**" target="templates\QueueTrigger-Python" />
+    <file src="..\..\..\Functions.Templates\templates\QueueTrigger-TypeScript\**" target="templates\QueueTrigger-TypeScript" />
+
+    <file src="..\..\..\Functions.Templates\templates\RabbitMQTrigger-CSharp\*.*" target="templates\RabbitMQTrigger-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\RabbitMQTrigger-Custom\**" target="templates\RabbitMQTrigger-Custom" />
+    <file src="..\..\..\Functions.Templates\templates\RabbitMQTrigger-JavaScript\**" target="templates\RabbitMQTrigger-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\RabbitMQTrigger-PowerShell\**" target="templates\RabbitMQTrigger-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\RabbitMQTrigger-Python\**" target="templates\RabbitMQTrigger-Python" />
+    <file src="..\..\..\Functions.Templates\templates\RabbitMQTrigger-TypeScript\**" target="templates\RabbitMQTrigger-TypeScript" />
+
+    <file src="..\..\..\Functions.Templates\templates\SendGrid-CSharp-3.x\*.*" target="templates\SendGrid-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\SendGrid-Custom\**" target="templates\SendGrid-Custom" />
+    <file src="..\..\..\Functions.Templates\templates\SendGrid-JavaScript\**" target="templates\SendGrid-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\SendGrid-PowerShell\**" target="Templates\SendGrid-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\SendGrid-TypeScript\**" target="templates\SendGrid-TypeScript" />
+
+    <file src="..\..\..\Functions.Templates\templates\ServiceBusQueueTrigger-CSharp\*.*" target="Templates\ServiceBusQueueTrigger-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\ServiceBusQueueTrigger-Custom\**" target="Templates\ServiceBusQueueTrigger-Custom" />
+    <file src="..\..\..\Functions.Templates\templates\ServiceBusQueueTrigger-JavaScript\**" target="Templates\ServiceBusQueueTrigger-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\ServiceBusQueueTrigger-PowerShell\**" target="Templates\ServiceBusQueueTrigger-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\ServiceBusQueueTrigger-Python\**" target="templates\ServiceBusQueueTrigger-Python" />
+    <file src="..\..\..\Functions.Templates\templates\ServiceBusQueueTrigger-TypeScript\**" target="Templates\ServiceBusQueueTrigger-TypeScript" />
+
+    <file src="..\..\..\Functions.Templates\templates\ServiceBusTopicTrigger-CSharp\*.*" target="Templates\ServiceBusTopicTrigger-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\ServiceBusTopicTrigger-Custom\**" target="Templates\ServiceBusTopicTrigger-Custom" />
+    <file src="..\..\..\Functions.Templates\templates\ServiceBusTopicTrigger-JavaScript\**" target="Templates\ServiceBusTopicTrigger-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\ServiceBusTopicTrigger-PowerShell\**" target="Templates\ServiceBusTopicTrigger-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\ServiceBusTopicTrigger-Python\**" target="templates\ServiceBusTopicTrigger-Python" />
+    <file src="..\..\..\Functions.Templates\templates\ServiceBusTopicTrigger-TypeScript\**" target="Templates\ServiceBusTopicTrigger-TypeScript" />
+
+    <file src="..\..\..\Functions.Templates\templates\SignalRConnectionInfoHttpTrigger-CSharp\*.*" target="Templates\SignalRConnectionInfoHttpTrigger-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\SignalRConnectionInfoHttpTrigger-Custom\**" target="Templates\SignalRConnectionInfoHttpTrigger-Custom" />
+    <file src="..\..\..\Functions.Templates\templates\SignalRConnectionInfoHttpTrigger-JavaScript\**" target="Templates\SignalRConnectionInfoHttpTrigger-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\SignalRConnectionInfoHttpTrigger-PowerShell\**" target="Templates\SignalRConnectionInfoHttpTrigger-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\SignalRConnectionInfoHttpTrigger-TypeScript\**" target="Templates\SignalRConnectionInfoHttpTrigger-TypeScript" />
+
+    <file src="..\..\..\Functions.Templates\templates\TimerTrigger-CSharp\*.*" target="templates\TimerTrigger-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\TimerTrigger-Custom\**" target="templates\TimerTrigger-Custom" />
+    <file src="..\..\..\Functions.Templates\templates\TimerTrigger-JavaScript\**" target="templates\TimerTrigger-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\TimerTrigger-PowerShell\**" target="templates\TimerTrigger-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\TimerTrigger-Python\**" target="templates\TimerTrigger-Python" />
+    <file src="..\..\..\Functions.Templates\templates\TimerTrigger-TypeScript\**" target="templates\TimerTrigger-TypeScript" />   
+  </files>
+</package>

@@ -31,6 +31,10 @@
       "type": "parameter",
       "defaultValue": "samples-workitems",
       "replaces": "eventHubNameValue"
+    },
+    "HostIdentifier": {
+      "type": "bind",
+      "binding": "HostIdentifier"
     }
   },
   "primaryOutputs": [
@@ -47,7 +51,7 @@
       "ManualInstructions": [],
       "args": {
         "referenceType": "package",
-        "reference": "Microsoft.Azure.WebJobs.Extensions.EventHubs", "version": "4.1.1",
+        "reference": "Microsoft.Azure.WebJobs.Extensions.EventHubs", "version": "4.2.0",
         "projectFileExtensions": ".fsproj"
       }
     },

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.Azure.WebJobs.ProjectTemplates</id>
+    <version>4.0.$patchVersion$</version>
+    <authors>Microsoft</authors>
+    <description>Azure Functions Project Template Pack for Microsoft Template Engine</description>
+    <language>en-US</language>
+    <projectUrl>https://go.microsoft.com/fwlink/?linkid=848145</projectUrl>
+    <licenseUrl>https://go.microsoft.com/fwlink/?linkid=2028464</licenseUrl>
+    <repository type="git" url="https://github.com/Azure/azure-functions-templates" />
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+  </metadata>
+  <files>
+    <file src="../../../Functions.Templates/ProjectTemplate_v4.x/CSharp/_gitignore" target="content/ProjectTemplate-CSharp/_gitignore" />
+    <file src="../../../Functions.Templates/ProjectTemplate_v4.x/CSharp/Company.FunctionApp.csproj" target="content/ProjectTemplate-CSharp/Company.FunctionApp.csproj" />
+    <file src="../../../Functions.Templates/ProjectTemplate_v4.x/CSharp/host.json" target="content/ProjectTemplate-CSharp/host.json" />
+    <file src="../../../Functions.Templates/ProjectTemplate_v4.x/CSharp/local.settings.json" target="content/ProjectTemplate-CSharp/local.settings.json" />
+    <file src="../../../Functions.Templates/ProjectTemplate_v4.x/CSharp/.template.config/template.json" target="content/ProjectTemplate-CSharp/.template.config/template.json" />
+    <file src="../../../Functions.Templates/ProjectTemplate_v4.x/CSharp/.template.config/dotnetcli.host.json" target="content/ProjectTemplate-CSharp/.template.config/dotnetcli.host.json" />
+    <file src="../../../Functions.Templates/ProjectTemplate_v4.x/FSharp/_gitignore" target="content/ProjectTemplate-FSharp/_gitignore" />
+    <file src="../../../Functions.Templates/ProjectTemplate_v4.x/FSharp/Company.FunctionApp.fsproj" target="content/ProjectTemplate-FSharp/Company.FunctionApp.fsproj" />
+    <file src="../../../Functions.Templates/ProjectTemplate_v4.x/FSharp/host.json" target="content/ProjectTemplate-FSharp/host.json" />
+    <file src="../../../Functions.Templates/ProjectTemplate_v4.x/FSharp/local.settings.json" target="content/ProjectTemplate-FSharp/local.settings.json" />
+    <file src="../../../Functions.Templates/ProjectTemplate_v4.x/FSharp/.template.config/template.json" target="content/ProjectTemplate-FSharp/.template.config/template.json" />
+    <file src="../../../Functions.Templates/ProjectTemplate_v4.x/FSharp/.template.config/dotnetcli.host.json" target="content/ProjectTemplate-FSharp/.template.config/dotnetcli.host.json" />
+  </files>
+</package>

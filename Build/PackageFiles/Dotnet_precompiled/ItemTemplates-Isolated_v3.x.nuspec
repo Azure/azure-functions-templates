@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Microsoft.Azure.Functions.Worker.ItemTemplates</id>
+    <version>3.1.$patchVersion$</version>
+    <authors>Microsoft</authors>
+    <licenseUrl>https://go.microsoft.com/fwlink/?linkid=2028464</licenseUrl>
+    <repository type="git" url="https://github.com/Azure/azure-functions-templates" />
+    <projectUrl>https://go.microsoft.com/fwlink/?linkid=848145</projectUrl>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Collection of templates for Azure Functions .NET Isolated</description>
+    <language>en-US</language>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+  </metadata>
+  <files>
+    <file src="..\..\..\Functions.Templates\Templates\QueueTrigger-CSharp-Isolated\**" target="content\QueueTrigger-CSharp" />
+    <file src="..\..\..\Functions.Templates\Templates\HttpTrigger-CSharp-Isolated\**" target="content\HttpTrigger-CSharp" />
+    <file src="..\..\..\Functions.Templates\Templates\BlobTrigger-CSharp-Isolated\**" target="content\BlobTrigger-CSharp" />
+    <file src="..\..\..\Functions.Templates\Templates\TimerTrigger-CSharp-Isolated\**" target="content\TimerTrigger-CSharp" />  
+    <file src="..\..\..\Functions.Templates\Templates\EventHubTrigger-CSharp-Isolated\**" target="content\EventHubTrigger-CSharp" />
+    <file src="..\..\..\Functions.Templates\Templates\ServiceBusQueueTrigger-CSharp-Isolated\**" target="content\ServiceBusQueueTrigger-CSharp" />
+    <file src="..\..\..\Functions.Templates\Templates\ServiceBusTopicTrigger-CSharp-Isolated\**" target="content\ServiceBusTopicTrigger-CSharp" />
+    <file src="..\..\..\Functions.Templates\Templates\EventGridTrigger-CSharp-Isolated\**" target="content\EventGridTrigger-CSharp" />
+    <file src="..\..\..\Functions.Templates\Templates\CosmosDBTrigger-CSharp-Isolated\**" target="content\CosmosDBTrigger-CSharp" />
+    <file src="..\..\..\Functions.Templates\Templates\SignalRConnectionInfoHttpTrigger-CSharp-Isolated\**" target="content\SignalRConnectionInfoHttpTrigger-CSharp" />
+    <file src="..\..\..\Functions.Templates\Templates\RabbitMQTrigger-CSharp-Isolated\**" target="content\RabbitMQTrigger-CSharp" />
+  </files>
+</package>
