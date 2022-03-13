@@ -1284,6 +1284,24 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";SqlInputBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A C# function that will be run on an HTTP trigger and returns the results of a provided SQL query.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Funkce jazyka C#, která se spustí na aktivační události HTTP a vrátí výsledky zadaného dotazu SQL.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";SqlOuputBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A C# function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Funkce jazyka C#, která se spustí na aktivační události HTTP a převezme seznam řádků a upsertuje ho do tabulky uživatelů (tj. pokud řádek ještě neexistuje, přidá se, a pokud existuje, aktualizuje se).]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";TimerTriggerExcelOutlook_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Read two Excel tables, send emails based on the data, and then update an Excel table.]]></Val>
