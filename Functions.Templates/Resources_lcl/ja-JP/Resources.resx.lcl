@@ -1284,6 +1284,24 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";SqlInputBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A C# function that will be run on an HTTP trigger and returns the results of a provided SQL query.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[HTTP トリガーで実行され、指定された SQL クエリの結果を返す C# 関数。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";SqlOuputBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A C# function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[HTTP トリガーで実行され、行の一覧を取得して、ユーザー テーブルにアップサートする C# 関数 (つまり、行がまだ存在しない場合は追加されます。存在する場合は更新されます)。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";TimerTriggerExcelOutlook_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Read two Excel tables, send emails based on the data, and then update an Excel table.]]></Val>
