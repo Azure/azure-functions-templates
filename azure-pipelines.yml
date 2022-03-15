@@ -14,7 +14,7 @@ trigger:
     - master
 
 pool:
-  vmImage: 'vs2017-win2016'
+  vmImage: 'windows-latest'
 
 variables:
   devops_buildNumber: $[counter(format(''), 1500)]
