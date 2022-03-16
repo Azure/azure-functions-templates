@@ -28,6 +28,21 @@
             "type": "parameter",
             "defaultValue": "V4",
             "replaces": "AzureFunctionsVersionValue"
+        },
+        "Framework": {
+            "type": "parameter",
+            "description": "The target framework for the project.",
+            "datatype": "choice",
+            "choices": [
+                {
+                  "choice": "net6.0",
+                  "description": "Target net6.0",
+                  "displayName": ".NET 6.0"
+                }
+            ],
+            "replaces": "net6.0",
+            "defaultValue": "net6.0",
+            "displayName": "Framework"
         }
     },
     "sources": [
