@@ -22,6 +22,21 @@
         "defaultValue": "UseDevelopmentStorage=True",
         "replaces": "AzureWebJobsStorageConnectionStringValue",
         "DataType": "AzureStorage"
+      },
+      "Framework": {
+        "type": "parameter",
+        "description": "The target framework for the project.",
+        "datatype": "choice",
+        "choices": [
+          {
+            "choice": "netcoreapp3.1",
+            "description": "Target netcoreapp3.1",
+            "displayName": ".NET Core 3.1"
+          }
+        ],
+        "replaces": "netcoreapp3.1",
+        "defaultValue": "netcoreapp3.1",
+        "displayName": "Framework"
       }
     },
     "sources": [
