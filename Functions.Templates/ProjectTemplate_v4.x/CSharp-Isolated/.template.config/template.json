@@ -43,6 +43,28 @@
             "replaces": "net6.0",
             "defaultValue": "net6.0",
             "displayName": "Framework"
+        },
+        "FunctionsHttpPort": {
+            "type": "parameter",
+            "datatype": "integer",
+            "description": "Port number to use for the HTTP endpoint in launchSettings.json."
+        },
+        "FunctionsHttpPortGenerated": {
+            "type": "generated",
+            "generator": "port",
+            "parameters": {
+              "low": 7000,
+              "high": 7300
+            }
+        },
+        "FunctionsHttpPortReplacer": {
+            "type": "generated",
+            "generator": "coalesce",
+            "parameters": {
+              "sourceVariableName": "FunctionsHttpPort",
+              "fallbackVariableName": "FunctionsHttpPortGenerated"
+            },
+            "replaces": "7071"
         }
     },
     "sources": [
