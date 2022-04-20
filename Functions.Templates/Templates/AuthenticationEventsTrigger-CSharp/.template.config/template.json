@@ -3,12 +3,12 @@
     "classifications": [
         "Azure Function",
         "Trigger",
-        "Authentication",
-        "Events"
+        "Authentication Events"
     ],
     "name": "AuthenticationEventsTrigger",
-    "identity": "Azure.Function.CSharp.AuthenticationEventsTrigger.2.x",
+    "identity": "Azure.Function.CSharp.AuthenticationEventsTrigger",
     "groupIdentity": "Azure.Function.AuthenticationEventsTrigger",
+    "shortName": "authevent",
     "tags": {
         "language": "C#",
         "type": "item"
@@ -36,7 +36,7 @@
     },
     "primaryOutputs": [
         {
-            "path": "OnTokenIssuanceStartFunction.cs"
+            "path": "AuthenticationEventsTriggerCSharp.cs"
         }
     ],
     "defaultName": "AuthenticationEventsTriggerCSharp",
@@ -49,7 +49,7 @@
             "args": {
                 "referenceType": "package",
                 "reference": "Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents",
-                "version": "0.2.39",
+                "version": "0.1.11",
                 "projectFileExtensions": ".csproj"
             }
         },
@@ -60,6 +60,7 @@
             "continueOnError": true
         },
         {
+            
             "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
             "description": "Opens the function class file in the editor",
             "manualInstructions": [],

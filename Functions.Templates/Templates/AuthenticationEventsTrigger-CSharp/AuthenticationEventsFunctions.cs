@@ -28,6 +28,8 @@ namespace  Company.Function
                 //Is the request successful and did the token validation pass.
                 if (request.RequestStatus == RequestStatus.Successful)
                 {
+                    //Fetch information about user from external data store
+
                     //Add new claims to the token's response
                     request.Response.Actions.Add(new ProvideClaimsForToken(
                                                  new Claim("DateOfBirth", "01/01/2000"),
