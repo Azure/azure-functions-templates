@@ -1912,4 +1912,44 @@ function app.</value>
   <data name="SqlOuputBinding_description" xml:space="preserve">
     <value>A C# function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).</value>
   </data>
+  <data name="authenticationEvents_description" xml:space="preserve">
+    <value>Triggers for Azure AD Authentication event custom extensions. Lets you focus on your business logic.</value>
+    <comment/>
+  </data>
+  <data name="authenticationEvents_trigger_displayName" xml:space="preserve">
+    <value>Authentication Events Trigger</value>
+    <comment/>
+  </data>
+  <data name="authenticationEvent_trigger_name_label" xml:space="preserve">
+    <value>Name</value>
+    <comment/>
+  </data>
+  <data name="authenticationEvent_trigger_name_help" xml:space="preserve">
+    <value>authenticationEvent_trigger_name_help</value>
+    <comment/>
+  </data>
+  <data name="authenticationEvent_trigger_IssuanceStartVer_label" xml:space="preserve">
+    <value>OnTokenIssuanceStart Version</value>
+    <comment/>
+  </data>
+  <data name="authenticationEvent_trigger_IssuanceStartVer_help" xml:space="preserve">
+    <value>API Schema Version for OnTokenIssuanceStart Event</value>
+    <comment/>
+  </data>
+  <data name="authenticationEvent_trigger_tenantid_label" xml:space="preserve">
+    <value>Tenant Id</value>
+    <comment/>
+  </data>
+  <data name="authenticationEvent_trigger_tenantid_help" xml:space="preserve">
+    <value>Your Tenant Id that the token was issued from.</value>
+    <comment/>
+  </data>
+  <data name="authenticationEvent_trigger_appid_label" xml:space="preserve">
+    <value>Application Id</value>
+    <comment/>
+  </data>
+  <data name="authenticationEvent_trigger_appid_help" xml:space="preserve">
+    <value>The Id of the application acting as the authorisation party that the token was issued from.</value>
+    <comment/>
+  </data>
 </root>
