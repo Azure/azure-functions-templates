@@ -1,27 +1,26 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents;
-using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.TokenIssuanceStart.preview_10_01_2021;
-using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.TokenIssuanceStart.preview_10_01_2021.Actions;
+using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.TokenIssuanceStart.[onTokenIssuanceStartVersions];
+using Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents.TokenIssuanceStart.[onTokenIssuanceStartVersions].Actions;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Threading.Tasks;
 
 namespace  Company.Function
 {
     /// <summary>Example functions for token augmentation</summary>
-    public static class AuthenticationEventsFunctions
+    public static class AuthenticationEventsTriggerCSharp
     {
         /// <summary>The entry point for the Azure Function</summary>
         /// <param name="request">Strongly Typed request data for a token issuance start request</param>
         /// <param name="log">Logger</param>
         /// <returns>The augmented token response or error.</returns>
-        [FunctionName("OnTokenIssuanceStart")]
-        public async static Task<IActionResult> OnTokenIssuanceStart(
+        [FunctionName("AuthenticationEventsTriggerCSharp")]
+        public async static Task<IActionResult> OnTokenIssuanceStartEvent(
             [AuthenticationEventTrigger(
                 EventType = EventTypes.onTokenIssuanceStart,
-                ApiSchemaVersion = Versions.TokenIssuanceStart_OnTokenIssuanceStartVersion)] TokenIssuanceStartRequest request, ILogger log)
+                ApiSchemaVersion = Versions.TokenIssuanceStart_[onTokenIssuanceStartVersions])] TokenIssuanceStartRequest request, ILogger log)
         {
             try
             {
