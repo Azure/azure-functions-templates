@@ -1,4 +1,4 @@
-# SQL Input Binding - C<span>#</span>
+# SQL Input Binding - JavaScript
 
 The `SQL Input Binding` makes it easy to retrieve data from a database, returning the output of the query or stored procedure to the function.
 
