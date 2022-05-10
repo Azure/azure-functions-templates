@@ -1,0 +1,27 @@
+{
+    "bindings": [
+        {
+            "authLevel": "function",
+            "type": "httpTrigger",
+            "direction": "in",
+            "name": "req",
+            "methods": [
+                "get",
+                "post"
+            ]
+        },
+        {
+          "type": "sql",
+          "name": "items",
+          "direction": "in",
+          "commandText": "SELECT * FROM [dbo].[table1]",
+          "commandType": "Text",
+          "connectionStringSetting": "SqlConnectionString"
+        },
+        {
+            "type": "http",
+            "direction": "out",
+            "name": "res"
+        }
+    ]
+}
