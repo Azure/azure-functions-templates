@@ -1,10 +1,20 @@
 {
   "bindings": [
     {
+      "authLevel": "function",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
       "type": "sql",
       "name": "results",
       "direction": "out",
-      "commandText": "[tableName]",
+      "commandText": "[dbo].[table1]",
       "commandType": "Text",
       "connectionStringSetting": "SqlConnectionString"
     }

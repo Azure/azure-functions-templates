@@ -1,10 +1,19 @@
 {
   "bindings": [
     {
+      "authLevel": "function",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in",
+      "methods": [
+        "get"
+      ]
+    },
+    {
       "type": "sql",
       "name": "results",
       "direction": "in",
-      "commandText": "select * from tableName",
+      "commandText": "select * from [dbo].[table1]",
       "commandType": "Text",
       "connectionStringSetting": "SqlConnectionString"
     }
