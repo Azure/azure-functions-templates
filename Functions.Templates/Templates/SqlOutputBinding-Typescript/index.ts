@@ -10,7 +10,7 @@ const sqlOutputBinding: AzureFunction = async function (context: Context, req: H
     context.log('HTTP trigger with SQL output binding function processed a request.');
 
     // Set items array to context.bindings for insertion
-    context.bindings.products = JSON.stringify(req.body);
+    context.bindings.items = JSON.stringify(req.body);
 
     context.res = {
         status: 201,
