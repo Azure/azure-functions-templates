@@ -10,9 +10,14 @@
       ]
     },
     {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
       "type": "sql",
       "name": "results",
-      "direction": "out",
+      "direction": "in",
       "commandText": "select * from [dbo].[table1]",
       "commandType": "Text",
       "connectionStringSetting": "SqlConnectionString"
