@@ -5,7 +5,7 @@ module.exports = async function (context, req) {
     context.bindings.results = JSON.stringify(rows);
 	
     return {
-        status: 201,
+        // status: 200, /* Defaults to 200 */
         mimetype: "application/json",
         body: context.bindings.results
     };

@@ -1,11 +1,7 @@
 module.exports = async function (context, results) {
-    if (!!results && results.length > 0) {
-        context.log('Query results: ', JSON.stringify(results));
-    } else {
-        context.log("No results!");
-    }
+    context.log('Query results: ', JSON.stringify(results));
     return {
-        status: 201,
+        status: 200,
         mimetype:"application/json",
         body: results
     };
