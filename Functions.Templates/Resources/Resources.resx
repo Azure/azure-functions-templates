@@ -1912,4 +1912,10 @@ function app.</value>
   <data name="SqlOuputBinding_description" xml:space="preserve">
     <value>A C# function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).</value>
   </data>
+  <data name="SqlInputBindingJavaScript_description" xml:space="preserve">
+    <value>A JavaScript function that will be run on an HTTP trigger and returns the results of a provided SQL query.</value>
+  </data>
+  <data name="SqlOuputBinding_description" xml:space="preserve">
+    <value>A JavaScript function that will be run on an HTTP trigger and takes an array of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).</value>
+  </data>
 </root>
