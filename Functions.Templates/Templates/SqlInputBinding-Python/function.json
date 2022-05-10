@@ -1,0 +1,26 @@
+{
+    "scriptFile": "__init__.py",
+    "bindings": [
+      {
+        "type": "httpTrigger",
+        "direction": "in",
+        "name": "req",
+        "authLevel": "anonymous",
+        "route": "getproducts/{cost}"
+      },
+      {
+        "direction": "in",
+        "type": "sql",
+        "name": "rowList",
+        "commandText": "SELECT * FROM Products WHERE Cost = @Cost",
+        "commandType": "Text",
+        "parameters": "@Cost={cost}",
+        "connectionStringSetting": "SqlConnectionString"
+      },
+      {
+        "type": "http",
+        "direction": "out",
+        "name": "$return"
+      }
+    ]
+  }

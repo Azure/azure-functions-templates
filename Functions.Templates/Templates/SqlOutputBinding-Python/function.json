@@ -1,0 +1,28 @@
+{
+    "scriptFile": "__init__.py",
+    "bindings": [
+      {
+        "authLevel": "anonymous",
+        "name": "req",
+        "direction": "in",
+        "type": "httpTrigger",
+        "methods": [
+          "get",
+          "post"
+        ],
+        "route": "addproduct"
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "out"
+      },
+      {
+        "name": "product",
+        "type": "sql",
+        "direction": "out",
+        "commandText": "[dbo].[Products]",
+        "connectionStringSetting": "SqlConnectionString"
+      }
+    ]
+  }
