@@ -5,16 +5,17 @@
         "type": "httpTrigger",
         "direction": "in",
         "name": "req",
-        "authLevel": "anonymous",
-        "route": "getproducts/{cost}"
+        "authLevel": "function",
+        "methods": [
+            "get"
+          ]
       },
       {
         "direction": "in",
         "type": "sql",
         "name": "rowList",
-        "commandText": "SELECT * FROM Products WHERE Cost = @Cost",
+        "commandText": "SELECT * FROM object",
         "commandType": "Text",
-        "parameters": "@Cost={cost}",
         "connectionStringSetting": "SqlConnectionString"
       },
       {

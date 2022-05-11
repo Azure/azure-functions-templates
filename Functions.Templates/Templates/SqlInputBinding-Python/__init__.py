@@ -1,9 +1,7 @@
-# Copyright (c) Microsoft Corporation. All rights reserved.
-# Licensed under the MIT License.
-
 import azure.functions as func
 import json
 
+# Visit https://aka.ms/sqlbindingsinput to learn how to use this input binding
 def main(req: func.HttpRequest, rowList: func.SqlRowList) -> func.HttpResponse:
     rows = list(map(lambda r: json.loads(r.to_json()), rowList))
 

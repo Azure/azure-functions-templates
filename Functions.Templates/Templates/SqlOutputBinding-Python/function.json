@@ -2,15 +2,13 @@
     "scriptFile": "__init__.py",
     "bindings": [
       {
-        "authLevel": "anonymous",
+        "authLevel": "function",
         "name": "req",
         "direction": "in",
         "type": "httpTrigger",
         "methods": [
-          "get",
-          "post"
-        ],
-        "route": "addproduct"
+          "get"
+        ]
       },
       {
         "name": "$return",
@@ -21,7 +19,7 @@
         "name": "product",
         "type": "sql",
         "direction": "out",
-        "commandText": "[dbo].[Products]",
+        "commandText": "table",
         "connectionStringSetting": "SqlConnectionString"
       }
     ]
