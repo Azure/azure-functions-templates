@@ -1,19 +1,21 @@
+import json
 import azure.functions as func
-import collections
 
-# Visit https://aka.ms/sqlbindingsoutput to learn how to use this output binding
-def main(req: func.HttpRequest, output: func.Out[func.SqlRow]) -> func.HttpResponse:
-    row = func.SqlRow(TodoItem(req.params["id"], req.params["priority"],req.params["description"]))
-    output.set(row)
+def main(req: func.HttpRequest, product: func.Out[func.SqlRow]) -> func.HttpResponse:
+    """Sample SQL Output Binding
+
+    See https://aka.ms/sqlbindingsoutput for more information about using this binding
+
+    Arguments:
+    req: The HttpRequest that triggered this function
+    product: The object to be upserted to the database
+    """
+
+    body = json.loads(req.get_body())
+    product.set(func.SqlRow.from_dict(body))
+
     return func.HttpResponse(
-        row.to_json(),
+        body,
         status_code=201,
         mimetype="application/json"
     )
-
-class TodoItem(collections.UserDict):
-    def __init__(self, id, priority, description):
-        super().__init__()
-        self['Id'] = id
-        self['Priority'] = priority
-        self['Description'] = description
