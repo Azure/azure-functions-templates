@@ -19,7 +19,7 @@ def main(req: func.HttpRequest, items: func.Out[func.SqlRowList]) -> func.HttpRe
     # Note that this expects the body to be an array of JSON objects which
     # have a property matching each of the columns in the table to upsert to.
     body = json.loads(req.get_body())
-    rows = list(map(lambda r: func.SqlRow.from_dict(r), body))
+    rows = func.SqlRowList(map(lambda r: func.SqlRow.from_dict(r), body))
     items.set(rows)
 
     return func.HttpResponse(
