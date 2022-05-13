@@ -1,0 +1,26 @@
+{
+    "scriptFile": "__init__.py",
+    "bindings": [
+      {
+        "authLevel": "function",
+        "type": "httpTrigger",
+        "direction": "in",
+        "name": "req",
+        "methods": [
+          "post"
+        ]
+      },
+      {
+        "type": "sql",
+        "name": "items",
+        "direction": "out",
+        "commandText": "[dbo].[table1]",
+        "connectionStringSetting": "SqlConnectionString"
+      },
+      {
+        "type": "http",
+        "direction": "out",
+        "name": "$return"
+      }
+    ]
+  }
