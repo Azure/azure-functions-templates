@@ -13,7 +13,7 @@ def main(req: func.HttpRequest, items: func.SqlRowList) -> func.HttpResponse:
 
     Arguments:
     req: The HttpRequest that triggered this function
-    rowList: The list of objects returned by the SQL input binding
+    items: The list of objects returned by the SQL input binding
     """
 
     rows = list(map(lambda r: json.loads(r.to_json()), items))
