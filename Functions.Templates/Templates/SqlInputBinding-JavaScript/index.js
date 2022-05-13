@@ -9,7 +9,7 @@
  *      3. Change the bundle name in host.json to "Microsoft.Azure.Functions.ExtensionBundle.Preview" and the version to "[3.*, 4.0.0)"
  * @param context The Azure Function runtime context
  * @param req The HttpRequest that triggered this function
- * @param items The array of objects returned by the SQL input binding
+ * @param results The array of objects returned by the SQL input binding
  */
 module.exports = async function (context, req, results) {
     context.log('Query results: ', JSON.stringify(results));

@@ -13,7 +13,7 @@
 module.exports = async function (context, req) {
     context.log('HTTP trigger with SQL output binding function processed a request.');
 
-    // Set results array to context.bindings for insertion
+    // Set results array to context.bindings for upsertion
     // Note that this expects the body to be a JSON object or array of objects which have a property
     // matching each of the columns in the table to upsert to.
     context.bindings.results = JSON.stringify(req.body);
