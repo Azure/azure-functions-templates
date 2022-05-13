@@ -170,7 +170,7 @@ Pretty much all non-dotnet templates do not require compilation. The only except
     - Sample commands for node app: `func init . --worker-runtime node`
 4. Execute the `func GetExtensionBundlePath` to find the path to the bundle being used.
     - Sample response: `%userprofile%\.azure-functions-core-tools\Functions\ExtensionBundles\Microsoft.Azure.Functions.ExtensionBundle\2.8.4`
-5. Replace the contents of the `StaticContent\v1` directory (path from step 4) with the files extracted from the zip file in step 3.
+5. Replace the contents of the `StaticContent\v1` directory (path from step 5) with the files extracted from the zip file in step 3.
 6. Execute `func new` at the root of the sample app to see the new / updated templates.
 
 # License
