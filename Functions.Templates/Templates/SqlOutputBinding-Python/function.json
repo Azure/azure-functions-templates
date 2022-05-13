@@ -3,25 +3,24 @@
     "bindings": [
       {
         "authLevel": "function",
-        "name": "req",
-        "direction": "in",
         "type": "httpTrigger",
+        "direction": "in",
+        "name": "req",
         "methods": [
-          "get",
           "post"
         ]
       },
       {
-        "name": "$return",
-        "type": "http",
-        "direction": "out"
+        "type": "sql",
+        "name": "items",
+        "direction": "out",
+        "commandText": "[dbo].[table1]",
+        "connectionStringSetting": "SqlConnectionString"
       },
       {
-        "name": "product",
-        "type": "sql",
+        "type": "http",
         "direction": "out",
-        "commandText": "table",
-        "connectionStringSetting": "SqlConnectionString"
+        "name": "$return"
       }
     ]
   }

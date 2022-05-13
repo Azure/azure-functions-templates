@@ -2,19 +2,19 @@
     "scriptFile": "__init__.py",
     "bindings": [
       {
+        "authLevel": "function",
         "type": "httpTrigger",
         "direction": "in",
         "name": "req",
-        "authLevel": "function",
         "methods": [
             "get"
           ]
       },
       {
-        "direction": "in",
         "type": "sql",
-        "name": "rowList",
-        "commandText": "SELECT * FROM object",
+        "name": "items",
+        "direction": "in",
+        "commandText": "SELECT * FROM [dbo].[table1]",
         "commandType": "Text",
         "connectionStringSetting": "SqlConnectionString"
       },
