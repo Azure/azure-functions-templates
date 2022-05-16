@@ -6,6 +6,12 @@ def main(req: func.HttpRequest, items: func.Out[func.SqlRowList]) -> func.HttpRe
 
     See https://aka.ms/sqlbindingsoutput for more information about using this binding
 
+    *IMPORTANT*
+        Local Development : You must have v4.x of the Azure Function Core Tools installed, support for earlier versions will be added in a later release.
+        Deployed App : The app must be deployed to the EUAP region, support for other regions will be added later.
+
+    See https://github.com/Azure/azure-functions-sql-extension/issues/250 for the current state of Python support for the SQL binding
+
     These tasks should be completed prior to running :
     1. Update "commandText" in function.json - this should be the name of the table that you wish to upsert values to
     2. Add an app setting named "SqlConnectionString" containing the connection string to use for the SQL connection
