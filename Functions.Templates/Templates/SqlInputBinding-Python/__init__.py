@@ -11,6 +11,7 @@ def main(req: func.HttpRequest, items: func.SqlRowList) -> func.HttpResponse:
     2. Add an app setting named "SqlConnectionString" containing the connection string to use for the SQL connection
     3. Change the bundle name in host.json to "Microsoft.Azure.Functions.ExtensionBundle.Preview" and the version to "[3.*, 4.0.0)"
     4. Update requirements.txt and change the "azure-functions" line to "azure-functions==1.11.3b1" *IMPORTANT* Support for durable functions is not available in this release. A future release will combine SQL bindings and durable functions capabilities.
+    5. Add an app setting named "PYTHON_ISOLATE_WORKER_DEPENDENCIES" and set the value to "1" (to ensure that the correct version of the azure-functions library is used)
 
     Arguments:
     req: The HttpRequest that triggered this function
