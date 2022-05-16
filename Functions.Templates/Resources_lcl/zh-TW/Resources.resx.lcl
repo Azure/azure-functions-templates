@@ -1286,19 +1286,25 @@
       </Item>
       <Item ItemId=";SqlInputBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A C# function that will be run on an HTTP trigger and returns the results of a provided SQL query.]]></Val>
+          <Val><![CDATA[A function that will be run on an HTTP trigger and returns the results of a provided SQL query.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[將在 HTTP 觸發程式上執行的 C# 函式，並傳回所提供 SQL 查詢的結果。]]></Val>
+            <Val><![CDATA[將在 HTTP 觸發程式上執行的函式，並傳回所提供 SQL 查詢的結果。]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[A C# function that will be run on an HTTP trigger and returns the results of a provided SQL query.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";SqlOuputBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A C# function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).]]></Val>
+          <Val><![CDATA[A function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[C# 函式，會在 HTTP 觸發程式上執行，並取得資料列清單，並將它們新增至使用者資料表(例如，如果資料列不存在，則會新增該資料列。如果有，會更新)。]]></Val>
+            <Val><![CDATA[將在 HTTP 觸發程式上執行的函式，並取得資料列清單，並將它們向上插入至使用者資料表 (例如，如果資料列尚未存在，則會新增該資料列。如果已經存在，會更新它)。]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[A C# function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
