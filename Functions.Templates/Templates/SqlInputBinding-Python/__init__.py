@@ -13,7 +13,7 @@ def main(req: func.HttpRequest, items: func.SqlRowList) -> func.HttpResponse:
     See https://github.com/Azure/azure-functions-sql-extension/issues/250 for the current state of Python support for the SQL binding
 
     These tasks should be completed prior to running :
-    1. Update "commandText" in function.json - this should be the name of the table that you wish to upsert values to
+    1. Update "commandText" in function.json - this should be the query to execute to retrieve the values being returned
     2. Add an app setting named "SqlConnectionString" containing the connection string to use for the SQL connection
     3. Change the bundle name in host.json to "Microsoft.Azure.Functions.ExtensionBundle.Preview" and the version to "[3.*, 4.0.0)"
     4. Update requirements.txt and change the "azure-functions" line to "azure-functions==1.11.3b1" *IMPORTANT* Support for durable functions is not available in this release. A future release will combine SQL bindings and durable functions capabilities.
