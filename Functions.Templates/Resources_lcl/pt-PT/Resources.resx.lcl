@@ -1286,19 +1286,25 @@
       </Item>
       <Item ItemId=";SqlInputBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A C# function that will be run on an HTTP trigger and returns the results of a provided SQL query.]]></Val>
+          <Val><![CDATA[A function that will be run on an HTTP trigger and returns the results of a provided SQL query.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Uma função C# que será executada num acionador HTTP e retorna os resultados de uma consulta SQL fornecida.]]></Val>
+            <Val><![CDATA[Uma função que será executada num acionador HTTP e devolve os resultados de uma consulta SQL fornecida.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[A C# function that will be run on an HTTP trigger and returns the results of a provided SQL query.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";SqlOuputBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A C# function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).]]></Val>
+          <Val><![CDATA[A function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Uma função C# que será executada num gatilho HTTP e leva uma lista de linhas e as coloca na mesa de utilizadores (ou seja, se uma linha já não existir, é adicionada. Se for o caso será atualizado).]]></Val>
+            <Val><![CDATA[Uma função que será executada num acionador HTTP e utiliza uma lista de linhas e as coloca na tabela de utilizador (ou seja, se uma linha já não existir, é adicionada. Se existir, é atualizada).]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[A C# function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>

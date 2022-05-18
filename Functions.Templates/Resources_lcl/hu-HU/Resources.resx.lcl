@@ -1286,19 +1286,25 @@
       </Item>
       <Item ItemId=";SqlInputBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A C# function that will be run on an HTTP trigger and returns the results of a provided SQL query.]]></Val>
+          <Val><![CDATA[A function that will be run on an HTTP trigger and returns the results of a provided SQL query.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[C#-függvény, amely egy HTTP-eseményindítón fut, és egy megadott SQL-lekérdezés eredményeit adja vissza.]]></Val>
+            <Val><![CDATA[Egy HTTP-eseményindító hatására futó függvény, amely egy megadott SQL-lekérdezés eredményeit adja vissza.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[A C# function that will be run on an HTTP trigger and returns the results of a provided SQL query.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";SqlOuputBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A C# function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).]]></Val>
+          <Val><![CDATA[A function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[C#-függvény, amely egy HTTP-eseményindítón fut, és sorlistát vesz fel, majd beszúrja a sorokat a felhasználói táblázatba (azaz ha egy sor még nem létezik, hozzáadódik. Ha létezik, frissül).]]></Val>
+            <Val><![CDATA[Egy HTTP-eseményindító hatására futó függvény, amely sorok listáját veszi át, majd upsert művelettel beszúrja azokat egy felhasználói táblába (azaz ha egy sor még nem létezik, akkor hozzáadja, ha létezik, akkor pedig módosítja azt).]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[A C# function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
