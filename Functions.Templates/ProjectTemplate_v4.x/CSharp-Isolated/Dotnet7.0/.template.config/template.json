@@ -8,8 +8,8 @@
     "generatorVersions": "[1.0.0.0-*)",
     "groupIdentity": "Microsoft.AzureFunctions.ProjectTemplates",
     "precedence": "100",
-    "identity": "Microsoft.AzureFunctions.ProjectTemplate.CSharp.Isolated.3.x",
-    "shortName": "func",
+    "identity": "Microsoft.AzureFunctions.ProjectTemplate.CSharp.Isolated.Dotnet7.4.x",
+    "shortName": "func-dotnet7",
     "tags": {
         "language": "C#",
         "type": "project"
@@ -38,16 +38,16 @@
             "type": "generated",
             "generator": "port",
             "parameters": {
-              "low": 7000,
-              "high": 7300
+                "low": 7000,
+                "high": 7300
             }
         },
         "FunctionsHttpPortReplacer": {
             "type": "generated",
             "generator": "coalesce",
             "parameters": {
-              "sourceVariableName": "FunctionsHttpPort",
-              "fallbackVariableName": "FunctionsHttpPortGenerated"
+                "sourceVariableName": "FunctionsHttpPort",
+                "fallbackVariableName": "FunctionsHttpPortGenerated"
             },
             "replaces": "7071"
         }
