@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Hosting;
 using Microsoft.Azure.Functions.Worker;
 
-namespace Company.Function
+namespace Company.FunctionApp
 {
     internal class Program
     {
