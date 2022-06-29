@@ -8,14 +8,43 @@
     "generatorVersions": "[1.0.0.0-*)",
     "groupIdentity": "Microsoft.AzureFunctions.ProjectTemplates",
     "precedence": "100",
-    "identity": "Microsoft.AzureFunctions.ProjectTemplate.CSharp.Net7.Isolated.4.x",
-    "shortName": "func-net7",
+    "identity": "Microsoft.AzureFunctions.ProjectTemplate.CSharp.Isolated.3.x",
+    "shortName": "func",
     "tags": {
         "language": "C#",
         "type": "project"
     },
     "sourceName": "Company.FunctionApp",
     "symbols": {
+        "Framework": {
+            "type": "parameter",
+            "description": "The target framework for the project.",
+            "datatype": "choice",
+            "defaultValue": "net6.0",
+            "replaces": "TargetFrameworkValue",
+            "choices": [
+                {
+                "choice": "net6.0",
+                "description": "Target .NET 6"
+                },
+                {
+                "choice": "net7.0",
+                "description": "Target .NET 7"
+                },
+                {
+                "choice": "net48",
+                "description": "Target .NET Framework 48"
+                }
+            ]
+        },
+        "NetFramework": {
+            "type": "computed",
+            "value": "(Framework == \"net48\")"
+        },
+        "NetCore": {
+            "type": "computed",
+            "value": "(Framework == \"net7.0\" || Framework == \"net6.0\")"
+        },
         "StorageConnectionStringValue": {
             "description": "The connection string for your Azure WebJobs Storage.",
             "type": "parameter",

@@ -1,3 +1,4 @@
+#if NetFramework
 using Microsoft.Extensions.Hosting;
 using Microsoft.Azure.Functions.Worker;
 
@@ -17,3 +18,13 @@ namespace Company.FunctionApp
         }
     }
 }
+#endif
+#if NetCore
+using Microsoft.Extensions.Hosting;
+
+var host = new HostBuilder()
+    .ConfigureFunctionsWorkerDefaults()
+    .Build();
+
+host.Run();
+#endif
