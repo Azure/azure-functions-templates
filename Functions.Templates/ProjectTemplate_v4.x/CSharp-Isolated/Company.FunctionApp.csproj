@@ -3,8 +3,10 @@
     <TargetFramework>TargetFrameworkValue</TargetFramework>
     <AzureFunctionsVersion>AzureFunctionsVersionValue</AzureFunctionsVersion>
     <OutputType>Exe</OutputType>
+<!--#if (NetCore)-->
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+<!--#endif -->
     <RootNamespace Condition="'$(name)' != '$(name{-VALUE-FORMS-}safe_namespace)'">Company.FunctionApp</RootNamespace>
   </PropertyGroup>
 <!--#if (Framework == "net6.0")-->
