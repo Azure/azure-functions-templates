@@ -18,13 +18,13 @@
 <!--#if (Framework == "net7.0")-->
   <ItemGroup>
     <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.6.0" />
-    <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.7.0-preview1" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.7.0-preview2" />
   </ItemGroup>
 <!--#endif -->
 <!--#if (NetFramework)-->
   <ItemGroup>
     <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.8.0-preview3" />
-    <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.7.0-preview1" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.7.0-preview2" />
   </ItemGroup>
 <!--#endif -->
   <ItemGroup>
@@ -36,7 +36,13 @@
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
   </ItemGroup>
+<!--#if (NetCore)-->
   <ItemGroup>
     <Using Include="System.Threading.ExecutionContext" Alias="ExecutionContext"/>
   </ItemGroup>
+<!--#if (NetFramework)-->
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+<!--#endif -->
 </Project>
