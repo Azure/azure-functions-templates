@@ -1,9 +1,3 @@
-import datetime
-import logging
-import azure.functions as func
-
-app = func.FunctionApp()
-
 @app.function_name(name="mytimer")
 @app.schedule(schedule="0 */5 * * * *", arg_name="mytimer", run_on_startup=True,
               use_monitor=False) 
