@@ -156,11 +156,11 @@ Pretty much all non-dotnet templates do not require compilation. The only except
 
 |Nuspec File |Description|
 |---|---|
-|[ExtensionBundleTemplates-1.x.nuspec](Build\PackageFiles\ExtensionBundle\ExtensionBundleTemplates-1.x.nuspec) | Templates for Extension bundle v1 |
-|[ExtensionBundleTemplates-2.x.nuspec](Build\PackageFiles\ExtensionBundle\ExtensionBundleTemplates-2.x.nuspec) | Templates for Extension bundle v2 |
-|[ExtensionBundleTemplates-3.x.nuspec](Build\PackageFiles\ExtensionBundle\ExtensionBundleTemplates-3.x.nuspec) | Templates for Extension bundle v3 |
-|[ExtensionBundlePreviewTemplates-3.x.nuspec](Build\PackageFiles\ExtensionBundle\ExtensionBundlePreviewTemplates-3.x.nuspec) | Templates for preview Extension bundle v3 |
-|[ExtensionBundlePreviewTemplates-4.x.nuspec](Build\PackageFiles\ExtensionBundle\ExtensionBundlePreviewTemplates-4.x.nuspec) | Templates for preview Extension bundle v4 |
+|[ExtensionBundleTemplates-1.x.nuspec](Build/PackageFiles/ExtensionBundle/ExtensionBundleTemplates-1.x.nuspec) | Templates for Extension bundle v1 |
+|[ExtensionBundleTemplates-2.x.nuspec](Build/PackageFiles/ExtensionBundle/ExtensionBundleTemplates-2.x.nuspec) | Templates for Extension bundle v2 |
+|[ExtensionBundleTemplates-3.x.nuspec](Build/PackageFiles/ExtensionBundle/ExtensionBundleTemplates-3.x.nuspec) | Templates for Extension bundle v3 |
+|[ExtensionBundlePreviewTemplates-3.x.nuspec](Build/PackageFiles/ExtensionBundle/ExtensionBundlePreviewTemplates-3.x.nuspec) | Templates for preview Extension bundle v3 |
+|[ExtensionBundlePreviewTemplates-4.x.nuspec](Build/PackageFiles/ExtensionBundle/ExtensionBundlePreviewTemplates-4.x.nuspec) | Templates for preview Extension bundle v4 |
 
 ### Testing script type template via Core tools
 1. Once the template files have been added / updated, build the templates using the [Build Steps](#build-steps)
