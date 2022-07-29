@@ -230,7 +230,12 @@ gulp.task('build-templates', function (cb) {
       templateObj.runtime = version;
       templateObj.files = files;
 
-      templateObj.function = require(path.join(filePath, 'function.json'));
+      funtionJsonFile = path.join(filePath, 'function.json')
+      if (fs.existsSync(funtionJsonFile)) {
+
+        templateObj.function = require(funtionJsonFile);
+
+      }
       templateObj.metadata = require(path.join(filePath, 'metadata.json'));
       templateListJson.push(templateObj);
     });
