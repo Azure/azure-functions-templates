@@ -28,7 +28,7 @@ The main project folder (<project_root>) can contain the following files:
 * *local.settings.json*: Used to store app settings and connection strings when running locally. This file doesn't get published to Azure.
 * *requirements.txt*: Contains the list of Python packages the system installs when publishing to Azure.
 * *host.json*: Contains configuration options that affect all functions in a function app instance. This file does get published to Azure. Not all options are supported when running locally.
-* *additional_functions.py*: (Optional) Functions that are defined in a separate file for logical organization and grouping, that can be referenced in `function_app.py`.    
+* *blueprint.py*: (Optional) Functions that are defined in a separate file for logical organization and grouping, that can be referenced in `function_app.py`.    
 * *.vscode/*: (Optional) Contains store VSCode configuration.
 * *.venv/*: (Optional) Contains a Python virtual environment used by local development.
 * *Dockerfile*: (Optional) Used when publishing your project in a custom container.
