@@ -1,7 +1,7 @@
-# Getting Started with Azure Functions in Python (New Programming Model)
+# Getting Started with Azure Functions in Python
   
 
-## New Programming Model (Preview)
+## Python Programming Model V2 (Preview)
 
 The new programming model in Azure Functions Python delivers an experience that aligns with Python development principles, and subsequently with commonly used Python frameworks. 
 
@@ -13,7 +13,7 @@ To learn more about the new programming model for Azure Functions in Python, see
 
 ## Notes
 
-- Mix and match of Functions written in the previous programming model and the new programming model in the same Function App will not be supported.
+- Mix and match of Functions written in the V1 programming model and the V2 programming model in the same Function App will not be supported.
 - At this time, the main functions file must be named `function_app.py`.
 
 To learn more about the new programming model for Azure Functions in Python, see the [Azure Functions Python developer guide](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python?tabs=asgi%2Capplication-level).
