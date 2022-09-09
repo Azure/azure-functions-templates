@@ -1,0 +1,11 @@
+import { app, InvocationContext } from "@azure/functions";
+
+export async function %functionName%(context: InvocationContext, blob: Buffer): Promise<void> {
+    context.log(`Storage blob function processed blob "${context.triggerMetadata.name}" with size ${blob.length} bytes`);
+}
+
+app.storageBlob('%functionName%', {
+    path: '%path%',
+    connection: '%connection%',
+    handler: %functionName%
+});

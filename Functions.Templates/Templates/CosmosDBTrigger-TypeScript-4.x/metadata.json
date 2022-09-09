@@ -1,0 +1,19 @@
+{
+    "defaultFunctionName": "cosmosDBTrigger",
+    "description": "$CosmosDBTrigger_description",
+    "name": "Azure Cosmos DB trigger",
+    "language": "TypeScript",
+    "triggerType": "cosmosDBTrigger",
+    "category": [
+        "$temp_category_core",
+        "$temp_category_dataProcessing"
+    ],
+    "categoryStyle": "cosmosDB",
+    "enabledInTryMode": false,
+    "userPrompt": [
+        "connectionStringSetting",
+        "databaseName",
+        "collectionName",
+        "createLeaseCollectionIfNotExists"
+    ]
+}

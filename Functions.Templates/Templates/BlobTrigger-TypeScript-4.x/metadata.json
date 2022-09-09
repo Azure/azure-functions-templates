@@ -1,0 +1,17 @@
+{
+    "defaultFunctionName": "storageBlobTrigger",
+    "description": "$BlobTrigger_description",
+    "name": "Azure Blob Storage trigger",
+    "language": "TypeScript",
+    "triggerType": "blobTrigger",
+    "category": [
+        "$temp_category_core",
+        "$temp_category_dataProcessing"
+    ],
+    "categoryStyle": "blob",
+    "enabledInTryMode": true,
+    "userPrompt": [
+        "connection",
+        "path"
+    ]
+}
