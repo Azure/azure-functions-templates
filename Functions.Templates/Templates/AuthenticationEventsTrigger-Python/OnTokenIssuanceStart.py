@@ -1,6 +1,6 @@
 #Import the event and related version modules.
-from azure.functions.authentication_events.token_issuance_start.preview_10_01_2021 import *
-from azure.functions.authentication_events.token_issuance_start.preview_10_01_2021.actions import ProvideClaimsForToken, Claim
+from azure.functions.authentication_events.token_issuance_start import *
+from azure.functions.authentication_events.token_issuance_start.actions import ProvideClaimsForToken, Claim
 
 def main(onTokenIssuanceStartRequest: TokenIssuanceStartRequest) -> TokenIssuanceStartResponse:
     try:
@@ -15,7 +15,7 @@ def main(onTokenIssuanceStartRequest: TokenIssuanceStartRequest) -> TokenIssuanc
                     Claim("CustomRoles", ["Writer", "Editor"])
                 ]
             ))
-        
+
         return onTokenIssuanceStartRequest.response
     except Exception as e:
         return FailedRequest.handle(e)

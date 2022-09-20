@@ -17,10 +17,6 @@ module.exports = async function (context, onTokenIssuanceStartRequest) {
                         'Writer',
                         'Editor'
                     ]
-                },
-                {
-                    'id': 'SocialSecurityNumber',
-                    'value': '123-45-6789'
                 }
             ]
         });
