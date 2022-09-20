@@ -16,6 +16,35 @@
     },
     "sourceName": "Company.FunctionApp",
     "symbols": {
+        "Framework": {
+            "type": "parameter",
+            "description": "The target framework for the project.",
+            "datatype": "choice",
+            "defaultValue": "net6.0",
+            "replaces": "TargetFrameworkValue",
+            "choices": [
+                {
+                "choice": "net6.0",
+                "description": "Target .NET 6"
+                },
+                {
+                "choice": "net7.0",
+                "description": "Target .NET 7"
+                },
+                {
+                "choice": "net48",
+                "description": "Target .NET Framework 4.8"
+                }
+            ]
+        },
+        "NetFramework": {
+            "type": "computed",
+            "value": "(Framework == \"net48\")"
+        },
+        "NetCore": {
+            "type": "computed",
+            "value": "(Framework == \"net7.0\" || Framework == \"net6.0\")"
+        },
         "StorageConnectionStringValue": {
             "description": "The connection string for your Azure WebJobs Storage.",
             "type": "parameter",
@@ -38,16 +67,16 @@
             "type": "generated",
             "generator": "port",
             "parameters": {
-              "low": 7000,
-              "high": 7300
+                "low": 7000,
+                "high": 7300
             }
         },
         "FunctionsHttpPortReplacer": {
             "type": "generated",
             "generator": "coalesce",
             "parameters": {
-              "sourceVariableName": "FunctionsHttpPort",
-              "fallbackVariableName": "FunctionsHttpPortGenerated"
+                "sourceVariableName": "FunctionsHttpPort",
+                "fallbackVariableName": "FunctionsHttpPortGenerated"
             },
             "replaces": "7071"
         }
