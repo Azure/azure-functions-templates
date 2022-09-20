@@ -17,7 +17,7 @@ namespace Company.Function
         /// <param name="log">Logger</param>
         /// <returns>The augmented token response or error.</returns>
         [FunctionName("onTokenIssuanceStart")]
-        public async static Task<AuthenticationEventResponse> Run(
+        public async static Task<AuthenticationEventResponse> OnTokenIssuanceStartEvent(
             [AuthenticationEventsTrigger] TokenIssuanceStartRequest request, ILogger log)
         {
             try

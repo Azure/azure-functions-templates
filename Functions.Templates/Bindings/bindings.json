@@ -1868,7 +1868,7 @@
       "documentation": "$content=Documentation\\AuthenticationEventsTrigger.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents",
-        "version": "0.1.12"
+        "version": "1.0.0-beta.1"
       },
       "settings": [
         {
@@ -1882,20 +1882,6 @@
             {
               "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
               "errorText": "[variables('parameterName')]"
-            }
-          ]
-        },
-        {
-          "name": "onTokenIssuanceStartVersions",
-          "value": "enum",
-          "required": true,
-          "label": "$authenticationEvent_trigger_IssuanceStartVer_label",
-          "help": "$authenticationEvent_trigger_IssuanceStartVer_help",
-          "defaultValue": "preview_10_01_2021",
-          "enum": [
-            {
-              "value": "preview_10_01_2021",
-              "display": "preview_10_01_2021"
             }
           ]
         }
