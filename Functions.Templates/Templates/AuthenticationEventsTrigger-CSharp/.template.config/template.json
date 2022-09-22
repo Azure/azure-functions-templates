@@ -19,19 +19,6 @@
             "description": "namespace for the generated code",
             "replaces": "Company.Function",
             "type": "parameter"
-        },
-        "OnTokenIssuanceStartVersions": {
-            "type": "parameter",
-            "description": "The version of the OnTokenIssuanceStart Event",
-            "datatype": "choice",
-            "choices": [
-                {
-                    "choice": "preview_10_01_2021",
-                    "description": "preview_10_01_2021"
-                }
-            ],
-            "replaces": "[onTokenIssuanceStartVersions]",
-            "defaultValue": "preview_10_01_2021"
         }
     },
     "primaryOutputs": [
@@ -49,7 +36,7 @@
             "args": {
                 "referenceType": "package",
                 "reference": "Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents",
-                "version": "0.1.13",
+                "version": "1.0.0-beta.1",
                 "projectFileExtensions": ".csproj"
             }
         },
