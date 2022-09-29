@@ -17,15 +17,15 @@ namespace Company.Function
             var outputs = new List<string>();
 
             // Replace "hello" with the name of your Durable Activity Function.
-            outputs.Add(await context.CallActivityAsync<string>("DurableFunctionsOrchestrationCSharp_Hello", "Tokyo"));
-            outputs.Add(await context.CallActivityAsync<string>("DurableFunctionsOrchestrationCSharp_Hello", "Seattle"));
-            outputs.Add(await context.CallActivityAsync<string>("DurableFunctionsOrchestrationCSharp_Hello", "London"));
+            outputs.Add(await context.CallActivityAsync<string>(nameof(SayHello), "Tokyo"));
+            outputs.Add(await context.CallActivityAsync<string>(nameof(SayHello), "Seattle"));
+            outputs.Add(await context.CallActivityAsync<string>(nameof(SayHello), "London"));
 
             // returns ["Hello Tokyo!", "Hello Seattle!", "Hello London!"]
             return outputs;
         }
 
-        [FunctionName("DurableFunctionsOrchestrationCSharp_Hello")]
+        [FunctionName(nameof(SayHello))]
         public static string SayHello([ActivityTrigger] string name, ILogger log)
         {
             log.LogInformation($"Saying hello to {name}.");
