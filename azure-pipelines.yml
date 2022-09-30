@@ -17,7 +17,9 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  devops_buildNumber: $[counter(format(''), 1500)]
+- group: Global connection strings and tokens
+- name: devops_buildNumber
+  value : $[counter(format(''), 1500)]
 
 steps:
 - task: NodeTool@0
@@ -132,7 +134,6 @@ steps:
 
           }
       }
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   
 - task: PublishBuildArtifacts@1
   inputs:
