@@ -9,7 +9,7 @@ These tasks should be completed prior to running :
 #>
 using namespace System.Net
 
-# Input bindings are passed in via param block.
+# Trigger binding data passed in via param block
 param($Request)
 
 # Write to the Azure Functions log stream.
