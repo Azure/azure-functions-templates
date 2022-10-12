@@ -12,8 +12,8 @@ using namespace System.Net
 # Trigger binding data passed in via param block
 param($Request)
 
-# PowerShell function with SQL Output Binding processed a request
-Write-Host "PowerShell SQL Binding function processed a request."
+# Write to the Azure Functions log stream.
+Write-Host "PowerShell function with SQL Output Binding processed a request."
 
 # Update req_body with the body of the request
 # Note that this expects the body to be a JSON object or array of objects 
