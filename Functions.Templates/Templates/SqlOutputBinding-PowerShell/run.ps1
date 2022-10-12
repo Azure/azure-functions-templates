@@ -12,7 +12,7 @@ using namespace System.Net
 # Trigger binding data passed in via param block
 param($Request)
 
-# Write to the Azure Functions log stream.
+# PowerShell function with SQL Output Binding processed a request
 Write-Host "PowerShell SQL Binding function processed a request."
 
 # Update req_body with the body of the request
@@ -20,10 +20,12 @@ Write-Host "PowerShell SQL Binding function processed a request."
 # which have a property matching each of the columns in the table to upsert to.
 $req_body = $Request.Body
 
-# Associate values to output bindings by calling 'Push-OutputBinding'.
+# Assign the value we want to pass to the SQL Output binding. 
+# The -Name value corresponds to the name property in the function.json for the binding
 Push-OutputBinding -Name results -Value $req_body
 
-# Associate values to output bindings by calling 'Push-OutputBinding'.
+# Assign the value to return as the HTTP response. 
+# The -Name value matches the name property in the function.json for the binding
 Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
     StatusCode = [HttpStatusCode]::OK
     Body = $req_body

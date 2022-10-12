@@ -10,13 +10,14 @@ These tasks should be completed prior to running:
 #>
 using namespace System.Net
 
-# Input bindings are passed in via param block.
+# Trigger and input binding data are passed in via the param block.
 param($Request, $items)
 
-# Write to the Azure Functions log stream.
+# PowerShell function with SQL Input Binding processed a request
 Write-Host "PowerShell SQL Binding function processed a request."
 
-# Associate values to output bindings by calling 'Push-OutputBinding'.
+# Assign the value to return as the HTTP response. 
+# The -Name value matches the name property in the function.json for the binding
 Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
     StatusCode = [System.Net.HttpStatusCode]::OK
     Body = $items
