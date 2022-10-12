@@ -16,6 +16,8 @@ param($Request)
 Write-Host "PowerShell SQL Binding function processed a request."
 
 # Update req_body with the body of the request
+# Note that this expects the body to be a JSON object or array of objects 
+# which have a property matching each of the columns in the table to upsert to.
 $req_body = $Request.Body
 
 # Associate values to output bindings by calling 'Push-OutputBinding'.
