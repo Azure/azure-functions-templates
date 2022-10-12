@@ -16,7 +16,13 @@ param($Request)
 Write-Host "PowerShell SQL Binding function processed a request."
 
 # Update req_body with the body of the request
-$req_body = @{'Insert Values Here'="Insert Value Here"} | ConvertTo-Json
+$req_body = $Request.Body
 
 # Associate values to output bindings by calling 'Push-OutputBinding'.
 Push-OutputBinding -Name results -Value $req_body
+
+# Associate values to output bindings by calling 'Push-OutputBinding'.
+Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
+    StatusCode = [HttpStatusCode]::OK
+    Body = $req_body
+})
