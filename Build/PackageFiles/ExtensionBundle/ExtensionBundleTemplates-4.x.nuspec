@@ -11,7 +11,7 @@
     <language>en-US</language>
   </metadata>
   <files>
-    <file src="../../../Functions.Templates/Bindings/bindings.json" target="Bindings/bindings.json" />
+    <file src="../../../Functions.Templates/Bindings/bindings-bundle-v4.json" target="Bindings/bindings.json" />
     <file src="..\..\..\Functions.Templates\Documentation\**" target="Documentation" />
     <file src="..\..\..\Functions.Templates\Resources\**" target="Resources" />
     <file src="..\..\..\Functions.Templates\templates\BlobTrigger-CSharp-5.x\*.*" target="templates\BlobTrigger-CSharp" exclude="**\*.cs"/>
@@ -21,12 +21,10 @@
     <file src="..\..\..\Functions.Templates\templates\BlobTrigger-Python\**" target="templates\BlobTrigger-Python" />
     <file src="..\..\..\Functions.Templates\templates\BlobTrigger-TypeScript\**" target="templates\BlobTrigger-TypeScript" />
 
-    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-CSharp\*.*" target="Templates\CosmosDBTrigger-CSharp" exclude="**\*.cs" />
-    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-Custom\**" target="Templates\CosmosDBTrigger-Custom" />
-    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-JavaScript\**" target="Templates\CosmosDBTrigger-JavaScript" />
-    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-PowerShell\**" target="Templates\CosmosDBTrigger-PowerShell" />
-    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-Python\**" target="templates\CosmosDBTrigger-Python" />
-    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-TypeScript\**" target="Templates\CosmosDBTrigger-TypeScript" />
+    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-CSharp-5.x\*.*" target="Templates\CosmosDBTrigger-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-JavaScript-5.x\**" target="Templates\CosmosDBTrigger-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-PowerShell-5.x\**" target="Templates\CosmosDBTrigger-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-Python-5.x\**" target="templates\CosmosDBTrigger-Python" />
 
     <file src="..\..\..\Functions.Templates\templates\DurableFunctionsActivity-CSharp-2.x\*.*" target="templates\DurableFunctionsActivity-CSharp" exclude="**\*.cs"/>
     <file src="..\..\..\Functions.Templates\templates\DurableFunctionsActivity-JavaScript\**" target="Templates\DurableFunctionsActivity-JavaScript" />

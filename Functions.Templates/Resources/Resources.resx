@@ -1527,8 +1527,14 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   <data name="cosmosDBIn_collectionName_help" xml:space="preserve">
     <value>Name of the collection to be monitored.</value>
   </data>
+  <data name="cosmosDBIn_containerName_help" xml:space="preserve">
+    <value>Name of the container to be monitored.</value>
+  </data>
   <data name="cosmosDBIn_collectionName_label" xml:space="preserve">
     <value>Collection name</value>
+  </data>
+  <data name="cosmosDBIn_containerName_label" xml:space="preserve">
+    <value>Container name</value>
   </data>
   <data name="cosmosDBIn_connection_help" xml:space="preserve">
     <value>The name of the App Setting containing the connection string to the service that contains the collection to be monitored.</value>
@@ -1542,11 +1548,14 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   <data name="cosmosDBIn_databaseName_label" xml:space="preserve">
     <value>Database name</value>
   </data>
-  <data name="cosmosDBIn_leaseCollectionName_help" xml:space="preserve">
-    <value>Name of the collection to store the leases.</value>
+  <data name="cosmosDBIn_leaseContainerName_help" xml:space="preserve">
+    <value>Name of the container to store the leases.</value>
   </data>
   <data name="cosmosDBIn_leaseCollectionName_label" xml:space="preserve">
     <value>Collection name for leases</value>
+  </data>
+  <data name="cosmosDBIn_leaseContainerName_label" xml:space="preserve">
+    <value>Container name for leases</value>
   </data>
   <data name="cosmosDBIn_leaseDatabaseName_help" xml:space="preserve">
     <value>Name of the database that includes the collection to store the leases.</value>
@@ -1572,8 +1581,14 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   <data name="cosmosDBIn_createIfNotExists_help" xml:space="preserve">
     <value>Checks for existence and automatically creates the leases collection.</value>
   </data>
+  <data name="cosmosDBIn_createContainerIfNotExists_help" xml:space="preserve">
+    <value>Checks for existence and automatically creates the leases container.</value>
+  </data>
   <data name="cosmosDBIn_createIfNotExists_label" xml:space="preserve">
     <value>Create lease collection if it does not exist</value>
+  </data>
+  <data name="cosmosDBIn_createContainerIfNotExists_label" xml:space="preserve">
+    <value>Create lease container if it does not exist</value>
   </data>
   <data name="EventGridTriggerJavascript_description" xml:space="preserve">
     <value>A JavaScript function that will be run whenever an event grid receives a new event</value>
