@@ -1941,6 +1941,9 @@
       <Item ItemId=";cosmosDBIn_containerName_help" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Name of the container to be monitored.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[De naam van de container die bewaakt moet worden.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1956,12 +1959,18 @@
       <Item ItemId=";cosmosDBIn_createContainerIfNotExists_help" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Checks for existence and automatically creates the leases container.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Hiermee wordt de aanwezigheid van de leasecontainer gecontroleerd en als deze nog niet bestaat wordt er automatisch een gemaakt.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";cosmosDBIn_createContainerIfNotExists_label" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Create lease container if it does not exist]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Een leasecontainer maken als deze nog niet bestaat]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2016,12 +2025,18 @@
       <Item ItemId=";cosmosDBIn_leaseContainerName_help" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Name of the container to store the leases.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[De naam van de container voor het opslaan van de leases.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";cosmosDBIn_leaseContainerName_label" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Container name for leases]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Containernaam voor leases]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
