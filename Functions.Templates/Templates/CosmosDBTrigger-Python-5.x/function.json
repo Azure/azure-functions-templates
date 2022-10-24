@@ -1,0 +1,16 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "type": "cosmosDBTrigger",
+      "name": "documents",
+      "direction": "in",
+      "leaseContainerName": "leases",
+      "connection": "",
+      "databaseName": "",
+      "containerName": "",
+      "createLeaseContainerIfNotExists": true,
+      "startFromBeginning": false
+    }
+  ]
+}

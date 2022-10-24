@@ -1,0 +1,1864 @@
+{
+  "$schema": "<TBD>",
+  "contentVersion": "2016-03-04-alpha",
+  "variables": {
+    "storageConnStringLabel": "$variables_storageConnStringLabel",
+    "appSettingsHelp": "$variables_appSettingsHelp",
+    "selectConnection": "$variables_selectConnection",
+    "parameterName": "$variables_parameterName",
+    "paramNameLabel": "$variables_paramNameLabel",
+    "paramNameInputHelp": "$variables_paramNameInputHelp",
+    "paramNameOutputHelp": "$variables_paramNameOutputHelp",
+    "apiHubTableDataSetLabel": "$variables_apiHubTableDataSetLabel",
+    "apiHubTableDataSetHelp": "$variables_apiHubTableDataSetHelp",
+    "apiHubTableNameLabel": "$variables_apiHubTableNameLabel",
+    "apiHubTableHelp": "$variables_apiHubTableHelp",
+    "apiHubTableEntityLabel": "$variables_apiHubTableEntityLabel",
+    "apiHubTableEntityHelp": "$variables_apiHubTableEntityHelp",
+    "apiHubTableConnectionLabel": "$variables_apiHubTableConnectionLabel",
+    "apiHubTableConnectionHelp": "$variables_apiHubTableConnectionHelp"
+  },
+  "bindings": [
+    {
+      "type": "timerTrigger",
+      "displayName": "$timerTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\timerTrigger.md",
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "myTimer",
+          "required": true,
+          "label": "$timerTrigger_name_label",
+          "help": "$timerTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "schedule",
+          "value": "string",
+          "defaultValue": "0 * * * * *",
+          "required": true,
+          "label": "$timerTrigger_schedule_label",
+          "help": "$timerTrigger_schedule_help",
+          "validators": [
+            {
+              "expression": "^(\\*|((([1-5]\\d)|\\d)(\\-(([1-5]\\d)|\\d)(\\/\\d+)?)?)(,((([1-5]\\d)|\\d)(\\-(([1-5]\\d)|\\d)(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|((([1-5]\\d)|\\d)(\\-(([1-5]\\d)|\\d)(\\/\\d+)?)?)(,((([1-5]\\d)|\\d)(\\-(([1-5]\\d)|\\d)(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|(((1\\d)|(2[0-3])|\\d)(\\-((1\\d)|(2[0-3])|\\d)(\\/\\d+)?)?)(,(((1\\d)|(2[0-3])|\\d)(\\-((1\\d)|(2[0-3])|\\d)(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|((([1-2]\\d)|(3[0-1])|[1-9])(\\-(([1-2]\\d)|(3[0-1])|[1-9])(\\/\\d+)?)?)(,((([1-2]\\d)|(3[0-1])|[1-9])(\\-(([1-2]\\d)|(3[0-1])|[1-9])(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|(([A-Za-z]+|(1[0-2])|[1-9])(\\-([A-Za-z]+|(1[0-2])|[1-9])(\\/\\d+)?)?)(,(([A-Za-z]+|(1[0-2])|[1-9])(\\-([A-Za-z]+|(1[0-2])|[1-9])(\\/\\d+)?)?))*)(\\/\\d+)? (\\*|(([A-Za-z]+|[0-6])(\\-([A-Za-z]+|[0-6])(\\/\\d+)?)?)(,(([A-Za-z]+|[0-6])(\\-([A-Za-z]+|[0-6])(\\/\\d+)?)?))*)(\\/\\d+)?$",
+              "errorText": "$timerTrigger_schedule_errorText"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "queue",
+      "displayName": "$queueOut_displayName",
+      "direction": "out",
+      "enabledInTryMode": true,
+      "actions": [
+        {
+          "template": "QueueTrigger",
+          "binding": "queueTrigger",
+          "settings": [
+            "queueName",
+            "connection"
+          ]
+        }
+      ],
+      "documentation": "$content=Documentation\\queueOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Storage", "version": "4.0.5"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "outputQueueItem",
+          "required": true,
+          "label": "$queueOut_name_label",
+          "help": "$queueOut_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "queueName",
+          "value": "string",
+          "defaultValue": "outqueue",
+          "required": true,
+          "label": "$queueOut_queueName_label",
+          "help": "$queueOut_queueName_help",
+          "validators": [
+            {
+              "expression": "^[0-9a-z][a-z0-9-]{1,61}[0-9a-z]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+              "errorText": "$queueOut_queueName_errorText"
+            }
+          ]
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "Storage",
+          "required": true,
+          "label": "[variables('storageConnStringLabel')]",
+          "help": "[variables('appSettingsHelp')]",
+          "placeholder": "[variables('selectConnection')]"
+        }
+      ]
+    },
+    {
+      "type": "rabbitMqTrigger",
+      "displayName": "$rabbitMQTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\rabbitMQTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.RabbitMQ", "version": "1.1.0"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "myQueueItem",
+          "required": true,
+          "label": "$rabbitmq_name_label",
+          "help": "$rabbitmq_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "queueName",
+          "value": "string",
+          "defaultValue": "myqueue",
+          "required": true,
+          "label": "$rabbitmq_queuename_label",
+          "help": "$rabbitmq_queuename_help"
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "resource": "AppSetting",
+          "required": true,
+          "label": "$rabbitmq_connectionstringsetting_label",
+          "help": "[variables('appSettingsHelp')]"
+        }
+      ]
+    },
+    {
+      "type": "kafkaTrigger",
+      "displayName": "$kafkaTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\kafkaTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Kafka", "version": "3.3.2"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "myKafakaEvent",
+          "required": true,
+          "label": "$kafka_name_label",
+          "help": "$kafka_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "brokerList",
+          "value": "string",
+          "resource": "AppSetting",
+          "defaultValue": "BrokerList",
+          "required": true,
+          "label": "$kafka_brokerlist_label",
+          "help": "[variables('appSettingsHelp')]"
+        },
+        {
+          "name": "topic",
+          "value": "string",
+          "defaultValue": "topic",
+          "required": true,
+          "label": "$kafka_topic_label",
+          "help": "$kafka_topic_help"
+        },
+        {
+          "name": "username",
+          "value": "string",
+          "defaultValue": "$ConnectionString",         
+          "required": false,
+          "label": "$kafka_username_label",
+          "help": "$kafka_username_help"
+        },
+        {
+          "name": "password",
+          "value": "string",
+          "defaultValue": "%KafkaPassword%",           
+          "resource": "AppSetting",
+          "required": false,
+          "label": "$kafka_password_label",
+          "help": "[variables('appSettingsHelp')]"
+        },
+        {
+          "name": "protocol",
+          "value": "enum",
+          "required": true,
+          "defaultValue":"SASLSSL",
+          "enum": [
+            {
+              "value": "NOTSET",
+              "display": "Not Set"
+            },
+            {
+              "value": "PLAINTEXT",
+              "display": "Plaintext"
+            },
+            {
+              "value": "SSL",
+              "display": "SSL"
+            },
+            {
+              "value": "SASLPLAINTEXT",
+              "display": "SASL Plaintext"
+            },
+            {
+              "value": "SASLSSL",
+              "display": "SASL SSL"
+            }
+          ],
+          "label": "$kafka_protocol_label",
+          "help": "$kafka_protocol_help"
+        },
+        {
+          "name": "authenticationMode",
+          "value": "enum",
+          "defaultValue": "PLAIN",
+          "required": false,
+          "enum": [
+            {
+              "value": "NOTSET",
+              "display": "Not Set"
+            },
+            {
+              "value": "GSSAPI",
+              "display": "GSS API"
+            },
+            {
+              "value": "PLAIN",
+              "display": "Plain"
+            },
+            {
+              "value": "SCRAMSHA256",
+              "display": "SCRAM SHA-256"
+            },
+            {
+              "value": "SCRAMSHA512",
+              "display": "SCRAM SHA-512"
+            }
+          ],
+          "label": "$kafka_authenticationmode_label",
+          "help": "$kafka_authenticationmode_help"
+        },
+        {
+          "name": "consumerGroup",
+          "value": "string",
+          "defaultValue": "$Default",         
+          "required": false,
+          "label": "$kafka_consumergroup_label",
+          "help": "$kafka_consumergroup_help"
+        }
+      ]
+    },
+    {
+      "type": "kafka",
+      "displayName": "$kafkaOutput_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\kafkaOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Kafka", "version": "3.3.2"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "eventData",
+          "required": true,
+          "label": "$kafka_name_label",
+          "help": "$kafka_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "brokerList",
+          "value": "string",
+          "resource": "AppSetting",
+          "defaultValue": "BrokerList",
+          "required": true,
+          "label": "$kafka_brokerlist_label",
+          "help": "[variables('appSettingsHelp')]"
+        },
+        {
+          "name": "topic",
+          "value": "string",
+          "defaultValue": "topic",
+          "required": true,
+          "label": "$kafka_topic_label",
+          "help": "$kafka_topic_help"
+        },
+        {
+          "name": "username",
+          "value": "string",
+          "defaultValue": "$ConnectionString",         
+          "required": false,
+          "label": "$kafka_username_label",
+          "help": "$kafka_username_help"
+        },
+        {
+          "name": "password",
+          "value": "string",
+          "defaultValue": "%KafkaPassword%",           
+          "resource": "AppSetting",
+          "required": false,
+          "label": "$kafka_password_label",
+          "help": "[variables('appSettingsHelp')]"
+        },
+        {
+          "name": "protocol",
+          "value": "enum",
+          "required": true,
+          "defaultValue":"SASLSSL",
+          "enum": [
+            {
+              "value": "NOTSET",
+              "display": "Not Set"
+            },
+            {
+              "value": "PLAINTEXT",
+              "display": "Plaintext"
+            },
+            {
+              "value": "SSL",
+              "display": "SSL"
+            },
+            {
+              "value": "SASLPLAINTEXT",
+              "display": "SASL Plaintext"
+            },
+            {
+              "value": "SASLSSL",
+              "display": "SASL SSL"
+            }
+          ],
+          "label": "$kafka_protocol_label",
+          "help": "$kafka_protocol_help"
+        },
+        {
+          "name": "authenticationMode",
+          "value": "enum",
+          "defaultValue": "PLAIN",
+          "required": false,
+          "enum": [
+            {
+              "value": "NOTSET",
+              "display": "Not Set"
+            },
+            {
+              "value": "GSSAPI",
+              "display": "GSS API"
+            },
+            {
+              "value": "PLAIN",
+              "display": "Plain"
+            },
+            {
+              "value": "SCRAMSHA256",
+              "display": "SCRAM SHA-256"
+            },
+            {
+              "value": "SCRAMSHA512",
+              "display": "SCRAM SHA-512"
+            }
+          ],
+          "label": "$kafka_authenticationmode_label",
+          "help": "$kafka_authenticationmode_help"
+        }
+      ]
+    },
+    {
+      "type": "queueTrigger",
+      "displayName": "$queueTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\queueTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Storage", "version": "4.0.5"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "myQueueItem",
+          "required": true,
+          "label": "$queueTrigger_name_label",
+          "help": "$queueTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "queueName",
+          "value": "string",
+          "defaultValue": "myqueue",
+          "required": true,
+          "label": "$queueTrigger_queueName_label",
+          "help": "$queueTrigger_queueName_help",
+          "validators": [
+            {
+              "expression": "^[0-9a-z][a-z0-9-]{1,61}[0-9a-z]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+              "errorText": "$queueTrigger_queueName_errorText"
+            }
+          ]
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "Storage",
+          "required": true,
+          "label": "[variables('storageConnStringLabel')]",
+          "help": "[variables('appSettingsHelp')]",
+          "placeholder": "[variables('selectConnection')]"
+        }
+      ]
+    },
+    {
+      "type": "blob",
+      "displayName": "$blobOut_displayName",
+      "direction": "out",
+      "enabledInTryMode": true,
+      "actions": [
+        {
+          "template": "BlobTrigger",
+          "binding": "blobTrigger",
+          "settings": [
+            "path",
+            "connection"
+          ]
+        }
+      ],
+      "documentation": "$content=Documentation\\blobOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Storage", "version": "4.0.5"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "outputBlob",
+          "required": true,
+          "label": "$blobOut_name_label",
+          "help": "$blobOut_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "path",
+          "value": "string",
+          "defaultValue": "outcontainer/{rand-guid}",
+          "required": true,
+          "label": "$blobOut_path_label",
+          "help": "$blobOut_path_help",
+          "validators": [
+            {
+              "expression": "((^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9])|(^[{][a-zA-Z0-9]{1,126}[}])|(^[%][a-zA-Z0-9]{1,126}[%]))[\\/](\\S){0,1023}[^\\/]$|(^[{][a-zA-Z0-9]{1,126}[}]$)|(^[%][a-zA-Z0-9]{1,126}[%]$)",
+              "errorText": "$blobOut_path_errorText"
+            }
+          ]
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "Storage",
+          "required": true,
+          "label": "[variables('storageConnStringLabel')]",
+          "help": "[variables('appSettingsHelp')]",
+          "placeholder": "[variables('selectConnection')]"
+        }
+      ]
+    },
+    {
+      "type": "blob",
+      "displayName": "$blobIn_displayName",
+      "direction": "in",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\blobIn.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Storage", "version": "4.0.5"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "inputBlob",
+          "required": true,
+          "label": "$blobIn_name_label",
+          "help": "$blobIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "path",
+          "value": "string",
+          "defaultValue": "incontainer/{name}",
+          "required": true,
+          "label": "$blobIn_path_label",
+          "help": "$blobIn_path_help",
+          "validators": [
+            {
+              "expression": "((^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9])|(^[{][a-zA-Z0-9]{1,126}[}])|(^[%][a-zA-Z0-9]{1,126}[%]))[\\/](\\S){0,1023}[^\\/]$|(^[{][a-zA-Z0-9]{1,126}[}]$)|(^[%][a-zA-Z0-9]{1,126}[%]$)",
+              "errorText": "$blobIn_patherrorText"
+            }
+          ]
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "Storage",
+          "required": true,
+          "label": "[variables('storageConnStringLabel')]",
+          "help": "[variables('appSettingsHelp')]",
+          "placeholder": "[variables('selectConnection')]"
+        }
+      ]
+    },
+    {
+      "type": "blobTrigger",
+      "displayName": "$blobTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\blobTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Storage", "version": "4.0.5"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "myBlob",
+          "required": true,
+          "label": "$blobTrigger_name_label",
+          "help": "$blobTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "path",
+          "value": "string",
+          "defaultValue": "mycontainer",
+          "required": true,
+          "label": "$blobTrigger_path_label",
+          "help": "$blobTrigger_path_help",
+          "validators": [
+            {
+              "expression": "(((^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9])|(^[{][a-zA-Z0-9]{1,126}[}])|(^[%][a-zA-Z0-9]{1,126}[%]))[\\/](\\S){0,1023}[^\\/]$)|(((^[a-z0-9](?:[a-z0-9]|(?:\\-(?!\\-))){1,61}[a-z0-9]$)|(^[{][a-zA-Z0-9]{1,126}[}]$)|(^[%][a-zA-Z0-9]{1,126}[%]$)))",
+              "errorText": "$blobTrigger_path_errorText"
+            }
+          ]
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "Storage",
+          "required": true,
+          "label": "[variables('storageConnStringLabel')]",
+          "help": "[variables('appSettingsHelp')]",
+          "placeholder": "[variables('selectConnection')]"
+        }
+      ]
+    },
+    {
+      "type": "httpTrigger",
+      "displayName": "$httpTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\httpTrigger.md",
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "req",
+          "required": true,
+          "label": "$httpTrigger_name_label",
+          "help": "$httpTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "route",
+          "value": "string",
+          "required": false,
+          "label": "$httpTrigger_route_label",
+          "help": "$httpTrigger_route_help",
+          "validators": []
+        },
+        {
+          "name": "authLevel",
+          "value": "enum",
+          "required": true,
+          "defaultValue": "function",
+          "enum": [
+            {
+              "value": "function",
+              "display": "Function"
+            },
+            {
+              "value": "anonymous",
+              "display": "Anonymous"
+            },
+            {
+              "value": "admin",
+              "display": "Admin"
+            }
+          ],
+          "label": "$httpTrigger_authLevel_label",
+          "help": "$httpTrigger_authLevel_help"
+        },
+        {
+          "name": "methods",
+          "value": "checkBoxList",
+          "defaultValue": [
+            "get",
+            "post",
+            "delete",
+            "head",
+            "patch",
+            "put",
+            "options",
+            "trace"
+          ],
+          "enum": [
+            {
+              "value": "get",
+              "display": "GET"
+            },
+            {
+              "value": "post",
+              "display": "POST"
+            },
+            {
+              "value": "delete",
+              "display": "DELETE"
+            },
+            {
+              "value": "head",
+              "display": "HEAD"
+            },
+            {
+              "value": "patch",
+              "display": "PATCH"
+            },
+            {
+              "value": "put",
+              "display": "PUT"
+            },
+            {
+              "value": "options",
+              "display": "OPTIONS"
+            },
+            {
+              "value": "trace",
+              "display": "TRACE"
+            }
+          ],
+          "label": "$httpTrigger_methods_label",
+          "help": "$httpTrigger_methods_help"
+        }
+      ],
+      "rules": [
+        {
+          "name": "methodRule",
+          "type": "exclusivity",
+          "values": [
+            {
+              "value": "allMethods",
+              "display": "All methods",
+              "hiddenSettings": [
+                "methods"
+              ],
+              "shownSettings": []
+            },
+            {
+              "value": "methods",
+              "display": "Selected methods",
+              "hiddenSettings": [],
+              "shownSettings": [
+                "methods"
+              ]
+            }
+          ],
+          "label": "$httpTrigger_methodRule_label",
+          "help": "$httpTrigger_methodRule_help"
+        }
+      ]
+    },
+    {
+      "type": "http",
+      "displayName": "$httpOut_displayName",
+      "direction": "out",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\httpOut.md",
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "res",
+          "required": true,
+          "label": "$httpOut_name_label",
+          "help": "$httpOut_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "serviceBusTrigger",
+      "displayName": "$serviceBusTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\serviceBusTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.ServiceBus", "version": "4.3.0"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "mySbMsg",
+          "required": true,
+          "label": "$serviceBusTrigger_name_label",
+          "help": "$serviceBusTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "ServiceBus",
+          "required": true,
+          "label": "$serviceBusTrigger_connection_label",
+          "help": "$serviceBusTrigger_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "queueName",
+          "value": "string",
+          "defaultValue": "mysbqueue",
+          "required": true,
+          "label": "$serviceBusTrigger_queueName_label",
+          "help": "$serviceBusTrigger_queueName_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
+              "errorText": "$serviceBusTrigger_queueName_errorText"
+            }
+          ]
+        },
+        {
+          "name": "topicName",
+          "value": "string",
+          "defaultValue": "mysbtopic",
+          "required": true,
+          "label": "$serviceBusTrigger_topicName_label",
+          "help": "$serviceBusTrigger_topicName_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+              "errorText": "$serviceBusTrigger_topicName_errorText"
+            }
+          ]
+        },
+        {
+          "name": "subscriptionName",
+          "value": "string",
+          "defaultValue": "mysubscription",
+          "required": true,
+          "label": "$serviceBusTrigger_subscriptionName_label",
+          "help": "$serviceBusTrigger_subscriptionName_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
+              "errorText": "$serviceBusTrigger_subscriptionName_errorText"
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "name": "messageType",
+          "type": "exclusivity",
+          "values": [
+            {
+              "value": "queueName",
+              "display": "$serviceBusTrigger_messageType_queueName",
+              "hiddenSettings": [
+                "topicName",
+                "subscriptionName"
+              ],
+              "shownSettings": [
+                "queueName"
+              ]
+            },
+            {
+              "value": "topicName",
+              "display": "$serviceBusTrigger_messageType_topicName",
+              "hiddenSettings": [
+                "queueName"
+              ],
+              "shownSettings": [
+                "topicName",
+                "subscriptionName"
+              ]
+            }
+          ],
+          "label": "$serviceBusTrigger_messageType_label",
+          "help": "$serviceBusTrigger_messageType_help"
+        }
+      ]
+    },
+    {
+      "type": "serviceBus",
+      "displayName": "$serviceBusOut_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\serviceBusOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.ServiceBus", "version": "4.3.0"
+      },
+      "settings": [
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "ServiceBus",
+          "required": true,
+          "label": "$serviceBusOut_connection_label",
+          "help": "$serviceBusOut_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "outputSbMsg",
+          "required": true,
+          "label": "$serviceBusOut_name_label",
+          "help": "$serviceBusOut_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "queueName",
+          "value": "string",
+          "defaultValue": "outqueue",
+          "required": true,
+          "label": "$serviceBusOut_queueName_label",
+          "help": "$serviceBusOut_queueName_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
+              "errorText": "$serviceBusOut_queueName_errorText"
+            }
+          ]
+        },
+        {
+          "name": "topicName",
+          "value": "string",
+          "defaultValue": "outtopic",
+          "required": true,
+          "label": "$serviceBusOut_topicName_label",
+          "help": "$serviceBusOut_topicName_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+              "errorText": "$serviceBusOut_topicName_errorText"
+            }
+          ]
+        }
+      ],
+      "rules": [
+        {
+          "name": "messageType",
+          "type": "exclusivity",
+          "values": [
+            {
+              "value": "queueName",
+              "display": "$serviceBusOut_messageType_queueName",
+              "hiddenSettings": [
+                "topicName"
+              ],
+              "shownSettings": [
+                "queueName"
+              ]
+            },
+            {
+              "value": "topicName",
+              "display": "$serviceBusOut_messageType_topicName",
+              "hiddenSettings": [
+                "queueName"
+              ],
+              "shownSettings": [
+                "topicName"
+              ]
+            }
+          ],
+          "label": "$serviceBusOut_messageType_label",
+          "help": "$serviceBusOut_messageType_help"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "displayName": "$tableout_displayName",
+      "direction": "out",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\tableOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Storage", "version": "4.0.5"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "outputTable",
+          "required": true,
+          "label": "$tableout_name_label",
+          "help": "$tableout_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "tableName",
+          "value": "string",
+          "defaultValue": "outTable",
+          "required": true,
+          "label": "$table_tableName_label",
+          "help": "$table_tableName_help",
+          "validators": [
+            {
+              "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+              "errorText": "$table_tableName_errorText"
+            }
+          ]
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "Storage",
+          "required": true,
+          "label": "[variables('storageConnStringLabel')]",
+          "help": "[variables('appSettingsHelp')]",
+          "placeholder": "[variables('selectConnection')]"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "displayName": "$tableIn_displayName",
+      "direction": "in",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\tableIn.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Storage", "version": "4.0.5"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "inputTable",
+          "required": true,
+          "label": "$tableIn_name_label",
+          "help": "$tableIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "tableName",
+          "value": "string",
+          "defaultValue": "inTable",
+          "required": true,
+          "label": "$tableIn_tableName_label",
+          "help": "$tableIn_tableName_help",
+          "validators": [
+            {
+              "expression": "^[A-Za-z][A-Za-z0-9]{2,62}$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+              "errorText": "$tableIn_tableName_errorText"
+            }
+          ]
+        },
+        {
+          "name": "partitionKey",
+          "value": "string",
+          "required": false,
+          "label": "$tableIn_partitionKey_label",
+          "help": "$tableIn_partitionKey_help"
+        },
+        {
+          "name": "rowKey",
+          "value": "string",
+          "required": false,
+          "label": "$tableIn_rowKey_label",
+          "help": "$tableIn_rowKey_help"
+        },
+        {
+          "name": "take",
+          "value": "int",
+          "defaultValue": 50,
+          "required": false,
+          "label": "$tableIn_take_label",
+          "help": "$tableIn_take_help"
+        },
+        {
+          "name": "filter",
+          "value": "string",
+          "required": false,
+          "label": "$tableIn_filter_label",
+          "help": "$tableIn_filter_help"
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "Storage",
+          "required": true,
+          "label": "[variables('storageConnStringLabel')]",
+          "help": "[variables('appSettingsHelp')]",
+          "placeholder": "[variables('selectConnection')]"
+        }
+      ]
+    },
+    {
+      "type": "eventHubTrigger",
+      "displayName": "$eventHubTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\eventHubTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.EventHubs", "version": "4.2.0"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "myEventHubMessage",
+          "required": true,
+          "label": "$eventHubTrigger_name_label",
+          "help": "$eventHubTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "EventHub",
+          "required": true,
+          "label": "$eventHubTrigger_connection_label",
+          "help": "$eventHubTrigger_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "eventHubName",
+          "value": "string",
+          "defaultValue": "myeventhub",
+          "required": true,
+          "label": "$eventHubOut_path_label",
+          "help": "$eventHubTrigger_path_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+              "errorText": "$eventHubTrigger_path_errorText"
+            }
+          ]
+        },
+        {
+          "name": "consumerGroup",
+          "value": "string",
+          "defaultValue": "$Default",
+          "required": false,
+          "label": "$eventHubTrigger_consumerGroup_label",
+          "help": "$eventHubTrigger_consumerGroup_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$)|^\\$Default$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+              "errorText": "$eventHubTrigger_consumerGroup_errorText"
+            }
+          ]
+        },
+        {
+          "name": "cardinality",
+          "value": "enum",
+          "required": false,
+          "defaultValue": "many",
+          "enum": [
+            {
+              "value": "one",
+              "display": "One"
+            },
+            {
+              "value": "many",
+              "display": "Many"
+            }
+          ],
+          "label": "$eventHubTrigger_cardinality_label",
+          "help": "$eventHubTrigger_cardinality_help"
+        },
+        {
+          "name": "dataType",
+          "value": "enum",
+          "required": false,
+          "enum": [
+            {
+              "value": "string",
+              "display": "String"
+            },
+            {
+              "value": "binary",
+              "display": "Binary"
+            },
+            {
+              "value": "stream",
+              "display": "Stream"
+            }
+          ],
+          "label": "$eventHubTrigger_dataType_label",
+          "help": "$eventHubTrigger_dataType_help"
+        }
+      ]
+    },
+    {
+      "type": "eventHub",
+      "displayName": "$eventHubOut_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "actions": [
+        {
+          "template": "EventHubTrigger",
+          "binding": "eventHubTrigger",
+          "settings": [
+            "connection",
+            "path"
+          ]
+        }
+      ],
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.EventHubs", "version": "4.2.0"
+      },
+      "documentation": "$content=Documentation\\eventHubOut.md",
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "outputEventHubMessage",
+          "required": true,
+          "label": "$eventHubOut_name_label",
+          "help": "$eventHubOut_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "resource": "EventHub",
+          "required": true,
+          "label": "$eventHubOut_connection_label",
+          "help": "$eventHubOut_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "eventHubName",
+          "value": "string",
+          "defaultValue": "outeventhub",
+          "required": true,
+          "label": "$eventHubOut_path_label",
+          "help": "$eventHubOut_path_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}[a-zA-Z0-9]$|^[{][a-zA-Z0-9]{1,126}[}]$|^[%][a-zA-Z0-9]{1,126}[%]$",
+              "errorText": "$eventHubOut_path_errorText"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "sendGrid",
+      "displayName": "$sendGrid_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\sendGridOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.SendGrid", "version": "3.0.0"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "message",
+          "required": true,
+          "label": "$sendGrid_name_label",
+          "help": "$sendGrid_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "apiKey",
+          "resource": "AppSetting",
+          "value": "string",
+          "defaultValue": "SendGridApiKey",
+          "required": true,
+          "label": "$sendGrid_apiKey_label",
+          "help": "$sendGrid_apiKey_help"
+        },
+        {
+          "name": "to",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$sendGrid_to_label",
+          "help": "$sendGrid_to_help"
+        },
+        {
+          "name": "from",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$sendGrid_from_label",
+          "help": "$sendGrid_from_help"
+        },
+        {
+          "name": "subject",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$sendGrid_subject_label",
+          "help": "$sendGrid_subject_help"
+        },
+        {
+          "name": "text",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$sendGrid_text_label",
+          "help": "$sendGrid_text_help"
+        }
+      ]
+    },
+    {
+      "type": "twilioSms",
+      "displayName": "$twilioSms_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\twilioSmsOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Twilio", "version": "3.0.0"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "message",
+          "required": true,
+          "label": "$twilioSms_name_label",
+          "help": "$twilioSms_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "accountSidSetting",
+          "value": "string",
+          "defaultValue": "TwilioAccountSid",
+          "required": true,
+          "label": "$twilioSms_accountsid_label",
+          "help": "$twilioSms_accountsid_help"
+        },
+        {
+          "name": "authTokenSetting",
+          "value": "string",
+          "defaultValue": "TwilioAuthToken",
+          "required": true,
+          "label": "$twilioSms_authtoken_label",
+          "help": "$twilioSms_authtoken_help"
+        },
+        {
+          "name": "from",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$twilioSms_from_label",
+          "help": "$twilioSms_from_help"
+        },
+        {
+          "name": "body",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$twilioSms_body_label",
+          "help": "$twilioSms_body_help"
+        }
+      ]
+    },
+    {
+      "type": "activityTrigger",
+      "displayName": "$activityTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\activityTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask", "version": "2.8.1"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "context",
+          "required": true,
+          "label": "$activityTrigger_name_label",
+          "help": "$activityTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "activity",
+          "value": "string",
+          "required": false,
+          "label": "$activityTrigger_activity_label",
+          "help": "$activityTrigger_activity_help"
+        }
+      ]
+    },
+    {
+      "type": "orchestrationTrigger",
+      "displayName": "$orchestrationTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\orchestrationTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask", "version": "2.8.1"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "context",
+          "required": true,
+          "label": "$orchestrationTrigger_name_label",
+          "help": "$orchestrationTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "orchestration",
+          "value": "string",
+          "required": false,
+          "label": "$orchestrationTrigger_orchestration_label",
+          "help": "$orchestrationTrigger_orchestration_help"
+        }
+      ]
+    },
+    {
+      "type": "entityTrigger",
+      "displayName": "$entityTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\entityTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask", "version": "2.8.1"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "context",
+          "required": true,
+          "label": "$entityTrigger_name_label",
+          "help": "$entityTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "activity",
+          "value": "string",
+          "required": false,
+          "label": "$entityTrigger_activity_label",
+          "help": "$entityTrigger_activity_help"
+        }
+      ]
+    },
+    {
+      "type": "orchestrationClient",
+      "displayName": "$orchestrationClientIn_displayName",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\orchestrationClientIn.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask", "version": "2.8.1"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "client",
+          "required": true,
+          "label": "$orchestrationClientIn_name_label",
+          "help": "$orchestrationClientIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "durableClient",
+      "displayName": "$durableClientIn_displayName",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\orchestrationClientIn.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.DurableTask", "version": "2.8.1"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "client",
+          "required": true,
+          "label": "$durableClientIn_name_label",
+          "help": "$durableClientIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "eventGridTrigger",
+      "displayName": "$eventGrid_trigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\eventGridTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.EventGrid", "version": "2.1.0"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "EventGridTrigger",
+          "required": true,
+          "label": "$eventGrid_trigger_name_label",
+          "help": "$eventGrid_trigger_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cosmosDBTrigger",
+      "displayName": "$cosmosDB_trigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\cosmosDBTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.CosmosDB", "version": "3.0.10"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "inputDocuments",
+          "required": true,
+          "label": "$cosmosDBIn_name_label",
+          "help": "$cosmosDBIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "required": true,
+          "resource": "DocumentDB",
+          "label": "$cosmosDBIn_connection_label",
+          "help": "$cosmosDBIn_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "databaseName",
+          "value": "string",
+          "defaultValue": "",
+          "required": true,
+          "label": "$cosmosDBIn_databaseName_label",
+          "help": "$cosmosDBIn_databaseName_help"
+        },
+        {
+          "name": "containerName",
+          "value": "string",
+          "defaultValue": "",
+          "required": true,
+          "label": "$cosmosDBIn_leaseContainerName_label",
+          "help": "$cosmosDBIn_containerName_help"
+        },
+        {
+          "name": "leaseContainerName",
+          "value": "string",
+          "required": true,
+          "label": "$cosmosDBIn_leaseContainerName_label",
+          "help": "$cosmosDBIn_leaseContainerName_help"
+        },
+        {
+          "name": "createLeaseContainerIfNotExists",
+          "value": "boolean",
+          "defaultValue": true,
+          "required": true,
+          "label": "$cosmosDBIn_createContainerIfNotExists_label",
+          "help": "$cosmosDBIn_createContainerIfNotExists_help"
+        }
+      ]
+    },
+    {
+      "type": "cosmosDB",
+      "displayName": "$documentDBOut_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\documentDBOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.CosmosDB", "version": "3.0.10"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "outputDocument",
+          "required": true,
+          "label": "$documentDBOut_name_label",
+          "help": "$documentDBOut_name_help",
+          "validators": [
+            {
+              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "databaseName",
+          "value": "string",
+          "defaultValue": "outDatabase",
+          "required": true,
+          "label": "$documentDBOut_databaseName_label",
+          "help": "$documentDBOut_databaseName_help"
+        },
+        {
+          "name": "collectionName",
+          "value": "string",
+          "defaultValue": "MyCollection",
+          "required": true,
+          "label": "$documentDBOut_collectionName_label",
+          "help": "$documentDBOut_collectionName_help"
+        },
+        {
+          "name": "createIfNotExists",
+          "value": "boolean",
+          "defaultValue": false,
+          "required": true,
+          "label": "$documentDBOut_createIfNotExists_label",
+          "help": "$documentDBOut_createIfNotExists_help"
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "resource": "DocumentDB",
+          "required": true,
+          "label": "$documentDBOut_connection_label",
+          "help": "$documentDBOut_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "partitionKey",
+          "value": "string",
+          "required": false,
+          "label": "$documentDB_partitionKey_label",
+          "help": "$documentDBOut_partitionKey_help"
+        },
+        {
+          "name": "collectionThroughput",
+          "value": "int",
+          "required": false,
+          "label": "$cosmosDB_collectionThroughput_label",
+          "help": "$cosmosDBOut_collectionThroughput_help"
+        }
+      ]
+    },
+    {
+      "type": "cosmosDB",
+      "displayName": "$documentDBIn_displayName",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\documentDBIn.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.CosmosDB", "version": "3.0.10"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "inputDocument",
+          "required": true,
+          "label": "$documentDBIn_name_label",
+          "help": "$documentDBIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "databaseName",
+          "value": "string",
+          "defaultValue": "inDatabase",
+          "required": true,
+          "label": "$documentDBIn_databaseName_label",
+          "help": "$documentDBIn_databaseName_help"
+        },
+        {
+          "name": "collectionName",
+          "value": "string",
+          "defaultValue": "MyCollection",
+          "required": true,
+          "label": "$documentDBIn_collectionName_label",
+          "help": "$documentDBIn_collectionName_help"
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "resource": "DocumentDB",
+          "required": true,
+          "label": "$documentDBIn_connection_label",
+          "help": "$documentDBIn_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "id",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$documentDBIn_id_label",
+          "help": "$documentDBIn_id_help"
+        },
+        {
+          "name": "partitionKey",
+          "value": "string",
+          "required": false,
+          "label": "$documentDB_partitionKey_label",
+          "help": "$documentDBIn_partitionKey_help"
+        },
+        {
+          "name": "sqlQuery",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$documentDBIn_sqlQuery_label",
+          "help": "$documentDBIn_sqlQuery_help"
+        }
+      ]
+    },
+    {
+      "type": "signalRConnectionInfo",
+      "displayName": "$signalRConnectionInfoIn_displayName",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\signalRConnectionInfo.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.SignalRService", "version": "1.0.0"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "connectionInfo",
+          "required": true,
+          "label": "$signalRConnectionInfoIn_name_label",
+          "help": "$signalRConnectionInfoIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "hubName",
+          "value": "string",
+          "defaultValue": "chat",
+          "required": true,
+          "label": "$signalRConnectionInfoIn_hubName_label",
+          "help": "$signalRConnectionInfoIn_hubName_help"
+        },
+        {
+          "name": "userId",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$signalRConnectionInfoIn_userId_label",
+          "help": "$signalRConnectionInfoIn_userId_help"
+        },
+        {
+          "name": "connectionStringSetting",
+          "resource": "AppSetting",
+          "value": "string",
+          "required": false,
+          "label": "$signalRConnectionInfoIn_connectionString_label",
+          "help": "$signalRConnectionInfoIn_connectionString_help"
+        }
+      ]
+    },
+    {
+      "type": "signalR",
+      "displayName": "$signalROut_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\signalR.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.SignalRService", "version": "1.0.0"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "signalRMessages",
+          "required": true,
+          "label": "$signalROut_name_label",
+          "help": "$signalROut_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "hubName",
+          "value": "string",
+          "defaultValue": "chat",
+          "required": true,
+          "label": "$signalROut_hubName_label",
+          "help": "$signalROut_hubName_help"
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "resource": "AppSetting",
+          "required": false,
+          "label": "$signalROut_connectionString_label",
+          "help": "$signalROut_connectionString_help"
+        }
+      ]
+    }
+  ]
+}
