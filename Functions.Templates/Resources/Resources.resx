@@ -1927,4 +1927,22 @@ function app.</value>
   <data name="SqlOuputBinding_description" xml:space="preserve">
     <value>A function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).</value>
   </data>
+  <data name="authenticationEvents_description" xml:space="preserve">
+    <value>Triggers for Azure AD Authentication event custom extensions. Lets you focus on your business logic.</value>
+  </data>
+  <data name="authenticationEvents_trigger_displayName" xml:space="preserve">
+    <value>Authentication Events Trigger</value>
+  </data>
+  <data name="authenticationEvent_trigger_name_label" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="authenticationEvent_trigger_name_help" xml:space="preserve">
+    <value>Triggers for Azure AD Authentication event custom extensions. Lets you focus on your business logic. For more information please see https://github.com/Azure/microsoft-azure-webJobs-extensions-authentication-events</value>
+  </data>
+  <data name="authenticationEvent_trigger_IssuanceStartVer_label" xml:space="preserve">
+    <value>OnTokenIssuanceStart Version</value>
+  </data>
+  <data name="authenticationEvent_trigger_IssuanceStartVer_help" xml:space="preserve">
+    <value>API Schema Version for OnTokenIssuanceStart Event</value>
+  </data>
 </root>
