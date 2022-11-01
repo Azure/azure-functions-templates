@@ -1,7 +1,6 @@
 // run 'npm install @azure/functions-authentication-events' from the project root folder
 import { AzureFunction, Context } from "@azure/functions"
-import { AuthenticationEventResponse, createFailedRequest } from "@azure/functions-authentication-events";
-import { TokenIssuanceStartRequest, ProvideClaimsForToken } from "@azure/functions-authentication-events/tokenIssuanceStart";
+import { AuthenticationEventResponse, createFailedRequest, ProvideClaimsForToken, TokenIssuanceStartRequest } from "@azure/functions-authentication-events";
 
 const eventTrigger: AzureFunction = async (context: Context, onTokenIssuanceStartRequest: TokenIssuanceStartRequest): Promise<AuthenticationEventResponse> => {
     try {
