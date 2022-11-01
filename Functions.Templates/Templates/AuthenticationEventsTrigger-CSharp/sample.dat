@@ -1,4 +1,41 @@
 {
-    "TenantId":"00000000-0000-0000-0000-000000000000",
-    "ApplicationId":"00000000-0000-0000-0000-000000000000"
+    "type": "microsoft.graph.authenticationEvent.tokenIssuanceStart",
+    "source": "/tenants/00000001-0000-0ff1-ce00-000000000000/applications/ef9e995c-efdb-4e76-97a9-8cdfc6e06afc",
+    "data": {
+        "@odata.type": "microsoft.graph.onTokenIssuanceStartCalloutData",
+        "tenantId": "00000001-0000-0ff1-ce00-000000000000",
+        "authenticationEventListenerId": "f2390d57-9664-4dde-b625-f0115925e1e2",
+        "customAuthenticationExtensionId": "9cc1c1ed-5f04-4fdf-85c0-94a7c6ea819c",
+        "authenticationContext": {
+            "correlationId": "f4bd1870-b774-4fa5-ba78-e08ac6be14c0",
+            "client": {
+                "ip": "127.0.0.1",
+                "locale": "en-us",
+                "market": "en-us"
+            },
+            "protocol": "OAUTH2.0",
+            "clientServicePrincipal": {
+                "id": "eedfddb9-304e-4d62-aa83-24700a0bcf0e",
+                "appId": "ef9e995c-efdb-4e76-97a9-8cdfc6e06afc",
+                "appDisplayName": "",
+                "displayName": "Test application"
+            },
+            "resourceServicePrincipal": {
+                "id": "eedfddb9-304e-4d62-aa83-24700a0bcf0e",
+                "appId": "ef9e995c-efdb-4e76-97a9-8cdfc6e06afc",
+                "appDisplayName": "",
+                "displayName": "Test application"
+            },
+            "user": {
+                "companyName": "Evo Sts Test",
+                "country": "",
+                "id": "69d24544-c420-4721-a4bf-106f2378d9f6",
+                "mail": "testadmin@evostsoneboxtest.com",
+                "onPremisesSamAccountName": "testadmin",
+                "onPremisesSecurityIdentifier": "testadmin",
+                "preferredDataLocation": "",
+                "userPrincipalName": "testadmin@evostsoneboxtest.com"
+            }
+        }
+    }
 }

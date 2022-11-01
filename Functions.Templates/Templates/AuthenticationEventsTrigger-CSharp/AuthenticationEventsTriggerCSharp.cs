@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Company.Function
 {
     /// <summary>Example functions for token augmentation</summary>
-    public static class AuthenticationEventFunctions
+    public static class AuthenticationEventsTriggerCSharp
     {
         /// <summary>The entry point for the Azure Function</summary>
         /// <param name="request">Strongly Typed request data for a token issuance start request</param>

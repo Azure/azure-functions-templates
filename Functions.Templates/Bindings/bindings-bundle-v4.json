@@ -1859,33 +1859,6 @@
           "help": "$signalROut_connectionString_help"
         }
       ]
-    },
-    {
-      "type": "authenticationEventsTrigger",
-      "displayName": "$authenticationEvents_trigger_displayName",
-      "direction": "in",
-      "enabledInTryMode": true,
-      "documentation": "$content=Documentation\\AuthenticationEventsTrigger.md",
-      "extension": {
-        "id": "Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents",
-        "version": "1.0.0-beta.1"
-      },
-      "settings": [
-        {
-          "name": "name",
-          "value": "string",
-          "defaultValue": "authenticationEventsTrigger",
-          "required": true,
-          "label": "$authenticationEvent_trigger_name_label",
-          "help": "$authenticationEvent_trigger_name_help",
-          "validators": [
-            {
-              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
-              "errorText": "[variables('parameterName')]"
-            }
-          ]
-        }
-      ]
     }
   ]
 }
