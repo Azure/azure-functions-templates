@@ -1527,8 +1527,14 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   <data name="cosmosDBIn_collectionName_help" xml:space="preserve">
     <value>Name of the collection to be monitored.</value>
   </data>
+  <data name="cosmosDBIn_containerName_help" xml:space="preserve">
+    <value>Name of the container to be monitored.</value>
+  </data>
   <data name="cosmosDBIn_collectionName_label" xml:space="preserve">
     <value>Collection name</value>
+  </data>
+  <data name="cosmosDBIn_containerName_label" xml:space="preserve">
+    <value>Container name</value>
   </data>
   <data name="cosmosDBIn_connection_help" xml:space="preserve">
     <value>The name of the App Setting containing the connection string to the service that contains the collection to be monitored.</value>
@@ -1542,11 +1548,14 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   <data name="cosmosDBIn_databaseName_label" xml:space="preserve">
     <value>Database name</value>
   </data>
-  <data name="cosmosDBIn_leaseCollectionName_help" xml:space="preserve">
-    <value>Name of the collection to store the leases.</value>
+  <data name="cosmosDBIn_leaseContainerName_help" xml:space="preserve">
+    <value>Name of the container to store the leases.</value>
   </data>
   <data name="cosmosDBIn_leaseCollectionName_label" xml:space="preserve">
     <value>Collection name for leases</value>
+  </data>
+  <data name="cosmosDBIn_leaseContainerName_label" xml:space="preserve">
+    <value>Container name for leases</value>
   </data>
   <data name="cosmosDBIn_leaseDatabaseName_help" xml:space="preserve">
     <value>Name of the database that includes the collection to store the leases.</value>
@@ -1572,8 +1581,14 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   <data name="cosmosDBIn_createIfNotExists_help" xml:space="preserve">
     <value>Checks for existence and automatically creates the leases collection.</value>
   </data>
+  <data name="cosmosDBIn_createContainerIfNotExists_help" xml:space="preserve">
+    <value>Checks for existence and automatically creates the leases container.</value>
+  </data>
   <data name="cosmosDBIn_createIfNotExists_label" xml:space="preserve">
     <value>Create lease collection if it does not exist</value>
+  </data>
+  <data name="cosmosDBIn_createContainerIfNotExists_label" xml:space="preserve">
+    <value>Create lease container if it does not exist</value>
   </data>
   <data name="EventGridTriggerJavascript_description" xml:space="preserve">
     <value>A JavaScript function that will be run whenever an event grid receives a new event</value>
@@ -1911,5 +1926,23 @@ function app.</value>
   </data>
   <data name="SqlOuputBinding_description" xml:space="preserve">
     <value>A function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).</value>
+  </data>
+  <data name="authenticationEvents_description" xml:space="preserve">
+    <value>Triggers for Azure AD Authentication event custom extensions. Lets you focus on your business logic.</value>
+  </data>
+  <data name="authenticationEvents_trigger_displayName" xml:space="preserve">
+    <value>Authentication Events Trigger</value>
+  </data>
+  <data name="authenticationEvent_trigger_name_label" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="authenticationEvent_trigger_name_help" xml:space="preserve">
+    <value>Triggers for Azure AD Authentication event custom extensions. Lets you focus on your business logic. For more information please see https://github.com/Azure/microsoft-azure-webJobs-extensions-authentication-events</value>
+  </data>
+  <data name="authenticationEvent_trigger_IssuanceStartVer_label" xml:space="preserve">
+    <value>OnTokenIssuanceStart Version</value>
+  </data>
+  <data name="authenticationEvent_trigger_IssuanceStartVer_help" xml:space="preserve">
+    <value>API Schema Version for OnTokenIssuanceStart Event</value>
   </data>
 </root>
