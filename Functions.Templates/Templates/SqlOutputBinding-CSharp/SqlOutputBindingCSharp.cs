@@ -12,21 +12,23 @@ namespace Company.Function
     {
         // Visit https://aka.ms/sqlbindingsoutput to learn how to use this output binding
         [FunctionName("SqlOutputBindingCSharp")]
-         public static CreatedResult Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "addtodoitem")] HttpRequest req,
-            [Sql("table", ConnectionStringSetting = "SqlConnectionString")] out ToDoItem output,
+        public static async Task<CreatedResult> Run(
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
+            [Sql("table", ConnectionStringSetting = "SqlConnectionString")] IAsyncCollector<ToDoItem> output,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger with SQL Output Binding function processed a request.");
 
-            output = new ToDoItem
-            {
-                Id = "1",
-                Priority = 1,
-                Description = "Hello World"
-            };
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            ToDoItem todoitem = JsonConvert.DeserializeObject<ToDoItem>(requestBody) ?? new ToDoItem
+                {
+                    Id = "1",
+                    Priority = 1,
+                    Description = "Hello World"
+                };
+            await output.AddAsync(todoitem);
 
-            return new CreatedResult($"/api/addtodoitem", output);
+            return new CreatedResult(req.Path, todoitem);
         }
     }
 
