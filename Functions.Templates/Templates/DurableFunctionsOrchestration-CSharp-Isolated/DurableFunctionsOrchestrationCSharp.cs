@@ -13,7 +13,7 @@ namespace Company.Function
         {
             var outputs = new List<string>();
 
-            // Replace "hello" with the name of your Durable Activity Function.
+            // Replace name and input with values relevant for you Durable Functions Activity
             outputs.Add(await context.CallActivityAsync<string>(nameof(SayHello), "Tokyo"));
             outputs.Add(await context.CallActivityAsync<string>(nameof(SayHello), "Seattle"));
             outputs.Add(await context.CallActivityAsync<string>(nameof(SayHello), "London"));
@@ -39,10 +39,12 @@ namespace Company.Function
 
             // Function input comes from the request content.
             string instanceId = await durableContext.Client
-                .ScheduleNewOrchestrationInstanceAsync("DurableFunctionsOrchestrationCSharp");
+                .ScheduleNewOrchestrationInstanceAsync(nameof(DurableFunctionsOrchestrationCSharp));
 
             logger.LogInformation($"Started orchestration with ID = '{instanceId}'.");
 
+            // Returns an HTTP 202 response with an instance management payload.
+            // See https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-http-api
             return durableContext.CreateCheckStatusResponse(req, instanceId);
         }
     }
