@@ -13,7 +13,7 @@ namespace Company.Function
         {
             var outputs = new List<string>();
 
-            // Replace name and input with values relevant for you Durable Functions Activity
+            // Replace name and input with values relevant for your Durable Functions Activity
             outputs.Add(await context.CallActivityAsync<string>(nameof(SayHello), "Tokyo"));
             outputs.Add(await context.CallActivityAsync<string>(nameof(SayHello), "Seattle"));
             outputs.Add(await context.CallActivityAsync<string>(nameof(SayHello), "London"));
