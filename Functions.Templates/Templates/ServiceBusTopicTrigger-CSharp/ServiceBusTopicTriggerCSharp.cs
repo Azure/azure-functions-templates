@@ -7,15 +7,8 @@ namespace Company.Function
 {
     public class ServiceBusTopicTriggerCSharp
     {
-        private readonly ILogger<ServiceBusTopicTriggerCSharp> _logger;
-
-        public ServiceBusTopicTriggerCSharp(ILogger<ServiceBusTopicTriggerCSharp> log)
-        {
-            _logger = log;
-        }
-
         [FunctionName("ServiceBusTopicTriggerCSharp")]
-        public void Run([ServiceBusTrigger("TopicNameValue", "SubscriptionNameValue", Connection = "ConnectionValue")]string mySbMsg)
+        public void Run([ServiceBusTrigger("TopicNameValue", "SubscriptionNameValue", Connection = "ConnectionValue")]string mySbMsg, ILogger _logger)
         {
             _logger.LogInformation($"C# ServiceBus topic trigger function processed message: {mySbMsg}");
         }
