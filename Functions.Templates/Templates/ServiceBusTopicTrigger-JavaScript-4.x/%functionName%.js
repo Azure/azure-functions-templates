@@ -4,7 +4,7 @@ app.serviceBusTopic('%functionName%', {
     connection: '%connection%',
     topicName: '%topicName%',
     subscriptionName: '%subscriptionName%',
-    handler: (context, message) => {
+    handler: (message, context) => {
         context.log('Service bus topic function processed message:', message);
     }
 });

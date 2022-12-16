@@ -1,7 +1,7 @@
 const { app } = require('@azure/functions');
 
 app.eventGrid('%functionName%', {
-    handler: (context, event) => {
+    handler: (event, context) => {
         context.log('Event grid function processed event:', event);
     }
 });

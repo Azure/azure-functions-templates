@@ -1,6 +1,6 @@
 import { app, InvocationContext } from "@azure/functions";
 
-export async function %functionName%(context: InvocationContext, messages: unknown | unknown[]): Promise<void> {
+export async function %functionName%(messages: unknown | unknown[], context: InvocationContext): Promise<void> {
     if (Array.isArray(messages)) {
         context.log(`Event hub function processed ${messages.length} messages`);
         for (const message of messages) {

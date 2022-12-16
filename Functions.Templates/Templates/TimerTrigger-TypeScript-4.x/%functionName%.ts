@@ -1,6 +1,6 @@
 import { app, InvocationContext, Timer } from "@azure/functions";
 
-export async function %functionName%(context: InvocationContext, myTimer: Timer): Promise<void> {
+export async function %functionName%(myTimer: Timer, context: InvocationContext): Promise<void> {
     context.log('Timer function processed request.');
 }
 

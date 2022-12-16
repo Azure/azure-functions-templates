@@ -5,7 +5,7 @@ app.cosmosDB('%functionName%', {
     databaseName: '%databaseName%',
     collectionName: '%collectionName%',
     createLeaseCollectionIfNotExists: %createLeaseCollectionIfNotExists%,
-    handler: (context, documents) => {
+    handler: (documents, context) => {
         context.log(`Cosmos DB function processed ${documents.length} documents`);
     }
 });

@@ -1,6 +1,6 @@
 import { app, InvocationContext } from "@azure/functions";
 
-export async function %functionName%(context: InvocationContext, message: unknown): Promise<void> {
+export async function %functionName%(message: unknown, context: InvocationContext): Promise<void> {
     context.log('Service bus queue function processed message:', message);
 }
 

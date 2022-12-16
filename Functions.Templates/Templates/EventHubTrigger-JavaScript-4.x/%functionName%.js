@@ -4,7 +4,7 @@ app.eventHub('%functionName%', {
     connection: '%connection%',
     eventHubName: '%eventHubName',
     cardinality: 'many',
-    handler: (context, messages) => {
+    handler: (messages, context) => {
         if (Array.isArray(messages)) {
             context.log(`Event hub function processed ${messages.length} messages`);
             for (const message of messages) {
