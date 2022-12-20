@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
-using Microsoft.Azure.Functions.Extension.Sql;
+using Microsoft.Azure.Functions.Extensions.Sql;
 using Microsoft.Extensions.Logging;
 
 namespace Company.Function
