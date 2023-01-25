@@ -15,7 +15,7 @@ namespace Company.Function
             logger.LogInformation("Saying hello.");
             var outputs = new List<string>();
 
-            // Replace name and input with values relevant for you Durable Functions Activity
+            // Replace name and input with values relevant for your Durable Functions Activity
             outputs.Add(await context.CallActivityAsync<string>(nameof(SayHello), "Tokyo"));
             outputs.Add(await context.CallActivityAsync<string>(nameof(SayHello), "Seattle"));
             outputs.Add(await context.CallActivityAsync<string>(nameof(SayHello), "London"));
@@ -47,7 +47,7 @@ namespace Company.Function
             logger.LogInformation($"Started orchestration with ID = '{instanceId}'.");
 
             // Returns an HTTP 202 response with an instance management payload.
-            // See https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-http-api
+            // See https://learn.microsoft.com/azure/azure-functions/durable/durable-functions-http-api#start-orchestration
             return durableContext.CreateCheckStatusResponse(req, instanceId);
         }
     }
