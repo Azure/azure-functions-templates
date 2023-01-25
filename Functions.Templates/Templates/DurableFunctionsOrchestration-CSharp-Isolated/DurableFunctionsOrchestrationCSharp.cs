@@ -7,10 +7,12 @@ namespace Company.Function
 {
     public static class DurableFunctionsOrchestrationCSharp
     {
-        [FunctionName("DurableFunctionsOrchestrationCSharp")]
+        [Function(nameof(DurableFunctionsOrchestrationCSharp))]
         public static async Task<List<string>> RunOrchestrator(
             [OrchestrationTrigger] TaskOrchestrationContext context)
         {
+            ILogger logger = context.CreateReplaySafeLogger(nameof(DurableFunctionsOrchestrationCSharp));
+            logger.LogInformation("Saying hello.");
             var outputs = new List<string>();
 
             // Replace name and input with values relevant for you Durable Functions Activity
@@ -22,14 +24,15 @@ namespace Company.Function
             return outputs;
         }
 
-        [FunctionName(nameof(SayHello))]
-        public static string SayHello([ActivityTrigger] string name, ILogger log)
+        [Function(nameof(SayHello))]
+        public static string SayHello([ActivityTrigger] string name, FunctionContext executionContext)
         {
-            log.LogInformation($"Saying hello to {name}.");
+            ILogger logger = executionContext.GetLogger("SayHello");
+            logger.LogInformation($"Saying hello to {name}.");
             return $"Hello {name}!";
         }
 
-        [FunctionName("DurableFunctionsOrchestrationCSharp_HttpStart")]
+        [Function("DurableFunctionsOrchestrationCSharp_HttpStart")]
         public static async Task<HttpResponseData> HttpStart(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req,
             [DurableClient] DurableClientContext durableContext,
