@@ -5,7 +5,7 @@ export async function %functionName%(blob: Buffer, context: InvocationContext): 
 }
 
 app.storageBlob('%functionName%', {
-    path: '%path%',
-    connection: '%connection%',
+    path: 'samples-workitems/{name}',
+    connection: '',
     handler: %functionName%
 });

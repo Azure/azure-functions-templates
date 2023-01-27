@@ -1,8 +1,8 @@
 const { app } = require('@azure/functions');
 
 app.storageQueue('%functionName%', {
-    queueName: '%queueName%',
-    connection: '%connection%',
+    queueName: 'js-queue-items',
+    connection: '',
     handler: (queueItem, context) => {
         context.log('Storage queue function processed work item:', queueItem);
     }

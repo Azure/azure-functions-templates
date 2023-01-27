@@ -5,6 +5,6 @@ export async function %functionName%(myTimer: Timer, context: InvocationContext)
 }
 
 app.timer('%functionName%', {
-    schedule: '%schedule%',
+    schedule: '0 */5 * * * *',
     handler: %functionName%
 });

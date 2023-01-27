@@ -5,8 +5,8 @@ export async function %functionName%(message: unknown, context: InvocationContex
 }
 
 app.serviceBusTopic('%functionName%', {
-    connection: '%connection%',
-    topicName: '%topicName%',
-    subscriptionName: '%subscriptionName%',
+    connection: '',
+    topicName: 'mytopic',
+    subscriptionName: 'mysubscription',
     handler: %functionName%
 });

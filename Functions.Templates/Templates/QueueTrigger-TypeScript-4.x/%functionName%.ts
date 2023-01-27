@@ -5,7 +5,7 @@ export async function %functionName%(queueItem: unknown, context: InvocationCont
 }
 
 app.storageQueue('%functionName%', {
-    queueName: '%queueName%',
-    connection: '%connection%',
+    queueName: 'js-queue-items',
+    connection: '',
     handler: %functionName%
 });

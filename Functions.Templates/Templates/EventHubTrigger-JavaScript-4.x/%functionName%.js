@@ -1,8 +1,8 @@
 const { app } = require('@azure/functions');
 
 app.eventHub('%functionName%', {
-    connection: '%connection%',
-    eventHubName: '%eventHubName',
+    connection: '',
+    eventHubName: 'samples-workitems',
     cardinality: 'many',
     handler: (messages, context) => {
         if (Array.isArray(messages)) {

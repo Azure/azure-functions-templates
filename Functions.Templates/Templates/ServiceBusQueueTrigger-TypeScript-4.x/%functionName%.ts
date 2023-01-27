@@ -5,7 +5,7 @@ export async function %functionName%(message: unknown, context: InvocationContex
 }
 
 app.serviceBusQueue('%functionName%', {
-    connection: '%connection%',
-    queueName: '%queueName%',
+    connection: '',
+    queueName: 'myinputqueue',
     handler: %functionName%
 });

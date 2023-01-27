@@ -13,7 +13,7 @@ export async function %functionName%(messages: unknown | unknown[], context: Inv
 
 app.eventHub('%functionName%', {
     connection: '%connection%',
-    eventHubName: '%eventHubName',
+    eventHubName: 'samples-workitems',
     cardinality: 'many',
     handler: %functionName%
 });

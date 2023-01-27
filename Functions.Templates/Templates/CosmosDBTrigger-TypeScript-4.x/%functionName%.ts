@@ -5,9 +5,9 @@ export async function %functionName%(documents: unknown[], context: InvocationCo
 }
 
 app.cosmosDB('%functionName%', {
-    connectionStringSetting: '%connectionStringSetting%',
-    databaseName: '%databaseName%',
-    collectionName: '%collectionName%',
-    createLeaseCollectionIfNotExists: %createLeaseCollectionIfNotExists%,
+    connectionStringSetting: '',
+    databaseName: '',
+    collectionName: '',
+    createLeaseCollectionIfNotExists: true,
     handler: %functionName%
 });
