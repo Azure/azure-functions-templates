@@ -28,27 +28,27 @@ namespace Company.Function
         public static string SayHello([ActivityTrigger] string name, FunctionContext executionContext)
         {
             ILogger logger = executionContext.GetLogger("SayHello");
-            logger.LogInformation($"Saying hello to {name}.");
+            logger.LogInformation("Saying hello to {name}.", name);
             return $"Hello {name}!";
         }
 
         [Function("DurableFunctionsOrchestrationCSharp_HttpStart")]
         public static async Task<HttpResponseData> HttpStart(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req,
-            [DurableClient] DurableClientContext durableContext,
+            [DurableClient] DurableTaskClient client,
             FunctionContext executionContext)
         {
             ILogger logger = executionContext.GetLogger("DurableFunctionsOrchestrationCSharp_HttpStart");
 
             // Function input comes from the request content.
-            string instanceId = await durableContext.Client
-                .ScheduleNewOrchestrationInstanceAsync(nameof(DurableFunctionsOrchestrationCSharp));
+            string instanceId = await client.ScheduleNewOrchestrationInstanceAsync(
+                nameof(DurableFunctionsOrchestrationCSharp));
 
-            logger.LogInformation($"Started orchestration with ID = '{instanceId}'.");
+            logger.LogInformation("Started orchestration with ID = '{instanceId}'.", instanceId);
 
             // Returns an HTTP 202 response with an instance management payload.
             // See https://learn.microsoft.com/azure/azure-functions/durable/durable-functions-http-api#start-orchestration
-            return durableContext.CreateCheckStatusResponse(req, instanceId);
+            return client.CreateCheckStatusResponse(req, instanceId);
         }
     }
 }
