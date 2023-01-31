@@ -29,7 +29,7 @@ namespace Company.Function
         [FunctionName(nameof(SayHello))]
         public static string SayHello([ActivityTrigger] string name, ILogger log)
         {
-            log.LogInformation($"Saying hello to {name}.");
+            log.LogInformation("Saying hello to {name}.", name);
             return $"Hello {name}!";
         }
 
@@ -42,7 +42,7 @@ namespace Company.Function
             // Function input comes from the request content.
             string instanceId = await starter.StartNewAsync("DurableFunctionsOrchestrationCSharp", null);
 
-            log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
+            log.LogInformation("Started orchestration with ID = '{instanceId}'.", instanceId);
 
             return starter.CreateCheckStatusResponse(req, instanceId);
         }
