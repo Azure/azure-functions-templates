@@ -1,12 +1,11 @@
-import datetime
 import logging
 
-import azure.functions as func
+from azure.functions import TimerRequest
+from datetime import datetime, timezone
 
 
-def main(mytimer: func.TimerRequest) -> None:
-    utc_timestamp = datetime.datetime.utcnow().replace(
-        tzinfo=datetime.timezone.utc).isoformat()
+def main(mytimer: TimerRequest) -> None:
+    utc_timestamp = datetime.utcnow().replace(tzinfo=timezone.utc).isoformat()
 
     if mytimer.past_due:
         logging.info('The timer is past due!')

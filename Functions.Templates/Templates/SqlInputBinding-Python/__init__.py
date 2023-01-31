@@ -1,7 +1,8 @@
-import azure.functions as func
 import json
 
-def main(req: func.HttpRequest, items: func.SqlRowList) -> func.HttpResponse:
+from azure.functions import HttpRequest, HttpResponse, SqlRowList
+
+def main(req: HttpRequest, items: SqlRowList) -> HttpResponse:
     """Sample SQL Input Binding
 
     See https://aka.ms/sqlbindingsinput for more information about using this binding
@@ -26,7 +27,7 @@ def main(req: func.HttpRequest, items: func.SqlRowList) -> func.HttpResponse:
 
     rows = list(map(lambda r: json.loads(r.to_json()), items))
 
-    return func.HttpResponse(
+    return HttpResponse(
         json.dumps(rows),
         status_code=200,
         mimetype="application/json"
