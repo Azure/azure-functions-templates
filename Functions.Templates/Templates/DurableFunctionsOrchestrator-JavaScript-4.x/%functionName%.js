@@ -18,16 +18,16 @@ df.app.activity(activityName, {
     },
 });
 
-const clientInput = df.input.durableClient();
-
 app.http('%functionName%HttpStart', {
     route: 'orchestrators/{orchestratorName}',
-    extraInputs: [clientInput],
+    extraInputs: [df.input.durableClient()],
     handler: async (request, context) => {
-        const client = df.getClient(context, clientInput);
+        const client = df.getClient(context);
         const body = await request.text();
-        const instanceId = await client.startNew(request.params.orchestratorName, undefined, body);
+        const instanceId = await client.startNew(request.params.orchestratorName, { input: body });
+
         context.log(`Started orchestration with ID = '${instanceId}'.`);
+
         return client.createCheckStatusResponse(request, instanceId);
     },
 });
