@@ -16,7 +16,7 @@ namespace Company.Function
             _logger = loggerFactory.CreateLogger<SqlInputBindingHttpTriggerCSharp>();
         }
 
-        [Function("SqlInputBindingCSharp")]
+        [Function("SqlInputBindingHttpTriggerCSharp")]
         public static IEnumerable<Object> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req,
             [SqlInput("SELECT * FROM object",
