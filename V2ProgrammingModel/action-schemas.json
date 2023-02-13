@@ -1,0 +1,51 @@
+{
+    "type": "object",
+    
+    "properties": {
+        "name": { "type": "string" },
+        "type": { "enum": [ "UserInput" ] },
+        "continueOnError": { "type": "boolean" },
+        "errorText": { "type": "string" },
+        "assignTo": { "type": "string", "pattern": "\\$\\([A-Z0-9_]+\\)" },
+        "filePath": { "type": "string" },
+        "source": { "type": "string", "pattern": "\\$\\([A-Z0-9_]+\\)" }
+    },
+    "required": [ "name", "type" ],
+    "allOf": [
+        {
+            "if": { "properties": { "type": { "const": "AppendToFile" } } },
+            "then": {
+                "properties": {
+                    "createIfNotExists": { "type": "boolean" }
+                },
+                "required": [ "createIfNotExists", "filePath", "source" ]
+            }  
+        },
+        {
+            "if": { "properties": { "type": { "const": "ReadFromFile" } } },
+            "then": { "required": [ "assignTo", "filePath" ] }
+        },
+        {
+            "if": { "properties": { "type": { "const": "ReplaceTokensInText" } } },
+            "then": { "required": [ "assignTo", "source" ] }
+        },
+        {
+            "if": { "properties": { "type": { "const": "ShowMarkdownPreview" } } },
+            "then": { "required": [ "filePath" ] }
+        },
+        {
+            "if": { "properties": { "type": { "const": "UserInput" } } },
+            "then": {
+                "properties": {                    
+                    "paramId": { "type": "string", "pattern": "([a-zA-Z]+)-([a-zA-Z]+)"},
+                    "defaultValue": { "type": "string" }
+                },
+                "required": [ "assignTo", "paramId" ]
+            }
+        },
+        {
+            "if": { "properties": { "type": { "const": "WriteToFile" } } },
+            "then": { "required": [ "filePath", "source" ] }
+        }
+    ]
+}
