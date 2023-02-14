@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
-using Microsoft.Azure.Functions.Extensions.Sql;
+using Microsoft.Azure.Functions.Worker.Extensions.Sql;
 using Microsoft.Extensions.Logging;
 
 namespace Company.Function
@@ -18,7 +18,7 @@ namespace Company.Function
 
         [Function("SqlInputBindingHttpTriggerCSharp")]
         public static IEnumerable<Object> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequestData req,
             [SqlInput("SELECT * FROM object",
             CommandType = System.Data.CommandType.Text,
             ConnectionStringSetting = "SqlConnectionString")] IEnumerable<Object> result)
