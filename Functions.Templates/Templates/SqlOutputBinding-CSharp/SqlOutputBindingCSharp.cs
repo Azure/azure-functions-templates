@@ -14,7 +14,7 @@ namespace Company.Function
         [FunctionName("SqlOutputBindingCSharp")]
         public static async Task<CreatedResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
-            [Sql("table", ConnectionStringSetting = "SqlConnectionString")] IAsyncCollector<ToDoItem> output,
+            [Sql("table", "SqlConnectionString")] IAsyncCollector<ToDoItem> output,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger with SQL Output Binding function processed a request.");
