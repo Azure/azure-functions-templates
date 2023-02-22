@@ -1,10 +1,10 @@
-# Kusto Input Binding - C<span>#</span>
+# Kusto Input Binding - JavaScript
 
 The `Kusto Input Binding` makes it easy to retrieve data from a database, returning the output of the KQL query or a KQL function.
 
 ## How it works
 
-For a `Kusto Input Binding` to work, the Database attribute, the KqlCommand has to be provided along with KqlParameters (optional) for running the command. For additional details please refer the [README](https://github.com/Azure/Webjobs.Extensions.Kusto/blob/main/README.md) in the repository.
+For a `Kusto Input Binding` to work, the database name, the kqlCommand has to be provided along with kqlParameters (optional) for running the command. For additional details please refer the [README](https://github.com/Azure/Webjobs.Extensions.Kusto/blob/main/README.md) in the repository.
 
 
 Add `KustoConnectionString` to your `local.settings.json`
