@@ -1,0 +1,73 @@
+{
+	"author": "Microsoft",
+	"classifications": [
+		"Azure Function",
+		"Output",
+		"Kusto"
+	],
+	"name": "KustoOutputBinding",
+	"identity": "Azure.Function.CSharp.KustoOutputBinding",
+	"groupIdentity": "Azure.Function.KustoOutputBinding",
+	"shortName": "kustooutput",
+	"tags": {
+		"language": "C#",
+		"type": "item"
+	},
+	"sourceName": "KustoOutputBindingCSharp",
+	"symbols": {
+		"connection": {
+			"description": "The name of the app setting containing your Kusto connection string.",
+			"type": "parameter",
+			"defaultValue": "KustoConnectionString",
+			"replaces": "KustoConnectionString"
+		},
+		"tableName": {
+			"description": "The table to ingest data into",
+			"type": "parameter",
+			"defaultValue": "",
+			"replaces": "TargetTable"
+		},
+		"database": {
+			"description": "The database to execute the query from",
+			"type": "parameter",
+			"defaultValue": "",
+			"replaces": "db"
+		}
+	},
+	"primaryOutputs": [
+		{
+			"path": "KustoOutputBindingCSharp.cs"
+		}
+	],
+	"defaultName": "KustoOutputBindingCSharp",
+	"postActions": [
+		{
+			"Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.Kusto Nuget package",
+			"ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+			"ContinueOnError": "true",
+			"ManualInstructions": [],
+			"args": {
+				"referenceType": "package",
+				"reference": "Microsoft.Azure.WebJobs.Extensions.Kusto",
+				"version": "1.0.3-preview",
+				"projectFileExtensions": ".csproj"
+			}
+		},
+		{
+			"description": "Restore NuGet packages required by this project.",
+			"manualInstructions": [],
+			"actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+			"continueOnError": true
+		},
+		{
+			"condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+			"description": "Opens the function class file in the editor",
+			"manualInstructions": [],
+			"actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+			"args": {
+				"files": "0"
+			},
+			"continueOnError": true
+		}
+	]
+}
