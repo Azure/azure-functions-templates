@@ -18,7 +18,7 @@ namespace Company.Function
 
         // Visit https://aka.ms/sqlbindingsoutput to learn how to use this output binding
         [Function("SqlOutputBindingHttpTriggerCSharp")]
-        [SqlOutput("table", ConnectionStringSetting = "SqlConnectionString")]
+        [SqlOutput("table", "SqlConnectionString")]
         public static async Task<ToDoItem> Run(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequestData req)
         {

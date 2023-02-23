@@ -20,8 +20,8 @@ namespace Company.Function
         public static IEnumerable<Object> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequestData req,
             [SqlInput("SELECT * FROM object",
-            CommandType = System.Data.CommandType.Text,
-            ConnectionStringSetting = "SqlConnectionString")] IEnumerable<Object> result)
+            "SqlConnectionString",
+            CommandType = System.Data.CommandType.Text)] IEnumerable<Object> result)
         {
             _logger.LogInformation("C# HTTP trigger with SQL Input Binding function processed a request.");
 
