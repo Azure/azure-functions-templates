@@ -1,0 +1,1 @@
+from $(FILE_NAME) import $(FILE_NAME)

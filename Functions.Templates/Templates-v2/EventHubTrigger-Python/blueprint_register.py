@@ -1,0 +1,1 @@
+@app.register($(FILE_NAME))
