@@ -15,8 +15,7 @@ namespace Company.Function
         public static IActionResult Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req,
             [Sql("SELECT * FROM object",
-            "SqlConnectionString",
-            CommandType = System.Data.CommandType.Text)] IEnumerable<Object> result,
+            "SqlConnectionString")] IEnumerable<Object> result,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger with SQL Input Binding function processed a request.");
