@@ -1,5 +1,5 @@
 @app.function_name(name="$(FUNCTION_NAME_INPUT)")
-@app.route(route="hello")
+@app.route(route="$(ROUTE_VALUE)")
 def $(FUNCTION_NAME_INPUT)(req: func.HttpRequest) -> func.HttpResponse:
      logging.info('Python HTTP trigger function processed a request.')
 

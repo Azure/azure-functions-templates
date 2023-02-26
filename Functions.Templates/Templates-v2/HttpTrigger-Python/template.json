@@ -28,6 +28,7 @@
             },
             "actions": [
                 "getFunctionName",
+                "getRouteValue",
                 "readFileContent_FunctionBody",
                 "replaceTokensInText_FunctionBody",
                 "appendFileContent_FunctionApp",
@@ -42,6 +43,13 @@
             "assignTo": "$(AUTHLEVEL_VALUE)",
             "paramId": "httpTrigger-authLevel",
             "defaultValue": "function"
+        },
+        {
+            "name": "getRouteValue",
+            "type": "UserInput",
+            "assignTo": "$(ROUTE_VALUE)",
+            "paramId": "httpTrigger-route",
+            "defaultValue": "hello"
         },
         {
             "name": "getFunctionName",
@@ -71,7 +79,7 @@
             "errorText" : "Unable to create the function app"
         },
         {
-            "name": "readFileContent_FunctionApp",
+            "name": "readFileContent_FunctionBody",
             "type": "ReadFromFile",
             "assignTo": "$(FUNCTION_BODY)",
             "filePath" : "function_body.py"

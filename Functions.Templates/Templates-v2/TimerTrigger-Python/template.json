@@ -24,15 +24,13 @@
         },
         {
             "name": "Append Timer Function to File",
-            "input": [
-                {
+            "input": {
                     "userCommand": "appendToFile",
                     "assignTo": "$(SELECTED_FILENAME)"
-                }
-            ],
+            },
             "actions": [
                 "getScheduleValue",
-                "getFunctionNameAction",
+                "getFunctionName",
                 "readFileContent_FunctionBody",
                 "replaceText_FunctionBody",
                 "appendFileContent_FunctionApp",
@@ -46,7 +44,7 @@
             "type": "UserInput",
             "assignTo": "$(SCHEDULE_INPUT)",
             "paramId": "timerTrigger-schedule",
-            "defaultValue": "0 5/* * * * *"
+            "defaultValue": "0 */5 * * * *"
         },
         {
             "name": "getFunctionName",
@@ -89,7 +87,7 @@
             "name": "appendFileContent_FunctionApp",
             "type": "AppendToFile",
             "createIfNotExists" : false,
-            "source": "$(FUNCTION_APP_TRANSFORMED)",
+            "source": "$(TIMER_FUNCTION_BODY)",
             "filePath" : "$(SELECTED_FILENAME)",
             "continueOnError" : false,
             "errorText" : "Unable to add template"
