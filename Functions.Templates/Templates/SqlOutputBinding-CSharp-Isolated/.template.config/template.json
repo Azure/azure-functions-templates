@@ -1,0 +1,82 @@
+{
+    "author": "Microsoft",
+    "classifications": [
+        "Azure Function",
+        "Output",
+        "SQL"
+    ],
+    "name": "SqlOutputBindingIsolated",
+    "identity": "Azure.Function.CSharp.Isolated.SqlOutputBinding",
+    "groupIdentity": "Azure.Function.SqlOutputBindingIsolated",
+    "shortName": "sqloutput",
+    "tags": {
+        "language": "C#",
+        "type": "item"
+    },
+    "sourceName": "SqlOutputBindingHttpTriggerCSharp",
+    "symbols": {
+        "namespace": {
+            "description": "namespace for the generated code",
+            "replaces": "Company.Function",
+            "type": "parameter"
+        },
+        "connectionStringSetting": {
+            "description": "The name of the app setting containing your SQL connection string.",
+            "type": "parameter",
+            "defaultValue": "",
+            "replaces": "SqlConnectionString"
+        },
+        "table": {
+            "description": "This is the table for the SQL output binding.",
+            "type": "parameter",
+            "defaultValue": "[dbo].[table1]",
+            "replaces": "table"
+        }
+    },
+    "primaryOutputs": [
+        {
+            "path": "SqlOutputBindingHttpTriggerCSharp.cs"
+        }
+    ],
+    "defaultName": "SqlOutputBindingHttpTriggerCSharp",
+    "postActions": [
+        {
+          "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Sql Nuget package",
+          "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+          "ContinueOnError": "true",
+          "ManualInstructions": [],
+          "args": {
+            "referenceType": "package",
+            "reference": "Microsoft.Azure.Functions.Worker.Extensions.Sql", "version": "1.0.122-preview",
+            "projectFileExtensions": ".csproj"
+          }
+        },
+        {
+          "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Http Nuget package",
+          "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+          "ContinueOnError": "true",
+          "ManualInstructions": [],
+          "args": {
+            "referenceType": "package",
+            "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http", "version": "3.0.13",
+            "projectFileExtensions": ".csproj"
+          }
+        },
+        {
+            "description": "Restore NuGet packages required by this project.",
+            "manualInstructions": [],
+            "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+            "continueOnError": true
+        },
+        {
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+            "description": "Opens the function class file in the editor",
+            "manualInstructions": [],
+            "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+            "args": {
+                "files": "0"
+            },
+            "continueOnError": true
+        }
+    ]
+}
