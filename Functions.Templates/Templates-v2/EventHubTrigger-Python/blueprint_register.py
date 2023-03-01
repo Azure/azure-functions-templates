@@ -1,1 +1,1 @@
-@app.register($(FILE_NAME))
+@app.register($(BLUEPRINT_FILENAME))

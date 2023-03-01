@@ -1,1 +1,1 @@
-from $(FILE_NAME) import $(FILE_NAME)
+from $(BLUEPRINT_FILENAME) import $(BLUEPRINT_FILENAME)
