@@ -36,28 +36,69 @@
                         "description": "The display name of this job",
                         "type": "string"
                     },
+                    "type": {
+                        "description": "The type of this job",
+                        "enum": [
+                            "AppendToFile",
+                            "CreateBlueprint",
+                            "CreateNewApp"
+                        ]
+                    },
                     "condition": {
                         "description": "The condition that must evaluate to true to run this job",
-                        "name": {
-                            "description": "The name of the variable to evaluate",
-                            "type": "string"
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "description": "The name of the variable to evaluate",
+                                "type": "string"
+                            },
+                            "expectedValue": {
+                                "description": "The value for which the condition is true",
+                                "type": "string"
+                            }
                         },
-                        "expectedValue": {
-                            "description": "The value for which the condition is true",
-                            "type": "string"
-                        }
+                        "required": [ "name", "expectedValue" ]
                     },
                     "input": {
                         "description": "The input provided to the job by the user gesture in the tooling",
-                        "userCommand": {
-                            "description": "The identifier for a job",
-                            "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "assignTo": {
+                                    "description": "Identifier to assign input to",
+                                    "type": "string",
+                                    "pattern": "\\$\\([A-Z0-9_]+\\"
+                                },
+                                "paramId": { 
+                                    "description": "Type data for the input corresponding to an entry in user-prompts.json",
+                                    "type": "string", 
+                                    "pattern": "([a-zA-Z]+)-([a-zA-Z]+)"
+                                },
+                                "defaultValue": { 
+                                    "description": "The default value to use if none is otherwise provided",
+                                    "type": "string" 
+                                },
+                                "condition": {
+                                    "description": "The condition that must evaluate to true to require this input value",
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "description": "The name of the variable to evaluate",
+                                            "type": "string"
+                                        },
+                                        "expectedValue": {
+                                            "description": "The value for which the condition is true",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [ "name", "expectedValue" ]
+                                }
+                            },
+                            "required": [ "assignTo", "paramId" ]
                         },
-                        "assignTo": {
-                            "description": "Identifier to assign initial tooling-provided input to",
-                            "type": "string",
-                            "pattern": "\\$\\([A-Z0-9_]+\\"
-                        }
+                        "minItems": 1,
+                        "uniqueItems": true
                     },
                     "actions": {
                         "description": "Names of the actions the job executes in order of operation",
