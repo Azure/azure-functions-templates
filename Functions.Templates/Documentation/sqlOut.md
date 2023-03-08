@@ -1,8 +1,8 @@
-#### Settings for a sql output binding
+#### Settings for a Azure SQL output binding
 
 See [Output Binding Overview](https://github.com/Azure/azure-functions-sql-extension/blob/main/docs/BindingsOverview.md#output-binding) for general information about the Azure SQL output binding.
 
-The settings for a Sql output binding specifies the following properties:
+The settings for a SQL output binding specifies the following properties:
 
 - `type` : Must be set to *sql*.
 - `name` : The name of the variable that represents the entity in function code.
@@ -10,7 +10,7 @@ The settings for a Sql output binding specifies the following properties:
 - `commandText` : The name of the table being written to by the binding.
 - `connectionStringSetting` : The name of an app setting that contains the connection string for the database to which data is being written. This isn't the actual connection string and must instead resolve to an environment variable. Optional keywords in the connection string value are [available to refine SQL bindings connectivity](https://aka.ms/sqlbindings#sql-connection-string).
 
-#### Sql output C# code example
+#### SQL output C# code example
 
 This C# code example upserts employees to Employees table.
 
@@ -45,7 +45,7 @@ public static IActionResult Run(
     }
 ```
 
-#### Sql output JavaScript example
+#### SQL output JavaScript example
 
 ```JavaScript
  module.exports = async function (context, req) {
