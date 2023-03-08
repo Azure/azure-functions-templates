@@ -16,7 +16,7 @@ This C# code example upserts employees to Employees table.
 
 ```csharp
 public static IActionResult Run(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "addemployees-array")]
+        [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "addemployees")]
         HttpRequest req, ILogger log,
         [Sql("dbo.Employees", "SqlConnectionString")]
         out Employee[] output)
@@ -41,7 +41,7 @@ public static IActionResult Run(
                 },
             };
 
-        return new CreatedResult($"/api/addemployees-array", output);
+        return new CreatedResult($"/api/addemployees", output);
     }
 ```
 
