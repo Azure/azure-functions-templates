@@ -1894,9 +1894,19 @@
         },
         {
           "name": "commandType",
-          "value": "string",
-          "defaultValue": "Text",
+          "value": "enum",
           "required": false,
+          "defaultValue":"Text",
+          "enum": [
+            {
+              "value": "Text",
+              "display": "Text"
+            },
+            {
+              "value": "StoredProcedure",
+              "display": "StoredProcedure"
+            }
+          ],
           "label": "$sqlIn_commandType_label",
           "help": "$sqlIn_commandType_help"
         },
