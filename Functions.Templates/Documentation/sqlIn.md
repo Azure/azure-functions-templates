@@ -14,7 +14,7 @@ The settings for a SQL input binding specifies the following properties:
 
 #### SQL input C# code example
 
-This C# code example copies a blob whose name is received in a queue message.
+This C# code example for getting data from Products table. Please refer to our [InputBinding C# Samples](https://github.com/Azure/azure-functions-sql-extension/tree/main/samples/samples-csharpscript/InputBindingSamples) for more examples.
 
 ```csharp
 [FunctionName("GetProducts")]
@@ -31,6 +31,8 @@ This C# code example copies a blob whose name is received in a queue message.
 ```
 
 #### SQL input JavaScript example
+
+ You can browse here for more [JavaScript Samples](https://github.com/Azure/azure-functions-sql-extension/tree/main/samples/samples-js).
 
 ```JavaScript
  module.exports = async function (context, req, product) {

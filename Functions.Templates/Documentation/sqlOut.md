@@ -12,7 +12,7 @@ The settings for a SQL output binding specifies the following properties:
 
 #### SQL output C# code example
 
-This C# code example upserts employees to Employees table.
+This C# code example upserts employees to Employees table. Please refer to our [OutputBinding C# Samples](https://github.com/Azure/azure-functions-sql-extension/tree/main/samples/samples-csharpscript/OutputBindingSamples) for more examples.
 
 ```csharp
 public static IActionResult Run(
@@ -46,6 +46,8 @@ public static IActionResult Run(
 ```
 
 #### SQL output JavaScript example
+
+You can browse here for more [JavaScript Samples](https://github.com/Azure/azure-functions-sql-extension/tree/main/samples/samples-js).
 
 ```JavaScript
  module.exports = async function (context, req) {
