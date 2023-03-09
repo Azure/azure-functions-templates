@@ -1,4 +1,4 @@
-#### Settings for a Azure SQL output binding
+#### Settings for an Azure SQL output binding
 
 See [Output Binding Overview](https://github.com/Azure/azure-functions-sql-extension/blob/main/docs/BindingsOverview.md#output-binding) for general information about the Azure SQL output binding.
 

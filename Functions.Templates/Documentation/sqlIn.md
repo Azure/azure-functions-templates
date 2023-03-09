@@ -1,4 +1,4 @@
-#### Settings for a Azure SQL input binding
+#### Settings for an Azure SQL input binding
 
 See [Input Binding Overview](https://github.com/Azure/azure-functions-sql-extension/blob/main/docs/BindingsOverview.md#input-binding) for general information about the Azure SQL Input binding.
 
