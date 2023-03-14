@@ -80,22 +80,26 @@
                                     "type": "string" 
                                 },
                                 "required": {
-                                    "description": "Whether this input is required",
-                                    "type": "boolean"
-                                },
-                                "requiredIf": {
-                                    "description": "The condition that must evaluate to true to require this input value",
-                                    "type": "object",
-                                    "properties": {
-                                        "name": {
-                                            "description": "The name of the variable to evaluate",
-                                            "type": "string"
+                                    "oneOf": [
+                                        { 
+                                            "description": "Whether this input value must be supplied",
+                                            "type": "boolean" 
                                         },
-                                        "expectedValue": {
-                                            "description": "The value for which the condition is true",
-                                            "type": "string"
+                                        { 
+                                            "description": "The condition that must evaluate to true to require this input value",
+                                            "type": "object",
+                                            "properties": {
+                                                "name": {
+                                                    "description": "The name of the variable to evaluate",
+                                                    "type": "string"
+                                                },
+                                                "expectedValue": {
+                                                    "description": "The value for which the condition is true",
+                                                    "type": "string"
+                                                }
+                                            }
                                         }
-                                    }
+                                    ]
                                 }
                             },
                             "required": [ "assignTo", "paramId" ]
