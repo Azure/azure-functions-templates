@@ -1,0 +1,47 @@
+{
+    "author": "Katy Shimizu",                               // Primary contact for this template (author/maintainer/owner/etc).
+    // TODO: Is "name" a display name or just a human readable tag? If display name, shouldn't it be a resx pointer?
+    "name": "<Trigger> Name",                               // If a resx pointer (ex. $Trigger_name), could be displayed in UI.
+    "description": "$Trigger_description",                  // Resx pointer to localized short description of trigger functionality.
+    "programmingModel": "v2",                               // "v1" | "v2". v1 = legacy; v2 = Stein.
+    "language": "python",                                   // Programming language. ex. python, dotnet, node, powershell.
+    "jobs": [                                               // Each 'job' is a collection of actions associated with a command or 'flow.'
+        {
+            "name": "Human-Readable Trigger Flow Name",     // If a resx pointer (ex. $Trigger_Flow_name), could be displayed in UI.
+            "condition": {                                  // Job-level condition; ex. to determine whether to enable it as an option.
+                "name": "SHOW_V2_TEMPLATES",                // Variable name - for example, an environment variable.
+                "expectedValue": "true"                     // Variable value for which this condition is true.
+            },
+            "input": {
+                // TODO: note on who defines userCommand values - template creators?
+                "userCommand": "createNewApp",              // Value tooling can match on to filter which job(s) to run for a flow.
+                "assignTo": "$(APP_FILENAME)"               // Key for initial input value. Actions can prompt for further inputs, ex. binding settings.
+                // ex. in the append scenario, this could be 'function_app.py' or the selected file
+            },
+            "actions": [                                    // Keys for action definitions (full action definitions below).
+                "getBindingParamValue",                     // NOTE: List actions in order of operation.
+                "readFileContent",
+                "replaceTextInFile",
+                "writeFile",
+                "showMarkdownPreview"
+            ]
+        },
+    ],
+    "actions": [                                            // Full action definitions. An action can be used by more than one job.
+        {
+            // TODO: Change 'name' to 'key'?
+            // Common Action Properties
+            "name": "getBindingParamValue",                 // Arbitrary value for lookup from job(s).
+            "type": "UserInput",                            // Corresponds to entry in actions_schema.json.
+            "condition": {                                  // Action-level condition. If undefined, action always runs.
+                "name": "SOME_FLAG",
+                "expectedValue": "true"
+            },
+            "continueOnError": "false",                     // Whether to continue job execution on error.
+            "errorText": "$Trigger_param_error",            // Resx pointer; text to show user on error. ex. manual instructions.
+            // Action Type Specific Properties
+            "property_one": "foo",                          // These vary by the specific action type. See actions_schema.json for examples.              
+            "property_two": "bar"
+        }
+    ]
+}
