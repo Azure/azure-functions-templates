@@ -1,0 +1,95 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "<ACTION_SCHEMA_URL>",
+    "title": "Actions",
+    "description": "An action used in Azure Functions' templates v2 template.json",
+    "type": "object",
+    
+    "properties": {
+        "name": { 
+            "description": "The arbitrary identifier for an action",
+            "type": "string" 
+        },
+        "type": { 
+            "description": "Type of the action",
+            "enum": [ 
+                "AppendToFile",
+                "ReadFromFile",
+                "ReplaceTokensInText",
+                "ShowMarkdownPreview",
+                "UserInput",
+                "WriteToFile"
+            ] 
+        },
+        "continueOnError": { 
+            "description": "Whether to continue job execution if the action errors",
+            "type": "boolean" 
+        },
+        "errorText": { 
+            "description": "Text to display on error (ex. manual instructions)",
+            "type": "string"
+        },
+        "assignTo": { 
+            "description": "Identifier to assign the action's output to",
+            "type": "string", 
+            "pattern": "\\$\\([A-Z0-9_]+\\)" 
+        },
+        "filePath": { 
+            "description": "File path target of the action's operation",
+            "type": "string" 
+        },
+        "source": { 
+            "description": "Identifier of the input data for the action",
+            "type": "string", 
+            "pattern": "\\$\\([A-Z0-9_]+\\)" 
+        }
+    },
+    "required": [ "name", "type" ],
+    "allOf": [
+        {
+            "if": { "properties": { "type": { "const": "AppendToFile" } } },
+            "then": {
+                "properties": {
+                    "createIfNotExists": { 
+                        "description": "If a file doesn't exist at filePath, create it",
+                        "type": "boolean" 
+                    }
+                },
+                "required": [ "createIfNotExists", "filePath", "source" ]
+            }  
+        },
+        {
+            "if": { "properties": { "type": { "const": "ReadFromFile" } } },
+            "then": { "required": [ "assignTo", "filePath" ] }
+        },
+        {
+            "if": { "properties": { "type": { "const": "ReplaceTokensInText" } } },
+            "then": { "required": [ "assignTo", "source" ] }
+        },
+        {
+            "if": { "properties": { "type": { "const": "ShowMarkdownPreview" } } },
+            "then": { "required": [ "filePath" ] }
+        },
+        {
+            "if": { "properties": { "type": { "const": "UserInput" } } },
+            "then": {
+                "properties": {                    
+                    "paramId": { 
+                        "description": "Type data for the input corresponding to an entry in user-prompts.json",
+                        "type": "string", 
+                        "pattern": "([a-zA-Z]+)-([a-zA-Z]+)"
+                    },
+                    "defaultValue": { 
+                        "description": "The default value to use if the user provides none",
+                        "type": "string" 
+                    }
+                },
+                "required": [ "assignTo", "paramId" ]
+            }
+        },
+        {
+            "if": { "properties": { "type": { "const": "WriteToFile" } } },
+            "then": { "required": [ "filePath", "source" ] }
+        }
+    ]
+}
