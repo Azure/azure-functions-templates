@@ -7,13 +7,27 @@
     "jobs": [
         {
             "name": "Create New Project with Timer Function",
-            "input": {
-                    "userCommand": "createNewApp",
-                    "assignTo": "$(APP_FILENAME)"
-            },
+            "type": "CreateNewApp",
+            "input": [
+                {
+                    "assignTo": "$(APP_FILENAME)",
+                    "paramId": "app-FileName",
+                    "required": true
+                },
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
+                    "required": true,
+                    "defaultValue": "TimerTrigger"
+                },                    
+                {
+                    "assignTo": "$(SCHEDULE_INPUT)",
+                    "paramId": "timerTrigger-schedule",
+                    "required": true,
+                    "defaultValue": "0 5/* * * * *"
+                }
+            ],
             "actions": [
-                "getScheduleValue",
-                "getFunctionName",
                 "readFileContent_FunctionBody",
                 "replaceText_FunctionBody",
                 "readFileContent_FunctionApp",
@@ -24,15 +38,27 @@
         },
         {
             "name": "Append Timer Function to File",
+            "type": "AppendToFile",
             "input": [
                 {
-                    "userCommand": "appendToFile",
-                    "assignTo": "$(SELECTED_FILENAME)"
+                    "assignTo": "$(SELECTED_FILENAME)",
+                    "paramId": "app-selectedFileName",
+                    "required": true
+                },
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
+                    "required": true,
+                    "defaultValue": "TimerTrigger"
+                },                    
+                {
+                    "assignTo": "$(SCHEDULE_INPUT)",
+                    "paramId": "timerTrigger-schedule",
+                    "required": true,
+                    "defaultValue": "0 5/* * * * *"
                 }
             ],
             "actions": [
-                "getScheduleValue",
-                "getFunctionNameAction",
                 "readFileContent_FunctionBody",
                 "replaceText_FunctionBody",
                 "appendFileContent_FunctionApp",
@@ -41,20 +67,6 @@
         }
     ],
     "actions": [
-        {
-            "name": "getScheduleValue",
-            "type": "UserInput",
-            "assignTo": "$(SCHEDULE_INPUT)",
-            "paramId": "timerTrigger-schedule",
-            "defaultValue": "0 5/* * * * *"
-        },
-        {
-            "name": "getFunctionName",
-            "type": "UserInput",
-            "assignTo": "$(FUNCTION_NAME_INPUT)",
-            "paramId": "trigger-functionName",
-            "defaultValue": "MyTimerFunction"
-        },
         {
             "name": "readFileContent_FunctionBody",
             "type": "ReadFromFile",

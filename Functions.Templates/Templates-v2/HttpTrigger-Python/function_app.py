@@ -1,7 +1,7 @@
 import azure.functions as func
 import logging
 
-app = func.FunctionApp(auth_level=func.AuthLevel.$(AUTHLEVEL_VALUE))
+app = func.FunctionApp(auth_level=func.AuthLevel.$(AUTHLEVEL_INPUT))
 
 @app.function_name(name="$(FUNCTION_NAME_INPUT)")
 @app.route(route="hello")
