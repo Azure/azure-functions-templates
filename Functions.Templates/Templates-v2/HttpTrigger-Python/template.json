@@ -29,7 +29,6 @@
             ],
             "actions": [
                 "readFileContent_FunctionApp",
-                "replaceTokensInText_FunctionApp",
                 "writeFile_FunctionApp",
                 "showMarkdownPreview"
             ]
@@ -55,7 +54,6 @@
             ],
             "actions": [
                 "readFileContent_FunctionBody",
-                "replaceTokensInText_FunctionBody",
                 "appendFileContent_FunctionApp",
                 "showMarkdownPreview"
             ]
@@ -64,49 +62,39 @@
     "actions" : [
         {
             "name": "readFileContent_FunctionApp",
-            "type": "ReadFromFile",
+            "type": "GetTemplateFileContent",
             "assignTo": "$(FUNCTION_APP_CONTENT)",
-            "filePath" : "FUNCTION_APP_CONTENT.py"
-        },
-        {
-            "name": "replaceTokensInText_FunctionApp",
-            "type": "ReplaceTokensInText",
-            "source": "$(FUNCTION_APP_CONTENT)",
-            "assignTo" : "$(FUNCTION_APP_CONTENT)"
+            "filePath": "FUNCTION_APP_CONTENT.py"
         },
         {
             "name": "writeFile_FunctionApp",
             "type": "WriteToFile",
             "source": "$(FUNCTION_APP_CONTENT)",
-            "filePath" : "$(APP_FILENAME)",
-            "continueOnError" : false,
-            "errorText" : "Unable to create the function app"
+            "filePath": "$(APP_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create the function app",
+            "replaceTokens": true
         },
         {
             "name": "readFileContent_FunctionBody",
-            "type": "ReadFromFile",
+            "type": "GetTemplateFileContent",
             "assignTo": "$(FUNCTION_BODY_CONTENT)",
-            "filePath" : "function_body.py"
-        },
-        {
-            "name": "replaceTokensInText_FunctionBody",
-            "type": "ReplaceTokensInText",
-            "source": "$(FUNCTION_BODY_CONTENT)",
-            "assignTo" : "$(FUNCTION_BODY_CONTENT)"
+            "filePath": "function_body.py"
         },
         {
             "name": "appendFileContent_FunctionApp",
             "type": "AppendToFile",
-            "createIfNotExists" : false,
+            "createIfNotExists": false,
             "source": "$(FUNCTION_BODY_CONTENT)",
-            "filePath" : "$(SELECTED_FILENAME)",
-            "continueOnError" : false,
-            "errorText" : "Unable to create httpTrigger function"
+            "filePath": "$(SELECTED_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create httpTrigger function",
+            "replaceTokens": true
         },
         {
             "name": "ShowMarkdownPreview",
             "type": "ShowMarkdownPreview",
-            "filePath" : "http_trigger_template.md"
+            "filePath": "http_trigger_template.md"
         }
     ]
 }

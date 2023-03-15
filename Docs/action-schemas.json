@@ -6,21 +6,43 @@
     "type": "object",
     
     "properties": {
-        "name": { 
-            "description": "The arbitrary identifier for an action",
-            "type": "string" 
-        },
         "type": { 
             "description": "Type of the action",
             "enum": [ 
                 "AppendToFile",
-                "ReadFromFile",
+                "GetTemplateFileContent",
                 "ReplaceTokensInText",
                 "ShowMarkdownPreview",
                 "UserInput",
                 "WriteToFile"
             ] 
         },
+        "conditions": {
+            "description": "The condition(s) that must evaluate to true to run this job",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The name of the variable to evaluate",
+                        "type": "string"
+                    },
+                    "values": {
+                        "description": "The value(s) to evaluate the operator against.",
+                        "type": "array",
+                        "items": { "type": "string" },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    },
+                    "operator": {
+                        "description": "The operator to evaluate the variable against values for a boolean result.",
+                        "enum": [ "In", "NotIn" ]
+                    }
+                },
+                "required": [ "name", "values", "operator" ]
+            },
+            "minItems": 1
+        },        
         "continueOnError": { 
             "description": "Whether to continue job execution if the action errors",
             "type": "boolean" 
@@ -42,9 +64,13 @@
             "description": "Identifier of the input data for the action",
             "type": "string", 
             "pattern": "\\$\\([A-Z0-9_]+\\)" 
+        },
+        "replaceTokens": {
+            "description": "Whether to replace placeholder tokens in file with defined values",
+            "type": "boolean"
         }
     },
-    "required": [ "name", "type" ],
+    "required": [ "type" ],
     "allOf": [
         {
             "if": { "properties": { "type": { "const": "AppendToFile" } } },
@@ -55,11 +81,11 @@
                         "type": "boolean" 
                     }
                 },
-                "required": [ "createIfNotExists", "filePath", "source" ]
+                "required": [ "createIfNotExists", "filePath", "source", "replaceTokens" ]
             }  
         },
         {
-            "if": { "properties": { "type": { "const": "ReadFromFile" } } },
+            "if": { "properties": { "type": { "const": "GetTemplateFileContent" } } },
             "then": { "required": [ "assignTo", "filePath" ] }
         },
         {
@@ -89,7 +115,7 @@
         },
         {
             "if": { "properties": { "type": { "const": "WriteToFile" } } },
-            "then": { "required": [ "filePath", "source" ] }
+            "then": { "required": [ "filePath", "source", "replaceTokens" ] }
         }
     ]
 }
