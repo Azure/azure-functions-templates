@@ -44,20 +44,31 @@
                             "CreateNewApp"
                         ]
                     },
-                    "condition": {
-                        "description": "The condition that must evaluate to true to run this job",
-                        "type": "object",
-                        "properties": {
-                            "name": {
-                                "description": "The name of the variable to evaluate",
-                                "type": "string"
+                    "conditions": {
+                        "description": "The condition(s) that must evaluate to true to run this job",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "description": "The name of the variable to evaluate",
+                                    "type": "string"
+                                },
+                                "values": {
+                                    "description": "The value(s) to evaluate the operator against.",
+                                    "type": "array",
+                                    "items": { "type": "string" },
+                                    "minItems": 1,
+                                    "uniqueItems": true
+                                },
+                                "operator": {
+                                    "description": "The operator to evaluate the variable against values for a boolean result.",
+                                    "enum": [ "In", "NotIn" ]
+                                }
                             },
-                            "expectedValue": {
-                                "description": "The value for which the condition is true",
-                                "type": "string"
-                            }
+                            "required": [ "name", "values", "operator" ]
                         },
-                        "required": [ "name", "expectedValue" ]
+                        "minItems": 1
                     },
                     "input": {
                         "description": "The input provided to the job by the user gesture in the tooling",
@@ -79,20 +90,31 @@
                                     "description": "The default value to use if none is otherwise provided",
                                     "type": "string" 
                                 },
-                                "condition": {
-                                    "description": "The condition that must evaluate to true to require this input value",
-                                    "type": "object",
-                                    "properties": {
-                                        "name": {
-                                            "description": "The name of the variable to evaluate",
-                                            "type": "string"
+                                "conditions": {
+                                    "description": "The condition(s) that must evaluate to true to enable this input value",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "description": "The name of the variable to evaluate",
+                                                "type": "string"
+                                            },
+                                            "values": {
+                                                "description": "The value(s) to evaluate the operator against.",
+                                                "type": "array",
+                                                "items": { "type": "string" },
+                                                "minItems": 1,
+                                                "uniqueItems": true
+                                            },
+                                            "operator": {
+                                                "description": "The operator to evaluate the variable against values for a boolean result.",
+                                                "enum": [ "In", "NotIn" ]
+                                            }
                                         },
-                                        "expectedValue": {
-                                            "description": "The value for which the condition is true",
-                                            "type": "string"
-                                        }
+                                        "required": [ "name", "values", "operator" ]
                                     },
-                                    "required": [ "name", "expectedValue" ]
+                                    "minItems": 1
                                 }
                             },
                             "required": [ "assignTo", "paramId" ]
@@ -119,7 +141,19 @@
         "actions": {
             "description": "The list of action definitions used by jobs defined by a template",
             "type": "array",
-            "items": { "$ref": "<ACTION_SCHEMA_URL>" },
+            "items": { 
+                "allOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "description": "The identifier for an action referenced from a job's actions list",
+                            "type": "string"
+                        },
+                        "required": [ "name" ]
+                    },
+                    { "$ref": "<ACTION_SCHEMA_URL>" }
+                ]
+            },
             "minItems": 1,
             "uniqueItems": true
         }

@@ -28,7 +28,6 @@
                 "readFileContent_FunctionBody",
                 "replaceText_FunctionBody",
                 "readFileContent_FunctionApp",
-                "replaceText_FunctionApp",
                 "writeFile_FunctionApp",
                 "showMarkdownPreview"
             ]
@@ -54,16 +53,29 @@
             ],
             "actions": [
                 "readFileContent_FunctionBody",
-                "replaceText_FunctionBody",
-                "appendFileContent_FunctionApp",
+                {
+                    "type": "AppendToFile",
+                    "createIfNotExists" : false,
+                    "source": "$(TIMER_FUNCTION_BODY)",
+                    "filePath": "$(SELECTED_FILENAME)",
+                    "continueOnError" : false,
+                    "errorText": "Unable to add template",
+                    "replaceTokens": true
+                },
                 "showMarkdownPreview"
             ]
         }
     ],
     "actions": [
         {
+            "name": "readFileContent_FunctionApp",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(FUNCTION_APP)",
+            "filePath": "function_app.py"
+        },
+        {
             "name": "readFileContent_FunctionBody",
-            "type": "ReadFromFile",
+            "type": "GetTemplateFileContent",
             "assignTo": "$(TIMER_FUNCTION_BODY)",
             "filePath": "function_body.py"
         },
@@ -74,36 +86,16 @@
             "source": "$(TIMER_FUNCTION_BODY)"
         },
         {
-            "name": "readFileContent_FunctionApp",
-            "type": "ReadFromFile",
-            "assignTo": "$(FUNCTION_APP)",
-            "filePath": "function_app.py"
-        },
-        {
-            "name": "replaceText_FunctionApp",
-            "type": "ReplaceTokensInText",
-            "assignTo": "$(FUNCTION_APP_TRANSFORMED)",
-            "source": "$(FUNCTION_APP)"
+            "name": "showMarkdownPreview",
+            "type": "ShowMarkdownPreview",
+            "filePath": "timer_trigger_template.md"
         },
         {
             "name": "writeFile_FunctionApp",
             "type": "WriteToFile",
             "filePath": "$(APP_FILENAME)",
-            "source": "$(FUNCTION_APP_TRANSFORMED)"
-        },
-        {
-            "name": "appendFileContent_FunctionApp",
-            "type": "AppendToFile",
-            "createIfNotExists" : false,
-            "source": "$(FUNCTION_APP_TRANSFORMED)",
-            "filePath" : "$(SELECTED_FILENAME)",
-            "continueOnError" : false,
-            "errorText" : "Unable to add template"
-        },
-        {
-            "name": "showMarkdownPreview",
-            "type": "ShowMarkdownPreview",
-            "filePath": "timer_trigger_template.md"
+            "source": "$(FUNCTION_APP)",
+            "replaceTokens": true
         }
     ]
 }
