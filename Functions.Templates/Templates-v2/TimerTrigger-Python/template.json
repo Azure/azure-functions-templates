@@ -37,7 +37,7 @@
             "type": "AppendToFile",
             "input": [
                 {
-                    "assignTo": "$(SELECTED_FILENAME)",
+                    "assignTo": "$(SELECTED_FILEPATH)",
                     "paramId": "app-selectedFileName"
                 },
                 {
@@ -57,7 +57,7 @@
                     "type": "AppendToFile",
                     "createIfNotExists" : false,
                     "source": "$(TIMER_FUNCTION_BODY)",
-                    "filePath": "$(SELECTED_FILENAME)",
+                    "filePath": "$(SELECTED_FILEPATH)",
                     "continueOnError" : false,
                     "errorText": "Unable to add template",
                     "replaceTokens": true
