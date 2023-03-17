@@ -1,0 +1,162 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "<TEMPLATE_SCHEMA_URL>",
+    "title": "Azure Functions Template",
+    "description": "A template in Azure Functions' v2 template schema",
+    "type": "object",
+
+    "properties": {
+        "author": {
+            "description": "The author of this template (author/maintainer/owner/contact)",
+            "type": "string"
+        },
+        "name": {
+            "description": "The name of this template; usually <Trigger> ex. 'HTTP Trigger'",
+            "type": "string"
+        },
+        "description": {
+            "description": "A short description of this template's trigger's functionality",
+            "type": "string"
+        },
+        "programmingModel": {
+            "description": "The programming model the template applies to",
+            "enum": [ "v1", "v2" ]
+        },
+        "language": {
+            "description": "The programming language the template applies to",
+            "enum": [ "dotnet", "node", "python", "powershell" ]
+        },
+        "jobs": {
+            "description": "The list of jobs defined by the template, each corresponding to a user gesture",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The display name of this job",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "The type of this job",
+                        "enum": [
+                            "AppendToFile",
+                            "CreateBlueprint",
+                            "CreateNewApp"
+                        ]
+                    },
+                    "conditions": {
+                        "description": "The condition(s) that must evaluate to true to run this job",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "description": "The name of the variable to evaluate",
+                                    "type": "string"
+                                },
+                                "values": {
+                                    "description": "The value(s) to evaluate the operator against.",
+                                    "type": "array",
+                                    "items": { "type": "string" },
+                                    "minItems": 1,
+                                    "uniqueItems": true
+                                },
+                                "operator": {
+                                    "description": "The operator to evaluate the variable against values for a boolean result.",
+                                    "enum": [ "In", "NotIn" ]
+                                }
+                            },
+                            "required": [ "name", "values", "operator" ]
+                        },
+                        "minItems": 1
+                    },
+                    "input": {
+                        "description": "The input provided to the job by the user gesture in the tooling",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "assignTo": {
+                                    "description": "Identifier to assign input to",
+                                    "type": "string",
+                                    "pattern": "\\$\\([A-Z0-9_]+\\"
+                                },
+                                "paramId": { 
+                                    "description": "Type data for the input corresponding to an entry in user-prompts.json",
+                                    "type": "string", 
+                                    "pattern": "([a-zA-Z]+)-([a-zA-Z]+)"
+                                },
+                                "defaultValue": { 
+                                    "description": "The default value to use if none is otherwise provided",
+                                    "type": "string" 
+                                },
+                                "conditions": {
+                                    "description": "The condition(s) that must evaluate to true to enable this input value",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "description": "The name of the variable to evaluate",
+                                                "type": "string"
+                                            },
+                                            "values": {
+                                                "description": "The value(s) to evaluate the operator against.",
+                                                "type": "array",
+                                                "items": { "type": "string" },
+                                                "minItems": 1,
+                                                "uniqueItems": true
+                                            },
+                                            "operator": {
+                                                "description": "The operator to evaluate the variable against values for a boolean result.",
+                                                "enum": [ "In", "NotIn" ]
+                                            }
+                                        },
+                                        "required": [ "name", "values", "operator" ]
+                                    },
+                                    "minItems": 1
+                                }
+                            },
+                            "required": [ "assignTo", "paramId" ]
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    },
+                    "actions": {
+                        "description": "Names of the actions the job executes in order of operation",
+                        "items": { 
+                            "oneOf": [ 
+                                { "type": "string" },
+                                { "$ref": "<ACTION_SCHEMA_URL>" }
+                            ],
+                        "minItems": 1
+                        }
+                    },
+                    "required": [ "name", "input", "actions" ]
+                },
+            "minItems": 1,
+            "uniqueItems": true
+            }
+        },
+        "actions": {
+            "description": "The list of action definitions used by jobs defined by a template",
+            "type": "array",
+            "items": { 
+                "allOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "description": "The identifier for an action referenced from a job's actions list",
+                            "type": "string"
+                        },
+                        "required": [ "name" ]
+                    },
+                    { "$ref": "<ACTION_SCHEMA_URL>" }
+                ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        }
+    },
+    "required": [ "author", "name", "description", "programmingModel", "language", "jobs", "actions" ]
+}

@@ -1,0 +1,101 @@
+{
+    "author": "kashimiz",
+    "name": "Timer Trigger",
+    "description": "$TimerTrigger_description",
+    "programmingModel": "v2",
+    "language": "python",
+    "jobs": [
+        {
+            "name": "Create New Project with Timer Function",
+            "type": "CreateNewApp",
+            "input": [
+                {
+                    "assignTo": "$(APP_FILENAME)",
+                    "paramId": "app-FileName"
+                },
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
+                    "defaultValue": "TimerTrigger"
+                },                    
+                {
+                    "assignTo": "$(SCHEDULE_INPUT)",
+                    "paramId": "timerTrigger-schedule",
+                    "defaultValue": "0 */5 * * * *"
+                }
+            ],
+            "actions": [
+                "readFileContent_FunctionBody",
+                "replaceText_FunctionBody",
+                "readFileContent_FunctionApp",
+                "writeFile_FunctionApp",
+                "showMarkdownPreview"
+            ]
+        },
+        {
+            "name": "Append Timer Function to File",
+            "type": "AppendToFile",
+            "input": [
+                {
+                    "assignTo": "$(SELECTED_FILENAME)",
+                    "paramId": "app-selectedFileName"
+                },
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
+                    "defaultValue": "TimerTrigger"
+                },                    
+                {
+                    "assignTo": "$(SCHEDULE_INPUT)",
+                    "paramId": "timerTrigger-schedule",
+                    "defaultValue": "0 */5 * * * *"
+                }
+            ],
+            "actions": [
+                "readFileContent_FunctionBody",
+                {
+                    "type": "AppendToFile",
+                    "createIfNotExists" : false,
+                    "source": "$(TIMER_FUNCTION_BODY)",
+                    "filePath": "$(SELECTED_FILENAME)",
+                    "continueOnError" : false,
+                    "errorText": "Unable to add template",
+                    "replaceTokens": true
+                },
+                "showMarkdownPreview"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "readFileContent_FunctionApp",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(FUNCTION_APP)",
+            "filePath": "function_app.py"
+        },
+        {
+            "name": "readFileContent_FunctionBody",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(TIMER_FUNCTION_BODY)",
+            "filePath": "function_body.py"
+        },
+        {
+            "name": "replaceText_FunctionBody",
+            "type": "ReplaceTokensInText",
+            "assignTo": "$(TIMER_FUNCTION_BODY)",
+            "source": "$(TIMER_FUNCTION_BODY)"
+        },
+        {
+            "name": "showMarkdownPreview",
+            "type": "ShowMarkdownPreview",
+            "filePath": "timer_trigger_template.md"
+        },
+        {
+            "name": "writeFile_FunctionApp",
+            "type": "WriteToFile",
+            "filePath": "$(APP_FILENAME)",
+            "source": "$(FUNCTION_APP)",
+            "replaceTokens": true
+        }
+    ]
+}
