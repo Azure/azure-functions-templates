@@ -14,6 +14,9 @@ Displays a rendered Markdown file to the user.
 
 ## Parameters
 
+**`type`**  
+**`ShowMarkdownPreview`**
+
 <!-- vvv Common Parameters vvv -->
 **`name`** String  
 The arbitrary identifier for an action, used to reference it from a job's list of actions.
@@ -28,7 +31,7 @@ Whether to continue the parent job's execution if this action errors. Default: `
 The text to display if this action errors (ex. manual instructions).
 <!-- ^^^ Common Parameters ^^^ -->
 
-**`filePath`** String
+**`filePath`** String  
 The file path of the Markdown file, relative to the root directory of the template that defines this action. Does not support subdirectories.
 
 ## Effects

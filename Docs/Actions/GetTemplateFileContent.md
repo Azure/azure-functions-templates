@@ -1,8 +1,8 @@
-# GetTemplateFileContent"
+# GetTemplateFileContent
 
 ## Definition
 
-Opens a file, reads all the text in the file, and then assigns the text to a placeholder.
+Opens a file, reads all the text in the file, and then assigns the text to a template's placeholder.
 
 ### Tooling Support
 
@@ -14,7 +14,7 @@ Opens a file, reads all the text in the file, and then assigns the text to a pla
 
 ## Parameters
 
-**`type`** enum  
+**`type`**  
 **`GetTemplateFileContent`**
 
 <!-- vvv Common Parameters vvv -->
@@ -34,7 +34,7 @@ The text to display if this action errors (ex. manual instructions).
 **`assignTo`** String  
 The placeholder to assign the text from the file at `filePath` to. Format: `$(PLACEHOLDER_ID)`
 
-**``filePath`** String  
+**`filePath`** String  
 The file path to read text from, relative to the root directory of the template that defines this action. Does not support subdirectories.
 
 ## Effects
@@ -45,7 +45,9 @@ The text from the file at `filePath` will be assigned to the placeholder defined
 
 ## Examples
 
-The following example template defines a job which gets the text in `function_app.py`. When the `getTemplateFileContent_FunctionApp` action executes, tooling with read the contents of `function_app.py` and assigns it to the placeholder `$(FUNCTION_APP_CONTENT)`. The `writeFile_FunctionApp` action then writes the text associated with `$(FUNCTION_APP_CONTENT)` to a file.
+The following example template defines a job which gets the text in `function_app.py`.
+
+When the `getTemplateFileContent_FunctionApp` action executes, tooling with read the contents of `function_app.py` and assigns it to the placeholder `$(FUNCTION_APP_CONTENT)`. The `writeFile_FunctionApp` action then writes the text associated with `$(FUNCTION_APP_CONTENT)` to a file.
 
 ### `template.json`
 

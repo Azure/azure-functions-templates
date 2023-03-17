@@ -2,7 +2,7 @@
 
 ## Definition
 
-Prompts the user for input and assigns it to a placeholder as a `string`.
+Prompts the user for input and assigns it to a template placeholder as a `string`.
 
 ### Tooling Support
 
@@ -20,6 +20,9 @@ Emoji Shortcode        Meaning
 
 ## Parameters
 
+**`type`**  
+**`UserInput`**
+
 <!-- vvv Common Parameters vvv -->
 **`name`** String  
 The arbitrary identifier for an action, used to reference it from a job's list of actions.
@@ -28,7 +31,7 @@ The arbitrary identifier for an action, used to reference it from a job's list o
 Collection of conditionals that must evaluate to `true` for this action to be executed. See [Conditionals](../conditionals.md) for more information.
 
 **`continueOnError`** boolean _(optional)_  
-Whether to continue the parent job's execution if this action errors. Default: `false`
+Whether to continue the job's execution if this action errors. Default: `false`
 
 **`errorText`** String _(optional)_  
 The text to display if this action errors (ex. manual instructions).
@@ -37,12 +40,12 @@ The text to display if this action errors (ex. manual instructions).
 **`assignTo`** String  
 The placeholder to assign the user-provided input to. Format: `$(PLACEHOLDER_ID)`
 
-**`paramId`** String
+**`paramId`** String  
 Lookup key for additional metadata about the property whose value the user is prompted for, ex. binding metadata, function name validation, etc. Should match the `name` of an entry in [userPrompts.json](../../Functions.Templates/Bindings/userPrompts.json).
 
 ## Effects
 
-The value provided by the user via tooling will be assigned to the placeholder specified by `assignTo`.
+The value provided by the user via tooling will be assigned to the template placeholder specified by `assignTo`.
 
 ## Exceptions
 

@@ -14,6 +14,9 @@ Replaces placeholders in a body of text with their associated values. Non-recurs
 
 ## Parameters
 
+**`type`**  
+**`ReplaceTokensInText`**
+
 <!-- vvv Common Parameters vvv -->
 **`name`** String  
 The arbitrary identifier for an action, used to reference it from a job's list of actions.
@@ -29,10 +32,10 @@ The text to display if this action errors (ex. manual instructions).
 <!-- ^^^ Common Parameters ^^^ -->
 
 **`assignTo`** String  
-The placeholder to assign the transformed text to. Format: `$(PLACEHOLDER_ID)`
+The template placeholder to assign the transformed text to. Format: `$(PLACEHOLDER_ID)`
 
-**`source`** String
-The placeholder whose associated text should have its placeholders replaced.
+**`source`** String  
+The template placeholder whose associated text should have its placeholder tokens replaced.
 
 ## Effects
 
@@ -155,6 +158,6 @@ def $(FUNCTION_NAME_INPUT)(myTimer: func.TimerRequest) -> None:
 
 ## Remarks
 
-Although most template scenarios can be accomplished by setting the `replaceTokens` property on the [`AppendToFile`](AppendToFile.md) and [`WriteToFile`](WriteToFile.md) actions to `true`, more complex operations may require an 'in-memory' token replacement.
+Although most template scenarios can be accomplished by setting `"replaceTokens": true` on the [`AppendToFile`](AppendToFile.md) and [`WriteToFile`](WriteToFile.md) actions, more complex sequences of actions may require an 'in-memory' token replacement.
 
 Like the `replaceTokens` property of the aforementioned actions, `ReplaceTokensInText` does not result in a recursive operation.

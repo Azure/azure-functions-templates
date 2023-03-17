@@ -20,6 +20,9 @@ Emoji Shortcode        Meaning
 
 ## Parameters
 
+**`type`**  
+**`WriteToFile`**
+
 <!-- vvv Common Parameters vvv -->
 **`name`** String  
 The arbitrary identifier for an action, used to reference it from a job's list of actions.
@@ -34,25 +37,25 @@ Whether to continue the parent job's execution if this action errors. Default: `
 The text to display if this action errors (ex. manual instructions).
 <!-- ^^^ Common Parameters ^^^ -->
 
-**`filePath`** String
+**`filePath`** String  
 The absolute path of the file in the user workspace to create and write the text of `source` to.
 
-**`source`** String
+**`source`** String  
 The text to write to the file at `filePath`.
 
-**`replaceTokens`** boolean
+**`replaceTokens`** boolean  
 Whether to replace tokens in the new file at `filePath` after writing text from `source`. This operation is not recursive.
 
 ## Effects
 
-A new file will be created at `filePath` that contains the text of `source`.
+A new file will be created at `filePath` that contains the text of `source`.  
 If `replaceTokens` is true, any placeholders in the text of `source` will be replaced with their associated values as part of the operation.
 
 ## Exceptions
 
 ## Examples
 
-The following example template defines a job which gets the text in `function_app.py`. When the `getTemplateFileContent_FunctionApp` action executes, tooling with read the contents of `function_app.py` and assigns it to the placeholder `$(FUNCTION_APP_CONTENT)`. The `writeFile_FunctionApp` action then writes the text associated with `$(FUNCTION_APP_CONTENT)` to a file.
+The following example template defines a job which gets the text in `function_app.py`, then writes it to the file specified by `$(APP_FILENAME)` in the user's workspace.
 
 Because `writeFile_FunctionApp`'s `replaceTokens` property is `true`, the placeholders `$(FUNCTION_NAME_INPUT)` and `$(AUTHLEVEL_INPUT)` in
 the file at `$(SELECTED_FILEPATH)` will be replaced with their associated values (provided by tooling) as part of the write operation.
