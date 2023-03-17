@@ -1859,6 +1859,118 @@
           "help": "$signalROut_connectionString_help"
         }
       ]
+    },
+    {
+      "type": "sql",
+      "displayName": "$sqlIn_displayName",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\sqlIn.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Sql", "version": "2.0.144"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "object",
+          "required": true,
+          "label": "$sqlIn_name_label",
+          "help": "$sqlIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "commandText",
+          "value": "string",
+          "defaultValue": "SELECT * FROM Products",
+          "required": true,
+          "label": "$sqlIn_commandText_label",
+          "help": "$sqlIn_commandText_help"
+        },
+        {
+          "name": "commandType",
+          "value": "enum",
+          "required": false,
+          "defaultValue":"Text",
+          "enum": [
+            {
+              "value": "Text",
+              "display": "Text"
+            },
+            {
+              "value": "StoredProcedure",
+              "display": "StoredProcedure"
+            }
+          ],
+          "label": "$sqlIn_commandType_label",
+          "help": "$sqlIn_commandType_help"
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "defaultValue": "SqlConnectionString",
+          "required": true,
+          "label": "$sql_connection_label",
+          "help": "$sql_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "parameters",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$sqlIn_parameters_label",
+          "help": "$sqlIn_parameters_help"
+        }
+      ]
+    },
+    {
+      "type": "sql",
+      "displayName": "$sqlOut_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\sqlOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Sql", "version": "2.0.144"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "object",
+          "required": true,
+          "label": "$sqlOut_name_label",
+          "help": "$sqlOut_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "commandText",
+          "value": "string",
+          "defaultValue": "object",
+          "required": true,
+          "label": "$sqlOut_commandText_label",
+          "help": "$sqlOut_commandText_help"
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "defaultValue": "SqlConnectionString",
+          "required": true,
+          "label": "$sql_connection_label",
+          "help": "$sql_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        }
+      ]
     }
   ]
 }
