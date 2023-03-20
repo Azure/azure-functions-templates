@@ -58,7 +58,7 @@ The following example template defines a job which appends the text of a file to
         {
             "name": "Append Timer Function to File",
             "type": "AppendToFile",
-            "input": [
+            "inputs": [
                 {
                     "assignTo": "$(SELECTED_FILEPATH)",
                     "paramId": "app-selectedFileName"

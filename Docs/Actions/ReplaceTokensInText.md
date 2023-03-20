@@ -66,7 +66,7 @@ The following example template defines a job which performs the following action
         {
             "name": "Create New Project with Timer Function",
             "type": "CreateNewApp",
-            "input": [
+            "inputs": [
                 {
                     "assignTo": "$(APP_FILENAME)",
                     "paramId": "app-FileName"

@@ -73,7 +73,7 @@ the file at `$(SELECTED_FILEPATH)` will be replaced with their associated values
         {
             "name": "Create New Project with httpTrigger Function",
             "type": "CreateNewApp",
-            "input": [
+            "inputs": [
                 {
                     "assignTo": "$(APP_FILENAME)",
                     "paramId": "app-fileName",

@@ -8,7 +8,7 @@
         {
             "name": "Create New Project with HttpTrigger function",
             "type": "CreateNewApp",
-            "input" : [
+            "inputs" : [
                 {
                     "assignTo": "$(APP_FILENAME)",
                     "paramId": "app-fileName",
@@ -36,7 +36,7 @@
         {
             "name": "Add httpTrigger function to an existing file",
             "type": "AppendToFile",
-            "input" : [
+            "inputs" : [
                 {
                     "assignTo": "$(SELECTED_FILEPATH)",
                     "paramId": "app-selectedFileName"

@@ -62,7 +62,7 @@ When the `getTemplateFileContent_FunctionApp` action executes, tooling with read
         {
             "name": "Create New Project with httpTrigger Function",
             "type": "CreateNewApp",
-            "input": [
+            "inputs": [
                 {
                     "assignTo": "$(APP_FILENAME)",
                     "paramId": "app-fileName",
