@@ -1,1 +1,0 @@
-@app.register($(BLUEPRINT_FILENAME))

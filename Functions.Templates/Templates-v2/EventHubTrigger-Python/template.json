@@ -70,7 +70,7 @@
         },
         {
             "name": "Create New Blueprint file",
-            "type": "CreateNewApp",
+            "type": "CreateNewBlueprint",
             "inputs" : [
                 {
                     "assignTo": "$(BLUEPRINT_FILENAME)",
@@ -101,16 +101,12 @@
                 "readFileContent_BlueprintFile",
                 "writeFile_BlueprintFile",
                 "readFileContent_BlueprintBody",
-                "appendFileContent_BlueprintBody",
-                "readFileContent_FunctionApp",
-                "readFileContent_BlueprintImport",
-                "appendFile_BlueprintImport",
-                "readFileContent_BlueprintRegister",
-                "appendFileContent_BlueprintRegister"
+                "appendFileContent_BlueprintBody"
             ]
         },
         {
             "name": "Add EventHubTrigger function to the Blueprint",
+            "type": "AppendToBlueprint", 
             "inputs" : [
                 {
                     "assignTo": "$(BLUEPRINT_FILENAME)",
@@ -179,13 +175,6 @@
             "filePath" : "eventhub_trigger_template.md"
         },
         {
-            "name": "getBluePrintFileName",
-            "type": "UserInput",
-            "assignTo": "$(BLUEPRINT_FILENAME)",
-            "paramId": "trigger-blueprintFileName",
-            "defaultValue": "blueprint.py"
-        },
-        {
             "name": "readFileContent_BlueprintFile",
             "type": "ReadFromFile",
             "assignTo": "$(BLUEPRINT_CONTENT)",
@@ -210,36 +199,6 @@
             "name": "appendFileContent_BlueprintBody",
             "type": "AppendToFile",
             "source": "$(BLUEPRINT_BODY_CONTENT)",
-            "filePath" : "$(BLUEPRINT_FILENAME)",
-            "continueOnError" : false,
-            "errorText" : "Unable to create the Blueprint",
-            "replaceTokens": true
-        },
-        {
-            "name": "readFileContent_BlueprintImport",
-            "type": "ReadFromFile",
-            "assignTo": "$(BLUEPRINT_IMPORT_CONTENT)",
-            "filePath" : "blueprint_import.py"
-        },
-        {
-            "name": "AppendFile_BlueprintImport",
-            "type": "AppendToFile",
-            "source": "$(BLUEPRINT_IMPORT_CONTENT)",
-            "filePath" : "$(APP_FILENAME)",
-            "continueOnError" : false,
-            "errorText" : "Unable to create blueprint",
-            "replaceTokens": true
-        },
-        {
-            "name": "readFileContent_BlueprintRegister",
-            "type": "ReadFromFile",
-            "assignTo": "$(BLUEPRINT_REGISTER_CONTENT)",
-            "filePath" : "blueprint_register.py"
-        },
-        {
-            "name": "appendFileContent_BlueprintRegister",
-            "type": "AppendToFile",
-            "source": "$(BLUEPRINT_REGISTER_CONTENT)",
             "filePath" : "$(BLUEPRINT_FILENAME)",
             "continueOnError" : false,
             "errorText" : "Unable to create the Blueprint",
