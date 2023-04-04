@@ -8,7 +8,7 @@
         {
             "name": "Create New Project with Timer Function",
             "type": "CreateNewApp",
-            "input": [
+            "inputs": [
                 {
                     "assignTo": "$(APP_FILENAME)",
                     "paramId": "app-FileName"
@@ -35,9 +35,9 @@
         {
             "name": "Append Timer Function to File",
             "type": "AppendToFile",
-            "input": [
+            "inputs": [
                 {
-                    "assignTo": "$(SELECTED_FILENAME)",
+                    "assignTo": "$(SELECTED_FILEPATH)",
                     "paramId": "app-selectedFileName"
                 },
                 {
@@ -57,7 +57,7 @@
                     "type": "AppendToFile",
                     "createIfNotExists" : false,
                     "source": "$(TIMER_FUNCTION_BODY)",
-                    "filePath": "$(SELECTED_FILENAME)",
+                    "filePath": "$(SELECTED_FILEPATH)",
                     "continueOnError" : false,
                     "errorText": "Unable to add template",
                     "replaceTokens": true

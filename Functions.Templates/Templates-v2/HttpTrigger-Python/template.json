@@ -8,10 +8,10 @@
         {
             "name": "Create New Project with HttpTrigger function",
             "type": "CreateNewApp",
-            "input" : [
+            "inputs" : [
                 {
                     "assignTo": "$(APP_FILENAME)",
-                    "paramId": "app-FileName",
+                    "paramId": "app-fileName",
                     "required": true
                 },
                 {
@@ -36,9 +36,9 @@
         {
             "name": "Add httpTrigger function to an existing file",
             "type": "AppendToFile",
-            "input" : [
+            "inputs" : [
                 {
-                    "assignTo": "$(SELECTED_FILENAME)",
+                    "assignTo": "$(SELECTED_FILEPATH)",
                     "paramId": "app-selectedFileName"
                 },
                 {
@@ -64,7 +64,7 @@
             "name": "readFileContent_FunctionApp",
             "type": "GetTemplateFileContent",
             "assignTo": "$(FUNCTION_APP_CONTENT)",
-            "filePath": "FUNCTION_APP_CONTENT.py"
+            "filePath": "function_app.py"
         },
         {
             "name": "writeFile_FunctionApp",
@@ -86,7 +86,7 @@
             "type": "AppendToFile",
             "createIfNotExists": false,
             "source": "$(FUNCTION_BODY_CONTENT)",
-            "filePath": "$(SELECTED_FILENAME)",
+            "filePath": "$(SELECTED_FILEPATH)",
             "continueOnError": false,
             "errorText": "Unable to create httpTrigger function",
             "replaceTokens": true

@@ -70,7 +70,7 @@
                         },
                         "minItems": 1
                     },
-                    "input": {
+                    "inputs": {
                         "description": "The input provided to the job by the user gesture in the tooling",
                         "type": "array",
                         "items": {
@@ -132,7 +132,7 @@
                         "minItems": 1
                         }
                     },
-                    "required": [ "name", "input", "actions" ]
+                    "required": [ "name", "inputs", "actions" ]
                 },
             "minItems": 1,
             "uniqueItems": true
