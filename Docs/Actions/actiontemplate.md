@@ -32,7 +32,7 @@ Whether to continue the parent job's execution if this action errors. Default: `
 The text to display if this action errors (ex. manual instructions).
 <!-- ^^^ Common Parameters ^^^ -->
 
-## Effects
+## Summary
 
 ## Exceptions
 

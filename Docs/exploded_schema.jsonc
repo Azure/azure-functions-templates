@@ -32,7 +32,7 @@
             // TODO: Change 'name' to 'key'?
             // Common Action Properties
             "name": "getBindingParamValue",                 // Arbitrary value for lookup from job(s).
-            "type": "UserInput",                            // Corresponds to entry in actions_schema.json.
+            "type": "GetTemplateFileContent",               // Corresponds to entry in actions_schema.json.
             "condition": {                                  // Action-level condition. If undefined, action always runs.
                 "name": "SOME_FLAG",
                 "expectedValue": "true"

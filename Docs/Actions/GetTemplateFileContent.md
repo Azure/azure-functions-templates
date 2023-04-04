@@ -37,7 +37,7 @@ The placeholder to assign the text from the file at `filePath` to. Format: `$(PL
 **`filePath`** String  
 The file path to read text from, relative to the root directory of the template that defines this action. Does not support subdirectories.
 
-## Effects
+## Summary
 
 The text from the file at `filePath` will be assigned to the placeholder defined by `assignTo`.
 
@@ -47,7 +47,7 @@ The text from the file at `filePath` will be assigned to the placeholder defined
 
 The following example template defines a job which gets the text in `function_app.py`.
 
-When the `getTemplateFileContent_FunctionApp` action executes, tooling with read the contents of `function_app.py` and assigns it to the placeholder `$(FUNCTION_APP_CONTENT)`. The `writeFile_FunctionApp` action then writes the text associated with `$(FUNCTION_APP_CONTENT)` to a file.
+When the `getTemplateFileContent_FunctionApp` action executes, tooling will read the contents of `function_app.py` and assigns it to the placeholder `$(FUNCTION_APP_CONTENT)`. The `writeFile_FunctionApp` action then writes the text associated with `$(FUNCTION_APP_CONTENT)` to a file.
 
 ### `template.json`
 

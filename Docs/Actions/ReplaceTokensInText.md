@@ -14,8 +14,7 @@ Replaces placeholders in a body of text with their associated values. Non-recurs
 
 ## Parameters
 
-**`type`**  
-**`ReplaceTokensInText`**
+**`type`**: `ReplaceTokensInText`
 
 <!-- vvv Common Parameters vvv -->
 **`name`** String  
@@ -37,7 +36,7 @@ The template placeholder to assign the transformed text to. Format: `$(PLACEHOLD
 **`source`** String  
 The template placeholder whose associated text should have its placeholder tokens replaced.
 
-## Effects
+## Summary
 
 All placeholders in the text of `source` defined at the time this action executes will be replaced with their associated text.  
 Placeholders that have not been defined at the time this action executes will _not_ be replaced.

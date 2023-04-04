@@ -38,7 +38,7 @@ The text to display if this action errors (ex. manual instructions).
 <!-- ^^^ Common Parameters ^^^ -->
 
 **`filePath`** String  
-The absolute path of the file in the user workspace to create and write the text of `source` to.
+The path of the file relative to the root of the user workspace to append the text present within the `source` to.
 
 **`source`** String  
 The text to write to the file at `filePath`.
@@ -46,7 +46,7 @@ The text to write to the file at `filePath`.
 **`replaceTokens`** boolean  
 Whether to replace tokens in the new file at `filePath` after writing text from `source`. This operation is not recursive.
 
-## Effects
+## Summary
 
 A new file will be created at `filePath` that contains the text of `source`.  
 If `replaceTokens` is true, any placeholders in the text of `source` will be replaced with their associated values as part of the operation.

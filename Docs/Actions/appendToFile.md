@@ -14,8 +14,7 @@ Appends text to an existing file in the user's workspace, or to a new file if th
 
 ### Parameters
 
-**`type`**  
-**`AppendToFile`**
+**`type`** : `AppendToFile`
 
 <!-- vvv Common Parameters vvv -->
 **`name`** String  
@@ -43,7 +42,7 @@ Whether to create the file at `filePath` if it doesn't exist. Default: `false`
 **`replaceTokens`** boolean  
 Whether to replace tokens in the file at `filePath` after appending text from `source`. This operation is not recursive.
 
-### Effects
+### Summary
 
 The text of `source` will be appended to the file at `filePath`.  
 If `filePath` does not exist and `createIfNotExists` is `true`, `filePath` will be created.  

@@ -13,7 +13,6 @@
                 "GetTemplateFileContent",
                 "ReplaceTokensInText",
                 "ShowMarkdownPreview",
-                "UserInput",
                 "WriteToFile"
             ] 
         },
@@ -95,23 +94,6 @@
         {
             "if": { "properties": { "type": { "const": "ShowMarkdownPreview" } } },
             "then": { "required": [ "filePath" ] }
-        },
-        {
-            "if": { "properties": { "type": { "const": "UserInput" } } },
-            "then": {
-                "properties": {                    
-                    "paramId": { 
-                        "description": "Type data for the input corresponding to an entry in user-prompts.json",
-                        "type": "string", 
-                        "pattern": "([a-zA-Z]+)-([a-zA-Z]+)"
-                    },
-                    "defaultValue": { 
-                        "description": "The default value to use if the user provides none",
-                        "type": "string" 
-                    }
-                },
-                "required": [ "assignTo", "paramId" ]
-            }
         },
         {
             "if": { "properties": { "type": { "const": "WriteToFile" } } },

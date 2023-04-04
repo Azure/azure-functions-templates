@@ -14,8 +14,7 @@ Displays a rendered Markdown file to the user.
 
 ## Parameters
 
-**`type`**  
-**`ShowMarkdownPreview`**
+**`type`** : `ShowMarkdownPreview`
 
 <!-- vvv Common Parameters vvv -->
 **`name`** String  
@@ -34,7 +33,7 @@ The text to display if this action errors (ex. manual instructions).
 **`filePath`** String  
 The file path of the Markdown file, relative to the root directory of the template that defines this action. Does not support subdirectories.
 
-## Effects
+## Summary
 
 Tooling displays the rendered Markdown to the user.
 
