@@ -29,7 +29,7 @@
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
-                    "paramId": "eventhubTrigger-connectionString",
+                    "paramId": "eventhubTrigger-connection",
                     "required": true,
                     "defaultValue": ""
                 }
@@ -45,6 +45,12 @@
             "type": "AppendToFile",
             "inputs" : [
                 {
+                    "assignTo": "$(APP_FILENAME)",
+                    "paramId": "app-fileName",
+                    "defaultValue": "function_app.py",
+                    "required": true
+                },
+                {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
@@ -58,7 +64,7 @@
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
-                    "paramId": "eventhubTrigger-connectionString",
+                    "paramId": "eventhubTrigger-connection",
                     "required": true,
                     "defaultValue": ""
                 }
@@ -92,7 +98,7 @@
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
-                    "paramId": "eventhubTrigger-connectionString",
+                    "paramId": "eventhubTrigger-connection",
                     "required": true,
                     "defaultValue": ""
                 }
@@ -127,7 +133,7 @@
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
-                    "paramId": "eventhubTrigger-connectionString",
+                    "paramId": "eventhubTrigger-connection",
                     "required": true,
                     "defaultValue": ""
                 }
@@ -165,7 +171,7 @@
             "type": "AppendToFile",
             "createIfNotExists" : false,
             "source": "$(FUNCTION_BODY)",
-            "filePath" : "$(MAIN_FUNCTION_APP_FILE)",
+            "filePath" : "$(APP_FILENAME)",
             "continueOnError" : false,
             "errorText" : "Unable to create eventhub trigger function"
         },

@@ -6,4 +6,4 @@ import azure.functions as func
 
 app = func.FunctionApp()
 
-$(AppBody)
+$(TIMER_FUNCTION_BODY)
