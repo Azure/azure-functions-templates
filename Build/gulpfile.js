@@ -246,16 +246,16 @@ gulp.task('userprompt-copy', function () {
   for (let i = 0; i < files.length; i++) {
     let fileName = files[i].replace(".nupkg", "");
     let dirPath = path.join('../bin/Temp/', 'Temp-' + fileName);
-    let userpromptSimple = path.join(dirPath, 'Bindings_v2', 'userPrompts.json');
+    let userpromptSimple = path.join(dirPath, 'Bindings-v2', 'userPrompts.json');
 
     if (!fs.existsSync(userpromptSimple)) {
       continue;
     }
-    
+
     streams.push(
       gulp.src(userpromptSimple)
         .pipe(rename('userPrompts.json'))
-        .pipe(gulp.dest('../bin/Temp/out/' + fileName + '/bindings_v2'))
+        .pipe(gulp.dest('../bin/Temp/out/' + fileName + '/bindings-v2'))
     );
   }
   return gulpMerge(streams);
@@ -328,7 +328,7 @@ gulp.task('build-templates-v2', function (cb) {
     templates.forEach(template => {
       let templateObj = {};
       const filePath = path.join(dirPath, 'templates-v2', template);
-      let files = getFilesWithContent(filePath, ['template.json']);   
+      let files = getFilesWithContent(filePath, ['template.json']);
       templateObj = require(path.join(filePath, 'template.json'));
       templateObj.id = template;
       templateObj.files = files;
@@ -422,7 +422,7 @@ gulp.task(
     'build-templates-v2',
     'build-bindings',
     'zip-output',
-    // 'clean-temp'
+    'clean-temp'
   )
 );
 
