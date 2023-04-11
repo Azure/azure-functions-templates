@@ -240,5 +240,31 @@
                 "errorText": "$serviceBusTrigger_subscriptionName_errorText"
             }
         ]
+    },
+    {
+        "name": "app-fileName",
+        "value": "string",
+        "defaultValue": "function_app.py",
+        "label": "$app_filename_label",
+        "help": "$app_filename_help",
+        "validators": [
+            {
+                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
+                "errorText": "$app_filename_errorText"
+            }
+        ]
+    },
+    {
+        "name": "blueprint-fileName",
+        "value": "string",
+        "defaultValue": "blueprint.py",
+        "label": "$blueprint_fileName_label",
+        "help": "$blueprint_fileName_help",
+        "validators": [
+            {
+                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
+                "errorText": "$blueprint_fileName_errorText"
+            }
+        ]
     }
 ]
