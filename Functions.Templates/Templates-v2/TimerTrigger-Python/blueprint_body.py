@@ -1,4 +1,4 @@
-@app.timer_trigger(schedule="$(SCHEDULE_INPUT)", arg_name="myTimer", run_on_startup=True,
+@BLUEPRINT_FILENAME.timer_trigger(schedule="$(SCHEDULE_INPUT)", arg_name="myTimer", run_on_startup=True,
               use_monitor=False) 
 def $(FUNCTION_NAME_INPUT)(myTimer: func.TimerRequest) -> None:
     utc_timestamp = datetime.datetime.utcnow().replace(
