@@ -1,10 +1,5 @@
-import azure.functions as func
-import logging
-
-app = func.FunctionApp(http_auth_level=func.AuthLevel.$(AUTHLEVEL_INPUT))
-
-@app.route(route="$(FUNCTION_NAME_INPUT)")
-def $(FUNCTION_NAME_INPUT)(req: func.HttpRequest) -> func.HttpResponse:
+$(BLUEPRINT_FILENAME).route(route="$(BLUEPRINT_FILENAME)")
+def $(BLUEPRINT_FILENAME)(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
     name = req.params.get('name')

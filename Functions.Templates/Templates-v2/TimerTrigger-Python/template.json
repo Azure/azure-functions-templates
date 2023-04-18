@@ -53,16 +53,61 @@
             ],
             "actions": [
                 "readFileContent_FunctionBody",
+                "appendFileContent_FunctionApp"
+            ]
+        },
+        {
+            "name": "Create New Blueprint file",
+            "type": "CreateNewBlueprint",
+            "inputs" : [
                 {
-                    "type": "AppendToFile",
-                    "createIfNotExists" : false,
-                    "source": "$(TIMER_FUNCTION_BODY)",
-                    "filePath": "$(SELECTED_FILEPATH)",
-                    "continueOnError" : false,
-                    "errorText": "Unable to add template",
-                    "replaceTokens": true
+                    "assignTo": "$(BLUEPRINT_FILENAME)",
+                    "paramId": "blueprint-fileName",
+                    "defaultValue": "blueprint.py",
+                    "required": true
                 },
-                "showMarkdownPreview"
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
+                    "defaultValue": "TimerTrigger"
+                },                    
+                {
+                    "assignTo": "$(SCHEDULE_INPUT)",
+                    "paramId": "timerTrigger-schedule",
+                    "defaultValue": "0 */5 * * * *"
+                }
+            ],
+            "actions": [
+                "readFileContent_BlueprintFile",
+                "writeFile_BlueprintFile",
+                "readFileContent_BlueprintBody",
+                "appendFileContent_BlueprintBody"
+            ]
+        },
+        {
+            "name": "Add EventHubTrigger function to the Blueprint",
+            "type": "AppendToBlueprint", 
+            "inputs" : [
+                {
+                    "assignTo": "$(BLUEPRINT_FILENAME)",
+                    "paramId": "blueprint-fileName",
+                    "defaultValue": "blueprint.py",
+                    "required": true
+                },
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
+                    "defaultValue": "TimerTrigger"
+                },                    
+                {
+                    "assignTo": "$(SCHEDULE_INPUT)",
+                    "paramId": "timerTrigger-schedule",
+                    "defaultValue": "0 */5 * * * *"
+                }
+            ],
+            "actions": [
+                "readFileContent_BlueprintBody",
+                "appendFileContent_BlueprintBody"
             ]
         }
     ],
@@ -80,6 +125,16 @@
             "filePath": "function_body.py"
         },
         {
+            "name": "appendFileContent_FunctionApp",
+            "type": "AppendToFile",
+            "createIfNotExists": false,
+            "source": "$(TIMER_FUNCTION_BODY)",
+            "filePath": "$(SELECTED_FILEPATH)",
+            "continueOnError": false,
+            "errorText": "Unable to create httpTrigger function",
+            "replaceTokens": true
+        },
+        {
             "name": "replaceText_FunctionBody",
             "type": "ReplaceTokensInText",
             "assignTo": "$(TIMER_FUNCTION_BODY)",
@@ -95,6 +150,27 @@
             "type": "WriteToFile",
             "filePath": "$(APP_FILENAME)",
             "source": "$(FUNCTION_APP)",
+            "replaceTokens": true
+        },
+        {
+            "name": "readFileContent_BlueprintBody",
+            "type": "ReadFromFile",
+            "assignTo": "$(BLUEPRINT_BODY_CONTENT)",
+            "filePath" : "blueprint_body.py"
+        },
+        {
+            "name": "readFileContent_BlueprintFile",
+            "type": "ReadFromFile",
+            "assignTo": "$(BLUEPRINT_CONTENT)",
+            "filePath" : "blueprint.py"
+        },
+        {
+            "name": "appendFileContent_BlueprintBody",
+            "type": "AppendToFile",
+            "source": "$(BLUEPRINT_BODY_CONTENT)",
+            "filePath" : "$(BLUEPRINT_FILENAME)",
+            "continueOnError" : false,
+            "errorText" : "Unable to create the Blueprint",
             "replaceTokens": true
         }
     ]

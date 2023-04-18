@@ -54,8 +54,53 @@
             ],
             "actions": [
                 "readFileContent_FunctionBody",
-                "appendFileContent_FunctionApp",
-                "showMarkdownPreview"
+                "appendFileContent_FunctionApp"
+            ]
+        },
+        {
+            "name": "Create New Blueprint file",
+            "type": "CreateNewBlueprint",
+            "inputs" : [
+                {
+                    "assignTo": "$(BLUEPRINT_FILENAME)",
+                    "paramId": "blueprint-fileName",
+                    "defaultValue": "blueprint.py",
+                    "required": true
+                },
+                {
+                    "assignTo": "$(AUTHLEVEL_INPUT)",
+                    "paramId": "httpTrigger-authLevel",
+                    "required": true,
+                    "defaultValue": "function"
+                }
+            ],
+            "actions": [
+                "readFileContent_BlueprintFile",
+                "writeFile_BlueprintFile",
+                "readFileContent_BlueprintBody",
+                "appendFileContent_BlueprintBody"
+            ]
+        },
+        {
+            "name": "Add EventHubTrigger function to the Blueprint",
+            "type": "AppendToBlueprint", 
+            "inputs" : [
+                {
+                    "assignTo": "$(BLUEPRINT_FILENAME)",
+                    "paramId": "blueprint-fileName",
+                    "defaultValue": "blueprint.py",
+                    "required": true
+                },
+                {
+                    "assignTo": "$(AUTHLEVEL_INPUT)",
+                    "paramId": "httpTrigger-authLevel",
+                    "required": true,
+                    "defaultValue": "function"
+                }
+            ],
+            "actions": [
+                "readFileContent_BlueprintBody",
+                "appendFileContent_BlueprintBody"
             ]
         }
     ],
@@ -92,9 +137,30 @@
             "replaceTokens": true
         },
         {
+            "name": "readFileContent_BlueprintBody",
+            "type": "ReadFromFile",
+            "assignTo": "$(BLUEPRINT_BODY_CONTENT)",
+            "filePath" : "blueprint_body.py"
+        },
+        {
+            "name": "readFileContent_BlueprintFile",
+            "type": "ReadFromFile",
+            "assignTo": "$(BLUEPRINT_CONTENT)",
+            "filePath" : "blueprint.py"
+        },
+        {
             "name": "ShowMarkdownPreview",
             "type": "ShowMarkdownPreview",
             "filePath": "http_trigger_template.md"
+        },
+        {
+            "name": "appendFileContent_BlueprintBody",
+            "type": "AppendToFile",
+            "source": "$(BLUEPRINT_BODY_CONTENT)",
+            "filePath" : "$(BLUEPRINT_FILENAME)",
+            "continueOnError" : false,
+            "errorText" : "Unable to create the Blueprint",
+            "replaceTokens": true
         }
     ]
 }
