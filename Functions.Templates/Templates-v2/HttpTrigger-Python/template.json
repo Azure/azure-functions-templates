@@ -87,7 +87,7 @@
             "inputs" : [
                 {
                     "assignTo": "$(BLUEPRINT_FILENAME)",
-                    "paramId": "blueprint-fileName",
+                    "paramId": "blueprint-existingFileName",
                     "defaultValue": "blueprint.py",
                     "required": true
                 },
@@ -115,7 +115,7 @@
             "name": "writeFile_FunctionApp",
             "type": "WriteToFile",
             "source": "$(FUNCTION_APP_CONTENT)",
-            "filePath": "$(APP_FILENAME)",
+            "filePath": "$(APP_FILENAME).py",
             "continueOnError": false,
             "errorText": "Unable to create the function app",
             "replaceTokens": true
@@ -131,20 +131,20 @@
             "type": "AppendToFile",
             "createIfNotExists": false,
             "source": "$(FUNCTION_BODY_CONTENT)",
-            "filePath": "$(SELECTED_FILEPATH)",
+            "filePath": "$(SELECTED_FILEPATH).py",
             "continueOnError": false,
             "errorText": "Unable to create httpTrigger function",
             "replaceTokens": true
         },
         {
             "name": "readFileContent_BlueprintBody",
-            "type": "ReadFromFile",
+            "type": "GetTemplateFileContent",
             "assignTo": "$(BLUEPRINT_BODY_CONTENT)",
             "filePath" : "blueprint_body.py"
         },
         {
             "name": "readFileContent_BlueprintFile",
-            "type": "ReadFromFile",
+            "type": "GetTemplateFileContent",
             "assignTo": "$(BLUEPRINT_CONTENT)",
             "filePath" : "blueprint.py"
         },
@@ -157,9 +157,18 @@
             "name": "appendFileContent_BlueprintBody",
             "type": "AppendToFile",
             "source": "$(BLUEPRINT_BODY_CONTENT)",
-            "filePath" : "$(BLUEPRINT_FILENAME)",
+            "filePath" : "$(BLUEPRINT_FILENAME).py",
             "continueOnError" : false,
             "errorText" : "Unable to create the Blueprint",
+            "replaceTokens": true
+        },
+        {
+            "name": "writeFile_BlueprintFile",
+            "type": "WriteToFile",
+            "source": "$(BLUEPRINT_CONTENT)",
+            "filePath" : "$(BLUEPRINT_FILENAME).py",
+            "continueOnError" : false,
+            "errorText" : "Unable to create blueprint",
             "replaceTokens": true
         }
     ]

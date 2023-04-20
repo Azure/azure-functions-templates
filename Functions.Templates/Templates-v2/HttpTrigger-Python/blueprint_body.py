@@ -1,4 +1,5 @@
-$(BLUEPRINT_FILENAME).route(route="$(BLUEPRINT_FILENAME)")
+
+@$(BLUEPRINT_FILENAME).route(route="$(BLUEPRINT_FILENAME)")
 def $(BLUEPRINT_FILENAME)(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
