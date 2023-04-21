@@ -1,6 +1,8 @@
 import logging
 import azure.functions as func
+
 app = func.FunctionApp()
+
 @app.function_name(name="BlobTrigger1")
 @app.blob_trigger(arg_name="myblob", path="samples-workitems/{name}",
                   connection="AzureWebJobsStorage")

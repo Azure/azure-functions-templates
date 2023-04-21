@@ -11,7 +11,9 @@ Following is an example code snippet for HTTP Trigger using the [Python programm
 ```python
 import azure.functions as func
 import logging
+
 app = func.FunctionApp(auth_level=func.AuthLevel.ANONYMOUS)
+
 @app.function_name(name="HttpTrigger1")
 @app.route(route="hello")
 def test_function(req: func.HttpRequest) -> func.HttpResponse:
@@ -39,7 +41,7 @@ To run the code snippet generated through the command palette, note the followin
 - Confirm that the parameters within the trigger reflect values that correspond with your storage account.
 - The name of the file must be `function_app.py`.
   
-Note that HTTP output bindings are also supported in Azure Functions. To learn more, see [Azure Functions HTTP triggers and bindings overview](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook?tabs=in-process%2Cfunctionsv2&pivots=programming-language-python)
+Note that HTTP output bindings are also supported in Azure Functions. To learn more, see [Azure Functions HTTP triggers and bindings overview](https://aka.ms/azure-function-binding-http)
 
 ## V2 Programming Model
 

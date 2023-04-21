@@ -11,7 +11,9 @@ Following is an example code snippet for Queue Trigger using the [Python program
 ```python
 import logging
 import azure.functions as func
+
 app = func.FunctionApp()
+
 @app.function_name(name="QueueTrigger1")
 @app.queue_trigger(arg_name="msg", queue_name="python-queue-items",
                    connection=""AzureWebJobsStorage"")  
@@ -26,7 +28,7 @@ To run the code snippet generated through the command palette, note the followin
 - Confirm that the parameters within the trigger reflect values that correspond with your storage account.
 - The name of the file must be `function_app.py`.
   
-Note that Queue output bindings are also supported in Azure Functions. To learn more, see [Azure Queue storage trigger and bindings for Azure Functions overview](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-queue?tabs=in-process%2Cextensionv5%2Cextensionv3&pivots=programming-language-python)
+Note that Queue output bindings are also supported in Azure Functions. To learn more, see [Azure Queue storage trigger and bindings for Azure Functions overview](https://aka.ms/azure-function-binding-queue)
 
 ## V2 Programming Model
 

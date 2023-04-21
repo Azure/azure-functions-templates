@@ -11,9 +11,11 @@ Following is an example code snippet for Cosmos DB Trigger using the [Python pro
 ```python
 import logging
 import azure.functions as func
+
 app = func.FunctionApp()
+
 @app.function_name(name="CosmosDBTrigger1")
-@app.cosmos_db_trigger(arg_name="documents", database_name="<DB_NAME>", collection_name="<COLLECTION_NAME>", connection_string_setting=""AzureWebJobsStorage"",
+@app.cosmos_db_trigger(arg_name="documents", database_name="<DB_NAME>", collection_name="<COLLECTION_NAME>", connection_string_setting="AzureWebJobsStorage",
  lease_collection_name="leases", create_lease_collection_if_not_exists="true")
 def test_function(documents: func.DocumentList) -> str:
     if documents:
@@ -26,7 +28,7 @@ To run the code snippet generated through the command palette, note the followin
 - Confirm that the parameters within the trigger reflect values that correspond with your storage account.
 - The name of the file must be `function_app.py`.
   
-Note that Cosmos DB input and output bindings are also supported in Azure Functions. To learn more, see [Azure Cosmos DB storage trigger and bindings overview](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-cosmosdb-v2?tabs=in-process%2Cfunctionsv2&pivots=programming-language-python)
+Note that Cosmos DB input and output bindings are also supported in Azure Functions. To learn more, see [Azure Cosmos DB storage trigger and bindings overview](https://aka.ms/azure-function-binding-cosmosdb-v2)
 
 ## V2 Programming Model
 

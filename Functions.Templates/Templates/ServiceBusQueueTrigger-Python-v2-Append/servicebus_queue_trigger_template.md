@@ -11,9 +11,11 @@ Following is an example code snippet for Service Bus Queue Trigger using the [Py
 ```python
 import logging
 import azure.functions as func
+
 app = func.FunctionApp()
+
 @app.function_name(name="ServiceBusQueueTrigger1")
-@app.service_bus_queue_trigger(arg_name="msg", queue_name="myinputqueue", connection="CONNECTION_SETTING")
+@app.service_bus_queue_trigger(arg_name="msg", queue_name="myinputqueue", connection="<CONNECTION_SETTING>")
 def test_function(msg: func.ServiceBusMessage):
     logging.info('Python ServiceBus queue trigger processed message: %s',
                  msg.get_body().decode('utf-8'))
@@ -25,7 +27,7 @@ To run the code snippet generated through the command palette, note the followin
 - Confirm that the parameters within the trigger reflect values that correspond with your storage account.
 - The name of the file must be `function_app.py`.
   
-Note that Service Bus output bindings are also supported in Azure Functions. To learn more, see [Azure Service Bus bindings for Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-service-bus?tabs=in-process%2Cextensionv5%2Cextensionv3&pivots=programming-language-python)
+Note that Service Bus output bindings are also supported in Azure Functions. To learn more, see [Azure Service Bus bindings for Azure Functions](https://aka.ms/azure-function-binding-service-bus)
 
 ## V2 Programming Model
 

@@ -11,10 +11,12 @@ Following is an example code snippet for Event Hub Trigger using the [Python pro
 ```python
 import logging
 import azure.functions as func
+
 app = func.FunctionApp()
+
 @app.function_name(name="EventHubTrigger1")
 @app.event_hub_message_trigger(arg_name="myhub", event_hub_name="samples-workitems",
-                               connection=""CONNECTION_SETTING"") 
+                               connection="<CONNECTION_SETTING>") 
 def test_function(myhub: func.EventHubEvent):
     logging.info('Python EventHub trigger processed an event: %s',
                 myhub.get_body().decode('utf-8'))
@@ -26,7 +28,7 @@ To run the code snippet generated through the command palette, note the followin
 - Confirm that the parameters within the trigger reflect values that correspond with your storage account.
 - The name of the file must be `function_app.py`.
   
-Note that Event Hub output bindings are also supported in Azure Functions. To learn more, see [Azure Event Hubs trigger and bindings for Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-bindings-event-hubs?tabs=in-process%2Cextensionv5&pivots=programming-language-python)
+Note that Event Hub output bindings are also supported in Azure Functions. To learn more, see [Azure Event Hubs trigger and bindings for Azure Functions](https://aka.ms/azure-function-binding-event-hubs)
 
 ## V2 Programming Model
 

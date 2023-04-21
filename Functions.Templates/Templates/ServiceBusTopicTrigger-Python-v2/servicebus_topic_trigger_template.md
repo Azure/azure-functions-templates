@@ -13,7 +13,7 @@ import logging
 import azure.functions as func
 app = func.FunctionApp()
 @app.function_name(name="ServiceBusTopicTrigger1")
-@app.service_bus_topic_trigger(arg_name="message", topic_name="mytopic", connection="CONNECTION_SETTING", subscription_name="testsub")
+@app.service_bus_topic_trigger(arg_name="message", topic_name="mytopic", connection="<CONNECTION_SETTING>", subscription_name="testsub")
 def test_function(message: func.ServiceBusMessage):
     message_body = message.get_body().decode("utf-8")
     logging.info("Python ServiceBus topic trigger processed message.")
@@ -26,7 +26,7 @@ To run the code snippet generated through the command palette, note the followin
 - Confirm that the parameters within the trigger reflect values that correspond with your storage account.
 - The name of the file must be `function_app.py`.
   
-Note that Service Bus output bindings are also supported in Azure Functions. To learn more, see [Azure Service Bus bindings for Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-service-bus?tabs=in-process%2Cextensionv5%2Cextensionv3&pivots=programming-language-python)
+Note that Service Bus output bindings are also supported in Azure Functions. To learn more, see [Azure Service Bus bindings for Azure Functions](https://aka.ms/azure-function-binding-service-bus)
 
 ## V2 Programming Model
 
