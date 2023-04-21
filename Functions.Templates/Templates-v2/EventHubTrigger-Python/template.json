@@ -46,7 +46,7 @@
             "inputs" : [
                 {
                     "assignTo": "$(APP_FILENAME)",
-                    "paramId": "app-fileName",
+                    "paramId": "app-selectedFileName",
                     "defaultValue": "function_app.py",
                     "required": true
                 },
@@ -116,7 +116,7 @@
             "inputs" : [
                 {
                     "assignTo": "$(BLUEPRINT_FILENAME)",
-                    "paramId": "blueprint-fileName",
+                    "paramId": "blueprint-existingFileName",
                     "required": true
                 },
                 {
@@ -155,14 +155,14 @@
             "name": "writeFile_FunctionApp",
             "type": "WriteToFile",
             "source": "$(FUNCTION_APP_CONTENT)",
-            "filePath": "$(APP_FILENAME)",
+            "filePath": "$(APP_FILENAME).py",
             "continueOnError": false,
             "errorText": "Unable to create the function app",
             "replaceTokens": true
         },
         {
             "name": "readFileContent_FunctionBody",
-            "type": "ReadFromFile",
+            "type": "GetTemplateFileContent",
             "assignTo": "$(FUNCTION_BODY)",
             "filePath" : "function_body.py"
         },
@@ -171,7 +171,7 @@
             "type": "AppendToFile",
             "createIfNotExists" : false,
             "source": "$(FUNCTION_BODY)",
-            "filePath" : "$(APP_FILENAME)",
+            "filePath" : "$(APP_FILENAME).py",
             "continueOnError" : false,
             "errorText" : "Unable to create eventhub trigger function"
         },
@@ -182,7 +182,7 @@
         },
         {
             "name": "readFileContent_BlueprintFile",
-            "type": "ReadFromFile",
+            "type": "GetTemplateFileContent",
             "assignTo": "$(BLUEPRINT_CONTENT)",
             "filePath" : "blueprint.py"
         },
@@ -190,14 +190,14 @@
             "name": "writeFile_BlueprintFile",
             "type": "WriteToFile",
             "source": "$(BLUEPRINT_CONTENT)",
-            "filePath" : "$(BLUEPRINT_FILENAME)",
+            "filePath" : "$(BLUEPRINT_FILENAME).py",
             "continueOnError" : false,
             "errorText" : "Unable to create blueprint",
             "replaceTokens": true
         },
         {
             "name": "readFileContent_BlueprintBody",
-            "type": "ReadFromFile",
+            "type": "GetTemplateFileContent",
             "assignTo": "$(BLUEPRINT_BODY_CONTENT)",
             "filePath" : "blueprint_body.py"
         },
@@ -205,7 +205,7 @@
             "name": "appendFileContent_BlueprintBody",
             "type": "AppendToFile",
             "source": "$(BLUEPRINT_BODY_CONTENT)",
-            "filePath" : "$(BLUEPRINT_FILENAME)",
+            "filePath" : "$(BLUEPRINT_FILENAME).py",
             "continueOnError" : false,
             "errorText" : "Unable to create the Blueprint",
             "replaceTokens": true
