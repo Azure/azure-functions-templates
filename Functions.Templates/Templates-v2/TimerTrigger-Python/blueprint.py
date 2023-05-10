@@ -4,7 +4,7 @@
 # 
 #Please refer to https://aka.ms/azure-functions-python-blueprints
 
-
+import logging
 from azure.functions import Blueprint
 
 $(BLUEPRINT_FILENAME) = Blueprint()
