@@ -5,7 +5,7 @@
 #Please refer to https://aka.ms/azure-functions-python-blueprints
 
 
-from azure.functions import Blueprint
+import azure.functions as func
 import logging
 
-$(BLUEPRINT_FILENAME) = Blueprint()
+$(BLUEPRINT_FILENAME) = func.Blueprint()
