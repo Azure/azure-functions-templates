@@ -1,12 +1,12 @@
 {
-    "author": "Gavin Aguiar",
-    "name": "EventHub trigger",
-    "description": "$EventHubTrigger_description",
+    "author": "Varad Meru (@vrdmr)",
+    "name": "Blob trigger",
+    "description": "$BlobTrigger_description",
     "programmingModel": "v2",
     "language": "python",
     "jobs": [
         {
-            "name": "Create New Project with EventHubTrigger function",
+            "name": "Create New Project with BlobTrigger function",
             "type": "CreateNewApp",
             "inputs" : [
                 {
@@ -19,19 +19,19 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "eventhub_trigger"
+                    "defaultValue": "BlobTrigger"
                 },
                 {
-                    "assignTo": "$(EVENTHUB_NAME_INPUT)",
-                    "paramId": "eventhubTrigger-eventhubName",
+                    "assignTo": "$(PATH_TO_BLOB_INPUT)",
+                    "paramId": "blobTrigger-path",
                     "required": true,
-                    "defaultValue": "myeventhub"
+                    "defaultValue": "myblob"
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
-                    "paramId": "eventhubTrigger-connection",
+                    "paramId": "blobTrigger-connection",
                     "required": true,
-                    "defaultValue": "EventHubConnectionString"
+                    "defaultValue": "BlobStorageConnectionString"
                 }
             ],
             "actions": [
@@ -41,7 +41,7 @@
             ]
         },
         {
-            "name": "Add EventHubTrigger function to the main file",
+            "name": "Add BlobTrigger function to the main file",
             "type": "AppendToFile",
             "inputs" : [
                 {
@@ -54,19 +54,19 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "eventhub_trigger"
+                    "defaultValue": "BlobTrigger"
                 },
                 {
                     "assignTo": "$(EVENTHUB_NAME_INPUT)",
-                    "paramId": "eventhubTrigger-eventhubName",
+                    "paramId": "blobTrigger-blobName",
                     "required": true,
-                    "defaultValue": "myeventhub"
+                    "defaultValue": "myblob"
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
-                    "paramId": "eventhubTrigger-connection",
+                    "paramId": "blobTrigger-connection",
                     "required": true,
-                    "defaultValue": "EventHubConnectionString"
+                    "defaultValue": ""
                 }
             ],
             "actions": [
@@ -88,19 +88,19 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "eventhub_trigger"
+                    "defaultValue": "BlobTrigger"
                 },
                 {
                     "assignTo": "$(EVENTHUB_NAME_INPUT)",
-                    "paramId": "eventhubTrigger-eventhubName",
+                    "paramId": "blobTrigger-blobName",
                     "required": true,
-                    "defaultValue": "myeventhub"
+                    "defaultValue": "myblob"
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
-                    "paramId": "eventhubTrigger-connection",
+                    "paramId": "blobTrigger-connection",
                     "required": true,
-                    "defaultValue": "EventHubConnectionString"
+                    "defaultValue": ""
                 }
             ],
             "actions": [
@@ -111,7 +111,7 @@
             ]
         },
         {
-            "name": "Add EventHubTrigger function to the Blueprint",
+            "name": "Add BlobTrigger function to the Blueprint",
             "type": "AppendToBlueprint", 
             "inputs" : [
                 {
@@ -123,19 +123,19 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "eventhub_trigger"
+                    "defaultValue": "BlobTrigger"
                 },
                 {
                     "assignTo": "$(EVENTHUB_NAME_INPUT)",
-                    "paramId": "eventhubTrigger-eventhubName",
+                    "paramId": "blobTrigger-blobName",
                     "required": true,
-                    "defaultValue": "myeventhub"
+                    "defaultValue": "myblob"
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
-                    "paramId": "eventhubTrigger-connection",
+                    "paramId": "blobTrigger-connection",
                     "required": true,
-                    "defaultValue": "EventHubConnectionString"
+                    "defaultValue": ""
                 }
             ],
             "actions": [
@@ -173,12 +173,12 @@
             "source": "$(FUNCTION_BODY)",
             "filePath" : "$(APP_FILENAME).py",
             "continueOnError" : false,
-            "errorText" : "Unable to create eventhub trigger function"
+            "errorText" : "Unable to create blob trigger function"
         },
         {
             "name": "ShowMarkdownPreview",
             "type": "ShowMarkdownPreview",
-            "filePath" : "eventhub_trigger_template.md"
+            "filePath" : "blob_trigger_template.md"
         },
         {
             "name": "readFileContent_BlueprintFile",
