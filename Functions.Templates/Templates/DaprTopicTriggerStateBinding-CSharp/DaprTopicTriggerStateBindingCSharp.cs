@@ -14,7 +14,7 @@ namespace Company.Function
             [DaprState("%StateStoreName%", Key = "product")] out string value,
             ILogger log)
         {
-            log.LogInformation("C# DaprTopic trigger with DaprState binding function processed a request.");
+            log.LogInformation("C# DaprTopic trigger with DaprState output binding function processed a request.");
 
             if (subEvent.TryGetProperty("data", out JsonElement data))
             {
