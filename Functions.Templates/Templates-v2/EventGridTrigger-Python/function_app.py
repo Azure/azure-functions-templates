@@ -14,3 +14,4 @@ def $(FUNCTION_NAME_INPUT)(azeventgrid: EventGridEvent):
         'event_type': azeventgrid.event_type,
     })
     logging.info('Python EventGrid trigger processed an event: %s', result)
+

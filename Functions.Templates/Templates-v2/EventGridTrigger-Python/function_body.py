@@ -1,5 +1,6 @@
 import logging
 import json
+
 @app.event_grid_trigger(arg_name="azeventgrid")
 def $(FUNCTION_NAME_INPUT)(azeventgrid: EventGridEvent):
     result = json.dumps({
