@@ -7,8 +7,9 @@ The Event Grid function trigger can be used to respond to an event sent by an Ev
 ## Using the Template
 Following is an example code snippet for Event Grid Trigger using the Python programming model V2 (currently in Preview).
 ```python
-import logging
 import azure.functions as func
+import logging
+import json
 
 app = func.FunctionApp()
 
