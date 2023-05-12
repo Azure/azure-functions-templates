@@ -14,4 +14,4 @@ module EventHuBTriggerFSharp =
         let logger =
             context.GetLogger("EventHubTriggerFSharp")
 
-        logger.LogInformation(sprintf "First Event Hubs triggered message: %s" (input |> Array.head))
+        logger.LogInformation $"First Event Hubs triggered message: {input |> Array.head}
