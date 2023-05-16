@@ -1,12 +1,12 @@
 {
     "author": "Gavin Aguiar",
-    "name": "ServiceBus trigger",
-    "description": "$ServiceBusTrigger_description",
+    "name": "CosmosDB trigger",
+    "description": "$CosmosDbTrigger_description",
     "programmingModel": "v2",
     "language": "python",
     "jobs": [
         {
-            "name": "Create New Project with ServiceTrigger function",
+            "name": "Create New Project with CosmosDbTrigger function",
             "type": "CreateNewApp",
             "inputs" : [
                 {
@@ -19,19 +19,25 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "servicebus_trigger"
+                    "defaultValue": "cosmosdb_trigger"
                 },
                 {
-                    "assignTo": "$(SERVICEBUS_NAME_INPUT)",
-                    "paramId": "serviceBusTrigger-topicName",
+                    "assignTo": "$(CONTAINER_NAME_INPUT)",
+                    "paramId": "cosmosDbTrigger-containerName",
                     "required": true,
-                    "defaultValue": "myservicebus"
+                    "defaultValue": "container_name"
+                },
+                {
+                    "assignTo": "$(DB_NAME_INPUT)",
+                    "paramId": "cosmosDbTrigger-databaseName",
+                    "required": true,
+                    "defaultValue": "database_name"
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
-                    "paramId": "serviceBusTrigger-connection",
+                    "paramId": "cosmosDbTrigger-connection",
                     "required": true,
-                    "defaultValue": "ServiceBusConnectionString"
+                    "defaultValue": "CosmosDbConnectionString"
                 }
             ],
             "actions": [
@@ -41,12 +47,12 @@
             ]
         },
         {
-            "name": "Add ServiceBusTrigger function to the main file",
+            "name": "Add CosmosTrigger function to the main file",
             "type": "AppendToFile",
             "inputs" : [
                 {
                     "assignTo": "$(APP_FILENAME)",
-                    "paramId": "app-selectedFileName",
+                    "paramId": "app-fileName",
                     "defaultValue": "function_app.py",
                     "required": true
                 },
@@ -54,19 +60,25 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "servicebus_trigger"
+                    "defaultValue": "cosmosdb_trigger"
                 },
                 {
-                    "assignTo": "$(SERVICEBUS_NAME_INPUT)",
-                    "paramId": "serviceBusTrigger-topicName",
+                    "assignTo": "$(CONTAINER_NAME_INPUT)",
+                    "paramId": "cosmosDbTrigger-containerName",
                     "required": true,
-                    "defaultValue": "myservicebus"
+                    "defaultValue": "container_name"
+                },
+                {
+                    "assignTo": "$(DB_NAME_INPUT)",
+                    "paramId": "cosmosDbTrigger-databaseName",
+                    "required": true,
+                    "defaultValue": "database_name"
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
-                    "paramId": "serviceBusTrigger-connection",
+                    "paramId": "cosmosDbTrigger-connection",
                     "required": true,
-                    "defaultValue": "ServiceBusConnectionString"
+                    "defaultValue": "CosmosDbConnectionString"
                 }
             ],
             "actions": [
@@ -79,28 +91,34 @@
             "type": "CreateNewBlueprint",
             "inputs" : [
                 {
-                    "assignTo": "$(BLUEPRINT_FILENAME)",
-                    "paramId": "blueprint-fileName",
-                    "defaultValue": "blueprint.py",
+                    "assignTo": "$(APP_FILENAME)",
+                    "paramId": "app-fileName",
+                    "defaultValue": "function_app.py",
                     "required": true
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "servicebus_trigger"
+                    "defaultValue": "cosmosdb_trigger"
                 },
                 {
-                    "assignTo": "$(SERVICEBUS_NAME_INPUT)",
-                    "paramId": "serviceBusTrigger-topicName",
+                    "assignTo": "$(CONTAINER_NAME_INPUT)",
+                    "paramId": "cosmosDbTrigger-containerName",
                     "required": true,
-                    "defaultValue": "myservicebus"
+                    "defaultValue": "container_name"
+                },
+                {
+                    "assignTo": "$(DB_NAME_INPUT)",
+                    "paramId": "cosmosDbTrigger-databaseName",
+                    "required": true,
+                    "defaultValue": "database_name"
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
-                    "paramId": "serviceBusTrigger-connection",
+                    "paramId": "cosmosDbTrigger-connection",
                     "required": true,
-                    "defaultValue": "ServiceBusConnectionString"
+                    "defaultValue": "CosmosDbConnectionString"
                 }
             ],
             "actions": [
@@ -111,31 +129,38 @@
             ]
         },
         {
-            "name": "Add ServiceBusTrigger function to the Blueprint",
+            "name": "Add CosmosDBTrigger function to the Blueprint",
             "type": "AppendToBlueprint", 
             "inputs" : [
                 {
-                    "assignTo": "$(BLUEPRINT_FILENAME)",
-                    "paramId": "blueprint-existingFileName",
+                    "assignTo": "$(APP_FILENAME)",
+                    "paramId": "app-fileName",
+                    "defaultValue": "function_app.py",
                     "required": true
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "servicebus_trigger"
+                    "defaultValue": "cosmosdb_trigger"
                 },
                 {
-                    "assignTo": "$(SERVICEBUS_NAME_INPUT)",
-                    "paramId": "serviceBusTrigger-topicName",
+                    "assignTo": "$(CONTAINER_NAME_INPUT)",
+                    "paramId": "cosmosDbTrigger-containerName",
                     "required": true,
-                    "defaultValue": "myservicebus"
+                    "defaultValue": "container_name"
+                },
+                {
+                    "assignTo": "$(DB_NAME_INPUT)",
+                    "paramId": "cosmosDbTrigger-databaseName",
+                    "required": true,
+                    "defaultValue": "database_name"
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
-                    "paramId": "serviceBusTrigger-connection",
+                    "paramId": "cosmosDbTrigger-connection",
                     "required": true,
-                    "defaultValue": "ServiceBusConnectionString"
+                    "defaultValue": "CosmosDbConnectionString"
                 }
             ],
             "actions": [
@@ -173,12 +198,12 @@
             "source": "$(FUNCTION_BODY)",
             "filePath" : "$(APP_FILENAME).py",
             "continueOnError" : false,
-            "errorText" : "Unable to create servicebus trigger function"
+            "errorText" : "Unable to create eventhub trigger function"
         },
         {
             "name": "ShowMarkdownPreview",
             "type": "ShowMarkdownPreview",
-            "filePath" : "servicebustopic_trigger_template.md"
+            "filePath" : "cosmosdb_trigger_template.md"
         },
         {
             "name": "readFileContent_BlueprintFile",

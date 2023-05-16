@@ -57,7 +57,7 @@
                     "defaultValue": "BlobTrigger"
                 },
                 {
-                    "assignTo": "$(EVENTHUB_NAME_INPUT)",
+                    "assignTo": "$(PATH_TO_BLOB_INPUT)",
                     "paramId": "blobTrigger-blobName",
                     "required": true,
                     "defaultValue": "myblob"
@@ -66,7 +66,7 @@
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
                     "paramId": "blobTrigger-connection",
                     "required": true,
-                    "defaultValue": ""
+                    "defaultValue": "BlobStorageConnectionString"
                 }
             ],
             "actions": [
@@ -91,7 +91,7 @@
                     "defaultValue": "BlobTrigger"
                 },
                 {
-                    "assignTo": "$(EVENTHUB_NAME_INPUT)",
+                    "assignTo": "$(PATH_TO_BLOB_INPUT)",
                     "paramId": "blobTrigger-blobName",
                     "required": true,
                     "defaultValue": "myblob"
@@ -100,7 +100,7 @@
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
                     "paramId": "blobTrigger-connection",
                     "required": true,
-                    "defaultValue": ""
+                    "defaultValue": "BlobStorageConnectionString"
                 }
             ],
             "actions": [
@@ -126,7 +126,7 @@
                     "defaultValue": "BlobTrigger"
                 },
                 {
-                    "assignTo": "$(EVENTHUB_NAME_INPUT)",
+                    "assignTo": "$(PATH_TO_BLOB_INPUT)",
                     "paramId": "blobTrigger-blobName",
                     "required": true,
                     "defaultValue": "myblob"
@@ -135,7 +135,7 @@
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
                     "paramId": "blobTrigger-connection",
                     "required": true,
-                    "defaultValue": ""
+                    "defaultValue": "BlobStorageConnectionString"
                 }
             ],
             "actions": [

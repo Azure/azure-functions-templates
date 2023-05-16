@@ -1,7 +1,7 @@
 {
     "author": "Gavin Aguiar",
     "name": "Queue trigger",
-    "description": "$EventHubTrigger_description",
+    "description": "$QueueTrigger_description",
     "programmingModel": "v2",
     "language": "python",
     "jobs": [
@@ -156,13 +156,13 @@
         "source": "$(FUNCTION_BODY)",
         "filePath": "$(SELECTED_FILEPATH)",
         "continueOnError": false,
-        "errorText": "Unable to create eventhub trigger function",
+        "errorText": "Unable to create queue trigger function",
         "replaceTokens": true
       },
       {
         "name": "ShowMarkdownPreview",
         "type": "ShowMarkdownPreview",
-        "filePath": "eventhub_trigger_template.md"
+        "filePath": "queue_trigger_template.md"
       },
       {
         "name": "readFileContent_BlueprintFile",

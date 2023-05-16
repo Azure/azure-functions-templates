@@ -25,16 +25,16 @@
         "defaultValue": "function",
         "enum": [
             {
-                "value": "function",
-                "display": "Function"
+                "value": "FUNCTION",
+                "display": "FUNCTION"
             },
             {
-                "value": "anonymous",
-                "display": "Anonymous"
+                "value": "ANONYMOUS",
+                "display": "ANONYMOUS"
             },
             {
-                "value": "admin",
-                "display": "Admin"
+                "value": "ADMIN",
+                "display": "ADMIN"
             }
         ],
         "label": "$httpTrigger_authLevel_label",
@@ -98,8 +98,8 @@
         "help": "$blobTrigger_path_help"
     },
     {
-        "id": "cosmosDBTrigger-connectionStringSetting",
-        "name": "cosmosDBTrigger-connectionStringSetting",
+        "id": "cosmosDBTrigger-connection",
+        "name": "cosmosDBTrigger-connection",
         "value": "string",
         "resource": "DocumentDB",
         "label": "$cosmosDBIn_connection_label",
@@ -115,23 +115,23 @@
         "help": "$cosmosDBIn_databaseName_help"
     },
     {
-        "id": "cosmosDBTrigger-collectionName",
-        "name": "cosmosDBTrigger-collectionName",
+        "id": "cosmosDBTrigger-containerName",
+        "name": "cosmosDBTrigger-containerName",
         "value": "string",
         "defaultValue": "",
-        "label": "$cosmosDBIn_collectionName_label",
-        "help": "$cosmosDBIn_collectionName_help"
+        "label": "$cosmosDBIn_containerName_label",
+        "help": "$cosmosDBIn_containerName_help"
     },
     {
-        "id": "cosmosDBTrigger-leaseCollectionName",
-        "name": "cosmosDBTrigger-leaseCollectionName",
+        "id": "cosmosDBTrigger-leaseContainerName",
+        "name": "cosmosDBTrigger-leaseContainerName",
         "value": "string",
-        "label": "$cosmosDBIn_leaseCollectionName_label",
-        "help": "$cosmosDBIn_leaseCollectionName_help"
+        "label": "$cosmosDBIn_leaseContainerName_label",
+        "help": "$cosmosDBIn_leaseContainerName_help"
     },
     {
-        "id": "cosmosDBTrigger-createLeaseCollectionIfNotExists",
-        "name": "cosmosDBTrigger-createLeaseCollectionIfNotExists",
+        "id": "cosmosDBTrigger-createLeaseContainerIfNotExists",
+        "name": "cosmosDBTrigger-createLeaseContainerIfNotExists",
         "value": "boolean",
         "defaultValue": true,
         "label": "$cosmosDBIn_createIfNotExists_label",
