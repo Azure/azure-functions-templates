@@ -22,7 +22,7 @@
         "id": "httpTrigger-authLevel",
         "name": "httpTrigger-authLevel",
         "value": "enum",
-        "defaultValue": "function",
+        "defaultValue": "FUNCTION",
         "enum": [
             {
                 "value": "FUNCTION",
@@ -94,8 +94,8 @@
         "id": "blobTrigger-connection",
         "name": "blobTrigger-connection",
         "value": "string",
-        "label": "$blobTrigger_path_label",
-        "help": "$blobTrigger_path_help"
+        "label": "$blobTrigger-connection_label",
+        "help": "$blobTrigger-connection_help"
     },
     {
         "id": "cosmosDBTrigger-connection",

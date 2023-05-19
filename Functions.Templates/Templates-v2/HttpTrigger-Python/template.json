@@ -24,7 +24,7 @@
                     "assignTo": "$(AUTHLEVEL_INPUT)",
                     "paramId": "httpTrigger-authLevel",
                     "required": true,
-                    "defaultValue": "function"
+                    "defaultValue": "FUNCTION"
                 }
             ],
             "actions": [
@@ -131,7 +131,7 @@
             "type": "AppendToFile",
             "createIfNotExists": false,
             "source": "$(FUNCTION_BODY_CONTENT)",
-            "filePath": "$(SELECTED_FILEPATH).py",
+            "filePath": "$(SELECTED_FILEPATH)",
             "continueOnError": false,
             "errorText": "Unable to create httpTrigger function",
             "replaceTokens": true

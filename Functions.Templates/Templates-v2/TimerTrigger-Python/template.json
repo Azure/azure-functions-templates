@@ -128,7 +128,7 @@
             "type": "AppendToFile",
             "createIfNotExists": false,
             "source": "$(TIMER_FUNCTION_BODY)",
-            "filePath": "$(SELECTED_FILEPATH).py",
+            "filePath": "$(SELECTED_FILEPATH)",
             "continueOnError": false,
             "errorText": "Unable to create httpTrigger function",
             "replaceTokens": true

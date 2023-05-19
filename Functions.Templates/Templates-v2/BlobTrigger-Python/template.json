@@ -92,7 +92,7 @@
                 },
                 {
                     "assignTo": "$(PATH_TO_BLOB_INPUT)",
-                    "paramId": "blobTrigger-blobName",
+                    "paramId": "blobTrigger-path",
                     "required": true,
                     "defaultValue": "myblob"
                 },
@@ -171,8 +171,9 @@
             "type": "AppendToFile",
             "createIfNotExists" : false,
             "source": "$(FUNCTION_BODY)",
-            "filePath" : "$(APP_FILENAME).py",
+            "filePath": "$(SELECTED_FILEPATH)",
             "continueOnError" : false,
+            "replaceTokens": true,
             "errorText" : "Unable to create blob trigger function"
         },
         {

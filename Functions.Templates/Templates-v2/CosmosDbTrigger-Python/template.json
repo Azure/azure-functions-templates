@@ -196,7 +196,7 @@
             "type": "AppendToFile",
             "createIfNotExists" : false,
             "source": "$(FUNCTION_BODY)",
-            "filePath" : "$(APP_FILENAME).py",
+            "filePath": "$(SELECTED_FILEPATH)",
             "continueOnError" : false,
             "errorText" : "Unable to create eventhub trigger function"
         },
