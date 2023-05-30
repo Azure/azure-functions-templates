@@ -1,11 +1,11 @@
-using System;
+using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
-using Microsoft.Azure.WebJobs.Kusto;
+using Newtonsoft.Json;
 
 namespace Company.Function
 {
@@ -15,7 +15,7 @@ namespace Company.Function
         [FunctionName("SqlOutputBindingCSharp")]
         public static async Task<CreatedResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
-            [Sql("table", ConnectionStringSetting = "SqlConnectionString")] IAsyncCollector<ToDoItem> output,
+            [Sql("table", "SqlConnectionString")] IAsyncCollector<ToDoItem> output,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger with SQL Output Binding function processed a request.");

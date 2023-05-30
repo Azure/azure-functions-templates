@@ -177,6 +177,38 @@ gulp.task('resources-build', function () {
         )
         .pipe(gulp.dest('../bin/Temp/out/' + fileName + '/resources'))
     );
+
+    streams.push(
+      gulp
+        .src(['../bin/Temp/Temp-' + fileName + '/resources-convert/**/Resources.*.json'])
+        .pipe(
+          jeditor(function (json) {
+            const enver = require('../bin/Temp/Temp-' + fileName + '/resources-convert/Resources.json');
+            const retVal = {
+              lang: json,
+              en: enver,
+            };
+
+            return retVal;
+          })
+        )
+        .pipe(gulp.dest('../bin/Temp/out/' + fileName + '/resources-v2'))
+    );
+
+    streams.push(
+      gulp
+        .src(['../bin/Temp/Temp-' + fileName + '/resources-convert/Resources.json'])
+        .pipe(
+          jeditor(function (json) {
+            const retVal = {
+              en: json,
+            };
+
+            return retVal;
+          })
+        )
+        .pipe(gulp.dest('../bin/Temp/out/' + fileName + '/resources-v2'))
+    );
   }
   return gulpMerge(streams);
 });
@@ -197,6 +229,33 @@ gulp.task('resources-copy', function () {
       gulp.src('../bin/Temp/out/' + fileName + '/resources/Resources.json')
         .pipe(rename('Resources.en-US.json'))
         .pipe(gulp.dest('../bin/Temp/out/' + fileName + '/resources'))
+    );
+
+    streams.push(
+      gulp.src('../bin/Temp/out/' + fileName + '/resources/Resources.json')
+        .pipe(rename('Resources.en-US.json'))
+        .pipe(gulp.dest('../bin/Temp/out/' + fileName + '/resources-v2'))
+    );
+  }
+  return gulpMerge(streams);
+});
+
+gulp.task('userprompt-copy', function () {
+  const streams = [];
+  let files = getFiles('../bin/Temp/ExtensionBundle');
+  for (let i = 0; i < files.length; i++) {
+    let fileName = files[i].replace(".nupkg", "");
+    let dirPath = path.join('../bin/Temp/', 'Temp-' + fileName);
+    let userpromptSimple = path.join(dirPath, 'Bindings-v2', 'userPrompts.json');
+
+    if (!fs.existsSync(userpromptSimple)) {
+      continue;
+    }
+
+    streams.push(
+      gulp.src(userpromptSimple)
+        .pipe(rename('userPrompts.json'))
+        .pipe(gulp.dest('../bin/Temp/out/' + fileName + '/bindings-v2'))
     );
   }
   return gulpMerge(streams);
@@ -237,6 +296,47 @@ gulp.task('build-templates', function (cb) {
 
     let writeSubPath = path.join('../bin/Temp/', fileName);
     let writePath = path.join('../bin/Temp/out', fileName, 'templates');
+
+    if (!fs.existsSync(writeSubPath)) {
+      fs.mkdirSync(writeSubPath);
+    }
+
+    if (!fs.existsSync(writePath)) {
+      fs.mkdirSync(writePath);
+    }
+    writePath = path.join(writePath, 'templates.json');
+    fs.writeFileSync(writePath, new Buffer(JSON.stringify(templateListJson, null, 2)));
+    cb();
+
+  }
+});
+
+gulp.task('build-templates-v2', function (cb) {
+
+  let files = getFiles('../bin/Temp/ExtensionBundle');
+  for (let i = 0; i < files.length; i++) {
+    let fileName = files[i].replace(".nupkg", "");
+    let dirPath = '../bin/Temp/Temp-' + fileName
+    let templatesDir = path.join(dirPath, 'templates-v2');
+
+    if (!fs.existsSync(templatesDir)) {
+      continue;
+    }
+
+    let templateListJson = [];
+    const templates = getSubDirectories(path.join(dirPath, 'templates-v2'));
+    templates.forEach(template => {
+      let templateObj = {};
+      const filePath = path.join(dirPath, 'templates-v2', template);
+      let files = getFilesWithContent(filePath, ['template.json']);
+      templateObj = require(path.join(filePath, 'template.json'));
+      templateObj.id = template;
+      templateObj.files = files;
+      templateListJson.push(templateObj);
+    });
+
+    let writeSubPath = path.join('../bin/Temp/', fileName);
+    let writePath = path.join('../bin/Temp/out', fileName, 'templates-v2');
 
     if (!fs.existsSync(writeSubPath)) {
       fs.mkdirSync(writeSubPath);
@@ -317,7 +417,9 @@ gulp.task(
     'resources-convert',
     'resources-build',
     'resources-copy',
+    'userprompt-copy',
     'build-templates',
+    'build-templates-v2',
     'build-bindings',
     'zip-output',
     'clean-temp'

@@ -18,7 +18,7 @@ namespace Company.Function
     // Add `KustoConnectionString` to the local.settings.json
     [FunctionName("KustoOutputBindingCSharp")]
     public static async Task <CreatedResult> Run(
-      [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
+      [HttpTrigger(AuthorizationLevel.Function, "post", Route = "api/item/add")] HttpRequest req,
       [Kusto(Database: "db", // The database to ingest the data into , e.g. functionsdb
             TableName = "TargetTable", // Table to ingest data into, e.g. Storms
             Connection = "KustoConnectionString")] IAsyncCollector<Item> output, ILogger log) 
