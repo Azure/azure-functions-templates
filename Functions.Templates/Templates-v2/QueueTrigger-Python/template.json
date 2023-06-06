@@ -13,7 +13,12 @@
             "assignTo": "$(APP_FILENAME)",
             "paramId": "app-fileName",
             "defaultValue": "function_app.py",
-            "required": true
+            "required": true,
+            "condition" : {
+              "name": "ClientId",
+              "values": [ "VSCode"],
+              "operator": "IN"
+            }
           },
           {
             "assignTo": "$(FUNCTION_NAME_INPUT)",
@@ -25,7 +30,7 @@
             "assignTo": "$(QUEUE_NAME_INPUT)",
             "paramId": "queueTrigger-queueName",
             "required": true,
-            "defaultValue": "myqueue"
+            "defaultValue": "queuename"
           },
           {
             "assignTo": "$(CONNECTION_STRING_INPUT)",
@@ -45,6 +50,17 @@
         "type": "AppendToFile",
         "inputs": [
           {
+            "assignTo": "$(SELECTED_FILEPATH)",
+            "paramId": "app-selectedFileName",
+            "defaultValue": "function_app.py",
+            "required": true,
+            "condition" : {
+                "name": "ClientId",
+                "values": [ "VSCode"],
+                "operator": "IN"
+            }
+          },
+          {
             "assignTo": "$(FUNCTION_NAME_INPUT)",
             "paramId": "trigger-functionName",
             "required": true,
@@ -54,7 +70,7 @@
             "assignTo": "$(QUEUE_NAME_INPUT)",
             "paramId": "queueTrigger-queueName",
             "required": true,
-            "defaultValue": "myqueue"
+            "defaultValue": "queuename"
           },
           {
             "assignTo": "$(CONNECTION_STRING_INPUT)",
@@ -73,6 +89,17 @@
         "type": "CreateNewBlueprint",
         "inputs": [
           {
+            "assignTo": "$(BLUEPRINT_FILENAME)",
+            "paramId": "blueprint-fileName",
+            "defaultValue": "blueprint.py",
+            "required": true,
+            "condition" : {
+                "name": "ClientId",
+                "values": [ "VSCode"],
+                "operator": "IN"
+            }
+          },
+          {
             "assignTo": "$(FUNCTION_NAME_INPUT)",
             "paramId": "trigger-functionName",
             "required": true,
@@ -82,7 +109,7 @@
             "assignTo": "$(QUEUE_NAME_INPUT)",
             "paramId": "queueTrigger-queueName",
             "required": true,
-            "defaultValue": "myqueue"
+            "defaultValue": "queuename"
           },
           {
             "assignTo": "$(CONNECTION_STRING_INPUT)",
@@ -103,6 +130,16 @@
         "type": "AppendToBlueprint",
         "inputs": [
           {
+            "assignTo": "$(BLUEPRINT_FILENAME)",
+            "paramId": "blueprint-existingFileName",
+            "required": true,
+            "condition" : {
+                "name": "ClientId",
+                "values": [ "VSCode"],
+                "operator": "IN"
+            }
+          },
+          {
             "assignTo": "$(FUNCTION_NAME_INPUT)",
             "paramId": "trigger-functionName",
             "required": true,
@@ -112,7 +149,7 @@
             "assignTo": "$(QUEUE_NAME_INPUT)",
             "paramId": "queueTrigger-queueName",
             "required": true,
-            "defaultValue": "myqueue"
+            "defaultValue": "queuename"
           },
           {
             "assignTo": "$(CONNECTION_STRING_INPUT)",

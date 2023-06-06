@@ -8,11 +8,17 @@
         {
             "name": "Create New Project with HttpTrigger function",
             "type": "CreateNewApp",
-            "inputs" : [
+            "inputs": [
                 {
                     "assignTo": "$(APP_FILENAME)",
                     "paramId": "app-fileName",
-                    "required": true
+                    "defaultValue": "function_app.py",
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
@@ -36,10 +42,17 @@
         {
             "name": "Add httpTrigger function to an existing file",
             "type": "AppendToFile",
-            "inputs" : [
+            "inputs": [
                 {
                     "assignTo": "$(SELECTED_FILEPATH)",
-                    "paramId": "app-selectedFileName"
+                    "paramId": "app-selectedFileName",
+                    "defaultValue": "function_app.py",
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
@@ -49,7 +62,7 @@
                 {
                     "assignTo": "$(AUTHLEVEL_INPUT)",
                     "paramId": "httpTrigger-authLevel",
-                    "defaultValue": "function"
+                    "defaultValue": "FUNCTION"
                 }
             ],
             "actions": [
@@ -60,18 +73,29 @@
         {
             "name": "Create New Blueprint file",
             "type": "CreateNewBlueprint",
-            "inputs" : [
+            "inputs": [
                 {
                     "assignTo": "$(BLUEPRINT_FILENAME)",
                     "paramId": "blueprint-fileName",
                     "defaultValue": "blueprint.py",
-                    "required": true
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
+                },
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
+                    "required": true,
+                    "defaultValue": "http_trigger"
                 },
                 {
                     "assignTo": "$(AUTHLEVEL_INPUT)",
                     "paramId": "httpTrigger-authLevel",
                     "required": true,
-                    "defaultValue": "function"
+                    "defaultValue": "FUNCTION"
                 }
             ],
             "actions": [
@@ -83,19 +107,29 @@
         },
         {
             "name": "Add EventHubTrigger function to the Blueprint",
-            "type": "AppendToBlueprint", 
-            "inputs" : [
+            "type": "AppendToBlueprint",
+            "inputs": [
                 {
                     "assignTo": "$(BLUEPRINT_FILENAME)",
                     "paramId": "blueprint-existingFileName",
-                    "defaultValue": "blueprint.py",
-                    "required": true
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
+                },
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
+                    "required": true,
+                    "defaultValue": "http_trigger"
                 },
                 {
                     "assignTo": "$(AUTHLEVEL_INPUT)",
                     "paramId": "httpTrigger-authLevel",
                     "required": true,
-                    "defaultValue": "function"
+                    "defaultValue": "FUNCTION"
                 }
             ],
             "actions": [
@@ -104,7 +138,7 @@
             ]
         }
     ],
-    "actions" : [
+    "actions": [
         {
             "name": "readFileContent_FunctionApp",
             "type": "GetTemplateFileContent",
@@ -115,7 +149,7 @@
             "name": "writeFile_FunctionApp",
             "type": "WriteToFile",
             "source": "$(FUNCTION_APP_CONTENT)",
-            "filePath": "$(APP_FILENAME).py",
+            "filePath": "$(APP_FILENAME)",
             "continueOnError": false,
             "errorText": "Unable to create the function app",
             "replaceTokens": true
@@ -140,13 +174,13 @@
             "name": "readFileContent_BlueprintBody",
             "type": "GetTemplateFileContent",
             "assignTo": "$(BLUEPRINT_BODY_CONTENT)",
-            "filePath" : "blueprint_body.py"
+            "filePath": "blueprint_body.py"
         },
         {
             "name": "readFileContent_BlueprintFile",
             "type": "GetTemplateFileContent",
             "assignTo": "$(BLUEPRINT_CONTENT)",
-            "filePath" : "blueprint.py"
+            "filePath": "blueprint.py"
         },
         {
             "name": "ShowMarkdownPreview",
@@ -157,18 +191,18 @@
             "name": "appendFileContent_BlueprintBody",
             "type": "AppendToFile",
             "source": "$(BLUEPRINT_BODY_CONTENT)",
-            "filePath" : "$(BLUEPRINT_FILENAME).py",
-            "continueOnError" : false,
-            "errorText" : "Unable to create the Blueprint",
+            "filePath": "$(BLUEPRINT_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create the Blueprint",
             "replaceTokens": true
         },
         {
             "name": "writeFile_BlueprintFile",
             "type": "WriteToFile",
             "source": "$(BLUEPRINT_CONTENT)",
-            "filePath" : "$(BLUEPRINT_FILENAME).py",
-            "continueOnError" : false,
-            "errorText" : "Unable to create blueprint",
+            "filePath": "$(BLUEPRINT_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create blueprint",
             "replaceTokens": true
         }
     ]

@@ -8,12 +8,17 @@
         {
             "name": "Create New Project with EventGridTrigger function",
             "type": "CreateNewApp",
-            "inputs" : [
+            "inputs": [
                 {
                     "assignTo": "$(APP_FILENAME)",
                     "paramId": "app-fileName",
                     "defaultValue": "function_app.py",
-                    "required": true
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
@@ -23,9 +28,9 @@
                 },
                 {
                     "assignTo": "$(EVENTGRID_NAME_INPUT)",
-                    "paramId": "eventgridTrigger-eventgridName",
+                    "paramId": "eventGridTrigger-eventGridName",
                     "required": true,
-                    "defaultValue": "myeventgrid"
+                    "defaultValue": "eventgridname"
                 }
             ],
             "actions": [
@@ -37,12 +42,17 @@
         {
             "name": "Add EventGridTrigger function to the main file",
             "type": "AppendToFile",
-            "inputs" : [
+            "inputs": [
                 {
                     "assignTo": "$(APP_FILENAME)",
-                    "paramId": "app-selectedFileName",
+                    "paramId": "app-fileName",
                     "defaultValue": "function_app.py",
-                    "required": true
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
@@ -52,9 +62,9 @@
                 },
                 {
                     "assignTo": "$(EVENTGRID_NAME_INPUT)",
-                    "paramId": "eventgridTrigger-eventgridName",
+                    "paramId": "eventGridTrigger-eventGridName",
                     "required": true,
-                    "defaultValue": "myeventgrid"
+                    "defaultValue": "eventgridname"
                 }
             ],
             "actions": [
@@ -65,12 +75,17 @@
         {
             "name": "Create New Blueprint file",
             "type": "CreateNewBlueprint",
-            "inputs" : [
+            "inputs": [
                 {
                     "assignTo": "$(BLUEPRINT_FILENAME)",
                     "paramId": "blueprint-fileName",
                     "defaultValue": "blueprint.py",
-                    "required": true
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
@@ -80,9 +95,9 @@
                 },
                 {
                     "assignTo": "$(EVENTGRID_NAME_INPUT)",
-                    "paramId": "eventgridTrigger-eventgridName",
+                    "paramId": "eventGridTrigger-eventGridName",
                     "required": true,
-                    "defaultValue": "myeventgrid"
+                    "defaultValue": "eventgridname"
                 }
             ],
             "actions": [
@@ -94,12 +109,17 @@
         },
         {
             "name": "Add EventGridTrigger function to the Blueprint",
-            "type": "AppendToBlueprint", 
-            "inputs" : [
+            "type": "AppendToBlueprint",
+            "inputs": [
                 {
                     "assignTo": "$(BLUEPRINT_FILENAME)",
                     "paramId": "blueprint-existingFileName",
-                    "required": true
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
@@ -109,9 +129,9 @@
                 },
                 {
                     "assignTo": "$(EVENTGRID_NAME_INPUT)",
-                    "paramId": "eventgridTrigger-eventgridName",
+                    "paramId": "eventGridTrigger-eventGridName",
                     "required": true,
-                    "defaultValue": "myeventgrid"
+                    "defaultValue": "eventgridname"
                 }
             ],
             "actions": [
@@ -120,7 +140,7 @@
             ]
         }
     ],
-    "actions" : [
+    "actions": [
         {
             "name": "readFileContent_FunctionApp",
             "type": "GetTemplateFileContent",
@@ -140,50 +160,51 @@
             "name": "readFileContent_FunctionBody",
             "type": "GetTemplateFileContent",
             "assignTo": "$(FUNCTION_BODY)",
-            "filePath" : "function_body.py"
+            "filePath": "function_body.py"
         },
         {
             "name": "appendFileContent_FunctionApp",
             "type": "AppendToFile",
-            "createIfNotExists" : false,
+            "createIfNotExists": false,
             "source": "$(FUNCTION_BODY)",
             "filePath": "$(SELECTED_FILEPATH)",
-            "continueOnError" : false,
-            "errorText" : "Unable to create eventgrid trigger function"
+            "continueOnError": false,
+            "errorText": "Unable to create eventgrid trigger function",
+			"replaceTokens": true
         },
         {
             "name": "ShowMarkdownPreview",
             "type": "ShowMarkdownPreview",
-            "filePath" : "eventgrid_trigger_template.md"
+            "filePath": "eventgrid_trigger_template.md"
         },
         {
             "name": "readFileContent_BlueprintFile",
             "type": "GetTemplateFileContent",
             "assignTo": "$(BLUEPRINT_CONTENT)",
-            "filePath" : "blueprint.py"
+            "filePath": "blueprint.py"
         },
         {
             "name": "writeFile_BlueprintFile",
             "type": "WriteToFile",
             "source": "$(BLUEPRINT_CONTENT)",
-            "filePath" : "$(BLUEPRINT_FILENAME).py",
-            "continueOnError" : false,
-            "errorText" : "Unable to create blueprint",
+            "filePath": "$(BLUEPRINT_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create blueprint",
             "replaceTokens": true
         },
         {
             "name": "readFileContent_BlueprintBody",
             "type": "GetTemplateFileContent",
             "assignTo": "$(BLUEPRINT_BODY_CONTENT)",
-            "filePath" : "blueprint_body.py"
+            "filePath": "blueprint_body.py"
         },
         {
             "name": "appendFileContent_BlueprintBody",
             "type": "AppendToFile",
             "source": "$(BLUEPRINT_BODY_CONTENT)",
-            "filePath" : "$(BLUEPRINT_FILENAME).py",
-            "continueOnError" : false,
-            "errorText" : "Unable to create the Blueprint",
+            "filePath": "$(BLUEPRINT_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create the Blueprint",
             "replaceTokens": true
         }
     ]

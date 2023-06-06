@@ -8,12 +8,17 @@
         {
             "name": "Create New Project with BlobTrigger function",
             "type": "CreateNewApp",
-            "inputs" : [
+            "inputs": [
                 {
                     "assignTo": "$(APP_FILENAME)",
                     "paramId": "app-fileName",
                     "defaultValue": "function_app.py",
-                    "required": true
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
@@ -25,7 +30,7 @@
                     "assignTo": "$(PATH_TO_BLOB_INPUT)",
                     "paramId": "blobTrigger-path",
                     "required": true,
-                    "defaultValue": "myblob"
+                    "defaultValue": "blobname"
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
@@ -48,7 +53,12 @@
                     "assignTo": "$(APP_FILENAME)",
                     "paramId": "app-selectedFileName",
                     "defaultValue": "function_app.py",
-                    "required": true
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
@@ -58,9 +68,9 @@
                 },
                 {
                     "assignTo": "$(PATH_TO_BLOB_INPUT)",
-                    "paramId": "blobTrigger-blobName",
+                    "paramId": "blobTrigger-path",
                     "required": true,
-                    "defaultValue": "myblob"
+                    "defaultValue": "blobname"
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
@@ -77,12 +87,17 @@
         {
             "name": "Create New Blueprint file",
             "type": "CreateNewBlueprint",
-            "inputs" : [
+            "inputs": [
                 {
                     "assignTo": "$(BLUEPRINT_FILENAME)",
                     "paramId": "blueprint-fileName",
                     "defaultValue": "blueprint.py",
-                    "required": true
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
@@ -94,7 +109,7 @@
                     "assignTo": "$(PATH_TO_BLOB_INPUT)",
                     "paramId": "blobTrigger-path",
                     "required": true,
-                    "defaultValue": "myblob"
+                    "defaultValue": "blobname"
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
@@ -117,7 +132,12 @@
                 {
                     "assignTo": "$(BLUEPRINT_FILENAME)",
                     "paramId": "blueprint-existingFileName",
-                    "required": true
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
@@ -127,9 +147,9 @@
                 },
                 {
                     "assignTo": "$(PATH_TO_BLOB_INPUT)",
-                    "paramId": "blobTrigger-blobName",
+                    "paramId": "blobTrigger-path",
                     "required": true,
-                    "defaultValue": "myblob"
+                    "defaultValue": "blobname"
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
@@ -144,7 +164,7 @@
             ]
         }
     ],
-    "actions" : [
+    "actions": [
         {
             "name": "readFileContent_FunctionApp",
             "type": "GetTemplateFileContent",
@@ -155,7 +175,7 @@
             "name": "writeFile_FunctionApp",
             "type": "WriteToFile",
             "source": "$(FUNCTION_APP_CONTENT)",
-            "filePath": "$(APP_FILENAME).py",
+            "filePath": "$(APP_FILENAME)",
             "continueOnError": false,
             "errorText": "Unable to create the function app",
             "replaceTokens": true
@@ -191,7 +211,7 @@
             "name": "writeFile_BlueprintFile",
             "type": "WriteToFile",
             "source": "$(BLUEPRINT_CONTENT)",
-            "filePath" : "$(BLUEPRINT_FILENAME).py",
+            "filePath" : "$(BLUEPRINT_FILENAME)",
             "continueOnError" : false,
             "errorText" : "Unable to create blueprint",
             "replaceTokens": true
@@ -206,7 +226,7 @@
             "name": "appendFileContent_BlueprintBody",
             "type": "AppendToFile",
             "source": "$(BLUEPRINT_BODY_CONTENT)",
-            "filePath" : "$(BLUEPRINT_FILENAME).py",
+            "filePath" : "$(BLUEPRINT_FILENAME)",
             "continueOnError" : false,
             "errorText" : "Unable to create the Blueprint",
             "replaceTokens": true
