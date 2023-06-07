@@ -2,18 +2,18 @@
 	"author": "Microsoft",
 	"classifications": [
 		"Azure Function",
-		"Input",
+		"Output",
 		"Kusto"
 	],
-	"name": "KustoInputBinding",
-	"identity": "Azure.Function.CSharp.KustoInputBinding",
-	"groupIdentity": "Azure.Function.KustoInputBinding",
-	"shortName": "kustoinput",
+	"name": "KustoOutputBindingIsolated",
+	"identity": "Azure.Function.CSharp.KustoOutputBindingIsolated",
+	"groupIdentity": "Azure.Function.KustoOutputBindingIsolatedBinding",
+	"shortName": "kustooutput",
 	"tags": {
 		"language": "C#",
 		"type": "item"
 	},
-	"sourceName": "KustoInputBindingCSharp",
+	"sourceName": "KustoOutputBindingIsolated",
 	"symbols": {
 		"namespace": {
             "description": "namespace for the generated code",
@@ -26,11 +26,11 @@
 			"defaultValue": "KustoConnectionString",
 			"replaces": "KustoConnectionString"
 		},
-		"kqlCommand": {
-			"description": "The KQL query or function to execute.",
+		"tableName": {
+			"description": "The table to ingest data into",
 			"type": "parameter",
 			"defaultValue": "",
-			"replaces": "Table"
+			"replaces": "TargetTable"
 		},
 		"database": {
 			"description": "The database to execute the query from",
@@ -41,10 +41,10 @@
 	},
 	"primaryOutputs": [
 		{
-			"path": "KustoInputBindingCSharp.cs"
+			"path": "KustoOutputBindingIsolated.cs"
 		}
 	],
-	"defaultName": "KustoInputBindingCSharp",
+	"defaultName": "KustoOutputBindingIsolated",
 	"postActions": [
 		{
 			"Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.Kusto Nuget package",
@@ -53,9 +53,20 @@
 			"ManualInstructions": [],
 			"args": {
 				"referenceType": "package",
-				"reference": "Microsoft.Azure.WebJobs.Extensions.Kusto",
+				"reference": "Microsoft.Azure.Functions.Worker.Extensions.Kusto",
 				"version": "1.0.7-preview",
 				"projectFileExtensions": ".csproj"
+			}
+		},
+		{
+			"Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Http Nuget package",
+			"ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+			"ContinueOnError": "true",
+			"ManualInstructions": [],
+			"args": {
+			  "referenceType": "package",
+			  "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http", "version": "3.0.13",
+			  "projectFileExtensions": ".csproj"
 			}
 		},
 		{

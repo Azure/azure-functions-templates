@@ -19,7 +19,7 @@ namespace Company.Function
     [FunctionName("KustoOutputBindingCSharp")]
     public static async Task <CreatedResult> Run(
       [HttpTrigger(AuthorizationLevel.Function, "post", Route = "api/item/add")] HttpRequest req,
-      [Kusto(Database: "db", // The database to ingest the data into , e.g. functionsdb
+      [Kusto(Database: "DB", // The database to ingest the data into , e.g. functionsdb
             TableName = "TargetTable", // Table to ingest data into, e.g. Storms
             Connection = "KustoConnectionString")] IAsyncCollector<Item> output, ILogger log) 
     {

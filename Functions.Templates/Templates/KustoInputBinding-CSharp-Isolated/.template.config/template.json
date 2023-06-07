@@ -5,15 +5,15 @@
 		"Input",
 		"Kusto"
 	],
-	"name": "KustoInputBinding",
-	"identity": "Azure.Function.CSharp.KustoInputBinding",
-	"groupIdentity": "Azure.Function.KustoInputBinding",
+	"name": "KustoInputBindingIsolated",
+	"identity": "Azure.Function.CSharp.KustoInputBindingIsolated",
+	"groupIdentity": "Azure.Function.KustoInputBindingIsolated",
 	"shortName": "kustoinput",
 	"tags": {
 		"language": "C#",
 		"type": "item"
 	},
-	"sourceName": "KustoInputBindingCSharp",
+	"sourceName": "KustoInputBindingIsolated",
 	"symbols": {
 		"namespace": {
             "description": "namespace for the generated code",
@@ -41,21 +41,32 @@
 	},
 	"primaryOutputs": [
 		{
-			"path": "KustoInputBindingCSharp.cs"
+			"path": "KustoInputBindingIsolated.cs"
 		}
 	],
-	"defaultName": "KustoInputBindingCSharp",
+	"defaultName": "KustoInputBindingIsolated",
 	"postActions": [
 		{
-			"Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.Kusto Nuget package",
+			"Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Kusto Nuget package",
 			"ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
 			"ContinueOnError": "true",
 			"ManualInstructions": [],
 			"args": {
 				"referenceType": "package",
-				"reference": "Microsoft.Azure.WebJobs.Extensions.Kusto",
+				"reference": "Microsoft.Azure.Functions.Worker.Extensions.Kusto",
 				"version": "1.0.7-preview",
 				"projectFileExtensions": ".csproj"
+			}
+		},
+		{
+			"Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Http Nuget package",
+			"ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+			"ContinueOnError": "true",
+			"ManualInstructions": [],
+			"args": {
+			  "referenceType": "package",
+			  "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http", "version": "3.0.13",
+			  "projectFileExtensions": ".csproj"
 			}
 		},
 		{
