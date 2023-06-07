@@ -150,6 +150,7 @@
                     "paramId": "serviceBusTrigger-queueName",
                     "required": true,
                     "defaultValue": "servicebusqueuename"
+                },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
                     "paramId": "serviceBusTrigger-connection",
@@ -192,7 +193,7 @@
             "source": "$(FUNCTION_BODY)",
             "filePath": "$(SELECTED_FILEPATH)",
             "continueOnError": false,
-			"replaceTokens": true			  
+			"replaceTokens": true,			  
             "errorText": "Unable to create ServiceBus trigger function"
         },
         {
