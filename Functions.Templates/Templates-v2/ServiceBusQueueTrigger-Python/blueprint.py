@@ -2,7 +2,7 @@
 # to your entry point file.  
 # app.register_functions($(BLUEPRINT_FILENAME)) 
 # 
-#Please refer to https://aka.ms/azure-functions-python-blueprints
+# Please refer to https://aka.ms/azure-functions-python-blueprints
 
 import logging
 import azure.functions as func
