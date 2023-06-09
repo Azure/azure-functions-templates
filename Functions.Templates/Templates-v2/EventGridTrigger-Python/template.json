@@ -44,8 +44,8 @@
             "type": "AppendToFile",
             "inputs": [
                 {
-                    "assignTo": "$(APP_FILENAME)",
-                    "paramId": "app-fileName",
+                    "assignTo": "$(SELECTED_FILEPATH)",
+                    "paramId": "app-selectedFileName",
                     "defaultValue": "function_app.py",
                     "required": true,
                     "condition" : {
