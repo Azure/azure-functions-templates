@@ -1,12 +1,12 @@
 {
-    "author": "Naren Soni",
-    "name": "HTTP trigger",
-    "description": "$HttpTrigger_description",
+    "author": "Varad Meru (@vrdmr)",
+    "name": "Blob trigger",
+    "description": "$BlobTrigger_description",
     "programmingModel": "v2",
     "language": "python",
     "jobs": [
         {
-            "name": "Create New Project with HttpTrigger function",
+            "name": "Create New Project with BlobTrigger function",
             "type": "CreateNewApp",
             "inputs": [
                 {
@@ -24,13 +24,19 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "HttpTrigger"
+                    "defaultValue": "blob_trigger"
                 },
                 {
-                    "assignTo": "$(AUTHLEVEL_INPUT)",
-                    "paramId": "httpTrigger-authLevel",
+                    "assignTo": "$(PATH_TO_BLOB_INPUT)",
+                    "paramId": "blobTrigger-path",
                     "required": true,
-                    "defaultValue": "FUNCTION"
+                    "defaultValue": "blobname"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "blobTrigger-connection",
+                    "required": true,
+                    "defaultValue": "BlobStorageConnectionString"
                 }
             ],
             "actions": [
@@ -40,9 +46,9 @@
             ]
         },
         {
-            "name": "Add httpTrigger function to an existing file",
+            "name": "Add BlobTrigger function to the main file",
             "type": "AppendToFile",
-            "inputs": [
+            "inputs" : [
                 {
                     "assignTo": "$(SELECTED_FILEPATH)",
                     "paramId": "app-selectedFileName",
@@ -57,12 +63,20 @@
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
-                    "defaultValue": "HttpTrigger"
+                    "required": true,
+                    "defaultValue": "BlobTrigger"
                 },
                 {
-                    "assignTo": "$(AUTHLEVEL_INPUT)",
-                    "paramId": "httpTrigger-authLevel",
-                    "defaultValue": "FUNCTION"
+                    "assignTo": "$(PATH_TO_BLOB_INPUT)",
+                    "paramId": "blobTrigger-path",
+                    "required": true,
+                    "defaultValue": "blobname"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "blobTrigger-connection",
+                    "required": true,
+                    "defaultValue": "BlobStorageConnectionString"
                 }
             ],
             "actions": [
@@ -89,13 +103,19 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "http_trigger"
+                    "defaultValue": "BlobTrigger"
                 },
                 {
-                    "assignTo": "$(AUTHLEVEL_INPUT)",
-                    "paramId": "httpTrigger-authLevel",
+                    "assignTo": "$(PATH_TO_BLOB_INPUT)",
+                    "paramId": "blobTrigger-path",
                     "required": true,
-                    "defaultValue": "FUNCTION"
+                    "defaultValue": "blobname"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "blobTrigger-connection",
+                    "required": true,
+                    "defaultValue": "BlobStorageConnectionString"
                 }
             ],
             "actions": [
@@ -106,11 +126,10 @@
             ]
         },
         {
-            "name": "Add EventHubTrigger function to the Blueprint",
-            "type": "AppendToBlueprint",
-            "inputs": [
+            "name": "Add BlobTrigger function to the Blueprint",
+            "type": "AppendToBlueprint", 
+            "inputs" : [
                 {
-                    "assignTo": "$(BLUEPRINT_FILENAME)",
                     "paramId": "blueprint-existingFileName",
                     "required": true,
                     "condition" : {
@@ -123,13 +142,19 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "http_trigger"
+                    "defaultValue": "BlobTrigger"
                 },
                 {
-                    "assignTo": "$(AUTHLEVEL_INPUT)",
-                    "paramId": "httpTrigger-authLevel",
+                    "assignTo": "$(PATH_TO_BLOB_INPUT)",
+                    "paramId": "blobTrigger-path",
                     "required": true,
-                    "defaultValue": "FUNCTION"
+                    "defaultValue": "blobname"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "blobTrigger-connection",
+                    "required": true,
+                    "defaultValue": "BlobStorageConnectionString"
                 }
             ],
             "actions": [
@@ -158,17 +183,38 @@
         {
             "name": "readFileContent_FunctionBody",
             "type": "GetTemplateFileContent",
-            "assignTo": "$(FUNCTION_BODY_CONTENT)",
-            "filePath": "function_body.py"
+            "assignTo": "$(FUNCTION_BODY)",
+            "filePath" : "function_body.py"
         },
         {
             "name": "appendFileContent_FunctionApp",
             "type": "AppendToFile",
-            "createIfNotExists": false,
-            "source": "$(FUNCTION_BODY_CONTENT)",
+            "createIfNotExists" : false,
+            "source": "$(FUNCTION_BODY)",
             "filePath": "$(SELECTED_FILEPATH)",
-            "continueOnError": false,
-            "errorText": "Unable to create httpTrigger function",
+            "continueOnError" : false,
+            "replaceTokens": true,
+            "errorText" : "Unable to create blob trigger function",
+            "FileExtension": ".py"
+        },
+        {
+            "name": "ShowMarkdownPreview",
+            "type": "ShowMarkdownPreview",
+            "filePath" : "blob_trigger_template.md"
+        },
+        {
+            "name": "readFileContent_BlueprintFile",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(BLUEPRINT_CONTENT)",
+            "filePath" : "blueprint.py"
+        },
+        {
+            "name": "writeFile_BlueprintFile",
+            "type": "WriteToFile",
+            "source": "$(BLUEPRINT_CONTENT)",
+            "filePath" : "$(BLUEPRINT_FILENAME)",
+            "continueOnError" : false,
+            "errorText" : "Unable to create blueprint",
             "replaceTokens": true,
             "FileExtension": ".py"
         },
@@ -176,36 +222,15 @@
             "name": "readFileContent_BlueprintBody",
             "type": "GetTemplateFileContent",
             "assignTo": "$(BLUEPRINT_BODY_CONTENT)",
-            "filePath": "blueprint_body.py"
-        },
-        {
-            "name": "readFileContent_BlueprintFile",
-            "type": "GetTemplateFileContent",
-            "assignTo": "$(BLUEPRINT_CONTENT)",
-            "filePath": "blueprint.py"
-        },
-        {
-            "name": "ShowMarkdownPreview",
-            "type": "ShowMarkdownPreview",
-            "filePath": "http_trigger_template.md"
+            "filePath" : "blueprint_body.py"
         },
         {
             "name": "appendFileContent_BlueprintBody",
             "type": "AppendToFile",
             "source": "$(BLUEPRINT_BODY_CONTENT)",
-            "filePath": "$(BLUEPRINT_FILENAME)",
-            "continueOnError": false,
-            "errorText": "Unable to create the Blueprint",
-            "replaceTokens": true,
-            "FileExtension": ".py"
-        },
-        {
-            "name": "writeFile_BlueprintFile",
-            "type": "WriteToFile",
-            "source": "$(BLUEPRINT_CONTENT)",
-            "filePath": "$(BLUEPRINT_FILENAME)",
-            "continueOnError": false,
-            "errorText": "Unable to create blueprint",
+            "filePath" : "$(BLUEPRINT_FILENAME)",
+            "continueOnError" : false,
+            "errorText" : "Unable to create the Blueprint",
             "replaceTokens": true,
             "FileExtension": ".py"
         }

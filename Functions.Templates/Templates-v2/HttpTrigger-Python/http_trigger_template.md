@@ -45,7 +45,7 @@ To run the code snippet generated through the command palette, note the followin
   
 Note that HTTP output bindings are also supported in Azure Functions. To learn more, see [Azure Functions HTTP triggers and bindings overview](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook?tabs=in-process%2Cfunctionsv2&pivots=programming-language-python)
 
-## Programming Model V2 (Preview)
+## Programming Model V2 
 
 The new programming model in Azure Functions Python delivers an experience that aligns with Python development principles, and subsequently with commonly used Python frameworks. 
 

@@ -1,42 +1,39 @@
-# Azure Functions: Timer Trigger in Python
+# Azure Functions: Event Grid Trigger in Python
 
-## Timer Trigger
+## Event Grid Trigger
 
-A timer trigger lets you run a function on a schedule.
+The Event Grid function trigger can be used to respond to an event sent by an Event Grid source. You must have an event subscription to the source to receive events. When the function is triggered, it converts the event data into a JSON string which is then logged using the Python logging module.
 
 ## Using the Template
-
-Following is an example code snippet for Timer Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel) (currently in Preview).
-
+Following is an example code snippet for Event Grid Trigger using the Python programming model V2 (currently in Preview).
 ```python
-import datetime
-
-import logging
-
 import azure.functions as func
+import logging
+import json
 
 app = func.FunctionApp()
 
-@app.function_name(name="mytimer")
-@app.schedule(schedule="0 */5 * * * *", arg_name="mytimer", run_on_startup=True,
-              use_monitor=False) 
-def test_function(mytimer: func.TimerRequest) -> None:
-    utc_timestamp = datetime.datetime.utcnow().replace(
-        tzinfo=datetime.timezone.utc).isoformat()
+@app.function_name(name="eventgridtrigger")
+@app.event_grid_trigger(arg_name="event")
+def test_function(event: func.EventGridEvent):
 
-    if mytimer.past_due:
-        logging.info('The timer is past due!')
+    result = json.dumps({
+        'id': event.id,
+        'data': event.get_json(),
+        'topic': event.topic,
+        'subject': event.subject,
+        'event_type': event.event_type,
+    })
 
-    logging.info('Python timer trigger function ran at %s', utc_timestamp)
+    logging.info('Python EventGrid trigger processed an event: %s', result)
 ```
-
 To run the code snippet generated through the command palette, note the following:
 
 - The function application is defined and named `app`.
 - Confirm that the parameters within the trigger reflect values that correspond with your storage account.
 - The name of the file must be `function_app.py`.
 
-## Programming Model V2 
+## Programming Model V2 (Preview)
 
 The new programming model in Azure Functions Python delivers an experience that aligns with Python development principles, and subsequently with commonly used Python frameworks. 
 

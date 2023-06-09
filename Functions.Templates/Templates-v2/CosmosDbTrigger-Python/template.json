@@ -1,12 +1,12 @@
 {
-    "author": "Naren Soni",
-    "name": "HTTP trigger",
-    "description": "$HttpTrigger_description",
+    "author": "Gavin Aguiar",
+    "name": "CosmosDB trigger",
+    "description": "$CosmosDBTrigger_description",
     "programmingModel": "v2",
     "language": "python",
     "jobs": [
         {
-            "name": "Create New Project with HttpTrigger function",
+            "name": "Create New Project with CosmosDbTrigger function",
             "type": "CreateNewApp",
             "inputs": [
                 {
@@ -24,13 +24,25 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "HttpTrigger"
+                    "defaultValue": "cosmosdb_trigger"
                 },
                 {
-                    "assignTo": "$(AUTHLEVEL_INPUT)",
-                    "paramId": "httpTrigger-authLevel",
+                    "assignTo": "$(CONTAINER_NAME_INPUT)",
+                    "paramId": "cosmosDbTrigger-containerName",
                     "required": true,
-                    "defaultValue": "FUNCTION"
+                    "defaultValue": "container_name"
+                },
+                {
+                    "assignTo": "$(DB_NAME_INPUT)",
+                    "paramId": "cosmosDbTrigger-databaseName",
+                    "required": true,
+                    "defaultValue": "database_name"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "cosmosDbTrigger-connection",
+                    "required": true,
+                    "defaultValue": "CosmosDbConnectionString"
                 }
             ],
             "actions": [
@@ -40,7 +52,7 @@
             ]
         },
         {
-            "name": "Add httpTrigger function to an existing file",
+            "name": "Add CosmosTrigger function to the main file",
             "type": "AppendToFile",
             "inputs": [
                 {
@@ -57,12 +69,26 @@
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
-                    "defaultValue": "HttpTrigger"
+                    "required": true,
+                    "defaultValue": "cosmosdb_trigger"
                 },
                 {
-                    "assignTo": "$(AUTHLEVEL_INPUT)",
-                    "paramId": "httpTrigger-authLevel",
-                    "defaultValue": "FUNCTION"
+                    "assignTo": "$(CONTAINER_NAME_INPUT)",
+                    "paramId": "cosmosDbTrigger-containerName",
+                    "required": true,
+                    "defaultValue": "container_name"
+                },
+                {
+                    "assignTo": "$(DB_NAME_INPUT)",
+                    "paramId": "cosmosDbTrigger-databaseName",
+                    "required": true,
+                    "defaultValue": "database_name"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "cosmosDbTrigger-connection",
+                    "required": true,
+                    "defaultValue": "CosmosDbConnectionString"
                 }
             ],
             "actions": [
@@ -75,8 +101,8 @@
             "type": "CreateNewBlueprint",
             "inputs": [
                 {
-                    "assignTo": "$(BLUEPRINT_FILENAME)",
-                    "paramId": "blueprint-fileName",
+                    "assignTo": "$(APP_FILENAME)",
+                    "paramId": "app-fileName",
                     "defaultValue": "blueprint.py",
                     "required": true,
                     "condition" : {
@@ -89,13 +115,25 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "http_trigger"
+                    "defaultValue": "cosmosdb_trigger"
                 },
                 {
-                    "assignTo": "$(AUTHLEVEL_INPUT)",
-                    "paramId": "httpTrigger-authLevel",
+                    "assignTo": "$(CONTAINER_NAME_INPUT)",
+                    "paramId": "cosmosDbTrigger-containerName",
                     "required": true,
-                    "defaultValue": "FUNCTION"
+                    "defaultValue": "container_name"
+                },
+                {
+                    "assignTo": "$(DB_NAME_INPUT)",
+                    "paramId": "cosmosDbTrigger-databaseName",
+                    "required": true,
+                    "defaultValue": "database_name"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "cosmosDbTrigger-connection",
+                    "required": true,
+                    "defaultValue": "CosmosDbConnectionString"
                 }
             ],
             "actions": [
@@ -106,12 +144,12 @@
             ]
         },
         {
-            "name": "Add EventHubTrigger function to the Blueprint",
+            "name": "Add CosmosDBTrigger function to the Blueprint",
             "type": "AppendToBlueprint",
             "inputs": [
                 {
-                    "assignTo": "$(BLUEPRINT_FILENAME)",
-                    "paramId": "blueprint-existingFileName",
+                    "assignTo": "$(APP_FILENAME)",
+                    "paramId": "app-fileName",
                     "required": true,
                     "condition" : {
                         "name": "ClientId",
@@ -123,13 +161,25 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "http_trigger"
+                    "defaultValue": "cosmosdb_trigger"
                 },
                 {
-                    "assignTo": "$(AUTHLEVEL_INPUT)",
-                    "paramId": "httpTrigger-authLevel",
+                    "assignTo": "$(CONTAINER_NAME_INPUT)",
+                    "paramId": "cosmosDbTrigger-containerName",
                     "required": true,
-                    "defaultValue": "FUNCTION"
+                    "defaultValue": "container_name"
+                },
+                {
+                    "assignTo": "$(DB_NAME_INPUT)",
+                    "paramId": "cosmosDbTrigger-databaseName",
+                    "required": true,
+                    "defaultValue": "database_name"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "cosmosDbTrigger-connection",
+                    "required": true,
+                    "defaultValue": "CosmosDbConnectionString"
                 }
             ],
             "actions": [
@@ -158,17 +208,38 @@
         {
             "name": "readFileContent_FunctionBody",
             "type": "GetTemplateFileContent",
-            "assignTo": "$(FUNCTION_BODY_CONTENT)",
+            "assignTo": "$(FUNCTION_BODY)",
             "filePath": "function_body.py"
         },
         {
             "name": "appendFileContent_FunctionApp",
             "type": "AppendToFile",
             "createIfNotExists": false,
-            "source": "$(FUNCTION_BODY_CONTENT)",
+            "source": "$(FUNCTION_BODY)",
             "filePath": "$(SELECTED_FILEPATH)",
             "continueOnError": false,
-            "errorText": "Unable to create httpTrigger function",
+            "errorText": "Unable to create eventhub trigger function",
+			"replaceTokens": true,
+            "FileExtension": ".py"
+        },
+        {
+            "name": "ShowMarkdownPreview",
+            "type": "ShowMarkdownPreview",
+            "filePath": "cosmosdb_trigger_template.md"
+        },
+        {
+            "name": "readFileContent_BlueprintFile",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(BLUEPRINT_CONTENT)",
+            "filePath": "blueprint.py"
+        },
+        {
+            "name": "writeFile_BlueprintFile",
+            "type": "WriteToFile",
+            "source": "$(BLUEPRINT_CONTENT)",
+            "filePath": "$(BLUEPRINT_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create blueprint",
             "replaceTokens": true,
             "FileExtension": ".py"
         },
@@ -179,33 +250,12 @@
             "filePath": "blueprint_body.py"
         },
         {
-            "name": "readFileContent_BlueprintFile",
-            "type": "GetTemplateFileContent",
-            "assignTo": "$(BLUEPRINT_CONTENT)",
-            "filePath": "blueprint.py"
-        },
-        {
-            "name": "ShowMarkdownPreview",
-            "type": "ShowMarkdownPreview",
-            "filePath": "http_trigger_template.md"
-        },
-        {
             "name": "appendFileContent_BlueprintBody",
             "type": "AppendToFile",
             "source": "$(BLUEPRINT_BODY_CONTENT)",
             "filePath": "$(BLUEPRINT_FILENAME)",
             "continueOnError": false,
             "errorText": "Unable to create the Blueprint",
-            "replaceTokens": true,
-            "FileExtension": ".py"
-        },
-        {
-            "name": "writeFile_BlueprintFile",
-            "type": "WriteToFile",
-            "source": "$(BLUEPRINT_CONTENT)",
-            "filePath": "$(BLUEPRINT_FILENAME)",
-            "continueOnError": false,
-            "errorText": "Unable to create blueprint",
             "replaceTokens": true,
             "FileExtension": ".py"
         }

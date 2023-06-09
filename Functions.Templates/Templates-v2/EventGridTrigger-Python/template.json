@@ -1,34 +1,36 @@
 {
-    "author": "kashimiz",
-    "name": "Timer Trigger",
-    "description": "$TimerTrigger_description",
+    "author": "Prashant Thummar",
+    "name": "EventGrid trigger",
+    "description": "$EventGridTrigger_description",
     "programmingModel": "v2",
     "language": "python",
     "jobs": [
         {
-            "name": "Create New Project with Timer Function",
+            "name": "Create New Project with EventGridTrigger function",
             "type": "CreateNewApp",
             "inputs": [
                 {
                     "assignTo": "$(APP_FILENAME)",
-                    "paramId": "app-FileName",
+                    "paramId": "app-fileName",
                     "defaultValue": "function_app.py",
                     "required": true,
                     "condition" : {
                         "name": "ClientId",
                         "values": [ "VSCode"],
                         "operator": "IN"
-                    }                    
+                    }
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
-                    "defaultValue": "timer_trigger"
-                },                    
+                    "required": true,
+                    "defaultValue": "EventGridTrigger"
+                },
                 {
-                    "assignTo": "$(SCHEDULE_INPUT)",
-                    "paramId": "timerTrigger-schedule",
-                    "defaultValue": "0 */5 * * * *"
+                    "assignTo": "$(EVENTGRID_NAME_INPUT)",
+                    "paramId": "eventGridTrigger-eventGridName",
+                    "required": true,
+                    "defaultValue": "eventgridname"
                 }
             ],
             "actions": [
@@ -38,7 +40,7 @@
             ]
         },
         {
-            "name": "Append Timer Function to File",
+            "name": "Add EventGridTrigger function to the main file",
             "type": "AppendToFile",
             "inputs": [
                 {
@@ -55,18 +57,19 @@
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
-                    "defaultValue": "timer_trigger"
-                },                    
+                    "required": true,
+                    "defaultValue": "EventGridTrigger"
+                },
                 {
-                    "assignTo": "$(SCHEDULE_INPUT)",
-                    "paramId": "timerTrigger-schedule",
-                    "defaultValue": "0 */5 * * * *"
+                    "assignTo": "$(EVENTGRID_NAME_INPUT)",
+                    "paramId": "eventGridTrigger-eventGridName",
+                    "required": true,
+                    "defaultValue": "eventgridname"
                 }
             ],
             "actions": [
                 "readFileContent_FunctionBody",
-                "appendFileContent_FunctionApp",
-                "showMarkdownPreview"
+                "appendFileContent_FunctionApp"
             ]
         },
         {
@@ -87,12 +90,14 @@
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
-                    "defaultValue": "timer_trigger"
-                },                    
+                    "required": true,
+                    "defaultValue": "EventGridTrigger"
+                },
                 {
-                    "assignTo": "$(SCHEDULE_INPUT)",
-                    "paramId": "timerTrigger-schedule",
-                    "defaultValue": "0 */5 * * * *"
+                    "assignTo": "$(EVENTGRID_NAME_INPUT)",
+                    "paramId": "eventGridTrigger-eventGridName",
+                    "required": true,
+                    "defaultValue": "eventgridname"
                 }
             ],
             "actions": [
@@ -103,7 +108,7 @@
             ]
         },
         {
-            "name": "Add EventHubTrigger function to the Blueprint",
+            "name": "Add EventGridTrigger function to the Blueprint",
             "type": "AppendToBlueprint",
             "inputs": [
                 {
@@ -119,12 +124,14 @@
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
-                    "defaultValue": "timer_trigger"
-                },                    
+                    "required": true,
+                    "defaultValue": "EventGridTrigger"
+                },
                 {
-                    "assignTo": "$(SCHEDULE_INPUT)",
-                    "paramId": "timerTrigger-schedule",
-                    "defaultValue": "0 */5 * * * *"
+                    "assignTo": "$(EVENTGRID_NAME_INPUT)",
+                    "paramId": "eventGridTrigger-eventGridName",
+                    "required": true,
+                    "defaultValue": "eventgridname"
                 }
             ],
             "actions": [
@@ -137,42 +144,54 @@
         {
             "name": "readFileContent_FunctionApp",
             "type": "GetTemplateFileContent",
-            "assignTo": "$(FUNCTION_APP)",
+            "assignTo": "$(FUNCTION_APP_CONTENT)",
             "filePath": "function_app.py"
+        },
+        {
+            "name": "writeFile_FunctionApp",
+            "type": "WriteToFile",
+            "source": "$(FUNCTION_APP_CONTENT)",
+            "filePath": "$(APP_FILENAME).py",
+            "continueOnError": false,
+            "errorText": "Unable to create the function app",
+            "replaceTokens": true,
+            "FileExtension": ".py"
         },
         {
             "name": "readFileContent_FunctionBody",
             "type": "GetTemplateFileContent",
-            "assignTo": "$(TIMER_FUNCTION_BODY)",
+            "assignTo": "$(FUNCTION_BODY)",
             "filePath": "function_body.py"
         },
         {
             "name": "appendFileContent_FunctionApp",
             "type": "AppendToFile",
             "createIfNotExists": false,
-            "source": "$(TIMER_FUNCTION_BODY)",
+            "source": "$(FUNCTION_BODY)",
             "filePath": "$(SELECTED_FILEPATH)",
             "continueOnError": false,
-            "errorText": "Unable to create httpTrigger function",
-            "replaceTokens": true,
+            "errorText": "Unable to create eventgrid trigger function",
+			"replaceTokens": true,
             "FileExtension": ".py"
         },
         {
-            "name": "replaceText_FunctionBody",
-            "type": "ReplaceTokensInText",
-            "assignTo": "$(TIMER_FUNCTION_BODY)",
-            "source": "$(TIMER_FUNCTION_BODY)"
-        },
-        {
-            "name": "showMarkdownPreview",
+            "name": "ShowMarkdownPreview",
             "type": "ShowMarkdownPreview",
-            "filePath": "timer_trigger_template.md"
+            "filePath": "eventgrid_trigger_template.md"
         },
         {
-            "name": "writeFile_FunctionApp",
+            "name": "readFileContent_BlueprintFile",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(BLUEPRINT_CONTENT)",
+            "filePath": "blueprint.py"
+        },
+        {
+            "name": "writeFile_BlueprintFile",
             "type": "WriteToFile",
-            "filePath": "$(APP_FILENAME)",
-            "source": "$(FUNCTION_APP)",
+            "source": "$(BLUEPRINT_CONTENT)",
+            "filePath": "$(BLUEPRINT_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create blueprint",
             "replaceTokens": true,
             "FileExtension": ".py"
         },
@@ -183,28 +202,12 @@
             "filePath": "blueprint_body.py"
         },
         {
-            "name": "readFileContent_BlueprintFile",
-            "type": "GetTemplateFileContent",
-            "assignTo": "$(BLUEPRINT_CONTENT)",
-            "filePath": "blueprint.py"
-        },
-        {
             "name": "appendFileContent_BlueprintBody",
             "type": "AppendToFile",
             "source": "$(BLUEPRINT_BODY_CONTENT)",
             "filePath": "$(BLUEPRINT_FILENAME)",
             "continueOnError": false,
             "errorText": "Unable to create the Blueprint",
-            "replaceTokens": true,
-            "FileExtension": ".py"
-        },
-        {
-            "name": "writeFile_BlueprintFile",
-            "type": "WriteToFile",
-            "source": "$(BLUEPRINT_CONTENT)",
-            "filePath": "$(BLUEPRINT_FILENAME)",
-            "continueOnError": false,
-            "errorText": "Unable to create blueprint",
             "replaceTokens": true,
             "FileExtension": ".py"
         }

@@ -13,7 +13,7 @@
         "help": "$trigger_functionName_help",
         "validators": [
             {
-                "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+                "expression": "^[a-zA-Z][a-zA-Z0-9_]{0,126}[a-zA-Z0-9]$",
                 "errorText": "[variables('parameterName')]"
             }
         ]
@@ -22,19 +22,19 @@
         "id": "httpTrigger-authLevel",
         "name": "httpTrigger-authLevel",
         "value": "enum",
-        "defaultValue": "function",
+        "defaultValue": "FUNCTION",
         "enum": [
             {
-                "value": "function",
-                "display": "Function"
+                "value": "FUNCTION",
+                "display": "FUNCTION"
             },
             {
-                "value": "anonymous",
-                "display": "Anonymous"
+                "value": "ANONYMOUS",
+                "display": "ANONYMOUS"
             },
             {
-                "value": "admin",
-                "display": "Admin"
+                "value": "ADMIN",
+                "display": "ADMIN"
             }
         ],
         "label": "$httpTrigger_authLevel_label",
@@ -94,12 +94,13 @@
         "id": "blobTrigger-connection",
         "name": "blobTrigger-connection",
         "value": "string",
-        "label": "$blobTrigger_path_label",
-        "help": "$blobTrigger_path_help"
+        "resource": "Storage",
+        "label": "$blobTrigger_connection_label",
+        "help": "$blobTrigger_connection_help"
     },
     {
-        "id": "cosmosDBTrigger-connectionStringSetting",
-        "name": "cosmosDBTrigger-connectionStringSetting",
+        "id": "cosmosDBTrigger-connection",
+        "name": "cosmosDBTrigger-connection",
         "value": "string",
         "resource": "DocumentDB",
         "label": "$cosmosDBIn_connection_label",
@@ -115,23 +116,23 @@
         "help": "$cosmosDBIn_databaseName_help"
     },
     {
-        "id": "cosmosDBTrigger-collectionName",
-        "name": "cosmosDBTrigger-collectionName",
+        "id": "cosmosDBTrigger-containerName",
+        "name": "cosmosDBTrigger-containerName",
         "value": "string",
         "defaultValue": "",
-        "label": "$cosmosDBIn_collectionName_label",
-        "help": "$cosmosDBIn_collectionName_help"
+        "label": "$cosmosDBIn_containerName_label",
+        "help": "$cosmosDBIn_containerName_help"
     },
     {
-        "id": "cosmosDBTrigger-leaseCollectionName",
-        "name": "cosmosDBTrigger-leaseCollectionName",
+        "id": "cosmosDBTrigger-leaseContainerName",
+        "name": "cosmosDBTrigger-leaseContainerName",
         "value": "string",
-        "label": "$cosmosDBIn_leaseCollectionName_label",
-        "help": "$cosmosDBIn_leaseCollectionName_help"
+        "label": "$cosmosDBIn_leaseContainerName_label",
+        "help": "$cosmosDBIn_leaseContainerName_help"
     },
     {
-        "id": "cosmosDBTrigger-createLeaseCollectionIfNotExists",
-        "name": "cosmosDBTrigger-createLeaseCollectionIfNotExists",
+        "id": "cosmosDBTrigger-createLeaseContainerIfNotExists",
+        "name": "cosmosDBTrigger-createLeaseContainerIfNotExists",
         "value": "boolean",
         "defaultValue": true,
         "label": "$cosmosDBIn_createIfNotExists_label",
@@ -257,13 +258,7 @@
         "value": "string",
         "defaultValue": "mysubscription",
         "label": "$serviceBusTrigger_subscriptionName_label",
-        "help": "$serviceBusTrigger_subscriptionName_help",
-        "validators": [
-            {
-                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
-                "errorText": "$serviceBusTrigger_subscriptionName_errorText"
-            }
-        ]
+        "help": "$serviceBusTrigger_subscriptionName_help"
     },
     {
         "id": "app-fileName",
@@ -273,12 +268,7 @@
         "defaultValue": "function_app.py",
         "label": "$app_filename_label",
         "help": "$app_filename_help",
-        "validators": [
-            {
-                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
-                "errorText": "$app_filename_errorText"
-            }
-        ]
+        "FileExtension": ".py"
     },
     {
         "id": "app-selectedFileName",
@@ -288,12 +278,7 @@
         "defaultValue": "function_app.py",
         "label": "$app_selected_filename_label",
         "help": "$app_selected_filename_help",
-        "validators": [
-            {
-                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
-                "errorText": "$app_filename_errorText"
-            }
-        ]
+        "FileExtension": ".py"
     },
     {
         "id": "blueprint-fileName",
@@ -303,12 +288,7 @@
         "defaultValue": "blueprint.py",
         "label": "$blueprint_filename_label",
         "help": "$blueprint_filename_help",
-        "validators": [
-            {
-                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
-                "errorText": "$blueprint_fileName_errorText"
-            }
-        ]
+        "FileExtension": ".py"
     },
     {
         "id": "blueprint-existingFileName",
@@ -318,11 +298,6 @@
         "defaultValue": "blueprint.py",
         "label": "$blueprint_selected_filename_label",
         "help": "$blueprint_selected_filename_help",
-        "validators": [
-            {
-                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
-                "errorText": "$blueprint_fileName_errorText"
-            }
-        ]
+        "FileExtension": ".py"
     }
 ]

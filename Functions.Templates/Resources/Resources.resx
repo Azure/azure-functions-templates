@@ -1546,7 +1546,7 @@ Windows Azure Service Management API - Access Azure Service Management as organi
     <value>Cosmos DB account connection</value>
   </data>
   <data name="cosmosDBIn_databaseName_help" xml:space="preserve">
-    <value>Name of the Cosmos DB database that includes the collection to be monitored.</value>
+    <value>Name of the Cosmos DB database that includes the container to be monitored.</value>
   </data>
   <data name="cosmosDBIn_databaseName_label" xml:space="preserve">
     <value>Database name</value>
@@ -1722,6 +1722,12 @@ function app.</value>
   </data>
   <data name="BlobTrigger_name" xml:space="preserve">
     <value>Blob trigger</value>
+  </data>
+  <data name="blobTrigger_connection_label" xml:space="preserve">
+    <value>Storage account connection</value>
+  </data>
+  <data name="blobTrigger_connection_help" xml:space="preserve">
+    <value>The name of the app setting containing your storage account connection string</value>
   </data>
   <data name="EventHubTrigger_name" xml:space="preserve">
     <value>Event Hub trigger</value>
@@ -2025,6 +2031,9 @@ function app.</value>
   </data>
   <data name="blueprint_filename_help" xml:space="preserve">
     <value>This is the name of the file where you want to save your blueprint code</value>
+  </data>
+  <data name="blueprint_selected_filename_help" xml:space="preserve">
+    <value>This is the name of the file where you want to add a function to the existing blueprint</value>
   </data>
   <data name="blueprint_selected_filename_label" xml:space="preserve">
     <value>Select a file to save for your blueprint function</value>

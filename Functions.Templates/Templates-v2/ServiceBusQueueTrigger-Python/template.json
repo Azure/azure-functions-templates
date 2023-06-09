@@ -1,12 +1,12 @@
 {
-    "author": "Naren Soni",
-    "name": "HTTP trigger",
-    "description": "$HttpTrigger_description",
+    "author": "Gavin Aguiar",
+    "name": "ServiceBus Queue trigger",
+    "description": "$ServiceBusQueueTrigger_description",
     "programmingModel": "v2",
     "language": "python",
     "jobs": [
         {
-            "name": "Create New Project with HttpTrigger function",
+            "name": "Create New Project with ServiceTrigger function",
             "type": "CreateNewApp",
             "inputs": [
                 {
@@ -24,13 +24,19 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "HttpTrigger"
+                    "defaultValue": "servicebus_queue_trigger"
                 },
                 {
-                    "assignTo": "$(AUTHLEVEL_INPUT)",
-                    "paramId": "httpTrigger-authLevel",
+                    "assignTo": "$(SERVICEBUS_NAME_INPUT)",
+                    "paramId": "serviceBusTrigger-queueName",
                     "required": true,
-                    "defaultValue": "FUNCTION"
+                    "defaultValue": "servicebusqueuename"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "serviceBusTrigger-connection",
+                    "required": true,
+                    "defaultValue": "ServiceBusConnectionString"
                 }
             ],
             "actions": [
@@ -40,7 +46,7 @@
             ]
         },
         {
-            "name": "Add httpTrigger function to an existing file",
+            "name": "Add ServiceBusTrigger function to the main file",
             "type": "AppendToFile",
             "inputs": [
                 {
@@ -57,12 +63,20 @@
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
-                    "defaultValue": "HttpTrigger"
+                    "required": true,
+                    "defaultValue": "servicebus_trigger"
                 },
                 {
-                    "assignTo": "$(AUTHLEVEL_INPUT)",
-                    "paramId": "httpTrigger-authLevel",
-                    "defaultValue": "FUNCTION"
+                    "assignTo": "$(SERVICEBUS_NAME_INPUT)",
+                    "paramId": "serviceBusTrigger-queueName",
+                    "required": true,
+                    "defaultValue": "servicebusqueuename"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "serviceBusTrigger-connection",
+                    "required": true,
+                    "defaultValue": "ServiceBusConnectionString"
                 }
             ],
             "actions": [
@@ -89,13 +103,19 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "http_trigger"
+                    "defaultValue": "servicebus_trigger"
                 },
                 {
-                    "assignTo": "$(AUTHLEVEL_INPUT)",
-                    "paramId": "httpTrigger-authLevel",
+                    "assignTo": "$(SERVICEBUS_NAME_INPUT)",
+                    "paramId": "serviceBusTrigger-queueName",
                     "required": true,
-                    "defaultValue": "FUNCTION"
+                    "defaultValue": "servicebusqueuename"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "serviceBusTrigger-connection",
+                    "required": true,
+                    "defaultValue": "ServiceBusConnectionString"
                 }
             ],
             "actions": [
@@ -106,7 +126,7 @@
             ]
         },
         {
-            "name": "Add EventHubTrigger function to the Blueprint",
+            "name": "Add ServiceBusTrigger function to the Blueprint",
             "type": "AppendToBlueprint",
             "inputs": [
                 {
@@ -123,13 +143,19 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "http_trigger"
+                    "defaultValue": "servicebus_trigger"
                 },
                 {
-                    "assignTo": "$(AUTHLEVEL_INPUT)",
-                    "paramId": "httpTrigger-authLevel",
+                    "assignTo": "$(SERVICEBUS_NAME_INPUT)",
+                    "paramId": "serviceBusTrigger-queueName",
                     "required": true,
-                    "defaultValue": "FUNCTION"
+                    "defaultValue": "servicebusqueuename"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "serviceBusTrigger-connection",
+                    "required": true,
+                    "defaultValue": "ServiceBusConnectionString"
                 }
             ],
             "actions": [
@@ -158,17 +184,38 @@
         {
             "name": "readFileContent_FunctionBody",
             "type": "GetTemplateFileContent",
-            "assignTo": "$(FUNCTION_BODY_CONTENT)",
+            "assignTo": "$(FUNCTION_BODY)",
             "filePath": "function_body.py"
         },
         {
             "name": "appendFileContent_FunctionApp",
             "type": "AppendToFile",
             "createIfNotExists": false,
-            "source": "$(FUNCTION_BODY_CONTENT)",
+            "source": "$(FUNCTION_BODY)",
             "filePath": "$(SELECTED_FILEPATH)",
             "continueOnError": false,
-            "errorText": "Unable to create httpTrigger function",
+			"replaceTokens": true,			  
+            "errorText": "Unable to create ServiceBus trigger function",
+            "FileExtension": ".py"
+        },
+        {
+            "name": "ShowMarkdownPreview",
+            "type": "ShowMarkdownPreview",
+            "filePath": "servicebusqueue_trigger_template.md"
+        },
+        {
+            "name": "readFileContent_BlueprintFile",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(BLUEPRINT_CONTENT)",
+            "filePath": "blueprint.py"
+        },
+        {
+            "name": "writeFile_BlueprintFile",
+            "type": "WriteToFile",
+            "source": "$(BLUEPRINT_CONTENT)",
+            "filePath": "$(BLUEPRINT_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create blueprint",
             "replaceTokens": true,
             "FileExtension": ".py"
         },
@@ -179,33 +226,12 @@
             "filePath": "blueprint_body.py"
         },
         {
-            "name": "readFileContent_BlueprintFile",
-            "type": "GetTemplateFileContent",
-            "assignTo": "$(BLUEPRINT_CONTENT)",
-            "filePath": "blueprint.py"
-        },
-        {
-            "name": "ShowMarkdownPreview",
-            "type": "ShowMarkdownPreview",
-            "filePath": "http_trigger_template.md"
-        },
-        {
             "name": "appendFileContent_BlueprintBody",
             "type": "AppendToFile",
             "source": "$(BLUEPRINT_BODY_CONTENT)",
             "filePath": "$(BLUEPRINT_FILENAME)",
             "continueOnError": false,
             "errorText": "Unable to create the Blueprint",
-            "replaceTokens": true,
-            "FileExtension": ".py"
-        },
-        {
-            "name": "writeFile_BlueprintFile",
-            "type": "WriteToFile",
-            "source": "$(BLUEPRINT_CONTENT)",
-            "filePath": "$(BLUEPRINT_FILENAME)",
-            "continueOnError": false,
-            "errorText": "Unable to create blueprint",
             "replaceTokens": true,
             "FileExtension": ".py"
         }
