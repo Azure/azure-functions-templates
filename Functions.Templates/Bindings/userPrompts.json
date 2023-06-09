@@ -257,13 +257,7 @@
         "value": "string",
         "defaultValue": "mysubscription",
         "label": "$serviceBusTrigger_subscriptionName_label",
-        "help": "$serviceBusTrigger_subscriptionName_help",
-        "validators": [
-            {
-                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
-                "errorText": "$serviceBusTrigger_subscriptionName_errorText"
-            }
-        ]
+        "help": "$serviceBusTrigger_subscriptionName_help"
     },
     {
         "id": "app-fileName",
@@ -272,13 +266,7 @@
         "resource": "Newfile",
         "defaultValue": "function_app.py",
         "label": "$app_filename_label",
-        "help": "$app_filename_help",
-        "validators": [
-            {
-                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
-                "errorText": "$app_filename_errorText"
-            }
-        ]
+        "help": "$app_filename_help"
     },
     {
         "id": "app-selectedFileName",
@@ -287,13 +275,7 @@
         "resource": "Existingfile",
         "defaultValue": "function_app.py",
         "label": "$app_selected_filename_label",
-        "help": "$app_selected_filename_help",
-        "validators": [
-            {
-                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
-                "errorText": "$app_filename_errorText"
-            }
-        ]
+        "help": "$app_selected_filename_help"
     },
     {
         "id": "blueprint-fileName",
@@ -302,13 +284,7 @@
         "resource": "Newfile",
         "defaultValue": "blueprint.py",
         "label": "$blueprint_filename_label",
-        "help": "$blueprint_filename_help",
-        "validators": [
-            {
-                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
-                "errorText": "$blueprint_fileName_errorText"
-            }
-        ]
+        "help": "$blueprint_filename_help"
     },
     {
         "id": "blueprint-existingFileName",
@@ -317,12 +293,6 @@
         "resource": "Existingfile",
         "defaultValue": "blueprint.py",
         "label": "$blueprint_selected_filename_label",
-        "help": "$blueprint_selected_filename_help",
-        "validators": [
-            {
-                "expression": "^[a-zA-Z0-9]$|^[a-zA-Z0-9][a-zA-Z0-9-_.]{0,48}([a-zA-Z0-9]$|[a-zA-Z0-9][\\/]\\$DeadLetterQueue$)|^[{][a-zA-Z0-9]{1,126}([}]$|[}][\\/]\\$DeadLetterQueue$)|^[%][a-zA-Z0-9]{1,126}([%]$|[%][\\/]\\$DeadLetterQueue$)",
-                "errorText": "$blueprint_fileName_errorText"
-            }
-        ]
+        "help": "$blueprint_selected_filename_help"
     }
 ]
