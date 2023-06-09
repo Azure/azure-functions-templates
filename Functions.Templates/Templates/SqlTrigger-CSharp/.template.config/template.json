@@ -2,18 +2,18 @@
     "author": "Microsoft",
     "classifications": [
         "Azure Function",
-        "Input",
+        "Trigger",
         "SQL"
     ],
-    "name": "SqlInputBindingIsolated",
-    "identity": "Azure.Function.CSharp.Isolated.SqlInputBinding.2.x",
-    "groupIdentity": "Azure.Function.SqlInputBindingIsolated",
-    "shortName": "sqlinput",
+    "name": "SqlTriggerBinding",
+    "identity": "Azure.Function.CSharp.SqlTriggerBinding.2.x",
+    "groupIdentity": "Azure.Function.SqlTriggerBinding",
+    "shortName": "sqltrigger",
     "tags": {
         "language": "C#",
         "type": "item"
     },
-    "sourceName": "SqlInputBindingHttpTriggerCSharp",
+    "sourceName": "SqlTriggerBindingCSharp",
     "symbols": {
         "namespace": {
             "description": "namespace for the generated code",
@@ -26,39 +26,28 @@
             "defaultValue": "",
             "replaces": "SqlConnectionString"
         },
-        "object": {
-            "description": "This is the table or view name for the SQL input binding.",
+        "table": {
+            "description": "This is the table for the SQL trigger binding.",
             "type": "parameter",
             "defaultValue": "[dbo].[table1]",
-            "replaces": "object"
+            "replaces": "table"
         }
     },
     "primaryOutputs": [
         {
-            "path": "SqlInputBindingHttpTriggerCSharp.cs"
+            "path": "SqlTriggerBindingCSharp.cs"
         }
     ],
-    "defaultName": "SqlInputBindingHttpTriggerCSharp",
+    "defaultName": "SqlTriggerBindingCSharp",
     "postActions": [
         {
-          "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Sql Nuget package",
+          "Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.Sql Nuget package",
           "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
           "ContinueOnError": "true",
           "ManualInstructions": [],
           "args": {
             "referenceType": "package",
-            "reference": "Microsoft.Azure.Functions.Worker.Extensions.Sql", "version": "2.0.145",
-            "projectFileExtensions": ".csproj"
-          }
-        },
-        {
-          "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Http Nuget package",
-          "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
-          "ContinueOnError": "true",
-          "ManualInstructions": [],
-          "args": {
-            "referenceType": "package",
-            "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http", "version": "3.0.13",
+            "reference": "Microsoft.Azure.WebJobs.Extensions.Sql", "version": "3.0.253-preview",
             "projectFileExtensions": ".csproj"
           }
         },

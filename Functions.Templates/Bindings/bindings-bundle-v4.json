@@ -1971,6 +1971,48 @@
           "placeholder": "[variables('selectConnection')]"
         }
       ]
+    },
+    {
+      "type": "sqlTrigger",
+      "displayName": "$sqlTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\sqlTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Sql", "version": "3.0.253-preview"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "changes",
+          "required": true,
+          "label": "$sqlTrigger_name_label",
+          "help": "$sqlTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "tableName",
+          "value": "string",
+          "defaultValue": "object",
+          "required": true,
+          "label": "$sqlTrigger_tableName_label",
+          "help": "$sqlTrigger_tableName_help"
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "resource": "AppSetting",
+          "required": true,
+          "label": "$sql_connectionstringsetting_label",
+          "help": "[variables('appSettingsHelp')]"
+        }
+      ]
     }
   ]
 }
