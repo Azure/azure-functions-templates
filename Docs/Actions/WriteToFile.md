@@ -112,7 +112,8 @@ the file at `$(SELECTED_FILEPATH)` will be replaced with their associated values
             "filePath": "$(APP_FILENAME)",
             "continueOnError": false,
             "errorText": "Unable to create the function app",
-            "replaceTokens": true
+            "replaceTokens": true,
+            "FileExtension": ".py"
         }
     ]
 }

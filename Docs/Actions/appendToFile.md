@@ -109,7 +109,8 @@ the file at `$(SELECTED_FILEPATH)` will be replaced with their associated values
             "filePath": "$(SELECTED_FILEPATH)",
             "continueOnError" : false,
             "errorText": "Unable to add template",
-            "replaceTokens": true
+            "replaceTokens": true,
+            "FileExtension": ".py"
         }
     ]
 }

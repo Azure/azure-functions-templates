@@ -154,7 +154,8 @@
             "filePath": "$(APP_FILENAME).py",
             "continueOnError": false,
             "errorText": "Unable to create the function app",
-            "replaceTokens": true
+            "replaceTokens": true,
+            "FileExtension": ".py"
         },
         {
             "name": "readFileContent_FunctionBody",
@@ -170,7 +171,8 @@
             "filePath": "$(SELECTED_FILEPATH)",
             "continueOnError": false,
             "errorText": "Unable to create eventgrid trigger function",
-			"replaceTokens": true
+			"replaceTokens": true,
+            "FileExtension": ".py"
         },
         {
             "name": "ShowMarkdownPreview",
@@ -190,7 +192,8 @@
             "filePath": "$(BLUEPRINT_FILENAME)",
             "continueOnError": false,
             "errorText": "Unable to create blueprint",
-            "replaceTokens": true
+            "replaceTokens": true,
+            "FileExtension": ".py"
         },
         {
             "name": "readFileContent_BlueprintBody",
@@ -205,7 +208,8 @@
             "filePath": "$(BLUEPRINT_FILENAME)",
             "continueOnError": false,
             "errorText": "Unable to create the Blueprint",
-            "replaceTokens": true
+            "replaceTokens": true,
+            "FileExtension": ".py"
         }
     ]
 }

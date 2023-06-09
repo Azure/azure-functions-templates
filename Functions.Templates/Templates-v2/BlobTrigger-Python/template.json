@@ -130,7 +130,6 @@
             "type": "AppendToBlueprint", 
             "inputs" : [
                 {
-                    "assignTo": "$(BLUEPRINT_FILENAME)",
                     "paramId": "blueprint-existingFileName",
                     "required": true,
                     "condition" : {
@@ -178,7 +177,8 @@
             "filePath": "$(APP_FILENAME)",
             "continueOnError": false,
             "errorText": "Unable to create the function app",
-            "replaceTokens": true
+            "replaceTokens": true,
+            "FileExtension": ".py"
         },
         {
             "name": "readFileContent_FunctionBody",
@@ -194,7 +194,8 @@
             "filePath": "$(SELECTED_FILEPATH)",
             "continueOnError" : false,
             "replaceTokens": true,
-            "errorText" : "Unable to create blob trigger function"
+            "errorText" : "Unable to create blob trigger function",
+            "FileExtension": ".py"
         },
         {
             "name": "ShowMarkdownPreview",
@@ -214,7 +215,8 @@
             "filePath" : "$(BLUEPRINT_FILENAME)",
             "continueOnError" : false,
             "errorText" : "Unable to create blueprint",
-            "replaceTokens": true
+            "replaceTokens": true,
+            "FileExtension": ".py"
         },
         {
             "name": "readFileContent_BlueprintBody",
@@ -229,7 +231,8 @@
             "filePath" : "$(BLUEPRINT_FILENAME)",
             "continueOnError" : false,
             "errorText" : "Unable to create the Blueprint",
-            "replaceTokens": true
+            "replaceTokens": true,
+            "FileExtension": ".py"
         }
     ]
 }

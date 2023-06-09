@@ -154,7 +154,8 @@
             "filePath": "$(SELECTED_FILEPATH)",
             "continueOnError": false,
             "errorText": "Unable to create httpTrigger function",
-            "replaceTokens": true
+            "replaceTokens": true,
+            "FileExtension": ".py"
         },
         {
             "name": "replaceText_FunctionBody",
@@ -172,7 +173,8 @@
             "type": "WriteToFile",
             "filePath": "$(APP_FILENAME)",
             "source": "$(FUNCTION_APP)",
-            "replaceTokens": true
+            "replaceTokens": true,
+            "FileExtension": ".py"
         },
         {
             "name": "readFileContent_BlueprintBody",
@@ -193,7 +195,8 @@
             "filePath": "$(BLUEPRINT_FILENAME)",
             "continueOnError": false,
             "errorText": "Unable to create the Blueprint",
-            "replaceTokens": true
+            "replaceTokens": true,
+            "FileExtension": ".py"
         },
         {
             "name": "writeFile_BlueprintFile",
@@ -202,7 +205,8 @@
             "filePath": "$(BLUEPRINT_FILENAME)",
             "continueOnError": false,
             "errorText": "Unable to create blueprint",
-            "replaceTokens": true
+            "replaceTokens": true,
+            "FileExtension": ".py"
         }
     ]
 }
