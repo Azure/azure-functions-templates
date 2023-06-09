@@ -12,7 +12,7 @@ namespace Company.Function
 {
     public static class SqlTriggerBinding
     {
-        // Visit https://aka.ms/sqlbindingsinput to learn how to use this input binding
+        // Visit https://aka.ms/sqltrigger to learn how to use this trigger binding
         [FunctionName("SqlTriggerBindingCSharp")]
         public static void Run(
                 [SqlTrigger("table", "SqlConnectionString")] IReadOnlyList<SqlChange<ToDoItem>> changes,

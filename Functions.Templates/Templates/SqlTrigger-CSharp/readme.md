@@ -6,4 +6,4 @@ The `SQL Trigger Binding` monitors the user table for changes (i.e., row inserts
 
 `SQL Trigger Binding` utilizes SQL change tracking functionality to monitor the user table for changes. As such, it is necessary to enable change tracking on the SQL database and the SQL table before using the trigger support.
 
-For more information, see the official [docs](https://aka.ms/sqlbindings).
+For more information, see the official [docs](https://aka.ms/sqltrigger).

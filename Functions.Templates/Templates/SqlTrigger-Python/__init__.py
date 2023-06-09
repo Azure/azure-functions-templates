@@ -4,7 +4,7 @@ import logging
 def main(changes) :
     """Sample SQL Trigger Binding
 
-    See https://aka.ms/sqlbindings for more information about using this binding
+    See https://aka.ms/sqltrigger for more information about using this binding
 
     *IMPORTANT*
         Local Development : You must have version >= 4.0.5030 of the Azure Function Core Tools installed.

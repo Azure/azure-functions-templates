@@ -2,7 +2,7 @@ import { AzureFunction, Context } from "@azure/functions"
 
 /**
  * Sample SQL Trigger Binding
- * See https://aka.ms/sqlbindings for more information about using this binding
+ * See https://aka.ms/sqltrigger for more information about using this binding
  *
  * These tasks should be completed prior to running :
  *      1. Update "tableName" in function.json - this should be the table that is monitored for changes and triggers/invokes the function.
