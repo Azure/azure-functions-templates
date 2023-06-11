@@ -1,0 +1,29 @@
+{
+    "scriptFile": "__init__.py",
+    "bindings": [
+      {
+        "authLevel": "function",
+        "type": "httpTrigger",
+        "direction": "in",
+        "name": "req",
+        "methods": [
+            "get"
+          ],
+          "route": "getproducts/{productId}"
+      },
+      {
+        "name": "products",
+        "type": "kusto",
+        "database": "db",
+        "direction": "in",
+        "kqlCommand": "declare query_parameters (productId:long);Products | where ProductID == productId",
+        "kqlParameters": "@productId={productId}",
+        "connection": "KustoConnectionString"
+      },
+      {
+        "type": "http",
+        "direction": "out",
+        "name": "$return"
+      }
+    ]
+  }

@@ -1,0 +1,47 @@
+{
+  "name": {
+    "text": "Kusto output binding isolated",
+    "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}",
+    "id": "4000"
+  },
+  "description": {
+    "text": "A C# function that takes a table name and ingests data into it",
+    "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}",
+    "id": "4001"
+  },
+  "order": 400,
+  "icon": "vs-2017.3/functionF.png",
+  "learnMoreLink": "https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-azure-data-explorer-input?tabs=isolated-process&pivots=programming-language-csharp",
+  "uiFilters": [
+    "functions"
+  ],
+  "symbolInfo": [
+    {
+      "id": "connection",
+      "name": {
+        "id": "4002",
+        "text": "Connection string setting name",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      },
+      "isVisible": true
+    },
+    {
+      "id": "database",
+      "name": {
+        "id": "4003",
+        "text": "Database to execute the query",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      },
+      "isVisible": true
+    },
+    {
+      "id": "tableName",
+      "name": {
+        "id": "4004",
+        "text": "Table to ingest data into",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      },
+      "isVisible": true
+    }
+  ]
+}
