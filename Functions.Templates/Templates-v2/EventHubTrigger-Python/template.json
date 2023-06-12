@@ -8,30 +8,35 @@
         {
             "name": "Create New Project with EventHubTrigger function",
             "type": "CreateNewApp",
-            "inputs" : [
+            "inputs": [
                 {
                     "assignTo": "$(APP_FILENAME)",
                     "paramId": "app-fileName",
                     "defaultValue": "function_app.py",
-                    "required": true
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "EventHubTrigger"
+                    "defaultValue": "eventhub_trigger"
                 },
                 {
                     "assignTo": "$(EVENTHUB_NAME_INPUT)",
                     "paramId": "eventhubTrigger-eventhubName",
                     "required": true,
-                    "defaultValue": "myeventhub"
+                    "defaultValue": "eventhubname"
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
                     "paramId": "eventhubTrigger-connection",
                     "required": true,
-                    "defaultValue": ""
+                    "defaultValue": "EventHubConnectionString"
                 }
             ],
             "actions": [
@@ -43,30 +48,35 @@
         {
             "name": "Add EventHubTrigger function to the main file",
             "type": "AppendToFile",
-            "inputs" : [
+            "inputs": [
                 {
-                    "assignTo": "$(APP_FILENAME)",
+                    "assignTo": "$(SELECTED_FILEPATH)",
                     "paramId": "app-selectedFileName",
                     "defaultValue": "function_app.py",
-                    "required": true
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "EventHubTrigger"
+                    "defaultValue": "eventhub_trigger"
                 },
                 {
                     "assignTo": "$(EVENTHUB_NAME_INPUT)",
                     "paramId": "eventhubTrigger-eventhubName",
                     "required": true,
-                    "defaultValue": "myeventhub"
+                    "defaultValue": "eventhubname"
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
                     "paramId": "eventhubTrigger-connection",
                     "required": true,
-                    "defaultValue": ""
+                    "defaultValue": "EventHubConnectionString"
                 }
             ],
             "actions": [
@@ -77,30 +87,35 @@
         {
             "name": "Create New Blueprint file",
             "type": "CreateNewBlueprint",
-            "inputs" : [
+            "inputs": [
                 {
                     "assignTo": "$(BLUEPRINT_FILENAME)",
                     "paramId": "blueprint-fileName",
                     "defaultValue": "blueprint.py",
-                    "required": true
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "EventHubTrigger"
+                    "defaultValue": "eventhub_trigger"
                 },
                 {
                     "assignTo": "$(EVENTHUB_NAME_INPUT)",
                     "paramId": "eventhubTrigger-eventhubName",
                     "required": true,
-                    "defaultValue": "myeventhub"
+                    "defaultValue": "eventhubname"
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
                     "paramId": "eventhubTrigger-connection",
                     "required": true,
-                    "defaultValue": ""
+                    "defaultValue": "EventHubConnectionString"
                 }
             ],
             "actions": [
@@ -112,30 +127,35 @@
         },
         {
             "name": "Add EventHubTrigger function to the Blueprint",
-            "type": "AppendToBlueprint", 
-            "inputs" : [
+            "type": "AppendToBlueprint",
+            "inputs": [
                 {
                     "assignTo": "$(BLUEPRINT_FILENAME)",
                     "paramId": "blueprint-existingFileName",
-                    "required": true
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "EventHubTrigger"
+                    "defaultValue": "eventhub_trigger"
                 },
                 {
                     "assignTo": "$(EVENTHUB_NAME_INPUT)",
                     "paramId": "eventhubTrigger-eventhubName",
                     "required": true,
-                    "defaultValue": "myeventhub"
+                    "defaultValue": "eventhubname"
                 },
                 {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
                     "paramId": "eventhubTrigger-connection",
                     "required": true,
-                    "defaultValue": ""
+                    "defaultValue": "EventHubConnectionString"
                 }
             ],
             "actions": [
@@ -144,7 +164,7 @@
             ]
         }
     ],
-    "actions" : [
+    "actions": [
         {
             "name": "readFileContent_FunctionApp",
             "type": "GetTemplateFileContent",
@@ -155,60 +175,65 @@
             "name": "writeFile_FunctionApp",
             "type": "WriteToFile",
             "source": "$(FUNCTION_APP_CONTENT)",
-            "filePath": "$(APP_FILENAME).py",
+            "filePath": "$(APP_FILENAME)",
             "continueOnError": false,
             "errorText": "Unable to create the function app",
-            "replaceTokens": true
+            "replaceTokens": true,
+            "FileExtension": ".py"
         },
         {
             "name": "readFileContent_FunctionBody",
             "type": "GetTemplateFileContent",
             "assignTo": "$(FUNCTION_BODY)",
-            "filePath" : "function_body.py"
+            "filePath": "function_body.py"
         },
         {
             "name": "appendFileContent_FunctionApp",
             "type": "AppendToFile",
-            "createIfNotExists" : false,
+            "createIfNotExists": false,
             "source": "$(FUNCTION_BODY)",
-            "filePath" : "$(APP_FILENAME).py",
-            "continueOnError" : false,
-            "errorText" : "Unable to create eventhub trigger function"
+            "filePath": "$(SELECTED_FILEPATH)",
+            "continueOnError": false,
+            "errorText": "Unable to create eventhub trigger function",
+			"replaceTokens": true,
+            "FileExtension": ".py"
         },
         {
             "name": "ShowMarkdownPreview",
             "type": "ShowMarkdownPreview",
-            "filePath" : "eventhub_trigger_template.md"
+            "filePath": "eventhub_trigger_template.md"
         },
         {
             "name": "readFileContent_BlueprintFile",
             "type": "GetTemplateFileContent",
             "assignTo": "$(BLUEPRINT_CONTENT)",
-            "filePath" : "blueprint.py"
+            "filePath": "blueprint.py"
         },
         {
             "name": "writeFile_BlueprintFile",
             "type": "WriteToFile",
             "source": "$(BLUEPRINT_CONTENT)",
-            "filePath" : "$(BLUEPRINT_FILENAME).py",
-            "continueOnError" : false,
-            "errorText" : "Unable to create blueprint",
-            "replaceTokens": true
+            "filePath": "$(BLUEPRINT_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create blueprint",
+            "replaceTokens": true,
+            "FileExtension": ".py"
         },
         {
             "name": "readFileContent_BlueprintBody",
             "type": "GetTemplateFileContent",
             "assignTo": "$(BLUEPRINT_BODY_CONTENT)",
-            "filePath" : "blueprint_body.py"
+            "filePath": "blueprint_body.py"
         },
         {
             "name": "appendFileContent_BlueprintBody",
             "type": "AppendToFile",
             "source": "$(BLUEPRINT_BODY_CONTENT)",
-            "filePath" : "$(BLUEPRINT_FILENAME).py",
-            "continueOnError" : false,
-            "errorText" : "Unable to create the Blueprint",
-            "replaceTokens": true
+            "filePath": "$(BLUEPRINT_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create the Blueprint",
+            "replaceTokens": true,
+            "FileExtension": ".py"
         }
     ]
 }

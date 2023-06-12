@@ -1,0 +1,239 @@
+{
+    "author": "Gavin Aguiar",
+    "name": "ServiceBus Queue trigger",
+    "description": "$ServiceBusQueueTrigger_description",
+    "programmingModel": "v2",
+    "language": "python",
+    "jobs": [
+        {
+            "name": "Create New Project with ServiceTrigger function",
+            "type": "CreateNewApp",
+            "inputs": [
+                {
+                    "assignTo": "$(APP_FILENAME)",
+                    "paramId": "app-fileName",
+                    "defaultValue": "function_app.py",
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
+                },
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
+                    "required": true,
+                    "defaultValue": "servicebus_queue_trigger"
+                },
+                {
+                    "assignTo": "$(SERVICEBUS_NAME_INPUT)",
+                    "paramId": "serviceBusTrigger-queueName",
+                    "required": true,
+                    "defaultValue": "servicebusqueuename"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "serviceBusTrigger-connection",
+                    "required": true,
+                    "defaultValue": "ServiceBusConnectionString"
+                }
+            ],
+            "actions": [
+                "readFileContent_FunctionApp",
+                "writeFile_FunctionApp",
+                "showMarkdownPreview"
+            ]
+        },
+        {
+            "name": "Add ServiceBusTrigger function to the main file",
+            "type": "AppendToFile",
+            "inputs": [
+                {
+                    "assignTo": "$(SELECTED_FILEPATH)",
+                    "paramId": "app-selectedFileName",
+                    "defaultValue": "function_app.py",
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
+                },
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
+                    "required": true,
+                    "defaultValue": "servicebus_trigger"
+                },
+                {
+                    "assignTo": "$(SERVICEBUS_NAME_INPUT)",
+                    "paramId": "serviceBusTrigger-queueName",
+                    "required": true,
+                    "defaultValue": "servicebusqueuename"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "serviceBusTrigger-connection",
+                    "required": true,
+                    "defaultValue": "ServiceBusConnectionString"
+                }
+            ],
+            "actions": [
+                "readFileContent_FunctionBody",
+                "appendFileContent_FunctionApp"
+            ]
+        },
+        {
+            "name": "Create New Blueprint file",
+            "type": "CreateNewBlueprint",
+            "inputs": [
+                {
+                    "assignTo": "$(BLUEPRINT_FILENAME)",
+                    "paramId": "blueprint-fileName",
+                    "defaultValue": "blueprint.py",
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
+                },
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
+                    "required": true,
+                    "defaultValue": "servicebus_trigger"
+                },
+                {
+                    "assignTo": "$(SERVICEBUS_NAME_INPUT)",
+                    "paramId": "serviceBusTrigger-queueName",
+                    "required": true,
+                    "defaultValue": "servicebusqueuename"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "serviceBusTrigger-connection",
+                    "required": true,
+                    "defaultValue": "ServiceBusConnectionString"
+                }
+            ],
+            "actions": [
+                "readFileContent_BlueprintFile",
+                "writeFile_BlueprintFile",
+                "readFileContent_BlueprintBody",
+                "appendFileContent_BlueprintBody"
+            ]
+        },
+        {
+            "name": "Add ServiceBusTrigger function to the Blueprint",
+            "type": "AppendToBlueprint",
+            "inputs": [
+                {
+                    "assignTo": "$(BLUEPRINT_FILENAME)",
+                    "paramId": "blueprint-existingFileName",
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
+                },
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
+                    "required": true,
+                    "defaultValue": "servicebus_trigger"
+                },
+                {
+                    "assignTo": "$(SERVICEBUS_NAME_INPUT)",
+                    "paramId": "serviceBusTrigger-queueName",
+                    "required": true,
+                    "defaultValue": "servicebusqueuename"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "serviceBusTrigger-connection",
+                    "required": true,
+                    "defaultValue": "ServiceBusConnectionString"
+                }
+            ],
+            "actions": [
+                "readFileContent_BlueprintBody",
+                "appendFileContent_BlueprintBody"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "readFileContent_FunctionApp",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(FUNCTION_APP_CONTENT)",
+            "filePath": "function_app.py"
+        },
+        {
+            "name": "writeFile_FunctionApp",
+            "type": "WriteToFile",
+            "source": "$(FUNCTION_APP_CONTENT)",
+            "filePath": "$(APP_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create the function app",
+            "replaceTokens": true,
+            "FileExtension": ".py"
+        },
+        {
+            "name": "readFileContent_FunctionBody",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(FUNCTION_BODY)",
+            "filePath": "function_body.py"
+        },
+        {
+            "name": "appendFileContent_FunctionApp",
+            "type": "AppendToFile",
+            "createIfNotExists": false,
+            "source": "$(FUNCTION_BODY)",
+            "filePath": "$(SELECTED_FILEPATH)",
+            "continueOnError": false,
+			"replaceTokens": true,			  
+            "errorText": "Unable to create ServiceBus trigger function",
+            "FileExtension": ".py"
+        },
+        {
+            "name": "ShowMarkdownPreview",
+            "type": "ShowMarkdownPreview",
+            "filePath": "servicebusqueue_trigger_template.md"
+        },
+        {
+            "name": "readFileContent_BlueprintFile",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(BLUEPRINT_CONTENT)",
+            "filePath": "blueprint.py"
+        },
+        {
+            "name": "writeFile_BlueprintFile",
+            "type": "WriteToFile",
+            "source": "$(BLUEPRINT_CONTENT)",
+            "filePath": "$(BLUEPRINT_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create blueprint",
+            "replaceTokens": true,
+            "FileExtension": ".py"
+        },
+        {
+            "name": "readFileContent_BlueprintBody",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(BLUEPRINT_BODY_CONTENT)",
+            "filePath": "blueprint_body.py"
+        },
+        {
+            "name": "appendFileContent_BlueprintBody",
+            "type": "AppendToFile",
+            "source": "$(BLUEPRINT_BODY_CONTENT)",
+            "filePath": "$(BLUEPRINT_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create the Blueprint",
+            "replaceTokens": true,
+            "FileExtension": ".py"
+        }
+    ]
+}

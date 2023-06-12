@@ -113,7 +113,8 @@ The following example template defines a job which performs the following action
             "type": "WriteToFile",
             "filePath": "$(APP_FILENAME)",
             "source": "$(FUNCTION_APP)",
-            "replaceTokens": true
+            "replaceTokens": true,
+            "FileExtension": ".py"
         }
     ]    
 }

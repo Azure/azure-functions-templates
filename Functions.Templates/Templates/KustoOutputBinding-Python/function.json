@@ -1,0 +1,27 @@
+{
+    "scriptFile": "__init__.py",
+    "bindings": [
+      {
+        "authLevel": "function",
+        "type": "httpTrigger",
+        "direction": "in",
+        "name": "req",
+        "methods": [
+          "post"
+        ]
+      },
+      {
+        "name": "products",
+        "type": "kusto",
+        "database": "db",
+        "direction": "out",
+        "tableName": "table",
+        "connection": "KustoConnectionString"
+      },
+      {
+        "type": "http",
+        "direction": "out",
+        "name": "$return"
+      }
+    ]
+  }

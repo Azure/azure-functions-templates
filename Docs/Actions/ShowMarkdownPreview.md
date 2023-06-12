@@ -95,7 +95,8 @@ The following example template defines a job which appends the text of a file to
             "filePath": "$(SELECTED_FILEPATH)",
             "continueOnError" : false,
             "errorText": "Unable to add template",
-            "replaceTokens": true
+            "replaceTokens": true,
+            "FileExtension": ".py"
         },
         {
             "name": "showMarkdownPreview",

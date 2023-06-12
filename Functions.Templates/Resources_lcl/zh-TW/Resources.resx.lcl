@@ -1788,6 +1788,24 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";blobTrigger_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The name of the app setting containing your storage account connection string]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[內含您儲存體帳戶連接字串之應用程式設定的名稱。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";blobTrigger_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Storage account connection]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[儲存體帳戶連線]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";blobTrigger_displayName" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Azure Blob Storage]]></Val>
@@ -1874,6 +1892,15 @@
           <Val><![CDATA[Blueprint function file Name]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[藍圖函式檔案名稱]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";blueprint_selected_filename_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[This is the name of the file where you want to add a function to the existing blueprint]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[這是您想要將函式新增到現有藍圖的檔案名稱]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2129,12 +2156,12 @@
       </Item>
       <Item ItemId=";cosmosDBIn_databaseName_help" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Name of the Cosmos DB database that includes the collection to be monitored.]]></Val>
+          <Val><![CDATA[Name of the Cosmos DB database that includes the container to be monitored.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Cosmos DB 資料庫的名稱。該資料庫包含要監視的集合。]]></Val>
+            <Val><![CDATA[Cosmos DB 資料庫的名稱。該資料庫包含要監視的容器。]]></Val>
           </Tgt>
           <Prev Cat="Text">
-            <Val><![CDATA[Name of the Azure Cosmos DB database that includes the collection to be monitored.]]></Val>
+            <Val><![CDATA[Name of the Cosmos DB database that includes the collection to be monitored.]]></Val>
           </Prev>
         </Str>
         <Disp Icon="Str" />
