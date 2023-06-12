@@ -1791,6 +1791,9 @@
       <Item ItemId=";blobTrigger_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[The name of the app setting containing your storage account connection string]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nom du paramètre d’application contenant votre chaîne de connexion du compte de stockage]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1896,6 +1899,9 @@
       <Item ItemId=";blueprint_selected_filename_help" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[This is the name of the file where you want to add a function to the existing blueprint]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Il s’agit du nom du fichier dans lequel vous voulez ajouter une fonction au blueprint existant]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2151,8 +2157,8 @@
       <Item ItemId=";cosmosDBIn_databaseName_help" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Name of the Cosmos DB database that includes the container to be monitored.]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Nom de la base de données Cosmos DB qui inclut la collection à surveiller.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nom de la base de données Cosmos DB qui inclut la conteneur à surveiller.]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Name of the Cosmos DB database that includes the collection to be monitored.]]></Val>
