@@ -8,8 +8,7 @@
  *          to use for the SQL connection
  *      3. Change the bundle name in host.json to "Microsoft.Azure.Functions.ExtensionBundle.Preview" and the version to "[4.*, 5.0.0)"
  * @param context The Azure Function runtime context
- * @param req The HttpRequest that triggered this function
- * @param results The array of objects returned by the SQL input binding
+ * @param changes The updated objects returned by the trigger binding
  */
 module.exports = async function (context, changes) {
     context.log(`SQL Changes: ${JSON.stringify(changes)}`)

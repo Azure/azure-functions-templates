@@ -1,6 +1,6 @@
 <#
-Sample SQL Input Binding
-See https://aka.ms/sqlbindingsinput for more information about using this binding
+Sample SQL Trigger Binding
+See https://aka.ms/sqltrigger for more information about using this binding
 These tasks should be completed prior to running:
     1. Update "tableName" in function.json - this should be the table that is monitored for changes and triggers/invokes the function.
     2. Add an app setting named "SqlConnectionString" containing the connection string to use for the SQL connection

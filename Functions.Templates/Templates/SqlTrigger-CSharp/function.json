@@ -1,13 +1,12 @@
 {
   "bindings": [
     {
-      "authLevel": "function",
       "name": "changes",
       "type": "sqlTrigger",
       "direction": "in",
-      "methods": [
-        "get"
-      ]
+      "tableName": "[dbo].[table1]",
+      "connectionStringSetting": "SqlConnectionString"
     }
-  ]
+  ],
+  "disabled": false
 }

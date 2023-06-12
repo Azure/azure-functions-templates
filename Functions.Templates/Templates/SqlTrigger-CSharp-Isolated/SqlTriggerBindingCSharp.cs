@@ -15,6 +15,7 @@ namespace Company.Function
             _logger = loggerFactory.CreateLogger<SqlTriggerBindingCSharp>();
         }
 
+        // Visit https://aka.ms/sqltrigger to learn how to use this trigger binding
         [Function("SqlTriggerBindingCSharp")]
         public static void Run(
             [SqlTrigger("table", "SqlConnectionString")] IReadOnlyList<SqlChange<ToDoItem>> changes,
