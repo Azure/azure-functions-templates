@@ -8,4 +8,4 @@
 import azure.functions as func
 import azure.durable_functions as df
 
-$(BLUEPRINT_FILENAME) = func.Blueprint()
+$(BLUEPRINT_FILENAME) = df.Blueprint()

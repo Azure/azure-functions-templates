@@ -1,12 +1,12 @@
 {
-    "author": "Varad Meru (@vrdmr)",
-    "name": "Blob trigger",
-    "description": "$BlobTrigger_description",
+    "author": "Naiyuan Tian(nytiannn)",
+    "name": "HTTP Trigger",
+    "description": "$HTTPTrigger_description",
     "programmingModel": "v2",
     "language": "python",
     "jobs": [
         {
-            "name": "Create New Project with Durable Function",
+            "name": "Create New Project with HTTPTrigger function",
             "type": "CreateNewApp",
             "inputs": [
                 {
@@ -21,10 +21,10 @@
                     }
                 },
                 {
-                    "assignTo": "$(ORCHESTRATOR_FUNCTION_NAME)",
-                    "paramId": "orchestrator-functionName",
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "hello_orchestratorgger"
+                    "defaultValue": "http_start"
                 }
             ],
             "actions": [
@@ -34,11 +34,11 @@
             ]
         },
         {
-            "name": "Add Durable function to the main file",
+            "name": "Add HTTPTrigger function to the main file",
             "type": "AppendToFile",
-            "inputs" : [
+            "inputs": [
                 {
-                    "assignTo": "$(APP_FILENAME)",
+                    "assignTo": "$(SELECTED_FILEPATH)",
                     "paramId": "app-selectedFileName",
                     "defaultValue": "function_app.py",
                     "required": true,
@@ -49,10 +49,10 @@
                     }
                 },
                 {
-                    "assignTo": "$(ORCHESTRATOR_FUNCTION_NAME)",
-                    "paramId": "orchestrator-functionName",
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "hello_orchestratorgger"
+                    "defaultValue": "http_start"
                 }
             ],
             "actions": [
@@ -74,6 +74,12 @@
                         "values": [ "VSCode"],
                         "operator": "IN"
                     }
+                },
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
+                    "required": true,
+                    "defaultValue": "http_start"
                 }
             ],
             "actions": [
@@ -84,9 +90,9 @@
             ]
         },
         {
-            "name": "Add BlobTrigger function to the Blueprint",
-            "type": "AppendToBlueprint", 
-            "inputs" : [
+            "name": "Add HTTPTrigger function to the Blueprint",
+            "type": "AppendToBlueprint",
+            "inputs": [
                 {
                     "assignTo": "$(BLUEPRINT_FILENAME)",
                     "paramId": "blueprint-existingFileName",
@@ -96,6 +102,12 @@
                         "values": [ "VSCode"],
                         "operator": "IN"
                     }
+                },
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
+                    "required": true,
+                    "defaultValue": "http_start"
                 }
             ],
             "actions": [
@@ -115,62 +127,65 @@
             "name": "writeFile_FunctionApp",
             "type": "WriteToFile",
             "source": "$(FUNCTION_APP_CONTENT)",
-            "filePath": "$(APP_FILENAME)",
+            "filePath": "$(APP_FILENAME).py",
             "continueOnError": false,
             "errorText": "Unable to create the function app",
-            "replaceTokens": true
+            "replaceTokens": true,
+            "FileExtension": ".py"
         },
         {
             "name": "readFileContent_FunctionBody",
             "type": "GetTemplateFileContent",
             "assignTo": "$(FUNCTION_BODY)",
-            "filePath" : "function_body.py"
+            "filePath": "function_body.py"
         },
         {
             "name": "appendFileContent_FunctionApp",
             "type": "AppendToFile",
-            "createIfNotExists" : false,
+            "createIfNotExists": false,
             "source": "$(FUNCTION_BODY)",
             "filePath": "$(SELECTED_FILEPATH)",
-            "continueOnError" : false,
-            "replaceTokens": true,
-            "errorText" : "Unable to create durable function"
+            "continueOnError": false,
+            "errorText": "Unable to create HTTP trigger function",
+			"replaceTokens": true,
+            "FileExtension": ".py"
         },
         {
             "name": "ShowMarkdownPreview",
             "type": "ShowMarkdownPreview",
-            "filePath" : "durable_function_template.md"
+            "filePath": "activit_trigger_template.md"
         },
         {
             "name": "readFileContent_BlueprintFile",
             "type": "GetTemplateFileContent",
             "assignTo": "$(BLUEPRINT_CONTENT)",
-            "filePath" : "blueprint.py"
+            "filePath": "blueprint.py"
         },
         {
             "name": "writeFile_BlueprintFile",
             "type": "WriteToFile",
             "source": "$(BLUEPRINT_CONTENT)",
-            "filePath" : "$(BLUEPRINT_FILENAME)",
-            "continueOnError" : false,
-            "errorText" : "Unable to create blueprint",
-            "replaceTokens": true
+            "filePath": "$(BLUEPRINT_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create blueprint",
+            "replaceTokens": true,
+            "FileExtension": ".py"
         },
         {
             "name": "readFileContent_BlueprintBody",
             "type": "GetTemplateFileContent",
             "assignTo": "$(BLUEPRINT_BODY_CONTENT)",
-            "filePath" : "blueprint_body.py"
+            "filePath": "blueprint_body.py"
         },
         {
             "name": "appendFileContent_BlueprintBody",
             "type": "AppendToFile",
             "source": "$(BLUEPRINT_BODY_CONTENT)",
-            "filePath" : "$(BLUEPRINT_FILENAME)",
-            "continueOnError" : false,
-            "errorText" : "Unable to create the Blueprint",
-            "replaceTokens": true
+            "filePath": "$(BLUEPRINT_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create the Blueprint",
+            "replaceTokens": true,
+            "FileExtension": ".py"
         }
-        
     ]
 }
