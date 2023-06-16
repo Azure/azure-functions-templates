@@ -1,6 +1,6 @@
 
-@$(BLUEPRINT_FILENAME).route(route="$(BLUEPRINT_FILENAME), auth_level=func.AuthLevel.$(AUTHLEVEL_INPUT)")
-def $(BLUEPRINT_FILENAME)(req: func.HttpRequest) -> func.HttpResponse:
+@$(BLUEPRINT_FILENAME).route(route="$(FUNCTION_NAME_INPUT)", auth_level=func.AuthLevel.$(AUTHLEVEL_INPUT))
+def $(FUNCTION_NAME_INPUT)(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
     name = req.params.get('name')
