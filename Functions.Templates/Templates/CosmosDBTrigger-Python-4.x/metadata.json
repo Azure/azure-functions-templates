@@ -2,7 +2,7 @@
   "defaultFunctionName": "CosmosTrigger",
   "description": "$CosmosDBTrigger_description",
   "name": "Azure Cosmos DB trigger",
-  "language": "Custom",
+  "language": "Python",
   "category": [
     "$temp_category_core",
     "$temp_category_dataProcessing"
@@ -15,5 +15,8 @@
     "containerName",
     "leaseContainerName",
     "createLeaseContainerIfNotExists"
+  ],
+  "filters": [
+    "Python3"
   ]
 }
