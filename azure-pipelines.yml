@@ -33,7 +33,7 @@ steps:
     locProj: 'Build\Localize\LocProject.json'
     outDir: '$(Build.Repository.LocalPath)'
     packageSourceAuth: 'patAuth'
-    patVariable: '$(ONELOCBUILD)'
+    patVariable: '$(GithubPATazfuncgh)'
     continueOnError: true
 
 - task: CopyFiles@2
