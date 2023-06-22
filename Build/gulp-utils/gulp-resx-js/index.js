@@ -1,4 +1,4 @@
-const resx2js = require('resx/resx2js');
+const resx2js = require('resx/cjs/resx2js');
 var Buffer = require('buffer').Buffer;
 var through2 = require('through2');
 module.exports = function(opt) {

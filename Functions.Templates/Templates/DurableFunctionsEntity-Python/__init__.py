@@ -1,11 +1,10 @@
 import logging
 import json
 
-import azure.functions as func
-import azure.durable_functions as df
+from azure.durable_functions import DurableOrchestrationContext, Entity
 
 
-def entity_function(context: df.DurableOrchestrationContext):
+def entity_function(context: DurableOrchestrationContext):
 
     current_value = context.get_state(lambda: 0)
     operation = context.operation_name
@@ -20,4 +19,4 @@ def entity_function(context: df.DurableOrchestrationContext):
     
     context.set_state(current_value)
 
-main = df.Entity.create(entity_function)
+main = Entity.create(entity_function)
