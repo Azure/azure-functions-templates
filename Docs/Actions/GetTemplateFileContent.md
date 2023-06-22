@@ -101,7 +101,8 @@ When the `getTemplateFileContent_FunctionApp` action executes, tooling will read
             "filePath": "$(APP_FILENAME)",
             "continueOnError": false,
             "errorText": "Unable to create the function app",
-            "replaceTokens": true
+            "replaceTokens": true,
+            "FileExtension": ".py"
         }
     ]
 }

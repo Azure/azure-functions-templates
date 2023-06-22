@@ -1,9 +1,9 @@
 import logging
 
-import azure.functions as func
+from azure.functions import HttpRequest, HttpResponse, Out
 
 
-def main(req: func.HttpRequest, out: func.Out[str]) -> func.HttpResponse:
+def main(req: HttpRequest, out: Out[str]) -> HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
     message = req.params.get('message')
@@ -17,9 +17,9 @@ def main(req: func.HttpRequest, out: func.Out[str]) -> func.HttpResponse:
 
     if message:
         out.set(message)
-        return func.HttpResponse(f"Message received: {message}. The message transfered to the kafka broker.")
+        return HttpResponse(f"Message received: {message}. The message transfered to the kafka broker.")
     else:
-        return func.HttpResponse(
-             "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
-             status_code=200
+        return HttpResponse(
+            "This HTTP triggered function executed successfully but no message was passed. Please pass message as request parameter or in body for sending data to Kafka",
+            status_code=200
         )

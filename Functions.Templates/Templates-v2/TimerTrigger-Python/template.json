@@ -11,12 +11,19 @@
             "inputs": [
                 {
                     "assignTo": "$(APP_FILENAME)",
-                    "paramId": "app-FileName"
+                    "paramId": "app-FileName",
+                    "defaultValue": "function_app.py",
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }                    
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
-                    "defaultValue": "TimerTrigger"
+                    "defaultValue": "timer_trigger"
                 },                    
                 {
                     "assignTo": "$(SCHEDULE_INPUT)",
@@ -36,12 +43,19 @@
             "inputs": [
                 {
                     "assignTo": "$(SELECTED_FILEPATH)",
-                    "paramId": "app-selectedFileName"
+                    "paramId": "app-selectedFileName",
+                    "defaultValue": "function_app.py",
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
-                    "defaultValue": "TimerTrigger"
+                    "defaultValue": "timer_trigger"
                 },                    
                 {
                     "assignTo": "$(SCHEDULE_INPUT)",
@@ -58,17 +72,22 @@
         {
             "name": "Create New Blueprint file",
             "type": "CreateNewBlueprint",
-            "inputs" : [
+            "inputs": [
                 {
                     "assignTo": "$(BLUEPRINT_FILENAME)",
                     "paramId": "blueprint-fileName",
                     "defaultValue": "blueprint.py",
-                    "required": true
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
-                    "defaultValue": "TimerTrigger"
+                    "defaultValue": "timer_trigger"
                 },                    
                 {
                     "assignTo": "$(SCHEDULE_INPUT)",
@@ -85,18 +104,22 @@
         },
         {
             "name": "Add EventHubTrigger function to the Blueprint",
-            "type": "AppendToBlueprint", 
-            "inputs" : [
+            "type": "AppendToBlueprint",
+            "inputs": [
                 {
                     "assignTo": "$(BLUEPRINT_FILENAME)",
                     "paramId": "blueprint-existingFileName",
-                    "defaultValue": "blueprint.py",
-                    "required": true
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
                 },
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
-                    "defaultValue": "TimerTrigger"
+                    "defaultValue": "timer_trigger"
                 },                    
                 {
                     "assignTo": "$(SCHEDULE_INPUT)",
@@ -128,10 +151,11 @@
             "type": "AppendToFile",
             "createIfNotExists": false,
             "source": "$(TIMER_FUNCTION_BODY)",
-            "filePath": "$(SELECTED_FILEPATH).py",
+            "filePath": "$(SELECTED_FILEPATH)",
             "continueOnError": false,
             "errorText": "Unable to create httpTrigger function",
-            "replaceTokens": true
+            "replaceTokens": true,
+            "FileExtension": ".py"
         },
         {
             "name": "replaceText_FunctionBody",
@@ -147,39 +171,42 @@
         {
             "name": "writeFile_FunctionApp",
             "type": "WriteToFile",
-            "filePath": "$(APP_FILENAME).py",
+            "filePath": "$(APP_FILENAME)",
             "source": "$(FUNCTION_APP)",
-            "replaceTokens": true
+            "replaceTokens": true,
+            "FileExtension": ".py"
         },
         {
             "name": "readFileContent_BlueprintBody",
             "type": "GetTemplateFileContent",
             "assignTo": "$(BLUEPRINT_BODY_CONTENT)",
-            "filePath" : "blueprint_body.py"
+            "filePath": "blueprint_body.py"
         },
         {
             "name": "readFileContent_BlueprintFile",
             "type": "GetTemplateFileContent",
             "assignTo": "$(BLUEPRINT_CONTENT)",
-            "filePath" : "blueprint.py"
+            "filePath": "blueprint.py"
         },
         {
             "name": "appendFileContent_BlueprintBody",
             "type": "AppendToFile",
             "source": "$(BLUEPRINT_BODY_CONTENT)",
-            "filePath" : "$(BLUEPRINT_FILENAME).py",
-            "continueOnError" : false,
-            "errorText" : "Unable to create the Blueprint",
-            "replaceTokens": true
+            "filePath": "$(BLUEPRINT_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create the Blueprint",
+            "replaceTokens": true,
+            "FileExtension": ".py"
         },
         {
             "name": "writeFile_BlueprintFile",
             "type": "WriteToFile",
             "source": "$(BLUEPRINT_CONTENT)",
-            "filePath" : "$(BLUEPRINT_FILENAME).py",
-            "continueOnError" : false,
-            "errorText" : "Unable to create blueprint",
-            "replaceTokens": true
+            "filePath": "$(BLUEPRINT_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create blueprint",
+            "replaceTokens": true,
+            "FileExtension": ".py"
         }
     ]
 }

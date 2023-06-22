@@ -1,10 +1,10 @@
 import json
 import logging
 
-import azure.functions as func
+from azure.functions import EventGridEvent
 
 
-def main(event: func.EventGridEvent):
+def main(event: EventGridEvent):
     result = json.dumps({
         'id': event.id,
         'data': event.get_json(),

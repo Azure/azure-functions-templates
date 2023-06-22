@@ -1788,6 +1788,24 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";blobTrigger_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The name of the app setting containing your storage account connection string]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[스토리지 계정 연결 문자열을 포함하는 앱 설정의 이름]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";blobTrigger_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Storage account connection]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[스토리지 계정 연결]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";blobTrigger_displayName" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Azure Blob Storage]]></Val>
@@ -1874,6 +1892,15 @@
           <Val><![CDATA[Blueprint function file Name]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[청사진 함수 파일 이름]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";blueprint_selected_filename_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[This is the name of the file where you want to add a function to the existing blueprint]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[기존 청사진에 기능을 추가하려는 파일의 이름입니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2129,12 +2156,12 @@
       </Item>
       <Item ItemId=";cosmosDBIn_databaseName_help" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Name of the Cosmos DB database that includes the collection to be monitored.]]></Val>
+          <Val><![CDATA[Name of the Cosmos DB database that includes the container to be monitored.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[모니터링할 컬렉션이 포함된 Cosmos DB 데이터베이스의 이름입니다.]]></Val>
+            <Val><![CDATA[모니터링할 컨테이너가 포함된 Cosmos DB 데이터베이스의 이름입니다.]]></Val>
           </Tgt>
           <Prev Cat="Text">
-            <Val><![CDATA[Name of the Azure Cosmos DB database that includes the collection to be monitored.]]></Val>
+            <Val><![CDATA[Name of the Cosmos DB database that includes the collection to be monitored.]]></Val>
           </Prev>
         </Str>
         <Disp Icon="Str" />
@@ -2144,6 +2171,15 @@
           <Val><![CDATA[Database name]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[데이터베이스 이름]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";cosmosDBIn_leaseCollectionName_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The name of the collection in which the lease is stored]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[임대가 저장되는 컬렉션의 이름입니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

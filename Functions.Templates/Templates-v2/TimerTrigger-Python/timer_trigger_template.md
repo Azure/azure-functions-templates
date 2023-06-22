@@ -36,7 +36,7 @@ To run the code snippet generated through the command palette, note the followin
 - Confirm that the parameters within the trigger reflect values that correspond with your storage account.
 - The name of the file must be `function_app.py`.
 
-## Programming Model V2 (Preview)
+## Programming Model V2 
 
 The new programming model in Azure Functions Python delivers an experience that aligns with Python development principles, and subsequently with commonly used Python frameworks. 
 
