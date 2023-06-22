@@ -14,10 +14,11 @@ namespace Company.Function
             _logger = loggerFactory.CreateLogger<BlobTriggerCSharp>();
         }
 
-        [Function("BlobTriggerCSharp")]
-        public void Run([BlobTrigger("PathValue/{name}", Connection = "ConnectionValue")] string myBlob, string name)
+        [Function(nameof(BlobStringFunction))]
+        public void BlobStringFunction(
+            [BlobTrigger("string-trigger")] string data)
         {
-            _logger.LogInformation($"C# Blob trigger function Processed blob\n Name: {name} \n Data: {myBlob}");
+            _logger.LogInformation("Blob content: {content}", data);
         }
     }
 }
