@@ -1788,6 +1788,24 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";blobTrigger_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The name of the app setting containing your storage account connection string]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[El nombre de la configuración de aplicación que contiene la cadena de conexión de la cuenta de almacenamiento]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";blobTrigger_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Storage account connection]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Conexión de cuenta de Storage]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";blobTrigger_displayName" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Azure Blob Storage]]></Val>
@@ -1874,6 +1892,15 @@
           <Val><![CDATA[Blueprint function file Name]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Nombre del archivo de función de plano técnico]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";blueprint_selected_filename_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[This is the name of the file where you want to add a function to the existing blueprint]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nombre del archivo donde desea agregar una función al proyecto existente.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2129,12 +2156,12 @@
       </Item>
       <Item ItemId=";cosmosDBIn_databaseName_help" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Name of the Cosmos DB database that includes the collection to be monitored.]]></Val>
+          <Val><![CDATA[Name of the Cosmos DB database that includes the container to be monitored.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Nombre de la base de datos de Cosmos DB que incluye la colección que se va a supervisar.]]></Val>
+            <Val><![CDATA[Nombre de la base de datos de Cosmos DB que incluye el contenedor que se va a supervisar.]]></Val>
           </Tgt>
           <Prev Cat="Text">
-            <Val><![CDATA[Name of the Azure Cosmos DB database that includes the collection to be monitored.]]></Val>
+            <Val><![CDATA[Name of the Cosmos DB database that includes the collection to be monitored.]]></Val>
           </Prev>
         </Str>
         <Disp Icon="Str" />
@@ -2144,6 +2171,15 @@
           <Val><![CDATA[Database name]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Nombre de la base de datos]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";cosmosDBIn_leaseCollectionName_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The name of the collection in which the lease is stored]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nombre de la colección en la que se almacena la concesión.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
