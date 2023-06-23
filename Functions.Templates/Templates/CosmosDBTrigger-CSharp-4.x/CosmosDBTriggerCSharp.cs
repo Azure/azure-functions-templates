@@ -13,7 +13,8 @@ namespace Company.Function
             databaseName: "DatabaseName",
             containerName: "ContainerName",
             Connection = "CosmosDBConnectionSetting",
-            LeaseContainerName = "leases")]IReadOnlyList<ToDoItem> input,
+            LeaseContainerName = "leases",
+            CreateLeaseContainerIfNotExists = true)]IReadOnlyList<ToDoItem> input,
             ILogger log)
         {
             if (input != null && input.Count > 0)
