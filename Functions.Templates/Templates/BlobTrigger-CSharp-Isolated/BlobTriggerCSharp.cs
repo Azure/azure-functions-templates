@@ -9,15 +9,16 @@ namespace Company.Function
     {
         private readonly ILogger _logger;
 
-        public BlobTriggerCSharp(ILoggerFactory loggerFactory)
+        public BlobTriggerCSharp(ILogger<BlobTriggerCSharp> logger)
         {
-            _logger = loggerFactory.CreateLogger<BlobTriggerCSharp>();
+            _logger = logger;
         }
 
-        [Function("BlobTriggerCSharp")]
-        public void Run([BlobTrigger("PathValue/{name}", Connection = "ConnectionValue")] string myBlob, string name)
+        [Function(nameof(BlobStringFunction))]
+        public void BlobStringFunction(
+            [BlobTrigger(PathValue), Connection = "ConnectionValue"] string data)
         {
-            _logger.LogInformation($"C# Blob trigger function Processed blob\n Name: {name} \n Data: {myBlob}");
+            _logger.LogInformation("Blob content: {content}", data);
         }
     }
 }
