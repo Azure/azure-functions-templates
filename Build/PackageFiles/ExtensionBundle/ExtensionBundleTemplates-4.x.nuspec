@@ -154,15 +154,15 @@
     <file src="..\..\..\Functions.Templates\Templates-v2\CosmosDbTrigger-Python\*.*" target="templates-v2\CosmosDbTrigger-Python"/>
   <!-- // Templates v2 -->
 
-    <file src="..\..\..\Functions.Templates\templates\SqlInputBinding-CSharp\*.*" target="Templates\SqlInputBinding-CSharp" />
-    <file src="..\..\..\Functions.Templates\templates\SqlOutputBinding-CSharp\*.*" target="Templates\SqlOutputBinding-CSharp" />
-    <file src="..\..\..\Functions.Templates\templates\SqlInputBinding-Python\*.*" target="Templates\SqlInputBinding-Python" />
-    <file src="..\..\..\Functions.Templates\templates\SqlOutputBinding-Python\*.*" target="Templates\SqlOutputBinding-Python" />
-    <file src="..\..\..\Functions.Templates\templates\SqlInputBinding-Typescript\*.*" target="Templates\SqlInputBinding-Typescript" />
-    <file src="..\..\..\Functions.Templates\templates\SqlOutputBinding-Typescript\*.*" target="Templates\SqlOutputBinding-Typescript" />
+    <file src="..\..\..\Functions.Templates\templates\SqlInputBinding-CSharp\*.*" target="Templates\SqlInputBinding-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\SqlOutputBinding-CSharp\*.*" target="Templates\SqlOutputBinding-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\SqlInputBinding-Python\**" target="Templates\SqlInputBinding-Python" />
+    <file src="..\..\..\Functions.Templates\templates\SqlOutputBinding-Python\**" target="Templates\SqlOutputBinding-Python" />
+    <file src="..\..\..\Functions.Templates\templates\SqlInputBinding-Typescript\**" target="Templates\SqlInputBinding-Typescript" />
+    <file src="..\..\..\Functions.Templates\templates\SqlOutputBinding-Typescript\*." target="Templates\SqlOutputBinding-Typescript" />
     <file src="..\..\..\Functions.Templates\templates\SqlInputBinding-JavaScript\**" target="templates\SqlInputBinding-JavaScript" />
     <file src="..\..\..\Functions.Templates\templates\SqlOutputBinding-JavaScript\**" target="templates\SqlOutputBinding-JavaScript" />
-    <file src="..\..\..\Functions.Templates\templates\SqlInputBinding-PowerShell\*.*" target="Templates\SqlInputBinding-PowerShell" />
-    <file src="..\..\..\Functions.Templates\templates\SqlOutputBinding-PowerShell\*.*" target="Templates\SqlOutputBinding-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\SqlInputBinding-PowerShell\**" target="Templates\SqlInputBinding-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\SqlOutputBinding-PowerShell\**" target="Templates\SqlOutputBinding-PowerShell" />
   </files>
 </package>
