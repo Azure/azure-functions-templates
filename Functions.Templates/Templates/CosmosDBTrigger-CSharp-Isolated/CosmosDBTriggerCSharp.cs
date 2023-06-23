@@ -19,7 +19,8 @@ namespace Company.Function
             databaseName: "DatabaseValue",
             containerName: "ContainerValue",
             Connection = "ConnectionValue",
-            LeaseContainerName = "leases")] IReadOnlyList<MyDocument> input)
+            LeaseContainerName = "leases",
+            CreateLeaseContainerIfNotExists = true)] IReadOnlyList<MyDocument> input)
         {
             if (input != null && input.Count > 0)
             {
