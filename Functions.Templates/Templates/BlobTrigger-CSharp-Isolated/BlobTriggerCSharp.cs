@@ -15,7 +15,7 @@ namespace Company.Function
         }
 
         [Function(nameof(BlobStringFunction))]
-        public void BlobStringFunction(
+        public void Run(
             [BlobTrigger(PathValue), Connection = "ConnectionValue"] string data)
         {
             _logger.LogInformation("Blob content: {content}", data);
