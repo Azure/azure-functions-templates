@@ -1,8 +1,8 @@
 import logging
 
-import azure.functions as func
+from azure.functions import ServiceBusMessage
 
 
-def main(msg: func.ServiceBusMessage):
+def main(msg: ServiceBusMessage):
     logging.info('Python ServiceBus queue trigger processed message: %s',
                  msg.get_body().decode('utf-8'))

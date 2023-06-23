@@ -1,7 +1,8 @@
 import json
-import azure.functions as func
 
-def main(req: func.HttpRequest, items: func.Out[func.SqlRowList]) -> func.HttpResponse:
+from azure.functions import HttpRequest, HttpResponse, Out, SqlRowList, SqlRow
+
+def main(req: HttpRequest, items: Out[SqlRowList]) -> HttpResponse:
     """Sample SQL Output Binding
 
     See https://aka.ms/sqlbindingsoutput for more information about using this binding
@@ -23,10 +24,10 @@ def main(req: func.HttpRequest, items: func.Out[func.SqlRowList]) -> func.HttpRe
     # Note that this expects the body to be an array of JSON objects which
     # have a property matching each of the columns in the table to upsert to.
     body = json.loads(req.get_body())
-    rows = func.SqlRowList(map(lambda r: func.SqlRow.from_dict(r), body))
+    rows = SqlRowList(map(lambda r: SqlRow.from_dict(r), body))
     items.set(rows)
 
-    return func.HttpResponse(
+    return HttpResponse(
         body=req.get_body(),
         status_code=201, # 201 Created
         mimetype="application/json"

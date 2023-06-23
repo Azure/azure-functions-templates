@@ -1,8 +1,8 @@
 import logging
 
-import azure.functions as func
+from azure.functions import QueueMessage
 
 
-def main(msg: func.QueueMessage) -> None:
+def main(msg: QueueMessage) -> None:
     logging.info('Python queue trigger function processed a queue item: %s',
                  msg.get_body().decode('utf-8'))
