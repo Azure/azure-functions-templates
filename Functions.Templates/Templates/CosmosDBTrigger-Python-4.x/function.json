@@ -1,4 +1,5 @@
 {
+  "scriptFile": "__init__.py",
   "bindings": [
     {
       "type": "cosmosDBTrigger",
@@ -8,7 +9,8 @@
       "connection": "",
       "databaseName": "",
       "containerName": "",
-      "createLeaseContainerIfNotExists" : true
+      "createLeaseContainerIfNotExists": true,
+      "startFromBeginning": false
     }
   ]
 }
