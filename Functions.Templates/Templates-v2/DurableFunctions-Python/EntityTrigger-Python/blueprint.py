@@ -5,6 +5,9 @@
 # Please refer to https://aka.ms/azure-functions-python-blueprints
 
 
+import logging
+import json
+
 import azure.functions as func
 import azure.durable_functions as df
 

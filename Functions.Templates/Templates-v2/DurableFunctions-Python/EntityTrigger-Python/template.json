@@ -1,12 +1,12 @@
 {
     "author": "Naiyuan Tian(nytiannn)",
-    "name": "Activity Trigger",
-    "description": "$ActivityTrigger_description",
+    "name": "Entity Trigger",
+    "description": "$EntityTrigger_description",
     "programmingModel": "v2",
     "language": "python",
     "jobs": [
         {
-            "name": "Create New Project with ActivityTrigger function",
+            "name": "Create New Project with EntityTrigger function",
             "type": "CreateNewApp",
             "inputs": [
                 {
@@ -24,7 +24,7 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "hello"
+                    "defaultValue": "entity_function"
                 }
             ],
             "actions": [
@@ -34,7 +34,7 @@
             ]
         },
         {
-            "name": "Add ActivityTrigger function to the main file",
+            "name": "Add EntityTrigger function to the main file",
             "type": "AppendToFile",
             "inputs": [
                 {
@@ -52,7 +52,7 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "hello"
+                    "defaultValue": "entity_function"
                 }
             ],
             "actions": [
@@ -79,7 +79,7 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "hello"
+                    "defaultValue": "entity_function"
                 }
             ],
             "actions": [
@@ -90,7 +90,7 @@
             ]
         },
         {
-            "name": "Add ActivityTrigger function to the Blueprint",
+            "name": "Add EntityTrigger function to the Blueprint",
             "type": "AppendToBlueprint",
             "inputs": [
                 {
@@ -107,7 +107,7 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "hello"
+                    "defaultValue": "entity_function"
                 }
             ],
             "actions": [
@@ -146,7 +146,7 @@
             "source": "$(FUNCTION_BODY)",
             "filePath": "$(SELECTED_FILEPATH)",
             "continueOnError": false,
-            "errorText": "Unable to create activity trigger function",
+            "errorText": "Unable to create entity trigger function",
 			"replaceTokens": true,
             "FileExtension": ".py"
         },
