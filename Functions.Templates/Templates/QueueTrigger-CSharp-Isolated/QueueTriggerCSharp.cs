@@ -17,7 +17,7 @@ namespace Company.Function
         [Function(nameof(QueueTriggerCSharp))]
         public void Run([QueueTrigger("PathValue", Connection = "ConnectionValue")] QueueMessage message)
         {
-            _logger.LogInformation($"C# Queue trigger function processed: {message.MessageText}"));
+            _logger.LogInformation($"C# Queue trigger function processed: {message.MessageText}");
         }
     }
 }
