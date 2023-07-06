@@ -1,0 +1,39 @@
+{
+    "author": "Eric Jizba",
+    "name": "Azure Event Grid trigger",
+    "description": "$EventGridTrigger_description",
+    "programmingModel": "v4",
+    "language": "TypeScript",
+    "jobs": [
+        {
+            "name": "Create New Function",
+            "type": "CreateNewApp",
+            "inputs": [
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "functionName",
+                    "defaultValue": "eventGridTrigger"
+                }
+            ],
+            "actions": [
+                "readFile",
+                "writeFile"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "readFile",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(INDEX_FILE)",
+            "filePath": "index.ts"
+        },
+        {
+            "name": "writeFile",
+            "type": "WriteToFile",
+            "source": "$(INDEX_FILE)",
+            "filePath": "src/functions/$(FUNCTION_NAME_INPUT).ts",
+            "replaceTokens": true
+        }
+    ]
+}

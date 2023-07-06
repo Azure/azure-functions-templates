@@ -1,0 +1,55 @@
+{
+    "author": "Eric Jizba",
+    "name": "Azure Cosmos DB trigger",
+    "description": "$CosmosDBTrigger_description",
+    "programmingModel": "v4",
+    "language": "JavaScript",
+    "jobs": [
+        {
+            "name": "Create New Function",
+            "type": "CreateNewApp",
+            "inputs": [
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "functionName",
+                    "defaultValue": "cosmosDBTrigger"
+                },
+                {
+                    "assignTo": "$(CONNECTION_INPUT)",
+                    "paramId": "connection"
+                },
+                {
+                    "assignTo": "$(DATABASE_NAME_INPUT)",
+                    "paramId": "databaseName"
+                },
+                {
+                    "assignTo": "$(CONTAINER_NAME_INPUT)",
+                    "paramId": "containerName"
+                },
+                {
+                    "assignTo": "$(CREATE_LEASE_CONTAINER_IF_NOT_EXISTS_INPUT)",
+                    "paramId": "createLeaseContainerIfNotExists"
+                }
+            ],
+            "actions": [
+                "readFile",
+                "writeFile"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "readFile",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(INDEX_FILE)",
+            "filePath": "index.js"
+        },
+        {
+            "name": "writeFile",
+            "type": "WriteToFile",
+            "source": "$(INDEX_FILE)",
+            "filePath": "src/functions/$(FUNCTION_NAME_INPUT).js",
+            "replaceTokens": true
+        }
+    ]
+}
