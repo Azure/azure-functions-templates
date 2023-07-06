@@ -14,4 +14,7 @@ module EventGridTriggerFSharp =
         let logger =
             context.GetLogger("EventGridTriggerFSharp")
 
-        log.LogInformation(cloudEvent.Subject)
+        let msg =
+            sprintf "Event type: %s, Event subject: %s" cloudEvent.Type cloudEvent.Subject
+
+        log.LogInformation msg
