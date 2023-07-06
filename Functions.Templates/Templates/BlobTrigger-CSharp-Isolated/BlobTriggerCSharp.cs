@@ -1,5 +1,5 @@
 using System;
-using System.IO;
+using Azure.Storage.Blobs;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 
@@ -7,7 +7,7 @@ namespace Company.Function
 {
     public class BlobTriggerCSharp
     {
-        private readonly ILogger _logger;
+        private readonly ILogger<BlobTriggerCSharp> _logger;
 
         public BlobTriggerCSharp(ILogger<BlobTriggerCSharp> logger)
         {
@@ -16,7 +16,7 @@ namespace Company.Function
 
         [Function(nameof(BlobClientFunction))]
         public async Task Run(
-            [BlobTrigger(PathValue), Connection = "ConnectionValue"] BlobClient client)
+            [BlobTrigger(PathValue, Connection = "ConnectionValue")] BlobClient client)
         {
             var downloadResult = await client.DownloadContentAsync();
             var blobContent = downloadResult.Value.Content.ToString();
