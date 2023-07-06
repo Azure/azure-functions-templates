@@ -1,4 +1,5 @@
 using System;
+using Azure.Messaging.EventHubs;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 
@@ -8,15 +9,19 @@ namespace Company.Function
     {
         private readonly ILogger _logger;
 
-        public EventHubTriggerCSharp(ILoggerFactory loggerFactory)
+        public EventHubTriggerCSharp(ILogger<EventHubTriggerCSharp> logger)
         {
-            _logger = loggerFactory.CreateLogger<EventHubTriggerCSharp>();
+            _logger = logger;
         }
 
-        [Function("EventHubTriggerCSharp")]
-        public void Run([EventHubTrigger("eventHubNameValue", Connection = "ConnectionValue")] string[] input)
+        [Function(nameof(EventHubTriggerCSharp))]
+        public void Run([EventHubTrigger("eventHubNameValue", Connection = "ConnectionValue")] EventData[] events)
         {
-            _logger.LogInformation($"First Event Hubs triggered message: {input[0]}");
+            foreach (EventData @event in events)
+            {
+                _logger.LogInformation("Event Body: {body}", @event.Body);
+                _logger.LogInformation("Event Content-Type: {contentType}", @event.ContentType);
+            }
         }
     }
 }
