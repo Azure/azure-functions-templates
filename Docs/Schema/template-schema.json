@@ -20,11 +20,11 @@
         },
         "programmingModel": {
             "description": "The programming model the template applies to",
-            "enum": [ "v1", "v2" ]
+            "enum": [ "v1", "v2", "v3", "v4" ]
         },
         "language": {
             "description": "The programming language the template applies to",
-            "enum": [ "dotnet", "node", "python", "powershell" ]
+            "enum": [ "dotnet", "javascript", "typescript", "python", "powershell" ]
         },
         "jobs": {
             "description": "The list of jobs defined by the template, each corresponding to a user gesture",
@@ -41,6 +41,7 @@
                         "enum": [
                             "AppendToFile",
                             "CreateBlueprint",
+                            "CreateNewFile",
                             "CreateNewApp"
                         ]
                     },
