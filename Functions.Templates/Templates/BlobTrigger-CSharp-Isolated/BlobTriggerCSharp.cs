@@ -14,7 +14,7 @@ namespace Company.Function
             _logger = logger;
         }
 
-        [Function(nameof(BlobStreamFunction))]
+        [Function(nameof(BlobTriggerCSharp))]
         public async Task Run(
             [BlobTrigger(PathValue, Connection = "ConnectionValue")] Stream myBlob)
         {
