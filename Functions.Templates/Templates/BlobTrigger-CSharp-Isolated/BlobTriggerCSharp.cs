@@ -14,13 +14,12 @@ namespace Company.Function
             _logger = logger;
         }
 
-        [Function(nameof(BlobClientFunction))]
+        [Function(nameof(BlobStreamFunction))]
         public async Task Run(
-            [BlobTrigger(PathValue, Connection = "ConnectionValue")] BlobClient client)
+            [BlobTrigger(PathValue, Connection = "ConnectionValue")] Stream myBlob)
         {
-            var downloadResult = await client.DownloadContentAsync();
-            var blobContent = downloadResult.Value.Content.ToString();
-            _logger.LogInformation("Blob content: {content}", blobContent);
+            using var blobStreamReader = new StreamReader(stream);
+            _logger.LogInformation("Blob content: {content}", await blobStreamReader.ReadToEndAsync());
         }
     }
 }

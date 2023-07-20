@@ -11,17 +11,20 @@ module BlobTriggerFSharp =
     [<Function("BlobTriggerFSharp")>]
     let run
         (
-            [<BlobTrigger("PathValue/{name}", Connection = "ConnectionValue")>] client: BlobClient,
+            [<BlobTrigger("PathValue/{name}", Connection = "ConnectionValue")>] client: Stream,
             name: string,
             context: FunctionContext
         ) =
         let logger
             = context.GetLogger "BlobTriggerFSharp"
 
-        let text =
-            client.DownloadContent().Value.Content.ToString()
+        use blobStreamReader
+            = new StreamReader(stream)
+
+        let blobContent
+            = blobStreamReader.ReadToEndAsync() |> Async.AwaitTask
 
         let msg =
-            sprintf "F# Blob trigger function Processed blob\nName: %s \nData: %s" name text
+            sprintf "Blob content:\nContent: %s" blobContent
 
         logger.LogInformation msg
