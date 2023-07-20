@@ -17,9 +17,9 @@ namespace Company.Function
         [Function("CosmosDBTriggerCSharp")]
         public void Run([CosmosDBTrigger(
             databaseName: "DatabaseValue",
-            collectionName: "CollectionValue",
-            ConnectionStringSetting = "ConnectionValue",
-            LeaseCollectionName = "leases")] IReadOnlyList<MyDocument> input)
+            containerName: "CollectionValue",
+            Connection = "ConnectionValue",
+            LeaseContainerName = "leases")] IReadOnlyList<MyDocument> input)
         {
             if (input != null && input.Count > 0)
             {

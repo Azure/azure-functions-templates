@@ -16,9 +16,9 @@ module CosmosDBTriggerFSharp =
     let run
         (
             [<CosmosDBTrigger(databaseName = "DatabaseValue",
-                              collectionName = "CollectionValue",
-                              ConnectionStringSetting = "ConnectionValue",
-                              LeaseCollectionName = "leases")>] input: IReadOnlyList<MyDocument>,
+                              containerName = "CollectionValue",
+                              Connection = "ConnectionValue",
+                              LeaseContainerName = "leases")>] input: IReadOnlyList<MyDocument>,
             context: FunctionContext
         ) =
         let logger =
