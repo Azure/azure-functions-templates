@@ -16,10 +16,11 @@ namespace Company.Function
 
         [Function(nameof(BlobTriggerCSharp))]
         public async Task Run(
-            [BlobTrigger("PathValue", Connection = "ConnectionValue")] Stream stream)
+            [BlobTrigger("PathValue/{name}", Connection = "ConnectionValue")] Stream stream, string name)
         {
             using var blobStreamReader = new StreamReader(stream);
-            _logger.LogInformation("Blob content: {content}", await blobStreamReader.ReadToEndAsync());
+            var content = await blobStreamReader.ReadToEndAsync();
+            _logger.LogInformation($"C# Blob trigger function Processed blob\n Name: {name} \n Data: {content}");
         }
     }
 }
