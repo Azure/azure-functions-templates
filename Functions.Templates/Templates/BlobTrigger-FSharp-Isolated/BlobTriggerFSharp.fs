@@ -2,7 +2,6 @@ namespace Company.Function
 
 open System
 open System.IO
-open Azure.Storage.Blobs;
 open Microsoft.Azure.Functions.Worker
 open Microsoft.Extensions.Logging
 
@@ -19,7 +18,7 @@ module BlobTriggerFSharp =
             = context.GetLogger "BlobTriggerFSharp"
 
         use blobStreamReader
-            = new StreamReader(stream)
+            = new StreamReader(client)
 
         let blobContent
             = blobStreamReader.ReadToEndAsync() |> Async.AwaitTask

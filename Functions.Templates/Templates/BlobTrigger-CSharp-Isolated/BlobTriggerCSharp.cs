@@ -1,5 +1,5 @@
-using System;
-using Azure.Storage.Blobs;
+using System.IO;
+using System.Threading.Tasks;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 
@@ -14,9 +14,9 @@ namespace Company.Function
             _logger = logger;
         }
 
-        [Function(nameof(BlobStreamFunction))]
+        [Function(nameof(BlobTriggerCSharp))]
         public async Task Run(
-            [BlobTrigger(PathValue, Connection = "ConnectionValue")] Stream myBlob)
+            [BlobTrigger("PathValue", Connection = "ConnectionValue")] Stream stream)
         {
             using var blobStreamReader = new StreamReader(stream);
             _logger.LogInformation("Blob content: {content}", await blobStreamReader.ReadToEndAsync());
