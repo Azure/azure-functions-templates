@@ -10,9 +10,9 @@ namespace Company.Function
     {
         [FunctionName("CosmosDBTriggerCSharp")]
         public static void Run([CosmosDBTrigger(
-            databaseName: "DatabaseName",
-            containerName: "ContainerName",
-            Connection = "CosmosDBConnectionSetting",
+            databaseName: "DatabaseValue",
+            containerName: "ContainerValue",
+            Connection = "ConnectionValue",
             LeaseContainerName = "leases",
             CreateLeaseContainerIfNotExists = true)]IReadOnlyList<ToDoItem> input,
             ILogger log)
