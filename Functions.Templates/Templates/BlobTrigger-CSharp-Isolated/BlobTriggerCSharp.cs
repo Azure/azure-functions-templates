@@ -15,8 +15,7 @@ namespace Company.Function
         }
 
         [Function(nameof(BlobTriggerCSharp))]
-        public async Task Run(
-            [BlobTrigger("PathValue/{name}", Connection = "ConnectionValue")] Stream stream, string name)
+        public async Task Run([BlobTrigger("PathValue/{name}", Connection = "ConnectionValue")] Stream stream, string name)
         {
             using var blobStreamReader = new StreamReader(stream);
             var content = await blobStreamReader.ReadToEndAsync();
