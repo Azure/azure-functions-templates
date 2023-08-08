@@ -32,6 +32,10 @@
                 "description": "Target .NET 7"
                 },
                 {
+                "choice": "net8.0",
+                "description": "Target .NET 8"
+                },
+                {
                 "choice": "net48",
                 "description": "Target .NET Framework 4.8"
                 }
@@ -43,14 +47,14 @@
         },
         "NetCore": {
             "type": "computed",
-            "value": "(Framework == \"net7.0\" || Framework == \"net6.0\")"
+            "value": "(Framework == \"net8.0\" || Framework == \"net7.0\" || Framework == \"net6.0\")"
         },
         "StorageConnectionStringValue": {
             "description": "The connection string for your Azure WebJobs Storage.",
             "type": "parameter",
             "defaultValue": "UseDevelopmentStorage=true",
             "replaces": "AzureWebJobsStorageConnectionStringValue",
-            "DataType": "AzureStorage"
+            "DataType": "string"
         },
         "AzureFunctionsVersion": {
             "description": "The setting that determines the target release",
