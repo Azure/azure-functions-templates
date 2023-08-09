@@ -1,35 +1,44 @@
 {
   "name": {
-    "text": "SQL trigger",
+    "text": "Dapr Service Invocation Trigger",
     "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}",
-    "id": "3000"
+    "id": "5000"
   },
   "description": {
-    "text": "A C# function that takes a SQL table to monitor for changes and invokes the function with updated rows.",
+    "text": "A C# function that gets triggered by Dapr runtime when Dapr runtime receives a service invocation request from other Daperized app.",
     "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}",
-    "id": "3001"
+    "id": "5001"
   },
   "order": 400,
   "icon": "vs-2017.3/functionF.png",
-  "learnMoreLink": "https://aka.ms/sqltrigger",
+  "learnMoreLink": "https://aka.ms/azure-function-dapr-trigger-service-invocation",
   "uiFilters": [
     "functions"
   ],
   "symbolInfo": [
     {
-      "id": "connectionStringSetting",
+      "id": "kubernetes",
       "name": {
-        "id": "3002",
-        "text": "Connection string setting name",
+        "id": "5002",
+        "text": "Secret store to get the secret from.",
         "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
       },
       "isVisible": true
     },
     {
-      "id": "table",
+      "id": "my-secret",
       "name": {
-        "id": "3003",
-        "text": "Table",
+        "id": "5003",
+        "text": "Secret key to get the secret value.",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      },
+      "isVisible": true
+    },
+    {
+      "id": "metadata.namespace=default",
+      "name": {
+        "id": "5003",
+        "text": "Metadata properties.",
         "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
       },
       "isVisible": true

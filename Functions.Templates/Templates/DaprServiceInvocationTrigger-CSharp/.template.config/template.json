@@ -3,51 +3,57 @@
     "classifications": [
         "Azure Function",
         "Trigger",
-        "SQL"
+        "Dapr"
     ],
-    "name": "SqlTriggerBinding",
-    "identity": "Azure.Function.CSharp.SqlTriggerBinding",
-    "groupIdentity": "Azure.Function.SqlTriggerBinding",
-    "shortName": "sqltrigger",
+    "name": "DaprServiceInvocationTrigger",
+    "identity": "Azure.Function.CSharp.DaprServiceInvocationTrigger",
+    "groupIdentity": "Azure.Function.DaprServiceInvocationTrigger",
+    "shortName": "daprServiceInvocationTrigger",
     "tags": {
         "language": "C#",
         "type": "item"
     },
-    "sourceName": "SqlTriggerBindingCSharp",
+    "sourceName": "DaprServiceInvocationTriggerCSharp",
     "symbols": {
         "namespace": {
             "description": "namespace for the generated code",
             "replaces": "Company.Function",
             "type": "parameter"
         },
-        "connectionStringSetting": {
-            "description": "The name of the app setting containing your SQL connection string.",
+        "kubernetes": {
+            "description": "Secret store to get the secret from.",
             "type": "parameter",
             "defaultValue": "",
-            "replaces": "SqlConnectionString"
+            "replaces": "SecretStoreName"
         },
-        "table": {
-            "description": "This is the table that is monitored for changes by the trigger.",
+        "my-secret": {
+            "description": "Secret key to get the secret value.",
             "type": "parameter",
-            "defaultValue": "[dbo].[table1]",
-            "replaces": "table"
+            "defaultValue": "",
+            "replaces": "Key"
+        },
+        "metadata.namespace=default": {
+            "description": "Metadata properties.",
+            "type": "parameter",
+            "defaultValue": "",
+            "replaces": "Metadata"
         }
     },
     "primaryOutputs": [
         {
-            "path": "SqlTriggerBindingCSharp.cs"
+            "path": "DaprServiceInvocationTriggerCSharp.cs"
         }
     ],
-    "defaultName": "SqlTriggerBindingCSharp",
+    "defaultName": "DaprServiceInvocationTriggerCSharp",
     "postActions": [
         {
-          "Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.Sql Nuget package",
+          "Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.Dapr Nuget package",
           "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
           "ContinueOnError": "true",
           "ManualInstructions": [],
           "args": {
             "referenceType": "package",
-            "reference": "Microsoft.Azure.WebJobs.Extensions.Sql", "version": "3.0.341-preview",
+            "reference": "Microsoft.Azure.WebJobs.Extensions.Dapr", "version": "0.15.0-preview01",
             "projectFileExtensions": ".csproj"
           }
         },

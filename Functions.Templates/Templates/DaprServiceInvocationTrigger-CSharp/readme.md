@@ -1,9 +1,9 @@
-# SQL Trigger Binding - C<span>#</span>
+# DaprServiceInvocationTrigger - C<span>#</span>
 
-The `SQL Trigger Binding` monitors the user table for changes (i.e., row inserts, updates, and deletes) and invokes the function with updated rows.
+Using `Dapr Service Invocation Trigger`, your azure functions can reliably and securely communicate with other applications using the standard HTTP protocol.
 
 ## How it works
 
-`SQL Trigger Binding` utilizes SQL change tracking functionality to monitor the user table for changes. As such, it is necessary to enable change tracking on the SQL database and the SQL table before using the trigger support.
+`Dapr Service Invocation Trigger` uses Dapr's API to invoke other services, and Dapr's sidecar handles routing, protocol translation, and retries, streamlining cross-service interaction.
 
-For more information, see the official [docs](https://aka.ms/sqltrigger).
+For more information, see the official [docs](https://aka.ms/azure-function-dapr-trigger-service-invocation).

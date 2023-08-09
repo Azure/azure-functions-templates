@@ -1,11 +1,17 @@
 {
   "bindings": [
     {
-      "name": "changes",
-      "type": "sqlTrigger",
+      "type": "daprServiceInvocationTrigger",
+      "name": "payload",
+      "direction": "in"
+    },
+    {
+      "type": "daprSecret",
       "direction": "in",
-      "tableName": "[dbo].[table1]",
-      "connectionStringSetting": "SqlConnectionString"
+      "name": "secret",
+      "key": "my-secret",
+      "secretStoreName": "kubernetes",
+      "metadata": "metadata.namespace=default"
     }
   ],
   "disabled": false

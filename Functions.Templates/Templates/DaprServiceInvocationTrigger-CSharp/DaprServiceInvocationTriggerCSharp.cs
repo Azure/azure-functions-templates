@@ -1,21 +1,17 @@
-
-
 namespace Company.Function
 {
+    using System.Collections.Generic;
+    using System.Text.Json;
     using Microsoft.Azure.WebJobs;
+    using Microsoft.Azure.WebJobs.Extensions.Dapr;
     using Microsoft.Extensions.Logging;
 
-    using Microsoft.Azure.WebJobs.Extensions.Dapr;
-    using System.Collections.Generic;
-
-    using System.Text.Json;
-
-    public static class DaprServiceInvocationTrigger
+    public static class DaprServiceInvocationTriggerCSharp
     {
         // Visit https://aka.ms/azure-functions-dapr to learn how to use the Dapr extension.
-        [FunctionName("DaprServiceInvocationTrigger")]
+        [FunctionName("DaprServiceInvocationTriggerCSharp")]
         public static void Run(
-            [DaprServiceInvocationTrigger] JsonElement data,
+            [DaprServiceInvocationTrigger] JsonElement payload,
             [DaprSecret("kubernetes", "my-secret", Metadata = "metadata.namespace=default")] IDictionary<string, string> secret,
             ILogger log)
         {
