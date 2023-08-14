@@ -1,0 +1,32 @@
+{
+  "bindings": [
+    {
+      "type": "daprBindingTrigger",
+      "bindingName": "%KafkaBindingName%",
+      "name": "triggerData",
+      "direction": "in"
+    },
+    {
+      "type": "daprPublish",
+      "direction": "out",
+      "name": "pubEvent",
+      "pubsubname": "messagebus",
+      "topic": "B"
+    },
+    {
+      "type": "daprTopicTrigger",
+      "pubsubname": "messagebus",
+      "topic": "A",
+      "name": "subEvent",
+      "direction": "in",
+      "dataType": "string"
+    },
+    {
+      "type": "daprState",
+      "stateStore": "statestore",
+      "direction": "out",
+      "name": "value",
+      "key": "product"
+    }
+  ]
+}
