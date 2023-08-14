@@ -16,7 +16,7 @@ namespace dotnet_azurefunction.templlate_samples
         /// <summary>
         /// Visit https://aka.ms/azure-functions-dapr to learn how to use the Dapr extension.
         /// Start function app with Dapr: dapr run --app-id functionapp --app-port 3001 --dapr-http-port 3501 --resources-path .\components\ -- func host start
-        /// Function will be invoked by Dapr cron binding trigger and publish a message to message bus.
+        /// Function will be invoked by Dapr cron binding trigger and publish messages to message bus.
         /// </summary>
         /// <param name="log">Function logger.</param>
         [FunctionName("DaprBindingTriggerCSharp")]
