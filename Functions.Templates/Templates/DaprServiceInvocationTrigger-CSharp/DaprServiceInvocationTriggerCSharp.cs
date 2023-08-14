@@ -12,7 +12,7 @@ namespace FunctionApp8
         [FunctionName("Function1")]
         public static void Run(
             [DaprServiceInvocationTrigger] JsonElement payload,
-            [DaprSecret("localsecretstore", "my-secret", Metadata = "metadata.namespace=default")] IDictionary<string, string> secret,
+            [DaprSecret("localsecretstore", "my-secret", Metadata = "metadata.namespace=default")] IDictionary<string, string> secrets,
             ILogger log)
         {
             log.LogInformation("C# ServiceInvocation trigger with DaprSecret input binding function processed a request.");
@@ -20,7 +20,10 @@ namespace FunctionApp8
             // print the fetched secret value
             // this is only for demo purpose
             // please do not log any real secret in your production code
-            log.LogInformation("Stored secret: Key = my-secret, Value = {0}", secret["my-secret"]);
+            foreach (var kvp in secrets)
+            {
+                log.LogInformation("Stored secret: Key = {0}, Value = {1}", kvp.Key, kvp.Value);
+            }
         }
     }
 }
