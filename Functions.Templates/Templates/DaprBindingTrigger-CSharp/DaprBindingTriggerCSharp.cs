@@ -3,7 +3,7 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace dotnet_azurefunction.templlate_samples
+namespace Company.Function
 {
     using CloudNative.CloudEvents;
     using Microsoft.Azure.Functions.Extensions.Dapr.Core;
