@@ -1,4 +1,4 @@
-#r "Azure.Messaging.EventGrid"
+#r "Azure.Messaging"
 
 using Azure.Messaging;
 
