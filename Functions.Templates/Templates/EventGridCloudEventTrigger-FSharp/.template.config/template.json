@@ -7,27 +7,31 @@
         "EventGrid CloudEvent"
     ],
     "name": "EventGridCloudEventTrigger",
-    "identity": "Azure.Function.CSharp.EventGridCloudEventTrigger.3.x",
+    "identity": "Azure.Function.FSharp.EventGridCloudEvent.3.x",
     "groupIdentity": "Azure.Function.EventGridCloudEventTrigger",
     "shortName": "eventgridcloudevent",
     "tags": {
-        "language": "C#",
+        "language": "F#",
         "type": "item"
     },
-    "sourceName": "EventGridCloudEventTriggerCSharp",
+    "sourceName": "EventGridCloudEventTriggerFSharp",
     "symbols": {
         "namespace": {
             "description": "namespace for the generated code",
             "replaces": "Company.Function",
             "type": "parameter"
+        },
+        "HostIdentifier": {
+            "type": "bind",
+            "binding": "HostIdentifier"
         }
     },
     "primaryOutputs": [
         {
-            "path": "EventGridCloudEventTriggerCSharp.cs"
+            "path": "EventGridCloudEventTriggerFSharp.fs"
         }
     ],
-    "defaultName": "EventGridCloudEventTriggerCSharp",
+    "defaultName": "EventGridCloudEventTriggerFSharp",
     "postActions": [
         {
             "Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.EventGrid Nuget package",
@@ -37,7 +41,7 @@
             "args": {
                 "referenceType": "package",
                 "reference": "Microsoft.Azure.WebJobs.Extensions.EventGrid", "version": "3.3.0",
-                "projectFileExtensions": ".csproj"
+                "projectFileExtensions": ".fsproj"
             }
         },
         {
