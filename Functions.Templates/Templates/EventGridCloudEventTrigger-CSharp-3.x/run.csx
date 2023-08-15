@@ -1,8 +1,8 @@
 #r "Azure.Messaging.EventGrid"
 
-using Azure.Messaging.EventGrid;
+using Azure.Messaging;
 
-public static void Run(EventGridEvent eventGridEvent, ILogger log)
+public static void Run(CloudEvent cloudEvent, ILogger log)
 {
-    log.LogInformation(eventGridEvent.EventType.ToString());
+    log.LogInformation("Event received {type} {subject}: {data}", cloudEvent.Type, cloudEvent.Subject, cloudEvent.Data.ToString());
 }
