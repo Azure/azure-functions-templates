@@ -16,8 +16,8 @@
       "replaces": "Company.Function",
       "type": "parameter"
     },
-    "ConnectionStringSetting": {
-      "description": "The name of the App Setting containing the connection string to the service that contains the collection to be monitored.",
+    "Connection": {
+      "description": "The name of the App Setting containing the connection string to the service that contains the container to be monitored.",
       "type": "parameter",
       "defaultValue": "",
       "replaces": "ConnectionValue"
@@ -28,11 +28,11 @@
       "defaultValue": "databaseName",
       "replaces": "DatabaseValue"
     },
-    "CollectionName": {
-      "description": "This is the name of the collection to be monitored.",
+    "ContainerName": {
+      "description": "This is the name of the container to be monitored.",
       "type": "parameter",
-      "defaultValue": "collectionName",
-      "replaces": "CollectionValue"
+      "defaultValue": "containerName",
+      "replaces": "ContainerValue"
     },
     "HostIdentifier": {
       "type": "bind",

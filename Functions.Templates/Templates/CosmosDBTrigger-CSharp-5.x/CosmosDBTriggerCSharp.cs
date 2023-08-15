@@ -10,7 +10,7 @@ namespace Company.Function
         [FunctionName("CosmosDBTriggerCSharp")]
         public static void Run([CosmosDBTrigger(
             databaseName: "DatabaseValue",
-            containerName: "CollectionValue",
+            containerName: "ContainerValue",
             Connection = "ConnectionValue",
             LeaseContainerName = "leases",
             CreateLeaseContainerIfNotExists = true)]IReadOnlyList<ToDoItem> input, // Here you can bind to any class you want!
