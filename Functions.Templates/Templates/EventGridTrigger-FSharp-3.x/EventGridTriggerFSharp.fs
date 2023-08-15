@@ -11,5 +11,5 @@ open Azure.Messaging
 
 module EventGridTriggerFSharp =
     [<Functionname>]
-    let run ([<EventGridTrigger>] eventGridEvent: CloudEvent, log: ILogger) =
+    let run ([<EventGridTrigger>] eventGridEvent: EventGridEvent, log: ILogger) =
         log.LogInformation(eventGridEvent.Data.ToString())
