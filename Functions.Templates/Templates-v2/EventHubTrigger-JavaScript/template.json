@@ -11,27 +11,27 @@
             "inputs": [
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
-                    "paramId": "functionName",
+                    "paramId": "trigger-functionName",
                     "defaultValue": "eventHubTrigger"
                 },
                 {
                     "assignTo": "$(CONNECTION_INPUT)",
-                    "paramId": "connection"
+                    "paramId": "eventHubTrigger-connection"
                 },
                 {
                     "assignTo": "$(EVENT_HUB_NAME_INPUT)",
-                    "paramId": "eventHubName"
+                    "paramId": "eventHubTrigger-eventHubName"
                 }
             ],
             "actions": [
-                "readFile",
+                "getTemplateFile",
                 "writeFile"
             ]
         }
     ],
     "actions": [
         {
-            "name": "readFile",
+            "name": "getTemplateFile",
             "type": "GetTemplateFileContent",
             "assignTo": "$(INDEX_FILE)",
             "filePath": "index.js"

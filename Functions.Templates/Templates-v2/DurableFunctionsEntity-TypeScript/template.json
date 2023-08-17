@@ -11,19 +11,19 @@
             "inputs": [
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
-                    "paramId": "functionName",
+                    "paramId": "trigger-functionName",
                     "defaultValue": "counter"
                 }
             ],
             "actions": [
-                "readFile",
+                "getTemplateFile",
                 "writeFile"
             ]
         }
     ],
     "actions": [
         {
-            "name": "readFile",
+            "name": "getTemplateFile",
             "type": "GetTemplateFileContent",
             "assignTo": "$(INDEX_FILE)",
             "filePath": "index.ts"

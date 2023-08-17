@@ -11,27 +11,27 @@
             "inputs": [
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
-                    "paramId": "functionName",
+                    "paramId": "trigger-functionName",
                     "defaultValue": "serviceBusQueueTrigger"
                 },
                 {
                     "assignTo": "$(CONNECTION_INPUT)",
-                    "paramId": "connection"
+                    "paramId": "serviceBusTrigger-connection"
                 },
                 {
                     "assignTo": "$(QUEUE_NAME_INPUT)",
-                    "paramId": "queueName"
+                    "paramId": "serviceBusTrigger-queueName"
                 }
             ],
             "actions": [
-                "readFile",
+                "getTemplateFile",
                 "writeFile"
             ]
         }
     ],
     "actions": [
         {
-            "name": "readFile",
+            "name": "getTemplateFile",
             "type": "GetTemplateFileContent",
             "assignTo": "$(INDEX_FILE)",
             "filePath": "index.js"

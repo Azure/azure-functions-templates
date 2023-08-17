@@ -11,23 +11,23 @@
             "inputs": [
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
-                    "paramId": "functionName",
+                    "paramId": "trigger-functionName",
                     "defaultValue": "timerTrigger"
                 },
                 {
                     "assignTo": "$(SCHEDULE_INPUT)",
-                    "paramId": "schedule"
+                    "paramId": "timerTrigger-schedule"
                 }
             ],
             "actions": [
-                "readFile",
+                "getTemplateFile",
                 "writeFile"
             ]
         }
     ],
     "actions": [
         {
-            "name": "readFile",
+            "name": "getTemplateFile",
             "type": "GetTemplateFileContent",
             "assignTo": "$(INDEX_FILE)",
             "filePath": "index.ts"

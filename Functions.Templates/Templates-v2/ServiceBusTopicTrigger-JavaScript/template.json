@@ -11,31 +11,31 @@
             "inputs": [
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
-                    "paramId": "functionName",
+                    "paramId": "trigger-functionName",
                     "defaultValue": "serviceBusTopicTrigger"
                 },
                 {
                     "assignTo": "$(CONNECTION_INPUT)",
-                    "paramId": "connection"
+                    "paramId": "serviceBusTrigger-connection"
                 },
                 {
                     "assignTo": "$(TOPIC_NAME_INPUT)",
-                    "paramId": "topicName"
+                    "paramId": "serviceBusTrigger-topicName"
                 },
                 {
                     "assignTo": "$(SUBSCRIPTION_NAME_INPUT)",
-                    "paramId": "subscriptionName"
+                    "paramId": "serviceBusTrigger-subscriptionName"
                 }
             ],
             "actions": [
-                "readFile",
+                "getTemplateFile",
                 "writeFile"
             ]
         }
     ],
     "actions": [
         {
-            "name": "readFile",
+            "name": "getTemplateFile",
             "type": "GetTemplateFileContent",
             "assignTo": "$(INDEX_FILE)",
             "filePath": "index.js"

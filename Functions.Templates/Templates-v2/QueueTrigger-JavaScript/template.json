@@ -11,27 +11,27 @@
             "inputs": [
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
-                    "paramId": "functionName",
+                    "paramId": "trigger-functionName",
                     "defaultValue": "storageQueueTrigger"
                 },
                 {
                     "assignTo": "$(CONNECTION_INPUT)",
-                    "paramId": "connection"
+                    "paramId": "queueTrigger-connection"
                 },
                 {
                     "assignTo": "$(QUEUE_NAME_INPUT)",
-                    "paramId": "queueName"
+                    "paramId": "queueTrigger-queueName"
                 }
             ],
             "actions": [
-                "readFile",
+                "getTemplateFile",
                 "writeFile"
             ]
         }
     ],
     "actions": [
         {
-            "name": "readFile",
+            "name": "getTemplateFile",
             "type": "GetTemplateFileContent",
             "assignTo": "$(INDEX_FILE)",
             "filePath": "index.js"

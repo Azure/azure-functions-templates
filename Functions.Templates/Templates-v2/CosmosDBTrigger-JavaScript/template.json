@@ -11,35 +11,35 @@
             "inputs": [
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
-                    "paramId": "functionName",
+                    "paramId": "trigger-functionName",
                     "defaultValue": "cosmosDBTrigger"
                 },
                 {
                     "assignTo": "$(CONNECTION_INPUT)",
-                    "paramId": "connection"
+                    "paramId": "cosmosDBTrigger-connection"
                 },
                 {
                     "assignTo": "$(DATABASE_NAME_INPUT)",
-                    "paramId": "databaseName"
+                    "paramId": "cosmosDBTrigger-databaseName"
                 },
                 {
                     "assignTo": "$(CONTAINER_NAME_INPUT)",
-                    "paramId": "containerName"
+                    "paramId": "cosmosDBTrigger-containerName"
                 },
                 {
                     "assignTo": "$(CREATE_LEASE_CONTAINER_IF_NOT_EXISTS_INPUT)",
-                    "paramId": "createLeaseContainerIfNotExists"
+                    "paramId": "cosmosDBTrigger-createLeaseContainerIfNotExists"
                 }
             ],
             "actions": [
-                "readFile",
+                "getTemplateFile",
                 "writeFile"
             ]
         }
     ],
     "actions": [
         {
-            "name": "readFile",
+            "name": "getTemplateFile",
             "type": "GetTemplateFileContent",
             "assignTo": "$(INDEX_FILE)",
             "filePath": "index.js"
