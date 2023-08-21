@@ -5,10 +5,9 @@
 
 namespace Company.Function
 {
-    using System.Text.Json;
     using CloudNative.CloudEvents;
-    using Microsoft.Azure.WebJobs;
-    using Microsoft.Azure.WebJobs.Extensions.Dapr;
+    using Microsoft.Azure.Functions.Worker;
+    using Microsoft.Azure.Functions.Worker.Extensions.Dapr;
     using Microsoft.Extensions.Logging;
 
     public static class DaprTopicTriggerCSharp
@@ -19,17 +18,17 @@ namespace Company.Function
         /// Invoke function app: dapr publish --pubsub messagebus --publish-app-id functionapp --topic A --data '{\"value\": { \"orderId\": \"42\" } }'
         /// </summary>
         /// <param name="subEvent">Cloud event sent by Dapr runtime.</param>
-        /// <param name="value">Value will be saved against the given key in state store.</param>
-        /// <param name="log">Function logger.</param>
-        [FunctionName("DaprTopicTriggerCSharp")]
-        public static void Run(
+        /// <param name="functionContext">Function context.</param>
+        [Function("DaprTopicTriggerCSharp")]
+        [DaprStateOutput("statestore", Key = "product")]
+        public static object? Run(
             [DaprTopicTrigger("messagebus", Topic = "A")] CloudEvent subEvent,
-            [DaprState("statestore", Key = "product")] out object value,
-            ILogger log)
+            FunctionContext functionContext)
         {
-            log.LogInformation("C# DaprTopic trigger with DaprState output binding function processed a request from the Dapr Runtime.");
+            var log = functionContext.GetLogger("DaprTopicTriggerCSharp");
+            log.LogInformation("C# DaprTopic trigger with DaprState output binding function processed a request.");
 
-            value = subEvent.Data;
+            return subEvent.Data;
         }
     }
 }

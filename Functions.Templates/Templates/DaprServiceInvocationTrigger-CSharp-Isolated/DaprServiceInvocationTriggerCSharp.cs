@@ -2,8 +2,8 @@ namespace Company.Function
 {
     using System.Collections.Generic;
     using System.Text.Json;
-    using Microsoft.Azure.WebJobs;
-    using Microsoft.Azure.WebJobs.Extensions.Dapr;
+    using Microsoft.Azure.Functions.Worker;
+    using Microsoft.Azure.Functions.Worker.Extensions.Dapr;
     using Microsoft.Extensions.Logging;
 
     public static class DaprServiceInvocationTriggerCSharp
@@ -15,13 +15,14 @@ namespace Company.Function
         /// </summary>
         /// <param name="payload">Payload of dapr service invocation trigger.</param>
         /// <param name="secrets">Secrets retrieved from secret store.</param>
-        /// <param name="log">Function logger.</param>
-        [FunctionName("DaprServiceInvocationTriggerCSharp")]
+        /// <param name="functionContext">Function context.</param>
+        [Function("DaprServiceInvocationTriggerCSharp")]
         public static void Run(
             [DaprServiceInvocationTrigger] object payload,
-            [DaprSecret("localsecretstore", "my-secret", Metadata = "metadata.namespace=default")] IDictionary<string, string> secrets,
-            ILogger log)
+            [DaprSecretInput("localsecretstore", "my-secret", Metadata = "metadata.namespace=default")] IDictionary<string, string> secrets,
+            FunctionContext functionContext)
         {
+            var log = functionContext.GetLogger("DaprServiceInvocationTriggerCSharp");
             log.LogInformation("C# ServiceInvocation trigger with DaprSecret input binding function processed a request.");
 
             // print the fetched secret value
