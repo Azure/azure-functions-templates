@@ -13,12 +13,12 @@ namespace Company.Function
         /// Start function app with Dapr: dapr run --app-id functionapp --app-port 3001 --dapr-http-port 3501 --resources-path .\components\ -- func host start
         /// Invoke function app: dapr invoke --app-id functionapp --method {functionName} my-secret
         /// </summary>
-        /// <param name="_args">Payload of dapr service invocation trigger.</param>
+        /// <param name="payload">Payload of dapr service invocation trigger.</param>
         /// <param name="secrets">Secrets retrieved from secret store.</param>
         /// <param name="log">Function logger.</param>
         [FunctionName("DaprServiceInvocationTriggerCSharp")]
         public static void Run(
-            [DaprServiceInvocationTrigger] JsonElement _args,
+            [DaprServiceInvocationTrigger] JsonElement payload,
             [DaprSecret("localsecretstore", "my-secret", Metadata = "metadata.namespace=default")] IDictionary<string, string> secrets,
             ILogger log)
         {

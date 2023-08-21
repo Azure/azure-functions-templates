@@ -30,26 +30,28 @@ namespace Company.Function
         }
     }
 
-    public static class DaprTopicTriggerCSharp
-    {
-        /// <summary>
-        /// Visit https://aka.ms/azure-functions-dapr to learn how to use the Dapr extension.
-        /// Start function app with Dapr: dapr run --app-id functionapp --app-port 3001 --dapr-http-port 3501 --resources-path .\components\ -- func host start
-        /// Invoke function app: dapr invoke --app-id functionapp --method {functionName} my-secret
-        /// </summary>
-        /// <param name="subEvent">Cloud event sent by Dapr runtime.</param>
-        /// <param name="value">Value will be saved against the given key in state store.</param>
-        /// <param name="log">Function logger.</param>
-        [FunctionName("DaprTopicTriggerCSharp")]
-        public static void Run(
-            [DaprTopicTrigger("messagebus", Topic = "A")] CloudEvent subEvent,
-            [DaprState("statestore", Key = "product")] out object value,
-            ILogger log)
-        {
-            log.LogInformation("C# DaprTopic trigger with DaprState output binding function processed a request from the Dapr Runtime.");
-            log.LogInformation($"Topic A received a message: {subEvent.Data}.");
+    // If you want to act on the published messages on topic A, please uncomment the below Azure function to receive message published on topic A
 
-            value = subEvent.Data;
-        }
-    }
+    // public static class DaprTopicTriggerCSharp
+    // {
+    //     /// <summary>
+    //     /// Visit https://aka.ms/azure-functions-dapr to learn how to use the Dapr extension.
+    //     /// Start function app with Dapr: dapr run --app-id functionapp --app-port 3001 --dapr-http-port 3501 --resources-path .\components\ -- func host start
+    //     /// Invoke function app: dapr invoke --app-id functionapp --method {functionName} my-secret
+    //     /// </summary>
+    //     /// <param name="subEvent">Cloud event sent by Dapr runtime.</param>
+    //     /// <param name="value">Value will be saved against the given key in state store.</param>
+    //     /// <param name="log">Function logger.</param>
+    //     [FunctionName("DaprTopicTriggerCSharp")]
+    //     public static void Run(
+    //         [DaprTopicTrigger("messagebus", Topic = "A")] CloudEvent subEvent,
+    //         [DaprState("statestore", Key = "product")] out object value,
+    //         ILogger log)
+    //     {
+    //         log.LogInformation("C# DaprTopic trigger with DaprState output binding function processed a request from the Dapr Runtime.");
+    //         log.LogInformation($"Topic A received a message: {subEvent.Data}.");
+
+    //         value = subEvent.Data;
+    //     }
+    // }
 }
