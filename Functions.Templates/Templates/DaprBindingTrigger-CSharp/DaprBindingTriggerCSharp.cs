@@ -30,7 +30,7 @@ namespace Company.Function
         }
     }
 
-    // If you want to act on the published messages on topic A, please uncomment the below Azure function to receive message published on topic A
+    // If you want to act on the published message on topic A, please uncomment below Azure function to receive message published on topic A
 
     // public static class DaprTopicTriggerCSharp
     // {
