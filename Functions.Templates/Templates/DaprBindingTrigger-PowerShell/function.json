@@ -1,0 +1,17 @@
+{
+  "bindings": [
+    {
+      "type": "daprBindingTrigger",
+      "bindingName": "scheduled",
+      "name": "triggerData",
+      "direction": "in"
+    },
+    {
+      "type": "daprPublish",
+      "direction": "out",
+      "name": "pubEvent",
+      "pubsubname": "messagebus",
+      "topic": "A"
+    }
+  ]
+}

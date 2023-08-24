@@ -10,6 +10,9 @@ namespace Company.Function
     {
         /// <summary>
         /// Visit https://aka.ms/azure-functions-dapr to learn how to use the Dapr extension.
+        /// These tasks should be completed prior to running :
+        ///   1. Install Dapr
+        ///   2. Change the bundle name in host.json to "Microsoft.Azure.Functions.ExtensionBundle.Preview" and the version to "[4.*, 5.0.0)"
         /// Start function app with Dapr: dapr run --app-id functionapp --app-port 3001 --dapr-http-port 3501 --resources-path .\components\ -- func host start
         /// Invoke function app: dapr invoke --app-id functionapp --method {functionName} my-secret
         /// </summary>
