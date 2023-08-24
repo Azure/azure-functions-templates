@@ -31,7 +31,8 @@ namespace Company.Function
         }
     }
 
-    // If you want to act on the published message on topic A, please uncomment below Azure function to receive message published on topic A
+    // If you want to act on the published message on topic A, please uncomment below Azure function to receive message published on topic A, this function will
+    // log the received message on topic A
 
     // public static class DaprTopicTriggerFuncApp
     // {
