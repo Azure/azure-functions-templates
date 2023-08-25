@@ -14,7 +14,7 @@ namespace Company.Function
         }
 
         [Function("TimerTriggerCSharp")]
-        public void Run([TimerTrigger("ScheduleValue")]TimerInfo myTimer)
+        public void Run([TimerTrigger("ScheduleValue")] TimerInfo myTimer)
         {
             _logger.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
             
