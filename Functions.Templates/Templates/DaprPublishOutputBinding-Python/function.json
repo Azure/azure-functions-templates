@@ -1,0 +1,17 @@
+{
+  "bindings": [
+    {
+      "schedule": "*/10 * * * * *",
+      "name": "myTimer",
+      "type": "timerTrigger",
+      "direction": "in"
+    },
+    {
+      "type": "daprPublish",
+      "direction": "out",
+      "name": "pubEvent",
+      "pubsubname": "pubsub",
+      "topic": "A"
+    }
+  ]
+}

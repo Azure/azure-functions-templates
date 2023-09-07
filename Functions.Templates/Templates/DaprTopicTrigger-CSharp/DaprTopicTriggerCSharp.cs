@@ -19,14 +19,14 @@ namespace Company.Function
         ///   1. Install Dapr
         ///   2. Change the bundle name in host.json to "Microsoft.Azure.Functions.ExtensionBundle.Preview" and the version to "[4.*, 5.0.0)"
         /// Start function app with Dapr: dapr run --app-id functionapp --app-port 3001 --dapr-http-port 3501 --resources-path .\components\ -- func host start
-        /// Invoke function app: dapr publish --pubsub messagebus --publish-app-id functionapp --topic A --data '{\"value\": { \"orderId\": \"42\" } }'
+        /// Invoke function app: dapr publish --pubsub pubsub --publish-app-id functionapp --topic A --data '{\"value\": { \"orderId\": \"42\" } }'
         /// </summary>
         /// <param name="subEvent">Cloud event sent by Dapr runtime.</param>
         /// <param name="value">Value will be saved against the given key in state store.</param>
         /// <param name="log">Function logger.</param>
         [FunctionName("DaprTopicTriggerCSharp")]
         public static void Run(
-            [DaprTopicTrigger("messagebus", Topic = "A")] CloudEvent subEvent,
+            [DaprTopicTrigger("pubsub", Topic = "A")] CloudEvent subEvent,
             [DaprState("statestore", Key = "product")] out object value,
             ILogger log)
         {
