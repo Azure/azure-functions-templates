@@ -11,17 +11,14 @@ using namespace Newtonsoft.Json.Linq
 #      1. Install Dapr
 #      2. Change the bundle name in host.json to "Microsoft.Azure.Functions.ExtensionBundle.Preview" and the version to "[4.*, 5.0.0)"
 # Run the app with below steps
-#      1. Start function app with Dapr: dapr run --app-id functionapp --app-port 3001 --dapr-http-port 3501 --resources-path .\components\ -- func host start
-#      2. Invoke function app: dapr invoke --app-id functionapp --method {functionName}
+#      1. Start function app with Dapr: dapr run --app-id functionapp --app-port 3001 --dapr-http-port 3501 -- func host start
+#      2. Invoke function app by dapr cli: dapr invoke --app-id functionapp --method {yourFunctionName}  --data '{ \"data\": {\"value\": { \"orderId\": \"41\" } } }'
 
 param (
-    $payload, $secret
+    $payload
 )
 
-# PowerShell function processed a CreateNewOrder request from the Dapr Runtime.
-Write-Host "PowerShell ServiceInvocation trigger with DaprSecret input binding function processed a request."
+Write-Host "Azure function triggered by Dapr Service Invocation Trigger."
 
-# Convert the object to a JSON-formatted string with ConvertTo-Json
-$jsonString = $secret | ConvertTo-Json
-
-Write-Host "$jsonString"
+$jsonString = $payload | ConvertTo-Json
+Write-Host "Dapr service invocation trigger payload: $jsonString"

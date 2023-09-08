@@ -16,7 +16,7 @@ using namespace Newtonsoft.Json.Linq
 #      2. Function will be invoked by Timer trigger and publish messages to message bus.
 
 param (
-    $triggerData
+    $myTimer
 )
 
 Write-Host "PowerShell DaprPublish output binding function processed a request."

@@ -3,7 +3,7 @@ import logging
 import json
 import azure.functions as func
 
-def main(triggerData: str,
+def main(myTimer: func.TimerRequest,
          pubEvent: func.Out[bytes]) -> None:
     """
     Sample Dapr Publish Output Binding
