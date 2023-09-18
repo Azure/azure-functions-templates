@@ -80,7 +80,8 @@ Dotnet pre-compiled templates are currently hosted by the following clients. Ple
 8. Open the `templates` folder for the framework you want to test:
     1. For in-proc, use the `templates` folder found at the root of the templates cache directory
     2. For net7-isolated, use the `net7-isolated/templates` folder (for isolated, you should see a folder for netfx, net6, net5 etc.)
-9.  Replace the contents of the folder with the copied packages found in `..\bin\VS`
+9. Replace the contents of the folder with the copied packages found in `..\bin\VS`
+
 10. Delete the `%userprofile%\.templateengine` directory
 11. Select corresponding function runtime when creating a new function app via Visual Studio 
 12. Run through the test scenarios
