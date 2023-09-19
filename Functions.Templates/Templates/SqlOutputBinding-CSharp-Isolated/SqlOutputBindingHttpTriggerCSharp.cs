@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class SqlOutputBindingHttpTriggerCSharp
+    public class SqlOutputBindingHttpTriggerCSharp
     {
         private readonly ILogger _logger;
 
@@ -19,7 +19,7 @@ namespace Company.Function
         // Visit https://aka.ms/sqlbindingsoutput to learn how to use this output binding
         [Function("SqlOutputBindingHttpTriggerCSharp")]
         [SqlOutput("table", "SqlConnectionString")]
-        public static async Task<ToDoItem> Run(
+        public async Task<ToDoItem> Run(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequestData req)
         {
             _logger.LogInformation("C# HTTP trigger with SQL Output Binding function processed a request.");

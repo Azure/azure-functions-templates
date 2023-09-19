@@ -3,10 +3,11 @@ using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Azure.Functions.Worker.Extensions.Sql;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace Company.Function
 {
-    public static class SqlTriggerBindingCSharp
+    public class SqlTriggerBindingCSharp
     {
         private readonly ILogger _logger;
 
@@ -17,7 +18,7 @@ namespace Company.Function
 
         // Visit https://aka.ms/sqltrigger to learn how to use this trigger binding
         [Function("SqlTriggerBindingCSharp")]
-        public static void Run(
+        public void Run(
             [SqlTrigger("table", "SqlConnectionString")] IReadOnlyList<SqlChange<ToDoItem>> changes,
                 FunctionContext context)
         {
