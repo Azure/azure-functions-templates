@@ -1,25 +1,28 @@
-# Azure Functions: Cosmos DB in Python
+# Azure Functions: Event Hub Trigger in Python
 
-## Dapr Service Invocation Trigger
+## Dapr Output Binding
 
-Using service invocation, your application can reliably and securely communicate with other applications using HTTP protocols.
+With Dapr output binding, you can invoke external resources. An optional payload and metadata can be sent with the invocation request.
 
 ## Using the Template
 
 Following is an example code snippet for Dapr Service Invocation Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel) (currently in Preview).
 
 ```python
+import datetime
 import json
 import azure.functions as func
 import logging
 
 dapp = func.DaprFunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 
-@dapp.function_name(name="DaprServiceInvocationTriggerPython")
-@dapp.dapr_service_invocation_trigger(arg_name="payload", method_name="DaprServiceInvocationTriggerPython")
-def main(payload: str) :
-    logging.info('Azure function triggered by Dapr Service Invocation Trigger.')
-    logging.info("Dapr service invocation trigger payload: %s", payload)
+@dapp.function_name(name="DaprPublishOutputBindingPython")
+@dapp.schedule(schedule="*/10 * * * * *", arg_name="myTimer", run_on_startup=True)
+@dapp.dapr_publish_output(arg_name="pubEvent", pub_sub_name="pubsub", topic="A")
+def main(myTimer, pubEvent: func.Out[bytes]) -> None:
+    logging.info('Python DaprPublish output binding function processed a request.')
+    payload = f"Invoked by Timer trigger: Hello, World! The time is {datetime.datetime.now()}"
+    pubEvent.set(json.dumps({"payload": payload}).encode('utf-8'))
 ```
 
 To run the code snippet generated through the command palette, note the following:

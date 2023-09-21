@@ -4,6 +4,7 @@
 # 
 # Please refer to https://aka.ms/azure-functions-python-blueprints
 
+import datetime
 import json
 import azure.functions as func
 import logging
