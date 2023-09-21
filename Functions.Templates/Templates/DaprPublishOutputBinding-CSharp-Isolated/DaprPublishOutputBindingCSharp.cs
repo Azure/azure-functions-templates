@@ -34,25 +34,23 @@ namespace Company.Function
         }
     }
 
-    // If you want to act on the published message on topic A, please uncomment below Azure function to receive message published on topic A, this function will
-    // log the received message on topic A
-
-    // public static class DaprTopicTriggerFuncApp
-    // {
-    //     /// <summary>
-    //     /// Visit https://aka.ms/azure-functions-dapr to learn how to use the Dapr extension.
-    //     /// This function will get invoked when a message is published on topic A
-    //     /// </summary>
-    //     /// <param name="subEvent">Cloud event sent by Dapr runtime.</param>
-    //     /// <param name="functionContext">Function context.</param>
-    //     [Function("DaprTopicTriggerFuncApp")]
-    //     public static void Run(
-    //         [DaprTopicTrigger("pubsub", Topic = "A")] CloudEvent subEvent,
-    //         FunctionContext functionContext)
-    //     {
-    //         var log = functionContext.GetLogger("DaprTopicTriggerFuncApp");
-    //         log.LogInformation("C# Dapr Topic Trigger function processed a request from the Dapr Runtime.");
-    //         log.LogInformation($"Topic A received a message: {subEvent.Data}.");
-    //     }
-    // }
+    // Below Azure function will receive message published on topic A, and it will log the message
+    public static class DaprTopicTriggerFuncApp
+    {
+        /// <summary>
+        /// Visit https://aka.ms/azure-functions-dapr to learn how to use the Dapr extension.
+        /// This function will get invoked when a message is published on topic A
+        /// </summary>
+        /// <param name="subEvent">Cloud event sent by Dapr runtime.</param>
+        /// <param name="functionContext">Function context.</param>
+        [Function("DaprTopicTriggerFuncApp")]
+        public static void Run(
+            [DaprTopicTrigger("pubsub", Topic = "A")] CloudEvent subEvent,
+            FunctionContext functionContext)
+        {
+            var log = functionContext.GetLogger("DaprTopicTriggerFuncApp");
+            log.LogInformation("C# Dapr Topic Trigger function processed a request from the Dapr Runtime.");
+            log.LogInformation($"Topic A received a message: {subEvent.Data}.");
+        }
+    }
 }
