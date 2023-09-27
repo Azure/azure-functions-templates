@@ -1,4 +1,4 @@
-# DaprServiceInvocationTrigger - C<span>#</span>
+# DaprServiceInvocationTrigger - JavaScript
 
 Using `Dapr Service Invocation Trigger`, your azure functions can reliably and securely communicate with other applications using the standard HTTP protocol.
 
