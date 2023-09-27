@@ -1,8 +1,3 @@
-// ------------------------------------------------------------
-// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT License.
-// ------------------------------------------------------------
-
 namespace Company.Function
 {
     using System.Text.Json;
