@@ -11,7 +11,7 @@ namespace Company.Function
     using Microsoft.Azure.WebJobs.Extensions.Dapr;
     using Microsoft.Extensions.Logging;
 
-    public static class DaprPublishOutputBinding
+    public static class DaprPublishOutputBindingCSharp
     {
         /// <summary>
         /// Visit https://aka.ms/azure-functions-dapr to learn how to use the Dapr extension.
