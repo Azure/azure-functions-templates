@@ -1,4 +1,4 @@
-# DaprServiceInvocationTrigger - C<span>#</span>
+# DaprServiceInvocationTrigger - PowerShell
 
 Using `Dapr Topic Trigger`, your azure functions can react to a message published on a Topic mentioned in your function.
 
