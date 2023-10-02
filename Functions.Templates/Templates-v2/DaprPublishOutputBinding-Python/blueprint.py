@@ -10,4 +10,4 @@ import azure.functions as func
 import logging
 
 
-$(BLUEPRINT_FILENAME) = func.DaprBlueprint()
+$(BLUEPRINT_FILENAME) = func.Blueprint()
