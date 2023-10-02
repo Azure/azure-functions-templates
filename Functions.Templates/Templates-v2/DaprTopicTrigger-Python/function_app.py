@@ -2,10 +2,10 @@ import json
 import azure.functions as func
 import logging
 
-dapp = func.DaprFunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
+app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 
-@dapp.dapr_topic_trigger(arg_name="subEvent", pub_sub_name="pubsub", topic="A")
-@dapp.dapr_state_output(arg_name="state", state_store="statestore", key="order")
+@app.dapr_topic_trigger(arg_name="subEvent", pub_sub_name="pubsub", topic="A")
+@app.dapr_state_output(arg_name="state", state_store="statestore", key="order")
 def $(FUNCTION_NAME_INPUT)(subEvent, state: func.Out[str]) -> None:
     """
     Sample Dapr topic trigger with dapr_state_output

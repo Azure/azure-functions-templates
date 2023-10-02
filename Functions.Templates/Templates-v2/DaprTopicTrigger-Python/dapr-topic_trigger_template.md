@@ -13,11 +13,11 @@ import json
 import azure.functions as func
 import logging
 
-dapp = func.DaprFunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
+app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 
-@dapp.function_name(name="DaprTopicTriggerPython")
-@dapp.dapr_topic_trigger(arg_name="subEvent", pub_sub_name="pubsub", topic="A")
-@dapp.dapr_state_output(arg_name="state", state_store="statestore", key="order")
+@app.function_name(name="DaprTopicTriggerPython")
+@app.dapr_topic_trigger(arg_name="subEvent", pub_sub_name="pubsub", topic="A")
+@app.dapr_state_output(arg_name="state", state_store="statestore", key="order")
 def main(subEvent, state: func.Out[str]) -> None:
     logging.info('Python DaprTopic trigger with DaprState output binding function processed a request from the Dapr Runtime.')
     subEvent_json = json.loads(subEvent)
@@ -26,7 +26,7 @@ def main(subEvent, state: func.Out[str]) -> None:
 
 To run the code snippet generated through the command palette, note the following:
 
-- The function application is defined and named `dapp`.
+- The function application is defined and named `app`.
 - The name of the file must be `function_app.py`.
 
 ## V2 Programming Model

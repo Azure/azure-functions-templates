@@ -13,10 +13,10 @@ import json
 import azure.functions as func
 import logging
 
-dapp = func.DaprFunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
+app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 
-@dapp.function_name(name="DaprServiceInvocationTriggerPython")
-@dapp.dapr_service_invocation_trigger(arg_name="payload", method_name="DaprServiceInvocationTriggerPython")
+@app.function_name(name="DaprServiceInvocationTriggerPython")
+@app.dapr_service_invocation_trigger(arg_name="payload", method_name="DaprServiceInvocationTriggerPython")
 def main(payload: str) :
     logging.info('Azure function triggered by Dapr Service Invocation Trigger.')
     logging.info("Dapr service invocation trigger payload: %s", payload)
@@ -24,7 +24,7 @@ def main(payload: str) :
 
 To run the code snippet generated through the command palette, note the following:
 
-- The function application is defined and named `dapp`.
+- The function application is defined and named `app`.
 - The name of the file must be `function_app.py`.
 
 ## V2 Programming Model
