@@ -14,7 +14,7 @@ def $(FUNCTION_NAME_INPUT)(payload: str) :
     logging.info("Dapr service invocation trigger payload: %s", payload)
 
 @$(BLUEPRINT_FILENAME).function_name(name="InvokeOutputBinding")
-@$(BLUEPRINT_FILENAME).route(route="invoke/{appId}/{methodName}", auth_level=dapp.auth_level.ANONYMOUS)
+@$(BLUEPRINT_FILENAME).route(route="invoke/{appId}/{methodName}", auth_level=app.auth_level.ANONYMOUS)
 @$(BLUEPRINT_FILENAME).dapr_invoke_output(arg_name = "payload", app_id = "{appId}", method_name = "{methodName}", http_verb = "post")
 def main(req: func.HttpRequest, payload: func.Out[str] ) -> str:
     """
@@ -22,7 +22,7 @@ def main(req: func.HttpRequest, payload: func.Out[str] ) -> str:
     Here this function acts like a proxy
     Invoke Dapr Service invocation trigger using Windows PowerShell with below request
 
-    Invoke-RestMethod -Uri 'http://localhost:7071/api/invoke/functionapp/DaprServiceInvocationTriggerPython' -Method POST -Headers @{
+    Invoke-RestMethod -Uri 'http://localhost:7071/api/invoke/functionapp/{yourFunctionName}' -Method POST -Headers @{
     'Content-Type' = 'application/json'
      } -Body '{
      "data": {

@@ -27,7 +27,7 @@ def main(myTimer, pubEvent: func.Out[bytes]) -> None:
 
 To run the code snippet generated through the command palette, note the following:
 
-- The function application is defined and named `dapp`.
+- The function application is defined and named `app`.
 - The name of the file must be `function_app.py`.
 
 ## V2 Programming Model

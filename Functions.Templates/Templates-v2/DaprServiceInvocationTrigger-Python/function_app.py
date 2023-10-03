@@ -27,7 +27,7 @@ def main(req: func.HttpRequest, payload: func.Out[str] ) -> str:
     Here this function acts like a proxy
     Invoke Dapr Service invocation trigger using Windows PowerShell with below request
 
-    Invoke-RestMethod -Uri 'http://localhost:7071/api/invoke/functionapp/DaprServiceInvocationTriggerPython' -Method POST -Headers @{
+    Invoke-RestMethod -Uri 'http://localhost:7071/api/invoke/functionapp/{yourFunctionName}' -Method POST -Headers @{
     'Content-Type' = 'application/json'
      } -Body '{
      "data": {
