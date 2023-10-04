@@ -98,7 +98,7 @@ steps:
       }
       
       $rootPath = $pwd
-      
+      Write-Host "Storage account name: $(ACCOUNT_NAME)"
       # Storage Context
       $ctx = New-AzureStorageContext -StorageAccountName "$(ACCOUNT_NAME)" -SasToken "$(ACCOUNT_KEY)"
       
