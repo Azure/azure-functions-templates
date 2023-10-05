@@ -142,7 +142,7 @@ $(TIMER_FUNCTION_BODY)
 
 ```python
 @app.function_name(name="$(FUNCTION_NAME_INPUT)")
-@app.schedule(schedule="$(SCHEDULE_INPUT)", arg_name="myTimer", run_on_startup=True,
+@app.timer_trigger(schedule="$(SCHEDULE_INPUT)", arg_name="myTimer", run_on_startup=False,
               use_monitor=False) 
 def $(FUNCTION_NAME_INPUT)(myTimer: func.TimerRequest) -> None:
     utc_timestamp = datetime.datetime.utcnow().replace(

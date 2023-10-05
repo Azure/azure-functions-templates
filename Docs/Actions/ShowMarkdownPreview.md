@@ -115,7 +115,7 @@ The following example template defines a job which appends the text of a file to
 
 ```python
 @app.function_name(name="$(FUNCTION_NAME_INPUT)")
-@app.schedule(schedule="$(SCHEDULE_INPUT)", arg_name="myTimer", run_on_startup=True,
+@app.timer_trigger(schedule="$(SCHEDULE_INPUT)", arg_name="myTimer", run_on_startup=False,
               use_monitor=False) 
 def $(FUNCTION_NAME_INPUT)(myTimer: func.TimerRequest) -> None:
     utc_timestamp = datetime.datetime.utcnow().replace(
@@ -157,7 +157,7 @@ import azure.functions as func
 app = func.FunctionApp()
 
 @app.function_name(name="mytimer")
-@app.schedule(schedule="0 */5 * * * *", arg_name="mytimer", run_on_startup=True,
+@app.timer_trigger(schedule="0 */5 * * * *", arg_name="mytimer", run_on_startup=False,
               use_monitor=False) 
 def test_function(mytimer: func.TimerRequest) -> None:
     utc_timestamp = datetime.datetime.utcnow().replace(
