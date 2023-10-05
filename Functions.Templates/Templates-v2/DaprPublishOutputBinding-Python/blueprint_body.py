@@ -1,5 +1,5 @@
 
-@$(BLUEPRINT_FILENAME).schedule(schedule="*/10 * * * * *", arg_name="myTimer", run_on_startup=True)
+@$(BLUEPRINT_FILENAME).timer_trigger(schedule="*/10 * * * * *", arg_name="myTimer", run_on_startup=False)
 @$(BLUEPRINT_FILENAME).dapr_publish_output(arg_name="pubEvent", pub_sub_name="pubsub", topic="A")
 def $(FUNCTION_NAME_INPUT)(myTimer, pubEvent: func.Out[bytes]) -> None:
     """

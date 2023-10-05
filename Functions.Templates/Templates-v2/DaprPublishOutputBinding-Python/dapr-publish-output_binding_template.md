@@ -17,7 +17,7 @@ import logging
 app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 
 @app.function_name(name="DaprPublishOutputBindingPython")
-@app.schedule(schedule="*/10 * * * * *", arg_name="myTimer", run_on_startup=True)
+@app.timer_trigger(schedule="*/10 * * * * *", arg_name="myTimer", run_on_startup=False)
 @app.dapr_publish_output(arg_name="pubEvent", pub_sub_name="pubsub", topic="A")
 def main(myTimer, pubEvent: func.Out[bytes]) -> None:
     logging.info('Python DaprPublish output binding function processed a request.')
