@@ -136,6 +136,7 @@ steps:
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master_2'))
   env: 
     SasToken: $(SASTOKEN)
+    AccountName: $(AccountName)
     
   
 - task: PublishBuildArtifacts@1
