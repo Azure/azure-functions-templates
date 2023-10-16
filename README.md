@@ -65,34 +65,39 @@ This section covers information you need to add your template to the list of tem
 ### Testing dotnet templates
 Dotnet pre-compiled templates are currently hosted by the following clients. Please follow the instructions in this section to test the corresponding clients.
 
-1. Visual Studio (VS 2019 and VS 2022):
-    1. Once the template files have been added / updated, build the templates using the [Build Steps](#build-steps)
-    2. Make sure all instances of Visual Studio are closed;
-    3. Open the directory `%userprofile%\AppData\Local\AzureFunctionsTools\Tags`
-    4. Each of the directory within the tags directory represent a runtime, for testing runtime v4 templates open directory v4
-    5. Open the `LastKnownGood` in v4 (runtime version templates you want to test) directory, Note the release version present in the file
-    6. For in-proc templates
-        1. Open the templates output directory, `..\bin\VS` and rename `Microsoft.Azure.WebJobs.ItemTemplates.X.0.0.nupkg` to `ItemTemplates.nupkg`, `Microsoft.Azure.WebJobs.ProjectTemplates.X.0.0.nupkg` to `ProjectTemplates.nupkg`
-        2. Open the templates cache directory `%userprofile%\AppData\Local\AzureFunctionsTools\Releases\<releaseVersion>\templates` for release version matching the one found in step 5. 
-        3. Replace the contents of the folder with the renamed package found in `..\bin\VS`
-    7. For testing net5-isolated templates, repeat the step 6, replace the contents of net5-isolated with `Microsoft.Azure.Functions.Worker.ItemTemplates.3.x.x`. Same for the corresponding project template
-    8. For testing net6-isolated templates, repeat the step 6, replace the contents of net5-isolated with `Microsoft.Azure.Functions.Worker.ItemTemplates.4.x.x`. Same for the corresponding project template
-    9. Delete the `%userprofile%\.templateengine` directory
-    10. Select corresponding function runtime when creating a new function app via Visual Studio 
-    11. Run through the test scenarios
+#### Visual Studio (VS 2019 and VS 2022):
 
-2. Core tools:
-    1. Once the template files have been added / updated, build the templates using the [Build Steps](#build-steps)
-    2. Find the location of core tools installation,you can use the command `where func` from windows command prompt
-    3. Locate the `bin\tempaltes` directory relative to `azure-functions-core-tools` at install location
-    4. For in-proc templates
-        1. Open the templates output directory, `..\bin\VS` and rename `Microsoft.Azure.WebJobs.ItemTemplates.X.0.0.nupkg` to `ItemTemplates.[version].nupkg`, `Microsoft.Azure.WebJobs.ProjectTemplates.X.0.0.nupkg` to `ProjectTemplates.[version].nupkg`. Use the version from templates found in step 3.
-        2. Open the templates cache directory `%userprofile%\AppData\Local\AzureFunctionsTools\Releases\<releaseVersion>\templates` for release version matching the one found in step 5. 
-        3. Replace the contents of the folder with the renamed package found in `..\bin\VS`
-    5. For testing net5-isolated templates, repeat the step 3, replace the contents of net5-isolated with `Microsoft.Azure.Functions.Worker.ItemTemplates.3.x.x`. Same for the corresponding project template
-    6. Delete the `%userprofile%\.templateengine` directory
+1. Once the template files have been added / updated, build the templates using the [Build Steps](#build-steps)
+2. Make sure all instances of Visual Studio are closed;
+3. Open the directory `%userprofile%\AppData\Local\AzureFunctionsTools\Tags`
+4. Each of the directory within the tags directory represent a runtime, for testing runtime `v4` templates open directory `v4`
+5. Open the `LastKnownGood` file in the directory for the runtime version you want to test and note the release version present in the file
+6. Open the templates output directory, `..\bin\VS`
+    1. Rename `Microsoft.Azure.WebJobs.ItemTemplates.X.0.0.nupkg` to `ItemTemplates.nupkg`
+    2. Rename `Microsoft.Azure.WebJobs.ProjectTemplates.X.0.0.nupkg` to `ProjectTemplates.nupkg`
+  > To test dotnet-isolated, rename `Microsoft.Azure.Functions.Worker.ItemTemplates.X.0.0` and `Microsoft.Azure.Functions.Worker.ProjectTemplates.X.0.0` in above step.
+7. Open the templates cache directory for release version matching the one found in step 5: `%userprofile%\AppData\Local\AzureFunctionsTools\Releases\<releaseVersion>` 
+8. Open the `templates` folder for the framework you want to test:
+    1. For in-proc, use the `templates` folder fould at the root of the templates cache directory
+    2. For net7-isolated, use the `net7-isolated/templates` folder (for isolated, you should see a folder for netfx, net6, net5 etc.)
+9. Replace the contents of the folder with the renamed package found in `..\bin\VS`
+10. Delete the `%userprofile%\.templateengine` directory
+11. Select corresponding function runtime when creating a new function app via Visual Studio 
+12. Run through the test scenarios
 
-3. Visual Studio Code: We currently do not have a way to test templates in VS code without going to through extensive set up. Will update this section with instructions once we have the right set of hooks enabled.
+#### Core tools
+
+1. Once the template files have been added / updated, build the templates using the [Build Steps](#build-steps)
+2. Find the location of core tools installation,you can use the command `where func` from windows command prompt
+3. Locate the `bin\tempaltes` directory relative to `azure-functions-core-tools` at install location
+4. For in-proc templates
+    1. Open the templates output directory, `..\bin\VS` and rename `Microsoft.Azure.WebJobs.ItemTemplates.X.0.0.nupkg` to `ItemTemplates.[version].nupkg`, `Microsoft.Azure.WebJobs.ProjectTemplates.X.0.0.nupkg` to `ProjectTemplates.[version].nupkg`. Use the version from templates found in step 3.
+    2. Open the templates cache directory `%userprofile%\AppData\Local\AzureFunctionsTools\Releases\<releaseVersion>\templates` for release version matching the one found in step 5. 
+    3. Replace the contents of the folder with the renamed package found in `..\bin\VS`
+5. For testing net5-isolated templates, repeat the step 3, replace the contents of net5-isolated with `Microsoft.Azure.Functions.Worker.ItemTemplates.3.x.x`. Same for the corresponding project template
+6. Delete the `%userprofile%\.templateengine` directory
+
+4. Visual Studio Code: We currently do not have a way to test templates in VS code without going to through extensive set up. Will update this section with instructions once we have the right set of hooks enabled.
 
 ## Creating script type templates
 Script type templates are templates for functions that do not require a compilation step. The templates includes metadata files in addition to the files required to execute a function. The metadata files help drive the user interface and development experience for creating a function using a template. In addition to the metadata file you would also need to add a code file for the corresponding language in the template. You can find information on the metadata files in the section below:

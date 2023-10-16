@@ -98,9 +98,8 @@ steps:
       }
       
       $rootPath = $pwd
-      
       # Storage Context
-      $ctx = New-AzureStorageContext -StorageAccountName "$(ACCOUNT_NAME)" -SasToken "$(ACCOUNT_KEY)"
+      $ctx = New-AzureStorageContext -StorageAccountName "$env:AccountName" -SasToken "$env:SasToken"
       
       $files= Get-ChildItem -Recurse -Path "$(System.ArtifactsDirectory)"
       foreach($file in $files)
@@ -135,6 +134,10 @@ steps:
           }
       }
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  env: 
+    SasToken: $(SASTOKEN)
+    AccountName: $(AccountName)
+    
   
 - task: PublishBuildArtifacts@1
   inputs:
