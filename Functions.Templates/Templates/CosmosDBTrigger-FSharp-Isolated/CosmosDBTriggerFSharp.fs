@@ -7,7 +7,7 @@ open Microsoft.Extensions.Logging
 
 module CosmosDBTriggerFSharp =
     type MyDocument =
-        { Id: string
+        { id: string
           Text: string
           Number: int
           Boolean: bool }
@@ -16,7 +16,7 @@ module CosmosDBTriggerFSharp =
     let run
         (
             [<CosmosDBTrigger(databaseName = "DatabaseValue",
-                              containerName = "CollectionValue",
+                              containerName = "ContainerValue",
                               Connection = "ConnectionValue",
                               LeaseContainerName = "leases")>] input: IReadOnlyList<MyDocument>,
             context: FunctionContext
@@ -26,4 +26,4 @@ module CosmosDBTriggerFSharp =
 
         if not (isNull input) && input.Count > 0 then
             log.LogInformation(sprintf "Documents modified %d" input.Count)
-            log.LogInformation("First document Id " + input.[0].Id)
+            log.LogInformation("First document Id " + input.[0].id)

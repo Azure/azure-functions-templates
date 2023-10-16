@@ -6,7 +6,7 @@
     "Cosmos DB"
   ],
   "name": "CosmosDBTrigger",
-  "identity": "Azure.Function.CSharp.Isolated.CosmosDBTrigger.4.x",
+  "identity": "Azure.Function.CSharp.CosmosDBTrigger.3.x",
   "groupIdentity": "Azure.Function.CosmosDBTrigger",
   "shortName": "cosmos",
   "tags": {
@@ -20,23 +20,23 @@
       "replaces": "Company.Function",
       "type": "parameter"
     },
-    "Connection": {
-      "description": "The name of an app setting or setting collection that specifies how to connect to the Azure Cosmos DB container being monitored.",
+    "ConnectionStringSetting": {
+      "description": "The name of the App Setting containing the connection string to the service that contains the collection to be monitored.",
       "type": "parameter",
       "defaultValue": "",
       "replaces": "ConnectionValue"
     },
     "DatabaseName": {
-      "description": "This is the name of the database that includes the container to be monitored.",
+      "description": "This is the name of the database that includes the collection to be monitored.",
       "type": "parameter",
       "defaultValue": "databaseName",
       "replaces": "DatabaseValue"
     },
-    "ContainerName": {
-      "description": "This is the name of the container to be monitored.",
+    "CollectionName": {
+      "description": "This is the name of the collection to be monitored.",
       "type": "parameter",
-      "defaultValue": "containerName",
-      "replaces": "ContainerValue"
+      "defaultValue": "collectionName",
+      "replaces": "CollectionValue"
     },
     "HostIdentifier": {
       "type": "bind",
@@ -51,13 +51,13 @@
   "defaultName": "CosmosDBTriggerCSharp",
   "postActions": [
     {
-      "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.CosmosDB Nuget package",
+      "Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.CosmosDB Nuget package",
       "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
       "ContinueOnError": "true",
       "ManualInstructions": [],
       "args": {
         "referenceType": "package",
-        "reference": "Microsoft.Azure.Functions.Worker.Extensions.CosmosDB", "version": "4.3.0",
+        "reference": "Microsoft.Azure.WebJobs.Extensions.CosmosDB", "version": "3.0.10",
         "projectFileExtensions": ".csproj"
       }
     },

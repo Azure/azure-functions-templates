@@ -6,7 +6,7 @@
     "Cosmos DB"
   ],
   "name": "CosmosDBTrigger",
-  "identity": "Azure.Function.CSharp.Isolated.CosmosDBTrigger.4.x",
+  "identity": "Azure.Function.CSharp.CosmosDBTrigger.4.x",
   "groupIdentity": "Azure.Function.CosmosDBTrigger",
   "shortName": "cosmos",
   "tags": {
@@ -51,13 +51,13 @@
   "defaultName": "CosmosDBTriggerCSharp",
   "postActions": [
     {
-      "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.CosmosDB Nuget package",
+      "Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.CosmosDB Nuget package",
       "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
       "ContinueOnError": "true",
       "ManualInstructions": [],
       "args": {
         "referenceType": "package",
-        "reference": "Microsoft.Azure.Functions.Worker.Extensions.CosmosDB", "version": "4.3.0",
+        "reference": "Microsoft.Azure.WebJobs.Extensions.CosmosDB", "version": "4.3.0",
         "projectFileExtensions": ".csproj"
       }
     },

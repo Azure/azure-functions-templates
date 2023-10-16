@@ -7,8 +7,12 @@ open Microsoft.Azure.WebJobs.Host
 open Microsoft.Extensions.Logging
 
 module CosmosDBTriggerFSharp =
+    type TodoItem =
+        { id: string
+          Description: string }
+
     [<FunctionName("CosmosDBTriggerFSharp")>]
-    let run([<CosmosDBTrigger(databaseName="DatabaseValue", collectionName="CollectionValue", ConnectionStringSetting="ConnectionValue", LeaseCollectionName="leases")>] input: IReadOnlyList<Document>, log: ILogger) =
+    let run([<CosmosDBTrigger(databaseName="DatabaseValue", containerName="ContainerValue", Connection="ConnectionValue", LeaseContainerName="leases")>] input: IReadOnlyList<TodoItem>, log: ILogger) =
         if not(isNull input) && input.Count > 0 then
             log.LogInformation(sprintf "Documents modified %d" input.Count)
-            log.LogInformation("First document Id " + input.[0].Id)
+            log.LogInformation("First document Id " + input.[0].id)
