@@ -1,6 +1,7 @@
 #if NetFramework
-using Microsoft.Extensions.Hosting;
 using Microsoft.Azure.Functions.Worker;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Company.FunctionApp
 {
@@ -24,7 +25,9 @@ namespace Company.FunctionApp
 }
 #endif
 #if NetCore
+using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 
 var host = new HostBuilder()
     .ConfigureFunctionsWorkerDefaults()
