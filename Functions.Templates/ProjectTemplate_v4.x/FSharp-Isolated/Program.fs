@@ -1,5 +1,6 @@
 open Microsoft.Extensions.Hosting
 open Microsoft.Azure.Functions.Worker
+open Microsoft.Extensions.DependencyInjection;
 
 [<EntryPoint>]
 let main args =
