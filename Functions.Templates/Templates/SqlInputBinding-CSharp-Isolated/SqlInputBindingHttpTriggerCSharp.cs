@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public static class SqlInputBindingHttpTriggerCSharp
+    public class SqlInputBindingHttpTriggerCSharp
     {
         private readonly ILogger _logger;
 
@@ -17,11 +17,10 @@ namespace Company.Function
         }
 
         [Function("SqlInputBindingHttpTriggerCSharp")]
-        public static IEnumerable<Object> Run(
+        public IEnumerable<Object> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequestData req,
             [SqlInput("SELECT * FROM object",
-            "SqlConnectionString",
-            CommandType = System.Data.CommandType.Text)] IEnumerable<Object> result)
+            "SqlConnectionString")] IEnumerable<Object> result)
         {
             _logger.LogInformation("C# HTTP trigger with SQL Input Binding function processed a request.");
 

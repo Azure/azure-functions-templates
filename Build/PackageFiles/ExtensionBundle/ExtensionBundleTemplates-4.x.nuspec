@@ -21,10 +21,12 @@
     <file src="..\..\..\Functions.Templates\templates\BlobTrigger-Python\**" target="templates\BlobTrigger-Python" />
     <file src="..\..\..\Functions.Templates\templates\BlobTrigger-TypeScript\**" target="templates\BlobTrigger-TypeScript" />
 
-    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-CSharp-5.x\*.*" target="Templates\CosmosDBTrigger-CSharp" exclude="**\*.cs" />
-    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-JavaScript-5.x\**" target="Templates\CosmosDBTrigger-JavaScript" />
-    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-PowerShell-5.x\**" target="Templates\CosmosDBTrigger-PowerShell" />
-    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-Python-5.x\**" target="templates\CosmosDBTrigger-Python" />
+    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-CSharp-4.x\*.*" target="Templates\CosmosDBTrigger-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-Custom\**" target="Templates\CosmosDBTrigger-Custom" />
+    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-JavaScript-4.x\**" target="Templates\CosmosDBTrigger-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-PowerShell-4.x\**" target="Templates\CosmosDBTrigger-PowerShell" />
+    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-Python-4.x\**" target="templates\CosmosDBTrigger-Python" />
+    <file src="..\..\..\Functions.Templates\templates\CosmosDBTrigger-TypeScript-4.x\**" target="templates\CosmosDBTrigger-TypeScript" />
 
     <file src="..\..\..\Functions.Templates\templates\DurableFunctionsActivity-CSharp-2.x\*.*" target="templates\DurableFunctionsActivity-CSharp" exclude="**\*.cs"/>
     <file src="..\..\..\Functions.Templates\templates\DurableFunctionsActivity-JavaScript\**" target="Templates\DurableFunctionsActivity-JavaScript" />
@@ -95,7 +97,7 @@
     <file src="..\..\..\Functions.Templates\templates\KafkaTrigger-Python\**" target="templates\KafkaTrigger-Python" />
     <file src="..\..\..\Functions.Templates\templates\KafkaTrigger-TypeScript\**" target="templates\KafkaTrigger-TypeScript" />
 
-    <file src="..\..\..\Functions.Templates\templates\QueueTrigger-CSharp-3.x\*.*" target="templates\QueueTrigger-CSharp" exclude="**\*.cs;" />
+    <file src="..\..\..\Functions.Templates\templates\QueueTrigger-CSharp-5.x\*.*" target="templates\QueueTrigger-CSharp" exclude="**\*.cs;" />
     <file src="..\..\..\Functions.Templates\templates\QueueTrigger-Custom\**" target="templates\QueueTrigger-Custom" />
     <file src="..\..\..\Functions.Templates\templates\QueueTrigger-JavaScript\**" target="templates\QueueTrigger-JavaScript" />
     <file src="..\..\..\Functions.Templates\templates\QueueTrigger-PowerShell\**" target="templates\QueueTrigger-PowerShell" />
@@ -115,14 +117,14 @@
     <file src="..\..\..\Functions.Templates\templates\SendGrid-PowerShell\**" target="Templates\SendGrid-PowerShell" />
     <file src="..\..\..\Functions.Templates\templates\SendGrid-TypeScript\**" target="templates\SendGrid-TypeScript" />
 
-    <file src="..\..\..\Functions.Templates\templates\ServiceBusQueueTrigger-CSharp\*.*" target="Templates\ServiceBusQueueTrigger-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\ServiceBusQueueTrigger-CSharp-5.x\*.*" target="Templates\ServiceBusQueueTrigger-CSharp" exclude="**\*.cs" />
     <file src="..\..\..\Functions.Templates\templates\ServiceBusQueueTrigger-Custom\**" target="Templates\ServiceBusQueueTrigger-Custom" />
     <file src="..\..\..\Functions.Templates\templates\ServiceBusQueueTrigger-JavaScript\**" target="Templates\ServiceBusQueueTrigger-JavaScript" />
     <file src="..\..\..\Functions.Templates\templates\ServiceBusQueueTrigger-PowerShell\**" target="Templates\ServiceBusQueueTrigger-PowerShell" />
     <file src="..\..\..\Functions.Templates\templates\ServiceBusQueueTrigger-Python\**" target="templates\ServiceBusQueueTrigger-Python" />
     <file src="..\..\..\Functions.Templates\templates\ServiceBusQueueTrigger-TypeScript\**" target="Templates\ServiceBusQueueTrigger-TypeScript" />
 
-    <file src="..\..\..\Functions.Templates\templates\ServiceBusTopicTrigger-CSharp\*.*" target="Templates\ServiceBusTopicTrigger-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\ServiceBusTopicTrigger-CSharp-5.x\*.*" target="Templates\ServiceBusTopicTrigger-CSharp" exclude="**\*.cs" />
     <file src="..\..\..\Functions.Templates\templates\ServiceBusTopicTrigger-Custom\**" target="Templates\ServiceBusTopicTrigger-Custom" />
     <file src="..\..\..\Functions.Templates\templates\ServiceBusTopicTrigger-JavaScript\**" target="Templates\ServiceBusTopicTrigger-JavaScript" />
     <file src="..\..\..\Functions.Templates\templates\ServiceBusTopicTrigger-PowerShell\**" target="Templates\ServiceBusTopicTrigger-PowerShell" />
@@ -165,5 +167,11 @@
     <file src="..\..\..\Functions.Templates\templates\SqlOutputBinding-JavaScript\**" target="templates\SqlOutputBinding-JavaScript" />
     <file src="..\..\..\Functions.Templates\templates\SqlInputBinding-PowerShell\**" target="Templates\SqlInputBinding-PowerShell" />
     <file src="..\..\..\Functions.Templates\templates\SqlOutputBinding-PowerShell\**" target="Templates\SqlOutputBinding-PowerShell" />
+
+    <file src="..\..\..\Functions.Templates\templates\SqlTrigger-CSharp\*.*" target="Templates\SqlTrigger-CSharp" exclude="**\*.cs" />
+    <file src="..\..\..\Functions.Templates\templates\SqlTrigger-Python\**" target="Templates\SqlTrigger-Python" />
+    <file src="..\..\..\Functions.Templates\templates\SqlTrigger-Typescript\**" target="Templates\SqlTrigger-Typescript" />
+    <file src="..\..\..\Functions.Templates\templates\SqlTrigger-JavaScript\**" target="templates\SqlTrigger-JavaScript" />
+    <file src="..\..\..\Functions.Templates\templates\SqlTrigger-PowerShell\**" target="Templates\SqlTrigger-PowerShell" />
   </files>
 </package>

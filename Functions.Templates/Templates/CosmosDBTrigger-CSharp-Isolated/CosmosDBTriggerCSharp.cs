@@ -17,21 +17,22 @@ namespace Company.Function
         [Function("CosmosDBTriggerCSharp")]
         public void Run([CosmosDBTrigger(
             databaseName: "DatabaseValue",
-            containerName: "CollectionValue",
+            containerName: "ContainerValue",
             Connection = "ConnectionValue",
-            LeaseContainerName = "leases")] IReadOnlyList<MyDocument> input)
+            LeaseContainerName = "leases",
+            CreateLeaseContainerIfNotExists = true)] IReadOnlyList<MyDocument> input)
         {
             if (input != null && input.Count > 0)
             {
                 _logger.LogInformation("Documents modified: " + input.Count);
-                _logger.LogInformation("First document Id: " + input[0].Id);
+                _logger.LogInformation("First document Id: " + input[0].id);
             }
         }
     }
 
     public class MyDocument
     {
-        public string Id { get; set; }
+        public string id { get; set; }
 
         public string Text { get; set; }
 
