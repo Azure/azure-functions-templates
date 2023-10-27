@@ -1,11 +1,16 @@
 open Microsoft.Extensions.Hosting
 open Microsoft.Azure.Functions.Worker
+open Microsoft.Extensions.DependencyInjection;
 
 [<EntryPoint>]
 let main args =
     let host =
         HostBuilder()
             .ConfigureFunctionsWorkerDefaults()
+            .ConfigureServices(services => {
+                services.AddApplicationInsightsTelemetryWorkerService();
+                services.ConfigureFunctionsApplicationInsights();
+            })
             .Build()
 
         // If using the Cosmos, Blob or Tables extension, you will need configure the extensions manually using the extension methods below.
