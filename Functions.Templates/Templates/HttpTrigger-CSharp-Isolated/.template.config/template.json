@@ -54,6 +54,19 @@
     "defaultName": "HttpTriggerCSharp",
     "postActions": [
         {
+            "condition": "(TargetFrameworkIdentifier == \".NETCoreApp\")",
+            "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore Nuget package",
+            "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+            "ContinueOnError": "true",
+            "ManualInstructions": [],
+            "args": {
+                "referenceType": "package",
+                "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore", "version": "1.0.0",
+                "projectFileExtensions": ".csproj"
+            }
+        },
+        {
+            "condition": "(TargetFrameworkIdentifier == \".NETFramework\")",
             "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Http Nuget package",
             "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
             "ContinueOnError": "true",
@@ -61,17 +74,6 @@
             "args": {
                 "referenceType": "package",
                 "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http", "version": "3.1.0",
-                "projectFileExtensions": ".csproj"
-            }
-        },
-        {
-            "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore Nuget package",
-            "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
-            "ContinueOnError": "true",
-            "ManualInstructions": [],
-            "args": {
-                "referenceType": "package",
-              "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore", "version": "1.0.0",
                 "projectFileExtensions": ".csproj"
             }
         },
