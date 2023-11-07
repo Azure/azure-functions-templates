@@ -12,16 +12,16 @@ namespace Company.Function
 {
     public class HttpTriggerCSharp
     {
-        private readonly ILogger<T> _logger;
+        private readonly ILogger<HttpTriggerCSharp> _logger;
 
-        public HttpTriggerCSharp(ILogger<T> logger)
+        public HttpTriggerCSharp(ILogger<HttpTriggerCSharp> logger)
         {
             _logger = logger;
         }
 
         [Function("HttpTriggerCSharp")]
 #if NetCore
-        public IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequest req)
+        public IActionResult Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post")] HttpRequest req)
         {
             return new OkObjectResult("Welcome to Azure Functions!");
         }
