@@ -69,6 +69,10 @@
                 }
             ]
         },
+        "NetFramework": {
+            "type": "computed",
+            "value": "(Framework == \"net48\")"
+        },
         "NetCore": {
             "type": "computed",
             "value": "(Framework == \"net8.0\" || Framework == \"net7.0\" || Framework == \"net6.0\")"
