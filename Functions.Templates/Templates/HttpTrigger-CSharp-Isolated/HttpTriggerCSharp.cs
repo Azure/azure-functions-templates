@@ -1,12 +1,8 @@
-using System.Net;
+#if NetCore
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
-#if NetCore
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-#elif NetFramework
-using Microsoft.Azure.Functions.Worker.Http;
-#endif
 
 namespace Company.Function
 {
@@ -20,12 +16,31 @@ namespace Company.Function
         }
 
         [Function("HttpTriggerCSharp")]
-#if NetCore
         public IActionResult Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post")] HttpRequest req)
         {
+            _logger.LogInformation("C# HTTP trigger function processed a request.");
             return new OkObjectResult("Welcome to Azure Functions!");
         }
-#elif NetFramework
+    }
+}
+#endif
+#if NetFramework
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Extensions.Logging;
+using Microsoft.Azure.Functions.Worker.Http;
+
+namespace Company.Function
+{
+    public class HttpTriggerCSharp
+    {
+        private readonly ILogger<HttpTriggerCSharp> _logger;
+
+        public HttpTriggerCSharp(ILogger<HttpTriggerCSharp> logger)
+        {
+            _logger = logger;
+        }
+
+        [Function("HttpTriggerCSharp")]
         public HttpResponseData Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post")] HttpRequestData req)
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
@@ -37,6 +52,6 @@ namespace Company.Function
 
             return response;
         }
-#endif
     }
 }
+#endif
