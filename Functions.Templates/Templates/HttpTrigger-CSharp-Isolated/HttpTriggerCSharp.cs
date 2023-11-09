@@ -1,5 +1,4 @@
 #if NetCore
-using System.Net;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
@@ -25,7 +24,6 @@ namespace Company.Function
 }
 #endif
 #if NetFramework
-using System.Net;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using Microsoft.Azure.Functions.Worker.Http;
@@ -55,3 +53,4 @@ namespace Company.Function
         }
     }
 }
+#endif

@@ -15,36 +15,6 @@
     },
     "sourceName": "HttpTriggerCSharp",
     "symbols": {
-        "namespace": {
-            "description": "namespace for the generated code",
-            "replaces": "Company.Function",
-            "type": "parameter"
-        },
-        "AccessRights": {
-            "type": "parameter",
-            "description": "Authorization level controls whether the function requires an API key and which key to use; Function uses a function key; Admin uses your master key. The function and master keys are found in the 'keys' management panel on the portal, when your function is selected.",
-            "datatype": "choice",
-            "choices": [
-                {
-                    "choice": "Function",
-                    "description": "Function"
-                },
-                {
-                    "choice": "Anonymous",
-                    "description": "Anonymous"
-                },
-                {
-                    "choice": "Admin",
-                    "description": "Admin"
-                }
-            ],
-            "replaces": "AuthLevelValue",
-            "defaultValue": "Function"
-        },
-        "HostIdentifier": {
-            "type": "bind",
-            "binding": "HostIdentifier"
-        },
         "Framework": {
             "type": "parameter",
             "description": "The target framework for the project.",
@@ -76,6 +46,36 @@
         "NetCore": {
             "type": "computed",
             "value": "(Framework == \"net8.0\" || Framework == \"net7.0\" || Framework == \"net6.0\")"
+        },
+        "namespace": {
+            "description": "namespace for the generated code",
+            "replaces": "Company.Function",
+            "type": "parameter"
+        },
+        "AccessRights": {
+            "type": "parameter",
+            "description": "Authorization level controls whether the function requires an API key and which key to use; Function uses a function key; Admin uses your master key. The function and master keys are found in the 'keys' management panel on the portal, when your function is selected.",
+            "datatype": "choice",
+            "choices": [
+                {
+                    "choice": "Function",
+                    "description": "Function"
+                },
+                {
+                    "choice": "Anonymous",
+                    "description": "Anonymous"
+                },
+                {
+                    "choice": "Admin",
+                    "description": "Admin"
+                }
+            ],
+            "replaces": "AuthLevelValue",
+            "defaultValue": "Function"
+        },
+        "HostIdentifier": {
+            "type": "bind",
+            "binding": "HostIdentifier"
         }
     },
     "primaryOutputs": [
