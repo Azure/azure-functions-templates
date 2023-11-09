@@ -15,37 +15,18 @@
     },
     "sourceName": "HttpTriggerCSharp",
     "symbols": {
-        "Framework": {
-            "type": "parameter",
-            "description": "The target framework for the project.",
-            "datatype": "choice",
-            "defaultValue": "net6.0",
-            "choices": [
-                {
-                "choice": "net6.0",
-                "description": "Target .NET 6"
-                },
-                {
-                "choice": "net7.0",
-                "description": "Target .NET 7"
-                },
-                {
-                "choice": "net8.0",
-                "description": "Target .NET 8"
-                },
-                {
-                "choice": "net48",
-                "description": "Target .NET Framework 4.8"
-                }
-            ]
+        "FrameworkIdentifier": {
+            "type": "bind",
+            "binding": "msbuild:TargetFrameworkIdentifier",
+            "defaultValue": ".NETCoreApp"
         },
         "NetFramework": {
             "type": "computed",
-            "value": "(Framework == \"net48\")"
+            "value": "(FrameworkIdentifier == \".NETFramework\")"
         },
         "NetCore": {
             "type": "computed",
-            "value": "(Framework == \"net8.0\" || Framework == \"net7.0\" || Framework == \"net6.0\")"
+            "value": "(FrameworkIdentifier == \".NETCoreApp\")"
         },
         "namespace": {
             "description": "namespace for the generated code",
