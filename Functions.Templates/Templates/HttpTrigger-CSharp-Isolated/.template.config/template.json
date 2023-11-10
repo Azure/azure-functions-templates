@@ -15,18 +15,18 @@
     },
     "sourceName": "HttpTriggerCSharp",
     "symbols": {
-        "FrameworkIdentifier": {
+        "Framework": {
             "type": "bind",
-            "binding": "msbuild:TargetFrameworkIdentifier",
-            "defaultValue": ".NETCoreApp"
+            "binding": "msbuild:TargetFramework",
+            "defaultValue": "net6.0"
         },
         "NetFramework": {
             "type": "computed",
-            "value": "(FrameworkIdentifier == \".NETFramework\")"
+            "value": "(Framework == \"net48\")"
         },
         "NetCore": {
             "type": "computed",
-            "value": "(FrameworkIdentifier == \".NETCoreApp\")"
+            "value": "(Framework == \"net6.0\" || Framework == \"net7.0\" || Framework == \"net6.0\")"
         },
         "namespace": {
             "description": "namespace for the generated code",
@@ -67,7 +67,7 @@
     "defaultName": "HttpTriggerCSharp",
     "postActions": [
         {
-            "condition": "NetCore",
+            "condition": "(NetCore == \"True\")",
             "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore Nuget package",
             "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
             "ContinueOnError": "true",
