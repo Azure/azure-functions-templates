@@ -22,10 +22,12 @@
         },
         "NetFramework": {
             "type": "computed",
+            "datatype": "bool",
             "value": "(Framework == \"net48\")"
         },
         "NetCore": {
             "type": "computed",
+            "datatype": "bool",
             "value": "(Framework == \"net6.0\" || Framework == \"net7.0\" || Framework == \"net8.0\")"
         },
         "namespace": {
@@ -67,7 +69,7 @@
     "defaultName": "HttpTriggerCSharp",
     "postActions": [
         {
-            "condition": "(NetCore == \"True\")",
+            "condition": "(NetCore)",
             "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore Nuget package",
             "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
             "ContinueOnError": "true",
