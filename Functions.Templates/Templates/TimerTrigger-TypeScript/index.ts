@@ -1,6 +1,6 @@
 import { AzureFunction, Context } from "@azure/functions"
 
-const timerTrigger: AzureFunction = async function (context: Context, myTimer: any): Promise<void> {
+const timerTrigger: AzureFunction = async function (context: Context, myTimer: Timer): Promise<void> {
     var timeStamp = new Date().toISOString();
     
     if (myTimer.isPastDue)
