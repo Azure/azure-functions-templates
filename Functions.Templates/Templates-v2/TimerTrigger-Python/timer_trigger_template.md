@@ -18,7 +18,7 @@ import azure.functions as func
 app = func.FunctionApp()
 
 @app.function_name(name="mytimer")
-@app.schedule(schedule="0 */5 * * * *", arg_name="mytimer", run_on_startup=True,
+@app.timer_trigger(schedule="0 */5 * * * *", arg_name="mytimer", run_on_startup=False,
               use_monitor=False) 
 def test_function(mytimer: func.TimerRequest) -> None:
     utc_timestamp = datetime.datetime.utcnow().replace(
