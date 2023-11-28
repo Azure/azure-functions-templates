@@ -1,4 +1,4 @@
-import { AzureFunction, Context } from "@azure/functions"
+import { AzureFunction, Context, Timer } from "@azure/functions"
 
 const timerTrigger: AzureFunction = async function (context: Context, myTimer: Timer): Promise<void> {
     var timeStamp = new Date().toISOString();
