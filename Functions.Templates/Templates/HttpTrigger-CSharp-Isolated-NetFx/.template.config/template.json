@@ -6,7 +6,7 @@
         "Http"
     ],
     "name": "HttpTrigger",
-    "identity": "Azure.Function.CSharp.Isolated.HttpTrigger.3.x",
+    "identity": "Azure.Function.CSharp.Isolated.NetFx.HttpTrigger.1.x",
     "groupIdentity": "Azure.Function.HttpTrigger",
     "shortName": "http",
     "tags": {
@@ -61,17 +61,6 @@
             "args": {
                 "referenceType": "package",
                 "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http", "version": "3.1.0",
-                "projectFileExtensions": ".csproj"
-            }
-        },
-        {
-            "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore Nuget package",
-            "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
-            "ContinueOnError": "true",
-            "ManualInstructions": [],
-            "args": {
-                "referenceType": "package",
-                "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore", "version": "1.1.1",
                 "projectFileExtensions": ".csproj"
             }
         },
