@@ -16,6 +16,31 @@
     },
     "sourceName": "Company.FunctionApp",
     "symbols": {
+        "Framework": {
+            "type": "parameter",
+            "description": "The target framework for the project.",
+            "datatype": "choice",
+            "defaultValue": "net8.0",
+            "replaces": "TargetFrameworkValue",
+            "choices": [
+                {
+                "choice": "net6.0",
+                "description": "Target .NET 6"
+                },
+                {
+                "choice": "net7.0",
+                "description": "Target .NET 7"
+                },    
+                {
+                "choice": "net8.0",
+                "description": "Target .NET 8"
+                }
+            ]
+        },
+        "NetCore": {
+            "type": "computed",
+            "value": "(Framework == \"net8.0\" || Framework == \"net7.0\" || Framework == \"net6.0\")"
+        },
         "StorageConnectionStringValue": {
             "description": "The connection string for your Azure WebJobs Storage.",
             "type": "parameter",
