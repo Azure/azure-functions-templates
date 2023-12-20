@@ -7,7 +7,7 @@
     <licenseUrl>https://go.microsoft.com/fwlink/?linkid=2028464</licenseUrl>
     <repository type="git" url="https://github.com/Azure/azure-functions-templates" />
     <projectUrl>https://go.microsoft.com/fwlink/?linkid=848145</projectUrl>
-    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <copyright>© Microsoft Fxoration. All rights reserved.</copyright>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Collection of templates for Azure Functions .NET Isolated</description>
     <language>en-US</language>
@@ -16,7 +16,8 @@
     </packageTypes>
   </metadata>
   <files>
-    <file src="..\..\..\Functions.Templates\Templates\HttpTrigger-CSharp-Isolated\**" target="content\HttpTrigger-CSharp" />
+    <!-- Target unique HTTP package for VS feed-->
+    <file src="..\..\..\Functions.Templates\Templates\HttpTrigger-CSharp-Isolated-NetFxVS\**" target="content\HttpTrigger-CSharp" />
     <file src="..\..\..\Functions.Templates\Templates\QueueTrigger-CSharp-Isolated\**" target="content\QueueTrigger-CSharpS" />
     <file src="..\..\..\Functions.Templates\Templates\QueueTrigger-FSharp-Isolated\**" target="content\QueueTrigger-FSharp" />
     <file src="..\..\..\Functions.Templates\Templates\HttpTrigger-FSharp-Isolated\**" target="content\HttpTrigger-FSharp" />
