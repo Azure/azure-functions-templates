@@ -1,0 +1,13 @@
+{
+  "bindings": [
+    {
+      "type": "eventHubTrigger",
+      "name": "events",
+      "direction": "in",
+      "eventHubName": "samples-workitems",
+      "cardinality": "many",
+      "connection": "",
+      "consumerGroup": "$Default"
+    }
+  ]
+}
