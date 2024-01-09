@@ -92,8 +92,7 @@ Dotnet pre-compiled templates are currently hosted by the following clients. Ple
 3. Locate the `templates` directory relative to `azure-functions-core-tools` at install location
 4. For in-proc templates:
     1. Open the templates output directory, `..\bin\VS` and rename `Microsoft.Azure.WebJobs.ItemTemplates.X.0.0.nupkg` to `itemTemplates.[version].nupkg`, `Microsoft.Azure.WebJobs.ProjectTemplates.X.0.0.nupkg` to `projectTemplates.[version].nupkg`. Use the version from templates found in step 3.
-    2. Open the templates cache directory `%userprofile%\AppData\Local\AzureFunctionsTools\Releases\<releaseVersion>\templates` for release version matching the one found in step 5.
-    3. Replace the contents of the folder with the renamed package found in `..\bin\VS`
+    2. Replace the contents of the folder with the renamed package found in `..\bin\VS`
 5. For testing dotnet-isolated templates, repeat the instructions for In-proc in step 4, but instead rename the templates `Microsoft.Azure.Functions.Worker.ItemTemplates.x` and `Microsoft.Azure.Functions.Worker.ProjectTemplates.x` using the format `itemTemplates.[version].nupkg` and `projectTemplates.[version].nupkg` respectively. Use the version denoted in the contents of the folder `net-isolated`, then replace those packages with the renamed packages from `..\bin\VS` of your local templates repo.
 6. Delete the `%userprofile%\.templateengine` directory
 
