@@ -89,15 +89,17 @@ Dotnet pre-compiled templates are currently hosted by the following clients. Ple
 
 1. Once the template files have been added / updated, build the templates using the [Build Steps](#build-steps)
 2. Find the location of core tools installation,you can use the command `where func` from windows command prompt
-3. Locate the `bin\tempaltes` directory relative to `azure-functions-core-tools` at install location
-4. For in-proc templates
-    1. Open the templates output directory, `..\bin\VS` and rename `Microsoft.Azure.WebJobs.ItemTemplates.X.0.0.nupkg` to `ItemTemplates.[version].nupkg`, `Microsoft.Azure.WebJobs.ProjectTemplates.X.0.0.nupkg` to `ProjectTemplates.[version].nupkg`. Use the version from templates found in step 3.
-    2. Open the templates cache directory `%userprofile%\AppData\Local\AzureFunctionsTools\Releases\<releaseVersion>\templates` for release version matching the one found in step 5. 
+3. Locate the `templates` directory relative to `azure-functions-core-tools` at install location
+4. For in-proc templates:
+    1. Open the templates output directory, `..\bin\VS` and rename `Microsoft.Azure.WebJobs.ItemTemplates.X.0.0.nupkg` to `itemTemplates.[version].nupkg`, `Microsoft.Azure.WebJobs.ProjectTemplates.X.0.0.nupkg` to `projectTemplates.[version].nupkg`. Use the version from templates found in step 3.
+    2. Open the templates cache directory `%userprofile%\AppData\Local\AzureFunctionsTools\Releases\<releaseVersion>\templates` for release version matching the one found in step 5.
     3. Replace the contents of the folder with the renamed package found in `..\bin\VS`
-5. For testing net5-isolated templates, repeat the step 3, replace the contents of net5-isolated with `Microsoft.Azure.Functions.Worker.ItemTemplates.3.x.x`. Same for the corresponding project template
+5. For testing dotnet-isolated templates, repeat the instructions for In-proc in step 4, but instead rename the templates `Microsoft.Azure.Functions.Worker.ItemTemplates.x` and `Microsoft.Azure.Functions.Worker.ProjectTemplates.x` using the format `itemTemplates.[version].nupkg` and `projectTemplates.[version].nupkg` respectively. Use the version denoted in the contents of the folder `net-isolated`, then replace those packages with the renamed packages from `..\bin\VS` of your local templates repo.
 6. Delete the `%userprofile%\.templateengine` directory
 
-4. Visual Studio Code: We currently do not have a way to test templates in VS code without going to through extensive set up. Will update this section with instructions once we have the right set of hooks enabled.
+#### Visual Studio Code
+
+We currently do not have a way to test templates in VS code without going to through extensive set up. Will update this section with instructions once we have the right set of hooks enabled.
 
 ## Creating script type templates
 Script type templates are templates for functions that do not require a compilation step. The templates includes metadata files in addition to the files required to execute a function. The metadata files help drive the user interface and development experience for creating a function using a template. In addition to the metadata file you would also need to add a code file for the corresponding language in the template. You can find information on the metadata files in the section below:
