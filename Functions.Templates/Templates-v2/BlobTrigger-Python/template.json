@@ -130,6 +130,7 @@
             "type": "AppendToBlueprint", 
             "inputs" : [
                 {
+                    "assignTo": "$(BLUEPRINT_FILENAME)",
                     "paramId": "blueprint-existingFileName",
                     "required": true,
                     "condition" : {
