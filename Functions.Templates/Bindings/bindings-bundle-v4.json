@@ -1537,23 +1537,7 @@
       "documentation": "$content=Documentation\\eventGridTrigger.md",
       "extension": {
         "id": "Microsoft.Azure.WebJobs.Extensions.EventGrid", "version": "2.1.0"
-      },
-      "settings": [
-        {
-          "name": "name",
-          "value": "string",
-          "defaultValue": "EventGridTrigger",
-          "required": true,
-          "label": "$eventGrid_trigger_name_label",
-          "help": "$eventGrid_trigger_name_help",
-          "validators": [
-            {
-              "expression": "(^[a-zA-Z][a-zA-Z0-9]{0,127}$)|^\\$return$",
-              "errorText": "[variables('parameterName')]"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
       "type": "cosmosDBTrigger",
