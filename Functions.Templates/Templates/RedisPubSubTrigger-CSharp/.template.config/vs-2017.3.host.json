@@ -1,0 +1,38 @@
+{
+  "name": {
+    "text": "Redis PubSub Trigger",
+    "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}",
+    "id": "3000"
+  },
+  "description": {
+    "text": "A C# function triggers based on messages from a Redis pubsub channel.",
+    "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}",
+    "id": "3001"
+  },
+  "order": 400,
+  "icon": "vs-2017.3/functionF.png",
+  "learnMoreLink": "https://github.com/Azure/azure-functions-redis-extension",
+  "uiFilters": [
+    "functions"
+  ],
+  "symbolInfo": [
+    {
+      "id": "connection",
+      "name": {
+        "id": "4100",
+        "text": "The name of the app setting containing your Redis connection string",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      },
+      "isVisible": true
+    },
+    {
+      "id": "channel",
+      "name": {
+        "id": "4101",
+        "text": "Redis pubsub channel that the trigger will listen to.",
+        "package": "{E9BCFE2B-304A-4D7F-836F-F3A4FB1A1451}"
+      },
+      "isVisible": true
+    }
+  ]
+}

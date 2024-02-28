@@ -1,0 +1,13 @@
+{
+  "bindings": [
+    {
+      "type": "redisPubSubTrigger",
+      "name": "message",
+      "direction": "in",
+      "connection": "RedisConnectionString",
+      "channel": "channelname",
+      "pattern": false
+    }
+  ],
+  "disabled": false
+}

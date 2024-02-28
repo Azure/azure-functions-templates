@@ -2013,6 +2013,269 @@
           "help": "[variables('appSettingsHelp')]"
         }
       ]
+    },
+    {
+      "type": "redisPubSubTrigger",
+      "displayName": "$redisPubSubTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\redisPubSubTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Redis", "version": "0.5.0-preview"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "changes",
+          "required": true,
+          "label": "$redisPubSubTrigger_name_label",
+          "help": "$redisPubSubTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "defaultValue": "object",
+          "required": true,
+          "label": "$redis_connection_label",
+          "help": "$redis_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "channel",
+          "value": "string",
+          "defaultValue": "object",
+          "required": true,
+          "label": "$redisPubSubTrigger_channel_label",
+          "help": "$redisPubSubTrigger_channel_help"
+        },
+        {
+          "name": "pattern",
+          "value": "boolean",
+          "defaultValue": false,
+          "required": true,
+          "label": "$redisPubSubTrigger_pattern_label",
+          "help": "$redisPubSubTrigger_pattern_help"
+        }
+      ]
+    },
+    {
+      "type": "redisListTrigger",
+      "displayName": "$redisListTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\redisListTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Redis", "version": "0.5.0-preview"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "changes",
+          "required": true,
+          "label": "$redisListTrigger_name_label",
+          "help": "$redisListTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "defaultValue": "object",
+          "required": true,
+          "label": "$redis_connection_label",
+          "help": "$redis_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "key",
+          "value": "string",
+          "defaultValue": "object",
+          "required": true,
+          "label": "$redisListTrigger_key_label",
+          "help": "$redisListTrigger_key_help"
+        },
+        {
+          "name": "pollingIntervalInMs",
+          "value": "long",
+          "defaultValue": 1000,
+          "required": true,
+          "label": "$redisTrigger_pollingIntervalInMs_label",
+          "help": "$redisTrigger_pollingIntervalInMs_help"
+        },
+        {
+          "name": "maxBatchSize",
+          "value": "int",
+          "defaultValue": 16,
+          "required": true,
+          "label": "$redisTrigger_maxBatchSize_label",
+          "help": "$redisTrigger_maxBatchSize_help"
+        },
+        {
+          "name": "listDirection",
+          "value": "string",
+          "defaultValue": "LEFT",
+          "required": true,
+          "label": "$redisListTrigger_listDirection_label",
+          "help": "$redisListTrigger_listDirection_help"
+        }
+      ]
+    },
+    {
+      "type": "redisStreamTrigger",
+      "displayName": "$redisStreamTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\redisStreamTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Redis", "version": "0.5.0-preview"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "changes",
+          "required": true,
+          "label": "$redisStreamTrigger_name_label",
+          "help": "$redisStreamTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "defaultValue": "object",
+          "required": true,
+          "label": "$redis_connection_label",
+          "help": "$redis_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "key",
+          "value": "string",
+          "defaultValue": "object",
+          "required": true,
+          "label": "$redisStreamTrigger_key_label",
+          "help": "$redisStreamTrigger_key_help"
+        },
+        {
+          "name": "pollingIntervalInMs",
+          "value": "long",
+          "defaultValue": 1000,
+          "required": true,
+          "label": "$redisTrigger_pollingIntervalInMs_label",
+          "help": "$redisTrigger_pollingIntervalInMs_help"
+        },
+        {
+          "name": "maxBatchSize",
+          "value": "int",
+          "defaultValue": 16,
+          "required": true,
+          "label": "$redisTrigger_maxBatchSize_label",
+          "help": "$redisTrigger_maxBatchSize_help"
+        }
+      ]
+    },
+    {
+      "type": "redis",
+      "displayName": "$redisIn_displayName",
+      "direction": "in",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\redisIn.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Redis", "version": "0.5.0-preview"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "changes",
+          "required": true,
+          "label": "$redisIn_name_label",
+          "help": "$redisIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "defaultValue": "object",
+          "required": true,
+          "label": "$redis_connection_label",
+          "help": "$redis_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "command",
+          "value": "string",
+          "defaultValue": "object",
+          "required": true,
+          "label": "$redisIn_command_label",
+          "help": "$redisIn_command_help"
+        }
+      ]
+    },
+    {
+      "type": "redis",
+      "displayName": "$redisOut_displayName",
+      "direction": "in",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\redisOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.Redis", "version": "0.5.0-preview"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "changes",
+          "required": true,
+          "label": "$redisOut_name_label",
+          "help": "$redisOut_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "connection",
+          "value": "string",
+          "defaultValue": "object",
+          "required": true,
+          "label": "$redis_connection_label",
+          "help": "$redis_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "command",
+          "value": "string",
+          "defaultValue": "object",
+          "required": true,
+          "label": "$redisOut_command_label",
+          "help": "$redisOut_command_help"
+        }
+      ]
     }
   ]
 }
