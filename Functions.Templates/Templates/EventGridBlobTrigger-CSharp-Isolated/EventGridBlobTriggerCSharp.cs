@@ -5,16 +5,16 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function
 {
-    public class BlobTriggerCSharp
+    public class EventGridBlobTriggerCSharp
     {
-        private readonly ILogger<BlobTriggerCSharp> _logger;
+        private readonly ILogger<EventGridBlobTriggerCSharp> _logger;
 
-        public BlobTriggerCSharp(ILogger<BlobTriggerCSharp> logger)
+        public EventGridBlobTriggerCSharp(ILogger<EventGridBlobTriggerCSharp> logger)
         {
             _logger = logger;
         }
 
-        [Function(nameof(BlobTriggerCSharp))]
+        [Function(nameof(EventGridBlobTriggerCSharp))]
         public async Task Run([BlobTrigger("PathValue/{name}", Source = BlobTriggerSource.EventGrid, Connection = "ConnectionValue")] Stream stream, string name)
         {
             using var blobStreamReader = new StreamReader(stream);
