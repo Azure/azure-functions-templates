@@ -3,17 +3,18 @@
     "classifications": [
         "Azure Function",
         "Trigger",
-        "Blob"
+        "Blob",
+        "EventGrid"
     ],
-    "name": "BlobTrigger",
-    "identity": "Azure.Function.CSharp.Isolated.BlobTrigger.3.x",
-    "groupIdentity": "Azure.Function.BlobTrigger",
-    "shortName": "blob",
+    "name": "EventGridBlobTrigger",
+    "identity": "Azure.Function.CSharp.Isolated.EventGridBlobTrigger.3.x",
+    "groupIdentity": "Azure.Function.EventGridBlobTrigger",
+    "shortName": "eventgridblob",
     "tags": {
         "language": "C#",
         "type": "item"
     },
-    "sourceName": "BlobTriggerCSharp",
+    "sourceName": "EventGridBlobTriggerCSharp",
     "symbols": {
         "namespace": {
             "description": "namespace for the generated code",
@@ -39,10 +40,10 @@
     },
     "primaryOutputs": [
         {
-            "path": "BlobTriggerCSharp.cs"
+            "path": "EventGridBlobTriggerCSharp.cs"
         }
     ],
-    "defaultName": "BlobTriggerCSharp",
+    "defaultName": "EventGridBlobTriggerCSharp",
     "postActions": [
         {
             "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Storage.Blobs Nuget package",
