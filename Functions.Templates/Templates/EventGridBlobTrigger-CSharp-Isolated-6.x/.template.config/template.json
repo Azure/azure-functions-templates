@@ -3,11 +3,10 @@
     "classifications": [
         "Azure Function",
         "Trigger",
-        "Blob",
-        "EventGrid"
+        "Blob"
     ],
     "name": "EventGridBlobTrigger",
-    "identity": "Azure.Function.CSharp.Isolated.EventGridBlobTrigger.3.x",
+    "identity": "Azure.Function.CSharp.Isolated.EventGridBlobTrigger.6.x",
     "groupIdentity": "Azure.Function.EventGridBlobTrigger",
     "shortName": "eventgridblob",
     "tags": {
@@ -22,7 +21,7 @@
             "type": "parameter"
         },
         "Connection": {
-            "description": "The name of the app setting containing your Storage connection.",
+            "description": "The name of the app setting containing your storage connection.",
             "type": "parameter",
             "defaultValue": "",
             "replaces": "ConnectionValue"
@@ -53,7 +52,7 @@
             "args": {
                 "referenceType": "package",
                 "reference": "Microsoft.Azure.Functions.Worker.Extensions.Storage.Blobs",
-                "version": "6.3.0",
+                "version": "6.4.0",
                 "projectFileExtensions": ".csproj"
             }
         },
