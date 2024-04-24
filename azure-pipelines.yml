@@ -35,6 +35,7 @@ steps:
     packageSourceAuth: 'patAuth'
     patVariable: '$(ONELOCBUILD)'
     continueOnError: true
+    condition: and(succeeded(), eq($(System.PullRequest.IsFork), false))
 
 - task: CopyFiles@2
   enabled: true
