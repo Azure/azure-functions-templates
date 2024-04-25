@@ -35,7 +35,7 @@ steps:
     packageSourceAuth: 'patAuth'
     patVariable: '$(ONELOCBUILD)'
     continueOnError: true
-    condition: and(succeededOrFailed(), ne(variables['system.pullrequest.isfork'], true))
+  condition: and(succeededOrFailed(), ne(variables['system.pullrequest.isfork'], true))
 
 - task: CopyFiles@2
   enabled: true
