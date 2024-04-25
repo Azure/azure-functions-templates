@@ -35,7 +35,7 @@ steps:
     packageSourceAuth: 'patAuth'
     patVariable: '$(ONELOCBUILD)'
     continueOnError: true
-    condition: and(succeeded(), eq($(System.PullRequest.IsFork), false))
+  condition: and(succeededOrFailed(), ne(variables['system.pullrequest.isfork'], true))
 
 - task: CopyFiles@2
   enabled: true
@@ -43,12 +43,14 @@ steps:
   inputs:
     SourceFolder: $(System.DefaultWorkingDirectory)/loc
     TargetFolder: $(Build.ArtifactStagingDirectory)
+  condition: and(succeededOrFailed(), ne(variables['system.pullrequest.isfork'], true))
 
 - task: PublishBuildArtifacts@1
   enabled: true
   displayName: 'Publish Artifact: loc'
   inputs:
     ArtifactName: 'loc'
+  condition: and(succeededOrFailed(), ne(variables['system.pullrequest.isfork'], true))
     
 - task: Npm@1
   inputs:
