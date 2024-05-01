@@ -1,0 +1,12 @@
+{
+    "bindings": [
+        {
+            "name": "myEventGridBlob",
+            "type": "blobTrigger",
+            "direction": "in",
+            "path": "samples-workitems/{name}",
+            "source": "EventGrid",
+            "connection": ""
+        }
+    ]
+}
