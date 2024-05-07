@@ -16,13 +16,53 @@
     },
     "sourceName": "Company.FunctionApp",
     "symbols": {
-      "StorageConnectionStringValue": {
-        "description": "The connection string for your Azure WebJobs Storage.",
-        "type": "parameter",
-        "defaultValue": "UseDevelopmentStorage=true",
-        "replaces": "AzureWebJobsStorageConnectionStringValue",
-        "DataType": "string"
-      }
+        "Framework": {
+            "type": "parameter",
+            "description": "The target framework for the project.",
+            "datatype": "choice",
+            "defaultValue": "net6.0",
+            "replaces": "TargetFrameworkValue",
+            "choices": [
+                {
+                    "choice": "net6.0",
+                    "description": "Target .NET 6"
+                },
+                {
+                    "choice": "net8.0",
+                    "description": "Target .NET 8"
+                }
+            ]
+        },
+        "StorageConnectionStringValue": {
+            "description": "The connection string for your Azure WebJobs Storage.",
+            "type": "parameter",
+            "defaultValue": "UseDevelopmentStorage=true",
+            "replaces": "AzureWebJobsStorageConnectionStringValue",
+            "DataType": "string"
+        },
+        "AzureFunctionsVersion": {
+            "description": "The setting that determines the target release",
+            "type": "parameter",
+            "defaultValue": "V4"
+        },
+        "AzureFunctionsVersionAdjusted": {
+            "description": "Adjusted value for .NET 8",
+            "type": "generated",
+            "generator": "switch",
+            "parameters": {
+                "datatype": "string",
+                "cases": [
+                    {
+                        "condition": "(Framework == 'net8.0')",
+                        "value": "V4"
+                    },
+                    {
+                        "value": "(AzureFunctionsVersion)"
+                    }
+                ]
+            },
+            "replaces": "AzureFunctionsVersionValue"
+        }
     },
     "sources": [
         {
