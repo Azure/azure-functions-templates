@@ -43,25 +43,23 @@
         "AzureFunctionsVersion": {
             "description": "The setting that determines the target release",
             "type": "parameter",
-            "defaultValue": "V4"
+            "defaultValue": "v4"
         },
         "AzureFunctionsVersionAdjusted": {
             "description": "Adjusted value for .NET 8",
             "type": "generated",
-            "generator": "switch",
-            "parameters": {
-                "datatype": "string",
-                "cases": [
-                {
-                    "condition": "(Framework == 'net8.0')",
-                    "value": "V4"
-                },
-                {
-                    "value": "(AzureFunctionsVersion)"
-                }
+            "generator": "regex",
+            "dataType": "string",
+            "replaces": "AzureFunctionsVersionValue",
+            "parameters" : {
+                "source": "AzureFunctionsVersion",
+                "steps": [
+                    {
+                        "regex": "^v\\d+",
+                        "replacement" : "v4"
+                    }
                 ]
-            },
-            "replaces": "AzureFunctionsVersionValue"
+            }
         },
         "FunctionsHttpPort": {
             "type": "parameter",
@@ -103,4 +101,4 @@
         }
     ],
     "defaultName": "Company.FunctionApp"
-}
+} 
