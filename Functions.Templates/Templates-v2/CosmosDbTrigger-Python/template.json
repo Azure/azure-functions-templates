@@ -101,8 +101,8 @@
             "type": "CreateNewBlueprint",
             "inputs": [
                 {
-                    "assignTo": "$(APP_FILENAME)",
-                    "paramId": "app-fileName",
+                    "assignTo": "$(BLUEPRINT_FILENAME)",
+                    "paramId": "blueprint-fileName",
                     "defaultValue": "blueprint.py",
                     "required": true,
                     "condition" : {
@@ -148,8 +148,8 @@
             "type": "AppendToBlueprint",
             "inputs": [
                 {
-                    "assignTo": "$(APP_FILENAME)",
-                    "paramId": "app-fileName",
+                    "assignTo": "$(BLUEPRINT_FILENAME)",
+                    "paramId": "blueprint-existingFileName",
                     "required": true,
                     "condition" : {
                         "name": "ClientId",
