@@ -1,6 +1,6 @@
 import json
 
-from azure.functions import HttpRequest, HttpResponse, MySqlRowList
+from azure.functions import HttpRequest, HttpResponse, SqlRowList
 
 def main(req: HttpRequest, items: SqlRowList) -> HttpResponse:
     """Sample MySql Input Binding
