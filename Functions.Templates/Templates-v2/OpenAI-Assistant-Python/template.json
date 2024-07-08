@@ -1,12 +1,12 @@
 {
     "author": "Gavin Aguiar",
-    "name": "TextCompletion Binding",
-    "description": "TODO: Add description",
+    "name": "Assistant Binding",
+    "description": "Template to add an assistant to your project",
     "programmingModel": "v2",
     "language": "python",
     "jobs": [
         {
-            "name": "Create New Project with TextCompletion function",
+            "name": "Create New Project",
             "type": "CreateNewApp",
             "inputs": [
                 {
@@ -21,26 +21,24 @@
                     }
                 },
                 {
-                    "assignTo": "$(FUNCTION_NAME_INPUT)",
-                    "paramId": "trigger-functionName",
-                    "required": true,
-                    "defaultValue": "whois"
-                },
-                {
                     "assignTo": "$(AUTHLEVEL_INPUT)",
                     "paramId": "httpTrigger-authLevel",
                     "required": true,
                     "defaultValue": "FUNCTION"
+                },
+                {
+                    "assignTo": "$(CHAT_MODEL_NAME)",
+                    "paramId": "chat-model-name",
+                    "required": true,
+                    "defaultValue": "gpt-3.5-turbo"
                 }
             ],
             "actions": [
                 "readFileContent_FunctionApp",
-                "writeFile_FunctionApp",
-                "showMarkdownPreview"
-            ]
+                "writeFile_FunctionApp"            ]
         },
         {
-            "name": "Add httpTrigger function to an existing file",
+            "name": "Add chat function to an existing file",
             "type": "AppendToFile",
             "inputs": [
                 {
@@ -55,14 +53,15 @@
                     }
                 },
                 {
-                    "assignTo": "$(FUNCTION_NAME_INPUT)",
-                    "paramId": "trigger-functionName",
-                    "defaultValue": "http_trigger"
-                },
-                {
                     "assignTo": "$(AUTHLEVEL_INPUT)",
                     "paramId": "httpTrigger-authLevel",
                     "defaultValue": "FUNCTION"
+                },
+                {
+                    "assignTo": "$(CHAT_MODEL_NAME)",
+                    "paramId": "chat-model-name",
+                    "required": true,
+                    "defaultValue": "gpt-3.5-turbo"
                 }
             ],
             "actions": [
@@ -86,16 +85,16 @@
                     }
                 },
                 {
-                    "assignTo": "$(FUNCTION_NAME_INPUT)",
-                    "paramId": "trigger-functionName",
-                    "required": true,
-                    "defaultValue": "http_trigger"
-                },
-                {
                     "assignTo": "$(AUTHLEVEL_INPUT)",
                     "paramId": "httpTrigger-authLevel",
                     "required": true,
                     "defaultValue": "FUNCTION"
+                },
+                {
+                    "assignTo": "$(CHAT_MODEL_NAME)",
+                    "paramId": "chat-model-name",
+                    "required": true,
+                    "defaultValue": "gpt-3.5-turbo"
                 }
             ],
             "actions": [
@@ -106,7 +105,7 @@
             ]
         },
         {
-            "name": "Add EventHubTrigger function to the Blueprint",
+            "name": "Add function to the Blueprint",
             "type": "AppendToBlueprint",
             "inputs": [
                 {
@@ -120,16 +119,16 @@
                     }
                 },
                 {
-                    "assignTo": "$(FUNCTION_NAME_INPUT)",
-                    "paramId": "trigger-functionName",
-                    "required": true,
-                    "defaultValue": "http_trigger"
-                },
-                {
                     "assignTo": "$(AUTHLEVEL_INPUT)",
                     "paramId": "httpTrigger-authLevel",
                     "required": true,
                     "defaultValue": "FUNCTION"
+                },
+                {
+                    "assignTo": "$(CHAT_MODEL_NAME)",
+                    "paramId": "chat-model-name",
+                    "required": true,
+                    "defaultValue": "gpt-3.5-turbo"
                 }
             ],
             "actions": [
@@ -183,11 +182,6 @@
             "type": "GetTemplateFileContent",
             "assignTo": "$(BLUEPRINT_CONTENT)",
             "filePath": "blueprint.py"
-        },
-        {
-            "name": "ShowMarkdownPreview",
-            "type": "ShowMarkdownPreview",
-            "filePath": "http_trigger_template.md"
         },
         {
             "name": "appendFileContent_BlueprintBody",
