@@ -30,16 +30,20 @@
                 {
                 "choice": "net7.0",
                 "description": "Target .NET 7"
-                },    
+                },
                 {
                 "choice": "net8.0",
                 "description": "Target .NET 8"
+                },
+                {
+                "choice": "net9.0",
+                "description": "Target .NET 9"
                 }
             ]
         },
         "NetCore": {
             "type": "computed",
-            "value": "(Framework == \"net8.0\" || Framework == \"net7.0\" || Framework == \"net6.0\")"
+            "value": "(Framework == \"net9.0\" || Framework == \"net8.0\" || Framework == \"net7.0\" || Framework == \"net6.0\")"
         },
         "StorageConnectionStringValue": {
             "description": "The connection string for your Azure WebJobs Storage.",
