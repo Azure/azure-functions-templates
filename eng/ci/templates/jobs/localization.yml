@@ -1,0 +1,28 @@
+jobs:
+- job: localize
+  displayName: Get localized strings
+
+  templateContext:
+    outputParentDirectory: $(Build.ArtifactStagingDirectory)
+    outputs:
+    - output: pipelineArtifact
+      displayName: Publish templates
+      path: $(Build.ArtifactStagingDirectory)
+      artifact: loc
+
+  steps:
+  - task: OneLocBuild@2
+    enabled: true
+    inputs:
+      locProj: 'Build\Localize\LocProject.json'
+      outDir: '$(Build.Repository.LocalPath)'
+      packageSourceAuth: 'patAuth'
+      patVariable: '$(ONELOCBUILD)'
+      continueOnError: true
+
+  - task: CopyFiles@2
+    enabled: true
+    displayName: 'Copy Loc files to publish directories'
+    inputs:
+      SourceFolder: $(System.DefaultWorkingDirectory)/loc
+      TargetFolder: $(Build.ArtifactStagingDirectory)

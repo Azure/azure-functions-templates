@@ -1,0 +1,49 @@
+trigger:
+  branches:
+    include:
+    - dev
+    - release/main
+
+schedules:
+# Ensure we build nightly to catch any new CVEs and report SDL often.
+- cron: "0 0 * * *"
+  displayName: Nightly Build
+  branches:
+    include:
+    - main
+  always: true
+
+# CI only, does not trigger on PRs.
+pr: none
+
+resources:
+  repositories:
+  - repository: 1es
+    type: git
+    name: 1ESPipelineTemplates/1ESPipelineTemplates
+    ref: refs/tags/release
+  - repository: eng
+    type: git
+    name: engineering
+    ref: refs/tags/release
+
+variables:
+  - template: /ci/variables/cfs.yml@eng
+  - name: devops_buildNumber
+    value : $[counter(format(''), 5000)]
+
+extends:
+  template: v1/1ES.Official.PipelineTemplate.yml@1es
+  parameters:
+    pool:
+      name: 1es-pool-azfunc
+      image: 1es-windows-2022
+      os: windows
+
+    stages:  
+    - stage: Build
+      dependsOn: []
+      jobs:
+      - template: eng/ci/templates/jobs/build.yml@self
+        parameters:
+          official: true
