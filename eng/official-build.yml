@@ -42,8 +42,5 @@ extends:
 
     stages:  
     - stage: Build
-      dependsOn: []
       jobs:
       - template: eng/ci/templates/jobs/build.yml@self
-        parameters:
-          official: true
