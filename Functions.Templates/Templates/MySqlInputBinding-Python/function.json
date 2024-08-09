@@ -1,0 +1,27 @@
+{
+    "scriptFile": "__init__.py",
+    "bindings": [
+      {
+        "authLevel": "function",
+        "type": "httpTrigger",
+        "direction": "in",
+        "name": "req",
+        "methods": [
+            "get"
+          ]
+      },
+      {
+        "type": "mysql",
+        "name": "items",
+        "direction": "in",
+        "commandText": "SELECT * FROM [table1]",
+        "commandType": "Text",
+        "connectionStringSetting": "MySqlConnectionString"
+      },
+      {
+        "type": "http",
+        "direction": "out",
+        "name": "$return"
+      }
+    ]
+  }
