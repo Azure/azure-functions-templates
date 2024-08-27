@@ -41,3 +41,20 @@ jobs:
       Contents: '*.zip'
       TargetFolder: '$(Build.ArtifactStagingDirectory)'
       CleanTargetFolder: false
+  
+  - task: PowerShell@2
+    displayName: 'Create version file'
+    inputs:
+      targetType: 'inline'
+      script: |
+        # Create a new path from $(System.ArtifactsDirectory) and version.json
+        $filePath = Join-Path $(System.ArtifactsDirectory) -ChildPath "version.json"   
+        $json = @"   
+                {
+                    "commitId" : "$(Build.SourceVersion)"
+                }
+        "@
+            
+        Write-Host "Creating version file at $filePath"
+        New-Item -Path $filePath -Force
+        $json | Out-File -FilePath $filePath -Encoding ascii
