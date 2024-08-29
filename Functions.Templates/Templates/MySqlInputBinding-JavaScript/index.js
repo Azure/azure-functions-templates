@@ -1,6 +1,6 @@
 /**
  * Sample MySQL Input Binding
- * See https://aka.ms/sqlbindingsinput for more information about using this binding
+ * See https://aka.ms/mysqlbindingsinput for more information about using this binding
  *
  * These tasks should be completed prior to running :
  *      1. Update "commandText" in function.json - this should be the query to execute to retrieve the values being returned
