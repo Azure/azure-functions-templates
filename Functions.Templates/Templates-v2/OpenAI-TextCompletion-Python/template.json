@@ -1,6 +1,6 @@
 {
     "author": "Gavin Aguiar",
-    "name": "TextCompletion Binding",
+    "name": "OpenAI TextCompletion Binding",
     "description": "Template for TextCompletion binding function",
     "programmingModel": "v2",
     "language": "python",
@@ -24,7 +24,7 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "whois"
+                    "defaultValue": "text_completion_function"
                 },
                 {
                     "assignTo": "$(AUTHLEVEL_INPUT)",
@@ -62,7 +62,7 @@
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
-                    "defaultValue": "whois"
+                    "defaultValue": "text_completion_function"
                 },
                 {
                     "assignTo": "$(AUTHLEVEL_INPUT)",
@@ -100,7 +100,7 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "whois"
+                    "defaultValue": "text_completion_function"
                 },
                 {
                     "assignTo": "$(AUTHLEVEL_INPUT)",
@@ -140,7 +140,7 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "whois"
+                    "defaultValue": "text_completion_function"
                 },
                 {
                     "assignTo": "$(AUTHLEVEL_INPUT)",

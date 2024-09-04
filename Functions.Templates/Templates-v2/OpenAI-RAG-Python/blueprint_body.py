@@ -1,9 +1,11 @@
+# Add searchProvider to host.json.
+# For samples code refer: https://github.com/Azure/azure-functions-openai-extension/tree/main/samples/rag-aisearch
 
 @$(BLUEPRINT_FILENAME).route(route="injest_file", methods=["POST"], auth_level=func.AuthLevel.$(AUTHLEVEL_INPUT))
 @$(BLUEPRINT_FILENAME).embeddings_store_output(arg_name="requests", input="{url}", input_type="url", connection_name="$(CONNECTION_STRING_INPUT)", collection="$(COLLECTION_NAME)", model="$(EMBEDDING_MODEL_NAME)")
 def ingest_file(req: func.HttpRequest, requests: func.Out[str]) -> func.HttpResponse:
     import json
-
+    import os
     user_message = req.get_json()
     if not user_message:
         return func.HttpResponse(json.dumps({"message": "No message provided"}), status_code=400, mimetype="application/json")

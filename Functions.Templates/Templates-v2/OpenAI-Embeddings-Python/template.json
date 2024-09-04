@@ -1,6 +1,6 @@
 {
     "author": "Gavin Aguiar",
-    "name": "Embeddings Binding",
+    "name": "Open AI Embeddings Binding",
     "description": "Template to create an Embeddings binding function",
     "programmingModel": "v2",
     "language": "python",
@@ -24,7 +24,7 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "whois"
+                    "defaultValue": "generate_embeddings_http_request"
                 },
                 {
                     "assignTo": "$(AUTHLEVEL_INPUT)",

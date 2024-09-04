@@ -17,5 +17,4 @@ def $(FUNCTION_NAME_INPUT)(req: func.HttpRequest, embeddings: str) -> func.HttpR
     }
     logging.info(f'Received {embeddings_json.get("count")} embedding(s) for input text '
         f'containing {len(embeddings_request.get("raw_text"))} characters.')
-    # TODO: Store the embeddings into a database or other storage.
     return func.HttpResponse(status_code=200)
