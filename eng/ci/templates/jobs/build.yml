@@ -1,0 +1,60 @@
+jobs:
+- job: Build
+  displayName: Build and publish templates
+
+  templateContext:
+    outputParentDirectory: $(Build.ArtifactStagingDirectory)
+    outputs:
+    - output: pipelineArtifact
+      displayName: Publish templates
+      path: $(Build.ArtifactStagingDirectory)
+      artifact: drop
+
+  steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '10.x'
+    displayName: 'Install Node.js'
+    
+  - task: Npm@1
+    inputs:
+      command: 'install'
+      workingDir: '.\Build'
+    
+  - task: Gulp@1
+    inputs:
+      buildNumber: $(devops_buildNumber)
+      gulpFile: '.\Build\gulpfile.js'
+      targets: 'build-all'
+      enableCodeCoverage: false
+    
+  - task: CopyFiles@2
+    inputs:
+      SourceFolder: '$(Build.Repository.LocalPath)\bin\VS'
+      Contents: '*.nupkg'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+      CleanTargetFolder: true
+    
+  - task: CopyFiles@2
+    inputs:
+      SourceFolder: '$(Build.Repository.LocalPath)\bin'
+      Contents: '*.zip'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+      CleanTargetFolder: false
+  
+  - task: PowerShell@2
+    displayName: 'Create version file'
+    inputs:
+      targetType: 'inline'
+      script: |
+        # Create a new path from $(System.ArtifactsDirectory) and version.json
+        $filePath = Join-Path $(System.ArtifactsDirectory) -ChildPath "version.json"   
+        $json = @"   
+                {
+                    "commitId" : "$(Build.SourceVersion)"
+                }
+        "@
+            
+        Write-Host "Creating version file at $filePath"
+        New-Item -Path $filePath -Force
+        $json | Out-File -FilePath $filePath -Encoding ascii
