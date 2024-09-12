@@ -1,3 +1,8 @@
+parameters:
+  - name: official
+    type: boolean
+    default: false
+
 jobs:
 - job: Build
   displayName: Build and publish templates
@@ -58,3 +63,18 @@ jobs:
         Write-Host "Creating version file at $filePath"
         New-Item -Path $filePath -Force
         $json | Out-File -FilePath $filePath -Encoding ascii
+  
+  - ${{ if eq(parameters.official, true) }}:
+    - template: ci/sign-files.yml@eng
+      parameters:
+        displayName: Sign nuget packages
+        folderPath: $(Build.ArtifactStagingDirectory)
+        pattern: Microsoft.Azure*.nupkg
+        signType: nuget
+
+  - ${{ if eq(parameters.official, true) }}:
+    - task: DeleteFiles@1
+      displayName: Delete CodeSignSummary files
+      inputs:
+        sourceFolder: $(Build.ArtifactStagingDirectory)
+        contents: '**/CodeSignSummary-*.md'

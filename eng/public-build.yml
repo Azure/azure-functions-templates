@@ -30,3 +30,5 @@ extends:
       dependsOn: []
       jobs:
       - template: eng/ci/templates/jobs/build.yml@self
+        parameters:
+          official: false
