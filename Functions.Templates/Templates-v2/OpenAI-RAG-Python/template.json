@@ -1,0 +1,280 @@
+{
+    "author": "Gavin Aguiar",
+    "name": "OpenAI RAG Binding",
+    "description": "Template for RAG binding function",
+    "programmingModel": "v2",
+    "language": "python",
+    "jobs": [
+        {
+            "name": "Create New Project with RAG Binding function",
+            "type": "CreateNewApp",
+            "inputs": [
+                {
+                    "assignTo": "$(APP_FILENAME)",
+                    "paramId": "app-fileName",
+                    "defaultValue": "function_app.py",
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
+                },
+                {
+                    "assignTo": "$(AUTHLEVEL_INPUT)",
+                    "paramId": "httpTrigger-authLevel",
+                    "required": true,
+                    "defaultValue": "FUNCTION"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "rag-connection",
+                    "required": true,
+                    "defaultValue": "AzureConnectionString"
+                },
+                {
+                    "assignTo": "$(COLLECTION_NAME)",
+                    "paramId": "rag-collection-name",
+                    "required": true,
+                    "defaultValue": "MyCollectionName"
+                },
+                {
+                    "assignTo": "$(EMBEDDING_MODEL_NAME)",
+                    "paramId": "embedding-model-name",
+                    "required": true,
+                    "defaultValue": "text-embedding-ada-002"
+                },
+                {
+                    "assignTo": "$(CHAT_MODEL_NAME)",
+                    "paramId": "chat-model-name",
+                    "required": true,
+                    "defaultValue": "gpt-3.5-turbo"
+                }
+            ],
+            "actions": [
+                "readFileContent_FunctionApp",
+                "writeFile_FunctionApp"            ]
+        },
+        {
+            "name": "Add textcompletion binding function to an existing file",
+            "type": "AppendToFile",
+            "inputs": [
+                {
+                    "assignTo": "$(SELECTED_FILEPATH)",
+                    "paramId": "app-selectedFileName",
+                    "defaultValue": "function_app.py",
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
+                },
+                {
+                    "assignTo": "$(AUTHLEVEL_INPUT)",
+                    "paramId": "httpTrigger-authLevel",
+                    "required": true,
+                    "defaultValue": "FUNCTION"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "rag-connection",
+                    "required": true,
+                    "defaultValue": "AzureConnectionString"
+                },
+                {
+                    "assignTo": "$(COLLECTION_NAME)",
+                    "paramId": "rag-collection-name",
+                    "required": true,
+                    "defaultValue": "MyCollectionName"
+                },
+                {
+                    "assignTo": "$(EMBEDDING_MODEL_NAME)",
+                    "paramId": "embedding-model-name",
+                    "required": true,
+                    "defaultValue": "text-embedding-ada-002"
+                },
+                {
+                    "assignTo": "$(CHAT_MODEL_NAME)",
+                    "paramId": "chat-model-name",
+                    "required": true,
+                    "defaultValue": "gpt-3.5-turbo"
+                }
+            ],
+            "actions": [
+                "readFileContent_FunctionBody",
+                "appendFileContent_FunctionApp"
+            ]
+        },
+        {
+            "name": "Create New Blueprint file",
+            "type": "CreateNewBlueprint",
+            "inputs": [
+                {
+                    "assignTo": "$(BLUEPRINT_FILENAME)",
+                    "paramId": "blueprint-fileName",
+                    "defaultValue": "blueprint.py",
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
+                },
+                {
+                    "assignTo": "$(AUTHLEVEL_INPUT)",
+                    "paramId": "httpTrigger-authLevel",
+                    "required": true,
+                    "defaultValue": "FUNCTION"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "rag-connection",
+                    "required": true,
+                    "defaultValue": "AzureConnectionString"
+                },
+                {
+                    "assignTo": "$(COLLECTION_NAME)",
+                    "paramId": "rag-collection-name",
+                    "required": true,
+                    "defaultValue": "MyCollectionName"
+                },
+                {
+                    "assignTo": "$(EMBEDDING_MODEL_NAME)",
+                    "paramId": "embedding-model-name",
+                    "required": true,
+                    "defaultValue": "text-embedding-ada-002"
+                },
+                {
+                    "assignTo": "$(CHAT_MODEL_NAME)",
+                    "paramId": "chat-model-name",
+                    "required": true,
+                    "defaultValue": "gpt-3.5-turbo"
+                }
+            ],
+            "actions": [
+                "readFileContent_BlueprintFile",
+                "writeFile_BlueprintFile",
+                "readFileContent_BlueprintBody",
+                "appendFileContent_BlueprintBody"
+            ]
+        },
+        {
+            "name": "Add Textcompletion function to the Blueprint",
+            "type": "AppendToBlueprint",
+            "inputs": [
+                {
+                    "assignTo": "$(BLUEPRINT_FILENAME)",
+                    "paramId": "blueprint-existingFileName",
+                    "required": true,
+                    "condition" : {
+                        "name": "ClientId",
+                        "values": [ "VSCode"],
+                        "operator": "IN"
+                    }
+                },
+                {
+                    "assignTo": "$(AUTHLEVEL_INPUT)",
+                    "paramId": "httpTrigger-authLevel",
+                    "required": true,
+                    "defaultValue": "FUNCTION"
+                },
+                {
+                    "assignTo": "$(CONNECTION_STRING_INPUT)",
+                    "paramId": "rag-connection",
+                    "required": true,
+                    "defaultValue": "AzureConnectionString"
+                },
+                {
+                    "assignTo": "$(COLLECTION_NAME)",
+                    "paramId": "rag-collection-name",
+                    "required": true,
+                    "defaultValue": "MyCollectionName"
+                },
+                {
+                    "assignTo": "$(EMBEDDING_MODEL_NAME)",
+                    "paramId": "embedding-model-name",
+                    "required": true,
+                    "defaultValue": "text-embedding-ada-002"
+                },
+                {
+                    "assignTo": "$(CHAT_MODEL_NAME)",
+                    "paramId": "chat-model-name",
+                    "required": true,
+                    "defaultValue": "gpt-3.5-turbo"
+                }
+            ],
+            "actions": [
+                "readFileContent_BlueprintBody",
+                "appendFileContent_BlueprintBody"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "readFileContent_FunctionApp",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(FUNCTION_APP_CONTENT)",
+            "filePath": "function_app.py"
+        },
+        {
+            "name": "writeFile_FunctionApp",
+            "type": "WriteToFile",
+            "source": "$(FUNCTION_APP_CONTENT)",
+            "filePath": "$(APP_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create the function app",
+            "replaceTokens": true,
+            "FileExtension": ".py"
+        },
+        {
+            "name": "readFileContent_FunctionBody",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(FUNCTION_BODY_CONTENT)",
+            "filePath": "function_body.py"
+        },
+        {
+            "name": "appendFileContent_FunctionApp",
+            "type": "AppendToFile",
+            "createIfNotExists": false,
+            "source": "$(FUNCTION_BODY_CONTENT)",
+            "filePath": "$(SELECTED_FILEPATH)",
+            "continueOnError": false,
+            "errorText": "Unable to create httpTrigger function",
+            "replaceTokens": true,
+            "FileExtension": ".py"
+        },
+        {
+            "name": "readFileContent_BlueprintBody",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(BLUEPRINT_BODY_CONTENT)",
+            "filePath": "blueprint_body.py"
+        },
+        {
+            "name": "readFileContent_BlueprintFile",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(BLUEPRINT_CONTENT)",
+            "filePath": "blueprint.py"
+        },
+        {
+            "name": "appendFileContent_BlueprintBody",
+            "type": "AppendToFile",
+            "source": "$(BLUEPRINT_BODY_CONTENT)",
+            "filePath": "$(BLUEPRINT_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create the Blueprint",
+            "replaceTokens": true,
+            "FileExtension": ".py"
+        },
+        {
+            "name": "writeFile_BlueprintFile",
+            "type": "WriteToFile",
+            "source": "$(BLUEPRINT_CONTENT)",
+            "filePath": "$(BLUEPRINT_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create blueprint",
+            "replaceTokens": true,
+            "FileExtension": ".py"
+        }
+    ]
+}
