@@ -2,18 +2,18 @@
     "author": "Microsoft",
     "classifications": [
         "Azure Function",
-        "Output",
+        "Trigger",
         "MySql"
     ],
-    "name": "MySqlOutputBinding",
-    "identity": "Azure.Function.CSharp.MySqlOutputBinding",
-    "groupIdentity": "Azure.Function.MySqlOutputBinding",
-    "shortName": "mysqloutput",
+    "name": "MySqlTriggerBinding",
+    "identity": "Azure.Function.CSharp.MySqlTriggerBinding",
+    "groupIdentity": "Azure.Function.MySqlTriggerBinding",
+    "shortName": "mysqltrigger",
     "tags": {
         "language": "C#",
         "type": "item"
     },
-    "sourceName": "MySqlOutputBindingCSharp",
+    "sourceName": "MySqlTriggerBindingCSharp",
     "symbols": {
         "namespace": {
             "description": "namespace for the generated code",
@@ -27,7 +27,7 @@
             "replaces": "MySqlConnectionString"
         },
         "table": {
-            "description": "This is the table for the MySql output binding.",
+            "description": "This is the table that is monitored for changes by the trigger.",
             "type": "parameter",
             "defaultValue": "table1",
             "replaces": "table"
@@ -35,10 +35,10 @@
     },
     "primaryOutputs": [
         {
-            "path": "MySqlOutputBindingCSharp.cs"
+            "path": "MySqlTriggerBindingCSharp.cs"
         }
     ],
-    "defaultName": "MySqlOutputBindingCSharp",
+    "defaultName": "MySqlTriggerBindingCSharp",
     "postActions": [
         {
           "Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.MySql Nuget package",
