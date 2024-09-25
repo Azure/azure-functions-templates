@@ -2090,12 +2090,75 @@ function app.</value>
     <value>A function that will be invoked when a message is received on a subscribed topic in message broker using Dapr.</value>
   </data>
   <data name="MySqlInputBinding_description" xml:space="preserve">
-    <value>A C# function that will be run on an HTTP trigger and returns the results of a provided MySQL query.</value>
+    <value>A function that will be run on an HTTP trigger and returns the results of a provided MySQL query.</value>
   </data>
   <data name="MySqlOuputBinding_description" xml:space="preserve">
-    <value>A C# function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).</value>
+    <value>A function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).</value>
   </data>
   <data name="MySqlTriggerBinding_description" xml:space="preserve">
     <value>A fucntion will ve invoked when there are changes detected on MySql table on which the trigger is configured.</value>
+  </data>
+  <data name="mysqlIn_displayName" xml:space="preserve">
+    <value>Azure MySql Input Binding</value>
+  </data>
+  <data name="mysqlIn_name_label" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="mysqlIn_name_help" xml:space="preserve">
+    <value>The name used to identify this binding in your code.</value>
+  </data>
+  <data name="mysqlIn_commandText_label" xml:space="preserve">
+    <value>MySql Command Text</value>
+  </data>
+  <data name="mysqlIn_commandText_help" xml:space="preserve">
+    <value>The query command or name of the stored procedure executed by the binding.</value>
+  </data>
+  <data name="mysqlIn_commandType_label" xml:space="preserve">
+    <value>Text or StoredProcedure</value>
+  </data>
+  <data name="mysqlIn_commandType_help" xml:space="preserve">
+    <value>The command type used to identify what type of value commandText is, either Text for a query or StoredProcedure for a stored procedure.</value>
+  </data>
+  <data name="mysqlIn_parameters_label" xml:space="preserve">
+    <value>Parameters</value>
+  </data>
+  <data name="mysqlIn_parameters_help" xml:space="preserve">
+    <value>Parameter values passed to the command during execution as a single string. Must follow the format `@param1=param1,@param2=param2`.</value>
+  </data>
+  <data name="mysql_connection_label" xml:space="preserve">
+    <value>MySql Connection string setting</value>
+  </data>
+  <data name="mysql_connection_help" xml:space="preserve">
+    <value>The name of the app setting containing your Azure MySql binding connection string.</value>
+  </data>
+  <data name="mysqlOut_displayName" xml:space="preserve">
+    <value>Azure MySql Output Binding</value>
+  </data>
+  <data name="mysqlOut_name_label" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="mysqlOut_name_help" xml:space="preserve">
+    <value>The name of the variable that represents the entity in function code.</value>
+  </data>
+  <data name="mysqlOut_commandText_label" xml:space="preserve">
+    <value>Table Name</value>
+  </data>
+  <data name="mysqlOut_commandText_help" xml:space="preserve">
+    <value>The name of the table being upserted to by the binding.</value>
+  </data>
+  <data name="mysqlTrigger_displayName" xml:space="preserve">
+    <value>Azure MySql Trigger Binding</value>
+  </data>
+  <data name="mysqlTrigger_name_label" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="mysqlTrigger_name_help" xml:space="preserve">
+    <value>The name of the parameter that the trigger binds to.</value>
+  </data>
+  <data name="mysqlTrigger_tableName_label" xml:space="preserve">
+    <value>Table Name</value>
+  </data>
+  <data name="mysqlTrigger_tableName_help" xml:space="preserve">
+    <value>The name of the table being monitored by the trigger.</value>
   </data>
 </root>
