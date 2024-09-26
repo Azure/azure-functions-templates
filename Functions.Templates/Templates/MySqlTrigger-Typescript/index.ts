@@ -8,7 +8,7 @@ import { AzureFunction, Context } from "@azure/functions"
  *      2. Add an app setting named "MySqlConnectionString" containing the connection string
  *          to use for the MySql connection
  *      3. Change the bundle name in host.json to "Microsoft.Azure.Functions.ExtensionBundle.Preview" and the version to "[4.*, 5.0.0)"
- *		4. Add 'updated_at' column in the table on which the changes are to be monitored.
+ *		4. Add 'az_func_updated_at' column in the table on which the changes are to be monitored.
  * @param context The Azure Function runtime context
  * @param req The HttpRequest that triggered this function
  * @param items The array of objects returned by the MySql input binding
