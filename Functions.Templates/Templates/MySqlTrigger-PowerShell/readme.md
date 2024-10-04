@@ -1,4 +1,4 @@
-# MySql Input Binding - PowerShell
+# MySql Trigger Binding - PowerShell
 
 The `MySql Trigger Binding` monitors the user table for changes (i.e., row inserts, and updates) and invokes the function with updated rows.
 

@@ -1,4 +1,4 @@
-# MySql Input Binding - Python
+# MySql Trigger Binding - Python
 
 The `MySql Trigger Binding` monitors the user table for changes (i.e., row inserts, and updates) and invokes the function with updated rows.
 

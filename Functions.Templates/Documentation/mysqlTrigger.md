@@ -14,7 +14,7 @@ This C# code example monitors the Products table.
 
 ```csharp
 public static void Run(
-            [MySqlTrigger("Products", "SqlConnectionString")]
+            [MySqlTrigger("Products", "MySqlConnectionString")]
             IReadOnlyList<MySqlChange<Product>> changes,
             ILogger logger)
         {
