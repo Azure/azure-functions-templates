@@ -42,7 +42,10 @@ namespace Company.Function
 }
 #endif
 #if( NetFramework )
+using System.IO;
+using System.Text.Json;
 using System.Net;
+using System.Threading.Tasks;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using Microsoft.Azure.Functions.Worker.Http;
@@ -59,14 +62,29 @@ namespace Company.Function
         }
 
         [Function("HttpTriggerCSharp")]
-        public HttpResponseData Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post")] HttpRequestData req)
+        public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post")] HttpRequestData req)
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
+            var queryParams = System.Web.HttpUtility.ParseQueryString(req.Url.Query);
+            string name = queryParams["name"];
+
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            dynamic data = null;
+
+            if (!string.IsNullOrEmpty(requestBody))
+            {
+                data = JsonSerializer.Deserialize<dynamic>(requestBody);
+                name = name ?? data?.name;
+            }
+
+            string responseMessage = string.IsNullOrEmpty(name)
+                ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
+                : $"Hello, {name}. This HTTP triggered function executed successfully.";
+
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
-
-            response.WriteString("Welcome to Azure Functions!");
+            await response.WriteStringAsync(responseMessage);
 
             return response;
         }
