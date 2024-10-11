@@ -2,18 +2,18 @@
     "author": "Microsoft",
     "classifications": [
         "Azure Function",
-        "Input",
+        "Trigger",
         "MySql"
     ],
-    "name": "MySqlInputBindingIsolated",
-    "identity": "Azure.Function.CSharp.Isolated.MySqlInputBinding",
-    "groupIdentity": "Azure.Function.MySqlInputBindingIsolated",
-    "shortName": "mysqlinput",
+    "name": "MySqlTriggerBinding",
+    "identity": "Azure.Function.CSharp.MySqlTriggerBinding",
+    "groupIdentity": "Azure.Function.MySqlTriggerBinding",
+    "shortName": "mysqltrigger",
     "tags": {
         "language": "C#",
         "type": "item"
     },
-    "sourceName": "MySqlInputBindingHttpTriggerCSharp",
+    "sourceName": "MySqlTriggerBindingCSharp",
     "symbols": {
         "namespace": {
             "description": "namespace for the generated code",
@@ -26,40 +26,28 @@
             "defaultValue": "",
             "replaces": "MySqlConnectionString"
         },
-        "object": {
-            "description": "This is the table or view name for the MySql input binding.",
+        "table": {
+            "description": "This is the table that is monitored for changes by the trigger.",
             "type": "parameter",
             "defaultValue": "table1",
-            "replaces": "object"
+            "replaces": "table"
         }
     },
     "primaryOutputs": [
         {
-            "path": "MySqlInputBindingHttpTriggerCSharp.cs"
+            "path": "MySqlTriggerBindingCSharp.cs"
         }
     ],
-    "defaultName": "MySqlInputBindingHttpTriggerCSharp",
+    "defaultName": "MySqlTriggerBindingCSharp",
     "postActions": [
         {
-          "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.MySql Nuget package",
+          "Description": "Adding Reference to Microsoft.Azure.WebJobs.Extensions.MySql Nuget package",
           "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
           "ContinueOnError": "true",
           "ManualInstructions": [],
           "args": {
             "referenceType": "package",
-            "reference": "Microsoft.Azure.Functions.Worker.Extensions.MySql", "version": "1.0.2-preview",
-            "projectFileExtensions": ".csproj"
-          }
-        },
-        {
-          "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Http Nuget package",
-          "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
-          "ContinueOnError": "true",
-          "ManualInstructions": [],
-          "args": {
-            "referenceType": "package",
-            "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http",
-            "version": "3.2.0",
+            "reference": "Microsoft.Azure.WebJobs.Extensions.MySql", "version": "1.0.2-preview",
             "projectFileExtensions": ".csproj"
           }
         },
