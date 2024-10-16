@@ -1997,6 +1997,160 @@
           "help": "[variables('appSettingsHelp')]"
         }
       ]
+    },
+	{
+      "type": "mysql",
+      "displayName": "$mysqlIn_displayName",
+      "direction": "in",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\mysqlIn.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MySql", "version": "1.0.2-preview"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "object",
+          "required": true,
+          "label": "$mysqlIn_name_label",
+          "help": "$mysqlIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "commandText",
+          "value": "string",
+          "defaultValue": "SELECT * FROM Products",
+          "required": true,
+          "label": "$mysqlIn_commandText_label",
+          "help": "$mysqlIn_commandText_help"
+        },
+        {
+          "name": "commandType",
+          "value": "enum",
+          "required": false,
+          "defaultValue":"Text",
+          "enum": [
+            {
+              "value": "Text",
+              "display": "Text"
+            },
+            {
+              "value": "StoredProcedure",
+              "display": "StoredProcedure"
+            }
+          ],
+          "label": "$mysqlIn_commandType_label",
+          "help": "$mysqlIn_commandType_help"
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "defaultValue": "MySqlConnectionString",
+          "required": true,
+          "label": "$mysql_connection_label",
+          "help": "$mysql_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "parameters",
+          "value": "string",
+          "defaultValue": "",
+          "required": false,
+          "label": "$mysqlIn_parameters_label",
+          "help": "$mysqlIn_parameters_help"
+        }
+      ]
+    },
+    {
+      "type": "mysql",
+      "displayName": "$mysqlOut_displayName",
+      "direction": "out",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\mysqlOut.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MySql", "version": "1.0.2-preview"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "object",
+          "required": true,
+          "label": "$mysqlOut_name_label",
+          "help": "$mysqlOut_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "commandText",
+          "value": "string",
+          "defaultValue": "object",
+          "required": true,
+          "label": "$mysqlOut_commandText_label",
+          "help": "$mysqlOut_commandText_help"
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "defaultValue": "MySqlConnectionString",
+          "required": true,
+          "label": "$mysql_connection_label",
+          "help": "$mysql_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        }
+      ]
+    },
+    {
+      "type": "mysqlTrigger",
+      "displayName": "$mysqlTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\mysqlTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MySql", "version": "1.0.2-preview"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "changes",
+          "required": true,
+          "label": "$mysqlTrigger_name_label",
+          "help": "$mysqlTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "tableName",
+          "value": "string",
+          "defaultValue": "object",
+          "required": true,
+          "label": "$mysqlTrigger_tableName_label",
+          "help": "$mysqlTrigger_tableName_help"
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "resource": "AppSetting",
+          "required": true,
+          "label": "$mysql_connection_label",
+          "help": "[variables('appSettingsHelp')]"
+        }
+      ]
     }
   ]
 }
