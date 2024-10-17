@@ -1,12 +1,12 @@
 {
-    "author": "Daniel Castro (@dacastr)",
-    "name": "Blob trigger (using Event Grid)",
-    "description": "$BlobTrigger_description",
+    "author": "Gavin Aguiar",
+    "name": "Blob trigger (using EventGrid source)",
+    "description": "$BlobTriggerEventGrif_description",
     "programmingModel": "v2",
     "language": "python",
     "jobs": [
         {
-            "name": "Create New Project with EventGridBlobTrigger function",
+            "name": "Create New Project with BlobTrigger function",
             "type": "CreateNewApp",
             "inputs": [
                 {
@@ -24,23 +24,17 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "event_grid_blob_trigger"
+                    "defaultValue": "blob_trigger"
                 },
                 {
                     "assignTo": "$(PATH_TO_BLOB_INPUT)",
-                    "paramId": "eventGridblobTrigger-path",
+                    "paramId": "blobTrigger-path",
                     "required": true,
                     "defaultValue": "blobname"
                 },
                 {
-                    "assignTo": "$(SOURCE_NAME_INPUT)",
-                    "paramId": "eventGridblobTrigger-source",
-                    "required": true,
-                    "defaultValue": "EventGrid"
-                },
-                {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
-                    "paramId": "eventGridblobTrigger-connection",
+                    "paramId": "blobTrigger-connection",
                     "required": true,
                     "defaultValue": "BlobStorageConnectionString"
                 }
@@ -52,7 +46,7 @@
             ]
         },
         {
-            "name": "Add EventGridBlobTrigger function to the main file",
+            "name": "Add BlobTrigger function to the main file",
             "type": "AppendToFile",
             "inputs" : [
                 {
@@ -70,23 +64,17 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "EventGridBlobTrigger"
+                    "defaultValue": "BlobTrigger"
                 },
                 {
                     "assignTo": "$(PATH_TO_BLOB_INPUT)",
-                    "paramId": "eventGridblobTrigger-path",
+                    "paramId": "blobTrigger-path",
                     "required": true,
                     "defaultValue": "blobname"
                 },
                 {
-                    "assignTo": "$(SOURCE_NAME_INPUT)",
-                    "paramId": "eventGridblobTrigger-source",
-                    "required": true,
-                    "defaultValue": "EventGrid"
-                },
-                {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
-                    "paramId": "eventGridblobTrigger-connection",
+                    "paramId": "blobTrigger-connection",
                     "required": true,
                     "defaultValue": "BlobStorageConnectionString"
                 }
@@ -115,23 +103,17 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "EventGridBlobTrigger"
+                    "defaultValue": "BlobTrigger"
                 },
                 {
                     "assignTo": "$(PATH_TO_BLOB_INPUT)",
-                    "paramId": "eventGridblobTrigger-path",
+                    "paramId": "blobTrigger-path",
                     "required": true,
                     "defaultValue": "blobname"
                 },
                 {
-                    "assignTo": "$(SOURCE_NAME_INPUT)",
-                    "paramId": "eventGridblobTrigger-source",
-                    "required": true,
-                    "defaultValue": "EventGrid"
-                },
-                {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
-                    "paramId": "eventGridblobTrigger-connection",
+                    "paramId": "blobTrigger-connection",
                     "required": true,
                     "defaultValue": "BlobStorageConnectionString"
                 }
@@ -144,10 +126,11 @@
             ]
         },
         {
-            "name": "Add EventGridBlobTrigger function to the Blueprint",
+            "name": "Add BlobTrigger function to the Blueprint",
             "type": "AppendToBlueprint", 
             "inputs" : [
                 {
+                    "assignTo": "$(BLUEPRINT_FILENAME)",
                     "paramId": "blueprint-existingFileName",
                     "required": true,
                     "condition" : {
@@ -160,23 +143,17 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "EventGridBlobTrigger"
+                    "defaultValue": "BlobTrigger"
                 },
                 {
                     "assignTo": "$(PATH_TO_BLOB_INPUT)",
-                    "paramId": "eventGridblobTrigger-path",
+                    "paramId": "blobTrigger-path",
                     "required": true,
                     "defaultValue": "blobname"
                 },
                 {
-                    "assignTo": "$(SOURCE_NAME_INPUT)",
-                    "paramId": "eventGridblobTrigger-source",
-                    "required": true,
-                    "defaultValue": "EventGrid"
-                },
-                {
                     "assignTo": "$(CONNECTION_STRING_INPUT)",
-                    "paramId": "eventGridblobTrigger-connection",
+                    "paramId": "blobTrigger-connection",
                     "required": true,
                     "defaultValue": "BlobStorageConnectionString"
                 }
