@@ -91,6 +91,74 @@
                 "fallbackVariableName": "FunctionsHttpPortGenerated"
             },
             "replaces": "7071"
+        },
+        "FunctionsWorkerPackageVersion": {
+            "type": "generated",
+            "generator": "switch",
+            "replaces": "FunctionsWorkerPackageVersionValue",
+            "parameters": {
+                "datatype": "string",
+                "cases": [
+                    {
+                        "condition": "FrameworkShouldUseV1Dependencies",
+                        "value": "1.23.0"
+                    },
+                    {
+                        "value": "2.0.0-preview2"
+                    }
+                ]
+            }
+        },
+        "FunctionsAspNetCorePackageVersion": {
+            "type": "generated",
+            "generator": "switch",
+            "replaces": "FunctionsAspNetCorePackageVersionValue",
+            "parameters": {
+                "datatype": "string",
+                "cases": [
+                    {
+                        "condition": "FrameworkShouldUseV1Dependencies",
+                        "value": "1.3.2"
+                    },
+                    {
+                        "value": "2.0.0-preview2"
+                    }
+                ]
+            }
+        },
+        "FunctionsSdkPackageVersion": {
+            "type": "generated",
+            "generator": "switch",
+            "replaces": "FunctionsSdkPackageVersionValue",
+            "parameters": {
+                "datatype": "string",
+                "cases": [
+                    {
+                        "condition": "FrameworkShouldUseV1Dependencies",
+                        "value": "1.17.4"
+                    },
+                    {
+                        "value": "2.0.0-preview2"
+                    }
+                ]
+            }
+        },
+        "FunctionsAppInsightsPackageVersion": {
+            "type": "generated",
+            "generator": "switch",
+            "replaces": "FunctionsAppInsightsPackageVersionValue",
+            "parameters": {
+                "datatype": "string",
+                "cases": [
+                    {
+                        "condition": "FrameworkShouldUseV1Dependencies",
+                        "value": "1.4.0"
+                    },
+                    {
+                        "value": "2.0.0-preview2"
+                    }
+                ]
+            }
         }
     },
     "sources": [
@@ -112,42 +180,6 @@
     "defaultName": "Company.FunctionApp",
     "postActions":
     [
-        {
-            "condition": "(NetCore && FrameworkShouldUseV1Dependencies)",
-            "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore Nuget package",
-            "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
-            "ContinueOnError": "true",
-            "ManualInstructions": [],
-            "args": {
-                "referenceType": "package",
-                "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore", "version": "1.3.2",
-                "projectFileExtensions": ".csproj"
-            }
-        },
-        {
-            "condition": "(NetCore && !FrameworkShouldUseV1Dependencies)",
-            "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore Nuget package",
-            "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
-            "ContinueOnError": "true",
-            "ManualInstructions": [],
-            "args": {
-                "referenceType": "package",
-                "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore", "version": "2.0.0-preview2",
-                "projectFileExtensions": ".csproj"
-            }
-        },
-        {
-            "condition": "(NetCore)",
-            "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Http Nuget package",
-            "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
-            "ContinueOnError": "true",
-            "ManualInstructions": [],
-            "args": {
-                "referenceType": "package",
-                "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http", "version": "3.2.0",
-                "projectFileExtensions": ".csproj"
-            }
-        },
         {
             "description": "Restore NuGet packages required by this project.",
             "manualInstructions": [],
