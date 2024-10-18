@@ -1,46 +1,28 @@
-using System.IO;
-using System.Text.Json;
-using System.Net;
-using System.Threading.Tasks;
 using Microsoft.Azure.Functions.Worker;
-using Microsoft.Extensions.Logging;
 using Microsoft.Azure.Functions.Worker.Http;
+using Microsoft.Extensions.Logging;
+using System.Net;
 
 namespace Company.Function
 {
     public class HttpTriggerCSharp
     {
-        private readonly ILogger<HttpTriggerCSharp> _logger;
+        private readonly ILogger _logger;
 
-        public HttpTriggerCSharp(ILogger<HttpTriggerCSharp> logger)
+        public HttpTriggerCSharp(ILoggerFactory loggerFactory)
         {
-            _logger = logger;
+            _logger = loggerFactory.CreateLogger<HttpTriggerCSharp>();
         }
 
         [Function("HttpTriggerCSharp")]
-        public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post")] HttpRequestData req)
+        public HttpResponseData Run([HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post")] HttpRequestData req)
         {
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
-            var queryParams = System.Web.HttpUtility.ParseQueryString(req.Url.Query);
-            string name = queryParams["name"];
-
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            dynamic data = null;
-
-            if (!string.IsNullOrEmpty(requestBody))
-            {
-                data = JsonSerializer.Deserialize<dynamic>(requestBody);
-                name = name ?? data?.name;
-            }
-
-            string responseMessage = string.IsNullOrEmpty(name)
-                ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-                : $"Hello, {name}. This HTTP triggered function executed successfully.";
-
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
-            await response.WriteStringAsync(responseMessage);
+
+            response.WriteString("Welcome to Azure Functions!");
 
             return response;
         }
