@@ -12,6 +12,7 @@ def main(changes) :
     2. Add an app setting named "MySqlConnectionString" containing the connection string to use for the MySql connection
     3. Change the bundle name in host.json to "Microsoft.Azure.Functions.ExtensionBundle.Preview" and the version to "[4.*, 5.0.0)"
     4. Add 'az_func_updated_at' column in the table on which the changes are to be monitored.
+    5. Add an app setting named "WEBSITE_SITE_NAME" containing the website name.
 
     Arguments:
     changes: The list of updated objects returned by the MySql trigger binding
