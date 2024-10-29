@@ -13,9 +13,16 @@
   <!--#if (NetCore)-->
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   <!--#endif -->
+  <!--#if (FrameworkShouldUseV1Dependencies)-->
     <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.22.0" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="FunctionsWorkerPackageVersionValue" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.ApplicationInsights" Version="FunctionsAppInsightsPackageVersionValue" />
+  <!--#else -->
+    <!-- Application Insights isn't enabled by default. See https://aka.ms/AAt8mw4. -->
+    <!-- <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.22.0" /> -->
+    <!-- <PackageReference Include="Microsoft.Azure.Functions.Worker.ApplicationInsights" Version="FunctionsAppInsightsPackageVersionValue" /> -->
+    <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="FunctionsWorkerPackageVersionValue" />
+  <!--#endif -->
   <!--#if (NetCore)-->
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore" Version="FunctionsAspNetCorePackageVersionValue" />
   <!--#endif -->
