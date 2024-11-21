@@ -3,41 +3,40 @@ using System.Collections.Generic;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 
-namespace Company.Function
+namespace Company.Function;
+
+public class CosmosDBTriggerCSharp
 {
-    public class CosmosDBTriggerCSharp
+    private readonly ILogger _logger;
+
+    public CosmosDBTriggerCSharp(ILoggerFactory loggerFactory)
     {
-        private readonly ILogger _logger;
-
-        public CosmosDBTriggerCSharp(ILoggerFactory loggerFactory)
-        {
-            _logger = loggerFactory.CreateLogger<CosmosDBTriggerCSharp>();
-        }
-
-        [Function("CosmosDBTriggerCSharp")]
-        public void Run([CosmosDBTrigger(
-            databaseName: "DatabaseValue",
-            containerName: "ContainerValue",
-            Connection = "ConnectionValue",
-            LeaseContainerName = "leases",
-            CreateLeaseContainerIfNotExists = true)] IReadOnlyList<MyDocument> input)
-        {
-            if (input != null && input.Count > 0)
-            {
-                _logger.LogInformation("Documents modified: " + input.Count);
-                _logger.LogInformation("First document Id: " + input[0].id);
-            }
-        }
+        _logger = loggerFactory.CreateLogger<CosmosDBTriggerCSharp>();
     }
 
-    public class MyDocument
+    [Function("CosmosDBTriggerCSharp")]
+    public void Run([CosmosDBTrigger(
+        databaseName: "DatabaseValue",
+        containerName: "ContainerValue",
+        Connection = "ConnectionValue",
+        LeaseContainerName = "leases",
+        CreateLeaseContainerIfNotExists = true)] IReadOnlyList<MyDocument> input)
     {
-        public string id { get; set; }
-
-        public string Text { get; set; }
-
-        public int Number { get; set; }
-
-        public bool Boolean { get; set; }
+        if (input != null && input.Count > 0)
+        {
+            _logger.LogInformation("Documents modified: " + input.Count);
+            _logger.LogInformation("First document Id: " + input[0].id);
+        }
     }
+}
+
+public class MyDocument
+{
+    public string id { get; set; }
+
+    public string Text { get; set; }
+
+    public int Number { get; set; }
+
+    public bool Boolean { get; set; }
 }
