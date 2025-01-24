@@ -16,11 +16,11 @@ public class TimerTriggerCSharp
     [Function("TimerTriggerCSharp")]
     public void Run([TimerTrigger("ScheduleValue")] TimerInfo myTimer)
     {
-        _logger.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
+        _logger.LogInformation("C# Timer trigger function executed at: {executionTime}", DateTime.Now);
         
         if (myTimer.ScheduleStatus is not null)
         {
-            _logger.LogInformation($"Next timer schedule at: {myTimer.ScheduleStatus.Next}");
+            _logger.LogInformation("Next timer schedule at: {nextSchedule}", myTimer.ScheduleStatus.Next);
         }
     }
 }

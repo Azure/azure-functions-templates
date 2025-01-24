@@ -20,7 +20,7 @@ public class SignalRConnectionInfoHttpTriggerCSharp
         [HttpTrigger(AuthorizationLevel.AuthLevelValue, "post")] HttpRequestData req,
         [SignalRConnectionInfoInput(HubName = "HubValue")] MyConnectionInfo connectionInfo)
     {
-        _logger.LogInformation($"SignalR Connection URL = '{connectionInfo.Url}'");
+        _logger.LogInformation("SignalR Connection URL = '{url}'", connectionInfo.Url);
 
         var response = req.CreateResponse(HttpStatusCode.OK);
         response.Headers.Add("Content-Type", "text/plain; charset=utf-8");

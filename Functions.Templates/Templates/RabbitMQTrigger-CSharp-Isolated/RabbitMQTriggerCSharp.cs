@@ -16,6 +16,6 @@ public class RabbitMQTriggerCSharp
     [Function("RabbitMQTriggerCSharp")]
     public void Run([RabbitMQTrigger("NameOfQueue", ConnectionStringSetting = "ConnectionValue")] string myQueueItem)
     {
-        _logger.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
+        _logger.LogInformation("C# Queue trigger function processed: {item}", myQueueItem);
     }
 }
