@@ -10,7 +10,7 @@ namespace Company.Function
         [FunctionName("ServiceBusTopicTriggerCSharp")]
         public void Run([ServiceBusTrigger("TopicNameValue", "SubscriptionNameValue", Connection = "ConnectionValue")]string mySbMsg, ILogger _logger)
         {
-            _logger.LogInformation($"C# ServiceBus topic trigger function processed message: {mySbMsg}");
+            _logger.LogInformation("C# ServiceBus topic trigger function processed message: {message}", mySbMsg);
         }
     }
 }

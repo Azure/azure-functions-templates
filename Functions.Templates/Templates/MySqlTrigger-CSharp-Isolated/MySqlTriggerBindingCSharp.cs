@@ -5,31 +5,30 @@ using Microsoft.Azure.Functions.Worker.Extensions.MySql;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace Company.Function
+namespace Company.Function;
+
+public class MySqlTriggerBindingCSharp
 {
-    public class MySqlTriggerBindingCSharp
+    private readonly ILogger _logger;
+
+    public MySqlTriggerBindingCSharp(ILoggerFactory loggerFactory)
     {
-        private readonly ILogger _logger;
-
-        public MySqlTriggerBindingCSharp(ILoggerFactory loggerFactory)
-        {
-            _logger = loggerFactory.CreateLogger<MySqlTriggerBindingCSharp>();
-        }
-
-        [Function("MySqlTriggerBindingCSharp")]
-        public void Run(
-            [MySqlTrigger("table", "MySqlConnectionString")] IReadOnlyList<MySqlChange<ToDoItem>> changes,
-                FunctionContext context)
-        {
-            _logger.LogInformation("MySql Changes: " + JsonConvert.SerializeObject(changes));
-
-        }
+        _logger = loggerFactory.CreateLogger<MySqlTriggerBindingCSharp>();
     }
 
-    public class ToDoItem
+    [Function("MySqlTriggerBindingCSharp")]
+    public void Run(
+        [MySqlTrigger("table", "MySqlConnectionString")] IReadOnlyList<MySqlChange<ToDoItem>> changes,
+            FunctionContext context)
     {
-        public string Id { get; set; }
-        public int Priority { get; set; }
-        public string Description { get; set; }
+        _logger.LogInformation("MySql Changes: " + JsonConvert.SerializeObject(changes));
+
     }
+}
+
+public class ToDoItem
+{
+    public string Id { get; set; }
+    public int Priority { get; set; }
+    public string Description { get; set; }
 }
