@@ -1,8 +1,15 @@
-#if NetFramework
+#if (FrameworkShouldUseV1Dependencies)
 using Microsoft.Azure.Functions.Worker;
-using Microsoft.Extensions.Hosting;
+#endif
+#if (NetCore && !FrameworkShouldUseV1Dependencies)
+using Microsoft.Azure.Functions.Worker.Builder;
+#endif
+#if (FrameworkShouldUseV1Dependencies)
 using Microsoft.Extensions.DependencyInjection;
+#endif
+using Microsoft.Extensions.Hosting;
 
+#if NetFramework
 namespace Company.FunctionApp
 {
     internal class Program
@@ -23,12 +30,7 @@ namespace Company.FunctionApp
         }
     }
 }
-#endif
-#if NetCore
-using Microsoft.Azure.Functions.Worker;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-
+#elseif FrameworkShouldUseV1Dependencies
 var host = new HostBuilder()
     .ConfigureFunctionsWebApplication()
     .ConfigureServices(services => {
@@ -38,4 +40,15 @@ var host = new HostBuilder()
     .Build();
 
 host.Run();
+#else
+var builder = FunctionsApplication.CreateBuilder(args);
+
+builder.ConfigureFunctionsWebApplication();
+
+// Application Insights isn't enabled by default. See https://aka.ms/AAt8mw4.
+// builder.Services
+//     .AddApplicationInsightsTelemetryWorkerService()
+//     .ConfigureFunctionsApplicationInsights();
+
+builder.Build().Run();
 #endif
