@@ -29,7 +29,7 @@ namespace CheckResourceStrings
         public const string FunctionDisabledValue = "disabled";
         public const string FunctionEnabledValue = "enabled";
 
-        public const string DefaultExtensionBundleSourceUri = "https://functionscdn.azureedge.net/public";
+        public const string DefaultExtensionBundleSourceUri = "https://cdn.functions.azure.com/public";
         public const string BindingMetadataFilePath = "bindings/bindings.json";
         public const string TemplatesCodeFilePath = "templates/templates.json";
         public const string ResourcesFilePathFormat = "resources/Resources.{0}.json";
