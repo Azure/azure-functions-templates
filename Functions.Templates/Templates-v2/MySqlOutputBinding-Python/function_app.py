@@ -6,7 +6,7 @@ app = func.FunctionApp()
 @app.function_name(name="AddProduct")
 @app.route(route="addproduct")
 @app.mysql_output(arg_name="product",
-                           commandText= "Products",
+                           command_text= "Products",
                            command_type="Text",
                            connection_string_setting="MySqlConnectionString")
  
