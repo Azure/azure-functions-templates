@@ -28,7 +28,7 @@ To run the code snippet generated through the command palette, note the followin
 - Confirm that the parameters within the trigger reflect values that correspond with your storage account.
 - The name of the file must be `function_app.py`.
   
-Note that Cosmos DB input and output bindings are also supported in Azure Functions. 
+Note that MySQL input and output bindings are also supported in Azure Functions. 
 
 ## V2 Programming Model
 
