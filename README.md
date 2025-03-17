@@ -1,4 +1,5 @@
 # Overview
+
 This repository is home to a collection of templates used by development tools to provide a quick start experience for Azure Functions. A template in this context is a sample  that demonstrates use of one or more bindings supported by Azure Functions. Following are the development tools that use templates from this repository:
 
 - [Azure Function Core Tools](https://github.com/Azure/azure-functions-core-tools)
@@ -9,46 +10,53 @@ This repository is home to a collection of templates used by development tools t
 Dotnet templates are consumed by Visual Studio and Visual Studio code via tooling feed. Non-dotnet and C# Script templates are consumed via extension bundles.
 
 ## Build Status
+
 |Branch|Status|Description|
 |---|---|---|
-|dev|[![Build Status](https://azfunc.visualstudio.com/internal/_apis/build/status/templates.official?branchName=dev)]([https://azfunc.visualstudio.com/Azure%20Functions/_build/latest?definitionId=43](https://azfunc.visualstudio.com/internal/_build/latest?definitionId=963&branchName=dev)| This is the primary development branch all pull request go against this branch. |
+|dev|[![Build Status](https://azfunc.visualstudio.com/internal/_apis/build/status/templates.official?branchName=dev)](https://azfunc.visualstudio.com/internal/_build/latest?definitionId=963&branchName=dev)| This is the primary development branch all pull request go against this branch. |
 |release/main|[![Build Status](https://azfunc.visualstudio.com/internal/_apis/build/status/templates.official?branchName=release/main)](https://azfunc.visualstudio.com/internal/_build/latest?definitionId=963&branchName=release/main)| This is the deployment branch all releases are performed from this branch. |
 
 ## Build Requirements
+
 - [Node (10.x)](https://nodejs.org/dist/latest-v10.x/)
 - [Gulp](https://gulpjs.com/docs/en/getting-started/quick-start)
 
 ## Build Steps
-```
+
+```bash
 cd Build
 npm install
 gulp build-all
 ```
+
 > These build steps only work on Windows
 
 ## Dotnet templates
 
-There are two kind of dotnet templates contained within this repository, script type (.csx and .fsx) templates that do not require compilation and non-script type (.cs and .fs) templates that require compilation. 
+There are two kind of dotnet templates contained within this repository, script type (.csx and .fsx) templates that do not require compilation and non-script type (.cs and .fs) templates that require compilation.
   
 ## Creating a dotnet templates (.cs and .fs)
-Template for dotnet precompiled functions apps adheres to the specification provided by the dotnet templating engine. The dotnet templating engine or an implementation of one is present within each of the dotnet client and is responsible for consuming dotnet templates. This format is not specific to Azure Functions but is a standard used for all dotnet templates by VS, VS Code and dotnet cli. This section covers some basic information needed to add a pre-compiled template. 
+
+Template for dotnet precompiled functions apps adheres to the specification provided by the dotnet templating engine. The dotnet templating engine or an implementation of one is present within each of the dotnet client and is responsible for consuming dotnet templates. This format is not specific to Azure Functions but is a standard used for all dotnet templates by VS, VS Code and dotnet cli. This section covers some basic information needed to add a pre-compiled template.
 
 There are 2 kinds of dotnet templates.
+
 1. Project templates: Project templates are responsible for creating initial set of files needed to build and run the project. For azure functions this would include, csproj file, host.json, local.settings.json file and so on.
 2. Item templates: Item templates are templates include files that you would want to add to an existing project. For azure functions this would mean class files, new functions.
 
-### Template files:
+### Template files
+
 At the minimum you need the following files for a valid dotnet template. Please refer to the this link for [detailed documentation](https://github.com/dotnet/templating/tree/main/docs) on each of the files and properties contained within the file.
 
-1.  **.template.config/template.json** : Presence of this file within the folder structure indicates to the dotnet templating engine that this is a template. This file contains symbols and post action action configuration that is used to generate a function from the template. The key difference between project and item template file is that `tags -> type` property would say project vs item for corresponding template types. Below is sample file with comments on individual fields.
-2.  **.template.config/vs-2017.3.host** : This file contains information required to generate UI elements in Visual studio. For example, label and help text for UI elements.
+1. **.template.config/template.json** : Presence of this file within the folder structure indicates to the dotnet templating engine that this is a template. This file contains symbols and post action action configuration that is used to generate a function from the template. The key difference between project and item template file is that `tags -> type` property would say project vs item for corresponding template types. Below is sample file with comments on individual fields.
+2. **.template.config/vs-2017.3.host** : This file contains information required to generate UI elements in Visual studio. For example, label and help text for UI elements.
 3. **.template.config/vs-2017.3/*.png**: Icon files for menu items in Visual studio.
 4. **Class file or Project file** : Class file is required if you are creating an item template. This could be either a `.cs` file or a `.fs` file. Project file is require if you are creating a project template. This could be either a `.csproj` file or an `.fsproj` file.
 
-Here is a sample PR adding a dotnet item template. https://github.com/Azure/azure-functions-templates/pull/1162
-
+Here is a sample PR adding a dotnet item template. <https://github.com/Azure/azure-functions-templates/pull/1162>
 
 ### Adding a dotnet template for release to Visual Studio / Visual Studio code
+
 This section covers information you need to add your template to the list of templates that show up within Visual studio and Visual studio code. VS and VS code only support templates for a single major version of a particular extension. That means there currently is no way to simultaneously include templates that target different major versions of the same extension within the same template list. The build system in this repository uses `.nuspec files` to manage different release trains. Add your template to the nuspec file corresponding to the target runtime release based on the table below.
 
 |Nuspec File |Description|
@@ -63,9 +71,10 @@ This section covers information you need to add your template to the list of tem
 |[ItemTemplates-Isolated_v4.x.nuspec](Build/PackageFiles/Dotnet_precompiled/ItemTemplates-Isolated_v4.x.nuspec) | Item templates for dotnet isolated (out of proc)  function app targeting runtime v4 |
 
 ### Testing dotnet templates
+
 Dotnet pre-compiled templates are currently hosted by the following clients. Please follow the instructions in this section to test the corresponding clients.
 
-#### Visual Studio (VS 2019 and VS 2022):
+#### Visual Studio (VS 2019 and VS 2022)
 
 1. Once the template files have been added / updated, build the templates using the [Build Steps](#build-steps)
 2. Make sure all instances of Visual Studio are closed;
@@ -75,14 +84,16 @@ Dotnet pre-compiled templates are currently hosted by the following clients. Ple
 6. Open the templates output directory, `..\bin\VS`
     1. Rename `Microsoft.Azure.WebJobs.ItemTemplates.X.0.0.nupkg` to `ItemTemplates.nupkg`
     2. Rename `Microsoft.Azure.WebJobs.ProjectTemplates.X.0.0.nupkg` to `ProjectTemplates.nupkg`
+
   > To test dotnet-isolated, rename `Microsoft.Azure.Functions.Worker.ItemTemplates.X.0.0` and `Microsoft.Azure.Functions.Worker.ProjectTemplates.X.0.0` in above step.
-7. Open the templates cache directory for release version matching the one found in step 5: `%userprofile%\AppData\Local\AzureFunctionsTools\Releases\<releaseVersion>` 
+
+7. Open the templates cache directory for release version matching the one found in step 5: `%userprofile%\AppData\Local\AzureFunctionsTools\Releases\<releaseVersion>`
 8. Open the `templates` folder for the framework you want to test:
     1. For in-proc, use the `templates` folder fould at the root of the templates cache directory
     2. For net7-isolated, use the `net7-isolated/templates` folder (for isolated, you should see a folder for netfx, net6, net5 etc.)
 9. Replace the contents of the folder with the renamed package found in `..\bin\VS`
 10. Delete the `%userprofile%\.templateengine` directory
-11. Select corresponding function runtime when creating a new function app via Visual Studio 
+11. Select corresponding function runtime when creating a new function app via Visual Studio
 12. Run through the test scenarios
 
 #### Core tools
@@ -101,9 +112,11 @@ Dotnet pre-compiled templates are currently hosted by the following clients. Ple
 We currently do not have a way to test templates in VS code without going to through extensive set up. Will update this section with instructions once we have the right set of hooks enabled.
 
 ## Creating script type templates
+
 Script type templates are templates for functions that do not require a compilation step. The templates includes metadata files in addition to the files required to execute a function. The metadata files help drive the user interface and development experience for creating a function using a template. In addition to the metadata file you would also need to add a code file for the corresponding language in the template. You can find information on the metadata files in the section below:
 
-### Template files:
+### Template files
+
 1. **Code file**: This is the file that contains the function execution code. This could be Python, JavaScript (Node JS), PowerShell, CSharp Script, FSharp Script. The only time this file is not needed is when you are creating a template for custom handlers.
 
 2. **Metadata.json:** This file includes basic information that explains the purpose of the template. It also includes configuration properties that help drive the UI required to create a function using a template. Individual properties are explain inline.
@@ -155,10 +168,12 @@ Script type templates are templates for functions that do not require a compilat
       ]
   }
   ```
+
 5. **Sample.dat:** Sample.dat contains sample input data for each template.
 
 ### Adding a template to Extension bundle
-Pretty much all non-dotnet templates do not require compilation. The only exception to this is java templates which are not part of this repository as of now. Non-dotnet templates, CSharp and FSharp script templates are deployed via Extension bundles. This means that a new version of these templates would be deployed when a new version of extension bundle is released. Similar to dotnet templates we use .nuspec files to control which templates are included in which package (in this case extension bundle). Following tables list all the .nuspec files and their corresponding bundles. 
+
+Pretty much all non-dotnet templates do not require compilation. The only exception to this is java templates which are not part of this repository as of now. Non-dotnet templates, CSharp and FSharp script templates are deployed via Extension bundles. This means that a new version of these templates would be deployed when a new version of extension bundle is released. Similar to dotnet templates we use .nuspec files to control which templates are included in which package (in this case extension bundle). Following tables list all the .nuspec files and their corresponding bundles.
 
 |Nuspec File |Description|
 |---|---|
@@ -169,9 +184,10 @@ Pretty much all non-dotnet templates do not require compilation. The only except
 |[ExtensionBundlePreviewTemplates-4.x.nuspec](Build/PackageFiles/ExtensionBundle/ExtensionBundlePreviewTemplates-4.x.nuspec) | Templates for preview Extension bundle v4 |
 
 ### Testing script type template via Core tools
+
 1. Once the template files have been added / updated, build the templates using the [Build Steps](#build-steps)
 2. Locate the zip file for built template in the bin directory `..\bin\`
-3. Extract the zip file content you want to test. This be based on the nuspec file you updated. 
+3. Extract the zip file content you want to test. This be based on the nuspec file you updated.
 3. Create a function app via core tools, open host.json to verify that it has extension bundle configuration present.
     - Sample commands for node app: `func init . --worker-runtime node`
 4. Execute the `func GetExtensionBundlePath` to find the path to the bundle being used.
@@ -180,11 +196,13 @@ Pretty much all non-dotnet templates do not require compilation. The only except
 6. Execute `func new` at the root of the sample app to see the new / updated templates.
 
 # License
+
 This project is under the benevolent umbrella of the [.NET Foundation](http://www.dotnetfoundation.org/) and is licensed under [the MIT License](LICENSE.txt)
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 ## Related Github Repositories
+
 - [Azure Function Core Tools](https://github.com/Azure/azure-functions-core-tools)
 - [Azure Portal](https://github.com/Azure/azure-functions-ux)
 - [Visual Studio Code](https://github.com/microsoft/vscode-azurefunctions)
@@ -192,5 +210,6 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 - [WebJobs SDK Extensions](https://github.com/Azure/azure-webjobs-sdk-extensions)
 
 ## Contribute Code or Provide Feedback
+
 If you would like to become an active contributor to this project please follow the instructions provided in [Microsoft Azure Projects Contribution Guidelines](http://azure.github.com/guidelines.html).
 If you encounter any bugs with the templates please file an issue in the [Issues](https://github.com/Azure/azure-webjobs-sdk-templates/issues) section of the project.

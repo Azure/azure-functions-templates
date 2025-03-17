@@ -25,7 +25,7 @@ module.exports = function(opt) {
 
     if (file.isBuffer()) {
       return doConvert(file).then(json => {
-        file.contents = Buffer.from(json);
+        file.contents = new Buffer(json);
         this.push(file);
         return cb();
       });
