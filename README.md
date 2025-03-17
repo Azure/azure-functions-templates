@@ -18,7 +18,7 @@ Dotnet templates are consumed by Visual Studio and Visual Studio code via toolin
 
 ## Build Requirements
 
-- [Node (10.x)](https://nodejs.org/dist/latest-v10.x/)
+- [Node (20.x)](https://nodejs.org/dist/latest-v20.x/)
 - [Gulp](https://gulpjs.com/docs/en/getting-started/quick-start)
 
 ## Build Steps
