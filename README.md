@@ -11,8 +11,8 @@ Dotnet templates are consumed by Visual Studio and Visual Studio code via toolin
 ## Build Status
 |Branch|Status|Description|
 |---|---|---|
-|dev|[![Build Status](https://azfunc.visualstudio.com/Azure%20Functions/_apis/build/status/Azure.azure-functions-templates?branchName=dev)](https://azfunc.visualstudio.com/Azure%20Functions/_build/latest?definitionId=43&branchName=dev)| This is the primary development branch all pull request go against this branch. |
-|master|[![Build Status](https://azfunc.visualstudio.com/Azure%20Functions/_apis/build/status/Azure.azure-functions-templates?branchName=master)](https://azfunc.visualstudio.com/Azure%20Functions/_build/latest?definitionId=43&branchName=master)| This is the deployment branch all releases are performed from this branch. |
+|dev|[![Build Status](https://azfunc.visualstudio.com/internal/_apis/build/status/templates.official?branchName=dev)]([https://azfunc.visualstudio.com/Azure%20Functions/_build/latest?definitionId=43](https://azfunc.visualstudio.com/internal/_build/latest?definitionId=963&branchName=dev)| This is the primary development branch all pull request go against this branch. |
+|release/main|[![Build Status](https://azfunc.visualstudio.com/internal/_apis/build/status/templates.official?branchName=release/main)](https://azfunc.visualstudio.com/internal/_build/latest?definitionId=963&branchName=release/main)| This is the deployment branch all releases are performed from this branch. |
 
 ## Build Requirements
 - [Node (10.x)](https://nodejs.org/dist/latest-v10.x/)
