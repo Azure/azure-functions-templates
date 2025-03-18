@@ -7,8 +7,6 @@
 
 import azure.functions as func
 import logging
-from azure.cosmos import CosmosClient
-from azure.cosmos import PartitionKey
 import os
 
 $(BLUEPRINT_FILENAME) = func.Blueprint()

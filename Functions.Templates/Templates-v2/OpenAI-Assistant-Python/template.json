@@ -1,6 +1,6 @@
 {
     "author": "Gavin Aguiar",
-    "name": "Assistant Binding",
+    "name": "OpenAI Assistant Trigger",
     "description": "Template to add an assistant to your project",
     "programmingModel": "v2",
     "language": "python",
@@ -19,12 +19,6 @@
                         "values": [ "VSCode"],
                         "operator": "IN"
                     }
-                },
-                {
-                    "assignTo": "$(AUTHLEVEL_INPUT)",
-                    "paramId": "httpTrigger-authLevel",
-                    "required": true,
-                    "defaultValue": "FUNCTION"
                 },
                 {
                     "assignTo": "$(CHAT_MODEL_NAME)",
@@ -51,11 +45,6 @@
                         "values": [ "VSCode"],
                         "operator": "IN"
                     }
-                },
-                {
-                    "assignTo": "$(AUTHLEVEL_INPUT)",
-                    "paramId": "httpTrigger-authLevel",
-                    "defaultValue": "FUNCTION"
                 },
                 {
                     "assignTo": "$(CHAT_MODEL_NAME)",
@@ -85,12 +74,6 @@
                     }
                 },
                 {
-                    "assignTo": "$(AUTHLEVEL_INPUT)",
-                    "paramId": "httpTrigger-authLevel",
-                    "required": true,
-                    "defaultValue": "FUNCTION"
-                },
-                {
                     "assignTo": "$(CHAT_MODEL_NAME)",
                     "paramId": "chat-model-name",
                     "required": true,
@@ -117,12 +100,6 @@
                         "values": [ "VSCode"],
                         "operator": "IN"
                     }
-                },
-                {
-                    "assignTo": "$(AUTHLEVEL_INPUT)",
-                    "paramId": "httpTrigger-authLevel",
-                    "required": true,
-                    "defaultValue": "FUNCTION"
                 },
                 {
                     "assignTo": "$(CHAT_MODEL_NAME)",
