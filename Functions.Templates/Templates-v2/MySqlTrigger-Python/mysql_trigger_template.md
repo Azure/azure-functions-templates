@@ -16,10 +16,15 @@ import json
 app = func.FunctionApp()
 
 @app.function_name(name="MySQLTrigger1")
-@app.mysql_trigger(arg_name="azmysqlchangeslist", table_name="<TABLE_NAME>",        connection="MySqlConnectionString",
+@app.mysql_trigger(arg_name="changes", table_name="<TABLE_NAME>",        connection="MySqlConnectionString",
  leases_table_name="leases")
-def test_function(azmysqlchangeslist: str) -> None:
-    logging.info("MySQL Changes: %s", json.loads(azmysqlchangeslist))
+def test_function(changes: str) -> None:
+    if changes:
+        logging.info("MySQL Changes: ")    
+    json_changes = json.loads(changes)
+    for change in json_changes:
+        rowdata = func.MySqlRow(change["Item"]) 
+        logging.info(rowdata.data)
 ```
 
 To run the code snippet generated through the command palette, note the following:
