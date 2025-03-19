@@ -1,7 +1,8 @@
+import azure.functions as func
 import json
 import logging
 
-def main(changes) :
+def main(changes: str) :
     """Sample MySql Trigger Binding
 
     *IMPORTANT*
@@ -17,5 +18,10 @@ def main(changes) :
     Arguments:
     changes: The list of updated objects returned by the MySql trigger binding
     """
-
-    logging.info("MySql Changes: %s", json.loads(changes))
+    if changes:
+        logging.info("MySQL Changes: ")
+    
+    json_changes = json.loads(changes)
+    for change in json_changes:
+        product = func.MySqlRow(change["Item"]) 
+        logging.info(product.data)
