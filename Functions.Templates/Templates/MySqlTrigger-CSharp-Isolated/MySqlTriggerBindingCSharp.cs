@@ -1,9 +1,6 @@
-using System;
 using Microsoft.Azure.Functions.Worker;
-using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Azure.Functions.Worker.Extensions.MySql;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 
 namespace Company.Function;
 
@@ -18,11 +15,17 @@ public class MySqlTriggerBindingCSharp
 
     [Function("MySqlTriggerBindingCSharp")]
     public void Run(
-        [MySqlTrigger("table", "MySqlConnectionString")] IReadOnlyList<MySqlChange<ToDoItem>> changes,
+        [MySqlTrigger("table1", "MySqlConnectionString")] IReadOnlyList<MySqlChange<ToDoItem>> changes,
             FunctionContext context)
     {
-        _logger.LogInformation("MySql Changes: " + JsonConvert.SerializeObject(changes));
-
+        _logger.LogInformation("MySql Changes: ");
+        // The output is used to inspect the trigger binding parameter in test methods.
+        foreach (MySqlChange<ToDoItem> change in changes)
+        {
+            ToDoItem toDoItem = change.Item;
+            _logger.LogInformation($"Change operation: {change.Operation}");
+            _logger.LogInformation($"Id: {toDoItem.Id}, Priority: {toDoItem.Priority}, Description: {toDoItem.Description}");
+        }
     }
 }
 
