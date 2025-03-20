@@ -4,7 +4,7 @@ import json
 
 app = func.FunctionApp()
 
-@app.mysql_db_trigger(arg_name="changes", table_name="$(TABLE_NAME_INPUT)",
+@app.mysql_trigger(arg_name="changes", table_name="$(TABLE_NAME_INPUT)",
                         connection="$(CONNECTION_STRING_INPUT)")  
 def $(FUNCTION_NAME_INPUT)(changes: str):
     if changes:
