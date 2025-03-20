@@ -1,12 +1,7 @@
-using System;
 using System.Collections.Generic;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.MySql
+using Microsoft.Azure.WebJobs.Extensions.MySql;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-
 
 namespace Company.Function
 {
@@ -14,11 +9,17 @@ namespace Company.Function
     {
         [FunctionName("MySqlTriggerBindingCSharp")]
         public static void Run(
-                [MySqlTrigger("table", "MySqlConnectionString")] IReadOnlyList<MySqlChange<ToDoItem>> changes,
+                [MySqlTrigger("table1", "MySqlConnectionString")] IReadOnlyList<MySqlChange<ToDoItem>> changes,
                 ILogger log)
         {
-            log.LogInformation("MySql Changes: " + JsonConvert.SerializeObject(changes));
-
+            log.LogInformation("MySql Changes: ");
+            // The output is used to inspect the trigger binding parameter in test methods.
+            foreach (MySqlChange<ToDoItem> change in changes)
+            {
+                ToDoItem toDoItem = change.Item;
+                log.LogInformation($"Change operation: {change.Operation}");
+                log.LogInformation($"Id: {toDoItem.Id}, Priority: {toDoItem.Priority}, Description: {toDoItem.Description}");
+            }
         }
     }
 
