@@ -16,7 +16,7 @@ import json
 app = func.FunctionApp()
 
 @app.function_name(name="MySQLTrigger1")
-@app.mysql_trigger(arg_name="changes", table_name="<TABLE_NAME>",        connection="MySqlConnectionString",
+@app.mysql_trigger(arg_name="changes", table_name="<TABLE_NAME>", connection_string_setting="MySqlConnectionString",
  leases_table_name="leases")
 def test_function(changes: str) -> None:
     if changes:

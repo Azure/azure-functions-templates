@@ -5,7 +5,7 @@ import json
 app = func.FunctionApp()
 
 @app.mysql_trigger(arg_name="changes", table_name="$(TABLE_NAME_INPUT)",
-                        connection="$(CONNECTION_STRING_INPUT)")  
+                        connection_string_setting="$(CONNECTION_STRING_INPUT)")  
 def $(FUNCTION_NAME_INPUT)(changes: str):
     if changes:
         logging.info("MySQL Changes: ")    
