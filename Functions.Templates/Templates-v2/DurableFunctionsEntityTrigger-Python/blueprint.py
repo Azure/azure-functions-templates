@@ -5,10 +5,8 @@
 # Please refer to https://aka.ms/azure-functions-python-blueprints
 
 
-import logging
 import json
-
 import azure.functions as func
-import azure.durable_functions as df
+import logging
 
-$(BLUEPRINT_FILENAME) = df.Blueprint()
+$(BLUEPRINT_FILENAME) = func.Blueprint()

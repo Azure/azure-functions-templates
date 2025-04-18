@@ -1,4 +1,8 @@
 # Entity Function
+
+# import statement added by Azure Functions Templates - move or remove as needed
+import azure.durable_functions as df
+
 @$(BLUEPRINT_FILENAME).entity_trigger(context_name="context")
 def $(FUNCTION_NAME_INPUT)(context: df.DurableEntityContext):
     """A Counter Durable Entity.

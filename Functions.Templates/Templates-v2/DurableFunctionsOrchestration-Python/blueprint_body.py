@@ -1,9 +1,3 @@
-# Activity
-@$(BLUEPRINT_FILENAME).activity_trigger(input_name="city")
-def $(FUNCTION_NAME_INPUT)_activity(city: str):
-    return "Hello " + city 
-
-
 # An HTTP-Triggered Function with a Durable Functions Client binding
 @$(BLUEPRINT_FILENAME).route(route="orchestrators/{functionName}")
 @$(BLUEPRINT_FILENAME).durable_client_input(client_name="client")
@@ -21,3 +15,8 @@ def $(FUNCTION_NAME_INPUT)_orchestrator(context):
     result3 = yield context.call_activity("$(FUNCTION_NAME_INPUT)_activity", "London")
 
     return [result1, result2, result3]
+
+# Activity
+@$(BLUEPRINT_FILENAME).activity_trigger(input_name="city")
+def $(FUNCTION_NAME_INPUT)_activity(city: str):
+    return "Hello " + city 

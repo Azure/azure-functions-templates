@@ -4,10 +4,10 @@ import json
 import azure.functions as func
 import azure.durable_functions as df
 
-dfApp = df.DFApp(http_auth_level=func.AuthLevel.ANONYMOUS)
+app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 
 #Entity Function
-@dfApp.entity_trigger(context_name="context")
+@app.entity_trigger(context_name="context")
 def $(FUNCTION_NAME_INPUT)(context: df.DurableEntityContext):
     """A Counter Durable Entity.
     A simple example of a Durable Entity that implements
