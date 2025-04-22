@@ -10,6 +10,15 @@ pr:
     - dev
     - release/main
 
+schedules:
+# Ensure we build nightly to catch any new CVEs and report SDL often.
+- cron: "0 0 * * *"
+  displayName: Nightly Build
+  branches:
+    include:
+    - dev
+  always: true
+
 resources:
   repositories:
   - repository: 1es
