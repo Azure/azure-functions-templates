@@ -10,7 +10,7 @@ schedules:
   displayName: Nightly Build
   branches:
     include:
-    - main
+    - release/main
   always: true
 
 # CI only, does not trigger on PRs.
