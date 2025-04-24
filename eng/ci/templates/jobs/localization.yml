@@ -11,13 +11,14 @@ jobs:
       artifact: loc
 
   steps:
-  - task: OneLocBuild@2
-    enabled: true
+  - task: OneLocBuild@3
     inputs:
       locProj: 'Build\Localize\LocProject.json'
       outDir: '$(Build.Repository.LocalPath)'
-      packageSourceAuth: 'patAuth'
-      patVariable: '$(ONELOCBUILD)'
+      prSourceBranchPrefix: 'locfiles'
+      packageSourceAuth: patAuth
+      dependencyPackageSource: 'https://pkgs.dev.azure.com/azfunc/internal/_packaging/OneLocBuildFeed/nuget/v3/index.json'
+      patVariable: '$(System.AccessToken)'
       continueOnError: true
 
   - task: CopyFiles@2
