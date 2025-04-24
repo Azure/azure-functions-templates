@@ -16,7 +16,7 @@ jobs:
       locProj: 'Build\Localize\LocProject.json'
       outDir: '$(Build.Repository.LocalPath)'
       prSourceBranchPrefix: 'locfiles'
-      packageSourceAuth: patAuth
+      packageSourceAuth: 'patAuth'
       dependencyPackageSource: 'https://pkgs.dev.azure.com/azfunc/internal/_packaging/OneLocBuildFeed/nuget/v3/index.json'
       patVariable: '$(System.AccessToken)'
       continueOnError: true
