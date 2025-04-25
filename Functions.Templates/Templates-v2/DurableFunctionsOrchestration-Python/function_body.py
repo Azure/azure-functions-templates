@@ -9,7 +9,7 @@ async def $(FUNCTION_NAME_INPUT)_starter(req: func.HttpRequest, client):
 
 
 # Orchestrator
-@dfApp.orchestration_trigger(context_name="context")
+@app.orchestration_trigger(context_name="context")
 def $(FUNCTION_NAME_INPUT)_orchestrator(context):
     result1 = yield context.call_activity("$(FUNCTION_NAME_INPUT)_activity", "Seattle")
     result2 = yield context.call_activity("$(FUNCTION_NAME_INPUT)_activity", "Tokyo")
