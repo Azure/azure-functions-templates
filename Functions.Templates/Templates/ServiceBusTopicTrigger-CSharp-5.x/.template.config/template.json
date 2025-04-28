@@ -1,6 +1,11 @@
 {
   "author": "Microsoft",
-  "classifications": ["Azure Function", "Trigger", "Service Bus", "Topic"],
+  "classifications": [
+    "Azure Function",
+    "Trigger",
+    "Service Bus",
+    "Topic"
+  ],
   "name": "ServiceBusTopicTrigger",
   "identity": "Azure.Function.CSharp.ServiceBusTopicTrigger.2.x",
   "groupIdentity": "Azure.Function.ServiceBusTopicTrigger",
@@ -54,7 +59,7 @@
       "args": {
         "referenceType": "package",
         "reference": "Microsoft.Azure.WebJobs.Extensions.ServiceBus",
-        "version": "5.16.4",
+        "version": "5.16.6",
         "projectFileExtensions": ".csproj"
       }
     },
