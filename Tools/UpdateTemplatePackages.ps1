@@ -21,31 +21,45 @@ foreach ($file in $templateFiles) {
             Write-Host "Current Version: $currentVersion"
 
             # Fetch the latest version of the package from NuGet.org
-            $nugetUrl = "https://api.nuget.org/v3-flatcontainer/$packageId/index.json"
+            $nugetUrl = "https://api.nuget.org/v3/registration5-gz-semver2/$packageId/index.json"
             $nugetUrl = $nugetUrl.ToLower()
             Write-Host "Fetching latest version from $nugetUrl"
 
             try {
                 $response = Invoke-RestMethod -Uri $nugetUrl -Method Get
-                if ($response.versions) {
-                    # Parse the current major version
-                    $currentMajorVersion = [Version]$currentVersion.Major
-
-                    # Filter versions within the same major version
-                    $filteredVersions = $response.versions | Where-Object {
-                        ([Version]$_).Major -eq $currentMajorVersion
+                if ($response.items) {
+                    # Flatten all listed versions from the registration data
+                    $allVersions = @()
+                    foreach ($item in $response.items) {
+                        foreach ($page in $item.items) {
+                            if ($page.catalogEntry.listed -eq $true) {
+                                $allVersions += $page.catalogEntry.version
+                            }
+                        }
                     }
 
-                    if ($filteredVersions) {
-                        # Get the latest version within the same major version
-                        $latestVersion = $filteredVersions[-1]
-                        Write-Host "Latest version of $packageId within major version $currentMajorVersion is $latestVersion"
+                    if ($allVersions) {
+                        # Parse the current major version
+                        $currentMajorVersion = [Version]$currentVersion.Major
 
-                        # Update the version in the template.json file
-                        $postAction.args.version = $latestVersion
-                        Write-Host "Updated version in $($file.FullName) to $latestVersion"
+                        # Filter versions within the same major version
+                        $filteredVersions = $allVersions | Where-Object {
+                            ([Version]$_).Major -eq $currentMajorVersion
+                        }
+
+                        if ($filteredVersions) {
+                            # Get the latest version within the same major version
+                            $latestVersion = $filteredVersions[-1]
+                            Write-Host "Latest version of $packageId within major version $currentMajorVersion is $latestVersion"
+
+                            # Update the version in the template.json file
+                            $postAction.args.version = $latestVersion
+                            Write-Host "Updated version in $($file.FullName) to $latestVersion"
+                        } else {
+                            Write-Host "No listed versions found for $packageId within major version $currentMajorVersion"
+                        }
                     } else {
-                        Write-Host "No versions found for $packageId within major version $currentMajorVersion"
+                        Write-Host "No listed versions found for $packageId on NuGet.org"
                     }
                 } else {
                     Write-Host "No versions found for $packageId on NuGet.org"
