@@ -1,3 +1,5 @@
+# Run Install-Package -Name NuGet.Versioning -Source https://www.nuget.org/api/v2 -Verbose before running this script
+
 # Load NuGet.Versioning assembly
 Add-Type -Path "C:\Program Files\PackageManagement\NuGet\Packages\NuGet.Versioning.6.13.2\lib\netstandard2.0\NuGet.Versioning.dll"
 
