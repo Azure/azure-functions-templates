@@ -39,9 +39,6 @@ def entity_function(context: df.DurableEntityContext):
 
     context.set_state(current_value)
     context.set_result(current_value)
-
-
-main = df.Entity.create(entity_function)
 ```
 
 To run the code snippet generated through the command palette, note the following:
