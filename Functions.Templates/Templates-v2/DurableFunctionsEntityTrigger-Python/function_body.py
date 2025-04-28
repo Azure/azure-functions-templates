@@ -26,6 +26,3 @@ def $(FUNCTION_NAME_INPUT)(context: df.DurableEntityContext):
 
     context.set_state(current_value)
     context.set_result(current_value)
-
-
-main = df.Entity.create(entity_function)
