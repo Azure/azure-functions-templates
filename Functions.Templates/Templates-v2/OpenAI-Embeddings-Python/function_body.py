@@ -1,5 +1,5 @@
 @app.route(route="$(FUNCTION_NAME_INPUT)", methods=["POST"], auth_level=func.AuthLevel.$(AUTHLEVEL_INPUT))
-@app.embeddings_input(arg_name="embeddings", input="{rawText}", input_type="rawText", model="$(EMBEDDING_MODEL_NAME)")
+@app.embeddings_input(arg_name="embeddings", input="{rawText}", input_type="rawText", embeddings_model="$(EMBEDDING_MODEL_NAME)")
 def $(FUNCTION_NAME_INPUT)(req: func.HttpRequest, embeddings: str) -> func.HttpResponse:
     user_message = req.get_json()
     embeddings_json = json.loads(embeddings)

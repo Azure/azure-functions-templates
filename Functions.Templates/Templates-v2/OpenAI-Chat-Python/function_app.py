@@ -31,7 +31,7 @@ def get_chat_state(req: func.HttpRequest, state: str) -> func.HttpResponse:
 
 @app.function_name("PostUserResponse")
 @app.route(route="chats/{chatID}", methods=["POST"], auth_level=func.AuthLevel.$(AUTHLEVEL_INPUT))
-@app.assistant_post_input(arg_name="state", id="{chatID}", user_message="{Query.message}", model="$(CHAT_MODEL_NAME)")
+@app.assistant_post_input(arg_name="state", id="{chatID}", user_message="{Query.message}", chat_model="$(CHAT_MODEL_NAME)")
 def post_user_response(req: func.HttpRequest, state: str) -> func.HttpResponse:
     # Parse the JSON string into a dictionary
     data = json.loads(state)
