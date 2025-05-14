@@ -46,7 +46,7 @@ def create_assistant(req: func.HttpRequest, requests: func.Out[str]) -> func.Htt
 
 @$(BLUEPRINT_FILENAME).function_name("PostUserQuery")
 @$(BLUEPRINT_FILENAME).route(route="assistants/{assistantId}", methods=["POST"])
-@$(BLUEPRINT_FILENAME).assistant_post_input(arg_name="state", id="{assistantId}", user_message="{message}", model="%CHAT_MODEL_DEPLOYMENT_NAME%", chat_storage_connection_setting=DEFAULT_CHAT_STORAGE_SETTING, collection_name=DEFAULT_CHAT_COLLECTION_NAME)
+@$(BLUEPRINT_FILENAME).assistant_post_input(arg_name="state", id="{assistantId}", user_message="{message}", chat_model="$(CHAT_MODEL_NAME)", chat_storage_connection_setting=DEFAULT_CHAT_STORAGE_SETTING, collection_name=DEFAULT_CHAT_COLLECTION_NAME)
 def post_user_query(req: func.HttpRequest, state: str) -> func.HttpResponse:
     # Parse the JSON string into a dictionary
     data = json.loads(state)

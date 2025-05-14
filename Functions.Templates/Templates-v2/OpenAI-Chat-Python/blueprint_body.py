@@ -24,7 +24,7 @@ def get_chat_state(req: func.HttpRequest, state: str) -> func.HttpResponse:
 
 @$(BLUEPRINT_FILENAME).function_name("PostUserResponse")
 @$(BLUEPRINT_FILENAME).route(route="chats/{chatID}", methods=["POST"], auth_level=func.AuthLevel.$(AUTHLEVEL_INPUT))
-@$(BLUEPRINT_FILENAME).assistant_post_input(arg_name="state", id="{chatID}", user_message="{Query.message}", model="$(CHAT_MODEL_NAME)")
+@$(BLUEPRINT_FILENAME).assistant_post_input(arg_name="state", id="{chatID}", user_message="{Query.message}", chat_model="$(CHAT_MODEL_NAME)")
 def post_user_response(req: func.HttpRequest, state: str) -> func.HttpResponse:
     # Parse the JSON string into a dictionary
     data = json.loads(state)
