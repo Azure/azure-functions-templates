@@ -5,7 +5,7 @@
 The Event Grid function trigger can be used to respond to an event sent by an Event Grid source. You must have an event subscription to the source to receive events. When the function is triggered, it converts the event data into a JSON string which is then logged using the Python logging module.
 
 ## Using the Template
-Following is an example code snippet for Event Grid Trigger using the Python programming model V2 (currently in Preview).
+Following is an example code snippet for Event Grid Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel).
 ```python
 import azure.functions as func
 import logging

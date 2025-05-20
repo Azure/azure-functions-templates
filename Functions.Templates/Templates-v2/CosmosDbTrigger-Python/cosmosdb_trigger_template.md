@@ -6,7 +6,7 @@ The Azure Cosmos DB Trigger uses the Azure Cosmos DB Change Feed to listen for i
 
 ## Using the Template
 
-Following is an example code snippet for Cosmos DB Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel) (currently in Preview).
+Following is an example code snippet for Cosmos DB Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel).
 
 ```python
 import logging

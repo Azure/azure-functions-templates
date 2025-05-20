@@ -6,7 +6,7 @@ The queue storage trigger runs a function as messages are added to Azure Queue s
 
 ## Using the Template
 
-Following is an example code snippet for Queue Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel) (currently in Preview).
+Following is an example code snippet for Queue Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel)).
 
 ```python
 import logging
