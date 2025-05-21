@@ -14,10 +14,10 @@ def $(FUNCTION_NAME_INPUT)(azservicebus: func.ServiceBusMessage):
 # To use, uncomment the section below and add azurefunctions-extensions-bindings-servicebus to your requirements.txt file
 # import azurefunctions.extensions.bindings.servicebus as servicebus
 # @app.service_bus_topic_trigger(arg_name="receivedmessage",
-#                                topic_name="TOPIC_NAME",
-#                                connection="SERVICEBUS_CONNECTION",
-#                                subscription_name="SUBSCRIPTION_NAME")
-# def servicebus_topic_trigger(receivedmessage: servicebus.ServiceBusReceivedMessage):
+#                                topic_name="$(SERVICEBUS_NAME_INPUT)",
+#                                connection="$(CONNECTION_STRING_INPUT)",
+#                                subscription_name="$(SERVICEBUS_SUBSCRIPTION_NAME_INPUT)")
+# def $(FUNCTION_NAME_INPUT)(receivedmessage: servicebus.ServiceBusReceivedMessage):
 #     logging.info("Python ServiceBus topic trigger processed message.")
 #     logging.info("Receiving: %s\n"
 #                  "Body: %s\n",

@@ -14,9 +14,9 @@ def $(FUNCTION_NAME_INPUT)(azeventhub: func.EventHubEvent):
 # To use, uncomment the section below and add azurefunctions-extensions-bindings-eventhub to your requirements.txt file
 # import azurefunctions.extensions.bindings.eventhub as eh
 # @app.event_hub_message_trigger(
-#     arg_name="event", event_hub_name="EVENTHUB_NAME", connection="EventHubConnection"
+#     arg_name="event", event_hub_name="$(EVENTHUB_NAME_INPUT)", connection="$(CONNECTION_STRING_INPUT)"
 # )
-# def eventhub_trigger(event: eh.EventData):
+# def $(FUNCTION_NAME_INPUT)(event: eh.EventData):
 #     logging.info(
 #         "Python EventHub trigger processed an event %s",
 #         event.body_as_str()
