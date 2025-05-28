@@ -305,7 +305,7 @@ gulp.task('build-templates', function (cb) {
       fs.mkdirSync(writePath);
     }
     writePath = path.join(writePath, 'templates.json');
-    fs.writeFileSync(writePath, new Buffer(JSON.stringify(templateListJson, null, 2)));
+    fs.writeFileSync(writePath, Buffer.from(JSON.stringify(templateListJson, null, 2)));
     cb();
 
   }
@@ -346,7 +346,7 @@ gulp.task('build-templates-v2', function (cb) {
       fs.mkdirSync(writePath);
     }
     writePath = path.join(writePath, 'templates.json');
-    fs.writeFileSync(writePath, new Buffer(JSON.stringify(templateListJson, null, 2)));
+    fs.writeFileSync(writePath, Buffer.from(JSON.stringify(templateListJson, null, 2)));
     cb();
 
   }
@@ -384,10 +384,10 @@ gulp.task('build-bindings', function (cb) {
       }
 
       if (!fs.existsSync(writePath)) {
-        fs.mkdirSync(writePath);;
+        fs.mkdirSync(writePath);
       }
       writePath = path.join(writePath, 'bindings.json');
-      fs.writeFileSync(writePath, new Buffer(JSON.stringify(bindingFile, null, 2)));
+      fs.writeFileSync(writePath, Buffer.from(JSON.stringify(bindingFile, null, 2)));
     }
   }
   cb();
