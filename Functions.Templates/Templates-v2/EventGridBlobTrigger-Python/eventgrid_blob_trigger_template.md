@@ -1,12 +1,13 @@
-# Azure Functions: Blob Trigger in Python
+# Azure Functions: Blob Trigger (using Event Grid) in Python
 
-## Blob Trigger
+## Blob Trigger (using Event Grid)
 
-The Blob storage trigger starts a function when a new or updated blob is detected. The blob contents are provided as input to the function. The Azure Blob storage trigger requires a general-purpose storage account. Storage V2 accounts with hierarchical namespaces are also supported.
+The Blob storage trigger starts a function when a new or updated blob is detected. The blob contents are provided as input to the function. 
+Starting with extension version 5.x+, you can use an Event Grid event subscription on the container, which reduces latency. The Azure Blob storage trigger requires a general-purpose storage account. Storage V2 accounts with hierarchical namespaces are also supported.
 
 ## Using the Template
 
-Following is an example code snippet for Blob Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel).
+Following is an example code snippet for Blob Trigger (using Event Grid) using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel).
 
 ```python
 import logging
@@ -16,30 +17,11 @@ app = func.FunctionApp()
 
 @app.function_name(name="BlobTrigger1")
 @app.blob_trigger(arg_name="myblob", path="samples-workitems/{name}",
-                  connection="BlobStorageConnection")
+                  source="EventGrid", connection="BlobStorageConnection")
 def test_function(myblob: func.InputStream):
-   logging.info("Python blob trigger function processed blob \n"
+   logging.info("Python blob trigger (using Event Grid) function processed blob \n"
                 f"Name: {myblob.name}\n"
                 f"Blob Size: {myblob.length} bytes")
-```
-
-This example uses SDK types to directly access the underlying BlobClient object provided by the Blob storage trigger:
-
-```python
-import logging
-import azure.functions as func
-import azurefunctions.extensions.bindings.blob as blob
-
-app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
-
-@app.blob_trigger(arg_name="client", path="samples-workitems/{name}",
-                  connection="BlobStorageConnection")
-def blob_trigger(client: blob.BlobClient):
-    logging.info(
-        f"Python blob trigger function processed blob \n"
-        f"Properties: {client.get_blob_properties()}\n"
-        f"Blob content head: {client.download_blob().read(size=1)}"
-    )
 ```
 
 To run the code snippet generated through the command palette, note the following:
@@ -47,9 +29,9 @@ To run the code snippet generated through the command palette, note the followin
 - The function application is defined and named `app`.
 - Confirm that the parameters within the trigger reflect values that correspond with your storage account.
 - The name of the file must be `function_app.py`.
-- If you are using SDK-Type Bindings, make sure to include `azurefunctions-extensions-bindings-blob` in your `requirements.txt` file.
   
 Note that Blob input and output bindings are also supported in Azure Functions. To learn more, see [Azure Blob storage bindings overview](https://aka.ms/azure-function-binding-storage-blob).
+To learn more about Blob Triggers using Event Grid, see the [Trigger Azure Functions on blob containers using an event subscription Tutorial](https://learn.microsoft.com/en-us/azure/azure-functions/functions-event-grid-blob-trigger?pivots=programming-language-python)
 
 ## Programming Model V2
 

@@ -6,7 +6,7 @@ Using `Dapr Topic Trigger`, your azure functions can react to a message publishe
 
 ## Using the Template
 
-Following is an example code snippet for Dapr Topic Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel) (currently in Preview).
+Following is an example code snippet for Dapr Topic Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel).
 
 ```python
 import json

@@ -6,7 +6,7 @@ With Dapr output binding, you can invoke external resources. An optional payload
 
 ## Using the Template
 
-Following is an example code snippet for Dapr Service Invocation Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel) (currently in Preview).
+Following is an example code snippet for Dapr Service Invocation Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel).
 
 ```python
 import datetime
