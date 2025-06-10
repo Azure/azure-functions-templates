@@ -6,7 +6,7 @@ Using service invocation, your application can reliably and securely communicate
 
 ## Using the Template
 
-Following is an example code snippet for Dapr Service Invocation Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel) (currently in Preview).
+Following is an example code snippet for Dapr Service Invocation Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel).
 
 ```python
 import json

@@ -6,7 +6,7 @@ A timer trigger lets you run a function on a schedule.
 
 ## Using the Template
 
-Following is an example code snippet for Timer Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel) (currently in Preview).
+Following is an example code snippet for Timer Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel).
 
 ```python
 import datetime
