@@ -5,3 +5,5 @@ The `MySql Trigger Binding` monitors the user table for changes (i.e., row inser
 ## How it works
 
 `MySql Trigger Binding` utilizes the 'az_func_updated_at' column in the table to monitor the user table for changes.
+
+For more information, see the official [docs](https://aka.ms/mysqltriggers).
