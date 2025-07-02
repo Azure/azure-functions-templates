@@ -1998,14 +1998,14 @@
         }
       ]
     },
-	{
+    {
       "type": "mysql",
       "displayName": "$mysqlIn_displayName",
       "direction": "in",
       "enabledInTryMode": false,
       "documentation": "$content=Documentation\\mysqlIn.md",
       "extension": {
-        "id": "Microsoft.Azure.WebJobs.Extensions.MySql", "version": "1.0.44"
+        "id": "Microsoft.Azure.WebJobs.Extensions.MySql", "version": "1.0.129"
       },
       "settings": [
         {
@@ -2074,7 +2074,7 @@
       "enabledInTryMode": false,
       "documentation": "$content=Documentation\\mysqlOut.md",
       "extension": {
-        "id": "Microsoft.Azure.WebJobs.Extensions.MySql", "version": "1.0.44"
+        "id": "Microsoft.Azure.WebJobs.Extensions.MySql", "version": "1.0.129"
       },
       "settings": [
         {
@@ -2107,6 +2107,48 @@
           "label": "$mysql_connection_label",
           "help": "$mysql_connection_help",
           "placeholder": "[variables('selectConnection')]"
+        }
+      ]
+    },
+    {
+      "type": "mysqlTrigger",
+      "displayName": "$mysqlTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": true,
+      "documentation": "$content=Documentation\\mysqlTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.MySql", "version": "1.0.129"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "changes",
+          "required": true,
+          "label": "$mysqlTrigger_name_label",
+          "help": "$mysqlTrigger_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "tableName",
+          "value": "string",
+          "defaultValue": "object",
+          "required": true,
+          "label": "$mysqlTrigger_tableName_label",
+          "help": "$mysqlTrigger_tableName_help"
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "resource": "AppSetting",
+          "required": true,
+          "label": "$mysql_connectionstringsetting_label",
+          "help": "[variables('appSettingsHelp')]"
         }
       ]
     }
