@@ -1,14 +1,10 @@
 using Microsoft.Azure.Functions.Worker;
-using Microsoft.Azure.Functions.Worker.Http;
-using Microsoft.DurableTask;
-using Microsoft.DurableTask.Client;
-using Microsoft.Extensions.Logging;
 
 namespace Company.Function;
 
 public static class DurableFunctionsEntityFunctionCSharp
 {
-    [Function(nameof(Counter))]
+    [Function("Counter")]
     public static Task DispatchAsync([EntityTrigger] TaskEntityDispatcher dispatcher)
     {
         return dispatcher.DispatchAsync(operation =>
@@ -30,9 +26,9 @@ public static class DurableFunctionsEntityFunctionCSharp
                     break;
                 case "get":
                     return new(operation.State.GetState<int>());
-                case "delete": 
+                case "delete":
                     operation.State.SetState(null);
-                    break; 
+                    break;
             }
 
             return default;
