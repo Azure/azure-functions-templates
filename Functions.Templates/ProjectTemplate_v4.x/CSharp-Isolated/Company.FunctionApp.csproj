@@ -1,4 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>TargetFrameworkValue</TargetFramework>
     <AzureFunctionsVersion>AzureFunctionsVersionValue</AzureFunctionsVersion>
@@ -9,6 +10,7 @@
 <!--#endif -->
     <RootNamespace Condition="'$(name)' != '$(name{-VALUE-FORMS-}safe_namespace)'">Company.FunctionApp</RootNamespace>
   </PropertyGroup>
+
   <ItemGroup>
   <!--#if (NetCore)-->
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
@@ -21,4 +23,5 @@
   <!--#endif -->
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="FunctionsSdkPackageVersionValue" />
   </ItemGroup>
+
 </Project>

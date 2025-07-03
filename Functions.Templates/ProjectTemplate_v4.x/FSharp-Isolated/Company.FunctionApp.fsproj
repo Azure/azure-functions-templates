@@ -1,12 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>TargetFrameworkValue</TargetFramework>
     <AzureFunctionsVersion>AzureFunctionsVersionValue</AzureFunctionsVersion>
     <OutputType>Exe</OutputType>
+  <!--#if (NetCore)-->
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+  <!--#endif -->
     <RootNamespace Condition="'$(name)' != '$(name{-VALUE-FORMS-}safe_namespace)'">Company.FunctionApp</RootNamespace>
   </PropertyGroup>
+
   <ItemGroup>
   <!--#if (NetCore)-->
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
@@ -14,17 +18,14 @@
     <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.23.0" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="FunctionsWorkerPackageVersionValue" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.ApplicationInsights" Version="FunctionsAppInsightsPackageVersionValue" />
+  <!--#if (NetCore)-->
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore" Version="FunctionsAspNetCorePackageVersionValue" />
+  <!--#endif -->
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="FunctionsSdkPackageVersionValue" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="host.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="local.settings.json" Condition="Exists('local.settings.json')">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+
   <ItemGroup>
     <Compile Include="Program.fs" />
   </ItemGroup>
+
 </Project>
