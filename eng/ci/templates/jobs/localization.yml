@@ -1,0 +1,29 @@
+jobs:
+- job: localize
+  displayName: Get localized strings
+
+  templateContext:
+    outputParentDirectory: $(Build.ArtifactStagingDirectory)
+    outputs:
+    - output: pipelineArtifact
+      displayName: Publish templates
+      path: $(Build.ArtifactStagingDirectory)
+      artifact: loc
+
+  steps:
+  - task: OneLocBuild@3
+    inputs:
+      locProj: 'Build\Localize\LocProject.json'
+      outDir: '$(Build.Repository.LocalPath)'
+      prSourceBranchPrefix: 'locfiles'
+      packageSourceAuth: 'patAuth'
+      dependencyPackageSource: 'https://pkgs.dev.azure.com/azfunc/internal/_packaging/OneLocBuildFeed/nuget/v3/index.json'
+      patVariable: '$(System.AccessToken)'
+      continueOnError: true
+
+  - task: CopyFiles@2
+    enabled: true
+    displayName: 'Copy Loc files to publish directories'
+    inputs:
+      SourceFolder: $(System.DefaultWorkingDirectory)/loc
+      TargetFolder: $(Build.ArtifactStagingDirectory)

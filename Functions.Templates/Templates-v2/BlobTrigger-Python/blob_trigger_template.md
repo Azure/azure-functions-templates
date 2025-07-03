@@ -6,7 +6,7 @@ The Blob storage trigger starts a function when a new or updated blob is detecte
 
 ## Using the Template
 
-Following is an example code snippet for Blob Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel) (currently in Preview).
+Following is an example code snippet for Blob Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel).
 
 ```python
 import logging
@@ -23,13 +23,33 @@ def test_function(myblob: func.InputStream):
                 f"Blob Size: {myblob.length} bytes")
 ```
 
+This example uses SDK types to directly access the underlying BlobClient object provided by the Blob storage trigger:
+
+```python
+import logging
+import azure.functions as func
+import azurefunctions.extensions.bindings.blob as blob
+
+app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
+
+@app.blob_trigger(arg_name="client", path="samples-workitems/{name}",
+                  connection="BlobStorageConnection")
+def blob_trigger(client: blob.BlobClient):
+    logging.info(
+        f"Python blob trigger function processed blob \n"
+        f"Properties: {client.get_blob_properties()}\n"
+        f"Blob content head: {client.download_blob().read(size=1)}"
+    )
+```
+
 To run the code snippet generated through the command palette, note the following:
 
 - The function application is defined and named `app`.
 - Confirm that the parameters within the trigger reflect values that correspond with your storage account.
 - The name of the file must be `function_app.py`.
+- If you are using SDK-Type Bindings, make sure to include `azurefunctions-extensions-bindings-blob` in your `requirements.txt` file.
   
-Note that Blob input and output bindings are also supported in Azure Functions. To learn more, see [Azure Blob storage bindings overview](https://aka.ms/azure-function-binding-storage-blob)
+Note that Blob input and output bindings are also supported in Azure Functions. To learn more, see [Azure Blob storage bindings overview](https://aka.ms/azure-function-binding-storage-blob).
 
 ## Programming Model V2
 

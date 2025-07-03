@@ -4,36 +4,35 @@ using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
 
-namespace Company.Function
+namespace Company.Function;
+
+public class SignalRConnectionInfoHttpTriggerCSharp
 {
-    public class SignalRConnectionInfoHttpTriggerCSharp
+    private readonly ILogger _logger;
+
+    public SignalRConnectionInfoHttpTriggerCSharp(ILoggerFactory loggerFactory)
     {
-        private readonly ILogger _logger;
-
-        public SignalRConnectionInfoHttpTriggerCSharp(ILoggerFactory loggerFactory)
-        {
-            _logger = loggerFactory.CreateLogger("negotiate");
-        }
-
-        [Function("negotiate")]
-        public HttpResponseData Negotiate(
-            [HttpTrigger(AuthorizationLevel.AuthLevelValue, "post")] HttpRequestData req,
-            [SignalRConnectionInfoInput(HubName = "HubValue")] MyConnectionInfo connectionInfo)
-        {
-            _logger.LogInformation($"SignalR Connection URL = '{connectionInfo.Url}'");
-
-            var response = req.CreateResponse(HttpStatusCode.OK);
-            response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
-            response.WriteString($"Connection URL = '{connectionInfo.Url}'");
-            
-            return response;
-        }
+        _logger = loggerFactory.CreateLogger("negotiate");
     }
 
-    public class MyConnectionInfo
+    [Function("negotiate")]
+    public HttpResponseData Negotiate(
+        [HttpTrigger(AuthorizationLevel.AuthLevelValue, "post")] HttpRequestData req,
+        [SignalRConnectionInfoInput(HubName = "HubValue")] MyConnectionInfo connectionInfo)
     {
-        public string Url { get; set; }
+        _logger.LogInformation("SignalR Connection URL = '{url}'", connectionInfo.Url);
 
-        public string AccessToken { get; set; }
+        var response = req.CreateResponse(HttpStatusCode.OK);
+        response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
+        response.WriteString($"Connection URL = '{connectionInfo.Url}'");
+        
+        return response;
     }
+}
+
+public class MyConnectionInfo
+{
+    public string Url { get; set; }
+
+    public string AccessToken { get; set; }
 }

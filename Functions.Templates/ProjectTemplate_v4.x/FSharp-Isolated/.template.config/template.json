@@ -30,14 +30,22 @@
                 {
                 "choice": "net7.0",
                 "description": "Target .NET 7"
-                },    
+                },
                 {
                 "choice": "net8.0",
                 "description": "Target .NET 8"
+                },
+                {
+                "choice": "net9.0",
+                "description": "Target .NET 9"
                 }
             ]
         },
         "NetCore": {
+            "type": "computed",
+            "value": "(Framework == \"net9.0\" || Framework == \"net8.0\" || Framework == \"net7.0\" || Framework == \"net6.0\")"
+        },
+        "FrameworkShouldUseV1Dependencies": {
             "type": "computed",
             "value": "(Framework == \"net8.0\" || Framework == \"net7.0\" || Framework == \"net6.0\")"
         },
@@ -53,6 +61,74 @@
             "type": "parameter",
             "defaultValue": "V4",
             "replaces": "AzureFunctionsVersionValue"
+        },
+        "FunctionsWorkerPackageVersion": {
+            "type": "generated",
+            "generator": "switch",
+            "replaces": "FunctionsWorkerPackageVersionValue",
+            "parameters": {
+                "datatype": "string",
+                "cases": [
+                    {
+                        "condition": "FrameworkShouldUseV1Dependencies",
+                        "value": "1.24.0"
+                    },
+                    {
+                        "value": "2.0.0"
+                    }
+                ]
+            }
+        },
+        "FunctionsAspNetCorePackageVersion": {
+            "type": "generated",
+            "generator": "switch",
+            "replaces": "FunctionsAspNetCorePackageVersionValue",
+            "parameters": {
+                "datatype": "string",
+                "cases": [
+                    {
+                        "condition": "FrameworkShouldUseV1Dependencies",
+                        "value": "1.3.3"
+                    },
+                    {
+                        "value": "2.0.0"
+                    }
+                ]
+            }
+        },
+        "FunctionsSdkPackageVersion": {
+            "type": "generated",
+            "generator": "switch",
+            "replaces": "FunctionsSdkPackageVersionValue",
+            "parameters": {
+                "datatype": "string",
+                "cases": [
+                    {
+                        "condition": "FrameworkShouldUseV1Dependencies",
+                        "value": "1.18.1"
+                    },
+                    {
+                        "value": "2.0.1"
+                    }
+                ]
+            }
+        },
+        "FunctionsAppInsightsPackageVersion": {
+            "type": "generated",
+            "generator": "switch",
+            "replaces": "FunctionsAppInsightsPackageVersionValue",
+            "parameters": {
+                "datatype": "string",
+                "cases": [
+                    {
+                        "condition": "FrameworkShouldUseV1Dependencies",
+                        "value": "1.4.0"
+                    },
+                    {
+                        "value": "2.0.0"
+                    }
+                ]
+            }
         }
     },
     "sources": [
@@ -71,5 +147,53 @@
             "path": "Company.FunctionApp.fsproj"
         }
     ],
-    "defaultName": "Company.FunctionApp"
+    "defaultName": "Company.FunctionApp",
+    "postActions":
+    [
+        {
+            "condition": "(NetCore && FrameworkShouldUseV1Dependencies)",
+            "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore Nuget package",
+            "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+            "ContinueOnError": "true",
+            "ManualInstructions": [],
+            "args": {
+                "referenceType": "package",
+                "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore",
+                "version": "1.3.2",
+                "projectFileExtensions": ".fsproj"
+            }
+        },
+        {
+            "condition": "(NetCore && !FrameworkShouldUseV1Dependencies)",
+            "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore Nuget package",
+            "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+            "ContinueOnError": "true",
+            "ManualInstructions": [],
+            "args": {
+                "referenceType": "package",
+                "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore",
+                "version": "2.0.0-preview2",
+                "projectFileExtensions": ".fsproj"
+            }
+        },
+        {
+            "condition": "(NetCore)",
+            "Description": "Adding Reference to Microsoft.Azure.Functions.Worker.Extensions.Http Nuget package",
+            "ActionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+            "ContinueOnError": "true",
+            "ManualInstructions": [],
+            "args": {
+                "referenceType": "package",
+                "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http",
+                "version": "3.2.0",
+                "projectFileExtensions": ".fsproj"
+            }
+        },
+        {
+            "description": "Restore NuGet packages required by this project.",
+            "manualInstructions": [],
+            "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+            "continueOnError": true
+        }
+    ]
 }

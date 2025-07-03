@@ -2,6 +2,9 @@
     "IsEncrypted": false,
     "Values": {
         "AzureWebJobsStorage": "AzureWebJobsStorageConnectionStringValue",
+//#if (Framework == 'net8.0')
+        "FUNCTIONS_INPROC_NET8_ENABLED": "1",
+//#endif
         "FUNCTIONS_WORKER_RUNTIME": "dotnet"
     }
 }

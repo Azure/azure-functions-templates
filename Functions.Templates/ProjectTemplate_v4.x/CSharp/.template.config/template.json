@@ -16,6 +16,23 @@
     },
     "sourceName": "Company.FunctionApp",
     "symbols": {
+        "Framework": {
+            "type": "parameter",
+            "description": "The target framework for the project.",
+            "datatype": "choice",
+            "defaultValue": "net6.0",
+            "replaces": "TargetFrameworkValue",
+            "choices": [
+                {
+                "choice": "net6.0",
+                "description": "Target .NET 6"
+                },
+                {
+                "choice": "net8.0",
+                "description": "Target .NET 8"
+                }
+            ]
+        },
         "StorageConnectionStringValue": {
             "description": "The connection string for your Azure WebJobs Storage.",
             "type": "parameter",
@@ -26,8 +43,23 @@
         "AzureFunctionsVersion": {
             "description": "The setting that determines the target release",
             "type": "parameter",
-            "defaultValue": "V4",
-            "replaces": "AzureFunctionsVersionValue"
+            "defaultValue": "v4"
+        },
+        "AzureFunctionsVersionAdjusted": {
+            "description": "Adjusted value for .NET 8",
+            "type": "generated",
+            "generator": "regex",
+            "dataType": "string",
+            "replaces": "AzureFunctionsVersionValue",
+            "parameters" : {
+                "source": "AzureFunctionsVersion",
+                "steps": [
+                    {
+                        "regex": "^v\\d+",
+                        "replacement" : "v4"
+                    }
+                ]
+            }
         },
         "FunctionsHttpPort": {
             "type": "parameter",

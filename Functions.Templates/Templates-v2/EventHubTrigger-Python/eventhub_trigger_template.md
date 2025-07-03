@@ -6,7 +6,7 @@ The Event Hub function trigger can be used to respond to an event sent to an eve
 
 ## Using the Template
 
-Following is an example code snippet for Event Hub Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel) (currently in Preview).
+Following is an example code snippet for Event Hub Trigger using the [Python programming model V2](https://aka.ms/pythonprogrammingmodel).
 
 ```python
 import logging
@@ -22,11 +22,31 @@ def test_function(myhub: func.EventHubEvent):
                 myhub.get_body().decode('utf-8'))
 ```
 
+This example uses SDK types to directly access the underlying EventData object provided by the Event Hubs trigger (currently in Preview):
+
+```python
+import logging
+import azure.functions as func
+import azurefunctions.extensions.bindings.eventhub as eh
+
+app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
+
+@app.event_hub_message_trigger(
+    arg_name="event", event_hub_name="EVENTHUB_NAME", connection="EventHubConnection"
+)
+def eventhub_trigger(event: eh.EventData):
+    logging.info(
+        "Python EventHub trigger processed an event %s",
+        event.body_as_str()
+    )
+```
+
 To run the code snippet generated through the command palette, note the following:
 
 - The function application is defined and named `app`.
 - Confirm that the parameters within the trigger reflect values that correspond with your storage account.
 - The name of the file must be `function_app.py`.
+- If you are using SDK-Type Bindings, make sure to include `azurefunctions-extensions-bindings-eventhub` in your `requirements.txt` file.
   
 Note that Event Hub output bindings are also supported in Azure Functions. To learn more, see [Azure Event Hubs trigger and bindings for Azure Functions](https://aka.ms/azure-function-binding-event-hubs)
 

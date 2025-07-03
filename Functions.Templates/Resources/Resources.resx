@@ -831,6 +831,12 @@
   <data name="BlobTrigger_description" xml:space="preserve">
     <value>A function that will be run whenever a blob is added to a specified container</value>
   </data>
+  <data name="DurableOrchestration_description" xml:space="preserve">
+    <value>A set of functions composing a Durable orchestration.</value>
+  </data>
+  <data name="EntityTrigger_description" xml:space="preserve">
+    <value>A function that manages the state of an entity in Durable Functions.</value>
+  </data>
   <data name="CSharp_description" xml:space="preserve">
     <value>A C# function that will be run whenever it receives a GitHub webhook request</value>
   </data>
@@ -1515,12 +1521,6 @@ Windows Azure Service Management API - Access Azure Service Management as organi
   <data name="eventGrid_trigger_displayName" xml:space="preserve">
     <value>Event Grid Trigger</value>
   </data>
-  <data name="eventGrid_trigger_name_help" xml:space="preserve">
-    <value>Event Trigger parameter name</value>
-  </data>
-  <data name="eventGrid_trigger_name_label" xml:space="preserve">
-    <value>Event Trigger parameter name</value>
-  </data>
   <data name="CosmosDBTriggerCSharp_description" xml:space="preserve">
     <value>A C# function that will be run whenever documents change in a document collection.</value>
   </data>
@@ -1726,8 +1726,32 @@ function app.</value>
   <data name="blobTrigger_connection_label" xml:space="preserve">
     <value>Storage account connection</value>
   </data>
+  <data name="rag_connection_label" xml:space="preserve">
+    <value>Connection string for RAG storage</value>
+  </data>
   <data name="blobTrigger_connection_help" xml:space="preserve">
     <value>The name of the app setting containing your storage account connection string</value>
+  </data>
+  <data name="rag_connection_help" xml:space="preserve">
+    <value>The name of the app setting containing your RAG connection string</value>
+  </data>
+  <data name="rag_collection_name_label" xml:space="preserve">
+    <value>Collection name for RAG function</value>
+  </data>
+  <data name="rag_collection_name_help" xml:space="preserve">
+    <value>The name of the app setting containing the name of the collection</value>
+  </data>
+  <data name="embedding_model_name_label" xml:space="preserve">
+    <value>Embedding model name</value>
+  </data>
+  <data name="embedding_model_name_help" xml:space="preserve">
+    <value>The name of the app setting containing the name of the embedding model</value>
+  </data>
+  <data name="chat_model_name_label" xml:space="preserve">
+    <value>Chat model name</value>
+  </data>
+  <data name="chat_model_name_help" xml:space="preserve">
+    <value>The name of the app setting containing the name of the chat model</value>
   </data>
   <data name="EventHubTrigger_name" xml:space="preserve">
     <value>Event Hub trigger</value>
@@ -2070,5 +2094,77 @@ function app.</value>
   </data>
   <data name="DaprTopicTrigger_description" xml:space="preserve">
     <value>A function that will be invoked when a message is received on a subscribed topic in message broker using Dapr.</value>
+  </data>
+  <data name="MySqlInputBinding_description" xml:space="preserve">
+    <value>A function that will be run on an HTTP trigger and returns the results of a provided MySQL query.</value>
+  </data>
+  <data name="MySqlOuputBinding_description" xml:space="preserve">
+    <value>A function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).</value>
+  </data>
+  <data name="MySqlTriggerBinding_description" xml:space="preserve">
+    <value>A fucntion will ve invoked when there are changes detected on MySql table on which the trigger is configured.</value>
+  </data>
+  <data name="mysqlIn_displayName" xml:space="preserve">
+    <value>Azure MySql Input Binding</value>
+  </data>
+  <data name="mysqlIn_name_label" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="mysqlIn_name_help" xml:space="preserve">
+    <value>The name used to identify this binding in your code.</value>
+  </data>
+  <data name="mysqlIn_commandText_label" xml:space="preserve">
+    <value>MySql Command Text</value>
+  </data>
+  <data name="mysqlIn_commandText_help" xml:space="preserve">
+    <value>The query command or name of the stored procedure executed by the binding.</value>
+  </data>
+  <data name="mysqlIn_commandType_label" xml:space="preserve">
+    <value>Text or StoredProcedure</value>
+  </data>
+  <data name="mysqlIn_commandType_help" xml:space="preserve">
+    <value>The command type used to identify what type of value commandText is, either Text for a query or StoredProcedure for a stored procedure.</value>
+  </data>
+  <data name="mysqlIn_parameters_label" xml:space="preserve">
+    <value>Parameters</value>
+  </data>
+  <data name="mysqlIn_parameters_help" xml:space="preserve">
+    <value>Parameter values passed to the command during execution as a single string. Must follow the format `@param1=param1,@param2=param2`.</value>
+  </data>
+  <data name="mysql_connection_label" xml:space="preserve">
+    <value>MySql Connection string setting</value>
+  </data>
+  <data name="mysql_connection_help" xml:space="preserve">
+    <value>The name of the app setting containing your Azure MySql binding connection string.</value>
+  </data>
+  <data name="mysqlOut_displayName" xml:space="preserve">
+    <value>Azure MySql Output Binding</value>
+  </data>
+  <data name="mysqlOut_name_label" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="mysqlOut_name_help" xml:space="preserve">
+    <value>The name of the variable that represents the entity in function code.</value>
+  </data>
+  <data name="mysqlOut_commandText_label" xml:space="preserve">
+    <value>Table Name</value>
+  </data>
+  <data name="mysqlOut_commandText_help" xml:space="preserve">
+    <value>The name of the table being upserted to by the binding.</value>
+  </data>
+  <data name="mysqlTrigger_displayName" xml:space="preserve">
+    <value>Azure MySql Trigger Binding</value>
+  </data>
+  <data name="mysqlTrigger_name_label" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="mysqlTrigger_name_help" xml:space="preserve">
+    <value>The name of the parameter that the trigger binds to.</value>
+  </data>
+  <data name="mysqlTrigger_tableName_label" xml:space="preserve">
+    <value>Table Name</value>
+  </data>
+  <data name="mysqlTrigger_tableName_help" xml:space="preserve">
+    <value>The name of the table being monitored by the trigger.</value>
   </data>
 </root>

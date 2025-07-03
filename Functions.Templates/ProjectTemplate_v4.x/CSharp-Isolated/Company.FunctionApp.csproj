@@ -11,17 +11,17 @@
     <RootNamespace Condition="'$(name)' != '$(name{-VALUE-FORMS-}safe_namespace)'">Company.FunctionApp</RootNamespace>
   </PropertyGroup>
 
-<!--#if (NetCore)-->
   <ItemGroup>
+  <!--#if (NetCore)-->
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-  </ItemGroup>
-<!--#endif -->
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.21.0" />
-    <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.17.3" />
-    <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.22.0" />
-    <PackageReference Include="Microsoft.Azure.Functions.Worker.ApplicationInsights" Version="1.2.0" />
+  <!--#endif -->
+    <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.23.0" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="FunctionsWorkerPackageVersionValue" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.ApplicationInsights" Version="FunctionsAppInsightsPackageVersionValue" />
+  <!--#if (NetCore)-->
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore" Version="FunctionsAspNetCorePackageVersionValue" />
+  <!--#endif -->
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="FunctionsSdkPackageVersionValue" />
   </ItemGroup>
 
 </Project>
