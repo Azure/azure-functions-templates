@@ -9,6 +9,8 @@ def $(FUNCTION_NAME_INPUT)(myblob: func.InputStream):
 
 # This example uses SDK types to directly access the underlying BlobClient object provided by the Blob storage trigger.
 # To use, uncomment the section below and add azurefunctions-extensions-bindings-blob to your requirements.txt file
+# Ref: aka.ms/functions-sdk-blob-python
+#
 # import azurefunctions.extensions.bindings.blob as blob
 # @app.blob_trigger(arg_name="client", path="$(PATH_TO_BLOB_INPUT)",
 #                   connection="$(CONNECTION_STRING_INPUT)")

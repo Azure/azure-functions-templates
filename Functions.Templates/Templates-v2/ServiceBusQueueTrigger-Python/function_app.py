@@ -12,6 +12,8 @@ def $(FUNCTION_NAME_INPUT)(azservicebus: func.ServiceBusMessage):
 
 # This example uses SDK types to directly access the underlying ServiceBusReceivedMessage object provided by the Service Bus trigger.
 # To use, uncomment the section below and add azurefunctions-extensions-bindings-servicebus to your requirements.txt file
+# Ref: aka.ms/functions-sdk-servicebus-python
+#
 # import azurefunctions.extensions.bindings.servicebus as servicebus
 # @app.service_bus_queue_trigger(arg_name="receivedmessage",
 #                                queue_name="$(SERVICEBUS_NAME_INPUT)",
