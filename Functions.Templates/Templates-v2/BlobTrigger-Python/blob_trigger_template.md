@@ -47,7 +47,7 @@ To run the code snippet generated through the command palette, note the followin
 - The function application is defined and named `app`.
 - Confirm that the parameters within the trigger reflect values that correspond with your storage account.
 - The name of the file must be `function_app.py`.
-- If you are using SDK-Type Bindings, make sure to include `azurefunctions-extensions-bindings-blob` in your `requirements.txt` file.
+- If you are using SDK-Type Bindings, make sure to include `azurefunctions-extensions-bindings-blob` in your `requirements.txt` file. Visit [SDK Binding Types for Blob](https://aka.ms/functions-sdk-blob-python) for more information on how to use SDK-Type Bindings in your app.
   
 Note that Blob input and output bindings are also supported in Azure Functions. To learn more, see [Azure Blob storage bindings overview](https://aka.ms/azure-function-binding-storage-blob).
 
