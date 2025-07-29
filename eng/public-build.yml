@@ -34,6 +34,12 @@ extends:
       image: 1es-windows-2022
       os: windows
 
+    sdl:
+      codeql:
+        compiled:
+          enabled: false
+          justificationForDisabling: Repo contains only templates. These are not compiled.
+
     settings:
       # PR's from forks do not have sufficient permissions to set tags.
       skipBuildTagsForGitHubPullRequests: ${{ variables['System.PullRequest.IsFork'] }}
