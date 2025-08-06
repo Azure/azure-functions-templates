@@ -38,12 +38,16 @@
                 {
                 "choice": "net9.0",
                 "description": "Target .NET 9"
+                },
+                {
+                "choice": "net10.0",
+                "description": "Target .NET 10 (Preview)"
                 }
             ]
         },
         "NetCore": {
             "type": "computed",
-            "value": "(Framework == \"net9.0\" || Framework == \"net8.0\" || Framework == \"net7.0\" || Framework == \"net6.0\")"
+            "value": "(Framework == \"net10.0\" || Framework == \"net9.0\" || Framework == \"net8.0\" || Framework == \"net7.0\" || Framework == \"net6.0\")"
         },
         "FrameworkShouldUseV1Dependencies": {
             "type": "computed",
@@ -74,6 +78,10 @@
                         "value": "1.24.0"
                     },
                     {
+                        "condition": "(Framework == \"net10.0\")",
+                        "value": "2.50.0-preview1"
+                    },
+                    {
                         "value": "2.0.0"
                     }
                 ]
@@ -91,7 +99,7 @@
                         "value": "1.3.3"
                     },
                     {
-                        "value": "2.0.0"
+                        "value": "2.0.2"
                     }
                 ]
             }
@@ -108,7 +116,7 @@
                         "value": "1.18.1"
                     },
                     {
-                        "value": "2.0.1"
+                        "value": "2.0.5"
                     }
                 ]
             }
@@ -172,7 +180,7 @@
             "args": {
                 "referenceType": "package",
                 "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore",
-                "version": "2.0.0-preview2",
+                "version": "2.0.2",
                 "projectFileExtensions": ".fsproj"
             }
         },

@@ -27,7 +27,7 @@
     },
     "NetCore": {
       "type": "computed",
-      "value": "(Framework == \"net9.0\" || Framework == \"net8.0\" || Framework == \"net7.0\" || Framework == \"net6.0\")"
+      "value": "(Framework == \"net10.0\" || Framework == \"net9.0\" || Framework == \"net8.0\" || Framework == \"net7.0\" || Framework == \"net6.0\")"
     },
     "FrameworkShouldUseV1Dependencies": {
       "type": "computed",
@@ -93,7 +93,7 @@
       "args": {
         "referenceType": "package",
         "reference": "Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore",
-        "version": "2.0.1",
+        "version": "2.0.2",
         "projectFileExtensions": ".csproj"
       }
     },
