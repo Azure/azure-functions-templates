@@ -337,9 +337,9 @@ gulp.task('build-templates', function (cb) {
     }
     writePath = path.join(writePath, 'templates.json');
     fs.writeFileSync(writePath, Buffer.from(JSON.stringify(templateListJson, null, 2)));
-    cb();
 
   }
+  cb();
 });
 
 gulp.task('build-templates-v2', function (cb) {
@@ -378,9 +378,9 @@ gulp.task('build-templates-v2', function (cb) {
     }
     writePath = path.join(writePath, 'templates.json');
     fs.writeFileSync(writePath, Buffer.from(JSON.stringify(templateListJson, null, 2)));
-    cb();
 
   }
+  cb();
 });
 
 /********
