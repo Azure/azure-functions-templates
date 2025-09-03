@@ -51,7 +51,7 @@ Notes:
   - `admin`: The host master key required. Avoid using `admin` for clients.
 - When not specified, authorization typically defaults to `function` (Node.js model v4 defaults to `anonymous`).
 - When running locally (Core Tools), authorization is disabled; after publishing to Azure, the setting is enforced. Keys are still required when running locally in a container.
-- Manage keys using the Azure portal, CLI, or ARM/REST—don’t store keys in code or in `host.json`.
+- Don’t store keys in code or in `host.json`.
 
 Learn more: [Work with access keys in Azure Functions](https://learn.microsoft.com/azure/azure-functions/function-keys-how-to)
 
