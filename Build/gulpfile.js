@@ -10,6 +10,7 @@ const decompress = require('gulp-decompress');
 const zip = require('gulp-zip');
 const request = require('request');
 const nuget = require('gulp-nuget');
+const through2 = require('through2');
 
 buildVersion = '1';
 
@@ -103,30 +104,79 @@ gulp.task('unzip-templates', function () {
 gulp.task('resources-convert', function () {
   const streams = [];
 
+  // Build resources for each extracted extension bundle using portal resources
   let files = getFiles('../bin/Temp/ExtensionBundle');
   for (let i = 0; i < files.length; i++) {
     let fileName = files[i].replace(".nupkg", "");
     let dirPath = path.join('../bin/Temp/', 'Temp-' + fileName);
-    let resourceFile = path.join(dirPath, 'Resources') + '/**/Resources.resx';
-    let resourceFileSimple = path.join(dirPath, 'Resources', 'Resources.resx');
-    let convertPath = path.join(dirPath, 'resources-convert')
+    let convertPath = path.join(dirPath, 'resources-convert');
 
-    if (!fs.existsSync(resourceFileSimple)) {
+    const baseEnResx = path.join('..', 'Functions.Templates', 'Resources', 'Resources.resx');
+  // Accept both standard RESX and localized .lcl files
+  const localizedResxGlob = path.join('..', 'Functions.Templates', 'Resources_lcl', '*', 'Resources.resx*');
+
+    // If base English resources do not exist, skip this bundle
+    if (!fs.existsSync(baseEnResx)) {
       continue;
     }
 
+    // Base English
     streams.push(
-      gulp.src([resourceFile])
+      gulp
+        .src([baseEnResx])
         .pipe(resx2())
-        .pipe(rename(function (p) {
-          const language = p.dirname.split(path.sep)[0];
-          if (!!language && language !== '.') {
-            p.basename = 'Resources.' + language;
-          }
-          p.dirname = '.';
-          p.extname = '.json';
-        }))
-        .pipe(gulp.dest(convertPath)));
+        .pipe(
+          rename(function (p) {
+            // Force base file name to Resources.json
+            p.basename = 'Resources';
+            p.dirname = '.';
+            p.extname = '.json';
+          })
+        )
+        .pipe(gulp.dest(convertPath))
+    );
+
+    // Localized languages under Resources_lcl/<lang>/Resources.resx (standard RESX)
+    streams.push(
+      gulp
+        .src([localizedResxGlob], { base: path.join('..', 'Functions.Templates', 'Resources_lcl') })
+        .pipe(resx2())
+        .pipe(
+          rename(function (p) {
+            // Derive language from the immediate folder name under Resources_lcl
+            const language = p.dirname.split(path.sep)[0];
+            if (!!language && language !== '.') {
+              p.basename = 'Resources.' + language;
+            } else {
+              p.basename = 'Resources';
+            }
+            p.dirname = '.';
+            p.extname = '.json';
+          })
+        )
+        .pipe(gulp.dest(convertPath))
+    );
+
+    // Localized languages provided as LCX files: Resources.resx.lcl
+    const localizedLclGlob = path.join('..', 'Functions.Templates', 'Resources_lcl', '*', 'Resources.resx.lcl');
+    streams.push(
+      gulp
+        .src([localizedLclGlob], { base: path.join('..', 'Functions.Templates', 'Resources_lcl') })
+        .pipe(lcx2json())
+        .pipe(
+          rename(function (p) {
+            const language = p.dirname.split(path.sep)[0];
+            if (!!language && language !== '.') {
+              p.basename = 'Resources.' + language;
+            } else {
+              p.basename = 'Resources';
+            }
+            p.dirname = '.';
+            p.extname = '.json';
+          })
+        )
+        .pipe(gulp.dest(convertPath))
+    );
   }
   return gulpMerge(streams);
 });
@@ -219,7 +269,7 @@ gulp.task('resources-copy', function () {
   for (let i = 0; i < files.length; i++) {
     let fileName = files[i].replace(".nupkg", "");
     let dirPath = path.join('../bin/Temp/', 'Temp-' + fileName);
-    let resourceFileSimple = path.join(dirPath, 'Resources', 'Resources.resx');
+    let resourceFileSimple = path.join(dirPath, 'resources-convert', 'Resources.json');
 
     if (!fs.existsSync(resourceFileSimple)) {
       continue;
@@ -460,4 +510,73 @@ function getFiles(folder) {
     return {};
   }
   return fileNames = fs.readdirSync(folder).filter(f => fs.statSync(path.join(folder, f)).isFile());
+}
+
+// Convert LCX (.resx.lcl) localization XML to a flat JSON of key:value using translated targets when available
+function lcx2json() {
+  return through2.obj(function (file, enc, cb) {
+    if (file.isStream()) {
+      return cb();
+    }
+    if (file.isBuffer()) {
+      try {
+        const xml = file.contents.toString('utf8');
+        const result = parseLcx(xml);
+        file.contents = Buffer.from(JSON.stringify(result));
+      } catch (e) {
+        // If parsing fails, pass file through unmodified so build doesn't break
+      }
+      this.push(file);
+      return cb();
+    }
+    this.push(file);
+    return cb();
+  });
+}
+
+function decodeXmlEntities(text) {
+  if (!text) return text;
+  return text
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'");
+}
+
+function stripCdata(text) {
+  if (!text) return text;
+  return text.replace(/^\s*<!\[CDATA\[/, '').replace(/\]\]>\s*$/, '');
+}
+
+function parseLcx(xml) {
+  const map = {};
+  // Only iterate leaf items that represent resource entries
+  const itemRegex = /<Item[^>]*ItemId=";([^"]+)"[^>]*Leaf="true"[^>]*>([\s\S]*?)<\/Item>/g;
+  let itemMatch;
+  while ((itemMatch = itemRegex.exec(xml)) !== null) {
+    const key = itemMatch[1];
+    const body = itemMatch[2];
+
+    // Prefer translated target value if present
+    let valMatch = /<Tgt[^>]*>[\s\S]*?<Val[^>]*>([\s\S]*?)<\/Val>[\s\S]*?<\/Tgt>/.exec(body);
+    let value;
+    if (valMatch && valMatch[1] != null) {
+      value = valMatch[1];
+    } else {
+      // Fallback to source Val
+      valMatch = /<Str[^>]*>[\s\S]*?<Val[^>]*>([\s\S]*?)<\/Val>/.exec(body);
+      value = valMatch ? valMatch[1] : '';
+    }
+
+    value = stripCdata(value);
+    value = decodeXmlEntities(value);
+    // Normalize Windows line endings possibly embedded
+    value = value.replace(/\r\n/g, '\n');
+
+    // The ItemId keys are prefixed with ';'
+    const normalizedKey = key;
+    map[normalizedKey] = value;
+  }
+  return map;
 }
