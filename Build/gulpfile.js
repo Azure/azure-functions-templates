@@ -84,7 +84,7 @@ gulp.task('clean-temp', function (cb) {
   ], { force: true });
 });
 
-gulp.task('unzip-templates', function () {
+gulp.task('unzip-templates', function (done) {
   let streams = [];
 
   let files = getFiles('../bin/Temp/ExtensionBundle');
@@ -99,6 +99,10 @@ gulp.task('unzip-templates', function () {
     );
   }
 
+  if (streams.length === 0) {
+    return done();
+  }
+
   return gulpMerge(streams);
 });
 
@@ -107,7 +111,7 @@ gulp.task('unzip-templates', function () {
  *   Also it will change the file name format to Resources.<language code>.json
  */
 
-gulp.task('resources-convert', function () {
+gulp.task('resources-convert', function (done) {
   const streams = [];
 
   let files = getFiles('../bin/Temp/ExtensionBundle');
@@ -135,13 +139,18 @@ gulp.task('resources-convert', function () {
         }))
         .pipe(gulp.dest(convertPath)));
   }
+  
+  if (streams.length === 0) {
+    return done();
+  }
+  
   return gulpMerge(streams);
 });
 
 /********
  *   This is the task takes the output of the convert task and formats the json to be in the format that gets sent back to the client by the API, it's easier to do this here than at the end
  */
-gulp.task('resources-build', function () {
+gulp.task('resources-build', function (done) {
   const streams = [];
   let files = getFiles('../bin/Temp/ExtensionBundle');
   for (let i = 0; i < files.length; i++) {
@@ -217,10 +226,15 @@ gulp.task('resources-build', function () {
         .pipe(gulp.dest('../bin/Temp/out/' + fileName + '/resources-v2'))
     );
   }
+  
+  if (streams.length === 0) {
+    return done();
+  }
+  
   return gulpMerge(streams);
 });
 
-gulp.task('resources-copy', function () {
+gulp.task('resources-copy', function (done) {
   const streams = [];
   let files = getFiles('../bin/Temp/ExtensionBundle');
   for (let i = 0; i < files.length; i++) {
@@ -244,10 +258,15 @@ gulp.task('resources-copy', function () {
         .pipe(gulp.dest('../bin/Temp/out/' + fileName + '/resources-v2'))
     );
   }
+  
+  if (streams.length === 0) {
+    return done();
+  }
+  
   return gulpMerge(streams);
 });
 
-gulp.task('userprompt-copy', function () {
+gulp.task('userprompt-copy', function (done) {
   const streams = [];
   let files = getFiles('../bin/Temp/ExtensionBundle');
   for (let i = 0; i < files.length; i++) {
@@ -265,6 +284,11 @@ gulp.task('userprompt-copy', function () {
         .pipe(gulp.dest('../bin/Temp/out/' + fileName + '/bindings-v2'))
     );
   }
+  
+  if (streams.length === 0) {
+    return done();
+  }
+  
   return gulpMerge(streams);
 });
 
@@ -400,7 +424,7 @@ gulp.task('build-bindings', function (cb) {
   cb();
 });
 
-gulp.task('zip-output', function () {
+gulp.task('zip-output', function (done) {
   let dirs = getSubDirectories("../bin/Temp/out")
   let streams = [];
 
@@ -411,6 +435,11 @@ gulp.task('zip-output', function () {
         .pipe(gulp.dest('../bin/'))
     );
   }
+  
+  if (streams.length === 0) {
+    return done();
+  }
+  
   return gulpMerge(streams);
 });
 
