@@ -1,13 +1,6 @@
-# Azure Functions HTTP trigger (updated)
-
-Use the HTTP trigger to invoke a function with an HTTP request. Typical uses include building serverless APIs and responding to webhooks.
-
-- Default responses: Functions 2.x and later return HTTP 204 No Content when your function doesn’t write a response; Functions 1.x returned HTTP 200 OK.
-- To shape the HTTP response, use the HTTP output binding or the language’s response APIs.
+## Settings for http trigger
 
 Authoritative docs: [HTTP trigger reference](https://learn.microsoft.com/azure/azure-functions/functions-bindings-http-webhook-trigger)
-
-## Binding settings
 
 HTTP trigger (request) properties:
 
@@ -31,7 +24,7 @@ By default, function routes are prefixed with `api`. You can change or remove th
 Default URL shape:
 
 ```text
-https://<APP_NAME>.azurewebsites.net/api/<FUNCTION_NAME>
+https://<function-app-uri>/api/<function-name>
 ```
 
 You can customize the route (including parameters and constraints) via the `route` property, such as `products/{category:alpha}/{id:int?}`.
