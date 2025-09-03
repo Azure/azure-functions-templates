@@ -8,7 +8,7 @@ const path = require('path');
 const del = require('del');
 const decompress = require('gulp-decompress');
 const zip = require('gulp-zip');
-const request = require('request');
+const https = require('https');
 const nuget = require('gulp-nuget');
 
 buildVersion = '1';
@@ -54,9 +54,16 @@ gulp.task('nuget-download', function (done) {
     return done();
   }
 
-  request.get('https://dist.nuget.org/win-x86-commandline/v6.0.0/nuget.exe')
-    .pipe(fs.createWriteStream('nuget.exe'))
-    .on('close', done);
+  const file = fs.createWriteStream('nuget.exe');
+  https.get('https://dist.nuget.org/win-x86-commandline/v6.0.0/nuget.exe', (response) => {
+    response.pipe(file);
+    file.on('finish', () => {
+      file.close(done);
+    });
+  }).on('error', (err) => {
+    fs.unlink('nuget.exe', () => {}); // Delete the file on error
+    done(err);
+  });
 });
 
 gulp.task('clean-output', function (cb) {
