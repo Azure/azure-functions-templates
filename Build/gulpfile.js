@@ -6,10 +6,11 @@ const jeditor = require('gulp-json-editor');
 const fs = require('fs');
 const path = require('path');
 const del = require('del');
-const decompress = require('gulp-decompress');
+const { exec } = require('child_process');
 const zip = require('gulp-zip');
 const https = require('https');
 const nuget = require('gulp-nuget');
+const { spawn, execSync } = require('child_process');
 
 buildVersion = '1';
 
@@ -17,10 +18,72 @@ if (process.env.devops_buildNumber) {
   buildVersion = process.env.devops_buildNumber;
 }
 
-gulp.task('nuget-pack', function () {
+// Helper function to find available NuGet executable
+function findNugetExecutable() {
+  // On Windows, prefer local nuget.exe first
+  if (process.platform === 'win32') {
+    if (fs.existsSync('./nuget.exe')) {
+      return './nuget.exe';
+    }
+  }
+  
+  // Check for system-installed nuget
+  try {
+    const command = process.platform === 'win32' ? 'where nuget' : 'which nuget';
+    execSync(command, { stdio: 'ignore' });
+    return 'nuget';
+  } catch (e) {
+    // nuget not found in PATH
+  }
+  
+  // Check for dotnet (can be used as alternative)
+  try {
+    const command = process.platform === 'win32' ? 'where dotnet' : 'which dotnet';
+    execSync(command, { stdio: 'ignore' });
+    return 'dotnet';
+  } catch (e) {
+    // dotnet not found in PATH
+  }
+  
+  return null;
+}
+
+// Helper function to check if NuGet packaging is available
+function isNugetAvailable() {
+  const nugetExe = findNugetExecutable();
+  if (!nugetExe) {
+    return false;
+  }
+  
+  // For dotnet, we need to check if pack command is available
+  if (nugetExe === 'dotnet') {
+    try {
+      execSync('dotnet pack --help', { stdio: 'ignore' });
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+  
+  return true;
+}
+
+gulp.task('nuget-pack', function (done) {
+  // Check if NuGet is available
+  if (!isNugetAvailable()) {
+    console.log('NuGet not available on this system. Skipping nuget-pack task.');
+    console.log('To enable NuGet packaging, install:');
+    console.log('  - Windows: nuget.exe will be downloaded automatically');
+    console.log('  - macOS: brew install nuget');
+    console.log('  - Linux: Install .NET SDK (dotnet command)');
+    return done();
+  }
+
   let streams = [];
-  var nugetPath = './nuget.exe';
+  var nugetPath = findNugetExecutable();
   var patchVersion = 'patchVersion=' + buildVersion
+
+  console.log(`Using NuGet executable: ${nugetPath}`);
 
   let files = getFiles('./PackageFiles/Dotnet_precompiled');
   for (let i = 0; i < files.length; i++) {
@@ -42,6 +105,10 @@ gulp.task('nuget-pack', function () {
     )
   }
 
+  if (streams.length === 0) {
+    return done();
+  }
+
   return gulpMerge(streams);
 });
 
@@ -50,6 +117,12 @@ gulp.copy = function (src, dest) {
 };
 
 gulp.task('nuget-download', function (done) {
+  // Skip download on non-Windows platforms - rely on system nuget
+  if (process.platform !== 'win32') {
+    console.log('Skipping nuget.exe download on non-Windows platform');
+    return done();
+  }
+
   if (fs.existsSync('nuget.exe')) {
     return done();
   }
@@ -85,25 +158,47 @@ gulp.task('clean-temp', function (cb) {
 });
 
 gulp.task('unzip-templates', function (done) {
-  let streams = [];
-
   let files = getFiles('../bin/Temp/ExtensionBundle');
-  for (let i = 0; i < files.length; i++) {
-    let filePath = '../bin/Temp/Temp-' + files[i].replace(".nupkg", "")
-
-    streams.push(
-      gulp
-        .src(path.join('../bin/Temp/ExtensionBundle', files[i]))
-        .pipe(decompress())
-        .pipe(gulp.dest(filePath))
-    );
-  }
-
-  if (streams.length === 0) {
+  console.log('Found ExtensionBundle files:', files);
+  
+  if (files.length === 0) {
+    console.log('No files to extract');
     return done();
   }
 
-  return gulpMerge(streams);
+  let completedFiles = 0;
+  const totalFiles = files.length;
+
+  files.forEach((file) => {
+    const sourceFile = path.resolve('../bin/Temp/ExtensionBundle', file);
+    const targetDir = path.resolve('../bin/Temp/Temp-' + file.replace('.nupkg', ''));
+    
+    // Create target directory if it doesn't exist
+    if (!fs.existsSync(targetDir)) {
+      fs.mkdirSync(targetDir, { recursive: true });
+    }
+    
+    console.log(`Extracting ${file} to ${targetDir}`);
+    
+    // Use system unzip command which is more reliable for nupkg files
+    const unzipCmd = process.platform === 'win32' 
+      ? `powershell -command "Expand-Archive -Path '${sourceFile}' -DestinationPath '${targetDir}' -Force"`
+      : `unzip -q -o "${sourceFile}" -d "${targetDir}"`;
+    
+    exec(unzipCmd, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`Error extracting ${file}:`, error.message);
+      } else {
+        console.log(`Successfully extracted ${file}`);
+      }
+      
+      completedFiles++;
+      if (completedFiles === totalFiles) {
+        console.log('All extractions completed');
+        done();
+      }
+    });
+  });
 });
 
 /********
@@ -247,13 +342,13 @@ gulp.task('resources-copy', function (done) {
     }
 
     streams.push(
-      gulp.src('../bin/Temp/out/' + fileName + '/resources/Resources.json')
+      gulp.src('../bin/Temp/out/' + fileName + '/resources/Resources.json', { allowEmpty: true })
         .pipe(rename('Resources.en-US.json'))
         .pipe(gulp.dest('../bin/Temp/out/' + fileName + '/resources'))
     );
 
     streams.push(
-      gulp.src('../bin/Temp/out/' + fileName + '/resources/Resources.json')
+      gulp.src('../bin/Temp/out/' + fileName + '/resources/Resources.json', { allowEmpty: true })
         .pipe(rename('Resources.en-US.json'))
         .pipe(gulp.dest('../bin/Temp/out/' + fileName + '/resources-v2'))
     );
@@ -493,7 +588,7 @@ function getFilesWithContent(folder, filesToIgnore) {
 
 function getFiles(folder) {
   if (!fs.existsSync(folder)) {
-    return {};
+    return [];
   }
-  return fileNames = fs.readdirSync(folder).filter(f => fs.statSync(path.join(folder, f)).isFile());
+  return fs.readdirSync(folder).filter(f => fs.statSync(path.join(folder, f)).isFile());
 }
