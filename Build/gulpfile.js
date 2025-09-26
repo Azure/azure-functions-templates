@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const resx2 = require('./gulp-utils/gulp-resx-js');
+const lcl2 = require('./gulp-utils/gulp-lcl-js');
 const rename = require('gulp-rename');
 const gulpMerge = require('merge-stream');
 const jeditor = require('gulp-json-editor');
@@ -115,6 +116,7 @@ gulp.task('resources-convert', function () {
       continue;
     }
 
+    // Process existing .resx files (English base file)
     streams.push(
       gulp.src([resourceFile])
         .pipe(resx2())
@@ -127,6 +129,26 @@ gulp.task('resources-convert', function () {
           p.extname = '.json';
         }))
         .pipe(gulp.dest(convertPath)));
+
+    // Process .lcl files from Resources_lcl directory
+    let resourcesLclPath = path.join(dirPath, 'Resources_lcl');
+    if (fs.existsSync(resourcesLclPath)) {
+      let lclFile = path.join(resourcesLclPath) + '/**/Resources.resx.lcl';
+      
+      streams.push(
+        gulp.src([lclFile])
+          .pipe(lcl2())
+          .pipe(rename(function (p) {
+            // Extract language from parent directory name
+            const language = p.dirname.split(path.sep)[0];
+            if (!!language && language !== '.') {
+              p.basename = 'Resources.' + language;
+            }
+            p.dirname = '.';
+            p.extname = '.json';
+          }))
+          .pipe(gulp.dest(convertPath)));
+    }
   }
   return gulpMerge(streams);
 });
