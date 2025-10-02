@@ -87,6 +87,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";BlobTriggerEventGrid_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A function that will be run whenever a blob is added to a specified container using Event Grid]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Fonction exécutée quand un objet blob est ajouté à un conteneur spécifié via Event Grid]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";BlobTriggerNodeTS_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[(Experimental) A TypeScript function that will be run whenever a blob is added to a specified container]]></Val>
@@ -1034,10 +1043,13 @@
       </Item>
       <Item ItemId=";MySqlTriggerBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A fucntion will ve invoked when there are changes detected on MySql table on which the trigger is configured.]]></Val>
+          <Val><![CDATA[A function will be invoked when there are changes detected on a MySQL table on which the trigger is configured.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Une fonction sera invoquée lorsqu'une modification sera détectée sur la table MySQL sur laquelle le déclencheur est configuré.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[A fucntion will ve invoked when there are changes detected on MySql table on which the trigger is configured.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1386,6 +1398,24 @@
           <Prev Cat="Text">
             <Val><![CDATA[A C# function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).]]></Val>
           </Prev>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";SqlOutputBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Fonction qui est exécutée sur un déclencheur HTTP et qui accepte une liste de lignes et les place dans la table utilisateur (c’est-à-dire si une ligne n’existe pas déjà, elle est ajoutée. Si c’est le cas, il est mis à jour).]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";SqlTriggerBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A function that will be invoked when there are changes detected on a SQL table on which the trigger is configured.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Fonction qui sera appelée quand des modifications sont détectées sur une table SQL sur laquelle le déclencheur est configuré.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>

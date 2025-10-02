@@ -87,6 +87,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";BlobTriggerEventGrid_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A function that will be run whenever a blob is added to a specified container using Event Grid]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Funkce, která se spustí při každém přidání objektu blob do zadaného kontejneru přes Event Grid]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";BlobTriggerNodeTS_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[(Experimental) A TypeScript function that will be run whenever a blob is added to a specified container]]></Val>
@@ -1034,10 +1043,13 @@
       </Item>
       <Item ItemId=";MySqlTriggerBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A fucntion will ve invoked when there are changes detected on MySql table on which the trigger is configured.]]></Val>
+          <Val><![CDATA[A function will be invoked when there are changes detected on a MySQL table on which the trigger is configured.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Funkce se vyvolá, když se v tabulce MySQL zjistí změny, na které je trigger nakonfigurovaný.]]></Val>
+            <Val><![CDATA[Funkce se vyvolá, když se v tabulce MySQL, ve které je aktivační událost nakonfigurovaná, zjistí změny.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[A fucntion will ve invoked when there are changes detected on MySql table on which the trigger is configured.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1386,6 +1398,24 @@
           <Prev Cat="Text">
             <Val><![CDATA[A C# function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).]]></Val>
           </Prev>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";SqlOutputBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Funkce, která se spustí na aktivační události HTTP a převezme seznam řádků a upsertuje ho do tabulky uživatelů (tj. pokud řádek ještě neexistuje, přidá se, a pokud existuje, aktualizuje se).]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";SqlTriggerBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A function that will be invoked when there are changes detected on a SQL table on which the trigger is configured.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Funkce, která se vyvolá, když se v tabulce SQL, ve které je aktivační událost nakonfigurovaná, zjistí změny.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
