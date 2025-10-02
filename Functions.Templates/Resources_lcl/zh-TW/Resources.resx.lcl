@@ -87,6 +87,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";BlobTriggerEventGrid_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A function that will be run whenever a blob is added to a specified container using Event Grid]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[每當 Blob 新增到使用 Azure 事件方格的指定容器時要執行的函式]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";BlobTriggerNodeTS_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[(Experimental) A TypeScript function that will be run whenever a blob is added to a specified container]]></Val>
@@ -1034,10 +1043,13 @@
       </Item>
       <Item ItemId=";MySqlTriggerBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A fucntion will ve invoked when there are changes detected on MySql table on which the trigger is configured.]]></Val>
+          <Val><![CDATA[A function will be invoked when there are changes detected on a MySQL table on which the trigger is configured.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[當在設定觸發程序的 MySQL 資料表上偵測到變更時，將會叫用函式。]]></Val>
+            <Val><![CDATA[在設定觸發程序的 MySQL 資料表上偵測到變更時，將會叫用函式。]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[A fucntion will ve invoked when there are changes detected on MySql table on which the trigger is configured.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1386,6 +1398,24 @@
           <Prev Cat="Text">
             <Val><![CDATA[A C# function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).]]></Val>
           </Prev>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";SqlOutputBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A function that will be run on an HTTP trigger and takes a list of rows and upserts them into the user table (i.e. If a row doesn't already exist, it is added. If it does, it is updated).]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[將在 HTTP 觸發程式上執行的函式，並取得資料列清單，並將它們向上插入至使用者資料表 (例如，如果資料列尚未存在，則會新增該資料列。如果已經存在，會更新它)。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";SqlTriggerBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A function that will be invoked when there are changes detected on a SQL table on which the trigger is configured.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[在設定觸發程序的 SQL 資料表上偵測到變更時，將會叫用函式。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
