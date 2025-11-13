@@ -6,21 +6,14 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function;
 
-public class SignalRConnectionInfoHttpTriggerCSharp
+public class SignalRConnectionInfoHttpTriggerCSharp(ILogger<SignalRConnectionInfoHttpTriggerCSharp> logger)
 {
-    private readonly ILogger _logger;
-
-    public SignalRConnectionInfoHttpTriggerCSharp(ILoggerFactory loggerFactory)
-    {
-        _logger = loggerFactory.CreateLogger("negotiate");
-    }
-
     [Function("negotiate")]
     public HttpResponseData Negotiate(
         [HttpTrigger(AuthorizationLevel.AuthLevelValue, "post")] HttpRequestData req,
         [SignalRConnectionInfoInput(HubName = "HubValue")] MyConnectionInfo connectionInfo)
     {
-        _logger.LogInformation("SignalR Connection URL = '{url}'", connectionInfo.Url);
+        logger.LogInformation("SignalR Connection URL = '{url}'", connectionInfo.Url);
 
         var response = req.CreateResponse(HttpStatusCode.OK);
         response.Headers.Add("Content-Type", "text/plain; charset=utf-8");

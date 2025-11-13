@@ -7,15 +7,8 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function;
 
-public class KustoOutputBindingIsolated
+public class KustoOutputBindingIsolated(ILogger<KustoOutputBindingIsolated> logger)
 {
-    private readonly ILogger _logger;
-
-    public KustoOutputBindingIsolated(ILoggerFactory loggerFactory)
-    {
-        _logger = loggerFactory.CreateLogger<KustoOutputBindingIsolated>();
-    }
-
     // Visit https://github.com/Azure/Webjobs.Extensions.Kusto/tree/main/samples/samples-outofproc/OutputBindingSamples 
     // KustoOutputBinding sample 
     // Execute queries against the ADX cluster.
@@ -27,7 +20,7 @@ public class KustoOutputBindingIsolated
     public async Task<ToDoItem> Run(
         [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequestData req)
     {
-        _logger.LogInformation("C# HTTP trigger with Kusto Output Binding function processed a request.");
+        logger.LogInformation("C# HTTP trigger with Kusto Output Binding function processed a request.");
         ToDoItem todoitem = await req.ReadFromJsonAsync<ToDoItem>() ?? new ToDoItem
             {
                 Id = "1",

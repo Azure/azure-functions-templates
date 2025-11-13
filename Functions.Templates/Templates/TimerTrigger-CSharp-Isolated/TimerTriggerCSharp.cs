@@ -4,23 +4,16 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function;
 
-public class TimerTriggerCSharp
+public class TimerTriggerCSharp(ILogger<TimerTriggerCSharp> logger)
 {
-    private readonly ILogger _logger;
-
-    public TimerTriggerCSharp(ILoggerFactory loggerFactory)
-    {
-        _logger = loggerFactory.CreateLogger<TimerTriggerCSharp>();
-    }
-
     [Function("TimerTriggerCSharp")]
     public void Run([TimerTrigger("ScheduleValue")] TimerInfo myTimer)
     {
-        _logger.LogInformation("C# Timer trigger function executed at: {executionTime}", DateTime.Now);
+        logger.LogInformation("C# Timer trigger function executed at: {executionTime}", DateTime.Now);
         
         if (myTimer.ScheduleStatus is not null)
         {
-            _logger.LogInformation("Next timer schedule at: {nextSchedule}", myTimer.ScheduleStatus.Next);
+            logger.LogInformation("Next timer schedule at: {nextSchedule}", myTimer.ScheduleStatus.Next);
         }
     }
 }

@@ -5,15 +5,8 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function;
 
-public class CosmosDBTriggerCSharp
+public class CosmosDBTriggerCSharp(ILogger<CosmosDBTriggerCSharp> logger)
 {
-    private readonly ILogger<CosmosDBTriggerCSharp> _logger;
-
-    public CosmosDBTriggerCSharp(ILogger<CosmosDBTriggerCSharp> logger)
-    {
-        _logger = logger;
-    }
-
     [Function("CosmosDBTriggerCSharp")]
     public void Run([CosmosDBTrigger(
         databaseName: "DatabaseValue",
@@ -24,8 +17,8 @@ public class CosmosDBTriggerCSharp
     {
         if (input != null && input.Count > 0)
         {
-            _logger.LogInformation("Documents modified: " + input.Count);
-            _logger.LogInformation("First document Id: " + input[0].id);
+            logger.LogInformation("Documents modified: " + input.Count);
+            logger.LogInformation("First document Id: " + input[0].id);
         }
     }
 }

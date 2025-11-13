@@ -11,15 +11,8 @@ namespace Company.Function;
 // KustoInputBinding sample 
 // Execute queries against the ADX cluster.
 // Add `KustoConnectionString` to the local.settings.json
-public class KustoInputBindingIsolated
+public class KustoInputBindingIsolated(ILogger<KustoInputBindingIsolated> logger)
 {
-    private readonly ILogger _logger;
-
-    public KustoInputBindingIsolated(ILoggerFactory loggerFactory)
-    {
-        _logger = loggerFactory.CreateLogger<KustoInputBindingIsolated>();
-    }
-
     [Function("KustoInputBindingIsolated")]
     public IEnumerable<Object> Run(
         [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequestData req,
@@ -28,7 +21,7 @@ public class KustoInputBindingIsolated
             KqlParameters = "", // Parameters to bind : @records={records}
             Connection = "KustoConnectionString")] IEnumerable<Object> result)
     {
-        _logger.LogInformation("C# HTTP trigger with Kusto Input Binding function processed a request.");
+        logger.LogInformation("C# HTTP trigger with Kusto Input Binding function processed a request.");
         return result;
     }
 }

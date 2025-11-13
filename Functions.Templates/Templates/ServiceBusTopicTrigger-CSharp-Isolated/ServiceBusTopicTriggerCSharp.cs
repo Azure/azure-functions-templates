@@ -6,24 +6,17 @@ using Microsoft.Extensions.Logging;
 
 namespace Company.Function;
 
-public class ServiceBusTopicTriggerCSharp
+public class ServiceBusTopicTriggerCSharp(ILogger<ServiceBusTopicTriggerCSharp> logger)
 {
-    private readonly ILogger<ServiceBusTopicTriggerCSharp> _logger;
-
-    public ServiceBusTopicTriggerCSharp(ILogger<ServiceBusTopicTriggerCSharp> logger)
-    {
-        _logger = logger;
-    }
-
     [Function(nameof(ServiceBusTopicTriggerCSharp))]
     public async Task Run(
         [ServiceBusTrigger("TopicNameValue", "SubscriptionNameValue", Connection = "ConnectionValue")]
         ServiceBusReceivedMessage message,
         ServiceBusMessageActions messageActions)
     {
-        _logger.LogInformation("Message ID: {id}", message.MessageId);
-        _logger.LogInformation("Message Body: {body}", message.Body);
-        _logger.LogInformation("Message Content-Type: {contentType}", message.ContentType);
+        logger.LogInformation("Message ID: {id}", message.MessageId);
+        logger.LogInformation("Message Body: {body}", message.Body);
+        logger.LogInformation("Message Content-Type: {contentType}", message.ContentType);
 
             // Complete the message
         await messageActions.CompleteMessageAsync(message);
