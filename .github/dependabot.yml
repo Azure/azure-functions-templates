@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "build/" # Location of your package.json and package-lock.json files
+    schedule:
+      interval: "weekly" # How often Dependabot checks for updates (e.g., daily, weekly, monthly)
+    target-branch: "dev"
+    labels:
+      - "dependencies"
+      - "npm"
