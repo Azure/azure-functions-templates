@@ -1,6 +1,6 @@
-# RabbitMQTrigger - C<span>#</span>
+# RabbitMQTrigger - Python
 
-The `RabbitMQTrigger` makes it incredibly easy to react to new events from a RabbitMQ queue. This sample demonstrates a simple use case of processing data from a given RabbitMQ Queue using C#.
+The `RabbitMQTrigger` makes it incredibly easy to react to new events from a RabbitMQ queue. This sample demonstrates a simple use case of processing data from a given RabbitMQ Queue using Python.
 
 ## How it works
 
