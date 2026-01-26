@@ -43,12 +43,6 @@ extends:
         demands:
         - Priority -equals Low
 
-    sdl:
-      codeql:
-        compiled:
-          enabled: false
-          justificationForDisabling: Repo contains only templates. These are not compiled.
-
     stages:  
     - stage: Build
       jobs:
