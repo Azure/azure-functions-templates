@@ -2566,7 +2566,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The partition key of the document to be read. Only applies if an ID is specified.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[要讀取之文件的分割區索引鍵。僅適用於指定了識別碼的情況。]]></Val>
+            <Val><![CDATA[要讀取之文件的資料分割索引鍵。僅適用於指定了識別碼的情況。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2719,7 +2719,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The partition key to use when creating a new collection. Only applies if you have selected to automatically create the collection if it does not exist.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[建立新集合時所要使用的分割區索引鍵。僅適用於選取要在集合不存在時自動建立集合的情況。]]></Val>
+            <Val><![CDATA[建立新集合時所要使用的資料分割索引鍵。僅適用於選取要在集合不存在時自動建立集合的情況。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2740,7 +2740,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Partition key (optional)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[分割區索引鍵 (選用)]]></Val>
+            <Val><![CDATA[資料分割索引鍵 (選用)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -5926,7 +5926,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The name of the partition key column of the table. Records with matching Partition key and Row key will be returned. If partition key is provided, row key must also be provided.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[資料表分割區索引鍵資料行的值。所有分割區索引鍵及資料列索引鍵相符的記錄皆會傳回。如有提供分割區索引鍵，也必須提供資料列索引鍵。]]></Val>
+            <Val><![CDATA[資料表資料分割索引鍵資料行的值。所有資料分割索引鍵及資料列索引鍵相符的記錄皆會傳回。如有提供資料分割索引鍵，也必須提供資料列索引鍵。]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[This is the value of Partition key column of the table. The records with matching Partition key and Row key will be returned. Row key setting must be configured with Partiton key setting.]]></Val>
@@ -5938,7 +5938,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Partition key (optional)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[分割區索引鍵 (選用)]]></Val>
+            <Val><![CDATA[資料分割索引鍵 (選用)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -5947,7 +5947,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The name of the partition key column of the table. Records with matching Partition key and Row key will be returned. If partition key is provided, row key must also be provided.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[資料表分割區索引鍵資料行的值。所有分割區索引鍵及資料列索引鍵相符的記錄皆會傳回。如有提供分割區索引鍵，也必須提供資料列索引鍵。]]></Val>
+            <Val><![CDATA[資料表資料分割索引鍵資料行的值。所有資料分割索引鍵及資料列索引鍵相符的記錄皆會傳回。如有提供資料分割索引鍵，也必須提供資料列索引鍵。]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[This is the value of Row key column of the table. The record with matching Row key and Partition key will be returned. Partiton key setting must be configured with Row key setting.]]></Val>
