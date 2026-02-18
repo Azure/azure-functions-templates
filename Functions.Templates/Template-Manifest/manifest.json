@@ -1,0 +1,378 @@
+{
+    "version": "1.0.0",
+    "generatedAt": "2026-02-13T00:00:00.000Z",
+    "templates": [
+        {
+            "id": "functions-quickstart-dotnet-azd",
+            "displayName": "HTTP Trigger (C#)",
+            "shortDescription": "HTTP trigger quickstart for .NET (Flex Consumption)",
+            "longDescription": "Azure Functions HTTP trigger quickstart written in C# and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Uses managed identity and virtual network.",
+            "category": "web-apis",
+            "languages": ["CSharp"],
+            "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd",
+            "branch": "main",
+            "tags": ["HTTP", "Flex Consumption", "VNET", "Managed Identity"],
+            "priority": 1,
+            "whatsIncluded": [
+                "HTTP trigger functions (GET and POST)",
+                "Bicep infrastructure files",
+                "Azure Developer CLI (azd) configuration",
+                "VS Code debug configuration",
+                "Dockerfile for containerization",
+                "Dev Container setup",
+                "Test files for local development"
+            ]
+        },
+        {
+            "id": "functions-quickstart-java-azd",
+            "displayName": "HTTP Trigger (Java)",
+            "shortDescription": "HTTP trigger quickstart for Java (Flex Consumption)",
+            "longDescription": "Azure Functions HTTP trigger quickstart written in Java and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Uses managed identity and virtual network.",
+            "category": "web-apis",
+            "languages": ["Java"],
+            "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-java-flex-consumption-azd",
+            "branch": "main",
+            "tags": ["HTTP", "Flex Consumption", "VNET", "Managed Identity"],
+            "priority": 2,
+            "whatsIncluded": [
+                "HTTP trigger functions",
+                "Bicep infrastructure files",
+                "Azure Developer CLI (azd) configuration",
+                "Maven build configuration",
+                "VS Code debug configuration",
+                "Test files for local development"
+            ]
+        },
+        {
+            "id": "functions-quickstart-javascript-azd",
+            "displayName": "HTTP Trigger (JavaScript)",
+            "shortDescription": "HTTP trigger quickstart for JavaScript (Flex Consumption)",
+            "longDescription": "Azure Functions HTTP trigger quickstart written in JavaScript and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Uses managed identity and virtual network.",
+            "category": "web-apis",
+            "languages": ["JavaScript"],
+            "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-javascript-azd",
+            "branch": "main",
+            "tags": ["HTTP", "Flex Consumption", "VNET", "Managed Identity"],
+            "priority": 3,
+            "whatsIncluded": [
+                "HTTP trigger functions (GET and POST)",
+                "Bicep infrastructure files",
+                "Azure Developer CLI (azd) configuration",
+                "VS Code debug configuration",
+                "Dev Container setup",
+                "Test files for local development"
+            ]
+        },
+        {
+            "id": "functions-quickstart-typescript-azd",
+            "displayName": "HTTP Trigger (TypeScript)",
+            "shortDescription": "HTTP trigger quickstart for TypeScript (Flex Consumption)",
+            "longDescription": "Azure Functions HTTP trigger quickstart written in TypeScript and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Uses managed identity and virtual network.",
+            "category": "web-apis",
+            "languages": ["TypeScript"],
+            "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-typescript-azd",
+            "branch": "main",
+            "tags": ["HTTP", "Flex Consumption", "VNET", "Managed Identity"],
+            "priority": 4,
+            "whatsIncluded": [
+                "HTTP trigger functions (GET and POST)",
+                "Bicep infrastructure files",
+                "Azure Developer CLI (azd) configuration",
+                "TypeScript configuration",
+                "VS Code debug configuration",
+                "Test files for local development"
+            ]
+        },
+        {
+            "id": "functions-quickstart-powershell-azd",
+            "displayName": "HTTP Trigger (PowerShell)",
+            "shortDescription": "HTTP trigger quickstart for PowerShell (Flex Consumption)",
+            "longDescription": "Azure Functions HTTP trigger quickstart written in PowerShell and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Uses managed identity and virtual network.",
+            "category": "web-apis",
+            "languages": ["PowerShell"],
+            "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-powershell-azd",
+            "branch": "main",
+            "tags": ["HTTP", "Flex Consumption", "VNET", "Managed Identity"],
+            "priority": 5,
+            "whatsIncluded": [
+                "HTTP trigger functions",
+                "Bicep infrastructure files",
+                "Azure Developer CLI (azd) configuration",
+                "VS Code debug configuration",
+                "Test files for local development"
+            ]
+        },
+        {
+            "id": "function-javascript-ai-openai-chatgpt",
+            "displayName": "Chat using ChatGPT (Node.js)",
+            "shortDescription": "ChatGPT prompted HTTP function with state storage",
+            "longDescription": "This sample shows how to take a ChatGPT prompt as HTTP Get or Post input, calculates the completions using OpenAI ChatGPT service, and then returns the output plus caches in a Blob state store.",
+            "category": "ai-ml",
+            "languages": ["JavaScript"],
+            "repositoryUrl": "https://github.com/Azure-Samples/function-javascript-ai-openai-chatgpt",
+            "branch": "main",
+            "tags": ["AI", "OpenAI", "ChatGPT", "HTTP"],
+            "priority": 1,
+            "isPopular": true,
+            "whatsIncluded": [
+                "Ask and Chat HTTP functions",
+                "Azure OpenAI integration",
+                "Blob storage for conversation state",
+                "Bicep infrastructure files",
+                "Azure Developer CLI (azd) configuration",
+                "Dockerfile for containerization",
+                "Dev Container setup",
+                "Test files with sample prompts"
+            ]
+        },
+        {
+            "id": "function-python-ai-openai-chatgpt",
+            "displayName": "Chat using ChatGPT (Python)",
+            "shortDescription": "ChatGPT prompted HTTP function with state storage (Python v2)",
+            "longDescription": "This sample shows how to take a ChatGPT prompt as HTTP Get or Post input, calculates the completions using OpenAI ChatGPT service, and then returns the output plus caches in a Blob state store.",
+            "category": "ai-ml",
+            "languages": ["Python"],
+            "repositoryUrl": "https://github.com/Azure-Samples/function-python-ai-openai-chatgpt",
+            "branch": "main",
+            "tags": ["AI", "OpenAI", "ChatGPT", "HTTP"],
+            "priority": 2,
+            "isPopular": true,
+            "whatsIncluded": [
+                "Ask and Chat HTTP functions",
+                "Azure OpenAI integration",
+                "Blob storage for conversation state",
+                "Bicep infrastructure files",
+                "Azure Developer CLI (azd) configuration",
+                "Dockerfile for containerization",
+                "Dev Container setup",
+                "Test files with sample prompts"
+            ]
+        },
+        {
+            "id": "function-python-ai-langchain",
+            "displayName": "LangChain with OpenAI (Python)",
+            "shortDescription": "LangChain integration with Azure OpenAI and ChatGPT",
+            "longDescription": "This sample shows how to take a human prompt as HTTP Get or Post input, calculates the completions using chains of human input and templates.",
+            "category": "ai-ml",
+            "languages": ["Python"],
+            "repositoryUrl": "https://github.com/Azure-Samples/function-python-ai-langchain",
+            "branch": "main",
+            "tags": ["AI", "OpenAI", "LangChain", "HTTP"],
+            "priority": 3,
+            "whatsIncluded": [
+                "LangChain integration",
+                "Azure OpenAI integration",
+                "HTTP trigger functions",
+                "Bicep infrastructure files",
+                "Azure Developer CLI (azd) configuration",
+                "Dev Container setup",
+                "Test files for local development"
+            ]
+        },
+        {
+            "id": "function-csharp-ai-textsummarize",
+            "displayName": "Text Summarization (C#)",
+            "shortDescription": "Summarize text using AI Cognitive Language Service",
+            "longDescription": "This sample shows how to take text documents as input via BlobTrigger, does Text Summarization processing using the AI Cognitive Language service, and then outputs to another text document.",
+            "category": "ai-ml",
+            "languages": ["CSharp"],
+            "repositoryUrl": "https://github.com/Azure-Samples/function-csharp-ai-textsummarize",
+            "branch": "main",
+            "tags": ["AI", "Cognitive Services", "Blob", "Summarization"],
+            "priority": 4,
+            "whatsIncluded": [
+                "Blob trigger function",
+                "Azure Cognitive Services integration",
+                "Text summarization processing",
+                "Bicep infrastructure files",
+                "Azure Developer CLI (azd) configuration",
+                "Sample text documents",
+                "VS Code debug configuration"
+            ]
+        },
+        {
+            "id": "function-python-ai-textsummarize",
+            "displayName": "Text Summarization (Python)",
+            "shortDescription": "Summarize text using AI Cognitive Language Service",
+            "longDescription": "This sample shows how to take text documents as input via BlobTrigger, does Text Summarization processing using the AI Cognitive Language service, and then outputs to another text document.",
+            "category": "ai-ml",
+            "languages": ["Python"],
+            "repositoryUrl": "https://github.com/Azure-Samples/function-python-ai-textsummarize",
+            "branch": "main",
+            "tags": ["AI", "Cognitive Services", "Blob", "Summarization"],
+            "priority": 5,
+            "whatsIncluded": [
+                "Blob trigger function",
+                "Azure Cognitive Services integration",
+                "Text summarization processing",
+                "Bicep infrastructure files",
+                "Azure Developer CLI (azd) configuration",
+                "Sample text documents",
+                "VS Code debug configuration"
+            ]
+        },
+        {
+            "id": "functions-quickstart-dotnet-azd-eventgrid-blob",
+            "displayName": "Event Grid Blob Trigger (C#)",
+            "shortDescription": "Blob trigger with Event Grid source for .NET",
+            "longDescription": "Azure Functions reference sample using the Blob trigger with Event Grid source type, written in C# (isolated process mode).",
+            "category": "event-processing",
+            "languages": ["CSharp"],
+            "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd-eventgrid-blob",
+            "branch": "main",
+            "tags": ["Event Grid", "Blob", "VNET", "Managed Identity"],
+            "priority": 1,
+            "whatsIncluded": [
+                "Blob trigger with Event Grid source",
+                "Bicep infrastructure files",
+                "Azure Developer CLI (azd) configuration",
+                "Post-deployment scripts for Event Grid setup",
+                "Sample PDF files for testing",
+                "Azurite configuration for local emulation",
+                "VS Code debug configuration",
+                "Dockerfile for containerization"
+            ]
+        },
+        {
+            "id": "functions-quickstart-python-azd-eventgrid-blob",
+            "displayName": "Event Grid Blob Trigger (Python)",
+            "shortDescription": "Blob trigger with Event Grid source for Python",
+            "longDescription": "Azure Functions reference sample using the Blob trigger with Event Grid source type, written in Python (v2 programming model).",
+            "category": "event-processing",
+            "languages": ["Python"],
+            "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-python-azd-eventgrid-blob",
+            "branch": "main",
+            "tags": ["Event Grid", "Blob", "VNET", "Managed Identity"],
+            "priority": 2,
+            "whatsIncluded": [
+                "Blob trigger with Event Grid source",
+                "Bicep infrastructure files",
+                "Azure Developer CLI (azd) configuration",
+                "Post-deployment scripts for Event Grid setup",
+                "Sample files for testing",
+                "VS Code debug configuration"
+            ]
+        },
+        {
+            "id": "functions-quickstart-javascript-azd-eventgrid-blob",
+            "displayName": "Event Grid Blob Trigger (JavaScript)",
+            "shortDescription": "Blob trigger with Event Grid source for JavaScript",
+            "longDescription": "Azure Functions reference sample using the Blob trigger with Event Grid source type, written in JavaScript (v4 programming model).",
+            "category": "event-processing",
+            "languages": ["JavaScript"],
+            "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-javascript-azd-eventgrid-blob",
+            "branch": "main",
+            "tags": ["Event Grid", "Blob", "VNET", "Managed Identity"],
+            "priority": 3,
+            "whatsIncluded": [
+                "Blob trigger with Event Grid source",
+                "Bicep infrastructure files",
+                "Azure Developer CLI (azd) configuration",
+                "Post-deployment scripts for Event Grid setup",
+                "Sample files for testing",
+                "VS Code debug configuration"
+            ]
+        },
+        {
+            "id": "functions-quickstart-java-azd-eventgrid-blob",
+            "displayName": "Event Grid Blob Trigger (Java)",
+            "shortDescription": "Blob trigger with Event Grid source for Java",
+            "longDescription": "Azure Functions reference sample using the Blob trigger with Event Grid source type, written in Java.",
+            "category": "event-processing",
+            "languages": ["Java"],
+            "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-java-azd-eventgrid-blob",
+            "branch": "main",
+            "tags": ["Event Grid", "Blob", "VNET", "Managed Identity"],
+            "priority": 4,
+            "whatsIncluded": [
+                "Blob trigger with Event Grid source",
+                "Bicep infrastructure files",
+                "Azure Developer CLI (azd) configuration",
+                "Maven build configuration",
+                "Post-deployment scripts for Event Grid setup",
+                "VS Code debug configuration"
+            ]
+        },
+        {
+            "id": "functions-quickstart-powershell-azd-eventgrid-blob",
+            "displayName": "Event Grid Blob Trigger (PowerShell)",
+            "shortDescription": "Blob trigger with Event Grid source for PowerShell",
+            "longDescription": "Azure Functions reference sample using the Blob trigger with Event Grid source type, written in PowerShell 7.4 (isolated process mode).",
+            "category": "event-processing",
+            "languages": ["PowerShell"],
+            "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-powershell-azd-eventgrid-blob",
+            "branch": "main",
+            "tags": ["Event Grid", "Blob", "VNET", "Managed Identity"],
+            "priority": 5,
+            "whatsIncluded": [
+                "Blob trigger with Event Grid source",
+                "Bicep infrastructure files",
+                "Azure Developer CLI (azd) configuration",
+                "Post-deployment scripts for Event Grid setup",
+                "VS Code debug configuration"
+            ]
+        },
+        {
+            "id": "functions-quickstart-dotnet-azd-eventhub",
+            "displayName": "Event Hub Trigger (C#)",
+            "shortDescription": "Event Hub trigger quickstart for .NET",
+            "longDescription": "Azure Functions Event Hub trigger quickstart written in .NET and deployed to Azure Functions Flex Consumption. Uses managed identity and virtual network.",
+            "category": "event-processing",
+            "languages": ["CSharp"],
+            "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd-eventhub",
+            "branch": "main",
+            "tags": ["Event Hub", "Streaming", "VNET", "Managed Identity"],
+            "priority": 6,
+            "whatsIncluded": [
+                "Timer trigger for event generation",
+                "Event Hub trigger for event processing",
+                "Analytics and sentiment analysis service",
+                "Bicep infrastructure files with Event Hubs",
+                "Azure Developer CLI (azd) configuration",
+                "VNet integration with private endpoints",
+                "Local development with Azurite",
+                "VS Code debug configuration"
+            ]
+        },
+        {
+            "id": "functions-quickstart-dotnet-azd-timer",
+            "displayName": "Timer Trigger (C#)",
+            "shortDescription": "Timer trigger quickstart for .NET",
+            "longDescription": "Azure Functions Timer trigger quickstart written in C# and deployed to Azure Functions Flex Consumption. Uses managed identity and virtual network.",
+            "category": "scheduled-tasks",
+            "languages": ["CSharp"],
+            "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd-timer",
+            "branch": "main",
+            "tags": ["Timer", "Scheduled", "VNET", "Managed Identity"],
+            "priority": 1,
+            "whatsIncluded": [
+                "Timer trigger function with CRON schedule",
+                "Bicep infrastructure files",
+                "Azure Developer CLI (azd) configuration",
+                "VNet integration setup",
+                "VS Code debug configuration",
+                "Local development configuration"
+            ]
+        },
+        {
+            "id": "functions-quickstart-python-http-azd",
+            "displayName": "HTTP Trigger (Python)",
+            "shortDescription": "HTTP trigger quickstart for Python",
+            "longDescription": "Azure Functions HTTP trigger quickstart written in Python and deployed to Azure Functions Flex Consumption. Uses managed identity and virtual network.",
+            "category": "web-apis",
+            "languages": ["Python"],
+            "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-python-http-azd",
+            "branch": "main",
+            "tags": ["HTTP", "VNET", "Managed Identity"],
+            "priority": 1,
+            "whatsIncluded": [
+                "HTTP trigger function",
+                "Bicep infrastructure files",
+                "Azure Developer CLI (azd) configuration",
+                "VNet integration setup",
+                "VS Code debug configuration",
+                "Local development configuration"
+            ]
+        }
+    ]
+}
