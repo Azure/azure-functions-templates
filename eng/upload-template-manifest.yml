@@ -17,7 +17,7 @@ resources:
 
 variables:
   azureServiceConnection: 'azfunc-templates-cdn'
-  storageAccountName: 'gavcdn'
+  storageAccountName: $(storage_account_name)
   containerName: 'templates'
   manifestFilePath: 'Functions.Templates/Template-Manifest/manifest.json'
 
