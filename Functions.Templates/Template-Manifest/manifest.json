@@ -855,10 +855,10 @@
     {
       "id": "durable-entity-class-csharp",
       "displayName": "Durable Functions Entity Class (C#)",
-      "shortDescription": "Stateful entity for managing persistent state",
-      "longDescription": "Stateful entity for managing persistent state. Use cases: State management, counters, workflow coordination, singleton patterns",
+      "shortDescription": "Durable entity using class-based syntax for C#",
+      "longDescription": "Durable Functions entity using class-based syntax for managing state with the virtual actor pattern.",
       "language": "CSharp",
-      "bindingType": "trigger",
+      "bindingType": "entity",
       "resource": "durable",
       "iac": "none",
       "priority": 0,
@@ -867,10 +867,11 @@
         "durable-functions"
       ],
       "tags": [
-        "Durable",
+        "Durable Functions",
         "Entity",
         "Stateful",
-        "State Management"
+        "State Management",
+        "Actor Pattern"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
@@ -886,10 +887,10 @@
     {
       "id": "durable-entity-function-csharp",
       "displayName": "Durable Functions Entity Function (C#)",
-      "shortDescription": "Stateful entity for managing persistent state",
-      "longDescription": "Stateful entity for managing persistent state. Use cases: State management, counters, workflow coordination, singleton patterns",
+      "shortDescription": "Durable entity using function-based syntax for C#",
+      "longDescription": "Durable Functions entity using function-based syntax for managing state with the virtual actor pattern.",
       "language": "CSharp",
-      "bindingType": "trigger",
+      "bindingType": "entity",
       "resource": "durable",
       "iac": "none",
       "priority": 0,
@@ -898,10 +899,11 @@
         "durable-functions"
       ],
       "tags": [
-        "Durable",
+        "Durable Functions",
         "Entity",
         "Stateful",
-        "State Management"
+        "State Management",
+        "Actor Pattern"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
@@ -917,10 +919,10 @@
     {
       "id": "durable-orchestration-csharp",
       "displayName": "Durable Functions Orchestration (C#)",
-      "shortDescription": "Orchestrator function for complex workflow coordination",
-      "longDescription": "Orchestrator function for complex workflow coordination. Use cases: Long-running workflows, saga patterns, business processes, stateful operations",
+      "shortDescription": "Durable Functions orchestration with activity functions for C#",
+      "longDescription": "Durable Functions orchestration pattern with HTTP trigger starter, orchestrator function, and activity functions for fault-tolerant workflows.",
       "language": "CSharp",
-      "bindingType": "trigger",
+      "bindingType": "orchestration",
       "resource": "durable",
       "iac": "none",
       "priority": 0,
@@ -929,9 +931,10 @@
         "durable-functions"
       ],
       "tags": [
-        "Durable",
-        "Workflow",
+        "Durable Functions",
         "Orchestration",
+        "Activity",
+        "Workflow",
         "Stateful"
       ],
       "author": "Azure Functions Team",
@@ -948,10 +951,10 @@
     {
       "id": "durable-orchestration-java",
       "displayName": "Durable Functions (Java)",
-      "shortDescription": "Orchestrator function for complex workflow coordination",
-      "longDescription": "Orchestrator function for complex workflow coordination. Use cases: Long-running workflows, saga patterns, business processes, stateful operations",
+      "shortDescription": "Durable Functions orchestration with activity functions for Java",
+      "longDescription": "Durable Functions orchestration pattern with HTTP trigger starter, orchestrator function, and activity functions for fault-tolerant workflows.",
       "language": "Java",
-      "bindingType": "trigger",
+      "bindingType": "orchestration",
       "resource": "durable",
       "iac": "none",
       "priority": 0,
@@ -960,9 +963,10 @@
         "durable-functions"
       ],
       "tags": [
-        "Durable",
-        "Workflow",
+        "Durable Functions",
         "Orchestration",
+        "Activity",
+        "Workflow",
         "Stateful"
       ],
       "author": "Azure Functions Team",
@@ -2570,9 +2574,11 @@
       ],
       "tags": [
         "Durable Functions",
-        "Workflow",
         "Orchestration",
-        "Order Processing"
+        "Activity",
+        "Workflow",
+        "Order Processing",
+        "AZD"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/Durable-Functions-Order-Processing",
