@@ -16,8 +16,8 @@ resources:
     ref: refs/tags/release
 
 variables:
-  azureServiceConnection: 'azfunc-templates-cdn'
-  storageAccountName: $(storage_account_name)
+  azureServiceConnection: 'your-service-connection-name'
+  storageAccountName: 'your-storage-account-name'
   containerName: 'templates'
   manifestFilePath: 'Functions.Templates/Template-Manifest/manifest.json'
 
