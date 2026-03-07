@@ -1,5 +1,6 @@
 parameters:
   # Array of validation sets. Each item contains:
+  #   - name: short display name for the validation step
   #   - schema: path to the JSON schema file
   #   - files: array of JSON file paths to validate (optional)
   #   - pattern: glob pattern to find JSON files (optional)
@@ -10,7 +11,7 @@ parameters:
 steps:
 - ${{ each validation in parameters.validations }}:
   - task: PowerShell@2
-    displayName: 'Validate against ${{ validation.schema }}'
+    displayName: 'Validate ${{ validation.name }}'
     inputs:
       targetType: 'inline'
       script: |

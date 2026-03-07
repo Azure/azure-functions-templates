@@ -29,7 +29,8 @@ jobs:
   - template: ../steps/validate-schemas.yml
     parameters:
       validations:
-        - schema: '$(Build.Repository.LocalPath)\Functions.Templates\Template-Manifest\schemas\manifest.schema.json'
+        - name: 'manifest.json'
+          schema: '$(Build.Repository.LocalPath)\Functions.Templates\Template-Manifest\schemas\manifest.schema.json'
           files:
             - '$(Build.Repository.LocalPath)\Functions.Templates\Template-Manifest\manifest.json'
     
