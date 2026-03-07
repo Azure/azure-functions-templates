@@ -25,6 +25,14 @@ jobs:
     inputs:
       command: 'install'
       workingDir: '.\Build'
+
+  - template: ../steps/validate-schemas.yml
+    parameters:
+      validations:
+        - name: 'manifest.json'
+          schema: '$(Build.Repository.LocalPath)\Functions.Templates\Template-Manifest\schemas\manifest.schema.json'
+          files:
+            - '$(Build.Repository.LocalPath)\Functions.Templates\Template-Manifest\manifest.json'
     
   - task: Gulp@1
     inputs:
