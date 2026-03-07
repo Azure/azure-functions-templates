@@ -1,0 +1,3412 @@
+{
+  "$schema": "./schemas/manifest.schema.json",
+  "generatedAt": "2026-03-02T03:24:03.953Z",
+  "version": "1.0.0",
+  "totalTemplates": 107,
+  "languages": [
+    "ARM",
+    "Bicep",
+    "CSharp",
+    "Java",
+    "JavaScript",
+    "PowerShell",
+    "Python",
+    "Terraform",
+    "TypeScript"
+  ],
+  "templates": [
+    {
+      "id": "blob-eventgrid-trigger-csharp",
+      "displayName": "Event Grid Blob Trigger (C#)",
+      "shortDescription": "Enhanced and preferred blob trigger using Event Grid for better performance and reliability",
+      "longDescription": "Enhanced blob trigger using Event Grid for better performance and reliability. Use cases: High-performance file processing, scalable blob operations, event-driven workflows",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "storage-triggers"
+      ],
+      "tags": [
+        "Blob",
+        "Storage",
+        "Eventgrid",
+        "Event Driven"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/EventGridBlobTrigger",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "blob-eventgrid-trigger-python",
+      "displayName": "Blob Trigger With Event Grid (Python)",
+      "shortDescription": "Enhanced blob trigger using Event Grid for better performance and reliability",
+      "longDescription": "Enhanced blob trigger using Event Grid for better performance and reliability. Use cases: High-performance file processing, scalable blob operations, event-driven workflows",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "storage-triggers"
+      ],
+      "tags": [
+        "Blob",
+        "Storage",
+        "Eventgrid",
+        "Event Driven"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/python/BlobTriggerWithEventGrid",
+      "whatsIncluded": [
+        "Function code (function_app.py)",
+        "requirements.txt dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "blob-eventgrid-trigger-typescript",
+      "displayName": "Blob Trigger With Event Grid (TypeScript)",
+      "shortDescription": "Enhanced blob trigger using Event Grid for better performance and reliability",
+      "longDescription": "Enhanced blob trigger using Event Grid for better performance and reliability. Use cases: High-performance file processing, scalable blob operations, event-driven workflows",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "storage-triggers"
+      ],
+      "tags": [
+        "Blob",
+        "Storage",
+        "Eventgrid",
+        "Event Driven"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/typescript/BlobTriggerWithEventGrid",
+      "whatsIncluded": [
+        "Function code (.ts)",
+        "package.json dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "blob-input-csharp",
+      "displayName": "Blob Input Binding (C#)",
+      "shortDescription": "Reads files from Azure Blob Storage",
+      "longDescription": "Reads files from Azure Blob Storage. Use cases: File processing, data ingestion, content reading, document analysis",
+      "language": "CSharp",
+      "bindingType": "input",
+      "resource": "blob",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "storage-bindings"
+      ],
+      "tags": [
+        "Blob",
+        "Storage",
+        "Input",
+        "Read"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/BlobInputBinding",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "blob-input-java",
+      "displayName": "Blob Input Binding (Java)",
+      "shortDescription": "Reads files from Azure Blob Storage",
+      "longDescription": "Reads files from Azure Blob Storage. Use cases: File processing, data ingestion, content reading, document analysis",
+      "language": "Java",
+      "bindingType": "input",
+      "resource": "blob",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "storage-bindings"
+      ],
+      "tags": [
+        "Blob",
+        "Storage",
+        "Input",
+        "Read"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/BlobInputBinding",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "blob-input-python",
+      "displayName": "Blob Input Binding (Python)",
+      "shortDescription": "Reads files from Azure Blob Storage",
+      "longDescription": "Reads files from Azure Blob Storage. Use cases: File processing, data ingestion, content reading, document analysis",
+      "language": "Python",
+      "bindingType": "input",
+      "resource": "blob",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "storage-bindings"
+      ],
+      "tags": [
+        "Blob",
+        "Storage",
+        "Input",
+        "Read"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/python/BlobInputBinding",
+      "whatsIncluded": [
+        "Function code (function_app.py)",
+        "requirements.txt dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "blob-input-typescript",
+      "displayName": "Blob Input Binding (TypeScript)",
+      "shortDescription": "Reads files from Azure Blob Storage",
+      "longDescription": "Reads files from Azure Blob Storage. Use cases: File processing, data ingestion, content reading, document analysis",
+      "language": "TypeScript",
+      "bindingType": "input",
+      "resource": "blob",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "storage-bindings"
+      ],
+      "tags": [
+        "Blob",
+        "Storage",
+        "Input",
+        "Read"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/typescript/BlobInputBinding",
+      "whatsIncluded": [
+        "Function code (.ts)",
+        "package.json dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "blob-output-csharp",
+      "displayName": "Blob Output Binding (C#)",
+      "shortDescription": "Writes files to Azure Blob Storage",
+      "longDescription": "Writes files to Azure Blob Storage. Use cases: File generation, data export, report creation, content publishing",
+      "language": "CSharp",
+      "bindingType": "output",
+      "resource": "blob",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "storage-bindings"
+      ],
+      "tags": [
+        "Blob",
+        "Storage",
+        "Output",
+        "Write"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/BlobOutputBinding",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "blob-output-java",
+      "displayName": "Blob Output Binding (Java)",
+      "shortDescription": "Writes files to Azure Blob Storage",
+      "longDescription": "Writes files to Azure Blob Storage. Use cases: File generation, data export, report creation, content publishing",
+      "language": "Java",
+      "bindingType": "output",
+      "resource": "blob",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "storage-bindings"
+      ],
+      "tags": [
+        "Blob",
+        "Storage",
+        "Output",
+        "Write"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/BlobOutputBinding",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "blob-output-python",
+      "displayName": "Blob Output Binding (Python)",
+      "shortDescription": "Writes files to Azure Blob Storage",
+      "longDescription": "Writes files to Azure Blob Storage. Use cases: File generation, data export, report creation, content publishing",
+      "language": "Python",
+      "bindingType": "output",
+      "resource": "blob",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "storage-bindings"
+      ],
+      "tags": [
+        "Blob",
+        "Storage",
+        "Output",
+        "Write"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/python/BlobOutputBinding",
+      "whatsIncluded": [
+        "Function code (function_app.py)",
+        "requirements.txt dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "blob-output-typescript",
+      "displayName": "Blob Output Binding (TypeScript)",
+      "shortDescription": "Writes files to Azure Blob Storage",
+      "longDescription": "Writes files to Azure Blob Storage. Use cases: File generation, data export, report creation, content publishing",
+      "language": "TypeScript",
+      "bindingType": "output",
+      "resource": "blob",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "storage-bindings"
+      ],
+      "tags": [
+        "Blob",
+        "Storage",
+        "Output",
+        "Write"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/typescript/BlobOutputBinding",
+      "whatsIncluded": [
+        "Function code (.ts)",
+        "package.json dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "blob-trigger-csharp",
+      "displayName": "Blob Trigger (C#)",
+      "shortDescription": "Triggered when files are added or modified in Azure Blob Storage",
+      "longDescription": "Triggered when files are added or modified in Azure Blob Storage. Use cases: File processing, image resizing, document analysis, ETL workflows",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "storage-triggers"
+      ],
+      "tags": [
+        "Blob",
+        "Storage",
+        "File",
+        "Upload"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/BlobTrigger",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "blob-trigger-java",
+      "displayName": "Blob Trigger (Java)",
+      "shortDescription": "Triggered when files are added or modified in Azure Blob Storage",
+      "longDescription": "Triggered when files are added or modified in Azure Blob Storage. Use cases: File processing, image resizing, document analysis, ETL workflows",
+      "language": "Java",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "storage-triggers"
+      ],
+      "tags": [
+        "Blob",
+        "Storage",
+        "File",
+        "Upload"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/BlobTrigger",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "blob-trigger-python",
+      "displayName": "Blob Trigger (Python)",
+      "shortDescription": "Triggered when files are added or modified in Azure Blob Storage",
+      "longDescription": "Triggered when files are added or modified in Azure Blob Storage. Use cases: File processing, image resizing, document analysis, ETL workflows",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "storage-triggers"
+      ],
+      "tags": [
+        "Blob",
+        "Storage",
+        "File",
+        "Upload"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/python/BlobTrigger",
+      "whatsIncluded": [
+        "Function code (function_app.py)",
+        "requirements.txt dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "blob-trigger-typescript",
+      "displayName": "Blob Trigger (TypeScript)",
+      "shortDescription": "Triggered when files are added or modified in Azure Blob Storage",
+      "longDescription": "Triggered when files are added or modified in Azure Blob Storage. Use cases: File processing, image resizing, document analysis, ETL workflows",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "storage-triggers"
+      ],
+      "tags": [
+        "Blob",
+        "Storage",
+        "File",
+        "Upload"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/typescript/BlobTrigger",
+      "whatsIncluded": [
+        "Function code (.ts)",
+        "package.json dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "cosmos-input-csharp",
+      "displayName": "Cosmos DB Input Binding (C#)",
+      "shortDescription": "Reads documents from Azure Cosmos DB collections",
+      "longDescription": "Reads documents from Azure Cosmos DB collections. Use cases: Data retrieval, document queries, read-only database operations",
+      "language": "CSharp",
+      "bindingType": "input",
+      "resource": "cosmos",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "database-bindings"
+      ],
+      "tags": [
+        "Cosmosdb",
+        "Database",
+        "Input",
+        "Nosql"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/CosmosDBInputBinding",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "cosmos-input-java",
+      "displayName": "Cosmos DB Input Binding (Java)",
+      "shortDescription": "Reads documents from Azure Cosmos DB collections",
+      "longDescription": "Reads documents from Azure Cosmos DB collections. Use cases: Data retrieval, document queries, read-only database operations",
+      "language": "Java",
+      "bindingType": "input",
+      "resource": "cosmos",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "database-bindings"
+      ],
+      "tags": [
+        "Cosmosdb",
+        "Database",
+        "Input",
+        "Nosql"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/CosmosDBInputBinding",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "cosmos-input-python",
+      "displayName": "Cosmos DB Input Binding (Python)",
+      "shortDescription": "Reads documents from Azure Cosmos DB collections",
+      "longDescription": "Reads documents from Azure Cosmos DB collections. Use cases: Data retrieval, document queries, read-only database operations",
+      "language": "Python",
+      "bindingType": "input",
+      "resource": "cosmos",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "database-bindings"
+      ],
+      "tags": [
+        "Cosmosdb",
+        "Database",
+        "Input",
+        "Nosql"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/python/CosmosDBInputBinding",
+      "whatsIncluded": [
+        "Function code (function_app.py)",
+        "requirements.txt dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "cosmos-input-typescript",
+      "displayName": "Cosmos DB Input Binding (TypeScript)",
+      "shortDescription": "Reads documents from Azure Cosmos DB collections",
+      "longDescription": "Reads documents from Azure Cosmos DB collections. Use cases: Data retrieval, document queries, read-only database operations",
+      "language": "TypeScript",
+      "bindingType": "input",
+      "resource": "cosmos",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "database-bindings"
+      ],
+      "tags": [
+        "Cosmosdb",
+        "Database",
+        "Input",
+        "Nosql"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/typescript/CosmosDBInputBinding",
+      "whatsIncluded": [
+        "Function code (.ts)",
+        "package.json dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "cosmos-output-csharp",
+      "displayName": "Cosmos DB Output Binding (C#)",
+      "shortDescription": "Writes documents to Azure Cosmos DB collections",
+      "longDescription": "Writes documents to Azure Cosmos DB collections. Use cases: Data persistence, document updates, write operations to NoSQL databases",
+      "language": "CSharp",
+      "bindingType": "output",
+      "resource": "cosmos",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "database-bindings"
+      ],
+      "tags": [
+        "Cosmosdb",
+        "Database",
+        "Output",
+        "Nosql"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/CosmosDBOutputBinding",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "cosmos-output-java",
+      "displayName": "Cosmos DB Output Binding (Java)",
+      "shortDescription": "Writes documents to Azure Cosmos DB collections",
+      "longDescription": "Writes documents to Azure Cosmos DB collections. Use cases: Data persistence, document updates, write operations to NoSQL databases",
+      "language": "Java",
+      "bindingType": "output",
+      "resource": "cosmos",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "database-bindings"
+      ],
+      "tags": [
+        "Cosmosdb",
+        "Database",
+        "Output",
+        "Nosql"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/CosmosDBOutputBinding",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "cosmos-output-python",
+      "displayName": "Cosmos DB Output Binding (Python)",
+      "shortDescription": "Writes documents to Azure Cosmos DB collections",
+      "longDescription": "Writes documents to Azure Cosmos DB collections. Use cases: Data persistence, document updates, write operations to NoSQL databases",
+      "language": "Python",
+      "bindingType": "output",
+      "resource": "cosmos",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "database-bindings"
+      ],
+      "tags": [
+        "Cosmosdb",
+        "Database",
+        "Output",
+        "Nosql"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/python/CosmosDBOutputBinding",
+      "whatsIncluded": [
+        "Function code (function_app.py)",
+        "requirements.txt dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "cosmos-output-typescript",
+      "displayName": "Cosmos DB Output Binding (TypeScript)",
+      "shortDescription": "Writes documents to Azure Cosmos DB collections",
+      "longDescription": "Writes documents to Azure Cosmos DB collections. Use cases: Data persistence, document updates, write operations to NoSQL databases",
+      "language": "TypeScript",
+      "bindingType": "output",
+      "resource": "cosmos",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "database-bindings"
+      ],
+      "tags": [
+        "Cosmosdb",
+        "Database",
+        "Output",
+        "Nosql"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/typescript/CosmosDBOutputBinding",
+      "whatsIncluded": [
+        "Function code (.ts)",
+        "package.json dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "cosmos-trigger-csharp",
+      "displayName": "Cosmos DB Trigger (C#)",
+      "shortDescription": "Triggered by changes in Cosmos DB using the change feed",
+      "longDescription": "Triggered by changes in Cosmos DB using the change feed. Use cases: Real-time data sync, event sourcing, maintaining materialized views",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "cosmos",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "database-triggers"
+      ],
+      "tags": [
+        "Cosmosdb",
+        "Database",
+        "Changefeed",
+        "Nosql"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/CosmosDBTrigger",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "cosmos-trigger-java",
+      "displayName": "Cosmos DB Trigger (Java)",
+      "shortDescription": "Triggered by changes in Cosmos DB using the change feed",
+      "longDescription": "Triggered by changes in Cosmos DB using the change feed. Use cases: Real-time data sync, event sourcing, maintaining materialized views",
+      "language": "Java",
+      "bindingType": "trigger",
+      "resource": "cosmos",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "database-triggers"
+      ],
+      "tags": [
+        "Cosmosdb",
+        "Database",
+        "Changefeed",
+        "Nosql"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/CosmosDBTrigger",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "cosmos-trigger-python",
+      "displayName": "Cosmos DB Trigger (Python)",
+      "shortDescription": "Triggered by changes in Cosmos DB using the change feed",
+      "longDescription": "Triggered by changes in Cosmos DB using the change feed. Use cases: Real-time data sync, event sourcing, maintaining materialized views",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "cosmos",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "database-triggers"
+      ],
+      "tags": [
+        "Cosmosdb",
+        "Database",
+        "Changefeed",
+        "Nosql"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/python/CosmosDBTrigger",
+      "whatsIncluded": [
+        "Function code (function_app.py)",
+        "requirements.txt dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "cosmos-trigger-typescript",
+      "displayName": "Cosmos DB Trigger (TypeScript)",
+      "shortDescription": "Triggered by changes in Cosmos DB using the change feed",
+      "longDescription": "Triggered by changes in Cosmos DB using the change feed. Use cases: Real-time data sync, event sourcing, maintaining materialized views",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "cosmos",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "database-triggers"
+      ],
+      "tags": [
+        "Cosmosdb",
+        "Database",
+        "Changefeed",
+        "Nosql"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/typescript/CosmosDBTrigger",
+      "whatsIncluded": [
+        "Function code (.ts)",
+        "package.json dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "durable-entity-class-csharp",
+      "displayName": "Durable Functions Entity Class (C#)",
+      "shortDescription": "Durable entity using class-based syntax for C#",
+      "longDescription": "Durable Functions entity using class-based syntax for managing state with the virtual actor pattern.",
+      "language": "CSharp",
+      "bindingType": "entity",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Entity",
+        "Stateful",
+        "State Management",
+        "Actor Pattern"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/DurableFunctionsEntityClass",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "durable-entity-function-csharp",
+      "displayName": "Durable Functions Entity Function (C#)",
+      "shortDescription": "Durable entity using function-based syntax for C#",
+      "longDescription": "Durable Functions entity using function-based syntax for managing state with the virtual actor pattern.",
+      "language": "CSharp",
+      "bindingType": "entity",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Entity",
+        "Stateful",
+        "State Management",
+        "Actor Pattern"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/DurableFunctionsEntityFunction",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "durable-orchestration-csharp",
+      "displayName": "Durable Functions Orchestration (C#)",
+      "shortDescription": "Durable Functions orchestration with activity functions for C#",
+      "longDescription": "Durable Functions orchestration pattern with HTTP trigger starter, orchestrator function, and activity functions for fault-tolerant workflows.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Activity",
+        "Workflow",
+        "Stateful"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/DurableFunctionsOrchestration",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "durable-orchestration-java",
+      "displayName": "Durable Functions (Java)",
+      "shortDescription": "Durable Functions orchestration with activity functions for Java",
+      "longDescription": "Durable Functions orchestration pattern with HTTP trigger starter, orchestrator function, and activity functions for fault-tolerant workflows.",
+      "language": "Java",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Activity",
+        "Workflow",
+        "Stateful"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/DurableFunctions",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "eventgrid-trigger-csharp",
+      "displayName": "Event Grid Trigger (C#)",
+      "shortDescription": "Handles Azure Event Grid events from various sources",
+      "longDescription": "Handles Azure Event Grid events from various sources. Use cases: React to Azure resource events, event-driven architectures, system integration",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "eventgrid",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "event-processing"
+      ],
+      "tags": [
+        "Eventgrid",
+        "Events",
+        "Event Driven",
+        "Integration"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/EventGridTrigger",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "eventgrid-trigger-java",
+      "displayName": "Event Grid Trigger (Java)",
+      "shortDescription": "Handles Azure Event Grid events from various sources",
+      "longDescription": "Handles Azure Event Grid events from various sources. Use cases: React to Azure resource events, event-driven architectures, system integration",
+      "language": "Java",
+      "bindingType": "trigger",
+      "resource": "eventgrid",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "event-processing"
+      ],
+      "tags": [
+        "Eventgrid",
+        "Events",
+        "Event Driven",
+        "Integration"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/EventGridTrigger",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "eventhub-trigger-csharp",
+      "displayName": "Event Hub Trigger (C#)",
+      "shortDescription": "Processes streaming data from Azure Event Hubs",
+      "longDescription": "Processes streaming data from Azure Event Hubs. Use cases: IoT telemetry, log ingestion, real-time analytics, big data streams",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "eventhub",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "streaming"
+      ],
+      "tags": [
+        "Eventhub",
+        "Streaming",
+        "Iot",
+        "Telemetry"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/EventHubTrigger",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "eventhub-trigger-java",
+      "displayName": "Event Hub Trigger (Java)",
+      "shortDescription": "Processes streaming data from Azure Event Hubs",
+      "longDescription": "Processes streaming data from Azure Event Hubs. Use cases: IoT telemetry, log ingestion, real-time analytics, big data streams",
+      "language": "Java",
+      "bindingType": "trigger",
+      "resource": "eventhub",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "streaming"
+      ],
+      "tags": [
+        "Eventhub",
+        "Streaming",
+        "Iot",
+        "Telemetry"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/EventHubTrigger",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "eventhub-trigger-python",
+      "displayName": "Event Hub Trigger (Python)",
+      "shortDescription": "Processes streaming data from Azure Event Hubs",
+      "longDescription": "Processes streaming data from Azure Event Hubs. Use cases: IoT telemetry, log ingestion, real-time analytics, big data streams",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "eventhub",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "streaming"
+      ],
+      "tags": [
+        "Eventhub",
+        "Streaming",
+        "Iot",
+        "Telemetry"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/python/EventHubTrigger",
+      "whatsIncluded": [
+        "Function code (function_app.py)",
+        "requirements.txt dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "eventhub-trigger-typescript",
+      "displayName": "Event Hub Trigger (TypeScript)",
+      "shortDescription": "Processes streaming data from Azure Event Hubs",
+      "longDescription": "Processes streaming data from Azure Event Hubs. Use cases: IoT telemetry, log ingestion, real-time analytics, big data streams",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "eventhub",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "streaming"
+      ],
+      "tags": [
+        "Eventhub",
+        "Streaming",
+        "Iot",
+        "Telemetry"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/typescript/EventHubTrigger",
+      "whatsIncluded": [
+        "Function code (.ts)",
+        "package.json dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "http-trigger-csharp",
+      "displayName": "HTTP Trigger (C#)",
+      "shortDescription": "HTTP-triggered function for REST API endpoints and webhooks",
+      "longDescription": "HTTP-triggered function for REST API endpoints and webhooks. Use cases: REST APIs, webhooks, web services, serverless backends",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "web-apis"
+      ],
+      "tags": [
+        "HTTP",
+        "Rest",
+        "API",
+        "Webhook"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/HttpTrigger",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "http-trigger-java",
+      "displayName": "HTTP Trigger (Java)",
+      "shortDescription": "HTTP-triggered function for REST API endpoints and webhooks",
+      "longDescription": "HTTP-triggered function for REST API endpoints and webhooks. Use cases: REST APIs, webhooks, web services, serverless backends",
+      "language": "Java",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "web-apis"
+      ],
+      "tags": [
+        "HTTP",
+        "Rest",
+        "API",
+        "Webhook"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/HttpTrigger",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "http-trigger-python",
+      "displayName": "HTTP Trigger (Python)",
+      "shortDescription": "HTTP-triggered function for REST API endpoints and webhooks",
+      "longDescription": "HTTP-triggered function for REST API endpoints and webhooks. Use cases: REST APIs, webhooks, web services, serverless backends",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "web-apis"
+      ],
+      "tags": [
+        "HTTP",
+        "Rest",
+        "API",
+        "Webhook"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/python/HttpTrigger",
+      "whatsIncluded": [
+        "Function code (function_app.py)",
+        "requirements.txt dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "http-trigger-typescript",
+      "displayName": "HTTP Trigger (TypeScript)",
+      "shortDescription": "HTTP-triggered function for REST API endpoints and webhooks",
+      "longDescription": "HTTP-triggered function for REST API endpoints and webhooks. Use cases: REST APIs, webhooks, web services, serverless backends",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "web-apis"
+      ],
+      "tags": [
+        "HTTP",
+        "Rest",
+        "API",
+        "Webhook"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/typescript/HttpTrigger",
+      "whatsIncluded": [
+        "Function code (.ts)",
+        "package.json dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "mcp-resource-trigger-csharp",
+      "displayName": "MCP Resource Trigger (C#)",
+      "shortDescription": "Model Context Protocol resource trigger for exposing resources to MCP clients",
+      "longDescription": "Model Context Protocol resource trigger for exposing resources to MCP clients. Use cases: Resource discovery, documentation exposure, knowledge base integration",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "mcp",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "ai-integration"
+      ],
+      "tags": [
+        "MCP",
+        "AI",
+        "Resource",
+        "Discovery"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/MCPResourceTrigger",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "mcp-resource-trigger-python",
+      "displayName": "MCP Resource Trigger (Python)",
+      "shortDescription": "Model Context Protocol resource trigger for exposing resources to MCP clients",
+      "longDescription": "Model Context Protocol resource trigger for exposing resources to MCP clients. Use cases: Resource discovery, documentation exposure, knowledge base integration",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "mcp",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "ai-integration"
+      ],
+      "tags": [
+        "MCP",
+        "AI",
+        "Resource",
+        "Discovery"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/python/MCPResourceTrigger",
+      "whatsIncluded": [
+        "Function code (function_app.py)",
+        "requirements.txt dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "mcp-resource-trigger-typescript",
+      "displayName": "MCP Resource Trigger (TypeScript)",
+      "shortDescription": "Model Context Protocol resource trigger for exposing resources to MCP clients",
+      "longDescription": "Model Context Protocol resource trigger for exposing resources to MCP clients. Use cases: Resource discovery, documentation exposure, knowledge base integration",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "mcp",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "ai-integration"
+      ],
+      "tags": [
+        "MCP",
+        "AI",
+        "Resource",
+        "Discovery"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/typescript/MCPResourceTrigger",
+      "whatsIncluded": [
+        "Function code (.ts)",
+        "package.json dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "mcp-tool-trigger-csharp",
+      "displayName": "MCP Tool Trigger (C#)",
+      "shortDescription": "Model Context Protocol trigger for exposing functions as discoverable tools",
+      "longDescription": "Model Context Protocol trigger for exposing functions as discoverable tools. Use cases: Remote MCP servers for AI agents, tool discovery, LLM function calling",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "mcp",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "ai-integration"
+      ],
+      "tags": [
+        "MCP",
+        "AI",
+        "LLM",
+        "Tool"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/MCPToolTrigger",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "mcp-tool-trigger-java",
+      "displayName": "MCP Tool Trigger (Java)",
+      "shortDescription": "Model Context Protocol trigger for exposing functions as discoverable tools",
+      "longDescription": "Model Context Protocol trigger for exposing functions as discoverable tools. Use cases: Remote MCP servers for AI agents, tool discovery, LLM function calling",
+      "language": "Java",
+      "bindingType": "trigger",
+      "resource": "mcp",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "ai-integration"
+      ],
+      "tags": [
+        "MCP",
+        "AI",
+        "LLM",
+        "Tool"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/MCPToolTrigger",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "mcp-tool-trigger-python",
+      "displayName": "MCP Tool Trigger (Python)",
+      "shortDescription": "Model Context Protocol trigger for exposing functions as discoverable tools",
+      "longDescription": "Model Context Protocol trigger for exposing functions as discoverable tools. Use cases: Remote MCP servers for AI agents, tool discovery, LLM function calling",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "mcp",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "ai-integration"
+      ],
+      "tags": [
+        "MCP",
+        "AI",
+        "LLM",
+        "Tool"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/python/MCPToolTrigger",
+      "whatsIncluded": [
+        "Function code (function_app.py)",
+        "requirements.txt dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "mcp-tool-trigger-typescript",
+      "displayName": "MCP Tool Trigger (TypeScript)",
+      "shortDescription": "Model Context Protocol trigger for exposing functions as discoverable tools",
+      "longDescription": "Model Context Protocol trigger for exposing functions as discoverable tools. Use cases: Remote MCP servers for AI agents, tool discovery, LLM function calling",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "mcp",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "ai-integration"
+      ],
+      "tags": [
+        "MCP",
+        "AI",
+        "LLM",
+        "Tool"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/typescript/MCPToolTrigger",
+      "whatsIncluded": [
+        "Function code (.ts)",
+        "package.json dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "mysql-input-csharp",
+      "displayName": "MySQL Input Binding (C#)",
+      "shortDescription": "Reads data from MySQL databases",
+      "longDescription": "Reads data from MySQL databases. Use cases: Database queries, data synchronization, reporting, ETL processes",
+      "language": "CSharp",
+      "bindingType": "input",
+      "resource": "mysql",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "database-bindings"
+      ],
+      "tags": [
+        "Mysql",
+        "Database",
+        "Input",
+        "Query"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/MySqlInputBinding",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "mysql-output-csharp",
+      "displayName": "MySQL Output Binding (C#)",
+      "shortDescription": "Writes data to MySQL databases",
+      "longDescription": "Writes data to MySQL databases. Use cases: Data persistence, database updates, transaction processing",
+      "language": "CSharp",
+      "bindingType": "output",
+      "resource": "mysql",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "database-bindings"
+      ],
+      "tags": [
+        "Mysql",
+        "Database",
+        "Output",
+        "Write"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/MySqlOutputBinding",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "mysql-trigger-csharp",
+      "displayName": "MySQL Trigger (C#)",
+      "shortDescription": "Triggered by changes in MySQL databases",
+      "longDescription": "Triggered by changes in MySQL databases. Use cases: Change data capture, real-time sync, audit logging",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "mysql",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "database-triggers"
+      ],
+      "tags": [
+        "Mysql",
+        "Database",
+        "Cdc"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/MySqlTrigger",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "queue-trigger-csharp",
+      "displayName": "Queue Trigger (C#)",
+      "shortDescription": "Processes messages from Azure Storage Queues",
+      "longDescription": "Processes messages from Azure Storage Queues. Use cases: Background job processing, async tasks, work queues, decoupled architectures",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "queue",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "storage-triggers"
+      ],
+      "tags": [
+        "Queue",
+        "Storage",
+        "Messaging",
+        "Async"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/QueueTrigger",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "queue-trigger-java",
+      "displayName": "Queue Trigger (Java)",
+      "shortDescription": "Processes messages from Azure Storage Queues",
+      "longDescription": "Processes messages from Azure Storage Queues. Use cases: Background job processing, async tasks, work queues, decoupled architectures",
+      "language": "Java",
+      "bindingType": "trigger",
+      "resource": "queue",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "storage-triggers"
+      ],
+      "tags": [
+        "Queue",
+        "Storage",
+        "Messaging",
+        "Async"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/QueueTrigger",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "queue-trigger-python",
+      "displayName": "Queue Trigger (Python)",
+      "shortDescription": "Processes messages from Azure Storage Queues",
+      "longDescription": "Processes messages from Azure Storage Queues. Use cases: Background job processing, async tasks, work queues, decoupled architectures",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "queue",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "storage-triggers"
+      ],
+      "tags": [
+        "Queue",
+        "Storage",
+        "Messaging",
+        "Async"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/python/QueueTrigger",
+      "whatsIncluded": [
+        "Function code (function_app.py)",
+        "requirements.txt dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "queue-trigger-typescript",
+      "displayName": "Queue Trigger (TypeScript)",
+      "shortDescription": "Processes messages from Azure Storage Queues",
+      "longDescription": "Processes messages from Azure Storage Queues. Use cases: Background job processing, async tasks, work queues, decoupled architectures",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "queue",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "storage-triggers"
+      ],
+      "tags": [
+        "Queue",
+        "Storage",
+        "Messaging",
+        "Async"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/typescript/QueueTrigger",
+      "whatsIncluded": [
+        "Function code (.ts)",
+        "package.json dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "rabbitmq-trigger-csharp",
+      "displayName": "RabbitMQ Trigger (C#)",
+      "shortDescription": "Consumes messages from RabbitMQ queues",
+      "longDescription": "Consumes messages from RabbitMQ queues. Use cases: Message processing, distributed systems, enterprise messaging",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "rabbitmq",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "messaging"
+      ],
+      "tags": [
+        "Rabbitmq",
+        "Messaging",
+        "Distributed"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/RabbitMQTrigger",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "servicebus-queue-trigger-csharp",
+      "displayName": "Service Bus Queue Trigger (C#)",
+      "shortDescription": "Handles messages from Azure Service Bus queues",
+      "longDescription": "Handles messages from Azure Service Bus queues. Use cases: Enterprise messaging, reliable processing, transactional messaging, decoupling",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "servicebus",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "messaging"
+      ],
+      "tags": [
+        "Servicebus",
+        "Messaging",
+        "Enterprise",
+        "Queue"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/ServiceBusQueueTrigger",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "servicebus-queue-trigger-java",
+      "displayName": "Service Bus Queue Trigger (Java)",
+      "shortDescription": "Handles messages from Azure Service Bus queues",
+      "longDescription": "Handles messages from Azure Service Bus queues. Use cases: Enterprise messaging, reliable processing, transactional messaging, decoupling",
+      "language": "Java",
+      "bindingType": "trigger",
+      "resource": "servicebus",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "messaging"
+      ],
+      "tags": [
+        "Servicebus",
+        "Messaging",
+        "Enterprise",
+        "Queue"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/ServiceBusQueueTrigger",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "servicebus-queue-trigger-python",
+      "displayName": "Service Bus Queue Trigger (Python)",
+      "shortDescription": "Handles messages from Azure Service Bus queues",
+      "longDescription": "Handles messages from Azure Service Bus queues. Use cases: Enterprise messaging, reliable processing, transactional messaging, decoupling",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "servicebus",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "messaging"
+      ],
+      "tags": [
+        "Servicebus",
+        "Messaging",
+        "Enterprise",
+        "Queue"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/python/ServiceBusQueueTrigger",
+      "whatsIncluded": [
+        "Function code (function_app.py)",
+        "requirements.txt dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "servicebus-topic-trigger-csharp",
+      "displayName": "Service Bus Topic Trigger (C#)",
+      "shortDescription": "Subscribes to Azure Service Bus topics",
+      "longDescription": "Subscribes to Azure Service Bus topics. Use cases: Publish-subscribe patterns, event broadcasting, multi-consumer scenarios",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "servicebus",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "messaging"
+      ],
+      "tags": [
+        "Servicebus",
+        "Messaging",
+        "Pubsub",
+        "Topic"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/ServiceBusTopicTrigger",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "servicebus-topic-trigger-java",
+      "displayName": "Service Bus Topic Trigger (Java)",
+      "shortDescription": "Subscribes to Azure Service Bus topics",
+      "longDescription": "Subscribes to Azure Service Bus topics. Use cases: Publish-subscribe patterns, event broadcasting, multi-consumer scenarios",
+      "language": "Java",
+      "bindingType": "trigger",
+      "resource": "servicebus",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "messaging"
+      ],
+      "tags": [
+        "Servicebus",
+        "Messaging",
+        "Pubsub",
+        "Topic"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/ServiceBusTopicTrigger",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "servicebus-topic-trigger-python",
+      "displayName": "Service Bus Topic Trigger (Python)",
+      "shortDescription": "Subscribes to Azure Service Bus topics",
+      "longDescription": "Subscribes to Azure Service Bus topics. Use cases: Publish-subscribe patterns, event broadcasting, multi-consumer scenarios",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "servicebus",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "messaging"
+      ],
+      "tags": [
+        "Servicebus",
+        "Messaging",
+        "Pubsub",
+        "Topic"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/python/ServiceBusTopicTrigger",
+      "whatsIncluded": [
+        "Function code (function_app.py)",
+        "requirements.txt dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "signalr-connection-info-csharp",
+      "displayName": "SignalR Connection Info HTTP Trigger (C#)",
+      "shortDescription": "Provides SignalR connection information via HTTP",
+      "longDescription": "Provides SignalR connection information via HTTP. Use cases: Real-time web applications, chat systems, live notifications",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "signalr",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "real-time-communication"
+      ],
+      "tags": [
+        "Signalr",
+        "Realtime",
+        "Websocket",
+        "Connection"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/SignalRConnectionInfoHttpTrigger",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "sql-input-csharp",
+      "displayName": "SQL Input Binding (C#)",
+      "shortDescription": "Reads data from SQL Server/Azure SQL databases",
+      "longDescription": "Reads data from SQL Server/Azure SQL databases. Use cases: Query database rows, reporting, data retrieval",
+      "language": "CSharp",
+      "bindingType": "input",
+      "resource": "sql",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "database-bindings"
+      ],
+      "tags": [
+        "SQL",
+        "Database",
+        "Input",
+        "Query"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/SqlInputBinding",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "sql-trigger-csharp",
+      "displayName": "SQL Trigger (C#)",
+      "shortDescription": "Triggered by row changes in SQL Server/Azure SQL databases",
+      "longDescription": "Triggered by row changes in SQL Server/Azure SQL databases. Use cases: Database change tracking, real-time sync, audit logging",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "sql",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "database-triggers"
+      ],
+      "tags": [
+        "SQL",
+        "Database",
+        "Change Tracking"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/SqlTrigger",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "timer-trigger-csharp",
+      "displayName": "Timer Trigger (C#)",
+      "shortDescription": "Scheduled function execution using CRON expressions",
+      "longDescription": "Scheduled function execution using CRON expressions. Use cases: Scheduled jobs, cleanup tasks, batch processing, periodic maintenance",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "timer",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "scheduling"
+      ],
+      "tags": [
+        "Timer",
+        "Cron",
+        "Schedule",
+        "Batch"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/TimerTrigger",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "timer-trigger-java",
+      "displayName": "Timer Trigger (Java)",
+      "shortDescription": "Scheduled function execution using CRON expressions",
+      "longDescription": "Scheduled function execution using CRON expressions. Use cases: Scheduled jobs, cleanup tasks, batch processing, periodic maintenance",
+      "language": "Java",
+      "bindingType": "trigger",
+      "resource": "timer",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "scheduling"
+      ],
+      "tags": [
+        "Timer",
+        "Cron",
+        "Schedule",
+        "Batch"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/TimerTrigger",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "timer-trigger-python",
+      "displayName": "Timer Trigger (Python)",
+      "shortDescription": "Scheduled function execution using CRON expressions",
+      "longDescription": "Scheduled function execution using CRON expressions. Use cases: Scheduled jobs, cleanup tasks, batch processing, periodic maintenance",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "timer",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "scheduling"
+      ],
+      "tags": [
+        "Timer",
+        "Cron",
+        "Schedule",
+        "Batch"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/python/TimerTrigger",
+      "whatsIncluded": [
+        "Function code (function_app.py)",
+        "requirements.txt dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "timer-trigger-typescript",
+      "displayName": "Timer Trigger (TypeScript)",
+      "shortDescription": "Scheduled function execution using CRON expressions",
+      "longDescription": "Scheduled function execution using CRON expressions. Use cases: Scheduled jobs, cleanup tasks, batch processing, periodic maintenance",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "timer",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "scheduling"
+      ],
+      "tags": [
+        "Timer",
+        "Cron",
+        "Schedule",
+        "Batch"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/typescript/TimerTrigger",
+      "whatsIncluded": [
+        "Function code (.ts)",
+        "package.json dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "ai-agent-csharp",
+      "displayName": "Simple Agent QuickStart (C# + AZD + Bicep)",
+      "shortDescription": "Simple AI agent using GitHub Copilot SDK on Azure Functions",
+      "longDescription": "A simple AI agent built with the GitHub Copilot SDK, running as an Azure Function. Supports GitHub Copilot models or bring your own model via Microsoft Foundry (BYOK).",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "ai-ml",
+        "agents",
+        "ai-agents",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "AI",
+        "Agents",
+        "Copilot SDK",
+        "Microsoft Foundry",
+        "Byok"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/simple-agent-functions-dotnet",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "AI agent HTTP endpoint (/api/ask)",
+        "GitHub Copilot SDK integration",
+        "Interactive chat client",
+        "Microsoft Foundry resources (optional)",
+        "Azure Developer CLI (azd) configuration",
+        "Flex Consumption hosting"
+      ]
+    },
+    {
+      "id": "ai-agent-python",
+      "displayName": "Simple Agent QuickStart (Python + AZD + Bicep)",
+      "shortDescription": "Simple AI agent using GitHub Copilot SDK on Azure Functions",
+      "longDescription": "A simple AI agent built with the GitHub Copilot SDK, running as an Azure Function. Supports GitHub Copilot models or bring your own model via Microsoft Foundry (BYOK).",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "ai-ml",
+        "agents",
+        "ai-agents",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "AI",
+        "Agents",
+        "Copilot SDK",
+        "Microsoft Foundry",
+        "Byok"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/simple-agent-functions-python",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "AI agent HTTP endpoint (/api/ask)",
+        "GitHub Copilot SDK integration",
+        "Interactive chat client (chat.py)",
+        "Microsoft Foundry resources (optional)",
+        "Azure Developer CLI (azd) configuration",
+        "Flex Consumption hosting"
+      ]
+    },
+    {
+      "id": "ai-chatgpt-javascript",
+      "displayName": "Chat using ChatGPT (JavaScript + AZD + Bicep)",
+      "shortDescription": "ChatGPT prompted HTTP function with state storage",
+      "longDescription": "Azure Functions sample showing how to take a ChatGPT prompt as HTTP Get or Post input, calculates the completions using OpenAI ChatGPT service, and then returns the output plus caches in a Blob state store.",
+      "language": "JavaScript",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "ai-ml",
+        "ai",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "AI",
+        "Openai",
+        "Chatgpt",
+        "HTTP"
+      ],
+      "author": "Paul Yuknewicz",
+      "repositoryUrl": "https://github.com/Azure-Samples/function-javascript-ai-openai-chatgpt",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Ask and Chat HTTP functions",
+        "Azure OpenAI integration",
+        "Blob storage for conversation state",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Dockerfile for containerization",
+        "Dev Container setup",
+        "Test files with sample prompts"
+      ],
+      "isPopular": true
+    },
+    {
+      "id": "ai-chatgpt-python",
+      "displayName": "Chat using ChatGPT (Python + AZD + Bicep)",
+      "shortDescription": "ChatGPT prompted HTTP function with state storage (Python v2)",
+      "longDescription": "Azure Functions sample showing how to take a ChatGPT prompt as HTTP Get or Post input, calculates the completions using OpenAI ChatGPT service, and then returns the output plus caches in a Blob state store.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "ai-ml",
+        "ai",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "AI",
+        "Openai",
+        "Chatgpt",
+        "HTTP"
+      ],
+      "author": "Paul Yuknewicz",
+      "repositoryUrl": "https://github.com/Azure-Samples/function-python-ai-openai-chatgpt",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Ask and Chat HTTP functions",
+        "Azure OpenAI integration",
+        "Blob storage for conversation state",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Dockerfile for containerization",
+        "Dev Container setup",
+        "Test files with sample prompts"
+      ],
+      "isPopular": true
+    },
+    {
+      "id": "ai-textsummarize-csharp",
+      "displayName": "Text Summarization using AI (C# + AZD + Bicep)",
+      "shortDescription": "Summarize text using AI Cognitive Language Service",
+      "longDescription": "Azure Functions sample showing how to take text documents as input via BlobTrigger, does Text Summarization processing using the AI Cognitive Language service, and then outputs to another text document.",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "ai-ml",
+        "ai",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "AI",
+        "Cognitive Services",
+        "Blob",
+        "Summarization"
+      ],
+      "author": "Paul Yuknewicz",
+      "repositoryUrl": "https://github.com/Azure-Samples/function-csharp-ai-textsummarize",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Blob trigger function",
+        "Azure Cognitive Services integration",
+        "Text summarization processing",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Sample text documents",
+        "VS Code debug configuration"
+      ]
+    },
+    {
+      "id": "ai-textsummarize-python",
+      "displayName": "Text Summarization using AI (Python + AZD + Bicep)",
+      "shortDescription": "Summarize text using AI Cognitive Language Service",
+      "longDescription": "Azure Functions sample showing how to take text documents as input via BlobTrigger, does Text Summarization processing using the AI Cognitive Language service, and then outputs to another text document.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "ai-ml",
+        "ai",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "AI",
+        "Cognitive Services",
+        "Blob",
+        "Summarization"
+      ],
+      "author": "Paul Yuknewicz",
+      "repositoryUrl": "https://github.com/Azure-Samples/function-python-ai-textsummarize",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Blob trigger function",
+        "Azure Cognitive Services integration",
+        "Text summarization processing",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Sample text documents",
+        "VS Code debug configuration"
+      ]
+    },
+    {
+      "id": "blob-eventgrid-trigger-csharp-azd",
+      "displayName": "Blob EventGrid Trigger (C# + AZD + Bicep)",
+      "shortDescription": "Preferred blob trigger with Event Grid source type for C# deployed with azd",
+      "longDescription": "Azure Functions Blob trigger with Event Grid source type (preferred over simple blob trigger) reference sample for functions written in C# (isolated process mode) and deployed to Azure using the Azure Developer CLI (azd).",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "azd-quickstart",
+        "storage-triggers",
+        "http"
+      ],
+      "tags": [
+        "Blob",
+        "Event Grid",
+        "Storage",
+        "Flex Consumption",
+        "AZD"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd-eventgrid-blob",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Blob EventGrid trigger function",
+        "Bicep infrastructure",
+        "azd configuration",
+        "VNet integration option"
+      ]
+    },
+    {
+      "id": "blob-eventgrid-trigger-java-azd",
+      "displayName": "Blob EventGrid Trigger (Java + AZD + Bicep)",
+      "shortDescription": "Preferred blob trigger with Event Grid source type for Java deployed with azd",
+      "longDescription": "Azure Functions Blob trigger with Event Grid source type (preferred over simple blob trigger) reference sample for functions written in Java and deployed to Azure using the Azure Developer CLI (azd).",
+      "language": "Java",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "azd-quickstart",
+        "storage-triggers",
+        "http"
+      ],
+      "tags": [
+        "Blob",
+        "Event Grid",
+        "Storage",
+        "Flex Consumption",
+        "AZD"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-java-azd-eventgrid-blob",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Blob EventGrid trigger function",
+        "Bicep infrastructure",
+        "azd configuration",
+        "VNet integration option"
+      ]
+    },
+    {
+      "id": "blob-eventgrid-trigger-javascript-azd",
+      "displayName": "Blob EventGrid Trigger (JavaScript + AZD + Bicep)",
+      "shortDescription": "Preferred blob trigger with Event Grid source type for JavaScript deployed with azd",
+      "longDescription": "Azure Functions Blob trigger with Event Grid source type (preferred over simple blob trigger) reference sample for functions written in JavaScript and deployed to Azure using the Azure Developer CLI (azd).",
+      "language": "JavaScript",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "azd-quickstart",
+        "storage-triggers",
+        "http"
+      ],
+      "tags": [
+        "Blob",
+        "Event Grid",
+        "Storage",
+        "Flex Consumption",
+        "AZD"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-javascript-azd-eventgrid-blob",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Blob EventGrid trigger function",
+        "Bicep infrastructure",
+        "azd configuration",
+        "VNet integration option"
+      ]
+    },
+    {
+      "id": "blob-eventgrid-trigger-powershell-azd",
+      "displayName": "Blob EventGrid Trigger (PowerShell + AZD + Bicep)",
+      "shortDescription": "Preferred blob trigger with Event Grid source type for PowerShell deployed with azd",
+      "longDescription": "Azure Functions Blob trigger with Event Grid source type (preferred over simple blob trigger) reference sample for functions written in PowerShell and deployed to Azure using the Azure Developer CLI (azd).",
+      "language": "PowerShell",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "azd-quickstart",
+        "storage-triggers",
+        "http"
+      ],
+      "tags": [
+        "Blob",
+        "Event Grid",
+        "Storage",
+        "Flex Consumption",
+        "AZD"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-powershell-azd-eventgrid-blob",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Blob EventGrid trigger function",
+        "Bicep infrastructure",
+        "azd configuration",
+        "VNet integration option"
+      ]
+    },
+    {
+      "id": "blob-eventgrid-trigger-python-azd",
+      "displayName": "Blob EventGrid Trigger (Python + AZD + Bicep)",
+      "shortDescription": "Preferred blob trigger with Event Grid source type for Python deployed with azd",
+      "longDescription": "Azure Functions Blob trigger with Event Grid source type (preferred over simple blob trigger) reference sample for functions written in Python and deployed to Azure using the Azure Developer CLI (azd).",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "azd-quickstart",
+        "storage-triggers",
+        "http"
+      ],
+      "tags": [
+        "Blob",
+        "Event Grid",
+        "Storage",
+        "Flex Consumption",
+        "AZD"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-python-azd-eventgrid-blob",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Blob EventGrid trigger function",
+        "Bicep infrastructure",
+        "azd configuration",
+        "VNet integration option"
+      ]
+    },
+    {
+      "id": "blob-eventgrid-trigger-typescript-azd",
+      "displayName": "Blob EventGrid Trigger (TypeScript + AZD + Bicep)",
+      "shortDescription": "Preferred blob trigger with Event Grid source type for TypeScript deployed with azd",
+      "longDescription": "Azure Functions Blob trigger with Event Grid source type (preferred over simple blob trigger) reference sample for functions written in TypeScript and deployed to Azure using the Azure Developer CLI (azd).",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "azd-quickstart",
+        "storage-triggers",
+        "http"
+      ],
+      "tags": [
+        "Blob",
+        "Event Grid",
+        "Storage",
+        "Flex Consumption",
+        "AZD"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-typescript-azd-eventgrid-blob",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Blob EventGrid trigger function",
+        "Bicep infrastructure",
+        "azd configuration",
+        "VNet integration option"
+      ]
+    },
+    {
+      "id": "durable-order-processing-csharp",
+      "displayName": "Order Processing with Durable Functions (C# + AZD + Bicep)",
+      "shortDescription": "Order processing workflow using Durable Functions",
+      "longDescription": "Implement an order processing workflow using Durable Functions and Flex Consumption. Demonstrates complex workflow coordination with managed identity authentication.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "workflows",
+        "durable-functions",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Activity",
+        "Workflow",
+        "Order Processing",
+        "AZD"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Functions-Order-Processing",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Durable orchestration function",
+        "Activity functions for order steps",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity authentication",
+        "VS Code debug configuration"
+      ]
+    },
+    {
+      "id": "eventhub-trigger-csharp-azd",
+      "displayName": "Event Hub Trigger (C# + AZD + Bicep)",
+      "shortDescription": "Event Hub trigger quickstart for C# deployed with azd",
+      "longDescription": "Azure Functions Event Hubs trigger quickstart written in C# and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). The sample demonstrates real-time news streaming with sentiment analysis and engagement tracking.",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "eventhub",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "azd-quickstart",
+        "event-processing",
+        "streaming"
+      ],
+      "tags": [
+        "Event Hubs",
+        "Streaming",
+        "Real Time",
+        "Flex Consumption",
+        "AZD"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd-eventhub",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Event Hub trigger function",
+        "Timer trigger for news generation",
+        "Bicep infrastructure",
+        "azd configuration",
+        "VNet integration option",
+        "Application Insights monitoring"
+      ]
+    },
+    {
+      "id": "http-trigger-csharp-azd",
+      "displayName": "HTTP Trigger (C# + AZD + Bicep)",
+      "shortDescription": "HTTP trigger quickstart for .NET (Flex Consumption)",
+      "longDescription": "Azure Functions HTTP trigger quickstart written in C# and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Uses managed identity and virtual network for secure deployment.",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "web-apis",
+        "http",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "HTTP",
+        "Flex Consumption",
+        "VNET",
+        "Managed Identity",
+        "Azd"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "HTTP trigger functions (GET and POST)",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "VS Code debug configuration",
+        "Dockerfile for containerization",
+        "Dev Container setup",
+        "Test files for local development"
+      ]
+    },
+    {
+      "id": "http-trigger-csharp-terraform",
+      "displayName": "HTTP Trigger (C# + AZD + Terraform)",
+      "shortDescription": "HTTP trigger quickstart for .NET with Terraform IaC",
+      "longDescription": "Azure Functions HTTP trigger quickstart written in C# and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd) with Terraform as the infrastructure-as-code provider. Uses managed identity and virtual network.",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "terraform",
+      "priority": 1,
+      "categories": [
+        "web-apis",
+        "http",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "HTTP",
+        "Flex Consumption",
+        "VNET",
+        "Managed Identity",
+        "Terraform",
+        "Azd"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd-tf",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "HTTP trigger functions (GET and POST)",
+        "Terraform infrastructure files (AzureRM 4.x)",
+        "Azure Developer CLI (azd) configuration",
+        "VS Code debug configuration",
+        "Test files for local development"
+      ]
+    },
+    {
+      "id": "http-trigger-java-azd",
+      "displayName": "HTTP Trigger (Java + AZD + Bicep)",
+      "shortDescription": "HTTP trigger quickstart for Java (Flex Consumption)",
+      "longDescription": "Azure Functions HTTP trigger quickstart written in Java and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Uses managed identity and virtual network for secure deployment.",
+      "language": "Java",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "web-apis",
+        "http",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "HTTP",
+        "Flex Consumption",
+        "VNET",
+        "Managed Identity",
+        "Azd"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-java-flex-consumption-azd",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "HTTP trigger functions",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Maven build configuration",
+        "VS Code debug configuration",
+        "Test files for local development"
+      ]
+    },
+    {
+      "id": "http-trigger-javascript-azd",
+      "displayName": "HTTP Trigger (JavaScript + AZD + Bicep)",
+      "shortDescription": "HTTP trigger quickstart for JavaScript (Flex Consumption)",
+      "longDescription": "Azure Functions HTTP trigger quickstart written in JavaScript and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Uses managed identity and virtual network for secure deployment.",
+      "language": "JavaScript",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "web-apis",
+        "http",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "HTTP",
+        "Flex Consumption",
+        "VNET",
+        "Managed Identity",
+        "Azd"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-javascript-azd",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "HTTP trigger functions (GET and POST)",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "VS Code debug configuration",
+        "Dev Container setup",
+        "Test files for local development"
+      ]
+    },
+    {
+      "id": "http-trigger-powershell-azd",
+      "displayName": "HTTP Trigger (PowerShell + AZD + Bicep)",
+      "shortDescription": "HTTP trigger quickstart for PowerShell (Flex Consumption)",
+      "longDescription": "Azure Functions HTTP trigger quickstart written in PowerShell and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Uses managed identity and virtual network for secure deployment.",
+      "language": "PowerShell",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "web-apis",
+        "http",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "HTTP",
+        "Flex Consumption",
+        "VNET",
+        "Managed Identity",
+        "Azd"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-powershell-azd",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "HTTP trigger functions",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "VS Code debug configuration",
+        "Test files for local development"
+      ]
+    },
+    {
+      "id": "http-trigger-python-azd",
+      "displayName": "HTTP Trigger (Python + AZD + Bicep)",
+      "shortDescription": "HTTP trigger quickstart for Python (Flex Consumption)",
+      "longDescription": "Azure Functions HTTP trigger quickstart written in Python and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Uses managed identity and virtual network for secure deployment.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "web-apis",
+        "http",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "HTTP",
+        "Flex Consumption",
+        "VNET",
+        "Managed Identity",
+        "Azd"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-python-http-azd",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "HTTP trigger function",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "VNet integration setup",
+        "VS Code debug configuration",
+        "Local development configuration"
+      ]
+    },
+    {
+      "id": "http-trigger-typescript-azd",
+      "displayName": "HTTP Trigger (TypeScript + AZD + Bicep)",
+      "shortDescription": "HTTP trigger quickstart for TypeScript (Flex Consumption)",
+      "longDescription": "Azure Functions HTTP trigger quickstart written in TypeScript and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Uses managed identity and virtual network for secure deployment.",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "web-apis",
+        "http",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "HTTP",
+        "Flex Consumption",
+        "VNET",
+        "Managed Identity",
+        "Azd"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-typescript-azd",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "HTTP trigger functions (GET and POST)",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "TypeScript configuration",
+        "VS Code debug configuration",
+        "Test files for local development"
+      ]
+    },
+    {
+      "id": "mcp-sdk-hosting-csharp",
+      "displayName": "Self-hosted MCP SDK Server (C# + AZD + Bicep)",
+      "shortDescription": "Host MCP SDK based servers on Azure Functions",
+      "longDescription": "Self-hosted MCP SDK based server on Azure Functions serverless compute platform for C#/.NET.",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "mcp",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "azd-quickstart",
+        "mcp",
+        "ai"
+      ],
+      "tags": [
+        "MCP",
+        "MCP SDK",
+        "Self-hosted",
+        "AZD",
+        "Preview"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/mcp-sdk-functions-hosting-dotnet",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "MCP SDK server",
+        "Azure Functions hosting",
+        "Bicep infrastructure"
+      ]
+    },
+    {
+      "id": "mcp-sdk-hosting-java",
+      "displayName": "Self-hosted MCP SDK Server (Java + AZD + Bicep)",
+      "shortDescription": "Host MCP SDK based servers on Azure Functions",
+      "longDescription": "Self-hosted MCP SDK based server on Azure Functions serverless compute platform for Java.",
+      "language": "Java",
+      "bindingType": "trigger",
+      "resource": "mcp",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "azd-quickstart",
+        "mcp",
+        "ai"
+      ],
+      "tags": [
+        "MCP",
+        "MCP SDK",
+        "Self-hosted",
+        "AZD",
+        "Preview"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/mcp-sdk-functions-hosting-java",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "MCP SDK server",
+        "Azure Functions hosting",
+        "Bicep infrastructure"
+      ]
+    },
+    {
+      "id": "mcp-sdk-hosting-python",
+      "displayName": "Self-hosted MCP SDK Server (Python + AZD + Bicep)",
+      "shortDescription": "Host MCP SDK based servers on Azure Functions",
+      "longDescription": "Self-hosted MCP SDK based server on Azure Functions serverless compute platform for Python.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "mcp",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "azd-quickstart",
+        "mcp",
+        "ai"
+      ],
+      "tags": [
+        "MCP",
+        "MCP SDK",
+        "Self-hosted",
+        "AZD",
+        "Preview"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/mcp-sdk-functions-hosting-python",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "MCP SDK server",
+        "Azure Functions hosting",
+        "Bicep infrastructure"
+      ]
+    },
+    {
+      "id": "mcp-sdk-hosting-typescript",
+      "displayName": "Self-hosted MCP SDK Server (TypeScript + AZD + Bicep)",
+      "shortDescription": "Host MCP SDK based servers on Azure Functions",
+      "longDescription": "Self-hosted MCP SDK based server on Azure Functions serverless compute platform for TypeScript/Node.js.",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "mcp",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "azd-quickstart",
+        "mcp",
+        "ai"
+      ],
+      "tags": [
+        "MCP",
+        "MCP SDK",
+        "Self-hosted",
+        "AZD",
+        "Preview"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/mcp-sdk-functions-hosting-node",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "MCP SDK server",
+        "Azure Functions hosting",
+        "Bicep infrastructure"
+      ]
+    },
+    {
+      "id": "mcp-server-apim-python",
+      "displayName": "Remote MCP Server with APIM Gateway (Python + AZD + Bicep)",
+      "shortDescription": "MCP server with Azure API Management gateway, Entra ID and OAuth support",
+      "longDescription": "Self-hosted MCP server on Azure Functions with Azure API Management serverless gateway for enhanced security including Entra ID authentication and OAuth support.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "mcp",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "azd-quickstart",
+        "mcp",
+        "ai"
+      ],
+      "tags": [
+        "MCP",
+        "API Management",
+        "APIM",
+        "Entra ID",
+        "OAuth",
+        "Gateway",
+        "AZD"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/remote-mcp-apim-functions-python",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "MCP server function",
+        "APIM gateway",
+        "Entra ID integration",
+        "OAuth support",
+        "Bicep infrastructure"
+      ]
+    },
+    {
+      "id": "mcp-server-remote-csharp",
+      "displayName": "Remote MCP Server (C# + AZD + Bicep)",
+      "shortDescription": "Build remote MCP servers using Azure Functions",
+      "longDescription": "Quickstart template to easily build and deploy a custom remote MCP server to the cloud using Azure Functions. Secured by design using keys and HTTPS, supports OAuth via EasyAuth and/or API Management, as well as network isolation using VNET.",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "mcp",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "mcp",
+        "integrations",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "MCP",
+        "Model Context Protocol",
+        "Remote",
+        "Copilot",
+        "Vs Code"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/remote-mcp-functions-dotnet",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "MCP Tool trigger functions",
+        "Snippet save/retrieve tools with Blob storage",
+        "Microsoft Entra ID authentication",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "VS Code mcp.json configuration",
+        "MCP Inspector support"
+      ]
+    },
+    {
+      "id": "mcp-server-remote-java",
+      "displayName": "Remote MCP Server (Java + AZD + Bicep)",
+      "shortDescription": "Build remote MCP servers using Azure Functions",
+      "longDescription": "Quickstart template to easily build and deploy a custom remote MCP server to the cloud using Azure Functions. Secured by design using keys and HTTPS, supports OAuth via EasyAuth and/or API Management, as well as network isolation using VNET.",
+      "language": "Java",
+      "bindingType": "trigger",
+      "resource": "mcp",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "mcp",
+        "integrations",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "MCP",
+        "Model Context Protocol",
+        "Remote",
+        "Copilot",
+        "Vs Code"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/remote-mcp-functions-java",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "MCP Tool trigger functions",
+        "Snippet save/retrieve tools with Blob storage",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Maven build configuration",
+        "VS Code mcp.json configuration",
+        "MCP Inspector support"
+      ]
+    },
+    {
+      "id": "mcp-server-remote-python",
+      "displayName": "Remote MCP Server (Python + AZD + Bicep)",
+      "shortDescription": "Build remote MCP servers using Azure Functions",
+      "longDescription": "Quickstart template to easily build and deploy a custom remote MCP server to the cloud using Azure Functions. Secured by design using keys and HTTPS, supports OAuth via EasyAuth and/or API Management, as well as network isolation using VNET.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "mcp",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "mcp",
+        "integrations",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "MCP",
+        "Model Context Protocol",
+        "Remote",
+        "Copilot",
+        "Vs Code"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/remote-mcp-functions-python",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "MCP Tool trigger functions",
+        "Snippet save/retrieve tools with Blob storage",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "VS Code mcp.json configuration",
+        "MCP Inspector support"
+      ]
+    },
+    {
+      "id": "mcp-server-remote-typescript",
+      "displayName": "Remote MCP Server (TypeScript + AZD + Bicep)",
+      "shortDescription": "Build remote MCP servers using Azure Functions",
+      "longDescription": "Quickstart template to easily build and deploy a custom remote MCP server to the cloud using Azure Functions. Secured by design using keys and HTTPS, supports OAuth via EasyAuth and/or API Management, as well as network isolation using VNET.",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "mcp",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "mcp",
+        "integrations",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "MCP",
+        "Model Context Protocol",
+        "Remote",
+        "Copilot",
+        "Vs Code"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/remote-mcp-functions-typescript",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "MCP Tool trigger functions",
+        "Snippet save/retrieve tools with Blob storage",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "TypeScript configuration",
+        "VS Code mcp.json configuration",
+        "MCP Inspector support"
+      ]
+    },
+    {
+      "id": "timer-trigger-csharp-azd",
+      "displayName": "Timer Trigger (C# + AZD + Bicep)",
+      "shortDescription": "Timer trigger quickstart for C# deployed with azd",
+      "longDescription": "Azure Functions timer trigger quickstart written in C# (isolated process mode) and deployed to Azure using the Azure Developer CLI (azd). The sample uses managed identity and a virtual network to make sure deployment is secure by default.",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "timer",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "azd-quickstart",
+        "scheduling"
+      ],
+      "tags": [
+        "Timer",
+        "Scheduled",
+        "Cron",
+        "Flex Consumption",
+        "AZD"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd-timer",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Timer trigger function",
+        "Configurable NCRONTAB schedule",
+        "Bicep infrastructure",
+        "azd configuration",
+        "VNet integration option"
+      ]
+    },
+    {
+      "id": "ai-langchain-python",
+      "displayName": "LangChain with OpenAI (Python + AZD + Bicep)",
+      "shortDescription": "LangChain integration with Azure OpenAI and ChatGPT",
+      "longDescription": "Azure Functions sample showing how to take a human prompt as HTTP Get or Post input, calculates the completions using chains of human input and templates.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 2,
+      "categories": [
+        "ai-ml",
+        "ai",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "AI",
+        "Openai",
+        "Langchain",
+        "HTTP"
+      ],
+      "author": "Paul Yuknewicz",
+      "repositoryUrl": "https://github.com/Azure-Samples/function-python-ai-langchain",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "LangChain integration",
+        "Azure OpenAI integration",
+        "HTTP trigger functions",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Dev Container setup",
+        "Test files for local development"
+      ]
+    },
+    {
+      "id": "generic-trigger-python",
+      "displayName": "Generic Trigger (Python)",
+      "shortDescription": "Generic trigger for custom extension trigger types",
+      "longDescription": "Generic trigger for custom extension trigger types. Use cases: Custom triggers, new extension triggers, experimental features",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "generic",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "starter",
+        "advanced"
+      ],
+      "tags": [
+        "Generic",
+        "Custom",
+        "Extensibility"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/python/GenericTrigger",
+      "whatsIncluded": [
+        "Function code (function_app.py)",
+        "requirements.txt dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "generic-trigger-typescript",
+      "displayName": "Generic Trigger (TypeScript)",
+      "shortDescription": "Generic trigger for custom extension trigger types",
+      "longDescription": "Generic trigger for custom extension trigger types. Use cases: Custom triggers, new extension triggers, experimental features",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "generic",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "starter",
+        "advanced"
+      ],
+      "tags": [
+        "Generic",
+        "Custom",
+        "Extensibility"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/typescript/GenericTrigger",
+      "whatsIncluded": [
+        "Function code (.ts)",
+        "package.json dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "iac-flex-consumption-arm",
+      "displayName": "Flex Consumption (ARM)",
+      "shortDescription": "ARM template for deploying Azure Functions Flex Consumption plan",
+      "longDescription": "Azure Resource Manager (ARM) template for creating a Flex Consumption function app with improved control plane features. Use this foundational template to automate function app creation.",
+      "language": "ARM",
+      "bindingType": "none",
+      "resource": "arm",
+      "iac": "arm",
+      "priority": 2,
+      "categories": [
+        "iac",
+        "flex-consumption",
+        "infrastructure"
+      ],
+      "tags": [
+        "ARM",
+        "Flex Consumption",
+        "Infrastructure As Code",
+        "Deployment"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-flex-consumption-samples",
+      "folderPath": "IaC/armtemplate",
+      "whatsIncluded": [
+        "ARM template files",
+        "Parameter files",
+        "Deployment scripts"
+      ]
+    },
+    {
+      "id": "iac-flex-consumption-bicep",
+      "displayName": "Flex Consumption (Bicep)",
+      "shortDescription": "Bicep template for deploying Azure Functions Flex Consumption plan",
+      "longDescription": "Bicep infrastructure template for creating a Flex Consumption function app with improved control plane features. Use this foundational template to automate function app creation.",
+      "language": "Bicep",
+      "bindingType": "none",
+      "resource": "bicep",
+      "iac": "bicep",
+      "priority": 2,
+      "categories": [
+        "iac",
+        "flex-consumption",
+        "infrastructure"
+      ],
+      "tags": [
+        "Bicep",
+        "Flex Consumption",
+        "Infrastructure As Code",
+        "Deployment"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-flex-consumption-samples",
+      "folderPath": "IaC/bicep",
+      "whatsIncluded": [
+        "Bicep modules",
+        "Parameter files",
+        "Deployment configuration"
+      ]
+    },
+    {
+      "id": "iac-flex-consumption-terraform-azapi",
+      "displayName": "Flex Consumption (Terraform AzAPI)",
+      "shortDescription": "Terraform template using AzAPI provider for Azure Functions Flex Consumption",
+      "longDescription": "Terraform infrastructure template using the AzAPI provider for creating a Flex Consumption function app. The AzAPI provider gives direct access to Azure Resource Manager APIs for latest features.",
+      "language": "Terraform",
+      "bindingType": "none",
+      "resource": "terraform",
+      "iac": "terraform",
+      "priority": 2,
+      "categories": [
+        "iac",
+        "flex-consumption",
+        "infrastructure"
+      ],
+      "tags": [
+        "Terraform",
+        "Azapi",
+        "Flex Consumption",
+        "Infrastructure As Code"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-flex-consumption-samples",
+      "folderPath": "IaC/terraformazapi",
+      "whatsIncluded": [
+        "Terraform configuration files",
+        "AzAPI provider setup",
+        "Variable definitions"
+      ]
+    },
+    {
+      "id": "iac-flex-consumption-terraform-azurerm",
+      "displayName": "Flex Consumption (Terraform AzureRM)",
+      "shortDescription": "Terraform template using AzureRM provider for Azure Functions Flex Consumption",
+      "longDescription": "Terraform infrastructure template using the AzureRM provider for creating a Flex Consumption function app. The AzureRM provider is the standard Terraform provider for Azure resources.",
+      "language": "Terraform",
+      "bindingType": "none",
+      "resource": "terraform",
+      "iac": "terraform",
+      "priority": 2,
+      "categories": [
+        "iac",
+        "flex-consumption",
+        "infrastructure"
+      ],
+      "tags": [
+        "Terraform",
+        "Azurerm",
+        "Flex Consumption",
+        "Infrastructure As Code"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-flex-consumption-samples",
+      "folderPath": "IaC/terraformazurerm",
+      "whatsIncluded": [
+        "Terraform configuration files",
+        "AzureRM provider setup",
+        "Variable definitions"
+      ]
+    }
+  ]
+}

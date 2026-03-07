@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Azure/azure-functions-templates/Functions.Templates/Template-Manifest/schemas/manifest.schema.json",
+  "title": "Azure Functions Templates Manifest",
+  "description": "Schema for the templates-manifest.json file containing Azure Functions template definitions",
+  "type": "object",
+  "required": [
+    "$schema",
+    "generatedAt",
+    "version",
+    "totalTemplates",
+    "languages",
+    "templates"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to this JSON schema"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of when the manifest was generated"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semantic version of the manifest format"
+    },
+    "totalTemplates": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total number of templates in the manifest"
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "ARM",
+          "Bicep",
+          "CSharp",
+          "Java",
+          "JavaScript",
+          "PowerShell",
+          "Python",
+          "Terraform",
+          "TypeScript"
+        ]
+      },
+      "description": "List of supported programming languages"
+    },
+    "templates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/template"
+      },
+      "description": "Array of template definitions"
+    },
+    "references": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": "Reference URLs for documentation and sources"
+    }
+  },
+  "$defs": {
+    "template": {
+      "type": "object",
+      "required": [
+        "id",
+        "displayName",
+        "shortDescription",
+        "language",
+        "bindingType",
+        "resource",
+        "iac",
+        "priority",
+        "categories",
+        "repositoryUrl",
+        "folderPath"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9/_-]+$",
+          "description": "Unique identifier for the template (lowercase with slashes or hyphens)"
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Human-readable name of the template"
+        },
+        "shortDescription": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Brief description of the template (max 200 characters)"
+        },
+        "longDescription": {
+          "type": "string",
+          "description": "Detailed description of the template and its use cases"
+        },
+        "language": {
+          "type": "string",
+          "enum": [
+            "ARM",
+            "Bicep",
+            "CSharp",
+            "Java",
+            "JavaScript",
+            "PowerShell",
+            "Python",
+            "Terraform",
+            "TypeScript"
+          ],
+          "description": "Programming language of the template"
+        },
+        "bindingType": {
+          "type": "string",
+          "enum": [
+            "trigger",
+            "input",
+            "output",
+            "orchestration",
+            "entity",
+            "none"
+          ],
+          "description": "Type of Azure Functions binding"
+        },
+        "resource": {
+          "type": "string",
+          "enum": [
+            "http",
+            "timer",
+            "blob",
+            "queue",
+            "cosmos",
+            "eventhub",
+            "eventgrid",
+            "servicebus",
+            "sql",
+            "mysql",
+            "signalr",
+            "rabbitmq",
+            "mcp",
+            "durable",
+            "generic",
+            "arm",
+            "bicep",
+            "terraform"
+          ],
+          "description": "Azure resource type the template interacts with"
+        },
+        "iac": {
+          "type": "string",
+          "enum": [
+            "none",
+            "bicep",
+            "terraform",
+            "arm"
+          ],
+          "description": "Infrastructure as Code type included with the template"
+        },
+        "priority": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Priority for sorting (0 = starter/highest, higher = lower priority)"
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "description": "Categories for filtering (kebab-case)"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Tags for search and discovery (Title Case)"
+        },
+        "author": {
+          "type": "string",
+          "description": "Author or team that created the template"
+        },
+        "repositoryUrl": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://github\\.com/",
+          "description": "GitHub repository URL containing the template"
+        },
+        "folderPath": {
+          "type": "string",
+          "description": "Path to template folder within the repository ('.' for root)"
+        },
+        "whatsIncluded": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of files and components included in the template"
+        }
+      }
+    }
+  }
+}
