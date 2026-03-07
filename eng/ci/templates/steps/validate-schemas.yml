@@ -1,0 +1,92 @@
+parameters:
+  # Array of validation sets. Each item contains:
+  #   - schema: path to the JSON schema file
+  #   - files: array of JSON file paths to validate (optional)
+  #   - pattern: glob pattern to find JSON files (optional)
+  - name: validations
+    type: object
+    displayName: 'List of schema/files validation sets'
+
+steps:
+- task: PowerShell@2
+  displayName: 'Validate JSON files against schemas'
+  inputs:
+    targetType: 'inline'
+    script: |
+      Write-Host "Installing ajv-cli for JSON schema validation..."
+      npm install -g ajv-cli ajv-formats
+
+      $failed = $false
+
+      ${{ each validation in parameters.validations }}:
+      Write-Host ""
+      Write-Host "=========================================="
+      $schemaFile = "${{ validation.schema }}"
+      Write-Host "Schema: $schemaFile"
+
+      if (-not (Test-Path $schemaFile)) {
+          Write-Error "Schema file not found: $schemaFile"
+          $failed = $true
+      } else {
+          # Validate the schema file itself is valid JSON
+          Write-Host "Validating schema file is valid JSON..."
+          try {
+              $schemaContent = Get-Content $schemaFile -Raw | ConvertFrom-Json -ErrorAction Stop
+              Write-Host "  Schema file is valid JSON" -ForegroundColor Green
+          } catch {
+              Write-Error "Failed to parse schema file as valid JSON: $_"
+              $failed = $true
+          }
+
+          # Collect JSON files to validate
+          $filesToValidate = @()
+
+          # From files array
+          ${{ if validation.files }}:
+          ${{ each file in validation.files }}:
+          $filesToValidate += "${{ file }}"
+          ${{ end }}
+          ${{ end }}
+
+          # From glob pattern
+          ${{ if validation.pattern }}:
+          $pattern = "${{ validation.pattern }}"
+          Write-Host "Finding files matching pattern: $pattern"
+          $matchedFiles = Get-ChildItem -Path "$(Build.Repository.LocalPath)" -Filter $pattern -Recurse -File | Select-Object -ExpandProperty FullName
+          $filesToValidate += $matchedFiles
+          ${{ end }}
+
+          if ($filesToValidate.Count -eq 0) {
+              Write-Warning "No JSON files found for schema: $schemaFile"
+          } else {
+              Write-Host "Validating $($filesToValidate.Count) file(s)..."
+
+              foreach ($jsonFile in $filesToValidate) {
+                  if (-not (Test-Path $jsonFile)) {
+                      Write-Error "File not found: $jsonFile"
+                      $failed = $true
+                      continue
+                  }
+
+                  Write-Host ""
+                  Write-Host "  Validating: $jsonFile"
+                  ajv validate -s $schemaFile -d $jsonFile --spec=draft2020 -c ajv-formats --strict=false
+                  if ($LASTEXITCODE -ne 0) {
+                      Write-Error "    Validation FAILED"
+                      $failed = $true
+                  } else {
+                      Write-Host "    Valid" -ForegroundColor Green
+                  }
+              }
+          }
+      }
+      ${{ end }}
+
+      Write-Host ""
+      Write-Host "=========================================="
+      if ($failed) {
+          Write-Error "One or more validations failed!"
+          exit 1
+      }
+
+      Write-Host "All schema validations passed!" -ForegroundColor Green
