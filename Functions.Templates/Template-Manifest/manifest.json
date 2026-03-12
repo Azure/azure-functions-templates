@@ -1,8 +1,8 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-03-12T22:47:47Z",
+  "generatedAt": "2026-03-12T22:59:55Z",
   "version": "1.0.0",
-  "totalTemplates": 116,
+  "totalTemplates": 130,
   "languages": [
     "ARM",
     "Bicep",
@@ -876,6 +876,68 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
       "folderPath": "templates/csharp/DurableFunctionsOrchestration",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "durable-entity-class-csharp",
+      "displayName": "Durable Functions Entity Class (C#)",
+      "shortDescription": "Durable entity using class-based syntax for C#",
+      "longDescription": "Durable Functions entity using class-based syntax for managing state with the virtual actor pattern.",
+      "language": "CSharp",
+      "bindingType": "entity",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Entity",
+        "State Management",
+        "Actor Pattern"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/DurableFunctionsEntityClass",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "durable-entity-function-csharp",
+      "displayName": "Durable Functions Entity Function (C#)",
+      "shortDescription": "Durable entity using function-based syntax for C#",
+      "longDescription": "Durable Functions entity using function-based syntax for managing state with the virtual actor pattern.",
+      "language": "CSharp",
+      "bindingType": "entity",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Entity",
+        "State Management",
+        "Actor Pattern"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/DurableFunctionsEntityFunction",
       "whatsIncluded": [
         "Function code (.cs)",
         ".csproj project file",
@@ -3692,6 +3754,400 @@
         "requirements.txt",
         "host.json configuration",
         "local.settings.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-single-agent-python",
+      "displayName": "Agent Framework Single Agent (Python)",
+      "shortDescription": "Host a single AI agent with durable HTTP API endpoints",
+      "longDescription": "Demonstrates hosting a single AI agent in Azure Functions with the Durable Extension for Agent Framework. Provides HTTP endpoints for interactive conversations with session-based state management.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 1,
+      "categories": [
+        "starter",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Azure OpenAI",
+        "AI Agent",
+        "Starter"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/01_single_agent",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "Agent definition",
+        "HTTP endpoints",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-multi-agent-python",
+      "displayName": "Agent Framework Multi Agent (Python)",
+      "shortDescription": "Host multiple AI agents with durable HTTP endpoints",
+      "longDescription": "Demonstrates hosting multiple AI agents in a single Azure Functions app. Each agent has unique instructions and independent HTTP endpoints with isolated conversation management.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 1,
+      "categories": [
+        "starter",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Azure OpenAI",
+        "Multi-Agent",
+        "Starter"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/02_multi_agent",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "Multiple agent definitions",
+        "HTTP endpoints",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-streaming-python",
+      "displayName": "Agent Framework Reliable Streaming (Python)",
+      "shortDescription": "Durable Redis-based reliable streaming with cursor-based resumption",
+      "longDescription": "Demonstrates reliable, resumable streaming for durable agents using Redis Streams. Clients can disconnect and reconnect without losing messages using cursor-based pagination and Server-Sent Events.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Redis",
+        "Streaming",
+        "SSE"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/03_reliable_streaming",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "Redis Stream callback",
+        "SSE endpoint",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-orchestration-chaining-python",
+      "displayName": "Agent Framework Orchestration Chaining (Python)",
+      "shortDescription": "Chain agent invocations in durable orchestration",
+      "longDescription": "Shows how to chain multiple invocations of an agent inside a Durable Functions orchestration while preserving conversation state between runs.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Function Chaining",
+        "Orchestration"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/04_single_agent_orchestration_chaining",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "Durable orchestration",
+        "Session management",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-orchestration-concurrency-python",
+      "displayName": "Agent Framework Orchestration Concurrency (Python)",
+      "shortDescription": "Run multiple durable agents in parallel with merged responses",
+      "longDescription": "Starts a Durable Functions orchestration that runs two agents (Physicist and Chemist) in parallel using task_all and merges their domain-specific responses.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Fan-out/Fan-in",
+        "Parallel Execution"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/05_multi_agent_orchestration_concurrency",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "Parallel orchestration",
+        "Multiple agents",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-orchestration-conditionals-python",
+      "displayName": "Agent Framework Orchestration Conditionals (Python)",
+      "shortDescription": "Durable conditional branching with spam detection workflow",
+      "longDescription": "Evaluates incoming emails with a spam detector agent and conditionally routes to an email assistant agent for response drafting. Demonstrates structured responses and conditional orchestration branching.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Conditional Logic",
+        "Spam Detection"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/06_multi_agent_orchestration_conditionals",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "Conditional orchestration",
+        "Structured responses",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-orchestration-hitl-python",
+      "displayName": "Agent Framework Orchestration HITL (Python)",
+      "shortDescription": "Durable human-in-the-loop with approval workflow",
+      "longDescription": "Demonstrates human-in-the-loop (HITL) pattern where a writer agent iterates on content until a human reviewer approves or maximum attempts reached. Uses external events for approval/rejection.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Human-in-the-Loop",
+        "HITL",
+        "Approval Workflow"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/07_single_agent_orchestration_hitl",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "HITL orchestration",
+        "External events",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-mcp-server-python",
+      "displayName": "Agent Framework MCP Server (Python)",
+      "shortDescription": "Expose durable agents as MCP tools and HTTP endpoints",
+      "longDescription": "Configure AI agents to be accessible as both HTTP endpoints and Model Context Protocol (MCP) tools. Demonstrates multi-trigger agent configuration for flexible integration patterns.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework",
+        "mcp"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "MCP",
+        "Model Context Protocol",
+        "Multi-Trigger"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/08_mcp_server",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "MCP tool configuration",
+        "HTTP endpoints",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-workflow-shared-state-python",
+      "displayName": "Agent Framework Workflow Shared State (Python)",
+      "shortDescription": "Durable workflows with shared state for data passing between executors",
+      "longDescription": "Demonstrates running Agent Framework workflows with shared state in Azure Durable Functions. Uses ctx.set_state() and ctx.get_state() to share data across workflow steps.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Workflow",
+        "SharedState",
+        "State Management"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/09_workflow_shared_state",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "WorkflowBuilder",
+        "SharedState APIs",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-workflow-python",
+      "displayName": "Agent Framework Workflow (Python)",
+      "shortDescription": "Basic durable workflow execution without SharedState",
+      "longDescription": "Demonstrates running Agent Framework workflows in Azure Durable Functions. Shows workflow registration with AgentFunctionApp and conditional routing with agent and executor composition.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Workflow",
+        "WorkflowBuilder"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/10_workflow_no_shared_state",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "WorkflowBuilder",
+        "Agent composition",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-workflow-parallel-python",
+      "displayName": "Agent Framework Workflow Parallel (Python)",
+      "shortDescription": "Durable parallel execution patterns for executors and agents",
+      "longDescription": "Showcases three parallel execution patterns: two executors in parallel (activities), two agents in parallel (entities), and mixed concurrent execution of agents and executors.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Workflow",
+        "Parallel Execution",
+        "Fan-out/Fan-in"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/11_workflow_parallel",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "Parallel patterns",
+        "Aggregation",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-workflow-hitl-python",
+      "displayName": "Agent Framework Workflow HITL (Python)",
+      "shortDescription": "Durable workflow with human approval using request_info pattern",
+      "longDescription": "Integrates human approval into Agent Framework workflows using the request_info and @response_handler pattern. Implements content moderation pipeline with AI analysis and human review.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Workflow",
+        "Human-in-the-Loop",
+        "HITL",
+        "Content Moderation"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/12_workflow_hitl",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "HITL endpoints",
+        "Response handlers",
+        "requirements.txt",
         "README.md"
       ]
     }
