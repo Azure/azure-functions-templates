@@ -1,8 +1,8 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-03-02T03:24:03.953Z",
+  "generatedAt": "2026-03-12T22:47:47Z",
   "version": "1.0.0",
-  "totalTemplates": 107,
+  "totalTemplates": 116,
   "languages": [
     "ARM",
     "Bicep",
@@ -847,70 +847,6 @@
       "whatsIncluded": [
         "Function code (.ts)",
         "package.json dependencies",
-        "host.json configuration",
-        "local.settings.json",
-        "README with setup instructions"
-      ]
-    },
-    {
-      "id": "durable-entity-class-csharp",
-      "displayName": "Durable Functions Entity Class (C#)",
-      "shortDescription": "Durable entity using class-based syntax for C#",
-      "longDescription": "Durable Functions entity using class-based syntax for managing state with the virtual actor pattern.",
-      "language": "CSharp",
-      "bindingType": "entity",
-      "resource": "durable",
-      "iac": "none",
-      "priority": 0,
-      "categories": [
-        "starter",
-        "durable-functions"
-      ],
-      "tags": [
-        "Durable Functions",
-        "Entity",
-        "Stateful",
-        "State Management",
-        "Actor Pattern"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
-      "folderPath": "templates/csharp/DurableFunctionsEntityClass",
-      "whatsIncluded": [
-        "Function code (.cs)",
-        ".csproj project file",
-        "host.json configuration",
-        "local.settings.json",
-        "README with setup instructions"
-      ]
-    },
-    {
-      "id": "durable-entity-function-csharp",
-      "displayName": "Durable Functions Entity Function (C#)",
-      "shortDescription": "Durable entity using function-based syntax for C#",
-      "longDescription": "Durable Functions entity using function-based syntax for managing state with the virtual actor pattern.",
-      "language": "CSharp",
-      "bindingType": "entity",
-      "resource": "durable",
-      "iac": "none",
-      "priority": 0,
-      "categories": [
-        "starter",
-        "durable-functions"
-      ],
-      "tags": [
-        "Durable Functions",
-        "Entity",
-        "Stateful",
-        "State Management",
-        "Actor Pattern"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
-      "folderPath": "templates/csharp/DurableFunctionsEntityFunction",
-      "whatsIncluded": [
-        "Function code (.cs)",
-        ".csproj project file",
         "host.json configuration",
         "local.settings.json",
         "README with setup instructions"
@@ -2558,41 +2494,6 @@
       ]
     },
     {
-      "id": "durable-order-processing-csharp",
-      "displayName": "Order Processing with Durable Functions (C# + AZD + Bicep)",
-      "shortDescription": "Order processing workflow using Durable Functions",
-      "longDescription": "Implement an order processing workflow using Durable Functions and Flex Consumption. Demonstrates complex workflow coordination with managed identity authentication.",
-      "language": "CSharp",
-      "bindingType": "orchestration",
-      "resource": "durable",
-      "iac": "bicep",
-      "priority": 1,
-      "categories": [
-        "workflows",
-        "durable-functions",
-        "azd-quickstart"
-      ],
-      "tags": [
-        "Durable Functions",
-        "Orchestration",
-        "Activity",
-        "Workflow",
-        "Order Processing",
-        "AZD"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Functions-Order-Processing",
-      "folderPath": ".",
-      "whatsIncluded": [
-        "Durable orchestration function",
-        "Activity functions for order steps",
-        "Bicep infrastructure files",
-        "Azure Developer CLI (azd) configuration",
-        "Managed identity authentication",
-        "VS Code debug configuration"
-      ]
-    },
-    {
       "id": "eventhub-trigger-csharp-azd",
       "displayName": "Event Hub Trigger (C# + AZD + Bicep)",
       "shortDescription": "Event Hub trigger quickstart for C# deployed with azd",
@@ -3406,6 +3307,392 @@
         "Terraform configuration files",
         "AzureRM provider setup",
         "Variable definitions"
+      ]
+    },
+    {
+      "id": "durable-order-processor-csharp",
+      "displayName": "Durable Functions Order Processing (C#)",
+      "shortDescription": "Order processing workflow with Durable Functions and azd deployment",
+      "longDescription": "A complete order processing solution demonstrating Durable Functions orchestration patterns. Includes inventory check, payment processing, shipping, and notification activities with built-in retry and compensation logic. Features azd (Azure Developer CLI) support for one-command deployment to Azure with Bicep infrastructure.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "workflow",
+        "durable-functions",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Order Processing",
+        "Saga Pattern",
+        "azd"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Functions-Order-Processing",
+      "folderPath": "",
+      "whatsIncluded": [
+        "Durable orchestration function",
+        "Activity functions for order steps",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity authentication",
+        "VS Code debug configuration"
+      ]
+    },
+    {
+      "id": "durable-order-processor-python",
+      "displayName": "Durable Functions Order Processing (Python)",
+      "shortDescription": "Order processing workflow with Durable Functions and azd deployment",
+      "longDescription": "A complete order processing solution in Python demonstrating Durable Functions orchestration patterns. Includes inventory check, payment processing, shipping, and notification activities with built-in retry and compensation logic. Features azd (Azure Developer CLI) support for one-command deployment to Azure with Bicep infrastructure.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "workflow",
+        "durable-functions",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Order Processing",
+        "Saga Pattern",
+        "azd"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/durable-functions-order-processing-python",
+      "folderPath": "",
+      "whatsIncluded": [
+        "Durable orchestration function",
+        "Activity functions for order steps",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity authentication",
+        "VS Code debug configuration"
+      ]
+    },
+    {
+      "id": "durable-saga-csharp",
+      "displayName": "Durable Functions Saga Pattern (C#)",
+      "shortDescription": "Saga pattern with compensation for distributed transactions",
+      "longDescription": "Implements the Saga pattern for managing distributed transactions with compensation logic. Demonstrates how to handle failures gracefully by rolling back completed steps when subsequent steps fail.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 1,
+      "categories": [
+        "workflow",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Saga Pattern",
+        "Compensation",
+        "Distributed Transactions"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/dotnet/Saga",
+      "whatsIncluded": [
+        "Orchestrator with compensation logic",
+        "Activity functions",
+        "Error handling patterns",
+        "README.md"
+      ]
+    },
+    {
+      "id": "durable-distributed-tracing-csharp",
+      "displayName": "Durable Functions Distributed Tracing (C#)",
+      "shortDescription": "OpenTelemetry distributed tracing for orchestrations",
+      "longDescription": "Demonstrates how to implement distributed tracing with OpenTelemetry in Durable Functions. Track orchestration execution across activities with correlation IDs and spans.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 1,
+      "categories": [
+        "observability",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "OpenTelemetry",
+        "Distributed Tracing",
+        "Observability"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/dotnet/DistributedTracing",
+      "whatsIncluded": [
+        "OpenTelemetry configuration",
+        "Traced orchestration",
+        "Activity functions with spans",
+        "README.md"
+      ]
+    },
+    {
+      "id": "durable-large-payload-csharp",
+      "displayName": "Durable Functions Large Payload (C#)",
+      "shortDescription": "Handling large payloads with blob storage",
+      "longDescription": "Demonstrates best practices for handling large payloads in Durable Functions using Azure Blob Storage for data that exceeds message size limits.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 1,
+      "categories": [
+        "workflow",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Large Payload",
+        "Blob Storage",
+        "Best Practices"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/dotnet/LargePayload",
+      "whatsIncluded": [
+        "Large payload handling",
+        "Blob storage integration",
+        "Orchestration code",
+        "README.md"
+      ]
+    },
+    {
+      "id": "durable-pdf-summarizer-csharp",
+      "displayName": "Durable Functions PDF Summarizer (C#)",
+      "shortDescription": "AI-powered PDF summarization with Azure OpenAI",
+      "longDescription": "Uses Durable Functions to orchestrate PDF processing and summarization with Azure OpenAI. Demonstrates integrating AI services into durable workflows.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "ai",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Azure OpenAI",
+        "PDF Processing",
+        "AI"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/dotnet/PdfSummarizer",
+      "whatsIncluded": [
+        "PDF processing orchestration",
+        "Azure OpenAI integration",
+        "Activity functions",
+        "README.md"
+      ]
+    },
+    {
+      "id": "durable-pdf-summarizer-python",
+      "displayName": "Durable Functions PDF Summarizer (Python)",
+      "shortDescription": "AI-powered PDF summarization with Azure OpenAI",
+      "longDescription": "Uses Durable Functions to orchestrate PDF processing and summarization with Azure OpenAI. Demonstrates integrating AI services into durable workflows.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "ai",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Azure OpenAI",
+        "PDF Processing",
+        "AI"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/python/pdf-summarizer",
+      "whatsIncluded": [
+        "PDF processing orchestration",
+        "Azure OpenAI integration",
+        "Activity functions",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "durable-ai-travel-planner-csharp",
+      "displayName": "Durable Functions AI Travel Planner (C#)",
+      "shortDescription": "AI agent orchestrating travel planning with multiple services",
+      "longDescription": "An AI-powered travel planning agent using Durable Functions to coordinate multiple AI services for destination research, itinerary creation, and booking recommendations.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "ai",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "AI Agent",
+        "Azure OpenAI",
+        "Travel Planning"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/dotnet/AiAgentTravelPlanOrchestrator",
+      "whatsIncluded": [
+        "AI agent orchestration",
+        "Multiple AI service integration",
+        "Activity functions",
+        "README.md"
+      ]
+    },
+    {
+      "id": "durable-aspire-csharp",
+      "displayName": "Durable Functions with .NET Aspire (C#)",
+      "shortDescription": "Durable Functions integrated with .NET Aspire for cloud-native development",
+      "longDescription": "Demonstrates integrating Durable Functions with .NET Aspire for enhanced local development, service discovery, and observability in cloud-native applications.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        ".NET Aspire",
+        "Cloud Native",
+        "Observability"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/dotnet/AzureFunctionsAndDtsWithAspire",
+      "whatsIncluded": [
+        "Aspire AppHost configuration",
+        "Durable Functions service",
+        "Service discovery setup",
+        "README.md"
+      ]
+    },
+    {
+      "id": "durable-orchestration-javascript",
+      "displayName": "Durable Functions Orchestration (JavaScript)",
+      "shortDescription": "Basic orchestration demonstrating Function Chaining and Fan-out/Fan-in patterns",
+      "longDescription": "Demonstrates core Durable Functions patterns: Function Chaining (sequential activity calls) and Fan-out/Fan-in (parallel execution with aggregation). HTTP trigger starts orchestrations that call activity functions.",
+      "language": "JavaScript",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Activity",
+        "Function Chaining",
+        "Fan-out/Fan-in",
+        "Starter"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/javascript/HelloCities",
+      "whatsIncluded": [
+        "Function code (.js)",
+        "package.json",
+        "host.json configuration",
+        "local.settings.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "durable-orchestration-typescript",
+      "displayName": "Durable Functions Orchestration (TypeScript)",
+      "shortDescription": "Basic orchestration demonstrating Function Chaining and Fan-out/Fan-in patterns",
+      "longDescription": "Demonstrates core Durable Functions patterns: Function Chaining (sequential activity calls) and Fan-out/Fan-in (parallel execution with aggregation). HTTP trigger starts orchestrations that call activity functions.",
+      "language": "TypeScript",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Activity",
+        "Function Chaining",
+        "Fan-out/Fan-in",
+        "Starter"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/typescript/HelloCities",
+      "whatsIncluded": [
+        "Function code (.ts)",
+        "package.json",
+        "tsconfig.json",
+        "host.json configuration",
+        "local.settings.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "durable-orchestration-python",
+      "displayName": "Durable Functions Orchestration (Python)",
+      "shortDescription": "Basic orchestration demonstrating Fan-out/Fan-in pattern",
+      "longDescription": "Demonstrates the Fan-out/Fan-in pattern: processes work items in parallel and aggregates results. A fundamental pattern for parallel data processing with Durable Functions.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Activity",
+        "Fan-out/Fan-in",
+        "Parallel Processing",
+        "Starter"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/python/fan-out-fan-in",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "requirements.txt",
+        "host.json configuration",
+        "local.settings.json",
+        "README.md"
       ]
     }
   ]
