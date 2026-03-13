@@ -4143,6 +4143,266 @@
         "requirements.txt",
         "README.md"
       ]
+    },
+    {
+      "id": "agentframework-durable-single-agent-csharp",
+      "displayName": "Agent Framework Single Agent (C#)",
+      "shortDescription": "Host a single AI agent with durable HTTP API endpoints",
+      "longDescription": "Demonstrates hosting a single conversational AI agent in Azure Functions with the Durable Extension for Agent Framework. Provides HTTP endpoints for interactive conversations with session-based state management.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 1,
+      "categories": [
+        "starter",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Azure OpenAI",
+        "AI Agent",
+        "Starter"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "dotnet/samples/04-hosting/DurableAgents/AzureFunctions/01_SingleAgent",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        "Agent definition",
+        "HTTP endpoints",
+        ".csproj file",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-orchestration-chaining-csharp",
+      "displayName": "Agent Framework Orchestration Chaining (C#)",
+      "shortDescription": "Chain agent invocations in durable orchestration",
+      "longDescription": "Demonstrates hosting a single conversational agent in Azure Functions and invoking it using a durable orchestration while preserving conversation state between runs.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Function Chaining",
+        "Orchestration"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "dotnet/samples/04-hosting/DurableAgents/AzureFunctions/02_AgentOrchestration_Chaining",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        "Durable orchestration",
+        "Session management",
+        ".csproj file",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-orchestration-concurrency-csharp",
+      "displayName": "Agent Framework Orchestration Concurrency (C#)",
+      "shortDescription": "Run multiple durable agents in parallel with merged responses",
+      "longDescription": "Demonstrates hosting multiple agents in Azure Functions and running them concurrently using a durable orchestration to merge their domain-specific responses.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Fan-out/Fan-in",
+        "Parallel Execution"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "dotnet/samples/04-hosting/DurableAgents/AzureFunctions/03_AgentOrchestration_Concurrency",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        "Parallel orchestration",
+        "Multiple agents",
+        ".csproj file",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-orchestration-conditionals-csharp",
+      "displayName": "Agent Framework Orchestration Conditionals (C#)",
+      "shortDescription": "Durable conditional branching with multi-agent workflow",
+      "longDescription": "Demonstrates hosting multiple agents in Azure Functions and running them sequentially using a durable orchestration with conditionals for branching logic.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Conditional Logic",
+        "Orchestration"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "dotnet/samples/04-hosting/DurableAgents/AzureFunctions/04_AgentOrchestration_Conditionals",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        "Conditional orchestration",
+        "Multiple agents",
+        ".csproj file",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-orchestration-hitl-csharp",
+      "displayName": "Agent Framework Orchestration HITL (C#)",
+      "shortDescription": "Durable human-in-the-loop with approval workflow",
+      "longDescription": "Demonstrates human-in-the-loop (HITL) pattern using durable orchestration with external event handling for human approval workflows.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Human-in-the-Loop",
+        "HITL",
+        "Approval Workflow"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "dotnet/samples/04-hosting/DurableAgents/AzureFunctions/05_AgentOrchestration_HITL",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        "HITL orchestration",
+        "External events",
+        ".csproj file",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-long-running-tools-csharp",
+      "displayName": "Agent Framework Long Running Tools (C#)",
+      "shortDescription": "Agents with durable orchestrations for long-running tool scenarios",
+      "longDescription": "Demonstrates how agents can start and interact with durable orchestrations from tool calls to enable long-running tool scenarios.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Tool",
+        "Orchestration"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "dotnet/samples/04-hosting/DurableAgents/AzureFunctions/06_LongRunningTools",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        "Tool orchestration",
+        "Agent tools",
+        ".csproj file",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-mcp-server-csharp",
+      "displayName": "Agent Framework MCP Server (C#)",
+      "shortDescription": "Expose durable agents as MCP tools and HTTP endpoints",
+      "longDescription": "Demonstrates how to configure durable AI agents to be accessible as Model Context Protocol (MCP) tools for flexible integration patterns.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "mcp",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "MCP",
+        "Model Context Protocol",
+        "MCP SDK"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "dotnet/samples/04-hosting/DurableAgents/AzureFunctions/07_AgentAsMcpTool",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        "MCP tool configuration",
+        "HTTP endpoints",
+        ".csproj file",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-streaming-csharp",
+      "displayName": "Agent Framework Reliable Streaming (C#)",
+      "shortDescription": "Durable Redis-based reliable streaming with cursor-based resumption",
+      "longDescription": "Demonstrates reliable streaming for durable agents using Redis Streams, enabling clients to disconnect and reconnect without losing messages.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "streaming",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Redis",
+        "Streaming",
+        "SSE"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "dotnet/samples/04-hosting/DurableAgents/AzureFunctions/08_ReliableStreaming",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        "Redis Stream integration",
+        "SSE endpoint",
+        ".csproj file",
+        "README.md"
+      ]
     }
   ]
 }
