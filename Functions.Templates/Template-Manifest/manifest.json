@@ -1,8 +1,39 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-03-02T03:24:03.953Z",
-  "version": "1.0.0",
-  "totalTemplates": 107,
+  "generatedAt": "2026-03-12T22:59:55Z",
+  "version": "1.1.0",
+  "totalTemplates": 138,
+  "runtimeVersions": {
+    "Python": {
+      "supported": ["3.10", "3.11", "3.12", "3.13"],
+      "preview": ["3.14"],
+      "default": "3.11"
+    },
+    "JavaScript": {
+      "supported": ["20", "22"],
+      "preview": ["24"],
+      "default": "22"
+    },
+    "TypeScript": {
+      "supported": ["20", "22"],
+      "preview": ["24"],
+      "default": "22"
+    },
+    "Java": {
+      "supported": ["8", "11", "17", "21"],
+      "preview": ["25"],
+      "default": "21"
+    },
+    "CSharp": {
+      "supported": ["8", "9", "10"],
+      "frameworkSupported": ["4.8.1"],
+      "default": "8"
+    },
+    "PowerShell": {
+      "supported": ["7.4"],
+      "default": "7.4"
+    }
+  },
   "languages": [
     "ARM",
     "Bicep",
@@ -32,7 +63,7 @@
       "tags": [
         "Blob",
         "Storage",
-        "Eventgrid",
+        "Event Grid",
         "Event Driven"
       ],
       "author": "Azure Functions Team",
@@ -63,7 +94,7 @@
       "tags": [
         "Blob",
         "Storage",
-        "Eventgrid",
+        "Event Grid",
         "Event Driven"
       ],
       "author": "Azure Functions Team",
@@ -94,7 +125,7 @@
       "tags": [
         "Blob",
         "Storage",
-        "Eventgrid",
+        "Event Grid",
         "Event Driven"
       ],
       "author": "Azure Functions Team",
@@ -495,10 +526,10 @@
         "database-bindings"
       ],
       "tags": [
-        "Cosmosdb",
+        "Cosmos DB",
         "Database",
         "Input",
-        "Nosql"
+        "NoSQL"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
@@ -526,10 +557,10 @@
         "database-bindings"
       ],
       "tags": [
-        "Cosmosdb",
+        "Cosmos DB",
         "Database",
         "Input",
-        "Nosql"
+        "NoSQL"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
@@ -557,10 +588,10 @@
         "database-bindings"
       ],
       "tags": [
-        "Cosmosdb",
+        "Cosmos DB",
         "Database",
         "Input",
-        "Nosql"
+        "NoSQL"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
@@ -588,10 +619,10 @@
         "database-bindings"
       ],
       "tags": [
-        "Cosmosdb",
+        "Cosmos DB",
         "Database",
         "Input",
-        "Nosql"
+        "NoSQL"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
@@ -619,10 +650,10 @@
         "database-bindings"
       ],
       "tags": [
-        "Cosmosdb",
+        "Cosmos DB",
         "Database",
         "Output",
-        "Nosql"
+        "NoSQL"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
@@ -650,10 +681,10 @@
         "database-bindings"
       ],
       "tags": [
-        "Cosmosdb",
+        "Cosmos DB",
         "Database",
         "Output",
-        "Nosql"
+        "NoSQL"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
@@ -681,10 +712,10 @@
         "database-bindings"
       ],
       "tags": [
-        "Cosmosdb",
+        "Cosmos DB",
         "Database",
         "Output",
-        "Nosql"
+        "NoSQL"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
@@ -712,10 +743,10 @@
         "database-bindings"
       ],
       "tags": [
-        "Cosmosdb",
+        "Cosmos DB",
         "Database",
         "Output",
-        "Nosql"
+        "NoSQL"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
@@ -743,10 +774,10 @@
         "database-triggers"
       ],
       "tags": [
-        "Cosmosdb",
+        "Cosmos DB",
         "Database",
         "Changefeed",
-        "Nosql"
+        "NoSQL"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
@@ -774,10 +805,10 @@
         "database-triggers"
       ],
       "tags": [
-        "Cosmosdb",
+        "Cosmos DB",
         "Database",
         "Changefeed",
-        "Nosql"
+        "NoSQL"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
@@ -805,10 +836,10 @@
         "database-triggers"
       ],
       "tags": [
-        "Cosmosdb",
+        "Cosmos DB",
         "Database",
         "Changefeed",
-        "Nosql"
+        "NoSQL"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
@@ -836,10 +867,10 @@
         "database-triggers"
       ],
       "tags": [
-        "Cosmosdb",
+        "Cosmos DB",
         "Database",
         "Changefeed",
-        "Nosql"
+        "NoSQL"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
@@ -847,6 +878,38 @@
       "whatsIncluded": [
         "Function code (.ts)",
         "package.json dependencies",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "durable-orchestration-csharp",
+      "displayName": "Durable Functions Orchestration (C#)",
+      "shortDescription": "Durable Functions orchestration with activity functions for C#",
+      "longDescription": "Durable Functions orchestration pattern with HTTP trigger starter, orchestrator function, and activity functions for fault-tolerant workflows.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Activity",
+        "Workflow",
+        "Stateful"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/csharp/DurableFunctionsOrchestration",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        ".csproj project file",
         "host.json configuration",
         "local.settings.json",
         "README with setup instructions"
@@ -869,7 +932,6 @@
       "tags": [
         "Durable Functions",
         "Entity",
-        "Stateful",
         "State Management",
         "Actor Pattern"
       ],
@@ -901,45 +963,12 @@
       "tags": [
         "Durable Functions",
         "Entity",
-        "Stateful",
         "State Management",
         "Actor Pattern"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
       "folderPath": "templates/csharp/DurableFunctionsEntityFunction",
-      "whatsIncluded": [
-        "Function code (.cs)",
-        ".csproj project file",
-        "host.json configuration",
-        "local.settings.json",
-        "README with setup instructions"
-      ]
-    },
-    {
-      "id": "durable-orchestration-csharp",
-      "displayName": "Durable Functions Orchestration (C#)",
-      "shortDescription": "Durable Functions orchestration with activity functions for C#",
-      "longDescription": "Durable Functions orchestration pattern with HTTP trigger starter, orchestrator function, and activity functions for fault-tolerant workflows.",
-      "language": "CSharp",
-      "bindingType": "orchestration",
-      "resource": "durable",
-      "iac": "none",
-      "priority": 0,
-      "categories": [
-        "starter",
-        "durable-functions"
-      ],
-      "tags": [
-        "Durable Functions",
-        "Orchestration",
-        "Activity",
-        "Workflow",
-        "Stateful"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
-      "folderPath": "templates/csharp/DurableFunctionsOrchestration",
       "whatsIncluded": [
         "Function code (.cs)",
         ".csproj project file",
@@ -995,7 +1024,7 @@
         "event-processing"
       ],
       "tags": [
-        "Eventgrid",
+        "Event Grid",
         "Events",
         "Event Driven",
         "Integration"
@@ -1026,7 +1055,7 @@
         "event-processing"
       ],
       "tags": [
-        "Eventgrid",
+        "Event Grid",
         "Events",
         "Event Driven",
         "Integration"
@@ -1057,9 +1086,9 @@
         "streaming"
       ],
       "tags": [
-        "Eventhub",
+        "Event Hub",
         "Streaming",
-        "Iot",
+        "IoT",
         "Telemetry"
       ],
       "author": "Azure Functions Team",
@@ -1088,9 +1117,9 @@
         "streaming"
       ],
       "tags": [
-        "Eventhub",
+        "Event Hub",
         "Streaming",
-        "Iot",
+        "IoT",
         "Telemetry"
       ],
       "author": "Azure Functions Team",
@@ -1119,9 +1148,9 @@
         "streaming"
       ],
       "tags": [
-        "Eventhub",
+        "Event Hub",
         "Streaming",
-        "Iot",
+        "IoT",
         "Telemetry"
       ],
       "author": "Azure Functions Team",
@@ -1150,9 +1179,9 @@
         "streaming"
       ],
       "tags": [
-        "Eventhub",
+        "Event Hub",
         "Streaming",
-        "Iot",
+        "IoT",
         "Telemetry"
       ],
       "author": "Azure Functions Team",
@@ -1522,7 +1551,7 @@
         "database-bindings"
       ],
       "tags": [
-        "Mysql",
+        "MySQL",
         "Database",
         "Input",
         "Query"
@@ -1553,7 +1582,7 @@
         "database-bindings"
       ],
       "tags": [
-        "Mysql",
+        "MySQL",
         "Database",
         "Output",
         "Write"
@@ -1584,7 +1613,7 @@
         "database-triggers"
       ],
       "tags": [
-        "Mysql",
+        "MySQL",
         "Database",
         "Cdc"
       ],
@@ -1738,7 +1767,7 @@
         "messaging"
       ],
       "tags": [
-        "Rabbitmq",
+        "RabbitMQ",
         "Messaging",
         "Distributed"
       ],
@@ -1768,7 +1797,7 @@
         "messaging"
       ],
       "tags": [
-        "Servicebus",
+        "Service Bus",
         "Messaging",
         "Enterprise",
         "Queue"
@@ -1799,7 +1828,7 @@
         "messaging"
       ],
       "tags": [
-        "Servicebus",
+        "Service Bus",
         "Messaging",
         "Enterprise",
         "Queue"
@@ -1830,7 +1859,7 @@
         "messaging"
       ],
       "tags": [
-        "Servicebus",
+        "Service Bus",
         "Messaging",
         "Enterprise",
         "Queue"
@@ -1954,7 +1983,7 @@
         "real-time-communication"
       ],
       "tags": [
-        "Signalr",
+        "SignalR",
         "Realtime",
         "Websocket",
         "Connection"
@@ -2168,7 +2197,6 @@
       "categories": [
         "ai-ml",
         "agents",
-        "ai-agents",
         "azd-quickstart"
       ],
       "tags": [
@@ -2203,7 +2231,6 @@
       "categories": [
         "ai-ml",
         "agents",
-        "ai-agents",
         "azd-quickstart"
       ],
       "tags": [
@@ -2236,14 +2263,13 @@
       "iac": "bicep",
       "priority": 1,
       "categories": [
-        "ai-ml",
         "ai",
         "azd-quickstart"
       ],
       "tags": [
         "AI",
-        "Openai",
-        "Chatgpt",
+        "OpenAI",
+        "ChatGPT",
         "HTTP"
       ],
       "author": "Paul Yuknewicz",
@@ -2272,14 +2298,13 @@
       "iac": "bicep",
       "priority": 1,
       "categories": [
-        "ai-ml",
         "ai",
         "azd-quickstart"
       ],
       "tags": [
         "AI",
-        "Openai",
-        "Chatgpt",
+        "OpenAI",
+        "ChatGPT",
         "HTTP"
       ],
       "author": "Paul Yuknewicz",
@@ -2308,7 +2333,6 @@
       "iac": "bicep",
       "priority": 1,
       "categories": [
-        "ai-ml",
         "ai",
         "azd-quickstart"
       ],
@@ -2342,7 +2366,6 @@
       "iac": "bicep",
       "priority": 1,
       "categories": [
-        "ai-ml",
         "ai",
         "azd-quickstart"
       ],
@@ -2555,41 +2578,6 @@
         "Bicep infrastructure",
         "azd configuration",
         "VNet integration option"
-      ]
-    },
-    {
-      "id": "durable-order-processing-csharp",
-      "displayName": "Order Processing with Durable Functions (C# + AZD + Bicep)",
-      "shortDescription": "Order processing workflow using Durable Functions",
-      "longDescription": "Implement an order processing workflow using Durable Functions and Flex Consumption. Demonstrates complex workflow coordination with managed identity authentication.",
-      "language": "CSharp",
-      "bindingType": "orchestration",
-      "resource": "durable",
-      "iac": "bicep",
-      "priority": 1,
-      "categories": [
-        "workflows",
-        "durable-functions",
-        "azd-quickstart"
-      ],
-      "tags": [
-        "Durable Functions",
-        "Orchestration",
-        "Activity",
-        "Workflow",
-        "Order Processing",
-        "AZD"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Functions-Order-Processing",
-      "folderPath": ".",
-      "whatsIncluded": [
-        "Durable orchestration function",
-        "Activity functions for order steps",
-        "Bicep infrastructure files",
-        "Azure Developer CLI (azd) configuration",
-        "Managed identity authentication",
-        "VS Code debug configuration"
       ]
     },
     {
@@ -3043,7 +3031,7 @@
         "Model Context Protocol",
         "Remote",
         "Copilot",
-        "Vs Code"
+        "VS Code"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/remote-mcp-functions-dotnet",
@@ -3078,7 +3066,7 @@
         "Model Context Protocol",
         "Remote",
         "Copilot",
-        "Vs Code"
+        "VS Code"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/remote-mcp-functions-java",
@@ -3113,7 +3101,7 @@
         "Model Context Protocol",
         "Remote",
         "Copilot",
-        "Vs Code"
+        "VS Code"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/remote-mcp-functions-python",
@@ -3147,7 +3135,7 @@
         "Model Context Protocol",
         "Remote",
         "Copilot",
-        "Vs Code"
+        "VS Code"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/remote-mcp-functions-typescript",
@@ -3205,13 +3193,12 @@
       "iac": "bicep",
       "priority": 2,
       "categories": [
-        "ai-ml",
         "ai",
         "azd-quickstart"
       ],
       "tags": [
         "AI",
-        "Openai",
+        "OpenAI",
         "Langchain",
         "HTTP"
       ],
@@ -3406,6 +3393,1046 @@
         "Terraform configuration files",
         "AzureRM provider setup",
         "Variable definitions"
+      ]
+    },
+    {
+      "id": "durable-order-processor-csharp",
+      "displayName": "Durable Functions Order Processing (C#)",
+      "shortDescription": "Order processing workflow with Durable Functions and azd deployment",
+      "longDescription": "A complete order processing solution demonstrating Durable Functions orchestration patterns. Includes inventory check, payment processing, shipping, and notification activities with built-in retry and compensation logic. Features azd (Azure Developer CLI) support for one-command deployment to Azure with Bicep infrastructure.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "workflow",
+        "durable-functions",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Order Processing",
+        "Saga Pattern",
+        "azd"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Functions-Order-Processing",
+      "folderPath": "",
+      "whatsIncluded": [
+        "Durable orchestration function",
+        "Activity functions for order steps",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity authentication",
+        "VS Code debug configuration"
+      ]
+    },
+    {
+      "id": "durable-order-processor-python",
+      "displayName": "Durable Functions Order Processing (Python)",
+      "shortDescription": "Order processing workflow with Durable Functions and azd deployment",
+      "longDescription": "A complete order processing solution in Python demonstrating Durable Functions orchestration patterns. Includes inventory check, payment processing, shipping, and notification activities with built-in retry and compensation logic. Features azd (Azure Developer CLI) support for one-command deployment to Azure with Bicep infrastructure.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "workflow",
+        "durable-functions",
+        "azd-quickstart"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Order Processing",
+        "Saga Pattern",
+        "azd"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/durable-functions-order-processing-python",
+      "folderPath": "",
+      "whatsIncluded": [
+        "Durable orchestration function",
+        "Activity functions for order steps",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity authentication",
+        "VS Code debug configuration"
+      ]
+    },
+    {
+      "id": "durable-saga-csharp",
+      "displayName": "Durable Functions Saga Pattern (C#)",
+      "shortDescription": "Saga pattern with compensation for distributed transactions",
+      "longDescription": "Implements the Saga pattern for managing distributed transactions with compensation logic. Demonstrates how to handle failures gracefully by rolling back completed steps when subsequent steps fail.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 1,
+      "categories": [
+        "workflow",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Saga Pattern",
+        "Compensation",
+        "Distributed Transactions"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/dotnet/Saga",
+      "whatsIncluded": [
+        "Orchestrator with compensation logic",
+        "Activity functions",
+        "Error handling patterns",
+        "README.md"
+      ]
+    },
+    {
+      "id": "durable-distributed-tracing-csharp",
+      "displayName": "Durable Functions Distributed Tracing (C#)",
+      "shortDescription": "OpenTelemetry distributed tracing for orchestrations",
+      "longDescription": "Demonstrates how to implement distributed tracing with OpenTelemetry in Durable Functions. Track orchestration execution across activities with correlation IDs and spans.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 1,
+      "categories": [
+        "observability",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "OpenTelemetry",
+        "Distributed Tracing",
+        "Observability"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/dotnet/DistributedTracing",
+      "whatsIncluded": [
+        "OpenTelemetry configuration",
+        "Traced orchestration",
+        "Activity functions with spans",
+        "README.md"
+      ]
+    },
+    {
+      "id": "durable-large-payload-csharp",
+      "displayName": "Durable Functions Large Payload (C#)",
+      "shortDescription": "Handling large payloads with blob storage",
+      "longDescription": "Demonstrates best practices for handling large payloads in Durable Functions using Azure Blob Storage for data that exceeds message size limits.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 1,
+      "categories": [
+        "workflow",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Large Payload",
+        "Blob Storage",
+        "Best Practices"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/dotnet/LargePayload",
+      "whatsIncluded": [
+        "Large payload handling",
+        "Blob storage integration",
+        "Orchestration code",
+        "README.md"
+      ]
+    },
+    {
+      "id": "durable-pdf-summarizer-csharp",
+      "displayName": "Durable Functions PDF Summarizer (C#)",
+      "shortDescription": "AI-powered PDF summarization with Azure OpenAI",
+      "longDescription": "Uses Durable Functions to orchestrate PDF processing and summarization with Azure OpenAI. Demonstrates integrating AI services into durable workflows.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "ai",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Azure OpenAI",
+        "PDF Processing",
+        "AI"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/dotnet/PdfSummarizer",
+      "whatsIncluded": [
+        "PDF processing orchestration",
+        "Azure OpenAI integration",
+        "Activity functions",
+        "README.md"
+      ]
+    },
+    {
+      "id": "durable-pdf-summarizer-python",
+      "displayName": "Durable Functions PDF Summarizer (Python)",
+      "shortDescription": "AI-powered PDF summarization with Azure OpenAI",
+      "longDescription": "Uses Durable Functions to orchestrate PDF processing and summarization with Azure OpenAI. Demonstrates integrating AI services into durable workflows.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "ai",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Azure OpenAI",
+        "PDF Processing",
+        "AI"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/python/pdf-summarizer",
+      "whatsIncluded": [
+        "PDF processing orchestration",
+        "Azure OpenAI integration",
+        "Activity functions",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "durable-ai-travel-planner-csharp",
+      "displayName": "Durable Functions AI Travel Planner (C#)",
+      "shortDescription": "AI agent orchestrating travel planning with multiple services",
+      "longDescription": "An AI-powered travel planning agent using Durable Functions to coordinate multiple AI services for destination research, itinerary creation, and booking recommendations.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "ai",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "AI Agent",
+        "Azure OpenAI",
+        "Travel Planning"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/dotnet/AiAgentTravelPlanOrchestrator",
+      "whatsIncluded": [
+        "AI agent orchestration",
+        "Multiple AI service integration",
+        "Activity functions",
+        "README.md"
+      ]
+    },
+    {
+      "id": "durable-aspire-csharp",
+      "displayName": "Durable Functions with .NET Aspire (C#)",
+      "shortDescription": "Durable Functions integrated with .NET Aspire for cloud-native development",
+      "longDescription": "Demonstrates integrating Durable Functions with .NET Aspire for enhanced local development, service discovery, and observability in cloud-native applications.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        ".NET Aspire",
+        "Cloud Native",
+        "Observability"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/dotnet/AzureFunctionsAndDtsWithAspire",
+      "whatsIncluded": [
+        "Aspire AppHost configuration",
+        "Durable Functions service",
+        "Service discovery setup",
+        "README.md"
+      ]
+    },
+    {
+      "id": "durable-orchestration-javascript",
+      "displayName": "Durable Functions Orchestration (JavaScript)",
+      "shortDescription": "Basic orchestration demonstrating Function Chaining and Fan-out/Fan-in patterns",
+      "longDescription": "Demonstrates core Durable Functions patterns: Function Chaining (sequential activity calls) and Fan-out/Fan-in (parallel execution with aggregation). HTTP trigger starts orchestrations that call activity functions.",
+      "language": "JavaScript",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Activity",
+        "Function Chaining",
+        "Fan-out/Fan-in",
+        "Starter"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/javascript/HelloCities",
+      "whatsIncluded": [
+        "Function code (.js)",
+        "package.json",
+        "host.json configuration",
+        "local.settings.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "durable-orchestration-typescript",
+      "displayName": "Durable Functions Orchestration (TypeScript)",
+      "shortDescription": "Basic orchestration demonstrating Function Chaining and Fan-out/Fan-in patterns",
+      "longDescription": "Demonstrates core Durable Functions patterns: Function Chaining (sequential activity calls) and Fan-out/Fan-in (parallel execution with aggregation). HTTP trigger starts orchestrations that call activity functions.",
+      "language": "TypeScript",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Activity",
+        "Function Chaining",
+        "Fan-out/Fan-in",
+        "Starter"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/typescript/HelloCities",
+      "whatsIncluded": [
+        "Function code (.ts)",
+        "package.json",
+        "tsconfig.json",
+        "host.json configuration",
+        "local.settings.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "durable-orchestration-python",
+      "displayName": "Durable Functions Orchestration (Python)",
+      "shortDescription": "Basic orchestration demonstrating Fan-out/Fan-in pattern",
+      "longDescription": "Demonstrates the Fan-out/Fan-in pattern: processes work items in parallel and aggregates results. A fundamental pattern for parallel data processing with Durable Functions.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "durable-functions"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Activity",
+        "Fan-out/Fan-in",
+        "Parallel Processing",
+        "Starter"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/python/fan-out-fan-in",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "requirements.txt",
+        "host.json configuration",
+        "local.settings.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-single-agent-python",
+      "displayName": "Agent Framework Single Agent (Python)",
+      "shortDescription": "Host a single AI agent with durable HTTP API endpoints",
+      "longDescription": "Demonstrates hosting a single AI agent in Azure Functions with the Durable Extension for Agent Framework. Provides HTTP endpoints for interactive conversations with session-based state management.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 1,
+      "categories": [
+        "starter",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Azure OpenAI",
+        "AI Agent",
+        "Starter"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/01_single_agent",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "Agent definition",
+        "HTTP endpoints",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-multi-agent-python",
+      "displayName": "Agent Framework Multi Agent (Python)",
+      "shortDescription": "Host multiple AI agents with durable HTTP endpoints",
+      "longDescription": "Demonstrates hosting multiple AI agents in a single Azure Functions app. Each agent has unique instructions and independent HTTP endpoints with isolated conversation management.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 1,
+      "categories": [
+        "starter",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Azure OpenAI",
+        "Multi-Agent",
+        "Starter"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/02_multi_agent",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "Multiple agent definitions",
+        "HTTP endpoints",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-streaming-python",
+      "displayName": "Agent Framework Reliable Streaming (Python)",
+      "shortDescription": "Durable Redis-based reliable streaming with cursor-based resumption",
+      "longDescription": "Demonstrates reliable, resumable streaming for durable agents using Redis Streams. Clients can disconnect and reconnect without losing messages using cursor-based pagination and Server-Sent Events.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Redis",
+        "Streaming",
+        "SSE"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/03_reliable_streaming",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "Redis Stream callback",
+        "SSE endpoint",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-orchestration-chaining-python",
+      "displayName": "Agent Framework Orchestration Chaining (Python)",
+      "shortDescription": "Chain agent invocations in durable orchestration",
+      "longDescription": "Shows how to chain multiple invocations of an agent inside a Durable Functions orchestration while preserving conversation state between runs.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Function Chaining",
+        "Orchestration"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/04_single_agent_orchestration_chaining",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "Durable orchestration",
+        "Session management",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-orchestration-concurrency-python",
+      "displayName": "Agent Framework Orchestration Concurrency (Python)",
+      "shortDescription": "Run multiple durable agents in parallel with merged responses",
+      "longDescription": "Starts a Durable Functions orchestration that runs two agents (Physicist and Chemist) in parallel using task_all and merges their domain-specific responses.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Fan-out/Fan-in",
+        "Parallel Execution"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/05_multi_agent_orchestration_concurrency",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "Parallel orchestration",
+        "Multiple agents",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-orchestration-conditionals-python",
+      "displayName": "Agent Framework Orchestration Conditionals (Python)",
+      "shortDescription": "Durable conditional branching with spam detection workflow",
+      "longDescription": "Evaluates incoming emails with a spam detector agent and conditionally routes to an email assistant agent for response drafting. Demonstrates structured responses and conditional orchestration branching.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Conditional Logic",
+        "Spam Detection"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/06_multi_agent_orchestration_conditionals",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "Conditional orchestration",
+        "Structured responses",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-orchestration-hitl-python",
+      "displayName": "Agent Framework Orchestration HITL (Python)",
+      "shortDescription": "Durable human-in-the-loop with approval workflow",
+      "longDescription": "Demonstrates human-in-the-loop (HITL) pattern where a writer agent iterates on content until a human reviewer approves or maximum attempts reached. Uses external events for approval/rejection.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Human-in-the-Loop",
+        "HITL",
+        "Approval Workflow"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/07_single_agent_orchestration_hitl",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "HITL orchestration",
+        "External events",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-mcp-server-python",
+      "displayName": "Agent Framework MCP Server (Python)",
+      "shortDescription": "Expose durable agents as MCP tools and HTTP endpoints",
+      "longDescription": "Configure AI agents to be accessible as both HTTP endpoints and Model Context Protocol (MCP) tools. Demonstrates multi-trigger agent configuration for flexible integration patterns.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework",
+        "mcp"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "MCP",
+        "Model Context Protocol",
+        "Multi-Trigger"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/08_mcp_server",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "MCP tool configuration",
+        "HTTP endpoints",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-workflow-shared-state-python",
+      "displayName": "Agent Framework Workflow Shared State (Python)",
+      "shortDescription": "Durable workflows with shared state for data passing between executors",
+      "longDescription": "Demonstrates running Agent Framework workflows with shared state in Azure Durable Functions. Uses ctx.set_state() and ctx.get_state() to share data across workflow steps.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Workflow",
+        "SharedState",
+        "State Management"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/09_workflow_shared_state",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "WorkflowBuilder",
+        "SharedState APIs",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-workflow-python",
+      "displayName": "Agent Framework Workflow (Python)",
+      "shortDescription": "Basic durable workflow execution without SharedState",
+      "longDescription": "Demonstrates running Agent Framework workflows in Azure Durable Functions. Shows workflow registration with AgentFunctionApp and conditional routing with agent and executor composition.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Workflow",
+        "WorkflowBuilder"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/10_workflow_no_shared_state",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "WorkflowBuilder",
+        "Agent composition",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-workflow-parallel-python",
+      "displayName": "Agent Framework Workflow Parallel (Python)",
+      "shortDescription": "Durable parallel execution patterns for executors and agents",
+      "longDescription": "Showcases three parallel execution patterns: two executors in parallel (activities), two agents in parallel (entities), and mixed concurrent execution of agents and executors.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Workflow",
+        "Parallel Execution",
+        "Fan-out/Fan-in"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/11_workflow_parallel",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "Parallel patterns",
+        "Aggregation",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-workflow-hitl-python",
+      "displayName": "Agent Framework Workflow HITL (Python)",
+      "shortDescription": "Durable workflow with human approval using request_info pattern",
+      "longDescription": "Integrates human approval into Agent Framework workflows using the request_info and @response_handler pattern. Implements content moderation pipeline with AI analysis and human review.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Workflow",
+        "Human-in-the-Loop",
+        "HITL",
+        "Content Moderation"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "python/samples/04-hosting/azure_functions/12_workflow_hitl",
+      "whatsIncluded": [
+        "Function code (.py)",
+        "HITL endpoints",
+        "Response handlers",
+        "requirements.txt",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-single-agent-csharp",
+      "displayName": "Agent Framework Single Agent (C#)",
+      "shortDescription": "Host a single AI agent with durable HTTP API endpoints",
+      "longDescription": "Demonstrates hosting a single conversational AI agent in Azure Functions with the Durable Extension for Agent Framework. Provides HTTP endpoints for interactive conversations with session-based state management.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 1,
+      "categories": [
+        "starter",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Azure OpenAI",
+        "AI Agent",
+        "Starter"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "dotnet/samples/04-hosting/DurableAgents/AzureFunctions/01_SingleAgent",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        "Agent definition",
+        "HTTP endpoints",
+        ".csproj file",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-orchestration-chaining-csharp",
+      "displayName": "Agent Framework Orchestration Chaining (C#)",
+      "shortDescription": "Chain agent invocations in durable orchestration",
+      "longDescription": "Demonstrates hosting a single conversational agent in Azure Functions and invoking it using a durable orchestration while preserving conversation state between runs.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Function Chaining",
+        "Orchestration"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "dotnet/samples/04-hosting/DurableAgents/AzureFunctions/02_AgentOrchestration_Chaining",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        "Durable orchestration",
+        "Session management",
+        ".csproj file",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-orchestration-concurrency-csharp",
+      "displayName": "Agent Framework Orchestration Concurrency (C#)",
+      "shortDescription": "Run multiple durable agents in parallel with merged responses",
+      "longDescription": "Demonstrates hosting multiple agents in Azure Functions and running them concurrently using a durable orchestration to merge their domain-specific responses.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Fan-out/Fan-in",
+        "Parallel Execution"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "dotnet/samples/04-hosting/DurableAgents/AzureFunctions/03_AgentOrchestration_Concurrency",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        "Parallel orchestration",
+        "Multiple agents",
+        ".csproj file",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-orchestration-conditionals-csharp",
+      "displayName": "Agent Framework Orchestration Conditionals (C#)",
+      "shortDescription": "Durable conditional branching with multi-agent workflow",
+      "longDescription": "Demonstrates hosting multiple agents in Azure Functions and running them sequentially using a durable orchestration with conditionals for branching logic.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Conditional Logic",
+        "Orchestration"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "dotnet/samples/04-hosting/DurableAgents/AzureFunctions/04_AgentOrchestration_Conditionals",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        "Conditional orchestration",
+        "Multiple agents",
+        ".csproj file",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-orchestration-hitl-csharp",
+      "displayName": "Agent Framework Orchestration HITL (C#)",
+      "shortDescription": "Durable human-in-the-loop with approval workflow",
+      "longDescription": "Demonstrates human-in-the-loop (HITL) pattern using durable orchestration with external event handling for human approval workflows.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Human-in-the-Loop",
+        "HITL",
+        "Approval Workflow"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "dotnet/samples/04-hosting/DurableAgents/AzureFunctions/05_AgentOrchestration_HITL",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        "HITL orchestration",
+        "External events",
+        ".csproj file",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-long-running-tools-csharp",
+      "displayName": "Agent Framework Long Running Tools (C#)",
+      "shortDescription": "Agents with durable orchestrations for long-running tool scenarios",
+      "longDescription": "Demonstrates how agents can start and interact with durable orchestrations from tool calls to enable long-running tool scenarios.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "workflow",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Tool",
+        "Orchestration"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "dotnet/samples/04-hosting/DurableAgents/AzureFunctions/06_LongRunningTools",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        "Tool orchestration",
+        "Agent tools",
+        ".csproj file",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-mcp-server-csharp",
+      "displayName": "Agent Framework MCP Server (C#)",
+      "shortDescription": "Expose durable agents as MCP tools and HTTP endpoints",
+      "longDescription": "Demonstrates how to configure durable AI agents to be accessible as Model Context Protocol (MCP) tools for flexible integration patterns.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "mcp",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "MCP",
+        "Model Context Protocol",
+        "MCP SDK"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "dotnet/samples/04-hosting/DurableAgents/AzureFunctions/07_AgentAsMcpTool",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        "MCP tool configuration",
+        "HTTP endpoints",
+        ".csproj file",
+        "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-durable-streaming-csharp",
+      "displayName": "Agent Framework Reliable Streaming (C#)",
+      "shortDescription": "Durable Redis-based reliable streaming with cursor-based resumption",
+      "longDescription": "Demonstrates reliable streaming for durable agents using Redis Streams, enabling clients to disconnect and reconnect without losing messages.",
+      "language": "CSharp",
+      "bindingType": "orchestration",
+      "resource": "agentframework",
+      "iac": "none",
+      "priority": 2,
+      "categories": [
+        "streaming",
+        "ai",
+        "agent-framework"
+      ],
+      "tags": [
+        "Agent Framework",
+        "Durable Functions",
+        "Redis",
+        "Streaming",
+        "SSE"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/microsoft/agent-framework",
+      "folderPath": "dotnet/samples/04-hosting/DurableAgents/AzureFunctions/08_ReliableStreaming",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        "Redis Stream integration",
+        "SSE endpoint",
+        ".csproj file",
+        "README.md"
       ]
     }
   ]
