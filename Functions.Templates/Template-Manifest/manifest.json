@@ -2,7 +2,7 @@
   "$schema": "./schemas/manifest.schema.json",
   "generatedAt": "2026-03-16T19:14:27.007Z",
   "version": "1.1.0",
-  "totalTemplates": 67,
+  "totalTemplates": 70,
   "runtimeVersions": {
     "Python": {
       "supported": [
@@ -675,188 +675,6 @@
       ]
     },
     {
-      "id": "cosmos-trigger-csharp-azd",
-      "displayName": "Cosmos DB Trigger (C# + AZD + Bicep)",
-      "shortDescription": "Cosmos DB trigger and bindings quickstart for C# deployed with azd",
-      "longDescription": "Azure Functions Cosmos DB trigger and bindings quickstart written in C# and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Demonstrates event-driven integration with Azure Cosmos DB.",
-      "language": "CSharp",
-      "bindingType": "trigger",
-      "resource": "cosmos",
-      "iac": "bicep",
-      "priority": 1,
-      "categories": [
-        "data-processing"
-      ],
-      "tags": [
-        "Cosmos DB",
-        "NoSQL",
-        "Flex Consumption",
-        "AZD"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd-cosmosdb",
-      "folderPath": ".",
-      "whatsIncluded": [
-        "Cosmos DB trigger function",
-        "Cosmos DB output binding",
-        "Bicep infrastructure",
-        "azd configuration",
-        "Application Insights monitoring"
-      ]
-    },
-    {
-      "id": "cosmos-trigger-python-azd",
-      "displayName": "Cosmos DB Trigger (Python + AZD + Bicep)",
-      "shortDescription": "Cosmos DB triggers and bindings quickstart for Python deployed with azd",
-      "longDescription": "Azure Functions Cosmos DB triggers and bindings quickstart written in Python and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Demonstrates event-driven integration with Azure Cosmos DB.",
-      "language": "Python",
-      "bindingType": "trigger",
-      "resource": "cosmos",
-      "iac": "bicep",
-      "priority": 1,
-      "categories": [
-        "data-processing"
-      ],
-      "tags": [
-        "Cosmos DB",
-        "NoSQL",
-        "Flex Consumption",
-        "AZD"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-python-azd-cosmosdb",
-      "folderPath": ".",
-      "whatsIncluded": [
-        "Cosmos DB trigger function",
-        "Cosmos DB output binding",
-        "Bicep infrastructure",
-        "azd configuration",
-        "Application Insights monitoring"
-      ]
-    },
-    {
-      "id": "cosmos-trigger-typescript-azd",
-      "displayName": "Cosmos DB Trigger (TypeScript + AZD + Bicep)",
-      "shortDescription": "Cosmos DB trigger quickstart for TypeScript deployed with azd",
-      "longDescription": "Azure Functions Cosmos DB trigger quickstart written in TypeScript and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Demonstrates event-driven integration with Azure Cosmos DB.",
-      "language": "TypeScript",
-      "bindingType": "trigger",
-      "resource": "cosmos",
-      "iac": "bicep",
-      "priority": 1,
-      "categories": [
-        "data-processing"
-      ],
-      "tags": [
-        "Cosmos DB",
-        "NoSQL",
-        "Flex Consumption",
-        "AZD"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-typescript-azd-cosmosdb",
-      "folderPath": ".",
-      "whatsIncluded": [
-        "Cosmos DB trigger function",
-        "Bicep infrastructure",
-        "azd configuration",
-        "Application Insights monitoring"
-      ]
-    },
-    {
-      "id": "cosmos-input-java",
-      "displayName": "Cosmos DB Input Binding (Java)",
-      "shortDescription": "Reads documents from Azure Cosmos DB collections",
-      "longDescription": "Reads documents from Azure Cosmos DB collections. Use cases: Data retrieval, document queries, read-only database operations",
-      "language": "Java",
-      "bindingType": "input",
-      "resource": "cosmos",
-      "iac": "none",
-      "priority": 0,
-      "categories": [
-        "starter",
-        "data-processing"
-      ],
-      "tags": [
-        "Cosmos DB",
-        "Database",
-        "Input",
-        "NoSQL"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
-      "folderPath": "templates/java/CosmosDBInputBinding",
-      "whatsIncluded": [
-        "Function code (.java)",
-        "pom.xml build file",
-        "host.json configuration",
-        "local.settings.json",
-        "README with setup instructions"
-      ]
-    },
-    {
-      "id": "cosmos-output-java",
-      "displayName": "Cosmos DB Output Binding (Java)",
-      "shortDescription": "Writes documents to Azure Cosmos DB collections",
-      "longDescription": "Writes documents to Azure Cosmos DB collections. Use cases: Data persistence, document updates, write operations to NoSQL databases",
-      "language": "Java",
-      "bindingType": "output",
-      "resource": "cosmos",
-      "iac": "none",
-      "priority": 0,
-      "categories": [
-        "starter",
-        "data-processing"
-      ],
-      "tags": [
-        "Cosmos DB",
-        "Database",
-        "Output",
-        "NoSQL"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
-      "folderPath": "templates/java/CosmosDBOutputBinding",
-      "whatsIncluded": [
-        "Function code (.java)",
-        "pom.xml build file",
-        "host.json configuration",
-        "local.settings.json",
-        "README with setup instructions"
-      ]
-    },
-    {
-      "id": "cosmos-trigger-java",
-      "displayName": "Cosmos DB Trigger (Java)",
-      "shortDescription": "Triggered by changes in Cosmos DB using the change feed",
-      "longDescription": "Triggered by changes in Cosmos DB using the change feed. Use cases: Real-time data sync, event sourcing, maintaining materialized views",
-      "language": "Java",
-      "bindingType": "trigger",
-      "resource": "cosmos",
-      "iac": "none",
-      "priority": 0,
-      "categories": [
-        "starter",
-        "data-processing"
-      ],
-      "tags": [
-        "Cosmos DB",
-        "Database",
-        "Changefeed",
-        "NoSQL"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
-      "folderPath": "templates/java/CosmosDBTrigger",
-      "whatsIncluded": [
-        "Function code (.java)",
-        "pom.xml build file",
-        "host.json configuration",
-        "local.settings.json",
-        "README with setup instructions"
-      ]
-    },
-    {
       "id": "eventhub-trigger-csharp-azd",
       "displayName": "Event Hub Trigger (C# + AZD + Bicep)",
       "shortDescription": "Event Hub trigger quickstart for C# deployed with azd",
@@ -923,6 +741,37 @@
       ]
     },
     {
+      "id": "eventhub-trigger-java",
+      "displayName": "Event Hub Trigger (Java)",
+      "shortDescription": "Processes streaming data from Azure Event Hubs",
+      "longDescription": "Processes streaming data from Azure Event Hubs. Use cases: IoT telemetry, log ingestion, real-time analytics, big data streams",
+      "language": "Java",
+      "bindingType": "trigger",
+      "resource": "eventhub",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "event-processing"
+      ],
+      "tags": [
+        "Event Hub",
+        "Streaming",
+        "IoT",
+        "Telemetry"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/EventHubTrigger",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
       "id": "eventhub-trigger-python-azd",
       "displayName": "Event Hub Trigger (Python + AZD + Bicep)",
       "shortDescription": "Event Hub trigger quickstart for Python deployed with azd",
@@ -986,37 +835,6 @@
         "Managed identity",
         "VNet integration option",
         "Application Insights monitoring"
-      ]
-    },
-    {
-      "id": "eventhub-trigger-java",
-      "displayName": "Event Hub Trigger (Java)",
-      "shortDescription": "Processes streaming data from Azure Event Hubs",
-      "longDescription": "Processes streaming data from Azure Event Hubs. Use cases: IoT telemetry, log ingestion, real-time analytics, big data streams",
-      "language": "Java",
-      "bindingType": "trigger",
-      "resource": "eventhub",
-      "iac": "none",
-      "priority": 0,
-      "categories": [
-        "starter",
-        "event-processing"
-      ],
-      "tags": [
-        "Event Hub",
-        "Streaming",
-        "IoT",
-        "Telemetry"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
-      "folderPath": "templates/java/EventHubTrigger",
-      "whatsIncluded": [
-        "Function code (.java)",
-        "pom.xml build file",
-        "host.json configuration",
-        "local.settings.json",
-        "README with setup instructions"
       ]
     },
     {
@@ -1757,6 +1575,38 @@
       ]
     },
     {
+      "id": "durable-orchestration-java",
+      "displayName": "Durable Functions (Java)",
+      "shortDescription": "Durable Functions orchestration with activity functions for Java",
+      "longDescription": "Durable Functions orchestration pattern with HTTP trigger starter, orchestrator function, and activity functions for fault-tolerant workflows.",
+      "language": "Java",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "workflows"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Activity",
+        "Workflow",
+        "Stateful"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/DurableFunctions",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
       "id": "durable-orchestration-javascript",
       "displayName": "Durable Functions Orchestration (JavaScript)",
       "shortDescription": "Basic orchestration demonstrating Function Chaining and Fan-out/Fan-in patterns",
@@ -1854,38 +1704,6 @@
         "host.json configuration",
         "local.settings.json",
         "README.md"
-      ]
-    },
-    {
-      "id": "durable-orchestration-java",
-      "displayName": "Durable Functions (Java)",
-      "shortDescription": "Durable Functions orchestration with activity functions for Java",
-      "longDescription": "Durable Functions orchestration pattern with HTTP trigger starter, orchestrator function, and activity functions for fault-tolerant workflows.",
-      "language": "Java",
-      "bindingType": "orchestration",
-      "resource": "durable",
-      "iac": "none",
-      "priority": 0,
-      "categories": [
-        "starter",
-        "workflows"
-      ],
-      "tags": [
-        "Durable Functions",
-        "Orchestration",
-        "Activity",
-        "Workflow",
-        "Stateful"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
-      "folderPath": "templates/java/DurableFunctions",
-      "whatsIncluded": [
-        "Function code (.java)",
-        "pom.xml build file",
-        "host.json configuration",
-        "local.settings.json",
-        "README with setup instructions"
       ]
     },
     {
@@ -2043,6 +1861,279 @@
         "Activity functions",
         "Error handling patterns",
         "README.md"
+      ]
+    },
+    {
+      "id": "cosmos-input-java",
+      "displayName": "Cosmos DB Input Binding (Java)",
+      "shortDescription": "Reads documents from Azure Cosmos DB collections",
+      "longDescription": "Reads documents from Azure Cosmos DB collections. Use cases: Data retrieval, document queries, read-only database operations",
+      "language": "Java",
+      "bindingType": "input",
+      "resource": "cosmos",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "data-processing"
+      ],
+      "tags": [
+        "Cosmos DB",
+        "Database",
+        "Input",
+        "NoSQL"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/CosmosDBInputBinding",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "cosmos-output-java",
+      "displayName": "Cosmos DB Output Binding (Java)",
+      "shortDescription": "Writes documents to Azure Cosmos DB collections",
+      "longDescription": "Writes documents to Azure Cosmos DB collections. Use cases: Data persistence, document updates, write operations to NoSQL databases",
+      "language": "Java",
+      "bindingType": "output",
+      "resource": "cosmos",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "data-processing"
+      ],
+      "tags": [
+        "Cosmos DB",
+        "Database",
+        "Output",
+        "NoSQL"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/CosmosDBOutputBinding",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "cosmos-trigger-csharp-azd",
+      "displayName": "Cosmos DB Trigger (C# + AZD + Bicep)",
+      "shortDescription": "Cosmos DB trigger and bindings quickstart for C# deployed with azd",
+      "longDescription": "Azure Functions Cosmos DB trigger and bindings quickstart written in C# and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Demonstrates event-driven integration with Azure Cosmos DB.",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "cosmos",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "data-processing"
+      ],
+      "tags": [
+        "Cosmos DB",
+        "NoSQL",
+        "Flex Consumption",
+        "AZD"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd-cosmosdb",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Cosmos DB trigger function",
+        "Cosmos DB output binding",
+        "Bicep infrastructure",
+        "azd configuration",
+        "Application Insights monitoring"
+      ]
+    },
+    {
+      "id": "cosmos-trigger-java",
+      "displayName": "Cosmos DB Trigger (Java)",
+      "shortDescription": "Triggered by changes in Cosmos DB using the change feed",
+      "longDescription": "Triggered by changes in Cosmos DB using the change feed. Use cases: Real-time data sync, event sourcing, maintaining materialized views",
+      "language": "Java",
+      "bindingType": "trigger",
+      "resource": "cosmos",
+      "iac": "none",
+      "priority": 0,
+      "categories": [
+        "starter",
+        "data-processing"
+      ],
+      "tags": [
+        "Cosmos DB",
+        "Database",
+        "Changefeed",
+        "NoSQL"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure/azure-functions-templates-mcp-server",
+      "folderPath": "templates/java/CosmosDBTrigger",
+      "whatsIncluded": [
+        "Function code (.java)",
+        "pom.xml build file",
+        "host.json configuration",
+        "local.settings.json",
+        "README with setup instructions"
+      ]
+    },
+    {
+      "id": "cosmos-trigger-python-azd",
+      "displayName": "Cosmos DB Trigger (Python + AZD + Bicep)",
+      "shortDescription": "Cosmos DB triggers and bindings quickstart for Python deployed with azd",
+      "longDescription": "Azure Functions Cosmos DB triggers and bindings quickstart written in Python and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Demonstrates event-driven integration with Azure Cosmos DB.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "cosmos",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "data-processing"
+      ],
+      "tags": [
+        "Cosmos DB",
+        "NoSQL",
+        "Flex Consumption",
+        "AZD"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-python-azd-cosmosdb",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Cosmos DB trigger function",
+        "Cosmos DB output binding",
+        "Bicep infrastructure",
+        "azd configuration",
+        "Application Insights monitoring"
+      ]
+    },
+    {
+      "id": "cosmos-trigger-typescript-azd",
+      "displayName": "Cosmos DB Trigger (TypeScript + AZD + Bicep)",
+      "shortDescription": "Cosmos DB trigger quickstart for TypeScript deployed with azd",
+      "longDescription": "Azure Functions Cosmos DB trigger quickstart written in TypeScript and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Demonstrates event-driven integration with Azure Cosmos DB.",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "cosmos",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "data-processing"
+      ],
+      "tags": [
+        "Cosmos DB",
+        "NoSQL",
+        "Flex Consumption",
+        "AZD"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-typescript-azd-cosmosdb",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Cosmos DB trigger function",
+        "Bicep infrastructure",
+        "azd configuration",
+        "Application Insights monitoring"
+      ]
+    },
+    {
+      "id": "sql-trigger-csharp-azd",
+      "displayName": "SQL Trigger (C# + AZD + Bicep)",
+      "shortDescription": "SQL triggers and bindings quickstart for C# deployed with azd",
+      "longDescription": "Azure Functions SQL triggers and bindings quickstart written in C# and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Demonstrates event-driven integration with Azure SQL Database.",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "sql",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "data-processing"
+      ],
+      "tags": [
+        "SQL",
+        "Azure SQL",
+        "Flex Consumption",
+        "AZD"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd-sql",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "SQL trigger function",
+        "SQL bindings",
+        "Bicep infrastructure",
+        "azd configuration",
+        "Application Insights monitoring"
+      ]
+    },
+    {
+      "id": "sql-trigger-python-azd",
+      "displayName": "SQL Trigger (Python + AZD + Bicep)",
+      "shortDescription": "SQL triggers and bindings quickstart for Python deployed with azd",
+      "longDescription": "Azure Functions SQL triggers and bindings quickstart written in Python and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Demonstrates event-driven integration with Azure SQL Database.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "sql",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "data-processing"
+      ],
+      "tags": [
+        "SQL",
+        "Azure SQL",
+        "Flex Consumption",
+        "AZD"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-python-azd-sql",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "SQL trigger function",
+        "SQL bindings",
+        "Bicep infrastructure",
+        "azd configuration",
+        "Key Vault integration",
+        "Log Analytics monitoring"
+      ]
+    },
+    {
+      "id": "sql-trigger-typescript-azd",
+      "displayName": "SQL Trigger (TypeScript + AZD + Bicep)",
+      "shortDescription": "SQL triggers and bindings quickstart for TypeScript deployed with azd",
+      "longDescription": "Azure Functions SQL triggers and bindings quickstart written in TypeScript and deployed to Azure Functions Flex Consumption using the Azure Developer CLI (azd). Demonstrates event-driven integration with Azure SQL Database.",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "sql",
+      "iac": "bicep",
+      "priority": 1,
+      "categories": [
+        "data-processing"
+      ],
+      "tags": [
+        "SQL",
+        "Azure SQL",
+        "Flex Consumption",
+        "AZD"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-typescript-azd-sql",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "SQL trigger function",
+        "SQL bindings",
+        "Bicep infrastructure",
+        "azd configuration",
+        "Azure Monitor integration"
       ]
     },
     {
