@@ -708,39 +708,6 @@
       ]
     },
     {
-      "id": "eventhub-trigger-csharp-vnet-azd",
-      "displayName": "Event Hub Trigger with VNet (C# + AZD + Bicep)",
-      "shortDescription": "EventHubTrigger + TimerTrigger with VNet integration, Key Vault secrets, and Application Insights monitoring in C#. Deployed with azd",
-      "longDescription": "C# Azure Functions app with EventHubTrigger for Event Hub event processing and TimerTrigger for event generation, secured with VNet integration. Uses Azure Key Vault for secrets management and Application Insights for monitoring. Deployed with azd.",
-      "language": "CSharp",
-      "bindingType": "trigger",
-      "resource": "eventhub",
-      "iac": "bicep",
-      "priority": 0,
-      "categories": [
-        "event-processing",
-        "data-processing"
-      ],
-      "tags": [
-        "Event Hubs",
-        "VNet",
-        "Key Vault",
-        "Flex Consumption",
-        "AZD"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure-Samples/function-eventhub-vnet",
-      "folderPath": ".",
-      "whatsIncluded": [
-        "Event Hub trigger function",
-        "Virtual network integration",
-        "Key Vault integration",
-        "Bicep infrastructure",
-        "azd configuration",
-        "Application Insights monitoring"
-      ]
-    },
-    {
       "id": "eventhub-trigger-java",
       "displayName": "Event Hub Trigger (Java)",
       "shortDescription": "EventHubTrigger for processing streaming data from Azure Event Hubs in Java",
