@@ -1855,6 +1855,48 @@ function app.</value>
   <data name="CosmosDBTrigger_description" xml:space="preserve">
     <value>A function that will be run whenever documents change in a document collection</value>
   </data>
+  <data name="CosmosDBMongoTrigger_description" xml:space="preserve">
+    <value>A function that will be run whenever documents change in a MongoDB collection on Azure Cosmos DB for MongoDB</value>
+  </data>
+  <data name="cosmosDBMongo_trigger_displayName" xml:space="preserve">
+    <value>Azure Cosmos DB for MongoDB Trigger</value>
+  </data>
+  <data name="cosmosDBMongo_databaseName_label" xml:space="preserve">
+    <value>Database name</value>
+  </data>
+  <data name="cosmosDBMongo_databaseName_help" xml:space="preserve">
+    <value>Name of the MongoDB database containing the collection to be monitored.</value>
+  </data>
+  <data name="cosmosDBMongo_connection_label" xml:space="preserve">
+    <value>MongoDB connection string setting</value>
+  </data>
+  <data name="cosmosDBMongo_connection_help" xml:space="preserve">
+    <value>The name of the App Setting containing the MongoDB connection string for the collection to be monitored.</value>
+  </data>
+  <data name="cosmosDBMongo_collectionName_label" xml:space="preserve">
+    <value>Collection name</value>
+  </data>
+  <data name="cosmosDBMongo_collectionName_help" xml:space="preserve">
+    <value>Name of the MongoDB collection to be monitored.</value>
+  </data>
+  <data name="cosmosDBMongo_leaseDatabaseName_label" xml:space="preserve">
+    <value>Lease database name</value>
+  </data>
+  <data name="cosmosDBMongo_leaseDatabaseName_help" xml:space="preserve">
+    <value>Name of the database that contains the lease collection used to track change stream state.</value>
+  </data>
+  <data name="cosmosDBMongo_leaseCollectionName_label" xml:space="preserve">
+    <value>Lease collection name</value>
+  </data>
+  <data name="cosmosDBMongo_leaseCollectionName_help" xml:space="preserve">
+    <value>Name of the collection used to store leases. Defaults to "leases".</value>
+  </data>
+  <data name="cosmosDBMongo_leaseConnectionStringSetting_label" xml:space="preserve">
+    <value>Lease connection string setting</value>
+  </data>
+  <data name="cosmosDBMongo_leaseConnectionStringSetting_help" xml:space="preserve">
+    <value>The name of the App Setting containing the MongoDB connection string for the lease cluster.</value>
+  </data>
   <data name="EventGridTrigger_description" xml:space="preserve">
     <value>A function that will be run whenever an event grid receives a new event</value>
   </data>

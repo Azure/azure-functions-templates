@@ -1606,6 +1606,79 @@
       ]
     },
     {
+      "type": "cosmosDBMongoTrigger",
+      "displayName": "$cosmosDBMongo_trigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\cosmosDBMongoTrigger.md",
+      "extension": {
+        "id": "Microsoft.Azure.WebJobs.Extensions.AzureCosmosDb.Mongo", "version": "1.2.1-preview"
+      },
+      "settings": [
+        {
+          "name": "name",
+          "value": "string",
+          "defaultValue": "input",
+          "required": true,
+          "label": "$cosmosDBIn_name_label",
+          "help": "$cosmosDBIn_name_help",
+          "validators": [
+            {
+              "expression": "^[a-zA-Z][a-zA-Z0-9]{0,127}$",
+              "errorText": "[variables('parameterName')]"
+            }
+          ]
+        },
+        {
+          "name": "connectionStringSetting",
+          "value": "string",
+          "required": true,
+          "label": "$cosmosDBMongo_connection_label",
+          "help": "$cosmosDBMongo_connection_help",
+          "placeholder": "[variables('selectConnection')]"
+        },
+        {
+          "name": "databaseName",
+          "value": "string",
+          "defaultValue": "",
+          "required": true,
+          "label": "$cosmosDBMongo_databaseName_label",
+          "help": "$cosmosDBMongo_databaseName_help"
+        },
+        {
+          "name": "collectionName",
+          "value": "string",
+          "defaultValue": "",
+          "required": true,
+          "label": "$cosmosDBMongo_collectionName_label",
+          "help": "$cosmosDBMongo_collectionName_help"
+        },
+        {
+          "name": "leaseDatabaseName",
+          "value": "string",
+          "defaultValue": "",
+          "required": true,
+          "label": "$cosmosDBMongo_leaseDatabaseName_label",
+          "help": "$cosmosDBMongo_leaseDatabaseName_help"
+        },
+        {
+          "name": "leaseCollectionName",
+          "value": "string",
+          "defaultValue": "leases",
+          "required": true,
+          "label": "$cosmosDBMongo_leaseCollectionName_label",
+          "help": "$cosmosDBMongo_leaseCollectionName_help"
+        },
+        {
+          "name": "leaseConnectionStringSetting",
+          "value": "string",
+          "required": true,
+          "label": "$cosmosDBMongo_leaseConnectionStringSetting_label",
+          "help": "$cosmosDBMongo_leaseConnectionStringSetting_help"
+        }
+      ]
+    },
+    {
       "type": "cosmosDB",
       "displayName": "$documentDBOut_displayName",
       "direction": "out",

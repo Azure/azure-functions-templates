@@ -1,0 +1,15 @@
+{
+  "bindings": [
+    {
+      "type": "cosmosDBMongoTrigger",
+      "name": "documents",
+      "direction": "in",
+      "connectionStringSetting": "MonitoredConnectionStringSetting",
+      "databaseName": "MonitoredDatabaseName",
+      "collectionName": "MonitoredCollectionName",
+      "leaseDatabaseName": "LeaseDatabaseName",
+      "leaseCollectionName": "LeaseCollectionName",
+      "leaseConnectionStringSetting": "LeaseConnectionStringSetting"
+    }
+  ]
+}

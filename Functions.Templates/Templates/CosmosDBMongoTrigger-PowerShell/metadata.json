@@ -1,0 +1,20 @@
+{
+  "defaultFunctionName": "CosmosDBMongoTrigger",
+  "description": "$CosmosDBMongoTrigger_description",
+  "name": "Azure Cosmos DB for MongoDB trigger",
+  "language": "PowerShell",
+  "category": [
+    "$temp_category_core",
+    "$temp_category_dataProcessing"
+  ],
+  "categoryStyle": "cosmosDB",
+  "enabledInTryMode": false,
+  "userPrompt": [
+    "connectionStringSetting",
+    "databaseName",
+    "collectionName",
+    "leaseDatabaseName",
+    "leaseCollectionName",
+    "leaseConnectionStringSetting"
+  ]
+}
