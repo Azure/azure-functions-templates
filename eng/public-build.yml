@@ -26,6 +26,10 @@ resources:
     name: 1ESPipelineTemplates/1ESPipelineTemplates
     ref: refs/tags/release
 
+variables:
+  - name: devops_buildNumber
+    value: '1'
+
 extends:
   template: v1/1ES.Unofficial.PipelineTemplate.yml@1es
   parameters:
