@@ -16,16 +16,6 @@ jobs:
       artifact: drop
 
   steps:
-  - task: NodeTool@0
-    inputs:
-      versionSpec: '20.x'
-    displayName: 'Install Node.js'
-    
-  - task: Npm@1
-    inputs:
-      command: 'install'
-      workingDir: '.\Build'
-
   - template: ../steps/validate-schemas.yml
     parameters:
       validations:
@@ -34,12 +24,14 @@ jobs:
           files:
             - '$(Build.Repository.LocalPath)\Functions.Templates\Template-Manifest\manifest.json'
     
-  - task: Gulp@1
+  - task: PowerShell@2
+    displayName: 'Build templates'
     inputs:
-      buildNumber: $(devops_buildNumber)
-      gulpFile: '.\Build\gulpfile.js'
-      targets: 'build-all'
-      enableCodeCoverage: false
+      targetType: 'filePath'
+      filePath: '.\Build\build-all.ps1'
+      pwsh: true
+    env:
+      devops_buildNumber: $(devops_buildNumber)
     
   - task: CopyFiles@2
     inputs:

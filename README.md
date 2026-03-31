@@ -18,15 +18,13 @@ Dotnet templates are consumed by Visual Studio and Visual Studio code via toolin
 
 ## Build Requirements
 
-- [Node (20.x)](https://nodejs.org/dist/latest-v20.x/)
-- [Gulp](https://gulpjs.com/docs/en/getting-started/quick-start)
+- [PowerShell 7.0+](https://github.com/PowerShell/PowerShell/releases)
 
 ## Build Steps
 
-```bash
+```powershell
 cd Build
-npm install
-gulp build-all
+.\build-all.ps1
 ```
 
 > These build steps only work on Windows
