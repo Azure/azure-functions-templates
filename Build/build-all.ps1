@@ -47,8 +47,11 @@ $VSDir = Join-Path $BinDir "VS"
 $ExtBundleDir = Join-Path $TempDir "ExtensionBundle"
 $OutDir = Join-Path $TempDir "out"
 
-# Determine build version - handle null or empty string
-$BuildVersion = [string]::IsNullOrWhiteSpace($BuildVersion) ? ($env:devops_buildNumber ?? "1") : $BuildVersion
+# Determine build version - handle null or empty string for both param and env var
+$envBuildNumber = $env:devops_buildNumber
+$BuildVersion = [string]::IsNullOrWhiteSpace($BuildVersion) ? 
+    ([string]::IsNullOrWhiteSpace($envBuildNumber) ? "1" : $envBuildNumber) : 
+    $BuildVersion
 
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "Azure Functions Templates Build Script" -ForegroundColor Cyan
