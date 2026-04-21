@@ -1,8 +1,8 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-04-15T19:41:34.000Z",
+  "generatedAt": "2026-04-20T23:54:56.000Z",
   "version": "1.4.0",
-  "totalTemplates": 70,
+  "totalTemplates": 76,
   "runtimeVersions": {
     "Python": {
       "supported": [
@@ -786,6 +786,204 @@
         "azd configuration",
         "Managed identity",
         "VNet integration option",
+        "Application Insights monitoring"
+      ]
+    },
+    {
+      "id": "servicebus-trigger-csharp-azd",
+      "displayName": "Service Bus Trigger (C# + AZD + Bicep)",
+      "shortDescription": "ServiceBusTrigger C# function processing queue/topic messages with managed identity. Deployed with azd+Bicep",
+      "longDescription": "C# Azure Function with a ServiceBusTrigger that processes messages from Azure Service Bus queues or topics. Runs on Flex Consumption plan with managed identity authentication and VNet integration. Infrastructure provisioned with Bicep and deployed with azd.",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "servicebus",
+      "iac": "bicep",
+      "priority": 30,
+      "categories": [
+        "starter",
+        "messaging"
+      ],
+      "tags": [
+        "Service Bus",
+        "Messaging",
+        "Flex Consumption",
+        "Managed Identity",
+        "Azd"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd-service-bus",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Service Bus trigger function",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity setup",
+        "VNet integration",
+        "Application Insights monitoring"
+      ]
+    },
+    {
+      "id": "servicebus-trigger-python-azd",
+      "displayName": "Service Bus Trigger (Python + AZD + Bicep)",
+      "shortDescription": "ServiceBusTrigger Python function processing queue/topic messages with managed identity. Deployed with azd+Bicep",
+      "longDescription": "Python Azure Function with a ServiceBusTrigger that processes messages from Azure Service Bus queues or topics. Runs on Flex Consumption plan with managed identity authentication and VNet integration. Infrastructure provisioned with Bicep and deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "servicebus",
+      "iac": "bicep",
+      "priority": 30,
+      "categories": [
+        "starter",
+        "messaging"
+      ],
+      "tags": [
+        "Service Bus",
+        "Messaging",
+        "Flex Consumption",
+        "Managed Identity",
+        "Azd"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-python-azd-service-bus",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Service Bus trigger function",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity setup",
+        "VNet integration",
+        "Application Insights monitoring"
+      ]
+    },
+    {
+      "id": "servicebus-trigger-typescript-azd",
+      "displayName": "Service Bus Trigger (TypeScript + AZD + Bicep)",
+      "shortDescription": "ServiceBusTrigger TypeScript function processing queue/topic messages with managed identity. Deployed with azd+Bicep",
+      "longDescription": "TypeScript Azure Function with a ServiceBusTrigger that processes messages from Azure Service Bus queues or topics. Runs on Flex Consumption plan with managed identity authentication and VNet integration. Infrastructure provisioned with Bicep and deployed with azd.",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "servicebus",
+      "iac": "bicep",
+      "priority": 30,
+      "categories": [
+        "starter",
+        "messaging"
+      ],
+      "tags": [
+        "Service Bus",
+        "Messaging",
+        "Flex Consumption",
+        "Managed Identity",
+        "Azd"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-typescript-azd-service-bus",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Service Bus trigger function",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity setup",
+        "VNet integration",
+        "Application Insights monitoring"
+      ]
+    },
+    {
+      "id": "servicebus-trigger-javascript-azd",
+      "displayName": "Service Bus Trigger (JavaScript + AZD + Bicep)",
+      "shortDescription": "ServiceBusTrigger JavaScript function processing queue/topic messages with managed identity. Deployed with azd+Bicep",
+      "longDescription": "JavaScript Azure Function with a ServiceBusTrigger that processes messages from Azure Service Bus queues or topics. Runs on Flex Consumption plan with managed identity authentication and VNet integration. Infrastructure provisioned with Bicep and deployed with azd.",
+      "language": "JavaScript",
+      "bindingType": "trigger",
+      "resource": "servicebus",
+      "iac": "bicep",
+      "priority": 30,
+      "categories": [
+        "starter",
+        "messaging"
+      ],
+      "tags": [
+        "Service Bus",
+        "Messaging",
+        "Flex Consumption",
+        "Managed Identity",
+        "Azd"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-javascript-azd-service-bus",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Service Bus trigger function",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity setup",
+        "VNet integration",
+        "Application Insights monitoring"
+      ]
+    },
+    {
+      "id": "servicebus-trigger-java-azd",
+      "displayName": "Service Bus Trigger (Java + AZD + Bicep)",
+      "shortDescription": "ServiceBusTrigger Java function processing queue/topic messages with managed identity. Deployed with azd+Bicep",
+      "longDescription": "Java Azure Function with a ServiceBusTrigger that processes messages from Azure Service Bus queues or topics. Runs on Flex Consumption plan with managed identity authentication and VNet integration. Infrastructure provisioned with Bicep and deployed with azd.",
+      "language": "Java",
+      "bindingType": "trigger",
+      "resource": "servicebus",
+      "iac": "bicep",
+      "priority": 30,
+      "categories": [
+        "starter",
+        "messaging"
+      ],
+      "tags": [
+        "Service Bus",
+        "Messaging",
+        "Flex Consumption",
+        "Managed Identity",
+        "Azd"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-java-azd-service-bus",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Service Bus trigger function",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity setup",
+        "VNet integration",
+        "Application Insights monitoring"
+      ]
+    },
+    {
+      "id": "servicebus-trigger-powershell-azd",
+      "displayName": "Service Bus Trigger (PowerShell + AZD + Bicep)",
+      "shortDescription": "ServiceBusTrigger PowerShell function processing queue/topic messages with managed identity. Deployed with azd+Bicep",
+      "longDescription": "PowerShell Azure Function with a ServiceBusTrigger that processes messages from Azure Service Bus queues or topics. Runs on Flex Consumption plan with managed identity authentication and VNet integration. Infrastructure provisioned with Bicep and deployed with azd.",
+      "language": "PowerShell",
+      "bindingType": "trigger",
+      "resource": "servicebus",
+      "iac": "bicep",
+      "priority": 30,
+      "categories": [
+        "starter",
+        "messaging"
+      ],
+      "tags": [
+        "Service Bus",
+        "Messaging",
+        "Flex Consumption",
+        "Managed Identity",
+        "Azd"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-powershell-azd-service-bus",
+      "folderPath": ".",
+      "whatsIncluded": [
+        "Service Bus trigger function",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity setup",
+        "VNet integration",
         "Application Insights monitoring"
       ]
     },

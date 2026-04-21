@@ -1,7 +1,7 @@
 # Template Manifest — Priority Tiers (P00–P99)
 
-**Total templates:** 69  
-**Manifest version:** 1.2.0
+**Total templates:** 76  
+**Manifest version:** 1.4.0
 
 ## Design principles
 
@@ -24,7 +24,7 @@
 | P15–19 | 📡 Event Hub | Trigger · Output | `P15` Trigger<br>`P16` Output *(future)* |
 | P20–24 | 📣 Event Grid *(reserved)* | Trigger · Output | `P20` Trigger<br>`P21` Output |
 | P25–29 | 📬 Queue Storage *(reserved)* | Trigger · Output | `P25` Trigger<br>`P26` Output |
-| P30–34 | 🚌 Service Bus *(reserved)* | Trigger · Output | `P30` Trigger<br>`P31` Output |
+| P30–34 | 🚌 Service Bus | Trigger · Output | `P30` Trigger<br>`P31` Output |
 | P35–39 | 🌐 Cosmos DB | Trigger · Input · Output | `P35` Trigger<br>`P36` Input *(future)*<br>`P37` Output *(future)* |
 | P40–44 | 🗄️ SQL | Trigger · Input · Output | `P40` Trigger<br>`P41` Input *(future)*<br>`P42` Output *(future)* |
 | P45–49 | 🔴 Redis *(reserved)* | Trigger · Input · Output | `P45` Trigger<br>`P46` Input<br>`P47` Output |
@@ -69,6 +69,13 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 15 | `eventhub-trigger-csharp-azd` | .NET | trigger | ✅ bicep | P0→15 |
 | 15 | `eventhub-trigger-python-azd` | Py | trigger | ✅ bicep | P0→15 |
 | 15 | `eventhub-trigger-typescript-azd` | TS | trigger | ✅ bicep | P0→15 |
+| | **🚌 Service Bus** | | | | |
+| 30 | `servicebus-trigger-csharp-azd` | .NET | trigger | ✅ bicep | *new* |
+| 30 | `servicebus-trigger-python-azd` | Py | trigger | ✅ bicep | *new* |
+| 30 | `servicebus-trigger-typescript-azd` | TS | trigger | ✅ bicep | *new* |
+| 30 | `servicebus-trigger-javascript-azd` | JS | trigger | ✅ bicep | *new* |
+| 30 | `servicebus-trigger-java-azd` | Java | trigger | ✅ bicep | *new* |
+| 30 | `servicebus-trigger-powershell-azd` | PS | trigger | ✅ bicep | *new* |
 | | **🌐 Cosmos DB** | | | | |
 | 35 | `cosmos-trigger-csharp-azd` | .NET | trigger | ✅ bicep | P1→35 |
 | 35 | `cosmos-trigger-python-azd` | Py | trigger | ✅ bicep | P1→35 |
@@ -144,7 +151,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 |  | Output | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | *no templates yet* |
 | Event Grid | *(reserved)* | — | — | — | — | — | — | no templates yet |
 | Queue | *(reserved)* | — | — | — | — | — | — | no templates yet |
-| Service Bus | *(reserved)* | — | — | — | — | — | — | no templates yet |
+| Service Bus | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
 | Cosmos DB | Trigger | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | JS, Java, PS |
 | | Input | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | *no templates yet* |
 | | Output | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | *no templates yet* |
@@ -192,6 +199,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 05 | ⏰ Timer — Trigger | 6 |
 | 10 | 📦 Blob Storage — Trigger | 6 |
 | 15 | 📡 Event Hub — Trigger | 3 |
+| 30 | 🚌 Service Bus — Trigger | 6 |
 | 35 | 🌐 Cosmos DB — Trigger | 3 |
 | 40 | 🗄️ SQL — Trigger | 3 |
 | 50 | 🔌 MCP — Remote Server | 4 |
@@ -209,7 +217,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 75 | 🤝 Agent Framework — Multi-Agent | 1 |
 | 90 | 🏗️ IaC — Flex Consumption (ARM / Bicep / TF) | 4 |
 | 95 | ⚠️ Non-AZD Stubs — Gap-fillers (AZD upgrade planned) | 4 |
-| | **Total** | **69** |
+| | **Total** | **76** |
 
 ## Language sort order
 
