@@ -1,7 +1,7 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-04-20T23:54:56.000Z",
-  "version": "1.4.0",
+  "generatedAt": "2026-04-25T04:52:00.000Z",
+  "version": "1.5.0",
   "totalTemplates": 76,
   "runtimeVersions": {
     "Python": {
@@ -41,9 +41,7 @@
         "8",
         "11",
         "17",
-        "21"
-      ],
-      "preview": [
+        "21",
         "25"
       ],
       "default": "21"
@@ -1170,8 +1168,8 @@
     {
       "id": "mcp-server-remote-csharp",
       "displayName": "Remote MCP Server (C# + AZD + Bicep)",
-      "shortDescription": "McpToolTrigger + McpResourceTrigger + BlobInput + BlobOutput for a remote MCP server with weather and code snippets in C#",
-      "longDescription": "C# Azure Functions app with McpToolTrigger and McpResourceTrigger, BlobInput, and BlobOutput bindings implementing an MCP server. Includes weather tools/resources via Open-Meteo and code snippet storage in Azure Blob Storage. Secured with function keys and HTTPS; supports OAuth via EasyAuth or Azure API Management.",
+      "shortDescription": "McpToolTrigger + McpResourceTrigger + McpPromptTrigger + BlobInput + BlobOutput for a remote MCP server with weather and code snippets in C#",
+      "longDescription": "Build and deploy a remote MCP server on Azure Functions in C#. This repo provides five sample apps covering all MCP capabilities: (1) McpToolTrigger for building custom tools, demonstrated with snippet CRUD, QR code generation, badges, and website preview using BlobInput/BlobOutput, (2) McpResourceTrigger for exposing server-side data as resources, demonstrated with snippet templates and server info, (3) McpPromptTrigger for building reusable prompt templates, demonstrated with code review, summarization, and documentation patterns, (4) MCP App with Fluent API for returning interactive UI from tools, demonstrated with a dynamic Vite dashboard, and (5) standalone McpWeatherApp combining tools and resources with an interactive weather UI. Secured with Entra ID authentication. Deployed with azd.",
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "mcp",
@@ -1192,8 +1190,12 @@
       "repositoryUrl": "https://github.com/Azure-Samples/remote-mcp-functions-dotnet",
       "folderPath": ".",
       "whatsIncluded": [
-        "MCP Tool trigger functions",
-        "Snippet save/retrieve tools with Blob storage",
+        "MCP Tool Trigger functions",
+        "MCP Resource Trigger functions",
+        "MCP Prompt Trigger functions",
+        "MCP App with Fluent API and Vite UI dashboard",
+        "Standalone weather app with tools and resources",
+        "BlobInput/BlobOutput bindings for snippet storage",
         "Microsoft Entra ID authentication",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration",
@@ -1206,7 +1208,7 @@
       "id": "mcp-server-remote-python",
       "displayName": "Remote MCP Server (Python + AZD + Bicep)",
       "shortDescription": "McpToolTrigger + McpResourceTrigger + BlobInput + BlobOutput for a remote MCP server with weather and code snippets in Python",
-      "longDescription": "Python Azure Functions app with McpToolTrigger and McpResourceTrigger, BlobInput, and BlobOutput bindings implementing an MCP server. Includes weather tools/resources via Open-Meteo and code snippet storage in Azure Blob Storage.",
+      "longDescription": "Build and deploy a remote MCP server on Azure Functions in Python. Includes two sample apps: (1) McpToolTrigger for building custom tools, demonstrated with hello world and snippet save/retrieve using BlobInput/BlobOutput, and (2) McpWeatherApp combining McpToolTrigger and McpResourceTrigger for exposing server-side data as resources, with an interactive Vite UI. Secured with Entra ID authentication. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
       "resource": "mcp",
@@ -1229,6 +1231,7 @@
       "whatsIncluded": [
         "MCP Tool trigger functions",
         "Snippet save/retrieve tools with Blob storage",
+        "Microsoft Entra ID authentication",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration",
         "VS Code mcp.json configuration",
@@ -1240,7 +1243,7 @@
       "id": "mcp-server-remote-typescript",
       "displayName": "Remote MCP Server (TypeScript + AZD + Bicep)",
       "shortDescription": "McpToolTrigger + McpResourceTrigger + BlobInput + BlobOutput for a remote MCP server with weather and code snippets in TypeScript",
-      "longDescription": "TypeScript Azure Functions app with McpToolTrigger and McpResourceTrigger (mcpTool + mcpResource), BlobInput, and BlobOutput bindings implementing an MCP server. Includes weather tools/resources via Open-Meteo and code snippet storage in Azure Blob Storage.",
+      "longDescription": "Build and deploy a remote MCP server on Azure Functions in TypeScript. Includes two sample apps: (1) McpToolTrigger (mcpTool) for building custom tools, demonstrated with hello world and snippet save/retrieve using BlobInput/BlobOutput, and (2) McpWeatherApp combining mcpTool and mcpResource for exposing server-side data as resources, with an interactive Vite UI. Secured with Entra ID authentication. Deployed with azd.",
       "language": "TypeScript",
       "bindingType": "trigger",
       "resource": "mcp",
@@ -1263,6 +1266,7 @@
       "whatsIncluded": [
         "MCP Tool trigger functions",
         "Snippet save/retrieve tools with Blob storage",
+        "Microsoft Entra ID authentication",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration",
         "TypeScript configuration",
@@ -1275,7 +1279,7 @@
       "id": "mcp-server-remote-java",
       "displayName": "Remote MCP Server (Java + AZD + Bicep)",
       "shortDescription": "McpToolTrigger + McpResourceTrigger + BlobInput + BlobOutput for a remote MCP server with weather and code snippets in Java",
-      "longDescription": "Java Azure Functions app with McpToolTrigger and McpResourceTrigger, BlobInput, and BlobOutput bindings implementing an MCP server. Includes weather tools/resources via Open-Meteo and code snippet storage in Azure Blob Storage.",
+      "longDescription": "Build and deploy a remote MCP server on Azure Functions in Java. Includes two sample apps: (1) McpToolTrigger for building custom tools, demonstrated with hello world and snippet save/retrieve using BlobInput/BlobOutput, and (2) McpWeatherApp combining McpToolTrigger and McpResourceTrigger for exposing server-side data as resources, with an interactive Vite UI. Secured with Entra ID authentication. Deployed with azd.",
       "language": "Java",
       "bindingType": "trigger",
       "resource": "mcp",
@@ -1298,6 +1302,7 @@
       "whatsIncluded": [
         "MCP Tool trigger functions",
         "Snippet save/retrieve tools with Blob storage",
+        "Microsoft Entra ID authentication",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration",
         "Maven build configuration",
@@ -1474,7 +1479,7 @@
         "Agents",
         "Copilot SDK",
         "Microsoft Foundry",
-        "Byok"
+        "BYOM"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/simple-agent-functions-dotnet",
@@ -1507,7 +1512,7 @@
         "Agents",
         "Copilot SDK",
         "Microsoft Foundry",
-        "Byok"
+        "BYOM"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/simple-agent-functions-python",
@@ -1540,7 +1545,7 @@
         "Agents",
         "Copilot SDK",
         "Microsoft Foundry",
-        "Byok"
+        "BYOM"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/simple-agent-functions-typescript",
@@ -1573,7 +1578,7 @@
         "Agents",
         "Copilot SDK",
         "Microsoft Foundry",
-        "Byok"
+        "BYOM"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/simple-agent-functions-java",
@@ -1752,8 +1757,8 @@
     {
       "id": "durable-orchestration-csharp",
       "displayName": "Durable Functions Orchestration (C#)",
-      "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. C# fan-out/fan-in parallel processing pattern",
-      "longDescription": "C# Durable Functions app with an HttpTrigger starter using DurableClient to start an OrchestrationTrigger workflow that fans out to multiple ActivityTrigger functions in parallel, then aggregates results.",
+      "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. C# function chaining pattern",
+      "longDescription": "C# Durable Functions app with an HttpTrigger starter using DurableClient to start an OrchestrationTrigger workflow that chains multiple ActivityTrigger functions sequentially. Demonstrates the function chaining orchestration pattern with the HelloCities sample.",
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "durable",
@@ -1766,13 +1771,12 @@
         "Durable Functions",
         "Orchestration",
         "Activity",
-        "Fan-out/Fan-in",
-        "Parallel Processing",
+        "Function Chaining",
         "Starter"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
-      "folderPath": "samples/durable-functions/dotnet/fan-out-fan-in",
+      "folderPath": "samples/durable-functions/dotnet/HelloCities",
       "whatsIncluded": [
         "Function code (.cs)",
         "Project file (.csproj)",
@@ -1816,8 +1820,8 @@
     {
       "id": "durable-orchestration-typescript",
       "displayName": "Durable Functions Orchestration (TypeScript)",
-      "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. TypeScript function chaining and fan-out/fan-in",
-      "longDescription": "TypeScript Durable Functions app with HttpTrigger starter, DurableClient, OrchestrationTrigger, and ActivityTrigger. Demonstrates function chaining and fan-out/fan-in orchestration patterns with HelloCities sample.",
+      "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. TypeScript function chaining pattern",
+      "longDescription": "TypeScript Durable Functions app with an HttpTrigger starter using DurableClient to start an OrchestrationTrigger workflow that chains multiple ActivityTrigger functions sequentially. Demonstrates the function chaining orchestration pattern with the HelloCities sample.",
       "language": "TypeScript",
       "bindingType": "trigger",
       "resource": "durable",
@@ -1849,8 +1853,8 @@
     {
       "id": "durable-orchestration-javascript",
       "displayName": "Durable Functions Orchestration (JavaScript)",
-      "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. JavaScript function chaining and fan-out/fan-in",
-      "longDescription": "JavaScript Durable Functions app with HttpTrigger starter, DurableClient, OrchestrationTrigger, and ActivityTrigger. Demonstrates function chaining and fan-out/fan-in orchestration patterns with HelloCities sample.",
+      "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. JavaScript function chaining pattern",
+      "longDescription": "JavaScript Durable Functions app with an HttpTrigger starter using DurableClient to start an OrchestrationTrigger workflow that chains multiple ActivityTrigger functions sequentially. Demonstrates the function chaining orchestration pattern with the HelloCities sample.",
       "language": "JavaScript",
       "bindingType": "trigger",
       "resource": "durable",
@@ -1913,7 +1917,7 @@
       "id": "durable-order-processor-csharp",
       "displayName": "Durable Functions Order Processing (C#)",
       "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. C# order processing with retry and compensation. Deployed with azd",
-      "longDescription": "C# Durable Functions app with HttpTrigger starter, DurableClient, OrchestrationTrigger, and ActivityTrigger. Implements order processing workflow: inventory check, payment, shipping, and notification, with retry policies and compensation logic. Deployed with azd.",
+      "longDescription": "C# Durable Functions app with an HttpTrigger starter using DurableClient to launch an OrchestrationTrigger workflow that coordinates ActivityTrigger functions for order processing: inventory check, payment, shipping, and notification, with retry policies and compensation logic. Deployed with azd.",
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "durable",
@@ -1945,7 +1949,7 @@
       "id": "durable-order-processor-python",
       "displayName": "Durable Functions Order Processing (Python)",
       "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. Python order processing with retry and compensation. Deployed with azd",
-      "longDescription": "Python Durable Functions app with HttpTrigger starter, DurableClient, OrchestrationTrigger, and ActivityTrigger. Implements order processing workflow: inventory check, payment, shipping, and notification, with retry policies and compensation logic. Deployed with azd.",
+      "longDescription": "Python Durable Functions app with an HttpTrigger starter using DurableClient to launch an OrchestrationTrigger workflow that coordinates ActivityTrigger functions for order processing: inventory check, payment, shipping, and notification, with retry policies and compensation logic. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
       "resource": "durable",
@@ -1977,7 +1981,7 @@
       "id": "durable-distributed-tracing-csharp",
       "displayName": "Durable Functions Distributed Tracing (C#)",
       "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger + OpenTelemetry. C# distributed tracing for orchestrations",
-      "longDescription": "C# Durable Functions app with HttpTrigger starter, DurableClient, OrchestrationTrigger, and ActivityTrigger. Adds OpenTelemetry distributed tracing with correlation IDs across orchestrations and activities.",
+      "longDescription": "C# Durable Functions app with an HttpTrigger starter using DurableClient to start an OrchestrationTrigger workflow that coordinates ActivityTrigger functions. Adds OpenTelemetry distributed tracing with correlation IDs across orchestrations and activities.",
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "durable",
@@ -2007,7 +2011,7 @@
       "id": "durable-large-payload-csharp",
       "displayName": "Durable Functions Large Payload (C#)",
       "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger + Blob Storage for large payload offloading. C#",
-      "longDescription": "C# Durable Functions app with HttpTrigger starter, DurableClient, OrchestrationTrigger, and ActivityTrigger. Demonstrates handling payloads exceeding message size limits by offloading to Azure Blob Storage.",
+      "longDescription": "C# Durable Functions app with an HttpTrigger starter using DurableClient to start an OrchestrationTrigger workflow that coordinates ActivityTrigger functions. Demonstrates handling payloads exceeding message size limits by offloading to Azure Blob Storage.",
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "durable",
@@ -2034,10 +2038,43 @@
       ]
     },
     {
+      "id": "durable-large-payload-fan-out-fan-in-csharp",
+      "displayName": "Durable Functions Large Payload Fan-out/Fan-in (C#)",
+      "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger + Blob Storage. C# fan-out/fan-in with large payload offloading",
+      "longDescription": "C# Durable Functions app with an HttpTrigger starter using DurableClient to start an OrchestrationTrigger workflow that fans out to multiple ActivityTrigger functions in parallel and aggregates results. Demonstrates the fan-out/fan-in pattern with large payload offloading using Azure Blob Storage to handle payloads exceeding message size limits. Includes Bicep infrastructure and azure.yaml for AZD deployment.",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "durable",
+      "iac": "bicep",
+      "priority": 70,
+      "categories": [
+        "workflows"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Fan-out/Fan-in",
+        "Large Payload",
+        "Blob Storage",
+        "Parallel Processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/dotnet/LargePayloadFanOutFanIn",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        "Project file (.csproj)",
+        "Bicep infrastructure (infra/)",
+        "azure.yaml (AZD ready)",
+        "host.json configuration",
+        "README.md"
+      ]
+    },
+    {
       "id": "durable-saga-csharp",
       "displayName": "Durable Functions Saga Pattern (C#)",
       "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. C# Saga pattern with compensation for distributed transactions",
-      "longDescription": "C# Durable Functions app with HttpTrigger starter, DurableClient, OrchestrationTrigger, and ActivityTrigger. Implements the Saga pattern for distributed transactions with compensation logic to roll back completed steps on failure.",
+      "longDescription": "C# Durable Functions app with an HttpTrigger starter using DurableClient to launch an OrchestrationTrigger workflow that coordinates ActivityTrigger functions. Implements the Saga pattern for distributed transactions with compensation logic to roll back completed steps on failure.",
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "durable",
