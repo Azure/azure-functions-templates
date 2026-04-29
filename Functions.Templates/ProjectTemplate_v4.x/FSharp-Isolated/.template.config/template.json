@@ -116,23 +116,6 @@
                     }
                 ]
             }
-        },
-        "FunctionsAppInsightsPackageVersion": {
-            "type": "generated",
-            "generator": "switch",
-            "replaces": "FunctionsAppInsightsPackageVersionValue",
-            "parameters": {
-                "datatype": "string",
-                "cases": [
-                    {
-                        "condition": "FrameworkShouldUseV1Dependencies",
-                        "value": "1.4.0"
-                    },
-                    {
-                        "value": "2.50.0"
-                    }
-                ]
-            }
         }
     },
     "sources": [
