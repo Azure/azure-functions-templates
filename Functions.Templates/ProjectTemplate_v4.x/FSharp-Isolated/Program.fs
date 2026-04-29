@@ -1,9 +1,12 @@
+open Azure.Monitor.OpenTelemetry.Exporter
 open Microsoft.Azure.Functions.Worker
 #if (!FrameworkShouldUseV1Dependencies)
 open Microsoft.Azure.Functions.Worker.Builder
 #endif
+open Microsoft.Azure.Functions.Worker.OpenTelemetry
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.Hosting
+open global.OpenTelemetry
 
 #if (FrameworkShouldUseV1Dependencies)
 [<EntryPoint>]
@@ -12,10 +15,10 @@ let main args =
         HostBuilder()
             .ConfigureFunctionsWebApplication()
             .ConfigureServices(fun services ->
-                services.AddApplicationInsightsTelemetryWorkerService()
-                |> ignore
-
-                services.ConfigureFunctionsApplicationInsights() |> ignore)
+                services.AddOpenTelemetry()
+                    .UseFunctionsWorkerDefaults()
+                    .UseAzureMonitorExporter()
+                |> ignore)
             .Build()
 
     // If using the Cosmos DB, Blob or Tables extension, you need to configure the extensions manually using the extension methods below.
@@ -35,9 +38,9 @@ let main args =
 
     builder.ConfigureFunctionsWebApplication() |> ignore
 
-    builder.Services
-        .AddApplicationInsightsTelemetryWorkerService()
-        .ConfigureFunctionsApplicationInsights() 
+    builder.Services.AddOpenTelemetry()
+        .UseFunctionsWorkerDefaults()
+        .UseAzureMonitorExporter()
     |> ignore
             
     // If using the Cosmos DB, Blob or Tables extension, you need to configure the extensions manually using the extension methods below.
