@@ -283,6 +283,9 @@ function Invoke-NugetPack {
         $outDir = $using:VSDir
         Write-Host "Attempting to build package from '$($_.Name)'."
         & $nuget pack $_.FullName -Properties "patchVersion=$version" -OutputDirectory $outDir -NonInteractive | Out-Null
+        if ($LASTEXITCODE -ne 0) {
+            throw "nuget pack failed for '$($_.FullName)' with exit code $LASTEXITCODE"
+        }
     } -ThrottleLimit 4
     
     # Pack ExtensionBundle nuspec files (parallel)
@@ -292,6 +295,9 @@ function Invoke-NugetPack {
         $outDir = $using:ExtBundleDir
         Write-Host "Attempting to build package from '$($_.Name)'."
         & $nuget pack $_.FullName -Properties "patchVersion=$version" -OutputDirectory $outDir -NonInteractive | Out-Null
+        if ($LASTEXITCODE -ne 0) {
+            throw "nuget pack failed for '$($_.FullName)' with exit code $LASTEXITCODE"
+        }
     } -ThrottleLimit 4
     
     $sw.Stop()
