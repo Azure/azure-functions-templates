@@ -1,9 +1,12 @@
+using Azure.Monitor.OpenTelemetry.Exporter;
 using Microsoft.Azure.Functions.Worker;
 #if (NetCore && !FrameworkShouldUseV1Dependencies)
 using Microsoft.Azure.Functions.Worker.Builder;
 #endif
+using Microsoft.Azure.Functions.Worker.OpenTelemetry;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OpenTelemetry;
 
 #if NetFramework
 namespace Company.FunctionApp
@@ -17,8 +20,18 @@ namespace Company.FunctionApp
             var host = new HostBuilder()
                 .ConfigureFunctionsWorkerDefaults()
                 .ConfigureServices(services => {
-                    services.AddApplicationInsightsTelemetryWorkerService();
-                    services.ConfigureFunctionsApplicationInsights();
+#if DEBUG
+                    if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING")))
+                    {
+                        services.AddOpenTelemetry()
+                            .UseFunctionsWorkerDefaults()
+                            .UseAzureMonitorExporter();
+                    }
+#else
+                    services.AddOpenTelemetry()
+                        .UseFunctionsWorkerDefaults()
+                        .UseAzureMonitorExporter();
+#endif
                 })
                 .Build();
 
@@ -30,8 +43,18 @@ namespace Company.FunctionApp
 var host = new HostBuilder()
     .ConfigureFunctionsWebApplication()
     .ConfigureServices(services => {
-        services.AddApplicationInsightsTelemetryWorkerService();
-        services.ConfigureFunctionsApplicationInsights();
+#if DEBUG
+        if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING")))
+        {
+            services.AddOpenTelemetry()
+                .UseFunctionsWorkerDefaults()
+                .UseAzureMonitorExporter();
+        }
+#else
+        services.AddOpenTelemetry()
+            .UseFunctionsWorkerDefaults()
+            .UseAzureMonitorExporter();
+#endif
     })
     .Build();
 
@@ -41,9 +64,18 @@ var builder = FunctionsApplication.CreateBuilder(args);
 
 builder.ConfigureFunctionsWebApplication();
 
-builder.Services
-    .AddApplicationInsightsTelemetryWorkerService()
-    .ConfigureFunctionsApplicationInsights();
+#if DEBUG
+if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING")))
+{
+    builder.Services.AddOpenTelemetry()
+        .UseFunctionsWorkerDefaults()
+        .UseAzureMonitorExporter();
+}
+#else
+builder.Services.AddOpenTelemetry()
+    .UseFunctionsWorkerDefaults()
+    .UseAzureMonitorExporter();
+#endif
 
 builder.Build().Run();
 #endif

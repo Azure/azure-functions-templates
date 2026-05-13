@@ -1,7 +1,7 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-04-20T23:54:56.000Z",
-  "version": "1.4.0",
+  "generatedAt": "2026-04-25T04:52:00.000Z",
+  "version": "1.5.0",
   "totalTemplates": 76,
   "runtimeVersions": {
     "Python": {
@@ -41,9 +41,7 @@
         "8",
         "11",
         "17",
-        "21"
-      ],
-      "preview": [
+        "21",
         "25"
       ],
       "default": "21"
@@ -81,7 +79,7 @@
     {
       "id": "http-trigger-csharp-azd",
       "displayName": "HTTP Trigger (C# + AZD + Bicep)",
-      "shortDescription": "HttpTrigger (GET/POST) C# function on Flex Consumption with managed identity, VNet, deployed via azd+Bicep",
+      "shortDescription": "Accepts GET and POST requests, Flex Consumption with managed identity and VNet, deployed via azd",
       "longDescription": "C# Azure Function with an HttpTrigger accepting GET and POST requests. Runs on Flex Consumption plan with managed identity authentication and VNet integration for secure networking. Infrastructure provisioned with Bicep and deployed with azd.",
       "language": "CSharp",
       "bindingType": "trigger",
@@ -115,7 +113,7 @@
     {
       "id": "http-trigger-python-azd",
       "displayName": "HTTP Trigger (Python + AZD + Bicep)",
-      "shortDescription": "HttpTrigger Python function on Flex Consumption with managed identity, VNet, deployed via azd+Bicep",
+      "shortDescription": "Flex Consumption with managed identity and VNet, deployed via azd",
       "longDescription": "Python Azure Function with an HttpTrigger. Runs on Flex Consumption plan with managed identity authentication and VNet integration for secure networking. Infrastructure provisioned with Bicep and deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
@@ -148,7 +146,7 @@
     {
       "id": "http-trigger-typescript-azd",
       "displayName": "HTTP Trigger (TypeScript + AZD + Bicep)",
-      "shortDescription": "HttpTrigger TypeScript function on Flex Consumption with managed identity, VNet, deployed via azd+Bicep",
+      "shortDescription": "Flex Consumption with managed identity and VNet, deployed via azd",
       "longDescription": "TypeScript Azure Function with an HttpTrigger. Runs on Flex Consumption plan with managed identity authentication and VNet integration for secure networking. Infrastructure provisioned with Bicep and deployed with azd.",
       "language": "TypeScript",
       "bindingType": "trigger",
@@ -181,7 +179,7 @@
     {
       "id": "http-trigger-javascript-azd",
       "displayName": "HTTP Trigger (JavaScript + AZD + Bicep)",
-      "shortDescription": "HttpTrigger JavaScript function on Flex Consumption with managed identity, VNet, deployed via azd+Bicep",
+      "shortDescription": "Flex Consumption with managed identity and VNet, deployed via azd",
       "longDescription": "JavaScript Azure Function with an HttpTrigger. Runs on Flex Consumption plan with managed identity authentication and VNet integration for secure networking. Infrastructure provisioned with Bicep and deployed with azd.",
       "language": "JavaScript",
       "bindingType": "trigger",
@@ -214,7 +212,7 @@
     {
       "id": "http-trigger-java-azd",
       "displayName": "HTTP Trigger (Java + AZD + Bicep)",
-      "shortDescription": "HttpTrigger Java function on Flex Consumption with managed identity, VNet, deployed via azd+Bicep",
+      "shortDescription": "Flex Consumption with managed identity and VNet, deployed via azd",
       "longDescription": "Java Azure Function with an HttpTrigger. Runs on Flex Consumption plan with managed identity authentication and VNet integration for secure networking. Infrastructure provisioned with Bicep and deployed with azd.",
       "language": "Java",
       "bindingType": "trigger",
@@ -247,7 +245,7 @@
     {
       "id": "http-trigger-powershell-azd",
       "displayName": "HTTP Trigger (PowerShell + AZD + Bicep)",
-      "shortDescription": "HttpTrigger PowerShell function on Flex Consumption with managed identity, VNet, deployed via azd+Bicep",
+      "shortDescription": "Flex Consumption with managed identity and VNet, deployed via azd",
       "longDescription": "PowerShell Azure Function with an HttpTrigger. Runs on Flex Consumption plan with managed identity authentication and VNet integration for secure networking. Infrastructure provisioned with Bicep and deployed with azd.",
       "language": "PowerShell",
       "bindingType": "trigger",
@@ -279,7 +277,7 @@
     {
       "id": "http-trigger-csharp-terraform",
       "displayName": "HTTP Trigger (C# + AZD + Terraform)",
-      "shortDescription": "HttpTrigger (GET/POST) C# function on Flex Consumption with managed identity, VNet, deployed via azd+Terraform",
+      "shortDescription": "Accepts GET and POST requests, Flex Consumption with managed identity and VNet, deployed via azd",
       "longDescription": "C# Azure Function with an HttpTrigger accepting GET and POST requests. Runs on Flex Consumption plan with managed identity authentication and VNet integration. Infrastructure provisioned with Terraform and deployed with azd.",
       "language": "CSharp",
       "bindingType": "trigger",
@@ -312,7 +310,7 @@
     {
       "id": "timer-trigger-csharp-azd",
       "displayName": "Timer Trigger (C# + AZD + Bicep)",
-      "shortDescription": "TimerTrigger C# function with configurable cron schedule on Flex Consumption, deployed via azd",
+      "shortDescription": "Configurable cron schedule, Flex Consumption, deployed via azd",
       "longDescription": "C# Azure Function with a TimerTrigger that executes on a configurable cron schedule. Runs on Flex Consumption plan. Deployed with azd.",
       "language": "CSharp",
       "bindingType": "trigger",
@@ -344,7 +342,7 @@
     {
       "id": "timer-trigger-python-azd",
       "displayName": "Timer Trigger (Python + AZD + Bicep)",
-      "shortDescription": "TimerTrigger Python function with configurable cron schedule on Flex Consumption, deployed via azd",
+      "shortDescription": "Configurable cron schedule, Flex Consumption, deployed via azd",
       "longDescription": "Python Azure Function with a TimerTrigger that executes on a configurable cron schedule. Runs on Flex Consumption plan. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
@@ -376,7 +374,7 @@
     {
       "id": "timer-trigger-typescript-azd",
       "displayName": "Timer Trigger (TypeScript + AZD + Bicep)",
-      "shortDescription": "TimerTrigger TypeScript function with configurable cron schedule on Flex Consumption, deployed via azd",
+      "shortDescription": "Configurable cron schedule, Flex Consumption, deployed via azd",
       "longDescription": "TypeScript Azure Function with a TimerTrigger that executes on a configurable cron schedule. Runs on Flex Consumption plan. Deployed with azd.",
       "language": "TypeScript",
       "bindingType": "trigger",
@@ -408,7 +406,7 @@
     {
       "id": "timer-trigger-javascript-azd",
       "displayName": "Timer Trigger (JavaScript + AZD + Bicep)",
-      "shortDescription": "TimerTrigger JavaScript function with configurable cron schedule on Flex Consumption, deployed via azd",
+      "shortDescription": "Configurable cron schedule, Flex Consumption, deployed via azd",
       "longDescription": "JavaScript Azure Function with a TimerTrigger that executes on a configurable cron schedule. Runs on Flex Consumption plan. Deployed with azd.",
       "language": "JavaScript",
       "bindingType": "trigger",
@@ -440,7 +438,7 @@
     {
       "id": "timer-trigger-java-azd",
       "displayName": "Timer Trigger (Java + AZD + Bicep)",
-      "shortDescription": "TimerTrigger Java function with configurable cron schedule on Flex Consumption, deployed via azd",
+      "shortDescription": "Configurable cron schedule, Flex Consumption, deployed via azd",
       "longDescription": "Java Azure Function with a TimerTrigger that executes on a configurable cron schedule. Runs on Flex Consumption plan. Deployed with azd.",
       "language": "Java",
       "bindingType": "trigger",
@@ -472,7 +470,7 @@
     {
       "id": "timer-trigger-powershell-azd",
       "displayName": "Timer Trigger (PowerShell + AZD + Bicep)",
-      "shortDescription": "TimerTrigger PowerShell function with configurable cron schedule on Flex Consumption, deployed via azd",
+      "shortDescription": "Configurable cron schedule, Flex Consumption, deployed via azd",
       "longDescription": "PowerShell Azure Function with a TimerTrigger that executes on a configurable cron schedule. Runs on Flex Consumption plan. Deployed with azd.",
       "language": "PowerShell",
       "bindingType": "trigger",
@@ -504,7 +502,7 @@
     {
       "id": "blob-eventgrid-trigger-csharp-azd",
       "displayName": "Blob EventGrid Trigger (C# + AZD + Bicep)",
-      "shortDescription": "BlobTrigger (EventGrid source) with BlobInput binding for C#. Processes blob content like PDFs/images, deployed via azd",
+      "shortDescription": "EventGrid-sourced with BlobInput binding, processes content like PDFs and images, deployed via azd",
       "longDescription": "C# Azure Function with a BlobTrigger using EventGrid as the event source and a BlobInput binding to read blob content. Designed for processing files such as PDFs and images from Azure Blob Storage. Deployed with azd.",
       "language": "CSharp",
       "bindingType": "trigger",
@@ -535,7 +533,7 @@
     {
       "id": "blob-eventgrid-trigger-python-azd",
       "displayName": "Blob EventGrid Trigger (Python + AZD + Bicep)",
-      "shortDescription": "BlobTrigger (EventGrid source) with BlobInput binding for Python. Reads blob content for processing, deployed via azd",
+      "shortDescription": "EventGrid-sourced with BlobInput binding, reads blob content for processing, deployed via azd",
       "longDescription": "Python Azure Function with a BlobTrigger using EventGrid as the event source and a BlobInput binding to read blob content from Azure Blob Storage. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
@@ -566,7 +564,7 @@
     {
       "id": "blob-eventgrid-trigger-typescript-azd",
       "displayName": "Blob EventGrid Trigger (TypeScript + AZD + Bicep)",
-      "shortDescription": "BlobTrigger (EventGrid source) with BlobInput binding for TypeScript. Reads blob content for processing, deployed via azd",
+      "shortDescription": "EventGrid-sourced with BlobInput binding, reads blob content for processing, deployed via azd",
       "longDescription": "TypeScript Azure Function with a BlobTrigger using EventGrid as the event source and a BlobInput binding to read blob content from Azure Blob Storage. Deployed with azd.",
       "language": "TypeScript",
       "bindingType": "trigger",
@@ -597,7 +595,7 @@
     {
       "id": "blob-eventgrid-trigger-javascript-azd",
       "displayName": "Blob EventGrid Trigger (JavaScript + AZD + Bicep)",
-      "shortDescription": "BlobTrigger (EventGrid source) with BlobInput binding for JavaScript. Reads blob content for processing, deployed via azd",
+      "shortDescription": "EventGrid-sourced with BlobInput binding, reads blob content for processing, deployed via azd",
       "longDescription": "JavaScript Azure Function with a BlobTrigger using EventGrid as the event source and a BlobInput binding to read blob content from Azure Blob Storage. Deployed with azd.",
       "language": "JavaScript",
       "bindingType": "trigger",
@@ -628,7 +626,7 @@
     {
       "id": "blob-eventgrid-trigger-java-azd",
       "displayName": "Blob EventGrid Trigger (Java + AZD + Bicep)",
-      "shortDescription": "BlobTrigger (EventGrid source) with BlobOutput binding for Java. Writes processed results back to blob storage, deployed via azd",
+      "shortDescription": "EventGrid-sourced with BlobOutput binding, writes processed results back to blob storage, deployed via azd",
       "longDescription": "Java Azure Function with a BlobTrigger using EventGrid as the event source and a BlobOutput binding to write results back to Azure Blob Storage. Deployed with azd.",
       "language": "Java",
       "bindingType": "trigger",
@@ -659,7 +657,7 @@
     {
       "id": "blob-eventgrid-trigger-powershell-azd",
       "displayName": "Blob EventGrid Trigger (PowerShell + AZD + Bicep)",
-      "shortDescription": "BlobTrigger (EventGrid source) PowerShell function for processing blobs from Azure Blob Storage, deployed via azd",
+      "shortDescription": "EventGrid-sourced, processes blobs from Azure Blob Storage, deployed via azd",
       "longDescription": "PowerShell Azure Function with a BlobTrigger using EventGrid as the event source. Processes blobs from Azure Blob Storage when new or updated blobs are detected. Deployed with azd.",
       "language": "PowerShell",
       "bindingType": "trigger",
@@ -690,7 +688,7 @@
     {
       "id": "eventhub-trigger-csharp-azd",
       "displayName": "Event Hub Trigger (C# + AZD + Bicep)",
-      "shortDescription": "EventHubTrigger + TimerTrigger for real-time news streaming with sentiment analysis in C#. Deployed with azd to Flex Consumption",
+      "shortDescription": "Real-time news streaming with sentiment analysis, includes TimerTrigger, Flex Consumption, deployed via azd",
       "longDescription": "C# Azure Functions app with EventHubTrigger for processing real-time news streaming events including sentiment analysis and engagement tracking, plus a TimerTrigger that generates simulated news events. Integrates with Azure Event Hubs. Deployed with azd to Azure Functions Flex Consumption.",
       "language": "CSharp",
       "bindingType": "trigger",
@@ -724,7 +722,7 @@
     {
       "id": "eventhub-trigger-python-azd",
       "displayName": "Event Hub Trigger (Python + AZD + Bicep)",
-      "shortDescription": "EventHubTrigger + EventHubOutput + TimerTrigger for real-time event streaming in Python with managed identity. Deployed with azd",
+      "shortDescription": "Real-time event streaming with EventHubOutput and TimerTrigger, managed identity, deployed via azd",
       "longDescription": "Python Azure Functions app with EventHubTrigger for processing events, EventHubOutput binding for producing events, and TimerTrigger for event generation. Uses managed identity authentication and VNet integration with Azure Event Hubs. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
@@ -758,7 +756,7 @@
     {
       "id": "eventhub-trigger-typescript-azd",
       "displayName": "Event Hub Trigger (TypeScript + AZD + Bicep)",
-      "shortDescription": "EventHubTrigger + EventHubOutput + TimerTrigger for real-time event streaming in TypeScript with managed identity. Deployed with azd",
+      "shortDescription": "Real-time event streaming with EventHubOutput and TimerTrigger, managed identity, deployed via azd",
       "longDescription": "TypeScript Azure Functions app with EventHubTrigger for processing events, EventHubOutput binding for producing events, and TimerTrigger for event generation. Uses managed identity authentication and VNet integration with Azure Event Hubs. Deployed with azd.",
       "language": "TypeScript",
       "bindingType": "trigger",
@@ -792,8 +790,8 @@
     {
       "id": "servicebus-trigger-csharp-azd",
       "displayName": "Service Bus Trigger (C# + AZD + Bicep)",
-      "shortDescription": "ServiceBusTrigger C# function processing queue/topic messages with managed identity. Deployed with azd+Bicep",
-      "longDescription": "C# Azure Function with a ServiceBusTrigger that processes messages from Azure Service Bus queues or topics. Runs on Flex Consumption plan with managed identity authentication and VNet integration. Infrastructure provisioned with Bicep and deployed with azd.",
+      "shortDescription": "Processes queue messages with managed identity, deployed via azd",
+      "longDescription": "C# Azure Function with a ServiceBusTrigger that processes messages from Azure Service Bus queues. Runs on Flex Consumption plan with managed identity authentication and VNet integration. Infrastructure provisioned with Bicep and deployed with azd.",
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "servicebus",
@@ -825,8 +823,8 @@
     {
       "id": "servicebus-trigger-python-azd",
       "displayName": "Service Bus Trigger (Python + AZD + Bicep)",
-      "shortDescription": "ServiceBusTrigger Python function processing queue/topic messages with managed identity. Deployed with azd+Bicep",
-      "longDescription": "Python Azure Function with a ServiceBusTrigger that processes messages from Azure Service Bus queues or topics. Runs on Flex Consumption plan with managed identity authentication and VNet integration. Infrastructure provisioned with Bicep and deployed with azd.",
+      "shortDescription": "Processes queue messages with managed identity, deployed via azd",
+      "longDescription": "Python Azure Function with a ServiceBusTrigger that processes messages from Azure Service Bus queues. Runs on Flex Consumption plan with managed identity authentication and VNet integration. Infrastructure provisioned with Bicep and deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
       "resource": "servicebus",
@@ -858,8 +856,8 @@
     {
       "id": "servicebus-trigger-typescript-azd",
       "displayName": "Service Bus Trigger (TypeScript + AZD + Bicep)",
-      "shortDescription": "ServiceBusTrigger TypeScript function processing queue/topic messages with managed identity. Deployed with azd+Bicep",
-      "longDescription": "TypeScript Azure Function with a ServiceBusTrigger that processes messages from Azure Service Bus queues or topics. Runs on Flex Consumption plan with managed identity authentication and VNet integration. Infrastructure provisioned with Bicep and deployed with azd.",
+      "shortDescription": "Processes queue messages with managed identity, deployed via azd",
+      "longDescription": "TypeScript Azure Function with a ServiceBusTrigger that processes messages from Azure Service Bus queues. Runs on Flex Consumption plan with managed identity authentication and VNet integration. Infrastructure provisioned with Bicep and deployed with azd.",
       "language": "TypeScript",
       "bindingType": "trigger",
       "resource": "servicebus",
@@ -891,8 +889,8 @@
     {
       "id": "servicebus-trigger-javascript-azd",
       "displayName": "Service Bus Trigger (JavaScript + AZD + Bicep)",
-      "shortDescription": "ServiceBusTrigger JavaScript function processing queue/topic messages with managed identity. Deployed with azd+Bicep",
-      "longDescription": "JavaScript Azure Function with a ServiceBusTrigger that processes messages from Azure Service Bus queues or topics. Runs on Flex Consumption plan with managed identity authentication and VNet integration. Infrastructure provisioned with Bicep and deployed with azd.",
+      "shortDescription": "Processes queue messages with managed identity, deployed via azd",
+      "longDescription": "JavaScript Azure Function with a ServiceBusTrigger that processes messages from Azure Service Bus queues. Runs on Flex Consumption plan with managed identity authentication and VNet integration. Infrastructure provisioned with Bicep and deployed with azd.",
       "language": "JavaScript",
       "bindingType": "trigger",
       "resource": "servicebus",
@@ -924,8 +922,8 @@
     {
       "id": "servicebus-trigger-java-azd",
       "displayName": "Service Bus Trigger (Java + AZD + Bicep)",
-      "shortDescription": "ServiceBusTrigger Java function processing queue/topic messages with managed identity. Deployed with azd+Bicep",
-      "longDescription": "Java Azure Function with a ServiceBusTrigger that processes messages from Azure Service Bus queues or topics. Runs on Flex Consumption plan with managed identity authentication and VNet integration. Infrastructure provisioned with Bicep and deployed with azd.",
+      "shortDescription": "Processes queue messages with managed identity, deployed via azd",
+      "longDescription": "Java Azure Function with a ServiceBusTrigger that processes messages from Azure Service Bus queues. Runs on Flex Consumption plan with managed identity authentication and VNet integration. Infrastructure provisioned with Bicep and deployed with azd.",
       "language": "Java",
       "bindingType": "trigger",
       "resource": "servicebus",
@@ -957,8 +955,8 @@
     {
       "id": "servicebus-trigger-powershell-azd",
       "displayName": "Service Bus Trigger (PowerShell + AZD + Bicep)",
-      "shortDescription": "ServiceBusTrigger PowerShell function processing queue/topic messages with managed identity. Deployed with azd+Bicep",
-      "longDescription": "PowerShell Azure Function with a ServiceBusTrigger that processes messages from Azure Service Bus queues or topics. Runs on Flex Consumption plan with managed identity authentication and VNet integration. Infrastructure provisioned with Bicep and deployed with azd.",
+      "shortDescription": "Processes queue messages with managed identity, deployed via azd",
+      "longDescription": "PowerShell Azure Function with a ServiceBusTrigger that processes messages from Azure Service Bus queues. Runs on Flex Consumption plan with managed identity authentication and VNet integration. Infrastructure provisioned with Bicep and deployed with azd.",
       "language": "PowerShell",
       "bindingType": "trigger",
       "resource": "servicebus",
@@ -990,7 +988,7 @@
     {
       "id": "cosmos-trigger-csharp-azd",
       "displayName": "Cosmos DB Trigger (C# + AZD + Bicep)",
-      "shortDescription": "CosmosDBTrigger (change feed) C# function reacting to document changes in Cosmos DB. Uses managed identity. Deployed with azd",
+      "shortDescription": "Reacts to document changes via change feed, managed identity, deployed via azd",
       "longDescription": "C# Azure Function with a CosmosDBTrigger that monitors an Azure Cosmos DB container via the change feed and reacts to document inserts and updates. Uses managed identity for authentication. Deployed with azd.",
       "language": "CSharp",
       "bindingType": "trigger",
@@ -1020,7 +1018,7 @@
     {
       "id": "cosmos-trigger-python-azd",
       "displayName": "Cosmos DB Trigger (Python + AZD + Bicep)",
-      "shortDescription": "CosmosDBTrigger (change feed) Python function reacting to document changes in Azure Cosmos DB. Deployed with azd",
+      "shortDescription": "Reacts to document changes via change feed, deployed via azd",
       "longDescription": "Python Azure Function with a CosmosDBTrigger that monitors an Azure Cosmos DB container via the change feed and reacts to document inserts and updates. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
@@ -1050,7 +1048,7 @@
     {
       "id": "cosmos-trigger-typescript-azd",
       "displayName": "Cosmos DB Trigger (TypeScript + AZD + Bicep)",
-      "shortDescription": "CosmosDBTrigger (change feed) TypeScript function reacting to document changes in Azure Cosmos DB. Deployed with azd",
+      "shortDescription": "Reacts to document changes via change feed, deployed via azd",
       "longDescription": "TypeScript Azure Function with a CosmosDBTrigger that monitors an Azure Cosmos DB container via the change feed and reacts to document inserts and updates. Deployed with azd.",
       "language": "TypeScript",
       "bindingType": "trigger",
@@ -1079,7 +1077,7 @@
     {
       "id": "sql-trigger-csharp-azd",
       "displayName": "SQL Trigger (C# + AZD + Bicep)",
-      "shortDescription": "SqlTrigger + HttpTrigger + SqlOutput. C# dual-function: SQL trigger monitors row changes, HTTP writes to Azure SQL. Deployed with azd",
+      "shortDescription": "Dual-function: monitors row changes and writes to Azure SQL via HTTP endpoint, deployed via azd",
       "longDescription": "C# Azure Functions app with two functions: (1) SqlTrigger monitoring row changes in Azure SQL [dbo].[ToDo] table, and (2) HttpTrigger with SqlOutput binding writing new rows. Deployed with azd.",
       "language": "CSharp",
       "bindingType": "trigger",
@@ -1109,7 +1107,7 @@
     {
       "id": "sql-trigger-python-azd",
       "displayName": "SQL Trigger (Python + AZD + Bicep)",
-      "shortDescription": "SqlTrigger + HttpTrigger + SqlOutput. Python dual-function: SQL trigger monitors row changes, HTTP writes to Azure SQL. Deployed with azd",
+      "shortDescription": "Dual-function: monitors row changes and writes to Azure SQL via HTTP endpoint, deployed via azd",
       "longDescription": "Python Azure Functions app with two functions: (1) SqlTrigger monitoring row changes in Azure SQL [dbo].[ToDo] table, and (2) HttpTrigger with SqlOutput binding writing new rows. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
@@ -1140,7 +1138,7 @@
     {
       "id": "sql-trigger-typescript-azd",
       "displayName": "SQL Trigger (TypeScript + AZD + Bicep)",
-      "shortDescription": "SqlTrigger + HttpTrigger + SqlOutput. TypeScript dual-function: SQL trigger monitors row changes, HTTP writes to Azure SQL. Deployed with azd",
+      "shortDescription": "Dual-function: monitors row changes and writes to Azure SQL via HTTP endpoint, deployed via azd",
       "longDescription": "TypeScript Azure Functions app with two functions: (1) SqlTrigger monitoring row changes in Azure SQL [dbo].[ToDo] table, and (2) HttpTrigger with SqlOutput binding writing new rows. Deployed with azd.",
       "language": "TypeScript",
       "bindingType": "trigger",
@@ -1170,8 +1168,8 @@
     {
       "id": "mcp-server-remote-csharp",
       "displayName": "Remote MCP Server (C# + AZD + Bicep)",
-      "shortDescription": "McpToolTrigger + McpResourceTrigger + BlobInput + BlobOutput for a remote MCP server with weather and code snippets in C#",
-      "longDescription": "C# Azure Functions app with McpToolTrigger and McpResourceTrigger, BlobInput, and BlobOutput bindings implementing an MCP server. Includes weather tools/resources via Open-Meteo and code snippet storage in Azure Blob Storage. Secured with function keys and HTTPS; supports OAuth via EasyAuth or Azure API Management.",
+      "shortDescription": "Weather and code snippet tools with McpPromptTrigger and Blob storage, deployed via azd",
+      "longDescription": "Build and deploy a remote MCP server on Azure Functions in C#. This repo provides five sample apps covering all MCP capabilities: (1) McpToolTrigger for building custom tools, demonstrated with snippet CRUD, QR code generation, badges, and website preview using BlobInput/BlobOutput, (2) McpResourceTrigger for exposing server-side data as resources, demonstrated with snippet templates and server info, (3) McpPromptTrigger for building reusable prompt templates, demonstrated with code review, summarization, and documentation patterns, (4) MCP App with Fluent API for returning interactive UI from tools, demonstrated with a dynamic Vite dashboard, and (5) standalone McpWeatherApp combining tools and resources with an interactive weather UI. Secured with Entra ID authentication. Deployed with azd.",
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "mcp",
@@ -1192,8 +1190,12 @@
       "repositoryUrl": "https://github.com/Azure-Samples/remote-mcp-functions-dotnet",
       "folderPath": ".",
       "whatsIncluded": [
-        "MCP Tool trigger functions",
-        "Snippet save/retrieve tools with Blob storage",
+        "MCP Tool Trigger functions",
+        "MCP Resource Trigger functions",
+        "MCP Prompt Trigger functions",
+        "MCP App with Fluent API and Vite UI dashboard",
+        "Standalone weather app with tools and resources",
+        "BlobInput/BlobOutput bindings for snippet storage",
         "Microsoft Entra ID authentication",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration",
@@ -1205,8 +1207,8 @@
     {
       "id": "mcp-server-remote-python",
       "displayName": "Remote MCP Server (Python + AZD + Bicep)",
-      "shortDescription": "McpToolTrigger + McpResourceTrigger + BlobInput + BlobOutput for a remote MCP server with weather and code snippets in Python",
-      "longDescription": "Python Azure Functions app with McpToolTrigger and McpResourceTrigger, BlobInput, and BlobOutput bindings implementing an MCP server. Includes weather tools/resources via Open-Meteo and code snippet storage in Azure Blob Storage.",
+      "shortDescription": "Weather and code snippet tools with Blob storage, deployed via azd",
+      "longDescription": "Build and deploy a remote MCP server on Azure Functions in Python. Includes two sample apps: (1) McpToolTrigger for building custom tools, demonstrated with hello world and snippet save/retrieve using BlobInput/BlobOutput, and (2) McpWeatherApp combining McpToolTrigger and McpResourceTrigger for exposing server-side data as resources, with an interactive Vite UI. Secured with Entra ID authentication. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
       "resource": "mcp",
@@ -1229,6 +1231,7 @@
       "whatsIncluded": [
         "MCP Tool trigger functions",
         "Snippet save/retrieve tools with Blob storage",
+        "Microsoft Entra ID authentication",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration",
         "VS Code mcp.json configuration",
@@ -1239,8 +1242,8 @@
     {
       "id": "mcp-server-remote-typescript",
       "displayName": "Remote MCP Server (TypeScript + AZD + Bicep)",
-      "shortDescription": "McpToolTrigger + McpResourceTrigger + BlobInput + BlobOutput for a remote MCP server with weather and code snippets in TypeScript",
-      "longDescription": "TypeScript Azure Functions app with McpToolTrigger and McpResourceTrigger (mcpTool + mcpResource), BlobInput, and BlobOutput bindings implementing an MCP server. Includes weather tools/resources via Open-Meteo and code snippet storage in Azure Blob Storage.",
+      "shortDescription": "Weather and code snippet tools with Blob storage, deployed via azd",
+      "longDescription": "Build and deploy a remote MCP server on Azure Functions in TypeScript. Includes two sample apps: (1) McpToolTrigger (mcpTool) for building custom tools, demonstrated with hello world and snippet save/retrieve using BlobInput/BlobOutput, and (2) McpWeatherApp combining mcpTool and mcpResource for exposing server-side data as resources, with an interactive Vite UI. Secured with Entra ID authentication. Deployed with azd.",
       "language": "TypeScript",
       "bindingType": "trigger",
       "resource": "mcp",
@@ -1263,6 +1266,7 @@
       "whatsIncluded": [
         "MCP Tool trigger functions",
         "Snippet save/retrieve tools with Blob storage",
+        "Microsoft Entra ID authentication",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration",
         "TypeScript configuration",
@@ -1274,8 +1278,8 @@
     {
       "id": "mcp-server-remote-java",
       "displayName": "Remote MCP Server (Java + AZD + Bicep)",
-      "shortDescription": "McpToolTrigger + McpResourceTrigger + BlobInput + BlobOutput for a remote MCP server with weather and code snippets in Java",
-      "longDescription": "Java Azure Functions app with McpToolTrigger and McpResourceTrigger, BlobInput, and BlobOutput bindings implementing an MCP server. Includes weather tools/resources via Open-Meteo and code snippet storage in Azure Blob Storage.",
+      "shortDescription": "Weather and code snippet tools with Blob storage, deployed via azd",
+      "longDescription": "Build and deploy a remote MCP server on Azure Functions in Java. Includes two sample apps: (1) McpToolTrigger for building custom tools, demonstrated with hello world and snippet save/retrieve using BlobInput/BlobOutput, and (2) McpWeatherApp combining McpToolTrigger and McpResourceTrigger for exposing server-side data as resources, with an interactive Vite UI. Secured with Entra ID authentication. Deployed with azd.",
       "language": "Java",
       "bindingType": "trigger",
       "resource": "mcp",
@@ -1298,6 +1302,7 @@
       "whatsIncluded": [
         "MCP Tool trigger functions",
         "Snippet save/retrieve tools with Blob storage",
+        "Microsoft Entra ID authentication",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration",
         "Maven build configuration",
@@ -1309,7 +1314,7 @@
     {
       "id": "mcp-sdk-hosting-csharp",
       "displayName": "Self-hosted MCP SDK Server (C# + AZD + Bicep)",
-      "shortDescription": "ASP.NET Core app hosting MCP tools via HTTP/SSE transport using ModelContextProtocol.AspNetCore SDK in C#",
+      "shortDescription": "Hosts MCP tools via HTTP/SSE transport using ModelContextProtocol.AspNetCore SDK",
       "longDescription": "C# ASP.NET Core application hosting MCP protocol tools (weather, user info) via HTTP/SSE transport using the ModelContextProtocol.AspNetCore SDK. Runs on Azure Functions but does not use Azure Functions trigger/binding attributes.",
       "language": "CSharp",
       "bindingType": "trigger",
@@ -1338,7 +1343,7 @@
     {
       "id": "mcp-sdk-hosting-python",
       "displayName": "Self-hosted MCP SDK Server (Python + AZD + Bicep)",
-      "shortDescription": "FastMCP SDK app hosting MCP tools via Starlette/ASGI transport in Python",
+      "shortDescription": "Hosts MCP tools via Starlette/ASGI transport using FastMCP SDK",
       "longDescription": "Python application hosting MCP protocol tools (weather) using the FastMCP SDK (mcp.server.fastmcp) with Starlette/ASGI transport. Runs on Azure Functions but does not use Azure Functions trigger/binding attributes.",
       "language": "Python",
       "bindingType": "trigger",
@@ -1367,7 +1372,7 @@
     {
       "id": "mcp-sdk-hosting-typescript",
       "displayName": "Self-hosted MCP SDK Server (TypeScript + AZD + Bicep)",
-      "shortDescription": "HttpTrigger wrapper hosting MCP SDK tools in TypeScript on Azure Functions",
+      "shortDescription": "Hosts MCP SDK tools on Azure Functions via HttpTrigger wrapper",
       "longDescription": "TypeScript Azure Functions app using HttpTrigger as the transport layer to host MCP SDK protocol tools. The HTTP trigger serves as the entry point for MCP protocol requests.",
       "language": "TypeScript",
       "bindingType": "trigger",
@@ -1396,7 +1401,7 @@
     {
       "id": "mcp-sdk-hosting-java",
       "displayName": "Self-hosted MCP SDK Server (Java + AZD + Bicep)",
-      "shortDescription": "Quarkus framework app hosting MCP tools using the MCP SDK in Java",
+      "shortDescription": "Hosts MCP tools using Quarkus framework and MCP SDK",
       "longDescription": "Java application built on the Quarkus framework hosting MCP protocol tools (weather) using the MCP SDK. Runs on Azure Functions but does not use Azure Functions trigger/binding attributes.",
       "language": "Java",
       "bindingType": "trigger",
@@ -1425,7 +1430,7 @@
     {
       "id": "mcp-server-apim-python",
       "displayName": "Remote MCP Server with APIM Gateway (Python + AZD + Bicep)",
-      "shortDescription": "McpToolTrigger + BlobInput + BlobOutput behind Azure API Management gateway with Entra ID and OAuth in Python",
+      "shortDescription": "MCP tools behind API Management gateway with Entra ID and OAuth, uses Blob storage",
       "longDescription": "Python Azure Functions app with McpToolTrigger, BlobInput, and BlobOutput bindings implementing an MCP server behind Azure API Management. Tools include hello, get_snippet, and save_snippet using Azure Blob Storage. Secured with Entra ID authentication and OAuth.",
       "language": "Python",
       "bindingType": "trigger",
@@ -1458,7 +1463,7 @@
     {
       "id": "ai-agent-csharp",
       "displayName": "Simple Agent QuickStart (C# + AZD + Bicep)",
-      "shortDescription": "HttpTrigger C# AI agent using GitHub Copilot SDK with bring-your-own-model support via Microsoft Foundry",
+      "shortDescription": "AI agent using GitHub Copilot SDK with bring-your-own-model support via Microsoft Foundry",
       "longDescription": "C# Azure Function with an HTTP trigger that implements an AI agent using the GitHub Copilot SDK. Supports GitHub Copilot models or bring-your-own-model (BYOM) via Microsoft Foundry. Deployed with azd.",
       "language": "CSharp",
       "bindingType": "trigger",
@@ -1474,7 +1479,7 @@
         "Agents",
         "Copilot SDK",
         "Microsoft Foundry",
-        "Byok"
+        "BYOM"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/simple-agent-functions-dotnet",
@@ -1491,7 +1496,7 @@
     {
       "id": "ai-agent-python",
       "displayName": "Simple Agent QuickStart (Python + AZD + Bicep)",
-      "shortDescription": "HttpTrigger Python AI agent using GitHub Copilot SDK with bring-your-own-model support via Microsoft Foundry",
+      "shortDescription": "AI agent using GitHub Copilot SDK with bring-your-own-model support via Microsoft Foundry",
       "longDescription": "Python Azure Function with an HTTP trigger that implements an AI agent using the GitHub Copilot SDK. Supports GitHub Copilot models or bring-your-own-model (BYOM) via Microsoft Foundry. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
@@ -1507,7 +1512,7 @@
         "Agents",
         "Copilot SDK",
         "Microsoft Foundry",
-        "Byok"
+        "BYOM"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/simple-agent-functions-python",
@@ -1524,7 +1529,7 @@
     {
       "id": "ai-agent-typescript",
       "displayName": "Simple Agent QuickStart (TypeScript + AZD + Bicep)",
-      "shortDescription": "HttpTrigger TypeScript AI agent using GitHub Copilot SDK with bring-your-own-model support via Microsoft Foundry",
+      "shortDescription": "AI agent using GitHub Copilot SDK with bring-your-own-model support via Microsoft Foundry",
       "longDescription": "TypeScript Azure Function with an HTTP trigger that implements an AI agent using the GitHub Copilot SDK. Supports GitHub Copilot models or bring-your-own-model (BYOM) via Microsoft Foundry. Deployed with azd.",
       "language": "TypeScript",
       "bindingType": "trigger",
@@ -1540,7 +1545,7 @@
         "Agents",
         "Copilot SDK",
         "Microsoft Foundry",
-        "Byok"
+        "BYOM"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/simple-agent-functions-typescript",
@@ -1557,7 +1562,7 @@
     {
       "id": "ai-agent-java",
       "displayName": "Simple Agent QuickStart (Java + AZD + Bicep)",
-      "shortDescription": "HttpTrigger Java AI agent using GitHub Copilot SDK with bring-your-own-model support via Microsoft Foundry",
+      "shortDescription": "AI agent using GitHub Copilot SDK with bring-your-own-model support via Microsoft Foundry",
       "longDescription": "Java Azure Function with an HTTP trigger that implements an AI agent using the GitHub Copilot SDK. Supports GitHub Copilot models or bring-your-own-model (BYOM) via Microsoft Foundry. Deployed with azd.",
       "language": "Java",
       "bindingType": "trigger",
@@ -1573,7 +1578,7 @@
         "Agents",
         "Copilot SDK",
         "Microsoft Foundry",
-        "Byok"
+        "BYOM"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/simple-agent-functions-java",
@@ -1590,7 +1595,7 @@
     {
       "id": "ai-chatgpt-python",
       "displayName": "Chat using ChatGPT (Python + AZD + Bicep)",
-      "shortDescription": "HttpTrigger + OpenAI TextCompletionInput + AssistantCreate/Post/Query bindings. Python ChatGPT chatbot with Blob state",
+      "shortDescription": "ChatGPT chatbot with OpenAI assistant bindings and Blob state management",
       "longDescription": "Python Azure Function with an HTTP trigger, OpenAI TextCompletionInput binding for prompt completion, and AssistantCreate/AssistantPost/AssistantQuery bindings for managing conversation state stored in Azure Blob Storage. Builds a ChatGPT-style chatbot with persistent multi-turn conversations.",
       "language": "Python",
       "bindingType": "trigger",
@@ -1623,7 +1628,7 @@
     {
       "id": "ai-chatgpt-javascript",
       "displayName": "Chat using ChatGPT (JavaScript + AZD + Bicep)",
-      "shortDescription": "HttpTrigger + OpenAI TextCompletionInput + AssistantCreate/Post/Query bindings. JavaScript ChatGPT chatbot with Blob state",
+      "shortDescription": "ChatGPT chatbot with OpenAI assistant bindings and Blob state management",
       "longDescription": "JavaScript Azure Function with an HTTP trigger, OpenAI TextCompletionInput binding for prompt completion, and AssistantCreate/AssistantPost/AssistantQuery bindings for managing conversation state stored in Azure Blob Storage. Builds a ChatGPT-style chatbot with persistent multi-turn conversations.",
       "language": "JavaScript",
       "bindingType": "trigger",
@@ -1656,7 +1661,7 @@
     {
       "id": "ai-textsummarize-csharp",
       "displayName": "Text Summarization using AI (C# + AZD + Bicep)",
-      "shortDescription": "BlobTrigger (EventGrid source) + BlobOutput. C# function summarizing text documents using Azure AI Language/TextAnalytics",
+      "shortDescription": "Summarizes text documents using Azure AI Language, EventGrid-sourced BlobTrigger with BlobOutput",
       "longDescription": "C# Azure Function with a BlobTrigger (EventGrid event source) that reads text documents from Azure Blob Storage, summarizes them using the Azure AI Language (TextAnalytics) service, and writes the summary to an output blob via BlobOutput binding.",
       "language": "CSharp",
       "bindingType": "trigger",
@@ -1688,7 +1693,7 @@
     {
       "id": "ai-textsummarize-python",
       "displayName": "Text Summarization using AI (Python + AZD + Bicep)",
-      "shortDescription": "BlobTrigger (EventGrid source) + BlobOutput. Python function summarizing text documents using Azure AI Language/TextAnalytics",
+      "shortDescription": "Summarizes text documents using Azure AI Language, EventGrid-sourced BlobTrigger with BlobOutput",
       "longDescription": "Python Azure Function with a BlobTrigger (EventGrid event source) that reads text documents from Azure Blob Storage, summarizes them using the Azure AI Language (TextAnalytics) service, and writes the summary to an output blob via BlobOutput binding.",
       "language": "Python",
       "bindingType": "trigger",
@@ -1720,7 +1725,7 @@
     {
       "id": "ai-langchain-python",
       "displayName": "LangChain with OpenAI (Python + AZD + Bicep)",
-      "shortDescription": "HttpTrigger Python function using LangChain SDK with Azure OpenAI and DefaultAzureCredential for Entra ID auth",
+      "shortDescription": "Uses LangChain SDK with Azure OpenAI and Entra ID auth via DefaultAzureCredential",
       "longDescription": "Python Azure Function with an HTTP trigger that uses the LangChain SDK for prompt templates and chain-of-thought processing against Azure OpenAI. Authenticates to Azure OpenAI via DefaultAzureCredential with Entra ID. No additional input/output bindings.",
       "language": "Python",
       "bindingType": "trigger",
@@ -1752,8 +1757,8 @@
     {
       "id": "durable-orchestration-csharp",
       "displayName": "Durable Functions Orchestration (C#)",
-      "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. C# fan-out/fan-in parallel processing pattern",
-      "longDescription": "C# Durable Functions app with an HttpTrigger starter using DurableClient to start an OrchestrationTrigger workflow that fans out to multiple ActivityTrigger functions in parallel, then aggregates results.",
+      "shortDescription": "Function chaining pattern with DurableClient, OrchestrationTrigger, and ActivityTrigger",
+      "longDescription": "C# Durable Functions app with an HttpTrigger starter using DurableClient to start an OrchestrationTrigger workflow that chains multiple ActivityTrigger functions sequentially. Demonstrates the function chaining orchestration pattern with the HelloCities sample.",
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "durable",
@@ -1766,13 +1771,12 @@
         "Durable Functions",
         "Orchestration",
         "Activity",
-        "Fan-out/Fan-in",
-        "Parallel Processing",
+        "Function Chaining",
         "Starter"
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
-      "folderPath": "samples/durable-functions/dotnet/fan-out-fan-in",
+      "folderPath": "samples/durable-functions/dotnet/HelloCities",
       "whatsIncluded": [
         "Function code (.cs)",
         "Project file (.csproj)",
@@ -1784,7 +1788,7 @@
     {
       "id": "durable-orchestration-python",
       "displayName": "Durable Functions Orchestration (Python)",
-      "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. Python fan-out/fan-in parallel processing pattern",
+      "shortDescription": "Fan-out/fan-in parallel processing pattern with DurableClient and ActivityTrigger",
       "longDescription": "Python Durable Functions app with an HttpTrigger starter using DurableClient to launch an OrchestrationTrigger workflow that fans out to multiple ActivityTrigger functions for parallel data processing.",
       "language": "Python",
       "bindingType": "trigger",
@@ -1816,8 +1820,8 @@
     {
       "id": "durable-orchestration-typescript",
       "displayName": "Durable Functions Orchestration (TypeScript)",
-      "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. TypeScript function chaining and fan-out/fan-in",
-      "longDescription": "TypeScript Durable Functions app with HttpTrigger starter, DurableClient, OrchestrationTrigger, and ActivityTrigger. Demonstrates function chaining and fan-out/fan-in orchestration patterns with HelloCities sample.",
+      "shortDescription": "Function chaining pattern with DurableClient, OrchestrationTrigger, and ActivityTrigger",
+      "longDescription": "TypeScript Durable Functions app with an HttpTrigger starter using DurableClient to start an OrchestrationTrigger workflow that chains multiple ActivityTrigger functions sequentially. Demonstrates the function chaining orchestration pattern with the HelloCities sample.",
       "language": "TypeScript",
       "bindingType": "trigger",
       "resource": "durable",
@@ -1849,8 +1853,8 @@
     {
       "id": "durable-orchestration-javascript",
       "displayName": "Durable Functions Orchestration (JavaScript)",
-      "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. JavaScript function chaining and fan-out/fan-in",
-      "longDescription": "JavaScript Durable Functions app with HttpTrigger starter, DurableClient, OrchestrationTrigger, and ActivityTrigger. Demonstrates function chaining and fan-out/fan-in orchestration patterns with HelloCities sample.",
+      "shortDescription": "Function chaining pattern with DurableClient, OrchestrationTrigger, and ActivityTrigger",
+      "longDescription": "JavaScript Durable Functions app with an HttpTrigger starter using DurableClient to start an OrchestrationTrigger workflow that chains multiple ActivityTrigger functions sequentially. Demonstrates the function chaining orchestration pattern with the HelloCities sample.",
       "language": "JavaScript",
       "bindingType": "trigger",
       "resource": "durable",
@@ -1881,7 +1885,7 @@
     {
       "id": "durable-orchestration-java",
       "displayName": "Durable Functions (Java)",
-      "shortDescription": "HttpTrigger + DurableClientInput + DurableOrchestrationTrigger + DurableActivityTrigger. Java fault-tolerant workflow",
+      "shortDescription": "Fault-tolerant workflow with DurableClientInput and DurableActivityTrigger",
       "longDescription": "Java Durable Functions app with an HttpTrigger starter using DurableClientInput binding to launch a DurableOrchestrationTrigger workflow that coordinates DurableActivityTrigger functions for fault-tolerant orchestration.",
       "language": "Java",
       "bindingType": "trigger",
@@ -1912,8 +1916,8 @@
     {
       "id": "durable-order-processor-csharp",
       "displayName": "Durable Functions Order Processing (C#)",
-      "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. C# order processing with retry and compensation. Deployed with azd",
-      "longDescription": "C# Durable Functions app with HttpTrigger starter, DurableClient, OrchestrationTrigger, and ActivityTrigger. Implements order processing workflow: inventory check, payment, shipping, and notification, with retry policies and compensation logic. Deployed with azd.",
+      "shortDescription": "Order processing with retry and compensation, deployed via azd",
+      "longDescription": "C# Durable Functions app with an HttpTrigger starter using DurableClient to launch an OrchestrationTrigger workflow that coordinates ActivityTrigger functions for order processing: inventory check, payment, shipping, and notification, with retry policies and compensation logic. Deployed with azd.",
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "durable",
@@ -1944,8 +1948,8 @@
     {
       "id": "durable-order-processor-python",
       "displayName": "Durable Functions Order Processing (Python)",
-      "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. Python order processing with retry and compensation. Deployed with azd",
-      "longDescription": "Python Durable Functions app with HttpTrigger starter, DurableClient, OrchestrationTrigger, and ActivityTrigger. Implements order processing workflow: inventory check, payment, shipping, and notification, with retry policies and compensation logic. Deployed with azd.",
+      "shortDescription": "Order processing with retry and compensation, deployed via azd",
+      "longDescription": "Python Durable Functions app with an HttpTrigger starter using DurableClient to launch an OrchestrationTrigger workflow that coordinates ActivityTrigger functions for order processing: inventory check, payment, shipping, and notification, with retry policies and compensation logic. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
       "resource": "durable",
@@ -1976,8 +1980,8 @@
     {
       "id": "durable-distributed-tracing-csharp",
       "displayName": "Durable Functions Distributed Tracing (C#)",
-      "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger + OpenTelemetry. C# distributed tracing for orchestrations",
-      "longDescription": "C# Durable Functions app with HttpTrigger starter, DurableClient, OrchestrationTrigger, and ActivityTrigger. Adds OpenTelemetry distributed tracing with correlation IDs across orchestrations and activities.",
+      "shortDescription": "Distributed tracing for orchestrations with OpenTelemetry integration",
+      "longDescription": "C# Durable Functions app with an HttpTrigger starter using DurableClient to start an OrchestrationTrigger workflow that coordinates ActivityTrigger functions. Adds OpenTelemetry distributed tracing with correlation IDs across orchestrations and activities.",
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "durable",
@@ -2006,8 +2010,8 @@
     {
       "id": "durable-large-payload-csharp",
       "displayName": "Durable Functions Large Payload (C#)",
-      "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger + Blob Storage for large payload offloading. C#",
-      "longDescription": "C# Durable Functions app with HttpTrigger starter, DurableClient, OrchestrationTrigger, and ActivityTrigger. Demonstrates handling payloads exceeding message size limits by offloading to Azure Blob Storage.",
+      "shortDescription": "Large payload offloading to Blob Storage for orchestration activities",
+      "longDescription": "C# Durable Functions app with an HttpTrigger starter using DurableClient to start an OrchestrationTrigger workflow that coordinates ActivityTrigger functions. Demonstrates handling payloads exceeding message size limits by offloading to Azure Blob Storage.",
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "durable",
@@ -2034,10 +2038,43 @@
       ]
     },
     {
+      "id": "durable-large-payload-fan-out-fan-in-csharp",
+      "displayName": "Durable Functions Large Payload Fan-out/Fan-in (C#)",
+      "shortDescription": "Fan-out/fan-in pattern with large payload offloading to Blob Storage",
+      "longDescription": "C# Durable Functions app with an HttpTrigger starter using DurableClient to start an OrchestrationTrigger workflow that fans out to multiple ActivityTrigger functions in parallel and aggregates results. Demonstrates the fan-out/fan-in pattern with large payload offloading using Azure Blob Storage to handle payloads exceeding message size limits. Includes Bicep infrastructure and azure.yaml for AZD deployment.",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "durable",
+      "iac": "bicep",
+      "priority": 70,
+      "categories": [
+        "workflows"
+      ],
+      "tags": [
+        "Durable Functions",
+        "Orchestration",
+        "Fan-out/Fan-in",
+        "Large Payload",
+        "Blob Storage",
+        "Parallel Processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
+      "folderPath": "samples/durable-functions/dotnet/LargePayloadFanOutFanIn",
+      "whatsIncluded": [
+        "Function code (.cs)",
+        "Project file (.csproj)",
+        "Bicep infrastructure (infra/)",
+        "azure.yaml (AZD ready)",
+        "host.json configuration",
+        "README.md"
+      ]
+    },
+    {
       "id": "durable-saga-csharp",
       "displayName": "Durable Functions Saga Pattern (C#)",
-      "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. C# Saga pattern with compensation for distributed transactions",
-      "longDescription": "C# Durable Functions app with HttpTrigger starter, DurableClient, OrchestrationTrigger, and ActivityTrigger. Implements the Saga pattern for distributed transactions with compensation logic to roll back completed steps on failure.",
+      "shortDescription": "Saga pattern with compensation for distributed transactions",
+      "longDescription": "C# Durable Functions app with an HttpTrigger starter using DurableClient to launch an OrchestrationTrigger workflow that coordinates ActivityTrigger functions. Implements the Saga pattern for distributed transactions with compensation logic to roll back completed steps on failure.",
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "durable",
@@ -2066,7 +2103,7 @@
     {
       "id": "durable-ai-travel-planner-csharp",
       "displayName": "Durable Functions AI Travel Planner (C#)",
-      "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. C# AI travel planner using Azure OpenAI",
+      "shortDescription": "AI travel planner using Azure OpenAI with durable orchestration",
       "longDescription": "C# Durable Functions app with an HttpTrigger starter that uses DurableClient to launch an OrchestrationTrigger workflow coordinating multiple ActivityTrigger functions. Each activity calls Azure OpenAI for destination research, itinerary creation, and booking recommendations.",
       "language": "CSharp",
       "bindingType": "trigger",
@@ -2097,7 +2134,7 @@
     {
       "id": "durable-aspire-csharp",
       "displayName": "Durable Functions with .NET Aspire (C#)",
-      "shortDescription": "HttpTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. C# Durable Functions with .NET Aspire integration",
+      "shortDescription": ".NET Aspire integration with durable orchestration for local development and monitoring",
       "longDescription": "C# Durable Functions app with HttpTrigger starter, DurableClient, OrchestrationTrigger, and ActivityTrigger, integrated with .NET Aspire for enhanced local development with service discovery, dashboard, and observability.",
       "language": "CSharp",
       "bindingType": "trigger",
@@ -2127,7 +2164,7 @@
     {
       "id": "durable-pdf-summarizer-csharp",
       "displayName": "Durable Functions PDF Summarizer (C#)",
-      "shortDescription": "BlobTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. C# PDF summarizer with Document Intelligence and Azure OpenAI",
+      "shortDescription": "PDF summarizer using Document Intelligence and Azure OpenAI with durable orchestration",
       "longDescription": "C# Durable Functions app triggered by BlobTrigger that orchestrates PDF processing via ActivityTrigger functions calling Azure Document Intelligence for OCR and Azure OpenAI for summarization. Results written back to Azure Blob Storage.",
       "language": "CSharp",
       "bindingType": "trigger",
@@ -2158,7 +2195,7 @@
     {
       "id": "durable-pdf-summarizer-python",
       "displayName": "Durable Functions PDF Summarizer (Python)",
-      "shortDescription": "BlobTrigger + DurableClient + OrchestrationTrigger + ActivityTrigger. Python PDF summarizer with Document Intelligence and Azure OpenAI",
+      "shortDescription": "PDF summarizer using Document Intelligence and Azure OpenAI with durable orchestration",
       "longDescription": "Python Durable Functions app triggered by BlobTrigger that orchestrates PDF processing via ActivityTrigger functions calling Azure Document Intelligence for OCR and Azure OpenAI for summarization. Reads from and writes to Azure Blob Storage.",
       "language": "Python",
       "bindingType": "trigger",
@@ -2190,7 +2227,7 @@
     {
       "id": "agentframework-durable-multi-agent-python",
       "displayName": "Agent Framework Multi Agent (Python)",
-      "shortDescription": "HttpTrigger (AgentFunctionApp) + Azure OpenAI. Python multi-agent hosting weather and math AI agents with independent endpoints",
+      "shortDescription": "Multi-agent hosting weather and math AI agents with independent endpoints, uses Azure OpenAI",
       "longDescription": "Python Azure Functions app using the Agent Framework SDK with HttpTrigger endpoints via AgentFunctionApp. Hosts multiple AI agents (weather, math) each with unique instructions, independent HTTP endpoints, and isolated conversation management, backed by Azure OpenAI.",
       "language": "Python",
       "bindingType": "trigger",
@@ -2221,7 +2258,7 @@
     {
       "id": "iac-flex-consumption-arm",
       "displayName": "Flex Consumption (ARM)",
-      "shortDescription": "ARM template for provisioning Azure Functions Flex Consumption plan, function app, storage, and networking. No function code",
+      "shortDescription": "Provisions Flex Consumption plan, function app, storage, and networking, infrastructure only",
       "longDescription": "ARM (Azure Resource Manager) JSON template that provisions Azure Functions Flex Consumption resources including the function app, hosting plan, storage account, and networking. Infrastructure-as-code only — contains no function code.",
       "language": "ARM",
       "bindingType": "none",
@@ -2247,7 +2284,7 @@
     {
       "id": "iac-flex-consumption-bicep",
       "displayName": "Flex Consumption (Bicep)",
-      "shortDescription": "Bicep template for provisioning Azure Functions Flex Consumption plan, function app, storage, and networking. No function code",
+      "shortDescription": "Provisions Flex Consumption plan, function app, storage, and networking, infrastructure only",
       "longDescription": "Bicep template that provisions Azure Functions Flex Consumption resources including the function app, hosting plan, storage account, and networking. Infrastructure-as-code only — contains no function code.",
       "language": "Bicep",
       "bindingType": "none",
@@ -2273,7 +2310,7 @@
     {
       "id": "iac-flex-consumption-terraform-azapi",
       "displayName": "Flex Consumption (Terraform AzAPI)",
-      "shortDescription": "Terraform (AzAPI provider) for provisioning Azure Functions Flex Consumption plan and resources. No function code",
+      "shortDescription": "Provisions Flex Consumption plan and resources, infrastructure only, no function code",
       "longDescription": "Terraform template using the AzAPI provider that provisions Azure Functions Flex Consumption resources including the function app, hosting plan, storage account, and networking. Infrastructure-as-code only — contains no function code.",
       "language": "Terraform",
       "bindingType": "none",
@@ -2299,7 +2336,7 @@
     {
       "id": "iac-flex-consumption-terraform-azurerm",
       "displayName": "Flex Consumption (Terraform AzureRM)",
-      "shortDescription": "Terraform (AzureRM provider) for provisioning Azure Functions Flex Consumption plan and resources. No function code",
+      "shortDescription": "Provisions Flex Consumption plan and resources, infrastructure only, no function code",
       "longDescription": "Terraform template using the AzureRM provider that provisions Azure Functions Flex Consumption resources including the function app, hosting plan, storage account, and networking. Infrastructure-as-code only — contains no function code.",
       "language": "Terraform",
       "bindingType": "none",
@@ -2325,7 +2362,7 @@
     {
       "id": "cosmos-input-java",
       "displayName": "Cosmos DB Input Binding (Java)",
-      "shortDescription": "HttpTrigger + CosmosDBInput binding. Java function reading documents from Azure Cosmos DB",
+      "shortDescription": "Reads documents from Azure Cosmos DB using CosmosDBInput binding via HTTP endpoint",
       "longDescription": "Java Azure Function with an HTTP trigger and a CosmosDBInput binding that reads documents from an Azure Cosmos DB container. The HTTP request parameters determine which documents to retrieve.",
       "language": "Java",
       "bindingType": "input",
@@ -2355,7 +2392,7 @@
     {
       "id": "cosmos-output-java",
       "displayName": "Cosmos DB Output Binding (Java)",
-      "shortDescription": "HttpTrigger + CosmosDBOutput binding. Java function writing documents to Azure Cosmos DB",
+      "shortDescription": "Writes documents to Azure Cosmos DB using CosmosDBOutput binding via HTTP endpoint",
       "longDescription": "Java Azure Function with an HTTP trigger and a CosmosDBOutput binding that writes documents to an Azure Cosmos DB container. Accepts data via HTTP request and persists it to Cosmos DB.",
       "language": "Java",
       "bindingType": "output",
@@ -2385,7 +2422,7 @@
     {
       "id": "cosmos-trigger-java",
       "displayName": "Cosmos DB Trigger (Java)",
-      "shortDescription": "CosmosDBTrigger (change feed) Java function monitoring document changes in Azure Cosmos DB",
+      "shortDescription": "Monitors document changes in Azure Cosmos DB via change feed",
       "longDescription": "Java Azure Function with a CosmosDBTrigger that monitors an Azure Cosmos DB container via the change feed and reacts to document inserts and updates. Suitable for real-time data sync, event sourcing, and materialized views.",
       "language": "Java",
       "bindingType": "trigger",
@@ -2415,7 +2452,7 @@
     {
       "id": "eventhub-trigger-java",
       "displayName": "Event Hub Trigger (Java)",
-      "shortDescription": "EventHubTrigger for processing streaming data from Azure Event Hubs in Java",
+      "shortDescription": "Processes streaming data from Azure Event Hubs",
       "longDescription": "Java Azure Function with a single EventHubTrigger function that processes streaming data from Azure Event Hubs. Suitable for IoT telemetry, log ingestion, and real-time analytics.",
       "language": "Java",
       "bindingType": "trigger",
