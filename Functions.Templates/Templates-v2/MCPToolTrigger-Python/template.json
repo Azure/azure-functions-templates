@@ -1,12 +1,12 @@
 {
     "author": "Gavin Aguiar",
-    "name": "MCP trigger",
-    "description": "$MCPTrigger_description",
+    "name": "MCP Tool trigger",
+    "description": "$MCPToolTrigger_description",
     "programmingModel": "v2",
     "language": "python",
     "jobs": [
         {
-            "name": "Create New Project with MCP trigger function",
+            "name": "Create New Project with MCP Tool trigger function",
             "type": "CreateNewApp",
             "inputs": [
                 {
@@ -24,7 +24,7 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "mcp_trigger"
+                    "defaultValue": "mcp_tool_trigger"
                 },
                 {
                     "assignTo": "$(AUTHLEVEL_INPUT)",
@@ -40,7 +40,7 @@
             ]
         },
         {
-            "name": "Add mcpTrigger function to an existing file",
+            "name": "Add mcpToolTrigger function to an existing file",
             "type": "AppendToFile",
             "inputs": [
                 {
@@ -57,7 +57,7 @@
                 {
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
-                    "defaultValue": "mcp_trigger"
+                    "defaultValue": "mcp_tool_trigger"
                 },
                 {
                     "assignTo": "$(AUTHLEVEL_INPUT)",
@@ -89,7 +89,7 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "mcp_trigger"
+                    "defaultValue": "mcp_tool_trigger"
                 },
                 {
                     "assignTo": "$(AUTHLEVEL_INPUT)",
@@ -106,7 +106,7 @@
             ]
         },
         {
-            "name": "Add MCPTrigger function to the Blueprint",
+            "name": "Add MCPToolTrigger function to the Blueprint",
             "type": "AppendToBlueprint",
             "inputs": [
                 {
@@ -123,7 +123,7 @@
                     "assignTo": "$(FUNCTION_NAME_INPUT)",
                     "paramId": "trigger-functionName",
                     "required": true,
-                    "defaultValue": "mcp_trigger"
+                    "defaultValue": "mcp_tool_trigger"
                 },
                 {
                     "assignTo": "$(AUTHLEVEL_INPUT)",
@@ -168,7 +168,7 @@
             "source": "$(FUNCTION_BODY_CONTENT)",
             "filePath": "$(SELECTED_FILEPATH)",
             "continueOnError": false,
-            "errorText": "Unable to create mcpTrigger function",
+            "errorText": "Unable to create mcpToolTrigger function",
             "replaceTokens": true,
             "FileExtension": ".py"
         },
@@ -187,7 +187,7 @@
         {
             "name": "ShowMarkdownPreview",
             "type": "ShowMarkdownPreview",
-            "filePath": "mcp_trigger_template.md"
+            "filePath": "mcp_tool_trigger_template.md"
         },
         {
             "name": "appendFileContent_BlueprintBody",
