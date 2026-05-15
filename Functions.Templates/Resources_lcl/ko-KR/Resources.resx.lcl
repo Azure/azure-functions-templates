@@ -813,6 +813,24 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";MCPResourceTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A function that will be run whenever it receives an MCP resource event]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[MCP 리소스 이벤트를 받을 때마다 실행되는 함수]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";MCPToolTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A function that will be run whenever it receives an MCP tool event]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[MCP 도구 이벤트를 받을 때마다 실행되는 함수]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";MSGraphWebhookCreator_displayName" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Microsoft Graph webhook subscription]]></Val>
@@ -1019,6 +1037,15 @@
           <Val><![CDATA[(Experimental) A TypeScript function that is triggered manually via the portal "Run" button]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[(실험적) 포털의 "실행" 단추를 통해 수동으로 트리거되는 TypeScript 함수]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";McpPromptTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A function that will be run whenever it receives an MCP prompt event]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[MCP 프롬프트 이벤트를 받을 때마다 실행되는 함수]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
