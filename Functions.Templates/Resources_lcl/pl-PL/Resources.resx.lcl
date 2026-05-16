@@ -813,6 +813,24 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";MCPResourceTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A function that will be run whenever it receives an MCP resource event]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Funkcja, która będzie uruchamiana za każdym razem, gdy otrzyma zdarzenie zasobu MCP]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";MCPToolTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A function that will be run whenever it receives an MCP tool event]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Funkcja, która będzie uruchamiana za każdym razem, gdy otrzyma zdarzenie narzędzia MCP]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";MSGraphWebhookCreator_displayName" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Microsoft Graph webhook subscription]]></Val>
@@ -1019,6 +1037,15 @@
           <Val><![CDATA[(Experimental) A TypeScript function that is triggered manually via the portal "Run" button]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[(Eksperymentalne) Funkcja języka TypeScript wyzwalana ręcznie za pomocą przycisku „Uruchom” portalu]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";McpPromptTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A function that will be run whenever it receives an MCP prompt event]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Funkcja, która będzie uruchamiana za każdym razem, gdy otrzyma zdarzenie monitu MCP]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
