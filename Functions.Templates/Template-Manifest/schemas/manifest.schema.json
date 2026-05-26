@@ -199,6 +199,11 @@
           "type": "string",
           "description": "Path to template folder within the repository ('.' for root)"
         },
+        "gitRef": {
+          "type": "string",
+          "default": "main",
+          "description": "Git ref to clone (signed tag or branch name). Defaults to main."
+        },
         "whatsIncluded": {
           "type": "array",
           "items": {
