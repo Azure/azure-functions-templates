@@ -25,10 +25,10 @@ jobs:
             - '$(Build.Repository.LocalPath)\Functions.Templates\Template-Manifest\manifest.json'
     
   - task: PowerShell@2
-    displayName: 'Smoke test manifest references'
+    displayName: 'Validate manifest references'
     inputs:
       targetType: 'filePath'
-      filePath: '.\eng\scripts\smoke-test-manifest.ps1'
+      filePath: '.\eng\scripts\validate-manifest-refs.ps1'
       arguments: '-ManifestPath "$(Build.Repository.LocalPath)\Functions.Templates\Template-Manifest\manifest.json"'
       pwsh: true
     

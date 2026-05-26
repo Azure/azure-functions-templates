@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Smoke test: verifies each template's repo, gitRef, and folderPath exist on GitHub.
+    Validates manifest template references: verifies each template's repo, gitRef, and folderPath exist on GitHub.
 
 .DESCRIPTION
     For each unique (repositoryUrl, gitRef, folderPath) tuple in the manifest:
@@ -15,8 +15,8 @@
     Path to the manifest.json file to validate.
 
 .EXAMPLE
-    .\smoke-test-manifest.ps1
-    .\smoke-test-manifest.ps1 -ManifestPath ./v5/manifest.json
+    .\validate-manifest-refs.ps1
+    .\validate-manifest-refs.ps1 -ManifestPath ./manifest.json
 #>
 
 param(
@@ -105,6 +105,6 @@ if ($errors.Count -gt 0) {
     foreach ($e in $errors) { Write-Host "  ERROR: $e" -ForegroundColor Red }
     exit 1
 } else {
-    Write-Host "`nSMOKE TEST PASSED" -ForegroundColor Green
+    Write-Host "`nMANIFEST REFS VALIDATION PASSED" -ForegroundColor Green
     exit 0
 }
