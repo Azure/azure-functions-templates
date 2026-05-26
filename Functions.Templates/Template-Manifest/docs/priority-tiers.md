@@ -134,7 +134,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 90 | `iac-flex-consumption-terraform-azapi` | TF | none | 📦 terraform | P2→90 |
 | 90 | `iac-flex-consumption-terraform-azurerm` | TF | none | 📦 terraform | P2→90 |
 | | **⚠️ Non-AZD Stubs** | | | | |
-| | *(none remaining)* | | | | |
+| | *(none — all stubs replaced by AZD versions)* | | | | |
 
 ## Coverage matrix
 
@@ -223,8 +223,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 72 | 🔄 Durable Advanced — PDF Summarizer | 2 |
 | 75 | 🤝 Agent Framework — Multi-Agent | 1 |
 | 90 | 🏗️ IaC — Flex Consumption (ARM / Bicep / TF) | 4 |
-| 95 | ⚠️ Non-AZD Stubs — Gap-fillers (AZD upgrade planned) | 2 |
-| | **Total** | **80** |
+| | **Total** | **77** |
 
 ## Language sort order
 
