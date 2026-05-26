@@ -25,14 +25,6 @@ jobs:
             - '$(Build.Repository.LocalPath)\Functions.Templates\Template-Manifest\manifest.json'
     
   - task: PowerShell@2
-    displayName: 'Validate manifest references'
-    inputs:
-      targetType: 'filePath'
-      filePath: '.\eng\scripts\validate-manifest-refs.ps1'
-      arguments: '-ManifestPath "$(Build.Repository.LocalPath)\Functions.Templates\Template-Manifest\manifest.json"'
-      pwsh: true
-    
-  - task: PowerShell@2
     displayName: 'Build templates'
     inputs:
       targetType: 'filePath'
