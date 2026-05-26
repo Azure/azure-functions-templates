@@ -1,7 +1,7 @@
 # Template Manifest — Priority Tiers (P00–P99)
 
-**Total templates:** 76  
-**Manifest version:** 1.5.0
+**Total templates:** 77  
+**Manifest version:** 1.6.0
 
 ## Design principles
 
@@ -69,6 +69,9 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 15 | `eventhub-trigger-csharp-azd` | .NET | trigger | ✅ bicep | P0→15 |
 | 15 | `eventhub-trigger-python-azd` | Py | trigger | ✅ bicep | P0→15 |
 | 15 | `eventhub-trigger-typescript-azd` | TS | trigger | ✅ bicep | P0→15 |
+| 15 | `eventhub-trigger-javascript-azd` | JS | trigger | ✅ bicep | *new* |
+| 15 | `eventhub-trigger-java-azd` | Java | trigger | ✅ bicep | *new* |
+| 15 | `eventhub-trigger-powershell-azd` | PS | trigger | ✅ bicep | *new* |
 | | **🚌 Service Bus** | | | | |
 | 30 | `servicebus-trigger-csharp-azd` | .NET | trigger | ✅ bicep | *new* |
 | 30 | `servicebus-trigger-python-azd` | Py | trigger | ✅ bicep | *new* |
@@ -80,6 +83,9 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 35 | `cosmos-trigger-csharp-azd` | .NET | trigger | ✅ bicep | P1→35 |
 | 35 | `cosmos-trigger-python-azd` | Py | trigger | ✅ bicep | P1→35 |
 | 35 | `cosmos-trigger-typescript-azd` | TS | trigger | ✅ bicep | P1→35 |
+| 35 | `cosmosdb-trigger-javascript-azd` | JS | trigger | ✅ bicep | *new* |
+| 35 | `cosmosdb-trigger-java-azd` | Java | trigger | ✅ bicep | *new* |
+| 35 | `cosmosdb-trigger-powershell-azd` | PS | trigger | ✅ bicep | *new* |
 | | **🗄️ SQL** | | | | |
 | 40 | `sql-trigger-csharp-azd` | .NET | trigger | ✅ bicep | P1→40 |
 | 40 | `sql-trigger-python-azd` | Py | trigger | ✅ bicep | P1→40 |
@@ -105,11 +111,10 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 62 | `ai-textsummarize-python` | Py | trigger | ✅ bicep | P2→62 |
 | 63 | `ai-langchain-python` | Py | trigger | ✅ bicep | P2→63 |
 | | **🔄 Durable Standard** | | | | |
-| 65 | `durable-orchestration-csharp` | .NET | orchestration | 🚧 none | P1→65 |
-| 65 | `durable-orchestration-python` | Py | orchestration | 🚧 none | P1→65 |
-| 65 | `durable-orchestration-typescript` | TS | orchestration | 🚧 none | P1→65 |
+| 65 | `durable-orchestrator-csharp-azd` | .NET | orchestration | ✅ bicep | *new* |
+| 65 | `durable-orchestrator-python-azd` | Py | orchestration | ✅ bicep | *new* |
+| 65 | `durable-orchestrator-typescript-azd` | TS | orchestration | ✅ bicep | *new* |
 | 65 | `durable-orchestration-javascript` | JS | orchestration | 🚧 none | P1→65 |
-| 65 | `durable-orchestration-java` | Java | orchestration | 🚧 none | P1→65 |
 | 66 | `durable-order-processor-csharp` | .NET | orchestration | ✅ bicep | P1→66 |
 | 66 | `durable-order-processor-python` | Py | orchestration | ✅ bicep | P1→66 |
 | | **🔄 Durable Advanced** | | | | |
@@ -129,10 +134,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 90 | `iac-flex-consumption-terraform-azapi` | TF | none | 📦 terraform | P2→90 |
 | 90 | `iac-flex-consumption-terraform-azurerm` | TF | none | 📦 terraform | P2→90 |
 | | **⚠️ Non-AZD Stubs** | | | | |
-| 95 | `cosmos-input-java` | Java | input | 🚧 none | P1→95 |
-| 95 | `cosmos-output-java` | Java | output | 🚧 none | P1→95 |
-| 95 | `cosmos-trigger-java` | Java | trigger | 🚧 none | P1→95 |
-| 95 | `eventhub-trigger-java` | Java | trigger | 🚧 none | P0→95 |
+| | *(none — all stubs replaced by AZD versions)* | | | | |
 
 ## Coverage matrix
 
@@ -156,12 +158,12 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | Blob | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
 | | Input | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | *no dedicated templates yet* |
 | | Output | — | — | — | — | — | — | *no dedicated templates yet* |
-| Event Hub | Trigger | ✅ | ✅ | ✅ | — | — | — | JS, Java, PS |
+| Event Hub | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
 | | Output | — | 🔗+🚧 | 🔗+🚧 | — | — | — | *no dedicated templates yet* |
 | Event Grid | *(reserved)* | — | — | — | — | — | — | *no dedicated templates yet* |
 | Queue | *(reserved)* | — | — | — | — | — | — | *no dedicated templates yet* |
 | Service Bus | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
-| Cosmos DB | Trigger | ✅ | ✅ | ✅ | — | — | — | JS, Java, PS |
+| Cosmos DB | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
 | | Input | — | — | — | — | — | — | *no dedicated templates yet* |
 | | Output | — | — | — | — | — | — | *no dedicated templates yet* |
 | SQL | Trigger | ✅ | ✅ | ✅ | — | — | — | JS, Java, PS |
@@ -188,7 +190,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 |  | ChatGPT | P61 | — | ✅ | — | ✅ | — | — | .NET, TS, Java, PS |
 |  | Text Summarize | P62 | ✅ | ✅ | — | — | — | — | TS, JS, Java, PS |
 |  | LangChain | P63 | — | ✅ | — | — | — | — | .NET, TS, JS, Java, PS |
-| Durable | Orchestration | P65 | 🚧 | 🚧 | 🚧 | 🚧 | 🚧 | — | PS |
+| Durable | Orchestration | P65 | ✅ | ✅ | ✅ | 🚧 | — | — | Java, PS |
 |  | Order Processor | P66 | ✅ | ✅ | — | — | — | — | TS, JS, Java, PS |
 |  | Patterns | P70 | ✅ | — | — | — | — | — | Py, TS, JS, Java, PS |
 |  | Scenarios | P71 | 🚧 | — | — | — | — | — | Py, TS, JS, Java, PS |
@@ -203,9 +205,9 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 03 | ⚡ HTTP — Variant (Terraform) | 1 |
 | 05 | ⏰ Timer — Trigger | 6 |
 | 10 | 🪣 Blob Storage — Trigger | 6 |
-| 15 | 📡 Event Hub — Trigger | 3 |
+| 15 | 📡 Event Hub — Trigger | 6 |
 | 30 | 🚌 Service Bus — Trigger | 6 |
-| 35 | 🌐 Cosmos DB — Trigger | 3 |
+| 35 | 🌐 Cosmos DB — Trigger | 6 |
 | 40 | 🗄️ SQL — Trigger | 3 |
 | 50 | 🔌 MCP — Remote Server | 4 |
 | 51 | 🔌 MCP — SDK Hosting | 4 |
@@ -214,15 +216,14 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 61 | 🤖 AI — ChatGPT | 2 |
 | 62 | 🤖 AI — Text Summarize | 2 |
 | 63 | 🤖 AI — LangChain | 1 |
-| 65 | 🔄 Durable Standard — Orchestration | 5 |
+| 65 | 🔄 Durable Standard — Orchestration | 4 |
 | 66 | 🔄 Durable Standard — Order Processor | 2 |
 | 70 | 🔄 Durable Advanced — Patterns (saga / tracing / payload) | 4 |
 | 71 | 🔄 Durable Advanced — Scenarios (travel / aspire) | 2 |
 | 72 | 🔄 Durable Advanced — PDF Summarizer | 2 |
 | 75 | 🤝 Agent Framework — Multi-Agent | 1 |
 | 90 | 🏗️ IaC — Flex Consumption (ARM / Bicep / TF) | 4 |
-| 95 | ⚠️ Non-AZD Stubs — Gap-fillers (AZD upgrade planned) | 4 |
-| | **Total** | **76** |
+| | **Total** | **77** |
 
 ## Language sort order
 
