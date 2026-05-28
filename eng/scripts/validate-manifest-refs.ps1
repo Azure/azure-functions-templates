@@ -5,9 +5,9 @@
 .DESCRIPTION
     For each unique (repositoryUrl, gitRef, folderPath) tuple in the manifest:
     1. Verifies the repository is accessible.
-    2. Verifies the gitRef resolves as a tag or branch.
+    2. Verifies the gitRef is fully qualified (refs/tags/* or refs/heads/*) and resolves on GitHub.
     3. Verifies the folderPath exists at that ref (skipped for '.').
-    Warns when gitRef is a branch instead of a signed tag.
+    Warns when gitRef is a branch (refs/heads/*) instead of a signed tag.
 
     Requires: gh CLI authenticated with repo read access.
 
@@ -63,18 +63,21 @@ foreach ($t in $manifest.templates) {
         continue
     }
 
-    # Check gitRef exists as tag
-    $null = gh api "repos/$repoPath/git/refs/tags/$($t.gitRef)" --jq '.ref' 2>&1
+    # Check gitRef exists — must be fully qualified (refs/tags/* or refs/heads/*)
+    $gitRef = $t.gitRef
+    if ($gitRef -notmatch '^refs/(tags|heads)/') {
+        $errors += "$($t.id): gitRef '$gitRef' is not fully qualified — must start with refs/tags/ or refs/heads/"
+        Write-Host "  FAIL  $label (gitRef not fully qualified)" -ForegroundColor Red
+        continue
+    }
+
+    $null = gh api "repos/$repoPath/git/$gitRef" --jq '.ref' 2>&1
     if ($LASTEXITCODE -ne 0) {
-        # Try as branch
-        $null = gh api "repos/$repoPath/git/refs/heads/$($t.gitRef)" --jq '.ref' 2>&1
-        if ($LASTEXITCODE -ne 0) {
-            $errors += "$($t.id): gitRef '$($t.gitRef)' not found in $repoPath"
-            Write-Host "  FAIL  $label (ref not found)" -ForegroundColor Red
-            continue
-        } else {
-            $warnings += "$($t.id): '$($t.gitRef)' is a branch, not a signed tag — $repoPath"
-        }
+        $errors += "$($t.id): gitRef '$gitRef' not found in $repoPath"
+        Write-Host "  FAIL  $label (ref not found)" -ForegroundColor Red
+        continue
+    } elseif ($gitRef -match '^refs/heads/') {
+        $warnings += "$($t.id): '$gitRef' is a branch, not a signed tag — $repoPath"
     }
 
     # Check folderPath exists at the gitRef
