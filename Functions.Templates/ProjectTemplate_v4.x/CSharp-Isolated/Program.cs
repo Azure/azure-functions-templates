@@ -20,18 +20,12 @@ namespace Company.FunctionApp
             var host = new HostBuilder()
                 .ConfigureFunctionsWorkerDefaults()
                 .ConfigureServices(services => {
-#if DEBUG
                     if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING")))
                     {
                         services.AddOpenTelemetry()
                             .UseFunctionsWorkerDefaults()
                             .UseAzureMonitorExporter();
                     }
-#else
-                    services.AddOpenTelemetry()
-                        .UseFunctionsWorkerDefaults()
-                        .UseAzureMonitorExporter();
-#endif
                 })
                 .Build();
 
@@ -43,18 +37,12 @@ namespace Company.FunctionApp
 var host = new HostBuilder()
     .ConfigureFunctionsWebApplication()
     .ConfigureServices(services => {
-#if DEBUG
         if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING")))
         {
             services.AddOpenTelemetry()
                 .UseFunctionsWorkerDefaults()
                 .UseAzureMonitorExporter();
         }
-#else
-        services.AddOpenTelemetry()
-            .UseFunctionsWorkerDefaults()
-            .UseAzureMonitorExporter();
-#endif
     })
     .Build();
 
@@ -64,18 +52,12 @@ var builder = FunctionsApplication.CreateBuilder(args);
 
 builder.ConfigureFunctionsWebApplication();
 
-#if DEBUG
 if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING")))
 {
     builder.Services.AddOpenTelemetry()
         .UseFunctionsWorkerDefaults()
         .UseAzureMonitorExporter();
 }
-#else
-builder.Services.AddOpenTelemetry()
-    .UseFunctionsWorkerDefaults()
-    .UseAzureMonitorExporter();
-#endif
 
 builder.Build().Run();
 #endif
