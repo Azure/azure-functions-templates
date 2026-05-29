@@ -15,10 +15,11 @@ let main args =
         HostBuilder()
             .ConfigureFunctionsWebApplication()
             .ConfigureServices(fun services ->
-                services.AddOpenTelemetry()
-                    .UseFunctionsWorkerDefaults()
-                    .UseAzureMonitorExporter()
-                |> ignore)
+                if not (System.String.IsNullOrEmpty(System.Environment.GetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING"))) then
+                    services.AddOpenTelemetry()
+                        .UseFunctionsWorkerDefaults()
+                        .UseAzureMonitorExporter()
+                    |> ignore)
             .Build()
 
     // If using the Cosmos DB, Blob or Tables extension, you need to configure the extensions manually using the extension methods below.
@@ -38,11 +39,12 @@ let main args =
 
     builder.ConfigureFunctionsWebApplication() |> ignore
 
-    builder.Services.AddOpenTelemetry()
-        .UseFunctionsWorkerDefaults()
-        .UseAzureMonitorExporter()
-    |> ignore
-            
+    if not (System.String.IsNullOrEmpty(System.Environment.GetEnvironmentVariable("APPLICATIONINSIGHTS_CONNECTION_STRING"))) then
+        builder.Services.AddOpenTelemetry()
+            .UseFunctionsWorkerDefaults()
+            .UseAzureMonitorExporter()
+        |> ignore
+
     // If using the Cosmos DB, Blob or Tables extension, you need to configure the extensions manually using the extension methods below.
     // Learn more about this here: https://go.microsoft.com/fwlink/?linkid=2245587
     // builder.ConfigureCosmosDBExtension() |> ignore
