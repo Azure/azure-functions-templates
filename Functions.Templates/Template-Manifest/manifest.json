@@ -1,8 +1,8 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-05-28T06:01:00Z",
-  "version": "1.7.0",
-  "totalTemplates": 77,
+  "generatedAt": "2026-05-29T21:31:12Z",
+  "version": "1.8.0",
+  "totalTemplates": 73,
   "runtimeVersions": {
     "Python": {
       "supported": [
@@ -68,14 +68,11 @@
     }
   },
   "languages": [
-    "ARM",
-    "Bicep",
     "CSharp",
     "Java",
     "JavaScript",
     "PowerShell",
     "Python",
-    "Terraform",
     "TypeScript"
   ],
   "templates": [
@@ -90,7 +87,7 @@
       "iac": "bicep",
       "priority": 0,
       "categories": [
-        "starter",
+        "starters",
         "web-apis"
       ],
       "tags": [
@@ -125,7 +122,7 @@
       "iac": "bicep",
       "priority": 0,
       "categories": [
-        "starter",
+        "starters",
         "web-apis"
       ],
       "tags": [
@@ -159,7 +156,7 @@
       "iac": "bicep",
       "priority": 0,
       "categories": [
-        "starter",
+        "starters",
         "web-apis"
       ],
       "tags": [
@@ -193,7 +190,7 @@
       "iac": "bicep",
       "priority": 0,
       "categories": [
-        "starter",
+        "starters",
         "web-apis"
       ],
       "tags": [
@@ -227,7 +224,7 @@
       "iac": "bicep",
       "priority": 0,
       "categories": [
-        "starter",
+        "starters",
         "web-apis"
       ],
       "tags": [
@@ -261,7 +258,7 @@
       "iac": "bicep",
       "priority": 0,
       "categories": [
-        "starter",
+        "starters",
         "web-apis"
       ],
       "tags": [
@@ -294,7 +291,7 @@
       "iac": "terraform",
       "priority": 3,
       "categories": [
-        "starter",
+        "starters",
         "web-apis"
       ],
       "tags": [
@@ -328,8 +325,7 @@
       "iac": "bicep",
       "priority": 5,
       "categories": [
-        "starter",
-        "scheduling"
+        "starters"
       ],
       "tags": [
         "Timer",
@@ -361,8 +357,7 @@
       "iac": "bicep",
       "priority": 5,
       "categories": [
-        "starter",
-        "scheduling"
+        "starters"
       ],
       "tags": [
         "Timer",
@@ -394,8 +389,7 @@
       "iac": "bicep",
       "priority": 5,
       "categories": [
-        "starter",
-        "scheduling"
+        "starters"
       ],
       "tags": [
         "Timer",
@@ -427,8 +421,7 @@
       "iac": "bicep",
       "priority": 5,
       "categories": [
-        "starter",
-        "scheduling"
+        "starters"
       ],
       "tags": [
         "Timer",
@@ -460,8 +453,7 @@
       "iac": "bicep",
       "priority": 5,
       "categories": [
-        "starter",
-        "scheduling"
+        "starters"
       ],
       "tags": [
         "Timer",
@@ -493,8 +485,7 @@
       "iac": "bicep",
       "priority": 5,
       "categories": [
-        "starter",
-        "scheduling"
+        "starters"
       ],
       "tags": [
         "Timer",
@@ -526,8 +517,8 @@
       "iac": "bicep",
       "priority": 10,
       "categories": [
-        "starter",
-        "data-processing"
+        "starters",
+        "event-processing"
       ],
       "tags": [
         "Blob",
@@ -558,8 +549,8 @@
       "iac": "bicep",
       "priority": 10,
       "categories": [
-        "starter",
-        "data-processing"
+        "starters",
+        "event-processing"
       ],
       "tags": [
         "Blob",
@@ -590,8 +581,8 @@
       "iac": "bicep",
       "priority": 10,
       "categories": [
-        "starter",
-        "data-processing"
+        "starters",
+        "event-processing"
       ],
       "tags": [
         "Blob",
@@ -622,8 +613,8 @@
       "iac": "bicep",
       "priority": 10,
       "categories": [
-        "starter",
-        "data-processing"
+        "starters",
+        "event-processing"
       ],
       "tags": [
         "Blob",
@@ -654,8 +645,8 @@
       "iac": "bicep",
       "priority": 10,
       "categories": [
-        "starter",
-        "data-processing"
+        "starters",
+        "event-processing"
       ],
       "tags": [
         "Blob",
@@ -686,8 +677,8 @@
       "iac": "bicep",
       "priority": 10,
       "categories": [
-        "starter",
-        "data-processing"
+        "starters",
+        "event-processing"
       ],
       "tags": [
         "Blob",
@@ -718,9 +709,8 @@
       "iac": "bicep",
       "priority": 15,
       "categories": [
-        "starter",
-        "event-processing",
-        "data-processing"
+        "starters",
+        "event-processing"
       ],
       "tags": [
         "Event Hubs",
@@ -755,9 +745,8 @@
       "iac": "bicep",
       "priority": 15,
       "categories": [
-        "starter",
-        "event-processing",
-        "data-processing"
+        "starters",
+        "event-processing"
       ],
       "tags": [
         "Event Hubs",
@@ -792,9 +781,8 @@
       "iac": "bicep",
       "priority": 15,
       "categories": [
-        "starter",
-        "event-processing",
-        "data-processing"
+        "starters",
+        "event-processing"
       ],
       "tags": [
         "Event Hubs",
@@ -829,8 +817,7 @@
       "iac": "bicep",
       "priority": 15,
       "categories": [
-        "event-processing",
-        "data-processing"
+        "event-processing"
       ],
       "tags": [
         "Event Hubs",
@@ -865,8 +852,7 @@
       "iac": "bicep",
       "priority": 15,
       "categories": [
-        "event-processing",
-        "data-processing"
+        "event-processing"
       ],
       "tags": [
         "Event Hubs",
@@ -901,8 +887,7 @@
       "iac": "bicep",
       "priority": 15,
       "categories": [
-        "event-processing",
-        "data-processing"
+        "event-processing"
       ],
       "tags": [
         "Event Hubs",
@@ -937,12 +922,10 @@
       "iac": "bicep",
       "priority": 30,
       "categories": [
-        "starter",
-        "messaging"
+        "starters"
       ],
       "tags": [
         "Service Bus",
-        "Messaging",
         "Flex Consumption",
         "Managed Identity",
         "Azd"
@@ -971,12 +954,10 @@
       "iac": "bicep",
       "priority": 30,
       "categories": [
-        "starter",
-        "messaging"
+        "starters"
       ],
       "tags": [
         "Service Bus",
-        "Messaging",
         "Flex Consumption",
         "Managed Identity",
         "Azd"
@@ -1005,12 +986,10 @@
       "iac": "bicep",
       "priority": 30,
       "categories": [
-        "starter",
-        "messaging"
+        "starters"
       ],
       "tags": [
         "Service Bus",
-        "Messaging",
         "Flex Consumption",
         "Managed Identity",
         "Azd"
@@ -1039,12 +1018,10 @@
       "iac": "bicep",
       "priority": 30,
       "categories": [
-        "starter",
-        "messaging"
+        "starters"
       ],
       "tags": [
         "Service Bus",
-        "Messaging",
         "Flex Consumption",
         "Managed Identity",
         "Azd"
@@ -1073,12 +1050,10 @@
       "iac": "bicep",
       "priority": 30,
       "categories": [
-        "starter",
-        "messaging"
+        "starters"
       ],
       "tags": [
         "Service Bus",
-        "Messaging",
         "Flex Consumption",
         "Managed Identity",
         "Azd"
@@ -1107,12 +1082,10 @@
       "iac": "bicep",
       "priority": 30,
       "categories": [
-        "starter",
-        "messaging"
+        "starters"
       ],
       "tags": [
         "Service Bus",
-        "Messaging",
         "Flex Consumption",
         "Managed Identity",
         "Azd"
@@ -1141,7 +1114,7 @@
       "iac": "bicep",
       "priority": 35,
       "categories": [
-        "data-processing"
+        "event-processing"
       ],
       "tags": [
         "Cosmos DB",
@@ -1173,7 +1146,7 @@
       "iac": "bicep",
       "priority": 35,
       "categories": [
-        "data-processing"
+        "event-processing"
       ],
       "tags": [
         "Cosmos DB",
@@ -1205,7 +1178,7 @@
       "iac": "bicep",
       "priority": 35,
       "categories": [
-        "data-processing"
+        "event-processing"
       ],
       "tags": [
         "Cosmos DB",
@@ -1237,7 +1210,7 @@
       "iac": "bicep",
       "priority": 35,
       "categories": [
-        "data-processing"
+        "event-processing"
       ],
       "tags": [
         "Cosmos DB",
@@ -1270,7 +1243,7 @@
       "iac": "bicep",
       "priority": 35,
       "categories": [
-        "data-processing"
+        "event-processing"
       ],
       "tags": [
         "Cosmos DB",
@@ -1303,7 +1276,7 @@
       "iac": "bicep",
       "priority": 35,
       "categories": [
-        "data-processing"
+        "event-processing"
       ],
       "tags": [
         "Cosmos DB",
@@ -1336,7 +1309,7 @@
       "iac": "bicep",
       "priority": 40,
       "categories": [
-        "data-processing"
+        "event-processing"
       ],
       "tags": [
         "SQL",
@@ -1367,7 +1340,7 @@
       "iac": "bicep",
       "priority": 40,
       "categories": [
-        "data-processing"
+        "event-processing"
       ],
       "tags": [
         "SQL",
@@ -1399,7 +1372,7 @@
       "iac": "bicep",
       "priority": 40,
       "categories": [
-        "data-processing"
+        "event-processing"
       ],
       "tags": [
         "SQL",
@@ -1426,12 +1399,12 @@
       "longDescription": "Build and deploy a remote MCP server on Azure Functions in C#. This repo provides five sample apps covering all MCP capabilities: (1) McpToolTrigger for building custom tools, demonstrated with snippet CRUD, QR code generation, badges, and website preview using BlobInput/BlobOutput, (2) McpResourceTrigger for exposing server-side data as resources, demonstrated with snippet templates and server info, (3) McpPromptTrigger for building reusable prompt templates, demonstrated with code review, summarization, and documentation patterns, (4) MCP App with Fluent API for returning interactive UI from tools, demonstrated with a dynamic Vite dashboard, and (5) standalone McpWeatherApp combining tools and resources with an interactive weather UI. Secured with Entra ID authentication. Deployed with azd.",
       "language": "CSharp",
       "bindingType": "trigger",
-      "resource": "mcp",
+      "resource": "MCP",
       "iac": "bicep",
       "priority": 50,
       "categories": [
-        "starter",
-        "ai-ml"
+        "starters",
+        "gen-ai"
       ],
       "tags": [
         "MCP",
@@ -1466,12 +1439,12 @@
       "longDescription": "Build and deploy a remote MCP server on Azure Functions in Python. Includes two sample apps: (1) McpToolTrigger for building custom tools, demonstrated with hello world and snippet save/retrieve using BlobInput/BlobOutput, and (2) McpWeatherApp combining McpToolTrigger and McpResourceTrigger for exposing server-side data as resources, with an interactive Vite UI. Secured with Entra ID authentication. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
-      "resource": "mcp",
+      "resource": "MCP",
       "iac": "bicep",
       "priority": 50,
       "categories": [
-        "starter",
-        "ai-ml"
+        "starters",
+        "gen-ai"
       ],
       "tags": [
         "MCP",
@@ -1502,12 +1475,12 @@
       "longDescription": "Build and deploy a remote MCP server on Azure Functions in TypeScript. Includes two sample apps: (1) McpToolTrigger (mcpTool) for building custom tools, demonstrated with hello world and snippet save/retrieve using BlobInput/BlobOutput, and (2) McpWeatherApp combining mcpTool and mcpResource for exposing server-side data as resources, with an interactive Vite UI. Secured with Entra ID authentication. Deployed with azd.",
       "language": "TypeScript",
       "bindingType": "trigger",
-      "resource": "mcp",
+      "resource": "MCP",
       "iac": "bicep",
       "priority": 50,
       "categories": [
-        "starter",
-        "ai-ml"
+        "starters",
+        "gen-ai"
       ],
       "tags": [
         "MCP",
@@ -1539,12 +1512,12 @@
       "longDescription": "Build and deploy a remote MCP server on Azure Functions in Java. Includes two sample apps: (1) McpToolTrigger for building custom tools, demonstrated with hello world and snippet save/retrieve using BlobInput/BlobOutput, and (2) McpWeatherApp combining McpToolTrigger and McpResourceTrigger for exposing server-side data as resources, with an interactive Vite UI. Secured with Entra ID authentication. Deployed with azd.",
       "language": "Java",
       "bindingType": "trigger",
-      "resource": "mcp",
+      "resource": "MCP",
       "iac": "bicep",
       "priority": 50,
       "categories": [
-        "starter",
-        "ai-ml"
+        "starters",
+        "gen-ai"
       ],
       "tags": [
         "MCP",
@@ -1576,11 +1549,11 @@
       "longDescription": "C# ASP.NET Core application hosting MCP protocol tools (weather, user info) via HTTP/SSE transport using the ModelContextProtocol.AspNetCore SDK. Runs on Azure Functions but does not use Azure Functions trigger/binding attributes.",
       "language": "CSharp",
       "bindingType": "trigger",
-      "resource": "mcp",
+      "resource": "MCP",
       "iac": "bicep",
       "priority": 51,
       "categories": [
-        "ai-ml"
+        "gen-ai"
       ],
       "tags": [
         "MCP",
@@ -1606,11 +1579,11 @@
       "longDescription": "Python application hosting MCP protocol tools (weather) using the FastMCP SDK (mcp.server.fastmcp) with Starlette/ASGI transport. Runs on Azure Functions but does not use Azure Functions trigger/binding attributes.",
       "language": "Python",
       "bindingType": "trigger",
-      "resource": "mcp",
+      "resource": "MCP",
       "iac": "bicep",
       "priority": 51,
       "categories": [
-        "ai-ml"
+        "gen-ai"
       ],
       "tags": [
         "MCP",
@@ -1636,11 +1609,11 @@
       "longDescription": "TypeScript Azure Functions app using HttpTrigger as the transport layer to host MCP SDK protocol tools. The HTTP trigger serves as the entry point for MCP protocol requests.",
       "language": "TypeScript",
       "bindingType": "trigger",
-      "resource": "mcp",
+      "resource": "MCP",
       "iac": "bicep",
       "priority": 51,
       "categories": [
-        "ai-ml"
+        "gen-ai"
       ],
       "tags": [
         "MCP",
@@ -1666,11 +1639,11 @@
       "longDescription": "Java application built on the Quarkus framework hosting MCP protocol tools (weather) using the MCP SDK. Runs on Azure Functions but does not use Azure Functions trigger/binding attributes.",
       "language": "Java",
       "bindingType": "trigger",
-      "resource": "mcp",
+      "resource": "MCP",
       "iac": "bicep",
       "priority": 51,
       "categories": [
-        "ai-ml"
+        "gen-ai"
       ],
       "tags": [
         "MCP",
@@ -1696,11 +1669,11 @@
       "longDescription": "Python Azure Functions app with McpToolTrigger, BlobInput, and BlobOutput bindings implementing an MCP server behind Azure API Management. Tools include hello, get_snippet, and save_snippet using Azure Blob Storage. Secured with Entra ID authentication and OAuth.",
       "language": "Python",
       "bindingType": "trigger",
-      "resource": "mcp",
+      "resource": "MCP",
       "iac": "bicep",
       "priority": 55,
       "categories": [
-        "ai-ml"
+        "gen-ai"
       ],
       "tags": [
         "MCP",
@@ -1734,8 +1707,8 @@
       "iac": "bicep",
       "priority": 60,
       "categories": [
-        "starter",
-        "ai-ml"
+        "starters",
+        "gen-ai"
       ],
       "tags": [
         "AI",
@@ -1768,8 +1741,8 @@
       "iac": "bicep",
       "priority": 60,
       "categories": [
-        "starter",
-        "ai-ml"
+        "starters",
+        "gen-ai"
       ],
       "tags": [
         "AI",
@@ -1802,8 +1775,8 @@
       "iac": "bicep",
       "priority": 60,
       "categories": [
-        "starter",
-        "ai-ml"
+        "starters",
+        "gen-ai"
       ],
       "tags": [
         "AI",
@@ -1836,8 +1809,8 @@
       "iac": "bicep",
       "priority": 60,
       "categories": [
-        "starter",
-        "ai-ml"
+        "starters",
+        "gen-ai"
       ],
       "tags": [
         "AI",
@@ -1870,7 +1843,7 @@
       "iac": "bicep",
       "priority": 61,
       "categories": [
-        "ai-ml"
+        "gen-ai"
       ],
       "tags": [
         "AI",
@@ -1904,7 +1877,7 @@
       "iac": "bicep",
       "priority": 61,
       "categories": [
-        "ai-ml"
+        "gen-ai"
       ],
       "tags": [
         "AI",
@@ -1938,7 +1911,7 @@
       "iac": "bicep",
       "priority": 62,
       "categories": [
-        "ai-ml"
+        "gen-ai"
       ],
       "tags": [
         "AI",
@@ -1971,7 +1944,7 @@
       "iac": "bicep",
       "priority": 62,
       "categories": [
-        "ai-ml"
+        "gen-ai"
       ],
       "tags": [
         "AI",
@@ -2004,7 +1977,7 @@
       "iac": "bicep",
       "priority": 63,
       "categories": [
-        "ai-ml"
+        "gen-ai"
       ],
       "tags": [
         "AI",
@@ -2037,8 +2010,7 @@
       "iac": "bicep",
       "priority": 65,
       "categories": [
-        "workflows",
-        "serverless"
+        "workflows"
       ],
       "tags": [
         "Durable Functions",
@@ -2073,8 +2045,7 @@
       "iac": "bicep",
       "priority": 65,
       "categories": [
-        "workflows",
-        "serverless"
+        "workflows"
       ],
       "tags": [
         "Durable Functions",
@@ -2109,8 +2080,7 @@
       "iac": "bicep",
       "priority": 65,
       "categories": [
-        "workflows",
-        "serverless"
+        "workflows"
       ],
       "tags": [
         "Durable Functions",
@@ -2369,7 +2339,7 @@
       "iac": "none",
       "priority": 71,
       "categories": [
-        "ai-ml",
+        "gen-ai",
         "workflows"
       ],
       "tags": [
@@ -2432,7 +2402,7 @@
       "iac": "none",
       "priority": 72,
       "categories": [
-        "ai-ml",
+        "gen-ai",
         "workflows"
       ],
       "tags": [
@@ -2464,7 +2434,7 @@
       "iac": "none",
       "priority": 72,
       "categories": [
-        "ai-ml",
+        "gen-ai",
         "workflows"
       ],
       "tags": [
@@ -2493,11 +2463,11 @@
       "longDescription": "Python Azure Functions app using the Agent Framework SDK with HttpTrigger endpoints via AgentFunctionApp. Hosts multiple AI agents (weather, math) each with unique instructions, independent HTTP endpoints, and isolated conversation management, backed by Azure OpenAI.",
       "language": "Python",
       "bindingType": "trigger",
-      "resource": "agentframework",
+      "resource": "durable",
       "iac": "none",
       "priority": 75,
       "categories": [
-        "ai-ml"
+        "gen-ai"
       ],
       "tags": [
         "Agent Framework",
@@ -2516,114 +2486,6 @@
         "HTTP endpoints",
         "requirements.txt",
         "README.md"
-      ]
-    },
-    {
-      "id": "iac-flex-consumption-arm",
-      "displayName": "Flex Consumption (ARM)",
-      "shortDescription": "Provisions Flex Consumption plan, function app, storage, and networking, infrastructure only",
-      "longDescription": "ARM (Azure Resource Manager) JSON template that provisions Azure Functions Flex Consumption resources including the function app, hosting plan, storage account, and networking. Infrastructure-as-code only — contains no function code.",
-      "language": "ARM",
-      "bindingType": "none",
-      "resource": "arm",
-      "iac": "arm",
-      "priority": 90,
-      "categories": [],
-      "tags": [
-        "ARM",
-        "Flex Consumption",
-        "Infrastructure As Code",
-        "Deployment"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-flex-consumption-samples",
-      "folderPath": "IaC/armtemplate",
-      "gitRef": "refs/heads/main",
-      "whatsIncluded": [
-        "ARM template files",
-        "Parameter files",
-        "Deployment scripts"
-      ]
-    },
-    {
-      "id": "iac-flex-consumption-bicep",
-      "displayName": "Flex Consumption (Bicep)",
-      "shortDescription": "Provisions Flex Consumption plan, function app, storage, and networking, infrastructure only",
-      "longDescription": "Bicep template that provisions Azure Functions Flex Consumption resources including the function app, hosting plan, storage account, and networking. Infrastructure-as-code only — contains no function code.",
-      "language": "Bicep",
-      "bindingType": "none",
-      "resource": "bicep",
-      "iac": "bicep",
-      "priority": 90,
-      "categories": [],
-      "tags": [
-        "Bicep",
-        "Flex Consumption",
-        "Infrastructure As Code",
-        "Deployment"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-flex-consumption-samples",
-      "folderPath": "IaC/bicep",
-      "gitRef": "refs/heads/main",
-      "whatsIncluded": [
-        "Bicep modules",
-        "Parameter files",
-        "Deployment configuration"
-      ]
-    },
-    {
-      "id": "iac-flex-consumption-terraform-azapi",
-      "displayName": "Flex Consumption (Terraform AzAPI)",
-      "shortDescription": "Provisions Flex Consumption plan and resources, infrastructure only, no function code",
-      "longDescription": "Terraform template using the AzAPI provider that provisions Azure Functions Flex Consumption resources including the function app, hosting plan, storage account, and networking. Infrastructure-as-code only — contains no function code.",
-      "language": "Terraform",
-      "bindingType": "none",
-      "resource": "terraform",
-      "iac": "terraform",
-      "priority": 90,
-      "categories": [],
-      "tags": [
-        "Terraform",
-        "Azapi",
-        "Flex Consumption",
-        "Infrastructure As Code"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-flex-consumption-samples",
-      "folderPath": "IaC/terraformazapi",
-      "gitRef": "refs/heads/main",
-      "whatsIncluded": [
-        "Terraform configuration files",
-        "AzAPI provider setup",
-        "Variable definitions"
-      ]
-    },
-    {
-      "id": "iac-flex-consumption-terraform-azurerm",
-      "displayName": "Flex Consumption (Terraform AzureRM)",
-      "shortDescription": "Provisions Flex Consumption plan and resources, infrastructure only, no function code",
-      "longDescription": "Terraform template using the AzureRM provider that provisions Azure Functions Flex Consumption resources including the function app, hosting plan, storage account, and networking. Infrastructure-as-code only — contains no function code.",
-      "language": "Terraform",
-      "bindingType": "none",
-      "resource": "terraform",
-      "iac": "terraform",
-      "priority": 90,
-      "categories": [],
-      "tags": [
-        "Terraform",
-        "Azurerm",
-        "Flex Consumption",
-        "Infrastructure As Code"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-flex-consumption-samples",
-      "folderPath": "IaC/terraformazurerm",
-      "gitRef": "refs/heads/main",
-      "whatsIncluded": [
-        "Terraform configuration files",
-        "AzureRM provider setup",
-        "Variable definitions"
       ]
     }
   ]
