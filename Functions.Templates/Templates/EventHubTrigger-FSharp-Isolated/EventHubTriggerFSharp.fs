@@ -5,7 +5,7 @@ open Azure.Messaging.EventHubs;
 open Microsoft.Azure.Functions.Worker
 open Microsoft.Extensions.Logging
 
-module EventHuBTriggerFSharp =
+module EventHubTriggerFSharp =
     [<Function("EventHubTriggerFSharp")>]
     let run
         (
@@ -17,4 +17,4 @@ module EventHuBTriggerFSharp =
 
         for event in events do
             logger.LogInformation $"Event Body: {event.Body}"
-            logger.LogInformation $"Event Content-Type: {event.contentType}"
+            logger.LogInformation $"Event Content-Type: {event.ContentType}"

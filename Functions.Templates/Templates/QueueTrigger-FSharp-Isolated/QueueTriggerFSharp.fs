@@ -16,4 +16,4 @@ module QueueTriggerFSharp =
             sprintf "F# Queue trigger function processed: %s" message.MessageText
 
         let logger = context.GetLogger "QueueTriggerFSharp"
-        log.LogInformation msg
+        logger.LogInformation msg

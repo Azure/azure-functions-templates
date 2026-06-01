@@ -2,6 +2,7 @@ namespace Company.Function
 
 open System
 open Microsoft.Azure.Functions.Worker
+open Microsoft.Azure.Functions.Worker.Extensions.Timer
 open Microsoft.Extensions.Logging
 
 module TimerTriggerFSharp =
