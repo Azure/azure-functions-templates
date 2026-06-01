@@ -1,3 +1,5 @@
+module Program
+
 open Azure.Monitor.OpenTelemetry.Exporter
 open Microsoft.Azure.Functions.Worker
 #if (!FrameworkShouldUseV1Dependencies)

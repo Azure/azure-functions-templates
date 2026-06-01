@@ -1,6 +1,5 @@
 namespace Company.Function
 
-open System
 open System.Collections.Generic
 open Microsoft.Azure.Functions.Worker
 open Microsoft.Extensions.Logging
@@ -18,12 +17,14 @@ module CosmosDBTriggerFSharp =
             [<CosmosDBTrigger(databaseName = "DatabaseValue",
                               containerName = "ContainerValue",
                               Connection = "ConnectionValue",
-                              LeaseContainerName = "leases")>] input: IReadOnlyList<MyDocument>,
+                              LeaseContainerName = "leases")>] input: IReadOnlyList<MyDocument> | null,
             context: FunctionContext
         ) =
         let logger =
-            context.GetLogger "CosmsoDBTriggerFSharp"
+            context.GetLogger "CosmosDBTriggerFSharp"
 
-        if not (isNull input) && input.Count > 0 then
-            log.LogInformation(sprintf "Documents modified %d" input.Count)
-            log.LogInformation("First document Id " + input.[0].id)
+        match Option.ofObj input with
+        | Some input when input.Count > 0 ->
+            logger.LogInformation(sprintf "Documents modified %d" input.Count)
+            logger.LogInformation("First document Id " + input.[0].id)
+        | _ -> ()

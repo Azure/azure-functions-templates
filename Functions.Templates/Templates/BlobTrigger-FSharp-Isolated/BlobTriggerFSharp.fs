@@ -1,6 +1,5 @@
 namespace Company.Function
 
-open System
 open System.IO
 open Microsoft.Azure.Functions.Worker
 open Microsoft.Extensions.Logging
@@ -21,7 +20,7 @@ module BlobTriggerFSharp =
             = new StreamReader(myBlob)
 
         let blobContent
-            = blobStreamReader.ReadToEndAsync() |> Async.AwaitTask
+            = blobStreamReader.ReadToEnd()
 
         let msg =
             sprintf "F# Blob trigger function Processed blob\nName: %s \n Data: %s" name blobContent
