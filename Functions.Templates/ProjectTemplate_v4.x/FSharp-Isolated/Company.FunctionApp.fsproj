@@ -26,6 +26,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!--
+      F# compilation order matters. The glob below resolves to an alphabetical
+      list of .fs files at evaluation time, with Program.fs always last so the
+      [<EntryPoint>] stays in the final file. If you add a shared helper
+      module that other trigger files depend on, list it explicitly above the
+      glob (or rename it so it sorts before its consumers).
+    -->
     <Compile Include="*.fs" Exclude="Program.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
