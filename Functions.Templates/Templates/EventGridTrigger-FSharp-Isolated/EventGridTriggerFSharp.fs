@@ -17,4 +17,4 @@ module EventGridTriggerFSharp =
         let msg =
             sprintf "Event type: %s, Event subject: %s" cloudEvent.Type cloudEvent.Subject
 
-        log.LogInformation msg
+        logger.LogInformation msg
