@@ -1,7 +1,7 @@
 # Template Manifest — Priority Tiers (P00–P99)
 
-**Total templates:** 77  
-**Manifest version:** 1.6.0
+**Total templates:** 78
+**Manifest version:** 1.8.0
 
 ## Design principles
 
@@ -103,6 +103,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | | **🤖 AI** | | | | |
 | 60 | `ai-agent-csharp` | .NET | trigger | ✅ bicep | P0→60 |
 | 60 | `ai-agent-python` | Py | trigger | ✅ bicep | P0→60 |
+| 60 | `ai-serverless-agents-python` | Py | trigger | ✅ bicep | *new* |
 | 60 | `ai-agent-typescript` | TS | trigger | ✅ bicep | P0→60 |
 | 60 | `ai-agent-java` | Java | trigger | ✅ bicep | P0→60 |
 | 61 | `ai-chatgpt-python` | Py | trigger | ✅ bicep | P1→61 |
@@ -186,7 +187,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 
 | Category | Sub-type | P | .NET | Py | TS | JS | Java | PS | Gaps |
 |---|---|---|---|---|---|---|---|---|---|
-| AI | Agent | P60 | ✅ | ✅ | ✅ | — | ✅ | — | JS, PS |
+| AI | Agent | P60 | ✅ | ✅ (2) | ✅ | — | ✅ | — | JS, PS |
 |  | ChatGPT | P61 | — | ✅ | — | ✅ | — | — | .NET, TS, Java, PS |
 |  | Text Summarize | P62 | ✅ | ✅ | — | — | — | — | TS, JS, Java, PS |
 |  | LangChain | P63 | — | ✅ | — | — | — | — | .NET, TS, JS, Java, PS |
@@ -212,7 +213,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 50 | 🔌 MCP — Remote Server | 4 |
 | 51 | 🔌 MCP — SDK Hosting | 4 |
 | 55 | 🔌 MCP — APIM Gateway | 1 |
-| 60 | 🤖 AI — Agent | 4 |
+| 60 | 🤖 AI — Agent | 5 |
 | 61 | 🤖 AI — ChatGPT | 2 |
 | 62 | 🤖 AI — Text Summarize | 2 |
 | 63 | 🤖 AI — LangChain | 1 |
@@ -223,7 +224,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 72 | 🔄 Durable Advanced — PDF Summarizer | 2 |
 | 75 | 🤝 Agent Framework — Multi-Agent | 1 |
 | 90 | 🏗️ IaC — Flex Consumption (ARM / Bicep / TF) | 4 |
-| | **Total** | **77** |
+| | **Total** | **78** |
 
 ## Language sort order
 
