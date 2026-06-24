@@ -1,8 +1,8 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-05-29T21:31:12Z",
+  "generatedAt": "2026-06-23T23:01:58Z",
   "version": "1.8.0",
-  "totalTemplates": 73,
+  "totalTemplates": 74,
   "runtimeVersions": {
     "Python": {
       "supported": [
@@ -1778,6 +1778,45 @@
         "Flex Consumption hosting",
         "Dev Container setup"
       ]
+    },
+    {
+      "id": "ai-serverless-agents-python",
+      "displayName": "Serverless Agents (Python + AZD + Bicep)",
+      "shortDescription": "Markdown-first serverless agents with chat, timer trigger, sandboxed Python execution, Microsoft Foundry, and Microsoft 365 Outlook MCP tools",
+      "longDescription": "Python Azure Functions app using the Azure Functions serverless agents runtime, a markdown-first programming model for building AI agents as function apps. Includes a chat agent with built-in debug chat UI, chat APIs, and MCP endpoint, plus a timer-triggered agent that gathers Microsoft blog posts, summarizes them, and can email the digest through MCP tools from a managed MCP server for a Microsoft 365 Outlook connector. Provisions a Flex Consumption function app, Microsoft Foundry project and model deployment, Azure Container Apps dynamic session pool, Connector Namespace resources when email delivery is enabled, managed identity, storage, and monitoring. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 60,
+      "categories": [
+        "starters",
+        "gen-ai"
+      ],
+      "tags": [
+        "AI",
+        "Agents",
+        "Serverless",
+        "Microsoft Foundry",
+        "MCP",
+        "AZD"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-serverless-agents-azd",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "Chat agent defined in .agent.md with built-in debug chat UI and chat APIs",
+        "Timer-triggered Microsoft blog summary agent",
+        "Azure Functions serverless agents runtime",
+        "Sandboxed Python code execution using Azure Container Apps dynamic sessions",
+        "Microsoft Foundry project and model deployment",
+        "Optional Connector Namespace and managed MCP server for Microsoft 365 Outlook",
+        "Managed identity, storage, monitoring, and Flex Consumption hosting",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ],
+      "isHighlighted": true
     },
     {
       "id": "ai-agent-typescript",
