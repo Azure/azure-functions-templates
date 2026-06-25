@@ -2,7 +2,7 @@ import json
 import azure.functions as func
 import logging
 
-app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
+app = func.FunctionApp()
 
 @app.dapr_service_invocation_trigger(arg_name="payload", method_name="$(FUNCTION_NAME_INPUT)")
 def $(FUNCTION_NAME_INPUT)(payload: str) :

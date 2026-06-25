@@ -3,7 +3,7 @@ import json
 import azure.functions as func
 import logging
 
-app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
+app = func.FunctionApp()
 
 @app.timer_trigger(schedule="*/10 * * * * *", arg_name="myTimer", run_on_startup=False)
 @app.dapr_publish_output(arg_name="pubEvent", pub_sub_name="pubsub", topic="A")

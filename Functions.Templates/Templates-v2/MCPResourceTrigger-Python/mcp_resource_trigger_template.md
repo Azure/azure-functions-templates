@@ -22,7 +22,7 @@ Following are example code snippets for MCP Resource Trigger using the [Python p
 import azure.functions as func
 import logging
 
-app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
+app = func.FunctionApp()
 
 RESOURCE_METADATA = """
         {
