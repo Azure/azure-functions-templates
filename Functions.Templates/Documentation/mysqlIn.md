@@ -17,7 +17,7 @@ This C# code example for getting data from Products table.
 ```csharp
 [FunctionName("GetProducts")]
   public static IActionResult Run(
-      [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "getproducts/{cost}")]
+      [HttpTrigger(AuthorizationLevel.Function, "get", Route = "getproducts/{cost}")]
       HttpRequest req,
       [MySql("select * from Products where Cost = @Cost",
           "MySqlConnectionString",

@@ -49,7 +49,7 @@ namespace Company.Function
         [Function("InvokeOutputBinding")]
         [DaprInvokeOutput(AppId = "{appId}", MethodName = "{methodName}", HttpVerb = "post")]
         public static async Task<InvokeMethodParameters> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = "invoke/{appId}/{methodName}")] HttpRequestData req, FunctionContext functionContext)
+            [HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = "invoke/{appId}/{methodName}")] HttpRequestData req, FunctionContext functionContext)
         {
             var log = functionContext.GetLogger("InvokeOutputBinding");
             log.LogInformation("C# HTTP trigger function processed a request.");

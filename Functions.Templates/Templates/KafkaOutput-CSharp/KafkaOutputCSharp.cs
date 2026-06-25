@@ -14,7 +14,7 @@ namespace Company.Function
         // Call this function then the KafkaTrigger will be trigged.
         [FunctionName("KafkaOutputCSharp")]
         public IActionResult Output(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", Route = null)] HttpRequest req,
             [Kafka("BrokerList",
                    "topic",
                    Username = "$ConnectionString",

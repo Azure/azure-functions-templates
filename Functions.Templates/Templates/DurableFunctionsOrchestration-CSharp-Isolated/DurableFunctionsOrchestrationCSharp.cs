@@ -35,7 +35,7 @@ public static class DurableFunctionsOrchestrationCSharp
 
     [Function("DurableFunctionsOrchestrationCSharp_HttpStart")]
     public static async Task<HttpResponseData> HttpStart(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req,
+        [HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post")] HttpRequestData req,
         [DurableClient] DurableTaskClient client,
         FunctionContext executionContext)
     {
