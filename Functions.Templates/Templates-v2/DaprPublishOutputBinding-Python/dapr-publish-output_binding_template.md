@@ -14,7 +14,7 @@ import json
 import azure.functions as func
 import logging
 
-app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
+app = func.FunctionApp()
 
 @app.function_name(name="DaprPublishOutputBindingPython")
 @app.timer_trigger(schedule="*/10 * * * * *", arg_name="myTimer", run_on_startup=False)

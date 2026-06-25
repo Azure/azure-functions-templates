@@ -20,7 +20,7 @@ This C# code example uses the binding to generate a valid connection info object
 ```csharp
 [FunctionName("negotiate")]
 public static SignalRConnectionInfo Negotiate(
-    [HttpTrigger(AuthorizationLevel.Anonymous)]HttpRequest req,
+    [HttpTrigger(AuthorizationLevel.Function)]HttpRequest req,
     [SignalRConnectionInfo(HubName = "chat")]SignalRConnectionInfo connectionInfo)
 {
     return connectionInfo;

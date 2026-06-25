@@ -22,7 +22,7 @@ Following are example code snippets for MCP Prompt Trigger using the [Python pro
 import azure.functions as func
 import logging
 
-app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
+app = func.FunctionApp()
 
 @app.mcp_prompt_trigger(
     arg_name="context",

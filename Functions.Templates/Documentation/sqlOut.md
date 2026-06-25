@@ -16,7 +16,7 @@ This C# code example upserts employees to Employees table. Please refer to our [
 
 ```csharp
 public static IActionResult Run(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "addemployees")]
+        [HttpTrigger(AuthorizationLevel.Function, "get", Route = "addemployees")]
         HttpRequest req, ILogger log,
         [Sql("dbo.Employees", "SqlConnectionString")]
         out Employee[] output)

@@ -14,7 +14,7 @@ This C# code example upserts Products to Products table.
 
 ```csharp
 public static IActionResult Run(
-        [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "addproduct")]
+        [HttpTrigger(AuthorizationLevel.Function, "get", Route = "addproduct")]
         HttpRequest req, ILogger log,
         [MySql("Products", "MySqlConnectionString")]
         out Product[] output)

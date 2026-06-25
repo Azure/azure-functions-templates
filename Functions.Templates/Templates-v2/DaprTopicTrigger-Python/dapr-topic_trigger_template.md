@@ -13,7 +13,7 @@ import json
 import azure.functions as func
 import logging
 
-app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
+app = func.FunctionApp()
 
 @app.function_name(name="DaprTopicTriggerPython")
 @app.dapr_topic_trigger(arg_name="subEvent", pub_sub_name="pubsub", topic="A")

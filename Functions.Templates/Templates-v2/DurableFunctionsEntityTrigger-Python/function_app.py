@@ -4,7 +4,7 @@ import json
 import azure.functions as func
 import azure.durable_functions as df
 
-app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
+app = func.FunctionApp()
 
 #Entity Function
 @app.entity_trigger(context_name="context")

@@ -19,7 +19,7 @@ This C# code example for getting data from Products table. Please refer to our [
 ```csharp
 [FunctionName("GetProducts")]
   public static IActionResult Run(
-      [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "getproducts/{cost}")]
+      [HttpTrigger(AuthorizationLevel.Function, "get", Route = "getproducts/{cost}")]
       HttpRequest req,
       [Sql("select * from Products where Cost = @Cost",
           "SqlConnectionString",

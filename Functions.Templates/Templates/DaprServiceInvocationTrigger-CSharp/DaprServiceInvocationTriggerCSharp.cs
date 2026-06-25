@@ -49,7 +49,7 @@ namespace Company.Function
         /// </summary>
         [FunctionName("InvokeOutputBinding")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = "invoke/{appId}/{methodName}")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = "invoke/{appId}/{methodName}")] HttpRequest req,
             [DaprInvoke(AppId = "{appId}", MethodName = "{methodName}", HttpVerb = "post")] IAsyncCollector<InvokeMethodParameters> output,
             ILogger log)
         {

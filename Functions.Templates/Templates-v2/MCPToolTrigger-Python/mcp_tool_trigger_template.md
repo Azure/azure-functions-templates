@@ -19,7 +19,7 @@ Following are example code snippets for MCP Tool using the [Python programming m
 ```python
 import azure.functions as func
 
-app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
+app = func.FunctionApp()
 
 @app.mcp_tool()
 def my_mcp_tool(context: func.MCPToolContext) -> None:

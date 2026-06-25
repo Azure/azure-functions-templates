@@ -2,7 +2,7 @@ import json
 import azure.functions as func
 import logging
 
-app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
+app = func.FunctionApp()
 
 
 # An HTTP-Triggered Function with a Durable Functions Client binding
