@@ -45,7 +45,8 @@
           "PowerShell",
           "Python",
           "Terraform",
-          "TypeScript"
+          "TypeScript",
+          "Go"
         ]
       },
       "description": "List of supported programming languages"
@@ -73,6 +74,7 @@
         "id",
         "displayName",
         "shortDescription",
+        "longDescription",
         "language",
         "bindingType",
         "resource",
@@ -80,7 +82,8 @@
         "priority",
         "categories",
         "repositoryUrl",
-        "folderPath"
+        "folderPath",
+        "gitRef"
       ],
       "properties": {
         "id": {
@@ -144,6 +147,7 @@
             "mysql",
             "signalr",
             "rabbitmq",
+            "connector",
             "MCP",
             "durable",
             "generic"

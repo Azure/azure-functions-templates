@@ -1,8 +1,8 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-06-23T23:01:58Z",
-  "version": "1.8.0",
-  "totalTemplates": 74,
+  "generatedAt": "2026-06-30T21:06:27Z",
+  "version": "1.9.0",
+  "totalTemplates": 77,
   "runtimeVersions": {
     "Python": {
       "supported": [
@@ -18,20 +18,14 @@
     },
     "JavaScript": {
       "supported": [
-        "20",
-        "22"
-      ],
-      "preview": [
+        "22",
         "24"
       ],
       "default": "22"
     },
     "TypeScript": {
       "supported": [
-        "20",
-        "22"
-      ],
-      "preview": [
+        "22",
         "24"
       ],
       "default": "22"
@@ -44,7 +38,7 @@
         "21",
         "25"
       ],
-      "default": "21"
+      "default": "17"
     },
     "CSharp": {
       "supported": [
@@ -65,6 +59,13 @@
       "preview": [
         "7.6"
       ]
+    },
+    "Go": {
+      "supported": [],
+      "preview": [
+        "1.24"
+      ],
+      "default": "1.24"
     }
   },
   "languages": [
@@ -1440,8 +1441,7 @@
         "VS Code mcp.json configuration",
         "MCP Inspector support",
         "Dev Container setup"
-      ],
-      "isHighlighted": true
+      ]
     },
     {
       "id": "mcp-server-remote-python",
@@ -1477,8 +1477,7 @@
         "VS Code mcp.json configuration",
         "MCP Inspector support",
         "Dev Container setup"
-      ],
-      "isHighlighted": true
+      ]
     },
     {
       "id": "mcp-server-remote-typescript",
@@ -1515,8 +1514,7 @@
         "VS Code mcp.json configuration",
         "MCP Inspector support",
         "Dev Container setup"
-      ],
-      "isHighlighted": true
+      ]
     },
     {
       "id": "mcp-server-remote-java",
@@ -1552,127 +1550,36 @@
         "Maven build configuration",
         "VS Code mcp.json configuration",
         "MCP Inspector support"
-      ],
-      "isHighlighted": true
-    },
-    {
-      "id": "mcp-sdk-hosting-csharp",
-      "displayName": "Self-hosted MCP SDK Server (C# + AZD + Bicep)",
-      "shortDescription": "Hosts MCP tools via HTTP/SSE transport using ModelContextProtocol.AspNetCore SDK",
-      "longDescription": "C# ASP.NET Core application hosting MCP protocol tools (weather, user info) via HTTP/SSE transport using the ModelContextProtocol.AspNetCore SDK. Runs on Azure Functions but does not use Azure Functions trigger/binding attributes.",
-      "language": "CSharp",
-      "bindingType": "trigger",
-      "resource": "MCP",
-      "iac": "bicep",
-      "priority": 51,
-      "categories": [
-        "gen-ai"
-      ],
-      "tags": [
-        "MCP",
-        "MCP SDK",
-        "Self-hosted",
-        "AZD",
-        "Preview"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure-Samples/mcp-sdk-functions-hosting-dotnet",
-      "folderPath": ".",
-      "gitRef": "refs/heads/main",
-      "whatsIncluded": [
-        "MCP SDK server",
-        "Azure Functions hosting",
-        "Bicep infrastructure"
       ]
     },
     {
-      "id": "mcp-sdk-hosting-python",
-      "displayName": "Self-hosted MCP SDK Server (Python + AZD + Bicep)",
-      "shortDescription": "Hosts MCP tools via Starlette/ASGI transport using FastMCP SDK",
-      "longDescription": "Python application hosting MCP protocol tools (weather) using the FastMCP SDK (mcp.server.fastmcp) with Starlette/ASGI transport. Runs on Azure Functions but does not use Azure Functions trigger/binding attributes.",
-      "language": "Python",
+      "id": "mcp-server-remote-javascript",
+      "displayName": "Remote MCP Server (JavaScript + AZD + Bicep)",
+      "shortDescription": "Weather and code snippet tools with Blob storage, deployed via azd",
+      "longDescription": "Build and deploy a remote MCP server on Azure Functions in JavaScript. Includes two sample apps: (1) McpToolTrigger (mcpTool) for building custom tools, demonstrated with hello world and snippet save/retrieve using BlobInput/BlobOutput, and (2) McpWeatherApp combining mcpTool and mcpResource for exposing server-side data as resources, with an interactive Vite UI. Secured with Entra ID authentication. Deployed with azd.",
+      "language": "JavaScript",
       "bindingType": "trigger",
       "resource": "MCP",
       "iac": "bicep",
-      "priority": 51,
+      "priority": 50,
       "categories": [
+        "starters",
         "gen-ai"
       ],
-      "tags": [
-        "MCP",
-        "MCP SDK",
-        "Self-hosted",
-        "AZD",
-        "Preview"
-      ],
       "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure-Samples/mcp-sdk-functions-hosting-python",
+      "repositoryUrl": "https://github.com/Azure-Samples/remote-mcp-functions-javascript",
       "folderPath": ".",
-      "gitRef": "refs/heads/main",
+      "gitRef": "refs/tags/v1.0.0",
       "whatsIncluded": [
-        "MCP SDK server",
-        "Azure Functions hosting",
-        "Bicep infrastructure"
-      ]
-    },
-    {
-      "id": "mcp-sdk-hosting-typescript",
-      "displayName": "Self-hosted MCP SDK Server (TypeScript + AZD + Bicep)",
-      "shortDescription": "Hosts MCP SDK tools on Azure Functions via HttpTrigger wrapper",
-      "longDescription": "TypeScript Azure Functions app using HttpTrigger as the transport layer to host MCP SDK protocol tools. The HTTP trigger serves as the entry point for MCP protocol requests.",
-      "language": "TypeScript",
-      "bindingType": "trigger",
-      "resource": "MCP",
-      "iac": "bicep",
-      "priority": 51,
-      "categories": [
-        "gen-ai"
-      ],
-      "tags": [
-        "MCP",
-        "MCP SDK",
-        "Self-hosted",
-        "AZD",
-        "Preview"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure-Samples/mcp-sdk-functions-hosting-node",
-      "folderPath": ".",
-      "gitRef": "refs/heads/main",
-      "whatsIncluded": [
-        "MCP SDK server",
-        "Azure Functions hosting",
-        "Bicep infrastructure"
-      ]
-    },
-    {
-      "id": "mcp-sdk-hosting-java",
-      "displayName": "Self-hosted MCP SDK Server (Java + AZD + Bicep)",
-      "shortDescription": "Hosts MCP tools using Quarkus framework and MCP SDK",
-      "longDescription": "Java application built on the Quarkus framework hosting MCP protocol tools (weather) using the MCP SDK. Runs on Azure Functions but does not use Azure Functions trigger/binding attributes.",
-      "language": "Java",
-      "bindingType": "trigger",
-      "resource": "MCP",
-      "iac": "bicep",
-      "priority": 51,
-      "categories": [
-        "gen-ai"
-      ],
-      "tags": [
-        "MCP",
-        "MCP SDK",
-        "Self-hosted",
-        "AZD",
-        "Preview"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure-Samples/mcp-sdk-functions-hosting-java",
-      "folderPath": ".",
-      "gitRef": "refs/heads/main",
-      "whatsIncluded": [
-        "MCP SDK server",
-        "Azure Functions hosting",
-        "Bicep infrastructure"
+        "MCP Tool trigger functions",
+        "Snippet save/retrieve tools with Blob storage",
+        "Microsoft Entra ID authentication",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Weather app with interactive Vite UI",
+        "VS Code mcp.json configuration",
+        "MCP Inspector support",
+        "Dev Container setup"
       ]
     },
     {
@@ -1782,8 +1689,8 @@
     {
       "id": "ai-serverless-agents-python",
       "displayName": "Serverless Agents (Python + AZD + Bicep)",
-      "shortDescription": "Markdown-first serverless agents with chat, timer trigger, sandboxed Python execution, Microsoft Foundry, and Microsoft 365 Outlook MCP tools",
-      "longDescription": "Python Azure Functions app using the Azure Functions serverless agents runtime, a markdown-first programming model for building AI agents as function apps. Includes a chat agent with built-in debug chat UI, chat APIs, and MCP endpoint, plus a timer-triggered agent that gathers Microsoft blog posts, summarizes them, and can email the digest through MCP tools from a managed MCP server for a Microsoft 365 Outlook connector. Provisions a Flex Consumption function app, Microsoft Foundry project and model deployment, Azure Container Apps dynamic session pool, Connector Namespace resources when email delivery is enabled, managed identity, storage, and monitoring. Deployed with azd.",
+      "shortDescription": "Markdown-first serverless agents with chat, timer trigger, sandboxed Python execution, Microsoft Foundry, and Microsoft 365 Outlook connector tools, deployed via azd",
+      "longDescription": "Build and deploy serverless agents on Azure Functions in Python using the Azure Functions serverless agents runtime, a markdown-first programming model for building AI agents as function apps. Includes a chat agent with built-in debug chat UI, chat APIs, and MCP endpoint, plus a timer-triggered agent that gathers Microsoft blog posts, summarizes them, and can email the digest through MCP tools from a managed MCP server for a Microsoft 365 Outlook connector. Provisions a Flex Consumption function app, Microsoft Foundry project and model deployment, Azure Container Apps dynamic session pool, Connector Namespace resources when email delivery is enabled, managed identity, storage, and monitoring. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
       "resource": "http",
@@ -2544,6 +2451,189 @@
         "requirements.txt",
         "README.md"
       ]
+    },
+    {
+      "id": "office365-connector-trigger-csharp",
+      "displayName": "Office 365 Outlook Connector Triggers (C# + AZD + Bicep)",
+      "shortDescription": "Office 365 Outlook email and calendar connector triggers with Blob output, deployed via azd",
+      "longDescription": "Build and deploy an Office 365 Outlook connector app on Azure Functions in C#. This app provides five connector trigger functions, each receiving a different Outlook event type from the Connector Namespace via ConnectorTrigger and writing the payload to Blob storage with BlobOutput: (1) OnNewEmail for incoming mail, (2) OnFlaggedEmail for flagged mail, (3) OnNewMentionMeEmail for mail that mentions you, (4) OnNewCalendarEvent for newly created calendar items, and (5) OnUpcomingEvent for upcoming calendar events. Built on the Azure.Connectors.Sdk and the Microsoft.Azure.Functions.Worker.Extensions.Connector worker extension. Runs on Flex Consumption (.NET 10 isolated) with a user-assigned managed identity and an OAuth Office 365 Outlook connection authorized via a post-deploy hook. Deployed with azd.",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "connector",
+      "iac": "bicep",
+      "priority": 80,
+      "categories": [
+        "starters",
+        "connectors",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-connectors-net",
+      "folderPath": "office365App",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "Connector trigger functions (OnNewEmail, OnFlaggedEmail, OnNewMentionMeEmail, OnNewCalendarEvent, OnUpcomingEvent)",
+        "ConnectorTrigger bindings with BlobOutput payload storage",
+        "OAuth Office 365 Outlook connection",
+        "Post-deploy connection authorization scripts",
+        "User-assigned managed identity",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration (azure.yaml)",
+        "VS Code configuration"
+      ]
+    },
+    {
+      "id": "office365-connector-trigger-typescript",
+      "displayName": "Office 365 Outlook Connector Triggers (TypeScript + AZD + Bicep)",
+      "shortDescription": "Office 365 Outlook email and calendar connector triggers, deployed via azd",
+      "longDescription": "Build and deploy an Office 365 Outlook connector app on Azure Functions in TypeScript. This app provides five connector trigger functions, each receiving a different Outlook event type from the Connector Namespace via the connector trigger and logging the received payload: (1) onNewEmail for incoming mail, (2) onFlaggedEmail for flagged mail, (3) onNewMentionMeEmail for mail that mentions you, (4) onNewCalendarEvent for newly created calendar items, and (5) onUpcomingEvent for upcoming calendar events. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a user-assigned managed identity and an OAuth Office 365 Outlook connection authorized via a post-deploy hook. Deployed with azd.",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "connector",
+      "iac": "bicep",
+      "priority": 80,
+      "categories": [
+        "starters",
+        "connectors",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-connectors-typescript",
+      "folderPath": "office365App",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "Connector trigger functions (onNewEmail, onFlaggedEmail, onNewMentionMeEmail, onNewCalendarEvent, onUpcomingEvent)",
+        "Connector triggers that log the received payload",
+        "OAuth Office 365 Outlook connection",
+        "Post-deploy connection authorization scripts",
+        "User-assigned managed identity",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration (azure.yaml)",
+        "TypeScript project files (package.json, tsconfig.json)"
+      ]
+    },
+    {
+      "id": "office365-connector-trigger-python",
+      "displayName": "Office 365 Outlook Connector Triggers (Python + AZD + Bicep)",
+      "shortDescription": "Office 365 Outlook email and calendar connector triggers, deployed via azd",
+      "longDescription": "Build and deploy an Office 365 Outlook connector app on Azure Functions in Python. This app provides five connector trigger functions, each receiving a different Outlook event type from the Connector Namespace via the connector_trigger decorator and logging the received payload: (1) OnNewEmail for incoming mail, (2) OnFlaggedEmail for flagged mail, (3) OnNewMentionMeEmail for mail that mentions you, (4) OnNewCalendarEvent for newly created calendar items, and (5) OnUpcomingEvent for upcoming calendar events. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a user-assigned managed identity and an OAuth Office 365 Outlook connection authorized via a post-deploy hook. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "connector",
+      "iac": "bicep",
+      "priority": 80,
+      "categories": [
+        "starters",
+        "connectors",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-connectors-python",
+      "folderPath": "office365App",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "Connector trigger functions (OnNewEmail, OnFlaggedEmail, OnNewMentionMeEmail, OnNewCalendarEvent, OnUpcomingEvent)",
+        "Connector triggers that log the received payload",
+        "OAuth Office 365 Outlook connection",
+        "Post-deploy connection authorization scripts",
+        "User-assigned managed identity",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration (azure.yaml)",
+        "Python project files (function_app.py, requirements.txt)"
+      ]
+    },
+    {
+      "id": "sharepoint-connector-trigger-csharp",
+      "displayName": "SharePoint Online Connector Triggers (C# + AZD + Bicep)",
+      "shortDescription": "SharePoint Online file connector triggers with Blob output, deployed via azd",
+      "longDescription": "Build and deploy a SharePoint Online connector app on Azure Functions in C#. This app provides two connector trigger functions, each receiving a different SharePoint Online file event from the Connector Namespace via ConnectorTrigger and writing the payload to Blob storage with BlobOutput: (1) OnNewFile for newly added files and (2) OnUpdatedFile for updated files. Built on the Azure.Connectors.Sdk and the Microsoft.Azure.Functions.Worker.Extensions.Connector worker extension. Runs on Flex Consumption (.NET 10 isolated) with a user-assigned managed identity and an OAuth SharePoint Online connection authorized via a post-deploy hook. Deployed with azd.",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "connector",
+      "iac": "bicep",
+      "priority": 81,
+      "categories": [
+        "starters",
+        "connectors",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-connectors-net",
+      "folderPath": "sharepointApp",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "Connector trigger functions (OnNewFile, OnUpdatedFile)",
+        "ConnectorTrigger bindings with BlobOutput payload storage",
+        "OAuth SharePoint Online connection",
+        "Post-deploy connection authorization scripts",
+        "User-assigned managed identity",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration (azure.yaml)",
+        "host.json and project files"
+      ],
+      "isHighlighted": true
+    },
+    {
+      "id": "sharepoint-connector-trigger-typescript",
+      "displayName": "SharePoint Online Connector Triggers (TypeScript + AZD + Bicep)",
+      "shortDescription": "SharePoint Online file connector triggers, deployed via azd",
+      "longDescription": "Build and deploy a SharePoint Online connector app on Azure Functions in TypeScript. This app provides two connector trigger functions, each receiving a different SharePoint Online file event from the Connector Namespace via the connector trigger and logging the received payload: (1) onSharepointNewFile for newly added files and (2) onSharepointUpdatedFile for updated files. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a user-assigned managed identity and an OAuth SharePoint Online connection authorized via a post-deploy hook. Deployed with azd.",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "connector",
+      "iac": "bicep",
+      "priority": 81,
+      "categories": [
+        "starters",
+        "connectors",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-connectors-typescript",
+      "folderPath": "sharepointApp",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "Connector trigger functions (onSharepointNewFile, onSharepointUpdatedFile)",
+        "Connector triggers that log the received payload",
+        "OAuth SharePoint Online connection",
+        "Post-deploy connection authorization scripts",
+        "User-assigned managed identity",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration (azure.yaml)",
+        "TypeScript project files (package.json, tsconfig.json)"
+      ],
+      "isHighlighted": true
+    },
+    {
+      "id": "sharepoint-connector-trigger-python",
+      "displayName": "SharePoint Online Connector Triggers (Python + AZD + Bicep)",
+      "shortDescription": "SharePoint Online file connector triggers, deployed via azd",
+      "longDescription": "Build and deploy a SharePoint Online connector app on Azure Functions in Python. This app provides two connector trigger functions, each receiving a different SharePoint Online file event from the Connector Namespace via the connector_trigger decorator and logging the received payload: (1) OnSharepointNewFile for newly added files and (2) OnSharepointUpdatedFile for updated files. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a user-assigned managed identity and an OAuth SharePoint Online connection authorized via a post-deploy hook. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "connector",
+      "iac": "bicep",
+      "priority": 81,
+      "categories": [
+        "starters",
+        "connectors",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-connectors-python",
+      "folderPath": "sharepointApp",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "Connector trigger functions (OnSharepointNewFile, OnSharepointUpdatedFile)",
+        "Connector triggers that log the received payload",
+        "OAuth SharePoint Online connection",
+        "Post-deploy connection authorization scripts",
+        "User-assigned managed identity",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration (azure.yaml)",
+        "Python project files (function_app.py, requirements.txt)"
+      ],
+      "isHighlighted": true
     }
   ]
 }

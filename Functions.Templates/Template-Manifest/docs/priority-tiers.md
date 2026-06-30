@@ -1,7 +1,7 @@
 # Template Manifest — Priority Tiers (P00–P99)
 
-**Total templates:** 78
-**Manifest version:** 1.8.0
+**Total templates:** 77
+**Manifest version:** 1.9.0
 
 ## Design principles
 
@@ -28,12 +28,12 @@
 | P35–39 | 🌐 Cosmos DB | Trigger · Input · Output | `P35` Trigger<br>`P36` Input *(future)*<br>`P37` Output *(future)* |
 | P40–44 | 🗄️ SQL | Trigger · Input · Output | `P40` Trigger<br>`P41` Input *(future)*<br>`P42` Output *(future)* |
 | P45–49 | 🔴 Redis *(reserved)* | Trigger · Input · Output | `P45` Trigger<br>`P46` Input<br>`P47` Output |
-| P50–59 | 🔌 MCP *(10-slot block)* | Trigger (Tool / Resource / Prompt) | `P50` Remote Server<br>`P51` SDK Hosting<br>`P52` Tool<br>`P53` Resource<br>`P54` Prompt<br>`P55` APIM Gateway<br>`P56` *(reserved)*<br>`P57` *(reserved)*<br>`P58` *(reserved)*<br>`P59` *(reserved)* |
+| P50–59 | 🔌 MCP *(10-slot block)* | Trigger (Tool / Resource / Prompt) | `P50` Remote Server<br>`P51` SDK Hosting *(removed — repos archived)*<br>`P52` Tool<br>`P53` Resource<br>`P54` Prompt<br>`P55` APIM Gateway<br>`P56` *(reserved)*<br>`P57` *(reserved)*<br>`P58` *(reserved)*<br>`P59` *(reserved)* |
 | P60–64 | 🤖 AI | — | `P60` Agent<br>`P61` ChatGPT<br>`P62` Text Summarize<br>`P63` LangChain |
 | P65–69 | 🔄 Durable Standard | Orchestration | `P65` Orchestration<br>`P66` Order Processor |
 | P70–74 | 🔄 Durable Advanced | Orchestration | `P70` Patterns (saga / tracing / payload)<br>`P71` Scenarios (travel / aspire)<br>`P72` PDF Summarizer |
 | P75–79 | 🤝 Agent Framework | Orchestration | `P75` Multi-Agent |
-| P80–89 | — *(reserved for future categories)* | — | — |
+| P80–89 | 🔌 Connectors | Trigger | `P80` Office 365 Outlook<br>`P81` SharePoint Online |
 | P90–94 | 🏗️ IaC | — | `P90` Flex Consumption (ARM / Bicep / TF) |
 | P95–99 | ⚠️ Non-AZD Stubs | — | `P95` Gap-fillers (AZD upgrade planned) |
 
@@ -94,11 +94,8 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 50 | `mcp-server-remote-csharp` | .NET | trigger | ✅ bicep | P0→50 |
 | 50 | `mcp-server-remote-python` | Py | trigger | ✅ bicep | P0→50 |
 | 50 | `mcp-server-remote-typescript` | TS | trigger | ✅ bicep | P0→50 |
+| 50 | `mcp-server-remote-javascript` | JS | trigger | ✅ bicep | *new* |
 | 50 | `mcp-server-remote-java` | Java | trigger | ✅ bicep | P0→50 |
-| 51 | `mcp-sdk-hosting-csharp` | .NET | trigger | ✅ bicep | P1→51 |
-| 51 | `mcp-sdk-hosting-python` | Py | trigger | ✅ bicep | P1→51 |
-| 51 | `mcp-sdk-hosting-typescript` | TS | trigger | ✅ bicep | P1→51 |
-| 51 | `mcp-sdk-hosting-java` | Java | trigger | ✅ bicep | P1→51 |
 | 55 | `mcp-server-apim-python` | Py | trigger | ✅ bicep | P2→55 |
 | | **🤖 AI** | | | | |
 | 60 | `ai-agent-csharp` | .NET | trigger | ✅ bicep | P0→60 |
@@ -129,13 +126,13 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 72 | `durable-pdf-summarizer-python` | Py | orchestration | 🚧 none | P2→72 |
 | | **🤝 Agent Framework** | | | | |
 | 75 | `agentframework-durable-multi-agent-python` | Py | orchestration | 🚧 none | P1→75 |
-| | **🏗️ IaC** | | | | |
-| 90 | `iac-flex-consumption-arm` | ARM | none | 📦 arm | P2→90 |
-| 90 | `iac-flex-consumption-bicep` | Bicep | none | 📦 bicep | P2→90 |
-| 90 | `iac-flex-consumption-terraform-azapi` | TF | none | 📦 terraform | P2→90 |
-| 90 | `iac-flex-consumption-terraform-azurerm` | TF | none | 📦 terraform | P2→90 |
-| | **⚠️ Non-AZD Stubs** | | | | |
-| | *(none — all stubs replaced by AZD versions)* | | | | |
+| | **🔌 Connectors** | | | | |
+| 80 | `office365-connector-trigger-csharp` | .NET | trigger | ✅ bicep | *new* |
+| 80 | `office365-connector-trigger-python` | Py | trigger | ✅ bicep | *new* |
+| 80 | `office365-connector-trigger-typescript` | TS | trigger | ✅ bicep | *new* |
+| 81 | `sharepoint-connector-trigger-csharp` | .NET | trigger | ✅ bicep | *new* |
+| 81 | `sharepoint-connector-trigger-python` | Py | trigger | ✅ bicep | *new* |
+| 81 | `sharepoint-connector-trigger-typescript` | TS | trigger | ✅ bicep | *new* |
 
 ## Coverage matrix
 
@@ -176,8 +173,8 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 
 | Sub-type | P | .NET | Py | TS | JS | Java | PS | Gaps |
 |---|---|---|---|---|---|---|---|---|
-| Remote Server | P50 | ✅ | ✅ | ✅ | — | ✅ | — | JS, PS |
-| SDK Hosting | P51 | ✅ | ✅ | ✅ | — | ✅ | — | JS, PS |
+| Remote Server | P50 | ✅ | ✅ | ✅ | ✅ | ✅ | — | PS |
+| SDK Hosting | P51 | — | — | — | — | — | — | *removed (repos archived)* |
 | Tool | P52 | 🔗 | 🔗 | 🔗 | — | 🔗 | — | *no dedicated templates yet* |
 | Resource | P53 | 🔗 | 🔗 | 🔗 | — | 🔗 | — | *no dedicated templates yet* |
 | Prompt | P54 | 🔗 | — | — | — | — | — | *no dedicated templates yet* |
@@ -198,6 +195,13 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 |  | PDF Summarizer | P72 | 🚧 | 🚧 | — | — | — | — | TS, JS, Java, PS |
 | Agent Fw | Multi-Agent | P75 | — | 🚧 | — | — | — | — | .NET, TS, JS, Java, PS |
 
+### Connectors (P80–P89)
+
+| Sub-type | P | .NET | Py | TS | JS | Java | PS | Gaps |
+|---|---|---|---|---|---|---|---|---|
+| Office 365 Outlook | P80 | ✅ | ✅ | ✅ | — | — | — | JS, Java, PS |
+| SharePoint Online | P81 | ✅ | ✅ | ✅ | — | — | — | JS, Java, PS |
+
 ## Summary
 
 | P | Slot label | Templates |
@@ -210,8 +214,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 30 | 🚌 Service Bus — Trigger | 6 |
 | 35 | 🌐 Cosmos DB — Trigger | 6 |
 | 40 | 🗄️ SQL — Trigger | 3 |
-| 50 | 🔌 MCP — Remote Server | 4 |
-| 51 | 🔌 MCP — SDK Hosting | 4 |
+| 50 | 🔌 MCP — Remote Server | 5 |
 | 55 | 🔌 MCP — APIM Gateway | 1 |
 | 60 | 🤖 AI — Agent | 5 |
 | 61 | 🤖 AI — ChatGPT | 2 |
@@ -223,8 +226,9 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 71 | 🔄 Durable Advanced — Scenarios (travel / aspire) | 2 |
 | 72 | 🔄 Durable Advanced — PDF Summarizer | 2 |
 | 75 | 🤝 Agent Framework — Multi-Agent | 1 |
-| 90 | 🏗️ IaC — Flex Consumption (ARM / Bicep / TF) | 4 |
-| | **Total** | **78** |
+| 80 | 🔌 Connectors — Office 365 Outlook | 3 |
+| 81 | 🔌 Connectors — SharePoint Online | 3 |
+| | **Total** | **77** |
 
 ## Language sort order
 
