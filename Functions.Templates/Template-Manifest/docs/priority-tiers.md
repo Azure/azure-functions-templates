@@ -1,6 +1,6 @@
 # Template Manifest — Priority Tiers (P00–P99)
 
-**Total templates:** 77
+**Total templates:** 75
 **Manifest version:** 1.9.0
 
 ## Design principles
@@ -29,7 +29,7 @@
 | P40–44 | 🗄️ SQL | Trigger · Input · Output | `P40` Trigger<br>`P41` Input *(future)*<br>`P42` Output *(future)* |
 | P45–49 | 🔴 Redis *(reserved)* | Trigger · Input · Output | `P45` Trigger<br>`P46` Input<br>`P47` Output |
 | P50–59 | 🔌 MCP *(10-slot block)* | Trigger (Tool / Resource / Prompt) | `P50` Remote Server<br>`P51` SDK Hosting *(removed — repos archived)*<br>`P52` Tool<br>`P53` Resource<br>`P54` Prompt<br>`P55` APIM Gateway<br>`P56` *(reserved)*<br>`P57` *(reserved)*<br>`P58` *(reserved)*<br>`P59` *(reserved)* |
-| P60–64 | 🤖 AI | — | `P60` Agent<br>`P61` ChatGPT<br>`P62` Text Summarize<br>`P63` LangChain |
+| P60–64 | 🤖 AI | — | `P60` Agent<br>`P61` ChatGPT<br>`P62` Text Summarize *(removed — repos archived)*<br>`P63` LangChain |
 | P65–69 | 🔄 Durable Standard | Orchestration | `P65` Orchestration<br>`P66` Order Processor |
 | P70–74 | 🔄 Durable Advanced | Orchestration | `P70` Patterns (saga / tracing / payload)<br>`P71` Scenarios (travel / aspire)<br>`P72` PDF Summarizer |
 | P75–79 | 🤝 Agent Framework | Orchestration | `P75` Multi-Agent |
@@ -105,8 +105,6 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 60 | `ai-agent-java` | Java | trigger | ✅ bicep | P0→60 |
 | 61 | `ai-chatgpt-python` | Py | trigger | ✅ bicep | P1→61 |
 | 61 | `ai-chatgpt-javascript` | JS | trigger | ✅ bicep | P1→61 |
-| 62 | `ai-textsummarize-csharp` | .NET | trigger | ✅ bicep | P2→62 |
-| 62 | `ai-textsummarize-python` | Py | trigger | ✅ bicep | P2→62 |
 | 63 | `ai-langchain-python` | Py | trigger | ✅ bicep | P2→63 |
 | | **🔄 Durable Standard** | | | | |
 | 65 | `durable-orchestrator-csharp-azd` | .NET | orchestration | ✅ bicep | *new* |
@@ -133,6 +131,16 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 81 | `sharepoint-connector-trigger-csharp` | .NET | trigger | ✅ bicep | *new* |
 | 81 | `sharepoint-connector-trigger-python` | Py | trigger | ✅ bicep | *new* |
 | 81 | `sharepoint-connector-trigger-typescript` | TS | trigger | ✅ bicep | *new* |
+
+### Removed (archived repos)
+
+These templates were removed because their source repositories were **archived**:
+
+| Removed template(s) | P | Archived repo(s) |
+|---|--:|---|
+| `mcp-sdk-hosting-csharp` / `-python` / `-typescript` / `-java` | P51 | `Azure-Samples/mcp-sdk-functions-hosting-{dotnet,python,node,java}` |
+| `ai-textsummarize-csharp` | P62 | `Azure-Samples/function-csharp-ai-textsummarize` |
+| `ai-textsummarize-python` | P62 | `Azure-Samples/function-python-ai-textsummarize` |
 
 ## Coverage matrix
 
@@ -186,7 +194,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 |---|---|---|---|---|---|---|---|---|---|
 | AI | Agent | P60 | ✅ | ✅ (2) | ✅ | — | ✅ | — | JS, PS |
 |  | ChatGPT | P61 | — | ✅ | — | ✅ | — | — | .NET, TS, Java, PS |
-|  | Text Summarize | P62 | ✅ | ✅ | — | — | — | — | TS, JS, Java, PS |
+|  | Text Summarize | P62 | — | — | — | — | — | — | *removed (repos archived)* |
 |  | LangChain | P63 | — | ✅ | — | — | — | — | .NET, TS, JS, Java, PS |
 | Durable | Orchestration | P65 | ✅ | ✅ | ✅ | 🚧 | — | — | Java, PS |
 |  | Order Processor | P66 | ✅ | ✅ | — | — | — | — | TS, JS, Java, PS |
@@ -218,7 +226,6 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 55 | 🔌 MCP — APIM Gateway | 1 |
 | 60 | 🤖 AI — Agent | 5 |
 | 61 | 🤖 AI — ChatGPT | 2 |
-| 62 | 🤖 AI — Text Summarize | 2 |
 | 63 | 🤖 AI — LangChain | 1 |
 | 65 | 🔄 Durable Standard — Orchestration | 4 |
 | 66 | 🔄 Durable Standard — Order Processor | 2 |
@@ -228,7 +235,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 75 | 🤝 Agent Framework — Multi-Agent | 1 |
 | 80 | 🔌 Connectors — Office 365 Outlook | 3 |
 | 81 | 🔌 Connectors — SharePoint Online | 3 |
-| | **Total** | **77** |
+| | **Total** | **75** |
 
 ## Language sort order
 

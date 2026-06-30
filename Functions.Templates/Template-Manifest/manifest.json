@@ -1,8 +1,8 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-06-30T21:06:27Z",
+  "generatedAt": "2026-06-30T22:13:05Z",
   "version": "1.9.0",
-  "totalTemplates": 77,
+  "totalTemplates": 75,
   "runtimeVersions": {
     "Python": {
       "supported": [
@@ -1859,74 +1859,6 @@
         "Azure Developer CLI (azd) configuration",
         "Dev Container setup",
         "Test files with sample prompts"
-      ]
-    },
-    {
-      "id": "ai-textsummarize-csharp",
-      "displayName": "Text Summarization using AI (C# + AZD + Bicep)",
-      "shortDescription": "Summarizes text documents using Azure AI Language, EventGrid-sourced BlobTrigger with BlobOutput",
-      "longDescription": "C# Azure Function with a BlobTrigger (EventGrid event source) that reads text documents from Azure Blob Storage, summarizes them using the Azure AI Language (TextAnalytics) service, and writes the summary to an output blob via BlobOutput binding.",
-      "language": "CSharp",
-      "bindingType": "trigger",
-      "resource": "http",
-      "iac": "bicep",
-      "priority": 62,
-      "categories": [
-        "gen-ai"
-      ],
-      "tags": [
-        "AI",
-        "Cognitive Services",
-        "Blob",
-        "Summarization"
-      ],
-      "author": "Paul Yuknewicz",
-      "repositoryUrl": "https://github.com/Azure-Samples/function-csharp-ai-textsummarize",
-      "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.0",
-      "whatsIncluded": [
-        "Blob trigger function",
-        "Azure Cognitive Services integration",
-        "Text summarization processing",
-        "Bicep infrastructure files",
-        "Azure Developer CLI (azd) configuration",
-        "Sample text documents",
-        "VS Code debug configuration",
-        "Dev Container setup"
-      ]
-    },
-    {
-      "id": "ai-textsummarize-python",
-      "displayName": "Text Summarization using AI (Python + AZD + Bicep)",
-      "shortDescription": "Summarizes text documents using Azure AI Language, EventGrid-sourced BlobTrigger with BlobOutput",
-      "longDescription": "Python Azure Function with a BlobTrigger (EventGrid event source) that reads text documents from Azure Blob Storage, summarizes them using the Azure AI Language (TextAnalytics) service, and writes the summary to an output blob via BlobOutput binding.",
-      "language": "Python",
-      "bindingType": "trigger",
-      "resource": "http",
-      "iac": "bicep",
-      "priority": 62,
-      "categories": [
-        "gen-ai"
-      ],
-      "tags": [
-        "AI",
-        "Cognitive Services",
-        "Blob",
-        "Summarization"
-      ],
-      "author": "Paul Yuknewicz",
-      "repositoryUrl": "https://github.com/Azure-Samples/function-python-ai-textsummarize",
-      "folderPath": ".",
-      "gitRef": "refs/heads/main",
-      "whatsIncluded": [
-        "Blob trigger function",
-        "Azure Cognitive Services integration",
-        "Text summarization processing",
-        "Bicep infrastructure files",
-        "Azure Developer CLI (azd) configuration",
-        "Sample text documents",
-        "VS Code debug configuration",
-        "Dev Container setup"
       ]
     },
     {
