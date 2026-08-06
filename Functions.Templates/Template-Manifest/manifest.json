@@ -1,8 +1,8 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-06-30T22:13:05Z",
-  "version": "1.9.0",
-  "totalTemplates": 75,
+  "generatedAt": "2026-08-06T17:33:17Z",
+  "version": "1.10.0",
+  "totalTemplates": 79,
   "runtimeVersions": {
     "Python": {
       "supported": [
@@ -63,13 +63,14 @@
     "Go": {
       "supported": [],
       "preview": [
-        "1.24"
+        "1.0"
       ],
-      "default": "1.24"
+      "default": "1.0"
     }
   },
   "languages": [
     "CSharp",
+    "Go",
     "Java",
     "JavaScript",
     "PowerShell",
@@ -246,6 +247,33 @@
         "Maven build configuration",
         "VS Code debug configuration",
         "Test files for local development"
+      ]
+    },
+    {
+      "id": "http-trigger-go-azd",
+      "displayName": "HTTP Trigger (Go + AZD + Bicep)",
+      "shortDescription": "Accepts GET and POST requests on Flex Consumption with managed identity and optional VNet, deployed via azd",
+      "longDescription": "Build and deploy an Azure Functions app in Go with two HttpTrigger functions: (1) httpget accepts GET requests and returns a greeting, and (2) httppost validates a JSON name and age payload and returns a personalized response. Runs on Flex Consumption with managed identity and optional VNet integration. Deployed with azd.",
+      "language": "Go",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 0,
+      "categories": [
+        "starters",
+        "web-apis"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-go-azd",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "HTTP GET and POST trigger functions",
+        "Native Go worker configuration",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity and optional VNet integration",
+        "VS Code debug configuration"
       ]
     },
     {
@@ -479,6 +507,34 @@
         "azd configuration",
         "VNet integration option",
         "Dev Container setup"
+      ]
+    },
+    {
+      "id": "timer-trigger-go-azd",
+      "displayName": "Timer Trigger (Go + AZD + Bicep)",
+      "shortDescription": "Native Go timer running every 30 minutes on Flex Consumption with optional VNet, deployed via azd",
+      "longDescription": "Build and deploy an Azure Functions app in Go with a scheduledTask TimerTrigger that runs every 30 minutes and logs schedule, invocation, and retry details. Uses the native Go worker and runs on Flex Consumption with managed identity and optional VNet integration. Deployed with azd.",
+      "language": "Go",
+      "bindingType": "trigger",
+      "resource": "timer",
+      "iac": "bicep",
+      "priority": 5,
+      "categories": [
+        "starters"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-go-azd-timer",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "scheduledTask timer trigger function",
+        "Native Go worker configuration",
+        "30-minute NCRONTAB schedule",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity and optional VNet integration",
+        "VS Code debug configuration",
+        "Test files for local development"
       ]
     },
     {
@@ -1583,6 +1639,35 @@
       ]
     },
     {
+      "id": "mcp-server-remote-go",
+      "displayName": "Remote MCP Server (Go + AZD + Bicep)",
+      "shortDescription": "Streamable HTTP MCP server with weather and Blob Storage snippet tools, deployed via azd",
+      "longDescription": "Build and deploy a remote MCP server on Azure Functions in Go. One HttpTrigger endpoint at /api/mcp hosts three tools using the official Model Context Protocol Go SDK: (1) get_weather calls the Open-Meteo API, (2) save_snippet writes text to Azure Blob Storage, and (3) get_snippet reads stored text. Runs on Flex Consumption with managed identity for Blob Storage access. Deployed with azd.",
+      "language": "Go",
+      "bindingType": "trigger",
+      "resource": "MCP",
+      "iac": "bicep",
+      "priority": 50,
+      "categories": [
+        "starters",
+        "gen-ai"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-mcp-go-azd",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "Streamable HTTP MCP endpoint",
+        "Weather lookup MCP tool",
+        "Blob Storage save and retrieve snippet tools",
+        "Official Model Context Protocol Go SDK",
+        "Managed identity authentication",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "VS Code MCP configuration"
+      ]
+    },
+    {
       "id": "mcp-server-apim-python",
       "displayName": "Remote MCP Server with APIM Gateway (Python + AZD + Bicep)",
       "shortDescription": "MCP tools behind API Management gateway with Entra ID and OAuth, uses Blob storage",
@@ -2382,6 +2467,36 @@
         "HTTP endpoints",
         "requirements.txt",
         "README.md"
+      ]
+    },
+    {
+      "id": "agentframework-multi-agent-go",
+      "displayName": "Microsoft Agent Framework Multi-Agent (Go + AZD + Bicep)",
+      "shortDescription": "Single-agent chat and multi-agent NASA briefing with Azure OpenAI and Cosmos DB, deployed via azd",
+      "longDescription": "Build and deploy a Microsoft Agent Framework app on Azure Functions in Go with three HttpTrigger surfaces: (1) chat provides streaming single-agent conversations with NASA tools, (2) ui serves an embedded browser experience, and (3) brief_today runs an editor agent that calls four specialist agents as tools. Uses Azure OpenAI, Cosmos DB conversation persistence, managed identity, and five NASA API tools. Deployed with azd.",
+      "language": "Go",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 75,
+      "categories": [
+        "starters",
+        "gen-ai"
+      ],
+      "author": "Microsoft Agent Framework Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-msft-agent-framework-go-azd",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "Streaming single-agent chat endpoint",
+        "Multi-agent daily briefing endpoint",
+        "Embedded browser UI",
+        "Five NASA API tools",
+        "Azure OpenAI integration",
+        "Cosmos DB conversation persistence",
+        "Managed identity authentication",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
       ]
     },
     {
