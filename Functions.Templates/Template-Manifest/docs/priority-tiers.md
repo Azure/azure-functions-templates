@@ -1,6 +1,6 @@
 # Template Manifest — Priority Tiers (P00–P99)
 
-**Total templates:** 78
+**Total templates:** 79
 **Manifest version:** 1.10.0
 
 ## Design principles
@@ -8,7 +8,7 @@
 1. **Priority is the primary sort key.** Lower number = show first.
 2. **5-slot blocks per Azure resource:** `+0` trigger, `+1` input, `+2` output, `+3` variant, `+4` stub.
 3. **10-slot block for MCP:** `+0` Remote Server, `+1` SDK Hosting, `+2` Tool, `+3` Resource, `+4` Prompt, `+5` APIM Gateway.
-4. **Language sort order (secondary):** .NET (C#) → Python → TypeScript → JavaScript → Java → PowerShell → Go.
+4. **Language sort order (secondary):** .NET (C#) → Python → TypeScript → JavaScript → Java → Go → PowerShell.
    Templates sharing a priority are sorted by this language order by the consumer.
 5. **IaC sort order (tertiary):** 🚧 no AZD → ✅ AZD → 📦 IaC-only.
    no AZD = what VS Code Azure Functions extension generates = the familiar baseline.
@@ -39,7 +39,7 @@
 
 ## Full template listing
 
-Sorted by priority → language order (.NET → Py → TS → JS → Java → PS → Go).
+Sorted by priority → language order (.NET → Py → TS → JS → Java → Go → PS).
 
 | P | Template ID | Lang | Binding | IaC | Was |
 |--:|---|---|---|---|---|
@@ -49,8 +49,8 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 0 | `http-trigger-typescript-azd` | TS | trigger | ✅ bicep | P0 |
 | 0 | `http-trigger-javascript-azd` | JS | trigger | ✅ bicep | P0 |
 | 0 | `http-trigger-java-azd` | Java | trigger | ✅ bicep | P0 |
-| 0 | `http-trigger-powershell-azd` | PS | trigger | ✅ bicep | P0 |
 | 0 | `http-trigger-go-azd` | Go | trigger | ✅ bicep | *new* |
+| 0 | `http-trigger-powershell-azd` | PS | trigger | ✅ bicep | P0 |
 | 3 | `http-trigger-csharp-terraform` | .NET | trigger | 📦 terraform | P0→3 |
 | | **⏰ Timer** | | | | |
 | 5 | `timer-trigger-csharp-azd` | .NET | trigger | ✅ bicep | P0→5 |
@@ -58,6 +58,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → PS
 | 5 | `timer-trigger-typescript-azd` | TS | trigger | ✅ bicep | P0→5 |
 | 5 | `timer-trigger-javascript-azd` | JS | trigger | ✅ bicep | P0→5 |
 | 5 | `timer-trigger-java-azd` | Java | trigger | ✅ bicep | P0→5 |
+| 5 | `timer-trigger-go-azd` | Go | trigger | ✅ bicep | *new* |
 | 5 | `timer-trigger-powershell-azd` | PS | trigger | ✅ bicep | P0→5 |
 | | **📦 Blob Storage** | | | | |
 | 10 | `blob-eventgrid-trigger-csharp-azd` | .NET | trigger | ✅ bicep | P0→10 |
@@ -160,58 +161,58 @@ These templates were removed because their source repositories were **archived**
 
 ### Azure resource templates (P00–P44)
 
-| Resource | Binding | .NET | Py | TS | JS | Java | PS | Go | Gaps |
+| Resource | Binding | .NET | Py | TS | JS | Java | Go | PS | Gaps |
 |---|---|---|---|---|---|---|---|---|---|
 | HTTP | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
-| Timer | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | Go |
-| Blob | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | Go |
-| | Input | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | — | *no dedicated templates yet* |
+| Timer | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
+| Blob | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | Go |
+| | Input | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | — | 🔗+🚧 | *no dedicated templates yet* |
 | | Output | — | — | — | — | — | — | — | *no dedicated templates yet* |
-| Event Hub | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | Go |
+| Event Hub | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | Go |
 | | Output | — | 🔗+🚧 | 🔗+🚧 | — | — | — | — | *no dedicated templates yet* |
 | Event Grid | *(reserved)* | — | — | — | — | — | — | — | *no dedicated templates yet* |
 | Queue | *(reserved)* | — | — | — | — | — | — | — | *no dedicated templates yet* |
-| Service Bus | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | Go |
-| Cosmos DB | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | Go |
+| Service Bus | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | Go |
+| Cosmos DB | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | Go |
 | | Input | — | — | — | — | — | — | — | *no dedicated templates yet* |
 | | Output | — | — | — | — | — | — | — | *no dedicated templates yet* |
-| SQL | Trigger | ✅ | ✅ | ✅ | — | — | — | — | JS, Java, PS, Go |
+| SQL | Trigger | ✅ | ✅ | ✅ | — | — | — | — | JS, Java, Go, PS |
 | | Input | — | — | — | — | — | — | — | *no dedicated templates yet* |
 | | Output | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | — | — | — | — | *no dedicated templates yet* |
 | Redis | *(reserved)* | — | — | — | — | — | — | — | *no dedicated templates yet* |
 
 ### MCP templates (P50–P59)
 
-| Sub-type | P | .NET | Py | TS | JS | Java | PS | Go | Gaps |
+| Sub-type | P | .NET | Py | TS | JS | Java | Go | PS | Gaps |
 |---|---|---|---|---|---|---|---|---|---|
-| Remote Server | P50 | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | PS |
+| Remote Server | P50 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | PS |
 | SDK Hosting | P51 | — | — | — | — | — | — | — | *removed (repos archived)* |
 | Tool | P52 | 🔗 | 🔗 | 🔗 | — | 🔗 | — | — | *no dedicated templates yet* |
 | Resource | P53 | 🔗 | 🔗 | 🔗 | — | 🔗 | — | — | *no dedicated templates yet* |
 | Prompt | P54 | 🔗 | — | — | — | — | — | — | *no dedicated templates yet* |
-| APIM Gateway | P55 | — | ✅ | — | — | — | — | — | .NET, TS, JS, Java, PS, Go |
+| APIM Gateway | P55 | — | ✅ | — | — | — | — | — | .NET, TS, JS, Java, Go, PS |
 
 ### AI · Durable · Agent Framework (P60–P79)
 
-| Category | Sub-type | P | .NET | Py | TS | JS | Java | PS | Go | Gaps |
+| Category | Sub-type | P | .NET | Py | TS | JS | Java | Go | PS | Gaps |
 |---|---|---|---|---|---|---|---|---|---|---|
-| AI | Agent | P60 | ✅ | ✅ (2) | ✅ | — | ✅ | — | — | JS, PS, Go |
-|  | ChatGPT | P61 | — | ✅ | — | ✅ | — | — | — | .NET, TS, Java, PS, Go |
+| AI | Agent | P60 | ✅ | ✅ (2) | ✅ | — | ✅ | — | — | JS, Go, PS |
+|  | ChatGPT | P61 | — | ✅ | — | ✅ | — | — | — | .NET, TS, Java, Go, PS |
 |  | Text Summarize | P62 | — | — | — | — | — | — | — | *removed (repos archived)* |
-|  | LangChain | P63 | — | ✅ | — | — | — | — | — | .NET, TS, JS, Java, PS, Go |
-| Durable | Orchestration | P65 | ✅ | ✅ | ✅ | 🚧 | — | — | — | Java, PS, Go |
-|  | Order Processor | P66 | ✅ | ✅ | — | — | — | — | — | TS, JS, Java, PS, Go |
-|  | Patterns | P70 | ✅ | — | — | — | — | — | — | Py, TS, JS, Java, PS, Go |
-|  | Scenarios | P71 | 🚧 | — | — | — | — | — | — | Py, TS, JS, Java, PS, Go |
-|  | PDF Summarizer | P72 | 🚧 | 🚧 | — | — | — | — | — | TS, JS, Java, PS, Go |
-| Agent Fw | Multi-Agent | P75 | — | 🚧 | — | — | — | — | ✅ | .NET, TS, JS, Java, PS |
+|  | LangChain | P63 | — | ✅ | — | — | — | — | — | .NET, TS, JS, Java, Go, PS |
+| Durable | Orchestration | P65 | ✅ | ✅ | ✅ | 🚧 | — | — | — | Java, Go, PS |
+|  | Order Processor | P66 | ✅ | ✅ | — | — | — | — | — | TS, JS, Java, Go, PS |
+|  | Patterns | P70 | ✅ | — | — | — | — | — | — | Py, TS, JS, Java, Go, PS |
+|  | Scenarios | P71 | 🚧 | — | — | — | — | — | — | Py, TS, JS, Java, Go, PS |
+|  | PDF Summarizer | P72 | 🚧 | 🚧 | — | — | — | — | — | TS, JS, Java, Go, PS |
+| Agent Fw | Multi-Agent | P75 | — | 🚧 | — | — | — | ✅ | — | .NET, TS, JS, Java, PS |
 
 ### Connectors (P80–P89)
 
-| Sub-type | P | .NET | Py | TS | JS | Java | PS | Go | Gaps |
+| Sub-type | P | .NET | Py | TS | JS | Java | Go | PS | Gaps |
 |---|---|---|---|---|---|---|---|---|---|
-| Office 365 Outlook | P80 | ✅ | ✅ | ✅ | — | — | — | — | JS, Java, PS, Go |
-| SharePoint Online | P81 | ✅ | ✅ | ✅ | — | — | — | — | JS, Java, PS, Go |
+| Office 365 Outlook | P80 | ✅ | ✅ | ✅ | — | — | — | — | JS, Java, Go, PS |
+| SharePoint Online | P81 | ✅ | ✅ | ✅ | — | — | — | — | JS, Java, Go, PS |
 
 ## Summary
 
@@ -219,7 +220,7 @@ These templates were removed because their source repositories were **archived**
 |--:|---|--:|
 | 00 | ⚡ HTTP — Trigger | 7 |
 | 03 | ⚡ HTTP — Variant (Terraform) | 1 |
-| 05 | ⏰ Timer — Trigger | 6 |
+| 05 | ⏰ Timer — Trigger | 7 |
 | 10 | 🪣 Blob Storage — Trigger | 6 |
 | 15 | 📡 Event Hub — Trigger | 6 |
 | 30 | 🚌 Service Bus — Trigger | 6 |
@@ -238,7 +239,7 @@ These templates were removed because their source repositories were **archived**
 | 75 | 🤝 Agent Framework — Multi-Agent | 2 |
 | 80 | 🔌 Connectors — Office 365 Outlook | 3 |
 | 81 | 🔌 Connectors — SharePoint Online | 3 |
-| | **Total** | **78** |
+| | **Total** | **79** |
 
 ## Language sort order
 
@@ -251,8 +252,8 @@ When templates share the same priority, sort by:
 | 3 | TypeScript | Modern JS with types |
 | 4 | JavaScript | Broad web developer reach |
 | 5 | Java | Enterprise |
-| 6 | PowerShell | IT automation / scripting |
-| 7 | Go | Cloud-native services and tooling |
+| 6 | Go | Cloud-native services and tooling |
+| 7 | PowerShell | IT automation / scripting |
 
 ## Schema change required
 

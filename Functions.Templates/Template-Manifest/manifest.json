@@ -1,8 +1,8 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-07-30T18:16:05Z",
+  "generatedAt": "2026-08-06T17:33:17Z",
   "version": "1.10.0",
-  "totalTemplates": 78,
+  "totalTemplates": 79,
   "runtimeVersions": {
     "Python": {
       "supported": [
@@ -250,6 +250,33 @@
       ]
     },
     {
+      "id": "http-trigger-go-azd",
+      "displayName": "HTTP Trigger (Go + AZD + Bicep)",
+      "shortDescription": "Accepts GET and POST requests on Flex Consumption with managed identity and optional VNet, deployed via azd",
+      "longDescription": "Build and deploy an Azure Functions app in Go with two HttpTrigger functions: (1) httpget accepts GET requests and returns a greeting, and (2) httppost validates a JSON name and age payload and returns a personalized response. Runs on Flex Consumption with managed identity and optional VNet integration. Deployed with azd.",
+      "language": "Go",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 0,
+      "categories": [
+        "starters",
+        "web-apis"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-go-azd",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "HTTP GET and POST trigger functions",
+        "Native Go worker configuration",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity and optional VNet integration",
+        "VS Code debug configuration"
+      ]
+    },
+    {
       "id": "http-trigger-powershell-azd",
       "displayName": "HTTP Trigger (PowerShell + AZD + Bicep)",
       "shortDescription": "Flex Consumption with managed identity and VNet, deployed via azd",
@@ -280,33 +307,6 @@
         "Azure Developer CLI (azd) configuration",
         "VS Code debug configuration",
         "Test files for local development"
-      ]
-    },
-    {
-      "id": "http-trigger-go-azd",
-      "displayName": "HTTP Trigger (Go + AZD + Bicep)",
-      "shortDescription": "Accepts GET and POST requests on Flex Consumption with managed identity and optional VNet, deployed via azd",
-      "longDescription": "Build and deploy an Azure Functions app in Go with two HttpTrigger functions: (1) httpget accepts GET requests and returns a greeting, and (2) httppost validates a JSON name and age payload and returns a personalized response. Runs on Flex Consumption with managed identity and optional VNet integration. Deployed with azd.",
-      "language": "Go",
-      "bindingType": "trigger",
-      "resource": "http",
-      "iac": "bicep",
-      "priority": 0,
-      "categories": [
-        "starters",
-        "web-apis"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-go-azd",
-      "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.0",
-      "whatsIncluded": [
-        "HTTP GET and POST trigger functions",
-        "Native Go worker configuration",
-        "Bicep infrastructure files",
-        "Azure Developer CLI (azd) configuration",
-        "Managed identity and optional VNet integration",
-        "VS Code debug configuration"
       ]
     },
     {
@@ -507,6 +507,34 @@
         "azd configuration",
         "VNet integration option",
         "Dev Container setup"
+      ]
+    },
+    {
+      "id": "timer-trigger-go-azd",
+      "displayName": "Timer Trigger (Go + AZD + Bicep)",
+      "shortDescription": "Native Go timer running every 30 minutes on Flex Consumption with optional VNet, deployed via azd",
+      "longDescription": "Build and deploy an Azure Functions app in Go with a scheduledTask TimerTrigger that runs every 30 minutes and logs schedule, invocation, and retry details. Uses the native Go worker and runs on Flex Consumption with managed identity and optional VNet integration. Deployed with azd.",
+      "language": "Go",
+      "bindingType": "trigger",
+      "resource": "timer",
+      "iac": "bicep",
+      "priority": 5,
+      "categories": [
+        "starters"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-go-azd-timer",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "scheduledTask timer trigger function",
+        "Native Go worker configuration",
+        "30-minute NCRONTAB schedule",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity and optional VNet integration",
+        "VS Code debug configuration",
+        "Test files for local development"
       ]
     },
     {
