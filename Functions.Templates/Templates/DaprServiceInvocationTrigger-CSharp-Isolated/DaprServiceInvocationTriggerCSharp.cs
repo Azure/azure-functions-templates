@@ -1,12 +1,8 @@
 namespace Company.Function
 {
-    using Microsoft.Azure.Functions.Extensions.Dapr.Core;
     using Microsoft.Azure.Functions.Worker;
     using Microsoft.Azure.Functions.Worker.Extensions.Dapr;
-    using Microsoft.Azure.Functions.Worker.Http;
     using Microsoft.Extensions.Logging;
-    using System.IO;
-    using System.Threading.Tasks;
 
     public static class DaprServiceInvocationTriggerCSharp
     {
@@ -37,31 +33,6 @@ namespace Company.Function
             var log = functionContext.GetLogger("DaprServiceInvocationTriggerCSharp");
             log.LogInformation("Azure function triggered by Dapr Service Invocation Trigger.");
             log.LogInformation($"Dapr service invocation trigger payload: {payload}");
-        }
-    }
-
-    public static class InvokeOutputBinding
-    {
-        /// <summary>
-        /// Sample to use a Dapr Invoke Output Binding to perform a Dapr Server Invocation operation hosted in another Darp'd app.
-        /// Here this function acts like a proxy
-        /// </summary>
-        [Function("InvokeOutputBinding")]
-        [DaprInvokeOutput(AppId = "{appId}", MethodName = "{methodName}", HttpVerb = "post")]
-        public static async Task<InvokeMethodParameters> Run(
-            [HttpTrigger(AuthorizationLevel.AuthLevelValue, "get", "post", Route = "invoke/{appId}/{methodName}")] HttpRequestData req, FunctionContext functionContext)
-        {
-            var log = functionContext.GetLogger("InvokeOutputBinding");
-            log.LogInformation("C# HTTP trigger function processed a request.");
-
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-
-            var outputContent = new InvokeMethodParameters
-            {
-                Body = requestBody
-            };
-
-            return outputContent;
         }
     }
 }
