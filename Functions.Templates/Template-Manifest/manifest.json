@@ -1,7 +1,7 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-08-06T17:33:17Z",
-  "version": "1.10.0",
+  "generatedAt": "2026-09-04T20:18:54Z",
+  "version": "1.10.1",
   "totalTemplates": 79,
   "runtimeVersions": {
     "Python": {
@@ -1773,9 +1773,9 @@
     },
     {
       "id": "ai-serverless-agents-python",
-      "displayName": "Serverless Agents (Python + AZD + Bicep)",
-      "shortDescription": "Markdown-first serverless agents with chat, timer trigger, sandboxed Python execution, Microsoft Foundry, and Microsoft 365 Outlook connector tools, deployed via azd",
-      "longDescription": "Build and deploy serverless agents on Azure Functions in Python using the Azure Functions serverless agents runtime, a markdown-first programming model for building AI agents as function apps. Includes a chat agent with built-in debug chat UI, chat APIs, and MCP endpoint, plus a timer-triggered agent that gathers Microsoft blog posts, summarizes them, and can email the digest through MCP tools from a managed MCP server for a Microsoft 365 Outlook connector. Provisions a Flex Consumption function app, Microsoft Foundry project and model deployment, Azure Container Apps dynamic session pool, Connector Namespace resources when email delivery is enabled, managed identity, storage, and monitoring. Deployed with azd.",
+      "displayName": "Azure Functions Hosted Skills QuickStart (Python + AZD + Bicep)",
+      "shortDescription": "Markdown-first Azure Functions hosted skills with chat and timer triggers, sandboxed Python execution, Microsoft Foundry, and Microsoft 365 Outlook connector tools, deployed via azd",
+      "longDescription": "Build and deploy Azure Functions hosted skills in Python using the Azure Functions agents runtime, a markdown-first programming model for building cloud-hosted, event-driven intelligent capabilities. Includes a chat hosted skill with built-in debug chat UI, chat APIs, and MCP endpoint, plus a timer-triggered hosted skill that gathers Microsoft blog posts, summarizes them, and can email the digest through MCP tools from a managed MCP server for a Microsoft 365 Outlook connector. Provisions a Flex Consumption function app, Microsoft Foundry project and model deployment, Azure Container Apps dynamic session pool, Connector Namespace resources when email delivery is enabled, managed identity, storage, and monitoring. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
       "resource": "http",
@@ -1787,8 +1787,7 @@
       ],
       "tags": [
         "AI",
-        "Agents",
-        "Serverless",
+        "Hosted Skills",
         "Microsoft Foundry",
         "MCP",
         "AZD"
@@ -1798,9 +1797,9 @@
       "folderPath": ".",
       "gitRef": "refs/tags/v1.0.0",
       "whatsIncluded": [
-        "Chat agent defined in .agent.md with built-in debug chat UI and chat APIs",
-        "Timer-triggered Microsoft blog summary agent",
-        "Azure Functions serverless agents runtime",
+        "Chat hosted skill defined in .agent.md with built-in debug chat UI and chat APIs",
+        "Timer-triggered Microsoft blog summary hosted skill",
+        "Azure Functions agents runtime",
         "Sandboxed Python code execution using Azure Container Apps dynamic sessions",
         "Microsoft Foundry project and model deployment",
         "Optional Connector Namespace and managed MCP server for Microsoft 365 Outlook",
