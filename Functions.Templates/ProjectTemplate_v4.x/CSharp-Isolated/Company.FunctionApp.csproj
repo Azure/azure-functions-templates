@@ -1,9 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="ProjectSdkValue">
 
   <PropertyGroup>
     <TargetFramework>TargetFrameworkValue</TargetFramework>
+<!--#if (!Net11)-->
     <AzureFunctionsVersion>AzureFunctionsVersionValue</AzureFunctionsVersion>
     <OutputType>Exe</OutputType>
+<!--#endif -->
 <!--#if (NetCore)-->
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -12,17 +14,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-  <!--#if (NetCore)-->
+<!--#if (NetCore && !Net11)-->
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-  <!--#endif -->
+<!--#endif -->
     <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="FunctionsWorkerPackageVersionValue" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.OpenTelemetry" Version="1.2.0" />
     <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.15.3" />
     <PackageReference Include="Azure.Monitor.OpenTelemetry.Exporter" Version="1.7.0" />
-  <!--#if (NetCore)-->
+<!--#if (NetCore)-->
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore" Version="FunctionsAspNetCorePackageVersionValue" />
-  <!--#endif -->
+<!--#endif -->
+<!--#if (!Net11)-->
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="FunctionsSdkPackageVersionValue" />
+<!--#endif -->
   </ItemGroup>
 
 </Project>

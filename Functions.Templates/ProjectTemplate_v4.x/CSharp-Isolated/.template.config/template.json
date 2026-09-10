@@ -44,6 +44,10 @@
                 "description": "Target .NET 10 (Preview)"
                 },
                 {
+                "choice": "net11.0",
+                "description": "Target .NET 11 (Preview)"
+                },
+                {
                 "choice": "net48",
                 "description": "Target .NET Framework 4.8"
                 }
@@ -55,7 +59,11 @@
         },
         "NetCore": {
             "type": "computed",
-            "value": "(Framework == \"net10.0\" || Framework == \"net9.0\" || Framework == \"net8.0\" || Framework == \"net7.0\" || Framework == \"net6.0\")"
+            "value": "(Framework == \"net11.0\" || Framework == \"net10.0\" || Framework == \"net9.0\" || Framework == \"net8.0\" || Framework == \"net7.0\" || Framework == \"net6.0\")"
+        },
+        "Net11": {
+            "type": "computed",
+            "value": "(Framework == \"net11.0\")"
         },
         "FrameworkShouldUseV1Dependencies": {
             "type": "computed",
@@ -125,7 +133,7 @@
                         "value": "1.3.3"
                     },
                     {
-                        "value": "2.1.0"
+                        "value": "2.1.1"
                     }
                 ]
             }
@@ -143,6 +151,23 @@
                     },
                     {
                         "value": "2.0.7"
+                    }
+                ]
+            }
+        },
+        "ProjectSdkValue": {
+            "type": "generated",
+            "generator": "switch",
+            "replaces": "ProjectSdkValue",
+            "parameters": {
+                "datatype": "string",
+                "cases": [
+                    {
+                        "condition": "Net11",
+                        "value": "Azure.Functions.Sdk/1.0.1"
+                    },
+                    {
+                        "value": "Microsoft.NET.Sdk"
                     }
                 ]
             }
