@@ -61,7 +61,7 @@
             "type": "computed",
             "value": "(Framework == \"net11.0\" || Framework == \"net10.0\" || Framework == \"net9.0\" || Framework == \"net8.0\" || Framework == \"net7.0\" || Framework == \"net6.0\")"
         },
-        "Net11": {
+        "UsesAzureFunctionsSdk": {
             "type": "computed",
             "value": "(Framework == \"net11.0\")"
         },
@@ -163,7 +163,7 @@
                 "datatype": "string",
                 "cases": [
                     {
-                        "condition": "Net11",
+                        "condition": "UsesAzureFunctionsSdk",
                         "value": "Azure.Functions.Sdk/1.0.1"
                     },
                     {
