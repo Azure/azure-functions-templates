@@ -1,7 +1,7 @@
 {
   "defaultFunctionName": "EventHubTrigger",
   "description": "$EventHubTrigger_description",
-  "name": "Azure Event Hub trigger",
+  "name": "$AzureEventHubTrigger_name",
   "language": "C#",
   "category": [
     "$temp_category_core",
@@ -16,7 +16,8 @@
   ],
   "extensions": [
     {
-      "id": "Microsoft.Azure.WebJobs.Extensions.EventHubs", "version": "4.1.1"
+      "id": "Microsoft.Azure.WebJobs.Extensions.EventHubs",
+      "version": "4.1.1"
     }
   ]
 }
