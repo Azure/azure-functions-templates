@@ -1,6 +1,6 @@
 # Template Manifest — Priority Tiers (P00–P99)
 
-**Total templates:** 79
+**Total templates:** 76
 **Manifest version:** 1.10.0
 
 ## Design principles
@@ -29,7 +29,7 @@
 | P40–44 | 🗄️ SQL | Trigger · Input · Output | `P40` Trigger<br>`P41` Input *(future)*<br>`P42` Output *(future)* |
 | P45–49 | 🔴 Redis *(reserved)* | Trigger · Input · Output | `P45` Trigger<br>`P46` Input<br>`P47` Output |
 | P50–59 | 🔌 MCP *(10-slot block)* | Trigger (Tool / Resource / Prompt) | `P50` Remote Server<br>`P51` SDK Hosting *(removed — repos archived)*<br>`P52` Tool<br>`P53` Resource<br>`P54` Prompt<br>`P55` APIM Gateway<br>`P56` *(reserved)*<br>`P57` *(reserved)*<br>`P58` *(reserved)*<br>`P59` *(reserved)* |
-| P60–64 | 🤖 AI | — | `P60` Agent<br>`P61` ChatGPT<br>`P62` Text Summarize *(removed — repos archived)*<br>`P63` LangChain |
+| P60–64 | 🤖 AI | — | `P60` Agent<br>`P61` ChatGPT *(removed — repos archived)*<br>`P62` Text Summarize *(removed — repos archived)*<br>`P63` LangChain *(removed — repo archived)* |
 | P65–69 | 🔄 Durable Standard | Orchestration | `P65` Orchestration<br>`P66` Order Processor |
 | P70–74 | 🔄 Durable Advanced | Orchestration | `P70` Patterns (saga / tracing / payload)<br>`P71` Scenarios (travel / aspire)<br>`P72` PDF Summarizer |
 | P75–79 | 🤝 Agent Framework | Orchestration | `P75` Multi-Agent |
@@ -106,9 +106,6 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → Go
 | 60 | `ai-serverless-agents-python` | Py | trigger | ✅ bicep | *new* |
 | 60 | `ai-agent-typescript` | TS | trigger | ✅ bicep | P0→60 |
 | 60 | `ai-agent-java` | Java | trigger | ✅ bicep | P0→60 |
-| 61 | `ai-chatgpt-python` | Py | trigger | ✅ bicep | P1→61 |
-| 61 | `ai-chatgpt-javascript` | JS | trigger | ✅ bicep | P1→61 |
-| 63 | `ai-langchain-python` | Py | trigger | ✅ bicep | P2→63 |
 | | **🔄 Durable Standard** | | | | |
 | 65 | `durable-orchestrator-csharp-azd` | .NET | orchestration | ✅ bicep | *new* |
 | 65 | `durable-orchestrator-python-azd` | Py | orchestration | ✅ bicep | *new* |
@@ -143,8 +140,10 @@ These templates were removed because their source repositories were **archived**
 | Removed template(s) | P | Archived repo(s) |
 |---|--:|---|
 | `mcp-sdk-hosting-csharp` / `-python` / `-typescript` / `-java` | P51 | `Azure-Samples/mcp-sdk-functions-hosting-{dotnet,python,node,java}` |
+| `ai-chatgpt-python` / `ai-chatgpt-javascript` | P61 | `Azure-Samples/function-{python,javascript}-ai-openai-chatgpt` |
 | `ai-textsummarize-csharp` | P62 | `Azure-Samples/function-csharp-ai-textsummarize` |
 | `ai-textsummarize-python` | P62 | `Azure-Samples/function-python-ai-textsummarize` |
+| `ai-langchain-python` | P63 | `Azure-Samples/function-python-ai-langchain` |
 
 ## Coverage matrix
 
@@ -197,9 +196,9 @@ These templates were removed because their source repositories were **archived**
 | Category | Sub-type | P | .NET | Py | TS | JS | Java | Go | PS | Gaps |
 |---|---|---|---|---|---|---|---|---|---|---|
 | AI | Agent | P60 | ✅ | ✅ (2) | ✅ | — | ✅ | — | — | JS, Go, PS |
-|  | ChatGPT | P61 | — | ✅ | — | ✅ | — | — | — | .NET, TS, Java, Go, PS |
+|  | ChatGPT | P61 | — | — | — | — | — | — | — | *removed (repos archived)* |
 |  | Text Summarize | P62 | — | — | — | — | — | — | — | *removed (repos archived)* |
-|  | LangChain | P63 | — | ✅ | — | — | — | — | — | .NET, TS, JS, Java, Go, PS |
+|  | LangChain | P63 | — | — | — | — | — | — | — | *removed (repo archived)* |
 | Durable | Orchestration | P65 | ✅ | ✅ | ✅ | 🚧 | — | — | — | Java, Go, PS |
 |  | Order Processor | P66 | ✅ | ✅ | — | — | — | — | — | TS, JS, Java, Go, PS |
 |  | Patterns | P70 | ✅ | — | — | — | — | — | — | Py, TS, JS, Java, Go, PS |
@@ -229,8 +228,6 @@ These templates were removed because their source repositories were **archived**
 | 50 | 🔌 MCP — Remote Server | 6 |
 | 55 | 🔌 MCP — APIM Gateway | 1 |
 | 60 | 🤖 AI — Agent | 5 |
-| 61 | 🤖 AI — ChatGPT | 2 |
-| 63 | 🤖 AI — LangChain | 1 |
 | 65 | 🔄 Durable Standard — Orchestration | 4 |
 | 66 | 🔄 Durable Standard — Order Processor | 2 |
 | 70 | 🔄 Durable Advanced — Patterns (saga / tracing / payload) | 4 |
@@ -239,7 +236,7 @@ These templates were removed because their source repositories were **archived**
 | 75 | 🤝 Agent Framework — Multi-Agent | 2 |
 | 80 | 🔌 Connectors — Office 365 Outlook | 3 |
 | 81 | 🔌 Connectors — SharePoint Online | 3 |
-| | **Total** | **79** |
+| | **Total** | **76** |
 
 ## Language sort order
 

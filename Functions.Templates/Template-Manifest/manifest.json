@@ -1,8 +1,8 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-08-06T17:33:17Z",
+  "generatedAt": "2026-10-01T04:56:22Z",
   "version": "1.10.0",
-  "totalTemplates": 79,
+  "totalTemplates": 76,
   "runtimeVersions": {
     "Python": {
       "supported": [
@@ -171,7 +171,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-typescript-azd",
       "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.0",
+      "gitRef": "refs/tags/v1.0.1",
       "whatsIncluded": [
         "HTTP trigger functions (GET and POST)",
         "Bicep infrastructure files",
@@ -861,7 +861,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-typescript-azd-eventhub",
       "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.0",
+      "gitRef": "refs/tags/v1.0.1",
       "whatsIncluded": [
         "Event Hub trigger function",
         "Event Hub output binding",
@@ -896,7 +896,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-javascript-azd-eventhub",
       "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.0",
+      "gitRef": "refs/tags/v1.0.1",
       "whatsIncluded": [
         "Event Hub trigger function",
         "Event Hub output binding",
@@ -1256,7 +1256,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-typescript-azd-cosmosdb",
       "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.0",
+      "gitRef": "refs/tags/v1.0.1",
       "whatsIncluded": [
         "Cosmos DB trigger function",
         "Bicep infrastructure",
@@ -1878,105 +1878,6 @@
         "Azure Developer CLI (azd) configuration",
         "Flex Consumption hosting",
         "Dev Container setup"
-      ]
-    },
-    {
-      "id": "ai-chatgpt-python",
-      "displayName": "Chat using ChatGPT (Python + AZD + Bicep)",
-      "shortDescription": "ChatGPT chatbot with OpenAI assistant bindings and Blob state management",
-      "longDescription": "Python Azure Function with an HTTP trigger, OpenAI TextCompletionInput binding for prompt completion, and AssistantCreate/AssistantPost/AssistantQuery bindings for managing conversation state stored in Azure Blob Storage. Builds a ChatGPT-style chatbot with persistent multi-turn conversations.",
-      "language": "Python",
-      "bindingType": "trigger",
-      "resource": "http",
-      "iac": "bicep",
-      "priority": 61,
-      "categories": [
-        "gen-ai"
-      ],
-      "tags": [
-        "AI",
-        "OpenAI",
-        "ChatGPT",
-        "HTTP"
-      ],
-      "author": "Paul Yuknewicz",
-      "repositoryUrl": "https://github.com/Azure-Samples/function-python-ai-openai-chatgpt",
-      "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.0",
-      "whatsIncluded": [
-        "Ask and Chat HTTP functions",
-        "Azure OpenAI integration",
-        "Blob storage for conversation state",
-        "Bicep infrastructure files",
-        "Azure Developer CLI (azd) configuration",
-        "Dev Container setup",
-        "Test files with sample prompts"
-      ]
-    },
-    {
-      "id": "ai-chatgpt-javascript",
-      "displayName": "Chat using ChatGPT (JavaScript + AZD + Bicep)",
-      "shortDescription": "ChatGPT chatbot with OpenAI assistant bindings and Blob state management",
-      "longDescription": "JavaScript Azure Function with an HTTP trigger, OpenAI TextCompletionInput binding for prompt completion, and AssistantCreate/AssistantPost/AssistantQuery bindings for managing conversation state stored in Azure Blob Storage. Builds a ChatGPT-style chatbot with persistent multi-turn conversations.",
-      "language": "JavaScript",
-      "bindingType": "trigger",
-      "resource": "http",
-      "iac": "bicep",
-      "priority": 61,
-      "categories": [
-        "gen-ai"
-      ],
-      "tags": [
-        "AI",
-        "OpenAI",
-        "ChatGPT",
-        "HTTP"
-      ],
-      "author": "Paul Yuknewicz",
-      "repositoryUrl": "https://github.com/Azure-Samples/function-javascript-ai-openai-chatgpt",
-      "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.0",
-      "whatsIncluded": [
-        "Ask and Chat HTTP functions",
-        "Azure OpenAI integration",
-        "Blob storage for conversation state",
-        "Bicep infrastructure files",
-        "Azure Developer CLI (azd) configuration",
-        "Dev Container setup",
-        "Test files with sample prompts"
-      ]
-    },
-    {
-      "id": "ai-langchain-python",
-      "displayName": "LangChain with OpenAI (Python + AZD + Bicep)",
-      "shortDescription": "Uses LangChain SDK with Azure OpenAI and Entra ID auth via DefaultAzureCredential",
-      "longDescription": "Python Azure Function with an HTTP trigger that uses the LangChain SDK for prompt templates and chain-of-thought processing against Azure OpenAI. Authenticates to Azure OpenAI via DefaultAzureCredential with Entra ID. No additional input/output bindings.",
-      "language": "Python",
-      "bindingType": "trigger",
-      "resource": "http",
-      "iac": "bicep",
-      "priority": 63,
-      "categories": [
-        "gen-ai"
-      ],
-      "tags": [
-        "AI",
-        "OpenAI",
-        "Langchain",
-        "HTTP"
-      ],
-      "author": "Paul Yuknewicz",
-      "repositoryUrl": "https://github.com/Azure-Samples/function-python-ai-langchain",
-      "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.0",
-      "whatsIncluded": [
-        "LangChain integration",
-        "Azure OpenAI integration",
-        "HTTP trigger functions",
-        "Bicep infrastructure files",
-        "Azure Developer CLI (azd) configuration",
-        "Dev Container setup",
-        "Test files for local development"
       ]
     },
     {
