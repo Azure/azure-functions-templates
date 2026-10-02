@@ -1,7 +1,7 @@
 # Template Manifest — Priority Tiers (P00–P99)
 
-**Total templates:** 79
-**Manifest version:** 1.10.0
+**Total templates:** 86
+**Manifest version:** 1.13.0
 
 ## Design principles
 
@@ -20,12 +20,12 @@
 |---|---|---|---|
 | P00–04 | ⚡ HTTP | Trigger · Output | `P00` Trigger<br>`P01` Input *(N/A)*<br>`P02` Output *(future)*<br>`P03` Variant (Terraform)<br>`P04` Stub |
 | P05–09 | ⏰ Timer | Trigger only | `P05` Trigger |
-| P10–14 | 🪣 Blob Storage | Trigger · Input · Output | `P10` Trigger<br>`P11` Input *(future)*<br>`P12` Output *(future)* |
-| P15–19 | 📡 Event Hub | Trigger · Output | `P15` Trigger<br>`P16` Output *(future)* |
+| P10–14 | 🪣 Blob Storage | Trigger · Input · Output | `P10` Trigger + Input (SDK type bindings)<br>`P11` Input *(future)*<br>`P12` Output *(future)*<br>`P13` Variant (Event Grid trigger quickstarts) |
+| P15–19 | 📡 Event Hub | Trigger · Output | `P15` Trigger (SDK type binding)<br>`P16` Output *(future)*<br>`P18` Variant (Event Hub trigger quickstarts) |
 | P20–24 | 📣 Event Grid *(reserved)* | Trigger · Output | `P20` Trigger<br>`P21` Output |
 | P25–29 | 📬 Queue Storage *(reserved)* | Trigger · Output | `P25` Trigger<br>`P26` Output |
 | P30–34 | 🚌 Service Bus | Trigger · Output | `P30` Trigger<br>`P31` Output |
-| P35–39 | 🌐 Cosmos DB | Trigger · Input · Output | `P35` Trigger<br>`P36` Input *(future)*<br>`P37` Output *(future)* |
+| P35–39 | 🌐 Cosmos DB | Trigger · Input · Output | `P35` Trigger<br>`P36` Input (SDK type bindings)<br>`P37` Output *(future)* |
 | P40–44 | 🗄️ SQL | Trigger · Input · Output | `P40` Trigger<br>`P41` Input *(future)*<br>`P42` Output *(future)* |
 | P45–49 | 🔴 Redis *(reserved)* | Trigger · Input · Output | `P45` Trigger<br>`P46` Input<br>`P47` Output |
 | P50–59 | 🔌 MCP *(10-slot block)* | Trigger (Tool / Resource / Prompt) | `P50` Remote Server<br>`P51` SDK Hosting *(removed — repos archived)*<br>`P52` Tool<br>`P53` Resource<br>`P54` Prompt<br>`P55` APIM Gateway<br>`P56` *(reserved)*<br>`P57` *(reserved)*<br>`P58` *(reserved)*<br>`P59` *(reserved)* |
@@ -61,19 +61,23 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → Go
 | 5 | `timer-trigger-go-azd` | Go | trigger | ✅ bicep | *new* |
 | 5 | `timer-trigger-powershell-azd` | PS | trigger | ✅ bicep | P0→5 |
 | | **📦 Blob Storage** | | | | |
-| 10 | `blob-eventgrid-trigger-csharp-azd` | .NET | trigger | ✅ bicep | P0→10 |
-| 10 | `blob-eventgrid-trigger-python-azd` | Py | trigger | ✅ bicep | P0→10 |
-| 10 | `blob-eventgrid-trigger-typescript-azd` | TS | trigger | ✅ bicep | P0→10 |
-| 10 | `blob-eventgrid-trigger-javascript-azd` | JS | trigger | ✅ bicep | P0→10 |
-| 10 | `blob-eventgrid-trigger-java-azd` | Java | trigger | ✅ bicep | P0→10 |
-| 10 | `blob-eventgrid-trigger-powershell-azd` | PS | trigger | ✅ bicep | P0→10 |
+| 10 | `blob-sdk-bindings-blobclient-python` | Py | trigger | ✅ bicep | *new* |
+| 10 | `blob-sdk-bindings-containerclient-python` | Py | trigger | ✅ bicep | *new* |
+| 10 | `blob-sdk-bindings-storagestreamdownloader-python` | Py | trigger | ✅ bicep | *new* |
+| 13 | `blob-eventgrid-trigger-csharp-azd` | .NET | trigger | ✅ bicep | P10→13 |
+| 13 | `blob-eventgrid-trigger-python-azd` | Py | trigger | ✅ bicep | P10→13 |
+| 13 | `blob-eventgrid-trigger-typescript-azd` | TS | trigger | ✅ bicep | P10→13 |
+| 13 | `blob-eventgrid-trigger-javascript-azd` | JS | trigger | ✅ bicep | P10→13 |
+| 13 | `blob-eventgrid-trigger-java-azd` | Java | trigger | ✅ bicep | P10→13 |
+| 13 | `blob-eventgrid-trigger-powershell-azd` | PS | trigger | ✅ bicep | P10→13 |
 | | **📡 Event Hub** | | | | |
-| 15 | `eventhub-trigger-csharp-azd` | .NET | trigger | ✅ bicep | P0→15 |
-| 15 | `eventhub-trigger-python-azd` | Py | trigger | ✅ bicep | P0→15 |
-| 15 | `eventhub-trigger-typescript-azd` | TS | trigger | ✅ bicep | P0→15 |
-| 15 | `eventhub-trigger-javascript-azd` | JS | trigger | ✅ bicep | *new* |
-| 15 | `eventhub-trigger-java-azd` | Java | trigger | ✅ bicep | *new* |
-| 15 | `eventhub-trigger-powershell-azd` | PS | trigger | ✅ bicep | *new* |
+| 15 | `eventhub-sdk-bindings-eventdata-python` | Py | trigger | ✅ bicep | *new* |
+| 18 | `eventhub-trigger-csharp-azd` | .NET | trigger | ✅ bicep | P15→18 |
+| 18 | `eventhub-trigger-python-azd` | Py | trigger | ✅ bicep | P15→18 |
+| 18 | `eventhub-trigger-typescript-azd` | TS | trigger | ✅ bicep | P15→18 |
+| 18 | `eventhub-trigger-javascript-azd` | JS | trigger | ✅ bicep | P15→18 |
+| 18 | `eventhub-trigger-java-azd` | Java | trigger | ✅ bicep | P15→18 |
+| 18 | `eventhub-trigger-powershell-azd` | PS | trigger | ✅ bicep | P15→18 |
 | | **🚌 Service Bus** | | | | |
 | 30 | `servicebus-trigger-csharp-azd` | .NET | trigger | ✅ bicep | *new* |
 | 30 | `servicebus-trigger-python-azd` | Py | trigger | ✅ bicep | *new* |
@@ -88,6 +92,9 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → Go
 | 35 | `cosmosdb-trigger-javascript-azd` | JS | trigger | ✅ bicep | *new* |
 | 35 | `cosmosdb-trigger-java-azd` | Java | trigger | ✅ bicep | *new* |
 | 35 | `cosmosdb-trigger-powershell-azd` | PS | trigger | ✅ bicep | *new* |
+| 36 | `cosmosdb-sdk-bindings-cosmosclient-python` | Py | input | ✅ bicep | *new* |
+| 36 | `cosmosdb-sdk-bindings-databaseproxy-python` | Py | input | ✅ bicep | *new* |
+| 36 | `cosmosdb-sdk-bindings-containerproxy-python` | Py | input | ✅ bicep | *new* |
 | | **🗄️ SQL** | | | | |
 | 40 | `sql-trigger-csharp-azd` | .NET | trigger | ✅ bicep | P1→40 |
 | 40 | `sql-trigger-python-azd` | Py | trigger | ✅ bicep | P1→40 |
@@ -165,16 +172,16 @@ These templates were removed because their source repositories were **archived**
 |---|---|---|---|---|---|---|---|---|---|
 | HTTP | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
 | Timer | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
-| Blob | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | Go |
-| | Input | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | — | 🔗+🚧 | *no dedicated templates yet* |
+| Blob | Trigger | ✅ | ✅ (4) | ✅ | ✅ | ✅ | — | ✅ | Go |
+| | Input | 🔗+🚧 | ✅ (3) | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | — | 🔗+🚧 | .NET, TS, JS, Java, Go, PS |
 | | Output | — | — | — | — | — | — | — | *no dedicated templates yet* |
-| Event Hub | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | Go |
+| Event Hub | Trigger | ✅ | ✅ (2) | ✅ | ✅ | ✅ | — | ✅ | Go |
 | | Output | — | 🔗+🚧 | 🔗+🚧 | — | — | — | — | *no dedicated templates yet* |
 | Event Grid | *(reserved)* | — | — | — | — | — | — | — | *no dedicated templates yet* |
 | Queue | *(reserved)* | — | — | — | — | — | — | — | *no dedicated templates yet* |
 | Service Bus | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | Go |
 | Cosmos DB | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | Go |
-| | Input | — | — | — | — | — | — | — | *no dedicated templates yet* |
+| | Input | — | ✅ (3) | — | — | — | — | — | .NET, TS, JS, Java, Go, PS |
 | | Output | — | — | — | — | — | — | — | *no dedicated templates yet* |
 | SQL | Trigger | ✅ | ✅ | ✅ | — | — | — | — | JS, Java, Go, PS |
 | | Input | — | — | — | — | — | — | — | *no dedicated templates yet* |
@@ -221,10 +228,13 @@ These templates were removed because their source repositories were **archived**
 | 00 | ⚡ HTTP — Trigger | 7 |
 | 03 | ⚡ HTTP — Variant (Terraform) | 1 |
 | 05 | ⏰ Timer — Trigger | 7 |
-| 10 | 🪣 Blob Storage — Trigger | 6 |
-| 15 | 📡 Event Hub — Trigger | 6 |
+| 10 | 🪣 Blob Storage — SDK type trigger/input bindings | 3 |
+| 13 | 🪣 Blob Storage — Event Grid trigger variants | 6 |
+| 15 | 📡 Event Hub — SDK type trigger binding | 1 |
+| 18 | 📡 Event Hub — Trigger variants | 6 |
 | 30 | 🚌 Service Bus — Trigger | 6 |
 | 35 | 🌐 Cosmos DB — Trigger | 6 |
+| 36 | 🌐 Cosmos DB — SDK type input bindings | 3 |
 | 40 | 🗄️ SQL — Trigger | 3 |
 | 50 | 🔌 MCP — Remote Server | 6 |
 | 55 | 🔌 MCP — APIM Gateway | 1 |
@@ -239,7 +249,7 @@ These templates were removed because their source repositories were **archived**
 | 75 | 🤝 Agent Framework — Multi-Agent | 2 |
 | 80 | 🔌 Connectors — Office 365 Outlook | 3 |
 | 81 | 🔌 Connectors — SharePoint Online | 3 |
-| | **Total** | **79** |
+| | **Total** | **85** |
 
 ## Language sort order
 

@@ -1,8 +1,8 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-08-06T17:33:17Z",
-  "version": "1.10.0",
-  "totalTemplates": 79,
+  "generatedAt": "2026-09-17T20:50:03Z",
+  "version": "1.13.0",
+  "totalTemplates": 86,
   "runtimeVersions": {
     "Python": {
       "supported": [
@@ -571,6 +571,84 @@
       ]
     },
     {
+      "id": "blob-sdk-bindings-blobclient-python",
+      "displayName": "Blob SDK Bindings: BlobClient (Python + AZD + Bicep)",
+      "shortDescription": "Blob SDK type bindings for BlobClient with Event Grid BlobTrigger and BlobInput, deployed via azd",
+      "longDescription": "Build and deploy a Python Azure Functions app that uses Azure Blob Storage SDK types directly in bindings: (1) blob_trigger uses an Event Grid BlobTrigger to receive a BlobClient, and (2) blob_input combines an HttpTrigger with BlobInput to receive a BlobClient. Uses the azurefunctions-extensions-bindings-blob extension and runs on Flex Consumption with managed identity for Blob Storage access. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "bicep",
+      "priority": 10,
+      "categories": [
+        "starters",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-blob-sdk-bindings-python",
+      "folderPath": "blob_samples_blobclient",
+      "gitRef": "refs/tags/v1",
+      "whatsIncluded": [
+        "Event Grid BlobTrigger with BlobClient SDK type",
+        "HTTP-triggered BlobInput with BlobClient SDK type",
+        "azurefunctions-extensions-bindings-blob package",
+        "Bicep infrastructure for Flex Consumption and managed identity",
+        "azd configuration"
+      ]
+    },
+    {
+      "id": "blob-sdk-bindings-containerclient-python",
+      "displayName": "Blob SDK Bindings: ContainerClient (Python + AZD + Bicep)",
+      "shortDescription": "Blob SDK bindings centered on ContainerClient with Event Grid BlobTrigger and BlobInput, deployed via azd",
+      "longDescription": "Build and deploy a Python Azure Functions app that demonstrates Azure Blob Storage SDK types in bindings: (1) blob_trigger uses an Event Grid BlobTrigger to receive a ContainerClient, and (2) blob_input combines an HttpTrigger with BlobInput for container access. Uses the azurefunctions-extensions-bindings-blob extension and runs on Flex Consumption with managed identity for Blob Storage access. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "bicep",
+      "priority": 10,
+      "categories": [
+        "starters",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-blob-sdk-bindings-python",
+      "folderPath": "blob_samples_containerclient",
+      "gitRef": "refs/tags/v1",
+      "whatsIncluded": [
+        "Event Grid BlobTrigger with ContainerClient SDK type",
+        "HTTP-triggered BlobInput function for container access",
+        "azurefunctions-extensions-bindings-blob package",
+        "Bicep infrastructure for Flex Consumption and managed identity",
+        "azd configuration"
+      ]
+    },
+    {
+      "id": "blob-sdk-bindings-storagestreamdownloader-python",
+      "displayName": "Blob SDK Bindings: StorageStreamDownloader (Python + AZD + Bicep)",
+      "shortDescription": "Blob SDK type bindings for StorageStreamDownloader with Event Grid BlobTrigger and BlobInput, deployed via azd",
+      "longDescription": "Build and deploy a Python Azure Functions app that uses Azure Blob Storage SDK types directly in bindings: (1) blob_trigger uses an Event Grid BlobTrigger to receive a StorageStreamDownloader, and (2) blob_input combines an HttpTrigger with BlobInput to receive a StorageStreamDownloader. Uses the azurefunctions-extensions-bindings-blob extension and runs on Flex Consumption with managed identity for Blob Storage access. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "bicep",
+      "priority": 10,
+      "categories": [
+        "starters",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-blob-sdk-bindings-python",
+      "folderPath": "blob_samples_storagestreamdownloader",
+      "gitRef": "refs/tags/v1",
+      "whatsIncluded": [
+        "Event Grid BlobTrigger with StorageStreamDownloader SDK type",
+        "HTTP-triggered BlobInput with StorageStreamDownloader SDK type",
+        "azurefunctions-extensions-bindings-blob package",
+        "Bicep infrastructure for Flex Consumption and managed identity",
+        "azd configuration"
+      ]
+    },
+    {
       "id": "blob-eventgrid-trigger-csharp-azd",
       "displayName": "Blob EventGrid Trigger (C# + AZD + Bicep)",
       "shortDescription": "EventGrid-sourced with BlobInput binding, processes content like PDFs and images, deployed via azd",
@@ -579,7 +657,7 @@
       "bindingType": "trigger",
       "resource": "blob",
       "iac": "bicep",
-      "priority": 10,
+      "priority": 13,
       "categories": [
         "starters",
         "event-processing"
@@ -612,7 +690,7 @@
       "bindingType": "trigger",
       "resource": "blob",
       "iac": "bicep",
-      "priority": 10,
+      "priority": 13,
       "categories": [
         "starters",
         "event-processing"
@@ -644,7 +722,7 @@
       "bindingType": "trigger",
       "resource": "blob",
       "iac": "bicep",
-      "priority": 10,
+      "priority": 13,
       "categories": [
         "starters",
         "event-processing"
@@ -677,7 +755,7 @@
       "bindingType": "trigger",
       "resource": "blob",
       "iac": "bicep",
-      "priority": 10,
+      "priority": 13,
       "categories": [
         "starters",
         "event-processing"
@@ -710,7 +788,7 @@
       "bindingType": "trigger",
       "resource": "blob",
       "iac": "bicep",
-      "priority": 10,
+      "priority": 13,
       "categories": [
         "starters",
         "event-processing"
@@ -742,7 +820,7 @@
       "bindingType": "trigger",
       "resource": "blob",
       "iac": "bicep",
-      "priority": 10,
+      "priority": 13,
       "categories": [
         "starters",
         "event-processing"
@@ -766,6 +844,32 @@
       ]
     },
     {
+      "id": "eventhub-sdk-bindings-eventdata-python",
+      "displayName": "Event Hub SDK Bindings: EventData (Python + AZD + Bicep)",
+      "shortDescription": "Event Hub SDK type trigger bindings for single and batched EventData messages, deployed via azd",
+      "longDescription": "Build and deploy a Python Azure Functions app that demonstrates Event Hub SDK types in trigger bindings: (1) an EventHubTrigger receives a single EventData message, and (2) a batched EventHubTrigger receives a list of EventData messages with cardinality set to many. Uses the azurefunctions-extensions-bindings-eventhub extension and runs on Flex Consumption with managed identity for Event Hubs access. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "eventhub",
+      "iac": "bicep",
+      "priority": 15,
+      "categories": [
+        "starters",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-eventhub-sdk-bindings-python",
+      "folderPath": "eventhub_samples_eventdata",
+      "gitRef": "refs/tags/v1",
+      "whatsIncluded": [
+        "EventHubTrigger with EventData SDK type",
+        "Batched EventHubTrigger with EventData SDK type",
+        "azurefunctions-extensions-bindings-eventhub package",
+        "Bicep infrastructure for Flex Consumption and managed identity",
+        "azd configuration"
+      ]
+    },
+    {
       "id": "eventhub-trigger-csharp-azd",
       "displayName": "Event Hub Trigger (C# + AZD + Bicep)",
       "shortDescription": "Event Hub trigger with output binding, TimerTrigger, Flex Consumption, deployed via azd",
@@ -774,7 +878,7 @@
       "bindingType": "trigger",
       "resource": "eventhub",
       "iac": "bicep",
-      "priority": 15,
+      "priority": 18,
       "categories": [
         "starters",
         "event-processing"
@@ -810,7 +914,7 @@
       "bindingType": "trigger",
       "resource": "eventhub",
       "iac": "bicep",
-      "priority": 15,
+      "priority": 18,
       "categories": [
         "starters",
         "event-processing"
@@ -846,7 +950,7 @@
       "bindingType": "trigger",
       "resource": "eventhub",
       "iac": "bicep",
-      "priority": 15,
+      "priority": 18,
       "categories": [
         "starters",
         "event-processing"
@@ -882,7 +986,7 @@
       "bindingType": "trigger",
       "resource": "eventhub",
       "iac": "bicep",
-      "priority": 15,
+      "priority": 18,
       "categories": [
         "event-processing"
       ],
@@ -917,7 +1021,7 @@
       "bindingType": "trigger",
       "resource": "eventhub",
       "iac": "bicep",
-      "priority": 15,
+      "priority": 18,
       "categories": [
         "event-processing"
       ],
@@ -952,7 +1056,7 @@
       "bindingType": "trigger",
       "resource": "eventhub",
       "iac": "bicep",
-      "priority": 15,
+      "priority": 18,
       "categories": [
         "event-processing"
       ],
@@ -1363,6 +1467,84 @@
         "Managed identity",
         "VNet integration",
         "Application Insights monitoring"
+      ]
+    },
+    {
+      "id": "cosmosdb-sdk-bindings-cosmosclient-python",
+      "displayName": "Cosmos DB SDK Bindings: CosmosClient (Python + AZD + Bicep)",
+      "shortDescription": "Cosmos DB SDK input binding for CosmosClient through an HTTP-triggered function, deployed via azd",
+      "longDescription": "Build and deploy a Python Azure Functions app that combines an HttpTrigger with CosmosDBInput to receive a CosmosClient and list databases. Uses the azurefunctions-extensions-bindings-cosmosdb extension and runs as one of three Flex Consumption apps with managed identity for Cosmos DB access. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "input",
+      "resource": "cosmos",
+      "iac": "bicep",
+      "priority": 36,
+      "categories": [
+        "starters",
+        "web-apis"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-cosmosdb-sdk-bindings-python",
+      "folderPath": "cosmosdb_samples_cosmosclient",
+      "gitRef": "refs/tags/v1",
+      "whatsIncluded": [
+        "HTTP trigger with CosmosDBInput binding",
+        "CosmosClient SDK type and database listing",
+        "azurefunctions-extensions-bindings-cosmosdb package",
+        "Shared Bicep infrastructure for Flex Consumption and managed identity",
+        "Root azd configuration for three independently deployable services"
+      ]
+    },
+    {
+      "id": "cosmosdb-sdk-bindings-databaseproxy-python",
+      "displayName": "Cosmos DB SDK Bindings: DatabaseProxy (Python + AZD + Bicep)",
+      "shortDescription": "Cosmos DB SDK input binding for DatabaseProxy through an HTTP-triggered function, deployed via azd",
+      "longDescription": "Build and deploy a Python Azure Functions app that combines an HttpTrigger with CosmosDBInput to receive a DatabaseProxy and list containers. Uses the azurefunctions-extensions-bindings-cosmosdb extension and runs as one of three Flex Consumption apps with managed identity for Cosmos DB access. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "input",
+      "resource": "cosmos",
+      "iac": "bicep",
+      "priority": 36,
+      "categories": [
+        "starters",
+        "web-apis"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-cosmosdb-sdk-bindings-python",
+      "folderPath": "cosmosdb_samples_databaseproxy",
+      "gitRef": "refs/tags/v1",
+      "whatsIncluded": [
+        "HTTP trigger with CosmosDBInput binding",
+        "DatabaseProxy SDK type and container listing",
+        "azurefunctions-extensions-bindings-cosmosdb package",
+        "Shared Bicep infrastructure for Flex Consumption and managed identity",
+        "Root azd configuration for three independently deployable services"
+      ]
+    },
+    {
+      "id": "cosmosdb-sdk-bindings-containerproxy-python",
+      "displayName": "Cosmos DB SDK Bindings: ContainerProxy (Python + AZD + Bicep)",
+      "shortDescription": "Cosmos DB SDK input binding for ContainerProxy through an HTTP-triggered function, deployed via azd",
+      "longDescription": "Build and deploy a Python Azure Functions app that combines an HttpTrigger with CosmosDBInput to receive a ContainerProxy and query items. Uses the azurefunctions-extensions-bindings-cosmosdb extension and runs as one of three Flex Consumption apps with managed identity for Cosmos DB access. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "input",
+      "resource": "cosmos",
+      "iac": "bicep",
+      "priority": 36,
+      "categories": [
+        "starters",
+        "web-apis"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-cosmosdb-sdk-bindings-python",
+      "folderPath": "cosmosdb_samples_containerproxy",
+      "gitRef": "refs/tags/v1",
+      "whatsIncluded": [
+        "HTTP trigger with CosmosDBInput binding",
+        "ContainerProxy SDK type and item query",
+        "azurefunctions-extensions-bindings-cosmosdb package",
+        "Shared Bicep infrastructure for Flex Consumption and managed identity",
+        "Root azd configuration for three independently deployable services"
       ]
     },
     {
