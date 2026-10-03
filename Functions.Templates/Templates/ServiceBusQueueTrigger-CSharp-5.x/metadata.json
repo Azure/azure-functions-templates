@@ -1,10 +1,16 @@
 {
   "defaultFunctionName": "ServiceBusQueueTrigger",
   "description": "$ServiceBusQueueTrigger_description",
-  "name": "Azure Service Bus Queue trigger",
+  "name": "$AzureServiceBusQueueTrigger_name",
   "language": "C#",
-  "category": ["$temp_category_core", "$temp_category_dataProcessing"],
+  "category": [
+    "$temp_category_core",
+    "$temp_category_dataProcessing"
+  ],
   "categoryStyle": "serviceBus",
   "enabledInTryMode": false,
-  "userPrompt": ["connection", "queueName"]
+  "userPrompt": [
+    "connection",
+    "queueName"
+  ]
 }
