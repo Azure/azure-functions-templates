@@ -1,7 +1,7 @@
 # Template Manifest — Priority Tiers (P00–P99)
 
 **Total templates:** 76
-**Manifest version:** 1.10.1
+**Manifest version:** 1.10.2
 
 ## Design principles
 
@@ -103,7 +103,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → Go
 | | **🤖 AI** | | | | |
 | 60 | `ai-agent-csharp` | .NET | trigger | ✅ bicep | P0→60 |
 | 60 | `ai-agent-python` | Py | trigger | ✅ bicep | P0→60 |
-| 60 | `ai-serverless-agents-python` | Py | trigger | ✅ bicep | *new* |
+| 60 | `ai-hosted-skills-python` | Py | trigger | ✅ bicep | *new* |
 | 60 | `ai-agent-typescript` | TS | trigger | ✅ bicep | P0→60 |
 | 60 | `ai-agent-java` | Java | trigger | ✅ bicep | P0→60 |
 | | **🔄 Durable Standard** | | | | |
