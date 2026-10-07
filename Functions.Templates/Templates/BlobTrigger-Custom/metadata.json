@@ -1,17 +1,16 @@
 {
-    "defaultFunctionName": "BlobTrigger",
-    "description": "$BlobTrigger_description",
-    "name": "Azure Blob Storage trigger",
-    "language": "Custom",
-    "category": [
-        "$temp_category_core",
-        "$temp_category_dataProcessing"
-    ],
-    "categoryStyle": "blob",
-    "enabledInTryMode": true,
-    "userPrompt": [
-        "connection",
-        "path"
-    ]
-  }
-  
+  "defaultFunctionName": "BlobTrigger",
+  "description": "$BlobTrigger_description",
+  "name": "$AzureBlobStorageTrigger_name",
+  "language": "Custom",
+  "category": [
+    "$temp_category_core",
+    "$temp_category_dataProcessing"
+  ],
+  "categoryStyle": "blob",
+  "enabledInTryMode": true,
+  "userPrompt": [
+    "connection",
+    "path"
+  ]
+}
