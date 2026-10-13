@@ -5,7 +5,8 @@
 .DESCRIPTION
     For each unique (repositoryUrl, gitRef, folderPath) tuple in the manifest:
     1. Verifies the repository is accessible.
-    2. Verifies the gitRef is fully qualified (refs/tags/* or refs/heads/*) and resolves on GitHub.
+    2. Verifies the gitRef is fully qualified (refs/tags/* or refs/heads/*), resolves on GitHub,
+       and points to a signed tag with a verified signature when it is a tag.
     3. Verifies the folderPath exists at that ref (skipped for '.').
     Warns when gitRef is a branch (refs/heads/*) instead of a signed tag.
 
@@ -71,12 +72,35 @@ foreach ($t in $manifest.templates) {
         continue
     }
 
-    $null = gh api "repos/$repoPath/git/$gitRef" --jq '.ref' 2>&1
+    $refResponse = gh api "repos/$repoPath/git/$gitRef" 2>&1
     if ($LASTEXITCODE -ne 0) {
         $errors += "$($t.id): gitRef '$gitRef' not found in $repoPath"
         Write-Host "  FAIL  $label (ref not found)" -ForegroundColor Red
         continue
-    } elseif ($gitRef -match '^refs/heads/') {
+    }
+
+    $ref = ($refResponse -join "`n") | ConvertFrom-Json
+    if ($gitRef -match '^refs/tags/') {
+        if ($ref.object.type -ne 'tag') {
+            $errors += "$($t.id): gitRef '$gitRef' must point to a signed tag (object type: '$($ref.object.type)') — $repoPath"
+            Write-Host "  FAIL  $label (not a signed tag)" -ForegroundColor Red
+            continue
+        }
+
+        $tagResponse = gh api "repos/$repoPath/git/tags/$($ref.object.sha)" 2>&1
+        if ($LASTEXITCODE -ne 0) {
+            $errors += "$($t.id): could not verify signed tag '$gitRef' in $repoPath"
+            Write-Host "  FAIL  $label (tag verification unavailable)" -ForegroundColor Red
+            continue
+        }
+
+        $tag = ($tagResponse -join "`n") | ConvertFrom-Json
+        if ($tag.verification.verified -ne $true) {
+            $errors += "$($t.id): gitRef '$gitRef' must be a verified signed tag (verification: '$($tag.verification.reason)') — $repoPath"
+            Write-Host "  FAIL  $label (signed tag verification failed)" -ForegroundColor Red
+            continue
+        }
+    } else {
         $warnings += "$($t.id): '$gitRef' is a branch, not a signed tag — $repoPath"
     }
 

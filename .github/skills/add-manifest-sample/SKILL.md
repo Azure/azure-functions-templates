@@ -6,8 +6,8 @@ description: >-
   "add a connector/MCP/trigger sample" to
   Functions.Templates/Template-Manifest/manifest.json. Covers required fields,
   the short/long description pattern, category rules, priority assignment,
-  metadata bumps (count/version/generatedAt), and keeping docs/priority-tiers.md
-  in sync.
+  signed annotated release tags, metadata bumps (count/version/generatedAt),
+  and keeping docs/priority-tiers.md in sync.
 ---
 
 # Add a new sample to the Template Manifest
@@ -46,7 +46,9 @@ trailing whitespace).
 Never guess what a sample does. Inspect the actual repo at the exact tag you will
 pin (`gitRef`) and confirm:
 
-- The folder (`folderPath`) and tag (`gitRef`) exist.
+- The folder (`folderPath`) and tag (`gitRef`) exist, and the tag ref's
+  `object.type` is `tag` (annotated), not `commit` (lightweight). GitHub must also
+  report `verification.verified: true` for the tag object's signature.
 - The real trigger/function names.
 - Whether it actually uses a binding you plan to mention. For example, only claim
   "Blob output" if the code really has a Blob output binding — sibling samples in
@@ -55,7 +57,32 @@ pin (`gitRef`) and confirm:
 
 ```powershell
 gh api "repos/<owner>/<repo>/contents/<folderPath>?ref=refs/tags/<tag>" --jq '.[] | "\(.type)\t\(.name)"'
+gh api "repos/<owner>/<repo>/git/refs/tags/<tag>" --jq '.object.type'
+$tagObjectSha = gh api "repos/<owner>/<repo>/git/refs/tags/<tag>" --jq '.object.sha'
+gh api "repos/<owner>/<repo>/git/tags/$tagObjectSha" --jq '{commit: .object.sha, verified: .verification.verified, reason: .verification.reason}'
 ```
+
+### Create signed annotated tags only
+
+If a tag is missing, lightweight, or unsigned, create a **new signed annotated
+tag** at the verified commit. Check for newer `main` commits and confirm with the
+user before including them. Choose an unused release version; never overwrite
+existing tags. Run from the source repository checkout:
+
+```powershell
+git fetch origin main --tags
+git tag -s <new-tag> <verified-commit-sha> -m "Release <new-tag>"
+git verify-tag <new-tag>
+git push origin refs/tags/<new-tag>
+```
+
+Re-run the API checks above for the new tag: its target must match the approved
+commit and its signature must verify on GitHub. For SSH signature verification,
+configure `gpg.ssh.allowedSignersFile` with the trusted public signing key.
+
+Stop and report missing access, signing/verification failures, or repository rule
+blocks. Never fall back to unsigned/lightweight tags or branches, bypass rules,
+or rewrite history.
 
 ## Step 2 — Add the template object
 
@@ -96,31 +123,14 @@ optional but recommended where applicable. **`tags` is deprecated — do not add
   bump manifest `version` with a minor increment.
 - **`repositoryUrl`** — must satisfy the schema pattern (GitHub HTTPS URL).
 - **`folderPath`** — path within the repo (`.` for root).
-- **`gitRef`** — **mandatory for new samples.** Always pin a signed release tag,
-  e.g. `refs/tags/v1.0.0`. Never leave it unset and never point a new sample at a
-  moving branch (`refs/heads/main`) — that makes the template non-reproducible.
-  Verify the tag exists before committing. **Whenever the sample repo ships a new
-  release, ask the user to update `gitRef` to the new tag** (and re-verify the
-  pinned `folderPath`/contents still match) so the manifest tracks the intended
-  release.
-  If the `gitRef` tag does not exist in the target repository, do not proceed
-  with adding the template. Inform the user that the tag was not found, provide
-  the exact `gh api` command used to verify, and ask them to confirm the tag name
-  or create the release first.
+- **`gitRef`** — **mandatory for new samples.** Always pin a signed annotated
+  release tag, e.g. `refs/tags/v1.0.0`, not a moving branch. Verify or create the
+  tag using Step 1 before adding the template. **When the source repo ships a new
+  release, ask the user to update `gitRef`** and re-verify the pinned
+  `folderPath`/contents.
 
 The allowed values, patterns, and limits for every field are defined in
 `schemas/manifest.schema.json` — read them there rather than relying on a copy.
-A quick way to print the enums:
-
-```powershell
-cd Functions.Templates\Template-Manifest
-@'
-import json
-p = json.load(open(r"schemas\manifest.schema.json", encoding="utf-8"))["$defs"]["template"]["properties"]
-for f in ("language", "bindingType", "resource", "iac"):
-    print(f, "->", p[f]["enum"])
-'@ | python -
-```
 
 ### Categories (match existing — shown in VS Code)
 
@@ -231,14 +241,11 @@ category.
 In `manifest.json`, update the top-level fields:
 
 - **`totalTemplates`** — must equal the number of objects in `templates`.
-- **`version`** — bump semver (minor bump for new templates / a new `resource`
-  enum value; patch for description-only fixes).
-  Use these exact rules: bump the **minor** version (for example, `1.2.0` →
-  `1.3.0`) if the PR adds one or more new templates or introduces a new enum
-  value (`resource`, `language`, `bindingType`, or `iac`). Bump the **patch**
-  version (for example, `1.2.0` → `1.2.1`) if the PR only fixes descriptions or
-  metadata without adding/removing templates or extending enums. If both occur in
-  one PR, use the higher bump (minor).
+- **`version`** — bump **minor** (e.g. `1.2.0` → `1.3.0`) for new templates or
+  enum values (`resource`, `language`, `bindingType`, `iac`). Bump **patch**
+  (e.g. `1.2.0` → `1.2.1`) for description/metadata fixes, including `gitRef`
+  updates, without adding/removing templates or extending enums. If both apply,
+  use the higher bump (minor).
 - **`generatedAt`** — current UTC time in `YYYY-MM-DDTHH:MM:SSZ`.
 
 ## Step 5 — Update `docs/priority-tiers.md`
@@ -256,36 +263,29 @@ Keep the doc in sync with the manifest:
 
 ## Step 6 — Validate
 
-Always validate JSON parses and conforms to the schema, and that the counts match
-(install the validator first if needed: `pip install jsonschema`):
+Validate schema, counts, and canonical formatting. For large edits, check
+formatting before and after. Install `jsonschema` only if missing:
 
 ```powershell
 cd Functions.Templates\Template-Manifest
 @'
 import json, jsonschema
-d = json.load(open("manifest.json", encoding="utf-8"))
+orig = open("manifest.json", encoding="utf-8").read()
+d = json.loads(orig)
 s = json.load(open(r"schemas\manifest.schema.json", encoding="utf-8"))
 jsonschema.validate(d, s)
 assert d["totalTemplates"] == len(d["templates"]), "totalTemplates mismatch"
+assert orig == json.dumps(d, indent=2, ensure_ascii=False) + "\n"
 print("OK:", len(d["templates"]), "templates, version", d["version"])
 '@ | python -
-```
-
-Also confirm a full-file round-trip produces no unintended formatting drift before
-and after large edits:
-
-```python
-orig = open("manifest.json", encoding="utf-8").read()
-import json
-assert orig == json.dumps(json.loads(orig), indent=2, ensure_ascii=False) + "\n"
 ```
 
 ### Validate template references on GitHub
 
 Run the repo's reference validator, which checks that every template's
-`repositoryUrl`, `gitRef`, and `folderPath` actually resolve on GitHub (and warns
-when a `gitRef` is a branch instead of a signed tag). Requires an authenticated
-`gh` CLI:
+`repositoryUrl`, `gitRef`, and `folderPath` resolve and tag signatures verify on
+GitHub. It rejects lightweight/unsigned tags and warns for legacy branch refs.
+Requires an authenticated `gh` CLI:
 
 ```powershell
 pwsh -NoProfile -File eng\scripts\validate-manifest-refs.ps1
@@ -293,14 +293,13 @@ pwsh -NoProfile -File eng\scripts\validate-manifest-refs.ps1
 
 The script validates the whole manifest, so pre-existing `refs/heads/*` branch
 entries may already emit warnings. **For the sample(s) you added or changed, the
-output must show `OK` with no `WARN`/`ERROR` lines** — i.e. the repo, tag, and
-folder resolve and `gitRef` is a signed tag (`refs/tags/*`). Fix any error and
-re-run until your entries are clean before committing.
+output must show `OK` with no `WARN`/`ERROR` lines**. Fix any error and re-run
+until your entries are clean before committing.
 
 ## Checklist
 
 - [ ] Verified repo, `folderPath`, and `gitRef` (tag) exist; claims match real code.
-- [ ] `gitRef` set to a pinned release tag (mandatory; not a moving branch).
+- [ ] `gitRef` pins a verified signed tag; newly created tags use `git tag -s`.
 - [ ] Template object added with all mandatory fields (incl. `gitRef`); `id` unique.
 - [ ] `displayName` follows `"<Friendly Name> (<Lang> + AZD + Bicep)"`.
 - [ ] `categories` use only existing values; **no `tags`** on new entries.
