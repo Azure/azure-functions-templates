@@ -203,7 +203,7 @@
         "gitRef": {
           "type": "string",
           "default": "refs/heads/main",
-          "description": "Git ref to clone (signed tag or branch name) with refs/tags/v* or refs/heads/branch. Defaults to main reference."
+          "description": "Git ref to clone (signed tag or branch name) with refs/tags/v* or refs/heads/branch. Tag refs must have a verified signature; lightweight and unsigned tags are not accepted. Defaults to main reference."
         },
         "whatsIncluded": {
           "type": "array",
