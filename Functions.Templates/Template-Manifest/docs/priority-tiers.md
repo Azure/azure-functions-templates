@@ -143,14 +143,6 @@ These templates were removed because their source repositories were **archived**
 | `ai-textsummarize-python` | P62 | `Azure-Samples/function-python-ai-textsummarize` |
 | `ai-langchain-python` | P63 | `Azure-Samples/function-python-ai-langchain` |
 
-### Removed (OpenAI extension retirement)
-
-The C# and Python PDF Summarizer entries (`durable-pdf-summarizer-csharp` and
-`durable-pdf-summarizer-python`, P72) were removed from the gallery manifest
-because they use the retiring Azure Functions OpenAI extension. Migration of
-maintained samples to direct OpenAI SDK usage is tracked in
-[Azure-Samples/Durable-Task-Scheduler#410](https://github.com/Azure-Samples/Durable-Task-Scheduler/issues/410).
-
 ## Coverage matrix
 
 **Icon legend** (matches IaC sort order in design principle 5):
