@@ -1,8 +1,8 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-10-13T02:51:46Z",
-  "version": "1.10.3",
-  "totalTemplates": 76,
+  "generatedAt": "2026-10-20T20:54:34Z",
+  "version": "1.11.0",
+  "totalTemplates": 74,
   "runtimeVersions": {
     "Python": {
       "supported": [
@@ -2270,71 +2270,6 @@
         "Aspire AppHost configuration",
         "Durable Functions service",
         "Service discovery setup",
-        "README.md"
-      ]
-    },
-    {
-      "id": "durable-pdf-summarizer-csharp",
-      "displayName": "Durable Functions PDF Summarizer (C#)",
-      "shortDescription": "PDF summarizer using Document Intelligence and Azure OpenAI with durable orchestration",
-      "longDescription": "C# Durable Functions app triggered by BlobTrigger that orchestrates PDF processing via ActivityTrigger functions calling Azure Document Intelligence for OCR and Azure OpenAI for summarization. Results written back to Azure Blob Storage.",
-      "language": "CSharp",
-      "bindingType": "trigger",
-      "resource": "durable",
-      "iac": "none",
-      "priority": 72,
-      "categories": [
-        "gen-ai",
-        "workflows"
-      ],
-      "tags": [
-        "Durable Functions",
-        "Orchestration",
-        "Azure OpenAI",
-        "PDF Processing",
-        "AI"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
-      "folderPath": "samples/durable-functions/dotnet/PdfSummarizer",
-      "gitRef": "refs/heads/main",
-      "whatsIncluded": [
-        "PDF processing orchestration",
-        "Azure OpenAI integration",
-        "Activity functions",
-        "README.md"
-      ]
-    },
-    {
-      "id": "durable-pdf-summarizer-python",
-      "displayName": "Durable Functions PDF Summarizer (Python)",
-      "shortDescription": "PDF summarizer using Document Intelligence and Azure OpenAI with durable orchestration",
-      "longDescription": "Python Durable Functions app triggered by BlobTrigger that orchestrates PDF processing via ActivityTrigger functions calling Azure Document Intelligence for OCR and Azure OpenAI for summarization. Reads from and writes to Azure Blob Storage.",
-      "language": "Python",
-      "bindingType": "trigger",
-      "resource": "durable",
-      "iac": "none",
-      "priority": 72,
-      "categories": [
-        "gen-ai",
-        "workflows"
-      ],
-      "tags": [
-        "Durable Functions",
-        "Orchestration",
-        "Azure OpenAI",
-        "PDF Processing",
-        "AI"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
-      "folderPath": "samples/durable-functions/python/pdf-summarizer",
-      "gitRef": "refs/heads/main",
-      "whatsIncluded": [
-        "PDF processing orchestration",
-        "Azure OpenAI integration",
-        "Activity functions",
-        "requirements.txt",
         "README.md"
       ]
     },

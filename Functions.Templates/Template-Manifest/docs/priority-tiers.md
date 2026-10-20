@@ -1,7 +1,7 @@
 # Template Manifest — Priority Tiers (P00–P99)
 
-**Total templates:** 76
-**Manifest version:** 1.10.3
+**Total templates:** 74
+**Manifest version:** 1.11.0
 
 ## Design principles
 
@@ -31,7 +31,7 @@
 | P50–59 | 🔌 MCP *(10-slot block)* | Trigger (Tool / Resource / Prompt) | `P50` Remote Server<br>`P51` SDK Hosting *(removed — repos archived)*<br>`P52` Tool<br>`P53` Resource<br>`P54` Prompt<br>`P55` APIM Gateway<br>`P56` *(reserved)*<br>`P57` *(reserved)*<br>`P58` *(reserved)*<br>`P59` *(reserved)* |
 | P60–64 | 🤖 AI | — | `P60` Agent<br>`P61` ChatGPT *(removed — repos archived)*<br>`P62` Text Summarize *(removed — repos archived)*<br>`P63` LangChain *(removed — repo archived)* |
 | P65–69 | 🔄 Durable Standard | Orchestration | `P65` Orchestration<br>`P66` Order Processor |
-| P70–74 | 🔄 Durable Advanced | Orchestration | `P70` Patterns (saga / tracing / payload)<br>`P71` Scenarios (travel / aspire)<br>`P72` PDF Summarizer |
+| P70–74 | 🔄 Durable Advanced | Orchestration | `P70` Patterns (saga / tracing / payload)<br>`P71` Scenarios (travel / aspire)<br>`P72` PDF Summarizer *(removed — uses retiring OpenAI extension)* |
 | P75–79 | 🤝 Agent Framework | Orchestration | `P75` Multi-Agent |
 | P80–89 | 🔌 Connectors | Trigger | `P80` Office 365 Outlook<br>`P81` SharePoint Online |
 | P90–94 | 🏗️ IaC | — | `P90` Flex Consumption (ARM / Bicep / TF) |
@@ -120,8 +120,6 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → Go
 | 70 | `durable-saga-csharp` | .NET | orchestration | 🚧 none | P1→70 |
 | 71 | `durable-ai-travel-planner-csharp` | .NET | orchestration | 🚧 none | P2→71 |
 | 71 | `durable-aspire-csharp` | .NET | orchestration | 🚧 none | P2→71 |
-| 72 | `durable-pdf-summarizer-csharp` | .NET | orchestration | 🚧 none | P2→72 |
-| 72 | `durable-pdf-summarizer-python` | Py | orchestration | 🚧 none | P2→72 |
 | | **🤝 Agent Framework** | | | | |
 | 75 | `agentframework-durable-multi-agent-python` | Py | orchestration | 🚧 none | P1→75 |
 | 75 | `agentframework-multi-agent-go` | Go | trigger | ✅ bicep | *new* |
@@ -144,6 +142,14 @@ These templates were removed because their source repositories were **archived**
 | `ai-textsummarize-csharp` | P62 | `Azure-Samples/function-csharp-ai-textsummarize` |
 | `ai-textsummarize-python` | P62 | `Azure-Samples/function-python-ai-textsummarize` |
 | `ai-langchain-python` | P63 | `Azure-Samples/function-python-ai-langchain` |
+
+### Removed (OpenAI extension retirement)
+
+The C# and Python PDF Summarizer entries (`durable-pdf-summarizer-csharp` and
+`durable-pdf-summarizer-python`, P72) were removed from the gallery manifest
+because they use the retiring Azure Functions OpenAI extension. Migration of
+maintained samples to direct OpenAI SDK usage is tracked in
+[Azure-Samples/Durable-Task-Scheduler#410](https://github.com/Azure-Samples/Durable-Task-Scheduler/issues/410).
 
 ## Coverage matrix
 
@@ -203,7 +209,7 @@ These templates were removed because their source repositories were **archived**
 |  | Order Processor | P66 | ✅ | ✅ | — | — | — | — | — | TS, JS, Java, Go, PS |
 |  | Patterns | P70 | ✅ | — | — | — | — | — | — | Py, TS, JS, Java, Go, PS |
 |  | Scenarios | P71 | 🚧 | — | — | — | — | — | — | Py, TS, JS, Java, Go, PS |
-|  | PDF Summarizer | P72 | 🚧 | 🚧 | — | — | — | — | — | TS, JS, Java, Go, PS |
+|  | PDF Summarizer | P72 | — | — | — | — | — | — | — | *removed (OpenAI extension retirement)* |
 | Agent Fw | Multi-Agent | P75 | — | 🚧 | — | — | — | ✅ | — | .NET, TS, JS, Java, PS |
 
 ### Connectors (P80–P89)
@@ -232,11 +238,10 @@ These templates were removed because their source repositories were **archived**
 | 66 | 🔄 Durable Standard — Order Processor | 2 |
 | 70 | 🔄 Durable Advanced — Patterns (saga / tracing / payload) | 4 |
 | 71 | 🔄 Durable Advanced — Scenarios (travel / aspire) | 2 |
-| 72 | 🔄 Durable Advanced — PDF Summarizer | 2 |
 | 75 | 🤝 Agent Framework — Multi-Agent | 2 |
 | 80 | 🔌 Connectors — Office 365 Outlook | 3 |
 | 81 | 🔌 Connectors — SharePoint Online | 3 |
-| | **Total** | **76** |
+| | **Total** | **74** |
 
 ## Language sort order
 
