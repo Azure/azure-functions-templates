@@ -25,6 +25,7 @@ pwsh -NoProfile -File .\eng\scripts\pack-quickstart.ps1 `
   -TemplateId http-trigger-python-azd `
   -PackageVersion 1.0.0 `
   -ExpectedCommit <40-character-commit-sha> `
+  -ReviewedStack python -ReviewedLanguage Python `
   -PackageSource https://api.nuget.org/v3/index.json `
   -OutputPath .\artifacts\quickstarts
 ```
@@ -35,6 +36,13 @@ feed URL, and expected source commit must be deliberately selected for the
 release; the example version is illustrative and is not a published package.
 Branch-backed entries are not packageable until their source is reviewed and
 registered against an approved signed tag.
+
+The current compatibility lane supports only the canonical `python` stack and
+`Python` language. These values were observed in an installed `IProjectStack`
+catalog, not inferred from manifest labels or workload package names. Supply
+both reviewed values explicitly. Missing values, different casing, unsupported
+pairs, or a manifest language mismatch are rejected. This does not authorize
+the package for any installed workload or production feed.
 
 ## Update
 
@@ -48,6 +56,7 @@ pwsh -NoProfile -File .\eng\scripts\pack-quickstart.ps1 `
   -SourceRef refs/tags/<reviewed-new-tag> `
   -PackageVersion 1.0.1 `
   -ExpectedCommit <new-40-character-commit-sha> `
+  -ReviewedStack python -ReviewedLanguage Python `
   -PackageSource https://api.nuget.org/v3/index.json `
   -OutputPath .\artifacts\quickstarts
 ```
@@ -61,8 +70,23 @@ or tag a source repository.
 
 The package is a single `type: project` template with copy-only project content.
 It introduces only the engine metadata needed to enumerate and instantiate a
-project. It does not add optional symbols, prompt for template parameters,
-rewrite arbitrary source names, or run post-actions. A source folder that
+project through the `func` host only. The nuspec declares exactly `Template`
+and `FuncTemplate`, with neither `Workload` nor `FuncRid`. The config declares a
+host-only constraint, one literal unconditional primary output, and exactly one
+required host-owned configuration action
+`00e33184-ffc7-43ef-bec0-b1684df8ad56` with `continueOnError: false`.
+Its only arguments are `primaryOutputIndex: "0"`, `stack: "python"`, and
+`language: "Python"`. It does not introduce workload package constraints.
+
+The primary output is derived from the copied content's sole `host.json`.
+For the retained HTTP sample it is `host.json`. For the Timer sample it is
+`src/host.json`, so the host config action targets the nested project rather
+than the repository root. Missing or multiple host roots, non-object or invalid
+JSON, nonliteral output paths, and incorrectly cased host filenames fail.
+No host file or `.func/config.json` is fabricated by the producer.
+
+It does not add user symbols, prompt for template parameters, rewrite source
+names, rename project files, or run arbitrary executable actions. A source folder that
 already contains `.template.config` is rejected rather than silently rewritten.
 
 The release record lists the exact source tag and commit, selected folder,
@@ -82,9 +106,21 @@ must be resolved before packaging. A selected-folder license is retained with
 the project. If one is absent, the repository-root license and notice files are
 carried as package legal files.
 
-Run the offline checks, including a temporary-hive install and project creation
-with the .NET template engine, with:
+Run the offline checks, including exact serialized config/nuspec assertions,
+missing and ambiguous host-root rejection, deterministic package bytes, and
+temporary-hive rejection by the non-Func .NET host, with:
 
 ```powershell
 pwsh -NoProfile -File .\eng\scripts\tests\test-pack-quickstart.ps1
 ```
+
+To assert the same exact metadata and actual root paths against a retained local
+HTTP 1.0.0/1.0.1 and Timer 1.0.0 compatibility epoch, pass
+`-PackageEvidenceRoot <new-epoch-root>` to that command. It also verifies each
+package against its adjacent release digest.
+
+These checks are not CLI qualification. Each distinct package epoch requires
+exact-byte inspection and Func-host configuration planner, preview, and create
+checks by the consumer owner. Keep old retained packages and hashes immutable.
+Use a separate output root for compatibility experiments and a new version for
+any actual release whose bytes change.
