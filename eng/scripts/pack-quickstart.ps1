@@ -78,6 +78,17 @@ function Get-QuickstartTemplateConfig {
     if ($primaryOutput -notmatch '^(?:[A-Za-z0-9_.-]+/)*host\.json$') {
         throw "Unsupported nonliteral host.json output path '$primaryOutput'."
     }
+    $hostDirectory = $primaryOutput.Substring(0, $primaryOutput.Length - 'host.json'.Length)
+    $configurationPath = "${hostDirectory}.func/config.json"
+    foreach ($file in Get-ChildItem -LiteralPath $ProjectRoot -Recurse -File -Force) {
+        $relative = [IO.Path]::GetRelativePath($ProjectRoot, $file.FullName).Replace('\', '/')
+        if ($relative -match '(^|/)\.func/config\.json$' -or
+            $relative.Equals($configurationPath, [StringComparison]::OrdinalIgnoreCase) -or
+            $relative.StartsWith("$configurationPath/", [StringComparison]::OrdinalIgnoreCase) -or
+            $configurationPath.StartsWith("$relative/", [StringComparison]::OrdinalIgnoreCase)) {
+            throw "Source folder contains CLI-owned configuration or a blocking path '$relative'."
+        }
+    }
     return [ordered]@{
         identity  = "$PackageId.Project"
         name      = $DisplayName
@@ -205,9 +216,6 @@ function Copy-QuickstartProjectContent {
         if (-not $relative -or $relative -match '(^|/)\.git(/|$)') { continue }
         if ($relative -match '(^|/)\.template\.config(/|$)') {
             throw "Source folder already has template engine metadata '$relative'."
-        }
-        if ($relative.Replace('\', '/') -match '(^|/)\.func/config\.json$') {
-            throw "Source folder contains CLI-owned configuration '$relative'."
         }
         $totalBytes += $entry.Length
         if ($totalBytes -gt 256MB) {

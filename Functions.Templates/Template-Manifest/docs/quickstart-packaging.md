@@ -90,7 +90,9 @@ names, rename project files, or run arbitrary executable actions. A source folde
 already contains `.template.config` is rejected rather than silently rewritten.
 Source-owned `.func/config.json` at any depth is also rejected, ignoring case,
 because configuration is owned by the Func host action. Source configuration is
-never deleted or rewritten to make a package compatible.
+never deleted or rewritten to make a package compatible. Descendants beneath
+the active project's reserved path and files blocking its `.func` directory
+are rejected before packaging as well.
 
 The release record lists the exact source tag and commit, selected folder,
 package coordinates, package SHA-256, and complete package file inventory. Its

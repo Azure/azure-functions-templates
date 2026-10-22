@@ -246,7 +246,10 @@ try {
         }
     } finally { $archive.Dispose() }
 
-    foreach ($configPath in @('.func/config.json', 'src/.func/config.json', '.FUNC/CONFIG.JSON', 'src/.FuNc/Config.Json')) {
+    foreach ($configPath in @(
+        '.func/config.json', 'src/.func/config.json', '.FUNC/CONFIG.JSON', 'src/.FuNc/Config.Json',
+        '.func/config.json/child.txt', 'src/.FuNc/Config.Json/child.txt', '.func', 'src/.FUNC'
+    )) {
         $hostPath = if ($configPath.StartsWith('src/')) { 'src/host.json' } else { 'host.json' }
         $configZip = Join-Path $tempRoot 'owned-config.zip'
         $stream = [IO.File]::Create($configZip)
@@ -271,12 +274,27 @@ try {
             Assert-Rejected {
                 Copy-QuickstartProjectContent -Archive $archive -ArchiveRoot 'config-repo' `
                     -FolderPath '' -Destination $configDestination -LegalDestination (Join-Path $configDestination 'license')
+                Get-QuickstartTemplateConfig -PackageId $packageId -TemplateId 'http-trigger-python-azd' `
+                    -DisplayName 'HTTP Trigger' -Language Python -Stack python -ProjectRoot $configDestination
             } '*CLI-owned configuration*'
-            Assert-True (-not (Test-Path -LiteralPath (Join-Path $configDestination $configPath))) `
-                'CLI-owned source configuration must be rejected before copying, never rewritten or deleted.'
+            Assert-True (Test-Path -LiteralPath (Join-Path $configDestination $configPath)) `
+                'Rejected source content must remain unchanged in the staged copy.'
             Assert-True ($null -ne $archive.GetEntry("config-repo/$configPath")) `
                 'Rejected source configuration must remain in the input archive.'
         } finally { $archive.Dispose() }
+    }
+
+    foreach ($hostPath in @('host.json', 'src/host.json')) {
+        $safeRoot = Join-Path $tempRoot "safe-config-$([guid]::NewGuid().ToString('N'))"
+        $hostDirectory = Split-Path -Parent (Join-Path $safeRoot $hostPath)
+        $null = New-Item -ItemType Directory -Path (Join-Path $hostDirectory '.func') -Force
+        [IO.File]::WriteAllText((Join-Path $safeRoot $hostPath), '{}')
+        [IO.File]::WriteAllText((Join-Path $hostDirectory '.func\notes.txt'), 'safe content')
+        $null = New-Item -ItemType Directory -Path (Join-Path $safeRoot 'unrelated') -Force
+        [IO.File]::WriteAllText((Join-Path $safeRoot 'unrelated\.func'), 'not an active config ancestor')
+        Assert-FuncConfig (Get-QuickstartTemplateConfig -PackageId $packageId `
+            -TemplateId 'http-trigger-python-azd' -DisplayName 'HTTP Trigger' `
+            -Language Python -Stack python -ProjectRoot $safeRoot) $hostPath
     }
 
     $traversalZip = Join-Path $tempRoot 'traversal.zip'
