@@ -205,6 +205,10 @@
           "default": "refs/heads/main",
           "description": "Git ref to clone (signed tag or branch name) with refs/tags/v* or refs/heads/branch. Tag refs must have a verified signature; lightweight and unsigned tags are not accepted. Defaults to main reference."
         },
+        "packageReference": {
+          "$ref": "#/$defs/packageReference",
+          "description": "Optional exact package nomination for Core Tools. This metadata is not publication evidence or acquisition authority."
+        },
         "whatsIncluded": {
           "type": "array",
           "items": {
@@ -216,6 +220,65 @@
           "type": "boolean",
           "default": false,
           "description": "Whether the template should be highlighted/featured in the UI"
+        }
+      }
+    },
+    "packageReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "packageId",
+        "version",
+        "source",
+        "templateIdentity"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "packageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-(0|[1-9][0-9]*|[0-9A-Za-z-]*[A-Za-z-][0-9A-Za-z-]*)(\\.(0|[1-9][0-9]*|[0-9A-Za-z-]*[A-Za-z-][0-9A-Za-z-]*))*)?$",
+          "description": "Exact normalized NuGet version, without a range or build metadata."
+        },
+        "source": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://[^/@?#]+(/[^?#]*)?$"
+        },
+        "templateIdentity": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\S(.*\\S)?$"
+        },
+        "artifact": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "algorithm",
+            "digest",
+            "evidenceReference"
+          ],
+          "properties": {
+            "algorithm": {
+              "const": "sha256"
+            },
+            "digest": {
+              "type": "string",
+              "pattern": "^[a-fA-F0-9]{64}$"
+            },
+            "evidenceReference": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
         }
       }
     }
