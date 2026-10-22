@@ -1,3 +1,5 @@
+param([string] $PackageEvidenceRoot)
+
 $ErrorActionPreference = 'Stop'
 
 $scriptPath = Join-Path $PSScriptRoot '..\pack-quickstart.ps1'
@@ -6,6 +8,56 @@ $scriptPath = Join-Path $PSScriptRoot '..\pack-quickstart.ps1'
 function Assert-True {
     param([bool] $Condition, [string] $Message)
     if (-not $Condition) { throw $Message }
+}
+
+function Assert-Rejected {
+    param([scriptblock] $Action, [string] $MessagePattern)
+    $failure = $null
+    try { & $Action } catch { $failure = $_.Exception.Message }
+    Assert-True ($failure -like $MessagePattern) "Expected rejection '$MessagePattern', got '$failure'."
+}
+
+function Assert-FuncConfig {
+    param($Config, [string] $ExpectedPath)
+    Assert-True (($Config.Keys | Sort-Object) -join ',' -ceq 'constraints,identity,name,postActions,primaryOutputs,shortName,tags') `
+        'Config must have exactly the accepted metadata keys, with no user symbols or transformations.'
+    Assert-True ($Config.tags.type -ceq 'project' -and $Config.tags.language -ceq 'Python') 'Project tags must be canonical.'
+    Assert-True ($Config.constraints.Keys.Count -eq 1 -and $Config.constraints.host.Keys.Count -eq 2 -and
+        $Config.constraints.host.type -ceq 'host' -and $Config.constraints.host.args.Count -eq 1 -and
+        $Config.constraints.host.args[0].Count -eq 1 -and $Config.constraints.host.args[0].hostname -ceq 'func') `
+        'Only the func host constraint is allowed, without invented workload constraints.'
+    Assert-True ($Config.primaryOutputs.Count -eq 1 -and $Config.primaryOutputs[0].Count -eq 1 -and
+        $Config.primaryOutputs[0].path -ceq $ExpectedPath) 'Primary output must be literal, unconditional, and point at the actual host root.'
+    Assert-True ($Config.postActions.Count -eq 1) 'Exactly one required config action is allowed.'
+    $action = $Config.postActions[0]
+    Assert-True ($action.Count -eq 3 -and $action.actionId -ceq '00e33184-ffc7-43ef-bec0-b1684df8ad56' -and
+        $action.continueOnError -is [bool] -and -not $action.continueOnError) 'Config action must fail closed.'
+    Assert-True ($action.args.Count -eq 3 -and $action.args.primaryOutputIndex -is [string] -and
+        $action.args.primaryOutputIndex -ceq '0' -and $action.args.stack -ceq 'python' -and
+        $action.args.language -ceq 'Python') 'Action arguments must be exactly the canonical index, stack, and language.'
+}
+
+function Assert-FuncPackage {
+    param([string] $Path, [string] $ExpectedHostPath)
+    $package = [System.IO.Compression.ZipFile]::OpenRead($Path)
+    try {
+        $nuspecs = @($package.Entries | Where-Object { $_.FullName -match '^[^/]+\.nuspec$' })
+        Assert-True ($nuspecs.Count -eq 1) 'Package must contain exactly one root nuspec.'
+        $reader = [IO.StreamReader]::new($nuspecs[0].Open())
+        try { [xml] $nuspec = $reader.ReadToEnd() } finally { $reader.Dispose() }
+        $types = @($nuspec.package.metadata.packageTypes.packageType | ForEach-Object name)
+        Assert-True (($types -join ',') -ceq 'Template,FuncTemplate') 'Package must declare exactly Template and FuncTemplate, not Workload or FuncRid.'
+        $configEntry = $package.GetEntry('content/quickstart/.template.config/template.json')
+        Assert-True ($null -ne $configEntry) 'Package must include the engine template config.'
+        $reader = [IO.StreamReader]::new($configEntry.Open())
+        try { $packedConfig = $reader.ReadToEnd() | ConvertFrom-Json -AsHashtable } finally { $reader.Dispose() }
+        Assert-FuncConfig $packedConfig $ExpectedHostPath
+        $hosts = @($package.Entries | Where-Object { $_.FullName -match '^content/quickstart/(.*/)?host\.json$' })
+        Assert-True ($hosts.Count -eq 1 -and $hosts[0].FullName -ceq "content/quickstart/$ExpectedHostPath") `
+            'The literal primary output must identify the sole actual copied host file.'
+        Assert-True (@($package.Entries | Where-Object { $_.FullName -match '(^|/)\.func/config\.json$' }).Count -eq 0) `
+            'Producer must not fabricate Func configuration at any project root.'
+    } finally { $package.Dispose() }
 }
 
 $repoRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..\..'))
@@ -42,13 +94,6 @@ Assert-True (-not (Test-Json -Json ($candidate | ConvertTo-Json -Depth 100) -Sch
 $packageId = Get-QuickstartPackageId -Id 'http-trigger-python-azd'
 Assert-True ($packageId -eq 'Microsoft.Azure.Functions.Quickstarts.http-trigger-python-azd') `
     'Package identity must be stable and derived from the manifest ID.'
-$config = Get-QuickstartTemplateConfig -PackageId $packageId -TemplateId 'http-trigger-python-azd' `
-    -DisplayName 'HTTP Trigger' -Language Python
-Assert-True ($config.tags.type -eq 'project' -and $config.Keys.Count -eq 4) `
-    'Generated config must be a parameterless project template.'
-$csharpConfig = Get-QuickstartTemplateConfig -PackageId $packageId -TemplateId test `
-    -DisplayName Test -Language CSharp
-Assert-True ($csharpConfig.tags.language -eq 'C#') 'CSharp must map to the engine language tag.'
 $branchRejected = $false
 try {
     $null = Get-QuickstartPinnedCommit -Repository 'Azure/azure-functions-templates' `
@@ -60,6 +105,61 @@ $tempRoot = Join-Path ([IO.Path]::GetTempPath()) "pack-quickstart-tests-$([Guid]
 $null = New-Item -ItemType Directory -Path $tempRoot
 try {
     Add-Type -AssemblyName System.IO.Compression
+    $metadataRoot = Join-Path $tempRoot 'metadata'
+    $null = New-Item -ItemType Directory -Path $metadataRoot
+    $configArgs = @{
+        PackageId = $packageId
+        TemplateId = 'http-trigger-python-azd'
+        DisplayName = 'HTTP Trigger'
+        Language = 'Python'
+        Stack = 'python'
+        ProjectRoot = $metadataRoot
+    }
+    Assert-Rejected { Get-QuickstartTemplateConfig @configArgs } '*exactly one host.json*found 0*'
+    [IO.File]::WriteAllText((Join-Path $metadataRoot 'host.json'), '{}')
+    $config = Get-QuickstartTemplateConfig @configArgs
+    Assert-FuncConfig $config 'host.json'
+    $null = New-Item -ItemType Directory -Path (Join-Path $metadataRoot 'src')
+    [IO.File]::WriteAllText((Join-Path $metadataRoot 'src\host.json'), '{}')
+    Assert-Rejected { Get-QuickstartTemplateConfig @configArgs } '*exactly one host.json*found 2*'
+    Remove-Item -LiteralPath (Join-Path $metadataRoot 'host.json')
+    Assert-FuncConfig (Get-QuickstartTemplateConfig @configArgs) 'src/host.json'
+    foreach ($invalidHost in @('[]', '[{}]', 'null', '"host"', '42', '')) {
+        [IO.File]::WriteAllText((Join-Path $metadataRoot 'src\host.json'), $invalidHost)
+        Assert-Rejected { Get-QuickstartTemplateConfig @configArgs } '*must contain a JSON object*'
+    }
+    [IO.File]::WriteAllText((Join-Path $metadataRoot 'src\host.json'), '{invalid')
+    Assert-Rejected { Get-QuickstartTemplateConfig @configArgs } '*Conversion from JSON failed*'
+    [IO.File]::WriteAllText((Join-Path $metadataRoot 'src\host.json'), '{}')
+    [IO.File]::Move((Join-Path $metadataRoot 'src\host.json'), (Join-Path $metadataRoot 'src\Host.json'))
+    Assert-Rejected { Get-QuickstartTemplateConfig @configArgs } '*literal name host.json*'
+    [IO.File]::Move((Join-Path $metadataRoot 'src\Host.json'), (Join-Path $metadataRoot 'src\host.json'))
+    $null = New-Item -ItemType Directory -Path (Join-Path $metadataRoot 'unsupported root')
+    [IO.File]::Move((Join-Path $metadataRoot 'src\host.json'), (Join-Path $metadataRoot 'unsupported root\host.json'))
+    Assert-Rejected { Get-QuickstartTemplateConfig @configArgs } '*Unsupported nonliteral host.json output path*'
+    [IO.File]::Move((Join-Path $metadataRoot 'unsupported root\host.json'), (Join-Path $metadataRoot 'src\host.json'))
+    foreach ($pair in @(@('Python', 'Python'), @('python', 'python'), @('node', 'Python'))) {
+        $configArgs.Stack = $pair[0]
+        $configArgs.Language = $pair[1]
+        Assert-Rejected { Get-QuickstartTemplateConfig @configArgs } '*Only the reviewed installed-catalog pair*'
+    }
+    $configArgs.Stack = 'python'
+    $configArgs.Language = 'Python'
+    Assert-Rejected {
+        Invoke-QuickstartPack -Id http-trigger-python-azd -Version 1.0.0 -Expected ('0' * 40) `
+            -Feed https://api.nuget.org/v3/index.json -OutPath $tempRoot
+    } '*Explicit reviewed installed-catalog values*'
+    foreach ($pair in @(@('', 'Python'), @('python', ''), @('node', 'Python'), @('python', 'python'))) {
+        Assert-Rejected {
+            Invoke-QuickstartPack -Id http-trigger-python-azd -Version 1.0.0 -Expected ('0' * 40) `
+                -Feed https://api.nuget.org/v3/index.json -OutPath $tempRoot -Stack $pair[0] -Language $pair[1]
+        } '*Explicit reviewed installed-catalog values*'
+    }
+    Assert-Rejected {
+        Invoke-QuickstartPack -Id http-trigger-javascript-azd -Version 1.0.0 -Expected ('0' * 40) `
+            -Feed https://api.nuget.org/v3/index.json -OutPath $tempRoot -Stack python -Language Python
+    } '*Explicit reviewed installed-catalog values*'
+
     $sourceZip = Join-Path $tempRoot 'source.zip'
     $stream = [IO.File]::Create($sourceZip)
     try {
@@ -146,6 +246,57 @@ try {
         }
     } finally { $archive.Dispose() }
 
+    foreach ($configPath in @(
+        '.func/config.json', 'src/.func/config.json', '.FUNC/CONFIG.JSON', 'src/.FuNc/Config.Json',
+        '.func/config.json/child.txt', 'src/.FuNc/Config.Json/child.txt', '.func', 'src/.FUNC'
+    )) {
+        $hostPath = if ($configPath.StartsWith('src/')) { 'src/host.json' } else { 'host.json' }
+        $configZip = Join-Path $tempRoot 'owned-config.zip'
+        $stream = [IO.File]::Create($configZip)
+        try {
+            $archive = [System.IO.Compression.ZipArchive]::new($stream, [System.IO.Compression.ZipArchiveMode]::Create, $false)
+            try {
+                foreach ($pair in @(
+                    @{ Path = 'config-repo/LICENSE'; Text = 'license' },
+                    @{ Path = "config-repo/$hostPath"; Text = '{}' },
+                    @{ Path = 'config-repo/function_app.py'; Text = 'app = True' },
+                    @{ Path = "config-repo/$configPath"; Text = '{"stack":{"runtime":"python","language":"Python"}}' }
+                )) {
+                    $entry = $archive.CreateEntry($pair.Path)
+                    $writer = [IO.StreamWriter]::new($entry.Open())
+                    try { $writer.Write($pair.Text) } finally { $writer.Dispose() }
+                }
+            } finally { $archive.Dispose() }
+        } finally { $stream.Dispose() }
+        $archive = [System.IO.Compression.ZipFile]::OpenRead($configZip)
+        try {
+            $configDestination = Join-Path $tempRoot "owned-config-$([guid]::NewGuid().ToString('N'))"
+            Assert-Rejected {
+                Copy-QuickstartProjectContent -Archive $archive -ArchiveRoot 'config-repo' `
+                    -FolderPath '' -Destination $configDestination -LegalDestination (Join-Path $configDestination 'license')
+                Get-QuickstartTemplateConfig -PackageId $packageId -TemplateId 'http-trigger-python-azd' `
+                    -DisplayName 'HTTP Trigger' -Language Python -Stack python -ProjectRoot $configDestination
+            } '*CLI-owned configuration*'
+            Assert-True (Test-Path -LiteralPath (Join-Path $configDestination $configPath)) `
+                'Rejected source content must remain unchanged in the staged copy.'
+            Assert-True ($null -ne $archive.GetEntry("config-repo/$configPath")) `
+                'Rejected source configuration must remain in the input archive.'
+        } finally { $archive.Dispose() }
+    }
+
+    foreach ($hostPath in @('host.json', 'src/host.json')) {
+        $safeRoot = Join-Path $tempRoot "safe-config-$([guid]::NewGuid().ToString('N'))"
+        $hostDirectory = Split-Path -Parent (Join-Path $safeRoot $hostPath)
+        $null = New-Item -ItemType Directory -Path (Join-Path $hostDirectory '.func') -Force
+        [IO.File]::WriteAllText((Join-Path $safeRoot $hostPath), '{}')
+        [IO.File]::WriteAllText((Join-Path $hostDirectory '.func\notes.txt'), 'safe content')
+        $null = New-Item -ItemType Directory -Path (Join-Path $safeRoot 'unrelated') -Force
+        [IO.File]::WriteAllText((Join-Path $safeRoot 'unrelated\.func'), 'not an active config ancestor')
+        Assert-FuncConfig (Get-QuickstartTemplateConfig -PackageId $packageId `
+            -TemplateId 'http-trigger-python-azd' -DisplayName 'HTTP Trigger' `
+            -Language Python -Stack python -ProjectRoot $safeRoot) $hostPath
+    }
+
     $traversalZip = Join-Path $tempRoot 'traversal.zip'
     $stream = [IO.File]::Create($traversalZip)
     try {
@@ -164,10 +315,12 @@ try {
         $null = New-Item -ItemType Directory -Path (Join-Path $stage 'content\quickstart\.template.config') -Force
         $null = New-Item -ItemType Directory -Path (Join-Path $stage 'license') -Force
         [IO.File]::WriteAllText((Join-Path $stage 'content\quickstart\main.py'), 'print("same")')
+        [IO.File]::WriteAllText((Join-Path $stage 'content\quickstart\host.json'), '{}')
         $testConfig = Get-QuickstartTemplateConfig -PackageId $packageId `
-            -TemplateId 'http-trigger-python-azd' -DisplayName 'HTTP Trigger' -Language Python
+            -TemplateId 'http-trigger-python-azd' -DisplayName 'HTTP Trigger' -Language Python `
+            -Stack python -ProjectRoot (Join-Path $stage 'content\quickstart')
         [IO.File]::WriteAllText((Join-Path $stage 'content\quickstart\.template.config\template.json'), `
-            (($testConfig | ConvertTo-Json -Depth 5) + "`n"))
+            (($testConfig | ConvertTo-Json -Depth 10) + "`n"))
         [IO.File]::WriteAllText((Join-Path $stage 'license\LICENSE'), 'license')
         $packagePath = Join-Path $stage "$packageId.1.0.0.nupkg"
         Write-QuickstartNupkg -Stage $stage -PackageId $packageId -Version '1.0.0' `
@@ -226,12 +379,25 @@ try {
 
     $package = [System.IO.Compression.ZipFile]::OpenRead($first)
     try {
-        Assert-True ($package.GetEntry("$packageId.nuspec") -ne $null) 'Package must contain its nuspec.'
         Assert-True ($package.GetEntry('content/quickstart/main.py') -ne $null) `
             'Package must place project files under the template content root.'
-        Assert-True ($package.GetEntry('content/quickstart/.template.config/template.json') -ne $null) `
-            'Package must include the engine template config.'
     } finally { $package.Dispose() }
+    Assert-FuncPackage $first 'host.json'
+
+    if ($PackageEvidenceRoot) {
+        foreach ($sample in @(
+            @{ Id = 'http-trigger-python-azd'; Version = '1.0.0'; HostPath = 'host.json' },
+            @{ Id = 'http-trigger-python-azd'; Version = '1.0.1'; HostPath = 'host.json' },
+            @{ Id = 'timer-trigger-python-azd'; Version = '1.0.0'; HostPath = 'src/host.json' }
+        )) {
+            $sampleDirectory = Join-Path $PackageEvidenceRoot "$($sample.Id)\$($sample.Version)"
+            $samplePackage = Join-Path $sampleDirectory "Microsoft.Azure.Functions.Quickstarts.$($sample.Id).$($sample.Version).nupkg"
+            Assert-FuncPackage $samplePackage $sample.HostPath
+            $release = Get-Content -LiteralPath (Join-Path $sampleDirectory 'release.json') -Raw | ConvertFrom-Json
+            Assert-True ($release.packageSha256 -ceq (Get-FileHash -LiteralPath $samplePackage -Algorithm SHA256).Hash.ToLowerInvariant()) `
+                'Retained real package must match its new-epoch release digest.'
+        }
+    }
 
     $previousCliHome = $env:DOTNET_CLI_HOME
     $previousTelemetryOptOut = $env:DOTNET_CLI_TELEMETRY_OPTOUT
@@ -240,19 +406,14 @@ try {
     $env:DOTNET_CLI_TELEMETRY_OPTOUT = '1'
     $env:DOTNET_NOLOGO = '1'
     $installOutput = & dotnet new install $first 2>&1
-    if ($LASTEXITCODE -ne 0 -or ($installOutput -join ' ') -match 'validation errors|No templates were found') {
+    if ($LASTEXITCODE -ne 0 -or ($installOutput -join ' ') -match 'validation errors') {
         throw "dotnet new install rejected the generated package: $($installOutput -join ' ')"
-    }
-    $listOutput = & dotnet new list http-trigger-python-azd 2>&1
-    if ($LASTEXITCODE -ne 0 -or ($listOutput -join ' ') -notmatch 'http-trigger-python-azd') {
-        throw "dotnet new did not enumerate the installed project template: $($listOutput -join ' ')"
     }
     $generatedPath = Join-Path $tempRoot 'generated'
     $createOutput = & dotnet new http-trigger-python-azd --output $generatedPath 2>&1
-    if ($LASTEXITCODE -ne 0) {
-        throw "dotnet new could not instantiate the project template: $($createOutput -join ' ')"
-    }
-    Assert-True (Test-Path (Join-Path $generatedPath 'main.py')) 'Template engine must materialize project files.'
+    Assert-True ($LASTEXITCODE -ne 0 -and ($createOutput -join ' ') -match 'constraint') `
+        "dotnet host must reject the func-only constraint: $($createOutput -join ' ')"
+    Assert-True (-not (Test-Path (Join-Path $generatedPath 'main.py'))) 'dotnet host must not materialize func-only content.'
     $env:DOTNET_CLI_HOME = $previousCliHome
     $env:DOTNET_CLI_TELEMETRY_OPTOUT = $previousTelemetryOptOut
     $env:DOTNET_NOLOGO = $previousNoLogo

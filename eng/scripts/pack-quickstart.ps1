@@ -9,7 +9,8 @@
 
 .EXAMPLE
     .\eng\scripts\pack-quickstart.ps1 -TemplateId http-trigger-python-azd `
-      -PackageVersion 1.0.0 -ExpectedCommit <40-character-commit>
+      -PackageVersion 1.0.0 -ExpectedCommit <40-character-commit> `
+      -ReviewedStack python -ReviewedLanguage Python
 #>
 [CmdletBinding()]
 param(
@@ -24,6 +25,10 @@ param(
     [string] $ExpectedCommit,
 
     [string] $SourceRef,
+
+    [string] $ReviewedStack,
+
+    [string] $ReviewedLanguage,
 
     [ValidatePattern('^https://')]
     [string] $PackageSource = 'https://api.nuget.org/v3/index.json',
@@ -49,18 +54,65 @@ function Get-QuickstartTemplateConfig {
         [Parameter(Mandatory)][string] $PackageId,
         [Parameter(Mandatory)][string] $TemplateId,
         [Parameter(Mandatory)][string] $DisplayName,
-        [Parameter(Mandatory)][string] $Language
+        [Parameter(Mandatory)][string] $Language,
+        [Parameter(Mandatory)][string] $Stack,
+        [Parameter(Mandatory)][string] $ProjectRoot
     )
 
-    $engineLanguage = if ($Language -eq 'CSharp') { 'C#' } else { $Language }
+    if ($Stack -cne 'python' -or $Language -cne 'Python') {
+        throw 'Only the reviewed installed-catalog pair python / Python is supported. Supply explicit -ReviewedStack and -ReviewedLanguage values.'
+    }
+    $hosts = @(Get-ChildItem -LiteralPath $ProjectRoot -Recurse -File -Force |
+        Where-Object { $_.Name -ieq 'host.json' })
+    if ($hosts.Count -ne 1) {
+        throw "Expected exactly one host.json project root in copied content, found $($hosts.Count)."
+    }
+    if ($hosts[0].Name -cne 'host.json') {
+        throw 'The project root file must use the literal name host.json.'
+    }
+    $hostConfig = Get-Content -LiteralPath $hosts[0].FullName -Raw | ConvertFrom-Json -AsHashtable -NoEnumerate
+    if ($hostConfig -isnot [System.Collections.IDictionary]) {
+        throw 'The selected host.json must contain a JSON object.'
+    }
+    $primaryOutput = [IO.Path]::GetRelativePath($ProjectRoot, $hosts[0].FullName).Replace('\', '/')
+    if ($primaryOutput -notmatch '^(?:[A-Za-z0-9_.-]+/)*host\.json$') {
+        throw "Unsupported nonliteral host.json output path '$primaryOutput'."
+    }
+    $hostDirectory = $primaryOutput.Substring(0, $primaryOutput.Length - 'host.json'.Length)
+    $configurationPath = "${hostDirectory}.func/config.json"
+    foreach ($file in Get-ChildItem -LiteralPath $ProjectRoot -Recurse -File -Force) {
+        $relative = [IO.Path]::GetRelativePath($ProjectRoot, $file.FullName).Replace('\', '/')
+        if ($relative -match '(^|/)\.func/config\.json$' -or
+            $relative.Equals($configurationPath, [StringComparison]::OrdinalIgnoreCase) -or
+            $relative.StartsWith("$configurationPath/", [StringComparison]::OrdinalIgnoreCase) -or
+            $configurationPath.StartsWith("$relative/", [StringComparison]::OrdinalIgnoreCase)) {
+            throw "Source folder contains CLI-owned configuration or a blocking path '$relative'."
+        }
+    }
     return [ordered]@{
         identity  = "$PackageId.Project"
         name      = $DisplayName
         shortName = $TemplateId
         tags      = [ordered]@{
-            language = $engineLanguage
+            language = $Language
             type     = 'project'
         }
+        constraints = [ordered]@{
+            host = [ordered]@{
+                type = 'host'
+                args = @(@{ hostname = 'func' })
+            }
+        }
+        primaryOutputs = @(@{ path = $primaryOutput })
+        postActions = @([ordered]@{
+            actionId = '00e33184-ffc7-43ef-bec0-b1684df8ad56'
+            continueOnError = $false
+            args = [ordered]@{
+                primaryOutputIndex = '0'
+                stack = $Stack
+                language = $Language
+            }
+        })
     }
 }
 
@@ -287,7 +339,7 @@ function Write-QuickstartNupkg {
     <authors>Azure Functions Team</authors>
     <description>Azure Functions quickstart project template.</description>
     <license type="file">$licenseXml</license>
-    <packageTypes><packageType name="Template" /></packageTypes>
+    <packageTypes><packageType name="Template" /><packageType name="FuncTemplate" /></packageTypes>
   </metadata>
 </package>
 "@
@@ -359,7 +411,9 @@ function Invoke-QuickstartPack {
         [string] $Expected,
         [string] $Ref,
         [string] $Feed,
-        [string] $OutPath
+        [string] $OutPath,
+        [string] $Stack,
+        [string] $Language
     )
 
     $versionPattern = '^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(-(0|[1-9][0-9]*|[0-9A-Za-z-]*[A-Za-z-][0-9A-Za-z-]*)(\.(0|[1-9][0-9]*|[0-9A-Za-z-]*[A-Za-z-][0-9A-Za-z-]*))*)?$'
@@ -379,6 +433,9 @@ function Invoke-QuickstartPack {
         throw 'The current manifest does not validate against manifest.schema.json.'
     }
     $entry = Get-QuickstartManifestEntry -ManifestPath $manifestPath -Id $Id
+    if ($Stack -cne 'python' -or $Language -cne 'Python' -or $entry.language -cne $Language) {
+        throw 'Explicit reviewed installed-catalog values -ReviewedStack python -ReviewedLanguage Python are required and must match the manifest language.'
+    }
     if (-not $Ref) { $Ref = [string]$entry.gitRef }
     if ($entry.repositoryUrl -notmatch '^https://github\.com/([^/]+)/([^/]+)/?$') {
         throw "Manifest repositoryUrl '$($entry.repositoryUrl)' is not a GitHub repository URL."
@@ -428,10 +485,10 @@ function Invoke-QuickstartPack {
         Remove-Item -LiteralPath $archivePath -Force
 
         $config = Get-QuickstartTemplateConfig -PackageId $packageId -TemplateId $Id `
-            -DisplayName ([string]$entry.displayName) -Language ([string]$entry.language)
+            -DisplayName ([string]$entry.displayName) -Language $Language -Stack $Stack -ProjectRoot $projectRoot
         $configPath = Join-Path $projectRoot '.template.config\template.json'
         $null = New-Item -ItemType Directory -Path (Split-Path -Parent $configPath) -Force
-        $configJson = $config | ConvertTo-Json -Depth 5
+        $configJson = $config | ConvertTo-Json -Depth 10
         [IO.File]::WriteAllText($configPath, $configJson.Replace("`r`n", "`n") + "`n", [Text.UTF8Encoding]::new($false))
 
         $packagePath = Join-Path $stage "$packageId.$Version.nupkg"
@@ -529,5 +586,5 @@ function Invoke-QuickstartPack {
 
 if (-not $script:QuickstartPackagerDotSourced) {
     Invoke-QuickstartPack -Id $TemplateId -Version $PackageVersion -Expected $ExpectedCommit `
-        -Ref $SourceRef -Feed $PackageSource -OutPath $OutputPath
+        -Ref $SourceRef -Feed $PackageSource -OutPath $OutputPath -Stack $ReviewedStack -Language $ReviewedLanguage
 }
