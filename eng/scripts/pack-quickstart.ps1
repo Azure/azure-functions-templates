@@ -294,8 +294,8 @@ function Write-QuickstartNupkg {
     [IO.File]::WriteAllText($nuspecPath, $nuspec.Replace("`r`n", "`n"), [Text.UTF8Encoding]::new($false))
 
     $files = @(Get-ChildItem -LiteralPath $Stage -File -Recurse |
-        Where-Object { $_.FullName -notin @($PackagePath) } |
-        Sort-Object { $_.FullName.Substring($Stage.Length).Replace('\', '/') })
+        Where-Object { $_.FullName -notin @($PackagePath) })
+    $files = @(Get-OrdinallySortedFiles -Files $files -Root $Stage)
     $stream = [IO.File]::Create($PackagePath)
     try {
         $archive = [System.IO.Compression.ZipArchive]::new($stream, [System.IO.Compression.ZipArchiveMode]::Create, $false)
@@ -315,6 +315,25 @@ function Write-QuickstartNupkg {
     } finally { $stream.Dispose() }
 }
 
+function Get-OrdinallySortedFiles {
+    param(
+        [Parameter(Mandatory)][System.IO.FileInfo[]] $Files,
+        [Parameter(Mandatory)][string] $Root
+    )
+
+    $sorted = [System.Collections.Generic.SortedDictionary[string, System.IO.FileInfo]]::new(
+        [StringComparer]::Ordinal
+    )
+    foreach ($file in $Files) {
+        $relative = $file.FullName.Substring($Root.Length).TrimStart('\', '/').Replace('\', '/')
+        if ($sorted.ContainsKey($relative)) {
+            throw "Package contains duplicate normalized path '$relative'."
+        }
+        $sorted.Add($relative, $file)
+    }
+    return @($sorted.Values)
+}
+
 function Get-QuickstartFilesManifest {
     param(
         [Parameter(Mandatory)][string] $ProjectRoot,
@@ -322,10 +341,8 @@ function Get-QuickstartFilesManifest {
     )
 
     $files = @(Get-ChildItem -LiteralPath $ProjectRoot -File -Recurse |
-        Where-Object { -not $ExcludePath -or $_.FullName -ne $ExcludePath } |
-        Sort-Object {
-        $_.FullName.Substring($ProjectRoot.Length).TrimStart('\', '/').Replace('\', '/')
-    })
+        Where-Object { -not $ExcludePath -or $_.FullName -ne $ExcludePath })
+    $files = @(Get-OrdinallySortedFiles -Files $files -Root $ProjectRoot)
     return @($files | ForEach-Object {
         [ordered]@{
             path   = $_.FullName.Substring($ProjectRoot.Length).TrimStart('\', '/').Replace('\', '/')

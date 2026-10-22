@@ -178,6 +178,52 @@ try {
     Assert-True ((Get-FileHash $first -Algorithm SHA256).Hash -eq (Get-FileHash $second -Algorithm SHA256).Hash) `
         'Identical package inputs must produce identical archive bytes.'
 
+    $legacyGermanOrder = @('content/quickstart/z.txt', "content/quickstart/$([char]0x00E4).txt") |
+        Sort-Object -Culture de-DE
+    $legacySwedishOrder = @('content/quickstart/z.txt', "content/quickstart/$([char]0x00E4).txt") |
+        Sort-Object -Culture sv-SE
+    Assert-True (($legacyGermanOrder -join "`n") -ne ($legacySwedishOrder -join "`n")) `
+        'Cross-culture fixture paths must distinguish German and Swedish collation.'
+
+    $previousCulture = [System.Threading.Thread]::CurrentThread.CurrentCulture
+    $previousUICulture = [System.Threading.Thread]::CurrentThread.CurrentUICulture
+    try {
+        $cultureOutputs = @{}
+        foreach ($cultureName in @('de-DE', 'sv-SE')) {
+            [System.Threading.Thread]::CurrentThread.CurrentCulture = [Globalization.CultureInfo]::GetCultureInfo($cultureName)
+            [System.Threading.Thread]::CurrentThread.CurrentUICulture = [Globalization.CultureInfo]::GetCultureInfo($cultureName)
+            $stage = Join-Path $tempRoot "culture-$cultureName"
+            $null = New-Item -ItemType Directory -Path (Join-Path $stage 'content\quickstart') -Force
+            $null = New-Item -ItemType Directory -Path (Join-Path $stage 'license') -Force
+            [IO.File]::WriteAllText((Join-Path $stage 'content\quickstart\z.txt'), 'z')
+            [IO.File]::WriteAllText((Join-Path $stage "content\quickstart\$([char]0x00E4).txt"), 'accented')
+            [IO.File]::WriteAllText((Join-Path $stage 'license\LICENSE'), 'license')
+            $packagePath = Join-Path $stage "$packageId.1.0.0.nupkg"
+            Write-QuickstartNupkg -Stage $stage -PackageId $packageId -Version '1.0.0' `
+                -LicensePath 'license/LICENSE' -PackagePath $packagePath
+            $inventory = Get-QuickstartFilesManifest -ProjectRoot $stage -ExcludePath $packagePath
+            $archive = [System.IO.Compression.ZipFile]::OpenRead($packagePath)
+            try { $archivePaths = @($archive.Entries | ForEach-Object FullName) } finally { $archive.Dispose() }
+            $cultureOutputs[$cultureName] = @{
+                packageHash = (Get-FileHash $packagePath -Algorithm SHA256).Hash
+                inventory = @($inventory | ConvertTo-Json -Depth 10 -Compress)
+                inventoryPaths = @($inventory | ForEach-Object path)
+                archivePaths = $archivePaths
+            }
+        }
+    } finally {
+        [System.Threading.Thread]::CurrentThread.CurrentCulture = $previousCulture
+        [System.Threading.Thread]::CurrentThread.CurrentUICulture = $previousUICulture
+    }
+    Assert-True ($cultureOutputs['de-DE'].packageHash -eq $cultureOutputs['sv-SE'].packageHash) `
+        'Identical files must produce identical package bytes across cultures.'
+    Assert-True (($cultureOutputs['de-DE'].inventory -join "`n") -eq ($cultureOutputs['sv-SE'].inventory -join "`n")) `
+        'Identical files must produce identical inventory bytes across cultures.'
+    Assert-True (($cultureOutputs['de-DE'].inventoryPaths -join "`n") -eq ($cultureOutputs['sv-SE'].inventoryPaths -join "`n")) `
+        'Inventory paths must retain identical ordinal order across cultures.'
+    Assert-True (($cultureOutputs['de-DE'].archivePaths -join "`n") -eq ($cultureOutputs['sv-SE'].archivePaths -join "`n")) `
+        'Archive entries must retain identical ordinal order across cultures.'
+
     $package = [System.IO.Compression.ZipFile]::OpenRead($first)
     try {
         Assert-True ($package.GetEntry("$packageId.nuspec") -ne $null) 'Package must contain its nuspec.'
