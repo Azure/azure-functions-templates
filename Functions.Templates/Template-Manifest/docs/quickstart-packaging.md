@@ -88,6 +88,9 @@ No host file or `.func/config.json` is fabricated by the producer.
 It does not add user symbols, prompt for template parameters, rewrite source
 names, rename project files, or run arbitrary executable actions. A source folder that
 already contains `.template.config` is rejected rather than silently rewritten.
+Source-owned `.func/config.json` at any depth is also rejected, ignoring case,
+because configuration is owned by the Func host action. Source configuration is
+never deleted or rewritten to make a package compatible.
 
 The release record lists the exact source tag and commit, selected folder,
 package coordinates, package SHA-256, and complete package file inventory. Its

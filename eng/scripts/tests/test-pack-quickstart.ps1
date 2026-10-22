@@ -246,6 +246,39 @@ try {
         }
     } finally { $archive.Dispose() }
 
+    foreach ($configPath in @('.func/config.json', 'src/.func/config.json', '.FUNC/CONFIG.JSON', 'src/.FuNc/Config.Json')) {
+        $hostPath = if ($configPath.StartsWith('src/')) { 'src/host.json' } else { 'host.json' }
+        $configZip = Join-Path $tempRoot 'owned-config.zip'
+        $stream = [IO.File]::Create($configZip)
+        try {
+            $archive = [System.IO.Compression.ZipArchive]::new($stream, [System.IO.Compression.ZipArchiveMode]::Create, $false)
+            try {
+                foreach ($pair in @(
+                    @{ Path = 'config-repo/LICENSE'; Text = 'license' },
+                    @{ Path = "config-repo/$hostPath"; Text = '{}' },
+                    @{ Path = 'config-repo/function_app.py'; Text = 'app = True' },
+                    @{ Path = "config-repo/$configPath"; Text = '{"stack":{"runtime":"python","language":"Python"}}' }
+                )) {
+                    $entry = $archive.CreateEntry($pair.Path)
+                    $writer = [IO.StreamWriter]::new($entry.Open())
+                    try { $writer.Write($pair.Text) } finally { $writer.Dispose() }
+                }
+            } finally { $archive.Dispose() }
+        } finally { $stream.Dispose() }
+        $archive = [System.IO.Compression.ZipFile]::OpenRead($configZip)
+        try {
+            $configDestination = Join-Path $tempRoot "owned-config-$([guid]::NewGuid().ToString('N'))"
+            Assert-Rejected {
+                Copy-QuickstartProjectContent -Archive $archive -ArchiveRoot 'config-repo' `
+                    -FolderPath '' -Destination $configDestination -LegalDestination (Join-Path $configDestination 'license')
+            } '*CLI-owned configuration*'
+            Assert-True (-not (Test-Path -LiteralPath (Join-Path $configDestination $configPath))) `
+                'CLI-owned source configuration must be rejected before copying, never rewritten or deleted.'
+            Assert-True ($null -ne $archive.GetEntry("config-repo/$configPath")) `
+                'Rejected source configuration must remain in the input archive.'
+        } finally { $archive.Dispose() }
+    }
+
     $traversalZip = Join-Path $tempRoot 'traversal.zip'
     $stream = [IO.File]::Create($traversalZip)
     try {

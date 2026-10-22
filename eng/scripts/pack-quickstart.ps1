@@ -206,6 +206,9 @@ function Copy-QuickstartProjectContent {
         if ($relative -match '(^|/)\.template\.config(/|$)') {
             throw "Source folder already has template engine metadata '$relative'."
         }
+        if ($relative.Replace('\', '/') -match '(^|/)\.func/config\.json$') {
+            throw "Source folder contains CLI-owned configuration '$relative'."
+        }
         $totalBytes += $entry.Length
         if ($totalBytes -gt 256MB) {
             throw 'Selected project content exceeds the 256 MiB uncompressed limit.'
