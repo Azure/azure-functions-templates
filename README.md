@@ -29,6 +29,13 @@ cd Build
 
 > These build steps only work on Windows
 
+## Quickstart project-template packages
+
+For a local, manually generated project-template package from one manifest entry,
+see [Quickstart packaging](Functions.Templates/Template-Manifest/docs/quickstart-packaging.md).
+This workflow is separate from the existing template build and does not publish
+packages or update the production manifest.
+
 ## Dotnet templates
 
 There are two kind of dotnet templates contained within this repository, script type (.csx and .fsx) templates that do not require compilation and non-script type (.cs and .fs) templates that require compilation.
