@@ -1,0 +1,251 @@
+{
+    "author": "Victoria Hall",
+    "name": "Dataverse trigger",
+    "description": "$DataverseTrigger_description",
+    "programmingModel": "v2",
+    "language": "python",
+    "jobs": [
+        {
+            "name": "Create New Project with Dataverse triggers",
+            "type": "CreateNewApp",
+            "inputs": [
+                {
+                    "assignTo": "$(APP_FILENAME)",
+                    "paramId": "app-fileName",
+                    "defaultValue": "function_app.py",
+                    "required": true,
+                    "condition": {
+                        "name": "ClientId",
+                        "values": [
+                            "VSCode"
+                        ],
+                        "operator": "IN"
+                    }
+                },
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
+                    "required": true,
+                    "defaultValue": "dataverse_trigger"
+                },
+                {
+                    "assignTo": "$(CONNECTION_INPUT)",
+                    "paramId": "dataverseTrigger-connection",
+                    "required": true,
+                    "defaultValue": "ConnectorNamespace"
+                },
+                {
+                    "assignTo": "$(ON_ROW_CHANGED_TRIGGER_CONFIG_INPUT)",
+                    "paramId": "dataverseTrigger-onRowChangedTriggerConfig",
+                    "required": true,
+                    "defaultValue": "%OnDataverseRowChangedTriggerConfigName%"
+                }
+            ],
+            "actions": [
+                "readFileContent_FunctionApp",
+                "writeFile_FunctionApp",
+                "ShowMarkdownPreview"
+            ]
+        },
+        {
+            "name": "Add Dataverse triggers to the main file",
+            "type": "AppendToFile",
+            "inputs": [
+                {
+                    "assignTo": "$(SELECTED_FILEPATH)",
+                    "paramId": "app-selectedFileName",
+                    "defaultValue": "function_app.py",
+                    "required": true,
+                    "condition": {
+                        "name": "ClientId",
+                        "values": [
+                            "VSCode"
+                        ],
+                        "operator": "IN"
+                    }
+                },
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
+                    "required": true,
+                    "defaultValue": "dataverse_trigger"
+                },
+                {
+                    "assignTo": "$(CONNECTION_INPUT)",
+                    "paramId": "dataverseTrigger-connection",
+                    "required": true,
+                    "defaultValue": "ConnectorNamespace"
+                },
+                {
+                    "assignTo": "$(ON_ROW_CHANGED_TRIGGER_CONFIG_INPUT)",
+                    "paramId": "dataverseTrigger-onRowChangedTriggerConfig",
+                    "required": true,
+                    "defaultValue": "%OnDataverseRowChangedTriggerConfigName%"
+                }
+            ],
+            "actions": [
+                "readFileContent_FunctionBody",
+                "appendFileContent_FunctionApp",
+                "ShowMarkdownPreview"
+            ]
+        },
+        {
+            "name": "Create New Blueprint with Dataverse triggers",
+            "type": "CreateNewBlueprint",
+            "inputs": [
+                {
+                    "assignTo": "$(BLUEPRINT_FILENAME)",
+                    "paramId": "blueprint-fileName",
+                    "defaultValue": "blueprint.py",
+                    "required": true,
+                    "condition": {
+                        "name": "ClientId",
+                        "values": [
+                            "VSCode"
+                        ],
+                        "operator": "IN"
+                    }
+                },
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
+                    "required": true,
+                    "defaultValue": "dataverse_trigger"
+                },
+                {
+                    "assignTo": "$(CONNECTION_INPUT)",
+                    "paramId": "dataverseTrigger-connection",
+                    "required": true,
+                    "defaultValue": "ConnectorNamespace"
+                },
+                {
+                    "assignTo": "$(ON_ROW_CHANGED_TRIGGER_CONFIG_INPUT)",
+                    "paramId": "dataverseTrigger-onRowChangedTriggerConfig",
+                    "required": true,
+                    "defaultValue": "%OnDataverseRowChangedTriggerConfigName%"
+                }
+            ],
+            "actions": [
+                "readFileContent_BlueprintFile",
+                "writeFile_BlueprintFile",
+                "readFileContent_BlueprintBody",
+                "appendFileContent_BlueprintBody",
+                "ShowMarkdownPreview"
+            ]
+        },
+        {
+            "name": "Add Dataverse triggers to the Blueprint",
+            "type": "AppendToBlueprint",
+            "inputs": [
+                {
+                    "assignTo": "$(BLUEPRINT_FILENAME)",
+                    "paramId": "blueprint-existingFileName",
+                    "required": true,
+                    "condition": {
+                        "name": "ClientId",
+                        "values": [
+                            "VSCode"
+                        ],
+                        "operator": "IN"
+                    }
+                },
+                {
+                    "assignTo": "$(FUNCTION_NAME_INPUT)",
+                    "paramId": "trigger-functionName",
+                    "required": true,
+                    "defaultValue": "dataverse_trigger"
+                },
+                {
+                    "assignTo": "$(CONNECTION_INPUT)",
+                    "paramId": "dataverseTrigger-connection",
+                    "required": true,
+                    "defaultValue": "ConnectorNamespace"
+                },
+                {
+                    "assignTo": "$(ON_ROW_CHANGED_TRIGGER_CONFIG_INPUT)",
+                    "paramId": "dataverseTrigger-onRowChangedTriggerConfig",
+                    "required": true,
+                    "defaultValue": "%OnDataverseRowChangedTriggerConfigName%"
+                }
+            ],
+            "actions": [
+                "readFileContent_BlueprintBody",
+                "appendFileContent_BlueprintBody",
+                "ShowMarkdownPreview"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "readFileContent_FunctionApp",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(FUNCTION_APP_CONTENT)",
+            "filePath": "function_app.py"
+        },
+        {
+            "name": "writeFile_FunctionApp",
+            "type": "WriteToFile",
+            "source": "$(FUNCTION_APP_CONTENT)",
+            "filePath": "$(APP_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create the function app",
+            "replaceTokens": true,
+            "FileExtension": ".py"
+        },
+        {
+            "name": "readFileContent_FunctionBody",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(FUNCTION_BODY_CONTENT)",
+            "filePath": "function_body.py"
+        },
+        {
+            "name": "appendFileContent_FunctionApp",
+            "type": "AppendToFile",
+            "createIfNotExists": false,
+            "source": "$(FUNCTION_BODY_CONTENT)",
+            "filePath": "$(SELECTED_FILEPATH)",
+            "continueOnError": false,
+            "errorText": "Unable to add Dataverse triggers",
+            "replaceTokens": true,
+            "FileExtension": ".py"
+        },
+        {
+            "name": "readFileContent_BlueprintFile",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(BLUEPRINT_CONTENT)",
+            "filePath": "blueprint.py"
+        },
+        {
+            "name": "writeFile_BlueprintFile",
+            "type": "WriteToFile",
+            "source": "$(BLUEPRINT_CONTENT)",
+            "filePath": "$(BLUEPRINT_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to create the blueprint",
+            "replaceTokens": true,
+            "FileExtension": ".py"
+        },
+        {
+            "name": "readFileContent_BlueprintBody",
+            "type": "GetTemplateFileContent",
+            "assignTo": "$(BLUEPRINT_BODY_CONTENT)",
+            "filePath": "blueprint_body.py"
+        },
+        {
+            "name": "appendFileContent_BlueprintBody",
+            "type": "AppendToFile",
+            "createIfNotExists": false,
+            "source": "$(BLUEPRINT_BODY_CONTENT)",
+            "filePath": "$(BLUEPRINT_FILENAME)",
+            "continueOnError": false,
+            "errorText": "Unable to add Dataverse triggers to the blueprint",
+            "replaceTokens": true,
+            "FileExtension": ".py"
+        },
+        {
+            "name": "ShowMarkdownPreview",
+            "type": "ShowMarkdownPreview",
+            "filePath": "dataverse_trigger_template.md"
+        }
+    ]
+}
