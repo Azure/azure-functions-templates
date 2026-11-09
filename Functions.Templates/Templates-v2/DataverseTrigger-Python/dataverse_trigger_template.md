@@ -60,8 +60,9 @@ def dataverse_trigger_on_row_changed_poll(rows: list[dataverse.Item]) -> None:
 To run the code generated through the command palette, note the following:
 
 - The function application is named `app`, and its entry point is `function_app.py`.
-  The function name prefix defaults to `dataverse_trigger`. Use a unique
-  prefix of 1 to 100 letters, digits, or underscores, starting with a letter.
+  The function name input sets the complete handler name; its default is
+  `dataverse_trigger_on_row_changed_poll`. Choose a name that is unique in this app
+  and no more than 128 characters long. No suffix is added.
   The registered name matches the Python function name and ends in `_poll`.
 - Add these packages to `requirements.txt` and install them in your virtual environment:
 

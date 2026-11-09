@@ -51,8 +51,9 @@ def teams_trigger_on_new_channel_message_poll(messages: list[teams.ChatMessage])
 ```
 
 - The function application is named `app`, and its entry point is `function_app.py`.
-  The function name input sets the handler's prefix; its default is `teams_trigger`.
-  Choose a prefix that is unique in this app.
+  The function name input sets the complete handler name; its default is
+  `teams_trigger_on_new_channel_message_poll`. Choose a name that is unique in this app
+  and no more than 128 characters long. No suffix is added.
 - Add these packages to your requirements file and install them in your virtual
   environment:
 

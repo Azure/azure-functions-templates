@@ -24,13 +24,13 @@ import azurefunctions.extensions.connectors.teams as teams
 # Configure a trigger config for the selected operation and its required parameters.
 
 
-@$(BLUEPRINT_FILENAME).function_name(name="$(FUNCTION_NAME_INPUT)_on_new_channel_message_poll")
+@$(BLUEPRINT_FILENAME).function_name(name="$(FUNCTION_NAME_INPUT)")
 @$(BLUEPRINT_FILENAME).connector_trigger(
     arg_name="messages",
     delivery_mode=func.DeliveryMode.POLL,
     connection="$(CONNECTION_INPUT)",
     trigger_config_name="$(ON_NEW_CHANNEL_MESSAGE_TRIGGER_CONFIG_INPUT)",
 )
-def $(FUNCTION_NAME_INPUT)_on_new_channel_message_poll(messages: list[teams.ChatMessage]) -> None:
+def $(FUNCTION_NAME_INPUT)(messages: list[teams.ChatMessage]) -> None:
     """Receive new channel messages."""
     logging.info("Received OnNewChannelMessage trigger (%s items)", len(messages))

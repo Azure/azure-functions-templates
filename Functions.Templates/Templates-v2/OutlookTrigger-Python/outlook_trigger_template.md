@@ -50,8 +50,9 @@ def outlook_trigger_on_new_email_poll(
 To run the code generated through the command palette, note the following:
 
 - The function application is named `app`, and its entry point is `function_app.py`.
-  The function name input sets the handler's prefix; its default is `outlook_trigger`.
-  Choose a prefix that is unique in this app.
+  The function name input sets the complete handler name; its default is
+  `outlook_trigger_on_new_email_poll`. Choose a name that is unique in this app
+  and no more than 128 characters long. No suffix is added.
 - Add these packages to `requirements.txt` and install them in your virtual environment:
 
   ```text

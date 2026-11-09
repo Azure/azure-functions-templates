@@ -20,14 +20,14 @@ import azurefunctions.extensions.connectors.office365 as office365
 app = func.FunctionApp()
 
 
-@app.function_name(name="$(FUNCTION_NAME_INPUT)_on_new_email_poll")
+@app.function_name(name="$(FUNCTION_NAME_INPUT)")
 @app.connector_trigger(
     arg_name="emails",
     connection="$(CONNECTION_INPUT)",
     delivery_mode=func.DeliveryMode.POLL,
     trigger_config_name="$(ON_NEW_EMAIL_TRIGGER_CONFIG_INPUT)",
 )
-def $(FUNCTION_NAME_INPUT)_on_new_email_poll(emails: list[office365.GraphClientReceiveMessage]) -> None:
+def $(FUNCTION_NAME_INPUT)(emails: list[office365.GraphClientReceiveMessage]) -> None:
     """Triggered when a new email arrives in Office 365."""
     logging.info("OnNewEmail trigger received.")
 

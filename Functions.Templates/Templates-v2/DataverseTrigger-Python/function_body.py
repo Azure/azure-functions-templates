@@ -22,13 +22,13 @@ import azurefunctions.extensions.connectors.commondataservice as dataverse
 # Configure a trigger config for the selected operation and its required parameters.
 
 
-@app.function_name(name="$(FUNCTION_NAME_INPUT)_on_row_changed_poll")
+@app.function_name(name="$(FUNCTION_NAME_INPUT)")
 @app.connector_trigger(
     arg_name="rows",
     connection="$(CONNECTION_INPUT)",
     delivery_mode=func.DeliveryMode.POLL,
     trigger_config_name="$(ON_ROW_CHANGED_TRIGGER_CONFIG_INPUT)",
 )
-def $(FUNCTION_NAME_INPUT)_on_row_changed_poll(rows: list[dataverse.Item]) -> None:
+def $(FUNCTION_NAME_INPUT)(rows: list[dataverse.Item]) -> None:
     """Receive new rows without logging their contents."""
     logging.info("Received Dataverse new rows (%s rows)", len(rows))
