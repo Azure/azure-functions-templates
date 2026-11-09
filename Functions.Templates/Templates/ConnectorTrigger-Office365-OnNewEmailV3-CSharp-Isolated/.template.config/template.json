@@ -1,0 +1,88 @@
+{
+  "author": "Microsoft",
+  "classifications": [ "Azure Function", "Trigger", "Connector", "Office365" ],
+  "name": "Connector Trigger - Office365 - OnNewEmailV3",
+  "identity": "Azure.Function.CSharp.Isolated.ConnectorTrigger.Office365.OnNewEmailV3",
+  "groupIdentity": "Azure.Function.ConnectorTrigger.Office365.OnNewEmailV3",
+  "shortName": "connector-office365-onnewemailv3",
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  },
+  "sourceName": "Office365OnNewEmailV3",
+  "symbols": {
+    "namespace": {
+      "description": "Namespace for the generated code.",
+      "replaces": "Company.Function",
+      "type": "parameter"
+    },
+    "Connection": {
+      "description": "Name of the configuration section containing the Connector Namespace polling endpoint.",
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "ConnectorNamespace",
+      "replaces": "ConnectionValue"
+    },
+    "TriggerConfigName": {
+      "description": "Name of the existing Office365 OnNewEmailV3 trigger configuration in the Connector Namespace.",
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "replaces": "TriggerConfigNameValue"
+    },
+    "HostIdentifier": {
+      "type": "bind",
+      "binding": "HostIdentifier"
+    }
+  },
+  "primaryOutputs": [ { "path": "Office365OnNewEmailV3.cs" } ],
+  "defaultName": "Office365OnNewEmailV3",
+  "postActions": [
+    {
+      "description": "Add the Connector worker extension.",
+      "actionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+      "continueOnError": true,
+      "manualInstructions": [],
+      "args": {
+        "referenceType": "package",
+        "reference": "Microsoft.Azure.Functions.Worker.Extensions.Connector",
+        "version": "1.0.0",
+        "projectFileExtensions": ".csproj"
+      }
+    },
+    {
+      "description": "Add the typed connector SDK.",
+      "actionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+      "continueOnError": true,
+      "manualInstructions": [],
+      "args": {
+        "referenceType": "package",
+        "reference": "Azure.Connectors.Sdk",
+        "version": "0.15.0-preview.1",
+        "projectFileExtensions": ".csproj"
+      }
+    },
+    {
+      "description": "Restore NuGet packages required by this project.",
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "continueOnError": true,
+      "manualInstructions": []
+    },
+    {
+      "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+      "description": "Open the function class file in the editor.",
+      "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+      "continueOnError": true,
+      "manualInstructions": [],
+      "args": { "files": "0" }
+    },
+    {
+      "description": "Configure local polling.",
+      "actionId": "AC1156F7-BB77-4DB8-B28F-24EEBCCA1E5C",
+      "continueOnError": true,
+      "manualInstructions": [
+        { "text": "Merge Values from the generated .local.settings.example.json into local.settings.json. Set the generated __pollingEndpoint setting to your namespace polling endpoint; its prefix is the connection setting section name. Sign in with an identity granted access to the connection. The trigger configuration must use Poll delivery and OnNewEmailV3." }
+      ]
+    }
+  ]
+}
