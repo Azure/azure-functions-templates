@@ -1,7 +1,7 @@
 # Template Manifest — Priority Tiers (P00–P99)
 
-**Total templates:** 74
-**Manifest version:** 1.11.0
+**Total templates:** 81
+**Manifest version:** 1.12.0
 
 ## Design principles
 
@@ -66,6 +66,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → Go
 | 10 | `blob-eventgrid-trigger-typescript-azd` | TS | trigger | ✅ bicep | P0→10 |
 | 10 | `blob-eventgrid-trigger-javascript-azd` | JS | trigger | ✅ bicep | P0→10 |
 | 10 | `blob-eventgrid-trigger-java-azd` | Java | trigger | ✅ bicep | P0→10 |
+| 10 | `blob-eventgrid-trigger-go-azd` | Go | trigger | ✅ bicep | *new* |
 | 10 | `blob-eventgrid-trigger-powershell-azd` | PS | trigger | ✅ bicep | P0→10 |
 | | **📡 Event Hub** | | | | |
 | 15 | `eventhub-trigger-csharp-azd` | .NET | trigger | ✅ bicep | P0→15 |
@@ -73,6 +74,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → Go
 | 15 | `eventhub-trigger-typescript-azd` | TS | trigger | ✅ bicep | P0→15 |
 | 15 | `eventhub-trigger-javascript-azd` | JS | trigger | ✅ bicep | *new* |
 | 15 | `eventhub-trigger-java-azd` | Java | trigger | ✅ bicep | *new* |
+| 15 | `eventhub-trigger-go-azd` | Go | trigger | ✅ bicep | *new* |
 | 15 | `eventhub-trigger-powershell-azd` | PS | trigger | ✅ bicep | *new* |
 | | **🚌 Service Bus** | | | | |
 | 30 | `servicebus-trigger-csharp-azd` | .NET | trigger | ✅ bicep | *new* |
@@ -80,6 +82,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → Go
 | 30 | `servicebus-trigger-typescript-azd` | TS | trigger | ✅ bicep | *new* |
 | 30 | `servicebus-trigger-javascript-azd` | JS | trigger | ✅ bicep | *new* |
 | 30 | `servicebus-trigger-java-azd` | Java | trigger | ✅ bicep | *new* |
+| 30 | `servicebus-trigger-go-azd` | Go | trigger | ✅ bicep | *new* |
 | 30 | `servicebus-trigger-powershell-azd` | PS | trigger | ✅ bicep | *new* |
 | | **🌐 Cosmos DB** | | | | |
 | 35 | `cosmos-trigger-csharp-azd` | .NET | trigger | ✅ bicep | P1→35 |
@@ -87,11 +90,13 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → Go
 | 35 | `cosmos-trigger-typescript-azd` | TS | trigger | ✅ bicep | P1→35 |
 | 35 | `cosmosdb-trigger-javascript-azd` | JS | trigger | ✅ bicep | *new* |
 | 35 | `cosmosdb-trigger-java-azd` | Java | trigger | ✅ bicep | *new* |
+| 35 | `cosmosdb-trigger-go-azd` | Go | trigger | ✅ bicep | *new* |
 | 35 | `cosmosdb-trigger-powershell-azd` | PS | trigger | ✅ bicep | *new* |
 | | **🗄️ SQL** | | | | |
 | 40 | `sql-trigger-csharp-azd` | .NET | trigger | ✅ bicep | P1→40 |
 | 40 | `sql-trigger-python-azd` | Py | trigger | ✅ bicep | P1→40 |
 | 40 | `sql-trigger-typescript-azd` | TS | trigger | ✅ bicep | P1→40 |
+| 40 | `sql-trigger-go-azd` | Go | trigger | ✅ bicep | *new* |
 | | **🔌 MCP *(10-slot block)*** | | | | |
 | 50 | `mcp-server-remote-csharp` | .NET | trigger | ✅ bicep | P0→50 |
 | 50 | `mcp-server-remote-python` | Py | trigger | ✅ bicep | P0→50 |
@@ -111,8 +116,10 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → Go
 | 65 | `durable-orchestrator-python-azd` | Py | orchestration | ✅ bicep | *new* |
 | 65 | `durable-orchestrator-typescript-azd` | TS | orchestration | ✅ bicep | *new* |
 | 65 | `durable-orchestration-javascript` | JS | orchestration | 🚧 none | P1→65 |
+| 65 | `durable-orchestrator-go-azd` | Go | orchestration | ✅ bicep | *new* |
 | 66 | `durable-order-processor-csharp` | .NET | orchestration | ✅ bicep | P1→66 |
 | 66 | `durable-order-processor-python` | Py | orchestration | ✅ bicep | P1→66 |
+| 66 | `durable-order-processor-go` | Go | orchestration | ✅ bicep | *new* |
 | | **🔄 Durable Advanced** | | | | |
 | 70 | `durable-distributed-tracing-csharp` | .NET | orchestration | 🚧 none | P1→70 |
 | 70 | `durable-large-payload-csharp` | .NET | orchestration | 🚧 none | P1→70 |
@@ -162,18 +169,18 @@ These templates were removed because their source repositories were **archived**
 |---|---|---|---|---|---|---|---|---|---|
 | HTTP | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
 | Timer | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
-| Blob | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | Go |
+| Blob | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
 | | Input | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | — | 🔗+🚧 | *no dedicated templates yet* |
 | | Output | — | — | — | — | — | — | — | *no dedicated templates yet* |
-| Event Hub | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | Go |
+| Event Hub | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
 | | Output | — | 🔗+🚧 | 🔗+🚧 | — | — | — | — | *no dedicated templates yet* |
 | Event Grid | *(reserved)* | — | — | — | — | — | — | — | *no dedicated templates yet* |
 | Queue | *(reserved)* | — | — | — | — | — | — | — | *no dedicated templates yet* |
-| Service Bus | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | Go |
-| Cosmos DB | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | Go |
+| Service Bus | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
+| Cosmos DB | Trigger | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — |
 | | Input | — | — | — | — | — | — | — | *no dedicated templates yet* |
 | | Output | — | — | — | — | — | — | — | *no dedicated templates yet* |
-| SQL | Trigger | ✅ | ✅ | ✅ | — | — | — | — | JS, Java, Go, PS |
+| SQL | Trigger | ✅ | ✅ | ✅ | — | — | ✅ | — | JS, Java, PS |
 | | Input | — | — | — | — | — | — | — | *no dedicated templates yet* |
 | | Output | 🔗+🚧 | 🔗+🚧 | 🔗+🚧 | — | — | — | — | *no dedicated templates yet* |
 | Redis | *(reserved)* | — | — | — | — | — | — | — | *no dedicated templates yet* |
@@ -197,8 +204,8 @@ These templates were removed because their source repositories were **archived**
 |  | ChatGPT | P61 | — | — | — | — | — | — | — | *removed (repos archived)* |
 |  | Text Summarize | P62 | — | — | — | — | — | — | — | *removed (repos archived)* |
 |  | LangChain | P63 | — | — | — | — | — | — | — | *removed (repo archived)* |
-| Durable | Orchestration | P65 | ✅ | ✅ | ✅ | 🚧 | — | — | — | Java, Go, PS |
-|  | Order Processor | P66 | ✅ | ✅ | — | — | — | — | — | TS, JS, Java, Go, PS |
+| Durable | Orchestration | P65 | ✅ | ✅ | ✅ | 🚧 | — | ✅ | — | Java, PS |
+|  | Order Processor | P66 | ✅ | ✅ | — | — | — | ✅ | — | TS, JS, Java, PS |
 |  | Patterns | P70 | ✅ | — | — | — | — | — | — | Py, TS, JS, Java, Go, PS |
 |  | Scenarios | P71 | 🚧 | — | — | — | — | — | — | Py, TS, JS, Java, Go, PS |
 |  | PDF Summarizer | P72 | — | — | — | — | — | — | — | *removed (OpenAI extension retirement)* |
@@ -218,22 +225,22 @@ These templates were removed because their source repositories were **archived**
 | 00 | ⚡ HTTP — Trigger | 7 |
 | 03 | ⚡ HTTP — Variant (Terraform) | 1 |
 | 05 | ⏰ Timer — Trigger | 7 |
-| 10 | 🪣 Blob Storage — Trigger | 6 |
-| 15 | 📡 Event Hub — Trigger | 6 |
-| 30 | 🚌 Service Bus — Trigger | 6 |
-| 35 | 🌐 Cosmos DB — Trigger | 6 |
-| 40 | 🗄️ SQL — Trigger | 3 |
+| 10 | 🪣 Blob Storage — Trigger | 7 |
+| 15 | 📡 Event Hub — Trigger | 7 |
+| 30 | 🚌 Service Bus — Trigger | 7 |
+| 35 | 🌐 Cosmos DB — Trigger | 7 |
+| 40 | 🗄️ SQL — Trigger | 4 |
 | 50 | 🔌 MCP — Remote Server | 6 |
 | 55 | 🔌 MCP — APIM Gateway | 1 |
 | 60 | 🤖 AI — Agent | 5 |
-| 65 | 🔄 Durable Standard — Orchestration | 4 |
-| 66 | 🔄 Durable Standard — Order Processor | 2 |
+| 65 | 🔄 Durable Standard — Orchestration | 5 |
+| 66 | 🔄 Durable Standard — Order Processor | 3 |
 | 70 | 🔄 Durable Advanced — Patterns (saga / tracing / payload) | 4 |
 | 71 | 🔄 Durable Advanced — Scenarios (travel / aspire) | 2 |
 | 75 | 🤝 Agent Framework — Multi-Agent | 2 |
 | 80 | 🔌 Connectors — Office 365 Outlook | 3 |
 | 81 | 🔌 Connectors — SharePoint Online | 3 |
-| | **Total** | **74** |
+| | **Total** | **81** |
 
 ## Language sort order
 

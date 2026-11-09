@@ -1,8 +1,8 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-10-20T20:54:34Z",
-  "version": "1.11.0",
-  "totalTemplates": 74,
+  "generatedAt": "2026-11-09T20:39:14Z",
+  "version": "1.12.0",
+  "totalTemplates": 81,
   "runtimeVersions": {
     "Python": {
       "supported": [
@@ -734,6 +734,34 @@
       ]
     },
     {
+      "id": "blob-eventgrid-trigger-go-azd",
+      "displayName": "Blob EventGrid Trigger (Go + AZD + Bicep)",
+      "shortDescription": "EventGrid-sourced Blob trigger with streamed content hashing and managed identity, deployed via azd",
+      "longDescription": "Build and deploy an Azure Functions app in Go with a processBlob BlobTrigger using EventGrid as its event source. The Go Blob extension injects an authenticated Blob client to stream content and log its byte count and SHA-256 digest. Uses Go worker v1.0.0 on Flex Consumption with managed identity and optional host-storage VNet integration. Deployed with azd.",
+      "language": "Go",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "bicep",
+      "priority": 10,
+      "categories": [
+        "starters",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-go-azd-eventgrid-blob",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.1",
+      "whatsIncluded": [
+        "processBlob EventGrid-sourced Blob trigger",
+        "Streaming byte count and SHA-256 digest",
+        "Native Go worker and Blob extension configuration",
+        "Bicep infrastructure and Event Grid subscription",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity and optional host-storage VNet integration",
+        "Local settings example and Go tests"
+      ]
+    },
+    {
       "id": "blob-eventgrid-trigger-powershell-azd",
       "displayName": "Blob EventGrid Trigger (PowerShell + AZD + Bicep)",
       "shortDescription": "EventGrid-sourced, processes blobs from Azure Blob Storage, deployed via azd",
@@ -944,6 +972,34 @@
       ]
     },
     {
+      "id": "eventhub-trigger-go-azd",
+      "displayName": "Event Hub Trigger (Go + AZD + Bicep)",
+      "shortDescription": "Processes Event Hubs telemetry with bounded retries and managed identity, deployed via azd",
+      "longDescription": "Build and deploy an Azure Functions app in Go with a processTelemetry EventHubTrigger consuming JSON telemetry from the telemetry event hub and functions consumer group. Configures three fixed-delay retries at five-second intervals using Go worker v1.0.0. Runs on Flex Consumption with managed identity and optional host-storage VNet integration. Deployed with azd.",
+      "language": "Go",
+      "bindingType": "trigger",
+      "resource": "eventhub",
+      "iac": "bicep",
+      "priority": 15,
+      "categories": [
+        "starters",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-go-azd-eventhub",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "processTelemetry Event Hubs trigger",
+        "Fixed-delay retry configuration",
+        "Go telemetry publisher",
+        "Bicep infrastructure and consumer group",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity and optional host-storage VNet integration",
+        "Local settings example and Go tests"
+      ]
+    },
+    {
       "id": "eventhub-trigger-powershell-azd",
       "displayName": "Event Hub Trigger (PowerShell + Bicep)",
       "shortDescription": "Event Hub trigger with output binding, TimerTrigger, Flex Consumption, deployed via azd",
@@ -1136,6 +1192,34 @@
         "Managed identity setup",
         "VNet integration",
         "Application Insights monitoring"
+      ]
+    },
+    {
+      "id": "servicebus-trigger-go-azd",
+      "displayName": "Service Bus Trigger (Go + AZD + Bicep)",
+      "shortDescription": "Processes Service Bus queue orders with managed identity and dead-letter handling, deployed via azd",
+      "longDescription": "Build and deploy an Azure Functions app in Go with a processOrder ServiceBusTrigger consuming JSON orders from the orders queue. Successful invocations complete messages; failures are redelivered and dead-lettered after the configured maximum delivery count. Uses Go worker v1.0.0 on Flex Consumption with managed identity and optional host-storage VNet integration. Deployed with azd.",
+      "language": "Go",
+      "bindingType": "trigger",
+      "resource": "servicebus",
+      "iac": "bicep",
+      "priority": 30,
+      "categories": [
+        "starters",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-go-azd-service-bus",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.1",
+      "whatsIncluded": [
+        "processOrder Service Bus queue trigger",
+        "Queue delivery and dead-letter configuration",
+        "Go order sender",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity and optional host-storage VNet integration",
+        "Local settings example and Go tests"
       ]
     },
     {
@@ -1333,6 +1417,34 @@
       ]
     },
     {
+      "id": "cosmosdb-trigger-go-azd",
+      "displayName": "Cosmos DB Trigger (Go + AZD + Bicep)",
+      "shortDescription": "Processes Cosmos DB change-feed batches with managed identity and bounded retries, deployed via azd",
+      "longDescription": "Build and deploy an Azure Functions app in Go with a processChanges CosmosDBTrigger processing document batches from ToDoList.Items. Infrastructure pre-provisions the leases container, and the function configures three fixed-delay retries at five-second intervals. Uses Go worker v1.0.0 on Flex Consumption with managed identity and optional host-storage VNet integration. Deployed with azd.",
+      "language": "Go",
+      "bindingType": "trigger",
+      "resource": "cosmos",
+      "iac": "bicep",
+      "priority": 35,
+      "categories": [
+        "starters",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-go-azd-cosmosdb",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "processChanges Cosmos DB change-feed trigger",
+        "Pre-provisioned data and lease containers",
+        "Fixed-delay retry configuration and Go document writer",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity and optional host-storage VNet integration",
+        "Local settings example and Go tests"
+      ]
+    },
+    {
       "id": "cosmosdb-trigger-powershell-azd",
       "displayName": "Cosmos DB Trigger (PowerShell + Bicep)",
       "shortDescription": "Cosmos DB change feed trigger, managed identity, Flex Consumption, deployed via azd",
@@ -1457,6 +1569,34 @@
         "Bicep infrastructure",
         "azd configuration",
         "Azure Monitor integration"
+      ]
+    },
+    {
+      "id": "sql-trigger-go-azd",
+      "displayName": "SQL Trigger (Go + AZD + Bicep)",
+      "shortDescription": "Processes Azure SQL product changes with managed identity and one Always Ready instance, deployed via azd",
+      "longDescription": "Build and deploy an Azure Functions app in Go with a productsChanged SqlTrigger receiving inserts, updates, and deletes from dbo.Products through SQL change tracking. Uses Go worker v1.0.0 and Microsoft Entra authentication on Flex Consumption with one Always Ready instance for the SQL listener. Includes optional host-storage VNet integration; SQL uses a public TLS endpoint with firewall rules. Deployed with azd.",
+      "language": "Go",
+      "bindingType": "trigger",
+      "resource": "sql",
+      "iac": "bicep",
+      "priority": 40,
+      "categories": [
+        "starters",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-go-azd-sql",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.1",
+      "whatsIncluded": [
+        "productsChanged SQL trigger",
+        "Product table and SQL change-tracking setup",
+        "Go database setup and product writer tools",
+        "Bicep infrastructure with one Always Ready instance",
+        "Azure Developer CLI (azd) configuration",
+        "Managed identity and optional host-storage VNet integration",
+        "Local settings example and Go tests"
       ]
     },
     {
@@ -2018,6 +2158,34 @@
       ]
     },
     {
+      "id": "durable-orchestrator-go-azd",
+      "displayName": "Durable Functions Fan-Out/Fan-In (Go + AZD + Bicep)",
+      "shortDescription": "Parallel greeting activities with Durable Task Scheduler and managed identity, deployed via azd",
+      "longDescription": "Build and deploy a Durable Functions app in Go with (1) StartGreetings and GetGreetingStatus HttpTrigger endpoints using DurableClient, (2) a FanOutGreetings OrchestrationTrigger scheduling parallel work, and (3) a SayHello ActivityTrigger returning greetings in input order. Uses Go worker and Durable middleware v1.0.0 with Durable Task Scheduler on Flex Consumption and managed identity. Requires durabletask-go v1.0.0-beta3 and an experimental extension bundle. Deployed with azd.",
+      "language": "Go",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "bicep",
+      "priority": 65,
+      "categories": [
+        "starters",
+        "workflows"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/durable-functions-quickstart-go-azd",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "HTTP starter and orchestration status endpoints",
+        "FanOutGreetings orchestrator and SayHello activity",
+        "Durable Task Scheduler and task-hub infrastructure",
+        "Native Go worker and Durable middleware configuration",
+        "Azure Developer CLI (azd) and Bicep configuration",
+        "Managed identity and task-hub-scoped RBAC",
+        "Local emulator instructions and Go tests"
+      ]
+    },
+    {
       "id": "durable-order-processor-csharp",
       "displayName": "Durable Functions Order Processing (C#)",
       "shortDescription": "Order processing with retry and compensation, deployed via azd",
@@ -2081,6 +2249,34 @@
         "Azure Developer CLI (azd) configuration",
         "Managed identity authentication",
         "VS Code debug configuration"
+      ]
+    },
+    {
+      "id": "durable-order-processor-go",
+      "displayName": "Durable Functions Order Processing (Go + AZD + Bicep)",
+      "shortDescription": "Order workflow with payment events, durable timeout, and inventory compensation, deployed via azd",
+      "longDescription": "Build and deploy a Durable Functions app in Go with (1) SubmitOrder, GetOrderStatus, and RecordPayment HttpTrigger endpoints using DurableClient, (2) a ProcessOrder OrchestrationTrigger waiting for a payment event or two-minute durable timer, and (3) ReserveInventory, ReleaseInventory, and ShipOrder ActivityTrigger functions simulating fulfillment and compensation. Uses Go worker and Durable middleware v1.0.0 with Durable Task Scheduler, managed identity, durabletask-go v1.0.0-beta3, and an experimental extension bundle. Deployed with azd.",
+      "language": "Go",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "bicep",
+      "priority": 66,
+      "categories": [
+        "starters",
+        "workflows"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/durable-functions-order-processing-go",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "HTTP order submission, status, and payment endpoints",
+        "ProcessOrder orchestrator and three simulated activities",
+        "External payment events and durable timeout compensation",
+        "Durable Task Scheduler and task-hub infrastructure",
+        "Azure Developer CLI (azd) and Bicep configuration",
+        "Managed identity and task-hub-scoped RBAC",
+        "Local emulator instructions and Go tests"
       ]
     },
     {
