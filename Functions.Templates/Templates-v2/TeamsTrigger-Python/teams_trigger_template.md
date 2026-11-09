@@ -20,6 +20,22 @@ import azure.functions as func
 # To use, add azurefunctions-extensions-connectors to your requirements.txt file
 import azurefunctions.extensions.connectors.teams as teams
 
+# For other operations, use the matching trigger payload type from
+# azurefunctions.extensions.connectors.teams.
+#
+# OnNewChannelMessageMentioningMe - list[teams.ChatMessage]
+# OnGroupMembershipAdd - list[teams.OnGroupMemberChangeResponse]
+# OnGroupMembershipRemoval - list[teams.OnGroupMemberChangeResponse]
+# WebhookChatMessageTrigger - list[teams.ChatMessageWebhookResponseSchema]
+# WebhookNewMessageTrigger - list[teams.DynamicNewMessageWebhookTriggerResponseSchema]
+# WebhookAtMentionTrigger - list[teams.DynamicAtMentionWebhookTriggerResponseSchema]
+# WebhookKeywordTrigger - list[teams.DynamicKeywordWebhookTriggerResponseSchema]
+# WebhookMessageReactionTrigger - list[teams.MessageReactionWebhookResponseSchema]
+# RecordingTrigger - list[teams.RecordingWebhookResponseSchema]
+# TranscriptTrigger - list[teams.TranscriptWebhookResponseSchema]
+# An operation name containing Webhook does not select Functions delivery mode.
+# Configure a trigger config for the selected operation and its required parameters.
+
 app = func.FunctionApp()
 
 @app.function_name(name="teams_trigger_on_new_channel_message_poll")
@@ -43,7 +59,7 @@ def teams_trigger_on_new_channel_message_poll(messages: list[teams.ChatMessage])
   ```text
   azure-functions>=2.4.0b1 ; python_version >= '3.13'
   azure-functions>=1.27.0b1 ; python_version < '3.13'
-  azurefunctions-extensions-connectors>=1.0.0b4
+  azurefunctions-extensions-connectors
   ```
 
 - On Python 3.12 and older, set `PYTHON_ISOLATE_WORKER_DEPENDENCIES=1` in local

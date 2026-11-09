@@ -20,6 +20,18 @@ import azure.functions as func
 # To use, add azurefunctions-extensions-connectors to your requirements.txt file
 import azurefunctions.extensions.connectors.office365 as office365
 
+# For other operations, use the matching trigger payload type from
+# azurefunctions.extensions.connectors.office365.
+#
+# OnFlaggedEmailV4 - list[office365.GraphClientReceiveMessage]
+# OnNewMentionMeEmailV3 - list[office365.GraphClientReceiveMessage]
+# SharedMailboxOnNewEmailV2 - list[office365.GraphClientReceiveMessage]
+# CalendarGetOnNewItemsV3 - list[office365.GraphCalendarEventClientReceive]
+# CalendarGetOnUpdatedItemsV3 - list[office365.GraphCalendarEventClientReceive]
+# OnUpcomingEventsV3 - list[office365.GraphCalendarEventClientReceive]
+# CalendarGetOnChangedItemsV3 - list[office365.GraphCalendarEventClientWithActionType]
+# Configure a trigger config for the selected operation and its required parameters.
+
 app = func.FunctionApp()
 
 @app.connector_trigger(
@@ -45,7 +57,7 @@ To run the code generated through the command palette, note the following:
   ```text
   azure-functions>=2.4.0b1 ; python_version >= '3.13'
   azure-functions>=1.27.0b1 ; python_version < '3.13'
-  azurefunctions-extensions-connectors>=1.0.0b4
+  azurefunctions-extensions-connectors
   ```
 
 - For Python 3.12 and older, set `PYTHON_ISOLATE_WORKER_DEPENDENCIES=1` in local

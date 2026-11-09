@@ -2249,7 +2249,7 @@ function app.</value>
     <value>The Poll trigger config name for new files, or an app setting reference such as %OnOneDriveNewFileTriggerConfigName%.</value>
   </data>
   <data name="DataverseTrigger_description" xml:space="preserve">
-    <value>A Python function for Dataverse row changes, with polling delivery.</value>
+    <value>A Python function for new Dataverse rows only, with polling delivery.</value>
   </data>
   <data name="dataverseTrigger_functionNamePrefix_label" xml:space="preserve">
     <value>Function name prefix</value>
@@ -2267,9 +2267,9 @@ function app.</value>
     <value>The app setting prefix for the Connector Namespace, such as ConnectorNamespace. This is not a storage connection string.</value>
   </data>
   <data name="dataverseTrigger_onRowChangedTriggerConfig_label" xml:space="preserve">
-    <value>Row change polling trigger config</value>
+    <value>New row polling trigger config</value>
   </data>
   <data name="dataverseTrigger_onRowChangedTriggerConfig_help" xml:space="preserve">
-    <value>The Poll trigger config name for row changes, or an app setting reference such as %OnDataverseRowChangedTriggerConfigName%.</value>
+    <value>The Poll trigger config name for new rows only, or an app setting reference such as %OnDataverseRowChangedTriggerConfigName%.</value>
   </data>
 </root>

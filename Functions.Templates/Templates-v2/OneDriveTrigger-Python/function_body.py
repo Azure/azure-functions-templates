@@ -7,6 +7,12 @@ import azure.functions as func
 # To use, add azurefunctions-extensions-connectors to your requirements.txt file
 import azurefunctions.extensions.connectors.onedriveforbusiness as onedrive
 
+# For other operations, use the matching trigger payload type from
+# azurefunctions.extensions.connectors.onedriveforbusiness.
+#
+# OnUpdatedFilesV2 - list[onedrive.BlobMetadata]
+# Configure a trigger config for the selected operation and its required parameters.
+
 
 @app.function_name(name="$(FUNCTION_NAME_INPUT)_on_new_file_poll")
 @app.connector_trigger(

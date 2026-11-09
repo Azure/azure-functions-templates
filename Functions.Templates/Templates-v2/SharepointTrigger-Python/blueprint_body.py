@@ -7,6 +7,20 @@ import azure.functions as func
 # To use, add azurefunctions-extensions-connectors to your requirements.txt file
 import azurefunctions.extensions.connectors.sharepointonline as sharepoint
 
+# For other operations, use the matching trigger payload type from
+# azurefunctions.extensions.connectors.sharepointonline.
+#
+# GetOnUpdatedFileItems - list[sharepoint.Item]
+# GetOnNewItems - list[sharepoint.Item]
+# GetOnUpdatedItems - list[sharepoint.Item]
+# GetOnChangedItems - list[sharepoint.Item]
+# GetOnNewItemsFromForm - list[sharepoint.Item]
+# GetOnRecurrenceDigest - list[sharepoint.Item]
+# GetOnUpdatedFileClassifiedTimes - list[sharepoint.Item]
+# GetOnDeletedItems - list[sharepoint.DeletedItem]
+# GetOnDeletedFileItems - list[sharepoint.DeletedItem]
+# Configure a trigger config for the selected operation and its required parameters.
+
 
 @$(BLUEPRINT_FILENAME).function_name(name="$(FUNCTION_NAME_INPUT)_on_new_file_poll")
 @$(BLUEPRINT_FILENAME).connector_trigger(

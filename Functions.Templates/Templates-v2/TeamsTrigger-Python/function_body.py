@@ -7,6 +7,22 @@ import azure.functions as func
 # To use, add azurefunctions-extensions-connectors to your requirements.txt file
 import azurefunctions.extensions.connectors.teams as teams
 
+# For other operations, use the matching trigger payload type from
+# azurefunctions.extensions.connectors.teams.
+#
+# OnNewChannelMessageMentioningMe - list[teams.ChatMessage]
+# OnGroupMembershipAdd - list[teams.OnGroupMemberChangeResponse]
+# OnGroupMembershipRemoval - list[teams.OnGroupMemberChangeResponse]
+# WebhookChatMessageTrigger - list[teams.ChatMessageWebhookResponseSchema]
+# WebhookNewMessageTrigger - list[teams.DynamicNewMessageWebhookTriggerResponseSchema]
+# WebhookAtMentionTrigger - list[teams.DynamicAtMentionWebhookTriggerResponseSchema]
+# WebhookKeywordTrigger - list[teams.DynamicKeywordWebhookTriggerResponseSchema]
+# WebhookMessageReactionTrigger - list[teams.MessageReactionWebhookResponseSchema]
+# RecordingTrigger - list[teams.RecordingWebhookResponseSchema]
+# TranscriptTrigger - list[teams.TranscriptWebhookResponseSchema]
+# An operation name containing Webhook does not select Functions delivery mode.
+# Configure a trigger config for the selected operation and its required parameters.
+
 
 @app.function_name(name="$(FUNCTION_NAME_INPUT)_on_new_channel_message_poll")
 @app.connector_trigger(

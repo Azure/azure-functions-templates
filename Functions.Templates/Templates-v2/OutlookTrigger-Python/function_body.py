@@ -7,6 +7,18 @@ import azure.functions as func
 # To use, add azurefunctions-extensions-connectors to your requirements.txt file
 import azurefunctions.extensions.connectors.office365 as office365
 
+# For other operations, use the matching trigger payload type from
+# azurefunctions.extensions.connectors.office365.
+#
+# OnFlaggedEmailV4 - list[office365.GraphClientReceiveMessage]
+# OnNewMentionMeEmailV3 - list[office365.GraphClientReceiveMessage]
+# SharedMailboxOnNewEmailV2 - list[office365.GraphClientReceiveMessage]
+# CalendarGetOnNewItemsV3 - list[office365.GraphCalendarEventClientReceive]
+# CalendarGetOnUpdatedItemsV3 - list[office365.GraphCalendarEventClientReceive]
+# OnUpcomingEventsV3 - list[office365.GraphCalendarEventClientReceive]
+# CalendarGetOnChangedItemsV3 - list[office365.GraphCalendarEventClientWithActionType]
+# Configure a trigger config for the selected operation and its required parameters.
+
 
 @app.function_name(name="$(FUNCTION_NAME_INPUT)_on_new_email_poll")
 @app.connector_trigger(
