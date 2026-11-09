@@ -2272,4 +2272,34 @@ function app.</value>
   <data name="dataverseTrigger_onRowChangedTriggerConfig_help" xml:space="preserve">
     <value>The Poll trigger config name for new rows only, or an app setting reference such as %OnDataverseRowChangedTriggerConfigName%.</value>
   </data>
+  <data name="OutlookTriggerNode_description" xml:space="preserve">
+    <value>A Node.js function for new Office 365 Outlook email, with polling delivery.</value>
+  </data>
+  <data name="SharepointTriggerNode_description" xml:space="preserve">
+    <value>A Node.js function for new SharePoint Online file properties, with polling delivery.</value>
+  </data>
+  <data name="OneDriveTriggerNode_description" xml:space="preserve">
+    <value>A Node.js function for new OneDrive for Business file metadata, with polling delivery.</value>
+  </data>
+  <data name="DataverseTriggerNode_description" xml:space="preserve">
+    <value>A Node.js function for new Dataverse rows only using the deprecated Admin Only operation, with polling delivery.</value>
+  </data>
+  <data name="TeamsTriggerNode_description" xml:space="preserve">
+    <value>A Node.js function for new Microsoft Teams channel messages, with polling delivery.</value>
+  </data>
+  <data name="connectorTrigger_displayName" xml:space="preserve">
+    <value>Connector trigger</value>
+  </data>
+  <data name="connectorTrigger_connection_label" xml:space="preserve">
+    <value>Connection setting prefix</value>
+  </data>
+  <data name="connectorTrigger_connection_help" xml:space="preserve">
+    <value>The app setting prefix for polling, such as ConnectorNamespace. This is not a connector connection resource name or a storage connection string.</value>
+  </data>
+  <data name="connectorTrigger_triggerConfigName_label" xml:space="preserve">
+    <value>Trigger config name</value>
+  </data>
+  <data name="connectorTrigger_triggerConfigName_help" xml:space="preserve">
+    <value>The Poll trigger config name, or an app setting reference such as %OnNewEmailTriggerConfigName%. Configure the matching connector operation separately.</value>
+  </data>
 </root>

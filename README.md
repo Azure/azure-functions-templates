@@ -193,6 +193,43 @@ Pretty much all non-dotnet templates do not require compilation. The only except
 5. Replace the contents of the `StaticContent\v1` directory (path from step 5) with the files extracted from the zip file in step 3.
 6. Execute `func new` at the root of the sample app to see the new / updated templates.
 
+### Node.js connector polling templates
+
+The v4 extension bundle packages include Outlook, SharePoint, OneDrive, Dataverse,
+and Teams templates for both JavaScript and TypeScript programming model v4.
+See the [connector polling setup guide](Functions.Templates/Documentation/connectorTrigger.md)
+for package versions, operations, identity permissions, and local/deployed settings.
+
+Node v4 uses the v1 template schema with IDs ending in `JavaScript-4.x` or
+`TypeScript-4.x`; it does not use Python's `Templates-v2` app/blueprint jobs.
+Keep the suffix in package targets, omit `function.json`, and put only the
+`%functionName%.js` / `%functionName%.ts` module and `metadata.json` in each
+template directory. Markdown guides belong in `Documentation`, not the generated
+module file list. Core Tools loads these templates from bundles; VS Code's
+separately bundled Node v4 catalog requires its own downstream refresh.
+
+Run the dependency-free metadata, packaging, and generated-syntax checks with
+Node.js 24 or later:
+
+```sh
+node --test Tools/tests/node-connector-templates.test.mjs
+```
+
+To also exercise actual registration, SDK operation metadata, Poll normalization,
+count-only logging, and strict TypeScript compilation, set
+`NODE_CONNECTOR_TEST_DEPENDENCIES` to a Node project containing TypeScript,
+`@types/node`, and the three package versions in the setup guide. Without that setting,
+the runtime checks are explicitly skipped. For example, in PowerShell:
+
+```powershell
+$env:NODE_CONNECTOR_TEST_DEPENDENCIES = 'C:\projects\connector-app'
+node --test .\Tools\tests\node-connector-templates.test.mjs
+```
+
+These checks do not start a host, use credentials, or connect to Azure. Also build
+both bundle packages and verify `func new` generation as described above before
+publishing templates.
+
 # License
 
 This project is under the benevolent umbrella of the [.NET Foundation](http://www.dotnetfoundation.org/) and is licensed under [the MIT License](LICENSE.txt)

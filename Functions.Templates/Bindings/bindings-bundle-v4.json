@@ -20,6 +20,30 @@
   },
   "bindings": [
     {
+      "type": "connectorTrigger",
+      "displayName": "$connectorTrigger_displayName",
+      "direction": "trigger",
+      "enabledInTryMode": false,
+      "documentation": "$content=Documentation\\connectorTrigger.md",
+      "settings": [
+        {
+          "name": "connection",
+          "value": "string",
+          "defaultValue": "ConnectorNamespace",
+          "required": true,
+          "label": "$connectorTrigger_connection_label",
+          "help": "$connectorTrigger_connection_help"
+        },
+        {
+          "name": "triggerConfigName",
+          "value": "string",
+          "required": true,
+          "label": "$connectorTrigger_triggerConfigName_label",
+          "help": "$connectorTrigger_triggerConfigName_help"
+        }
+      ]
+    },
+    {
       "type": "timerTrigger",
       "displayName": "$timerTrigger_displayName",
       "direction": "trigger",

@@ -1,0 +1,161 @@
+import assert from 'node:assert/strict';
+import { spawnSync } from 'node:child_process';
+import { mkdtemp, readFile, readdir, rm, symlink, writeFile } from 'node:fs/promises';
+import { createRequire, stripTypeScriptTypes } from 'node:module';
+import os from 'node:os';
+import path from 'node:path';
+import test from 'node:test';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+
+const root = fileURLToPath(new URL('../../', import.meta.url));
+const connectors = [
+    { name: 'Outlook', setting: 'OnNewEmailTriggerConfigName', sdk: 'Office365', key: 'OnNewEmail', operation: 'OnNewEmailV3' },
+    { name: 'Sharepoint', setting: 'OnSharepointNewFileTriggerConfigName', sdk: 'Sharepointonline', key: 'OnNewFileItems', operation: 'GetOnNewFileItems' },
+    { name: 'OneDrive', setting: 'OnOneDriveNewFileTriggerConfigName', sdk: 'Onedriveforbusiness', key: 'OnNewFiles', operation: 'OnNewFilesV2' },
+    { name: 'Dataverse', setting: 'OnDataverseRowChangedTriggerConfigName', sdk: 'Commondataservice', key: 'OnNewItems', operation: 'GetOnNewItems_V2' },
+    { name: 'Teams', setting: 'OnNewChannelMessageTriggerConfigName', sdk: 'Teams', key: 'OnNewChannelMessage', operation: 'OnNewChannelMessage' },
+];
+const languages = { JavaScript: 'js', TypeScript: 'ts' };
+const resourceXml = await readFile(path.join(root, 'Functions.Templates/Resources/Resources.resx'), 'utf8');
+const resources = new Set([...resourceXml.matchAll(/<data name="([^"]+)"/g)].map((match) => match[1]));
+const catalogs = await Promise.all(['bindings.json', 'bindings-bundle-v4.json'].map(async (name) =>
+    JSON.parse(await readFile(path.join(root, 'Functions.Templates/Bindings', name), 'utf8'))));
+const packages = await Promise.all(['ExtensionBundleTemplates-4.x.nuspec', 'ExtensionBundlePreviewTemplates-4.x.nuspec'].map((name) =>
+    readFile(path.join(root, 'Build/PackageFiles/ExtensionBundle', name), 'utf8')));
+const temporary = await mkdtemp(path.join(os.tmpdir(), 'node-connector-templates-'));
+const dependencyApp = process.env.NODE_CONNECTOR_TEST_DEPENDENCIES;
+const generatedTypeScript = [];
+
+try {
+    if (dependencyApp) {
+        await symlink(path.resolve(dependencyApp, 'node_modules'), path.join(temporary, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir');
+    }
+
+    await test('both binding catalogs resolve the connector prompts and documentation', async () => {
+        const bindings = catalogs.map((catalog) => catalog.bindings.filter((binding) => binding.type === 'connectorTrigger'));
+        assert.ok(bindings.every((entries) => entries.length === 1));
+        assert.deepEqual(bindings[0], bindings[1]);
+        const binding = bindings[0][0];
+        assert.equal(binding.direction, 'trigger');
+        assert.equal(binding.enabledInTryMode, false);
+        assert.equal(binding.documentation, '$content=Documentation\\connectorTrigger.md');
+        await readFile(path.join(root, 'Functions.Templates/Documentation/connectorTrigger.md'), 'utf8');
+        for (const reference of JSON.stringify(binding).matchAll(/\$([A-Za-z][A-Za-z0-9_]+)/g)) {
+            if (reference[1] !== 'content') assert.ok(resources.has(reference[1]), reference[1]);
+        }
+        assert.deepEqual(binding.settings.map((setting) => setting.name), ['connection', 'triggerConfigName']);
+        assert.ok(binding.settings.every((setting) => setting.required && setting.value === 'string'));
+        assert.equal(binding.settings[0].defaultValue, 'ConnectorNamespace');
+    });
+
+    for (const connector of connectors) {
+        await test(`${connector.name}: Python template remains separately packaged`, async () => {
+            const id = `${connector.name}Trigger-Python`;
+            const template = JSON.parse(await readFile(path.join(root, 'Functions.Templates/Templates-v2', id, 'template.json'), 'utf8'));
+            assert.equal(template.programmingModel, 'v2');
+            assert.equal(template.language, 'python');
+            assert.ok(packages.every((nuspec) => nuspec.includes(`target="templates-v2\\${id}"`)));
+        });
+
+        for (const [language, extension] of Object.entries(languages)) {
+            const id = `${connector.name}Trigger-${language}-4.x`;
+            const directory = path.join(root, 'Functions.Templates/Templates', id);
+            const metadata = JSON.parse(await readFile(path.join(directory, 'metadata.json'), 'utf8'));
+            const fileName = `%functionName%.${extension}`;
+            const source = await readFile(path.join(directory, fileName), 'utf8');
+
+            await test(`${id}: v4 metadata, resources, and both packages are complete`, async () => {
+                assert.equal(metadata.language, language);
+                assert.equal(metadata.triggerType, 'connectorTrigger');
+                assert.equal(metadata.enabledInTryMode, false);
+                assert.deepEqual(metadata.userPrompt, ['connection', 'triggerConfigName']);
+                assert.ok(resources.has(metadata.description.slice(1)));
+                assert.match(metadata.defaultFunctionName, /^[a-zA-Z][a-zA-Z0-9_]{0,127}$/);
+                assert.deepEqual((await readdir(directory)).sort(), [fileName, 'metadata.json'].sort());
+                for (const nuspec of packages) {
+                    assert.ok(nuspec.includes(`Templates\\${id}\\*.*" target="templates\\${id}"`), 'Retain the -4.x suffix for Node v4 discovery.');
+                }
+                assert.match(source, /deliveryMode: 'Poll'/);
+                assert.ok(source.includes(`triggerConfigName: '%${connector.setting}%'`));
+                assert.doesNotMatch(source, /\bany\b|console\.log|function\.json|deliveryMode: 'Webhook'/);
+            });
+
+            for (const name of [metadata.defaultFunctionName, `custom${connector.name}Poll`]) {
+                const generated = source.replaceAll('%functionName%', name);
+                const runtimeSource = language === 'TypeScript' ? stripTypeScriptTypes(generated) : generated;
+                const generatedPath = path.join(temporary, `${name}-${language}.${language === 'TypeScript' ? 'mjs' : 'cjs'}`);
+                await writeFile(generatedPath, runtimeSource);
+                if (language === 'TypeScript') {
+                    const typeScriptPath = path.join(temporary, `${name}.ts`);
+                    await writeFile(typeScriptPath, generated);
+                    generatedTypeScript.push(typeScriptPath);
+                }
+
+                await test(`${id}: generates valid code with function name ${name}`, () => {
+                    assert.ok(!generated.includes('%functionName%'));
+                    assert.ok(generated.includes(`'${name}'`));
+                    const result = spawnSync(process.execPath, ['--check', generatedPath], { encoding: 'utf8' });
+                    assert.ifError(result.error);
+                    assert.equal(result.status, 0, result.stderr);
+                });
+
+                await test(`${id}: ${name} registers and normalizes real SDK payloads`, { skip: !dependencyApp }, async () => {
+                    const require = createRequire(generatedPath);
+                    const { app } = require('@azure/functions');
+                    const sdk = require(`@azure/connectors/generated/${connector.sdk}Extensions`);
+                    assert.equal(sdk[`${connector.sdk}TriggerOperations`][connector.key], connector.operation);
+                    const original = app.connectorTrigger;
+                    const registrations = [];
+                    app.connectorTrigger = (registeredName, options) => registrations.push({ registeredName, options });
+                    try {
+                        await import(pathToFileURL(generatedPath).href);
+                    } finally {
+                        app.connectorTrigger = original;
+                    }
+                    assert.equal(registrations.length, 1);
+                    const { registeredName, options: { handler, ...options } } = registrations[0];
+                    assert.equal(registeredName, name);
+                    assert.deepEqual(options, {
+                        deliveryMode: 'Poll',
+                        connection: 'ConnectorNamespace',
+                        triggerConfigName: `%${connector.setting}%`,
+                        cardinality: 'one',
+                    });
+                    const item = { secretField: 'do-not-log-this-payload' };
+                    const payloads = [
+                        [{ body: item }, 1],
+                        [{ body: { value: [item, item] } }, 2],
+                        [[{ body: item }, { body: { value: [item] } }], 2],
+                        [JSON.stringify([{ body: item }, { body: item }]), 2],
+                        [[], 0],
+                        [null, 0],
+                    ];
+                    for (const [payload, count] of payloads) {
+                        const logs = [];
+                        await handler(payload, {
+                            log: (...args) => logs.push(args.join(' ')),
+                            warn: (...args) => assert.fail(args.join(' ')),
+                        });
+                        assert.equal(logs.length, 1);
+                        assert.ok(logs[0].includes(`Received ${count} `));
+                        assert.ok(!logs[0].includes(item.secretField));
+                    }
+                });
+            }
+        }
+    }
+
+    await test('all generated TypeScript modules pass strict SDK type checking', { skip: !dependencyApp }, () => {
+        const require = createRequire(path.join(temporary, 'package.json'));
+        const compiler = require.resolve('typescript/bin/tsc');
+        const result = spawnSync(process.execPath, [
+            compiler, '--noEmit', '--strict', '--module', 'Node16',
+            '--moduleResolution', 'Node16', '--target', 'ES2022',
+            ...generatedTypeScript,
+        ], { encoding: 'utf8', cwd: temporary });
+        assert.ifError(result.error);
+        assert.equal(result.status, 0, result.stdout + result.stderr);
+    });
+} finally {
+    await rm(temporary, { recursive: true, force: true });
+}
