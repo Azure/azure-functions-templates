@@ -1,0 +1,105 @@
+{
+  "author": "Microsoft",
+  "classifications": [ "Azure Function", "Trigger", "Connector", "Teams" ],
+  "name": "Connector Trigger - Teams - OnNewChannelMessage",
+  "identity": "Azure.Function.CSharp.Isolated.ConnectorTrigger.Teams.OnNewChannelMessage",
+  "groupIdentity": "Azure.Function.ConnectorTrigger.Teams.OnNewChannelMessage",
+  "shortName": "connector-teams-onnewchannelmessage",
+  "tags": { "language": "C#", "type": "item" },
+  "sourceName": "TeamsOnNewChannelMessageCSharp",
+  "symbols": {
+    "namespace": {
+      "description": "Namespace for the generated code.",
+      "replaces": "Company.Function",
+      "type": "parameter"
+    },
+    "Connection": {
+      "description": "Name of the configuration section containing the Connector Namespace polling endpoint.",
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "ConnectorNamespace",
+      "replaces": "ConnectionValue"
+    },
+    "TriggerConfigName": {
+      "description": "Teams OnNewChannelMessage trigger config name, or an app-setting reference such as %MyTriggerConfig%. Leave empty to use the default.",
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "%OnNewChannelMessageTriggerConfigName%",
+      "defaultIfOptionWithoutValue": "%OnNewChannelMessageTriggerConfigName%"
+    },
+    "DefaultTriggerConfigName": {
+      "type": "generated",
+      "generator": "constant",
+      "parameters": { "value": "%OnNewChannelMessageTriggerConfigName%" }
+    },
+    "ResolvedTriggerConfigName": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "TriggerConfigName",
+        "fallbackVariableName": "DefaultTriggerConfigName"
+      },
+      "replaces": "TriggerConfigNameValue"
+    },
+    "TriggerConfigIsSetting": {
+      "type": "generated",
+      "generator": "regexMatch",
+      "parameters": {
+        "source": "ResolvedTriggerConfigName",
+        "pattern": "^%[^%]+%$"
+      }
+    },
+    "TriggerConfigSettingName": {
+      "type": "generated",
+      "generator": "regex",
+      "parameters": {
+        "source": "ResolvedTriggerConfigName",
+        "steps": [ { "regex": "^%([^%]+)%$", "replacement": "$1" } ]
+      },
+      "replaces": "TriggerConfigSettingNameValue"
+    },
+    "HostIdentifier": { "type": "bind", "binding": "HostIdentifier" }
+  },
+  "primaryOutputs": [ { "path": "TeamsOnNewChannelMessageCSharp.cs" } ],
+  "defaultName": "TeamsOnNewChannelMessageCSharp",
+  "postActions": [
+    {
+      "description": "Add the Connector worker extension.",
+      "actionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+      "continueOnError": true,
+      "manualInstructions": [],
+      "args": {
+        "referenceType": "package",
+        "reference": "Microsoft.Azure.Functions.Worker.Extensions.Connector",
+        "version": "1.0.0",
+        "projectFileExtensions": ".csproj"
+      }
+    },
+    {
+      "description": "Add the typed connector SDK.",
+      "actionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
+      "continueOnError": true,
+      "manualInstructions": [],
+      "args": {
+        "referenceType": "package",
+        "reference": "Azure.Connectors.Sdk",
+        "version": "0.15.0-preview.1",
+        "projectFileExtensions": ".csproj"
+      }
+    },
+    {
+      "description": "Restore NuGet packages required by this project.",
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "continueOnError": true,
+      "manualInstructions": []
+    },
+    {
+      "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+      "description": "Open the function class file in the editor.",
+      "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+      "continueOnError": true,
+      "manualInstructions": [],
+      "args": { "files": "0" }
+    }
+  ]
+}
