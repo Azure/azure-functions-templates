@@ -9,6 +9,8 @@ import azurefunctions.extensions.connectors.onedriveforbusiness as onedrive
 
 # For more supported operations and SDK types, see:
 # https://github.com/Azure/azure-functions-python-extensions/tree/dev/azurefunctions-extensions-connectors#key-concepts
+# OnNewFilesV2 - list[onedrive.BlobMetadata]
+# OnUpdatedFilesV2 - list[onedrive.BlobMetadata]
 
 
 @app.function_name(name="$(FUNCTION_NAME_INPUT)")

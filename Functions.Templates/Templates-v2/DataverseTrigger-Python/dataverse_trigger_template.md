@@ -33,6 +33,8 @@ import azurefunctions.extensions.connectors.commondataservice as dataverse
 
 # For more supported operations and SDK types, see:
 # https://github.com/Azure/azure-functions-python-extensions/tree/dev/azurefunctions-extensions-connectors#key-concepts
+# SubscribeWebhookTrigger - list[dataverse.RowChangeNotification]
+# BusinessEventsTrigger - list[dataverse.ActionEventNotification]
 
 app = func.FunctionApp()
 

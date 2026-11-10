@@ -7,6 +7,17 @@ import azurefunctions.extensions.connectors.teams as teams
 
 # For more supported operations and SDK types, see:
 # https://github.com/Azure/azure-functions-python-extensions/tree/dev/azurefunctions-extensions-connectors#key-concepts
+# OnNewChannelMessage - list[teams.ChatMessage]
+# OnNewChannelMessageMentioningMe - list[teams.ChatMessage]
+# OnGroupMembershipAdd - list[teams.OnGroupMemberChangeResponse]
+# OnGroupMembershipRemoval - list[teams.OnGroupMemberChangeResponse]
+# WebhookChatMessageTrigger - list[teams.ChatMessageWebhookResponseSchema]
+# WebhookNewMessageTrigger - list[teams.DynamicNewMessageWebhookTriggerResponseSchema]
+# WebhookAtMentionTrigger - list[teams.DynamicAtMentionWebhookTriggerResponseSchema]
+# WebhookKeywordTrigger - list[teams.DynamicKeywordWebhookTriggerResponseSchema]
+# WebhookMessageReactionTrigger - list[teams.MessageReactionWebhookResponseSchema]
+# RecordingTrigger - list[teams.RecordingWebhookResponseSchema]
+# TranscriptTrigger - list[teams.TranscriptWebhookResponseSchema]
 
 app = func.FunctionApp()
 

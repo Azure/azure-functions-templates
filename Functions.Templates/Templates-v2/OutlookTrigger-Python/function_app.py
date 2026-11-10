@@ -7,6 +7,14 @@ import azurefunctions.extensions.connectors.office365 as office365
 
 # For more supported operations and SDK types, see:
 # https://github.com/Azure/azure-functions-python-extensions/tree/dev/azurefunctions-extensions-connectors#key-concepts
+# OnNewEmailV3 - list[office365.GraphClientReceiveMessage]
+# OnFlaggedEmailV4 - list[office365.GraphClientReceiveMessage]
+# OnNewMentionMeEmailV3 - list[office365.GraphClientReceiveMessage]
+# SharedMailboxOnNewEmailV2 - list[office365.GraphClientReceiveMessage]
+# CalendarGetOnNewItemsV3 - list[office365.GraphCalendarEventClientReceive]
+# CalendarGetOnUpdatedItemsV3 - list[office365.GraphCalendarEventClientReceive]
+# OnUpcomingEventsV3 - list[office365.GraphCalendarEventClientReceive]
+# CalendarGetOnChangedItemsV3 - list[office365.GraphCalendarEventClientWithActionType]
 
 app = func.FunctionApp()
 
