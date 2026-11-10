@@ -1,5 +1,85 @@
 [
     {
+        "id": "teamsTrigger-connection",
+        "name": "teamsTrigger-connection",
+        "value": "string",
+        "defaultValue": "ConnectorNamespace",
+        "label": "Connection setting prefix",
+        "help": "$teamsTrigger_connection_help"
+    },
+    {
+        "id": "teamsTrigger-onNewChannelMessageTriggerConfig",
+        "name": "teamsTrigger-onNewChannelMessageTriggerConfig",
+        "value": "string",
+        "defaultValue": "%OnNewChannelMessageTriggerConfigName%",
+        "label": "Trigger config name",
+        "help": "$teamsTrigger_onNewChannelMessageTriggerConfig_help"
+    },
+    {
+        "id": "dataverseTrigger-connection",
+        "name": "dataverseTrigger-connection",
+        "value": "string",
+        "defaultValue": "ConnectorNamespace",
+        "label": "Connection setting prefix",
+        "help": "$dataverseTrigger_connection_help"
+    },
+    {
+        "id": "dataverseTrigger-onRowChangedTriggerConfig",
+        "name": "dataverseTrigger-onRowChangedTriggerConfig",
+        "value": "string",
+        "defaultValue": "%OnDataverseRowChangedTriggerConfigName%",
+        "label": "Trigger config name",
+        "help": "$dataverseTrigger_onRowChangedTriggerConfig_help"
+    },
+    {
+        "id": "oneDriveTrigger-connection",
+        "name": "oneDriveTrigger-connection",
+        "value": "string",
+        "defaultValue": "ConnectorNamespace",
+        "label": "Connection setting prefix",
+        "help": "$oneDriveTrigger_connection_help"
+    },
+    {
+        "id": "oneDriveTrigger-onNewFileTriggerConfig",
+        "name": "oneDriveTrigger-onNewFileTriggerConfig",
+        "value": "string",
+        "defaultValue": "%OnOneDriveNewFileTriggerConfigName%",
+        "label": "Trigger config name",
+        "help": "$oneDriveTrigger_onNewFileTriggerConfig_help"
+    },
+    {
+        "id": "sharepointTrigger-connection",
+        "name": "sharepointTrigger-connection",
+        "value": "string",
+        "defaultValue": "ConnectorNamespace",
+        "label": "Connection setting prefix",
+        "help": "$sharepointTrigger_connection_help"
+    },
+    {
+        "id": "sharepointTrigger-onNewFileTriggerConfig",
+        "name": "sharepointTrigger-onNewFileTriggerConfig",
+        "value": "string",
+        "defaultValue": "%OnSharepointNewFileTriggerConfigName%",
+        "label": "Trigger config name",
+        "help": "$sharepointTrigger_onNewFileTriggerConfig_help"
+    },
+    {
+        "id": "outlookTrigger-connection",
+        "name": "outlookTrigger-connection",
+        "value": "string",
+        "defaultValue": "ConnectorNamespace",
+        "label": "Connection setting prefix",
+        "help": "$outlookTrigger_connection_help"
+    },
+    {
+        "id": "outlookTrigger-onNewEmailTriggerConfig",
+        "name": "outlookTrigger-onNewEmailTriggerConfig",
+        "value": "string",
+        "defaultValue": "%OnNewEmailTriggerConfigName%",
+        "label": "Trigger config name",
+        "help": "$outlookTrigger_onNewEmailTriggerConfig_help"
+    },
+    {
         "id": "httpTrigger-route",
         "name": "httpTrigger-route",
         "label": "$httpTrigger_route_label",
