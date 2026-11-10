@@ -32,7 +32,22 @@ jobs:
       pwsh: true
     env:
       devops_buildNumber: $(devops_buildNumber)
-    
+
+  - task: UseNode@1
+    displayName: 'Use Node.js 24 for template tests'
+    inputs:
+      version: '24.x'
+
+  - task: PowerShell@2
+    displayName: 'Test Node.js v4 connector templates'
+    inputs:
+      targetType: 'inline'
+      pwsh: true
+      workingDirectory: '$(Build.Repository.LocalPath)'
+      script: |
+        node --test .\Tools\tests\node-connector-templates.test.mjs
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
   - task: CopyFiles@2
     inputs:
       SourceFolder: '$(Build.Repository.LocalPath)\bin\VS'

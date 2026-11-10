@@ -187,7 +187,7 @@ Pretty much all non-dotnet templates do not require compilation. The only except
 2. Locate the zip file for built template in the bin directory `..\bin\`
 3. Extract the zip file content you want to test. This be based on the nuspec file you updated.
 3. Create a function app via core tools, open host.json to verify that it has extension bundle configuration present.
-    - Sample commands for node app: `func init . --worker-runtime node`
+    - For Node.js v4, choose a language explicitly: `func init . --worker-runtime node --language javascript --model V4` or `func init . --worker-runtime node --language typescript --model V4`. See the tested connector workflow below for local bundle validation.
 4. Execute the `func GetExtensionBundlePath` to find the path to the bundle being used.
     - Sample response: `%userprofile%\.azure-functions-core-tools\Functions\ExtensionBundles\Microsoft.Azure.Functions.ExtensionBundle\2.8.4`
 5. Replace the contents of the `StaticContent\v1` directory (path from step 5) with the files extracted from the zip file in step 3.
@@ -195,43 +195,101 @@ Pretty much all non-dotnet templates do not require compilation. The only except
 
 ### Node.js connector polling templates
 
-The v4 extension bundle packages include Outlook, SharePoint, OneDrive, Dataverse,
-and Teams templates for both JavaScript and TypeScript programming model v4.
-See the [connector polling setup guide](Functions.Templates/Documentation/connectorTrigger.md)
-for package versions, operations, identity permissions, and local/deployed settings.
+The v4 extension bundle packages include Office 365, SharePoint, OneDrive, Dataverse, and Teams templates for both JavaScript and TypeScript programming model v4. See the [connector polling setup guide](Functions.Templates/Documentation/connectorTrigger.md) for package versions, module-format compatibility, operations, identity permissions, and local/deployed settings.
 
-The templates require `@azure/functions@^4.17.1`, use `DeliveryMode.Poll`, and omit
-single-event cardinality in favor of the library's `Cardinality.One` default.
+Node v4 uses the v1 template schema with IDs ending in `JavaScript-4.x` or `TypeScript-4.x`; it does not use Python's `Templates-v2` app/blueprint jobs. Keep the suffix in package targets, omit `function.json`, and put only the `%functionName%.js` / `%functionName%.ts` module and `metadata.json` in each template directory. Markdown guides belong in `Documentation`, not the generated module file list. The Office 365 display name matches the Connector Namespaces portal; its existing `OutlookTrigger-*` IDs are retained for template identity and Python-template correspondence.
 
-Node v4 uses the v1 template schema with IDs ending in `JavaScript-4.x` or
-`TypeScript-4.x`; it does not use Python's `Templates-v2` app/blueprint jobs.
-Keep the suffix in package targets, omit `function.json`, and put only the
-`%functionName%.js` / `%functionName%.ts` module and `metadata.json` in each
-template directory. Markdown guides belong in `Documentation`, not the generated
-module file list. Core Tools loads these templates from bundles; VS Code's
-separately bundled Node v4 catalog requires its own downstream refresh.
+#### CI and offline checks
 
-Run the dependency-free metadata, packaging, and generated-syntax checks with
-Node.js 24 or later:
+The shared build job used by both public PR and official pipelines installs Node.js 24 and runs the following dependency-free checks for both languages:
 
 ```sh
 node --test Tools/tests/node-connector-templates.test.mjs
 ```
 
-To also exercise actual registration, SDK operation metadata, library-supplied
-binding defaults, Poll normalization, count-only logging, and strict TypeScript compilation, set
-`NODE_CONNECTOR_TEST_DEPENDENCIES` to a Node project containing TypeScript,
-`@types/node`, and the three package versions in the setup guide. Without that setting,
-the runtime checks are explicitly skipped. For example, in PowerShell:
+These checks cover metadata, package registrations, localized references, operation-comment parity between languages, documented module-format limitations, and generated JavaScript/TypeScript syntax. They do not require npm preview packages. Runtime registration and strict SDK type checks are explicitly skipped unless `NODE_CONNECTOR_TEST_DEPENDENCIES` is set; the CI baseline does not claim that coverage.
+
+To also exercise actual registration, SDK operation/model metadata, library-supplied binding defaults, Poll normalization, count-only logging, and strict TypeScript compilation, set `NODE_CONNECTOR_TEST_DEPENDENCIES` to a Node project containing TypeScript, `@types/node`, and the package versions in the setup guide. For example, in PowerShell:
 
 ```powershell
 $env:NODE_CONNECTOR_TEST_DEPENDENCIES = 'C:\projects\connector-app'
 node --test .\Tools\tests\node-connector-templates.test.mjs
 ```
 
-These checks do not start a host, use credentials, or connect to Azure. Also build
-both bundle packages and verify `func new` generation as described above before
-publishing templates.
+Neither test profile starts a Functions host, invokes Core Tools, uses credentials, or connects to Azure. Run the separate generation workflow below when changing template assets.
+
+#### Tested Core Tools v4 generation workflow
+
+The workflow below was verified on Windows with **Core Tools 4.14.0** and **Node.js 24.5.0** for all five connectors in both languages, using both the default and custom function names. Run it from the repository root in PowerShell.
+
+Core Tools loads the v1 template catalog from the selected extension bundle and combines it with its embedded Node v4 fallback templates. These new templates are supplied by the bundle's `StaticContent\v1\templates\templates.json`, not by editing the CLI's embedded `node-v4-templates.json`. The built ZIP is the catalog payload, not a complete host extension bundle. Use a private probing directory for generation tests instead of replacing another project's shared bundle cache. VS Code's separately bundled Node v4 picker still requires its own downstream catalog refresh.
+
+```powershell
+.\Build\build-all.ps1
+$repo = (Get-Location).Path
+$testRoot = Join-Path $env:TEMP ("connector-template-test-" + [guid]::NewGuid().ToString('N'))
+
+func init "$testRoot\javascript" --worker-runtime node --language javascript --model V4 --bundles-channel Preview --skip-npm-install
+func init "$testRoot\typescript" --worker-runtime node --language typescript --model V4 --bundles-channel Preview --skip-npm-install
+
+Push-Location "$testRoot\javascript"
+try {
+    $publishedBundle = (func GetExtensionBundlePath | Select-Object -Last 1).Trim()
+} finally {
+    Pop-Location
+}
+$bundleVersion = Split-Path $publishedBundle -Leaf
+$probeRoot = Join-Path $testRoot 'bundles'
+$privateBundle = Join-Path $probeRoot $bundleVersion
+New-Item -ItemType Directory -Path "$privateBundle\StaticContent\v1" -Force | Out-Null
+Copy-Item "$publishedBundle\bundle.json" $privateBundle
+Expand-Archive "$repo\bin\ExtensionBundle.Preview.v4.Templates.4.0.1.zip" "$privateBundle\StaticContent\v1"
+
+foreach ($language in 'javascript', 'typescript') {
+    $hostPath = Join-Path $testRoot "$language\host.json"
+    $config = Get-Content $hostPath -Raw | ConvertFrom-Json
+    $config.extensionBundle.version = "[$bundleVersion]"
+    $config.extensionBundle | Add-Member -NotePropertyName probingPaths -NotePropertyValue @($probeRoot)
+    $config | ConvertTo-Json -Depth 10 | Set-Content $hostPath
+}
+
+$templates = @(
+    @{ Template = 'Office 365 trigger'; Name = 'office365NewEmailPoll' },
+    @{ Template = 'SharePoint trigger'; Name = 'sharepointNewFilePoll' },
+    @{ Template = 'OneDrive trigger'; Name = 'oneDriveNewFilePoll' },
+    @{ Template = 'Dataverse trigger'; Name = 'dataverseNewRowPoll' },
+    @{ Template = 'Teams trigger'; Name = 'teamsNewChannelMessagePoll' }
+)
+foreach ($language in 'javascript', 'typescript') {
+    Push-Location (Join-Path $testRoot $language)
+    try {
+        foreach ($template in $templates) {
+            foreach ($name in @($template.Name, ('custom' + $template.Name))) {
+                func new --language $language --template $template.Template --name $name
+            }
+        }
+    } finally {
+        Pop-Location
+    }
+}
+```
+
+The default build creates the `4.0.1` ZIP above; use the actual filename if a custom build version is configured. Both v4 ZIPs contain these templates, while the example selects the preview package. Inspect each generated file under the two projects' `src\functions` directories and compare it with its built catalog entry after `%functionName%` replacement.
+
+Install the SDK dependencies in both generated projects and apply the TypeScript compiler options from the [setup guide](Functions.Templates/Documentation/connectorTrigger.md#create-and-configure-a-function). No connection authorization or endpoint configuration is needed for generation or compilation. Then validate the emitted files:
+
+```powershell
+Get-ChildItem "$testRoot\javascript\src\functions\*.js" | ForEach-Object { node --check $_.FullName }
+Push-Location "$testRoot\typescript"
+try {
+    npm run build
+    Get-ChildItem '.\dist\src\functions\*.js' | ForEach-Object { node --check $_.FullName }
+} finally {
+    Pop-Location
+}
+```
+
+The documented TypeScript options enable strict checking and produce loadable CommonJS output for the Core Tools-created project. A successful `func new` or compilation is not a host-startup or live-event test. The private probe contains template catalogs only; remove `probingPaths` and restore a normal host bundle before runtime testing, then follow the setup guide. Delete the isolated `$testRoot` when finished.
 
 # License
 

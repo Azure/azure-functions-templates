@@ -9,7 +9,7 @@ connections, or create trigger configurations.
 
 | Template | Connector operation | Default function name | Trigger config app setting |
 | --- | --- | --- | --- |
-| Outlook trigger | `OnNewEmailV3` | `outlookNewEmailPoll` | `OnNewEmailTriggerConfigName` |
+| Office 365 trigger | `OnNewEmailV3` | `office365NewEmailPoll` | `OnNewEmailTriggerConfigName` |
 | SharePoint trigger | `GetOnNewFileItems` | `sharepointNewFilePoll` | `OnSharepointNewFileTriggerConfigName` |
 | OneDrive trigger | `OnNewFilesV2` | `oneDriveNewFilePoll` | `OnOneDriveNewFileTriggerConfigName` |
 | Dataverse trigger | `GetOnNewItems_V2` | `dataverseNewRowPoll` | `OnDataverseRowChangedTriggerConfigName` |
@@ -31,15 +31,16 @@ Dataverse helper.
 ## Create and configure a function
 
 Use Node.js 24 or later, Azure Functions Core Tools v4, and an existing Node.js
-programming-model-v4 project. The JavaScript templates use CommonJS; the TypeScript
-templates use imports and strict SDK types.
+programming-model-v4 project. The TypeScript templates use imports and strict SDK types.
+
+**JavaScript is CommonJS-only in this preview.** The generated `.js` files use `require` and work when `package.json` omits `type` or declares `"type": "commonjs"`. They do not run unchanged in projects declaring `"type": "module"`; `require` is undefined there. The picker is not filtered by package module type. In an ESM project, use the TypeScript template with a matching ESM compiler configuration or convert the generated JavaScript imports to ESM before loading it. Do not change an existing application's package module type just to accommodate this template.
 
 For example, after a bundle containing these templates is available:
 
 ```sh
 func init connector-app --worker-runtime node --language typescript --model V4
 cd connector-app
-func new --template "Outlook trigger" --name outlookNewEmailPoll
+func new --template "Office 365 trigger" --name office365NewEmailPoll
 npm install "@azure/functions@^4.17.1" "@azure/functions-extensions-connectors@0.2.0-preview" "@azure/connectors@0.4.0-preview"
 ```
 
@@ -82,7 +83,7 @@ CommonJS project output and the SDK's exported type declarations.
 3. Grant connection access policies to both the namespace identity that runs the
    connector operation and the Function/developer identity that receives and
    acknowledges events.
-4. Merge the following example into `local.settings.json` for Outlook. For the
+4. Merge the following example into `local.settings.json` for Office 365. For the
    other templates, use the app setting name from the table:
 
    ```json
@@ -137,6 +138,10 @@ For batching, import `Cardinality` from `@azure/functions`, set
 do not use `maxConcurrentCalls` with batched invocations. See the
 [polling and concurrency guide](https://github.com/Azure/azure-functions-connector-extension/blob/main/docs/connector-poll-concurrency-visual-guide.md).
 
+Numeric tuning options remain omitted, matching the Python templates. `Cardinality.One` selects the invocation shape; it is not an explicit service Receive batch-size override. If an application also needs to pin the receive batch size to one rather than inherit host configuration, set `maxBatchSize: 1` deliberately.
+
+Each generated module lists the selected operation, alternative operations, and SDK payload types. Use the matching typed helper or generic model when changing operations, and configure the corresponding trigger parameters separately. The pinned Node Dataverse SDK exports only the two listed legacy row operations; the additional Python deletion/action notification models are not assumed to be available in Node.
+
 Only item counts are logged. Keep email, message, file, and row contents out of
 logs, and never commit credentials or private local settings.
 
@@ -144,7 +149,7 @@ logs, and never commit credentials or private local settings.
 
 - [Connector reference](https://aka.ms/connectors)
 - [TypeScript connector samples](https://github.com/Azure-Samples/functions-connectors-typescript)
-- [Outlook samples](https://github.com/Azure-Samples/functions-connectors-typescript/tree/main/office365App)
+- [Office 365 samples](https://github.com/Azure-Samples/functions-connectors-typescript/tree/main/office365App)
 - [SharePoint samples](https://github.com/Azure-Samples/functions-connectors-typescript/tree/main/sharepointApp)
 - [OneDrive samples](https://github.com/Azure-Samples/functions-connectors-typescript/tree/main/onedriveApp)
 - [Teams samples](https://github.com/Azure-Samples/functions-connectors-typescript/tree/main/teamsApp)
