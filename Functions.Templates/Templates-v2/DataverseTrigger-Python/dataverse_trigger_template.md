@@ -31,69 +31,46 @@ import azure.functions as func
 # To use, add azurefunctions-extensions-connectors to your requirements.txt file
 import azurefunctions.extensions.connectors.commondataservice as dataverse
 
-# For other operations, use the matching trigger payload type from
-# azurefunctions.extensions.connectors.commondataservice.
-#
-# Legacy row polling operations:
-# GetOnUpdatedItems_V2 - list[dataverse.Item]
-# GetOnDeletedItems_V2 - list[dataverse.Item]
-#
-# Current row-change and action notifications:
-# SubscribeWebhookTrigger - list[dataverse.RowChangeNotification]
-# BusinessEventsTrigger - list[dataverse.ActionEventNotification]
-# An operation name containing Webhook does not select Functions delivery mode.
-# Configure a trigger config for the selected operation and its required parameters.
+# For more supported operations and SDK types, see:
+# https://github.com/Azure/azure-functions-python-extensions/tree/dev/azurefunctions-extensions-connectors#key-concepts
 
 app = func.FunctionApp()
 
+# Visit aka.ms/connectortrigger to local testing and deployment instructions.
 @app.connector_trigger(
-  arg_name="rows",
+    arg_name="rows",
     connection="ConnectorNamespace",
     delivery_mode=func.DeliveryMode.POLL,
     trigger_config_name="%OnDataverseRowChangedTriggerConfigName%",
 )
 def dataverse_trigger_on_row_changed_poll(rows: list[dataverse.Item]) -> None:
-  """Receive new rows without logging their contents."""
-  logging.info("Received Dataverse new rows (%s rows)", len(rows))
+    """Receive new rows without logging their contents."""
+    logging.info("Received Dataverse new rows (%s rows)", len(rows))
 ```
 
 To run the code generated through the command palette, note the following:
 
 - The function application is named `app`, and its entry point is `function_app.py`.
-  The function name input sets the complete handler name; its default is
-  `dataverse_trigger_on_row_changed_poll`. Choose a name that is unique in this app
-  and no more than 128 characters long. No suffix is added.
-  The registered name matches the Python function name and ends in `_poll`.
+	The function name input sets the complete handler name; its default is
+	`dataverse_trigger_on_row_changed_poll`. Choose a name that is unique in this app
+	and no more than 128 characters long. No suffix is added.
+	The registered name matches the Python function name and ends in `_poll`.
 - Add these packages to `requirements.txt` and install them in your virtual environment:
 
-  ```text
-  azure-functions>=2.4.0b1 ; python_version >= '3.13'
-  azure-functions>=1.27.0b1 ; python_version < '3.13'
-  azurefunctions-extensions-connectors
-  ```
+	```text
+	azure-functions>=2.4.0b1 ; python_version >= '3.13'
+	azure-functions>=1.27.0b1 ; python_version < '3.13'
+	azurefunctions-extensions-connectors
+	```
 
-  The connector extension provides the SDK binding. Verify that the package
-  version you install exports `commondataservice.Item` before
-  running this template.
+	The connector extension provides the SDK binding. Verify that the package
+	version you install exports `commondataservice.Item` before
+	running this template.
 - For Python 3.12 and older, set `PYTHON_ISOLATE_WORKER_DEPENDENCIES=1` in local
-  and deployed app settings.
-- Create a Connector Namespace and authorize an OAuth Dataverse connection in the
-  [Connector Namespaces portal](https://connectors.azure.com/). Use the organization's
-  HTTPS URL, such as `https://contoso.crm.dynamics.com`, and an OAuth account with
-  the permissions required by the Admin Only trigger. Configure `GetOnNewItems_V2`
-  with `dataset=<org HTTPS URL>` and `table=<plural entity-set name>`, for example,
-  `dataset=https://contoso.crm.dynamics.com` and `table=accounts`.
-  The template generates code, not infrastructure or trigger configs.
-- For polling, create a Poll config for `GetOnNewItems_V2` and set
-  `OnDataverseRowChangedTriggerConfigName` to its name. The trigger config input
-  accepts `%OnDataverseRowChangedTriggerConfigName%` or a literal name. Configure
-  `ConnectorNamespace__pollingEndpoint` with the service-derived base endpoint and
-  grant the host identity access to receive and acknowledge events.
-- For local polling tests, stop the deployed app or use separate configs so hosts
-  do not compete for events.
-- Verify Connected consent, Enabled configs, and successful source registration.
-  An Enabled config alone does not prove source registration succeeded. Add a
-  test row and check for `Received Dataverse new rows`.
+	and deployed app settings.
+
+For resource setup and configuration, see the [connector documentation](https://aka.ms/connectors).
+For local testing and deployment, see the [connector trigger documentation](https://aka.ms/connectortrigger).
 
 ## More connectors and events
 

@@ -20,70 +20,46 @@ import azure.functions as func
 # To use, add azurefunctions-extensions-connectors to your requirements.txt file
 import azurefunctions.extensions.connectors.teams as teams
 
-# For other operations, use the matching trigger payload type from
-# azurefunctions.extensions.connectors.teams.
-#
-# OnNewChannelMessageMentioningMe - list[teams.ChatMessage]
-# OnGroupMembershipAdd - list[teams.OnGroupMemberChangeResponse]
-# OnGroupMembershipRemoval - list[teams.OnGroupMemberChangeResponse]
-# WebhookChatMessageTrigger - list[teams.ChatMessageWebhookResponseSchema]
-# WebhookNewMessageTrigger - list[teams.DynamicNewMessageWebhookTriggerResponseSchema]
-# WebhookAtMentionTrigger - list[teams.DynamicAtMentionWebhookTriggerResponseSchema]
-# WebhookKeywordTrigger - list[teams.DynamicKeywordWebhookTriggerResponseSchema]
-# WebhookMessageReactionTrigger - list[teams.MessageReactionWebhookResponseSchema]
-# RecordingTrigger - list[teams.RecordingWebhookResponseSchema]
-# TranscriptTrigger - list[teams.TranscriptWebhookResponseSchema]
-# An operation name containing Webhook does not select Functions delivery mode.
-# Configure a trigger config for the selected operation and its required parameters.
+# For more supported operations and SDK types, see:
+# https://github.com/Azure/azure-functions-python-extensions/tree/dev/azurefunctions-extensions-connectors#key-concepts
 
 app = func.FunctionApp()
 
 @app.function_name(name="teams_trigger_on_new_channel_message_poll")
+# Visit aka.ms/connectortrigger to local testing and deployment instructions.
 @app.connector_trigger(
-    arg_name="messages",
-    delivery_mode=func.DeliveryMode.POLL,
-    connection="ConnectorNamespace",
-    trigger_config_name="%OnNewChannelMessageTriggerConfigName%",
+		arg_name="messages",
+		delivery_mode=func.DeliveryMode.POLL,
+		connection="ConnectorNamespace",
+		trigger_config_name="%OnNewChannelMessageTriggerConfigName%",
 )
 def teams_trigger_on_new_channel_message_poll(messages: list[teams.ChatMessage]) -> None:
-    """Receive new channel messages."""
-    logging.info("Received OnNewChannelMessage trigger (%s items)", len(messages))
+		"""Receive new channel messages."""
+		logging.info("Received OnNewChannelMessage trigger (%s items)", len(messages))
 ```
 
 - The function application is named `app`, and its entry point is `function_app.py`.
-  The function name input sets the complete handler name; its default is
-  `teams_trigger_on_new_channel_message_poll`. Choose a name that is unique in this app
-  and no more than 128 characters long. No suffix is added.
+	The function name input sets the complete handler name; its default is
+	`teams_trigger_on_new_channel_message_poll`. Choose a name that is unique in this app
+	and no more than 128 characters long. No suffix is added.
 - Add these packages to your requirements file and install them in your virtual
-  environment:
+	environment:
 
-  ```text
-  azure-functions>=2.4.0b1 ; python_version >= '3.13'
-  azure-functions>=1.27.0b1 ; python_version < '3.13'
-  azurefunctions-extensions-connectors
-  ```
+	```text
+	azure-functions>=2.4.0b1 ; python_version >= '3.13'
+	azure-functions>=1.27.0b1 ; python_version < '3.13'
+	azurefunctions-extensions-connectors
+	```
 
 - On Python 3.12 and older, set `PYTHON_ISOLATE_WORKER_DEPENDENCIES=1` in local
-  and deployed app settings. The main app is `app`; register blueprints with
-  `app.register_functions()`.
-- Create a Connector Namespace and authorize a Teams OAuth connection in the
-  [Connector Namespaces portal](https://connectors.azure.com/). Select the team /
-  Microsoft 365 group **object ID** and **URL-decoded channel ID**, not display names.
-  The template creates code, not resources, consent, or source subscriptions.
-- For polling, set `ConnectorNamespace__pollingEndpoint` to the namespace polling
-  base endpoint and grant the host identity receive/acknowledge access. Configure
-  identity credentials for that prefix; `ConnectorNamespace` is not the Teams
-  connection name. Set `OnNewChannelMessageTriggerConfigName` to the matching Poll
-  config name for `OnNewChannelMessage`. The trigger config input accepts
-  `%OnNewChannelMessageTriggerConfigName%` or a literal config name.
+	and deployed app settings. The main app is `app`; register blueprints with
+	`app.register_functions()`.
 
-Check Connected consent, Enabled configs, **and successful source registration**;
-Enabled alone does not prove registration. Test new root channel messages, not
-replies. Confirm
-successful invocations and actual item counts. Stop competing deployed/local hosts
-or use separate polling configs. Delivery can repeat; these handlers do not
-deduplicate. Keep customer payloads, tokens, and private settings out
-of logs and source control.
+For resource setup and configuration, see the [connector documentation](https://aka.ms/connectors).
+For local testing and deployment, see the [connector trigger documentation](https://aka.ms/connectortrigger).
+
+Delivery can repeat; this handler does not deduplicate. Keep customer payloads,
+tokens, and private settings out of logs and source control.
 
 ## More connectors and events
 

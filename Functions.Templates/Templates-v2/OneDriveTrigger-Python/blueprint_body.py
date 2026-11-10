@@ -7,14 +7,12 @@ import azure.functions as func
 # To use, add azurefunctions-extensions-connectors to your requirements.txt file
 import azurefunctions.extensions.connectors.onedriveforbusiness as onedrive
 
-# For other operations, use the matching trigger payload type from
-# azurefunctions.extensions.connectors.onedriveforbusiness.
-#
-# OnUpdatedFilesV2 - list[onedrive.BlobMetadata]
-# Configure a trigger config for the selected operation and its required parameters.
+# For more supported operations and SDK types, see:
+# https://github.com/Azure/azure-functions-python-extensions/tree/dev/azurefunctions-extensions-connectors#key-concepts
 
 
 @$(BLUEPRINT_FILENAME).function_name(name="$(FUNCTION_NAME_INPUT)")
+# Visit aka.ms/connectortrigger to local testing and deployment instructions.
 @$(BLUEPRINT_FILENAME).connector_trigger(
     arg_name="files",
     connection="$(CONNECTION_INPUT)",

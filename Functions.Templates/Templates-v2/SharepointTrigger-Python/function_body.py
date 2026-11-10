@@ -7,22 +7,12 @@ import azure.functions as func
 # To use, add azurefunctions-extensions-connectors to your requirements.txt file
 import azurefunctions.extensions.connectors.sharepointonline as sharepoint
 
-# For other operations, use the matching trigger payload type from
-# azurefunctions.extensions.connectors.sharepointonline.
-#
-# GetOnUpdatedFileItems - list[sharepoint.Item]
-# GetOnNewItems - list[sharepoint.Item]
-# GetOnUpdatedItems - list[sharepoint.Item]
-# GetOnChangedItems - list[sharepoint.Item]
-# GetOnNewItemsFromForm - list[sharepoint.Item]
-# GetOnRecurrenceDigest - list[sharepoint.Item]
-# GetOnUpdatedFileClassifiedTimes - list[sharepoint.Item]
-# GetOnDeletedItems - list[sharepoint.DeletedItem]
-# GetOnDeletedFileItems - list[sharepoint.DeletedItem]
-# Configure a trigger config for the selected operation and its required parameters.
+# For more supported operations and SDK types, see:
+# https://github.com/Azure/azure-functions-python-extensions/tree/dev/azurefunctions-extensions-connectors#key-concepts
 
 
 @app.function_name(name="$(FUNCTION_NAME_INPUT)")
+# Visit aka.ms/connectortrigger to local testing and deployment instructions.
 @app.connector_trigger(
     arg_name="files",
     connection="$(CONNECTION_INPUT)",

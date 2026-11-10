@@ -20,56 +20,44 @@ import azure.functions as func
 # To use, add azurefunctions-extensions-connectors to your requirements.txt file
 import azurefunctions.extensions.connectors.office365 as office365
 
-# For other operations, use the matching trigger payload type from
-# azurefunctions.extensions.connectors.office365.
-#
-# OnFlaggedEmailV4 - list[office365.GraphClientReceiveMessage]
-# OnNewMentionMeEmailV3 - list[office365.GraphClientReceiveMessage]
-# SharedMailboxOnNewEmailV2 - list[office365.GraphClientReceiveMessage]
-# CalendarGetOnNewItemsV3 - list[office365.GraphCalendarEventClientReceive]
-# CalendarGetOnUpdatedItemsV3 - list[office365.GraphCalendarEventClientReceive]
-# OnUpcomingEventsV3 - list[office365.GraphCalendarEventClientReceive]
-# CalendarGetOnChangedItemsV3 - list[office365.GraphCalendarEventClientWithActionType]
-# Configure a trigger config for the selected operation and its required parameters.
+# For more supported operations and SDK types, see:
+# https://github.com/Azure/azure-functions-python-extensions/tree/dev/azurefunctions-extensions-connectors#key-concepts
 
 app = func.FunctionApp()
 
+# Visit aka.ms/connectortrigger to local testing and deployment instructions.
 @app.connector_trigger(
-    arg_name="emails",
-    connection="ConnectorNamespace",
-    delivery_mode=func.DeliveryMode.POLL,
-    trigger_config_name="%OnNewEmailTriggerConfigName%",
+		arg_name="emails",
+		connection="ConnectorNamespace",
+		delivery_mode=func.DeliveryMode.POLL,
+		trigger_config_name="%OnNewEmailTriggerConfigName%",
 )
 def outlook_trigger_on_new_email_poll(
-    emails: list[office365.GraphClientReceiveMessage],
+		emails: list[office365.GraphClientReceiveMessage],
 ) -> None:
-    for email in emails:
-        logging.info("Subject: '%s'.", email.subject)
+		for email in emails:
+				logging.info("Subject: '%s'.", email.subject)
 ```
 
 To run the code generated through the command palette, note the following:
 
 - The function application is named `app`, and its entry point is `function_app.py`.
-  The function name input sets the complete handler name; its default is
-  `outlook_trigger_on_new_email_poll`. Choose a name that is unique in this app
-  and no more than 128 characters long. No suffix is added.
+	The function name input sets the complete handler name; its default is
+	`outlook_trigger_on_new_email_poll`. Choose a name that is unique in this app
+	and no more than 128 characters long. No suffix is added.
 - Add these packages to `requirements.txt` and install them in your virtual environment:
 
-  ```text
-  azure-functions>=2.4.0b1 ; python_version >= '3.13'
-  azure-functions>=1.27.0b1 ; python_version < '3.13'
-  azurefunctions-extensions-connectors
-  ```
+	```text
+	azure-functions>=2.4.0b1 ; python_version >= '3.13'
+	azure-functions>=1.27.0b1 ; python_version < '3.13'
+	azurefunctions-extensions-connectors
+	```
 
 - For Python 3.12 and older, set `PYTHON_ISOLATE_WORKER_DEPENDENCIES=1` in local
-  and deployed app settings.
-- Create a Connector Namespace and authorize an Office 365 connection in the
-  [Connector Namespaces portal](https://connectors.azure.com/). The template
-  generates code, not Azure resources or trigger configs.
-- For polling, configure `ConnectorNamespace__pollingEndpoint`, grant the host
-  identity access to receive and acknowledge events, and set
-  `OnNewEmailTriggerConfigName` to the new-email Poll config name. The trigger config
-  input accepts `%OnNewEmailTriggerConfigName%` or a literal config name.
+	and deployed app settings.
+
+For resource setup and configuration, see the [connector documentation](https://aka.ms/connectors).
+For local testing and deployment, see the [connector trigger documentation](https://aka.ms/connectortrigger).
 
 ## More connectors and events
 
