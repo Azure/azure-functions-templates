@@ -13,6 +13,7 @@ import azurefunctions.extensions.connectors.commondataservice as dataverse
 
 
 @$(BLUEPRINT_FILENAME).function_name(name="$(FUNCTION_NAME_INPUT)")
+# Visit aka.ms/connectortrigger to local testing and deployment instructions.
 @$(BLUEPRINT_FILENAME).connector_trigger(
     arg_name="rows",
     connection="$(CONNECTION_INPUT)",

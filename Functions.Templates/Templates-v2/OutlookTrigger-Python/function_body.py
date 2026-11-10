@@ -12,6 +12,7 @@ import azurefunctions.extensions.connectors.office365 as office365
 
 
 @app.function_name(name="$(FUNCTION_NAME_INPUT)")
+# Visit aka.ms/connectortrigger to local testing and deployment instructions.
 @app.connector_trigger(
     arg_name="emails",
     connection="$(CONNECTION_INPUT)",

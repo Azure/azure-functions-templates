@@ -12,6 +12,7 @@ import azurefunctions.extensions.connectors.sharepointonline as sharepoint
 
 
 @app.function_name(name="$(FUNCTION_NAME_INPUT)")
+# Visit aka.ms/connectortrigger to local testing and deployment instructions.
 @app.connector_trigger(
     arg_name="files",
     connection="$(CONNECTION_INPUT)",

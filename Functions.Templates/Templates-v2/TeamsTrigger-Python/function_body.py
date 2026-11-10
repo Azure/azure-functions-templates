@@ -12,6 +12,7 @@ import azurefunctions.extensions.connectors.teams as teams
 
 
 @app.function_name(name="$(FUNCTION_NAME_INPUT)")
+# Visit aka.ms/connectortrigger to local testing and deployment instructions.
 @app.connector_trigger(
     arg_name="messages",
     delivery_mode=func.DeliveryMode.POLL,
