@@ -31,6 +31,20 @@ try {
         await symlink(path.resolve(dependencyApp, 'node_modules'), path.join(temporary, 'node_modules'), process.platform === 'win32' ? 'junction' : 'dir');
     }
 
+    await test('runtime dependencies provide Functions 4.17.1 enums and binding defaults', { skip: !dependencyApp }, () => {
+        const require = createRequire(path.join(temporary, 'package.json'));
+        const version = require('@azure/functions/package.json').version;
+        const match = version.match(/^4\.(\d+)\.(\d+)(?:\+[\w.-]+)?$/);
+        assert.ok(match, 'The template requires a stable Functions v4 release.');
+        assert.ok(Number(match[1]) > 17 || (Number(match[1]) === 17 && Number(match[2]) >= 1), 'The template requires Functions 4.17.1 or later.');
+        const { DeliveryMode, Cardinality, trigger } = require('@azure/functions');
+        assert.deepEqual(DeliveryMode, { Webhook: 'Webhook', Poll: 'Poll' });
+        assert.deepEqual(Cardinality, { One: 'one', Many: 'many' });
+        const binding = trigger.connectorTrigger({});
+        assert.equal(binding.deliveryMode, DeliveryMode.Webhook);
+        assert.equal(binding.cardinality, Cardinality.One);
+    });
+
     await test('both binding catalogs resolve the connector prompts and documentation', async () => {
         const bindings = catalogs.map((catalog) => catalog.bindings.filter((binding) => binding.type === 'connectorTrigger'));
         assert.ok(bindings.every((entries) => entries.length === 1));
@@ -75,7 +89,8 @@ try {
                 for (const nuspec of packages) {
                     assert.ok(nuspec.includes(`Templates\\${id}\\*.*" target="templates\\${id}"`), 'Retain the -4.x suffix for Node v4 discovery.');
                 }
-                assert.match(source, /deliveryMode: 'Poll'/);
+                assert.match(source, /deliveryMode: DeliveryMode\.Poll/);
+                assert.doesNotMatch(source, /\bcardinality\s*:/, 'Single-event templates must rely on the library default.');
                 assert.ok(source.includes(`triggerConfigName: '%${connector.setting}%'`));
                 assert.doesNotMatch(source, /\bany\b|console\.log|function\.json|deliveryMode: 'Webhook'/);
             });
@@ -101,7 +116,7 @@ try {
 
                 await test(`${id}: ${name} registers and normalizes real SDK payloads`, { skip: !dependencyApp }, async () => {
                     const require = createRequire(generatedPath);
-                    const { app } = require('@azure/functions');
+                    const { app, trigger, DeliveryMode, Cardinality } = require('@azure/functions');
                     const sdk = require(`@azure/connectors/generated/${connector.sdk}Extensions`);
                     assert.equal(sdk[`${connector.sdk}TriggerOperations`][connector.key], connector.operation);
                     const original = app.connectorTrigger;
@@ -116,11 +131,13 @@ try {
                     const { registeredName, options: { handler, ...options } } = registrations[0];
                     assert.equal(registeredName, name);
                     assert.deepEqual(options, {
-                        deliveryMode: 'Poll',
+                        deliveryMode: DeliveryMode.Poll,
                         connection: 'ConnectorNamespace',
                         triggerConfigName: `%${connector.setting}%`,
-                        cardinality: 'one',
                     });
+                    const binding = trigger.connectorTrigger(options);
+                    assert.equal(binding.deliveryMode, DeliveryMode.Poll);
+                    assert.equal(binding.cardinality, Cardinality.One);
                     const item = { secretField: 'do-not-log-this-payload' };
                     const payloads = [
                         [{ body: item }, 1],

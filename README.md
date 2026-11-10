@@ -200,6 +200,9 @@ and Teams templates for both JavaScript and TypeScript programming model v4.
 See the [connector polling setup guide](Functions.Templates/Documentation/connectorTrigger.md)
 for package versions, operations, identity permissions, and local/deployed settings.
 
+The templates require `@azure/functions@^4.17.1`, use `DeliveryMode.Poll`, and omit
+single-event cardinality in favor of the library's `Cardinality.One` default.
+
 Node v4 uses the v1 template schema with IDs ending in `JavaScript-4.x` or
 `TypeScript-4.x`; it does not use Python's `Templates-v2` app/blueprint jobs.
 Keep the suffix in package targets, omit `function.json`, and put only the
@@ -215,8 +218,8 @@ Node.js 24 or later:
 node --test Tools/tests/node-connector-templates.test.mjs
 ```
 
-To also exercise actual registration, SDK operation metadata, Poll normalization,
-count-only logging, and strict TypeScript compilation, set
+To also exercise actual registration, SDK operation metadata, library-supplied
+binding defaults, Poll normalization, count-only logging, and strict TypeScript compilation, set
 `NODE_CONNECTOR_TEST_DEPENDENCIES` to a Node project containing TypeScript,
 `@types/node`, and the three package versions in the setup guide. Without that setting,
 the runtime checks are explicitly skipped. For example, in PowerShell:
