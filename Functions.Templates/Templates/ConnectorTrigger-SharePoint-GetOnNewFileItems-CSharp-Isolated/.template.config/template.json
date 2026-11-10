@@ -21,11 +21,42 @@
       "replaces": "ConnectionValue"
     },
     "TriggerConfigName": {
-      "description": "Name of the existing SharePoint GetOnNewFileItems trigger configuration in the Connector Namespace.",
+      "description": "SharePoint GetOnNewFileItems trigger config name, or an app-setting reference such as %MyTriggerConfig%. Leave empty to use the default.",
       "type": "parameter",
       "datatype": "string",
-      "isRequired": true,
+      "defaultValue": "%OnSharepointNewFileTriggerConfigName%",
+      "defaultIfOptionWithoutValue": "%OnSharepointNewFileTriggerConfigName%"
+    },
+    "DefaultTriggerConfigName": {
+      "type": "generated",
+      "generator": "constant",
+      "parameters": { "value": "%OnSharepointNewFileTriggerConfigName%" }
+    },
+    "ResolvedTriggerConfigName": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "TriggerConfigName",
+        "fallbackVariableName": "DefaultTriggerConfigName"
+      },
       "replaces": "TriggerConfigNameValue"
+    },
+    "TriggerConfigIsSetting": {
+      "type": "generated",
+      "generator": "regexMatch",
+      "parameters": {
+        "source": "ResolvedTriggerConfigName",
+        "pattern": "^%[^%]+%$"
+      }
+    },
+    "TriggerConfigSettingName": {
+      "type": "generated",
+      "generator": "regex",
+      "parameters": {
+        "source": "ResolvedTriggerConfigName",
+        "steps": [ { "regex": "^%([^%]+)%$", "replacement": "$1" } ]
+      },
+      "replaces": "TriggerConfigSettingNameValue"
     },
     "HostIdentifier": { "type": "bind", "binding": "HostIdentifier" }
   },
@@ -69,14 +100,6 @@
       "continueOnError": true,
       "manualInstructions": [],
       "args": { "files": "0" }
-    },
-    {
-      "description": "Configure local polling.",
-      "actionId": "AC1156F7-BB77-4DB8-B28F-24EEBCCA1E5C",
-      "continueOnError": true,
-      "manualInstructions": [
-        { "text": "Merge Values from the generated .local.settings.example.json into local.settings.json. Set the generated __pollingEndpoint setting to your namespace polling endpoint; its prefix is the connection setting section name. Sign in with an identity granted access to the connection. The trigger configuration must use Poll delivery and GetOnNewFileItems." }
-      ]
     }
   ]
 }

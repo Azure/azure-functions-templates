@@ -14,13 +14,20 @@ public class DataverseGetOnNewItemsV2
         _logger = logger;
     }
 
+    // For local development, add these under "Values" in local.settings.json; in Azure, add them as app settings:
+#if (TriggerConfigIsSetting)
+    // "ConnectionValue__pollingEndpoint": "https://<namespace-host>",
+    // "TriggerConfigSettingNameValue": "<trigger-config-name>"
+#else
+    // "ConnectionValue__pollingEndpoint": "https://<namespace-host>"
+#endif
     // Visit https://aka.ms/connectortrigger to learn how to use this trigger binding
     [Function(nameof(DataverseGetOnNewItemsV2))]
     public void Run(
         [ConnectorTrigger(
             DeliveryMode = ConnectorTriggerDeliveryMode.Poll,
             Connection = "ConnectionValue",
-            TriggerConfigName = "%DataverseGetOnNewItemsV2TriggerConfigName%")]
+            TriggerConfigName = "TriggerConfigNameValue")]
         CommondataserviceOnNewItemsTriggerPayload payload)
     {
         _logger.LogInformation("Received GetOnNewItems_V2 trigger");

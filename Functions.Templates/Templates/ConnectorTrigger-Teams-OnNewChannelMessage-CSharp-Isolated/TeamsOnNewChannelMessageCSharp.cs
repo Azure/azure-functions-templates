@@ -14,13 +14,20 @@ public class TeamsOnNewChannelMessageCSharp
         _logger = logger;
     }
 
+    // For local development, add these under "Values" in local.settings.json; in Azure, add them as app settings:
+#if (TriggerConfigIsSetting)
+    // "ConnectionValue__pollingEndpoint": "https://<namespace-host>",
+    // "TriggerConfigSettingNameValue": "<trigger-config-name>"
+#else
+    // "ConnectionValue__pollingEndpoint": "https://<namespace-host>"
+#endif
     // Visit https://aka.ms/connectortrigger to learn how to use this trigger binding
     [Function(nameof(TeamsOnNewChannelMessageCSharp))]
     public void Run(
         [ConnectorTrigger(
             DeliveryMode = ConnectorTriggerDeliveryMode.Poll,
             Connection = "ConnectionValue",
-            TriggerConfigName = "%TeamsOnNewChannelMessageCSharpTriggerConfigName%")]
+            TriggerConfigName = "TriggerConfigNameValue")]
         TeamsOnNewChannelMessageTriggerPayload payload)
     {
         _logger.LogInformation("Received OnNewChannelMessage trigger ({Count} items)", payload.Body?.Value?.Count ?? 0);
