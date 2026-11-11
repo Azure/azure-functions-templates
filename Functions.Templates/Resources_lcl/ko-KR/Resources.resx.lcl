@@ -159,29 +159,11 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";DaprPublishOutputBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+      <Item ItemId=";DataverseTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A function that will publish message on a topic to message broker using Dapr.]]></Val>
+          <Val><![CDATA[A Python function for new Dataverse rows only, with polling delivery.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Dapr을 사용하여 토픽에 대한 메시지를 메시지 브로커에 게시하는 함수입니다.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";DaprServiceInvocationTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[A function that will be invoked by other app or functions using Dapr.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Dapr을 사용하여 다른 앱 또는 함수에서 호출할 함수입니다.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";DaprTopicTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[A function that will be invoked when a message is received on a subscribed topic in message broker using Dapr.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Dapr을 사용하여 메시지 브로커의 구독된 토픽에 대한 메시지를 받을 때 호출되는 함수입니다.]]></Val>
+            <Val><![CDATA[폴링 방식으로 전달되는 새 Dataverse 행만 처리하는 Python 함수입니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1080,6 +1062,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";OneDriveTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A Python function for new OneDrive for Business files, with polling delivery.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[폴링 방식으로 전달되는 새 비즈니스용 OneDrive 파일용 Python 함수입니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";OutlookMessageWebhookCreator_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A function that will register a webhook subscription for messages in the calling Azure Active Directory user's mailbox]]></Val>
@@ -1148,6 +1139,15 @@
           <Val><![CDATA[Outlook message webhook subscription refresher]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Outlook 메시지 웹후크 구독 리프레셔]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";OutlookTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A Python function for new Office 365 Outlook email, with polling delivery.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[폴링 방식으로 전달되는 새 Office 365 Outlook 이메일용 Python 함수입니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1404,6 +1404,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";SharepointTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A Python function for new SharePoint Online files, with polling delivery.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[폴링 방식으로 전달되는 새 SharePoint Online 파일용 Python 함수입니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";SqlInputBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A function that will be run on an HTTP trigger and returns the results of a provided SQL query.]]></Val>
@@ -1442,6 +1451,15 @@
           <Val><![CDATA[A function that will be invoked when there are changes detected on a SQL table on which the trigger is configured.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[트리거가 구성된 SQL 테이블에서 변경 내용이 감지되면 함수가 호출됩니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TeamsTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A Python function for new Microsoft Teams channel messages, with polling delivery.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[폴링 방식으로 전달되는 새 Microsoft Teams 채널 메시지용 Python 함수입니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2199,24 +2217,6 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";chat_model_name_help" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[The name of the app setting containing the name of the chat model]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[채팅 모델의 이름을 포함하는 앱 설정의 이름]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";chat_model_name_label" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Chat model name]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[채팅 모델 이름]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
       <Item ItemId=";cosmosDBIn_collectionName_help" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Name of the collection to be monitored.]]></Val>
@@ -2426,6 +2426,69 @@
           <Val><![CDATA[Azure Cosmos DB]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Azure Cosmos DB]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The app setting prefix for the Connector Namespace, such as ConnectorNamespace. This is not a storage connection string.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[커넥터 네임스페이스의 앱 설정 접두사입니다(예: ConnectorNamespace). 스토리지 연결 문자열이 아닙니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Connector Namespace connection setting prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[커넥터 네임스페이스 연결 설정 접두사]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_functionNamePrefix_errorText" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use 1 to 100 letters, digits, or underscores, starting with a letter.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[문자로 시작하고, 문자·숫자·밑줄을 1~100개 사용하세요.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_functionNamePrefix_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prefix for the Dataverse function name. Choose a prefix that is unique in this app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Dataverse 함수 이름의 접두사입니다. 이 앱에서 고유한 접두사를 선택하세요.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_functionNamePrefix_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Function name prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[함수 이름 접두사]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_onRowChangedTriggerConfig_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The Poll trigger config name for new rows only, or an app setting reference such as %OnDataverseRowChangedTriggerConfigName%.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[새 행만 처리하는 Poll 트리거 구성 이름 또는 %OnDataverseRowChangedTriggerConfigName% 같은 앱 설정 참조입니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_onRowChangedTriggerConfig_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[New row polling trigger config]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[새 행 폴링 트리거 구성]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2795,24 +2858,6 @@
           <Val><![CDATA[Durable Client parameter name]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[지속형 클라이언트 매개 변수 이름]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";embedding_model_name_help" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[The name of the app setting containing the name of the embedding model]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[포함 모델의 이름을 포함하는 앱 설정의 이름]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";embedding_model_name_label" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Embedding model name]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[포함 모델 이름]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -4422,6 +4467,69 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";oneDriveTrigger_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The app setting prefix for the Connector Namespace, such as ConnectorNamespace. This is not a storage connection string.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[커넥터 네임스페이스의 앱 설정 접두사입니다(예: ConnectorNamespace). 스토리지 연결 문자열이 아닙니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";oneDriveTrigger_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Connector Namespace connection setting prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[커넥터 네임스페이스 연결 설정 접두사]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";oneDriveTrigger_functionNamePrefix_errorText" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use 1 to 104 letters, digits, or underscores, starting with a letter.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[문자로 시작하고, 문자·숫자·밑줄을 1~104개 사용하세요.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";oneDriveTrigger_functionNamePrefix_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prefix for the OneDrive function name. Choose a prefix that is unique in this app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[OneDrive 함수 이름의 접두사입니다. 이 앱에서 고유한 접두사를 선택하세요.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";oneDriveTrigger_functionNamePrefix_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Function name prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[함수 이름 접두사]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";oneDriveTrigger_onNewFileTriggerConfig_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The Poll trigger config name for new files, or an app setting reference such as %OnOneDriveNewFileTriggerConfigName%.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[새 파일의 Poll 트리거 구성 이름 또는 %OnOneDriveNewFileTriggerConfigName% 같은 앱 설정 참조입니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";oneDriveTrigger_onNewFileTriggerConfig_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[New file polling trigger config]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[새 파일 폴링 트리거 구성]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";oneDrive_in_displayName" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[OneDrive file]]></Val>
@@ -4613,6 +4721,69 @@
           <Val><![CDATA[Orchestration name]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[오케스트레이션 이름]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The app setting prefix for the Connector Namespace, such as ConnectorNamespace. This is not a storage connection string.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[커넥터 네임스페이스의 앱 설정 접두사입니다(예: ConnectorNamespace). 스토리지 연결 문자열이 아닙니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Connector Namespace connection setting prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[커넥터 네임스페이스 연결 설정 접두사]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_functionNamePrefix_errorText" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use 1 to 89 letters, digits, or underscores, starting with a letter.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[문자로 시작하고, 문자·숫자·밑줄을 1~89개 사용하세요.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_functionNamePrefix_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prefix for the Outlook function name. Choose a prefix that is unique in this app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Outlook 함수 이름의 접두사입니다. 이 앱에서 고유한 접두사를 선택하세요.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_functionNamePrefix_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Function name prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[함수 이름 접두사]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_onNewEmailTriggerConfig_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The Poll trigger config name for new email, or an app setting reference such as %OnNewEmailTriggerConfigName%.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[새 이메일의 Poll 트리거 구성 이름 또는 %OnNewEmailTriggerConfigName% 같은 앱 설정 참조입니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_onNewEmailTriggerConfig_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[New email polling trigger config]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[새 이메일 폴링 트리거 구성]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -4967,42 +5138,6 @@
           <Val><![CDATA[RabbitMQ queue name]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[RabbitMQ 큐 이름]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";rag_collection_name_help" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[The name of the app setting containing the name of the collection]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[컬렉션의 이름을 포함하는 앱 설정의 이름]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";rag_collection_name_label" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Collection name for RAG function]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[RAG 함수의 컬렉션 이름]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";rag_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[The name of the app setting containing your RAG connection string]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[RAG 연결 문자열을 포함하는 앱 설정의 이름]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";rag_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Connection string for RAG storage]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[RAG 스토리지에 대한 연결 문자열]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -5549,6 +5684,69 @@
           <Val><![CDATA[Queue]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[큐]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The app setting prefix for the Connector Namespace, such as ConnectorNamespace. This is not a storage connection string.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[커넥터 네임스페이스의 앱 설정 접두사입니다(예: ConnectorNamespace). 스토리지 연결 문자열이 아닙니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Connector Namespace connection setting prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[커넥터 네임스페이스 연결 설정 접두사]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_functionNamePrefix_errorText" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use 1 to 104 letters, digits, or underscores, starting with a letter.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[문자로 시작하고, 문자·숫자·밑줄을 1~104개 사용하세요.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_functionNamePrefix_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prefix for the SharePoint function name. Choose a prefix that is unique in this app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[SharePoint 함수 이름의 접두사입니다. 이 앱에서 고유한 접두사를 선택하세요.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_functionNamePrefix_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Function name prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[함수 이름 접두사]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_onNewFileTriggerConfig_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The Poll trigger config name for new files, or an app setting reference such as %OnSharepointNewFileTriggerConfigName%.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[새 파일의 Poll 트리거 구성 이름 또는 %OnSharepointNewFileTriggerConfigName% 같은 앱 설정 참조입니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_onNewFileTriggerConfig_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[New file polling trigger config]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[새 파일 폴링 트리거 구성]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -6107,6 +6305,69 @@
           <Val><![CDATA[Table parameter name]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[테이블 매개 변수 이름]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The app setting prefix for polling, such as ConnectorNamespace. This is not the Teams connection name or a storage connection string.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[ConnectorNamespace와 같은 폴링용 앱 설정 접두사입니다. Teams 연결 이름이나 스토리지 연결 문자열이 아닙니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Connector Namespace connection setting prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[커넥터 네임스페이스 연결 설정 접두사]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_functionNamePrefix_errorText" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use 1 to 83 letters, digits, or underscores, starting with a letter.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[문자로 시작하고, 문자·숫자·밑줄을 1~83개 사용하세요.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_functionNamePrefix_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prefix for the Teams function name. Choose a prefix that is unique in this app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Teams 함수 이름의 접두사입니다. 이 앱에서 고유한 접두사를 선택하세요.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_functionNamePrefix_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Function name prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[함수 이름 접두사]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_onNewChannelMessageTriggerConfig_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The Poll trigger config name for new channel messages, or an app setting reference such as %OnNewChannelMessageTriggerConfigName%.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[새 채널 메시지의 Poll 트리거 구성 이름 또는 %OnNewChannelMessageTriggerConfigName% 같은 앱 설정 참조입니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_onNewChannelMessageTriggerConfig_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[New channel message polling trigger config]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[새 채널 메시지 폴링 트리거 구성]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

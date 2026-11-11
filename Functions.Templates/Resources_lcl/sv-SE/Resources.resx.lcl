@@ -159,29 +159,11 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";DaprPublishOutputBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+      <Item ItemId=";DataverseTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A function that will publish message on a topic to message broker using Dapr.]]></Val>
+          <Val><![CDATA[A Python function for new Dataverse rows only, with polling delivery.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[En funktion som publicerar meddelandet i ett ämne till meddelandekoordinatorn med hjälp av Dapr.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";DaprServiceInvocationTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[A function that will be invoked by other app or functions using Dapr.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[En funktion som anropas av en annan app eller funktion med hjälp av Dapr.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";DaprTopicTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[A function that will be invoked when a message is received on a subscribed topic in message broker using Dapr.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[En funktion som anropas när ett meddelande tas emot via ett prenumererat ämne i meddelandekoordinatorn med hjälp av Dapr.]]></Val>
+            <Val><![CDATA[En Python-funktion endast för enbart nya Dataverse-rader, med avsökning som leveransmetod.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1080,6 +1062,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";OneDriveTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A Python function for new OneDrive for Business files, with polling delivery.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[En Python-funktion för nya filer i OneDrive för företag, med avsökning som leveransmetod.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";OutlookMessageWebhookCreator_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A function that will register a webhook subscription for messages in the calling Azure Active Directory user's mailbox]]></Val>
@@ -1148,6 +1139,15 @@
           <Val><![CDATA[Outlook message webhook subscription refresher]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Webhookprenumerationsuppdaterare för Outlook-meddelanden]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";OutlookTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A Python function for new Office 365 Outlook email, with polling delivery.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[En Python-funktion för nya mejl i Office 365 Outlook, med avsökning som leveransmetod.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1404,6 +1404,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";SharepointTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A Python function for new SharePoint Online files, with polling delivery.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[En Python-funktion för nya filer i SharePoint Online, med avsökning som leveransmetod.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";SqlInputBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A function that will be run on an HTTP trigger and returns the results of a provided SQL query.]]></Val>
@@ -1442,6 +1451,15 @@
           <Val><![CDATA[A function that will be invoked when there are changes detected on a SQL table on which the trigger is configured.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[En funktion som anropas när det finns ändringar som identifieras i en SQL-tabell där utlösaren är konfigurerad.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TeamsTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A Python function for new Microsoft Teams channel messages, with polling delivery.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[En Python-funktion för nya kanalmeddelanden i Microsoft Teams, med avsökning som leveransmetod.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2199,24 +2217,6 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";chat_model_name_help" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[The name of the app setting containing the name of the chat model]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Namnet på appinställningen som innehåller namnet på chattmodellen]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";chat_model_name_label" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Chat model name]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Namn på chattmodell]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
       <Item ItemId=";cosmosDBIn_collectionName_help" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Name of the collection to be monitored.]]></Val>
@@ -2426,6 +2426,69 @@
           <Val><![CDATA[Azure Cosmos DB]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Azure Cosmos DB]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The app setting prefix for the Connector Namespace, such as ConnectorNamespace. This is not a storage connection string.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Appinställningsprefixet för kopplingens namnområde, till exempel ConnectorNamespace. Det här är inte en lagringsanslutningssträng.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Connector Namespace connection setting prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefix för anslutningsinställning för kopplingens namnrymd]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_functionNamePrefix_errorText" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use 1 to 100 letters, digits, or underscores, starting with a letter.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Använd 1–100 bokstäver, siffror eller understreck och börja med en bokstav.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_functionNamePrefix_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prefix for the Dataverse function name. Choose a prefix that is unique in this app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefixet för Dataverse-funktionsnamnet. Välj ett prefix som är unikt i den här appen.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_functionNamePrefix_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Function name prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefix för funktionsnamn]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_onRowChangedTriggerConfig_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The Poll trigger config name for new rows only, or an app setting reference such as %OnDataverseRowChangedTriggerConfigName%.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Konfigurationsnamnet för avsökningsutlösaren för enbart nya rader, eller en appinställningsreferens, till exempel %OnDataverseRowChangedTriggerConfigName%.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_onRowChangedTriggerConfig_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[New row polling trigger config]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Konfiguration av avsökningsutlösare för ny rad]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2795,24 +2858,6 @@
           <Val><![CDATA[Durable Client parameter name]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Parameternamn för beständig klient]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";embedding_model_name_help" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[The name of the app setting containing the name of the embedding model]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Namnet på appinställningen som innehåller namnet på inbäddningsmodellen]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";embedding_model_name_label" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Embedding model name]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Namn på inbäddningsmodell]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -4422,6 +4467,69 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";oneDriveTrigger_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The app setting prefix for the Connector Namespace, such as ConnectorNamespace. This is not a storage connection string.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Appinställningsprefixet för kopplingens namnområde, till exempel ConnectorNamespace. Det här är inte en lagringsanslutningssträng.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";oneDriveTrigger_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Connector Namespace connection setting prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefix för anslutningsinställning för kopplingens namnrymd]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";oneDriveTrigger_functionNamePrefix_errorText" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use 1 to 104 letters, digits, or underscores, starting with a letter.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Använd 1–104 bokstäver, siffror eller understreck och börja med en bokstav.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";oneDriveTrigger_functionNamePrefix_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prefix for the OneDrive function name. Choose a prefix that is unique in this app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefixet för OneDrive-funktionsnamnet. Välj ett prefix som är unikt i den här appen.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";oneDriveTrigger_functionNamePrefix_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Function name prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefix för funktionsnamn]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";oneDriveTrigger_onNewFileTriggerConfig_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The Poll trigger config name for new files, or an app setting reference such as %OnOneDriveNewFileTriggerConfigName%.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Konfigurationsnamnet för avsökningsutlösaren för nya filer, eller en appinställningsreferens, till exempel %OnOneDriveNewFileTriggerConfigName%.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";oneDriveTrigger_onNewFileTriggerConfig_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[New file polling trigger config]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Konfiguration av avsökningsutlösare för ny fil]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";oneDrive_in_displayName" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[OneDrive file]]></Val>
@@ -4613,6 +4721,69 @@
           <Val><![CDATA[Orchestration name]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Orkestreringsnamn]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The app setting prefix for the Connector Namespace, such as ConnectorNamespace. This is not a storage connection string.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Appinställningsprefixet för kopplingens namnområde, till exempel ConnectorNamespace. Det här är inte en lagringsanslutningssträng.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Connector Namespace connection setting prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefix för anslutningsinställning för kopplingens namnrymd]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_functionNamePrefix_errorText" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use 1 to 89 letters, digits, or underscores, starting with a letter.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Använd 1–89 bokstäver, siffror eller understreck och börja med en bokstav.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_functionNamePrefix_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prefix for the Outlook function name. Choose a prefix that is unique in this app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefixet för Outlook-funktionsnamnet. Välj ett prefix som är unikt i den här appen.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_functionNamePrefix_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Function name prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefix för funktionsnamn]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_onNewEmailTriggerConfig_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The Poll trigger config name for new email, or an app setting reference such as %OnNewEmailTriggerConfigName%.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Konfigurationsnamnet för avsökningsutlösaren för nya mejl eller en appinställningsreferens, till exempel %OnNewEmailTriggerConfigName%.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_onNewEmailTriggerConfig_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[New email polling trigger config]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Konfiguration av avsökningsutlösare för nytt mejl]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -4967,42 +5138,6 @@
           <Val><![CDATA[RabbitMQ queue name]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Namn på RabbitMQ-kö]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";rag_collection_name_help" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[The name of the app setting containing the name of the collection]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Namnet på appinställningen som innehåller namnet på samlingen]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";rag_collection_name_label" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Collection name for RAG function]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Samlingsnamn för RAG-funktionen]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";rag_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[The name of the app setting containing your RAG connection string]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Namnet på den appinställning som innehåller din RAG-anslutningssträng]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";rag_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Connection string for RAG storage]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Anslutningssträng för RAG-lagring]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -5549,6 +5684,69 @@
           <Val><![CDATA[Queue]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Kö]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The app setting prefix for the Connector Namespace, such as ConnectorNamespace. This is not a storage connection string.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Appinställningsprefixet för kopplingens namnområde, till exempel ConnectorNamespace. Det här är inte en lagringsanslutningssträng.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Connector Namespace connection setting prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefix för anslutningsinställning för kopplingens namnrymd]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_functionNamePrefix_errorText" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use 1 to 104 letters, digits, or underscores, starting with a letter.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Använd 1–104 bokstäver, siffror eller understreck och börja med en bokstav.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_functionNamePrefix_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prefix for the SharePoint function name. Choose a prefix that is unique in this app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefixet för SharePoint-funktionsnamnet. Välj ett prefix som är unikt i den här appen.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_functionNamePrefix_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Function name prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefix för funktionsnamn]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_onNewFileTriggerConfig_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The Poll trigger config name for new files, or an app setting reference such as %OnSharepointNewFileTriggerConfigName%.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Konfigurationsnamnet för avsökningsutlösaren för nya filer, eller en appinställningsreferens, till exempel %OnSharepointNewFileTriggerConfigName%.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_onNewFileTriggerConfig_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[New file polling trigger config]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Konfiguration av avsökningsutlösare för ny fil]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -6107,6 +6305,69 @@
           <Val><![CDATA[Table parameter name]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Tabellparameternamn]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The app setting prefix for polling, such as ConnectorNamespace. This is not the Teams connection name or a storage connection string.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Appinställningsprefixet för avsökning, till exempel ConnectorNamespace. Det här är inte Teams-anslutningsnamnet eller en lagringsanslutningssträng.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Connector Namespace connection setting prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefix för anslutningsinställning för kopplingens namnrymd]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_functionNamePrefix_errorText" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use 1 to 83 letters, digits, or underscores, starting with a letter.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Använd 1–83 bokstäver, siffror eller understreck och börja med en bokstav.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_functionNamePrefix_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prefix for the Teams function name. Choose a prefix that is unique in this app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefixet för Teams-funktionsnamnet. Välj ett prefix som är unikt i den här appen.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_functionNamePrefix_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Function name prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefix för funktionsnamn]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_onNewChannelMessageTriggerConfig_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The Poll trigger config name for new channel messages, or an app setting reference such as %OnNewChannelMessageTriggerConfigName%.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Konfigurationsnamnet för avsökningsutlösaren för nya kanalmeddelanden, eller en appinställningsreferens, till exempel %OnNewChannelMessageTriggerConfigName%.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_onNewChannelMessageTriggerConfig_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[New channel message polling trigger config]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Konfiguration för avsökningsutlösare för nytt kanalmeddelande]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

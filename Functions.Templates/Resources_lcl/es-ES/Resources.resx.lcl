@@ -159,29 +159,11 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";DaprPublishOutputBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+      <Item ItemId=";DataverseTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A function that will publish message on a topic to message broker using Dapr.]]></Val>
+          <Val><![CDATA[A Python function for new Dataverse rows only, with polling delivery.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Una función que publicará un mensaje en un tema en el agente de mensajes mediante Dapr.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";DaprServiceInvocationTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[A function that will be invoked by other app or functions using Dapr.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Una función que invocarán otras aplicaciones o funciones con Dapr.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";DaprTopicTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[A function that will be invoked when a message is received on a subscribed topic in message broker using Dapr.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Una función que se invocará cuando se reciba un mensaje en un tema suscrito en el agente de mensajes mediante Dapr.]]></Val>
+            <Val><![CDATA[Una función de Python solo para las nuevas filas de Dataverse, con entrega mediante sondeo.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1080,6 +1062,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";OneDriveTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A Python function for new OneDrive for Business files, with polling delivery.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Una función de Python para los nuevos archivos de OneDrive para la Empresa, con entrega mediante sondeo.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";OutlookMessageWebhookCreator_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A function that will register a webhook subscription for messages in the calling Azure Active Directory user's mailbox]]></Val>
@@ -1148,6 +1139,15 @@
           <Val><![CDATA[Outlook message webhook subscription refresher]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Actualizador de suscripción de webhook de mensaje de Outlook]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";OutlookTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A Python function for new Office 365 Outlook email, with polling delivery.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Una función de Python para el nuevo correo electrónico de Outlook de Office 365, con entrega mediante sondeo.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1404,6 +1404,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";SharepointTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A Python function for new SharePoint Online files, with polling delivery.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Una función de Python para los nuevos archivos de SharePoint Online, con entrega mediante sondeo.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";SqlInputBinding_description" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A function that will be run on an HTTP trigger and returns the results of a provided SQL query.]]></Val>
@@ -1442,6 +1451,15 @@
           <Val><![CDATA[A function that will be invoked when there are changes detected on a SQL table on which the trigger is configured.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Se habrá invocado una función cuando se detecten cambios en la tabla SQL en la que está configurado el desencadenador.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TeamsTrigger_description" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A Python function for new Microsoft Teams channel messages, with polling delivery.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Una función de Python para los nuevos mensajes de canal de Microsoft Teams, con entrega mediante sondeo.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2199,24 +2217,6 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";chat_model_name_help" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[The name of the app setting containing the name of the chat model]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Nombre de la configuración de la aplicación que contiene el nombre del modelo de chat]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";chat_model_name_label" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Chat model name]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Nombre del modelo de chat]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
       <Item ItemId=";cosmosDBIn_collectionName_help" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Name of the collection to be monitored.]]></Val>
@@ -2426,6 +2426,69 @@
           <Val><![CDATA[Azure Cosmos DB]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Azure Cosmos DB]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The app setting prefix for the Connector Namespace, such as ConnectorNamespace. This is not a storage connection string.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo de configuración de la aplicación para el espacio de nombres del conector, como ConnectorNamespace. No es una cadena de conexión de almacenamiento.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Connector Namespace connection setting prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo de la configuración de conexión del espacio de nombres del conector]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_functionNamePrefix_errorText" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use 1 to 100 letters, digits, or underscores, starting with a letter.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Use entre 1 y 100 letras, dígitos o guiones bajos, empezando por una letra.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_functionNamePrefix_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prefix for the Dataverse function name. Choose a prefix that is unique in this app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo del nombre de la función de Dataverse. Elija un prefijo que sea único en esta aplicación.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_functionNamePrefix_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Function name prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo del nombre de la función]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_onRowChangedTriggerConfig_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The Poll trigger config name for new rows only, or an app setting reference such as %OnDataverseRowChangedTriggerConfigName%.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nombre de configuración del desencadenador de sondeo solo para las nuevas filas o una referencia de configuración de la aplicación, como %OnDataverseRowChangedTriggerConfigName%.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";dataverseTrigger_onRowChangedTriggerConfig_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[New row polling trigger config]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nueva configuración del desencadenador de sondeo de filas]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2795,24 +2858,6 @@
           <Val><![CDATA[Durable Client parameter name]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Nombre del parámetro Cliente duradero]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";embedding_model_name_help" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[The name of the app setting containing the name of the embedding model]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Nombre de la configuración de la aplicación que contiene el nombre del modelo de inserción]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";embedding_model_name_label" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Embedding model name]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Insertando el nombre del modelo]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -4422,6 +4467,69 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";oneDriveTrigger_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The app setting prefix for the Connector Namespace, such as ConnectorNamespace. This is not a storage connection string.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo de configuración de la aplicación para el espacio de nombres del conector, como ConnectorNamespace. No es una cadena de conexión de almacenamiento.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";oneDriveTrigger_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Connector Namespace connection setting prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo de la configuración de conexión del espacio de nombres del conector]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";oneDriveTrigger_functionNamePrefix_errorText" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use 1 to 104 letters, digits, or underscores, starting with a letter.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Use entre 1 y 104 letras, dígitos o guiones bajos, empezando por una letra.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";oneDriveTrigger_functionNamePrefix_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prefix for the OneDrive function name. Choose a prefix that is unique in this app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo del nombre de la función de OneDrive. Elija un prefijo que sea único en esta aplicación.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";oneDriveTrigger_functionNamePrefix_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Function name prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo del nombre de la función]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";oneDriveTrigger_onNewFileTriggerConfig_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The Poll trigger config name for new files, or an app setting reference such as %OnOneDriveNewFileTriggerConfigName%.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nombre de configuración del desencadenador de sondeo para los nuevos archivos o una referencia de configuración de la aplicación, como %OnOneDriveNewFileTriggerConfigName%.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";oneDriveTrigger_onNewFileTriggerConfig_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[New file polling trigger config]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nueva configuración del desencadenador de sondeo de archivos]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";oneDrive_in_displayName" ItemType="0;.resx" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[OneDrive file]]></Val>
@@ -4613,6 +4721,69 @@
           <Val><![CDATA[Orchestration name]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Nombre de la orquestación]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The app setting prefix for the Connector Namespace, such as ConnectorNamespace. This is not a storage connection string.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo de configuración de la aplicación para el espacio de nombres del conector, como ConnectorNamespace. No es una cadena de conexión de almacenamiento.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Connector Namespace connection setting prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo de la configuración de conexión del espacio de nombres del conector]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_functionNamePrefix_errorText" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use 1 to 89 letters, digits, or underscores, starting with a letter.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Use entre 1 y 89 letras, dígitos o guiones bajos, empezando por una letra.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_functionNamePrefix_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prefix for the Outlook function name. Choose a prefix that is unique in this app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo del nombre de la función de Outlook. Elija un prefijo que sea único en esta aplicación.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_functionNamePrefix_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Function name prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo del nombre de la función]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_onNewEmailTriggerConfig_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The Poll trigger config name for new email, or an app setting reference such as %OnNewEmailTriggerConfigName%.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nombre de configuración del desencadenador de sondeo para los nuevos correos electrónicos o una referencia de configuración de la aplicación, como %OnNewEmailTriggerConfigName%.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";outlookTrigger_onNewEmailTriggerConfig_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[New email polling trigger config]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nueva configuración del desencadenador de sondeo de correos electrónicos]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -4967,42 +5138,6 @@
           <Val><![CDATA[RabbitMQ queue name]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Nombre de la cola de RabbitMQ]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";rag_collection_name_help" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[The name of the app setting containing the name of the collection]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Nombre de la configuración de la aplicación que contiene el nombre de la colección]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";rag_collection_name_label" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Collection name for RAG function]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Nombre de la colección para la función RAG]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";rag_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[The name of the app setting containing your RAG connection string]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[El nombre de la configuración de la aplicación que contiene la cadena de conexión RAG]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";rag_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Connection string for RAG storage]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Cadena de conexión para el almacenamiento RAG]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -5549,6 +5684,69 @@
           <Val><![CDATA[Queue]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Cola]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The app setting prefix for the Connector Namespace, such as ConnectorNamespace. This is not a storage connection string.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo de configuración de la aplicación para el espacio de nombres del conector, como ConnectorNamespace. No es una cadena de conexión de almacenamiento.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Connector Namespace connection setting prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo de la configuración de conexión del espacio de nombres del conector]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_functionNamePrefix_errorText" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use 1 to 104 letters, digits, or underscores, starting with a letter.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Use entre 1 y 104 letras, dígitos o guiones bajos, empezando por una letra.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_functionNamePrefix_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prefix for the SharePoint function name. Choose a prefix that is unique in this app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo del nombre de la función de SharePoint. Elija un prefijo que sea único en esta aplicación.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_functionNamePrefix_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Function name prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo del nombre de la función]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_onNewFileTriggerConfig_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The Poll trigger config name for new files, or an app setting reference such as %OnSharepointNewFileTriggerConfigName%.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nombre de configuración del desencadenador de sondeo para los nuevos archivos o una referencia de configuración de la aplicación, como %OnSharepointNewFileTriggerConfigName%.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";sharepointTrigger_onNewFileTriggerConfig_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[New file polling trigger config]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nueva configuración del desencadenador de sondeo de archivos]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -6107,6 +6305,69 @@
           <Val><![CDATA[Table parameter name]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Nombre de parámetro de tabla]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_connection_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The app setting prefix for polling, such as ConnectorNamespace. This is not the Teams connection name or a storage connection string.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo de configuración de la aplicación para el sondeo, como ConnectorNamespace. No es el nombre de conexión de Teams ni una cadena de conexión de almacenamiento.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_connection_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Connector Namespace connection setting prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo de la configuración de conexión del espacio de nombres del conector]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_functionNamePrefix_errorText" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use 1 to 83 letters, digits, or underscores, starting with a letter.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Use entre 1 y 83 letras, dígitos o guiones bajos, empezando por una letra.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_functionNamePrefix_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prefix for the Teams function name. Choose a prefix that is unique in this app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo del nombre de la función de Teams. Elija un prefijo que sea único en esta aplicación.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_functionNamePrefix_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Function name prefix]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Prefijo del nombre de la función]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_onNewChannelMessageTriggerConfig_help" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The Poll trigger config name for new channel messages, or an app setting reference such as %OnNewChannelMessageTriggerConfigName%.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nombre de configuración del desencadenador de sondeo para los nuevos mensajes de canal o una referencia de configuración de la aplicación, como %OnNewChannelMessageTriggerConfigName%.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";teamsTrigger_onNewChannelMessageTriggerConfig_label" ItemType="0;.resx" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[New channel message polling trigger config]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nueva configuración del desencadenador de sondeo de mensajes del canal]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
