@@ -1,12 +1,12 @@
 {
   "author": "Microsoft",
   "classifications": [ "Azure Function", "Trigger", "Connector", "Dataverse" ],
-  "name": "Connector Trigger - Dataverse - GetOnNewItems_V2",
-  "identity": "Azure.Function.CSharp.Isolated.ConnectorTrigger.Dataverse.GetOnNewItems_V2",
-  "groupIdentity": "Azure.Function.ConnectorTrigger.Dataverse.GetOnNewItemsV2",
-  "shortName": "connector-dataverse-getonnewitems-v2",
+  "name": "Connector Trigger - Dataverse - SubscribeOnNewItems",
+  "identity": "Azure.Function.CSharp.Isolated.ConnectorTrigger.Dataverse.SubscribeOnNewItems",
+  "groupIdentity": "Azure.Function.ConnectorTrigger.Dataverse.SubscribeOnNewItems",
+  "shortName": "connector-dataverse-subscribeonnewitems",
   "tags": { "language": "C#", "type": "item" },
-  "sourceName": "DataverseGetOnNewItemsV2",
+  "sourceName": "DataverseSubscribeOnNewItems",
   "symbols": {
     "namespace": {
       "description": "Namespace for the generated code.",
@@ -21,16 +21,16 @@
       "replaces": "ConnectionValue"
     },
     "TriggerConfigName": {
-      "description": "Dataverse GetOnNewItems_V2 trigger config name, or an app-setting reference such as %MyTriggerConfig%. Leave empty to use the default.",
+      "description": "Name of a provisioned Dataverse SubscribeOnNewItems trigger config, or an app-setting reference such as %MyTriggerConfig%. Leave empty to use the default.",
       "type": "parameter",
       "datatype": "string",
-      "defaultValue": "%OnDataverseRowChangedTriggerConfigName%",
-      "defaultIfOptionWithoutValue": "%OnDataverseRowChangedTriggerConfigName%"
+      "defaultValue": "%OnDataverseRowAddedTriggerConfigName%",
+      "defaultIfOptionWithoutValue": "%OnDataverseRowAddedTriggerConfigName%"
     },
     "DefaultTriggerConfigName": {
       "type": "generated",
       "generator": "constant",
-      "parameters": { "value": "%OnDataverseRowChangedTriggerConfigName%" }
+      "parameters": { "value": "%OnDataverseRowAddedTriggerConfigName%" }
     },
     "ResolvedTriggerConfigName": {
       "type": "generated",
@@ -60,8 +60,8 @@
     },
     "HostIdentifier": { "type": "bind", "binding": "HostIdentifier" }
   },
-  "primaryOutputs": [ { "path": "DataverseGetOnNewItemsV2.cs" } ],
-  "defaultName": "DataverseGetOnNewItemsV2",
+  "primaryOutputs": [ { "path": "DataverseSubscribeOnNewItems.cs" } ],
+  "defaultName": "DataverseSubscribeOnNewItems",
   "postActions": [
     {
       "description": "Add the Connector worker extension.",
@@ -72,18 +72,6 @@
         "referenceType": "package",
         "reference": "Microsoft.Azure.Functions.Worker.Extensions.Connector",
         "version": "1.0.0",
-        "projectFileExtensions": ".csproj"
-      }
-    },
-    {
-      "description": "Add the typed connector SDK.",
-      "actionId": "B17581D1-C5C9-4489-8F0A-004BE667B814",
-      "continueOnError": true,
-      "manualInstructions": [],
-      "args": {
-        "referenceType": "package",
-        "reference": "Azure.Connectors.Sdk",
-        "version": "0.15.0-preview.1",
         "projectFileExtensions": ".csproj"
       }
     },
