@@ -1,7 +1,7 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-11-14T00:35:17Z",
-  "version": "1.13.0",
+  "generatedAt": "2026-11-14T07:26:25Z",
+  "version": "1.13.1",
   "totalTemplates": 91,
   "runtimeVersions": {
     "Python": {
@@ -1918,7 +1918,7 @@
       "longDescription": "Build and deploy two Functions Hosted Skills on Azure Functions in Python using the markdown-first Azure Functions agents runtime: (1) a chat hosted skill with built-in chat UI, HTTP chat APIs, an MCP tool endpoint, and sandboxed Python execution, and (2) a timer_trigger hosted skill that gathers and summarizes Microsoft blog posts and can email the digest through an optional Microsoft 365 Outlook MCP tool. Provisions a Flex Consumption function app, Microsoft Foundry project and model deployment, Azure Container Apps dynamic session pool, optional Connector Gateway resources, managed identity, storage, and monitoring. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
-      "resource": "http",
+      "resource": "timer",
       "iac": "bicep",
       "priority": 60,
       "categories": [
@@ -1949,6 +1949,76 @@
         "Azure Developer CLI (azd) configuration"
       ],
       "isHighlighted": true
+    },
+    {
+      "id": "ai-agent-typescript",
+      "displayName": "Simple Agent QuickStart (TypeScript + AZD + Bicep)",
+      "shortDescription": "AI agent using GitHub Copilot SDK with bring-your-own-model support via Microsoft Foundry",
+      "longDescription": "TypeScript Azure Function with an HTTP trigger that implements an AI agent using the GitHub Copilot SDK. Supports GitHub Copilot models or bring-your-own-model (BYOM) via Microsoft Foundry. Deployed with azd.",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 60,
+      "categories": [
+        "starters",
+        "gen-ai"
+      ],
+      "tags": [
+        "AI",
+        "Agents",
+        "Copilot SDK",
+        "Microsoft Foundry",
+        "BYOM"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/simple-agent-functions-typescript",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "AI agent HTTP endpoint (/api/ask)",
+        "GitHub Copilot SDK integration",
+        "Interactive chat client",
+        "Microsoft Foundry resources (optional)",
+        "Azure Developer CLI (azd) configuration",
+        "Flex Consumption hosting",
+        "Dev Container setup"
+      ]
+    },
+    {
+      "id": "ai-agent-java",
+      "displayName": "Simple Agent QuickStart (Java + AZD + Bicep)",
+      "shortDescription": "AI agent using GitHub Copilot SDK with bring-your-own-model support via Microsoft Foundry",
+      "longDescription": "Java Azure Function with an HTTP trigger that implements an AI agent using the GitHub Copilot SDK. Supports GitHub Copilot models or bring-your-own-model (BYOM) via Microsoft Foundry. Deployed with azd.",
+      "language": "Java",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 60,
+      "categories": [
+        "starters",
+        "gen-ai"
+      ],
+      "tags": [
+        "AI",
+        "Agents",
+        "Copilot SDK",
+        "Microsoft Foundry",
+        "BYOM"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/simple-agent-functions-java",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "AI agent HTTP endpoint (/api/ask)",
+        "GitHub Copilot SDK integration",
+        "Interactive chat client",
+        "Microsoft Foundry resources (optional)",
+        "Azure Developer CLI (azd) configuration",
+        "Flex Consumption hosting",
+        "Dev Container setup"
+      ]
     },
     {
       "id": "ai-hosted-skills-customer-returns-queue-python",
@@ -1982,7 +2052,7 @@
       "id": "ai-hosted-skills-invoice-review-blob-python",
       "displayName": "Invoice Review Hosted Skill (Python + AZD + Bicep)",
       "shortDescription": "Blob-triggered hosted skill that reviews uploaded invoices against purchase orders and contracts, deployed via azd",
-      "longDescription": "Build and deploy an invoice review hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The invoice_review hosted skill runs on a blob_trigger with an Event Grid source for invoices uploaded to Blob Storage and calls five Python tools: (1) extract_invoice (Document Intelligence or PDF text), (2) get_purchase_order, (3) get_contract_terms, (4) check_invoice_against_po for a three-way match computed in code, and (5) record_invoice_review, which writes an approve, hold, or reject review with discrepancies to Blob Storage. Runs on Flex Consumption with managed identity, Event Grid, Azure AI Document Intelligence, and a Microsoft Foundry model. Deployed with azd.",
+      "longDescription": "Build and deploy an invoice review hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The invoice_review hosted skill runs on a blob_trigger with an Event Grid source for invoices uploaded to Blob Storage and calls five Python tools: (1) extract_invoice (PDF text with pypdf by default, or the optional Azure AI Document Intelligence prebuilt invoice model), (2) get_purchase_order, (3) get_contract_terms, (4) check_invoice_against_po for a three-way match computed in code, and (5) record_invoice_review, which writes an approve, hold, or reject review with discrepancies to Blob Storage. Runs on Flex Consumption with managed identity, Event Grid, and a Microsoft Foundry model. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
       "resource": "blob",
@@ -1998,9 +2068,9 @@
       "gitRef": "refs/tags/v1.0.0",
       "whatsIncluded": [
         "invoice_review.agent.md hosted skill with a Blob trigger (Event Grid source)",
-        "Invoice extraction, purchase order, contract terms, three-way match, and review tools with sample data",
+        "Invoice extraction (pypdf by default; optional Document Intelligence), purchase order, contract terms, three-way match, and review tools with sample data",
         "Sample invoice PDFs, demo script, and unit tests",
-        "Event Grid subscription and Document Intelligence infrastructure",
+        "Event Grid subscription and optional Document Intelligence infrastructure",
         "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration"
@@ -2123,7 +2193,7 @@
       "id": "ai-hosted-skills-alert-investigation-eventhub-python",
       "displayName": "Alert Investigation Hosted Skill (Python + AZD + Bicep)",
       "shortDescription": "Event Hubs alert router with Microsoft-Decision-1 and a queue-triggered investigation hosted skill, deployed via azd",
-      "longDescription": "Build and deploy a security alert investigation app on Azure Functions in Python. An EventHubTrigger function, alert_router, validates, suppresses, deduplicates, and groups alerts with deterministic rules and routes the rest with the Microsoft-Decision-1 model, writing decisions to Table Storage and sending alerts that need a closer look to a Storage queue. The alert_investigator hosted skill runs on a queue_trigger for that queue and calls Python tools: (1) get_signin_logs, (2) get_endpoint_events, (3) get_network_flows, (4) get_asset, (5) lookup_threat_intel, (6) record_investigation, and (7) execute_containment_action, which never runs containment automatically. Runs on Flex Consumption with managed identity, Azure Event Hubs, and Microsoft Foundry models. Deployed with azd.",
+      "longDescription": "Build and deploy a security alert investigation app on Azure Functions in Python. An EventHubTrigger function, alert_router, validates, suppresses, deduplicates, and groups alerts with deterministic rules. It sends critical groups directly to the alerts-investigate Storage queue without a model call and routes other groups with the Microsoft-Decision-1 model, recording decisions in Table Storage and sending alerts for investigation or review to Storage queues. The alert_investigator hosted skill runs on a queue_trigger for the investigation queue and calls Python tools: (1) get_signin_logs, (2) get_endpoint_events, (3) get_network_flows, (4) get_asset, (5) lookup_threat_intel, (6) record_investigation, and (7) execute_containment_action, which never runs containment automatically. Runs on Flex Consumption with managed identity, Azure Event Hubs, and Microsoft Foundry models. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
       "resource": "eventhub",
@@ -2138,7 +2208,7 @@
       "folderPath": "alert-investigation-eventhub",
       "gitRef": "refs/tags/v1.0.0",
       "whatsIncluded": [
-        "alert_router Event Hubs trigger function with rule-based filtering and Microsoft-Decision-1 routing",
+        "alert_router Event Hubs trigger function with rule-based filtering, a critical-alert bypass, and Microsoft-Decision-1 routing for other groups",
         "alert_investigator.agent.md hosted skill with a Storage queue trigger",
         "Sign-in, endpoint, network, asset, threat intelligence, investigation, and containment tools with sample data",
         "Azure Event Hubs infrastructure",
@@ -2180,8 +2250,8 @@
     {
       "id": "ai-hosted-skills-record-repair-servicebus-python",
       "displayName": "Record Repair Hosted Skill (Python + AZD + Bicep)",
-      "shortDescription": "Service Bus dead-letter queue hosted skill that repairs malformed records and requeues them, deployed via azd",
-      "longDescription": "Build and deploy a record repair hosted skill on Azure Functions in Python that adds AI to an existing ingestion pipeline. The ingest function uses a ServiceBusTrigger to validate JSON records and write them to Blob Storage, and records that fail land in the queue's dead-letter queue. The record_repair hosted skill runs on a service_bus_queue_trigger for that dead-letter queue and calls three Python tools: (1) get_record_schema, (2) requeue_repaired_record, which checks the repair in code and sends the record back to the main queue, and (3) record_unrepairable, which writes records that need a person to Blob Storage. Runs on Flex Consumption with managed identity, Azure Service Bus, and a Microsoft Foundry model. Deployed with azd.",
+      "shortDescription": "Service Bus dead-letter queue hosted skill that validates format-only repairs before requeueing, deployed via azd",
+      "longDescription": "Build and deploy a record repair hosted skill on Azure Functions in Python that adds AI to an existing ingestion pipeline. The ingest function uses a ServiceBusTrigger to validate JSON records and write them to Blob Storage, and records that fail land in the queue's dead-letter queue. The record_repair hosted skill runs on a service_bus_queue_trigger for that dead-letter queue and calls three Python tools: (1) get_record_schema, (2) requeue_repaired_record, which rejects invalid JSON and only requeues schema-valid, format-only corrections that preserve the original fields and values, such as normalized field names and numeric-string conversion, and (3) record_unrepairable, which writes records that need a person to Blob Storage. Runs on Flex Consumption with managed identity, Azure Service Bus, and a Microsoft Foundry model. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
       "resource": "servicebus",
@@ -2198,7 +2268,7 @@
       "whatsIncluded": [
         "ingest Service Bus trigger function with schema validation",
         "record_repair.agent.md hosted skill with a Service Bus dead-letter queue trigger",
-        "Record schema, requeue, and unrepairable record tools",
+        "Record schema, format-only requeue validation, and unrepairable record tools",
         "Azure Service Bus infrastructure",
         "Sample records, demo script, and unit tests",
         "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
@@ -2232,76 +2302,6 @@
         "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration"
-      ]
-    },
-    {
-      "id": "ai-agent-typescript",
-      "displayName": "Simple Agent QuickStart (TypeScript + AZD + Bicep)",
-      "shortDescription": "AI agent using GitHub Copilot SDK with bring-your-own-model support via Microsoft Foundry",
-      "longDescription": "TypeScript Azure Function with an HTTP trigger that implements an AI agent using the GitHub Copilot SDK. Supports GitHub Copilot models or bring-your-own-model (BYOM) via Microsoft Foundry. Deployed with azd.",
-      "language": "TypeScript",
-      "bindingType": "trigger",
-      "resource": "http",
-      "iac": "bicep",
-      "priority": 60,
-      "categories": [
-        "starters",
-        "gen-ai"
-      ],
-      "tags": [
-        "AI",
-        "Agents",
-        "Copilot SDK",
-        "Microsoft Foundry",
-        "BYOM"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure-Samples/simple-agent-functions-typescript",
-      "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.0",
-      "whatsIncluded": [
-        "AI agent HTTP endpoint (/api/ask)",
-        "GitHub Copilot SDK integration",
-        "Interactive chat client",
-        "Microsoft Foundry resources (optional)",
-        "Azure Developer CLI (azd) configuration",
-        "Flex Consumption hosting",
-        "Dev Container setup"
-      ]
-    },
-    {
-      "id": "ai-agent-java",
-      "displayName": "Simple Agent QuickStart (Java + AZD + Bicep)",
-      "shortDescription": "AI agent using GitHub Copilot SDK with bring-your-own-model support via Microsoft Foundry",
-      "longDescription": "Java Azure Function with an HTTP trigger that implements an AI agent using the GitHub Copilot SDK. Supports GitHub Copilot models or bring-your-own-model (BYOM) via Microsoft Foundry. Deployed with azd.",
-      "language": "Java",
-      "bindingType": "trigger",
-      "resource": "http",
-      "iac": "bicep",
-      "priority": 60,
-      "categories": [
-        "starters",
-        "gen-ai"
-      ],
-      "tags": [
-        "AI",
-        "Agents",
-        "Copilot SDK",
-        "Microsoft Foundry",
-        "BYOM"
-      ],
-      "author": "Azure Functions Team",
-      "repositoryUrl": "https://github.com/Azure-Samples/simple-agent-functions-java",
-      "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.0",
-      "whatsIncluded": [
-        "AI agent HTTP endpoint (/api/ask)",
-        "GitHub Copilot SDK integration",
-        "Interactive chat client",
-        "Microsoft Foundry resources (optional)",
-        "Azure Developer CLI (azd) configuration",
-        "Flex Consumption hosting",
-        "Dev Container setup"
       ]
     },
     {
