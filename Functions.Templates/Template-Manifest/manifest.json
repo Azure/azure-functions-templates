@@ -1,8 +1,8 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-11-09T22:04:43Z",
-  "version": "1.12.0",
-  "totalTemplates": 81,
+  "generatedAt": "2026-11-14T00:35:17Z",
+  "version": "1.13.0",
+  "totalTemplates": 91,
   "runtimeVersions": {
     "Python": {
       "supported": [
@@ -1949,6 +1949,290 @@
         "Azure Developer CLI (azd) configuration"
       ],
       "isHighlighted": true
+    },
+    {
+      "id": "ai-hosted-skills-customer-returns-queue-python",
+      "displayName": "Customer Returns Review Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Queue-triggered hosted skill that triages customer return requests and records a recommendation, deployed via azd",
+      "longDescription": "Build and deploy a customer returns hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The customer_returns hosted skill runs on a queue_trigger (Azure Storage queue) or service_bus_queue_trigger (Azure Service Bus), selected by the RETURNS_TRIGGER_TYPE app setting, and calls four Python tools: (1) get_order, (2) get_return_policy, (3) get_support_history, and (4) record_return_recommendation, which writes an idempotent approve, exception, decline, or escalate recommendation with reasons and a reply draft to Blob Storage. Runs on Flex Consumption with managed identity and a Microsoft Foundry model. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "queue",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "gen-ai",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "customer-returns-queue",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "customer_returns.agent.md hosted skill with a Storage queue or Service Bus queue trigger",
+        "Order, return policy, support history, and recommendation tools with sample data",
+        "Sample return requests, demo script, and unit tests",
+        "Optional Service Bus infrastructure",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-invoice-review-blob-python",
+      "displayName": "Invoice Review Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Blob-triggered hosted skill that reviews uploaded invoices against purchase orders and contracts, deployed via azd",
+      "longDescription": "Build and deploy an invoice review hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The invoice_review hosted skill runs on a blob_trigger with an Event Grid source for invoices uploaded to Blob Storage and calls five Python tools: (1) extract_invoice (Document Intelligence or PDF text), (2) get_purchase_order, (3) get_contract_terms, (4) check_invoice_against_po for a three-way match computed in code, and (5) record_invoice_review, which writes an approve, hold, or reject review with discrepancies to Blob Storage. Runs on Flex Consumption with managed identity, Event Grid, Azure AI Document Intelligence, and a Microsoft Foundry model. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "gen-ai",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "invoice-review-blob",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "invoice_review.agent.md hosted skill with a Blob trigger (Event Grid source)",
+        "Invoice extraction, purchase order, contract terms, three-way match, and review tools with sample data",
+        "Sample invoice PDFs, demo script, and unit tests",
+        "Event Grid subscription and Document Intelligence infrastructure",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-contract-review-durable-python",
+      "displayName": "Contract Review Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Durable Functions workflow that calls a hosted skill to review contract clauses before approval, deployed via azd",
+      "longDescription": "Build and deploy a contract review process on Azure Functions in Python that adds a hosted skill to a Durable Functions workflow. An HTTP trigger starts the contract_orchestrator orchestration, whose activities validate the contract, call the contract_review hosted skill in process, and route the result: low-risk contracts are approved automatically and others create a legal review task that waits for an external approval event or a 24-hour timer. The contract_review hosted skill is also exposed through its own http_trigger and uses three Python tools: (1) get_clause_playbook, (2) get_standard_clause, and (3) check_contract_terms. Uses Durable Task Scheduler for orchestration state and runs on Flex Consumption with managed identity and a Microsoft Foundry model. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "gen-ai",
+        "workflows"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "contract-review-durable",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "contract_review.agent.md hosted skill with structured output and an HTTP trigger",
+        "Durable Functions orchestrator, activities, and HTTP start, status, and approve endpoints",
+        "Clause playbook and contract term tools with sample contracts",
+        "Durable Task Scheduler infrastructure",
+        "Demo script and unit tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-daily-work-briefing-timer-python",
+      "displayName": "Daily Work Briefing Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Timer-triggered hosted skill that publishes a prioritized daily work briefing, deployed via azd",
+      "longDescription": "Build and deploy a daily work briefing hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The daily_briefing hosted skill runs on a timer_trigger (schedule set by the BRIEFING_SCHEDULE app setting) and calls four Python tools: (1) get_calendar, (2) get_messages, (3) get_tasks, and (4) publish_briefing, which writes one Markdown and JSON briefing per day to Blob Storage. Works with built-in sample data and can be connected to Outlook calendar and mail through the Office 365 Outlook connector. Runs on Flex Consumption with managed identity and a Microsoft Foundry model. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "timer",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "gen-ai",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "daily-work-briefing-timer",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "daily_briefing.agent.md hosted skill with a timer trigger",
+        "Calendar, message, task, and briefing publishing tools with sample data",
+        "Optional Office 365 Outlook connector gateway infrastructure",
+        "Demo script and unit tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-customer-retention-cosmos-python",
+      "displayName": "Customer Retention Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Cosmos DB change feed hosted skill that drafts retention actions when account usage drops, deployed via azd",
+      "longDescription": "Build and deploy a customer retention hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The customer_retention hosted skill runs on a cosmos_db_trigger over the accounts container change feed and calls five Python tools: (1) assess_churn_signals, (2) get_account_profile, (3) get_support_tickets, (4) get_plan_catalog, and (5) record_retention_action, which writes an outreach email draft and a policy-limited offer to a retention-actions container in Azure Cosmos DB. Runs on Flex Consumption with managed identity, Azure Cosmos DB, and a Microsoft Foundry model. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "cosmos",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "gen-ai",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "customer-retention-cosmos",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "customer_retention.agent.md hosted skill with a Cosmos DB change feed trigger",
+        "Churn signal, account profile, support ticket, plan catalog, and retention action tools with sample data",
+        "Azure Cosmos DB account, containers, and data-plane RBAC infrastructure",
+        "Demo script and unit tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-claims-review-workflow-python",
+      "displayName": "Insurance Claims Review Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Blob-triggered hosted skill that runs parallel claim checks in a Dynamic Workflow, deployed via azd",
+      "longDescription": "Build and deploy an insurance claims review hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The claims_review hosted skill runs on a blob_trigger with an Event Grid source for claim packages uploaded to Blob Storage, reads the claim with the read_claim tool, and starts a Dynamic Workflow that runs (1) check_coverage, (2) check_documents, and (3) check_claim_history in parallel before (4) publish_claim_decision records an approve, request_info, or refer_to_adjuster decision. Uses Durable Task Scheduler for workflow state and runs on Flex Consumption with managed identity, Event Grid, and a Microsoft Foundry model. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "gen-ai",
+        "workflows"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "claims-review-workflow",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "claims_review.agent.md hosted skill with a Blob trigger (Event Grid source) and Dynamic Workflows",
+        "Claim reading, coverage, document, claim history, and decision tools with sample data",
+        "Durable Task Scheduler and Event Grid subscription infrastructure",
+        "Sample claim packages, demo script, and unit tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-alert-investigation-eventhub-python",
+      "displayName": "Alert Investigation Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Event Hubs alert router with Microsoft-Decision-1 and a queue-triggered investigation hosted skill, deployed via azd",
+      "longDescription": "Build and deploy a security alert investigation app on Azure Functions in Python. An EventHubTrigger function, alert_router, validates, suppresses, deduplicates, and groups alerts with deterministic rules and routes the rest with the Microsoft-Decision-1 model, writing decisions to Table Storage and sending alerts that need a closer look to a Storage queue. The alert_investigator hosted skill runs on a queue_trigger for that queue and calls Python tools: (1) get_signin_logs, (2) get_endpoint_events, (3) get_network_flows, (4) get_asset, (5) lookup_threat_intel, (6) record_investigation, and (7) execute_containment_action, which never runs containment automatically. Runs on Flex Consumption with managed identity, Azure Event Hubs, and Microsoft Foundry models. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "eventhub",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "gen-ai",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "alert-investigation-eventhub",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "alert_router Event Hubs trigger function with rule-based filtering and Microsoft-Decision-1 routing",
+        "alert_investigator.agent.md hosted skill with a Storage queue trigger",
+        "Sign-in, endpoint, network, asset, threat intelligence, investigation, and containment tools with sample data",
+        "Azure Event Hubs infrastructure",
+        "Sample alert burst, demo script, and unit tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-teams-helpdesk-connector-python",
+      "displayName": "Teams IT Helpdesk Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Microsoft Teams connector-triggered hosted skill that answers IT helpdesk questions, deployed via azd",
+      "longDescription": "Build and deploy an IT helpdesk hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The teams_helpdesk hosted skill runs on a connector_trigger for new Microsoft Teams channel messages through the connector gateway and replies in the message thread, and the helpdesk_test hosted skill exposes the same tools through an http_trigger so you can test without a Teams connection. Both call five Python tools: (1) search_knowledge_base, (2) get_password_reset_guidance, (3) create_software_request, (4) escalate_to_human, and (5) post_reply, which records each reply once in Blob Storage. Runs on Flex Consumption with managed identity, Connector Gateway resources, and a Microsoft Foundry model. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "connector",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "gen-ai",
+        "connectors"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "teams-helpdesk-connector",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "teams_helpdesk.agent.md hosted skill with a Microsoft Teams connector trigger",
+        "helpdesk_test.agent.md hosted skill with an HTTP trigger for testing",
+        "Knowledge base, password reset, software request, escalation, and reply tools with sample data",
+        "Connector gateway infrastructure",
+        "Demo script and unit tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-record-repair-servicebus-python",
+      "displayName": "Record Repair Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Service Bus dead-letter queue hosted skill that repairs malformed records and requeues them, deployed via azd",
+      "longDescription": "Build and deploy a record repair hosted skill on Azure Functions in Python that adds AI to an existing ingestion pipeline. The ingest function uses a ServiceBusTrigger to validate JSON records and write them to Blob Storage, and records that fail land in the queue's dead-letter queue. The record_repair hosted skill runs on a service_bus_queue_trigger for that dead-letter queue and calls three Python tools: (1) get_record_schema, (2) requeue_repaired_record, which checks the repair in code and sends the record back to the main queue, and (3) record_unrepairable, which writes records that need a person to Blob Storage. Runs on Flex Consumption with managed identity, Azure Service Bus, and a Microsoft Foundry model. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "servicebus",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "gen-ai",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "record-repair-servicebus",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "ingest Service Bus trigger function with schema validation",
+        "record_repair.agent.md hosted skill with a Service Bus dead-letter queue trigger",
+        "Record schema, requeue, and unrepairable record tools",
+        "Azure Service Bus infrastructure",
+        "Sample records, demo script, and unit tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-expense-policy-queue-python",
+      "displayName": "Expense Policy Routing Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Queue-triggered hosted skill that routes free-form expense requests by policy documents in Blob, deployed via azd",
+      "longDescription": "Build and deploy an expense policy routing hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The expense_processor hosted skill runs on a queue_trigger for requests in any format and calls three Python tools: (1) list_policies and (2) read_policy, which read Markdown policy documents from Blob Storage, and (3) route_expense_decision, which checks rules in code and sends the decision to the expense-approved, expense-review, or expense-flagged queue. Includes an optional Azure API Management AI Gateway with token limits, prompt shields, and token metrics. Runs on Flex Consumption with managed identity and a Microsoft Foundry model. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "queue",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "gen-ai",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "expense-policy-queue",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "expense_processor.agent.md hosted skill with a Storage queue trigger",
+        "Policy listing, policy reading, and decision routing tools with sample policy documents",
+        "Optional API Management AI Gateway infrastructure",
+        "Sample requests, demo script, and unit tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
     },
     {
       "id": "ai-agent-typescript",

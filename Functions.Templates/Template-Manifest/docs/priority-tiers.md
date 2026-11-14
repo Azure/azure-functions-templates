@@ -1,7 +1,7 @@
 # Template Manifest — Priority Tiers (P00–P99)
 
-**Total templates:** 81
-**Manifest version:** 1.12.0
+**Total templates:** 91
+**Manifest version:** 1.13.0
 
 ## Design principles
 
@@ -29,7 +29,7 @@
 | P40–44 | 🗄️ SQL | Trigger · Input · Output | `P40` Trigger<br>`P41` Input *(future)*<br>`P42` Output *(future)* |
 | P45–49 | 🔴 Redis *(reserved)* | Trigger · Input · Output | `P45` Trigger<br>`P46` Input<br>`P47` Output |
 | P50–59 | 🔌 MCP *(10-slot block)* | Trigger (Tool / Resource / Prompt) | `P50` Remote Server<br>`P51` SDK Hosting *(removed — repos archived)*<br>`P52` Tool<br>`P53` Resource<br>`P54` Prompt<br>`P55` APIM Gateway<br>`P56` *(reserved)*<br>`P57` *(reserved)*<br>`P58` *(reserved)*<br>`P59` *(reserved)* |
-| P60–64 | 🤖 AI | — | `P60` Agent<br>`P61` ChatGPT *(removed — repos archived)*<br>`P62` Text Summarize *(removed — repos archived)*<br>`P63` LangChain *(removed — repo archived)* |
+| P60–64 | 🤖 AI | — | `P60` Agent<br>`P61` Hosted Skills Scenarios *(previously ChatGPT — removed, repos archived)*<br>`P62` Text Summarize *(removed — repos archived)*<br>`P63` LangChain *(removed — repo archived)* |
 | P65–69 | 🔄 Durable Standard | Orchestration | `P65` Orchestration<br>`P66` Order Processor |
 | P70–74 | 🔄 Durable Advanced | Orchestration | `P70` Patterns (saga / tracing / payload)<br>`P71` Scenarios (travel / aspire)<br>`P72` PDF Summarizer *(removed — uses retiring OpenAI extension)* |
 | P75–79 | 🤝 Agent Framework | Orchestration | `P75` Multi-Agent |
@@ -111,6 +111,16 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → Go
 | 60 | `ai-hosted-skills-python` | Py | trigger | ✅ bicep | *new* |
 | 60 | `ai-agent-typescript` | TS | trigger | ✅ bicep | P0→60 |
 | 60 | `ai-agent-java` | Java | trigger | ✅ bicep | P0→60 |
+| 61 | `ai-hosted-skills-customer-returns-queue-python` | Py | trigger | ✅ bicep | *new* |
+| 61 | `ai-hosted-skills-invoice-review-blob-python` | Py | trigger | ✅ bicep | *new* |
+| 61 | `ai-hosted-skills-contract-review-durable-python` | Py | orchestration | ✅ bicep | *new* |
+| 61 | `ai-hosted-skills-daily-work-briefing-timer-python` | Py | trigger | ✅ bicep | *new* |
+| 61 | `ai-hosted-skills-customer-retention-cosmos-python` | Py | trigger | ✅ bicep | *new* |
+| 61 | `ai-hosted-skills-claims-review-workflow-python` | Py | trigger | ✅ bicep | *new* |
+| 61 | `ai-hosted-skills-alert-investigation-eventhub-python` | Py | trigger | ✅ bicep | *new* |
+| 61 | `ai-hosted-skills-teams-helpdesk-connector-python` | Py | trigger | ✅ bicep | *new* |
+| 61 | `ai-hosted-skills-record-repair-servicebus-python` | Py | trigger | ✅ bicep | *new* |
+| 61 | `ai-hosted-skills-expense-policy-queue-python` | Py | trigger | ✅ bicep | *new* |
 | | **🔄 Durable Standard** | | | | |
 | 65 | `durable-orchestrator-csharp-azd` | .NET | orchestration | ✅ bicep | *new* |
 | 65 | `durable-orchestrator-python-azd` | Py | orchestration | ✅ bicep | *new* |
@@ -201,7 +211,7 @@ These templates were removed because their source repositories were **archived**
 | Category | Sub-type | P | .NET | Py | TS | JS | Java | Go | PS | Gaps |
 |---|---|---|---|---|---|---|---|---|---|---|
 | AI | Agent | P60 | ✅ | ✅ (2) | ✅ | — | ✅ | — | — | JS, Go, PS |
-|  | ChatGPT | P61 | — | — | — | — | — | — | — | *removed (repos archived)* |
+|  | Hosted Skills Scenarios | P61 | — | ✅ (10) | — | — | — | — | — | .NET, TS, JS, Java, Go, PS |
 |  | Text Summarize | P62 | — | — | — | — | — | — | — | *removed (repos archived)* |
 |  | LangChain | P63 | — | — | — | — | — | — | — | *removed (repo archived)* |
 | Durable | Orchestration | P65 | ✅ | ✅ | ✅ | 🚧 | — | ✅ | — | Java, PS |
@@ -233,6 +243,7 @@ These templates were removed because their source repositories were **archived**
 | 50 | 🔌 MCP — Remote Server | 6 |
 | 55 | 🔌 MCP — APIM Gateway | 1 |
 | 60 | 🤖 AI — Agent | 5 |
+| 61 | 🤖 AI — Hosted Skills Scenarios | 10 |
 | 65 | 🔄 Durable Standard — Orchestration | 5 |
 | 66 | 🔄 Durable Standard — Order Processor | 3 |
 | 70 | 🔄 Durable Advanced — Patterns (saga / tracing / payload) | 4 |
@@ -240,7 +251,7 @@ These templates were removed because their source repositories were **archived**
 | 75 | 🤝 Agent Framework — Multi-Agent | 2 |
 | 80 | 🔌 Connectors — Office 365 Outlook | 3 |
 | 81 | 🔌 Connectors — SharePoint Online | 3 |
-| | **Total** | **81** |
+| | **Total** | **91** |
 
 ## Language sort order
 
