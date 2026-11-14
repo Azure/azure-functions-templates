@@ -1,7 +1,7 @@
 # Template Manifest — Priority Tiers (P00–P99)
 
 **Total templates:** 85
-**Manifest version:** 1.13.0
+**Manifest version:** 1.13.1
 
 ## Design principles
 
@@ -18,7 +18,7 @@
 
 | Range | Category | Supported bindings | Slot assignments |
 |---|---|---|---|
-| P00–04 | ⚡ HTTP | Trigger · Output | `P00` Trigger (including HTML-to-PDF Flex containers)<br>`P01` Input *(N/A)*<br>`P02` Output *(future)*<br>`P03` Variant (Terraform)<br>`P04` Stub |
+| P00–04 | ⚡ HTTP | Trigger · Output | `P00` Trigger starters<br>`P01` Input *(N/A)*<br>`P02` Output *(future)*<br>`P03` Variant (Terraform / HTML-to-PDF Flex containers)<br>`P04` Stub |
 | P05–09 | ⏰ Timer | Trigger only | `P05` Trigger |
 | P10–14 | 🪣 Blob Storage | Trigger · Input · Output | `P10` Trigger<br>`P11` Input *(future)*<br>`P12` Output *(future)* |
 | P15–19 | 📡 Event Hub | Trigger · Output | `P15` Trigger<br>`P16` Output *(future)* |
@@ -45,17 +45,17 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → Go
 |--:|---|---|---|---|---|
 | | **⚡ HTTP** | | | | |
 | 0 | `http-trigger-csharp-azd` | .NET | trigger | ✅ bicep | P0 |
-| 0 | `http-trigger-html-to-pdf-container-csharp` | .NET | trigger | ✅ bicep | *new* |
 | 0 | `http-trigger-python-azd` | Py | trigger | ✅ bicep | P0 |
-| 0 | `http-trigger-html-to-pdf-container-python` | Py | trigger | ✅ bicep | *new* |
 | 0 | `http-trigger-typescript-azd` | TS | trigger | ✅ bicep | P0 |
-| 0 | `http-trigger-html-to-pdf-container-typescript` | TS | trigger | ✅ bicep | *new* |
 | 0 | `http-trigger-javascript-azd` | JS | trigger | ✅ bicep | P0 |
 | 0 | `http-trigger-java-azd` | Java | trigger | ✅ bicep | P0 |
 | 0 | `http-trigger-go-azd` | Go | trigger | ✅ bicep | *new* |
-| 0 | `http-trigger-html-to-pdf-container-go` | Go | trigger | ✅ bicep | *new* |
 | 0 | `http-trigger-powershell-azd` | PS | trigger | ✅ bicep | P0 |
+| 3 | `http-trigger-html-to-pdf-container-csharp` | .NET | trigger | ✅ bicep | *new* |
 | 3 | `http-trigger-csharp-terraform` | .NET | trigger | 📦 terraform | P0→3 |
+| 3 | `http-trigger-html-to-pdf-container-python` | Py | trigger | ✅ bicep | *new* |
+| 3 | `http-trigger-html-to-pdf-container-typescript` | TS | trigger | ✅ bicep | *new* |
+| 3 | `http-trigger-html-to-pdf-container-go` | Go | trigger | ✅ bicep | *new* |
 | | **⏰ Timer** | | | | |
 | 5 | `timer-trigger-csharp-azd` | .NET | trigger | ✅ bicep | P0→5 |
 | 5 | `timer-trigger-python-azd` | Py | trigger | ✅ bicep | P0→5 |
@@ -227,8 +227,8 @@ These templates were removed because their source repositories were **archived**
 
 | P | Slot label | Templates |
 |--:|---|--:|
-| 00 | ⚡ HTTP — Trigger | 11 |
-| 03 | ⚡ HTTP — Variant (Terraform) | 1 |
+| 00 | ⚡ HTTP — Trigger starters | 7 |
+| 03 | ⚡ HTTP — Variant (Terraform / HTML-to-PDF Flex containers) | 5 |
 | 05 | ⏰ Timer — Trigger | 7 |
 | 10 | 🪣 Blob Storage — Trigger | 7 |
 | 15 | 📡 Event Hub — Trigger | 7 |
