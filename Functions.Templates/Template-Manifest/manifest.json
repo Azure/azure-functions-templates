@@ -1,8 +1,8 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-11-09T22:04:43Z",
-  "version": "1.12.0",
-  "totalTemplates": 81,
+  "generatedAt": "2026-11-14T02:34:55Z",
+  "version": "1.13.1",
+  "totalTemplates": 85,
   "runtimeVersions": {
     "Python": {
       "supported": [
@@ -310,6 +310,32 @@
       ]
     },
     {
+      "id": "http-trigger-html-to-pdf-container-csharp",
+      "displayName": "HTML-to-PDF Flex Container (C# + AZD + Bicep)",
+      "shortDescription": "Render HTML to PDF with an HTTP-triggered Flex Consumption container (preview), deployed via azd",
+      "longDescription": "Build and deploy an HTML-to-PDF app in C# on Azure Functions Flex Consumption using a custom Linux container (preview). Two anonymous HttpTrigger functions provide (1) Hello for GET and POST requests and (2) HtmlToPdf, which renders a sample invoice on GET or posted HTML as a PDF. The .NET isolated worker uses PuppeteerSharp with system Chromium. Deployed with azd.",
+      "language": "CSharp",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 3,
+      "categories": [
+        "starters",
+        "web-apis"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/flex-container-html2pdf-dotnet",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "Hello and HtmlToPdf HTTP triggers (GET and POST)",
+        "PuppeteerSharp renderer using system Chromium",
+        "Dockerfile and sample HTML",
+        "Azure Developer CLI configuration and Bicep infrastructure",
+        "Automated tests"
+      ]
+    },
+    {
       "id": "http-trigger-csharp-terraform",
       "displayName": "HTTP Trigger (C# + AZD + Terraform)",
       "shortDescription": "Accepts GET and POST requests, Flex Consumption with managed identity and VNet, deployed via azd",
@@ -342,6 +368,84 @@
         "VS Code debug configuration",
         "Test files for local development",
         "Dev Container setup"
+      ]
+    },
+    {
+      "id": "http-trigger-html-to-pdf-container-python",
+      "displayName": "HTML-to-PDF Flex Container (Python + AZD + Bicep)",
+      "shortDescription": "Render HTML to PDF with an HTTP-triggered Flex Consumption container (preview), deployed via azd",
+      "longDescription": "Build and deploy an HTML-to-PDF app in Python on Azure Functions Flex Consumption using a custom Linux container (preview). The anonymous HtmlToPdf HttpTrigger accepts HTML via POST and returns a PDF. It uses the Azure Functions Python library and Playwright with system Chromium. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 3,
+      "categories": [
+        "starters",
+        "web-apis"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/flex-container-html2pdf-python",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "HtmlToPdf HTTP trigger (POST)",
+        "Playwright renderer using system Chromium",
+        "Dockerfile and sample HTML",
+        "Azure Developer CLI configuration and Bicep infrastructure",
+        "Automated tests"
+      ]
+    },
+    {
+      "id": "http-trigger-html-to-pdf-container-typescript",
+      "displayName": "HTML-to-PDF Flex Container (TypeScript + AZD + Bicep)",
+      "shortDescription": "Render HTML to PDF with an HTTP-triggered Flex Consumption container (preview), deployed via azd",
+      "longDescription": "Build and deploy an HTML-to-PDF app in TypeScript on Azure Functions Flex Consumption using a custom Linux container (preview). Two anonymous HttpTrigger functions provide (1) Hello for GET and POST requests and (2) HtmlToPdf, which renders a sample invoice on GET or posted HTML as a PDF. The Node.js v4 programming model uses Puppeteer Core with system Chromium. Deployed with azd.",
+      "language": "TypeScript",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 3,
+      "categories": [
+        "starters",
+        "web-apis"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/flex-container-html2pdf-node",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "Hello and HtmlToPdf HTTP triggers (GET and POST)",
+        "Puppeteer Core renderer using system Chromium",
+        "Dockerfile and sample HTML",
+        "Azure Developer CLI configuration and Bicep infrastructure",
+        "Automated tests"
+      ]
+    },
+    {
+      "id": "http-trigger-html-to-pdf-container-go",
+      "displayName": "HTML-to-PDF Flex Container (Go + AZD + Bicep)",
+      "shortDescription": "Render HTML to PDF with an HTTP-triggered Flex Consumption container (preview), deployed via azd",
+      "longDescription": "Build and deploy an HTML-to-PDF app in Go on Azure Functions Flex Consumption using a custom Linux container (preview). Two anonymous HttpTrigger functions provide (1) Hello for GET and POST requests and (2) HtmlToPdf, which renders a sample invoice on GET or posted HTML as a PDF. The Azure Functions Go worker SDK uses chromedp with system Chromium. Deployed with azd.",
+      "language": "Go",
+      "bindingType": "trigger",
+      "resource": "http",
+      "iac": "bicep",
+      "priority": 3,
+      "categories": [
+        "starters",
+        "web-apis"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/flex-container-html2pdf-go",
+      "folderPath": ".",
+      "gitRef": "refs/tags/v1.0.0",
+      "whatsIncluded": [
+        "Hello and HtmlToPdf HTTP triggers (GET and POST)",
+        "chromedp renderer using system Chromium",
+        "Dockerfile and sample HTML",
+        "Azure Developer CLI configuration and Bicep infrastructure",
+        "Automated tests"
       ]
     },
     {
