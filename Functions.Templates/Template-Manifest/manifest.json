@@ -1,6 +1,6 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-11-15T02:45:22Z",
+  "generatedAt": "2026-11-15T03:56:53Z",
   "version": "1.14.0",
   "totalTemplates": 95,
   "runtimeVersions": {
@@ -2148,7 +2148,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
       "folderPath": "customer-returns-queue",
-      "gitRef": "refs/tags/v1.0.0",
+      "gitRef": "refs/tags/v1.1.0",
       "whatsIncluded": [
         "customer_returns.agent.md hosted skill with a Storage queue or Service Bus queue trigger",
         "Order, return policy, support history, and recommendation tools with sample data",
@@ -2176,7 +2176,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
       "folderPath": "invoice-review-blob",
-      "gitRef": "refs/tags/v1.0.0",
+      "gitRef": "refs/tags/v1.1.0",
       "whatsIncluded": [
         "invoice_review.agent.md hosted skill with a Blob trigger (Event Grid source)",
         "Invoice extraction (pypdf by default; optional Document Intelligence), purchase order, contract terms, three-way match, and review tools with sample data",
@@ -2204,7 +2204,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
       "folderPath": "contract-review-durable",
-      "gitRef": "refs/tags/v1.0.0",
+      "gitRef": "refs/tags/v1.1.0",
       "whatsIncluded": [
         "contract_review.agent.md hosted skill with structured output and an HTTP trigger",
         "Durable Functions orchestrator, activities, and HTTP start, status, and approve endpoints",
@@ -2233,7 +2233,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
       "folderPath": "daily-work-briefing-timer",
-      "gitRef": "refs/tags/v1.0.0",
+      "gitRef": "refs/tags/v1.1.0",
       "whatsIncluded": [
         "daily_briefing.agent.md hosted skill with a timer trigger",
         "Calendar, message, task, and briefing publishing tools with sample data",
@@ -2261,7 +2261,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
       "folderPath": "customer-retention-cosmos",
-      "gitRef": "refs/tags/v1.0.0",
+      "gitRef": "refs/tags/v1.1.0",
       "whatsIncluded": [
         "customer_retention.agent.md hosted skill with a Cosmos DB change feed trigger",
         "Churn signal, account profile, support ticket, plan catalog, and retention action tools with sample data",
@@ -2289,7 +2289,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
       "folderPath": "claims-review-workflow",
-      "gitRef": "refs/tags/v1.0.0",
+      "gitRef": "refs/tags/v1.1.0",
       "whatsIncluded": [
         "claims_review.agent.md hosted skill with a Blob trigger (Event Grid source) and Dynamic Workflows",
         "Claim reading, coverage, document, claim history, and decision tools with sample data",
@@ -2304,7 +2304,7 @@
       "id": "ai-hosted-skills-alert-investigation-eventhub-python",
       "displayName": "Alert Investigation Hosted Skill (Python + AZD + Bicep)",
       "shortDescription": "Event Hubs alert router with Microsoft-Decision-1 and a queue-triggered investigation hosted skill, deployed via azd",
-      "longDescription": "Build and deploy a security alert investigation app on Azure Functions in Python. An EventHubTrigger function, alert_router, validates, suppresses, deduplicates, and groups alerts with deterministic rules. It sends critical groups directly to the alerts-investigate Storage queue without a model call and routes other groups with the Microsoft-Decision-1 model, recording decisions in Table Storage and sending alerts for investigation or review to Storage queues. The alert_investigator hosted skill runs on a queue_trigger for the investigation queue and calls Python tools: (1) get_signin_logs, (2) get_endpoint_events, (3) get_network_flows, (4) get_asset, (5) lookup_threat_intel, (6) record_investigation, and (7) execute_containment_action, which never runs containment automatically. Runs on Flex Consumption with managed identity, Azure Event Hubs, and Microsoft Foundry models. Deployed with azd.",
+      "longDescription": "Build and deploy a security alert investigation app on Azure Functions in Python. An EventHubTrigger function, alert_router, validates, suppresses, deduplicates, and groups alerts with deterministic rules. It sends critical groups directly to the alerts-investigate Storage queue without a model call and routes other groups with the Microsoft-Decision-1 model, recording decisions in Table Storage and sending alerts for investigation or review to Storage queues; groups too large for a queue message are offloaded to Blob Storage. The alert_investigator hosted skill runs on a queue_trigger for the investigation queue and calls Python tools: (1) get_alert_payload, which loads offloaded alert groups from Blob Storage, (2) get_signin_logs, (3) get_endpoint_events, (4) get_network_flows, (5) get_asset, (6) lookup_threat_intel, (7) record_investigation, and (8) execute_containment_action, which never runs containment automatically. Runs on Flex Consumption with managed identity, Azure Event Hubs, and Microsoft Foundry models. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
       "resource": "eventhub",
@@ -2317,11 +2317,11 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
       "folderPath": "alert-investigation-eventhub",
-      "gitRef": "refs/tags/v1.0.0",
+      "gitRef": "refs/tags/v1.1.0",
       "whatsIncluded": [
         "alert_router Event Hubs trigger function with rule-based filtering, a critical-alert bypass, and Microsoft-Decision-1 routing for other groups",
         "alert_investigator.agent.md hosted skill with a Storage queue trigger",
-        "Sign-in, endpoint, network, asset, threat intelligence, investigation, and containment tools with sample data",
+        "Alert payload, sign-in, endpoint, network, asset, threat intelligence, investigation, and containment tools with sample data",
         "Azure Event Hubs infrastructure",
         "Sample alert burst, demo script, and unit tests",
         "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
@@ -2333,7 +2333,7 @@
       "id": "ai-hosted-skills-teams-helpdesk-connector-python",
       "displayName": "Teams IT Helpdesk Hosted Skill (Python + AZD + Bicep)",
       "shortDescription": "Microsoft Teams connector-triggered hosted skill that answers IT helpdesk questions, deployed via azd",
-      "longDescription": "Build and deploy an IT helpdesk hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The teams_helpdesk hosted skill runs on a connector_trigger for new Microsoft Teams channel messages through the connector gateway and replies in the message thread, and the helpdesk_test hosted skill exposes the same tools through an http_trigger so you can test without a Teams connection. Both call five Python tools: (1) search_knowledge_base, (2) get_password_reset_guidance, (3) create_software_request, (4) escalate_to_human, and (5) post_reply, which records each reply once in Blob Storage. Runs on Flex Consumption with managed identity, Connector Gateway resources, and a Microsoft Foundry model. Deployed with azd.",
+      "longDescription": "Build and deploy an IT helpdesk hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The teams_helpdesk hosted skill runs on a connector_trigger for new Microsoft Teams channel messages through the connector gateway and replies in the message thread, and the helpdesk_test hosted skill exposes the same tools through an http_trigger so you can test without a Teams connection. Both use the Python tools (1) search_knowledge_base, (2) get_password_reset_guidance, (3) create_software_request, (4) escalate_to_human, and (5) post_reply, which records each reply once in Blob Storage; the Teams skill also calls (6) mark_reply_delivered after the Teams reply succeeds, so an undelivered reply is resent when the message is redelivered. Runs on Flex Consumption with managed identity, Connector Gateway resources, and a Microsoft Foundry model. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
       "resource": "connector",
@@ -2346,11 +2346,11 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
       "folderPath": "teams-helpdesk-connector",
-      "gitRef": "refs/tags/v1.0.0",
+      "gitRef": "refs/tags/v1.1.0",
       "whatsIncluded": [
         "teams_helpdesk.agent.md hosted skill with a Microsoft Teams connector trigger",
         "helpdesk_test.agent.md hosted skill with an HTTP trigger for testing",
-        "Knowledge base, password reset, software request, escalation, and reply tools with sample data",
+        "Knowledge base, password reset, software request, escalation, reply, and reply delivery tools with sample data",
         "Connector gateway infrastructure",
         "Demo script and unit tests",
         "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
@@ -2375,7 +2375,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
       "folderPath": "record-repair-servicebus",
-      "gitRef": "refs/tags/v1.0.0",
+      "gitRef": "refs/tags/v1.1.0",
       "whatsIncluded": [
         "ingest Service Bus trigger function with schema validation",
         "record_repair.agent.md hosted skill with a Service Bus dead-letter queue trigger",
@@ -2404,7 +2404,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
       "folderPath": "expense-policy-queue",
-      "gitRef": "refs/tags/v1.0.0",
+      "gitRef": "refs/tags/v1.1.0",
       "whatsIncluded": [
         "expense_processor.agent.md hosted skill with a Storage queue trigger",
         "Policy listing, policy reading, and decision routing tools with sample policy documents",
