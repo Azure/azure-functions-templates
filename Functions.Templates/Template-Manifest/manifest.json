@@ -1,18 +1,21 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-11-15T04:09:28Z",
+  "generatedAt": "2026-11-15T06:42:30Z",
   "version": "1.13.0",
   "totalTemplates": 95,
   "runtimeVersions": {
     "Python": {
       "supported": [
-        "3.10",
         "3.11",
         "3.12",
-        "3.13"
+        "3.13",
+        "3.14"
       ],
       "preview": [
-        "3.14"
+        "3.15"
+      ],
+      "deprecated": [
+        "3.10"
       ],
       "default": "3.13"
     },
@@ -21,12 +24,18 @@
         "22",
         "24"
       ],
+      "preview": [
+        "26"
+      ],
       "default": "22"
     },
     "TypeScript": {
       "supported": [
         "22",
         "24"
+      ],
+      "preview": [
+        "26"
       ],
       "default": "22"
     },
@@ -42,27 +51,29 @@
     },
     "CSharp": {
       "supported": [
+        "10",
+        "11"
+      ],
+      "deprecated": [
         "8",
-        "9",
-        "10"
+        "9"
       ],
       "frameworkSupported": [
         "4.8.1"
       ],
-      "default": "8"
+      "default": "10"
     },
     "PowerShell": {
       "supported": [
+        "7.6"
+      ],
+      "deprecated": [
         "7.4"
       ],
-      "default": "7.4",
-      "preview": [
-        "7.6"
-      ]
+      "default": "7.6"
     },
     "Go": {
-      "supported": [],
-      "preview": [
+      "supported": [
         "1.0"
       ],
       "default": "1.0"
@@ -594,7 +605,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd-eventgrid-blob",
       "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.1",
+      "gitRef": "refs/tags/v1.0.2",
       "whatsIncluded": [
         "Blob EventGrid trigger function",
         "Bicep infrastructure",
@@ -659,7 +670,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-typescript-azd-eventgrid-blob",
       "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.1",
+      "gitRef": "refs/tags/v1.0.2",
       "whatsIncluded": [
         "Blob EventGrid trigger function",
         "Bicep infrastructure",
@@ -692,7 +703,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-javascript-azd-eventgrid-blob",
       "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.1",
+      "gitRef": "refs/tags/v1.0.2",
       "whatsIncluded": [
         "Blob EventGrid trigger function",
         "Bicep infrastructure",
@@ -817,7 +828,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd-eventhub",
       "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.1",
+      "gitRef": "refs/tags/v1.0.2",
       "whatsIncluded": [
         "Event Hub trigger function",
         "Event Hub output binding",
@@ -1056,7 +1067,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd-service-bus",
       "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.0",
+      "gitRef": "refs/tags/v1.0.1",
       "whatsIncluded": [
         "Service Bus trigger function",
         "Bicep infrastructure files",
@@ -1499,7 +1510,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd-sql",
       "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.0",
+      "gitRef": "refs/tags/v1.0.1",
       "whatsIncluded": [
         "SQL trigger function",
         "SQL bindings",
@@ -2543,7 +2554,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
       "folderPath": "samples/durable-functions/javascript/HelloCities",
-      "gitRef": "refs/heads/main",
+      "gitRef": "refs/tags/v1.0.0",
       "whatsIncluded": [
         "Function code (.js)",
         "package.json",
@@ -2697,7 +2708,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
       "folderPath": "samples/durable-functions/dotnet/DistributedTracing",
-      "gitRef": "refs/heads/main",
+      "gitRef": "refs/tags/v1.0.0",
       "whatsIncluded": [
         "OpenTelemetry configuration",
         "Traced orchestration",
@@ -2713,7 +2724,7 @@
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "durable",
-      "iac": "none",
+      "iac": "bicep",
       "priority": 70,
       "categories": [
         "workflows"
@@ -2728,7 +2739,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
       "folderPath": "samples/durable-functions/dotnet/LargePayload",
-      "gitRef": "refs/heads/main",
+      "gitRef": "refs/tags/v1.0.0",
       "whatsIncluded": [
         "Large payload handling",
         "Blob storage integration",
@@ -2760,7 +2771,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
       "folderPath": "samples/durable-functions/dotnet/LargePayloadFanOutFanIn",
-      "gitRef": "refs/heads/main",
+      "gitRef": "refs/tags/v1.0.0",
       "whatsIncluded": [
         "Function code (.cs)",
         "Project file (.csproj)",
@@ -2793,7 +2804,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
       "folderPath": "samples/durable-functions/dotnet/Saga",
-      "gitRef": "refs/heads/main",
+      "gitRef": "refs/tags/v1.0.0",
       "whatsIncluded": [
         "Orchestrator with compensation logic",
         "Activity functions",
@@ -2809,7 +2820,7 @@
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "durable",
-      "iac": "none",
+      "iac": "bicep",
       "priority": 71,
       "categories": [
         "gen-ai",
@@ -2825,7 +2836,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
       "folderPath": "samples/durable-functions/dotnet/AiAgentTravelPlanOrchestrator",
-      "gitRef": "refs/heads/main",
+      "gitRef": "refs/tags/v1.0.0",
       "whatsIncluded": [
         "AI agent orchestration",
         "Multiple AI service integration",
@@ -2856,7 +2867,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
       "folderPath": "samples/durable-functions/dotnet/AzureFunctionsAndDtsWithAspire",
-      "gitRef": "refs/heads/main",
+      "gitRef": "refs/tags/v1.0.0",
       "whatsIncluded": [
         "Aspire AppHost configuration",
         "Durable Functions service",
@@ -2929,8 +2940,8 @@
     {
       "id": "office365-connector-trigger-csharp",
       "displayName": "Office 365 Outlook Connector Triggers (C# + AZD + Bicep)",
-      "shortDescription": "Office 365 Outlook email and calendar connector triggers with Blob output, deployed via azd",
-      "longDescription": "Build and deploy an Office 365 Outlook connector app on Azure Functions in C#. This app provides five connector trigger functions, each receiving a different Outlook event type from the Connector Namespace via ConnectorTrigger and writing the payload to Blob storage with BlobOutput: (1) OnNewEmail for incoming mail, (2) OnFlaggedEmail for flagged mail, (3) OnNewMentionMeEmail for mail that mentions you, (4) OnNewCalendarEvent for newly created calendar items, and (5) OnUpcomingEvent for upcoming calendar events. Built on the Azure.Connectors.Sdk and the Microsoft.Azure.Functions.Worker.Extensions.Connector worker extension. Runs on Flex Consumption (.NET 10 isolated) with a user-assigned managed identity and an OAuth Office 365 Outlook connection authorized via a post-deploy hook. Deployed with azd.",
+      "shortDescription": "Office 365 Outlook email and calendar Connector Triggers, deployed via azd",
+      "longDescription": "Build and deploy an Office 365 Outlook connector app on Azure Functions in C#. This app provides seven polling ConnectorTrigger functions that receive Outlook events from the Connector Namespace and log item counts: (1) OnNewEmail for incoming mail, (2) OnFlaggedEmail for flagged mail, (3) OnNewMentionMeEmail for mail that mentions you, (4) OnNewCalendarEvent for new calendar items, (5) OnUpcomingEvent for upcoming calendar events, (6) OnSharedMailboxNewEmail for shared mailbox mail, and (7) OnCalendarUpdatedItems for updated calendar items. Built on the Azure.Connectors.Sdk and the Microsoft.Azure.Functions.Worker.Extensions.Connector worker extension. Runs on Flex Consumption (.NET 10 isolated) with a system-assigned managed identity and an OAuth Office 365 Outlook connection authorized via a post-deploy hook. Deployed with azd.",
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "connector",
@@ -2943,24 +2954,23 @@
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-connectors-net",
-      "folderPath": "office365App",
-      "gitRef": "refs/tags/v1.0.2",
+      "folderPath": "office365App/polling",
+      "gitRef": "refs/tags/v1.0.4",
       "whatsIncluded": [
-        "Connector trigger functions (OnNewEmail, OnFlaggedEmail, OnNewMentionMeEmail, OnNewCalendarEvent, OnUpcomingEvent)",
-        "ConnectorTrigger bindings with BlobOutput payload storage",
+        "Connector trigger functions (OnNewEmail, OnFlaggedEmail, OnNewMentionMeEmail, OnNewCalendarEvent, OnUpcomingEvent, OnSharedMailboxNewEmail, OnCalendarUpdatedItems)",
+        "Polling ConnectorTrigger functions that log item counts",
         "OAuth Office 365 Outlook connection",
         "Post-deploy connection authorization scripts",
-        "User-assigned managed identity",
+        "System-assigned managed identity",
         "Bicep infrastructure files",
-        "Azure Developer CLI (azd) configuration (azure.yaml)",
-        "VS Code configuration"
+        "Azure Developer CLI (azd) configuration (azure.yaml)"
       ]
     },
     {
       "id": "office365-connector-trigger-typescript",
       "displayName": "Office 365 Outlook Connector Triggers (TypeScript + AZD + Bicep)",
-      "shortDescription": "Office 365 Outlook email and calendar connector triggers, deployed via azd",
-      "longDescription": "Build and deploy an Office 365 Outlook connector app on Azure Functions in TypeScript. This app provides five connector trigger functions, each receiving a different Outlook event type from the Connector Namespace via the connector trigger and logging the received payload: (1) onNewEmail for incoming mail, (2) onFlaggedEmail for flagged mail, (3) onNewMentionMeEmail for mail that mentions you, (4) onNewCalendarEvent for newly created calendar items, and (5) onUpcomingEvent for upcoming calendar events. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a user-assigned managed identity and an OAuth Office 365 Outlook connection authorized via a post-deploy hook. Deployed with azd.",
+      "shortDescription": "Office 365 Outlook email connector polling trigger, deployed via azd",
+      "longDescription": "Build and deploy an Office 365 Outlook connector app on Azure Functions in TypeScript. This app provides the OnNewEmailPoll connector trigger, which receives batches of Outlook email events from the Connector Namespace and logs their counts, subjects, and senders. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a system-assigned managed identity and an OAuth Office 365 Outlook connection authorized via a post-deploy hook. Deployed with azd.",
       "language": "TypeScript",
       "bindingType": "trigger",
       "resource": "connector",
@@ -2973,14 +2983,14 @@
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-connectors-typescript",
-      "folderPath": "office365App",
-      "gitRef": "refs/tags/v1.0.1",
+      "folderPath": "office365App/polling",
+      "gitRef": "refs/tags/v1.0.3",
       "whatsIncluded": [
-        "Connector trigger functions (onNewEmail, onFlaggedEmail, onNewMentionMeEmail, onNewCalendarEvent, onUpcomingEvent)",
-        "Connector triggers that log the received payload",
+        "Connector trigger function (OnNewEmailPoll)",
+        "Connector trigger that logs email counts, subjects, and senders",
         "OAuth Office 365 Outlook connection",
         "Post-deploy connection authorization scripts",
-        "User-assigned managed identity",
+        "System-assigned managed identity",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration (azure.yaml)",
         "TypeScript project files (package.json, tsconfig.json)"
@@ -2990,7 +3000,7 @@
       "id": "office365-connector-trigger-python",
       "displayName": "Office 365 Outlook Connector Triggers (Python + AZD + Bicep)",
       "shortDescription": "Office 365 Outlook email and calendar connector triggers, deployed via azd",
-      "longDescription": "Build and deploy an Office 365 Outlook connector app on Azure Functions in Python. This app provides five connector trigger functions, each receiving a different Outlook event type from the Connector Namespace via the connector_trigger decorator and logging the received payload: (1) OnNewEmail for incoming mail, (2) OnFlaggedEmail for flagged mail, (3) OnNewMentionMeEmail for mail that mentions you, (4) OnNewCalendarEvent for newly created calendar items, and (5) OnUpcomingEvent for upcoming calendar events. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a user-assigned managed identity and an OAuth Office 365 Outlook connection authorized via a post-deploy hook. Deployed with azd.",
+      "longDescription": "Build and deploy an Office 365 Outlook connector app on Azure Functions in Python. This app provides seven polling connector_trigger functions that receive Outlook events from the Connector Namespace and log item counts: (1) OnNewEmail for incoming mail, (2) OnFlaggedEmail for flagged mail, (3) OnNewMentionMeEmail for mail that mentions you, (4) OnNewCalendarEvent for new calendar items, (5) OnUpcomingEvent for upcoming calendar events, (6) OnCalendarUpdatedItems for updated calendar items, and (7) OnSharedMailboxNewEmail for shared mailbox mail. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a system-assigned managed identity and an OAuth Office 365 Outlook connection authorized via a post-deploy hook. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
       "resource": "connector",
@@ -3003,14 +3013,14 @@
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-connectors-python",
-      "folderPath": "office365App",
-      "gitRef": "refs/tags/v1.0.2",
+      "folderPath": "office365App/polling",
+      "gitRef": "refs/tags/v1.0.3",
       "whatsIncluded": [
-        "Connector trigger functions (OnNewEmail, OnFlaggedEmail, OnNewMentionMeEmail, OnNewCalendarEvent, OnUpcomingEvent)",
-        "Connector triggers that log the received payload",
+        "Connector trigger functions (OnNewEmail, OnFlaggedEmail, OnNewMentionMeEmail, OnNewCalendarEvent, OnUpcomingEvent, OnCalendarUpdatedItems, OnSharedMailboxNewEmail)",
+        "Connector triggers that log received item counts",
         "OAuth Office 365 Outlook connection",
         "Post-deploy connection authorization scripts",
-        "User-assigned managed identity",
+        "System-assigned managed identity",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration (azure.yaml)",
         "Python project files (function_app.py, requirements.txt)"
@@ -3019,8 +3029,8 @@
     {
       "id": "sharepoint-connector-trigger-csharp",
       "displayName": "SharePoint Online Connector Triggers (C# + AZD + Bicep)",
-      "shortDescription": "SharePoint Online file connector triggers with Blob output, deployed via azd",
-      "longDescription": "Build and deploy a SharePoint Online connector app on Azure Functions in C#. This app provides two connector trigger functions, each receiving a different SharePoint Online file event from the Connector Namespace via ConnectorTrigger and writing the payload to Blob storage with BlobOutput: (1) OnNewFile for newly added files and (2) OnUpdatedFile for updated files. Built on the Azure.Connectors.Sdk and the Microsoft.Azure.Functions.Worker.Extensions.Connector worker extension. Runs on Flex Consumption (.NET 10 isolated) with a user-assigned managed identity and an OAuth SharePoint Online connection authorized via a post-deploy hook. Deployed with azd.",
+      "shortDescription": "SharePoint Online file Connector Triggers, deployed via azd",
+      "longDescription": "Build and deploy a SharePoint Online connector app on Azure Functions in C#. This app provides polling ConnectorTrigger functions that receive SharePoint Online events from the Connector Namespace and log item counts: (1) OnNewFile, (2) OnUpdatedFile, (3) OnNewItem, (4) OnUpdatedItem, (5) OnChangedItem, (6) OnDeletedItem, (7) OnDeletedFile, (8) OnFormSubmitted, (9) OnFileClassified, and (10) OnRecurringDigest. Built on the Azure.Connectors.Sdk and the Microsoft.Azure.Functions.Worker.Extensions.Connector worker extension. Runs on Flex Consumption (.NET 10 isolated) with a system-assigned managed identity and an OAuth SharePoint Online connection authorized via a post-deploy hook. Deployed with azd.",
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "connector",
@@ -3033,14 +3043,14 @@
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-connectors-net",
-      "folderPath": "sharepointApp",
-      "gitRef": "refs/tags/v1.0.2",
+      "folderPath": "sharepointApp/polling",
+      "gitRef": "refs/tags/v1.0.4",
       "whatsIncluded": [
-        "Connector trigger functions (OnNewFile, OnUpdatedFile)",
-        "ConnectorTrigger bindings with BlobOutput payload storage",
+        "Connector trigger functions for SharePoint files, list items, forms, classification, and digests",
+        "Polling ConnectorTrigger functions that log item counts",
         "OAuth SharePoint Online connection",
         "Post-deploy connection authorization scripts",
-        "User-assigned managed identity",
+        "System-assigned managed identity",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration (azure.yaml)",
         "host.json and project files"
@@ -3051,7 +3061,7 @@
       "id": "sharepoint-connector-trigger-typescript",
       "displayName": "SharePoint Online Connector Triggers (TypeScript + AZD + Bicep)",
       "shortDescription": "SharePoint Online file connector triggers, deployed via azd",
-      "longDescription": "Build and deploy a SharePoint Online connector app on Azure Functions in TypeScript. This app provides two connector trigger functions, each receiving a different SharePoint Online file event from the Connector Namespace via the connector trigger and logging the received payload: (1) onSharepointNewFile for newly added files and (2) onSharepointUpdatedFile for updated files. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a user-assigned managed identity and an OAuth SharePoint Online connection authorized via a post-deploy hook. Deployed with azd.",
+      "longDescription": "Build and deploy a SharePoint Online connector app on Azure Functions in TypeScript. This app provides polling connector trigger functions that receive SharePoint Online events from the Connector Namespace and log item counts: (1) OnSharepointChangedItemsPoll, (2) OnSharepointDeletedFileItemsPoll, (3) OnSharepointDeletedItemsPoll, (4) OnSharepointNewFileItemsPoll, (5) OnSharepointNewItemsPoll, (6) OnSharepointNewItemsFromFormPoll, (7) OnSharepointRecurrenceDigestPoll, (8) OnSharepointUpdatedFileClassifiedTimesPoll, (9) OnSharepointUpdatedFileItemsPoll, and (10) OnSharepointUpdatedItemsPoll. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a system-assigned managed identity and an OAuth SharePoint Online connection authorized via a post-deploy hook. Deployed with azd.",
       "language": "TypeScript",
       "bindingType": "trigger",
       "resource": "connector",
@@ -3064,14 +3074,14 @@
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-connectors-typescript",
-      "folderPath": "sharepointApp",
-      "gitRef": "refs/tags/v1.0.1",
+      "folderPath": "sharepointApp/polling",
+      "gitRef": "refs/tags/v1.0.3",
       "whatsIncluded": [
-        "Connector trigger functions (onSharepointNewFile, onSharepointUpdatedFile)",
-        "Connector triggers that log the received payload",
+        "Connector trigger functions for SharePoint files, list items, forms, classification, and digests",
+        "Connector triggers that log received item counts",
         "OAuth SharePoint Online connection",
         "Post-deploy connection authorization scripts",
-        "User-assigned managed identity",
+        "System-assigned managed identity",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration (azure.yaml)",
         "TypeScript project files (package.json, tsconfig.json)"
@@ -3082,7 +3092,7 @@
       "id": "sharepoint-connector-trigger-python",
       "displayName": "SharePoint Online Connector Triggers (Python + AZD + Bicep)",
       "shortDescription": "SharePoint Online file connector triggers, deployed via azd",
-      "longDescription": "Build and deploy a SharePoint Online connector app on Azure Functions in Python. This app provides two connector trigger functions, each receiving a different SharePoint Online file event from the Connector Namespace via the connector_trigger decorator and logging the received payload: (1) OnSharepointNewFile for newly added files and (2) OnSharepointUpdatedFile for updated files. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a user-assigned managed identity and an OAuth SharePoint Online connection authorized via a post-deploy hook. Deployed with azd.",
+      "longDescription": "Build and deploy a SharePoint Online connector app on Azure Functions in Python. This app provides polling connector_trigger functions that receive SharePoint Online events from the Connector Namespace and log item counts: (1) OnSharepointNewFile, (2) OnSharepointUpdatedFile, (3) OnSharepointNewItem, (4) OnSharepointUpdatedItem, (5) OnSharepointChangedItem, (6) OnSharepointDeletedItem, (7) OnSharepointDeletedFile, (8) OnSharepointFormSubmitted, (9) OnSharepointFileClassified, and (10) OnSharepointRecurringDigest. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a system-assigned managed identity and an OAuth SharePoint Online connection authorized via a post-deploy hook. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
       "resource": "connector",
@@ -3095,14 +3105,14 @@
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-connectors-python",
-      "folderPath": "sharepointApp",
-      "gitRef": "refs/tags/v1.0.2",
+      "folderPath": "sharepointApp/polling",
+      "gitRef": "refs/tags/v1.0.3",
       "whatsIncluded": [
-        "Connector trigger functions (OnSharepointNewFile, OnSharepointUpdatedFile)",
-        "Connector triggers that log the received payload",
+        "Connector trigger functions for SharePoint files, list items, forms, classification, and digests",
+        "Connector triggers that log received item counts",
         "OAuth SharePoint Online connection",
         "Post-deploy connection authorization scripts",
-        "User-assigned managed identity",
+        "System-assigned managed identity",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration (azure.yaml)",
         "Python project files (function_app.py, requirements.txt)"

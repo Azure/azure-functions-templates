@@ -136,10 +136,10 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → Go
 | 66 | `durable-order-processor-go` | Go | orchestration | ✅ bicep | *new* |
 | | **🔄 Durable Advanced** | | | | |
 | 70 | `durable-distributed-tracing-csharp` | .NET | orchestration | 🚧 none | P1→70 |
-| 70 | `durable-large-payload-csharp` | .NET | orchestration | 🚧 none | P1→70 |
+| 70 | `durable-large-payload-csharp` | .NET | orchestration | ✅ bicep | P1→70 |
 | 70 | `durable-large-payload-fan-out-fan-in-csharp` | .NET | orchestration | ✅ bicep | *new* |
 | 70 | `durable-saga-csharp` | .NET | orchestration | 🚧 none | P1→70 |
-| 71 | `durable-ai-travel-planner-csharp` | .NET | orchestration | 🚧 none | P2→71 |
+| 71 | `durable-ai-travel-planner-csharp` | .NET | orchestration | ✅ bicep | P2→71 |
 | 71 | `durable-aspire-csharp` | .NET | orchestration | 🚧 none | P2→71 |
 | | **🤝 Agent Framework** | | | | |
 | 75 | `agentframework-durable-multi-agent-python` | Py | orchestration | 🚧 none | P1→75 |
@@ -221,7 +221,7 @@ These templates were removed because their source repositories were **archived**
 | Durable | Orchestration | P65 | ✅ | ✅ | ✅ | 🚧 | — | ✅ | — | Java, PS |
 |  | Order Processor | P66 | ✅ | ✅ | — | — | — | ✅ | — | TS, JS, Java, PS |
 |  | Patterns | P70 | ✅ | — | — | — | — | — | — | Py, TS, JS, Java, Go, PS |
-|  | Scenarios | P71 | 🚧 | — | — | — | — | — | — | Py, TS, JS, Java, Go, PS |
+|  | Scenarios | P71 | ✅ | — | — | — | — | — | — | Py, TS, JS, Java, Go, PS |
 |  | PDF Summarizer | P72 | — | — | — | — | — | — | — | *removed (OpenAI extension retirement)* |
 | Agent Fw | Multi-Agent | P75 | — | 🚧 | — | — | — | ✅ | — | .NET, TS, JS, Java, PS |
 
