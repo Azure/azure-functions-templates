@@ -1,8 +1,8 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-11-14T07:26:25Z",
-  "version": "1.13.1",
-  "totalTemplates": 91,
+  "generatedAt": "2026-11-15T02:45:22Z",
+  "version": "1.14.0",
+  "totalTemplates": 95,
   "runtimeVersions": {
     "Python": {
       "supported": [
@@ -1949,6 +1949,117 @@
         "Azure Developer CLI (azd) configuration"
       ],
       "isHighlighted": true
+    },
+    {
+      "id": "ai-hosted-skills-starter-queue-python",
+      "displayName": "Support Triage Hosted Skill Starter (Python + AZD + Bicep)",
+      "shortDescription": "Starter hosted skill that triages support messages from an Azure Storage queue with no custom tools, deployed via azd",
+      "longDescription": "Build and deploy a starter hosted skill on Azure Functions in Python using the markdown-first Azure Functions agents runtime. The support_triage hosted skill is defined entirely in a .agent.md file with a queue_trigger on the support-requests Azure Storage queue and no custom tools; it classifies each message by category, urgency, and sentiment, and drafts a summary and suggested reply. Runs on Flex Consumption with managed identity, a Microsoft Foundry model, sandboxed Python execution in an Azure Container Apps dynamic session pool, and an optional Office 365 Outlook connector that emails results when TO_EMAIL is set. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "queue",
+      "iac": "bicep",
+      "priority": 60,
+      "categories": [
+        "starters",
+        "gen-ai"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "starter-queue",
+      "gitRef": "refs/tags/v1.1.0",
+      "whatsIncluded": [
+        "support_triage.agent.md hosted skill with a Storage queue trigger (support-requests)",
+        "Sample support messages and demo script",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, Azure Container Apps dynamic session pool, and monitoring",
+        "Optional Office 365 Outlook connector for email results",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-starter-servicebus-python",
+      "displayName": "Order Review Hosted Skill Starter (Python + AZD + Bicep)",
+      "shortDescription": "Starter hosted skill that reviews orders from an Azure Service Bus queue and recommends fulfill or hold, deployed via azd",
+      "longDescription": "Build and deploy a starter hosted skill on Azure Functions in Python using the markdown-first Azure Functions agents runtime. The order_review hosted skill is defined entirely in a .agent.md file with a service_bus_queue_trigger on the orders queue and no custom tools; it totals each order, flags risk signals, and recommends fulfill or hold_for_review without changing the order. Provisions a Service Bus namespace and queue. Runs on Flex Consumption with managed identity, a Microsoft Foundry model, sandboxed Python execution in an Azure Container Apps dynamic session pool, and an optional Office 365 Outlook connector that emails results when TO_EMAIL is set. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "servicebus",
+      "iac": "bicep",
+      "priority": 60,
+      "categories": [
+        "starters",
+        "gen-ai"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "starter-servicebus",
+      "gitRef": "refs/tags/v1.1.0",
+      "whatsIncluded": [
+        "order_review.agent.md hosted skill with a Service Bus queue trigger (orders)",
+        "Sample orders and demo script",
+        "Service Bus namespace and queue",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, Azure Container Apps dynamic session pool, and monitoring",
+        "Optional Office 365 Outlook connector for email results",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-starter-blob-python",
+      "displayName": "Document Summary Hosted Skill Starter (Python + AZD + Bicep)",
+      "shortDescription": "Starter hosted skill that summarizes text documents uploaded to Blob Storage, deployed via azd",
+      "longDescription": "Build and deploy a starter hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The summarize_document function uses a blob_trigger with an Event Grid source on the documents container, reads text, Markdown, CSV, and other text files, and passes the content to the document_summary hosted skill, which returns a summary, key points, and action items without custom tools. Provisions the documents container and creates the Event Grid subscription in a postdeploy hook. Runs on Flex Consumption with managed identity, a Microsoft Foundry model, sandboxed Python execution in an Azure Container Apps dynamic session pool, and an optional Office 365 Outlook connector that emails results when TO_EMAIL is set. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "bicep",
+      "priority": 60,
+      "categories": [
+        "starters",
+        "gen-ai"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "starter-blob",
+      "gitRef": "refs/tags/v1.1.0",
+      "whatsIncluded": [
+        "summarize_document function with a Blob trigger (Event Grid source) and document_summary.agent.md hosted skill",
+        "Sample documents and demo script",
+        "Event Grid subscription created by a postdeploy hook",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, Azure Container Apps dynamic session pool, and monitoring",
+        "Optional Office 365 Outlook connector for email results",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-starter-cosmos-python",
+      "displayName": "Product Watch Hosted Skill Starter (Python + AZD + Bicep)",
+      "shortDescription": "Starter hosted skill that reports product price and stock changes from the Azure Cosmos DB change feed, deployed via azd",
+      "longDescription": "Build and deploy a starter hosted skill on Azure Functions in Python using the markdown-first Azure Functions agents runtime. The product_watch hosted skill is defined entirely in a .agent.md file with a cosmos_db_trigger on the products container change feed and no custom tools; it summarizes each change and flags low stock, out-of-stock, and price changes over 20 percent. Provisions a serverless Cosmos DB account with products and leases containers. Runs on Flex Consumption with managed identity, a Microsoft Foundry model, sandboxed Python execution in an Azure Container Apps dynamic session pool, and an optional Office 365 Outlook connector that emails results when TO_EMAIL is set. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "cosmos",
+      "iac": "bicep",
+      "priority": 60,
+      "categories": [
+        "starters",
+        "gen-ai"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "starter-cosmos",
+      "gitRef": "refs/tags/v1.1.0",
+      "whatsIncluded": [
+        "product_watch.agent.md hosted skill with a Cosmos DB change feed trigger (products)",
+        "Sample products and demo script",
+        "Serverless Cosmos DB account with products and leases containers",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, Azure Container Apps dynamic session pool, and monitoring",
+        "Optional Office 365 Outlook connector for email results",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
     },
     {
       "id": "ai-agent-typescript",

@@ -1,7 +1,7 @@
 # Template Manifest — Priority Tiers (P00–P99)
 
-**Total templates:** 91
-**Manifest version:** 1.13.1
+**Total templates:** 95
+**Manifest version:** 1.14.0
 
 ## Design principles
 
@@ -109,6 +109,10 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → Go
 | 60 | `ai-agent-csharp` | .NET | trigger | ✅ bicep | P0→60 |
 | 60 | `ai-agent-python` | Py | trigger | ✅ bicep | P0→60 |
 | 60 | `ai-hosted-skills-python` | Py | trigger | ✅ bicep | *new* |
+| 60 | `ai-hosted-skills-starter-queue-python` | Py | trigger | ✅ bicep | *new* |
+| 60 | `ai-hosted-skills-starter-servicebus-python` | Py | trigger | ✅ bicep | *new* |
+| 60 | `ai-hosted-skills-starter-blob-python` | Py | trigger | ✅ bicep | *new* |
+| 60 | `ai-hosted-skills-starter-cosmos-python` | Py | trigger | ✅ bicep | *new* |
 | 60 | `ai-agent-typescript` | TS | trigger | ✅ bicep | P0→60 |
 | 60 | `ai-agent-java` | Java | trigger | ✅ bicep | P0→60 |
 | 61 | `ai-hosted-skills-customer-returns-queue-python` | Py | trigger | ✅ bicep | *new* |
@@ -210,7 +214,7 @@ These templates were removed because their source repositories were **archived**
 
 | Category | Sub-type | P | .NET | Py | TS | JS | Java | Go | PS | Gaps |
 |---|---|---|---|---|---|---|---|---|---|---|
-| AI | Agent | P60 | ✅ | ✅ (2) | ✅ | — | ✅ | — | — | JS, Go, PS |
+| AI | Agent | P60 | ✅ | ✅ (6) | ✅ | — | ✅ | — | — | JS, Go, PS |
 |  | Hosted Skills Scenarios | P61 | — | ✅ (10) | — | — | — | — | — | .NET, TS, JS, Java, Go, PS |
 |  | Text Summarize | P62 | — | — | — | — | — | — | — | *removed (repos archived)* |
 |  | LangChain | P63 | — | — | — | — | — | — | — | *removed (repo archived)* |
@@ -242,7 +246,7 @@ These templates were removed because their source repositories were **archived**
 | 40 | 🗄️ SQL — Trigger | 4 |
 | 50 | 🔌 MCP — Remote Server | 6 |
 | 55 | 🔌 MCP — APIM Gateway | 1 |
-| 60 | 🤖 AI — Agent | 5 |
+| 60 | 🤖 AI — Agent | 9 |
 | 61 | 🤖 AI — Hosted Skills Scenarios | 10 |
 | 65 | 🔄 Durable Standard — Orchestration | 5 |
 | 66 | 🔄 Durable Standard — Order Processor | 3 |
@@ -251,7 +255,7 @@ These templates were removed because their source repositories were **archived**
 | 75 | 🤝 Agent Framework — Multi-Agent | 2 |
 | 80 | 🔌 Connectors — Office 365 Outlook | 3 |
 | 81 | 🔌 Connectors — SharePoint Online | 3 |
-| | **Total** | **91** |
+| | **Total** | **95** |
 
 ## Language sort order
 
