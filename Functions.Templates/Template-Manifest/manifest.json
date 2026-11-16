@@ -1,8 +1,8 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-11-15T06:42:30Z",
-  "version": "1.13.0",
-  "totalTemplates": 95,
+  "generatedAt": "2026-11-16T21:19:33Z",
+  "version": "1.14.0",
+  "totalTemplates": 97,
   "runtimeVersions": {
     "Python": {
       "supported": [
@@ -2073,6 +2073,33 @@
       ]
     },
     {
+      "id": "ai-hosted-skills-starter-hosted-skill-binding-python",
+      "displayName": "Hosted Skill Binding Starter (Python + AZD + Bicep)",
+      "shortDescription": "Storage queue starter that invokes a Markdown-defined skill from Python with the Hosted Skill binding, deployed via azd",
+      "longDescription": "Build and deploy a Hosted Skill binding starter on Azure Functions in Python using the Azure Functions agents runtime. The triage_support_message function owns a queue_trigger on the support-requests Storage queue, validates each message, and uses @app.hosted_skill to inject a HostedSkill facade for explicit skill.run() calls to the endpoint-less support_triage Markdown agent. Application code parses the returned JSON, attaches the ticket identity, and logs classification metadata, with full summary and suggested reply logging available only when sensitive-data logging is enabled. The Hosted Skill binding is a runtime-owned Python decorator, not a separate Functions host binding or extension package. Runs on Flex Consumption with managed identity, a Microsoft Foundry model, and monitoring, without an Azure Container Apps session pool or email connector. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "queue",
+      "iac": "bicep",
+      "priority": 60,
+      "categories": [
+        "starters",
+        "hosted-skills"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "starter-hosted-skill-binding",
+      "gitRef": "refs/tags/v1.2.0",
+      "whatsIncluded": [
+        "triage_support_message Python function with a Storage queue trigger and @app.hosted_skill injection",
+        "Endpoint-less support_triage.agent.md instructions for support-message triage and reply drafting",
+        "Sample messages, demo script, and handler tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
       "id": "ai-agent-typescript",
       "displayName": "Simple Agent QuickStart (TypeScript + AZD + Bicep)",
       "shortDescription": "AI agent using GitHub Copilot SDK with bring-your-own-model support via Microsoft Foundry",
@@ -2422,6 +2449,35 @@
         "Optional API Management AI Gateway infrastructure",
         "Sample requests, demo script, and unit tests",
         "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-supplier-change-servicebus-python",
+      "displayName": "Supplier Change Review Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Service Bus supplier-change review with conditional Hosted Skill invocation and code-enforced purchasing policy, deployed via azd",
+      "longDescription": "Build and deploy a supplier change review workflow on Azure Functions in Python using the Azure Functions agents runtime. The review_supplier_change function owns a service_bus_queue_trigger on supplier-changes, validates updates, and loads mock purchase-order, inventory, and policy evidence. Routine structured schedule confirmations bypass AI; exceptions use @app.hosted_skill and skill.run() to invoke the endpoint-less supplier_assessment agent with a JSON response schema. Python enforces human review for missing dates, quantity mismatches, inventory coverage gaps, late deliveries, and unapproved substitutes, regardless of the model recommendation. Azure Storage Blob and Service Bus SDK calls, not output bindings, conditionally persist the first recommendation and send reference-only notifications to supplier-reviews. Replays reuse saved decisions; notifications are at least once and downstream consumers must deduplicate. Includes three business cases, with no automatic order changes or supplier communications. Runs on Flex Consumption with managed identity, a Microsoft Foundry model, Entra-only Service Bus, and monitoring. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "servicebus",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "hosted-skills",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "supplier-change-servicebus",
+      "gitRef": "refs/tags/v1.2.0",
+      "whatsIncluded": [
+        "review_supplier_change Python function with a Service Bus queue trigger and @app.hosted_skill injection",
+        "Endpoint-less supplier_assessment.agent.md with a structured response contract",
+        "Deterministic validation, no-model routing, purchasing policy enforcement, and mock business evidence",
+        "Conditional Blob recommendation writes and at-least-once reference-only Service Bus buyer notifications via SDKs",
+        "Three supplier updates, demo script, and workflow, storage, and policy tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, Service Bus queues, and monitoring",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration"
       ]

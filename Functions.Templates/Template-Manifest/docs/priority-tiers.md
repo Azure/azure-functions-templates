@@ -1,7 +1,7 @@
 # Template Manifest — Priority Tiers (P00–P99)
 
-**Total templates:** 95
-**Manifest version:** 1.13.0
+**Total templates:** 97
+**Manifest version:** 1.14.0
 
 ## Design principles
 
@@ -113,6 +113,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → Go
 | 60 | `ai-hosted-skills-starter-servicebus-python` | Py | trigger | ✅ bicep | *new* |
 | 60 | `ai-hosted-skills-starter-blob-python` | Py | trigger | ✅ bicep | *new* |
 | 60 | `ai-hosted-skills-starter-cosmos-python` | Py | trigger | ✅ bicep | *new* |
+| 60 | `ai-hosted-skills-starter-hosted-skill-binding-python` | Py | trigger | ✅ bicep | *new* |
 | 60 | `ai-agent-typescript` | TS | trigger | ✅ bicep | P0→60 |
 | 60 | `ai-agent-java` | Java | trigger | ✅ bicep | P0→60 |
 | 61 | `ai-hosted-skills-customer-returns-queue-python` | Py | trigger | ✅ bicep | *new* |
@@ -125,6 +126,7 @@ Sorted by priority → language order (.NET → Py → TS → JS → Java → Go
 | 61 | `ai-hosted-skills-teams-helpdesk-connector-python` | Py | trigger | ✅ bicep | *new* |
 | 61 | `ai-hosted-skills-record-repair-servicebus-python` | Py | trigger | ✅ bicep | *new* |
 | 61 | `ai-hosted-skills-expense-policy-queue-python` | Py | trigger | ✅ bicep | *new* |
+| 61 | `ai-hosted-skills-supplier-change-servicebus-python` | Py | trigger | ✅ bicep | *new* |
 | | **🔄 Durable Standard** | | | | |
 | 65 | `durable-orchestrator-csharp-azd` | .NET | orchestration | ✅ bicep | *new* |
 | 65 | `durable-orchestrator-python-azd` | Py | orchestration | ✅ bicep | *new* |
@@ -214,8 +216,8 @@ These templates were removed because their source repositories were **archived**
 
 | Category | Sub-type | P | .NET | Py | TS | JS | Java | Go | PS | Gaps |
 |---|---|---|---|---|---|---|---|---|---|---|
-| AI | Agent | P60 | ✅ | ✅ (6) | ✅ | — | ✅ | — | — | JS, Go, PS |
-|  | Hosted Skills Scenarios | P61 | — | ✅ (10) | — | — | — | — | — | .NET, TS, JS, Java, Go, PS |
+| AI | Agent | P60 | ✅ | ✅ (7) | ✅ | — | ✅ | — | — | JS, Go, PS |
+|  | Hosted Skills Scenarios | P61 | — | ✅ (11) | — | — | — | — | — | .NET, TS, JS, Java, Go, PS |
 |  | Text Summarize | P62 | — | — | — | — | — | — | — | *removed (repos archived)* |
 |  | LangChain | P63 | — | — | — | — | — | — | — | *removed (repo archived)* |
 | Durable | Orchestration | P65 | ✅ | ✅ | ✅ | 🚧 | — | ✅ | — | Java, PS |
@@ -246,8 +248,8 @@ These templates were removed because their source repositories were **archived**
 | 40 | 🗄️ SQL — Trigger | 4 |
 | 50 | 🔌 MCP — Remote Server | 6 |
 | 55 | 🔌 MCP — APIM Gateway | 1 |
-| 60 | 🤖 AI — Agent | 9 |
-| 61 | 🤖 AI — Hosted Skills Scenarios | 10 |
+| 60 | 🤖 AI — Agent | 10 |
+| 61 | 🤖 AI — Hosted Skills Scenarios | 11 |
 | 65 | 🔄 Durable Standard — Orchestration | 5 |
 | 66 | 🔄 Durable Standard — Order Processor | 3 |
 | 70 | 🔄 Durable Advanced — Patterns (saga / tracing / payload) | 4 |
@@ -255,7 +257,7 @@ These templates were removed because their source repositories were **archived**
 | 75 | 🤝 Agent Framework — Multi-Agent | 2 |
 | 80 | 🔌 Connectors — Office 365 Outlook | 3 |
 | 81 | 🔌 Connectors — SharePoint Online | 3 |
-| | **Total** | **95** |
+| | **Total** | **97** |
 
 ## Language sort order
 
