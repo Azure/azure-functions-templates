@@ -17,6 +17,7 @@ new files through polling:
 
 ```python
 import logging
+from typing import List
 import azure.functions as func
 # This example uses SDK types to directly access the underlying Connector object provided by the Connector trigger.
 # To use, add azurefunctions-extensions-connectors to your requirements.txt file
@@ -34,7 +35,7 @@ app = func.FunctionApp()
 		delivery_mode=func.DeliveryMode.POLL,
 		trigger_config_name="%OnOneDriveNewFileTriggerConfigName%",
 )
-def onedrive_trigger_on_new_file_poll(files: list[onedrive.BlobMetadata]) -> None:
+def onedrive_trigger_on_new_file_poll(files: List[onedrive.BlobMetadata]) -> None:
 		for file in files:
 				logging.info("Name: '%s'.", file.name)
 ```

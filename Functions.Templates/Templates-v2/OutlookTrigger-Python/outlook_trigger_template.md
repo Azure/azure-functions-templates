@@ -15,6 +15,7 @@ new email through polling:
 
 ```python
 import logging
+from typing import List
 import azure.functions as func
 # This example uses SDK types to directly access the underlying Connector object provided by the Connector trigger.
 # To use, add azurefunctions-extensions-connectors to your requirements.txt file
@@ -33,7 +34,7 @@ app = func.FunctionApp()
 		trigger_config_name="%OnNewEmailTriggerConfigName%",
 )
 def outlook_trigger_on_new_email_poll(
-		emails: list[office365.GraphClientReceiveMessage],
+		emails: List[office365.GraphClientReceiveMessage],
 ) -> None:
 		for email in emails:
 				logging.info("Subject: '%s'.", email.subject)
