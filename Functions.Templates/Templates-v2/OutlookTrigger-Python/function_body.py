@@ -1,6 +1,7 @@
 
 
 import logging
+from typing import List
 
 import azure.functions as func
 # This example uses SDK types to directly access the underlying Connector object provided by the Connector trigger.
@@ -19,7 +20,7 @@ import azurefunctions.extensions.connectors.office365 as office365
     delivery_mode=func.DeliveryMode.POLL,
     trigger_config_name="$(ON_NEW_EMAIL_TRIGGER_CONFIG_INPUT)",
 )
-def $(FUNCTION_NAME_INPUT)(emails: list[office365.GraphClientReceiveMessage]) -> None:
+def $(FUNCTION_NAME_INPUT)(emails: List[office365.GraphClientReceiveMessage]) -> None:
     """Triggered when a new email arrives in Office 365."""
     logging.info("OnNewEmail trigger received.")
 
