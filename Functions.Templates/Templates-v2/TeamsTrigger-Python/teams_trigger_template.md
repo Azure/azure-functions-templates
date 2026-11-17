@@ -4,7 +4,7 @@
 
 This template includes one polling handler for new Teams channel messages:
 `teams_trigger_on_new_channel_message_poll` by default. It receives
-`list[teams.ChatMessage]` and logs the decoded item count.
+`List[teams.ChatMessage]` and logs the decoded item count.
 
 Polling receives events from a Connector Namespace without a public callback.
 
@@ -15,6 +15,7 @@ receives new channel messages through polling:
 
 ```python
 import logging
+from typing import List
 import azure.functions as func
 # This example uses SDK types to directly access the underlying Connector object provided by the Connector trigger.
 # To use, add azurefunctions-extensions-connectors to your requirements.txt file
@@ -33,7 +34,7 @@ app = func.FunctionApp()
 		connection="ConnectorNamespace",
 		trigger_config_name="%OnNewChannelMessageTriggerConfigName%",
 )
-def teams_trigger_on_new_channel_message_poll(messages: list[teams.ChatMessage]) -> None:
+def teams_trigger_on_new_channel_message_poll(messages: List[teams.ChatMessage]) -> None:
 		"""Receive new channel messages."""
 		logging.info("Received OnNewChannelMessage trigger (%s items)", len(messages))
 ```

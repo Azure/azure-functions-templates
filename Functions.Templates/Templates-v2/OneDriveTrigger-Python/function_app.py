@@ -1,4 +1,5 @@
 import logging
+from typing import List
 
 import azure.functions as func
 # This example uses SDK types to directly access the underlying Connector object provided by the Connector trigger.
@@ -19,7 +20,7 @@ app = func.FunctionApp()
     delivery_mode=func.DeliveryMode.POLL,
     trigger_config_name="$(ON_NEW_FILE_TRIGGER_CONFIG_INPUT)",
 )
-def $(FUNCTION_NAME_INPUT)(files: list[onedrive.BlobMetadata]) -> None:
+def $(FUNCTION_NAME_INPUT)(files: List[onedrive.BlobMetadata]) -> None:
     """Triggered when a new file is created in OneDrive for Business."""
     logging.info("OnOneDriveNewFile trigger received.")
 

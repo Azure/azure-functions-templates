@@ -1,18 +1,21 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-11-14T02:34:55Z",
-  "version": "1.13.1",
-  "totalTemplates": 85,
+  "generatedAt": "2026-11-17T18:01:37Z",
+  "version": "1.15.0",
+  "totalTemplates": 101,
   "runtimeVersions": {
     "Python": {
       "supported": [
-        "3.10",
         "3.11",
         "3.12",
-        "3.13"
+        "3.13",
+        "3.14"
       ],
       "preview": [
-        "3.14"
+        "3.15"
+      ],
+      "deprecated": [
+        "3.10"
       ],
       "default": "3.13"
     },
@@ -21,12 +24,18 @@
         "22",
         "24"
       ],
+      "preview": [
+        "26"
+      ],
       "default": "22"
     },
     "TypeScript": {
       "supported": [
         "22",
         "24"
+      ],
+      "preview": [
+        "26"
       ],
       "default": "22"
     },
@@ -42,27 +51,29 @@
     },
     "CSharp": {
       "supported": [
+        "10",
+        "11"
+      ],
+      "deprecated": [
         "8",
-        "9",
-        "10"
+        "9"
       ],
       "frameworkSupported": [
         "4.8.1"
       ],
-      "default": "8"
+      "default": "10"
     },
     "PowerShell": {
       "supported": [
+        "7.6"
+      ],
+      "deprecated": [
         "7.4"
       ],
-      "default": "7.4",
-      "preview": [
-        "7.6"
-      ]
+      "default": "7.6"
     },
     "Go": {
-      "supported": [],
-      "preview": [
+      "supported": [
         "1.0"
       ],
       "default": "1.0"
@@ -698,7 +709,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd-eventgrid-blob",
       "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.1",
+      "gitRef": "refs/tags/v1.0.2",
       "whatsIncluded": [
         "Blob EventGrid trigger function",
         "Bicep infrastructure",
@@ -763,7 +774,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-typescript-azd-eventgrid-blob",
       "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.1",
+      "gitRef": "refs/tags/v1.0.2",
       "whatsIncluded": [
         "Blob EventGrid trigger function",
         "Bicep infrastructure",
@@ -796,7 +807,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-javascript-azd-eventgrid-blob",
       "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.1",
+      "gitRef": "refs/tags/v1.0.2",
       "whatsIncluded": [
         "Blob EventGrid trigger function",
         "Bicep infrastructure",
@@ -921,7 +932,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd-eventhub",
       "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.1",
+      "gitRef": "refs/tags/v1.0.2",
       "whatsIncluded": [
         "Event Hub trigger function",
         "Event Hub output binding",
@@ -1160,7 +1171,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd-service-bus",
       "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.0",
+      "gitRef": "refs/tags/v1.0.1",
       "whatsIncluded": [
         "Service Bus trigger function",
         "Bicep infrastructure files",
@@ -1603,7 +1614,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-quickstart-dotnet-azd-sql",
       "folderPath": ".",
-      "gitRef": "refs/tags/v1.0.0",
+      "gitRef": "refs/tags/v1.0.2",
       "whatsIncluded": [
         "SQL trigger function",
         "SQL bindings",
@@ -2022,12 +2033,12 @@
       "longDescription": "Build and deploy two Functions Hosted Skills on Azure Functions in Python using the markdown-first Azure Functions agents runtime: (1) a chat hosted skill with built-in chat UI, HTTP chat APIs, an MCP tool endpoint, and sandboxed Python execution, and (2) a timer_trigger hosted skill that gathers and summarizes Microsoft blog posts and can email the digest through an optional Microsoft 365 Outlook MCP tool. Provisions a Flex Consumption function app, Microsoft Foundry project and model deployment, Azure Container Apps dynamic session pool, optional Connector Gateway resources, managed identity, storage, and monitoring. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
-      "resource": "http",
+      "resource": "timer",
       "iac": "bicep",
       "priority": 60,
       "categories": [
         "starters",
-        "gen-ai"
+        "hosted-skills"
       ],
       "tags": [
         "AI",
@@ -2053,6 +2064,144 @@
         "Azure Developer CLI (azd) configuration"
       ],
       "isHighlighted": true
+    },
+    {
+      "id": "ai-hosted-skills-starter-queue-python",
+      "displayName": "Support Triage Hosted Skill Starter (Python + AZD + Bicep)",
+      "shortDescription": "Starter hosted skill that triages support messages from an Azure Storage queue with no custom tools, deployed via azd",
+      "longDescription": "Build and deploy a starter hosted skill on Azure Functions in Python using the markdown-first Azure Functions agents runtime. The support_triage hosted skill is defined entirely in a .agent.md file with a queue_trigger on the support-requests Azure Storage queue and no custom tools; it classifies each message by category, urgency, and sentiment, and drafts a summary and suggested reply. Runs on Flex Consumption with managed identity, a Microsoft Foundry model, sandboxed Python execution in an Azure Container Apps dynamic session pool, and an optional Office 365 Outlook connector that emails results when TO_EMAIL is set. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "queue",
+      "iac": "bicep",
+      "priority": 60,
+      "categories": [
+        "starters",
+        "hosted-skills"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "starter-queue",
+      "gitRef": "refs/tags/v1.2.0",
+      "whatsIncluded": [
+        "support_triage.agent.md hosted skill with a Storage queue trigger (support-requests)",
+        "Sample support messages and demo script",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, Azure Container Apps dynamic session pool, and monitoring",
+        "Optional Office 365 Outlook connector for email results",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-starter-servicebus-python",
+      "displayName": "Order Review Hosted Skill Starter (Python + AZD + Bicep)",
+      "shortDescription": "Starter hosted skill that reviews orders from an Azure Service Bus queue and recommends fulfill or hold, deployed via azd",
+      "longDescription": "Build and deploy a starter hosted skill on Azure Functions in Python using the markdown-first Azure Functions agents runtime. The order_review hosted skill is defined entirely in a .agent.md file with a service_bus_queue_trigger on the orders queue and no custom tools; it totals each order, flags risk signals, and recommends fulfill or hold_for_review without changing the order. Provisions a Service Bus namespace and queue. Runs on Flex Consumption with managed identity, a Microsoft Foundry model, sandboxed Python execution in an Azure Container Apps dynamic session pool, and an optional Office 365 Outlook connector that emails results when TO_EMAIL is set. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "servicebus",
+      "iac": "bicep",
+      "priority": 60,
+      "categories": [
+        "starters",
+        "hosted-skills"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "starter-servicebus",
+      "gitRef": "refs/tags/v1.2.0",
+      "whatsIncluded": [
+        "order_review.agent.md hosted skill with a Service Bus queue trigger (orders)",
+        "Sample orders and demo script",
+        "Service Bus namespace and queue",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, Azure Container Apps dynamic session pool, and monitoring",
+        "Optional Office 365 Outlook connector for email results",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-starter-blob-python",
+      "displayName": "Document Summary Hosted Skill Starter (Python + AZD + Bicep)",
+      "shortDescription": "Starter hosted skill that summarizes text documents uploaded to Blob Storage, deployed via azd",
+      "longDescription": "Build and deploy a starter hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The summarize_document function uses a blob_trigger with an Event Grid source on the documents container, reads text, Markdown, CSV, and other text files, and passes the content to the document_summary hosted skill, which returns a summary, key points, and action items without custom tools. Provisions the documents container and creates the Event Grid subscription in a postdeploy hook. Runs on Flex Consumption with managed identity, a Microsoft Foundry model, sandboxed Python execution in an Azure Container Apps dynamic session pool, and an optional Office 365 Outlook connector that emails results when TO_EMAIL is set. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "bicep",
+      "priority": 60,
+      "categories": [
+        "starters",
+        "hosted-skills"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "starter-blob",
+      "gitRef": "refs/tags/v1.2.0",
+      "whatsIncluded": [
+        "summarize_document function with a Blob trigger (Event Grid source) and document_summary.agent.md hosted skill",
+        "Sample documents and demo script",
+        "Event Grid subscription created by a postdeploy hook",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, Azure Container Apps dynamic session pool, and monitoring",
+        "Optional Office 365 Outlook connector for email results",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-starter-cosmos-python",
+      "displayName": "Product Watch Hosted Skill Starter (Python + AZD + Bicep)",
+      "shortDescription": "Starter hosted skill that reports product price and stock changes from the Azure Cosmos DB change feed, deployed via azd",
+      "longDescription": "Build and deploy a starter hosted skill on Azure Functions in Python using the markdown-first Azure Functions agents runtime. The product_watch hosted skill is defined entirely in a .agent.md file with a cosmos_db_trigger on the products container change feed and no custom tools; it summarizes each change and flags low stock, out-of-stock, and price changes over 20 percent. Provisions a serverless Cosmos DB account with products and leases containers. Runs on Flex Consumption with managed identity, a Microsoft Foundry model, sandboxed Python execution in an Azure Container Apps dynamic session pool, and an optional Office 365 Outlook connector that emails results when TO_EMAIL is set. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "cosmos",
+      "iac": "bicep",
+      "priority": 60,
+      "categories": [
+        "starters",
+        "hosted-skills"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "starter-cosmos",
+      "gitRef": "refs/tags/v1.2.0",
+      "whatsIncluded": [
+        "product_watch.agent.md hosted skill with a Cosmos DB change feed trigger (products)",
+        "Sample products and demo script",
+        "Serverless Cosmos DB account with products and leases containers",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, Azure Container Apps dynamic session pool, and monitoring",
+        "Optional Office 365 Outlook connector for email results",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-starter-hosted-skill-binding-python",
+      "displayName": "Hosted Skill Binding Starter (Python + AZD + Bicep)",
+      "shortDescription": "Storage queue starter that invokes a Markdown-defined skill from Python with the Hosted Skill binding, deployed via azd",
+      "longDescription": "Build and deploy a Hosted Skill binding starter on Azure Functions in Python using the Azure Functions agents runtime. The triage_support_message function owns a queue_trigger on the support-requests Storage queue, validates each message, and uses @app.hosted_skill to inject a HostedSkill facade for explicit skill.run() calls to the endpoint-less support_triage Markdown agent. Application code parses the returned JSON, attaches the ticket identity, and logs classification metadata, with full summary and suggested reply logging available only when sensitive-data logging is enabled. The Hosted Skill binding is a runtime-owned Python decorator, not a separate Functions host binding or extension package. Runs on Flex Consumption with managed identity, a Microsoft Foundry model, and monitoring, without an Azure Container Apps session pool or email connector. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "queue",
+      "iac": "bicep",
+      "priority": 60,
+      "categories": [
+        "starters",
+        "hosted-skills"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "starter-hosted-skill-binding",
+      "gitRef": "refs/tags/v1.2.0",
+      "whatsIncluded": [
+        "triage_support_message Python function with a Storage queue trigger and @app.hosted_skill injection",
+        "Endpoint-less support_triage.agent.md instructions for support-message triage and reply drafting",
+        "Sample messages, demo script, and handler tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
     },
     {
       "id": "ai-agent-typescript",
@@ -2122,6 +2271,319 @@
         "Azure Developer CLI (azd) configuration",
         "Flex Consumption hosting",
         "Dev Container setup"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-customer-returns-queue-python",
+      "displayName": "Customer Returns Review Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Queue-triggered hosted skill that triages customer return requests and records a recommendation, deployed via azd",
+      "longDescription": "Build and deploy a customer returns hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The customer_returns hosted skill runs on a queue_trigger (Azure Storage queue) or service_bus_queue_trigger (Azure Service Bus), selected by the RETURNS_TRIGGER_TYPE app setting, and calls four Python tools: (1) get_order, (2) get_return_policy, (3) get_support_history, and (4) record_return_recommendation, which writes an idempotent approve, exception, decline, or escalate recommendation with reasons and a reply draft to Blob Storage. Runs on Flex Consumption with managed identity and a Microsoft Foundry model. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "queue",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "hosted-skills",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "customer-returns-queue",
+      "gitRef": "refs/tags/v1.2.0",
+      "whatsIncluded": [
+        "customer_returns.agent.md hosted skill with a Storage queue or Service Bus queue trigger",
+        "Order, return policy, support history, and recommendation tools with sample data",
+        "Sample return requests, demo script, and unit tests",
+        "Optional Service Bus infrastructure",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-invoice-review-blob-python",
+      "displayName": "Invoice Review Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Blob-triggered hosted skill that reviews uploaded invoices against purchase orders and contracts, deployed via azd",
+      "longDescription": "Build and deploy an invoice review hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The invoice_review hosted skill runs on a blob_trigger with an Event Grid source for invoices uploaded to Blob Storage and calls five Python tools: (1) extract_invoice (PDF text with pypdf by default, or the optional Azure AI Document Intelligence prebuilt invoice model), (2) get_purchase_order, (3) get_contract_terms, (4) check_invoice_against_po for a three-way match computed in code, and (5) record_invoice_review, which writes an approve, hold, or reject review with discrepancies to Blob Storage. Runs on Flex Consumption with managed identity, Event Grid, and a Microsoft Foundry model. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "hosted-skills",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "invoice-review-blob",
+      "gitRef": "refs/tags/v1.2.0",
+      "whatsIncluded": [
+        "invoice_review.agent.md hosted skill with a Blob trigger (Event Grid source)",
+        "Invoice extraction (pypdf by default; optional Document Intelligence), purchase order, contract terms, three-way match, and review tools with sample data",
+        "Sample invoice PDFs, demo script, and unit tests",
+        "Event Grid subscription and optional Document Intelligence infrastructure",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-contract-review-durable-python",
+      "displayName": "Contract Review Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Durable Functions workflow that calls a hosted skill to review contract clauses before approval, deployed via azd",
+      "longDescription": "Build and deploy a contract review process on Azure Functions in Python that adds a hosted skill to a Durable Functions workflow. An HTTP trigger starts the contract_orchestrator orchestration, whose activities validate the contract, call the contract_review hosted skill in process, and route the result: low-risk contracts are approved automatically and others create a legal review task that waits for an external approval event or a 24-hour timer. The contract_review hosted skill is also exposed through its own http_trigger and uses three Python tools: (1) get_clause_playbook, (2) get_standard_clause, and (3) check_contract_terms. Uses Durable Task Scheduler for orchestration state and runs on Flex Consumption with managed identity and a Microsoft Foundry model. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "orchestration",
+      "resource": "durable",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "hosted-skills",
+        "workflows"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "contract-review-durable",
+      "gitRef": "refs/tags/v1.2.0",
+      "whatsIncluded": [
+        "contract_review.agent.md hosted skill with structured output and an HTTP trigger",
+        "Durable Functions orchestrator, activities, and HTTP start, status, and approve endpoints",
+        "Clause playbook and contract term tools with sample contracts",
+        "Durable Task Scheduler infrastructure",
+        "Demo script and unit tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-daily-work-briefing-timer-python",
+      "displayName": "Daily Work Briefing Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Timer-triggered hosted skill that publishes a prioritized daily work briefing, deployed via azd",
+      "longDescription": "Build and deploy a daily work briefing hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The daily_briefing hosted skill runs on a timer_trigger (schedule set by the BRIEFING_SCHEDULE app setting) and calls four Python tools: (1) get_calendar, (2) get_messages, (3) get_tasks, and (4) publish_briefing, which writes one Markdown and JSON briefing per day to Blob Storage. Works with built-in sample data and can be connected to Outlook calendar and mail through the Office 365 Outlook connector. Runs on Flex Consumption with managed identity and a Microsoft Foundry model. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "timer",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "hosted-skills",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "daily-work-briefing-timer",
+      "gitRef": "refs/tags/v1.2.0",
+      "whatsIncluded": [
+        "daily_briefing.agent.md hosted skill with a timer trigger",
+        "Calendar, message, task, and briefing publishing tools with sample data",
+        "Optional Office 365 Outlook connector gateway infrastructure",
+        "Demo script and unit tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-customer-retention-cosmos-python",
+      "displayName": "Customer Retention Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Cosmos DB change feed hosted skill that drafts retention actions when account usage drops, deployed via azd",
+      "longDescription": "Build and deploy a customer retention hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The customer_retention hosted skill runs on a cosmos_db_trigger over the accounts container change feed and calls five Python tools: (1) assess_churn_signals, (2) get_account_profile, (3) get_support_tickets, (4) get_plan_catalog, and (5) record_retention_action, which writes an outreach email draft and a policy-limited offer to a retention-actions container in Azure Cosmos DB. Runs on Flex Consumption with managed identity, Azure Cosmos DB, and a Microsoft Foundry model. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "cosmos",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "hosted-skills",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "customer-retention-cosmos",
+      "gitRef": "refs/tags/v1.2.0",
+      "whatsIncluded": [
+        "customer_retention.agent.md hosted skill with a Cosmos DB change feed trigger",
+        "Churn signal, account profile, support ticket, plan catalog, and retention action tools with sample data",
+        "Azure Cosmos DB account, containers, and data-plane RBAC infrastructure",
+        "Demo script and unit tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-claims-review-workflow-python",
+      "displayName": "Insurance Claims Review Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Blob-triggered hosted skill that runs parallel claim checks in a Dynamic Workflow, deployed via azd",
+      "longDescription": "Build and deploy an insurance claims review hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The claims_review hosted skill runs on a blob_trigger with an Event Grid source for claim packages uploaded to Blob Storage, reads the claim with the read_claim tool, and starts a Dynamic Workflow that runs (1) check_coverage, (2) check_documents, and (3) check_claim_history in parallel before (4) publish_claim_decision records an approve, request_info, or refer_to_adjuster decision. Uses Durable Task Scheduler for workflow state and runs on Flex Consumption with managed identity, Event Grid, and a Microsoft Foundry model. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "blob",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "hosted-skills",
+        "workflows"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "claims-review-workflow",
+      "gitRef": "refs/tags/v1.2.0",
+      "whatsIncluded": [
+        "claims_review.agent.md hosted skill with a Blob trigger (Event Grid source) and Dynamic Workflows",
+        "Claim reading, coverage, document, claim history, and decision tools with sample data",
+        "Durable Task Scheduler and Event Grid subscription infrastructure",
+        "Sample claim packages, demo script, and unit tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-alert-investigation-eventhub-python",
+      "displayName": "Alert Investigation Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Event Hubs alert router with Microsoft-Decision-1 and a queue-triggered investigation hosted skill, deployed via azd",
+      "longDescription": "Build and deploy a security alert investigation app on Azure Functions in Python. An EventHubTrigger function, alert_router, validates, suppresses, deduplicates, and groups alerts with deterministic rules. It sends critical groups directly to the alerts-investigate Storage queue without a model call and routes other groups with the Microsoft-Decision-1 model, recording decisions in Table Storage and sending alerts for investigation or review to Storage queues; groups too large for a queue message are offloaded to Blob Storage. The alert_investigator hosted skill runs on a queue_trigger for the investigation queue and calls Python tools: (1) get_alert_payload, which loads offloaded alert groups from Blob Storage, (2) get_signin_logs, (3) get_endpoint_events, (4) get_network_flows, (5) get_asset, (6) lookup_threat_intel, (7) record_investigation, and (8) execute_containment_action, which never runs containment automatically. Runs on Flex Consumption with managed identity, Azure Event Hubs, and Microsoft Foundry models. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "eventhub",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "hosted-skills",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "alert-investigation-eventhub",
+      "gitRef": "refs/tags/v1.2.0",
+      "whatsIncluded": [
+        "alert_router Event Hubs trigger function with rule-based filtering, a critical-alert bypass, and Microsoft-Decision-1 routing for other groups",
+        "alert_investigator.agent.md hosted skill with a Storage queue trigger",
+        "Alert payload, sign-in, endpoint, network, asset, threat intelligence, investigation, and containment tools with sample data",
+        "Azure Event Hubs infrastructure",
+        "Sample alert burst, demo script, and unit tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-teams-helpdesk-connector-python",
+      "displayName": "Teams IT Helpdesk Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Microsoft Teams connector-triggered hosted skill that answers IT helpdesk questions, deployed via azd",
+      "longDescription": "Build and deploy an IT helpdesk hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The teams_helpdesk hosted skill runs on a connector_trigger for new Microsoft Teams channel messages through the connector gateway and replies in the message thread, and the helpdesk_test hosted skill exposes the same tools through an http_trigger so you can test without a Teams connection. Both use the Python tools (1) search_knowledge_base, (2) get_password_reset_guidance, (3) create_software_request, (4) escalate_to_human, and (5) post_reply, which records each reply once in Blob Storage; the Teams skill also calls (6) mark_reply_delivered after the Teams reply succeeds, so an undelivered reply is resent when the message is redelivered. Runs on Flex Consumption with managed identity, Connector Gateway resources, and a Microsoft Foundry model. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "connector",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "hosted-skills",
+        "connectors"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "teams-helpdesk-connector",
+      "gitRef": "refs/tags/v1.2.0",
+      "whatsIncluded": [
+        "teams_helpdesk.agent.md hosted skill with a Microsoft Teams connector trigger",
+        "helpdesk_test.agent.md hosted skill with an HTTP trigger for testing",
+        "Knowledge base, password reset, software request, escalation, reply, and reply delivery tools with sample data",
+        "Connector gateway infrastructure",
+        "Demo script and unit tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-record-repair-servicebus-python",
+      "displayName": "Record Repair Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Service Bus dead-letter queue hosted skill that validates format-only repairs before requeueing, deployed via azd",
+      "longDescription": "Build and deploy a record repair hosted skill on Azure Functions in Python that adds AI to an existing ingestion pipeline. The ingest function uses a ServiceBusTrigger to validate JSON records and write them to Blob Storage, and records that fail land in the queue's dead-letter queue. The record_repair hosted skill runs on a service_bus_queue_trigger for that dead-letter queue and calls three Python tools: (1) get_record_schema, (2) requeue_repaired_record, which rejects invalid JSON and only requeues schema-valid, format-only corrections that preserve the original fields and values, such as normalized field names and numeric-string conversion, and (3) record_unrepairable, which writes records that need a person to Blob Storage. Runs on Flex Consumption with managed identity, Azure Service Bus, and a Microsoft Foundry model. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "servicebus",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "hosted-skills",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "record-repair-servicebus",
+      "gitRef": "refs/tags/v1.2.0",
+      "whatsIncluded": [
+        "ingest Service Bus trigger function with schema validation",
+        "record_repair.agent.md hosted skill with a Service Bus dead-letter queue trigger",
+        "Record schema, format-only requeue validation, and unrepairable record tools",
+        "Azure Service Bus infrastructure",
+        "Sample records, demo script, and unit tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-expense-policy-queue-python",
+      "displayName": "Expense Policy Routing Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Queue-triggered hosted skill that routes free-form expense requests by policy documents in Blob, deployed via azd",
+      "longDescription": "Build and deploy an expense policy routing hosted skill on Azure Functions in Python using the Azure Functions agents runtime. The expense_processor hosted skill runs on a queue_trigger for requests in any format and calls three Python tools: (1) list_policies and (2) read_policy, which read Markdown policy documents from Blob Storage, and (3) route_expense_decision, which checks rules in code and sends the decision to the expense-approved, expense-review, or expense-flagged queue. Includes an optional Azure API Management AI Gateway with token limits, prompt shields, and token metrics. Runs on Flex Consumption with managed identity and a Microsoft Foundry model. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "queue",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "hosted-skills",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "expense-policy-queue",
+      "gitRef": "refs/tags/v1.2.0",
+      "whatsIncluded": [
+        "expense_processor.agent.md hosted skill with a Storage queue trigger",
+        "Policy listing, policy reading, and decision routing tools with sample policy documents",
+        "Optional API Management AI Gateway infrastructure",
+        "Sample requests, demo script, and unit tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
+      ]
+    },
+    {
+      "id": "ai-hosted-skills-supplier-change-servicebus-python",
+      "displayName": "Supplier Change Review Hosted Skill (Python + AZD + Bicep)",
+      "shortDescription": "Service Bus supplier-change review with conditional Hosted Skill invocation and code-enforced purchasing policy, deployed via azd",
+      "longDescription": "Build and deploy a supplier change review workflow on Azure Functions in Python using the Azure Functions agents runtime. The review_supplier_change function owns a service_bus_queue_trigger on supplier-changes, validates updates, and loads mock purchase-order, inventory, and policy evidence. Routine structured schedule confirmations bypass AI; exceptions use @app.hosted_skill and skill.run() to invoke the endpoint-less supplier_assessment agent with a JSON response schema. Python enforces human review for missing dates, quantity mismatches, inventory coverage gaps, late deliveries, and unapproved substitutes, regardless of the model recommendation. Azure Storage Blob and Service Bus SDK calls, not output bindings, conditionally persist the first recommendation and send reference-only notifications to supplier-reviews. Replays reuse saved decisions; notifications are at least once and downstream consumers must deduplicate. Includes three business cases, with no automatic order changes or supplier communications. Runs on Flex Consumption with managed identity, a Microsoft Foundry model, Entra-only Service Bus, and monitoring. Deployed with azd.",
+      "language": "Python",
+      "bindingType": "trigger",
+      "resource": "servicebus",
+      "iac": "bicep",
+      "priority": 61,
+      "categories": [
+        "hosted-skills",
+        "event-processing"
+      ],
+      "author": "Azure Functions Team",
+      "repositoryUrl": "https://github.com/Azure-Samples/azure-functions-hosted-skills-samples",
+      "folderPath": "supplier-change-servicebus",
+      "gitRef": "refs/tags/v1.2.0",
+      "whatsIncluded": [
+        "review_supplier_change Python function with a Service Bus queue trigger and @app.hosted_skill injection",
+        "Endpoint-less supplier_assessment.agent.md with a structured response contract",
+        "Deterministic validation, no-model routing, purchasing policy enforcement, and mock business evidence",
+        "Conditional Blob recommendation writes and at-least-once reference-only Service Bus buyer notifications via SDKs",
+        "Three supplier updates, demo script, and workflow, storage, and policy tests",
+        "Flex Consumption hosting with managed identity, Microsoft Foundry model deployment, Service Bus queues, and monitoring",
+        "Bicep infrastructure files",
+        "Azure Developer CLI (azd) configuration"
       ]
     },
     {
@@ -2252,7 +2714,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
       "folderPath": "samples/durable-functions/javascript/HelloCities",
-      "gitRef": "refs/heads/main",
+      "gitRef": "refs/tags/v1.0.1",
       "whatsIncluded": [
         "Function code (.js)",
         "package.json",
@@ -2406,7 +2868,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
       "folderPath": "samples/durable-functions/dotnet/DistributedTracing",
-      "gitRef": "refs/heads/main",
+      "gitRef": "refs/tags/v1.0.1",
       "whatsIncluded": [
         "OpenTelemetry configuration",
         "Traced orchestration",
@@ -2422,7 +2884,7 @@
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "durable",
-      "iac": "none",
+      "iac": "bicep",
       "priority": 70,
       "categories": [
         "workflows"
@@ -2437,7 +2899,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
       "folderPath": "samples/durable-functions/dotnet/LargePayload",
-      "gitRef": "refs/heads/main",
+      "gitRef": "refs/tags/v1.0.1",
       "whatsIncluded": [
         "Large payload handling",
         "Blob storage integration",
@@ -2469,7 +2931,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
       "folderPath": "samples/durable-functions/dotnet/LargePayloadFanOutFanIn",
-      "gitRef": "refs/heads/main",
+      "gitRef": "refs/tags/v1.0.1",
       "whatsIncluded": [
         "Function code (.cs)",
         "Project file (.csproj)",
@@ -2502,7 +2964,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
       "folderPath": "samples/durable-functions/dotnet/Saga",
-      "gitRef": "refs/heads/main",
+      "gitRef": "refs/tags/v1.0.1",
       "whatsIncluded": [
         "Orchestrator with compensation logic",
         "Activity functions",
@@ -2518,7 +2980,7 @@
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "durable",
-      "iac": "none",
+      "iac": "bicep",
       "priority": 71,
       "categories": [
         "gen-ai",
@@ -2534,7 +2996,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
       "folderPath": "samples/durable-functions/dotnet/AiAgentTravelPlanOrchestrator",
-      "gitRef": "refs/heads/main",
+      "gitRef": "refs/tags/v1.0.1",
       "whatsIncluded": [
         "AI agent orchestration",
         "Multiple AI service integration",
@@ -2565,7 +3027,7 @@
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/Durable-Task-Scheduler",
       "folderPath": "samples/durable-functions/dotnet/AzureFunctionsAndDtsWithAspire",
-      "gitRef": "refs/heads/main",
+      "gitRef": "refs/tags/v1.0.1",
       "whatsIncluded": [
         "Aspire AppHost configuration",
         "Durable Functions service",
@@ -2638,8 +3100,8 @@
     {
       "id": "office365-connector-trigger-csharp",
       "displayName": "Office 365 Outlook Connector Triggers (C# + AZD + Bicep)",
-      "shortDescription": "Office 365 Outlook email and calendar connector triggers with Blob output, deployed via azd",
-      "longDescription": "Build and deploy an Office 365 Outlook connector app on Azure Functions in C#. This app provides five connector trigger functions, each receiving a different Outlook event type from the Connector Namespace via ConnectorTrigger and writing the payload to Blob storage with BlobOutput: (1) OnNewEmail for incoming mail, (2) OnFlaggedEmail for flagged mail, (3) OnNewMentionMeEmail for mail that mentions you, (4) OnNewCalendarEvent for newly created calendar items, and (5) OnUpcomingEvent for upcoming calendar events. Built on the Azure.Connectors.Sdk and the Microsoft.Azure.Functions.Worker.Extensions.Connector worker extension. Runs on Flex Consumption (.NET 10 isolated) with a user-assigned managed identity and an OAuth Office 365 Outlook connection authorized via a post-deploy hook. Deployed with azd.",
+      "shortDescription": "Office 365 Outlook email and calendar Connector Triggers, deployed via azd",
+      "longDescription": "Build and deploy an Office 365 Outlook connector app on Azure Functions in C#. This app provides seven polling ConnectorTrigger functions that receive Outlook events from the Connector Namespace and log item counts: (1) OnNewEmail for incoming mail, (2) OnFlaggedEmail for flagged mail, (3) OnNewMentionMeEmail for mail that mentions you, (4) OnNewCalendarEvent for new calendar items, (5) OnUpcomingEvent for upcoming calendar events, (6) OnSharedMailboxNewEmail for shared mailbox mail, and (7) OnCalendarUpdatedItems for updated calendar items. Built on the Azure.Connectors.Sdk and the Microsoft.Azure.Functions.Worker.Extensions.Connector worker extension. Runs on Flex Consumption (.NET 10 isolated) with a system-assigned managed identity and an OAuth Office 365 Outlook connection authorized via a post-deploy hook. Deployed with azd.",
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "connector",
@@ -2652,24 +3114,23 @@
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-connectors-net",
-      "folderPath": "office365App",
-      "gitRef": "refs/tags/v1.0.2",
+      "folderPath": "office365App/polling",
+      "gitRef": "refs/tags/v1.0.4",
       "whatsIncluded": [
-        "Connector trigger functions (OnNewEmail, OnFlaggedEmail, OnNewMentionMeEmail, OnNewCalendarEvent, OnUpcomingEvent)",
-        "ConnectorTrigger bindings with BlobOutput payload storage",
+        "Connector trigger functions (OnNewEmail, OnFlaggedEmail, OnNewMentionMeEmail, OnNewCalendarEvent, OnUpcomingEvent, OnSharedMailboxNewEmail, OnCalendarUpdatedItems)",
+        "Polling ConnectorTrigger functions that log item counts",
         "OAuth Office 365 Outlook connection",
         "Post-deploy connection authorization scripts",
-        "User-assigned managed identity",
+        "System-assigned managed identity",
         "Bicep infrastructure files",
-        "Azure Developer CLI (azd) configuration (azure.yaml)",
-        "VS Code configuration"
+        "Azure Developer CLI (azd) configuration (azure.yaml)"
       ]
     },
     {
       "id": "office365-connector-trigger-typescript",
       "displayName": "Office 365 Outlook Connector Triggers (TypeScript + AZD + Bicep)",
-      "shortDescription": "Office 365 Outlook email and calendar connector triggers, deployed via azd",
-      "longDescription": "Build and deploy an Office 365 Outlook connector app on Azure Functions in TypeScript. This app provides five connector trigger functions, each receiving a different Outlook event type from the Connector Namespace via the connector trigger and logging the received payload: (1) onNewEmail for incoming mail, (2) onFlaggedEmail for flagged mail, (3) onNewMentionMeEmail for mail that mentions you, (4) onNewCalendarEvent for newly created calendar items, and (5) onUpcomingEvent for upcoming calendar events. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a user-assigned managed identity and an OAuth Office 365 Outlook connection authorized via a post-deploy hook. Deployed with azd.",
+      "shortDescription": "Office 365 Outlook email connector polling trigger, deployed via azd",
+      "longDescription": "Build and deploy an Office 365 Outlook connector app on Azure Functions in TypeScript. This app provides the OnNewEmailPoll connector trigger, which receives batches of Outlook email events from the Connector Namespace and logs their counts, subjects, and senders. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a system-assigned managed identity and an OAuth Office 365 Outlook connection authorized via a post-deploy hook. Deployed with azd.",
       "language": "TypeScript",
       "bindingType": "trigger",
       "resource": "connector",
@@ -2682,14 +3143,14 @@
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-connectors-typescript",
-      "folderPath": "office365App",
-      "gitRef": "refs/tags/v1.0.1",
+      "folderPath": "office365App/polling",
+      "gitRef": "refs/tags/v1.0.4",
       "whatsIncluded": [
-        "Connector trigger functions (onNewEmail, onFlaggedEmail, onNewMentionMeEmail, onNewCalendarEvent, onUpcomingEvent)",
-        "Connector triggers that log the received payload",
+        "Connector trigger function (OnNewEmailPoll)",
+        "Connector trigger that logs email counts, subjects, and senders",
         "OAuth Office 365 Outlook connection",
         "Post-deploy connection authorization scripts",
-        "User-assigned managed identity",
+        "System-assigned managed identity",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration (azure.yaml)",
         "TypeScript project files (package.json, tsconfig.json)"
@@ -2699,7 +3160,7 @@
       "id": "office365-connector-trigger-python",
       "displayName": "Office 365 Outlook Connector Triggers (Python + AZD + Bicep)",
       "shortDescription": "Office 365 Outlook email and calendar connector triggers, deployed via azd",
-      "longDescription": "Build and deploy an Office 365 Outlook connector app on Azure Functions in Python. This app provides five connector trigger functions, each receiving a different Outlook event type from the Connector Namespace via the connector_trigger decorator and logging the received payload: (1) OnNewEmail for incoming mail, (2) OnFlaggedEmail for flagged mail, (3) OnNewMentionMeEmail for mail that mentions you, (4) OnNewCalendarEvent for newly created calendar items, and (5) OnUpcomingEvent for upcoming calendar events. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a user-assigned managed identity and an OAuth Office 365 Outlook connection authorized via a post-deploy hook. Deployed with azd.",
+      "longDescription": "Build and deploy an Office 365 Outlook connector app on Azure Functions in Python. This app provides seven polling connector_trigger functions that receive Outlook events from the Connector Namespace and log item counts: (1) OnNewEmail for incoming mail, (2) OnFlaggedEmail for flagged mail, (3) OnNewMentionMeEmail for mail that mentions you, (4) OnNewCalendarEvent for new calendar items, (5) OnUpcomingEvent for upcoming calendar events, (6) OnCalendarUpdatedItems for updated calendar items, and (7) OnSharedMailboxNewEmail for shared mailbox mail. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a system-assigned managed identity and an OAuth Office 365 Outlook connection authorized via a post-deploy hook. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
       "resource": "connector",
@@ -2712,14 +3173,14 @@
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-connectors-python",
-      "folderPath": "office365App",
-      "gitRef": "refs/tags/v1.0.2",
+      "folderPath": "office365App/polling",
+      "gitRef": "refs/tags/v1.0.4",
       "whatsIncluded": [
-        "Connector trigger functions (OnNewEmail, OnFlaggedEmail, OnNewMentionMeEmail, OnNewCalendarEvent, OnUpcomingEvent)",
-        "Connector triggers that log the received payload",
+        "Connector trigger functions (OnNewEmail, OnFlaggedEmail, OnNewMentionMeEmail, OnNewCalendarEvent, OnUpcomingEvent, OnCalendarUpdatedItems, OnSharedMailboxNewEmail)",
+        "Connector triggers that log received item counts",
         "OAuth Office 365 Outlook connection",
         "Post-deploy connection authorization scripts",
-        "User-assigned managed identity",
+        "System-assigned managed identity",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration (azure.yaml)",
         "Python project files (function_app.py, requirements.txt)"
@@ -2728,8 +3189,8 @@
     {
       "id": "sharepoint-connector-trigger-csharp",
       "displayName": "SharePoint Online Connector Triggers (C# + AZD + Bicep)",
-      "shortDescription": "SharePoint Online file connector triggers with Blob output, deployed via azd",
-      "longDescription": "Build and deploy a SharePoint Online connector app on Azure Functions in C#. This app provides two connector trigger functions, each receiving a different SharePoint Online file event from the Connector Namespace via ConnectorTrigger and writing the payload to Blob storage with BlobOutput: (1) OnNewFile for newly added files and (2) OnUpdatedFile for updated files. Built on the Azure.Connectors.Sdk and the Microsoft.Azure.Functions.Worker.Extensions.Connector worker extension. Runs on Flex Consumption (.NET 10 isolated) with a user-assigned managed identity and an OAuth SharePoint Online connection authorized via a post-deploy hook. Deployed with azd.",
+      "shortDescription": "SharePoint Online file Connector Triggers, deployed via azd",
+      "longDescription": "Build and deploy a SharePoint Online connector app on Azure Functions in C#. This app provides polling ConnectorTrigger functions that receive SharePoint Online events from the Connector Namespace and log item counts: (1) OnNewFile, (2) OnUpdatedFile, (3) OnNewItem, (4) OnUpdatedItem, (5) OnChangedItem, (6) OnDeletedItem, (7) OnDeletedFile, (8) OnFormSubmitted, (9) OnFileClassified, and (10) OnRecurringDigest. Built on the Azure.Connectors.Sdk and the Microsoft.Azure.Functions.Worker.Extensions.Connector worker extension. Runs on Flex Consumption (.NET 10 isolated) with a system-assigned managed identity and an OAuth SharePoint Online connection authorized via a post-deploy hook. Deployed with azd.",
       "language": "CSharp",
       "bindingType": "trigger",
       "resource": "connector",
@@ -2742,14 +3203,14 @@
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-connectors-net",
-      "folderPath": "sharepointApp",
-      "gitRef": "refs/tags/v1.0.2",
+      "folderPath": "sharepointApp/polling",
+      "gitRef": "refs/tags/v1.0.4",
       "whatsIncluded": [
-        "Connector trigger functions (OnNewFile, OnUpdatedFile)",
-        "ConnectorTrigger bindings with BlobOutput payload storage",
+        "Connector trigger functions for SharePoint files, list items, forms, classification, and digests",
+        "Polling ConnectorTrigger functions that log item counts",
         "OAuth SharePoint Online connection",
         "Post-deploy connection authorization scripts",
-        "User-assigned managed identity",
+        "System-assigned managed identity",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration (azure.yaml)",
         "host.json and project files"
@@ -2760,7 +3221,7 @@
       "id": "sharepoint-connector-trigger-typescript",
       "displayName": "SharePoint Online Connector Triggers (TypeScript + AZD + Bicep)",
       "shortDescription": "SharePoint Online file connector triggers, deployed via azd",
-      "longDescription": "Build and deploy a SharePoint Online connector app on Azure Functions in TypeScript. This app provides two connector trigger functions, each receiving a different SharePoint Online file event from the Connector Namespace via the connector trigger and logging the received payload: (1) onSharepointNewFile for newly added files and (2) onSharepointUpdatedFile for updated files. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a user-assigned managed identity and an OAuth SharePoint Online connection authorized via a post-deploy hook. Deployed with azd.",
+      "longDescription": "Build and deploy a SharePoint Online connector app on Azure Functions in TypeScript. This app provides polling connector trigger functions that receive SharePoint Online events from the Connector Namespace and log item counts: (1) OnSharepointChangedItemsPoll, (2) OnSharepointDeletedFileItemsPoll, (3) OnSharepointDeletedItemsPoll, (4) OnSharepointNewFileItemsPoll, (5) OnSharepointNewItemsPoll, (6) OnSharepointNewItemsFromFormPoll, (7) OnSharepointRecurrenceDigestPoll, (8) OnSharepointUpdatedFileClassifiedTimesPoll, (9) OnSharepointUpdatedFileItemsPoll, and (10) OnSharepointUpdatedItemsPoll. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a system-assigned managed identity and an OAuth SharePoint Online connection authorized via a post-deploy hook. Deployed with azd.",
       "language": "TypeScript",
       "bindingType": "trigger",
       "resource": "connector",
@@ -2773,14 +3234,14 @@
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-connectors-typescript",
-      "folderPath": "sharepointApp",
-      "gitRef": "refs/tags/v1.0.1",
+      "folderPath": "sharepointApp/polling",
+      "gitRef": "refs/tags/v1.0.4",
       "whatsIncluded": [
-        "Connector trigger functions (onSharepointNewFile, onSharepointUpdatedFile)",
-        "Connector triggers that log the received payload",
+        "Connector trigger functions for SharePoint files, list items, forms, classification, and digests",
+        "Connector triggers that log received item counts",
         "OAuth SharePoint Online connection",
         "Post-deploy connection authorization scripts",
-        "User-assigned managed identity",
+        "System-assigned managed identity",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration (azure.yaml)",
         "TypeScript project files (package.json, tsconfig.json)"
@@ -2791,7 +3252,7 @@
       "id": "sharepoint-connector-trigger-python",
       "displayName": "SharePoint Online Connector Triggers (Python + AZD + Bicep)",
       "shortDescription": "SharePoint Online file connector triggers, deployed via azd",
-      "longDescription": "Build and deploy a SharePoint Online connector app on Azure Functions in Python. This app provides two connector trigger functions, each receiving a different SharePoint Online file event from the Connector Namespace via the connector_trigger decorator and logging the received payload: (1) OnSharepointNewFile for newly added files and (2) OnSharepointUpdatedFile for updated files. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a user-assigned managed identity and an OAuth SharePoint Online connection authorized via a post-deploy hook. Deployed with azd.",
+      "longDescription": "Build and deploy a SharePoint Online connector app on Azure Functions in Python. This app provides polling connector_trigger functions that receive SharePoint Online events from the Connector Namespace and log item counts: (1) OnSharepointNewFile, (2) OnSharepointUpdatedFile, (3) OnSharepointNewItem, (4) OnSharepointUpdatedItem, (5) OnSharepointChangedItem, (6) OnSharepointDeletedItem, (7) OnSharepointDeletedFile, (8) OnSharepointFormSubmitted, (9) OnSharepointFileClassified, and (10) OnSharepointRecurringDigest. Built on the Azure Functions Connector trigger extension. Runs on Flex Consumption with a system-assigned managed identity and an OAuth SharePoint Online connection authorized via a post-deploy hook. Deployed with azd.",
       "language": "Python",
       "bindingType": "trigger",
       "resource": "connector",
@@ -2804,14 +3265,14 @@
       ],
       "author": "Azure Functions Team",
       "repositoryUrl": "https://github.com/Azure-Samples/functions-connectors-python",
-      "folderPath": "sharepointApp",
-      "gitRef": "refs/tags/v1.0.2",
+      "folderPath": "sharepointApp/polling",
+      "gitRef": "refs/tags/v1.0.4",
       "whatsIncluded": [
-        "Connector trigger functions (OnSharepointNewFile, OnSharepointUpdatedFile)",
-        "Connector triggers that log the received payload",
+        "Connector trigger functions for SharePoint files, list items, forms, classification, and digests",
+        "Connector triggers that log received item counts",
         "OAuth SharePoint Online connection",
         "Post-deploy connection authorization scripts",
-        "User-assigned managed identity",
+        "System-assigned managed identity",
         "Bicep infrastructure files",
         "Azure Developer CLI (azd) configuration (azure.yaml)",
         "Python project files (function_app.py, requirements.txt)"
