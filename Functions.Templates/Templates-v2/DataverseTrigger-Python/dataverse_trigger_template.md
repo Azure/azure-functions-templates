@@ -25,6 +25,7 @@ new rows through polling:
 
 ```python
 import logging
+from typing import List
 import azure.functions as func
 
 # This example uses SDK types to directly access the underlying Connector object provided by the Connector trigger.
@@ -43,7 +44,7 @@ app = func.FunctionApp()
     delivery_mode=func.DeliveryMode.POLL,
     trigger_config_name="%OnDataverseRowChangedTriggerConfigName%",
 )
-def dataverse_trigger_on_row_changed_poll(rows: list[dataverse.Item]) -> None:
+def dataverse_trigger_on_row_changed_poll(rows: List[dataverse.Item]) -> None:
     """Receive new rows without logging their contents."""
     logging.info("Received Dataverse new rows (%s rows)", len(rows))
 ```

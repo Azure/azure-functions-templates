@@ -1,6 +1,7 @@
 
 
 import logging
+from typing import List
 
 import azure.functions as func
 # This example uses SDK types to directly access the underlying Connector object provided by the Connector trigger.
@@ -19,6 +20,6 @@ import azurefunctions.extensions.connectors.teams as teams
     connection="$(CONNECTION_INPUT)",
     trigger_config_name="$(ON_NEW_CHANNEL_MESSAGE_TRIGGER_CONFIG_INPUT)",
 )
-def $(FUNCTION_NAME_INPUT)(messages: list[teams.ChatMessage]) -> None:
+def $(FUNCTION_NAME_INPUT)(messages: List[teams.ChatMessage]) -> None:
     """Receive new channel messages."""
     logging.info("Received OnNewChannelMessage trigger (%s items)", len(messages))

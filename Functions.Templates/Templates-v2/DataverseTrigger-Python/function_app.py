@@ -1,4 +1,5 @@
 import logging
+from typing import List
 
 import azure.functions as func
 
@@ -20,6 +21,6 @@ app = func.FunctionApp()
     delivery_mode=func.DeliveryMode.POLL,
     trigger_config_name="$(ON_ROW_CHANGED_TRIGGER_CONFIG_INPUT)",
 )
-def $(FUNCTION_NAME_INPUT)(rows: list[dataverse.Item]) -> None:
+def $(FUNCTION_NAME_INPUT)(rows: List[dataverse.Item]) -> None:
     """Receive new rows without logging their contents."""
     logging.info("Received Dataverse new rows (%s rows)", len(rows))

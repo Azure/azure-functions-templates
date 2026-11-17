@@ -15,6 +15,7 @@ new files through polling:
 
 ```python
 import logging
+from typing import List
 import azure.functions as func
 # This example uses SDK types to directly access the underlying Connector object provided by the Connector trigger.
 # To use, add azurefunctions-extensions-connectors to your requirements.txt file
@@ -32,7 +33,7 @@ app = func.FunctionApp()
 		delivery_mode=func.DeliveryMode.POLL,
 		trigger_config_name="%OnSharepointNewFileTriggerConfigName%",
 )
-def sharepoint_trigger_on_new_file_poll(files: list[sharepoint.Item]) -> None:
+def sharepoint_trigger_on_new_file_poll(files: List[sharepoint.Item]) -> None:
 		for file in files:
 				columns = file.dynamic_properties or {}
 				logging.info("Name: '%s'.", columns.get("{FilenameWithExtension}"))
