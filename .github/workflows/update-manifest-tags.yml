@@ -1,0 +1,133 @@
+name: Update manifest sample tags
+
+on:
+  schedule:
+    - cron: "17 8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: update-manifest-tags
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.repository == 'Azure/azure-functions-templates'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      BASE_BRANCH: ${{ github.event.repository.default_branch }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+
+      - name: Test updater
+        run: |
+          python3 -m unittest discover -s eng/scripts -p 'test_update_manifest_tags.py' -v
+          echo "REPORT_DIR=$RUNNER_TEMP/manifest-tag-update" >> "$GITHUB_ENV"
+
+      - name: Discover and validate newer sample tags
+        id: update
+        run: python3 eng/scripts/update-manifest-tags.py --report-dir "$REPORT_DIR"
+
+      - name: Publish discovery summary
+        if: always() && steps.update.outcome == 'success'
+        run: cat "$REPORT_DIR/report.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Validate manifest schema and changed references
+        if: steps.update.outputs.changed == 'true'
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $manifest = 'Functions.Templates/Template-Manifest/manifest.json'
+          $schema = 'Functions.Templates/Template-Manifest/schemas/manifest.schema.json'
+          if (-not (Test-Json -Json (Get-Content $manifest -Raw) -SchemaFile $schema)) {
+            throw 'Manifest schema validation failed'
+          }
+          ./eng/scripts/validate-manifest-refs.ps1 -ManifestPath "$env:REPORT_DIR/changed-manifest.json"
+          if ($LASTEXITCODE -ne 0) { throw 'Changed reference validation failed' }
+
+      - name: Compare existing automation PRs
+        if: steps.update.outputs.changed == 'true'
+        id: plan
+        run: python3 eng/scripts/update-manifest-tags.py --report-dir "$REPORT_DIR" --plan-pr
+
+      - name: Open consolidated update PR
+        if: steps.plan.outputs.create_pr == 'true'
+        id: publish
+        env:
+          UPDATE_BRANCH: automation/manifest-tags-${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          set -euo pipefail
+          cp .github/PULL_REQUEST_TEMPLATE.md "$REPORT_DIR/pr-body.md"
+          cat >> "$REPORT_DIR/pr-body.md" <<'EOF'
+
+          ## Automated update
+
+          Refresh existing sample pins to newer stable SemVer tags with verified
+          signatures and existing sample directories. Update generatedAt in UTC;
+          leave version, totalTemplates, priorities and other metadata unchanged.
+
+          ## Validation
+
+          - Passed: `python3 -m unittest discover -s eng/scripts -p 'test_update_manifest_tags.py' -v`.
+          - Passed: `Test-Json -Json (Get-Content Functions.Templates/Template-Manifest/manifest.json -Raw) -SchemaFile Functions.Templates/Template-Manifest/schemas/manifest.schema.json`.
+          - Passed: `pwsh ./eng/scripts/validate-manifest-refs.ps1 -ManifestPath "$REPORT_DIR/changed-manifest.json"` (changed entries only).
+          - Full-manifest reference validation was not run; unchanged pins may have existing signature exceptions.
+          - Priority tiers are unchanged. The full-reference-validation checklist above is intentionally unchecked.
+
+          EOF
+          cat "$REPORT_DIR/report.md" >> "$REPORT_DIR/pr-body.md"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$UPDATE_BRANCH"
+          git add -- Functions.Templates/Template-Manifest/manifest.json
+          git commit -m "Update manifest sample release tags" \
+            -m "Co-authored-by: Copilot App <223556219+Copilot@users.noreply.github.com>"
+          git rev-parse HEAD > "$REPORT_DIR/new-pr-sha"
+          gh auth setup-git
+          git push origin "$UPDATE_BRANCH"
+          gh pr create --base "$BASE_BRANCH" --head "$UPDATE_BRANCH" \
+            --title "Update manifest sample release tags" \
+            --body-file "$REPORT_DIR/pr-body.md" > "$REPORT_DIR/new-pr-url"
+          cat "$REPORT_DIR/new-pr-url" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Close superseded automation PRs
+        if: steps.update.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          if [ -s "$REPORT_DIR/new-pr-url" ]; then
+            replacement=$(cat "$REPORT_DIR/new-pr-url")
+            replacement_sha=$(cat "$REPORT_DIR/new-pr-sha")
+          else
+            replacement=$(jq -r '.replacement_url' "$REPORT_DIR/pr-plan.json")
+            replacement_sha=$(jq -r '.replacement_sha' "$REPORT_DIR/pr-plan.json")
+            echo "Existing PR already proposes these pins: $replacement" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          test -n "$replacement"
+          replacement_state=$(gh pr view "$replacement" --json state,headRefOid,baseRefName \
+            --jq '[.state, .headRefOid, .baseRefName] | @tsv')
+          if [ "$replacement_state" != "$(printf 'OPEN\t%s\t%s' "$replacement_sha" "$BASE_BRANCH")" ]; then
+            echo "::error::Replacement PR changed or is no longer open; older PRs were retained."
+            exit 1
+          fi
+          jq -r '.superseded[] | [.number, .sha] | @tsv' "$REPORT_DIR/pr-plan.json" |
+          while IFS=$'\t' read -r number expected_sha; do
+            actual_state=$(gh pr view "$number" --json state,headRefOid,baseRefName \
+              --jq '[.state, .headRefOid, .baseRefName] | @tsv')
+            if [ "$actual_state" != "$(printf 'OPEN\t%s\t%s' "$expected_sha" "$BASE_BRANCH")" ]; then
+              echo "::error::PR #$number changed during this run; refusing to close it."
+              exit 1
+            fi
+            gh pr close "$number" --comment "Superseded by $replacement, which includes these sample updates and the latest eligible tags."
+            echo "Closed superseded PR #$number in favor of $replacement." >> "$GITHUB_STEP_SUMMARY"
+          done
