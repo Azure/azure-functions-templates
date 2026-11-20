@@ -56,16 +56,8 @@ jobs:
           ./eng/scripts/validate-manifest-refs.ps1 -ManifestPath "$env:REPORT_DIR/changed-manifest.json"
           if ($LASTEXITCODE -ne 0) { throw 'Changed reference validation failed' }
 
-      - name: Compare existing automation PRs
+      - name: Prepare PR description
         if: steps.update.outputs.changed == 'true'
-        id: plan
-        run: python3 eng/scripts/update-manifest-tags.py --report-dir "$REPORT_DIR" --plan-pr
-
-      - name: Open consolidated update PR
-        if: steps.plan.outputs.create_pr == 'true'
-        id: publish
-        env:
-          UPDATE_BRANCH: automation/manifest-tags-${{ github.run_id }}-${{ github.run_attempt }}
         run: |
           set -euo pipefail
           cp .github/PULL_REQUEST_TEMPLATE.md "$REPORT_DIR/pr-body.md"
@@ -87,6 +79,19 @@ jobs:
 
           EOF
           cat "$REPORT_DIR/report.md" >> "$REPORT_DIR/pr-body.md"
+
+      - name: Compare existing automation PRs
+        if: steps.update.outputs.changed == 'true'
+        id: plan
+        run: python3 eng/scripts/update-manifest-tags.py --report-dir "$REPORT_DIR" --plan-pr
+
+      - name: Open consolidated update PR
+        if: steps.plan.outputs.create_pr == 'true'
+        id: publish
+        env:
+          UPDATE_BRANCH: automation/manifest-tags-${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -c "$UPDATE_BRANCH"
@@ -119,6 +124,10 @@ jobs:
           if [ "$replacement_state" != "$(printf 'OPEN\t%s\t%s' "$replacement_sha" "$BASE_BRANCH")" ]; then
             echo "::error::Replacement PR changed or is no longer open; older PRs were retained."
             exit 1
+          fi
+          if [ ! -s "$REPORT_DIR/new-pr-url" ]; then
+            gh pr edit "$replacement" --body-file "$REPORT_DIR/pr-body.md"
+            echo "Refreshed the description of $replacement." >> "$GITHUB_STEP_SUMMARY"
           fi
           jq -r '.superseded[] | [.number, .sha] | @tsv' "$REPORT_DIR/pr-plan.json" |
           while IFS=$'\t' read -r number expected_sha; do

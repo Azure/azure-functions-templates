@@ -23,6 +23,21 @@ UTC, for example `2026-11-17T21:56:11Z`, and changes only when at least one pin
 changes. Manifest version, template count, ordering, priorities and other
 metadata are preserved.
 
+## Untagged sample changes
+
+After selecting updates, the workflow compares each remaining tag pin with its
+repository's default branch. When commits after that tag touch a pinned sample
+folder (or any file for root-folder samples), the report lists the repository,
+pinned tag, commit count, samples and a compare link under **Untagged sample
+changes: please create signed tag**. Sample owners should review those changes
+and publish a new signed annotated tag; a later run then proposes the pin update.
+
+This check is advisory and never creates tags. Comparison failures are listed
+as "Could not check" without blocking pin updates. Results always appear in the
+Actions run summary. Because a PR requires a manifest change, they appear in a
+PR description only when that run also has pin updates; a retained equivalent
+PR receives the refreshed description.
+
 ## Validation and pull requests
 
 The workflow runs focused updater tests, validates the complete updated manifest

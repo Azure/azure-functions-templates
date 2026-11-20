@@ -149,8 +149,83 @@ def refresh(manifest, github):
     return updated, changes, skipped
 
 
+def untagged_changes(manifest, github):
+    """Find pinned sample folders whose default branch has commits after the pinned tag."""
+    groups = defaultdict(lambda: {"folders": set(), "ids": []})
+    for template in manifest["templates"]:
+        if not template["gitRef"].startswith("refs/tags/"):
+            continue
+        repository = template["repositoryUrl"].removeprefix("https://github.com/")
+        folder = template["folderPath"].strip("/")
+        group = groups[(repository, template["gitRef"].removeprefix("refs/tags/"))]
+        group["folders"].add("" if folder == "." else folder)
+        group["ids"].append(template["id"])
+
+    pending = []
+    errors = []
+    for (repository, tag), group in sorted(groups.items()):
+        try:
+            branch = github.get(f"repos/{repository}")["default_branch"]
+            comparison = github.get(
+                f"repos/{repository}/compare/{quote(tag, safe='')}...{quote(branch, safe='')}"
+            )
+        except RuntimeError as error:
+            errors.append(f"{repository}@{tag}: could not compare with default branch ({error})")
+            continue
+        if comparison["ahead_by"] == 0:
+            continue
+        files = [file["filename"] for file in comparison.get("files", [])]
+        changed = sorted(
+            folder or "."
+            for folder in group["folders"]
+            if not folder or any(name.startswith(folder + "/") for name in files)
+        )
+        truncated = len(files) >= 300
+        if not changed and not truncated:
+            continue
+        pending.append({
+            "repository": repository,
+            "tag": tag,
+            "branch": branch,
+            "ahead_by": comparison["ahead_by"],
+            "folders": changed or sorted(folder or "." for folder in group["folders"]),
+            "ids": sorted(group["ids"]),
+            "truncated": truncated and not changed,
+            "compare_url": f"https://github.com/{repository}/compare/{tag}...{branch}",
+        })
+    return pending, errors
+
+
 def write_json(path, value):
     path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def untagged_report(pending, errors):
+    lines = ["## Untagged sample changes: please create signed tag", ""]
+    if pending:
+        lines += [
+            "These sample repositories have commits on their default branch after the pinned "
+            "tag that touch a manifest sample folder. Owners: please review and create a new "
+            "signed annotated release tag so a later run can pick it up.",
+            "",
+            "| Repository | Pinned tag | Commits ahead | Sample folders | Samples | Changes |",
+            "| --- | --- | --- | --- | --- | --- |",
+        ]
+        for item in pending:
+            folders = ", ".join(f"`{folder}`" for folder in item["folders"])
+            if item["truncated"]:
+                folders += " (file list truncated; verify manually)"
+            lines.append(
+                f"| `{item['repository']}` | `{item['tag']}` | {item['ahead_by']} | {folders} | "
+                f"{', '.join(f'`{i}`' for i in item['ids'])} | "
+                f"[`{item['tag']}...{item['branch']}`]({item['compare_url']}) |"
+            )
+    else:
+        lines.append("No untagged sample-folder changes were found.")
+    if errors:
+        lines += ["", "Could not check:", ""]
+        lines += [f"- {error}" for error in errors]
+    return "\n".join(lines) + "\n"
 
 
 def report(changes, skipped):
@@ -271,10 +346,18 @@ def main():
         with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as stream:
             stream.write(f"create_pr={'true' if plan['create'] else 'false'}\n")
         return
-    updated, changes, skipped = refresh(manifest, GitHub(token))
+    github = GitHub(token)
+    updated, changes, skipped = refresh(manifest, github)
+    pending, compare_errors = untagged_changes(updated, github)
+    full_report = report(changes, skipped) + "\n" + untagged_report(pending, compare_errors)
     args.report_dir.mkdir(parents=True, exist_ok=True)
-    write_json(args.report_dir / "result.json", {"changes": changes, "skipped": skipped})
-    (args.report_dir / "report.md").write_text(report(changes, skipped), encoding="utf-8")
+    write_json(args.report_dir / "result.json", {
+        "changes": changes,
+        "skipped": skipped,
+        "untagged": pending,
+        "untagged_errors": compare_errors,
+    })
+    (args.report_dir / "report.md").write_text(full_report, encoding="utf-8")
     if changes:
         changed_ids = {change["id"] for change in changes}
         changed_manifest = deepcopy(updated)
@@ -284,7 +367,7 @@ def main():
         changed_manifest["totalTemplates"] = len(changed_manifest["templates"])
         write_json(args.report_dir / "changed-manifest.json", changed_manifest)
         write_json(args.manifest, updated)
-    print(report(changes, skipped), end="")
+    print(full_report, end="")
     output = os.environ.get("GITHUB_OUTPUT")
     if output:
         with open(output, "a", encoding="utf-8") as stream:

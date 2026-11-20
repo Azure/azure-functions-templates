@@ -127,6 +127,52 @@ class RefreshTests(unittest.TestCase):
             self.assertIsNone(updater.version(tag))
 
 
+class UntaggedChangeTests(unittest.TestCase):
+    def github(self, ahead_by, files, fail=False):
+        github = Mock()
+
+        def get(endpoint):
+            if endpoint == "repos/example/samples":
+                return {"default_branch": "main"}
+            if "/compare/" in endpoint:
+                if fail:
+                    raise RuntimeError("HTTP 404")
+                return {"ahead_by": ahead_by, "files": [{"filename": f} for f in files]}
+            raise AssertionError(f"Unexpected endpoint: {endpoint}")
+
+        github.get.side_effect = get
+        return github
+
+    def test_reports_changes_inside_sample_folder(self):
+        pending, errors = updater.untagged_changes(
+            manifest("refs/tags/v1.0.0"), self.github(2, ["app/main.py", "README.md"])
+        )
+        self.assertEqual(errors, [])
+        self.assertEqual(pending[0]["folders"], ["app"])
+        self.assertEqual(pending[0]["ahead_by"], 2)
+        self.assertIn("please create signed tag", updater.untagged_report(pending, errors))
+
+    def test_ignores_changes_outside_folder_and_branch_pins(self):
+        original = manifest("refs/tags/v1.0.0", "refs/heads/main")
+        pending, _ = updater.untagged_changes(
+            original, self.github(3, ["other/file.py", "application/x.py"])
+        )
+        self.assertEqual(pending, [])
+
+    def test_root_folder_reports_any_new_commit(self):
+        original = manifest("refs/tags/v1.0.0")
+        original["templates"][0]["folderPath"] = "."
+        pending, _ = updater.untagged_changes(original, self.github(1, ["README.md"]))
+        self.assertEqual(pending[0]["folders"], ["."])
+
+    def test_compare_failure_is_reported_without_failing(self):
+        pending, errors = updater.untagged_changes(
+            manifest("refs/tags/v1.0.0"), self.github(0, [], fail=True)
+        )
+        self.assertEqual(pending, [])
+        self.assertEqual(len(errors), 1)
+
+
 class PullRequestPlanTests(unittest.TestCase):
     def setUp(self):
         self.base = manifest("refs/tags/v1.0.0", "refs/tags/v1.0.0")
