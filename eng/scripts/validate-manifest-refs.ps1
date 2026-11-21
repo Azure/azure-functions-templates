@@ -106,7 +106,8 @@ foreach ($t in $manifest.templates) {
 
     # Check folderPath exists at the gitRef
     $contentPath = if ($t.folderPath -eq '.') { '' } else { "/$($t.folderPath)" }
-    $null = gh api "repos/$repoPath/contents${contentPath}?ref=$($t.gitRef)" --jq '.[0].name // .name' 2>&1
+    $encodedGitRef = [uri]::EscapeDataString($t.gitRef)
+    $null = gh api "repos/$repoPath/contents${contentPath}?ref=$encodedGitRef" --jq '.[0].name // .name' 2>&1
     if ($LASTEXITCODE -ne 0) {
         $errors += "$($t.id): folderPath '$($t.folderPath)' not found at ref '$($t.gitRef)' in $repoPath"
         Write-Host "  FAIL  $label (folder not found at ref)" -ForegroundColor Red
