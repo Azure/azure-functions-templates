@@ -137,7 +137,13 @@ class UntaggedChangeTests(unittest.TestCase):
             if "/compare/" in endpoint:
                 if fail:
                     raise RuntimeError("HTTP 404")
-                return {"ahead_by": ahead_by, "files": [{"filename": f} for f in files]}
+                return {
+                    "ahead_by": ahead_by,
+                    "files": [
+                        file if isinstance(file, dict) else {"filename": file}
+                        for file in files
+                    ],
+                }
             raise AssertionError(f"Unexpected endpoint: {endpoint}")
 
         github.get.side_effect = get
@@ -171,6 +177,37 @@ class UntaggedChangeTests(unittest.TestCase):
         )
         self.assertEqual(pending, [])
         self.assertEqual(len(errors), 1)
+
+    def test_network_io_failure_is_reported_without_failing(self):
+        github = self.github(0, [])
+        github.get.side_effect = OSError("connection reset")
+        pending, errors = updater.untagged_changes(manifest("refs/tags/v1.0.0"), github)
+        self.assertEqual(pending, [])
+        self.assertIn("connection reset", errors[0])
+
+    def test_renamed_file_matches_previous_sample_path(self):
+        pending, errors = updater.untagged_changes(
+            manifest("refs/tags/v1.0.0"),
+            self.github(1, [{"filename": "archive/main.py", "previous_filename": "app/main.py"}]),
+        )
+        self.assertEqual(errors, [])
+        self.assertEqual(pending[0]["folders"], ["app"])
+
+    def test_sample_ids_are_limited_to_changed_folders(self):
+        original = manifest("refs/tags/v1.0.0", "refs/tags/v1.0.0")
+        original["templates"][1]["folderPath"] = "other"
+        pending, _ = updater.untagged_changes(
+            original, self.github(1, ["app/main.py"])
+        )
+        self.assertEqual(pending[0]["folders"], ["app"])
+        self.assertEqual(pending[0]["ids"], ["sample-0"])
+
+    def test_truncation_warning_is_preserved_when_folder_matches(self):
+        files = ["app/main.py"] + [f"other/file-{index}.py" for index in range(299)]
+        pending, _ = updater.untagged_changes(manifest("refs/tags/v1.0.0"), self.github(1, files))
+        self.assertEqual(pending[0]["folders"], ["app"])
+        self.assertTrue(pending[0]["truncated"])
+        self.assertIn("file list truncated", updater.untagged_report(pending, []))
 
 
 class PullRequestPlanTests(unittest.TestCase):

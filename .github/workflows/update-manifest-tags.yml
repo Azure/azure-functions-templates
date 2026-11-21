@@ -137,6 +137,12 @@ jobs:
               echo "::error::PR #$number changed during this run; refusing to close it."
               exit 1
             fi
+            replacement_state=$(gh pr view "$replacement" --json state,headRefOid,baseRefName \
+              --jq '[.state, .headRefOid, .baseRefName] | @tsv')
+            if [ "$replacement_state" != "$(printf 'OPEN\t%s\t%s' "$replacement_sha" "$BASE_BRANCH")" ]; then
+              echo "::error::Replacement PR changed or is no longer open; older PRs were retained."
+              exit 1
+            fi
             gh pr close "$number" --comment "Superseded by $replacement, which includes these sample updates and the latest eligible tags."
             echo "Closed superseded PR #$number in favor of $replacement." >> "$GITHUB_STEP_SUMMARY"
           done

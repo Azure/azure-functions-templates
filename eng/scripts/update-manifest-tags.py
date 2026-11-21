@@ -151,15 +151,14 @@ def refresh(manifest, github):
 
 def untagged_changes(manifest, github):
     """Find pinned sample folders whose default branch has commits after the pinned tag."""
-    groups = defaultdict(lambda: {"folders": set(), "ids": []})
+    groups = defaultdict(lambda: {"folders": {}})
     for template in manifest["templates"]:
         if not template["gitRef"].startswith("refs/tags/"):
             continue
         repository = template["repositoryUrl"].removeprefix("https://github.com/")
         folder = template["folderPath"].strip("/")
         group = groups[(repository, template["gitRef"].removeprefix("refs/tags/"))]
-        group["folders"].add("" if folder == "." else folder)
-        group["ids"].append(template["id"])
+        group["folders"].setdefault("" if folder == "." else folder, set()).add(template["id"])
 
     pending = []
     errors = []
@@ -169,28 +168,39 @@ def untagged_changes(manifest, github):
             comparison = github.get(
                 f"repos/{repository}/compare/{quote(tag, safe='')}...{quote(branch, safe='')}"
             )
-        except RuntimeError as error:
+        except (RuntimeError, OSError) as error:
             errors.append(f"{repository}@{tag}: could not compare with default branch ({error})")
             continue
         if comparison["ahead_by"] == 0:
             continue
-        files = [file["filename"] for file in comparison.get("files", [])]
+        files = comparison.get("files", [])
+        changed_paths = [
+            path
+            for file in files
+            for path in (file.get("filename"), file.get("previous_filename"))
+            if path
+        ]
         changed = sorted(
             folder or "."
             for folder in group["folders"]
-            if not folder or any(name.startswith(folder + "/") for name in files)
+            if not folder or any(name.startswith(folder + "/") for name in changed_paths)
         )
         truncated = len(files) >= 300
         if not changed and not truncated:
             continue
+        reported_folders = changed or sorted(folder or "." for folder in group["folders"])
         pending.append({
             "repository": repository,
             "tag": tag,
             "branch": branch,
             "ahead_by": comparison["ahead_by"],
-            "folders": changed or sorted(folder or "." for folder in group["folders"]),
-            "ids": sorted(group["ids"]),
-            "truncated": truncated and not changed,
+            "folders": reported_folders,
+            "ids": sorted({
+                template_id
+                for folder in reported_folders
+                for template_id in group["folders"][folder if folder != "." else ""]
+            }),
+            "truncated": truncated,
             "compare_url": f"https://github.com/{repository}/compare/{tag}...{branch}",
         })
     return pending, errors
