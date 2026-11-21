@@ -1,5 +1,6 @@
 import importlib.util
 from pathlib import Path
+import tempfile
 import unittest
 from unittest.mock import Mock
 
@@ -30,7 +31,7 @@ def manifest(*refs):
 
 
 class RefreshTests(unittest.TestCase):
-    def github(self, tags, lightweight=(), unsigned=(), missing=()):
+    def github(self, tags, lightweight=(), unsigned=(), missing=(), mismatched=()):
         github = Mock()
         github.tags.return_value = tags
 
@@ -41,6 +42,7 @@ class RefreshTests(unittest.TestCase):
             if "/git/tags/" in endpoint:
                 tag = endpoint.rsplit("/", 1)[1]
                 return {
+                    "tag": "v1.0.0" if tag in mismatched else tag,
                     "verification": {"verified": tag not in unsigned},
                     "object": {"type": "commit"},
                 }
@@ -61,6 +63,7 @@ class RefreshTests(unittest.TestCase):
         self.assertRegex(updated["generatedAt"], r"^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$")
         self.assertNotEqual(updated["generatedAt"], original["generatedAt"])
         expected = manifest("refs/tags/v1.10.0", "refs/tags/v1.10.0")
+        expected["version"] = "1.14.1"
         expected["generatedAt"] = updated["generatedAt"]
         self.assertEqual(updated, expected)
         self.assertEqual(original, manifest("refs/tags/v1.0.0", "refs/tags/v1.9.0"))
@@ -77,12 +80,31 @@ class RefreshTests(unittest.TestCase):
         self.assertEqual(len(changes), 1)
         self.assertEqual(len(skipped), 3)
 
+    def test_mismatched_signed_tag_name_is_skipped(self):
+        updated, changes, skipped = updater.refresh(
+            manifest("refs/tags/v1.0.0"),
+            self.github(["v9.0.0", "v2.0.0"], mismatched=["v9.0.0"]),
+        )
+        self.assertEqual(updated["templates"][0]["gitRef"], "refs/tags/v2.0.0")
+        self.assertEqual(len(changes), 1)
+        self.assertIn("mismatched", skipped[0])
+
     def test_no_downgrades_branch_changes_or_timestamp_only_changes(self):
         original = manifest("refs/tags/v2.0.0", "refs/heads/main", "refs/tags/custom")
         updated, changes, skipped = updater.refresh(original, self.github(["v1.0.0", "v2.0.0"]))
         self.assertEqual(updated, original)
         self.assertEqual(changes, [])
         self.assertEqual(len(skipped), 2)
+
+    def test_syncs_priority_document_version_header(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "priority-tiers.md"
+            path.write_text(
+                "# Template Manifest\n\n**Manifest version:** 1.14.0\n",
+                encoding="utf-8",
+            )
+            updater.sync_priority_doc(path, "1.14.1")
+            self.assertIn("**Manifest version:** 1.14.1", path.read_text(encoding="utf-8"))
 
     def test_existing_empty_and_dot_root_folders_are_supported(self):
         for folder in ("", "."):
@@ -214,6 +236,8 @@ class PullRequestPlanTests(unittest.TestCase):
     def setUp(self):
         self.base = manifest("refs/tags/v1.0.0", "refs/tags/v1.0.0")
         self.head = manifest("refs/tags/v2.0.0", "refs/tags/v1.0.0")
+        self.head["version"] = "1.14.1"
+        self.current_base = updater.deepcopy(self.base)
         self.pull = {
             "number": 42,
             "html_url": "https://github.com/example/templates/pull/42",
@@ -232,19 +256,30 @@ class PullRequestPlanTests(unittest.TestCase):
         if "/pulls?" in endpoint:
             return [self.pull]
         if endpoint.endswith("/files?per_page=100"):
-            return [{"filename": updater.MANIFEST_PATH}]
+            return [
+                {"filename": updater.MANIFEST_PATH},
+                {"filename": updater.PRIORITY_DOC_PATH},
+            ]
         if "/compare/" in endpoint:
             return {"merge_base_commit": {"sha": "original-base"}}
         if "/contents/" in endpoint:
-            value = self.head if endpoint.endswith("ref=old-head") else self.base
+            if endpoint.endswith("ref=old-head"):
+                value = self.head
+            elif endpoint.endswith("ref=latest-base"):
+                value = self.current_base
+            else:
+                value = self.base
             return {"content": updater.base64.b64encode(updater.json.dumps(value).encode()).decode()}
         raise AssertionError(f"Unexpected endpoint: {endpoint}")
 
     def plan(self, desired):
+        desired = updater.deepcopy(desired)
         changes = [
             {"id": template_id, "new": ref}
             for template_id, ref in updater.pin_changes(self.base, desired).items()
         ]
+        if changes:
+            desired["version"] = updater.bump_patch(self.base["version"])
         return updater.plan_pull_request(
             desired, changes, self.github, "example/templates", "dev"
         )
@@ -256,6 +291,12 @@ class PullRequestPlanTests(unittest.TestCase):
         self.assertFalse(plan["create"])
         self.assertEqual(plan["replacement_url"], self.pull["html_url"])
         self.assertEqual(plan["superseded"], [])
+
+    def test_changed_base_manifest_does_not_retain_equivalent_pins(self):
+        self.current_base["generatedAt"] = "2026-11-20T08:17:00Z"
+        plan = self.plan(self.head)
+        self.assertTrue(plan["create"])
+        self.assertEqual([pull["number"] for pull in plan["superseded"]], [42])
 
     def test_additional_sample_update_supersedes_existing_pr(self):
         desired = manifest("refs/tags/v2.0.0", "refs/tags/v2.0.0")
@@ -278,6 +319,12 @@ class PullRequestPlanTests(unittest.TestCase):
     def test_regression_does_not_close_or_replace_existing_pr(self):
         with self.assertRaisesRegex(ValueError, "not covered"):
             self.plan(manifest("refs/tags/v1.5.0", "refs/tags/v2.0.0"))
+
+    def test_pin_changes_rejects_downgrades_and_non_tag_refs(self):
+        with self.assertRaisesRegex(ValueError, "non-increasing"):
+            updater.pin_changes(manifest("refs/tags/v2.0.0"), manifest("refs/tags/v1.0.0"))
+        with self.assertRaisesRegex(ValueError, "non-increasing"):
+            updater.pin_changes(manifest("refs/tags/v1.0.0"), manifest("refs/heads/main"))
 
     def test_manual_metadata_edits_block_automatic_replacement(self):
         self.head["templates"][0]["priority"] = 99

@@ -20,6 +20,8 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[2]
 MANIFEST = ROOT / "Functions.Templates/Template-Manifest/manifest.json"
 MANIFEST_PATH = MANIFEST.relative_to(ROOT).as_posix()
+PRIORITY_DOC = ROOT / "Functions.Templates/Template-Manifest/docs/priority-tiers.md"
+PRIORITY_DOC_PATH = PRIORITY_DOC.relative_to(ROOT).as_posix()
 STABLE_VERSION = re.compile(
     r"v?(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)"
     r"(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?"
@@ -29,6 +31,29 @@ STABLE_VERSION = re.compile(
 def version(tag):
     match = STABLE_VERSION.fullmatch(tag)
     return tuple(map(int, match.groups())) if match else None
+
+
+def bump_patch(value):
+    match = re.fullmatch(
+        r"(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)", value
+    )
+    if not match:
+        raise ValueError(f"Invalid manifest version {value!r}")
+    major, minor, patch = map(int, match.groups())
+    return f"{major}.{minor}.{patch + 1}"
+
+
+def sync_priority_doc(path, manifest_version):
+    text = path.read_text(encoding="utf-8")
+    updated, count = re.subn(
+        r"(?m)^\*\*Manifest version:\*\* \S+$",
+        f"**Manifest version:** {manifest_version}",
+        text,
+    )
+    if count != 1:
+        raise ValueError(f"Expected one manifest version header in {path}")
+    if updated != text:
+        path.write_text(updated, encoding="utf-8")
 
 
 class GitHub:
@@ -117,11 +142,15 @@ def refresh(manifest, github):
                             f"repos/{repository}/git/tags/{ref['object']['sha']}"
                         )
                         verified[tag] = (
-                            tag_object["verification"]["verified"] is True
+                            tag_object["tag"] == tag
+                            and tag_object["verification"]["verified"] is True
                             and tag_object["object"]["type"] == "commit"
                         )
                         if not verified[tag]:
-                            skipped.append(f"{repository}@{tag}: skipped unverified/non-commit tag")
+                            skipped.append(
+                                f"{repository}@{tag}: skipped mismatched, unverified, "
+                                "or non-commit tag"
+                            )
                 if not verified[tag]:
                     continue
                 content_path = "" if folder in ("", ".") else quote(folder, safe="/")
@@ -145,6 +174,7 @@ def refresh(manifest, github):
                 break
 
     if changes:
+        updated["version"] = bump_patch(updated["version"])
         updated["generatedAt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     return updated, changes, skipped
 
@@ -263,8 +293,31 @@ def pin_changes(base, head):
         if proposed is None:
             raise ValueError("Existing update PR removes templates; manual review required")
         if template["gitRef"] != proposed["gitRef"]:
+            old_ref = template["gitRef"]
+            new_ref = proposed["gitRef"]
+            old_version = (
+                version(old_ref.removeprefix("refs/tags/"))
+                if old_ref.startswith("refs/tags/")
+                else None
+            )
+            new_version = (
+                version(new_ref.removeprefix("refs/tags/"))
+                if new_ref.startswith("refs/tags/")
+                else None
+            )
+            if old_version is None or new_version is None or new_version <= old_version:
+                raise ValueError(
+                    "Existing update PR contains non-increasing or non-stable tag changes; "
+                    "manual review required"
+                )
             template["gitRef"] = proposed["gitRef"]
             changes[template["id"]] = proposed["gitRef"]
+    if changes:
+        if head["version"] not in (base["version"], bump_patch(base["version"])):
+            raise ValueError("Existing update PR has an invalid manifest version bump")
+    elif head["version"] != base["version"]:
+        raise ValueError("Existing update PR changes the manifest version without pin updates")
+    expected["version"] = head["version"]
     expected["generatedAt"] = head["generatedAt"]
     if expected != head:
         raise ValueError("Existing update PR contains non-pin changes; manual review required")
@@ -290,17 +343,25 @@ def plan_pull_request(manifest, changes, github, repository, branch):
             ):
                 continue
             files = github.get(f"repos/{repository}/pulls/{pull['number']}/files?per_page=100")
-            if [file["filename"] for file in files] != [MANIFEST_PATH]:
+            changed_files = {file["filename"] for file in files}
+            if changed_files not in (
+                {MANIFEST_PATH},
+                {MANIFEST_PATH, PRIORITY_DOC_PATH},
+            ):
                 raise ValueError(f"PR #{pull['number']} edits other files; manual review required")
             comparison = github.get(
                 f"repos/{repository}/compare/{pull['base']['sha']}...{pull['head']['sha']}"
             )
             manifests = []
-            for commit in (comparison["merge_base_commit"]["sha"], pull["head"]["sha"]):
+            for commit in (
+                comparison["merge_base_commit"]["sha"],
+                pull["base"]["sha"],
+                pull["head"]["sha"],
+            ):
                 content = github.get(f"repos/{repository}/contents/{MANIFEST_PATH}?ref={commit}")
                 manifests.append(json.loads(base64.b64decode(content["content"])))
-            old_changes = pin_changes(*manifests)
-            old_templates = {template["id"]: template for template in manifests[1]["templates"]}
+            old_changes = pin_changes(manifests[0], manifests[2])
+            old_templates = {template["id"]: template for template in manifests[2]["templates"]}
             for template_id, old_ref in old_changes.items():
                 target = templates.get(template_id)
                 previous = old_templates[template_id]
@@ -323,11 +384,18 @@ def plan_pull_request(manifest, changes, github, repository, branch):
                 "sha": pull["head"]["sha"],
                 "url": pull["html_url"],
                 "changes": old_changes,
+                "version": manifests[2]["version"],
+                "base_matches_merge_base": manifests[0] == manifests[1],
             })
         if len(pulls) < 100:
             break
         page += 1
-    equivalent = next((pull for pull in existing if pull["changes"] == desired), None)
+    equivalent = next((
+        pull for pull in existing
+        if pull["changes"] == desired
+        and pull["version"] == manifest["version"]
+        and pull["base_matches_merge_base"]
+    ), None)
     return {
         "create": equivalent is None,
         "replacement_url": equivalent["url"] if equivalent else "",
@@ -377,6 +445,8 @@ def main():
         changed_manifest["totalTemplates"] = len(changed_manifest["templates"])
         write_json(args.report_dir / "changed-manifest.json", changed_manifest)
         write_json(args.manifest, updated)
+        if args.manifest.resolve() == MANIFEST.resolve():
+            sync_priority_doc(PRIORITY_DOC, updated["version"])
     print(full_report, end="")
     output = os.environ.get("GITHUB_OUTPUT")
     if output:

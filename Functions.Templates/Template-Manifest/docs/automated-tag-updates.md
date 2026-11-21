@@ -18,10 +18,11 @@ Unsigned/lightweight tags are never an automatic exception, even if an existing
 pin was approved manually. Branch and non-stable pins are left unchanged and
 reported for manual review.
 
-Only changed `gitRef` values and `generatedAt` are written. The timestamp uses
-UTC, for example `2026-11-17T21:56:11Z`, and changes only when at least one pin
-changes. Manifest version, template count, ordering, priorities and other
-metadata are preserved.
+Only changed `gitRef` values, `generatedAt`, and the manifest patch version are
+updated. The timestamp uses UTC, for example `2026-11-17T21:56:11Z`, and changes
+only when at least one pin changes. The matching version header in
+`docs/priority-tiers.md` is synchronized; template count, ordering, priorities
+and other metadata are preserved.
 
 ## Untagged sample changes
 
@@ -41,7 +42,8 @@ PR receives the refreshed description.
 ## Validation and pull requests
 
 The workflow runs focused updater tests, validates the complete updated manifest
-against its schema with PowerShell `Test-Json`, and runs
+against its schema with PowerShell `Test-Json`, checks template counts and the
+priority-tiers version header, and runs
 `eng/scripts/validate-manifest-refs.ps1` against a temporary manifest containing
 only changed entries. This avoids blocking updates on pre-existing signature
 exceptions in unchanged entries; the PR explicitly reports that scope.
@@ -52,7 +54,8 @@ the Actions run summary, including no-change runs. API, authentication and rate
 limit errors fail the run before the manifest is written rather than being
 treated as "no updates."
 
-If an existing automation PR proposes exactly the same pins, it is retained
+If an existing automation PR proposes exactly the same pins and is based on the
+current manifest revision with the expected manifest version, it is retained
 without a duplicate or timestamp-only replacement. When additional or newer
 updates arrive, the workflow first creates a consolidated replacement PR, then
 closes superseded PRs with a comment linking to the replacement. If creation
@@ -61,11 +64,15 @@ after pushing, that branch remains available for manual recovery.
 
 Automatic closure is limited to `github-actions[bot]` PRs from this repository's
 `automation/manifest-tags-` branches targeting the default branch. The workflow
-checks that they only modify manifest pins and the timestamp, and that the
-replacement covers every prior pin with an equal or newer version. Human PRs
+checks that they only modify the manifest and priority-tier version header, that
+pin changes are stable and strictly increasing, and that the replacement covers
+every prior pin with an equal or newer version. Before each closure it verifies
+that the replacement is still unchanged and the default branch has not moved
+since planning. Human PRs
 are not closed. Unexpected edits, removed samples or regressions stop publishing
-for manual review. A head-SHA check immediately before closure also catches
-concurrent commits; a failure can leave both PRs open rather than lose changes.
+for manual review. Head-SHA and default-branch checks immediately before closure
+catch concurrent changes; a failure can leave both PRs open rather than lose
+changes.
 
 ## Repository setup
 

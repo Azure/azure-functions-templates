@@ -30,6 +30,10 @@ jobs:
           ref: ${{ github.event.repository.default_branch }}
           persist-credentials: false
 
+      - name: Record checked-out default branch revision
+        id: base
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
       - name: Test updater
         run: |
           python3 -m unittest discover -s eng/scripts -p 'test_update_manifest_tags.py' -v
@@ -50,8 +54,20 @@ jobs:
           $ErrorActionPreference = 'Stop'
           $manifest = 'Functions.Templates/Template-Manifest/manifest.json'
           $schema = 'Functions.Templates/Template-Manifest/schemas/manifest.schema.json'
-          if (-not (Test-Json -Json (Get-Content $manifest -Raw) -SchemaFile $schema)) {
+          $manifestJson = Get-Content $manifest -Raw
+          if (-not (Test-Json -Json $manifestJson -SchemaFile $schema)) {
             throw 'Manifest schema validation failed'
+          }
+          $manifestData = $manifestJson | ConvertFrom-Json
+          if ($manifestData.totalTemplates -ne $manifestData.templates.Count) {
+            throw 'Manifest totalTemplates does not match the template count'
+          }
+          $priorityDoc = Get-Content 'Functions.Templates/Template-Manifest/docs/priority-tiers.md' -Raw
+          $priorityVersion = [regex]::Match(
+            $priorityDoc, '(?m)^\*\*Manifest version:\*\* ([0-9]+\.[0-9]+\.[0-9]+)$'
+          ).Groups[1].Value
+          if ($priorityVersion -ne $manifestData.version) {
+            throw 'Priority tiers manifest version does not match manifest.json'
           }
           ./eng/scripts/validate-manifest-refs.ps1 -ManifestPath "$env:REPORT_DIR/changed-manifest.json"
           if ($LASTEXITCODE -ne 0) { throw 'Changed reference validation failed' }
@@ -66,16 +82,18 @@ jobs:
           ## Automated update
 
           Refresh existing sample pins to newer stable SemVer tags with verified
-          signatures and existing sample directories. Update generatedAt in UTC;
-          leave version, totalTemplates, priorities and other metadata unchanged.
+          signatures and existing sample directories. Update generatedAt in UTC,
+          bump the manifest patch version, and sync its header in priority-tiers.md.
+          Leave totalTemplates, priorities, and other metadata unchanged.
 
           ## Validation
 
           - Passed: `python3 -m unittest discover -s eng/scripts -p 'test_update_manifest_tags.py' -v`.
           - Passed: `Test-Json -Json (Get-Content Functions.Templates/Template-Manifest/manifest.json -Raw) -SchemaFile Functions.Templates/Template-Manifest/schemas/manifest.schema.json`.
           - Passed: `pwsh ./eng/scripts/validate-manifest-refs.ps1 -ManifestPath "$REPORT_DIR/changed-manifest.json"` (changed entries only).
+          - Passed: `totalTemplates` matches the template count and the priority-tiers manifest version matches `manifest.json`.
           - Full-manifest reference validation was not run; unchanged pins may have existing signature exceptions.
-          - Priority tiers are unchanged. The full-reference-validation checklist above is intentionally unchecked.
+          - Priority ordering and listing are unchanged. The full-reference-validation checklist above is intentionally unchecked.
 
           EOF
           cat "$REPORT_DIR/report.md" >> "$REPORT_DIR/pr-body.md"
@@ -95,7 +113,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -c "$UPDATE_BRANCH"
-          git add -- Functions.Templates/Template-Manifest/manifest.json
+          git add -- Functions.Templates/Template-Manifest/manifest.json \
+            Functions.Templates/Template-Manifest/docs/priority-tiers.md
           git commit -m "Update manifest sample release tags" \
             -m "Co-authored-by: Copilot App <223556219+Copilot@users.noreply.github.com>"
           git rev-parse HEAD > "$REPORT_DIR/new-pr-sha"
@@ -108,6 +127,8 @@ jobs:
 
       - name: Close superseded automation PRs
         if: steps.update.outputs.changed == 'true'
+        env:
+          BASE_SHA: ${{ steps.base.outputs.sha }}
         run: |
           set -euo pipefail
           if [ -s "$REPORT_DIR/new-pr-url" ]; then
@@ -141,6 +162,12 @@ jobs:
               --jq '[.state, .headRefOid, .baseRefName] | @tsv')
             if [ "$replacement_state" != "$(printf 'OPEN\t%s\t%s' "$replacement_sha" "$BASE_BRANCH")" ]; then
               echo "::error::Replacement PR changed or is no longer open; older PRs were retained."
+              exit 1
+            fi
+            encoded_base_branch=$(printf '%s' "$BASE_BRANCH" | jq -sRr @uri)
+            current_base_sha=$(gh api "repos/$GH_REPO/branches/$encoded_base_branch" --jq '.commit.sha')
+            if [ "$current_base_sha" != "$BASE_SHA" ]; then
+              echo "::error::Default branch moved after planning; older PRs were retained."
               exit 1
             fi
             gh pr close "$number" --comment "Superseded by $replacement, which includes these sample updates and the latest eligible tags."
