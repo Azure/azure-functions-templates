@@ -1,8 +1,9 @@
 {
   "$schema": "./schemas/manifest.schema.json",
-  "generatedAt": "2026-11-18T22:43:56Z",
-  "version": "1.14.0",
+  "generatedAt": "2026-11-23T20:47:26Z",
+  "version": "1.15.0",
   "totalTemplates": 101,
+  "totalPromptStarters": 6,
   "runtimeVersions": {
     "Python": {
       "supported": [
@@ -3278,6 +3279,143 @@
         "Python project files (function_app.py, requirements.txt)"
       ],
       "isHighlighted": true
+    }
+  ],
+  "promptStarters": [
+    {
+      "id": "azure-functions-skills",
+      "displayName": "Azure Functions Skills",
+      "shortDescription": "Set up the Azure Functions skills in this directory so your coding agent can create, run, deploy, and diagnose function apps.",
+      "longDescription": "Paste this prompt into GitHub Copilot, Claude Code, or Codex to install the Azure Functions skills into the current directory with one installer command. The skills help the agent create, update, review, deploy, and troubleshoot Azure Functions apps. The installer verifies every file, never overwrites existing files, and lists missing tools before asking to install them.",
+      "kind": "setup",
+      "workspace": "any",
+      "priority": 0,
+      "categories": [
+        "agent-skills"
+      ],
+      "tags": [
+        "Skills",
+        "GitHub Copilot",
+        "Claude Code",
+        "Codex"
+      ],
+      "prompt": "Read https://aka.ms/azure-functions-starter and follow it to set up Azure Functions Skills in this directory. Use the one-liner for your OS and coding agent; I authorize that one command for this directory only. Do not open a Canvas. Load no other skills until setup is reported; then use the skills it added to this directory.",
+      "isHighlighted": true
+    },
+    {
+      "id": "hosted-skills-timer",
+      "displayName": "Hosted Skills - Timer",
+      "shortDescription": "Set up Azure Functions Hosted Skills with a timer-triggered Python starter app in a new, empty directory.",
+      "longDescription": "Paste this prompt into GitHub Copilot, Claude Code, or Codex in a new, empty directory. It installs the Hosted Skills and Connector skills together with the official timer-triggered Hosted Skills starter sample (Python, azd, Bicep), ready to run locally and deploy.",
+      "kind": "create",
+      "workspace": "empty",
+      "priority": 10,
+      "categories": [
+        "hosted-skills",
+        "agent-skills"
+      ],
+      "tags": [
+        "Hosted Skills",
+        "Timer",
+        "Python",
+        "GitHub Copilot",
+        "Claude Code",
+        "Codex"
+      ],
+      "prompt": "Read https://aka.ms/hosted-skills-timer-starter and follow it to set up Azure Functions Hosted Skills in this directory. Use the one-liner for your OS and coding agent; I authorize that one command for this directory only. Do not open a Canvas. Load no other skills until setup is reported; then use the skills it added to this directory.",
+      "isHighlighted": true
+    },
+    {
+      "id": "hosted-skills-queue",
+      "displayName": "Hosted Skills - Queue",
+      "shortDescription": "Set up Azure Functions Hosted Skills with a Storage queue-triggered Python starter app in a new, empty directory.",
+      "longDescription": "Paste this prompt into GitHub Copilot, Claude Code, or Codex in a new, empty directory. It installs the Hosted Skills and Connector skills together with the official Storage queue-triggered Hosted Skills starter sample (Python, azd, Bicep), ready to run locally and deploy.",
+      "kind": "create",
+      "workspace": "empty",
+      "priority": 11,
+      "categories": [
+        "hosted-skills",
+        "agent-skills",
+        "event-processing"
+      ],
+      "tags": [
+        "Hosted Skills",
+        "Queue Storage",
+        "Python",
+        "GitHub Copilot",
+        "Claude Code",
+        "Codex"
+      ],
+      "prompt": "Read https://aka.ms/hosted-skills-queue-starter and follow it to set up Azure Functions Hosted Skills in this directory. Use the one-liner for your OS and coding agent; I authorize that one command for this directory only. Do not open a Canvas. Load no other skills until setup is reported; then use the skills it added to this directory."
+    },
+    {
+      "id": "hosted-skills-servicebus",
+      "displayName": "Hosted Skills - Service Bus",
+      "shortDescription": "Set up Azure Functions Hosted Skills with a Service Bus-triggered Python starter app in a new, empty directory.",
+      "longDescription": "Paste this prompt into GitHub Copilot, Claude Code, or Codex in a new, empty directory. It installs the Hosted Skills and Connector skills together with the official Service Bus-triggered Hosted Skills starter sample (Python, azd, Bicep), ready to run locally and deploy.",
+      "kind": "create",
+      "workspace": "empty",
+      "priority": 12,
+      "categories": [
+        "hosted-skills",
+        "agent-skills",
+        "event-processing"
+      ],
+      "tags": [
+        "Hosted Skills",
+        "Service Bus",
+        "Python",
+        "GitHub Copilot",
+        "Claude Code",
+        "Codex"
+      ],
+      "prompt": "Read https://aka.ms/hosted-skills-servicebus-starter and follow it to set up Azure Functions Hosted Skills in this directory. Use the one-liner for your OS and coding agent; I authorize that one command for this directory only. Do not open a Canvas. Load no other skills until setup is reported; then use the skills it added to this directory."
+    },
+    {
+      "id": "hosted-skills-blob",
+      "displayName": "Hosted Skills - Blob",
+      "shortDescription": "Set up Azure Functions Hosted Skills with a Blob Storage-triggered Python starter app in a new, empty directory.",
+      "longDescription": "Paste this prompt into GitHub Copilot, Claude Code, or Codex in a new, empty directory. It installs the Hosted Skills and Connector skills together with the official Blob Storage-triggered Hosted Skills starter sample (Python, azd, Bicep), ready to run locally and deploy.",
+      "kind": "create",
+      "workspace": "empty",
+      "priority": 13,
+      "categories": [
+        "hosted-skills",
+        "agent-skills",
+        "event-processing"
+      ],
+      "tags": [
+        "Hosted Skills",
+        "Blob Storage",
+        "Python",
+        "GitHub Copilot",
+        "Claude Code",
+        "Codex"
+      ],
+      "prompt": "Read https://aka.ms/hosted-skills-blob-starter and follow it to set up Azure Functions Hosted Skills in this directory. Use the one-liner for your OS and coding agent; I authorize that one command for this directory only. Do not open a Canvas. Load no other skills until setup is reported; then use the skills it added to this directory."
+    },
+    {
+      "id": "hosted-skills-cosmos",
+      "displayName": "Hosted Skills - Cosmos DB",
+      "shortDescription": "Set up Azure Functions Hosted Skills with a Cosmos DB-triggered Python starter app in a new, empty directory.",
+      "longDescription": "Paste this prompt into GitHub Copilot, Claude Code, or Codex in a new, empty directory. It installs the Hosted Skills and Connector skills together with the official Cosmos DB-triggered Hosted Skills starter sample (Python, azd, Bicep), ready to run locally and deploy.",
+      "kind": "create",
+      "workspace": "empty",
+      "priority": 14,
+      "categories": [
+        "hosted-skills",
+        "agent-skills",
+        "event-processing"
+      ],
+      "tags": [
+        "Hosted Skills",
+        "Cosmos DB",
+        "Python",
+        "GitHub Copilot",
+        "Claude Code",
+        "Codex"
+      ],
+      "prompt": "Read https://aka.ms/hosted-skills-cosmos-starter and follow it to set up Azure Functions Hosted Skills in this directory. Use the one-liner for your OS and coding agent; I authorize that one command for this directory only. Do not open a Canvas. Load no other skills until setup is reported; then use the skills it added to this directory."
     }
   ]
 }

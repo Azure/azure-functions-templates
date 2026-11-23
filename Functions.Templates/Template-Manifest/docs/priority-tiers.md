@@ -1,7 +1,7 @@
 # Template Manifest — Priority Tiers (P00–P99)
 
 **Total templates:** 101
-**Manifest version:** 1.14.0
+**Manifest version:** 1.15.0
 
 ## Design principles
 
@@ -278,6 +278,34 @@ When templates share the same priority, sort by:
 | 5 | Java | Enterprise |
 | 6 | Go | Cloud-native services and tooling |
 | 7 | PowerShell | IT automation / scripting |
+
+## Prompt starters
+
+`promptStarters` is a separate list with its own `priority` scale; it does not
+share the P00–P99 blocks above. A prompt starter is a prompt that a user pastes
+into a coding agent (GitHub Copilot, Claude Code, Codex). The prompt names one
+aka.ms link that resolves to a generated `start.md` in
+[Azure/azure-functions-skills](https://github.com/Azure/azure-functions-skills),
+and the agent runs that repository's installer. The prompt text, bundles,
+skills, and required tools are owned by that repository's `starter.config.json`;
+the manifest carries only what a tool needs to list, filter, and copy the
+prompt. Tools show the prompt verbatim and never run it automatically.
+
+| Field | Meaning |
+|---|---|
+| `kind` | `setup` installs skills only; `create` also adds a new starter app; `assess` reviews an existing app |
+| `workspace` | `any`, `empty` (new directory), or `existing-app` — tells a tool which folder to open |
+| `categories` | Same kebab-case vocabulary as templates (`starters` is not used here) |
+
+| P | Prompt starter | Kind | Workspace |
+|--:|---|---|---|
+| 0 | `azure-functions-skills` ⭐ | setup | any |
+| 10 | `hosted-skills-timer` ⭐ | create | empty |
+| 11 | `hosted-skills-queue` | create | empty |
+| 12 | `hosted-skills-servicebus` | create | empty |
+| 13 | `hosted-skills-blob` | create | empty |
+| 14 | `hosted-skills-cosmos` | create | empty |
+| | **Total** | **6** | |
 
 ## Schema change required
 

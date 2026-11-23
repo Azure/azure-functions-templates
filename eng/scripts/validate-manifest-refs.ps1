@@ -9,6 +9,8 @@
        and points to a signed tag with a verified signature when it is a tag.
     3. Verifies the folderPath exists at that ref (skipped for '.').
     Warns when gitRef is a branch (refs/heads/*) instead of a signed tag.
+    For prompt starters, checks unique ids, totalPromptStarters, and that each prompt names exactly
+    one aka.ms link that redirects to a start.md in Azure/azure-functions-skills.
 
     Requires: gh CLI authenticated with repo read access.
 
@@ -115,6 +117,49 @@ foreach ($t in $manifest.templates) {
 
     $passed++
     Write-Host "  OK    $label" -ForegroundColor Green
+}
+
+# Prompt starters: unique ids, count, and an aka.ms link that resolves to a start.md in the skills repository
+$promptStarters = @($manifest.promptStarters | Where-Object { $_ })
+if ($promptStarters.Count -gt 0) {
+    Write-Host "`nChecking $($promptStarters.Count) prompt starters...`n"
+    $trustedPrefix = 'https://raw.githubusercontent.com/Azure/azure-functions-skills/'
+
+    if ($manifest.totalPromptStarters -ne $promptStarters.Count) {
+        $errors += "totalPromptStarters is $($manifest.totalPromptStarters) but promptStarters has $($promptStarters.Count) entries"
+    }
+
+    $duplicateIds = $promptStarters | Group-Object id | Where-Object Count -gt 1
+    foreach ($d in $duplicateIds) {
+        $errors += "promptStarters: duplicate id '$($d.Name)'"
+    }
+
+    foreach ($s in $promptStarters) {
+        $links = @([regex]::Matches($s.prompt, 'https://aka\.ms/[A-Za-z0-9-]+') | ForEach-Object Value | Select-Object -Unique)
+        if ($links.Count -ne 1) {
+            $errors += "$($s.id): prompt must name exactly one aka.ms link (found $($links.Count))"
+            Write-Host "  FAIL  $($s.id) (aka.ms link count)" -ForegroundColor Red
+            continue
+        }
+
+        $link = $links[0]
+        $redirect = (curl.exe -s -o NUL -w "%{http_code} %{redirect_url}" $link) -split ' ', 2
+        if ($redirect[0] -notmatch '^30[1278]$' -or -not $redirect[1].StartsWith($trustedPrefix) -or -not $redirect[1].EndsWith('/start.md')) {
+            $errors += "$($s.id): $link must redirect to a start.md under $trustedPrefix (got '$($redirect -join ' ')')"
+            Write-Host "  FAIL  $($s.id) ($link redirect)" -ForegroundColor Red
+            continue
+        }
+
+        $status = curl.exe -s -o NUL -w "%{http_code}" $redirect[1]
+        if ($status -ne '200') {
+            $errors += "$($s.id): $($redirect[1]) returned HTTP $status"
+            Write-Host "  FAIL  $($s.id) (start.md not found)" -ForegroundColor Red
+            continue
+        }
+
+        $passed++
+        Write-Host "  OK    $($s.id) -> $($redirect[1])" -ForegroundColor Green
+    }
 }
 
 # Summary

@@ -65,9 +65,112 @@
         "format": "uri"
       },
       "description": "Reference URLs for documentation and sources"
+    },
+    "totalPromptStarters": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total number of prompt starters in the manifest"
+    },
+    "promptStarters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/promptStarter"
+      },
+      "description": "Prompts that a user pastes into a coding agent to set up Azure Functions skills (and, for some, a starter app) in a directory"
     }
   },
+  "dependentRequired": {
+    "promptStarters": [
+      "totalPromptStarters"
+    ]
+  },
   "$defs": {
+    "promptStarter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "displayName",
+        "shortDescription",
+        "longDescription",
+        "kind",
+        "workspace",
+        "priority",
+        "categories",
+        "prompt"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "description": "Unique identifier for the prompt starter (kebab-case)"
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Human-readable name of the prompt starter"
+        },
+        "shortDescription": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Brief description of the prompt starter (max 200 characters)"
+        },
+        "longDescription": {
+          "type": "string",
+          "description": "Detailed description of what the prompt sets up"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "setup",
+            "create",
+            "assess"
+          ],
+          "description": "What the prompt does: 'setup' installs skills only, 'create' installs skills and a new starter app, 'assess' installs skills and reviews an existing app"
+        },
+        "workspace": {
+          "type": "string",
+          "enum": [
+            "any",
+            "empty",
+            "existing-app"
+          ],
+          "description": "Directory the prompt expects: any directory, a new empty directory, or an existing Functions app"
+        },
+        "priority": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 99,
+          "description": "Priority for sorting prompt starters (lower first)"
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "description": "Categories for filtering (kebab-case), from the same vocabulary as template categories"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Tags for search and discovery (Title Case)"
+        },
+        "prompt": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "https://aka\\.ms/[A-Za-z0-9-]+",
+          "description": "Exact prompt text to show and copy. It names one aka.ms link that resolves to a start.md in Azure/azure-functions-skills. Tools display it verbatim and never run it automatically."
+        },
+        "isHighlighted": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether the prompt starter should be highlighted/featured in the UI"
+        }
+      }
+    },
     "template": {
       "type": "object",
       "required": [
